@@ -24,8 +24,12 @@ line in the redirect table of `404.html` for their entity paths.
 
 ## Publishing the edition
 
-Export the edition from Roll Desk and replace `edition.jsonld`.
-Identifiers must not change between exports; the format keeps them.
+`edition.jsonld` is the only copy of the edition. Roll Desk loads it
+from this repository and does not bundle one of its own; the test
+sample in linked-rolls is a frozen export of an earlier format
+version, not the edition. To publish a change, export the edition
+from Roll Desk and replace the file here. Identifiers must not change
+between exports; the format keeps them.
 
 ## DNS
 
