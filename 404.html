@@ -13,7 +13,7 @@
       var path = location.pathname.replace(/^\//, '')
       var uuid = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
       var apps = [
-        { entity: new RegExp('^(symbol_|copy/)?' + uuid + '$', 'i'), at: 'https://rolldesk.wm225.org/' }
+        { entity: new RegExp('^(symbol_|copy/)?' + uuid + '$', 'i'), at: 'https://rolldesk.welte225.org/' }
       ]
       for (var i = 0; i < apps.length; i++) {
         if (apps[i].entity.test(path)) {

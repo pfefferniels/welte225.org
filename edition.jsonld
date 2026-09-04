@@ -3,11 +3,11 @@
     "https://w3id.org/reo/context.jsonld",
     "https://w3id.org/reo/welte-t100/context.jsonld",
     {
-      "@base": "https://wm225.org/"
+      "@base": "https://welte225.org/"
     }
   ],
   "@type": "Edition",
-  "@id": "https://wm225.org/",
+  "@id": "https://welte225.org/",
   "title": "Alfred Grünfeld spielt Robert Schumann, Träumerei",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "creation": {

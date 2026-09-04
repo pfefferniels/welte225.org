@@ -1,6 +1,6 @@
-# wm225.org
+# welte225.org
 
-The site at the root of `wm225.org`: a landing page for the roll on
+The site at the root of `welte225.org`: a landing page for the roll on
 which the dissertation *Grünfelds Geist* demonstrates its projects,
 and the place where the data about that roll is published.
 
@@ -12,7 +12,7 @@ and the place where the data about that roll is published.
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/symbol_<id>`, `/copy/<id>`, `/<id>` | identifiers of the edition's entities; `404.html` sends them on to Roll Desk, which opens at that entity |
 
-The identifiers are the edition's `@base`, `https://wm225.org/`, so
+The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages
 serves files only, hence the redirect page for the entity paths. A
 machine asking for an entity gets that page with status 404 and a
