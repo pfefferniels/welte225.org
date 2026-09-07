@@ -7,17 +7,26 @@
   <title>WM 225</title>
   <link rel="alternate" type="application/ld+json" href="/edition.jsonld" title="Roll edition of WM 225 as JSON-LD">
   <script>
-    // An entity IRI of the edition opens the edition at that entity in
-    // Roll Desk. Anything else is a page that does not exist.
+    // An entity IRI opens its app at that entity: one of the edition's in Roll
+    // Desk, a segment of the performance reconstruction in MPM Desk. Anything
+    // else is a page that does not exist.
     (function () {
       var path = location.pathname.replace(/^\//, '')
       var uuid = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
       var apps = [
-        { entity: new RegExp('^(symbol_|copy/)?' + uuid + '$', 'i'), at: 'https://rolldesk.welte225.org/' }
+        {
+          entity: new RegExp('^(symbol_|copy/)?' + uuid + '$', 'i'),
+          open: function (path) { return 'https://rolldesk.welte225.org/' + path + location.search + location.hash }
+        },
+        {
+          entity: new RegExp('^mpm/(' + uuid + ')$', 'i'),
+          open: function (path, match) { return 'https://mpmdesk.welte225.org/' + location.search + '#' + match[1] }
+        }
       ]
       for (var i = 0; i < apps.length; i++) {
-        if (apps[i].entity.test(path)) {
-          location.replace(apps[i].at + path + location.search + location.hash)
+        var match = apps[i].entity.exec(path)
+        if (match) {
+          location.replace(apps[i].open(path, match))
           return
         }
       }
@@ -36,8 +45,8 @@
 <body>
   <main>
     <h1>Nothing is published at this address.</h1>
-    <p>Identifiers of the edition of WM 225 open in Roll Desk; this one is not among them.</p>
-    <p><a href="/">To the roll</a> · <a href="/edition.jsonld">the edition as JSON-LD</a></p>
+    <p>Identifiers of the edition of WM 225 open in Roll Desk, those of its performance reconstruction in MPM Desk; this one is not among them.</p>
+    <p><a href="/">To the roll</a> · <a href="/edition.jsonld">the edition as JSON-LD</a> · <a href="/mpm/">the performance as MPM</a></p>
   </main>
 </body>
 </html>

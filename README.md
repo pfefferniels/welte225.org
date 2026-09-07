@@ -12,6 +12,7 @@ and the place where the data about that roll is published.
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/symbol_<id>`, `/copy/<id>`, `/<id>` | identifiers of the edition's entities; `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
+| `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages
@@ -42,8 +43,12 @@ of transformer calls and claims (`work.json`), the MPM the chain wrote
 here and bundles none. To publish a change made in the editor, replace
 the files. After a change to the chain, `scripts/recordOutcomes.ts` in
 mpm-desk rewrites the last three in a checkout of this repository, and
-mpm-desk's tests read that checkout. The work file's entities have no
-identifiers under this domain, so `404.html` has no line for them.
+mpm-desk's tests read that checkout.
+
+A segment of the reconstruction, one claim about a stretch of the
+performance, has the identifier `https://welte225.org/mpm/<id>`, its
+`id` in `work.json` being a UUID the editor mints. Identifiers must not
+change between exports.
 
 ## DNS
 
