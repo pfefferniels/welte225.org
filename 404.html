@@ -19,7 +19,8 @@
           open: function (path) { return 'https://rolldesk.welte225.org/' + path + location.search + location.hash }
         },
         {
-          entity: new RegExp('^mpm/(' + uuid + ')$', 'i'),
+          // A segment's id, or at least its first eight characters; the viewer resolves a prefix.
+          entity: /^mpm\/([0-9a-f]{8}[0-9a-f-]{0,28})$/i,
           open: function (path, match) { return 'https://mpmdesk.welte225.org/' + location.search + '#' + match[1] }
         }
       ]

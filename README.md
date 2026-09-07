@@ -47,8 +47,10 @@ mpm-desk's tests read that checkout.
 
 A segment of the reconstruction, one claim about a stretch of the
 performance, has the identifier `https://welte225.org/mpm/<id>`, its
-`id` in `work.json` being a UUID the editor mints. Identifiers must not
-change between exports.
+`id` in `work.json` being a UUID the editor mints. A prefix of at least
+eight characters names the segment as well, as long as no second
+segment shares it; the viewer settles the address on the identifier.
+Identifiers must not change between exports.
 
 ## DNS
 
