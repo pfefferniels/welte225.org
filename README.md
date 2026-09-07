@@ -11,6 +11,7 @@ and the place where the data about that roll is published.
 | `/` | the landing page |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/symbol_<id>`, `/copy/<id>`, `/<id>` | identifiers of the edition's entities; `404.html` sends them on to Roll Desk, which opens at that entity |
+| `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages
@@ -30,6 +31,19 @@ sample in linked-rolls is a frozen export of an earlier format
 version, not the edition. To publish a change, export the edition
 from Roll Desk and replace the file here. Identifiers must not change
 between exports; the format keeps them.
+
+## Publishing the reconstruction
+
+`mpm/` holds the four files of an MPM Desk archive, unzipped: the
+transcription with its recordings (`transcription.mei`), the work file
+of transformer calls and claims (`work.json`), the MPM the chain wrote
+(`performance.mpm`) and the score it is performed against
+(`score.msm`). The viewer at `mpmdesk.welte225.org` loads them from
+here and bundles none. To publish a change made in the editor, replace
+the files. After a change to the chain, `scripts/recordOutcomes.ts` in
+mpm-desk rewrites the last three in a checkout of this repository, and
+mpm-desk's tests read that checkout. The work file's entities have no
+identifiers under this domain, so `404.html` has no line for them.
 
 ## DNS
 
