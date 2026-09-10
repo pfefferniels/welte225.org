@@ -3595,7 +3595,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "edfea01e-8588-4898-9579-2f9191d00184",
+                    "@id": "ef7dfff9-a379-4169-8730-2b60407a145a",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -3618,7 +3618,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "076397c1-76cf-4c66-b89a-a2e05639ae38",
+                    "@id": "345669c5-a058-456f-92c3-cc10b93e621b",
                     "insert": [
                         {
                             "@id": "symbol_887def13-467e-4e30-a370-218aa65a8277",
@@ -3641,7 +3641,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "cc509ceb-86c3-4b7d-b0a3-441b32042e5a",
+                    "@id": "4d49af2d-b17f-4a8a-87b5-fc085560142b",
                     "insert": [
                         {
                             "@id": "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9",
@@ -3664,7 +3664,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "8602c357-b7d9-4949-bbcb-802641b99f4a",
+                    "@id": "dd3b456c-8048-4718-9505-45c429888a89",
                     "insert": [
                         {
                             "@id": "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb",
@@ -6097,7 +6097,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "e3120061-a35c-456b-9c3e-42d14a623ac7",
+                    "@id": "adee234c-90ee-4000-bd3d-cf1b172b42c4",
                     "insert": [
                         {
                             "@id": "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c",
@@ -6117,7 +6117,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "627c02ec-abf1-48ec-9a6a-523f25e5d87f",
+                    "@id": "7bdc8a0a-455a-4ec5-a23c-3f02a23683ab",
                     "insert": [
                         {
                             "@id": "symbol_de121890-2032-4f64-bc31-0a59e96bc610",
@@ -6137,7 +6137,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "2fe564e6-e0ca-4376-9972-63368b9888fc",
+                    "@id": "adbc216a-eac3-45c7-99e8-bb8ed5fb2cd2",
                     "insert": [
                         {
                             "@id": "symbol_68c88440-9fdd-4703-8f58-995f06321cdc",
@@ -6157,7 +6157,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "451ad24b-a4e7-42a2-a0d8-dc3f9cd2d55f",
+                    "@id": "3df0e0bc-402f-4a78-a135-3e6d89449071",
                     "insert": [
                         {
                             "@id": "symbol_e93405aa-b53a-4281-af88-35be2c572065",
@@ -6177,7 +6177,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "53412f38-b155-4da4-ac63-ce4d5eeaa7ae",
+                    "@id": "e0241c7a-0478-4315-a4f3-a34ae4d3a214",
                     "editType": "remove-redundancy",
                     "motivation": "treble-crescendo-thinned",
                     "delete": [
@@ -6187,7 +6187,21 @@
                         "symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18",
                         "symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d",
                         "symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845"
-                    ]
+                    ],
+                    "@annotation": {
+                        "@id": "948cbb92-3301-43f2-a3cf-5777fb455ba5",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "b113949a-901c-4bb4-a309-2c8fe6a111c1",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "simpleArgumentation",
+                                    "note": "Diese Befehle bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in Stanford-2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von Stanford-1 und vom Exemplar Widuch. Vier von ihnen werden erst durch Bearbeitungen der Fassung B wirkungslos, zwei sind es schon in A."
+                                }
+                            ]
+                        }
+                    }
                 }
             ],
             "motivations": [
@@ -6204,7 +6218,7 @@
                 {
                     "@type": "motivation",
                     "@id": "treble-crescendo-thinned",
-                    "note": "Die Crescendo-Befehle im Diskant bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in Stanford-2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von Stanford-1 und vom Exemplar Widuch. Vier von ihnen werden erst durch Bearbeitungen der Fassung B redundant, zwei sind es schon in A."
+                    "note": "Ausgedünntes Crescendo im Diskant"
                 }
             ],
             "basedOn": {
@@ -20376,7 +20390,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "d1571b7a-61d6-49ea-89b5-d5fe6c847091",
+                    "@id": "a3c05c1f-682a-4d6f-abdd-787c96254a6e",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20402,7 +20416,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "b6957620-1f35-458a-a458-57863a8d5697",
+                    "@id": "9b7f75ea-e1cc-4a3b-b57d-20876497596d",
                     "insert": [
                         {
                             "pitch": 60,
@@ -20430,7 +20444,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "c03f9d62-e3cb-4d2a-9b56-bee11fa7b21d",
+                    "@id": "c422422e-482a-4b80-8480-1b502d9e5abd",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20453,7 +20467,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "4eec95e2-90a0-4a46-9753-007fa579efbc",
+                    "@id": "510c88b4-4f34-450b-be86-12b39addf218",
                     "insert": [
                         {
                             "expressionType": "SustainPedalOff",
@@ -20493,7 +20507,21 @@
                     "toleranceStart": 8,
                     "toleranceEnd": 8
                 },
-                "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
+                "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f",
+                "@annotation": {
+                    "@id": "3660f926-55c8-49ae-aeff-2a1b69f9cb57",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267",
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "@type": "simpleArgumentation",
+                                "note": "Zweiundfünfzig dieser Lesarten trägt allein das Exemplar Widuch. Stünden sie in der Fassung A, so ließe die Fassung B ebenso viele wirksame Differenzierungen fallen. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars, und die Fassung A behält, was zwei Äste bezeugen: 657 Lesarten aller vier Kopien und elf, die über die Astgrenze hinweg bezeugt sind."
+                            }
+                        ]
+                    }
+                }
             },
             "edits": [
                 {
@@ -20618,7 +20646,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "34acd7db-7b63-4087-bbe1-d9321ad76d68",
+                    "@id": "bb1e73c4-7f26-4a7a-9793-eb0d0e73410e",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20631,12 +20659,11 @@
                             "@type": "expression",
                             "@id": "symbol_a10a4120-fbcc-42a2-965d-40f92fa71dbf"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "19e3e510-cdff-4856-9279-ed7b99ba80f6",
+                    "@id": "b7424fde-e0d2-4c50-9f42-d788bdf1dbf7",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20649,12 +20676,11 @@
                             "@type": "expression",
                             "@id": "symbol_453db0e0-ee3d-457a-876f-ed6d82af162d"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "a4650630-2906-4db1-9289-679eeaf05e9a",
+                    "@id": "92de6499-c030-42fe-8e9e-ade3121f2678",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20667,12 +20693,11 @@
                             "@type": "expression",
                             "@id": "symbol_10715b5c-63b3-4420-af3f-f8851a5cb8e8"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "6b005432-0cb8-43a7-b8a0-a57fcb49e59d",
+                    "@id": "52bbcc7c-a09b-4cd1-ba94-adbaf7d9ac04",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20685,12 +20710,11 @@
                             "@type": "expression",
                             "@id": "symbol_7146e5c6-1d80-4120-90a3-daecbfbd6935"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "dfc80b2f-137e-4f88-b405-8e46a81fec8d",
+                    "@id": "b28592ad-94d1-4fd7-8123-1023a15e2a48",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20703,12 +20727,11 @@
                             "@type": "expression",
                             "@id": "symbol_1fa31b0a-002d-47c1-b168-ca54d1e4a135"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "c8bc2b8a-8901-4fd5-86c0-887451308970",
+                    "@id": "d486b7dc-48ec-4dd1-a979-b37d0ad7f467",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20721,12 +20744,11 @@
                             "@type": "expression",
                             "@id": "symbol_1637c1c6-d4d6-4a81-9eaa-c2042dff5026"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "98ef8851-f61e-4c72-8e0d-2ea65e095c21",
+                    "@id": "bce208f5-f49d-475a-b7cd-0036f4e88f3f",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20739,12 +20761,11 @@
                             "@type": "expression",
                             "@id": "symbol_2d3b7b9e-274c-46cd-8727-f8986303d817"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "2a27c53b-628b-4b53-8fcc-bbe71fa4e2d4",
+                    "@id": "e1418816-a3c8-4a06-9006-852d5bfa1c19",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20757,12 +20778,11 @@
                             "@type": "expression",
                             "@id": "symbol_93a33469-9270-433b-8279-e0660afa037b"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "676d83b4-9ac3-46e6-b253-08f7ba591f0f",
+                    "@id": "9f17a4e9-be41-43a2-b640-06dcd133d7d6",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20775,12 +20795,11 @@
                             "@type": "expression",
                             "@id": "symbol_d5639aa1-c681-4d7d-8d3c-deecde234110"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "d33921e2-1604-4a86-b4ef-bc45b92ba3d7",
+                    "@id": "1b390bcd-03bd-4f6b-829b-f05632ef7f9f",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20793,12 +20812,11 @@
                             "@type": "expression",
                             "@id": "symbol_c257ecc2-f50b-4f27-8666-e40987ce07fc"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "d4358411-3b66-4f3f-8ae6-2c3d81ff0d3f",
+                    "@id": "2604c4c2-2f65-4876-b351-074dc9293947",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20811,12 +20829,11 @@
                             "@type": "expression",
                             "@id": "symbol_8395eced-571b-4802-9ea2-69f039527d83"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "04dcc910-a6b4-4fd1-9461-6acb6354d6d8",
+                    "@id": "28961446-05e6-4008-b0c8-c33c3cd8f984",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20829,12 +20846,11 @@
                             "@type": "expression",
                             "@id": "symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "c8d472c4-2631-4593-87f2-6c320fe678af",
+                    "@id": "81d941b4-6562-4f68-811b-e0cfe5d3cb85",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20847,12 +20863,11 @@
                             "@type": "expression",
                             "@id": "symbol_8a47bc85-838e-4116-90b8-97c18ce892da"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "d3201146-bfec-4df0-aa04-0e9317a7b039",
+                    "@id": "90766012-348e-4854-8e8a-ce398707efe4",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20865,12 +20880,11 @@
                             "@type": "expression",
                             "@id": "symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "a6bd9d5a-a901-420c-9d22-a4b0eff982fe",
+                    "@id": "fcca54db-2279-4455-8524-32f124983f43",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20883,12 +20897,11 @@
                             "@type": "expression",
                             "@id": "symbol_ed962bbb-74a2-4edf-8f41-16748af0f85c"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "353b6581-6ddb-41ac-9204-97d4fe425129",
+                    "@id": "f722b3ea-b89c-421c-acbc-9460a41e9ef8",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20901,12 +20914,11 @@
                             "@type": "expression",
                             "@id": "symbol_5ec9a884-0fd7-4005-92eb-099c210bfb2e"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "157a0ce6-f76a-49a4-b2b8-9bc72e480a8d",
+                    "@id": "a7852e22-9876-400d-8097-c8571f19b52b",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20919,12 +20931,11 @@
                             "@type": "expression",
                             "@id": "symbol_ae9eaaf2-663b-4565-b705-c840ce63fcfc"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "ca4cc668-f8d9-47c9-8da4-4b70cf8c7630",
+                    "@id": "a2ae65ce-d4ea-4242-ab6a-44223d102fa8",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20937,12 +20948,11 @@
                             "@type": "expression",
                             "@id": "symbol_9fe4b1bb-334d-441e-9d47-543601c9b018"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "d2d08fdd-4bfe-42cb-abad-6322aa239ab3",
+                    "@id": "6fe1bed2-a9c6-4c77-8942-a61baecc7bd5",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20955,12 +20965,11 @@
                             "@type": "expression",
                             "@id": "symbol_c70b19f3-c43d-4738-806b-e11e0e8726ab"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "8269ff54-8009-4a86-a552-af989229d665",
+                    "@id": "e9856c75-84cf-4901-9c80-6a6f09df4b59",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -20973,12 +20982,11 @@
                             "@type": "expression",
                             "@id": "symbol_5e61514c-3a01-40a5-8455-a2ea50911a58"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "e5e2c9b4-f0e8-4dfb-89d8-b4525a6ba99a",
+                    "@id": "fbd38fae-d523-4b57-aaf8-2533e998e85c",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -20991,12 +20999,11 @@
                             "@type": "expression",
                             "@id": "symbol_e21603a1-224d-4830-85b0-c27093566b2a"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "dc54cd34-f09f-4b25-b38d-479dfa2ac997",
+                    "@id": "43634f1e-7720-4abc-9d47-bb8ae4c90372",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOff",
@@ -21009,12 +21016,11 @@
                             "@type": "expression",
                             "@id": "symbol_5530b9bb-cdc1-46eb-907c-fdfd816b8e9c"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "45451c90-ba74-44ae-a0aa-d00a4748281d",
+                    "@id": "1fa26af0-2284-42a8-a7ae-7b7b3f0c9f86",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21027,12 +21033,11 @@
                             "@type": "expression",
                             "@id": "symbol_f322f32f-ed6b-4b72-a85f-b8f386b87f2b"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "e0892f0a-6d67-4542-9e9a-659e679292e5",
+                    "@id": "c674f27f-0c4c-47af-88ab-962464a778a6",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOn",
@@ -21045,12 +21050,11 @@
                             "@type": "expression",
                             "@id": "symbol_77ac825c-2410-46ce-8932-9d5f25cb33bc"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "02f54ed0-292d-45d8-b67a-735f81c5a89f",
+                    "@id": "5f394b17-996b-45fd-a5f0-feb483354c99",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21063,12 +21067,11 @@
                             "@type": "expression",
                             "@id": "symbol_b06a34a0-655c-4fa0-911b-a183997cd8bf"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "4e2f8229-3c32-413c-a030-4ebe51dd62f6",
+                    "@id": "4d8feb64-e95b-43a8-90a8-46a3bfccb248",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOff",
@@ -21081,12 +21084,11 @@
                             "@type": "expression",
                             "@id": "symbol_c563f947-8067-4812-aa94-361dacf83682"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "384378d7-ee36-40d8-a848-5e081ec3df28",
+                    "@id": "b95a0aa0-c524-4a5c-a7a1-8c4f5657b82d",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOn",
@@ -21099,12 +21101,11 @@
                             "@type": "expression",
                             "@id": "symbol_8c2a6b5a-fa0f-497c-a942-b137b3b11816"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "a0c86775-0fe8-4d13-8c7b-c0ce7b3c7df6",
+                    "@id": "f70f25f6-556b-47e9-a58f-b805c3cf81ce",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21117,12 +21118,11 @@
                             "@type": "expression",
                             "@id": "symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "42825f24-f603-4bb6-b275-4fa4bf0a9000",
+                    "@id": "5fc44069-a9fa-4ebb-8a17-49a876948635",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOff",
@@ -21135,12 +21135,11 @@
                             "@type": "expression",
                             "@id": "symbol_37a7260a-2686-45e5-bedb-881b810e3caa"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "a3136a27-6ad3-4536-96d3-11478cee458a",
+                    "@id": "f2ff10c0-9f18-4478-9891-8dc0b74dd900",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21153,12 +21152,11 @@
                             "@type": "expression",
                             "@id": "symbol_7c068e1c-86a6-4319-8ebc-0707480c88a6"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "0662800f-d60b-48cc-9c99-80fe01e22351",
+                    "@id": "3a702614-54e1-453e-aacc-397a6a178029",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOn",
@@ -21171,12 +21169,11 @@
                             "@type": "expression",
                             "@id": "symbol_9ba2dfbd-4c8c-4edb-ac66-48ab10d46901"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "ad9e60eb-16b6-4a7c-b2c4-004a23027b56",
+                    "@id": "6f23df5d-e6ac-4d82-a965-f52cd8208a90",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21189,12 +21186,11 @@
                             "@type": "expression",
                             "@id": "symbol_84fce17c-c347-4334-9bec-c5783442eb54"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "ebc77dd9-af95-4571-959f-85b4f75d12d5",
+                    "@id": "6d914e01-5576-4ba3-982c-5389c97431d0",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21207,12 +21203,11 @@
                             "@type": "expression",
                             "@id": "symbol_e10aae05-88b4-4220-aa06-750147e269eb"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "b71c5f7b-f00f-481a-b6ea-018f6d882e1b",
+                    "@id": "6952c724-94bb-4aae-90d7-3aa94e674ce8",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21225,12 +21220,11 @@
                             "@type": "expression",
                             "@id": "symbol_1ade814f-b729-4826-a18b-efb181a759da"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "8226778f-9460-499b-90a1-a44e7fd7bfc2",
+                    "@id": "c257a237-cafe-4182-b645-c4a2d39871c3",
                     "insert": [
                         {
                             "expressionType": "SoftPedalOn",
@@ -21243,12 +21237,11 @@
                             "@type": "expression",
                             "@id": "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "d30b23d5-0f59-4748-9364-e82024ee0f76",
+                    "@id": "8105088e-8a1f-4c1d-8b69-be17190e297b",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21261,12 +21254,11 @@
                             "@type": "expression",
                             "@id": "symbol_ffe87be1-e659-47a4-b1c6-e96c55967514"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "575de64e-80c1-4678-96e8-3c1a3e44112c",
+                    "@id": "8535e256-6a5a-4eec-91d4-dd43b54a1efb",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21279,12 +21271,11 @@
                             "@type": "expression",
                             "@id": "symbol_d4951659-2632-4944-9f26-b433c587e607"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "f56763ab-6896-4bdf-91a9-f692433e18d1",
+                    "@id": "d3a31b44-c538-4227-85fe-04168c658417",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21297,12 +21288,11 @@
                             "@type": "expression",
                             "@id": "symbol_69f5c28c-e7f3-40ff-947b-099aa0d65c9f"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "2314cb8d-0bb7-445f-baa0-d53255eca31e",
+                    "@id": "1c04d11f-0ece-4193-b3f0-2014f0bb7cc3",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21315,12 +21305,11 @@
                             "@type": "expression",
                             "@id": "symbol_31e2cfbc-5bd8-4cc5-9308-63190937ce43"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "6622c734-40b8-4313-9124-c48f99d15af6",
+                    "@id": "051c3ef1-e9d5-4d7a-897c-24d2e16a2390",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21333,12 +21322,11 @@
                             "@type": "expression",
                             "@id": "symbol_f9742099-f60e-4996-99f2-4ddf04da7bcf"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "657d907c-3e18-492d-abbe-a6fe493a3125",
+                    "@id": "fdf72242-3c75-4699-beba-5605e0ff2123",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21351,12 +21339,11 @@
                             "@type": "expression",
                             "@id": "symbol_2b8425e0-4e20-43e1-9871-c3e6fb228a77"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "9dabc294-4226-4bcb-b8ad-81e3c18cd6c1",
+                    "@id": "ebbdad61-1f2c-45d8-90c5-4dee241fb144",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21369,12 +21356,11 @@
                             "@type": "expression",
                             "@id": "symbol_97618927-5791-44f2-b9c0-0a3288fda8cd"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "e4614591-3a19-44e6-a03a-acb18017c90e",
+                    "@id": "1e0b8a65-885a-4993-8dee-ccba1a18cc78",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21387,12 +21373,11 @@
                             "@type": "expression",
                             "@id": "symbol_ba07e2d7-4241-4e82-99e5-022a77298f1c"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "bcf7117a-902f-4926-b9f4-f9340c30954d",
+                    "@id": "6c74961b-114b-4496-bfd0-4a827a2b312b",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21405,12 +21390,11 @@
                             "@type": "expression",
                             "@id": "symbol_f71387f4-f594-4a76-a506-ccb45a7522a5"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "080b2c2d-c1e7-4b5a-9e63-f193b4061e43",
+                    "@id": "5b3bcfe4-55d4-472f-8c56-92b359a1d874",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21423,12 +21407,11 @@
                             "@type": "expression",
                             "@id": "symbol_d2dd2104-4704-4242-82a8-2fabdabde751"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "8c5d2ef5-ce51-46ad-866c-96d311b131e1",
+                    "@id": "9feea341-4654-4c18-baa1-b71ba796b9cd",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21441,12 +21424,11 @@
                             "@type": "expression",
                             "@id": "symbol_05589b14-529e-4296-b513-207f7d065a79"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "ba049f42-0381-45fc-944b-2bd03207e72a",
+                    "@id": "13e92016-fc1d-48c8-86a0-a0545a2bf18d",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21459,12 +21441,11 @@
                             "@type": "expression",
                             "@id": "symbol_ed167462-e205-4f6f-9739-b28c5db203b4"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "f742429e-b3b6-4fe3-b697-1a27d8091722",
+                    "@id": "9341a872-ba54-4bcf-986d-a8bded8d10a0",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21477,12 +21458,11 @@
                             "@type": "expression",
                             "@id": "symbol_85f626a1-7963-42f6-8117-177508d532f0"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "75c37b00-a70e-4533-beb1-86603f97b916",
+                    "@id": "d062a18e-2d0d-4fa3-af3a-f832c9ed33f4",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21495,12 +21475,11 @@
                             "@type": "expression",
                             "@id": "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "28478be6-e50a-428a-8628-9af74d163af9",
+                    "@id": "5d85c16a-c794-4433-9365-0d5e4f834b3a",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -21513,12 +21492,11 @@
                             "@type": "expression",
                             "@id": "symbol_d0298992-4507-492e-a023-d7805c92ccea"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "348e7dd0-b44d-4a83-9bc6-c983947448c5",
+                    "@id": "46d3b743-1011-4d42-9c45-77aeafb90fc1",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -21531,12 +21509,11 @@
                             "@type": "expression",
                             "@id": "symbol_d6fab648-eb46-45a3-85a2-ec4241586903"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "002092a2-8434-429a-9f91-f09638335eac",
+                    "@id": "4d0471ea-54e1-411f-bc07-30702f14a210",
                     "insert": [
                         {
                             "expressionType": "Rewind",
@@ -21549,16 +21526,29 @@
                             "@type": "expression",
                             "@id": "symbol_924274fc-32ea-40be-88b0-ea2f0e5e7928"
                         }
-                    ],
-                    "motivation": "widuch-own-layer"
+                    ]
                 },
                 {
                     "@type": "edit",
-                    "@id": "ac80e616-62bf-46c7-aa79-7406e8477c6f",
-                    "motivation": "pedal-release-dropped",
+                    "@id": "05a3a8bd-46d3-4e9f-a045-637c8d810035",
+                    "motivation": "pedal-held-through",
                     "delete": [
                         "symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3"
-                    ]
+                    ],
+                    "@annotation": {
+                        "@id": "27a60e44-0214-4cbf-8b07-64e5166de741",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "0f5c625c-ffb7-4a9a-83ca-a53879864e49",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "simpleArgumentation",
+                                    "note": "Das Loslassen bei 5370,8 mm fehlt allein auf dem Exemplar Widuch. Es steht auf Stanford-1, Stanford-2 und der Licensee-Kopie, und die grüne Kopie hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung B, so machte diese Zutat eine in A bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in A und dieses Exemplar hat es verloren."
+                                }
+                            ]
+                        }
+                    }
                 }
             ],
             "motivations": [
@@ -21574,13 +21564,8 @@
                 },
                 {
                     "@type": "motivation",
-                    "@id": "pedal-release-dropped",
-                    "note": "Das Loslassen des Dämpferpedals bei 5370,8 mm fehlt allein auf dem Exemplar Widuch. Es steht auf Stanford-1, Stanford-2 und der Licensee-Kopie, und die grüne Kopie hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung B, so machte diese Zutat eine in A bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun."
-                },
-                {
-                    "@type": "motivation",
-                    "@id": "widuch-own-layer",
-                    "note": "Diese Lesarten trägt allein das Exemplar Widuch. Stünden sie in der Fassung A, so ließe die Fassung B zweiundfünfzig wirksame Differenzierungen fallen. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars, und die Fassung A behält, was zwei Äste bezeugen."
+                    "@id": "pedal-held-through",
+                    "note": "Das Dämpferpedal bleibt über die Phrase hinweg getreten"
                 }
             ],
             "versionType": "unicum",
@@ -21620,7 +21605,7 @@
                             ]
                         }
                     ],
-                    "motivation": "licensee-dynamics-recoded"
+                    "motivation": "bass-mezzoforte-set"
                 },
                 {
                     "@type": "edit",
@@ -21638,7 +21623,7 @@
                             ]
                         }
                     ],
-                    "motivation": "licensee-dynamics-recoded"
+                    "motivation": "bass-mezzoforte-set"
                 },
                 {
                     "@type": "edit",
@@ -21697,7 +21682,7 @@
                     "delete": [
                         "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                     ],
-                    "motivation": "soft-pedal-release-missing"
+                    "motivation": "soft-pedal-held"
                 },
                 {
                     "@type": "edit",
@@ -21719,23 +21704,23 @@
             "motivations": [
                 {
                     "@type": "motivation",
-                    "@id": "licensee-dynamics-recoded",
-                    "note": "Die Dynamik ist für die Licensee-Ausgabe an dieser Stelle neu gesetzt. Der rote Text kennt das Mezzoforte im Bass bei 1145 mm nicht."
+                    "@id": "bass-mezzoforte-set",
+                    "note": "Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich festlegt"
                 },
                 {
                     "@type": "motivation",
                     "@id": "note-repeated",
-                    "note": "Vor das c′ bei 5242 mm tritt eine kurze zusätzliche Stanzung, so dass der Ton zweimal angeschlagen wird, wo der rote Text eine durchgehende Perforation hat."
+                    "note": "Wiederholter Anschlag des c′ statt eines durchgehaltenen Tons"
                 },
                 {
                     "@type": "motivation",
                     "@id": "note-retimed",
-                    "note": "Einsatz oder Länge weichen um mehr als acht Millimeter ab und damit über die Toleranz hinaus, mit der die Edition kollationiert ist."
+                    "note": "Das zweite c vorgezogen, das erste dafür verkürzt"
                 },
                 {
                     "@type": "motivation",
-                    "@id": "soft-pedal-release-missing",
-                    "note": "Das Loslassen des Pianozugs bei 6338 mm fehlt. In der Fassung C ist es eine wirkungslose zweite Ab-Stanzung, seine Tilgung also eine Bereinigung, wie sie jeder Bearbeiter unabhängig vornehmen kann. Als Bindefehler taugt sie deshalb nicht."
+                    "@id": "soft-pedal-held",
+                    "note": "Der Pianozug bleibt getreten, die lösende Stanzung fehlt"
                 }
             ],
             "basedOn": {
@@ -28349,7 +28334,7 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "e34ba3d6-42a5-4cb3-8512-1f031e75ea76",
+                    "@id": "bbe8ddd9-ca9a-4d9f-87a5-10bd298cbaf5",
                     "motivation": "latch-to-hold",
                     "delete": [
                         "symbol_0846addd-08aa-4b8a-b265-4b6d21996791",
@@ -28369,22 +28354,22 @@
                 {
                     "@type": "motivation",
                     "@id": "latch-to-hold",
-                    "note": "Der T-98 hält eine Funktion so lange an, wie ihre Perforation dauert. Das rote Paar aus Ein- und Ausschaltbefehl wird deshalb zu einer einzigen gehaltenen Perforation, mitunter auf der anderen Seite der Bahn. Gemessen an den grünen Perforationen endet die grüne Haltung dort, wo die rote Ab-Stanzung beginnt. Der Befund gehört zur Codierung des Systems und ist keine Entscheidung."
+                    "note": "Haltende Perforation an Stelle von Ein- und Ausschaltbefehl, wie es die Bahn des T-98 verlangt"
                 },
                 {
                     "@type": "motivation",
                     "@id": "t98-only-command",
-                    "note": "Der T-98 hat einen eigenen Sforzando-piano-Befehl. Der T-100 erreicht die Tiefe durch das Loslassen von Crescendo oder Mezzoforte und hat von vornherein keine Entsprechung dazu."
+                    "note": "Absenkung durch den eigenen Sforzando-piano-Befehl des T-98"
                 },
                 {
                     "@type": "motivation",
                     "@id": "expression-recoded",
-                    "note": "Die Expression steht hier anders als im roten Text. Was davon die Codierung des T-98 erzwingt und was der Korrektor des zweiten Masters gewählt hat, trennt erst eine Kollation auf der Ebene des Intervalls; auf der Ebene des einzelnen Symbols sind die beiden Systeme nicht vergleichbar."
+                    "note": "Dynamik für die grüne Bahn neu gelegt"
                 },
                 {
                     "@type": "motivation",
                     "@id": "note-text-differs",
-                    "note": "Der Notentext weicht ab: ein f′′ bei 1948 mm, das kein rotes Exemplar trägt, und ein g bei 6470 mm, das gegenüber dem roten Text verschoben steht."
+                    "note": "Abweichender Notentext: ein zusätzliches f′′, ein verschobenes g"
                 }
             ],
             "basedOn": {
@@ -28403,10 +28388,10 @@
                     "name": "Kähle",
                     "sameAs": [],
                     "@annotation": {
-                        "@id": "46b85a85-3950-4965-a87f-906c3f893b34",
+                        "@id": "6086d640-7f57-46ac-b293-ff74bbd72b8f",
                         "belief": {
                             "@type": "belief",
-                            "@id": "dfa634f4-5206-4fc0-9419-d923f07c859d",
+                            "@id": "0932c5fc-19d4-4cdf-9a55-a06db5641e9e",
                             "certainty": "possible",
                             "reasons": [
                                 {
@@ -28421,7 +28406,7 @@
         },
         {
             "@type": "Version",
-            "@id": "12a64913-94f9-4fb3-b78f-797f31c6eb19",
+            "@id": "ed5ad006-40c5-4cba-a3cd-25ad6d6b33ae",
             "siglum": "B1",
             "system": {
                 "name": "T-100",
@@ -28434,20 +28419,34 @@
                 "collationTolerance": {
                     "toleranceStart": 8,
                     "toleranceEnd": 8
+                },
+                "@annotation": {
+                    "@id": "1f817b39-c5a9-4eba-82ab-b307c850d379",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "fdde15c3-726e-43a0-a44b-fec300e49841",
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "@type": "simpleArgumentation",
+                                "note": "Diese Lesarten trägt allein Stanford-1. Hingen sie an der Fassung B, so nähme die Fassung C wirksame Differenzierungen zurück, darunter ein vollständiges Crescendo-Paar. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars. Eine von ihnen, das Crescendo an bei 7364,7 mm, wäre in B redundant und hätte auch als Bereinigung durch C erklärt werden können."
+                            }
+                        ]
+                    }
                 }
             },
             "motivations": [
                 {
                     "@type": "motivation",
-                    "@id": "stanford-1-own-layer",
-                    "note": "Diese Lesarten trägt allein Stanford-1. Hingen sie an der Fassung B, so nähme die Fassung C fünf wirksame Differenzierungen zurück, darunter ein vollständiges Crescendo-Paar. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars. Eine von ihnen, das Crescendo an bei 7364,7 mm, wäre in B redundant und hätte auch als Bereinigung durch C erklärt werden können."
+                    "@id": "bass-crescendo-added",
+                    "note": "Zusätzliches Crescendo im Bass"
                 }
             ],
             "edits": [
                 {
                     "@type": "edit",
-                    "@id": "3673bbe2-3d4f-460c-96b8-81d1d4df8e57",
-                    "motivation": "stanford-1-own-layer",
+                    "@id": "9f3200d1-4b69-4f8c-8a3e-e212de8acd2e",
+                    "motivation": "bass-crescendo-added",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -28464,8 +28463,8 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "4cf3fe43-73ee-4498-af9b-256d6766f7e8",
-                    "motivation": "stanford-1-own-layer",
+                    "@id": "583873b8-f331-4687-acbe-450694e239ac",
+                    "motivation": "bass-crescendo-added",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -28482,8 +28481,8 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "b36c743b-f7a5-421c-8b4c-472e6626c8b6",
-                    "motivation": "stanford-1-own-layer",
+                    "@id": "f7a1f802-45da-45ff-ac12-cdece63084a0",
+                    "motivation": "bass-crescendo-added",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOff",
@@ -63567,10 +63566,10 @@
                     "value": 8.3,
                     "unit": "ft/min",
                     "@annotation": {
-                        "@id": "6a4b4bc2-124f-46ab-9d29-9dfcbbee67d4",
+                        "@id": "8d75eb76-7411-4a26-b051-5d2b835f7ba3",
                         "belief": {
                             "@type": "belief",
-                            "@id": "2aa952aa-6c89-43b4-aba4-0e6c2c0860b8",
+                            "@id": "c1f35d90-1a69-4679-bab3-5145cc7fe556",
                             "certainty": "likely",
                             "reasons": [
                                 {
@@ -90425,10 +90424,10 @@
                     "@value": "2015-05-01",
                     "@type": "xsd:date",
                     "@annotation": {
-                        "@id": "26949dba-1412-46d7-9608-822a98a322ec",
+                        "@id": "0f6d4e23-4ab8-4494-83e1-30816a6b1357",
                         "belief": {
                             "@type": "belief",
-                            "@id": "51d2e0a9-c759-4076-8152-23b2f50db392",
+                            "@id": "8740ca74-a256-4cec-8e8e-4813b08d2df9",
                             "certainty": "likely",
                             "reasons": [
                                 {
