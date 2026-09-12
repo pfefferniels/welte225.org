@@ -10,7 +10,7 @@ and the place where the data about that roll is published.
 |---|---|
 | `/` | the landing page |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
-| `/symbol_<id>`, `/copy/<id>`, `/<id>` | identifiers of the edition's entities; `404.html` sends them on to Roll Desk, which opens at that entity |
+| `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
 | `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
 
@@ -20,6 +20,13 @@ serves files only, hence the redirect page for the entity paths. A
 machine asking for an entity gets that page with status 404 and a
 `rel=alternate` link to the JSON-LD; content negotiation would need
 a proxy in front of the domain.
+
+An entity is named by its id alone. Until September 2026 a copy was
+named `copy/<id>`; both the redirect page and Roll Desk still read that,
+so links given out then keep working. Since the ids are not all UUIDs –
+a motivation goes by a word – the redirect page sends on anything shaped
+like an identifier and lets Roll Desk, which holds the ids, say where it
+knows none.
 
 Data of further projects goes into directories of its own, with a
 line in the redirect table of `404.html` for their entity paths.

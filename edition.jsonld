@@ -40487,7 +40487,7 @@
                 "sameAs": []
             },
             "@type": "RollCopy",
-            "@id": "copy/d229954b-086c-44d6-a589-aaa324d31d88"
+            "@id": "d229954b-086c-44d6-a589-aaa324d31d88"
         },
         {
             "ops": [
@@ -54022,7 +54022,7 @@
                 "sameAs": []
             },
             "@type": "RollCopy",
-            "@id": "copy/88460599-2e0d-4759-851c-903a5a521997"
+            "@id": "88460599-2e0d-4759-851c-903a5a521997"
         },
         {
             "ops": [
@@ -63531,11 +63531,11 @@
                 "sameAs": []
             },
             "@type": "RollCopy",
-            "@id": "copy/a7ff95b7-f43a-4341-ba86-80fa4e84499c"
+            "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
         },
         {
             "@type": "RollCopy",
-            "@id": "copy/6e1ce072-7490-44b6-b8e8-eb1bbffc3cad",
+            "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad",
             "ops": [
                 "shifted",
                 "stretched"
@@ -76107,7 +76107,7 @@
         },
         {
             "@type": "RollCopy",
-            "@id": "copy/9ae56c3e-b058-4972-9895-96946c6b93f8",
+            "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8",
             "ops": [
                 "shifted",
                 "stretched"

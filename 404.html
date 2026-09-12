@@ -12,16 +12,20 @@
     // else is a page that does not exist.
     (function () {
       var path = location.pathname.replace(/^\//, '')
-      var uuid = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
       var apps = [
-        {
-          entity: new RegExp('^(symbol_|copy/)?' + uuid + '$', 'i'),
-          open: function (path) { return 'https://rolldesk.welte225.org/' + path + location.search + location.hash }
-        },
         {
           // A segment's id, or at least its first eight characters; the viewer resolves a prefix.
           entity: /^mpm\/([0-9a-f]{8}[0-9a-f-]{0,28})$/i,
           open: function (path, match) { return 'https://mpmdesk.welte225.org/' + location.search + '#' + match[1] }
+        },
+        {
+          // Every entity of the edition is addressed by its id alone. The ids
+          // are mostly UUIDs, but a motivation goes by a word, so anything of
+          // that shape is sent on and Roll Desk, which is where the ids are
+          // known, says so where it knows none. `copy/<id>` is kept for links
+          // given out while a copy was named that way.
+          entity: /^(copy\/)?[A-Za-z0-9][A-Za-z0-9_-]*$/,
+          open: function (path) { return 'https://rolldesk.welte225.org/' + path + location.search + location.hash }
         }
       ]
       for (var i = 0; i < apps.length; i++) {
@@ -46,7 +50,7 @@
 <body>
   <main>
     <h1>Nothing is published at this address.</h1>
-    <p>Identifiers of the edition of WM 225 open in Roll Desk, those of its performance reconstruction in MPM Desk; this one is not among them.</p>
+    <p>Identifiers of the edition of WM 225 open in Roll Desk, those of its performance reconstruction in MPM Desk. This address has the shape of neither.</p>
     <p><a href="/">To the roll</a> · <a href="/edition.jsonld">the edition as JSON-LD</a> · <a href="/mpm/">the performance as MPM</a></p>
   </main>
 </body>
