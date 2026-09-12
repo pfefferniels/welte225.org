@@ -28354,7 +28354,7 @@
                 {
                     "@type": "motivation",
                     "@id": "latch-to-hold",
-                    "note": "Haltende Perforation an Stelle von Ein- und Ausschaltbefehl, wie es die Bahn des T-98 verlangt"
+                    "note": "Haltende Perforation an Stelle von Ein- und Ausschaltbefehl, wie es das T-98 verlangt"
                 },
                 {
                     "@type": "motivation",
@@ -28364,7 +28364,7 @@
                 {
                     "@type": "motivation",
                     "@id": "expression-recoded",
-                    "note": "Dynamik für die grüne Bahn neu gelegt"
+                    "note": "Dynamik für das grüne System neu gelegt"
                 },
                 {
                     "@type": "motivation",
@@ -28396,7 +28396,7 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Rex Lawson, Pianola Journal 20 (2009), S. 26: auf einigen der zweiten Masterrollen in USC steht der Name Kähle als desjenigen, der sie für das spätere 98-tönige grüne System „corrigiert\" habe, wobei die Arbeit zum Teil darin bestand, die Pedalbahnen so neu zu legen, dass keine Perforation lang genug wurde, um das Papier zu schwächen. Die Aufschrift nennt einen Mann, der zweite Master korrigiert hat. Dass er diesen korrigiert hat, sagt sie nicht."
+                                    "note": "Rex Lawson, Pianola Journal 20 (2009), S. 26: auf einigen der zweiten Masterrollen in USC steht der Name Kähle als desjenigen, der sie für das spätere 98-tönige grüne System „corrigiert\" habe, wobei die Arbeit zum Teil darin bestand, die Pedalspuren so neu zu legen, dass keine Perforation lang genug wurde, um das Papier zu schwächen. Die Aufschrift nennt einen Mann, der zweite Master korrigiert hat. Dass er diesen korrigiert hat, sagt sie nicht."
                                 }
                             ]
                         }
@@ -63582,6 +63582,24 @@
                 "scale": 1.3011593658380265
             },
             "production": {
+                "date": {
+                    "@value": "1916-01-01",
+                    "@type": "xsd:date",
+                    "@annotation": {
+                        "@id": "b08406b5-aa63-42a7-9af0-98f11aaebe4c",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "364dcd01-1841-4e71-90c0-0c97d2a22b36",
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "@type": "beliefAdoption",
+                                    "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
+                                }
+                            ]
+                        }
+                    }
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-licensee",
                     "name": "Welte-Mignon (Licensee)",
@@ -63642,25 +63660,7 @@
                             "@id": "b2249b44-879d-4565-aae4-1ead1de73e45"
                         }
                     },
-                    "@type": "Addition",
-                    "date": {
-                        "@value": "1916-01-01",
-                        "@type": "xsd:date",
-                        "@annotation": {
-                            "belief": {
-                                "certainty": "true",
-                                "reasons": [
-                                    {
-                                        "@type": "beliefAdoption",
-                                        "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein und ein Eingriff in sie erst recht nicht. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
-                                    }
-                                ],
-                                "@type": "belief",
-                                "@id": "364dcd01-1841-4e71-90c0-0c97d2a22b36"
-                            },
-                            "@id": "b08406b5-aa63-42a7-9af0-98f11aaebe4c"
-                        }
-                    }
+                    "@type": "Addition"
                 }
             ],
             "features": [
@@ -76101,7 +76101,7 @@
                     "name": "Chase, Spencer",
                     "sameAs": []
                 },
-                "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll, quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb. Überführt mit cis2roll.py in ein TIFF von 300 dpi und gelesen mit tiff2holes -l auf der Licensee-Leiste; deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung des Parsers, und die Rückspulperforation auf Bahn 89 legt den Versatz fest. Das Gerät ist nicht überliefert, seine Bauart aber aus der Datei ablesbar: ein Chase-Transport mit Capstan-Antrieb und ohne Positionsgeber, aus der Generation vor dem Mk3. Zuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war; beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm und im Rest auf 0,06 mm. Ein Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen."
+                "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll, quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb. Überführt mit cis2roll.py in ein TIFF von 300 dpi und gelesen mit tiff2holes -l auf der Licensee-Leiste; deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung des Parsers, und die Rückspulperforation auf Spur 89 legt den Versatz fest. Das Gerät ist nicht überliefert, seine Bauart aber aus der Datei ablesbar: ein Chase-Transport mit Capstan-Antrieb und ohne Positionsgeber, aus der Generation vor dem Mk3. Zuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war; beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm und im Rest auf 0,06 mm. Ein Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen."
             },
             "scan": "/facsimiles/WelteLicensee_225"
         },
@@ -90534,7 +90534,7 @@
                         }
                     }
                 },
-                "note": "Optische Abtastung durch Julian Dyer aus der Sammlung Peter Both; die CIS-Datei kam am 8. September 2026 per Mail, wurde mit cis2roll.py in ein lesbares TIFF überführt und mit dem roll-image-parser von SUPRA analysiert. Der Rückspulbefehl ist eine 499 mm lange Perforation auf der Bassbahn 1, die zugleich die Sforzando-piano-Position ist, und beginnt bei 10324,6 mm der Editionsachse. Dahinter folgt eine Eichtreppe über alle 98 Bahnen, 361 Perforationen, die zum Scanner gehören und nicht auf das Papier.",
+                "note": "Optische Abtastung durch Julian Dyer aus der Sammlung Peter Both; die CIS-Datei kam am 8. September 2026 per Mail, wurde mit cis2roll.py in ein lesbares TIFF überführt und mit dem roll-image-parser von SUPRA analysiert. Der Rückspulbefehl ist eine 499 mm lange Perforation auf der Bassspur 1, die zugleich die Sforzando-piano-Position ist, und beginnt bei 10324,6 mm der Editionsachse. Dahinter folgt eine Eichtreppe über alle 98 Spuren, 361 Perforationen, die zum Scanner gehören und nicht auf das Papier.",
                 "actor": {
                     "name": "Dyer, Julian",
                     "sameAs": []
