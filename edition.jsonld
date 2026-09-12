@@ -63642,7 +63642,25 @@
                             "@id": "b2249b44-879d-4565-aae4-1ead1de73e45"
                         }
                     },
-                    "@type": "Addition"
+                    "@type": "Addition",
+                    "date": {
+                        "@value": "1916-01-01",
+                        "@type": "xsd:date",
+                        "@annotation": {
+                            "belief": {
+                                "certainty": "true",
+                                "reasons": [
+                                    {
+                                        "@type": "beliefAdoption",
+                                        "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein und ein Eingriff in sie erst recht nicht. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "364dcd01-1841-4e71-90c0-0c97d2a22b36"
+                            },
+                            "@id": "b08406b5-aa63-42a7-9af0-98f11aaebe4c"
+                        }
+                    }
                 }
             ],
             "features": [
