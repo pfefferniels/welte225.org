@@ -63668,7 +63668,8 @@
                     "@type": "Hole",
                     "@id": "e9b1cf87-5145-4ded-8c0d-ec5809ad9032",
                     "vertical": {
-                        "from": 2,
+                        "from": 0.8,
+                        "to": 2.46,
                         "unit": "track"
                     },
                     "horizontal": {
