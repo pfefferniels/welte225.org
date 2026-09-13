@@ -13,6 +13,7 @@ and the place where the data about that roll is published.
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
 | `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
+| `/schmitz-225/` | the comparison of TACET's recording of Hans-W. Schmitz's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages

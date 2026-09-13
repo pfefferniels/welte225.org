@@ -1,0 +1,4651 @@
+{
+ "measures": {
+  "composite": {
+   "n": 461,
+   "r2": {
+    "A": 0.05365467169890403,
+    "A1": 0.13539349900843634,
+    "B": 0.3148286795478423,
+    "B1": 0.3159787180570113,
+    "C": 0.39684216526513116
+   },
+   "delta": {
+    "A": 207.64759903190563,
+    "A1": 166.0040622218315,
+    "B": 58.77288917896481,
+    "B1": 57.998465074602976,
+    "C": 0.0
+   },
+   "ci_B1": [
+    28.09923165301056,
+    91.56548466541469
+   ],
+   "ci_A1": [
+    96.01809951978136,
+    252.2867041750027
+   ]
+  },
+  "kong": {
+   "n": 461,
+   "r2": {
+    "A": 0.27277685908218985,
+    "A1": 0.3319182038197055,
+    "B": 0.48554717669567526,
+    "B1": 0.48584447021956223,
+    "C": 0.5530777193665602
+   },
+   "delta": {
+    "A": 224.43722932504687,
+    "A1": 185.33394208716558,
+    "B": 64.87152637257701,
+    "B1": 64.60504531996425,
+    "C": 0.0
+   },
+   "ci_B1": [
+    34.06873348484385,
+    105.11653145547227
+   ],
+   "ci_A1": [
+    113.44475071976456,
+    269.99737335239934
+   ]
+  },
+  "transkun": {
+   "n": 463,
+   "r2": {
+    "A": 0.4512765266663361,
+    "A1": 0.5054306015189118,
+    "B": 0.6086404003454048,
+    "B1": 0.6073330164921552,
+    "C": 0.6510452758490067
+   },
+   "delta": {
+    "A": 209.57807948579637,
+    "A1": 161.46907314325603,
+    "B": 53.098991088043334,
+    "B1": 54.643120580876534,
+    "C": 0.0
+   },
+   "ci_B1": [
+    23.2823122917832,
+    107.89966357393253
+   ],
+   "ci_A1": [
+    99.56435954242646,
+    255.606429412516
+   ]
+  },
+  "nmf_harmonic": {
+   "n": 461,
+   "r2": {
+    "A": 0.17795348833067837,
+    "A1": 0.2052444409478722,
+    "B": 0.27792231330052153,
+    "B1": 0.27962713508842685,
+    "C": 0.3209844070550586
+   },
+   "delta": {
+    "A": 88.1214800434932,
+    "A1": 72.55702170626017,
+    "B": 28.34626329049062,
+    "B1": 27.25655770676584,
+    "C": 0.0
+   },
+   "ci_B1": [
+    7.434398876627371,
+    43.640434996352354
+   ],
+   "ci_A1": [
+    29.910215742477877,
+    117.10890445142623
+   ]
+  },
+  "nmf_onset": {
+   "n": 461,
+   "r2": {
+    "A": 0.09396081333864281,
+    "A1": 0.14927728613816504,
+    "B": 0.23373353382358641,
+    "B1": 0.23557666357374762,
+    "C": 0.27162640538724037
+   },
+   "delta": {
+    "A": 100.62176075838356,
+    "A1": 71.5804583144319,
+    "B": 23.38002083748308,
+    "B1": 22.269824344332005,
+    "C": 0.0
+   },
+   "ci_B1": [
+    0.8494278674185618,
+    47.14597987046445
+   ],
+   "ci_A1": [
+    16.9923946733463,
+    131.14695794756025
+   ]
+  }
+ },
+ "instruments": {
+  "consensus": {
+   "A": 207.64759903190563,
+   "A1": 166.0040622218315,
+   "B": 58.77288917896481,
+   "B1": 57.998465074602976,
+   "C": 0.0
+  },
+  "1348": {
+   "A": 212.43468679377403,
+   "A1": 181.42170255163597,
+   "B": 56.85443630334314,
+   "B1": 56.20288999334745,
+   "C": 0.0
+  },
+  "1474": {
+   "A": 206.88257855905385,
+   "A1": 161.51704758794966,
+   "B": 47.62623445835302,
+   "B1": 47.02316724707311,
+   "C": 0.0
+  },
+  "1478": {
+   "A": 203.39553914250163,
+   "A1": 160.65264570788815,
+   "B": 47.66899560920161,
+   "B1": 46.86708104485872,
+   "C": 0.0
+  },
+  "2739": {
+   "A": 215.15091575185915,
+   "A1": 178.50200690893797,
+   "B": 54.883569944896,
+   "B1": 54.064478703717434,
+   "C": 0.0
+  },
+  "3309": {
+   "A": 191.50997729312772,
+   "A1": 148.41642423621727,
+   "B": 47.931512453740766,
+   "B1": 47.24780370414286,
+   "C": 0.0
+  },
+  "3357": {
+   "A": 201.24968877883754,
+   "A1": 159.41405582568353,
+   "B": 51.738226916212064,
+   "B1": 50.91352303601081,
+   "C": 0.0
+  }
+ },
+ "marginals": {
+  "A1": 2.4811082193969596e-21,
+  "B": 1.0,
+  "B1": 0.3502164479565819,
+  "Cadd": 0.9999999999996796,
+  "Cdel": 0.5
+ },
+ "passages": [
+  {
+   "family": "B1",
+   "from_mm": 1418.8,
+   "to_mm": 1437.6,
+   "readings": [
+    {
+     "id": "symbol_4fccd1e2-bd21-4e11-8b6d-cd1e50964da7",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1418.8
+    },
+    {
+     "id": "symbol_aa07b07c-d3a2-4c07-9c52-2c4a4867e77e",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1437.6
+    }
+   ],
+   "notes": 1,
+   "rec_from": 4.130256175994873,
+   "rec_to": 4.130256175994873,
+   "treble_notes": 0,
+   "detectability": 0.5680185301370139,
+   "llr": -0.6336332085543396,
+   "lambda": -0.057757515764053136,
+   "p": 0.5249457700650759,
+   "kong": {
+    "detectability": 0.5505671472973016,
+    "llr": -0.8779931688763062,
+    "lambda": -0.297353395663288,
+    "p": 0.6247288503253796
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 1433.3,
+   "to_mm": 1439.5,
+   "readings": [
+    {
+     "id": "symbol_4efd31e0-ee7c-48c5-8383-eb100698ab14",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 1433.3
+    },
+    {
+     "id": "symbol_f16b36a6-6f50-4546-9f9d-56c7eb15e4e6",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 1439.5
+    }
+   ],
+   "notes": 1,
+   "rec_from": 4.130256175994873,
+   "rec_to": 4.130256175994873,
+   "treble_notes": 0,
+   "detectability": 0.968587143150728,
+   "llr": -0.8829052403115414,
+   "lambda": 0.044230353172183864,
+   "p": 0.4772234273318872,
+   "kong": {
+    "detectability": 0.9388289853584648,
+    "llr": -0.5112648298272868,
+    "lambda": 0.22771141613609477,
+    "p": 0.3774403470715835
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 1461.9,
+   "to_mm": 1472.9,
+   "readings": [
+    {
+     "id": "symbol_e46c2d11-4b90-4806-9a04-ed56abcdf2d7",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1461.9
+    },
+    {
+     "id": "symbol_f4b3c8be-c820-4320-b82c-8df1b343ccf3",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1472.9
+    }
+   ],
+   "notes": 2,
+   "rec_from": 4.923046112060547,
+   "rec_to": 5.108626842498779,
+   "treble_notes": 0,
+   "detectability": 0.287014810842452,
+   "llr": 0.3785087392235857,
+   "lambda": 1.159388862394555,
+   "p": 0.21475054229934923,
+   "kong": {
+    "detectability": 0.27819677924853364,
+    "llr": 1.0222754976238735,
+    "lambda": 2.337324465770683,
+    "p": 0.04121475054229935
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 1483.2,
+   "to_mm": 1489.4,
+   "readings": [
+    {
+     "id": "symbol_635ab925-7c60-495f-bc85-8cb9d27b3f41",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 1483.2
+    },
+    {
+     "id": "symbol_dc6d76be-0206-487b-80f1-d61672aecc65",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 1489.4
+    }
+   ],
+   "notes": 1,
+   "rec_from": 5.108626842498779,
+   "rec_to": 5.108626842498779,
+   "treble_notes": 0,
+   "detectability": 0.6721776311421312,
+   "llr": -0.8421214810461496,
+   "lambda": -0.12641290191050986,
+   "p": 0.5553145336225597,
+   "kong": {
+    "detectability": 0.6515261408209919,
+    "llr": -0.8599378817751876,
+    "lambda": -0.15994119644345722,
+    "p": 0.5878524945770065
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 1591.3,
+   "to_mm": 1609.2,
+   "readings": [
+    {
+     "id": "symbol_32f5588c-7e9c-45b4-9272-1c34ea946acd",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1591.3
+    },
+    {
+     "id": "symbol_c3340547-aefc-46f7-9348-9e258f01ac62",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1609.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 7.904144763946533,
+   "rec_to": 8.351731300354004,
+   "treble_notes": 0,
+   "detectability": 0.32888809687094944,
+   "llr": -0.6609871520012495,
+   "lambda": -0.5048815361363025,
+   "p": 0.6616052060737527,
+   "kong": {
+    "detectability": 0.318783581286687,
+    "llr": -0.5967008809363811,
+    "lambda": -0.4359027816425698,
+    "p": 0.6529284164859002
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 1708.6,
+   "to_mm": 2162.5,
+   "readings": [
+    {
+     "id": "symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 1708.6
+    },
+    {
+     "id": "symbol_8c37d918-d63b-46ae-9649-4fb4fec84d15",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 1759.1
+    },
+    {
+     "id": "symbol_aaca3000-4c1a-4c23-920e-213c81175668",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 1931.9
+    },
+    {
+     "id": "symbol_6a9fcd00-6fa8-4ad6-a215-40e9b058950e",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 1952.1
+    },
+    {
+     "id": "symbol_c0768b93-bc62-445c-894d-77f2d5f53601",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2001.3
+    },
+    {
+     "id": "symbol_637bbdf5-d061-4eb7-a98c-b15e84dc1565",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2023
+    },
+    {
+     "id": "symbol_c27aadcb-0379-4163-8f95-995c304a13f8",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2042.8
+    },
+    {
+     "id": "symbol_37f8db89-e9ad-455c-b0d0-c9886c8945d5",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2070.3
+    },
+    {
+     "id": "symbol_8a306f00-005b-4b07-9fb4-0896156d7dcb",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2144.5
+    },
+    {
+     "id": "symbol_50e5f06e-b686-4b40-9323-5f577583b30f",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2162.5
+    }
+   ],
+   "notes": 13,
+   "rec_from": 9.960569381713867,
+   "rec_to": 21.104053497314453,
+   "treble_notes": 13,
+   "detectability": 52.42442320189229,
+   "llr": -38.7424590112845,
+   "lambda": 0.13049227206484484,
+   "p": 0.1019522776572668,
+   "kong": {
+    "detectability": 60.99545062164253,
+    "llr": -50.85441500100205,
+    "lambda": 0.0831294425837245,
+    "p": 0.21258134490238612
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 1737.3,
+   "to_mm": 1753.1,
+   "readings": [
+    {
+     "id": "symbol_90ce9677-568e-42ca-9872-e657496bf006",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1737.3
+    },
+    {
+     "id": "symbol_cc354252-f2cc-4266-bfa2-71b923ccc9d5",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1753.1
+    }
+   ],
+   "notes": 3,
+   "rec_from": 10.35287094116211,
+   "rec_to": 10.751287460327148,
+   "treble_notes": 0,
+   "detectability": 0.8502153851673021,
+   "llr": 2.5861652698350097,
+   "lambda": 2.020888303689137,
+   "p": 0.015184381778741865,
+   "kong": {
+    "detectability": 0.8240939940584785,
+    "llr": 2.7747669097613548,
+    "lambda": 2.1835257444944167,
+    "p": 0.013015184381778741
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 1874.6,
+   "to_mm": 1888.6,
+   "readings": [
+    {
+     "id": "symbol_e744b9c1-d3af-4d17-b52d-ba044ff944c6",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1874.6
+    },
+    {
+     "id": "symbol_a9e5ed86-9cb1-4637-8a9d-d7c834ecc301",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1888.6
+    }
+   ],
+   "notes": 2,
+   "rec_from": 13.40428352355957,
+   "rec_to": 13.990756034851074,
+   "treble_notes": 0,
+   "detectability": 0.41769571679262685,
+   "llr": -1.0170949589196514,
+   "lambda": -0.7175070488268951,
+   "p": 0.7592190889370932,
+   "kong": {
+    "detectability": 0.40486274132174227,
+    "llr": -1.1372135729170263,
+    "lambda": -0.904443354313615,
+    "p": 0.8156182212581344
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 1934.4,
+   "to_mm": 1949.4,
+   "readings": [
+    {
+     "id": "symbol_a7e7f7fb-57d1-4500-83a6-bb9803aa4c3c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1934.4
+    },
+    {
+     "id": "symbol_5af5528c-0936-486f-833d-5e9a141d0b08",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 1949.4
+    }
+   ],
+   "notes": 2,
+   "rec_from": 14.563262939453125,
+   "rec_to": 14.616128921508789,
+   "treble_notes": 0,
+   "detectability": 0.5294785909394354,
+   "llr": -0.19902293810563537,
+   "lambda": 0.31205761525455084,
+   "p": 0.40563991323210413,
+   "kong": {
+    "detectability": 0.5132112807978337,
+    "llr": -0.19414009931913576,
+    "lambda": 0.3108575292642367,
+    "p": 0.41431670281995664
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 1964.1,
+   "to_mm": 2111.8,
+   "readings": [
+    {
+     "id": "symbol_a10a4120-fbcc-42a2-965d-40f92fa71dbf",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 1964.1
+    },
+    {
+     "id": "symbol_453db0e0-ee3d-457a-876f-ed6d82af162d",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 1986.7
+    },
+    {
+     "id": "symbol_10715b5c-63b3-4420-af3f-f8851a5cb8e8",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2029.2
+    },
+    {
+     "id": "symbol_7146e5c6-1d80-4120-90a3-daecbfbd6935",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2046.6
+    },
+    {
+     "id": "symbol_1fa31b0a-002d-47c1-b168-ca54d1e4a135",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2087.6
+    },
+    {
+     "id": "symbol_1637c1c6-d4d6-4a81-9eaa-c2042dff5026",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2111.8
+    }
+   ],
+   "notes": 9,
+   "rec_from": 15.378153800964355,
+   "rec_to": 21.104053497314453,
+   "treble_notes": 9,
+   "detectability": 7.394787429483132,
+   "llr": -8.827850513038314,
+   "lambda": -0.09689684099921111,
+   "p": 0.6550976138828634,
+   "kong": {
+    "detectability": 8.603783579564505,
+    "llr": -8.430365210759879,
+    "lambda": 0.010078029462324193,
+    "p": 0.46637744034707157
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 1995.3,
+   "to_mm": 2076.9,
+   "readings": [
+    {
+     "id": "symbol_1bfd0824-571d-4c90-940d-31949b6d4394",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 1995.3
+    },
+    {
+     "id": "symbol_adb3a923-443e-4aed-bc49-597347efc1dc",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2011.8
+    },
+    {
+     "id": "symbol_782a2066-cea7-4d0e-8615-da30775ebd31",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2033.1
+    },
+    {
+     "id": "symbol_18c93957-e340-4202-ae5e-07f376fa24f0",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2042.6
+    },
+    {
+     "id": "symbol_ce8e3d62-0448-471b-921e-9db0dfd5c95b",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2059.5
+    },
+    {
+     "id": "symbol_ecb5ce3f-0f5e-4cc7-9f85-9dcb369958a5",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2076.9
+    }
+   ],
+   "notes": 5,
+   "rec_from": 15.864948272705078,
+   "rec_to": 17.2072811126709,
+   "treble_notes": 0,
+   "detectability": 2.4642524782872086,
+   "llr": -3.1644603762406076,
+   "lambda": -0.14207308385058073,
+   "p": 0.6334056399132321,
+   "kong": {
+    "detectability": 2.3885426006500707,
+    "llr": -4.341420401137616,
+    "lambda": -0.40880112415747716,
+    "p": 0.7678958785249458
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2136,
+   "to_mm": 2141.2,
+   "readings": [
+    {
+     "id": "symbol_641bc685-3d4f-404f-9ddb-03a198a43311",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 2136
+    },
+    {
+     "id": "symbol_1dade7b6-12e5-4456-bba0-4dbcae212304",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 2141.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 18.537965774536133,
+   "rec_to": 18.546241760253906,
+   "treble_notes": 0,
+   "detectability": 0.5399517747844007,
+   "llr": -0.834899809722952,
+   "lambda": -0.2731244239879779,
+   "p": 0.6247288503253796,
+   "kong": {
+    "detectability": 0.5233626942583274,
+    "llr": -1.8026901696539859,
+    "lambda": -1.2222188259029718,
+    "p": 0.8915401301518439
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 2149.4,
+   "to_mm": 2251.1,
+   "readings": [
+    {
+     "id": "symbol_2d3b7b9e-274c-46cd-8727-f8986303d817",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2149.4
+    },
+    {
+     "id": "symbol_93a33469-9270-433b-8279-e0660afa037b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2251.1
+    }
+   ],
+   "notes": 6,
+   "rec_from": 19.088844299316406,
+   "rec_to": 19.76287078857422,
+   "treble_notes": 0,
+   "detectability": 1.1582258329058523,
+   "llr": -1.4927107389339547,
+   "lambda": -0.1443953746001846,
+   "p": 0.561822125813449,
+   "kong": {
+    "detectability": 1.1226413557233752,
+    "llr": -0.1161272402308834,
+    "lambda": 0.4482794573534765,
+    "p": 0.30151843817787416
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2161.3,
+   "to_mm": 2161.3,
+   "readings": [
+    {
+     "id": "symbol_2a10ade8-b969-4b06-a8cd-abd6b058da2a",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2161.3
+    }
+   ],
+   "notes": 6,
+   "rec_from": 19.088844299316406,
+   "rec_to": 19.76287078857422,
+   "treble_notes": 0,
+   "detectability": 0.20756478183029464,
+   "llr": -0.4683158131934696,
+   "lambda": -0.62811963827362,
+   "p": 0.6724511930585684,
+   "kong": {
+    "detectability": 0.20118771439397684,
+    "llr": -1.0929267414609543,
+    "lambda": -2.216186584138843,
+    "p": 0.8503253796095445
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2231.1,
+   "to_mm": 2242.2,
+   "readings": [
+    {
+     "id": "symbol_4a027008-060b-4f7a-a539-2fbe56dad262",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2231.1
+    },
+    {
+     "id": "symbol_eccceddf-1b79-4a79-9d13-920d06661ded",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2242.2
+    }
+   ],
+   "notes": 7,
+   "rec_from": 20.736309051513672,
+   "rec_to": 22.666976928710938,
+   "treble_notes": 0,
+   "detectability": 0.7482422310405185,
+   "llr": -2.320077971810451,
+   "lambda": -1.050352195828423,
+   "p": 0.8741865509761388,
+   "kong": {
+    "detectability": 0.7252537879916994,
+    "llr": -3.6961641945754122,
+    "lambda": -2.048186755984042,
+    "p": 0.9544468546637744
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2258.1,
+   "to_mm": 2258.1,
+   "readings": [
+    {
+     "id": "symbol_a0149af3-192d-4d93-8c29-b51aefa2ace7",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2258.1
+    }
+   ],
+   "notes": 3,
+   "rec_from": 21.618200302124023,
+   "rec_to": 22.666976928710938,
+   "treble_notes": 0,
+   "detectability": 2.0464006264239094,
+   "llr": -2.7677700089622306,
+   "lambda": -0.1762532158228754,
+   "p": 0.6399132321041214,
+   "kong": {
+    "detectability": 1.9835285212365374,
+    "llr": -3.343813996040847,
+    "lambda": -0.34289536556709155,
+    "p": 0.7613882863340564
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2364.1,
+   "to_mm": 2369,
+   "readings": [
+    {
+     "id": "symbol_57a10a1f-5eba-40b8-b071-d0136ae7ec30",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 2364.1
+    },
+    {
+     "id": "symbol_e22ac75f-56d7-4e14-92ea-0bbd2168a0e6",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 2369
+    }
+   ],
+   "notes": 3,
+   "rec_from": 23.29168701171875,
+   "rec_to": 24.28372573852539,
+   "treble_notes": 0,
+   "detectability": 0.8810029135113427,
+   "llr": -2.6577413364459708,
+   "lambda": -1.0083612640128647,
+   "p": 0.9262472885032538,
+   "kong": {
+    "detectability": 0.8539356290639855,
+    "llr": -3.1111390294827084,
+    "lambda": -1.3216472785500732,
+    "p": 0.9566160520607375
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2374.1,
+   "to_mm": 2388.8,
+   "readings": [
+    {
+     "id": "symbol_400c239c-e485-46f9-976a-24cf7b231afc",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2374.1
+    },
+    {
+     "id": "symbol_bcca828a-69cd-47dd-b416-b1e02249c0d5",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2388.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 23.82330894470215,
+   "rec_to": 24.28372573852539,
+   "treble_notes": 0,
+   "detectability": 0.27484405010276025,
+   "llr": 0.09429115792591407,
+   "lambda": 0.6715357452538266,
+   "p": 0.3188720173535792,
+   "kong": {
+    "detectability": 0.26639994399515954,
+    "llr": -0.029037282258485633,
+    "lambda": 0.4455005849043773,
+    "p": 0.3796095444685466
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2419.1,
+   "to_mm": 2425.3,
+   "readings": [
+    {
+     "id": "symbol_5750fa55-ddc0-41ce-80df-c4f594ed1d87",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 2419.1
+    },
+    {
+     "id": "symbol_b2fe2b5c-85ef-4bc4-8cd7-4b97b449e14e",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 2425.3
+    }
+   ],
+   "notes": 1,
+   "rec_from": 24.465370178222656,
+   "rec_to": 24.465370178222656,
+   "treble_notes": 0,
+   "detectability": 1.3074292404470622,
+   "llr": -2.2212382163843256,
+   "lambda": -0.3494678517457647,
+   "p": 0.735357917570499,
+   "kong": {
+    "detectability": 1.267260747694947,
+    "llr": -2.9152189024365236,
+    "lambda": -0.6502048444801475,
+    "p": 0.8828633405639913
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2464.2,
+   "to_mm": 2475,
+   "readings": [
+    {
+     "id": "symbol_9d1b33d2-f273-4136-ad10-f2c59f0d4961",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2464.2
+    },
+    {
+     "id": "symbol_09b7c3eb-6de0-40e4-bbf9-16dea91c4dbe",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2475
+    }
+   ],
+   "notes": 4,
+   "rec_from": 25.39729881286621,
+   "rec_to": 25.47886085510254,
+   "treble_notes": 0,
+   "detectability": 0.802018395906046,
+   "llr": 0.49921066750687604,
+   "lambda": 0.8112214570483226,
+   "p": 0.18872017353579176,
+   "kong": {
+    "detectability": 0.7773777735867841,
+    "llr": -0.35832765951499623,
+    "lambda": 0.2695279748855635,
+    "p": 0.4511930585683297
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2512.3,
+   "to_mm": 2567.8,
+   "readings": [
+    {
+     "id": "symbol_4cc29396-990c-45ac-a9e1-5de6df803269",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2512.3
+    },
+    {
+     "id": "symbol_aaf971d5-4020-44a5-82fc-3fbec9dee622",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2567.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 27.01887321472168,
+   "rec_to": 27.442251205444336,
+   "treble_notes": 0,
+   "detectability": 3.987555701884892,
+   "llr": -3.2561050693487665,
+   "lambda": 0.09171666645187845,
+   "p": 0.42516268980477223,
+   "kong": {
+    "detectability": 3.865044978279651,
+    "llr": -4.135189499039053,
+    "lambda": -0.03494713803817674,
+    "p": 0.5574837310195228
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 2568.6,
+   "to_mm": 2677.7,
+   "readings": [
+    {
+     "id": "symbol_6c99b758-adf4-4734-a537-2b64f86c0029",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2568.6
+    },
+    {
+     "id": "symbol_7a04184f-62c3-440c-8038-074a4c535b87",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2621.9
+    },
+    {
+     "id": "symbol_6d55cd75-8ec7-4cb7-ae00-05198fde40a1",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2677.7
+    }
+   ],
+   "notes": 6,
+   "rec_from": 27.945775985717773,
+   "rec_to": 29.895017623901367,
+   "treble_notes": 6,
+   "detectability": 14.791685697059325,
+   "llr": -0.857148169747093,
+   "lambda": 0.471026014637483,
+   "p": 0.013015184381778741,
+   "kong": {
+    "detectability": 17.21002310452262,
+    "llr": -3.363705533135576,
+    "lambda": 0.40227481065229853,
+    "p": 0.019522776572668113
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2658.7,
+   "to_mm": 2671.4,
+   "readings": [
+    {
+     "id": "symbol_02e11d85-61dd-4175-9766-e009dd2bdbcd",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2658.7
+    },
+    {
+     "id": "symbol_d54d10ea-b83a-43a7-8422-234cddf394d4",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2671.4
+    }
+   ],
+   "notes": 3,
+   "rec_from": 29.39354705810547,
+   "rec_to": 29.5648136138916,
+   "treble_notes": 0,
+   "detectability": 0.7247491533600308,
+   "llr": -0.41068713397539486,
+   "lambda": 0.21666946275728896,
+   "p": 0.4490238611713666,
+   "kong": {
+    "detectability": 0.7024824943216497,
+    "llr": 0.3809471718685552,
+    "lambda": 0.7711435337875686,
+    "p": 0.22559652928416485
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 2666.9,
+   "to_mm": 2872.9,
+   "readings": [
+    {
+     "id": "symbol_2277f60f-e5a7-4e54-9133-9661401e477c",
+     "type": "ForzandoOn",
+     "scope": "treble",
+     "from": 2685.1
+    },
+    {
+     "id": "symbol_06495160-8a9a-45d2-8b53-83ce9d22ece5",
+     "type": "ForzandoOff",
+     "scope": "treble",
+     "from": 2863.7
+    },
+    {
+     "id": "symbol_8395eced-571b-4802-9ea2-69f039527d83",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2666.9
+    },
+    {
+     "id": "symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2872.9
+    }
+   ],
+   "notes": 19,
+   "rec_from": 29.67552375793457,
+   "rec_to": 40.166019439697266,
+   "treble_notes": 19,
+   "detectability": 37.185339940266765,
+   "llr": -36.81214890235156,
+   "lambda": 0.005017986100364777,
+   "p": 0.48156182212581344,
+   "kong": {
+    "detectability": 43.26488357231298,
+    "llr": -43.8195737961354,
+    "lambda": -0.006410397740875842,
+    "p": 0.5075921908893709
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2776.1,
+   "to_mm": 2787.1,
+   "readings": [
+    {
+     "id": "symbol_3ba01190-caa3-44e9-a9d4-f155def4afb3",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 2776.1
+    },
+    {
+     "id": "symbol_84f019d1-2e84-4f89-9488-09b2d5a81f97",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 2787.1
+    }
+   ],
+   "notes": 2,
+   "rec_from": 31.758880615234375,
+   "rec_to": 32.2882080078125,
+   "treble_notes": 2,
+   "detectability": 0.3579511707966754,
+   "llr": 0.27317843005286047,
+   "lambda": 0.8815861664104352,
+   "p": 0.2472885032537961,
+   "kong": {
+    "detectability": 0.4164736897381765,
+    "llr": 0.21167289720386556,
+    "lambda": 0.7541251733536126,
+    "p": 0.2754880694143167
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2853.1,
+   "to_mm": 2862.5,
+   "readings": [
+    {
+     "id": "symbol_e76192b8-d2cd-4eb4-8569-7c1ff83f164e",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2853.1
+    },
+    {
+     "id": "symbol_070e04ae-aaac-4a27-a640-2d69181323ac",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2862.5
+    }
+   ],
+   "notes": 2,
+   "rec_from": 33.35884094238281,
+   "rec_to": 33.4354362487793,
+   "treble_notes": 0,
+   "detectability": 0.29266423263530267,
+   "llr": -0.9797582690567459,
+   "lambda": -1.1738606221786774,
+   "p": 0.8221258134490239,
+   "kong": {
+    "detectability": 0.28367263236835827,
+    "llr": -0.46012139723124995,
+    "lambda": -0.3110077334386052,
+    "p": 0.6377440347071583
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2930,
+   "to_mm": 2939.2,
+   "readings": [
+    {
+     "id": "symbol_c0271513-87e6-4800-a2b8-147e55ec3fb1",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2930
+    },
+    {
+     "id": "symbol_725fdb72-1e34-43e2-b744-988b0c2cf1b1",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2939.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 34.94782257080078,
+   "rec_to": 34.99934005737305,
+   "treble_notes": 0,
+   "detectability": 0.28894374932203193,
+   "llr": -1.2025436651064867,
+   "lambda": -1.580930402419321,
+   "p": 0.8785249457700651,
+   "kong": {
+    "detectability": 0.28006645444338707,
+    "llr": -1.0636625107524722,
+    "lambda": -1.3989466497628729,
+    "p": 0.8351409978308026
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 2965.6,
+   "to_mm": 2974.8,
+   "readings": [
+    {
+     "id": "symbol_e469f6c5-9d9e-46ee-847a-c66197d733c9",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 2965.6
+    },
+    {
+     "id": "symbol_f4b92831-72b3-4a82-be38-ffdc0542bd51",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 2974.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 35.63443374633789,
+   "rec_to": 35.69375991821289,
+   "treble_notes": 0,
+   "detectability": 0.2831018398075258,
+   "llr": -0.6354967765151419,
+   "lambda": -0.6223819261421986,
+   "p": 0.6963123644251626,
+   "kong": {
+    "detectability": 0.27440402745285425,
+    "llr": -0.11066428162956492,
+    "lambda": 0.29835521610815585,
+    "p": 0.4490238611713666
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3060.2,
+   "to_mm": 3068.7,
+   "readings": [
+    {
+     "id": "symbol_e72aa59e-2030-4e03-b160-91d51e71de88",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3060.2
+    },
+    {
+     "id": "symbol_f0534e1c-ca3d-411b-8244-cc48c8a0983b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3068.7
+    }
+   ],
+   "notes": 3,
+   "rec_from": 37.6485710144043,
+   "rec_to": 37.7768440246582,
+   "treble_notes": 0,
+   "detectability": 0.40165742272679933,
+   "llr": 1.100288295971487,
+   "lambda": 1.8696850023357898,
+   "p": 0.049891540130151846,
+   "kong": {
+    "detectability": 0.3893171959867901,
+    "llr": 0.9574537136856168,
+    "lambda": 1.729657620515309,
+    "p": 0.06941431670281996
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3061.9,
+   "to_mm": 3075.7,
+   "readings": [
+    {
+     "id": "symbol_dcb55400-2859-44bc-bb98-ff05fe22576c",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 3061.9
+    },
+    {
+     "id": "symbol_8e18d126-b0ee-4e14-919a-29d41d707d5c",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 3075.7
+    }
+   ],
+   "notes": 4,
+   "rec_from": 37.79541778564453,
+   "rec_to": 40.166019439697266,
+   "treble_notes": 4,
+   "detectability": 0.873201395879365,
+   "llr": -1.4471713021694588,
+   "lambda": -0.3286583765203858,
+   "p": 0.6572668112798264,
+   "kong": {
+    "detectability": 1.015963731636949,
+    "llr": -1.70928020926938,
+    "lambda": -0.34121123424127553,
+    "p": 0.6898047722342733
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3097.1,
+   "to_mm": 3108.7,
+   "readings": [
+    {
+     "id": "symbol_1465adc2-2a8b-4ff1-8721-6135bfed018c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3097.1
+    },
+    {
+     "id": "symbol_192c4e1a-3bf8-45d6-8a99-d84562a70bba",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3108.7
+    }
+   ],
+   "notes": 3,
+   "rec_from": 38.392696380615234,
+   "rec_to": 38.48157501220703,
+   "treble_notes": 0,
+   "detectability": 0.7390999429602236,
+   "llr": 1.2275033336686136,
+   "lambda": 1.3304041593835398,
+   "p": 0.06290672451193059,
+   "kong": {
+    "detectability": 0.7163923808349227,
+    "llr": 0.6919670751421274,
+    "lambda": 0.9829525645817668,
+    "p": 0.14316702819956617
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3252,
+   "to_mm": 3263,
+   "readings": [
+    {
+     "id": "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3252
+    },
+    {
+     "id": "symbol_6b546385-1515-4a0b-9a69-0647602a8b99",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3263
+    }
+   ],
+   "notes": 4,
+   "rec_from": 41.58489990234375,
+   "rec_to": 43.10608673095703,
+   "treble_notes": 0,
+   "detectability": 0.5225167229422276,
+   "llr": 0.1895512154957986,
+   "lambda": 0.6813829176877428,
+   "p": 0.2559652928416486,
+   "kong": {
+    "detectability": 0.5064633041039069,
+    "llr": 0.7574399860598031,
+    "lambda": 1.2477738070282833,
+    "p": 0.1301518438177874
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3252.1,
+   "to_mm": 3270.1,
+   "readings": [
+    {
+     "id": "symbol_77185ff2-c1a1-4426-947d-6958d8e3bba5",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 3252.1
+    },
+    {
+     "id": "symbol_62660d03-f020-435e-9b09-72b0b66f2464",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 3270.1
+    }
+   ],
+   "notes": 2,
+   "rec_from": 41.42320251464844,
+   "rec_to": 41.6702995300293,
+   "treble_notes": 2,
+   "detectability": 1.3506632641961136,
+   "llr": -0.9200552806511368,
+   "lambda": 0.15940612103686175,
+   "p": 0.4078091106290672,
+   "kong": {
+    "detectability": 1.5714872840940834,
+    "llr": -0.13785012725450627,
+    "lambda": 0.4561402345886709,
+    "p": 0.20607375271149675
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 3360.8,
+   "to_mm": 3428.6,
+   "readings": [
+    {
+     "id": "symbol_134b68f6-7af4-4b57-907d-b613a103db29",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3360.8
+    },
+    {
+     "id": "symbol_612d1cde-8044-4960-8627-c3ef9dba0034",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3388
+    },
+    {
+     "id": "symbol_66552792-c215-45c9-828e-7b645a0a6b7f",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 3422.6
+    },
+    {
+     "id": "symbol_26a62aab-29c4-4f67-9d95-b07addbb5214",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 3428.6
+    }
+   ],
+   "notes": 4,
+   "rec_from": 43.92604446411133,
+   "rec_to": 44.8277473449707,
+   "treble_notes": 0,
+   "detectability": 3.041641379271516,
+   "llr": 3.1113527833118497,
+   "lambda": 1.0114595041538115,
+   "p": 0.013015184381778741,
+   "kong": {
+    "detectability": 2.948192230424252,
+    "llr": 3.1998229182759843,
+    "lambda": 1.0426754207637814,
+    "p": 0.01735357917570499
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 3459.2,
+   "to_mm": 3473.9,
+   "readings": [
+    {
+     "id": "symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3459.2
+    },
+    {
+     "id": "symbol_d213c387-af08-4639-a22b-a17438a65f9e",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3473.9
+    }
+   ],
+   "notes": 4,
+   "rec_from": 45.79594421386719,
+   "rec_to": 45.86069869995117,
+   "treble_notes": 0,
+   "detectability": 1.5955056182489484,
+   "llr": 1.6599547444034246,
+   "lambda": 1.0201970853055375,
+   "p": 0.04121475054229935,
+   "kong": {
+    "detectability": 1.546486479101748,
+    "llr": 1.876777198670441,
+    "lambda": 1.1067874579028123,
+    "p": 0.03253796095444685
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 3523.1,
+   "to_mm": 3546.5,
+   "readings": [
+    {
+     "id": "symbol_f92c9a17-6787-4cd0-bb90-9b0c470e4000",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3523.1
+    },
+    {
+     "id": "symbol_b206651f-01d7-468c-a7a7-afe0cd52d2ac",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3546.5
+    }
+   ],
+   "notes": 2,
+   "rec_from": 47.38547134399414,
+   "rec_to": 47.84609603881836,
+   "treble_notes": 0,
+   "detectability": 0.8142886327503018,
+   "llr": -0.95260972121931,
+   "lambda": -0.08493369728238835,
+   "p": 0.5574837310195228,
+   "kong": {
+    "detectability": 0.7892710287141735,
+    "llr": -0.6331555088082224,
+    "lambda": 0.09889854956432645,
+    "p": 0.49023861171366595
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 3796.5,
+   "to_mm": 4055.7,
+   "readings": [
+    {
+     "id": "symbol_8a47bc85-838e-4116-90b8-97c18ce892da",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3796.5
+    },
+    {
+     "id": "symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4055.7
+    }
+   ],
+   "notes": 8,
+   "rec_from": 52.79951858520508,
+   "rec_to": 55.85770797729492,
+   "treble_notes": 0,
+   "detectability": 0.16687977540956464,
+   "llr": -0.10124395593911757,
+   "lambda": 0.1966560037289132,
+   "p": 0.4360086767895879,
+   "kong": {
+    "detectability": 0.16175268413637145,
+    "llr": 0.027931206837501804,
+    "lambda": 0.5863392375422758,
+    "p": 0.3882863340563991
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 3805.9,
+   "to_mm": 4270.7,
+   "readings": [
+    {
+     "id": "symbol_f47e1c78-37c3-4fe9-b9d9-c0972c15d48f",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3805.9
+    },
+    {
+     "id": "symbol_e3020571-39d5-40c5-882c-c4feb5f5231f",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4047
+    },
+    {
+     "id": "symbol_2a4030e4-20bd-45ec-9a5f-275bdfa730fd",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4081.5
+    },
+    {
+     "id": "symbol_4b307fcc-d2ee-4b16-85d7-40cf5e116136",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4183.6
+    },
+    {
+     "id": "symbol_f5f700fb-1699-4442-aa5e-5b1928bfd0cb",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4206.6
+    },
+    {
+     "id": "symbol_80a89b2b-8095-44e3-94df-6c4788f6e88f",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4249.8
+    },
+    {
+     "id": "symbol_3d48714f-c5cf-4953-b512-55d4d10919dd",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4270.7
+    },
+    {
+     "id": "symbol_f9292c10-fe39-46d9-9169-a237822d8176",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 4050.3
+    }
+   ],
+   "notes": 23,
+   "rec_from": 52.79951858520508,
+   "rec_to": 62.15223693847656,
+   "treble_notes": 0,
+   "detectability": 4.450773178224137,
+   "llr": -7.018641091218838,
+   "lambda": -0.2884743627869265,
+   "p": 0.7657266811279827,
+   "kong": {
+    "detectability": 4.3140309021452605,
+    "llr": -6.827545923973046,
+    "lambda": -0.2913186157959458,
+    "p": 0.7678958785249458
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3863.1,
+   "to_mm": 3879,
+   "readings": [
+    {
+     "id": "symbol_48e0d136-fd09-41f5-88e3-4fe8b4293c3e",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3863.1
+    },
+    {
+     "id": "symbol_7e551fe8-6fea-4d8c-ad95-39ce1efe5809",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3879
+    }
+   ],
+   "notes": 2,
+   "rec_from": 53.83230972290039,
+   "rec_to": 53.90504837036133,
+   "treble_notes": 0,
+   "detectability": 1.0842737293979532,
+   "llr": -1.6291763626033324,
+   "lambda": -0.2512754014191317,
+   "p": 0.6529284164859002,
+   "kong": {
+    "detectability": 1.0509613021604085,
+    "llr": -1.5568300203507166,
+    "lambda": -0.24066952662786864,
+    "p": 0.6746203904555315
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3864.8,
+   "to_mm": 3887.7,
+   "readings": [
+    {
+     "id": "symbol_577e6991-fda2-49be-8da9-b29b81498d5a",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 3864.8
+    },
+    {
+     "id": "symbol_41014959-a02f-4965-be55-45940dfcaad4",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 3887.7
+    }
+   ],
+   "notes": 8,
+   "rec_from": 54.043792724609375,
+   "rec_to": 58.600135803222656,
+   "treble_notes": 8,
+   "detectability": 3.7498438958244087,
+   "llr": -4.146285419949463,
+   "lambda": -0.05286107037235694,
+   "p": 0.5683297180043384,
+   "kong": {
+    "detectability": 4.362917209518663,
+    "llr": -4.583978571543525,
+    "lambda": -0.025334122951332562,
+    "p": 0.5422993492407809
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 3922.4,
+   "to_mm": 3938.1,
+   "readings": [
+    {
+     "id": "symbol_ee1b90a9-23d4-4ef4-95e2-9fc2a6a6cf24",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 3922.4
+    },
+    {
+     "id": "symbol_bcfc8b9f-7ddb-4b65-8675-7e5551a430a9",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 3938.1
+    }
+   ],
+   "notes": 4,
+   "rec_from": 54.97119140625,
+   "rec_to": 55.85770797729492,
+   "treble_notes": 0,
+   "detectability": 1.0788440629199372,
+   "llr": -1.5314651199479363,
+   "lambda": -0.20977130643095962,
+   "p": 0.648590021691974,
+   "kong": {
+    "detectability": 1.0456984527550277,
+    "llr": -2.561062294639621,
+    "lambda": -0.7245701845939293,
+    "p": 0.8199566160520607
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 3925.7,
+   "to_mm": 4073.9,
+   "readings": [
+    {
+     "id": "symbol_a9b93901-dc5a-4ab5-bdc9-a65c483bd968",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 3925.7
+    },
+    {
+     "id": "symbol_438e953e-fc5e-457a-a0c2-b118bce03f9c",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 3948.5
+    },
+    {
+     "id": "symbol_45906033-bffb-4415-86ce-fef6ebc9f1be",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4052.6
+    },
+    {
+     "id": "symbol_147b9192-4e03-4c51-906f-d4aaa675fef7",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 4073.9
+    }
+   ],
+   "notes": 8,
+   "rec_from": 55.33637237548828,
+   "rec_to": 59.9608154296875,
+   "treble_notes": 8,
+   "detectability": 7.860888516711819,
+   "llr": -1.3557004482358437,
+   "lambda": 0.4137692612384911,
+   "p": 0.052060737527114966,
+   "kong": {
+    "detectability": 9.146088942491703,
+    "llr": -5.637548324423697,
+    "lambda": 0.1918055160040988,
+    "p": 0.23644251626898047
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 4066.5,
+   "to_mm": 4066.5,
+   "readings": [
+    {
+     "id": "symbol_ed962bbb-74a2-4edf-8f41-16748af0f85c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4066.5
+    }
+   ],
+   "notes": 14,
+   "rec_from": 57.96165466308594,
+   "rec_to": 62.00358200073242,
+   "treble_notes": 0,
+   "detectability": 1.770371190518533,
+   "llr": -2.926548315608765,
+   "lambda": -0.3265352292452276,
+   "p": 0.6941431670281996,
+   "kong": {
+    "detectability": 1.715979610358844,
+    "llr": -1.6216285425203554,
+    "lambda": 0.027491896543793304,
+    "p": 0.4772234273318872
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 4280.7,
+   "to_mm": 4285.8,
+   "readings": [
+    {
+     "id": "symbol_9ecc1747-1258-4e70-be6f-971ceee0f964",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 4280.7
+    },
+    {
+     "id": "symbol_23e43b39-886f-4b6c-8827-127a70774470",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 4285.8
+    }
+   ],
+   "notes": 4,
+   "rec_from": 62.15223693847656,
+   "rec_to": 63.142822265625,
+   "treble_notes": 0,
+   "detectability": 0.7496429196723595,
+   "llr": -0.07382086101572001,
+   "lambda": 0.45076265040428565,
+   "p": 0.2559652928416486,
+   "kong": {
+    "detectability": 0.7266114428979547,
+    "llr": 0.2643485232438839,
+    "lambda": 0.6819050097735723,
+    "p": 0.1540130151843818
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4295.8,
+   "to_mm": 4340.1,
+   "readings": [
+    {
+     "id": "symbol_fbbc7eac-22e9-4662-bd69-828cd23e147b",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4295.8
+    },
+    {
+     "id": "symbol_ea7fc709-1694-41c4-9fe3-6c3b75c0f2a9",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4307.7
+    },
+    {
+     "id": "symbol_92c575eb-5767-4cf8-9d74-2f5de03dfcbc",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 4334.3
+    },
+    {
+     "id": "symbol_a1d1d9b6-bfbb-43cc-8564-3cbc5277105f",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 4340.1
+    }
+   ],
+   "notes": 3,
+   "rec_from": 62.55419158935547,
+   "rec_to": 63.142822265625,
+   "treble_notes": 0,
+   "detectability": 0.9848365670048773,
+   "llr": -0.7430836336656512,
+   "lambda": 0.1227375898898913,
+   "p": 0.46637744034707157,
+   "kong": {
+    "detectability": 0.9545791738856695,
+    "llr": -1.4854517960215838,
+    "lambda": -0.2780663127056118,
+    "p": 0.6637744034707158
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4440.1,
+   "to_mm": 4483.2,
+   "readings": [
+    {
+     "id": "symbol_af7aafc8-ff4c-4fa1-bd46-03c91a1716ec",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4440.1
+    },
+    {
+     "id": "symbol_2e142db5-b999-4741-9f81-223b7dcf368a",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4483.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 65.77230834960938,
+   "rec_to": 66.30054473876953,
+   "treble_notes": 0,
+   "detectability": 2.332502584568249,
+   "llr": -1.264292795168851,
+   "lambda": 0.22898362395536767,
+   "p": 0.3492407809110629,
+   "kong": {
+    "detectability": 2.2608404936007234,
+    "llr": -1.7858925590211483,
+    "lambda": 0.1050379130955741,
+    "p": 0.44251626898047725
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 4561.4,
+   "to_mm": 4561.4,
+   "readings": [
+    {
+     "id": "symbol_5ec9a884-0fd7-4005-92eb-099c210bfb2e",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4561.4
+    }
+   ],
+   "notes": 1,
+   "rec_from": 68.15143585205078,
+   "rec_to": 68.15143585205078,
+   "treble_notes": 1,
+   "detectability": 1.3609062661303906,
+   "llr": -3.213774295645722,
+   "lambda": -0.6807478500278303,
+   "p": 0.89587852494577,
+   "kong": {
+    "detectability": 1.583404945377518,
+    "llr": -3.2523235015108396,
+    "lambda": -0.5270030768204448,
+    "p": 0.8373101952277657
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4579.8,
+   "to_mm": 4579.8,
+   "readings": [
+    {
+     "id": "symbol_2a96ad21-7645-466d-b6c7-f8371200fdef",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4579.8
+    }
+   ],
+   "notes": 1,
+   "rec_from": 68.15143585205078,
+   "rec_to": 68.15143585205078,
+   "treble_notes": 1,
+   "detectability": 0.3475939815792401,
+   "llr": 0.5888170148758148,
+   "lambda": 1.3469896575893154,
+   "p": 0.10629067245119306,
+   "kong": {
+    "detectability": 0.4044231723474905,
+    "llr": 0.4390225902521946,
+    "lambda": 1.0427762555046864,
+    "p": 0.1648590021691974
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4602.6,
+   "to_mm": 4602.6,
+   "readings": [
+    {
+     "id": "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d",
+     "type": "ForzandoOff",
+     "scope": "treble",
+     "from": 4602.6
+    }
+   ],
+   "notes": 3,
+   "rec_from": 68.96449279785156,
+   "rec_to": 69.21282958984375,
+   "treble_notes": 3,
+   "detectability": 0.3694686896336329,
+   "llr": -0.35405331579092014,
+   "lambda": 0.0208615429063809,
+   "p": 0.4598698481561822,
+   "kong": {
+    "detectability": 0.4298742425453673,
+    "llr": -0.2893457174775613,
+    "lambda": 0.16345306505887602,
+    "p": 0.3969631236442516
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 4614.7,
+   "to_mm": 4644.5,
+   "readings": [
+    {
+     "id": "symbol_ae9eaaf2-663b-4565-b705-c840ce63fcfc",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4614.7
+    },
+    {
+     "id": "symbol_9fe4b1bb-334d-441e-9d47-543601c9b018",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 4644.5
+    }
+   ],
+   "notes": 9,
+   "rec_from": 68.96449279785156,
+   "rec_to": 73.68751525878906,
+   "treble_notes": 9,
+   "detectability": 3.332819311097523,
+   "llr": -4.180122666404685,
+   "lambda": -0.1271151052932626,
+   "p": 0.5835140997830802,
+   "kong": {
+    "detectability": 3.8777120148375426,
+    "llr": -4.686578667427482,
+    "lambda": -0.10429689588795175,
+    "p": 0.559652928416486
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4814.2,
+   "to_mm": 4830.6,
+   "readings": [
+    {
+     "id": "symbol_f5053729-1dfe-4fb3-8cd1-87a1be95dcf1",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4814.2
+    },
+    {
+     "id": "symbol_fd08c549-236c-4509-9251-ee11eaa8ae6f",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4830.6
+    }
+   ],
+   "notes": 2,
+   "rec_from": 72.94790649414062,
+   "rec_to": 73.03666687011719,
+   "treble_notes": 0,
+   "detectability": 0.6518269836711289,
+   "llr": -1.278302468663386,
+   "lambda": -0.4805535062877491,
+   "p": 0.7223427331887202,
+   "kong": {
+    "detectability": 0.6318007316498154,
+    "llr": -0.6874788251865195,
+    "lambda": -0.04406301761578555,
+    "p": 0.5509761388286334
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 4816,
+   "to_mm": 4919.8,
+   "readings": [
+    {
+     "id": "symbol_c664a1f1-b165-4819-be70-ab2566219cc3",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4816
+    },
+    {
+     "id": "symbol_8fb460ac-9885-4b90-8b79-012e0d86b7f8",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 4832.3
+    },
+    {
+     "id": "symbol_6f9e33ee-7558-4035-b653-0bc2413b6be7",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 4904.7
+    },
+    {
+     "id": "symbol_9e172ee5-dfa2-4dd6-985f-84ca906781f9",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 4919.8
+    }
+   ],
+   "notes": 9,
+   "rec_from": 73.12469482421875,
+   "rec_to": 76.3163070678711,
+   "treble_notes": 9,
+   "detectability": 6.592225218148131,
+   "llr": -2.7875101560234588,
+   "lambda": 0.28857593120836067,
+   "p": 0.17136659436008678,
+   "kong": {
+    "detectability": 7.670008046283798,
+    "llr": -2.568555704650069,
+    "lambda": 0.33255847391877497,
+    "p": 0.16052060737527116
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 4895.3,
+   "to_mm": 4908.8,
+   "readings": [
+    {
+     "id": "symbol_6faa1d26-918b-4169-b98b-66567f1a67da",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 4895.3
+    },
+    {
+     "id": "symbol_3da64dd5-a580-4559-8069-01a9924b9265",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 4908.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 74.6512222290039,
+   "rec_to": 74.72933959960938,
+   "treble_notes": 0,
+   "detectability": 0.6193417977038922,
+   "llr": -5.681521031745366,
+   "lambda": -4.086741160380805,
+   "p": 1.0,
+   "kong": {
+    "detectability": 0.6003135966032008,
+    "llr": -5.63752292160615,
+    "lambda": -4.195481622859592,
+    "p": 1.0
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 5036.2,
+   "to_mm": 5052.7,
+   "readings": [
+    {
+     "id": "symbol_8407bddb-18bb-4c3a-8923-68ebc5923ff3",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5036.2
+    },
+    {
+     "id": "symbol_d3202d24-34cd-4f1d-9149-57cf94c01a07",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5052.7
+    }
+   ],
+   "notes": 5,
+   "rec_from": 77.4413833618164,
+   "rec_to": 78.31255340576172,
+   "treble_notes": 0,
+   "detectability": 0.941541571892952,
+   "llr": 0.20647274959165232,
+   "lambda": 0.6096461142849713,
+   "p": 0.227765726681128,
+   "kong": {
+    "detectability": 0.9126143423065418,
+    "llr": 0.19661584447734068,
+    "lambda": 0.6077212111199205,
+    "p": 0.2646420824295011
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 5037.3,
+   "to_mm": 5253.1,
+   "readings": [
+    {
+     "id": "symbol_89b316e0-bc3a-464d-99a4-cb8d1b14eea1",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5037.3
+    },
+    {
+     "id": "symbol_22166ae2-018b-42f4-a072-5656e9492283",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5057
+    },
+    {
+     "id": "symbol_36fa67a1-2d4c-46e5-b1b0-852c8933c898",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5159.3
+    },
+    {
+     "id": "symbol_ccf1f792-e182-403a-bfba-22ae431a040c",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5179.6
+    },
+    {
+     "id": "symbol_de121890-2032-4f64-bc31-0a59e96bc610",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5231.6
+    },
+    {
+     "id": "symbol_07a22f96-e819-4324-9517-335bc65e64af",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5253.1
+    }
+   ],
+   "notes": 6,
+   "rec_from": 77.61035919189453,
+   "rec_to": 81.46745300292969,
+   "treble_notes": 6,
+   "detectability": 4.8744009426053525,
+   "llr": -9.843870484440622,
+   "lambda": -0.5097518239009594,
+   "p": 0.9262472885032538,
+   "kong": {
+    "detectability": 5.671331487230187,
+    "llr": -12.223406574293389,
+    "lambda": -0.577648749840856,
+    "p": 0.9609544468546638
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 5156.2,
+   "to_mm": 5174.7,
+   "readings": [
+    {
+     "id": "symbol_70283c79-e3af-4cdf-986f-e0ebb86e9235",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5156.2
+    },
+    {
+     "id": "symbol_052e68c6-0409-40e6-ace1-784f6c2e6cb0",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5174.7
+    }
+   ],
+   "notes": 2,
+   "rec_from": 79.84706115722656,
+   "rec_to": 80.65624237060547,
+   "treble_notes": 0,
+   "detectability": 0.23019902657879812,
+   "llr": -0.11891152269332629,
+   "lambda": 0.24172018782924273,
+   "p": 0.45770065075921906,
+   "kong": {
+    "detectability": 0.2231265612823109,
+    "llr": -0.21390824069812184,
+    "lambda": 0.020657156483771727,
+    "p": 0.5119305856832972
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 5341.3,
+   "to_mm": 5419.8,
+   "readings": [
+    {
+     "id": "symbol_997afbf7-a73d-45e4-8270-0bb655f56c09",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 5341.3
+    },
+    {
+     "id": "symbol_832bfd3a-4be6-4a4d-90cb-6265052538ad",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 5349.5
+    },
+    {
+     "id": "symbol_1e2f5839-7947-4e8b-834a-c61182eb831c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5344.4
+    },
+    {
+     "id": "symbol_8c981bab-25b7-40c5-84f1-41cafacf3d22",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5373.9
+    },
+    {
+     "id": "symbol_f761b4d6-4de3-4adc-9198-4849353f72bb",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 5378.9
+    },
+    {
+     "id": "symbol_eda638b5-d697-4448-a49c-bdc6db476b2a",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 5384.8
+    },
+    {
+     "id": "symbol_d7d83471-4e1f-4f39-8cf0-f2ffc877c692",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5408
+    },
+    {
+     "id": "symbol_8a8de782-1798-4f29-99ba-3707676e29c4",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5419.8
+    }
+   ],
+   "notes": 7,
+   "rec_from": 83.44149017333984,
+   "rec_to": 85.23614501953125,
+   "treble_notes": 0,
+   "detectability": 3.30381958576821,
+   "llr": -6.673644548412593,
+   "lambda": -0.5099892526154427,
+   "p": 0.8741865509761388,
+   "kong": {
+    "detectability": 3.2023154668609037,
+    "llr": -8.85360176805652,
+    "lambda": -0.8823750126553487,
+    "p": 0.9479392624728851
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 5456.7,
+   "to_mm": 5878.3,
+   "readings": [
+    {
+     "id": "symbol_63570383-8b17-46c7-a848-7bcfb54800c8",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5456.7
+    },
+    {
+     "id": "symbol_b81c63d3-e1db-428a-a49d-6bbd41f5300b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5527.6
+    },
+    {
+     "id": "symbol_c1f8c127-0c62-435d-af71-00ddd9fe4b3c",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5562.8
+    },
+    {
+     "id": "symbol_4da686fa-1b51-4132-a025-36f5fc2bf7d8",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5648.5
+    },
+    {
+     "id": "symbol_7b9fb286-6751-4448-adf1-91d78b7ace9c",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5670.3
+    },
+    {
+     "id": "symbol_6be7a40f-cff0-4e95-a842-31b30cbcec53",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5725.8
+    },
+    {
+     "id": "symbol_096e9d0c-ce29-48e1-a7c4-d85eae77bf00",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5750.3
+    },
+    {
+     "id": "symbol_cf4ae87a-d77d-459f-a868-d43542983512",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5765.8
+    },
+    {
+     "id": "symbol_782a7846-ee14-49f9-83b8-8007d9b36f6c",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5783.5
+    },
+    {
+     "id": "symbol_08033aa3-a49f-41cb-ad39-86dd61980e9a",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5835.9
+    },
+    {
+     "id": "symbol_642050a9-68cd-4662-b70e-22e1328fcbee",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5855.9
+    },
+    {
+     "id": "symbol_1f2faf0f-7a11-4427-98d2-a77b0ea9b873",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5870.2
+    },
+    {
+     "id": "symbol_cf9fc006-6450-4b7b-94f6-a9b5b7f523bf",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5878.3
+    }
+   ],
+   "notes": 17,
+   "rec_from": 86.60303497314453,
+   "rec_to": 94.41387939453125,
+   "treble_notes": 0,
+   "detectability": 20.427196913670556,
+   "llr": -26.26634247064361,
+   "lambda": -0.14292576660543435,
+   "p": 0.7917570498915402,
+   "kong": {
+    "detectability": 19.799606765164892,
+    "llr": -17.72675432376542,
+    "lambda": 0.05234579822682188,
+    "p": 0.3926247288503254
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 5468.5,
+   "to_mm": 5510.7,
+   "readings": [
+    {
+     "id": "symbol_e21603a1-224d-4830-85b0-c27093566b2a",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 5468.5
+    },
+    {
+     "id": "symbol_f322f32f-ed6b-4b72-a85f-b8f386b87f2b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 5510.7
+    }
+   ],
+   "notes": 8,
+   "rec_from": 87.24168395996094,
+   "rec_to": 90.76639556884766,
+   "treble_notes": 0,
+   "detectability": 0.5128365224373352,
+   "llr": -0.7720961266529216,
+   "lambda": -0.2527702229390906,
+   "p": 0.5921908893709328,
+   "kong": {
+    "detectability": 0.497080510947566,
+    "llr": -0.6736779259377067,
+    "lambda": -0.17763461964491412,
+    "p": 0.5748373101952278
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 5535.3,
+   "to_mm": 5584.3,
+   "readings": [
+    {
+     "id": "symbol_5585d34e-ccfc-4295-a4ba-4d484196de2f",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5535.3
+    },
+    {
+     "id": "symbol_46fecda0-94fc-44d5-9e21-fbece6c395da",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5584.3
+    }
+   ],
+   "notes": 2,
+   "rec_from": 87.76605224609375,
+   "rec_to": 88.25152587890625,
+   "treble_notes": 2,
+   "detectability": 10.187050809745367,
+   "llr": -9.487515828519747,
+   "lambda": 0.034334519101269875,
+   "p": 0.47288503253796094,
+   "kong": {
+    "detectability": 11.852562540422165,
+    "llr": -7.141804130527058,
+    "lambda": 0.19872320411005903,
+    "p": 0.18004338394793926
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 5588.5,
+   "to_mm": 5979.4,
+   "readings": [
+    {
+     "id": "symbol_6fd98ff4-ec3f-4686-84db-0f3b819adafb",
+     "type": "ForzandoOff",
+     "scope": "treble",
+     "from": 5588.5
+    },
+    {
+     "id": "symbol_3e3c53d4-08e5-4048-a013-491a799fdb8d",
+     "type": "ForzandoOn",
+     "scope": "treble",
+     "from": 5604.2
+    },
+    {
+     "id": "symbol_6c3880e1-8ea7-4cf3-8688-95baa46cd99d",
+     "type": "ForzandoOff",
+     "scope": "treble",
+     "from": 5614.7
+    },
+    {
+     "id": "symbol_b75093d3-d2ab-4e95-8264-7b2dda97f18c",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5716.2
+    },
+    {
+     "id": "symbol_1f11195f-5c39-47d9-b09c-44b80fc54953",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5734.7
+    },
+    {
+     "id": "symbol_28af7f56-9890-41b0-a9e7-c1047ad38292",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5762
+    },
+    {
+     "id": "symbol_33f28cd2-b247-4179-adcd-d31d0606a73a",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5776.4
+    },
+    {
+     "id": "symbol_a1ade749-8012-4978-b08b-acc9db4fd94e",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5841.9
+    },
+    {
+     "id": "symbol_7dda6454-f23a-4225-9b3f-1e909ccadb3a",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5881.9
+    },
+    {
+     "id": "symbol_61211f11-8374-42c2-bab0-9c16a1370cdc",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5953.3
+    },
+    {
+     "id": "symbol_e81a33a5-944d-4568-a985-40b14751b315",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 5979.4
+    },
+    {
+     "id": "symbol_672af8d0-ddc6-4c4f-af4b-c96688917518",
+     "type": "ForzandoOn",
+     "scope": "treble",
+     "from": 5637.7
+    }
+   ],
+   "notes": 16,
+   "rec_from": 88.66243743896484,
+   "rec_to": 96.66339111328125,
+   "treble_notes": 16,
+   "detectability": 34.57239614063292,
+   "llr": -25.475339425430686,
+   "lambda": 0.13156531988985376,
+   "p": 0.14099783080260303,
+   "kong": {
+    "detectability": 40.224741692374465,
+    "llr": -33.724357926871676,
+    "lambda": 0.08080081427514907,
+    "p": 0.2950108459869848
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 5589.1,
+   "to_mm": 5589.1,
+   "readings": [
+    {
+     "id": "symbol_7c068e1c-86a6-4319-8ebc-0707480c88a6",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5589.1
+    }
+   ],
+   "notes": 2,
+   "rec_from": 88.66243743896484,
+   "rec_to": 88.75373840332031,
+   "treble_notes": 2,
+   "detectability": 0.4132331481856435,
+   "llr": 2.38713023953631,
+   "lambda": 3.3883576378339098,
+   "p": 0.008676789587852495,
+   "kong": {
+    "detectability": 0.4807938847188595,
+    "llr": 2.122499622399209,
+    "lambda": 2.7072864171726345,
+    "p": 0.013015184381778741
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 5605.4,
+   "to_mm": 5605.4,
+   "readings": [
+    {
+     "id": "symbol_47820b6b-3e7c-43f1-823f-d650218bb144",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 5605.4
+    }
+   ],
+   "notes": 5,
+   "rec_from": 88.75373840332031,
+   "rec_to": 91.19961547851562,
+   "treble_notes": 5,
+   "detectability": 0.6686061943848371,
+   "llr": -2.7991586428468964,
+   "lambda": -1.5932790231044085,
+   "p": 0.9609544468546638,
+   "kong": {
+    "detectability": 0.7779186421921876,
+    "llr": -2.457397161833772,
+    "lambda": -1.0794692584489207,
+    "p": 0.8806941431670282
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 6078.8,
+   "to_mm": 6084.1,
+   "readings": [
+    {
+     "id": "symbol_5eecb459-5675-427a-be2e-4a9b35f04eb5",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 6078.8
+    },
+    {
+     "id": "symbol_f34264a1-426d-4ffc-9a3a-02b977977a6d",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 6084.1
+    }
+   ],
+   "notes": 2,
+   "rec_from": 98.12493133544922,
+   "rec_to": 98.2124252319336,
+   "treble_notes": 0,
+   "detectability": 0.8661900093099074,
+   "llr": -2.1690433606755035,
+   "lambda": -0.7520597890545849,
+   "p": 0.8524945770065075,
+   "kong": {
+    "detectability": 0.8395778256180215,
+    "llr": -1.2512666141434936,
+    "lambda": -0.2451760729997983,
+    "p": 0.6464208242950108
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 6144.3,
+   "to_mm": 6234.3,
+   "readings": [
+    {
+     "id": "symbol_c888ed0e-9dc7-4e00-ba72-05797e0b0cac",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6144.3
+    },
+    {
+     "id": "symbol_f6667c87-72d6-4cfe-8c6e-2eefe7f49745",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6163
+    },
+    {
+     "id": "symbol_9e6db98f-d80f-4e43-b94f-eb9314072a7b",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6181.8
+    },
+    {
+     "id": "symbol_a9033cc9-e53b-4a10-ba47-6ce423159154",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6199.5
+    },
+    {
+     "id": "symbol_394bdb37-0ec1-4c1c-9436-db21cd1d9e99",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6218.5
+    },
+    {
+     "id": "symbol_f14397c4-0dc4-4c85-b85c-3175721309d8",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6234.3
+    },
+    {
+     "id": "symbol_8ef4fb55-771e-433f-8235-94a252d7e787",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 6192.5
+    }
+   ],
+   "notes": 8,
+   "rec_from": 99.76403045654297,
+   "rec_to": 102.50820922851562,
+   "treble_notes": 0,
+   "detectability": 7.062062585155233,
+   "llr": -10.779515077683179,
+   "lambda": -0.2631987785227364,
+   "p": 0.8177874186550976,
+   "kong": {
+    "detectability": 6.845092977171097,
+    "llr": -11.622421864770276,
+    "lambda": -0.348960116650857,
+    "p": 0.841648590021692
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 6181.6,
+   "to_mm": 6503.3,
+   "readings": [
+    {
+     "id": "symbol_1e693ad7-b34a-40bf-8518-7f3f55e4d857",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6181.6
+    },
+    {
+     "id": "symbol_a1fdfd15-a07e-4f5a-89be-e4b956644a26",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6339.4
+    },
+    {
+     "id": "symbol_2eb5e30f-7dd1-479a-a345-ea69a2443a55",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6466.2
+    },
+    {
+     "id": "symbol_0846addd-08aa-4b8a-b265-4b6d21996791",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6503.3
+    }
+   ],
+   "notes": 17,
+   "rec_from": 101.3246841430664,
+   "rec_to": 111.13214111328125,
+   "treble_notes": 17,
+   "detectability": 27.427723344379835,
+   "llr": -38.032057359908116,
+   "lambda": -0.1933141493805609,
+   "p": 0.89587852494577,
+   "kong": {
+    "detectability": 31.9119647434825,
+    "llr": -35.68226375404477,
+    "lambda": -0.05907343908262952,
+    "p": 0.6594360086767896
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 6475,
+   "to_mm": 6494.5,
+   "readings": [
+    {
+     "id": "symbol_828467f6-630d-47a8-a084-a7d13f56736c",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6475
+    },
+    {
+     "id": "symbol_e7c6945f-c87a-46ee-844f-52d8b189f2ab",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6494.5
+    }
+   ],
+   "notes": 4,
+   "rec_from": 106.01722717285156,
+   "rec_to": 107.41785430908203,
+   "treble_notes": 0,
+   "detectability": 0.9925990068183291,
+   "llr": 0.3231579895637686,
+   "lambda": 0.662783756251992,
+   "p": 0.16702819956616052,
+   "kong": {
+    "detectability": 0.9621031262171689,
+    "llr": -0.3661466428751448,
+    "lambda": 0.3097154905239873,
+    "p": 0.33405639913232105
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 6607.7,
+   "to_mm": 6929.8,
+   "readings": [
+    {
+     "id": "symbol_0c022c76-dfd3-4183-89e3-e81bd5affc29",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6607.7
+    },
+    {
+     "id": "symbol_edcf8db4-8411-4424-ae5f-9ef19bd0d353",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6625
+    },
+    {
+     "id": "symbol_387034e3-9b47-41e2-8896-8ac233c2049e",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6663.8
+    },
+    {
+     "id": "symbol_efb8f72d-2302-4369-bdc2-dc8c4fb03c50",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6676.6
+    },
+    {
+     "id": "symbol_685f554d-044e-481b-ae95-d5fb7d61548a",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6743.8
+    },
+    {
+     "id": "symbol_cd25e962-df8c-4c1f-af08-9b1b000a6638",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6756
+    },
+    {
+     "id": "symbol_20b4312a-11ff-4598-b0bc-98f775292431",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6878.9
+    },
+    {
+     "id": "symbol_572c2414-b9e0-4dcf-a2bd-0655beeae56a",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6895.3
+    },
+    {
+     "id": "symbol_aab9cd39-5fe3-4bad-8171-2b331ec2e44a",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 6916.7
+    },
+    {
+     "id": "symbol_657dd0df-9e68-4c6e-8c05-f0bcab83492f",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 6929.8
+    }
+   ],
+   "notes": 16,
+   "rec_from": 108.67452239990234,
+   "rec_to": 115.5761489868164,
+   "treble_notes": 16,
+   "detectability": 10.856623456949347,
+   "llr": -8.931925256203584,
+   "lambda": 0.0886416577114388,
+   "p": 0.3600867678958785,
+   "kong": {
+    "detectability": 12.631605643726324,
+    "llr": -15.992618171081855,
+    "lambda": -0.13303979803330973,
+    "p": 0.6898047722342733
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 6635.2,
+   "to_mm": 6674.8,
+   "readings": [
+    {
+     "id": "symbol_79e79a71-78d0-4b3b-bdab-9a90fc4cf3ce",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6635.2
+    },
+    {
+     "id": "symbol_6a169cf8-03e6-4538-9fc9-a6cf96d00f91",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6645.7
+    },
+    {
+     "id": "symbol_e0d1ef1f-e1fc-4c96-ad57-b70c7347b4cf",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6665.8
+    },
+    {
+     "id": "symbol_78ed37b0-512d-42e8-8401-5c41375c3cb8",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6674.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 109.35528564453125,
+   "rec_to": 109.93927001953125,
+   "treble_notes": 0,
+   "detectability": 0.48429854879602774,
+   "llr": -1.2013567028381655,
+   "lambda": -0.7403059082303193,
+   "p": 0.7570498915401301,
+   "kong": {
+    "detectability": 0.4694193169834354,
+    "llr": -0.8649029691054488,
+    "lambda": -0.42124773929570636,
+    "p": 0.6811279826464208
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 6746.5,
+   "to_mm": 6787.8,
+   "readings": [
+    {
+     "id": "symbol_46051622-d660-437c-bc8f-90f94bd01764",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6746.5
+    },
+    {
+     "id": "symbol_5fec95db-d76e-4786-9425-dd5796f5a93f",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6756.2
+    },
+    {
+     "id": "symbol_3a84a4b8-58dc-4381-8908-1f03c1c23c7e",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6775
+    },
+    {
+     "id": "symbol_70339882-7b92-4d3a-b8f0-d2fca1085a70",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6787.8
+    }
+   ],
+   "notes": 4,
+   "rec_from": 111.54733276367188,
+   "rec_to": 112.21763610839844,
+   "treble_notes": 0,
+   "detectability": 1.044240276247913,
+   "llr": -4.007643371585023,
+   "lambda": -1.4189277902519672,
+   "p": 0.9501084598698482,
+   "kong": {
+    "detectability": 1.0121578073308277,
+    "llr": -3.304569204079314,
+    "lambda": -1.132437738534977,
+    "p": 0.8980477223427332
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 6876.1,
+   "to_mm": 6925.7,
+   "readings": [
+    {
+     "id": "symbol_10462491-dd44-43bf-8dd2-1dc6af6ba4c8",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6876.1
+    },
+    {
+     "id": "symbol_d95ed2f0-78d6-4ead-b9a2-71aa5110961a",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6890.2
+    },
+    {
+     "id": "symbol_f98d0cb9-0fd3-4b74-ba8d-944593240db4",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 6911.3
+    },
+    {
+     "id": "symbol_175b3acb-2504-44ac-996f-64d01ddce51c",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 6925.7
+    }
+   ],
+   "notes": 3,
+   "rec_from": 114.10408020019531,
+   "rec_to": 114.9210433959961,
+   "treble_notes": 0,
+   "detectability": 1.1231539266764003,
+   "llr": 0.6103807284884365,
+   "lambda": 0.7717262140081969,
+   "p": 0.1019522776572668,
+   "kong": {
+    "detectability": 1.088646972902149,
+    "llr": 1.2775777474668308,
+    "lambda": 1.0867732053031958,
+    "p": 0.052060737527114966
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7011.5,
+   "to_mm": 7067.1,
+   "readings": [
+    {
+     "id": "symbol_0ddc8608-11f8-4dd0-8f51-0e240f1a4eeb",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7011.5
+    },
+    {
+     "id": "symbol_4b13aac0-d27e-493c-ba4f-6f198552cf6e",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7026.4
+    },
+    {
+     "id": "symbol_b77aa976-a536-41af-bad1-f08c69f85bbd",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7053.3
+    },
+    {
+     "id": "symbol_9fc561da-5a85-4309-a7c2-d3656e9786e0",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7067.1
+    }
+   ],
+   "notes": 5,
+   "rec_from": 116.77857971191406,
+   "rec_to": 118.40727996826172,
+   "treble_notes": 0,
+   "detectability": 0.7930853684394996,
+   "llr": 0.7481982751424796,
+   "lambda": 0.9717009699817428,
+   "p": 0.1279826464208243,
+   "kong": {
+    "detectability": 0.768719197874829,
+    "llr": 2.107493145756261,
+    "lambda": 1.870782173505328,
+    "p": 0.03036876355748373
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7013.9,
+   "to_mm": 7072.3,
+   "readings": [
+    {
+     "id": "symbol_fd3150a6-fecc-4b02-b473-e8356963e0a7",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7013.9
+    },
+    {
+     "id": "symbol_386ce183-e08b-449a-a95d-029ce57ee7d3",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7030.3
+    },
+    {
+     "id": "symbol_e64500b9-b864-42ed-8829-d7be4e6e4db0",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7055
+    },
+    {
+     "id": "symbol_ffedf858-d378-4c54-b5a9-bf57c8c46898",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7072.3
+    }
+   ],
+   "notes": 3,
+   "rec_from": 116.89185333251953,
+   "rec_to": 117.71031188964844,
+   "treble_notes": 3,
+   "detectability": 2.2022718609356726,
+   "llr": -1.8906365141668187,
+   "lambda": 0.07075315093851554,
+   "p": 0.46203904555314534,
+   "kong": {
+    "detectability": 2.5623279445883527,
+    "llr": -1.731172291979036,
+    "lambda": 0.16218760255975848,
+    "p": 0.403470715835141
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7221,
+   "to_mm": 7226.5,
+   "readings": [
+    {
+     "id": "symbol_f7893d1e-2cc3-492f-8693-a48c87cbb695",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 7221
+    },
+    {
+     "id": "symbol_2975476a-7e85-4c74-aff0-38124b4210cc",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 7226.5
+    }
+   ],
+   "notes": 1,
+   "rec_from": 120.87994384765625,
+   "rec_to": 120.87994384765625,
+   "treble_notes": 0,
+   "detectability": 1.2091517425241138,
+   "llr": -3.1595284735177933,
+   "lambda": -0.8065061904150475,
+   "p": 0.9088937093275488,
+   "kong": {
+    "detectability": 1.1720026552135232,
+    "llr": -2.276547080286951,
+    "lambda": -0.4712209567785469,
+    "p": 0.8004338394793926
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 7255.8,
+   "to_mm": 7263.4,
+   "readings": [
+    {
+     "id": "symbol_46200256-524e-4172-8d78-9b80ed951d86",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 7255.8
+    },
+    {
+     "id": "symbol_38813377-f5bb-4fdb-abf9-6dd4f19dba93",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 7263.4
+    }
+   ],
+   "notes": 1,
+   "rec_from": 121.51551818847656,
+   "rec_to": 121.51551818847656,
+   "treble_notes": 0,
+   "detectability": 0.6001761882820977,
+   "llr": -0.6493192272584635,
+   "lambda": -0.04094051041664072,
+   "p": 0.5249457700650759,
+   "kong": {
+    "detectability": 0.5817368172452696,
+    "llr": -0.4486486343574248,
+    "lambda": 0.11438865389168984,
+    "p": 0.4772234273318872
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 7347.8,
+   "to_mm": 7395.9,
+   "readings": [
+    {
+     "id": "symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7347.8
+    },
+    {
+     "id": "symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7395.9
+    }
+   ],
+   "notes": 2,
+   "rec_from": 124.24866485595703,
+   "rec_to": 124.80155944824219,
+   "treble_notes": 0,
+   "detectability": 2.6282628906416683,
+   "llr": -4.838309521579725,
+   "lambda": -0.42043865528202395,
+   "p": 0.8394793926247288,
+   "kong": {
+    "detectability": 2.5475140779278767,
+    "llr": -4.829470144431372,
+    "lambda": -0.4478789903998522,
+    "p": 0.8264642082429501
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 7430.8,
+   "to_mm": 8019.6,
+   "readings": [
+    {
+     "id": "symbol_69aa4a60-c468-4d72-87d9-65a77db2340f",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7430.8
+    },
+    {
+     "id": "symbol_d7fa893d-a3d7-4ec2-ba69-789ec7142d22",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7504.6
+    },
+    {
+     "id": "symbol_5ecafb66-27f7-4375-8008-ed00714f605c",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7555.4
+    },
+    {
+     "id": "symbol_10cc8693-97b2-4eff-a48f-46f45c488869",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7670.7
+    },
+    {
+     "id": "symbol_32bcc215-b8c7-4647-97a0-58577e1d381b",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7685.8
+    },
+    {
+     "id": "symbol_9baf0f63-6300-468c-ab0e-530328c44caf",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7952.5
+    },
+    {
+     "id": "symbol_d4775f40-9118-405d-b1da-8a477766787e",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8019.6
+    }
+   ],
+   "notes": 16,
+   "rec_from": 125.39689636230469,
+   "rec_to": 138.02879333496094,
+   "treble_notes": 16,
+   "detectability": 141.56468121956328,
+   "llr": -141.8363969334277,
+   "lambda": -0.0009596875135929722,
+   "p": 0.49891540130151846,
+   "kong": {
+    "detectability": 164.70951887907017,
+    "llr": -178.9753947670748,
+    "lambda": -0.04330616707853622,
+    "p": 0.754880694143167
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7672.3,
+   "to_mm": 7683,
+   "readings": [
+    {
+     "id": "symbol_4f8662a7-fa58-4097-ad7b-9787af772b1f",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7672.3
+    },
+    {
+     "id": "symbol_7071cd66-da62-43ac-883c-14ea44e9f9b8",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7683
+    }
+   ],
+   "notes": 1,
+   "rec_from": 129.94520568847656,
+   "rec_to": 129.94520568847656,
+   "treble_notes": 0,
+   "detectability": 0.1835701381663119,
+   "llr": -0.365590853742802,
+   "lambda": -0.4957797531632893,
+   "p": 0.6247288503253796,
+   "kong": {
+    "detectability": 0.17793026448418672,
+    "llr": -0.31087896630393874,
+    "lambda": -0.3735977749630323,
+    "p": 0.6052060737527115
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7736,
+   "to_mm": 7749.2,
+   "readings": [
+    {
+     "id": "symbol_1d4f0e28-cc61-49da-af2e-d050d383cd10",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7736
+    },
+    {
+     "id": "symbol_1d73a6b5-9670-4829-ad15-c287730ce718",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7749.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 131.17529296875,
+   "rec_to": 131.25636291503906,
+   "treble_notes": 0,
+   "detectability": 0.48558287044344806,
+   "llr": -0.260248723333146,
+   "lambda": 0.23202439874425598,
+   "p": 0.44251626898047725,
+   "kong": {
+    "detectability": 0.47066418007876754,
+    "llr": 0.16052526472859094,
+    "lambda": 0.6705305730953717,
+    "p": 0.2950108459869848
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7739.1,
+   "to_mm": 7842.9,
+   "readings": [
+    {
+     "id": "symbol_b3b2f716-4e01-4c80-a28f-c28c76da8e1c",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7739.1
+    },
+    {
+     "id": "symbol_4c6537d5-fa06-4513-9235-f3681fc17fae",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7752.4
+    },
+    {
+     "id": "symbol_d7393980-3eac-4d86-9010-ecb6ca8d798a",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7809.5
+    },
+    {
+     "id": "symbol_d4e27d55-2d53-4f6e-8bb1-dc8ce3c5fad2",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7820.1
+    },
+    {
+     "id": "symbol_cfe69211-dd09-4f9a-afbb-d075ec271a5f",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 7831.2
+    },
+    {
+     "id": "symbol_9de0f850-5187-4e51-a40a-cbbdc1decc1f",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 7842.9
+    }
+   ],
+   "notes": 10,
+   "rec_from": 131.33419799804688,
+   "rec_to": 138.02879333496094,
+   "treble_notes": 10,
+   "detectability": 4.866405835714731,
+   "llr": -1.6785261227009405,
+   "lambda": 0.3275394429311489,
+   "p": 0.1735357917570499,
+   "kong": {
+    "detectability": 5.662029236146114,
+    "llr": -3.8929015326445144,
+    "lambda": 0.15622735504504082,
+    "p": 0.3579175704989154
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 7805.9,
+   "to_mm": 7880.2,
+   "readings": [
+    {
+     "id": "symbol_b32e7896-68cc-42cf-a8b0-0f30e16021b2",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7805.9
+    },
+    {
+     "id": "symbol_fcc0c2a1-bd32-47e0-bf9d-6bef95bbebdf",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7816.9
+    },
+    {
+     "id": "symbol_78158056-8847-4cb6-bc8d-1e7355555403",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7838.7
+    },
+    {
+     "id": "symbol_4fd1a159-9678-4aa2-9444-cc3cf9ea8488",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7846.8
+    },
+    {
+     "id": "symbol_2c60830d-5be6-4c51-b5f5-4be26b990809",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7869.8
+    },
+    {
+     "id": "symbol_ac026c6e-3528-4d46-bfbc-6e83c551f12c",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7880.2
+    }
+   ],
+   "notes": 5,
+   "rec_from": 132.45370483398438,
+   "rec_to": 133.8199462890625,
+   "treble_notes": 0,
+   "detectability": 0.8190713288507661,
+   "llr": -0.900280094650964,
+   "lambda": -0.0495736835973377,
+   "p": 0.544468546637744,
+   "kong": {
+    "detectability": 0.7939067847832358,
+    "llr": -0.8539737004043343,
+    "lambda": -0.03782995483373949,
+    "p": 0.5574837310195228
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 7923.6,
+   "to_mm": 7952.7,
+   "readings": [
+    {
+     "id": "symbol_f9742099-f60e-4996-99f2-4ddf04da7bcf",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7923.6
+    },
+    {
+     "id": "symbol_2b8425e0-4e20-43e1-9871-c3e6fb228a77",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7952.7
+    }
+   ],
+   "notes": 9,
+   "rec_from": 135.24537658691406,
+   "rec_to": 136.49398803710938,
+   "treble_notes": 0,
+   "detectability": 1.9583969999636235,
+   "llr": -5.031781524940991,
+   "lambda": -0.7846684112144915,
+   "p": 0.9327548806941431,
+   "kong": {
+    "detectability": 1.8982286533600976,
+    "llr": -6.120569062518845,
+    "lambda": -1.1121790838223542,
+    "p": 0.9804772234273319
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 7938.7,
+   "to_mm": 7980.6,
+   "readings": [
+    {
+     "id": "symbol_d6dcdfb6-6d10-458f-99df-c098bce58344",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 7951.5
+    },
+    {
+     "id": "symbol_f39f1b72-3ab8-4586-a3f1-8c14e59115ee",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 7957.5
+    },
+    {
+     "id": "symbol_133a257f-d830-432b-81f8-0bad0e022aa6",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 7938.7
+    },
+    {
+     "id": "symbol_77159c01-bbca-452a-8f6f-1cbbcf0f3730",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 7980.6
+    }
+   ],
+   "notes": 9,
+   "rec_from": 135.24537658691406,
+   "rec_to": 136.49398803710938,
+   "treble_notes": 0,
+   "detectability": 3.573407659800889,
+   "llr": -0.047508257598714604,
+   "lambda": 0.493352527598074,
+   "p": 0.13449023861171366,
+   "kong": {
+    "detectability": 3.4636209155224873,
+    "llr": -2.6418795879423405,
+    "lambda": 0.11862460523573022,
+    "p": 0.4642082429501085
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 8040.4,
+   "to_mm": 8040.4,
+   "readings": [
+    {
+     "id": "symbol_d2dd2104-4704-4242-82a8-2fabdabde751",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8040.4
+    }
+   ],
+   "notes": 9,
+   "rec_from": 137.99484252929688,
+   "rec_to": 140.41673278808594,
+   "treble_notes": 0,
+   "detectability": 2.1365356335267585,
+   "llr": -4.996303380082566,
+   "lambda": -0.6692534638037412,
+   "p": 0.9002169197396963,
+   "kong": {
+    "detectability": 2.070894286786945,
+    "llr": -4.520568562425842,
+    "lambda": -0.5914532410632225,
+    "p": 0.8156182212581344
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8070.2,
+   "to_mm": 8224,
+   "readings": [
+    {
+     "id": "symbol_44c0a21e-f724-46a2-847c-8aab713c3c79",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8070.2
+    },
+    {
+     "id": "symbol_583a4144-9e67-449a-a323-1a12abd38273",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8104.1
+    },
+    {
+     "id": "symbol_a115a458-5c7d-4db2-ba64-1eb40b7fe682",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8136.4
+    },
+    {
+     "id": "symbol_369458b1-8c45-4520-894a-fbd278be2246",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8164.4
+    },
+    {
+     "id": "symbol_b2c50994-56da-48d0-ace9-0a65573998dd",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8180.4
+    },
+    {
+     "id": "symbol_15a06153-87de-4246-8cba-88cbb990a2c8",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8206.7
+    },
+    {
+     "id": "symbol_396879f6-26a4-460a-993e-5fbb137c6dc3",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8224
+    }
+   ],
+   "notes": 9,
+   "rec_from": 137.99484252929688,
+   "rec_to": 140.41673278808594,
+   "treble_notes": 0,
+   "detectability": 6.412281186392805,
+   "llr": -5.34776970347839,
+   "lambda": 0.0830056770727213,
+   "p": 0.43383947939262474,
+   "kong": {
+    "detectability": 6.215274983386307,
+    "llr": -6.389113228270676,
+    "lambda": -0.013984758948642203,
+    "p": 0.5184381778741866
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 8209.9,
+   "to_mm": 8215.6,
+   "readings": [
+    {
+     "id": "symbol_15c23810-6a65-465f-a0b9-e1567f5daac8",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 8209.9
+    },
+    {
+     "id": "symbol_7d7cd8cb-934d-4231-8669-fc7d6deba1ea",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 8215.6
+    }
+   ],
+   "notes": 4,
+   "rec_from": 140.41673278808594,
+   "rec_to": 141.60043334960938,
+   "treble_notes": 0,
+   "detectability": 1.1054278921694096,
+   "llr": -2.8541395201869966,
+   "lambda": -0.7909659419691902,
+   "p": 0.9088937093275488,
+   "kong": {
+    "detectability": 1.071465540019927,
+    "llr": -2.2282784940178453,
+    "lambda": -0.5398274189837234,
+    "p": 0.8286334056399133
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8270.9,
+   "to_mm": 8275.7,
+   "readings": [
+    {
+     "id": "symbol_2b8231e3-04d7-4ab6-9fdd-742479acd5e2",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 8270.9
+    },
+    {
+     "id": "symbol_c31849ac-3f60-486f-9d34-b345fb866375",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 8275.7
+    }
+   ],
+   "notes": 1,
+   "rec_from": 141.60043334960938,
+   "rec_to": 141.60043334960938,
+   "treble_notes": 0,
+   "detectability": 0.12575011657661897,
+   "llr": -0.3995185245254688,
+   "lambda": -1.088541368397237,
+   "p": 0.7310195227765727,
+   "kong": {
+    "detectability": 0.12188666263967136,
+    "llr": -0.585606755967388,
+    "lambda": -1.9022593747545358,
+    "p": 0.8633405639913232
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8375.6,
+   "to_mm": 8425.4,
+   "readings": [
+    {
+     "id": "symbol_4139366d-c422-419e-b109-3924ce049063",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8375.6
+    },
+    {
+     "id": "symbol_3496801a-b3d1-46d3-89bd-f2a913b2e072",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8425.4
+    }
+   ],
+   "notes": 2,
+   "rec_from": 144.3231964111328,
+   "rec_to": 144.83444213867188,
+   "treble_notes": 0,
+   "detectability": 2.82801150475685,
+   "llr": -1.8087181834808155,
+   "lambda": 0.180213786181834,
+   "p": 0.38177874186550975,
+   "kong": {
+    "detectability": 2.7411257627851606,
+    "llr": -1.4427274270957415,
+    "lambda": 0.2368366955863717,
+    "p": 0.3275488069414317
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8437.8,
+   "to_mm": 8498.3,
+   "readings": [
+    {
+     "id": "symbol_ae3f4270-fbeb-4040-b4b5-de2c314a2178",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8437.8
+    },
+    {
+     "id": "symbol_17e9bb49-dfc5-4edb-91c8-1b1dfe4437e9",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8498.3
+    }
+   ],
+   "notes": 6,
+   "rec_from": 145.42373657226562,
+   "rec_to": 148.25466918945312,
+   "treble_notes": 6,
+   "detectability": 6.74020282146493,
+   "llr": -5.469990877971078,
+   "lambda": 0.09422653717843037,
+   "p": 0.3665943600867679,
+   "kong": {
+    "detectability": 7.842178955279,
+    "llr": -6.104562337539992,
+    "lambda": 0.11078659564184795,
+    "p": 0.3232104121475054
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 8533.6,
+   "to_mm": 8605.1,
+   "readings": [
+    {
+     "id": "symbol_0a6fd364-9b84-4748-b7e3-bc29497ceebb",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8533.6
+    },
+    {
+     "id": "symbol_4d0541b0-8d11-4725-b90d-c070ff269078",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8546
+    },
+    {
+     "id": "symbol_bb63c682-45cb-4d0b-8234-f57b7e01a959",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8605.1
+    }
+   ],
+   "notes": 4,
+   "rec_from": 146.86297607421875,
+   "rec_to": 148.25466918945312,
+   "treble_notes": 4,
+   "detectability": 0.9964348565167873,
+   "llr": -0.9213992430819676,
+   "lambda": 0.03765204164832219,
+   "p": 0.4772234273318872,
+   "kong": {
+    "detectability": 1.1593450032686168,
+    "llr": -0.8740331127502649,
+    "lambda": 0.1230487429168857,
+    "p": 0.4598698481561822
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 8543,
+   "to_mm": 8627.5,
+   "readings": [
+    {
+     "id": "symbol_85f626a1-7963-42f6-8117-177508d532f0",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8543
+    },
+    {
+     "id": "symbol_d0298992-4507-492e-a023-d7805c92ccea",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8627.5
+    }
+   ],
+   "notes": 4,
+   "rec_from": 147.41380310058594,
+   "rec_to": 147.85812377929688,
+   "treble_notes": 0,
+   "detectability": 0.3681579083747855,
+   "llr": -1.4782797271772306,
+   "lambda": -1.5076707488140368,
+   "p": 0.8850325379609545,
+   "kong": {
+    "detectability": 0.35684689603339875,
+    "llr": -1.7254284782937703,
+    "lambda": -1.9176033159782349,
+    "p": 0.9327548806941431
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 8550,
+   "to_mm": 8550,
+   "readings": [
+    {
+     "id": "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8550
+    }
+   ],
+   "notes": 3,
+   "rec_from": 147.85629272460938,
+   "rec_to": 148.25466918945312,
+   "treble_notes": 3,
+   "detectability": 20.200644565370443,
+   "llr": -17.228314999309337,
+   "lambda": 0.07357016644796849,
+   "p": 0.30151843817787416,
+   "kong": {
+    "detectability": 23.50330900861355,
+    "llr": -23.213373333519716,
+    "lambda": 0.006167975645207476,
+    "p": 0.43383947939262474
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8553.3,
+   "to_mm": 8567.9,
+   "readings": [
+    {
+     "id": "symbol_f79e5caf-3bfe-41a6-8762-e1449fe68151",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8553.3
+    },
+    {
+     "id": "symbol_9750336a-3b79-4908-86d6-b943fef9ffd3",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8567.9
+    }
+   ],
+   "notes": 4,
+   "rec_from": 147.41380310058594,
+   "rec_to": 147.85812377929688,
+   "treble_notes": 0,
+   "detectability": 0.9716082757292467,
+   "llr": 0.6137981556466728,
+   "lambda": 0.815867089123949,
+   "p": 0.1561822125813449,
+   "kong": {
+    "detectability": 0.9417572988854211,
+    "llr": 1.2435996657667345,
+    "lambda": 1.160254859313831,
+    "p": 0.0650759219088937
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8753.2,
+   "to_mm": 8766.2,
+   "readings": [
+    {
+     "id": "symbol_1fe3f7fb-6d8a-48cc-be82-2b8c2664c060",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8753.2
+    },
+    {
+     "id": "symbol_0e889080-c41b-411c-9b42-e0eddd7d68a2",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8766.2
+    }
+   ],
+   "notes": 2,
+   "rec_from": 151.3442840576172,
+   "rec_to": 152.0145263671875,
+   "treble_notes": 2,
+   "detectability": 0.5279126445663529,
+   "llr": 1.1793449889502878,
+   "lambda": 1.616988768017714,
+   "p": 0.04121475054229935,
+   "kong": {
+    "detectability": 0.6142226786202469,
+    "llr": 0.6217603219769784,
+    "lambda": 1.0061359207491847,
+    "p": 0.11279826464208242
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 8866.6,
+   "to_mm": 8877.9,
+   "readings": [
+    {
+     "id": "symbol_8a142075-5c35-4123-8fc2-adb1f98b421e",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8866.6
+    },
+    {
+     "id": "symbol_f0e6112b-79f6-426f-9a05-3d2d1fc0fec6",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8877.9
+    }
+   ],
+   "notes": 3,
+   "rec_from": 153.41184997558594,
+   "rec_to": 153.51646423339844,
+   "treble_notes": 0,
+   "detectability": 0.48992213747850993,
+   "llr": -0.06443180134782422,
+   "lambda": 0.4342428149098993,
+   "p": 0.37310195227765725,
+   "kong": {
+    "detectability": 0.4748701306703424,
+    "llr": 0.8371487508018997,
+    "lambda": 1.3814502078917377,
+    "p": 0.09761388286334056
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8870.8,
+   "to_mm": 8887.8,
+   "readings": [
+    {
+     "id": "symbol_ed06588d-9642-43ba-8ffa-ebb5099b00f2",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8870.8
+    },
+    {
+     "id": "symbol_de8c2a0a-4c7a-4cbe-81bc-73523357ecc7",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8887.8
+    }
+   ],
+   "notes": 2,
+   "rec_from": 153.64259338378906,
+   "rec_to": 154.35862731933594,
+   "treble_notes": 2,
+   "detectability": 0.8442838610018509,
+   "llr": -1.2508323422922765,
+   "lambda": -0.24076528053491614,
+   "p": 0.6290672451193059,
+   "kong": {
+    "detectability": 0.982318381569323,
+    "llr": -0.8098945640716778,
+    "lambda": 0.08776371323836286,
+    "p": 0.49023861171366595
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 8948.8,
+   "to_mm": 8958.5,
+   "readings": [
+    {
+     "id": "symbol_edc17502-3f19-4865-b0da-8d76f0198f23",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 8948.8
+    },
+    {
+     "id": "symbol_e3419566-79d4-458e-b944-33e3173e5e3b",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 8958.5
+    }
+   ],
+   "notes": 4,
+   "rec_from": 155.01095581054688,
+   "rec_to": 155.2430419921875,
+   "treble_notes": 0,
+   "detectability": 0.5314013133268328,
+   "llr": 0.4692265098899099,
+   "lambda": 0.9414992004369748,
+   "p": 0.2039045553145336,
+   "kong": {
+    "detectability": 0.5150749308791411,
+    "llr": 0.592501996765658,
+    "lambda": 1.0751609729426772,
+    "p": 0.18872017353579176
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 8952.9,
+   "to_mm": 8967.8,
+   "readings": [
+    {
+     "id": "symbol_e22d658d-36c5-48f5-b85f-a138a58f763d",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8952.9
+    },
+    {
+     "id": "symbol_0ce81524-0381-41e6-a7df-40f44dd707f0",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 8967.8
+    }
+   ],
+   "notes": 4,
+   "rec_from": 155.2429962158203,
+   "rec_to": 157.9640350341797,
+   "treble_notes": 4,
+   "detectability": 0.7960437119012299,
+   "llr": 1.3827473047092382,
+   "lambda": 1.3685121708999848,
+   "p": 0.03470715835140998,
+   "kong": {
+    "detectability": 0.9261913046701461,
+    "llr": 0.3337038170114896,
+    "lambda": 0.6801484290172294,
+    "p": 0.18655097613882862
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 8996.2,
+   "to_mm": 9053.9,
+   "readings": [
+    {
+     "id": "symbol_bac9ea09-c884-4fbd-b464-2ff91e57459d",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 8996.2
+    },
+    {
+     "id": "symbol_c7f77513-a9a2-4eda-9a4c-673003a666fc",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 9011.7
+    },
+    {
+     "id": "symbol_b517dbe5-f735-4134-87d2-f6babcd82e30",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 9041.8
+    },
+    {
+     "id": "symbol_da9bbe03-2d1c-4073-af89-0219cb29933e",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 9053.9
+    }
+   ],
+   "notes": 3,
+   "rec_from": 156.21202087402344,
+   "rec_to": 157.9640350341797,
+   "treble_notes": 3,
+   "detectability": 2.169032248810921,
+   "llr": -1.0828511810403092,
+   "lambda": 0.2503837986655255,
+   "p": 0.30151843817787416,
+   "kong": {
+    "detectability": 2.523653887799405,
+    "llr": -2.9526990855505257,
+    "lambda": -0.08500476230622162,
+    "p": 0.596529284164859
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 9004.5,
+   "to_mm": 9012.5,
+   "readings": [
+    {
+     "id": "symbol_91bd851c-ac05-473e-9c49-332ffda4d4f0",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9004.5
+    },
+    {
+     "id": "symbol_19e92928-edd7-4fe0-b393-0602e86ddca6",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9012.5
+    }
+   ],
+   "notes": 1,
+   "rec_from": 156.2284698486328,
+   "rec_to": 156.2284698486328,
+   "treble_notes": 0,
+   "detectability": 0.096106349194136,
+   "llr": 0.16391479996954517,
+   "lambda": 1.3527782053110522,
+   "p": 0.2668112798264642,
+   "kong": {
+    "detectability": 0.09315364852659021,
+    "llr": 0.48199237743089596,
+    "lambda": 3.087082658889705,
+    "p": 0.0650759219088937
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 9050.5,
+   "to_mm": 9059.7,
+   "readings": [
+    {
+     "id": "symbol_76f60c32-b394-413b-a174-5f78be6ff827",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9050.5
+    },
+    {
+     "id": "symbol_90fb0d85-7fe1-4426-a673-58c080811a4a",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9059.7
+    }
+   ],
+   "notes": 1,
+   "rec_from": 157.04617309570312,
+   "rec_to": 157.04617309570312,
+   "treble_notes": 0,
+   "detectability": 0.1183725031693028,
+   "llr": -0.3217486123198677,
+   "lambda": -0.8590513155732005,
+   "p": 0.6876355748373102,
+   "kong": {
+    "detectability": 0.11473571359132145,
+    "llr": 0.0294355602823888,
+    "lambda": 0.6282754922640552,
+    "p": 0.3839479392624729
+   }
+  },
+  {
+   "family": "A1add",
+   "from_mm": 9085.1,
+   "to_mm": 9085.1,
+   "readings": [
+    {
+     "id": "symbol_d6fab648-eb46-45a3-85a2-ec4241586903",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 9085.1
+    }
+   ],
+   "notes": 3,
+   "rec_from": 157.9640350341797,
+   "rec_to": 160.20660400390625,
+   "treble_notes": 3,
+   "detectability": 1.9296924500207007,
+   "llr": -1.43104143128075,
+   "lambda": 0.12920479082938888,
+   "p": 0.40130151843817785,
+   "kong": {
+    "detectability": 2.245183701819833,
+    "llr": -2.0965243944661345,
+    "lambda": 0.033106268149283545,
+    "p": 0.48590021691973967
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 9144.7,
+   "to_mm": 9156,
+   "readings": [
+    {
+     "id": "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9144.7
+    },
+    {
+     "id": "symbol_68c88440-9fdd-4703-8f58-995f06321cdc",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9156
+    }
+   ],
+   "notes": 3,
+   "rec_from": 158.90719604492188,
+   "rec_to": 159.0674591064453,
+   "treble_notes": 0,
+   "detectability": 0.5258617816111647,
+   "llr": -1.5947292336426724,
+   "lambda": -1.0163007556440513,
+   "p": 0.8329718004338394,
+   "kong": {
+    "detectability": 0.5097055916547278,
+    "llr": -0.772436123281513,
+    "lambda": -0.2577277313888656,
+    "p": 0.6290672451193059
+   }
+  },
+  {
+   "family": "Cadd",
+   "from_mm": 9151.1,
+   "to_mm": 9163.3,
+   "readings": [
+    {
+     "id": "symbol_649fb2e0-413a-4b1e-a43b-0d6fe304ea46",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 9151.1
+    },
+    {
+     "id": "symbol_e93405aa-b53a-4281-af88-35be2c572065",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 9163.3
+    }
+   ],
+   "notes": 1,
+   "rec_from": 159.06350708007812,
+   "rec_to": 159.06350708007812,
+   "treble_notes": 1,
+   "detectability": 0.4218700230394929,
+   "llr": 0.8511262071448166,
+   "lambda": 1.5087540719444994,
+   "p": 0.05639913232104121,
+   "kong": {
+    "detectability": 0.4908428283504275,
+    "llr": 1.2266043311058243,
+    "lambda": 1.7494878811085681,
+    "p": 0.0368763557483731
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 9198,
+   "to_mm": 9209.9,
+   "readings": [
+    {
+     "id": "symbol_deb4df00-9cf1-42fe-88b7-da48829b6233",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9198
+    },
+    {
+     "id": "symbol_66a00f6c-8095-4783-a7de-3c5360fb838e",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9209.9
+    }
+   ],
+   "notes": 3,
+   "rec_from": 160.06126403808594,
+   "rec_to": 160.20594787597656,
+   "treble_notes": 0,
+   "detectability": 0.5054456074621324,
+   "llr": 0.6685418981787803,
+   "lambda": 1.1613391117746203,
+   "p": 0.1279826464208243,
+   "kong": {
+    "detectability": 0.48991666899890146,
+    "llr": 0.9769010216834861,
+    "lambda": 1.4970073315526207,
+    "p": 0.08676789587852494
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 9212.6,
+   "to_mm": 9221.6,
+   "readings": [
+    {
+     "id": "symbol_5ba6d22c-957f-46c0-a5c7-0397d607c2c2",
+     "type": "SlowCrescendoOn",
+     "scope": "treble",
+     "from": 9212.6
+    },
+    {
+     "id": "symbol_dc780aa1-ee80-496c-b080-1b07f60fa941",
+     "type": "SlowCrescendoOff",
+     "scope": "treble",
+     "from": 9221.6
+    }
+   ],
+   "notes": 1,
+   "rec_from": 160.20660400390625,
+   "rec_to": 160.20660400390625,
+   "treble_notes": 1,
+   "detectability": 0.1665644906754197,
+   "llr": 0.5076081581623534,
+   "lambda": 2.023758623773891,
+   "p": 0.09544468546637744,
+   "kong": {
+    "detectability": 0.19379662275320717,
+    "llr": -0.13775772790114396,
+    "lambda": 0.14458171163133907,
+    "p": 0.4924078091106291
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 9420.1,
+   "to_mm": 9423.1,
+   "readings": [
+    {
+     "id": "symbol_57960ab8-5b12-42ce-832a-cdbb9456df80",
+     "type": "ForzandoOn",
+     "scope": "bass",
+     "from": 9420.1
+    },
+    {
+     "id": "symbol_4e662b02-ef96-4f47-afb1-4a2397ede15a",
+     "type": "ForzandoOff",
+     "scope": "bass",
+     "from": 9423.1
+    }
+   ],
+   "notes": 1,
+   "rec_from": 164.1383056640625,
+   "rec_to": 164.1383056640625,
+   "treble_notes": 0,
+   "detectability": 0.018414064626310303,
+   "llr": -0.4065661297798997,
+   "lambda": -10.539554222020923,
+   "p": 0.9761388286334056,
+   "kong": {
+    "detectability": 0.017848324471052637,
+    "llr": -0.29247772133848254,
+    "lambda": -7.693422352132786,
+    "p": 0.9219088937093276
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 9502.4,
+   "to_mm": 9523.5,
+   "readings": [
+    {
+     "id": "symbol_4d1bf108-8f72-48b1-8e2c-d7b6a6b2aba8",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9502.4
+    },
+    {
+     "id": "symbol_887def13-467e-4e30-a370-218aa65a8277",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9523.5
+    }
+   ],
+   "notes": 3,
+   "rec_from": 166.03497314453125,
+   "rec_to": 166.17691040039062,
+   "treble_notes": 0,
+   "detectability": 1.7470743451187292,
+   "llr": 2.234476384674486,
+   "lambda": 1.1394909269080458,
+   "p": 0.021691973969631236,
+   "kong": {
+    "detectability": 1.6933985200734576,
+    "llr": 1.6704544142161117,
+    "lambda": 0.9932254263880098,
+    "p": 0.0368763557483731
+   }
+  },
+  {
+   "family": "B",
+   "from_mm": 9663.1,
+   "to_mm": 9673.3,
+   "readings": [
+    {
+     "id": "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9",
+     "type": "SlowCrescendoOn",
+     "scope": "bass",
+     "from": 9663.1
+    },
+    {
+     "id": "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb",
+     "type": "SlowCrescendoOff",
+     "scope": "bass",
+     "from": 9673.3
+    }
+   ],
+   "notes": 4,
+   "rec_from": 169.02195739746094,
+   "rec_to": 169.1144256591797,
+   "treble_notes": 0,
+   "detectability": 0.6211477743040485,
+   "llr": 3.186131072942593,
+   "lambda": 3.0647126213342895,
+   "p": 0.0021691973969631237,
+   "kong": {
+    "detectability": 0.6020640877088236,
+    "llr": 3.813466727637838,
+    "lambda": 3.6669940173230744,
+    "p": 0.0021691973969631237
+   }
+  }
+ ],
+ "detectable_threshold": 2.0,
+ "validation": {
+  "synthetic C": {
+   "n": 463,
+   "r2": {
+    "A": 0.22291115644403403,
+    "A1": 0.24927401797567927,
+    "B": 0.43555091896052955,
+    "B1": 0.43493405482352043,
+    "C": 0.5462773227319602
+   },
+   "delta": {
+    "A": 249.12572347433886,
+    "A1": 233.14575479674397,
+    "B": 101.1025362891279,
+    "B1": 101.60825443753933,
+    "C": 0.0
+   },
+   "best": "C"
+  },
+  "synthetic A1": {
+   "n": 463,
+   "r2": {
+    "A": 0.29987913119122867,
+    "A1": 0.5499914101346275,
+    "B": 0.28486222106284487,
+    "B1": 0.28235315194905897,
+    "C": 0.2477740652291076
+   },
+   "delta": {
+    "A": -33.235868904396796,
+    "A1": -237.87553445908082,
+    "B": -23.40997545142527,
+    "B1": -21.788377668605584,
+    "C": 0.0
+   },
+   "best": "A1"
+  },
+  "synthetic B1": {
+   "n": 463,
+   "r2": {
+    "A": 0.21277068082070338,
+    "A1": 0.27144144426345196,
+    "B": 0.5445378382520949,
+    "B1": 0.5423563797430764,
+    "C": 0.44974733763049235
+   },
+   "delta": {
+    "A": 165.8197603851678,
+    "A1": 129.95967466300388,
+    "B": -87.53705579597492,
+    "B1": -85.32478810220498,
+    "C": 0.0
+   },
+   "best": "B"
+  },
+  "B on instrument 1478, compressive map": {
+   "n": 462,
+   "r2": {
+    "A": 0.2397818888982357,
+    "A1": 0.31913618676671507,
+    "B": 0.680542391269924,
+    "B1": 0.6723106614698897,
+    "C": 0.541946991317557
+   },
+   "delta": {
+    "A": 234.0586541373255,
+    "A1": 183.12635357231483,
+    "B": -166.4864733444759,
+    "B1": -154.73252993397378,
+    "C": 0.0
+   },
+   "best": "B"
+  },
+  "C on instrument 3309, expansive map": {
+   "n": 463,
+   "r2": {
+    "A": 0.2135782433931881,
+    "A1": 0.22956212256021025,
+    "B": 0.2920406748385932,
+    "B1": 0.2896493100300954,
+    "C": 0.33061088616004297
+   },
+   "delta": {
+    "A": 74.60212901268778,
+    "A1": 65.094790098752,
+    "B": 25.93777653435394,
+    "B1": 27.49907546578052,
+    "C": 0.0
+   },
+   "best": "C"
+  }
+ },
+ "chance_flags": {
+  "synthetic C": {
+   "detectable": 53,
+   "flagged": 2
+  },
+  "recording, Kong": {
+   "detectable": 33,
+   "flagged": 1
+  },
+  "recording, Transkun": {
+   "detectable": 34,
+   "flagged": 2
+  }
+ },
+ "mismatch": {
+  "recording": 64.87152637257701,
+  "groups": [
+   {
+    "true": "B",
+    "map": "linear",
+    "p5": -136.72436736197764,
+    "p95": -27.49412879134077,
+    "median": -76.18252809772142,
+    "chosen": {
+     "A": 0,
+     "A1": 0,
+     "B": 206,
+     "B1": 74,
+     "C": 0
+    }
+   },
+   {
+    "true": "B",
+    "map": "compressive",
+    "p5": -282.60434281532866,
+    "p95": -137.19592777404787,
+    "median": -211.10799071538872,
+    "chosen": {
+     "A": 0,
+     "A1": 0,
+     "B": 243,
+     "B1": 37,
+     "C": 0
+    }
+   },
+   {
+    "true": "B",
+    "map": "expansive",
+    "p5": -48.77071265660699,
+    "p95": 13.305203629149375,
+    "median": -9.982372684455443,
+    "chosen": {
+     "A": 0,
+     "A1": 2,
+     "B": 144,
+     "B1": 91,
+     "C": 43
+    }
+   },
+   {
+    "true": "C",
+    "map": "linear",
+    "p5": 16.109142788924235,
+    "p95": 117.9456525279997,
+    "median": 58.06873453358269,
+    "chosen": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B1": 0,
+     "C": 280
+    }
+   },
+   {
+    "true": "C",
+    "map": "compressive",
+    "p5": 106.5350962680897,
+    "p95": 204.9731677759182,
+    "median": 145.7367399231385,
+    "chosen": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B1": 0,
+     "C": 280
+    }
+   },
+   {
+    "true": "C",
+    "map": "expansive",
+    "p5": -6.1318654851077,
+    "p95": 46.44662322980372,
+    "median": 12.03979458926254,
+    "chosen": {
+     "A": 0,
+     "A1": 1,
+     "B": 12,
+     "B1": 21,
+     "C": 246
+    }
+   },
+   {
+    "true": "A1",
+    "map": "linear",
+    "p5": -46.42221248990434,
+    "p95": -8.591212783254797,
+    "median": -30.35926681162431,
+    "chosen": {
+     "A": 0,
+     "A1": 280,
+     "B": 0,
+     "B1": 0,
+     "C": 0
+    }
+   },
+   {
+    "true": "A1",
+    "map": "compressive",
+    "p5": -81.64675923572602,
+    "p95": -41.54833570015627,
+    "median": -62.85117796083486,
+    "chosen": {
+     "A": 0,
+     "A1": 280,
+     "B": 0,
+     "B1": 0,
+     "C": 0
+    }
+   },
+   {
+    "true": "A1",
+    "map": "expansive",
+    "p5": -22.01907132612945,
+    "p95": 1.2231061044795914,
+    "median": -9.329932301492308,
+    "chosen": {
+     "A": 0,
+     "A1": 280,
+     "B": 0,
+     "B1": 0,
+     "C": 0
+    }
+   }
+  ]
+ },
+ "soft_pedal": {
+  "gamma": -0.3489854766272198,
+  "contested_notes": 31,
+  "off_rail_uncontested": 26,
+  "llr_vs_C": {
+   "A": -4.076148930400649,
+   "A1": 0.8969062088499618,
+   "C": 0.0
+  }
+ },
+ "first_note": {
+  "pitch": 60,
+  "rec_t": 4.130256175994873,
+  "kong_velocity": 52.0,
+  "V_A1": 35,
+  "V_B": 35,
+  "V_B1": 45.29088486955774,
+  "V_C": 47.48927043901422
+ },
+ "matched_notes": 461,
+ "speed_ratio": 1.008654547749505
+}
