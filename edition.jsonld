@@ -90627,11 +90627,15 @@
                 "output": "https://www.youtube.com/watch?v=Myn21YML3P0",
                 "software": [
                     {
+                        "name": "piano_transcription_inference",
+                        "version": "0.0.6, checkpoint note_F1=0.9677_pedal_F1=0.9186"
+                    },
+                    {
                         "name": "Transkun",
-                        "version": "2.0.1"
+                        "version": "2.0.1, model 2.0"
                     }
                 ],
-                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung von TACET in The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar stammt von Hans-W. Schmitz. Wo es sich befindet und von welcher Rolle es kopiert wurde, ist nicht bekannt, und auf welchem Instrument in welcher Regulierung es gespielt wurde, nennt die Veröffentlichung nicht. Die Töne wurden mit Transkun transkribiert und zum Vergleich mit dem Verfahren von Kong et al. (2021). Beide Transkriptionen und alle Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
+                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung von TACET in The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar stammt von Hans-W. Schmitz. Wo es sich befindet und von welcher Rolle es kopiert wurde, ist nicht bekannt, und auf welchem Instrument in welcher Regulierung es gespielt wurde, nennt die Veröffentlichung nicht. Die Töne wurden zweimal transkribiert, mit dem Verfahren von Kong et al. (2021) und mit Transkun (Yan und Duan 2024). Der Vergleich mit den Fassungen stützt sich auf das Mittel von vier standardisierten Lautstärkemaßen: den Anschlagstärken beider Transkriptionen und der Lautstärke aus einer NMF-Zerlegung nach Ewert und Müller (2012), am Obertonmaximum und am Anschlag. Beide Transkriptionen und alle Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
             },
             "carries": [
                 {
@@ -90645,10 +90649,12 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder B1: R² 0,65 mit Transkun und 0,55 mit Kong gegenüber 0,61 und 0,49 bei B, und so unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Eine Passage, das Crescendo im Bass von B bei 3360,8 mm, weicht mit p ≈ 0,01 ab, was unter 33 beurteilten Passagen im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder B1: mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei B, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von C ab, das Crescendo im Bass von B bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/matched.json",
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/matched_transkun.json",
                                         "c9050e75-97a8-4862-9533-0f4b1439802b"
                                     ]
@@ -90678,10 +90684,11 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen). Das Exemplar kann darin von C abweichen. C_S steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C_S steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "c9050e75-97a8-4862-9533-0f4b1439802b"
                         ]
                     }
@@ -90705,10 +90712,11 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die allein A1 hat, fehlen unter jeder erprobten Einstellung (A-posteriori-Wahrscheinlichkeit 2·10⁻²¹).",
+                        "note": "Die Lesarten, die allein A1 hat, fehlen (A-posteriori-Wahrscheinlichkeit 2,5·10⁻²¹ auf dem Mittel der vier Lautstärkemaße).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "755d411a-0ba4-4f59-90a7-f231be3e66ad"
                         ]
                     }
@@ -90732,10 +90740,11 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die C zu B hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00), und C passt mit beiden Transkriptionen besser als B.",
+                        "note": "Die Lesarten, die C zu B hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Lautstärkemaße), und C passt mit jeder der beiden Transkriptionen allein besser als B.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                         ]
                     }
