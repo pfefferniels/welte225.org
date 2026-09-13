@@ -3723,13 +3723,15 @@
                     "@id": "cleanup-b"
                 }
             ],
-            "basedOn": {
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
-                },
-                "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
-            },
+            "basedOn": [
+                {
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    },
+                    "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
+                }
+            ],
             "versionType": "edition",
             "system": {
                 "name": "T-100",
@@ -6221,13 +6223,15 @@
                     "note": "Ausgedünntes Crescendo im Diskant"
                 }
             ],
-            "basedOn": {
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
-                },
-                "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
-            },
+            "basedOn": [
+                {
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    },
+                    "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+                }
+            ],
             "versionType": "edition",
             "system": {
                 "name": "T-100",
@@ -20502,27 +20506,29 @@
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "siglum": "A1",
-            "basedOn": {
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
-                },
-                "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f",
-                "@annotation": {
-                    "@id": "3660f926-55c8-49ae-aeff-2a1b69f9cb57",
-                    "belief": {
-                        "@type": "belief",
-                        "@id": "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267",
-                        "certainty": "likely",
-                        "reasons": [
-                            {
-                                "@type": "simpleArgumentation",
-                                "note": "Zweiundfünfzig dieser Lesarten trägt allein das Exemplar Widuch. Stünden sie in der Fassung A, so ließe die Fassung B ebenso viele wirksame Differenzierungen fallen. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars, und die Fassung A behält, was zwei Äste bezeugen: 657 Lesarten aller vier Kopien und elf, die über die Astgrenze hinweg bezeugt sind."
-                            }
-                        ]
+            "basedOn": [
+                {
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    },
+                    "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f",
+                    "@annotation": {
+                        "@id": "3660f926-55c8-49ae-aeff-2a1b69f9cb57",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "simpleArgumentation",
+                                    "note": "Zweiundfünfzig dieser Lesarten trägt allein das Exemplar Widuch. Stünden sie in der Fassung A, so ließe die Fassung B ebenso viele wirksame Differenzierungen fallen. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars, und die Fassung A behält, was zwei Äste bezeugen: 657 Lesarten aller vier Kopien und elf, die über die Astgrenze hinweg bezeugt sind."
+                                }
+                            ]
+                        }
                     }
                 }
-            },
+            ],
             "edits": [
                 {
                     "insert": [
@@ -21723,13 +21729,15 @@
                     "note": "Der Pianozug bleibt getreten, die lösende Stanzung fehlt"
                 }
             ],
-            "basedOn": {
-                "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
+            "basedOn": [
+                {
+                    "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    }
                 }
-            },
+            ],
             "creation": {
                 "procedure": {
                     "name": "Umstanzung für ein anderes Wiedergabesystem",
@@ -28372,13 +28380,15 @@
                     "note": "Abweichender Notentext: ein zusätzliches f′′, ein verschobenes g"
                 }
             ],
-            "basedOn": {
-                "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
+            "basedOn": [
+                {
+                    "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    }
                 }
-            },
+            ],
             "creation": {
                 "procedure": {
                     "name": "Umstanzung für ein anderes Wiedergabesystem",
@@ -28405,6 +28415,7 @@
             }
         },
         {
+            "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "@type": "Version",
             "@id": "ed5ad006-40c5-4cba-a3cd-25ad6d6b33ae",
             "siglum": "B1",
@@ -28414,27 +28425,29 @@
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "versionType": "unicum",
-            "basedOn": {
-                "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14",
-                "collationTolerance": {
-                    "toleranceStart": 8,
-                    "toleranceEnd": 8
-                },
-                "@annotation": {
-                    "@id": "1f817b39-c5a9-4eba-82ab-b307c850d379",
-                    "belief": {
-                        "@type": "belief",
-                        "@id": "fdde15c3-726e-43a0-a44b-fec300e49841",
-                        "certainty": "likely",
-                        "reasons": [
-                            {
-                                "@type": "simpleArgumentation",
-                                "note": "Diese Lesarten trägt allein Stanford-1. Hingen sie an der Fassung B, so nähme die Fassung C wirksame Differenzierungen zurück, darunter ein vollständiges Crescendo-Paar. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars. Eine von ihnen, das Crescendo an bei 7364,7 mm, wäre in B redundant und hätte auch als Bereinigung durch C erklärt werden können."
-                            }
-                        ]
+            "basedOn": [
+                {
+                    "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14",
+                    "collationTolerance": {
+                        "toleranceStart": 8,
+                        "toleranceEnd": 8
+                    },
+                    "@annotation": {
+                        "@id": "1f817b39-c5a9-4eba-82ab-b307c850d379",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "fdde15c3-726e-43a0-a44b-fec300e49841",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "simpleArgumentation",
+                                    "note": "Diese Lesarten trägt allein Stanford-1. Hingen sie an der Fassung B, so nähme die Fassung C wirksame Differenzierungen zurück, darunter ein vollständiges Crescendo-Paar. Da bestehende Differenzierungen nicht mutwillig zurückgenommen werden, sind sie die eigene Schicht dieses Exemplars. Eine von ihnen, das Crescendo an bei 7364,7 mm, wäre in B redundant und hätte auch als Bereinigung durch C erklärt werden können."
+                                }
+                            ]
+                        }
                     }
                 }
-            },
+            ],
             "motivations": [
                 {
                     "@type": "motivation",
@@ -28498,6 +28511,23 @@
                     ]
                 }
             ]
+        },
+        {
+            "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
+            "@type": "Version",
+            "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521",
+            "siglum": "C_S",
+            "system": {
+                "@id": "https://w3id.org/reo/type/system/welte-t100",
+                "name": "Welte-Mignon T100",
+                "sameAs": []
+            },
+            "basedOn": [
+                {
+                    "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
+                }
+            ],
+            "motivations": []
         }
     ],
     "copies": [
@@ -90568,6 +90598,149 @@
                 "output": "WelteT98_225_Gruenfeld_Traeumerei.CIS"
             },
             "scan": "/facsimiles/WelteT98_225"
+        },
+        {
+            "@type": "RollCopy",
+            "@id": "8d2c822d-b78b-46ef-9b78-9855f0a07d52",
+            "ops": [],
+            "measurements": {},
+            "conditions": [],
+            "modifications": [],
+            "features": [],
+            "production": {
+                "company": {
+                    "name": "Schmitz, Hans-W.",
+                    "sameAs": []
+                },
+                "system": {
+                    "@id": "https://w3id.org/reo/type/system/welte-t100",
+                    "name": "Welte-Mignon T100",
+                    "sameAs": []
+                }
+            },
+            "readFrom": {
+                "kind": "recording",
+                "actor": {
+                    "name": "TACET",
+                    "sameAs": []
+                },
+                "output": "https://www.youtube.com/watch?v=Myn21YML3P0",
+                "software": [
+                    {
+                        "name": "Transkun",
+                        "version": "2.0.1"
+                    }
+                ],
+                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung von TACET in The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar stammt von Hans-W. Schmitz. Wo es sich befindet und von welcher Rolle es kopiert wurde, ist nicht bekannt, und auf welchem Instrument in welcher Regulierung es gespielt wurde, nennt die Veröffentlichung nicht. Die Töne wurden mit Transkun transkribiert und zum Vergleich mit dem Verfahren von Kong et al. (2021). Beide Transkriptionen und alle Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
+            },
+            "carries": [
+                {
+                    "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
+                    "@annotation": {
+                        "@id": "4913b663-c633-4d2b-a9a0-866bf83ad06f",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "043e7f24-deac-4373-94f5-e097a5129672",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "inference",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder B1: R² 0,65 mit Transkun und 0,55 mit Kong gegenüber 0,61 und 0,49 bei B, und so unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Eine Passage, das Crescendo im Bass von B bei 3360,8 mm, weicht mit p ≈ 0,01 ab, was unter 33 beurteilten Passagen im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "premises": [],
+                                    "used": [
+                                        "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/matched_transkun.json",
+                                        "c9050e75-97a8-4862-9533-0f4b1439802b"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "@included": [
+        {
+            "@id": {
+                "@id": "8d2c822d-b78b-46ef-9b78-9855f0a07d52",
+                "carries": [
+                    {
+                        "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521"
+                    }
+                ]
+            },
+            "annotation": "60310427-94ac-4bc3-8ce2-fccab54c33da",
+            "belief": {
+                "@type": "belief",
+                "@id": "c34f9d5a-0172-4a0d-acdf-784210c4e3d3",
+                "certainty": "possible",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen). Das Exemplar kann darin von C abweichen. C_S steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "premises": [],
+                        "used": [
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "c9050e75-97a8-4862-9533-0f4b1439802b"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "@id": {
+                "@id": "8d2c822d-b78b-46ef-9b78-9855f0a07d52",
+                "carries": [
+                    {
+                        "@id": "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+                    }
+                ]
+            },
+            "annotation": "9bfaabf0-7fe8-40f5-8f7f-db78571b5564",
+            "belief": {
+                "@type": "belief",
+                "@id": "cb0eca38-47b8-434e-ac21-2dbd03037007",
+                "certainty": "unlikely",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "note": "Die Lesarten, die allein A1 hat, fehlen unter jeder erprobten Einstellung (A-posteriori-Wahrscheinlichkeit 2·10⁻²¹).",
+                        "premises": [],
+                        "used": [
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "@id": {
+                "@id": "8d2c822d-b78b-46ef-9b78-9855f0a07d52",
+                "carries": [
+                    {
+                        "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+                    }
+                ]
+            },
+            "annotation": "f43f69bd-4869-42a2-8bf3-aca8391991f9",
+            "belief": {
+                "@type": "belief",
+                "@id": "016a1f1d-df91-4783-a1cd-94b234070eeb",
+                "certainty": "unlikely",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "note": "Die Lesarten, die C zu B hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00), und C passt mit beiden Transkriptionen besser als B.",
+                        "premises": [],
+                        "used": [
+                            "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
+                            "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+                        ]
+                    }
+                ]
+            }
         }
     ]
 }
