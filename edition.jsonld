@@ -28516,7 +28516,7 @@
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "@type": "Version",
             "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521",
-            "siglum": "C_S",
+            "siglum": "C1",
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100",
                 "name": "Welte-Mignon T100",
@@ -90607,11 +90607,11 @@
             "conditions": [],
             "modifications": [],
             "features": [],
+            "keeper": {
+                "name": "Hans-W. Schmitz",
+                "sameAs": []
+            },
             "production": {
-                "company": {
-                    "name": "Schmitz, Hans-W.",
-                    "sameAs": []
-                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100",
                     "name": "Welte-Mignon T100",
@@ -90635,7 +90635,7 @@
                         "version": "2.0.1, model 2.0"
                     }
                 ],
-                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung von TACET in The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar stammt von Hans-W. Schmitz. Wo es sich befindet und von welcher Rolle es kopiert wurde, ist nicht bekannt, und auf welchem Instrument in welcher Regulierung es gespielt wurde, nennt die Veröffentlichung nicht. Die Töne wurden zweimal transkribiert, mit dem Verfahren von Kong et al. (2021) und mit Transkun (Yan und Duan 2024). Der Vergleich mit den Fassungen stützt sich auf das Mittel von vier standardisierten Lautstärkemaßen: den Anschlagstärken beider Transkriptionen und der Lautstärke aus einer NMF-Zerlegung nach Ewert und Müller (2012), am Obertonmaximum und am Anschlag. Beide Transkriptionen und alle Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
+                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung von TACET in The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar befindet sich bei Hans-W. Schmitz. Von welcher Rolle es kopiert wurde, ist nicht bekannt, und auf welchem Instrument in welcher Regulierung es gespielt wurde, nennt die Veröffentlichung nicht. Die Töne wurden zweimal transkribiert, mit dem Verfahren von Kong et al. (2021) und mit Transkun (Yan und Duan 2024). Der Vergleich mit den Fassungen stützt sich auf das Mittel von vier standardisierten Lautstärkemaßen: den Anschlagstärken beider Transkriptionen und der Lautstärke aus einer NMF-Zerlegung nach Ewert und Müller (2012), am Obertonmaximum und am Anschlag. Beide Transkriptionen und alle Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
             },
             "carries": [
                 {
@@ -90684,7 +90684,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C_S steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
