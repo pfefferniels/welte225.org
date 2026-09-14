@@ -13261,7 +13261,7 @@
                                     "@id": "581e26db-c456-4724-a971-4b9ae90a42ff"
                                 },
                                 {
-                                    "@id": "2866eb24-1235-44e9-8738-4d4460f95dbc"
+                                    "@id": "2f4a1b57-e67b-41c7-9dd7-b50ac470d4eb"
                                 }
                             ],
                             "@type": "note",
@@ -21297,23 +21297,6 @@
                 },
                 {
                     "@type": "edit",
-                    "@id": "c84b7945-7838-4f27-83f5-297fdf25f522",
-                    "insert": [
-                        {
-                            "@id": "symbol_627b8936-5315-4570-871a-5f3c92f898b7",
-                            "@type": "note",
-                            "pitch": 60,
-                            "carriers": [
-                                {
-                                    "@id": "70425f88-16dc-4cce-8228-0082cfc2cbd2"
-                                }
-                            ]
-                        }
-                    ],
-                    "motivation": "note-repeated"
-                },
-                {
-                    "@type": "edit",
                     "@id": "0b815875-2ec1-40fd-a27b-d4f9fd709f32",
                     "insert": [
                         {
@@ -21376,11 +21359,6 @@
                     "@type": "motivation",
                     "@id": "bass-mezzoforte-set",
                     "note": "Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich festlegt"
-                },
-                {
-                    "@type": "motivation",
-                    "@id": "note-repeated",
-                    "note": "Wiederholter Anschlag des c′ statt eines durchgehaltenen Tons"
                 },
                 {
                     "@type": "motivation",
@@ -69275,7 +69253,7 @@
                 },
                 {
                     "@type": "Hole",
-                    "@id": "70425f88-16dc-4cce-8228-0082cfc2cbd2",
+                    "@id": "2f4a1b57-e67b-41c7-9dd7-b50ac470d4eb",
                     "vertical": {
                         "from": 45,
                         "unit": "track"
@@ -69283,7 +69261,12 @@
                     "horizontal": {
                         "unit": "mm",
                         "from": 5242.352087903021,
-                        "to": 5284.51008471483
+                        "to": 5284.597274476735
+                    },
+                    "condition": {
+                        "@type": "ConditionState",
+                        "conditionType": "missing-perforation",
+                        "description": "Nach der ersten Stanzung der Kette fehlt vermutlich ein Stanzschritt: die Brücke misst im Scan 1,6 mm, die übrigen 0,8 bis 0,9 mm."
                     }
                 },
                 {
@@ -69297,19 +69280,6 @@
                         "unit": "mm",
                         "from": 5244.0031843839015,
                         "to": 5306.524704459899
-                    }
-                },
-                {
-                    "@type": "Hole",
-                    "@id": "2866eb24-1235-44e9-8738-4d4460f95dbc",
-                    "vertical": {
-                        "from": 45,
-                        "unit": "track"
-                    },
-                    "horizontal": {
-                        "unit": "mm",
-                        "from": 5247.365031219014,
-                        "to": 5284.597274476735
                     }
                 },
                 {
