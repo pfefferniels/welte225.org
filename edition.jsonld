@@ -3732,7 +3732,6 @@
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
             ],
-            "versionType": "edition",
             "system": {
                 "name": "T-100",
                 "sameAs": [],
@@ -6232,7 +6231,6 @@
                     "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                 }
             ],
-            "versionType": "edition",
             "system": {
                 "name": "T-100",
                 "sameAs": [],
@@ -20494,7 +20492,6 @@
                 }
             ],
             "motivations": [],
-            "versionType": "edition",
             "system": {
                 "name": "T-100",
                 "sameAs": [],
@@ -21574,7 +21571,6 @@
                     "note": "Das Dämpferpedal bleibt über die Phrase hinweg getreten"
                 }
             ],
-            "versionType": "unicum",
             "system": {
                 "name": "T-100",
                 "sameAs": [],
@@ -21593,7 +21589,6 @@
                 "name": "Welte-Mignon (Licensee)",
                 "sameAs": []
             },
-            "versionType": "edition",
             "edits": [
                 {
                     "@type": "edit",
@@ -21755,7 +21750,6 @@
                 "name": "Welte-Mignon T98",
                 "sameAs": []
             },
-            "versionType": "edition",
             "edits": [
                 {
                     "@type": "edit",
@@ -28424,7 +28418,6 @@
                 "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
-            "versionType": "unicum",
             "basedOn": [
                 {
                     "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14",
