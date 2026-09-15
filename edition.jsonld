@@ -106128,6 +106128,86 @@
                     }
                 }
             ]
+        },
+        {
+            "@type": "RollCopy",
+            "@id": "08504bf3-4dcc-4f9e-8300-eca90648b800",
+            "ops": [],
+            "measurements": {},
+            "conditions": [],
+            "modifications": [],
+            "features": [],
+            "production": {
+                "system": {
+                    "@id": "https://w3id.org/reo/type/system/welte-t100",
+                    "name": "Welte-Mignon T100",
+                    "sameAs": []
+                }
+            },
+            "readFrom": {
+                "kind": "recording",
+                "actor": {
+                    "name": "Heebner, Walter S.",
+                    "sameAs": []
+                },
+                "output": "https://www.youtube.com/watch?v=ma3FOR-eUQQ",
+                "instrument": {
+                    "name": "Steinway-Konzertflügel Nr. 261 mit dem Welte-Vorsetzer von Kenneth K. Caswell",
+                    "sameAs": [],
+                    "@annotation": {
+                        "@id": "fb5098d7-a20b-45f6-9e16-89c440985229",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "d771db65-2566-43a9-97f3-fd83b85f04a2",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "beliefAdoption",
+                                    "note": "Die Plattentasche nennt den Steinway-Konzertflügel Nr. 261. Dass der Vorsetzer Kenneth K. Caswell gehörte und Caswell darin eine Ampico-Mechanik an die Stelle der Welte-Mechanik gesetzt hatte, berichtet Rex Lawson nach Caswells Erinnerung („On the Right Track“, The Pianola Journal 20, 2009, S. 37)."
+                                }
+                            ]
+                        }
+                    }
+                },
+                "software": [
+                    {
+                        "name": "Transkun",
+                        "version": "2.0.1, model 2.0"
+                    },
+                    {
+                        "name": "piano_transcription_inference",
+                        "version": "0.0.6, checkpoint note_F1=0.9677_pedal_F1=0.9186"
+                    }
+                ],
+                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung in Legendary Masters of the Piano (The Classics Record Library, 1963, Katalognummer WV 6633), LP 1, Seite 2, Nr. 2, hier nach der Überspielung, die David Hertzberg 2022 auf YouTube unter der Nummer SWV 6633 veröffentlicht hat. Nach der Abschrift der Plattentasche auf mmdigest.com wurde die Kassette von Richard C. Simonton für den Book-of-the-Month Club hergestellt, von Walter S. Heebner produziert und „in Los Angeles, California, winter 1962-1963, on Steinway Concert Grand No. 261“ aufgenommen. Welche Rolle gespielt wurde und wo sie heute ist, ist nicht bekannt. Das Verzeichnis der Welte-Rollen der Sammlung Simonton an der University of Southern California (2000) führt Nr. 0225 in drei Exemplaren, keines davon als Rolle der amerikanischen Tochtergesellschaft vermerkt. Töne und Timing folgen den roten Exemplaren: die Neuanschläge von D3 sind nicht zu hören, das e′′ bei 6611,5 mm, das D3 überbindet, erklingt, und an den beiden Stellen, an denen die Licensee-Exemplare rund 27 mm länger laufen, weicht die Aufnahme um höchstens 0,2 mm ab, bei einer Streuung aller gleich langen Strecken von 1,4 mm. Die Überspielung klingt gleichbleibend 19 Cent zu hoch, durch die Geschwindigkeit oder die Stimmung. Transkribiert wurde die Monosumme nach Korrektur der Tonhöhe, mit Transkun (Yan und Duan 2024) und dem Verfahren von Kong et al. (2021), dessen Transkription viele Fehltöne enthält und daher mit der Zeitzuordnung von Transkun gepaart ist. Die Lautstärke der Töne ist aus beiden Transkriptionen und aus einer NMF-Zerlegung nach Ewert und Müller (2012) geschätzt. Transkriptionen und Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/."
+            },
+            "carries": [
+                {
+                    "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f",
+                    "@annotation": {
+                        "@id": "8f332e40-581b-4288-9852-3e0ffa9754a7",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "3bceccc8-c746-47ec-9ba7-b3f95e3669ac",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "inference",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die A emuliert, besser als der von B, B2 oder C: mit den Anschlagstärken von Transkun R² 0,74 gegenüber 0,55 bei B und 0,52 bei C, mit denen von Kong 0,69 gegenüber 0,52, und auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators. Von den 23 Passagen mit Hinzufügungen von B, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, spricht eine für sie. Wo B eine Stanzung von A verschiebt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen A. Eine Beschädigung der Rolle oder ein Ausfall am Instrument erklärt diese Lesarten von A nicht. Die Aufnahme folgt auch den Crescendi, die A selbst hat, in beiden Hälften. Auf verformten Instrumenten emuliert, mit langsameren und schnelleren Bälgen, ausgefallenen Ventilen und gebogenen Anschlagskalen, erscheinen B und C in höchstens 0,5 % der Ziehungen als A oder A1. Keine Strecke der Aufnahme weicht über den Zufall hinaus von A ab. Dieselben Skripte ergeben für die Aufnahme von Schmitz' Exemplar weiterhin C. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt und dessen Vorsetzer eine Ampico-Mechanik trug, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "premises": [],
+                                    "used": [
+                                        "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/rec_composite.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched_transkun.json",
+                                        "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
+                                        "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ],
     "@included": [
@@ -106238,6 +106318,66 @@
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/findings.md",
                             "e07c4be8-f44b-496d-8a6c-026006340441"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "@id": {
+                "@id": "08504bf3-4dcc-4f9e-8300-eca90648b800",
+                "carries": [
+                    {
+                        "@id": "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+                    }
+                ]
+            },
+            "annotation": "1ecf754f-dc66-4e63-9a26-0da1dfacde89",
+            "belief": {
+                "@type": "belief",
+                "@id": "ae3dc373-5252-493f-a41d-55c790afddc3",
+                "certainty": "possible",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "note": "Ob die Lesarten, die A1 zu A hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt A etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße A1 (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von A1 bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Pianozugs, das A1 hinzufügt, ein schwacher Befund (A in 0,65 der Stichproben vorgezogen).",
+                        "premises": [],
+                        "used": [
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/rec_composite.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched_transkun.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
+                            "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "@id": {
+                "@id": "08504bf3-4dcc-4f9e-8300-eca90648b800",
+                "carries": [
+                    {
+                        "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+                    }
+                ]
+            },
+            "annotation": "569d69e4-8ba5-452c-98b3-4d4bc5d7cd64",
+            "belief": {
+                "@type": "belief",
+                "@id": "f79bdc7a-ad90-486d-830e-91dfa27c758d",
+                "certainty": "unlikely",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "note": "Die Hinzufügungen von B fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo B Stanzungen von A verschiebt oder tilgt, zeigt die Aufnahme die von A. Das gilt ebenso für B2, C und die Fassungen, die auf B zurückgehen. Für die Una corda in T. 13, die B tilgt, spricht die Lautstärke schwach (A in 0,69 der Stichproben vorgezogen).",
+                        "premises": [],
+                        "used": [
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/rec_composite.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched_transkun.json",
+                            "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
+                            "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                         ]
                     }
                 ]
