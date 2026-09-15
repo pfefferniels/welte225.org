@@ -1,0 +1,5525 @@
+{
+ "audio": {
+  "seconds": 190.589410430839,
+  "cents_sharp": 19.083290728783897,
+  "concentration": 0.7926471452606614,
+  "cents_sharp_by_window": {
+   "6.0": 19.028653057302947,
+   "16.0": 17.1375028529137,
+   "26.0": 19.521761060140136,
+   "36.0": 18.924862348515333,
+   "46.0": 18.626570265725086,
+   "56.0": 17.75321594401239,
+   "66.0": 20.704751579644277,
+   "76.0": 18.359898885237666,
+   "86.0": 18.854852163607177,
+   "96.0": 19.16814204562213,
+   "106.0": 21.889251820301062,
+   "116.0": 19.114677925766063,
+   "126.0": 20.280241721531414,
+   "136.0": 17.68376791314185,
+   "146.0": 20.494029038584944,
+   "156.0": 19.918990553921304,
+   "166.0": 14.830181546705024
+  },
+  "pitch_class_correlation_by_shift": {
+   "-6": -0.8456636804988465,
+   "-5": 0.7109061747547647,
+   "-4": -0.2982823543519482,
+   "-3": -0.13020910315501572,
+   "-2": 0.3553552185290577,
+   "-1": -0.724029533890934,
+   "0": 0.9663889968673924,
+   "1": -0.6332591020593865,
+   "2": 0.2185164378330744,
+   "3": 0.07519861252334457,
+   "4": -0.3978326761520811,
+   "5": 0.7029110096005791
+  },
+  "channels": {
+   "coherence": {
+    "50–150 Hz": 0.3094985978637258,
+    "150–300 Hz": 0.3435044820471637,
+    "300–600 Hz": 0.31122827585467594,
+    "600–1200 Hz": 0.29675293514251794,
+    "1200–2500 Hz": 0.24156843723195312,
+    "2500–5000 Hz": 0.1332429617964504
+   },
+   "onset_envelope_correlation": 0.9323689767798311,
+   "comb_strength": {
+    "L/R": 2.9996544136605228,
+    "L/M": 2.8947374332473617,
+    "R/M": 2.3054399917439374,
+    "M": 1.2604892403628727
+   }
+  }
+ },
+ "speed": {
+  "rec_seconds_per_emulated_second_corrected": 1.0213113541520333,
+  "rec_seconds_per_emulated_second_as_transferred": 1.0101075685969856
+ },
+ "transcriptions": {
+  "transkun": {
+   "transcribed": 469,
+   "matched": 459,
+   "reference_notes": 463,
+   "onset_residual_sd_ms": 21.478840821540775,
+   "unmatched": 10,
+   "unmatched_velocity_40_or_more": 7,
+   "missed_mm": [
+    1532.8,
+    3975.8,
+    4082.3,
+    5248.0
+   ]
+  },
+  "kong": {
+   "transcribed": 1108,
+   "matched": 460,
+   "reference_notes": 463,
+   "onset_residual_sd_ms": 22.01523988717907,
+   "unmatched": 648,
+   "unmatched_velocity_40_or_more": 262,
+   "missed_mm": [
+    2139.4,
+    2167.6,
+    2246.9
+   ]
+  }
+ },
+ "red_paper": {
+  "text_transkun": [
+   {
+    "kind": "re-strike",
+    "pitch": 57,
+    "mm": 2864.376750488558,
+    "rec_t": 35.15267678613407,
+    "heard": []
+   },
+   {
+    "kind": "re-strike",
+    "pitch": 60,
+    "mm": 9676.034569113315,
+    "rec_t": 172.43613712562208,
+    "heard": []
+   },
+   {
+    "kind": "tied over",
+    "pitch": 76,
+    "mm": 6611.511518601654,
+    "rec_t": 111.53926294520305,
+    "heard": [
+     {
+      "offset_s": 0.018,
+      "velocity": 51
+     }
+    ]
+   }
+  ],
+  "text_kong": [
+   {
+    "kind": "re-strike",
+    "pitch": 57,
+    "mm": 2864.376750488558,
+    "rec_t": 35.15267678613407,
+    "heard": []
+   },
+   {
+    "kind": "re-strike",
+    "pitch": 60,
+    "mm": 9676.034569113315,
+    "rec_t": 172.43613712562208,
+    "heard": []
+   },
+   {
+    "kind": "tied over",
+    "pitch": 76,
+    "mm": 6611.511518601654,
+    "rec_t": 111.53926294520305,
+    "heard": [
+     {
+      "offset_s": 0.015,
+      "velocity": 54.0
+     }
+    ]
+   }
+  ],
+  "timing": {
+   "rec_seconds_per_emulated_second": 1.0213113541520333,
+   "stretches": {
+    "bar 3 → bar 4": {
+     "from_mm": 2073.0130066776524,
+     "to_mm": 2243.5789126185614,
+     "extra_s": -0.004472960535423454,
+     "extra_mm": -0.21501877825831672
+    },
+    "bar 8 → bar 1′": {
+     "from_mm": 3339.817501650621,
+     "to_mm": 3474.427530938192,
+     "extra_s": 0.0030572833728399473,
+     "extra_mm": 0.14843874299600915
+    }
+   },
+   "control": {
+    "spans": 411,
+    "sd_mm": 1.402147219776141,
+    "p1_mm": -3.325162378846908,
+    "p99_mm": 2.996141595040803,
+    "max_abs_mm": 5.869153584631111
+   },
+   "largest_steps": [
+    {
+     "index": 137,
+     "between_mm": [
+      3885.386356521114,
+      3913.277036373603
+     ],
+     "seconds": 0.05058680913663949,
+     "mm": 2.4647288689717395
+    },
+    {
+     "index": 302,
+     "between_mm": [
+      6598.116696236301,
+      6611.511518601654
+     ],
+     "seconds": 0.04531471940833853,
+     "mm": 2.2526004306008085
+    },
+    {
+     "index": 393,
+     "between_mm": [
+      8091.778499590099,
+      8123.326510882913
+     ],
+     "seconds": 0.0442713352682631,
+     "mm": 2.2302890155072768
+    },
+    {
+     "index": 177,
+     "between_mm": [
+      4494.602900561665,
+      4524.476742963812
+     ],
+     "seconds": -0.042912017767562816,
+     "mm": -2.1019147172085013
+    },
+    {
+     "index": 231,
+     "between_mm": [
+      5434.205006371203,
+      5504.123977693591
+     ],
+     "seconds": -0.04036222461104444,
+     "mm": -1.989436344200195
+    }
+   ]
+  }
+ },
+ "measures": {
+  "transkun": {
+   "n": 458,
+   "best": "A",
+   "r2": {
+    "A": 0.7366272617620782,
+    "A1": 0.7343064589760873,
+    "B": 0.5455165059122128,
+    "B2": 0.5374904489325798,
+    "C": 0.519730780760622,
+    "D1": 0.5201351446047748,
+    "D3": 0.5029288844867357
+   },
+   "delta_to_best": {
+    "A": 0.0,
+    "A1": 4.0181524903059795,
+    "B": 249.8808208241742,
+    "B2": 257.8983908345194,
+    "C": 275.15565330949005,
+    "D1": 274.76987666336476,
+    "D3": 290.9045719941127
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": 4.0181524903059795,
+     "ci": [
+      -5.96878046583166,
+      15.197863948818718
+     ],
+     "share_favouring_reference": 0.81
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 249.8808208241742,
+     "ci": [
+      165.70343933062688,
+      357.00816574278736
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 275.15565330949005,
+     "ci": [
+      189.0561566543682,
+      378.87312659635285
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 245.8626683338682,
+     "ci": [
+      155.45437818429062,
+      343.2631076714703
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 271.137500819184,
+     "ci": [
+      179.59999195745556,
+      368.78436386668545
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  },
+  "kong": {
+   "n": 459,
+   "best": "A1",
+   "r2": {
+    "A": 0.6897498338837215,
+    "A1": 0.6975357801611846,
+    "B": 0.5323965145486106,
+    "B2": 0.524385011537189,
+    "C": 0.5181132249155719,
+    "D1": 0.5078680153266608,
+    "D3": 0.4831020992234112
+   },
+   "delta_to_best": {
+    "A": 11.665930487605708,
+    "A1": 0.0,
+    "B": 199.96688179211492,
+    "B2": 207.76437181091305,
+    "C": 213.77750168800515,
+    "D1": 223.43383447165462,
+    "D3": 245.97001336749818
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": -11.665930487605676,
+     "ci": [
+      -28.39130688948584,
+      4.859354281184296
+     ],
+     "share_favouring_reference": 0.14
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 188.30095130450925,
+     "ci": [
+      105.69389780311987,
+      293.626199988138
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 202.11157120039948,
+     "ci": [
+      119.14835877667096,
+      301.16838861703434
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 199.96688179211492,
+     "ci": [
+      114.54055208622002,
+      295.7308679873992
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 213.77750168800515,
+     "ci": [
+      136.69733298837437,
+      308.9264938480162
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  },
+  "nmf_harmonic": {
+   "n": 462,
+   "best": "A1",
+   "r2": {
+    "A": 0.22070286578116027,
+    "A1": 0.223781569123078,
+    "B": 0.09350593626230219,
+    "B2": 0.08289557610113119,
+    "C": 0.07472084593926531,
+    "D1": 0.07337734255961192,
+    "D3": 0.05293594671936286
+   },
+   "delta_to_best": {
+    "A": 1.828799188074783,
+    "A1": 0.0,
+    "B": 71.6795392968061,
+    "B2": 77.05576848876795,
+    "C": 81.15562062031923,
+    "D1": 81.82595709975718,
+    "D3": 91.90693758502637
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": -1.8287991880747663,
+     "ci": [
+      -10.991957738092596,
+      7.796382561288605
+     ],
+     "share_favouring_reference": 0.474
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 69.85074010873133,
+     "ci": [
+      37.413080082453305,
+      105.50576849855962
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 79.32682143224449,
+     "ci": [
+      51.01413820021922,
+      116.27900213512446
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 71.6795392968061,
+     "ci": [
+      38.57764793187807,
+      101.52920450149719
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 81.15562062031923,
+     "ci": [
+      52.28329672258512,
+      113.53374802605805
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  },
+  "nmf_onset": {
+   "n": 462,
+   "best": "A1",
+   "r2": {
+    "A": 0.42755539446089286,
+    "A1": 0.42853183789396,
+    "B": 0.16546697841412383,
+    "B2": 0.13741611573497325,
+    "C": 0.12270262485386285,
+    "D1": 0.11695706455505861,
+    "D3": 0.08944898773054188
+   },
+   "delta_to_best": {
+    "A": 0.7887261833291503,
+    "A1": 0.0,
+    "B": 174.9425557068709,
+    "B2": 190.2163165808777,
+    "C": 198.03040711108946,
+    "D1": 201.04625384035657,
+    "D3": 215.2186121875187
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": -0.788726183329145,
+     "ci": [
+      -14.069022916781226,
+      12.994769896248117
+     ],
+     "share_favouring_reference": 0.476
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 174.1538295235418,
+     "ci": [
+      116.68435904246985,
+      240.8973078182538
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 197.24168092776034,
+     "ci": [
+      144.30051731144505,
+      259.8264175168364
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 174.9425557068709,
+     "ci": [
+      117.53536890905995,
+      244.6342194025914
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 198.03040711108946,
+     "ci": [
+      143.665344686961,
+      254.00184570630785
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  },
+  "composite": {
+   "n": 455,
+   "best": "A1",
+   "r2": {
+    "A": 0.47003785397378073,
+    "A1": 0.4755420567373603,
+    "B": 0.13963242032485312,
+    "B2": 0.1158454736842125,
+    "C": 0.0950980283675098,
+    "D1": 0.08826493841182537,
+    "D3": 0.04695022968987783
+   },
+   "delta_to_best": {
+    "A": 4.750355254780925,
+    "A1": 0.0,
+    "B": 225.22248656780715,
+    "B2": 237.63130786932774,
+    "C": 248.18492744991008,
+    "D1": 251.60781329392984,
+    "D3": 271.77235857857187
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": -4.750355254780923,
+     "ci": [
+      -18.69836679960538,
+      10.253430264669817
+     ],
+     "share_favouring_reference": 0.374
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 220.4721313130263,
+     "ci": [
+      149.25264937238194,
+      310.5369345730178
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 243.43457219512922,
+     "ci": [
+      176.24855253221443,
+      329.1549975730979
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 225.22248656780715,
+     "ci": [
+      158.3209859040799,
+      302.4703952615098
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 248.18492744991008,
+     "ci": [
+      164.80824538984157,
+      331.91490289900025
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  },
+  "composite_without_kong": {
+   "n": 458,
+   "best": "A1",
+   "r2": {
+    "A": 0.4383918701642706,
+    "A1": 0.43989082521412615,
+    "B": 0.12526285746215393,
+    "B2": 0.10111828585818416,
+    "C": 0.0792041597909563,
+    "D1": 0.07732889894112605,
+    "D3": 0.04194309384751693
+   },
+   "delta_to_best": {
+    "A": 1.2240549711552076,
+    "A1": 0.0,
+    "B": 204.1726045517281,
+    "B2": 216.64303688340996,
+    "C": 227.67483201091807,
+    "D1": 228.6066304025745,
+    "D3": 245.8431595341822
+   },
+   "pairs": [
+    {
+     "other": "A1",
+     "reference": "A",
+     "value": -1.2240549711552324,
+     "ci": [
+      -12.347396001973433,
+      10.9182842711411
+     ],
+     "share_favouring_reference": 0.532
+    },
+    {
+     "other": "B",
+     "reference": "A",
+     "value": 202.94854958057286,
+     "ci": [
+      131.27983501069363,
+      277.62107907693786
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A",
+     "value": 226.45077703976287,
+     "ci": [
+      158.53203855251104,
+      293.8458925759536
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "B",
+     "reference": "A1",
+     "value": 204.1726045517281,
+     "ci": [
+      137.7934823839667,
+      275.6491112199242
+     ],
+     "share_favouring_reference": 1.0
+    },
+    {
+     "other": "C",
+     "reference": "A1",
+     "value": 227.67483201091807,
+     "ci": [
+      161.38285564578416,
+      299.92129384178156
+     ],
+     "share_favouring_reference": 1.0
+    }
+   ]
+  }
+ },
+ "green": {
+  "n": 367,
+  "C_notes_without_D2_counterpart": 92,
+  "r2": {
+   "A": 0.7607580768840293,
+   "A1": 0.7564329285788063,
+   "B": 0.6150004194214027,
+   "C": 0.5873034158504129,
+   "D2": 0.579491943771627
+  },
+  "delta_to_best": {
+   "A": 0.0,
+   "A1": 6.575568846879546,
+   "B": 174.60647956759945,
+   "C": 200.10212187511655,
+   "D2": 206.98373081206512
+  }
+ },
+ "instruments": {
+  "consensus": {
+   "A": 0.0,
+   "A1": -4.767529570282931,
+   "B": 220.9459653952293,
+   "B2": 233.38213627405597,
+   "C": 243.9598722328272
+  },
+  "1348": {
+   "A": 0.0,
+   "A1": 15.844978758912397,
+   "B": 203.93641477586706,
+   "B2": 215.98414893396327,
+   "C": 228.3267720234439
+  },
+  "1474": {
+   "A": 0.0,
+   "A1": -10.176617403341217,
+   "B": 194.55243426395043,
+   "B2": 204.4505155700165,
+   "C": 210.8523666789207
+  },
+  "1478": {
+   "A": 0.0,
+   "A1": -6.220869607493923,
+   "B": 207.63277623198238,
+   "B2": 220.08333372611472,
+   "C": 231.58721115021265
+  },
+  "2739": {
+   "A": 0.0,
+   "A1": -0.9230596379128262,
+   "B": 209.5703092632583,
+   "B2": 220.44377069698965,
+   "C": 233.7329880188504
+  },
+  "3309": {
+   "A": 0.0,
+   "A1": -2.95519520076754,
+   "B": 219.9215424525188,
+   "B2": 231.87540872463165,
+   "C": 241.07322656852006
+  },
+  "3357": {
+   "A": 0.0,
+   "A1": -9.477595893581176,
+   "B": 216.47201853343324,
+   "B2": 230.03197606359237,
+   "C": 241.15110401801994
+  }
+ },
+ "hybrids": {
+  "composite": {
+   "n": 455,
+   "marginals": {
+    "A1": 0.915482252791767,
+    "B": 8.014077528589072e-48,
+    "B2": 6.902515778770558e-07,
+    "Cadd": 7.451350799435818e-10,
+    "Cdel": 9.461748610326001e-13
+   },
+   "share_of_resamples_above_half": {
+    "A1": 0.5733333333333334,
+    "B": 0.0,
+    "B2": 0.0,
+    "Cadd": 0.02666666666666667,
+    "Cdel": 0.0033333333333333335
+   },
+   "best": [
+    {
+     "layers": "A1",
+     "delta": 0.0,
+     "posterior": 0.9154815865449866
+    },
+    {
+     "layers": "A",
+     "delta": 4.764978010626076,
+     "posterior": 0.08451772245735614
+    },
+    {
+     "layers": "A1+B2",
+     "delta": 28.268467427211448,
+     "posterior": 6.656254302395273e-07
+    },
+    {
+     "layers": "B2",
+     "delta": 34.86230420391308,
+     "posterior": 2.462614557815075e-08
+    }
+   ]
+  },
+  "transkun": {
+   "n": 458,
+   "marginals": {
+    "A1": 0.11782804933208402,
+    "B": 1.2177947300388152e-53,
+    "B2": 9.023028848788135e-07,
+    "Cadd": 1.9453468333503274e-18,
+    "Cdel": 9.815897162281402e-09
+   },
+   "share_of_resamples_above_half": {
+    "A1": 0.2866666666666667,
+    "B": 0.0,
+    "B2": 0.0,
+    "Cadd": 0.0,
+    "Cdel": 0.14
+   },
+   "best": [
+    {
+     "layers": "A",
+     "delta": 0.0,
+     "posterior": 0.8821712712345465
+    },
+    {
+     "layers": "A1",
+     "delta": 4.026323688727917,
+     "posterior": 0.11782781664675669
+    },
+    {
+     "layers": "B2",
+     "delta": 28.16164531431409,
+     "posterior": 6.765958502145334e-07
+    },
+    {
+     "layers": "A1+B2",
+     "delta": 30.357318612442374,
+     "posterior": 2.2570694944342852e-07
+    }
+   ]
+  }
+ },
+ "passages_against_A": {
+  "transkun": {
+   "passages": [
+    {
+     "family": "Cdel",
+     "from_mm": 1419.5,
+     "readings": "SlowCrescendoOn/b@1420, SlowCrescendoOff/b@1438",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.8673415119140733,
+     "llr": -2.2088912834298933,
+     "lambda": -0.09145348329072452,
+     "p": 0.5664488017429193
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1419.5,
+     "readings": "SlowCrescendoOn/b@1420, SlowCrescendoOff/b@1438",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.8673415119140733,
+     "llr": -2.2088912834298933,
+     "lambda": -0.09145348329072452,
+     "p": 0.5664488017429193
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1433.3,
+     "readings": "ForzandoOn/b@1433, ForzandoOff/b@1440",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 3.410042232879808,
+     "llr": -3.5408381477930932,
+     "lambda": -0.019178049123870562,
+     "p": 0.5228758169934641
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1461.9,
+     "readings": "SlowCrescendoOn/b@1462, SlowCrescendoOff/b@1473",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8594373735161415,
+     "llr": -2.6500043301031746,
+     "lambda": -1.0417088037848774,
+     "p": 0.9193899782135077
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1483.6,
+     "readings": "ForzandoOn/b@1484, ForzandoOff/b@1490",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.9864178761583857,
+     "llr": -2.6539415624345617,
+     "lambda": -0.1680219691657042,
+     "p": 0.6296296296296297
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1591.2,
+     "readings": "SlowCrescendoOn/b@1591, SlowCrescendoOff/b@1609",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.9904739649808751,
+     "llr": 1.483931950070979,
+     "lambda": 1.2491019464098847,
+     "p": 0.0457516339869281
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 1692.5,
+     "readings": "SlowCrescendoOn/t@1692, SlowCrescendoOff/t@1772",
+     "span": "long span",
+     "notes": 8,
+     "detectability": 13.086199597061329,
+     "llr": -18.45267649738629,
+     "lambda": -0.20504336879937504,
+     "p": 0.8387799564270153
+    },
+    {
+     "family": "A1del",
+     "from_mm": 1709,
+     "readings": "SlowCrescendoOff/t@1709",
+     "span": "lone punch",
+     "notes": 6,
+     "detectability": 2.080849814552628,
+     "llr": -1.4877399902009558,
+     "lambda": 0.14251624990032916,
+     "p": 0.4074074074074074
+    },
+    {
+     "family": "A1add",
+     "from_mm": 1737.3,
+     "readings": "SlowCrescendoOn/b@1737, SlowCrescendoOff/b@1753",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.424600102223366,
+     "llr": -2.281658342423279,
+     "lambda": 0.0294773888009427,
+     "p": 0.477124183006536
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1759.1,
+     "readings": "SlowCrescendoOff/t@1759",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 0.4348402872135948,
+     "llr": -0.8273243853934618,
+     "lambda": -0.45129684360073774,
+     "p": 0.6666666666666666
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1874.6,
+     "readings": "SlowCrescendoOn/b@1875, SlowCrescendoOff/b@1889",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.193124564856585,
+     "llr": 0.3210818639625852,
+     "lambda": 0.6345550470671851,
+     "p": 0.17429193899782136
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1932.1,
+     "readings": "SlowCrescendoOn/t@1932, SlowCrescendoOff/t@1952, SlowCrescendoOn/t@2002, SlowCrescendoOff/t@2023, SlowCrescendoOn/t@2144, SlowCrescendoOff/t@2162",
+     "span": "short pairs",
+     "notes": 10,
+     "detectability": 7.8196072007262165,
+     "llr": -9.692796221767043,
+     "lambda": -0.11977513530774671,
+     "p": 0.6862745098039216
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1934.4,
+     "readings": "SlowCrescendoOn/b@1934, SlowCrescendoOff/b@1949",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.4835340813220281,
+     "llr": -1.0168950862864474,
+     "lambda": 0.15727275864796536,
+     "p": 0.39215686274509803
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 1964.1,
+     "readings": "SlowCrescendoOn/t@1964, SlowCrescendoOff/t@1987, SlowCrescendoOn/t@2029, SlowCrescendoOff/t@2047, SlowCrescendoOn/t@2088, SlowCrescendoOff/t@2112",
+     "span": "short pairs",
+     "notes": 8,
+     "detectability": 3.980478074758728,
+     "llr": -3.8092932601550946,
+     "lambda": 0.021503047044670584,
+     "p": 0.47276688453159044
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1995.3,
+     "readings": "SlowCrescendoOn/b@1995, SlowCrescendoOff/b@2012, SlowCrescendoOn/b@2033, SlowCrescendoOff/b@2043",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 4.91822265953435,
+     "llr": 4.112312815768128,
+     "lambda": 0.9180689956966563,
+     "p": 0.004357298474945534
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2059.5,
+     "readings": "SlowCrescendoOn/b@2060, SlowCrescendoOff/b@2077",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.133886631882645,
+     "llr": -2.3238818695438797,
+     "lambda": -0.5247417176465998,
+     "p": 0.7864923747276689
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2136.4,
+     "readings": "ForzandoOn/b@2136, ForzandoOff/b@2141",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.1018228022648469,
+     "llr": -3.308635849501319,
+     "lambda": -1.0014373648377342,
+     "p": 0.9259259259259259
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2149.4,
+     "readings": "SlowCrescendoOn/b@2149, SlowCrescendoOff/b@2251",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 6.483190634432709,
+     "llr": -6.71952425785859,
+     "lambda": -0.01822664462237905,
+     "p": 0.49455337690631807
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2231.1,
+     "readings": "SlowCrescendoOn/b@2231, SlowCrescendoOff/b@2242",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 2.0734840491780604,
+     "llr": -1.2184371678985682,
+     "lambda": 0.20618602820176932,
+     "p": 0.35294117647058826
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2258.1,
+     "readings": "SlowCrescendoOn/b@2258",
+     "span": "lone punch",
+     "notes": 3,
+     "detectability": 1.3686990320962429,
+     "llr": -1.3927481068238492,
+     "lambda": -0.008785377268358806,
+     "p": 0.5076252723311547
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2275,
+     "readings": "SlowCrescendoOn/b@2275",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 1.0878158431526992,
+     "llr": -0.9035787143052405,
+     "lambda": 0.08468213163429572,
+     "p": 0.45751633986928103
+    },
+    {
+     "family": "B2add",
+     "from_mm": 2364.5,
+     "readings": "ForzandoOn/b@2364, ForzandoOff/b@2370",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 3.923701353406835,
+     "llr": -1.765596111921395,
+     "lambda": 0.2750088560654113,
+     "p": 0.2374727668845316
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2374.7,
+     "readings": "SlowCrescendoOn/b@2375, SlowCrescendoOff/b@2389",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.956756154917878,
+     "llr": -1.9717634443772143,
+     "lambda": -0.5304419962401278,
+     "p": 0.7799564270152506
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2419.2,
+     "readings": "ForzandoOn/b@2419, ForzandoOff/b@2426",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 5.149320060383631,
+     "llr": -8.857085412409987,
+     "lambda": -0.3600247516708179,
+     "p": 0.8779956427015251
+    },
+    {
+     "family": "B2add",
+     "from_mm": 2463.3,
+     "readings": "SlowCrescendoOn/b@2463, SlowCrescendoOff/b@2474",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 2.5321119509091417,
+     "llr": -0.9208675596826056,
+     "lambda": 0.3181621552412063,
+     "p": 0.25272331154684097
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2512.1,
+     "readings": "SlowCrescendoOn/b@2512, SlowCrescendoOff/b@2569",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 11.891867250892341,
+     "llr": -10.179317623388703,
+     "lambda": 0.07200507672061052,
+     "p": 0.37254901960784315
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2568.9,
+     "readings": "SlowCrescendoOn/t@2569, SlowCrescendoOff/t@2622",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 0.8910817186300677,
+     "llr": -2.031279518687012,
+     "lambda": -0.6397829605402872,
+     "p": 0.8344226579520697
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 2583.1,
+     "readings": "SlowCrescendoOn/t@2583",
+     "span": "lone punch",
+     "notes": 7,
+     "detectability": 2.2692942915643886,
+     "llr": -1.7339809222564928,
+     "lambda": 0.1179471017262519,
+     "p": 0.39869281045751637
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 2608.7,
+     "readings": "SlowCrescendoOn/t@2609, SlowCrescendoOff/t@2894",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 9.655952815233734,
+     "llr": -0.20913787778752627,
+     "lambda": 0.489170520932042,
+     "p": 0.026143790849673203
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2636.4,
+     "readings": "SlowCrescendoOff/t@2636, SlowCrescendoOn/t@2667",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 5.627022906933184,
+     "llr": -1.6246882929932995,
+     "lambda": 0.35563518046181375,
+     "p": 0.12854030501089325
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2658.7,
+     "readings": "SlowCrescendoOn/b@2659, SlowCrescendoOff/b@2671",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.0687651113889958,
+     "llr": -1.0380977219042435,
+     "lambda": 0.24910208119102245,
+     "p": 0.31808278867102396
+    },
+    {
+     "family": "A1add",
+     "from_mm": 2685.1,
+     "readings": "ForzandoOn/t@2685, ForzandoOff/t@2864",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 12.574017655805573,
+     "llr": -3.090217508836149,
+     "lambda": 0.37711892915112283,
+     "p": 0.0196078431372549
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2776.1,
+     "readings": "SlowCrescendoOn/t@2776, SlowCrescendoOff/t@2787",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.33825975715816753,
+     "llr": 2.1224947039024364,
+     "lambda": 3.6373739544636026,
+     "p": 0.002178649237472767
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2853.1,
+     "readings": "SlowCrescendoOn/b@2853, SlowCrescendoOff/b@2862",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8353973937332467,
+     "llr": 0.29653568718708756,
+     "lambda": 0.6774818124952011,
+     "p": 0.1830065359477124
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2872.9,
+     "readings": "SlowCrescendoOn/t@2873",
+     "span": "lone punch",
+     "notes": 7,
+     "detectability": 2.504990168954364,
+     "llr": -3.4989894671157744,
+     "lambda": -0.19840383217478394,
+     "p": 0.6666666666666666
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2930,
+     "readings": "SlowCrescendoOn/b@2930, SlowCrescendoOff/b@2939",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8628380760036977,
+     "llr": 1.1759366982179622,
+     "lambda": 1.1814353300589175,
+     "p": 0.06535947712418301
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2965.6,
+     "readings": "SlowCrescendoOn/b@2966, SlowCrescendoOff/b@2975",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8098617607119241,
+     "llr": -0.41331747731259044,
+     "lambda": 0.2448222046258512,
+     "p": 0.3769063180827887
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3060.2,
+     "readings": "SlowCrescendoOn/b@3060, SlowCrescendoOff/b@3069",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.1417787432714341,
+     "llr": 1.2866494737973497,
+     "lambda": 1.063440807327885,
+     "p": 0.06535947712418301
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3061.9,
+     "readings": "SlowCrescendoOn/t@3062, SlowCrescendoOff/t@3076",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.6497472499015986,
+     "llr": 2.542483205708111,
+     "lambda": 2.4565170965272722,
+     "p": 0.002178649237472767
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3097.1,
+     "readings": "SlowCrescendoOn/b@3097, SlowCrescendoOff/b@3109",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.094551210535673,
+     "llr": -3.904156516074807,
+     "lambda": -0.43197924606396576,
+     "p": 0.803921568627451
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3252,
+     "readings": "SlowCrescendoOn/b@3252, SlowCrescendoOff/b@3263",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 2.1596483314363732,
+     "llr": -0.24840747033830773,
+     "lambda": 0.44248890740162944,
+     "p": 0.1786492374727669
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3252.1,
+     "readings": "SlowCrescendoOn/t@3252, SlowCrescendoOff/t@3270",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.7640246322554082,
+     "llr": 1.036660112270083,
+     "lambda": 1.1784206087766125,
+     "p": 0.09368191721132897
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3360.7,
+     "readings": "SlowCrescendoOn/b@3361, SlowCrescendoOff/b@3388, ForzandoOn/b@3423, ForzandoOff/b@3428",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 8.357955958757103,
+     "llr": -6.586237065104033,
+     "lambda": 0.10598996347885382,
+     "p": 0.3420479302832244
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3459.2,
+     "readings": "SlowCrescendoOn/b@3459, SlowCrescendoOff/b@3475",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 5.024571090408983,
+     "llr": -2.9125593200640574,
+     "lambda": 0.21016836386058724,
+     "p": 0.27233115468409586
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3523.9,
+     "readings": "SlowCrescendoOn/b@3524, SlowCrescendoOff/b@3547",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 2.3532744400587524,
+     "llr": -1.7533032304366223,
+     "lambda": 0.12747582674784647,
+     "p": 0.4008714596949891
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 3796.5,
+     "readings": "SlowCrescendoOn/b@3796, SlowCrescendoOff/b@4056, SlowCrescendoOn/b@4066",
+     "span": "long span",
+     "notes": 15,
+     "detectability": 6.324500774693185,
+     "llr": -8.970065760700331,
+     "lambda": -0.2091520801604684,
+     "p": 0.7581699346405228
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3805.9,
+     "readings": "SlowCrescendoOn/b@3806, SlowCrescendoOff/b@4047, SlowCrescendoOn/b@4184, SlowCrescendoOff/b@4207, SlowCrescendoOn/b@4250, SlowCrescendoOff/b@4271, SlowCrescendoOn/b@4296, SlowCrescendoOff/b@4308, ForzandoOn/b@4050",
+     "span": "lone punch",
+     "notes": 21,
+     "detectability": 16.24571981928971,
+     "llr": -23.7980058745656,
+     "lambda": -0.23243925597893517,
+     "p": 0.8736383442265795
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3863.1,
+     "readings": "SlowCrescendoOn/b@3863, SlowCrescendoOff/b@3879",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 2.8570000705090735,
+     "llr": -3.598361372038677,
+     "lambda": -0.12974471180140787,
+     "p": 0.644880174291939
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3864.8,
+     "readings": "SlowCrescendoOn/t@3865, SlowCrescendoOff/t@3888",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.9527829750584185,
+     "llr": -1.5571134166906937,
+     "lambda": 0.10130914787289358,
+     "p": 0.42919389978213507
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3922.4,
+     "readings": "SlowCrescendoOn/b@3922, SlowCrescendoOff/b@3938",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.988791623243795,
+     "llr": -1.1970510731059265,
+     "lambda": 0.29974330364879326,
+     "p": 0.23529411764705882
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3926.1,
+     "readings": "SlowCrescendoOn/t@3926, SlowCrescendoOff/t@3949, SlowCrescendoOn/t@4053, SlowCrescendoOff/t@4074",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 1.9045921815809015,
+     "llr": -4.015699567070101,
+     "lambda": -0.554215071842015,
+     "p": 0.8453159041394336
+    },
+    {
+     "family": "B2add",
+     "from_mm": 4281.5,
+     "readings": "ForzandoOn/b@4282, ForzandoOff/b@4287",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 3.4223461818721153,
+     "llr": -4.626652533807545,
+     "lambda": -0.17594747695521565,
+     "p": 0.6928104575163399
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4334.5,
+     "readings": "ForzandoOn/b@4334, ForzandoOff/b@4340",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.7285464087199147,
+     "llr": -4.639524468271495,
+     "lambda": -0.8420306347769171,
+     "p": 0.9455337690631809
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4440,
+     "readings": "SlowCrescendoOn/b@4440, SlowCrescendoOff/b@4483",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 6.748450604407352,
+     "llr": -11.986297793279164,
+     "lambda": -0.3880777600602883,
+     "p": 0.9237472766884531
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 4561.4,
+     "readings": "SlowCrescendoOn/t@4561, SlowCrescendoOn/t@4615, SlowCrescendoOff/t@4644",
+     "span": "long span",
+     "notes": 9,
+     "detectability": 9.903275557158887,
+     "llr": -8.611170701839628,
+     "lambda": 0.06523623663007236,
+     "p": 0.37254901960784315
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4602.6,
+     "readings": "ForzandoOff/t@4603",
+     "span": "lone punch",
+     "notes": 6,
+     "detectability": 2.3147049577864274,
+     "llr": -1.9574824522024614,
+     "lambda": 0.07716372326034601,
+     "p": 0.43137254901960786
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4814,
+     "readings": "SlowCrescendoOn/b@4814, SlowCrescendoOff/b@4831",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.9011130135477496,
+     "llr": -3.3545560563139962,
+     "lambda": -0.3822610840093912,
+     "p": 0.7777777777777778
+    },
+    {
+     "family": "B2add",
+     "from_mm": 4816,
+     "readings": "SlowCrescendoOn/t@4816, SlowCrescendoOff/t@4833",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 2.1262588968631726,
+     "llr": -2.235537036029554,
+     "lambda": -0.025697279698064304,
+     "p": 0.5272331154684096
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4895.9,
+     "readings": "SlowCrescendoOn/b@4896, SlowCrescendoOff/b@4909",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.657325754434043,
+     "llr": -0.9172952873743881,
+     "lambda": 0.22326041367539315,
+     "p": 0.3464052287581699
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 4904.7,
+     "readings": "SlowCrescendoOn/t@4905, SlowCrescendoOff/t@4920",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.4849773294855277,
+     "llr": -0.5101752107843726,
+     "lambda": 0.32822121231940843,
+     "p": 0.29193899782135074
+    },
+    {
+     "family": "B2add",
+     "from_mm": 5035.7,
+     "readings": "SlowCrescendoOn/t@5036, SlowCrescendoOff/t@5057, SlowCrescendoOn/t@5159, SlowCrescendoOff/t@5180",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.9549783145567126,
+     "llr": -2.5441343937591245,
+     "lambda": -0.1506809755421768,
+     "p": 0.6514161220043573
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5036.2,
+     "readings": "SlowCrescendoOn/b@5036, SlowCrescendoOff/b@5053",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 2.5948527049373857,
+     "llr": -2.9446148499201104,
+     "lambda": -0.0673953755288713,
+     "p": 0.5816993464052288
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5156.2,
+     "readings": "SlowCrescendoOn/b@5156, SlowCrescendoOff/b@5175",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.6638534635434983,
+     "llr": 0.031497202111066595,
+     "lambda": 0.5237230080437795,
+     "p": 0.28322440087145967
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5231.6,
+     "readings": "SlowCrescendoOn/t@5232, SlowCrescendoOff/t@5253",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.0293897831178377,
+     "llr": 0.12040598829500229,
+     "lambda": 2.548432746377152,
+     "p": 0.2962962962962963
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5341.6,
+     "readings": "ForzandoOn/b@5342, ForzandoOff/b@5350, SlowCrescendoOn/b@5344, SlowCrescendoOff/b@5374",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 2.0977207326122684,
+     "llr": -0.3557143133112156,
+     "lambda": 0.4152140921856055,
+     "p": 0.19607843137254902
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5362.5,
+     "readings": "SlowCrescendoOn/b@5362, SlowCrescendoOff/b@5384",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.7673798343185694,
+     "llr": -6.245093556625936,
+     "lambda": -0.6283405116962757,
+     "p": 0.934640522875817
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5379.2,
+     "readings": "ForzandoOn/b@5379, ForzandoOff/b@5385, SlowCrescendoOn/b@5408, SlowCrescendoOff/b@5420",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 3.241546792728163,
+     "llr": -0.16974908397677818,
+     "lambda": 0.4738166537719615,
+     "p": 0.13725490196078433
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5456.6,
+     "readings": "SlowCrescendoOn/b@5457, SlowCrescendoOff/b@5528",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 0.21108345575282292,
+     "llr": 0.5341856835011403,
+     "lambda": 1.7653423774875743,
+     "p": 0.12200435729847495
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5468.5,
+     "readings": "SlowCrescendoOn/b@5468, SlowCrescendoOff/b@5511",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 6.089007790836066,
+     "llr": -10.168413559432254,
+     "lambda": -0.3349811585670559,
+     "p": 0.8801742919389978
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5534.9,
+     "readings": "SlowCrescendoOn/t@5535, SlowCrescendoOff/t@5584",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 0.43768127102035653,
+     "llr": 0.06749275982949275,
+     "lambda": 0.5771026364369537,
+     "p": 0.29193899782135074
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5546.8,
+     "readings": "SlowCrescendoOn/t@5547",
+     "span": "lone punch",
+     "notes": 9,
+     "detectability": 9.993640322343778,
+     "llr": -14.185504992129875,
+     "lambda": -0.2097266128546734,
+     "p": 0.7952069716775599
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5562.8,
+     "readings": "SlowCrescendoOn/b@5563, SlowCrescendoOn/b@5649, SlowCrescendoOff/b@5671",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 8.031702275861702,
+     "llr": -4.092916357417741,
+     "lambda": 0.2452024354962396,
+     "p": 0.1786492374727669
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5582.7,
+     "readings": "SlowCrescendoOn/b@5583",
+     "span": "lone punch",
+     "notes": 5,
+     "detectability": 7.178682383342671,
+     "llr": -8.808135955309936,
+     "lambda": -0.11349252446021504,
+     "p": 0.6623093681917211
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5589,
+     "readings": "ForzandoOff/t@5589, ForzandoOn/t@5604, ForzandoOff/t@5615, SlowCrescendoOn/t@5716, SlowCrescendoOff/t@5735, SlowCrescendoOn/t@5762, SlowCrescendoOff/t@5774, SlowCrescendoOn/t@5842, SlowCrescendoOff/t@5882, SlowCrescendoOn/t@5953, SlowCrescendoOff/t@5980, ForzandoOn/t@5638",
+     "span": "long span",
+     "notes": 16,
+     "detectability": 18.574827473807936,
+     "llr": -18.78215199214545,
+     "lambda": -0.005580792570748303,
+     "p": 0.5032679738562091
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5725.8,
+     "readings": "SlowCrescendoOn/b@5726, SlowCrescendoOff/b@5750, SlowCrescendoOn/b@5766, SlowCrescendoOff/b@5784",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 5.450350847260517,
+     "llr": -9.856696624857966,
+     "lambda": -0.40422588389995007,
+     "p": 0.8976034858387799
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5835.7,
+     "readings": "SlowCrescendoOn/b@5836, SlowCrescendoOff/b@5856, SlowCrescendoOn/b@5870, SlowCrescendoOff/b@5879",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 7.956451563123608,
+     "llr": -11.967744459358677,
+     "lambda": -0.25207800640844236,
+     "p": 0.8213507625272332
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5868.1,
+     "readings": "SlowCrescendoOn/t@5868, SlowCrescendoOff/t@5892",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.3559596087628623,
+     "llr": -5.6960830302570225,
+     "lambda": -1.6003881654904015,
+     "p": 0.9978213507625272
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6079,
+     "readings": "ForzandoOn/b@6079, ForzandoOff/b@6084",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 2.140928780386038,
+     "llr": -4.346591429309596,
+     "lambda": -0.5151181742079824,
+     "p": 0.8540305010893247
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6144.3,
+     "readings": "SlowCrescendoOn/b@6144, SlowCrescendoOff/b@6163, SlowCrescendoOn/b@6182, SlowCrescendoOff/b@6200, SlowCrescendoOn/b@6218, SlowCrescendoOff/b@6234, ForzandoOn/b@6193",
+     "span": "lone punch",
+     "notes": 8,
+     "detectability": 19.686354105255965,
+     "llr": -23.692228866296666,
+     "lambda": -0.10174242370178628,
+     "p": 0.7298474945533769
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6182.3,
+     "readings": "SlowCrescendoOn/t@6182",
+     "span": "lone punch",
+     "notes": 1,
+     "detectability": 1.0200145951297717,
+     "llr": 1.5085643240345183,
+     "lambda": 1.239481734495471,
+     "p": 0.0457516339869281
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6215.6,
+     "readings": "SlowCrescendoOn/t@6216",
+     "span": "lone punch",
+     "notes": 1,
+     "detectability": 1.148556512656062,
+     "llr": -3.8317346353310127,
+     "lambda": -1.1680653468543936,
+     "p": 0.9564270152505446
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6339.7,
+     "readings": "SlowCrescendoOn/t@6340, SlowCrescendoOff/t@6466",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 15.817014325304832,
+     "llr": -10.395526564023907,
+     "lambda": 0.17138151517658307,
+     "p": 0.16993464052287582
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6360.2,
+     "readings": "SlowCrescendoOn/t@6360",
+     "span": "lone punch",
+     "notes": 12,
+     "detectability": 4.262775414482479,
+     "llr": -11.564091086671288,
+     "lambda": -0.8564039812399106,
+     "p": 0.9803921568627451
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6457.6,
+     "readings": "SlowCrescendoOn/t@6458, SlowCrescendoOff/t@7524",
+     "span": "long span",
+     "notes": 1,
+     "detectability": 0.3582862951828356,
+     "llr": 0.48092930351865587,
+     "lambda": 1.1711522461014519,
+     "p": 0.15468409586056645
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6475,
+     "readings": "SlowCrescendoOff/b@6475",
+     "span": "lone punch",
+     "notes": 4,
+     "detectability": 11.31233846416092,
+     "llr": -17.03139462252305,
+     "lambda": -0.25277957234399,
+     "p": 0.8910675381263616
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6607.7,
+     "readings": "SlowCrescendoOn/t@6608, SlowCrescendoOff/t@6625, SlowCrescendoOn/t@6744, SlowCrescendoOff/t@6756",
+     "span": "short pairs",
+     "notes": 12,
+     "detectability": 2.583652843349712,
+     "llr": -2.6470116902425604,
+     "lambda": -0.012261486107921313,
+     "p": 0.514161220043573
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6635.2,
+     "readings": "SlowCrescendoOn/b@6635, SlowCrescendoOff/b@6646",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.6477381043407493,
+     "llr": 1.051826639727621,
+     "lambda": 1.3119227761026524,
+     "p": 0.06971677559912855
+    },
+    {
+     "family": "B2add",
+     "from_mm": 6663.4,
+     "readings": "SlowCrescendoOn/t@6663, SlowCrescendoOff/t@6677",
+     "span": "short pairs",
+     "notes": 9,
+     "detectability": 0.9160798876710319,
+     "llr": -0.7183953659353921,
+     "lambda": 0.1078969882409587,
+     "p": 0.4553376906318083
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6665.8,
+     "readings": "SlowCrescendoOn/b@6666, SlowCrescendoOff/b@6675",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.4769131874165867,
+     "llr": -1.1172765933838564,
+     "lambda": -0.6713626534800642,
+     "p": 0.7494553376906318
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6746.5,
+     "readings": "SlowCrescendoOn/b@6746, SlowCrescendoOff/b@6756",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.015701434266228,
+     "llr": -0.31695874731210016,
+     "lambda": 0.343970513076473,
+     "p": 0.3006535947712418
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6775,
+     "readings": "SlowCrescendoOn/b@6775, SlowCrescendoOff/b@6788",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.395645411580308,
+     "llr": -1.8982599678773517,
+     "lambda": -0.18006527737153746,
+     "p": 0.6361655773420479
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6876.1,
+     "readings": "SlowCrescendoOn/b@6876, SlowCrescendoOff/b@6890, SlowCrescendoOn/b@6911, SlowCrescendoOff/b@6926",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 3.1562558626281083,
+     "llr": -2.869663750583716,
+     "lambda": 0.045400646290722026,
+     "p": 0.4596949891067538
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6878.9,
+     "readings": "SlowCrescendoOn/t@6879, SlowCrescendoOff/t@6895, SlowCrescendoOn/t@6917, SlowCrescendoOff/t@6930",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.306632921744344,
+     "llr": -3.4281690410274583,
+     "lambda": -0.8118332562946912,
+     "p": 0.8758169934640523
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7011.5,
+     "readings": "SlowCrescendoOn/b@7012, SlowCrescendoOff/b@7026, SlowCrescendoOn/b@7053, SlowCrescendoOff/b@7067",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 2.2726416481150653,
+     "llr": -5.485812728764803,
+     "lambda": -0.70692427099423,
+     "p": 0.9411764705882353
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7013.9,
+     "readings": "SlowCrescendoOn/t@7014, SlowCrescendoOff/t@7030, SlowCrescendoOn/t@7055, SlowCrescendoOff/t@7072",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.3081308058533523,
+     "llr": -2.3754084453510775,
+     "lambda": -0.40793995322260324,
+     "p": 0.7494553376906318
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7221,
+     "readings": "ForzandoOn/b@7221, ForzandoOff/b@7226",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 3.3703296322107223,
+     "llr": 1.2925300361221348,
+     "lambda": 0.6917512791284924,
+     "p": 0.037037037037037035
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7256.1,
+     "readings": "ForzandoOn/b@7256, ForzandoOff/b@7264",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.7131769706085334,
+     "llr": -3.851820550505924,
+     "lambda": -0.6241747398512273,
+     "p": 0.8779956427015251
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7348.1,
+     "readings": "SlowCrescendoOn/b@7348, SlowCrescendoOn/b@7365, SlowCrescendoOff/b@7396, ForzandoOn/b@7952, ForzandoOff/b@7958, SlowCrescendoOn/b@7939, SlowCrescendoOff/b@7981, SlowCrescendoOn/b@8104, SlowCrescendoOff/b@8136, SlowCrescendoOn/b@8164, SlowCrescendoOff/b@8180, SlowCrescendoOn/b@8206, SlowCrescendoOff/b@8224",
+     "span": "long span",
+     "notes": 21,
+     "detectability": 34.53949958572418,
+     "llr": -33.01397500974195,
+     "lambda": 0.022083767777179478,
+     "p": 0.3877995642701525
+    },
+    {
+     "family": "B2del",
+     "from_mm": 7364.7,
+     "readings": "SlowCrescendoOn/b@7365",
+     "span": "lone punch",
+     "notes": 31,
+     "detectability": 526.4340006078417,
+     "llr": -531.3220527290156,
+     "lambda": -0.004642606780270598,
+     "p": 0.5664488017429193
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7430.9,
+     "readings": "SlowCrescendoOn/t@7431, SlowCrescendoOff/t@7505, SlowCrescendoOff/t@7556",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 1.8356127978170234,
+     "llr": -4.180338385494521,
+     "lambda": -0.6386765200335087,
+     "p": 0.9106753812636166
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 7445.7,
+     "readings": "SlowCrescendoOn/t@7446, SlowCrescendoOff/t@8037",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 2.820423891312303,
+     "llr": -2.894406089815423,
+     "lambda": -0.013115439620797253,
+     "p": 0.5206971677559913
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 7568.1,
+     "readings": "SlowCrescendoOff/t@7568, SlowCrescendoOn/t@7993",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 101.80406868401099,
+     "llr": -121.09221496382601,
+     "lambda": -0.09473170635096825,
+     "p": 0.8888888888888888
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7670.4,
+     "readings": "SlowCrescendoOn/t@7670, SlowCrescendoOff/t@7686",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.6660327416417829,
+     "llr": -2.440752183918738,
+     "lambda": -1.3323064553119708,
+     "p": 0.9259259259259259
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7672.3,
+     "readings": "SlowCrescendoOn/b@7672, SlowCrescendoOff/b@7683",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.5239930196133253,
+     "llr": -0.5752646410540987,
+     "lambda": -0.048923954634556704,
+     "p": 0.5228758169934641
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7736,
+     "readings": "SlowCrescendoOn/b@7736, SlowCrescendoOff/b@7749",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.402482853189023,
+     "llr": -1.901630999208388,
+     "lambda": -0.17795160378766192,
+     "p": 0.6339869281045751
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7739.1,
+     "readings": "SlowCrescendoOn/t@7739, SlowCrescendoOff/t@7752, SlowCrescendoOn/t@7810, SlowCrescendoOff/t@7820",
+     "span": "short pairs",
+     "notes": 7,
+     "detectability": 1.3207834152892,
+     "llr": -4.4896442850954505,
+     "lambda": -1.1996141203485635,
+     "p": 0.9520697167755992
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7805.9,
+     "readings": "SlowCrescendoOn/b@7806, SlowCrescendoOff/b@7817",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.1644762033514235,
+     "llr": -0.45689401613795844,
+     "lambda": 0.30381994289664593,
+     "p": 0.3355119825708061
+    },
+    {
+     "family": "B2add",
+     "from_mm": 7831,
+     "readings": "SlowCrescendoOn/t@7831, SlowCrescendoOff/t@7843",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.542502530000936,
+     "llr": -2.4871560557311505,
+     "lambda": -1.7922990384273974,
+     "p": 0.9586056644880174
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7838.7,
+     "readings": "SlowCrescendoOn/b@7839, SlowCrescendoOff/b@7847",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.35433673189739656,
+     "llr": 0.3685819958572576,
+     "lambda": 1.020101308554127,
+     "p": 0.19825708061002179
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7869.8,
+     "readings": "SlowCrescendoOn/b@7870, SlowCrescendoOff/b@7880",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.45456315380913304,
+     "llr": -1.5991709319103615,
+     "lambda": -1.2590195317302806,
+     "p": 0.8910675381263616
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 7923.6,
+     "readings": "SlowCrescendoOn/b@7924, SlowCrescendoOff/b@7953, SlowCrescendoOn/b@7969, SlowCrescendoOff/b@7998, SlowCrescendoOn/b@8040",
+     "span": "long span",
+     "notes": 16,
+     "detectability": 60.237143420718695,
+     "llr": -62.748982738898256,
+     "lambda": -0.020849588605455046,
+     "p": 0.5708061002178649
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7953,
+     "readings": "SlowCrescendoOn/t@7953, SlowCrescendoOff/t@8020",
+     "span": "long span",
+     "notes": 3,
+     "detectability": 4.4769722504892355,
+     "llr": -8.221589559876382,
+     "lambda": -0.41820867987041244,
+     "p": 0.8976034858387799
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8209.9,
+     "readings": "ForzandoOn/b@8210, ForzandoOff/b@8216",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.6119045468526962,
+     "llr": -2.438407992124826,
+     "lambda": -0.25637481043338106,
+     "p": 0.6928104575163399
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8270.8,
+     "readings": "ForzandoOn/b@8271, ForzandoOff/b@8276",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.5728854253496394,
+     "llr": -2.907403811292353,
+     "lambda": -2.037508970068427,
+     "p": 0.9891067538126361
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8375.6,
+     "readings": "SlowCrescendoOn/b@8376, SlowCrescendoOff/b@8426",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 8.154412153781843,
+     "llr": -14.262748057026322,
+     "lambda": -0.37454176880252243,
+     "p": 0.9302832244008714
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8438.2,
+     "readings": "SlowCrescendoOn/t@8438, SlowCrescendoOff/t@8498",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 0.6009713442512994,
+     "llr": -0.2354883889929305,
+     "lambda": 0.304076857203311,
+     "p": 0.3812636165577342
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 8449.2,
+     "readings": "SlowCrescendoOn/t@8449, SlowCrescendoOff/t@8515, SlowCrescendoOn/t@8550",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 4.0237701925650615,
+     "llr": -7.296175165315485,
+     "lambda": -0.40663417841270116,
+     "p": 0.8976034858387799
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8533.6,
+     "readings": "SlowCrescendoOn/t@8534, SlowCrescendoOff/t@8546",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.4786870984587054,
+     "llr": -3.5435992913028236,
+     "lambda": -3.201373300756002,
+     "p": 0.9912854030501089
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 8543,
+     "readings": "SlowCrescendoOn/b@8543, SlowCrescendoOff/b@8628",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 16.119221379767446,
+     "llr": -7.132297045554072,
+     "lambda": 0.2787642195141509,
+     "p": 0.07625272331154684
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8553.4,
+     "readings": "SlowCrescendoOn/b@8553, SlowCrescendoOff/b@8568",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 3.3128137469092525,
+     "llr": 0.5728341466516473,
+     "lambda": 0.5864573426722349,
+     "p": 0.07407407407407407
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8753.2,
+     "readings": "SlowCrescendoOn/t@8753, SlowCrescendoOff/t@8767",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.3424099487733493,
+     "llr": -1.1043878968156937,
+     "lambda": -1.1126691131085082,
+     "p": 0.8257080610021786
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8866.6,
+     "readings": "SlowCrescendoOn/b@8867, SlowCrescendoOff/b@8878",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.4043928479476298,
+     "llr": -3.2757917157017036,
+     "lambda": -0.6662661628079788,
+     "p": 0.8583877995642701
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8871.3,
+     "readings": "SlowCrescendoOn/t@8871, SlowCrescendoOff/t@8888",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.4742235786166238,
+     "llr": 0.3363832532853716,
+     "lambda": 0.8546673641435634,
+     "p": 0.20697167755991286
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8948.8,
+     "readings": "SlowCrescendoOn/b@8949, SlowCrescendoOff/b@8958",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.5423740160006698,
+     "llr": -0.273886570774998,
+     "lambda": 0.4112126605046233,
+     "p": 0.24618736383442266
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8952.9,
+     "readings": "SlowCrescendoOn/t@8953, SlowCrescendoOff/t@8968",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.4096139585842982,
+     "llr": -0.5945977269428034,
+     "lambda": -0.22580256907973012,
+     "p": 0.5751633986928104
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8996.4,
+     "readings": "SlowCrescendoOn/t@8996, SlowCrescendoOff/t@9012, SlowCrescendoOn/t@9042, SlowCrescendoOff/t@9055",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.020523679550809,
+     "llr": -0.19030306220954835,
+     "lambda": 0.4067620546084187,
+     "p": 0.30501089324618735
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9004.5,
+     "readings": "SlowCrescendoOn/b@9004, SlowCrescendoOff/b@9012",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.2743314169792879,
+     "llr": 0.5136940545372789,
+     "lambda": 1.4362654489114948,
+     "p": 0.13725490196078433
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9050.5,
+     "readings": "SlowCrescendoOn/b@9050, SlowCrescendoOff/b@9060",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.3452031026445058,
+     "llr": -1.6835344204096243,
+     "lambda": -1.9384694220772227,
+     "p": 0.954248366013072
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 9085.1,
+     "readings": "SlowCrescendoOn/t@9085",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 0.7286073979854749,
+     "llr": -0.4565789038957074,
+     "lambda": 0.18667700523073105,
+     "p": 0.4139433551198257
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9144.7,
+     "readings": "SlowCrescendoOn/b@9145, SlowCrescendoOff/b@9156",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.5010497110158236,
+     "llr": -2.177284261097519,
+     "lambda": -0.22525388237277605,
+     "p": 0.6623093681917211
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9151.1,
+     "readings": "SlowCrescendoOn/t@9151, SlowCrescendoOff/t@9163",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.3441598656427363,
+     "llr": -0.7503967046331214,
+     "lambda": -0.5901862470682294,
+     "p": 0.6928104575163399
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9198.5,
+     "readings": "SlowCrescendoOn/b@9198, SlowCrescendoOff/b@9210",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.4327535545142052,
+     "llr": -2.8146585653912237,
+     "lambda": -0.48225495812696606,
+     "p": 0.7777777777777778
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9213.2,
+     "readings": "SlowCrescendoOn/t@9213, SlowCrescendoOff/t@9222",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.08447812948966568,
+     "llr": -0.7154319913541507,
+     "lambda": -3.7344213566049085,
+     "p": 0.9281045751633987
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9420.1,
+     "readings": "ForzandoOn/b@9420, ForzandoOff/b@9424",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.03178103155949123,
+     "llr": -0.7142216653942272,
+     "lambda": -10.736602941242937,
+     "p": 0.9956427015250545
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9503.9,
+     "readings": "SlowCrescendoOn/b@9504, SlowCrescendoOff/b@9524",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 4.423612985674006,
+     "llr": -1.167920232652964,
+     "lambda": 0.3679902337257682,
+     "p": 0.14161220043572983
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9663.8,
+     "readings": "SlowCrescendoOn/b@9664, SlowCrescendoOff/b@9674",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.768133173647751,
+     "llr": -2.8261507920457465,
+     "lambda": -0.29919059100487594,
+     "p": 0.7189542483660131
+    }
+   ],
+   "by_family": [
+    {
+     "group": "A1add",
+     "detectable": 2,
+     "favouring_toggle": 0,
+     "sum_llr": -5.3718758512594285,
+     "sum_detectability": 14.998617758028939
+    },
+    {
+     "group": "A1del",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -1.4877399902009558,
+     "sum_detectability": 2.080849814552628
+    },
+    {
+     "group": "B2add",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -9.5486532414411,
+     "sum_detectability": 12.004418383051265
+    },
+    {
+     "group": "B2del",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -531.3220527290156,
+     "sum_detectability": 526.4340006078417
+    },
+    {
+     "group": "Badd",
+     "detectable": 23,
+     "favouring_toggle": 1,
+     "sum_llr": -217.47580339656164,
+     "sum_detectability": 203.80967900163006
+    },
+    {
+     "group": "Bdel",
+     "detectable": 15,
+     "favouring_toggle": 0,
+     "sum_llr": -282.4746408044258,
+     "sum_detectability": 247.2991475393168
+    },
+    {
+     "group": "Cadd",
+     "detectable": 14,
+     "favouring_toggle": 2,
+     "sum_llr": -40.3190042592976,
+     "sum_detectability": 47.86057644410804
+    },
+    {
+     "group": "Cdel",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -23.29020138724573,
+     "sum_detectability": 27.831870595171754
+    }
+   ],
+   "by_family_and_span": [
+    {
+     "group": "A1add long span",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -3.090217508836149,
+     "sum_detectability": 12.574017655805573
+    },
+    {
+     "group": "A1add short pairs",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -2.281658342423279,
+     "sum_detectability": 2.424600102223366
+    },
+    {
+     "group": "A1del lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -1.4877399902009558,
+     "sum_detectability": 2.080849814552628
+    },
+    {
+     "group": "B2add short pairs",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -9.5486532414411,
+     "sum_detectability": 12.004418383051265
+    },
+    {
+     "group": "B2del lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -531.3220527290156,
+     "sum_detectability": 526.4340006078417
+    },
+    {
+     "group": "Badd lone punch",
+     "detectable": 3,
+     "favouring_toggle": 0,
+     "sum_llr": -49.447717193064726,
+     "sum_detectability": 38.2467788823321
+    },
+    {
+     "group": "Badd long span",
+     "detectable": 9,
+     "favouring_toggle": 0,
+     "sum_llr": -111.29023727021084,
+     "sum_detectability": 110.33246665288169
+    },
+    {
+     "group": "Badd short pairs",
+     "detectable": 11,
+     "favouring_toggle": 1,
+     "sum_llr": -56.737848933286074,
+     "sum_detectability": 55.23043346641627
+    },
+    {
+     "group": "Bdel lone punch",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -38.056721501226875,
+     "sum_detectability": 23.940088289123292
+    },
+    {
+     "group": "Bdel long span",
+     "detectable": 9,
+     "favouring_toggle": 0,
+     "sum_llr": -234.36353248641794,
+     "sum_detectability": 216.6112013411162
+    },
+    {
+     "group": "Bdel short pairs",
+     "detectable": 2,
+     "favouring_toggle": 0,
+     "sum_llr": -10.054386816781031,
+     "sum_detectability": 6.747857909077297
+    },
+    {
+     "group": "Cadd lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -17.03139462252305,
+     "sum_detectability": 11.31233846416092
+    },
+    {
+     "group": "Cadd short pairs",
+     "detectable": 13,
+     "favouring_toggle": 2,
+     "sum_llr": -23.28760963677455,
+     "sum_detectability": 36.548237979947125
+    },
+    {
+     "group": "Cdel lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -1.7339809222564928,
+     "sum_detectability": 2.2692942915643886
+    },
+    {
+     "group": "Cdel long span",
+     "detectable": 3,
+     "favouring_toggle": 0,
+     "sum_llr": -21.556220464989238,
+     "sum_detectability": 25.562576303607365
+    }
+   ]
+  },
+  "composite_without_kong": {
+   "passages": [
+    {
+     "family": "Cdel",
+     "from_mm": 1419.5,
+     "readings": "SlowCrescendoOn/b@1420, SlowCrescendoOff/b@1438",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.1208063106041477,
+     "llr": 0.2846818520124033,
+     "lambda": 0.6269986835900984,
+     "p": 0.16775599128540306
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1419.5,
+     "readings": "SlowCrescendoOn/b@1420, SlowCrescendoOff/b@1438",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.1208063106041477,
+     "llr": 0.2846818520124033,
+     "lambda": 0.6269986835900984,
+     "p": 0.16775599128540306
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1433.3,
+     "readings": "ForzandoOn/b@1433, ForzandoOff/b@1440",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 2.046758361902801,
+     "llr": -0.07724607172359352,
+     "lambda": 0.4811296552730874,
+     "p": 0.14596949891067537
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1461.9,
+     "readings": "SlowCrescendoOn/b@1462, SlowCrescendoOff/b@1473",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.5158471686406073,
+     "llr": -1.0031726873660323,
+     "lambda": -0.4723545541692667,
+     "p": 0.6993464052287581
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1483.6,
+     "readings": "ForzandoOn/b@1484, ForzandoOff/b@1490",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.1922777257884127,
+     "llr": -1.8419092773868315,
+     "lambda": -0.27243298165653435,
+     "p": 0.6949891067538126
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1591.2,
+     "readings": "SlowCrescendoOn/b@1591, SlowCrescendoOff/b@1609",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.5944972911258023,
+     "llr": 0.6009131811386503,
+     "lambda": 1.0053960632862584,
+     "p": 0.14161220043572983
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 1692.5,
+     "readings": "SlowCrescendoOn/t@1692, SlowCrescendoOff/t@1772",
+     "span": "long span",
+     "notes": 8,
+     "detectability": 14.032615152555733,
+     "llr": -14.744808755854468,
+     "lambda": -0.025376367681865075,
+     "p": 0.5686274509803921
+    },
+    {
+     "family": "A1del",
+     "from_mm": 1709,
+     "readings": "SlowCrescendoOff/t@1709",
+     "span": "lone punch",
+     "notes": 6,
+     "detectability": 2.2313403078798504,
+     "llr": 1.4022558583845328,
+     "lambda": 0.8142182869714106,
+     "p": 0.0457516339869281
+    },
+    {
+     "family": "A1add",
+     "from_mm": 1737.3,
+     "readings": "SlowCrescendoOn/b@1737, SlowCrescendoOff/b@1753",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.4552812530140218,
+     "llr": -1.0249196800919138,
+     "lambda": 0.1478619930102134,
+     "p": 0.38344226579520696
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1759.1,
+     "readings": "SlowCrescendoOff/t@1759",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 0.46628865455066465,
+     "llr": -1.8061288279270031,
+     "lambda": -1.4367068127225444,
+     "p": 0.9259259259259259
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1874.6,
+     "readings": "SlowCrescendoOn/b@1875, SlowCrescendoOff/b@1889",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.7161312127942578,
+     "llr": 1.5643024132560537,
+     "lambda": 1.5921898007715192,
+     "p": 0.0196078431372549
+    },
+    {
+     "family": "Badd",
+     "from_mm": 1932.1,
+     "readings": "SlowCrescendoOn/t@1932, SlowCrescendoOff/t@1952, SlowCrescendoOn/t@2002, SlowCrescendoOff/t@2023, SlowCrescendoOn/t@2144, SlowCrescendoOff/t@2162",
+     "span": "short pairs",
+     "notes": 10,
+     "detectability": 8.385134100857348,
+     "llr": -11.38856288287128,
+     "lambda": -0.17909247162229894,
+     "p": 0.7189542483660131
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1934.4,
+     "readings": "SlowCrescendoOn/b@1934, SlowCrescendoOff/b@1949",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8904393490603066,
+     "llr": -0.07326423982701667,
+     "lambda": 0.45886062318318843,
+     "p": 0.2636165577342048
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 1964.1,
+     "readings": "SlowCrescendoOn/t@1964, SlowCrescendoOff/t@1987, SlowCrescendoOn/t@2029, SlowCrescendoOff/t@2047, SlowCrescendoOn/t@2088, SlowCrescendoOff/t@2112",
+     "span": "short pairs",
+     "notes": 8,
+     "detectability": 4.268352819470864,
+     "llr": -2.7212888593467746,
+     "lambda": 0.18122493916937654,
+     "p": 0.3202614379084967
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 1995.3,
+     "readings": "SlowCrescendoOn/b@1995, SlowCrescendoOff/b@2012, SlowCrescendoOn/b@2033, SlowCrescendoOff/b@2043",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 2.95199081613737,
+     "llr": 2.767923726268631,
+     "lambda": 0.9688232278937798,
+     "p": 0.013071895424836602
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2059.5,
+     "readings": "SlowCrescendoOn/b@2060, SlowCrescendoOff/b@2077",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.6805757192325678,
+     "llr": -2.049252509298342,
+     "lambda": -1.0055286659426552,
+     "p": 0.8671023965141612
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2136.4,
+     "readings": "ForzandoOn/b@2136, ForzandoOff/b@2141",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.661330529025808,
+     "llr": -1.8410248026094123,
+     "lambda": -0.8919097348502769,
+     "p": 0.8300653594771242
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2149.4,
+     "readings": "SlowCrescendoOn/b@2149, SlowCrescendoOff/b@2251",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 3.8913080063612147,
+     "llr": -1.1171432276132032,
+     "lambda": 0.3564565917440894,
+     "p": 0.16122004357298475
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2231.1,
+     "readings": "SlowCrescendoOn/b@2231, SlowCrescendoOff/b@2242",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.244536145331915,
+     "llr": -1.8749687683241196,
+     "lambda": -0.2532801579756726,
+     "p": 0.644880174291939
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2258.1,
+     "readings": "SlowCrescendoOn/b@2258",
+     "span": "lone punch",
+     "notes": 3,
+     "detectability": 0.8215136345996082,
+     "llr": -0.791552938085206,
+     "lambda": 0.018235057370048605,
+     "p": 0.4880174291938998
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2275,
+     "readings": "SlowCrescendoOn/b@2275",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 0.6529233426246567,
+     "llr": -0.6792584080092935,
+     "lambda": -0.020167042335148985,
+     "p": 0.5185185185185185
+    },
+    {
+     "family": "B2add",
+     "from_mm": 2364.5,
+     "readings": "ForzandoOn/b@2364, ForzandoOff/b@2370",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 2.355064250307728,
+     "llr": -0.6182833271857371,
+     "lambda": 0.3687332358119426,
+     "p": 0.20915032679738563
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2374.7,
+     "readings": "SlowCrescendoOn/b@2375, SlowCrescendoOff/b@2389",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.574259357112531,
+     "llr": -1.3843610537312505,
+     "lambda": -0.7053447946342941,
+     "p": 0.7821350762527233
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2419.2,
+     "readings": "ForzandoOn/b@2419, ForzandoOff/b@2426",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 3.090698933310105,
+     "llr": -5.929193104581075,
+     "lambda": -0.45919939672528576,
+     "p": 0.8562091503267973
+    },
+    {
+     "family": "B2add",
+     "from_mm": 2463.3,
+     "readings": "SlowCrescendoOn/b@2463, SlowCrescendoOff/b@2474",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.5198114729566075,
+     "llr": -1.87582907035682,
+     "lambda": -0.11712557897316804,
+     "p": 0.5773420479302832
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2512.1,
+     "readings": "SlowCrescendoOn/b@2512, SlowCrescendoOff/b@2569",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 7.137676624563922,
+     "llr": -7.0722680268643545,
+     "lambda": 0.004581924983436928,
+     "p": 0.4989106753812636
+    },
+    {
+     "family": "Badd",
+     "from_mm": 2568.9,
+     "readings": "SlowCrescendoOn/t@2569, SlowCrescendoOff/t@2622",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 0.9555262193785942,
+     "llr": -1.3416212200904027,
+     "lambda": -0.20203265639476492,
+     "p": 0.6470588235294118
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 2583.1,
+     "readings": "SlowCrescendoOn/t@2583",
+     "span": "lone punch",
+     "notes": 7,
+     "detectability": 2.4334134005235306,
+     "llr": -2.5890200044961134,
+     "lambda": -0.03197290767345696,
+     "p": 0.5206971677559913
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 2608.7,
+     "readings": "SlowCrescendoOn/t@2609, SlowCrescendoOff/t@2894",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 10.354287261355841,
+     "llr": -10.838863230010402,
+     "lambda": -0.023399774239560227,
+     "p": 0.5424836601307189
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2636.4,
+     "readings": "SlowCrescendoOff/t@2636, SlowCrescendoOn/t@2667",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 6.033978491764767,
+     "llr": -4.304496386882382,
+     "lambda": 0.1433119215823192,
+     "p": 0.3093681917211329
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2658.7,
+     "readings": "SlowCrescendoOn/b@2659, SlowCrescendoOff/b@2671",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.241703768276306,
+     "llr": -1.1903416387223695,
+     "lambda": 0.020682118741265982,
+     "p": 0.47276688453159044
+    },
+    {
+     "family": "A1add",
+     "from_mm": 2685.1,
+     "readings": "ForzandoOn/t@2685, ForzandoOff/t@2864",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 13.48339136787917,
+     "llr": -3.806099144418963,
+     "lambda": 0.35885972450944165,
+     "p": 0.017429193899782137
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2776.1,
+     "readings": "SlowCrescendoOn/t@2776, SlowCrescendoOff/t@2787",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.36272326114171816,
+     "llr": 0.9333931805697383,
+     "lambda": 1.7866464334707446,
+     "p": 0.06971677559912855
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2853.1,
+     "readings": "SlowCrescendoOn/b@2853, SlowCrescendoOff/b@2862",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.5014180131403656,
+     "llr": 0.114787509567347,
+     "lambda": 0.6144628898036952,
+     "p": 0.2636165577342048
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 2872.9,
+     "readings": "SlowCrescendoOn/t@2873",
+     "span": "lone punch",
+     "notes": 7,
+     "detectability": 2.6861551928159404,
+     "llr": -0.498372749208914,
+     "lambda": 0.40723306856174946,
+     "p": 0.1721132897603486
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2930,
+     "readings": "SlowCrescendoOn/b@2930, SlowCrescendoOff/b@2939",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.5178883211476455,
+     "llr": 0.7551382524293551,
+     "lambda": 1.2290551085955765,
+     "p": 0.10239651416122005
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 2965.6,
+     "readings": "SlowCrescendoOn/b@2966, SlowCrescendoOff/b@2975",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.4860911441916678,
+     "llr": -0.6671990172435557,
+     "lambda": -0.186290035537529,
+     "p": 0.5904139433551199
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3060.2,
+     "readings": "SlowCrescendoOn/b@3060, SlowCrescendoOff/b@3069",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.6853126825529403,
+     "llr": 1.2752667410223442,
+     "lambda": 1.4304269229862312,
+     "p": 0.058823529411764705
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3061.9,
+     "readings": "SlowCrescendoOn/t@3062, SlowCrescendoOff/t@3076",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.6967380435147936,
+     "llr": 0.8411674707265068,
+     "lambda": 1.103646864525381,
+     "p": 0.08278867102396514
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3097.1,
+     "readings": "SlowCrescendoOn/b@3097, SlowCrescendoOff/b@3109",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.2571809707403776,
+     "llr": -3.6019933770071266,
+     "lambda": -0.9325675701589106,
+     "p": 0.9368191721132898
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3252,
+     "readings": "SlowCrescendoOn/b@3252, SlowCrescendoOff/b@3263",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.296253236548296,
+     "llr": -1.5481417512215718,
+     "lambda": -0.09716022593857233,
+     "p": 0.5490196078431373
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3252.1,
+     "readings": "SlowCrescendoOn/t@3252, SlowCrescendoOff/t@3270",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8192801547915146,
+     "llr": 0.5342717728291349,
+     "lambda": 0.8260617077714357,
+     "p": 0.14596949891067537
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3360.7,
+     "readings": "SlowCrescendoOn/b@3361, SlowCrescendoOff/b@3388, ForzandoOn/b@3423, ForzandoOff/b@3428",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 5.016570200233174,
+     "llr": -5.8578506209012815,
+     "lambda": -0.08385015928103669,
+     "p": 0.5947712418300654
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3459.2,
+     "readings": "SlowCrescendoOn/b@3459, SlowCrescendoOff/b@3475",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 3.0158227353051483,
+     "llr": -3.561289392009874,
+     "lambda": -0.09043413764329444,
+     "p": 0.5860566448801743
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3523.9,
+     "readings": "SlowCrescendoOn/b@3524, SlowCrescendoOff/b@3547",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.4124705235614452,
+     "llr": -1.485024440524405,
+     "lambda": -0.025683338431735928,
+     "p": 0.5098039215686274
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 3796.5,
+     "readings": "SlowCrescendoOn/b@3796, SlowCrescendoOff/b@4056, SlowCrescendoOn/b@4066",
+     "span": "long span",
+     "notes": 15,
+     "detectability": 3.7960599785686804,
+     "llr": -8.787119795162864,
+     "lambda": -0.6574000206493158,
+     "p": 0.971677559912854
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3805.9,
+     "readings": "SlowCrescendoOn/b@3806, SlowCrescendoOff/b@4047, SlowCrescendoOn/b@4184, SlowCrescendoOff/b@4207, SlowCrescendoOn/b@4250, SlowCrescendoOff/b@4271, SlowCrescendoOn/b@4296, SlowCrescendoOff/b@4308, ForzandoOn/b@4050",
+     "span": "lone punch",
+     "notes": 21,
+     "detectability": 9.75092406910764,
+     "llr": -16.71520895787547,
+     "lambda": -0.35710896933510666,
+     "p": 0.9172113289760349
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3863.1,
+     "readings": "SlowCrescendoOn/b@3863, SlowCrescendoOff/b@3879",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.7148141826187888,
+     "llr": -1.4543211891725143,
+     "lambda": 0.0759537085961293,
+     "p": 0.44880174291938996
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3864.8,
+     "readings": "SlowCrescendoOn/t@3865, SlowCrescendoOff/t@3888",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.0940114631608737,
+     "llr": -0.4342430812359294,
+     "lambda": 0.39631310790905433,
+     "p": 0.19389978213507625
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 3922.4,
+     "readings": "SlowCrescendoOn/b@3922, SlowCrescendoOff/b@3938",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.79391744415234,
+     "llr": -0.0969339642532955,
+     "lambda": 0.47298260168847994,
+     "p": 0.1786492374727669
+    },
+    {
+     "family": "Badd",
+     "from_mm": 3926.1,
+     "readings": "SlowCrescendoOn/t@3926, SlowCrescendoOff/t@3949, SlowCrescendoOn/t@4053, SlowCrescendoOff/t@4074",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 2.0423354319532994,
+     "llr": -3.099564405685129,
+     "lambda": -0.25882843660032157,
+     "p": 0.6797385620915033
+    },
+    {
+     "family": "B2add",
+     "from_mm": 4281.5,
+     "readings": "ForzandoOn/b@4282, ForzandoOff/b@4287",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 2.054143376153244,
+     "llr": -1.6741822366477204,
+     "lambda": 0.09248651869108328,
+     "p": 0.46187363834422657
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4334.5,
+     "readings": "ForzandoOn/b@4334, ForzandoOff/b@4340",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.0374994133127622,
+     "llr": -3.0851325670305227,
+     "lambda": -0.9868117164421403,
+     "p": 0.9193899782135077
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4440,
+     "readings": "SlowCrescendoOn/b@4440, SlowCrescendoOff/b@4483",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 4.050521008589983,
+     "llr": -6.326467711298546,
+     "lambda": -0.2809449325015151,
+     "p": 0.7995642701525054
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 4561.4,
+     "readings": "SlowCrescendoOn/t@4561, SlowCrescendoOn/t@4615, SlowCrescendoOff/t@4644",
+     "span": "long span",
+     "notes": 9,
+     "detectability": 10.619496792218406,
+     "llr": -8.756408160981401,
+     "lambda": 0.08772019370080765,
+     "p": 0.3485838779956427
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4602.6,
+     "readings": "ForzandoOff/t@4603",
+     "span": "lone punch",
+     "notes": 6,
+     "detectability": 2.4821082410835156,
+     "llr": -1.4243127801214615,
+     "lambda": 0.2130840717285348,
+     "p": 0.3093681917211329
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4814,
+     "readings": "SlowCrescendoOn/b@4814, SlowCrescendoOff/b@4831",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.1410764711013586,
+     "llr": -2.601236994347868,
+     "lambda": -0.6398171201607431,
+     "p": 0.8453159041394336
+    },
+    {
+     "family": "B2add",
+     "from_mm": 4816,
+     "readings": "SlowCrescendoOn/t@4816, SlowCrescendoOff/t@4833",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 2.280033449977246,
+     "llr": -2.0653347294453726,
+     "lambda": 0.04708236200087695,
+     "p": 0.4553376906318083
+    },
+    {
+     "family": "Badd",
+     "from_mm": 4895.9,
+     "readings": "SlowCrescendoOn/b@4896, SlowCrescendoOff/b@4909",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.9947517111599089,
+     "llr": 0.32826226289104027,
+     "lambda": 0.6649970837990704,
+     "p": 0.1655773420479303
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 4904.7,
+     "readings": "SlowCrescendoOn/t@4905, SlowCrescendoOff/t@4920",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.5923733411203527,
+     "llr": -1.5641194649470493,
+     "lambda": 0.008871624336986407,
+     "p": 0.5054466230936819
+    },
+    {
+     "family": "B2add",
+     "from_mm": 5035.7,
+     "readings": "SlowCrescendoOn/t@5036, SlowCrescendoOff/t@5057, SlowCrescendoOn/t@5159, SlowCrescendoOff/t@5180",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 2.0963655732354045,
+     "llr": -6.8958955515119476,
+     "lambda": -1.1447263873135531,
+     "p": 0.9760348583877996
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5036.2,
+     "readings": "SlowCrescendoOn/b@5036, SlowCrescendoOff/b@5053",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.5574694121167765,
+     "llr": 0.08824860254791296,
+     "lambda": 0.5283307658761571,
+     "p": 0.18518518518518517
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5156.2,
+     "readings": "SlowCrescendoOn/b@5156, SlowCrescendoOff/b@5175",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.3984547799686098,
+     "llr": 0.6273274715952067,
+     "lambda": 1.2872003338052909,
+     "p": 0.12854030501089325
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 5231.6,
+     "readings": "SlowCrescendoOn/t@5232, SlowCrescendoOff/t@5253",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.031515300744939655,
+     "llr": 0.27248419706076665,
+     "lambda": 4.823046117599223,
+     "p": 0.11328976034858387
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5341.6,
+     "readings": "ForzandoOn/b@5342, ForzandoOff/b@5350, SlowCrescendoOn/b@5344, SlowCrescendoOff/b@5374",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 1.2590833653063327,
+     "llr": 1.0564348676417896,
+     "lambda": 0.9195253851935217,
+     "p": 0.04793028322440087
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5362.5,
+     "readings": "SlowCrescendoOn/b@5362, SlowCrescendoOff/b@5384",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.6610227761517464,
+     "llr": -3.2030051875867143,
+     "lambda": -0.4641665465320797,
+     "p": 0.8235294117647058
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5379.2,
+     "readings": "ForzandoOn/b@5379, ForzandoOff/b@5385, SlowCrescendoOn/b@5408, SlowCrescendoOff/b@5420",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.945624878056876,
+     "llr": -1.5855945989687474,
+     "lambda": 0.09252304571878618,
+     "p": 0.4226579520697168
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5456.6,
+     "readings": "SlowCrescendoOn/b@5457, SlowCrescendoOff/b@5528",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 0.12669544792017767,
+     "llr": 0.4078281949453136,
+     "lambda": 2.109482430664197,
+     "p": 0.14814814814814814
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5468.5,
+     "readings": "SlowCrescendoOn/b@5468, SlowCrescendoOff/b@5511",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 3.654713566717367,
+     "llr": -6.521719061242918,
+     "lambda": -0.39223395242717624,
+     "p": 0.8518518518518519
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5534.9,
+     "readings": "SlowCrescendoOn/t@5535, SlowCrescendoOff/t@5584",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 0.4693351029957796,
+     "llr": 0.2911305217254455,
+     "lambda": 0.8101520852234905,
+     "p": 0.20697167755991286
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5546.8,
+     "readings": "SlowCrescendoOn/t@5547",
+     "span": "lone punch",
+     "notes": 9,
+     "detectability": 10.716396886381377,
+     "llr": -15.509670796494557,
+     "lambda": -0.22364204876568994,
+     "p": 0.840958605664488
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5562.8,
+     "readings": "SlowCrescendoOn/b@5563, SlowCrescendoOn/b@5649, SlowCrescendoOff/b@5671",
+     "span": "long span",
+     "notes": 7,
+     "detectability": 4.820747859052427,
+     "llr": -1.3475892614912388,
+     "lambda": 0.36023026915204365,
+     "p": 0.1655773420479303
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5582.7,
+     "readings": "SlowCrescendoOn/b@5583",
+     "span": "lone punch",
+     "notes": 5,
+     "detectability": 4.308752558510855,
+     "llr": -6.953033742261594,
+     "lambda": -0.3068499696655392,
+     "p": 0.8257080610021786
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5589,
+     "readings": "ForzandoOff/t@5589, ForzandoOn/t@5604, ForzandoOff/t@5615, SlowCrescendoOn/t@5716, SlowCrescendoOff/t@5735, SlowCrescendoOn/t@5762, SlowCrescendoOff/t@5774, SlowCrescendoOn/t@5842, SlowCrescendoOff/t@5882, SlowCrescendoOn/t@5953, SlowCrescendoOff/t@5980, ForzandoOn/t@5638",
+     "span": "long span",
+     "notes": 16,
+     "detectability": 19.918189657110137,
+     "llr": -22.625095003534316,
+     "lambda": -0.06795058670048125,
+     "p": 0.6775599128540305
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5725.8,
+     "readings": "SlowCrescendoOn/b@5726, SlowCrescendoOff/b@5750, SlowCrescendoOn/b@5766, SlowCrescendoOff/b@5784",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 3.2713821149697386,
+     "llr": -7.382752005995535,
+     "lambda": -0.6283842343290164,
+     "p": 0.9324618736383442
+    },
+    {
+     "family": "Badd",
+     "from_mm": 5835.7,
+     "readings": "SlowCrescendoOn/b@5836, SlowCrescendoOff/b@5856, SlowCrescendoOn/b@5870, SlowCrescendoOff/b@5879",
+     "span": "short pairs",
+     "notes": 6,
+     "detectability": 4.775581255527471,
+     "llr": -8.177898088919534,
+     "lambda": -0.3562201804706044,
+     "p": 0.8605664488017429
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 5868.1,
+     "readings": "SlowCrescendoOn/t@5868, SlowCrescendoOff/t@5892",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 1.4540248458729137,
+     "llr": -4.376003355912374,
+     "lambda": -1.0047897456268262,
+     "p": 0.9586056644880174
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6079,
+     "readings": "ForzandoOn/b@6079, ForzandoOff/b@6084",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.2850174819661646,
+     "llr": -3.5401472722107217,
+     "lambda": -0.8774704709830307,
+     "p": 0.9128540305010894
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6144.3,
+     "readings": "SlowCrescendoOn/b@6144, SlowCrescendoOff/b@6163, SlowCrescendoOn/b@6182, SlowCrescendoOff/b@6200, SlowCrescendoOn/b@6218, SlowCrescendoOff/b@6234, ForzandoOn/b@6193",
+     "span": "lone punch",
+     "notes": 8,
+     "detectability": 11.816044238925521,
+     "llr": -14.491339655543019,
+     "lambda": -0.11320605113360573,
+     "p": 0.7037037037037037
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6182.3,
+     "readings": "SlowCrescendoOn/t@6182",
+     "span": "lone punch",
+     "notes": 1,
+     "detectability": 1.0937837343288197,
+     "llr": 1.7706804826558393,
+     "lambda": 1.3094289698604746,
+     "p": 0.010893246187363835
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6215.6,
+     "readings": "SlowCrescendoOn/t@6216",
+     "span": "lone punch",
+     "notes": 1,
+     "detectability": 1.231622015507341,
+     "llr": -4.27122171395721,
+     "lambda": -1.2339823664153038,
+     "p": 0.9912854030501089
+    },
+    {
+     "family": "Badd",
+     "from_mm": 6339.7,
+     "readings": "SlowCrescendoOn/t@6340, SlowCrescendoOff/t@6466",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 16.96092690954418,
+     "llr": -9.883630040238701,
+     "lambda": 0.20863532126074355,
+     "p": 0.09803921568627451
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6360.2,
+     "readings": "SlowCrescendoOn/t@6360",
+     "span": "lone punch",
+     "notes": 12,
+     "detectability": 4.571066368775373,
+     "llr": -11.558451211412384,
+     "lambda": -0.7643057745089128,
+     "p": 0.9891067538126361
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 6457.6,
+     "readings": "SlowCrescendoOn/t@6458, SlowCrescendoOff/t@7524",
+     "span": "long span",
+     "notes": 1,
+     "detectability": 0.3841981514529816,
+     "llr": 0.17085369862157251,
+     "lambda": 0.7223510159736957,
+     "p": 0.2875816993464052
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6475,
+     "readings": "SlowCrescendoOff/b@6475",
+     "span": "lone punch",
+     "notes": 4,
+     "detectability": 6.789834777102636,
+     "llr": -14.334970524306362,
+     "lambda": -0.5556199815530264,
+     "p": 0.9825708061002179
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6607.7,
+     "readings": "SlowCrescendoOn/t@6608, SlowCrescendoOff/t@6625, SlowCrescendoOn/t@6744, SlowCrescendoOff/t@6756",
+     "span": "short pairs",
+     "notes": 12,
+     "detectability": 2.7705068816674996,
+     "llr": -2.936933144933476,
+     "lambda": -0.03003534558373082,
+     "p": 0.5337690631808278
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6635.2,
+     "readings": "SlowCrescendoOn/b@6635, SlowCrescendoOff/b@6646",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.3887821002917256,
+     "llr": 1.2043426016990892,
+     "lambda": 2.0488658052870763,
+     "p": 0.026143790849673203
+    },
+    {
+     "family": "B2add",
+     "from_mm": 6663.4,
+     "readings": "SlowCrescendoOn/t@6663, SlowCrescendoOff/t@6677",
+     "span": "short pairs",
+     "notes": 9,
+     "detectability": 0.9823322972676367,
+     "llr": 0.314542840357142,
+     "lambda": 0.6601000197346889,
+     "p": 0.20043572984749455
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6665.8,
+     "readings": "SlowCrescendoOn/b@6666, SlowCrescendoOff/b@6675",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.28625042963830694,
+     "llr": -0.17186110390787795,
+     "lambda": 0.19980638260520023,
+     "p": 0.477124183006536
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6746.5,
+     "readings": "SlowCrescendoOn/b@6746, SlowCrescendoOff/b@6756",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.6096391955900868,
+     "llr": -0.0348492550216253,
+     "lambda": 0.47141813118832204,
+     "p": 0.28322440087145967
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6775,
+     "readings": "SlowCrescendoOn/b@6775, SlowCrescendoOff/b@6788",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8376872546798029,
+     "llr": -0.4827851871736683,
+     "lambda": 0.21183446777030898,
+     "p": 0.37254901960784315
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6876.1,
+     "readings": "SlowCrescendoOn/b@6876, SlowCrescendoOff/b@6890, SlowCrescendoOn/b@6911, SlowCrescendoOff/b@6926",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.8944319858711007,
+     "llr": -0.5518381322893156,
+     "lambda": 0.35435261429151577,
+     "p": 0.24618736383442266
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 6878.9,
+     "readings": "SlowCrescendoOn/t@6879, SlowCrescendoOff/t@6895, SlowCrescendoOn/t@6917, SlowCrescendoOff/t@6930",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.4011307714284988,
+     "llr": -3.218944729817322,
+     "lambda": -0.6486953236119075,
+     "p": 0.8562091503267973
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7011.5,
+     "readings": "SlowCrescendoOn/b@7012, SlowCrescendoOff/b@7026, SlowCrescendoOn/b@7053, SlowCrescendoOff/b@7067",
+     "span": "short pairs",
+     "notes": 5,
+     "detectability": 1.3640735155821817,
+     "llr": -2.4658762937684084,
+     "lambda": -0.40386488176774754,
+     "p": 0.7886710239651417
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7013.9,
+     "readings": "SlowCrescendoOn/t@7014, SlowCrescendoOff/t@7030, SlowCrescendoOn/t@7055, SlowCrescendoOff/t@7072",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.4027369849887417,
+     "llr": -1.3864311728512964,
+     "lambda": 0.005812141660175989,
+     "p": 0.4880174291938998
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7221,
+     "readings": "ForzandoOn/b@7221, ForzandoOff/b@7226",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 2.0229222648865726,
+     "llr": 1.5341674813933774,
+     "lambda": 0.879195856416015,
+     "p": 0.030501089324618737
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7256.1,
+     "readings": "ForzandoOn/b@7256, ForzandoOff/b@7264",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 1.0282744466337859,
+     "llr": -2.8587776863827243,
+     "lambda": -0.8900849601686455,
+     "p": 0.8932461873638344
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7348.1,
+     "readings": "SlowCrescendoOn/b@7348, SlowCrescendoOn/b@7365, SlowCrescendoOff/b@7396, ForzandoOn/b@7952, ForzandoOff/b@7958, SlowCrescendoOn/b@7939, SlowCrescendoOff/b@7981, SlowCrescendoOn/b@8104, SlowCrescendoOff/b@8136, SlowCrescendoOn/b@8164, SlowCrescendoOff/b@8180, SlowCrescendoOn/b@8206, SlowCrescendoOff/b@8224",
+     "span": "long span",
+     "notes": 21,
+     "detectability": 20.731124357165996,
+     "llr": -20.9232450793226,
+     "lambda": -0.004633630063827252,
+     "p": 0.5250544662309368
+    },
+    {
+     "family": "B2del",
+     "from_mm": 7364.7,
+     "readings": "SlowCrescendoOn/b@7365",
+     "span": "lone punch",
+     "notes": 31,
+     "detectability": 315.9735625397522,
+     "llr": -296.8868330319678,
+     "lambda": 0.030203048246137874,
+     "p": 0.2766884531590414
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7430.9,
+     "readings": "SlowCrescendoOn/t@7431, SlowCrescendoOff/t@7505, SlowCrescendoOff/t@7556",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 1.9683673452953268,
+     "llr": -2.982326189638348,
+     "lambda": -0.25756341842556063,
+     "p": 0.6928104575163399
+    },
+    {
+     "family": "Cdel",
+     "from_mm": 7445.7,
+     "readings": "SlowCrescendoOn/t@7446, SlowCrescendoOff/t@8037",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 3.0244016026430582,
+     "llr": -4.365940781163882,
+     "lambda": -0.22178588606560026,
+     "p": 0.7015250544662309
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 7568.1,
+     "readings": "SlowCrescendoOff/t@7568, SlowCrescendoOn/t@7993",
+     "span": "long span",
+     "notes": 12,
+     "detectability": 109.16670697334331,
+     "llr": -120.17760665058545,
+     "lambda": -0.050431582954731845,
+     "p": 0.7581699346405228
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7670.4,
+     "readings": "SlowCrescendoOn/t@7670, SlowCrescendoOff/t@7686",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.7142013288991498,
+     "llr": -2.451412619463291,
+     "lambda": -1.2161915837105972,
+     "p": 0.906318082788671
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7672.3,
+     "readings": "SlowCrescendoOn/b@7672, SlowCrescendoOff/b@7683",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.31450844923012816,
+     "llr": 0.3765263891869807,
+     "lambda": 1.0985950299724279,
+     "p": 0.18518518518518517
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7736,
+     "readings": "SlowCrescendoOn/b@7736, SlowCrescendoOff/b@7749",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.8417911894204705,
+     "llr": -0.526647543582921,
+     "lambda": 0.18718635321813565,
+     "p": 0.40522875816993464
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7739.1,
+     "readings": "SlowCrescendoOn/t@7739, SlowCrescendoOff/t@7752, SlowCrescendoOn/t@7810, SlowCrescendoOff/t@7820",
+     "span": "short pairs",
+     "notes": 7,
+     "detectability": 1.4163046520239226,
+     "llr": -3.986252382567748,
+     "lambda": -0.9072722196002558,
+     "p": 0.9324618736383442
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7805.9,
+     "readings": "SlowCrescendoOn/b@7806, SlowCrescendoOff/b@7817",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.6989360376436012,
+     "llr": -0.0042997085670993555,
+     "lambda": 0.4969241043990267,
+     "p": 0.2679738562091503
+    },
+    {
+     "family": "B2add",
+     "from_mm": 7831,
+     "readings": "SlowCrescendoOn/t@7831, SlowCrescendoOff/t@7843",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.5817372084482411,
+     "llr": -3.276264886580718,
+     "lambda": -2.3159320385574227,
+     "p": 0.9912854030501089
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7838.7,
+     "readings": "SlowCrescendoOn/b@7839, SlowCrescendoOff/b@7847",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.21267820731001177,
+     "llr": 0.3341523616689988,
+     "lambda": 1.2855820441017716,
+     "p": 0.19389978213507625
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 7869.8,
+     "readings": "SlowCrescendoOn/b@7870, SlowCrescendoOff/b@7880",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.2728356051139102,
+     "llr": -0.9102378534958442,
+     "lambda": -1.1681067947781512,
+     "p": 0.8148148148148148
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 7923.6,
+     "readings": "SlowCrescendoOn/b@7924, SlowCrescendoOff/b@7953, SlowCrescendoOn/b@7969, SlowCrescendoOff/b@7998, SlowCrescendoOn/b@8040",
+     "span": "long span",
+     "notes": 16,
+     "detectability": 36.15523461988743,
+     "llr": -27.779630265290358,
+     "lambda": 0.11582837786357517,
+     "p": 0.22004357298474944
+    },
+    {
+     "family": "Badd",
+     "from_mm": 7953,
+     "readings": "SlowCrescendoOn/t@7953, SlowCrescendoOff/t@8020",
+     "span": "long span",
+     "notes": 3,
+     "detectability": 4.8007542735245,
+     "llr": -9.36643173926408,
+     "lambda": -0.47551667983911006,
+     "p": 0.9302832244008714
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8209.9,
+     "readings": "ForzandoOn/b@8210, ForzandoOff/b@8216",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.9674892228750253,
+     "llr": -0.23922367037966827,
+     "lambda": 0.37636881904028724,
+     "p": 0.3159041394335512
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8270.8,
+     "readings": "ForzandoOn/b@8271, ForzandoOff/b@8276",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.3438544025762351,
+     "llr": -1.6572107182592366,
+     "lambda": -1.90975643447203,
+     "p": 0.9433551198257081
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8375.6,
+     "readings": "SlowCrescendoOn/b@8376, SlowCrescendoOff/b@8426",
+     "span": "long span",
+     "notes": 2,
+     "detectability": 4.894400163501753,
+     "llr": -7.45204179938092,
+     "lambda": -0.26128244018050134,
+     "p": 0.8104575163398693
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8438.2,
+     "readings": "SlowCrescendoOn/t@8438, SlowCrescendoOff/t@8498",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 0.6444345838562903,
+     "llr": -0.34639388722150205,
+     "lambda": 0.23124200974078346,
+     "p": 0.4117647058823529
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 8449.2,
+     "readings": "SlowCrescendoOn/t@8449, SlowCrescendoOff/t@8515, SlowCrescendoOn/t@8550",
+     "span": "long span",
+     "notes": 6,
+     "detectability": 4.314775894696752,
+     "llr": -6.386517824342489,
+     "lambda": -0.2400752646495607,
+     "p": 0.775599128540305
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8533.6,
+     "readings": "SlowCrescendoOn/t@8534, SlowCrescendoOff/t@8546",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.5133065395604242,
+     "llr": -2.0083401371110674,
+     "lambda": -1.4562775674267974,
+     "p": 0.9302832244008714
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 8543,
+     "readings": "SlowCrescendoOn/b@8543, SlowCrescendoOff/b@8628",
+     "span": "long span",
+     "notes": 4,
+     "detectability": 9.674997813308394,
+     "llr": -6.5344314285470295,
+     "lambda": 0.1623032090219894,
+     "p": 0.2440087145969499
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8553.4,
+     "readings": "SlowCrescendoOn/b@8553, SlowCrescendoOff/b@8568",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 1.988400370099478,
+     "llr": 0.7987374714492785,
+     "lambda": 0.700849256382234,
+     "p": 0.06535947712418301
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8753.2,
+     "readings": "SlowCrescendoOn/t@8753, SlowCrescendoOff/t@8767",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.36717360146499195,
+     "llr": -1.6025755812341143,
+     "lambda": -1.6823131821568496,
+     "p": 0.9302832244008714
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8866.6,
+     "readings": "SlowCrescendoOn/b@8867, SlowCrescendoOff/b@8878",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.842937596847826,
+     "llr": -1.3893371684737459,
+     "lambda": -0.32410440207506874,
+     "p": 0.6710239651416122
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8871.3,
+     "readings": "SlowCrescendoOn/t@8871, SlowCrescendoOff/t@8888",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.5085202105956885,
+     "llr": 0.5570555917412437,
+     "lambda": 1.047722175180314,
+     "p": 0.14596949891067537
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8948.8,
+     "readings": "SlowCrescendoOn/b@8949, SlowCrescendoOff/b@8958",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 0.925755958091163,
+     "llr": -0.32313863681096777,
+     "lambda": 0.32547309904585725,
+     "p": 0.3202614379084967
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 8952.9,
+     "readings": "SlowCrescendoOn/t@8953, SlowCrescendoOff/t@8968",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.43923791619525165,
+     "llr": -0.2513053823676681,
+     "lambda": 0.2139302265335892,
+     "p": 0.45751633986928103
+    },
+    {
+     "family": "Badd",
+     "from_mm": 8996.4,
+     "readings": "SlowCrescendoOn/t@8996, SlowCrescendoOff/t@9012, SlowCrescendoOn/t@9042, SlowCrescendoOff/t@9055",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.094329636575503,
+     "llr": -1.5269035960398825,
+     "lambda": -0.197643353979719,
+     "p": 0.6318082788671024
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9004.5,
+     "readings": "SlowCrescendoOn/b@9004, SlowCrescendoOff/b@9012",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.16465782042846389,
+     "llr": 0.3709149493579211,
+     "lambda": 1.6263204759808731,
+     "p": 0.15250544662309368
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9050.5,
+     "readings": "SlowCrescendoOn/b@9050, SlowCrescendoOff/b@9060",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.20719606639468158,
+     "llr": -1.1867788140031013,
+     "lambda": -2.3639028593874016,
+     "p": 0.9389978213507625
+    },
+    {
+     "family": "Bdel",
+     "from_mm": 9085.1,
+     "readings": "SlowCrescendoOn/t@9085",
+     "span": "lone punch",
+     "notes": 2,
+     "detectability": 0.7813014876779941,
+     "llr": -0.7142771754659925,
+     "lambda": 0.04289273300323292,
+     "p": 0.4466230936819172
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9144.7,
+     "readings": "SlowCrescendoOn/b@9145, SlowCrescendoOff/b@9156",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.9009524920337566,
+     "llr": -1.777874793415892,
+     "lambda": -0.48666400788937436,
+     "p": 0.7647058823529411
+    },
+    {
+     "family": "Cadd",
+     "from_mm": 9151.1,
+     "readings": "SlowCrescendoOn/t@9151, SlowCrescendoOff/t@9163",
+     "span": "short pairs",
+     "notes": 2,
+     "detectability": 0.36905007521085986,
+     "llr": -0.4603179997424148,
+     "lambda": -0.12365249414921296,
+     "p": 0.5686274509803921
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9198.5,
+     "readings": "SlowCrescendoOn/b@9198, SlowCrescendoOff/b@9210",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 0.8599601172010674,
+     "llr": -1.7800707059827834,
+     "lambda": -0.5349728262843291,
+     "p": 0.775599128540305
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9213.2,
+     "readings": "SlowCrescendoOn/t@9213, SlowCrescendoOff/t@9222",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.09058772725753439,
+     "llr": -0.8278511861352832,
+     "lambda": -4.069334120624097,
+     "p": 0.954248366013072
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9420.1,
+     "readings": "ForzandoOn/b@9420, ForzandoOff/b@9424",
+     "span": "short pairs",
+     "notes": 1,
+     "detectability": 0.019075450581546565,
+     "llr": -0.37635451274312764,
+     "lambda": -9.364891818262207,
+     "p": 0.9651416122004357
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9503.9,
+     "readings": "SlowCrescendoOn/b@9504, SlowCrescendoOff/b@9524",
+     "span": "short pairs",
+     "notes": 3,
+     "detectability": 2.655118690598695,
+     "llr": -3.16196295100894,
+     "lambda": -0.09544662959981615,
+     "p": 0.5620915032679739
+    },
+    {
+     "family": "Badd",
+     "from_mm": 9663.8,
+     "readings": "SlowCrescendoOn/b@9664, SlowCrescendoOff/b@9674",
+     "span": "short pairs",
+     "notes": 4,
+     "detectability": 1.0612599818346082,
+     "llr": -4.4376933113216825,
+     "lambda": -1.590766347210327,
+     "p": 0.9891067538126361
+    }
+   ],
+   "by_family": [
+    {
+     "group": "A1add",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -3.806099144418963,
+     "sum_detectability": 13.48339136787917
+    },
+    {
+     "group": "A1del",
+     "detectable": 1,
+     "favouring_toggle": 1,
+     "sum_llr": 1.4022558583845328,
+     "sum_detectability": 2.2313403078798504
+    },
+    {
+     "group": "B2add",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -11.253695844790778,
+     "sum_detectability": 8.785606649673623
+    },
+    {
+     "group": "B2del",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -296.8868330319678,
+     "sum_detectability": 315.9735625397522
+    },
+    {
+     "group": "Badd",
+     "detectable": 19,
+     "favouring_toggle": 0,
+     "sum_llr": -166.18670350690735,
+     "sum_detectability": 139.61606086492455
+    },
+    {
+     "group": "Bdel",
+     "detectable": 14,
+     "favouring_toggle": 0,
+     "sum_llr": -227.6058901593723,
+     "sum_detectability": 213.85799596282072
+    },
+    {
+     "group": "Cadd",
+     "detectable": 6,
+     "favouring_toggle": 2,
+     "sum_llr": -13.481301614537353,
+     "sum_detectability": 18.676024564857755
+    },
+    {
+     "group": "Cdel",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -32.53863277152487,
+     "sum_detectability": 29.844717417078165
+    }
+   ],
+   "by_family_and_span": [
+    {
+     "group": "A1add long span",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -3.806099144418963,
+     "sum_detectability": 13.48339136787917
+    },
+    {
+     "group": "A1del lone punch",
+     "detectable": 1,
+     "favouring_toggle": 1,
+     "sum_llr": 1.4022558583845328,
+     "sum_detectability": 2.2313403078798504
+    },
+    {
+     "group": "B2add short pairs",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -11.253695844790778,
+     "sum_detectability": 8.785606649673623
+    },
+    {
+     "group": "B2del lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -296.8868330319678,
+     "sum_detectability": 315.9735625397522
+    },
+    {
+     "group": "Badd lone punch",
+     "detectable": 3,
+     "favouring_toggle": 0,
+     "sum_llr": -32.63086139353995,
+     "sum_detectability": 24.049076549116677
+    },
+    {
+     "group": "Badd long span",
+     "detectable": 8,
+     "favouring_toggle": 0,
+     "sum_llr": -84.99676866139475,
+     "sum_detectability": 83.3143408530529
+    },
+    {
+     "group": "Badd short pairs",
+     "detectable": 8,
+     "favouring_toggle": 0,
+     "sum_llr": -48.55907345197265,
+     "sum_detectability": 32.25264346275498
+    },
+    {
+     "group": "Bdel lone punch",
+     "detectable": 4,
+     "favouring_toggle": 0,
+     "sum_llr": -34.51952849937745,
+     "sum_detectability": 22.282371006483544
+    },
+    {
+     "group": "Bdel long span",
+     "detectable": 9,
+     "favouring_toggle": 0,
+     "sum_llr": -190.36507280064808,
+     "sum_detectability": 187.30727213686632
+    },
+    {
+     "group": "Bdel short pairs",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -2.7212888593467746,
+     "sum_detectability": 4.268352819470864
+    },
+    {
+     "group": "Cadd lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -14.334970524306362,
+     "sum_detectability": 6.789834777102636
+    },
+    {
+     "group": "Cadd short pairs",
+     "detectable": 5,
+     "favouring_toggle": 2,
+     "sum_llr": 0.8536689097690096,
+     "sum_detectability": 11.886189787755118
+    },
+    {
+     "group": "Cdel lone punch",
+     "detectable": 1,
+     "favouring_toggle": 0,
+     "sum_llr": -2.5890200044961134,
+     "sum_detectability": 2.4334134005235306
+    },
+    {
+     "group": "Cdel long span",
+     "detectable": 3,
+     "favouring_toggle": 0,
+     "sum_llr": -29.949612767028754,
+     "sum_detectability": 27.41130401655463
+    }
+   ]
+  }
+ },
+ "departures_from_A": {
+  "transkun": [
+   {
+    "half": "bass",
+    "width": 6,
+    "notes": 298,
+    "residual_sd": 4.8379179520723685,
+    "bound": 7.418939718480748,
+    "windows": []
+   },
+   {
+    "half": "bass",
+    "width": 12,
+    "notes": 298,
+    "residual_sd": 4.8379179520723685,
+    "bound": 5.193776172564217,
+    "windows": []
+   },
+   {
+    "half": "bass",
+    "width": 24,
+    "notes": 298,
+    "residual_sd": 4.8379179520723685,
+    "bound": 3.483638310010107,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 6,
+    "notes": 161,
+    "residual_sd": 4.8379179520723685,
+    "bound": 9.010674024496133,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 12,
+    "notes": 161,
+    "residual_sd": 4.8379179520723685,
+    "bound": 6.143497031695517,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 24,
+    "notes": 161,
+    "residual_sd": 4.8379179520723685,
+    "bound": 4.079123830465107,
+    "windows": []
+   }
+  ],
+  "composite_without_kong": [
+   {
+    "half": "bass",
+    "width": 6,
+    "notes": 298,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.8822911616666607,
+    "windows": []
+   },
+   {
+    "half": "bass",
+    "width": 12,
+    "notes": 298,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.6238111029856963,
+    "windows": []
+   },
+   {
+    "half": "bass",
+    "width": 24,
+    "notes": 298,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.4312096231700126,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 6,
+    "notes": 161,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.9102362907402647,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 12,
+    "notes": 161,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.6804821992101484,
+    "windows": []
+   },
+   {
+    "half": "treble",
+    "width": 24,
+    "notes": 161,
+    "residual_sd": 0.6606256524514009,
+    "bound": 0.46866630997513875,
+    "windows": []
+   }
+  ]
+ },
+ "ablation": {
+  "transkun": {
+   "n": 459,
+   "r2_A": 0.7370540418538967,
+   "variants": [
+    {
+     "variant": "A without its own SoftPedal|bass",
+     "punches": 7,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    },
+    {
+     "variant": "A without its own SustainPedal|treble",
+     "punches": 103,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    },
+    {
+     "variant": "A without its own SlowCrescendo|bass",
+     "punches": 39,
+     "notes_changed": 73,
+     "detectability": 166.11763676449704,
+     "delta": 211.2801692979461
+    },
+    {
+     "variant": "A without its own SlowCrescendo|treble",
+     "punches": 102,
+     "notes_changed": 121,
+     "detectability": 200.7620831743161,
+     "delta": 147.2294853483915
+    },
+    {
+     "variant": "A without its own Forzando|bass",
+     "punches": 1,
+     "notes_changed": 1,
+     "detectability": 0.9376354326468083,
+     "delta": 6.153470147635786
+    },
+    {
+     "variant": "A without its own Forzando|treble",
+     "punches": 1,
+     "notes_changed": 6,
+     "detectability": 0.8304195686248653,
+     "delta": 4.198993789350719
+    },
+    {
+     "variant": "A with B's added SlowCrescendo|bass",
+     "punches": 76,
+     "notes_changed": 109,
+     "detectability": 134.7539793860486,
+     "delta": 135.53518694400324
+    },
+    {
+     "variant": "A with B's added Forzando|bass",
+     "punches": 26,
+     "notes_changed": 42,
+     "detectability": 36.44096186923188,
+     "delta": 77.43354898648619
+    },
+    {
+     "variant": "A with B's added SlowCrescendo|treble",
+     "punches": 51,
+     "notes_changed": 76,
+     "detectability": 37.909868707898134,
+     "delta": 49.70909548945677
+    },
+    {
+     "variant": "A with B's added Forzando|treble",
+     "punches": 5,
+     "notes_changed": 14,
+     "detectability": 9.830207448995784,
+     "delta": 27.93454058262996
+    },
+    {
+     "variant": "A without the SlowCrescendo|treble B removes",
+     "punches": 26,
+     "notes_changed": 75,
+     "detectability": 182.70928644160497,
+     "delta": 146.62037864253676
+    },
+    {
+     "variant": "A without the SlowCrescendo|bass B removes",
+     "punches": 18,
+     "notes_changed": 53,
+     "detectability": 106.28694206126204,
+     "delta": 162.3846073305476
+    },
+    {
+     "variant": "A without the SoftPedal|bass B removes",
+     "punches": 1,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    }
+   ]
+  },
+  "composite_without_kong": {
+   "n": 459,
+   "r2_A": 0.43841412131499713,
+   "variants": [
+    {
+     "variant": "A without its own SoftPedal|bass",
+     "punches": 7,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    },
+    {
+     "variant": "A without its own SustainPedal|treble",
+     "punches": 103,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    },
+    {
+     "variant": "A without its own SlowCrescendo|bass",
+     "punches": 39,
+     "notes_changed": 73,
+     "detectability": 99.70629068137126,
+     "delta": 138.04042976552165
+    },
+    {
+     "variant": "A without its own SlowCrescendo|treble",
+     "punches": 102,
+     "notes_changed": 121,
+     "detectability": 215.28152841587436,
+     "delta": 157.6833933360776
+    },
+    {
+     "variant": "A without its own Forzando|bass",
+     "punches": 1,
+     "notes_changed": 1,
+     "detectability": 0.5627828135622527,
+     "delta": 2.9040898414365506
+    },
+    {
+     "variant": "A without its own Forzando|treble",
+     "punches": 1,
+     "notes_changed": 6,
+     "detectability": 0.8904768825535033,
+     "delta": 1.7399090677991145
+    },
+    {
+     "variant": "A with B's added SlowCrescendo|bass",
+     "punches": 76,
+     "notes_changed": 109,
+     "detectability": 80.8813543271427,
+     "delta": 95.43454312753292
+    },
+    {
+     "variant": "A with B's added Forzando|bass",
+     "punches": 26,
+     "notes_changed": 42,
+     "detectability": 21.872410465322332,
+     "delta": 53.410277154390286
+    },
+    {
+     "variant": "A with B's added SlowCrescendo|treble",
+     "punches": 51,
+     "notes_changed": 76,
+     "detectability": 40.65157298848716,
+     "delta": 63.135305145630404
+    },
+    {
+     "variant": "A with B's added Forzando|treble",
+     "punches": 5,
+     "notes_changed": 14,
+     "detectability": 10.541144277863637,
+     "delta": 19.028540771684778
+    },
+    {
+     "variant": "A without the SlowCrescendo|treble B removes",
+     "punches": 26,
+     "notes_changed": 75,
+     "detectability": 195.92312362474323,
+     "delta": 151.4602250663727
+    },
+    {
+     "variant": "A without the SlowCrescendo|bass B removes",
+     "punches": 18,
+     "notes_changed": 53,
+     "detectability": 63.79501266213034,
+     "delta": 97.43307897010102
+    },
+    {
+     "variant": "A without the SoftPedal|bass B removes",
+     "punches": 1,
+     "notes_changed": 0,
+     "detectability": 0.0,
+     "delta": 0.0
+    }
+   ]
+  }
+ },
+ "deformed_instruments": {
+  "notes": 459,
+  "target_r2": 0.52,
+  "draws": 200,
+  "largest_share_read_as_A_branch_when_B_or_C": 0.005,
+  "smallest_share_read_as_A_branch_when_A_with_a_working_crescendo": 1.0,
+  "records": [
+   {
+    "deformation": "consensus",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 199,
+     "A1": 1,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 240.24356561442892
+   },
+   {
+    "deformation": "consensus",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 197,
+     "A1": 3,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 238.9342801166702
+   },
+   {
+    "deformation": "consensus",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 199,
+     "A1": 1,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 240.4567784138268
+   },
+   {
+    "deformation": "consensus",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 200,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -259.0280744394664
+   },
+   {
+    "deformation": "consensus",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 199,
+     "B2": 1,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -256.10739022144713
+   },
+   {
+    "deformation": "consensus",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 198,
+     "B2": 2,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -259.04003761844956
+   },
+   {
+    "deformation": "consensus",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -290.85649281627445
+   },
+   {
+    "deformation": "consensus",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -294.7484135021106
+   },
+   {
+    "deformation": "consensus",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -291.6259522830537
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 195,
+     "A1": 5,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 109.11959669841903
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 193,
+     "A1": 7,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 115.17740333921776
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 195,
+     "A1": 5,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 108.13988634210521
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 179,
+     "B2": 21,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -121.98870945838578
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 175,
+     "B2": 25,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -132.01477633256394
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 181,
+     "B2": 19,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -114.43849262591121
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 19,
+     "C": 181
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -117.1824493252073
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 16,
+     "C": 184
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -125.30716295224289
+   },
+   {
+    "deformation": "slow crescendo pump ×0.3",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 26,
+     "C": 174
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -112.3151446257288
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 198,
+     "A1": 2,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 240.2130134393023
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 200,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 233.76156713227792
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 199,
+     "A1": 1,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 240.46265154231594
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 198,
+     "B2": 2,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -220.2278101726243
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 198,
+     "B2": 2,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -220.36898879316988
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 199,
+     "B2": 1,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -217.20677501847717
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -227.23280478676648
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -223.11083795089866
+   },
+   {
+    "deformation": "slow sforzando ×0.3",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -224.56786009468954
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 196,
+     "A1": 4,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 140.17074964013915
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 194,
+     "A1": 6,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 137.74562158460512
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 194,
+     "A1": 6,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 144.00192607002805
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 195,
+     "B2": 5,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -174.70082919020598
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 195,
+     "B2": 5,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -180.0111507142346
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 193,
+     "B2": 7,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -174.6283785033989
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 2,
+     "C": 198
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -163.21354458980122
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -163.5003905959997
+   },
+   {
+    "deformation": "all pumps slow ×0.3",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 1,
+     "B2": 7,
+     "C": 192
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -159.40934103801595
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 200,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 182.92297105768313
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 198,
+     "A1": 2,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 182.3645073152108
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 199,
+     "A1": 1,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 182.72576505630565
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 197,
+     "B2": 3,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -162.63391429542733
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 197,
+     "B2": 3,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -173.76763646056315
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 194,
+     "B2": 6,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -143.44748252183243
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -176.39707335974225
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -183.31777992332363
+   },
+   {
+    "deformation": "all pumps fast ×3",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -149.45100527051602
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 199,
+     "A1": 1,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 235.4055308330561
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 198,
+     "A1": 2,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 229.81402120509148
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 200,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 0
+    },
+    "share_A_branch": 1.0,
+    "median_margin": 240.84735877577896
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 195,
+     "B2": 5,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -174.58648185045197
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 199,
+     "B2": 1,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -172.21900705142838
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 198,
+     "B2": 2,
+     "C": 0
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -175.42235466978497
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -162.1927543018119
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -163.53077538289529
+   },
+   {
+    "deformation": "dead sforzando valve",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 0,
+     "C": 200
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -161.57113806125315
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "linear",
+    "truth": "A",
+    "wins": {
+     "A": 161,
+     "A1": 5,
+     "B": 0,
+     "B2": 2,
+     "C": 32
+    },
+    "share_A_branch": 0.83,
+    "median_margin": 2.6901603067703928
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "compressive",
+    "truth": "A",
+    "wins": {
+     "A": 173,
+     "A1": 5,
+     "B": 1,
+     "B2": 2,
+     "C": 19
+    },
+    "share_A_branch": 0.89,
+    "median_margin": 3.77136520842216
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "expansive",
+    "truth": "A",
+    "wins": {
+     "A": 168,
+     "A1": 5,
+     "B": 1,
+     "B2": 3,
+     "C": 23
+    },
+    "share_A_branch": 0.865,
+    "median_margin": 3.0602114134010776
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "linear",
+    "truth": "B",
+    "wins": {
+     "A": 1,
+     "A1": 0,
+     "B": 158,
+     "B2": 15,
+     "C": 26
+    },
+    "share_A_branch": 0.005,
+    "median_margin": -20.52840688873482
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "compressive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 164,
+     "B2": 18,
+     "C": 18
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -20.692598097863517
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "expansive",
+    "truth": "B",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 157,
+     "B2": 11,
+     "C": 32
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -21.09915164448746
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "linear",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 17,
+     "C": 183
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -32.047665765268064
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "compressive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 21,
+     "C": 179
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -32.89881818754025
+   },
+   {
+    "deformation": "dead crescendo valve",
+    "map": "expansive",
+    "truth": "C",
+    "wins": {
+     "A": 0,
+     "A1": 0,
+     "B": 0,
+     "B2": 15,
+     "C": 185
+    },
+    "share_A_branch": 0.0,
+    "median_margin": -32.56384859412217
+   }
+  ]
+ },
+ "pedals": {
+  "differing": {
+   "hammerRail": {
+    "A1": [
+     [
+      5317.376852622814,
+      5508.22581182348
+     ],
+     [
+      5536.65012489592,
+      5550.86228143214
+     ],
+     [
+      5566.089592006661,
+      5584.8699417152375
+     ],
+     [
+      5668.620149875104,
+      5772.165861781848
+     ]
+    ],
+    "B": [
+     [
+      6252.333721898418,
+      6340.144546211491
+     ]
+    ],
+    "B2": [
+     [
+      6252.333721898418,
+      6340.144546211491
+     ]
+    ],
+    "C": [
+     [
+      6252.333721898418,
+      6340.144546211491
+     ]
+    ]
+   },
+   "damper": {
+    "A1": [
+     [
+      5375.240632805995,
+      5395.036136552872
+     ]
+    ],
+    "B": [],
+    "B2": [],
+    "C": []
+   }
+  },
+  "soft": {
+   "transkun": [
+    {
+     "other": "A1",
+     "where": "flicker, bars 8′–10",
+     "notes_differing": 17,
+     "gamma": -2.3880212679888606,
+     "delta": 3.5534055980834234,
+     "ci": [
+      -4.945972679867231,
+      17.24247678136687
+     ],
+     "share_favouring_A": 0.648,
+     "mean_residual_under_A": -0.1262519703806138,
+     "residual_sd": 4.783153013055369,
+     "rail_A": 6.726915768501879e-06,
+     "rail_other": 0.9227297989327058
+    },
+    {
+     "other": "B",
+     "where": "una corda, bar 13",
+     "notes_differing": 4,
+     "gamma": -2.3880212679888606,
+     "delta": 2.0913215964133354,
+     "ci": [
+      -0.16688314792349093,
+      7.498505998765711
+     ],
+     "share_favouring_A": 0.688,
+     "mean_residual_under_A": -1.603725226939222,
+     "residual_sd": 4.783153013055369,
+     "rail_A": 1.0,
+     "rail_other": 0.0
+    }
+   ],
+   "composite_without_kong": [
+    {
+     "other": "A1",
+     "where": "flicker, bars 8′–10",
+     "notes_differing": 17,
+     "gamma": -0.37065770522672875,
+     "delta": 0.43953102670126587,
+     "ci": [
+      -9.311271146064527,
+      10.297198761351328
+     ],
+     "share_favouring_A": 0.485,
+     "mean_residual_under_A": -0.1226142773651701,
+     "residual_sd": 0.650947259015021,
+     "rail_A": 6.726915768501879e-06,
+     "rail_other": 0.9227297989327058
+    },
+    {
+     "other": "B",
+     "where": "una corda, bar 13",
+     "notes_differing": 4,
+     "gamma": -0.37065770522672875,
+     "delta": 1.5034859961541769,
+     "ci": [
+      -0.5266337431073084,
+      6.822220905427918
+     ],
+     "share_favouring_A": 0.675,
+     "mean_residual_under_A": -0.0517141957277355,
+     "residual_sd": 0.650947259015021,
+     "rail_A": 1.0,
+     "rail_other": 0.0
+    }
+   ]
+  },
+  "damper": {
+   "events": 137,
+   "agreement": {
+    "A": 0.7293399889073766,
+    "A1": 0.7318050163308066,
+    "B": 0.7293399889073766,
+    "B2": 0.7293399889073766,
+    "C": 0.7293399889073766
+   }
+  }
+ },
+ "control_tacet": {
+  "versions": {
+   "n": 462,
+   "best": "C",
+   "r2": {
+    "A": 0.5089821894233407,
+    "A1": 0.5040890694969857,
+    "B": 0.6049451726483377,
+    "B2": 0.6024109734861494,
+    "C": 0.6465330153591522,
+    "D1": 0.6390234055331323,
+    "D3": 0.5436055318197655
+   },
+   "delta_to_best": {
+    "A": 151.8549259410401,
+    "A1": 156.43608734602472,
+    "B": 51.39032669090219,
+    "B2": 54.344500867499804,
+    "C": 0.0,
+    "D1": 9.71264245890345,
+    "D3": 118.07214435740529
+   }
+  },
+  "hybrids": {
+   "n": 462,
+   "marginals": {
+    "A1": 0.0003165935317723335,
+    "B": 1.0,
+    "B2": 0.3709244197818644,
+    "Cadd": 0.9999999999899962,
+    "Cdel": 0.9110251428755236
+   },
+   "share_of_resamples_above_half": {
+    "A1": 0.16,
+    "B": 1.0,
+    "B2": 0.49333333333333335,
+    "Cadd": 1.0,
+    "Cdel": 0.18333333333333332
+   },
+   "best": [
+    {
+     "layers": "B+Cadd+Cdel",
+     "delta": 0.0,
+     "posterior": 0.5735350781453883
+    },
+    {
+     "layers": "B+B2+Cadd+Cdel",
+     "delta": 1.062276365008713,
+     "posterior": 0.337201581841929
+    },
+    {
+     "layers": "B+Cadd",
+     "delta": 4.675486371861441,
+     "posterior": 0.055372103156683984
+    },
+    {
+     "layers": "B+B2+Cadd",
+     "delta": 5.676095961856102,
+     "posterior": 0.03357464331428437
+    }
+   ]
+  }
+ },
+ "detectable_threshold": 2.0
+}

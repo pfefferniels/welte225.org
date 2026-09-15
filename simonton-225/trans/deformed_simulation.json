@@ -1,0 +1,889 @@
+{
+ "notes": 459,
+ "target_r2": 0.52,
+ "draws": 200,
+ "records": [
+  {
+   "deformation": "consensus",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 199,
+    "A1": 1,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 240.24356561442892
+  },
+  {
+   "deformation": "consensus",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 197,
+    "A1": 3,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 238.9342801166702
+  },
+  {
+   "deformation": "consensus",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 199,
+    "A1": 1,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 240.4567784138268
+  },
+  {
+   "deformation": "consensus",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 200,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -259.0280744394664
+  },
+  {
+   "deformation": "consensus",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 199,
+    "B2": 1,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -256.10739022144713
+  },
+  {
+   "deformation": "consensus",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 198,
+    "B2": 2,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -259.04003761844956
+  },
+  {
+   "deformation": "consensus",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -290.85649281627445
+  },
+  {
+   "deformation": "consensus",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -294.7484135021106
+  },
+  {
+   "deformation": "consensus",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -291.6259522830537
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 195,
+    "A1": 5,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 109.11959669841903
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 193,
+    "A1": 7,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 115.17740333921776
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 195,
+    "A1": 5,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 108.13988634210521
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 179,
+    "B2": 21,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -121.98870945838578
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 175,
+    "B2": 25,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -132.01477633256394
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 181,
+    "B2": 19,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -114.43849262591121
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 19,
+    "C": 181
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -117.1824493252073
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 16,
+    "C": 184
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -125.30716295224289
+  },
+  {
+   "deformation": "slow crescendo pump \u00d70.3",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 26,
+    "C": 174
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -112.3151446257288
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 198,
+    "A1": 2,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 240.2130134393023
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 200,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 233.76156713227792
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 199,
+    "A1": 1,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 240.46265154231594
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 198,
+    "B2": 2,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -220.2278101726243
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 198,
+    "B2": 2,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -220.36898879316988
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 199,
+    "B2": 1,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -217.20677501847717
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -227.23280478676648
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -223.11083795089866
+  },
+  {
+   "deformation": "slow sforzando \u00d70.3",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -224.56786009468954
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 196,
+    "A1": 4,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 140.17074964013915
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 194,
+    "A1": 6,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 137.74562158460512
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 194,
+    "A1": 6,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 144.00192607002805
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 195,
+    "B2": 5,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -174.70082919020598
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 195,
+    "B2": 5,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -180.0111507142346
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 193,
+    "B2": 7,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -174.6283785033989
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 2,
+    "C": 198
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -163.21354458980122
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -163.5003905959997
+  },
+  {
+   "deformation": "all pumps slow \u00d70.3",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 1,
+    "B2": 7,
+    "C": 192
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -159.40934103801595
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 200,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 182.92297105768313
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 198,
+    "A1": 2,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 182.3645073152108
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 199,
+    "A1": 1,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 182.72576505630565
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 197,
+    "B2": 3,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -162.63391429542733
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 197,
+    "B2": 3,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -173.76763646056315
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 194,
+    "B2": 6,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -143.44748252183243
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -176.39707335974225
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -183.31777992332363
+  },
+  {
+   "deformation": "all pumps fast \u00d73",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -149.45100527051602
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 199,
+    "A1": 1,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 235.4055308330561
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 198,
+    "A1": 2,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 229.81402120509148
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 200,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 0
+   },
+   "share_A_branch": 1.0,
+   "median_margin": 240.84735877577896
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 195,
+    "B2": 5,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -174.58648185045197
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 199,
+    "B2": 1,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -172.21900705142838
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 198,
+    "B2": 2,
+    "C": 0
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -175.42235466978497
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -162.1927543018119
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -163.53077538289529
+  },
+  {
+   "deformation": "dead sforzando valve",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 0,
+    "C": 200
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -161.57113806125315
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "linear",
+   "truth": "A",
+   "wins": {
+    "A": 161,
+    "A1": 5,
+    "B": 0,
+    "B2": 2,
+    "C": 32
+   },
+   "share_A_branch": 0.83,
+   "median_margin": 2.6901603067703928
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "compressive",
+   "truth": "A",
+   "wins": {
+    "A": 173,
+    "A1": 5,
+    "B": 1,
+    "B2": 2,
+    "C": 19
+   },
+   "share_A_branch": 0.89,
+   "median_margin": 3.77136520842216
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "expansive",
+   "truth": "A",
+   "wins": {
+    "A": 168,
+    "A1": 5,
+    "B": 1,
+    "B2": 3,
+    "C": 23
+   },
+   "share_A_branch": 0.865,
+   "median_margin": 3.0602114134010776
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "linear",
+   "truth": "B",
+   "wins": {
+    "A": 1,
+    "A1": 0,
+    "B": 158,
+    "B2": 15,
+    "C": 26
+   },
+   "share_A_branch": 0.005,
+   "median_margin": -20.52840688873482
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "compressive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 164,
+    "B2": 18,
+    "C": 18
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -20.692598097863517
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "expansive",
+   "truth": "B",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 157,
+    "B2": 11,
+    "C": 32
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -21.09915164448746
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "linear",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 17,
+    "C": 183
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -32.047665765268064
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "compressive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 21,
+    "C": 179
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -32.89881818754025
+  },
+  {
+   "deformation": "dead crescendo valve",
+   "map": "expansive",
+   "truth": "C",
+   "wins": {
+    "A": 0,
+    "A1": 0,
+    "B": 0,
+    "B2": 15,
+    "C": 185
+   },
+   "share_A_branch": 0.0,
+   "median_margin": -32.56384859412217
+  }
+ ]
+}
