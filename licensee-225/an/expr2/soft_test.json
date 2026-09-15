@@ -1,0 +1,413 @@
+{
+ "patterns": {
+  "A": [
+   [
+    "On",
+    1345.6,
+    "upbeat"
+   ],
+   [
+    "Off",
+    6185.7,
+    "12"
+   ],
+   [
+    "Off",
+    6338.5,
+    "13"
+   ],
+   [
+    "On",
+    6715.5,
+    "15"
+   ]
+  ],
+  "A1": [
+   [
+    "On",
+    1345.6,
+    "upbeat"
+   ],
+   [
+    "Off",
+    5507.0,
+    "9"
+   ],
+   [
+    "On",
+    5534.9,
+    "9"
+   ],
+   [
+    "Off",
+    5549.4,
+    "9"
+   ],
+   [
+    "On",
+    5563.9,
+    "9"
+   ],
+   [
+    "Off",
+    5583.5,
+    "9"
+   ],
+   [
+    "On",
+    5666.8,
+    "10"
+   ],
+   [
+    "Off",
+    6185.7,
+    "12"
+   ],
+   [
+    "On",
+    6250.4,
+    "13"
+   ],
+   [
+    "Off",
+    6338.5,
+    "13"
+   ],
+   [
+    "On",
+    6715.5,
+    "15"
+   ]
+  ],
+  "B": [
+   [
+    "On",
+    1345.6,
+    "upbeat"
+   ],
+   [
+    "Off",
+    5315.6,
+    "8\u2032"
+   ],
+   [
+    "On",
+    5770.6,
+    "10"
+   ],
+   [
+    "Off",
+    6185.7,
+    "12"
+   ],
+   [
+    "Off",
+    6338.5,
+    "13"
+   ],
+   [
+    "On",
+    6715.5,
+    "15"
+   ]
+  ],
+  "C": [
+   [
+    "On",
+    1345.6,
+    "upbeat"
+   ],
+   [
+    "Off",
+    5315.6,
+    "8\u2032"
+   ],
+   [
+    "On",
+    5770.6,
+    "10"
+   ],
+   [
+    "Off",
+    6185.7,
+    "12"
+   ],
+   [
+    "Off",
+    6338.5,
+    "13"
+   ],
+   [
+    "On",
+    6715.5,
+    "15"
+   ]
+  ]
+ },
+ "files": {
+  "chaseEmR": {
+   "bass": {
+    "B pattern": {
+     "cv_whole": 0.9523,
+     "soft_factor": 0.111,
+     "sse_window": 39.63,
+     "rows_window": 43,
+     "soft_rows_on": 21,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.8016,
+     "soft_factor": 0.111,
+     "sse_window": 420.63,
+     "rows_window": 43,
+     "soft_rows_on": 30,
+     "gain_over_B_window": -327.117
+    },
+    "data A": {
+     "cv_whole": 0.8034,
+     "soft_factor": 0.08,
+     "sse_window": 409.49,
+     "rows_window": 43,
+     "soft_rows_on": 33,
+     "gain_over_B_window": -317.552
+    },
+    "no soft pedal": {
+     "cv_whole": 0.6363,
+     "soft_factor": 0.0,
+     "sse_window": 725.41,
+     "rows_window": 43,
+     "soft_rows_on": 0,
+     "gain_over_B_window": -588.793
+    }
+   },
+   "treble": {
+    "B pattern": {
+     "cv_whole": 0.8329,
+     "soft_factor": 0.15,
+     "sse_window": 219.6,
+     "rows_window": 38,
+     "soft_rows_on": 9,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.6857,
+     "soft_factor": 0.111,
+     "sse_window": 724.22,
+     "rows_window": 38,
+     "soft_rows_on": 17,
+     "gain_over_B_window": -85.37
+    },
+    "data A": {
+     "cv_whole": 0.7109,
+     "soft_factor": 0.15,
+     "sse_window": 607.96,
+     "rows_window": 38,
+     "soft_rows_on": 21,
+     "gain_over_B_window": -65.701
+    },
+    "no soft pedal": {
+     "cv_whole": 0.4252,
+     "soft_factor": 0.0,
+     "sse_window": 1323.62,
+     "rows_window": 38,
+     "soft_rows_on": 0,
+     "gain_over_B_window": -186.775
+    }
+   },
+   "design_power": {
+    "bass": {
+     "assumed_soft_factor": 0.111,
+     "critical_gain_for_Widuch": -273.303,
+     "power_if_Widuch": 1.0,
+     "gain_if_B_median": -310.519,
+     "gain_if_Widuch_median": 183.288,
+     "observed_gain_Widuch_over_B": -327.117
+    },
+    "treble": {
+     "assumed_soft_factor": 0.15,
+     "critical_gain_for_Widuch": -79.547,
+     "power_if_Widuch": 1.0,
+     "gain_if_B_median": -94.78,
+     "gain_if_Widuch_median": 83.359,
+     "observed_gain_Widuch_over_B": -85.37
+    }
+   }
+  },
+  "phillipsR": {
+   "bass": {
+    "B pattern": {
+     "cv_whole": 0.8562,
+     "soft_factor": 0.0,
+     "sse_window": 79.98,
+     "rows_window": 45,
+     "soft_rows_on": 22,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.8562,
+     "soft_factor": 0.0,
+     "sse_window": 79.98,
+     "rows_window": 45,
+     "soft_rows_on": 32,
+     "gain_over_B_window": 0.0
+    },
+    "data A": {
+     "cv_whole": 0.8562,
+     "soft_factor": 0.0,
+     "sse_window": 79.98,
+     "rows_window": 45,
+     "soft_rows_on": 35,
+     "gain_over_B_window": 0.0
+    },
+    "no soft pedal": {
+     "cv_whole": 0.8562,
+     "soft_factor": 0.0,
+     "sse_window": 79.98,
+     "rows_window": 45,
+     "soft_rows_on": 0,
+     "gain_over_B_window": 0.0
+    }
+   },
+   "treble": {
+    "B pattern": {
+     "cv_whole": 0.5037,
+     "soft_factor": 0.04,
+     "sse_window": 1162.68,
+     "rows_window": 38,
+     "soft_rows_on": 9,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.4949,
+     "soft_factor": 0.04,
+     "sse_window": 1216.0,
+     "rows_window": 38,
+     "soft_rows_on": 17,
+     "gain_over_B_window": -1.663
+    },
+    "data A": {
+     "cv_whole": 0.4986,
+     "soft_factor": 0.04,
+     "sse_window": 1177.05,
+     "rows_window": 38,
+     "soft_rows_on": 21,
+     "gain_over_B_window": -0.448
+    },
+    "no soft pedal": {
+     "cv_whole": 0.4806,
+     "soft_factor": 0.0,
+     "sse_window": 1294.88,
+     "rows_window": 38,
+     "soft_rows_on": 0,
+     "gain_over_B_window": -4.123
+    }
+   },
+   "design_power": {
+    "bass": {
+     "assumed_soft_factor": 0.15,
+     "critical_gain_for_Widuch": -6.23,
+     "power_if_Widuch": 1.0,
+     "gain_if_B_median": -30.368,
+     "gain_if_Widuch_median": 15.16,
+     "observed_gain_Widuch_over_B": 0.0
+    },
+    "treble": {
+     "assumed_soft_factor": 0.04,
+     "critical_gain_for_Widuch": 1.407,
+     "power_if_Widuch": 0.47,
+     "gain_if_B_median": -0.447,
+     "gain_if_Widuch_median": 1.023,
+     "observed_gain_Widuch_over_B": -1.663
+    }
+   }
+  },
+  "gourlin": {
+   "bass": {
+    "B pattern": {
+     "cv_whole": 0.6229,
+     "soft_factor": 0.0,
+     "sse_window": 39.82,
+     "rows_window": 44,
+     "soft_rows_on": 21,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.6379,
+     "soft_factor": 0.0,
+     "sse_window": 38.91,
+     "rows_window": 44,
+     "soft_rows_on": 31,
+     "gain_over_B_window": 0.486
+    },
+    "data A": {
+     "cv_whole": 0.6258,
+     "soft_factor": 0.04,
+     "sse_window": 50.03,
+     "rows_window": 44,
+     "soft_rows_on": 34,
+     "gain_over_B_window": -5.45
+    },
+    "no soft pedal": {
+     "cv_whole": 0.6229,
+     "soft_factor": 0.0,
+     "sse_window": 39.82,
+     "rows_window": 44,
+     "soft_rows_on": 0,
+     "gain_over_B_window": 0.0
+    }
+   },
+   "treble": {
+    "B pattern": {
+     "cv_whole": 0.3164,
+     "soft_factor": 0.04,
+     "sse_window": 296.41,
+     "rows_window": 39,
+     "soft_rows_on": 9,
+     "gain_over_B_window": 0.0
+    },
+    "Widuch pattern (A1)": {
+     "cv_whole": 0.3307,
+     "soft_factor": 0.08,
+     "sse_window": 273.82,
+     "rows_window": 39,
+     "soft_rows_on": 16,
+     "gain_over_B_window": 1.743
+    },
+    "data A": {
+     "cv_whole": 0.3181,
+     "soft_factor": 0.08,
+     "sse_window": 338.68,
+     "rows_window": 39,
+     "soft_rows_on": 21,
+     "gain_over_B_window": -3.262
+    },
+    "no soft pedal": {
+     "cv_whole": 0.1848,
+     "soft_factor": 0.0,
+     "sse_window": 511.62,
+     "rows_window": 39,
+     "soft_rows_on": 0,
+     "gain_over_B_window": -16.608
+    }
+   },
+   "design_power": {
+    "bass": {
+     "assumed_soft_factor": 0.15,
+     "critical_gain_for_Widuch": -24.458,
+     "power_if_Widuch": 1.0,
+     "gain_if_B_median": -57.641,
+     "gain_if_Widuch_median": 22.889,
+     "observed_gain_Widuch_over_B": 0.486
+    },
+    "treble": {
+     "assumed_soft_factor": 0.04,
+     "critical_gain_for_Widuch": 0.415,
+     "power_if_Widuch": 0.78,
+     "gain_if_B_median": -1.846,
+     "gain_if_Widuch_median": 2.712,
+     "observed_gain_Widuch_over_B": 1.743
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,135 @@
+archetype (A, never deleted), n=164: offset +1.00 mm; |d - offset| p50 0.79 p90 2.59 p95 3.86
+B additions matched, n=140: |d - offset| p50 0.78 p90 2.10 p95 2.73
+"same place" taken as |d - offset| <= 3.33 mm (p95 of archetype and B)
+
+== B1 additions by edit
+  [1/1 same] Zusätzliches Crescendo im Bass
+        1418.8   SlowCrescendoOn:bass   wit S1     del -  SAME -1.6
+  [1/1 same] Zusätzliches Crescendo im Bass
+        1437.6  SlowCrescendoOff:bass   wit S1     del -  SAME -1.4
+  [0/1 same] Zusätzliches Crescendo im Bass
+        7364.7   SlowCrescendoOn:bass   wit S1     del -  absent (nearest -16.5)
+
+== C additions by edit
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [2/2 same] None
+        2365.4        ForzandoOn:bass   wit LS2    del -  SAME -1.3
+        2370.4       ForzandoOff:bass   wit LS2    del -  SAME +1.7
+  [1/2 same] None
+        2464.0   SlowCrescendoOn:bass   wit LS2    del -  SAME -3.0
+        2475.4  SlowCrescendoOff:bass   wit LS2    del -  near -3.4
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/1 same] None
+  [0/1 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [2/2 same] None
+        4281.4        ForzandoOn:bass   wit LS2    del -  SAME +0.6
+        4286.9       ForzandoOff:bass   wit LS2    del -  SAME +0.8
+  [1/2 same] None
+        4816.0   SlowCrescendoOn:treble wit LS2    del -  absent (nearest +11.2)
+        4831.9  SlowCrescendoOff:treble wit LS2    del -  SAME +1.4
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [1/2 same] None
+        5037.0   SlowCrescendoOn:treble wit LS2    del -  near -5.2
+        5056.5  SlowCrescendoOff:treble wit LS2    del -  SAME -1.2
+  [0/2 same] None
+  [2/2 same] None
+        5158.9   SlowCrescendoOn:treble wit LS2    del -  SAME -0.2
+        5179.0  SlowCrescendoOff:treble wit LS2    del -  SAME +0.4
+  [0/1 same] None
+  [0/1 same] None
+  [0/1 same] None
+  [0/1 same] None
+  [0/1 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [1/2 same] None
+        6663.4   SlowCrescendoOn:treble wit LS2    del -  SAME -1.8
+        6675.5  SlowCrescendoOff:treble wit LS2    del -  absent (nearest +17.4)
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [1/2 same] None
+        7831.7   SlowCrescendoOn:treble wit LS2    del -  SAME -2.0
+        7842.3  SlowCrescendoOff:treble wit LS2    del -  absent (nearest +10.8)
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] None
+  [0/1 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] None
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/2 same] Differenzierung der Mittelstimmen
+  [0/1 same] None
+  [0/1 same] None
+  [0/1 same] None
+  [0/1 same] None
+
+== D1 additions by edit
+  [0/1 same] Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich 
+        1145.1      MezzoforteOn:bass   wit L      del -  absent
+  [0/1 same] Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich 
+        1242.5     MezzoforteOff:bass   wit L      del -  absent (nearest +142.5)
+
+== B additions (not deleted) not at the same place
+    1759.2  SlowCrescendoOff:treble absent (nearest +15.8)   Weniger Akzent auf f'
+    2144.7   SlowCrescendoOn:treble near -8.1                Verschiebung auf betonte Zeit
+    2163.2  SlowCrescendoOff:treble absent (nearest -10.5)   Verschiebung auf betonte Zeit
+    3459.2   SlowCrescendoOn:bass   absent (nearest +66.2)   None
+    4048.4  SlowCrescendoOff:bass   absent (nearest +9.3)    None
+    4052.0        ForzandoOn:bass   absent (nearest +230.0)  None
+    5536.7   SlowCrescendoOn:treble near -4.0                None
+    5562.7   SlowCrescendoOn:bass   absent (nearest +19.6)   None
+    5762.4   SlowCrescendoOn:treble absent (nearest -13.0)   None
+    5776.5  SlowCrescendoOff:treble absent (nearest -9.0)    None
+    6500.7   SlowCrescendoOn:treble near +5.8                None
+    7939.2   SlowCrescendoOn:bass   absent (nearest +224.5)  None
+    7980.1  SlowCrescendoOff:bass   absent (nearest +155.5)  None
+    8070.3   SlowCrescendoOn:bass   absent (nearest +93.4)   None
+    8104.3   SlowCrescendoOn:bass   absent (nearest +59.4)   None
+    8753.6   SlowCrescendoOn:treble absent (nearest -13.8)   None
+    9042.8   SlowCrescendoOn:treble absent (nearest -47.2)   None
+    9503.5   SlowCrescendoOn:bass   near +3.9                None
+    9523.9  SlowCrescendoOff:bass   absent (nearest +62.5)   None
+
+== leader, 1370–1500 mm: e-roll holes and symbols
+  e-roll: [(1385.0, 'MezzoforteOff', 'bass'), (1385.0, 'SoftPedalOff', 'bass'), (1385.2, 'SlowCrescendoOff', 'bass'), (1385.2, 'ForzandoOff', 'bass'), (1385.4, 'ForzandoOff', 'treble'), (1385.5, 'SlowCrescendoOff', 'treble'), (1385.5, 'MezzoforteOff', 'treble'), (1385.6, 'SustainPedalOff', 'treble'), (1417.2, 'SlowCrescendoOn', 'bass'), (1436.2, 'SlowCrescendoOff', 'bass'), (1483.3, 'ForzandoOn', 'bass'), (1489.2, 'ForzandoOff', 'bass'), (1493.8, 'SustainPedalOn', 'treble')]
+  symbols: [(1346.0, 'SoftPedalOn', 'bass', 'A', 'LS1S2W', ''), (1418.8, 'SlowCrescendoOn', 'bass', 'B1', 'S1', ''), (1434.5, 'ForzandoOn', 'bass', 'C', 'LS2', ''), (1437.6, 'SlowCrescendoOff', 'bass', 'B1', 'S1', ''), (1440.5, 'ForzandoOff', 'bass', 'C', 'LS2', ''), (1462.5, 'SlowCrescendoOn', 'bass', 'C', 'LS2', ''), (1473.4, 'SlowCrescendoOff', 'bass', 'C', 'LS2', ''), (1483.4, 'ForzandoOn', 'bass', 'B', 'LS1S2', ''), (1489.4, 'ForzandoOff', 'bass', 'B', 'LS1S2', ''), (1491.7, 'SustainPedalOn', 'treble', 'A', 'LS1S2W', '')]
+
+chance: C additions at the same place among free holes: observed 12; displaced mean 1.21, p99 4, max 6, P(null >= observed) = 0.0000

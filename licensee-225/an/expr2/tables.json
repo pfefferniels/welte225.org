@@ -1,0 +1,9561 @@
+[
+ {
+  "label": "B:bass:1483-1609 (bar 1\u20131)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Differenzierung der Melodie"
+  ],
+  "chaseEmR/B": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "bass": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -33 mm"
+  },
+  "gourlin/B": {
+   "bass": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -31 mm"
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -31 mm"
+  }
+ },
+ {
+  "label": "B:bass:2136-2568 (bar 3\u20135)",
+  "version": "B",
+  "kinds": {
+   "addition": 6
+  },
+  "n": 6,
+  "motivations": [
+   "Betonte Auftaktfigur",
+   "Dynamische Differenzierung innheralb eines Akkordes",
+   "Verschiebung auf betonte Zeit"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 9.847
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 24.087
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 1.3
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 6.51
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 29.886
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 6.116
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.98,
+    0.98
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 4.204
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.72,
+    0.67
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -18 mm"
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 2.874
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 2.534
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.38,
+    0.68
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -18 mm"
+  }
+ },
+ {
+  "label": "B:bass:3361-3547 (bar 8\u20131\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 4
+  },
+  "n": 4,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 8.268
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.98,
+    0.95
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 24.616
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.93,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 4.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 3.935
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.68,
+    0.77
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 21.519
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 3.7
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 10.025
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.85,
+    0.87
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 6.222
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.08,
+    0.87
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 5.2
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 5.906
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.75,
+    0.77
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 2.725
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.33,
+    0.8
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 8.6
+  }
+ },
+ {
+  "label": "B:bass:3806-3806 (bar 2\u2032\u20132\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.58
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.45,
+    0.83
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 2.982
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.97,
+    0.97
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 7.9
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.853
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.43,
+    0.77
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 5.036
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 7.3
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 1.809
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.83,
+    0.18
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 1.12
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.17,
+    0.63
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 15.3
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 1.351
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.27,
+    0.8
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.847
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.05,
+    0.47
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 17.8
+  }
+ },
+ {
+  "label": "B:bass:4047-4483 (bar 3\u2032\u20135\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 8
+  },
+  "n": 8,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 16.586
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 25.671
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 2.6
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 1.485
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.65,
+    0.9
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "between"
+  },
+  "phillipsR/C/gain": {
+   "bass": 13.537
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 1.2
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 32.421
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 16.243
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.95,
+    0.97
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 3.3
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 14.583
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 7.198
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.77,
+    0.62
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 5.7
+  }
+ },
+ {
+  "label": "B:bass:4814-4909 (bar 6\u2032\u20137\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 1.535
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.48,
+    0.68
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 7.251
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.95,
+    0.97
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 5.3
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.961
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.55,
+    0.7
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 9.476
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.93,
+    0.93
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 5.0
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 2.828
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.82,
+    0.22
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 2.061
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.22,
+    0.53
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 8.7
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 2.457
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.73,
+    0.78
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 1.746
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.22,
+    0.28
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 8.9
+  }
+ },
+ {
+  "label": "B:bass:5341-5878 (bar 8\u2032\u201311)",
+  "version": "B",
+  "kinds": {
+   "addition": 13
+  },
+  "n": 13,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 349.545
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 814.926
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 98.559
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 459.994
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 1.2
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 104.353
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 73.958
+  },
+  "gourlin/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 1.1
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 40.858
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 22.376
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 2.3
+  }
+ },
+ {
+  "label": "B:bass:6079-6234 (bar 12\u201313)",
+  "version": "B",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 47.967
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 99.595
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 17.183
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 75.295
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 1.3
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 26.606
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 17.385
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.78,
+    0.92
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 1.1
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 17.768
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    1.0,
+    0.97
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 11.19
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 1.1
+  }
+ },
+ {
+  "label": "B:bass:7256-7396 (bar 16\u201317)",
+  "version": "B",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "bass": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -35 mm"
+  },
+  "gourlin/B": {
+   "bass": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -18 mm"
+  }
+ },
+ {
+  "label": "B:bass:7939-8425 (bar 19\u201321)",
+  "version": "B",
+  "kinds": {
+   "addition": 9
+  },
+  "n": 9,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 30.955
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 52.837
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 5.467
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.98,
+    0.95
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "between"
+  },
+  "phillipsR/C/gain": {
+   "bass": -0.183
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -22.106
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.97,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -10.223
+  },
+  "gourlin/C/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 4.3
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -13.469
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.97,
+    0.97
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -9.538
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.85,
+    0.9
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 8.0
+  }
+ },
+ {
+  "label": "B:bass:8553-8568 (bar 22\u201322)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.434
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.12,
+    0.78
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 3.285
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.38,
+    0.82
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 7.9
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": -0.263
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.38,
+    0.55
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 1.894
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.95,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 15.5
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 3.201
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.78,
+    0.8
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 2.192
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.17,
+    0.43
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 6.4
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.952
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.1,
+    0.08
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.901
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.23,
+    0.45
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 31"
+  }
+ },
+ {
+  "label": "B:bass:9198-9210 (bar 23\u201323)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.12
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.52,
+    0.68
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 1.455
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.38,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37"
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": -0.037
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.23,
+    0.12
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 1.351
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.72,
+    0.37
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": ">= 36"
+  },
+  "gourlin/B": {
+   "bass": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.222
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.23,
+    0.78
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.196
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.05,
+    0.3
+   ]
+  },
+  "gourlin/precision": {
+   "bass": ">= 30"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.059
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.2,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.142
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.08,
+    0.0
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 32"
+  }
+ },
+ {
+  "label": "B:bass:9420-9673 (bar 24\u201324)",
+  "version": "B",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 6.922
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.47,
+    0.93
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 20.264
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.928
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.87,
+    0.93
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "between"
+  },
+  "phillipsR/C/gain": {
+   "bass": 10.208
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 2.743
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.87,
+    0.83
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 2.902
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.3,
+    0.72
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 6.4
+  },
+  "phillipsL/B": {
+   "bass": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.653
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 1.876
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.4,
+    0.33
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 9.2
+  }
+ },
+ {
+  "label": "B:soft:5316-5316 (bar 8\u2032\u20138\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "Verl\u00e4ngerung des Bereichs ohne Verschiebung"
+  ],
+  "chaseEmR/B": {
+   "bass": "has",
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 100.772,
+   "treble": 65.544
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has",
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 279.164,
+   "treble": 69.623
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 10.5,
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 1.533,
+   "treble": 2.604
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.03,
+    0.13
+   ],
+   "treble": [
+    0.45,
+    0.37
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0,
+   "treble": 2.115
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.08,
+    0.02
+   ],
+   "treble": [
+    0.38,
+    0.42
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -35 mm",
+   "treble": "best at -35 mm"
+  },
+  "gourlin/B": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": -1.629,
+   "treble": 2.369
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.02,
+    0.1
+   ],
+   "treble": [
+    0.88,
+    0.63
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0,
+   "treble": 2.434
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.02,
+    0.03
+   ],
+   "treble": [
+    0.55,
+    0.6
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm",
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.281,
+   "treble": 0.807
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.03,
+    0.03
+   ],
+   "treble": [
+    0.58,
+    0.78
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0,
+   "treble": 1.651
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.38,
+    0.45
+   ],
+   "treble": [
+    0.75,
+    0.8
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -31 mm",
+   "treble": "best at -31 mm"
+  }
+ },
+ {
+  "label": "B:soft:5771-5771 (bar 10\u201310)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "Verl\u00e4ngerung des Bereichs ohne Verschiebung"
+  ],
+  "chaseEmR/B": {
+   "bass": "between",
+   "treble": "between"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 5.966,
+   "treble": 1.155
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between",
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 3.622,
+   "treble": 21.335
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37",
+   "treble": 10.7
+  },
+  "phillipsR/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.07,
+    0.03
+   ],
+   "treble": [
+    0.25,
+    0.17
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.2,
+    0.02
+   ],
+   "treble": [
+    0.28,
+    0.38
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -35 mm",
+   "treble": "best at -35 mm"
+  },
+  "gourlin/B": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0,
+   "treble": 0.208
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.1,
+    0.0
+   ],
+   "treble": [
+    0.58,
+    0.28
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0,
+   "treble": 0.076
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.07,
+    0.05
+   ],
+   "treble": [
+    0.62,
+    0.6
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm",
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0,
+   "treble": 0.007
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.03,
+    0.03
+   ],
+   "treble": [
+    0.58,
+    0.48
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.754,
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.62,
+    0.53
+   ],
+   "treble": [
+    0.53,
+    0.45
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -31 mm",
+   "treble": ">= 31"
+  }
+ },
+ {
+  "label": "B:treble:1709-1759 (bar 2\u20132)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Weniger Akzent auf f'",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 15.069
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 90.999
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 13.2
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 14.545
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 121.282
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 12.0
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 1.251
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.85,
+    0.72
+   ]
+  },
+  "gourlin/C": {
+   "treble": "lacks"
+  },
+  "gourlin/C/gain": {
+   "treble": -7.147
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.95,
+    0.95
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 10.1
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 4.703
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "treble": -1.787
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.82,
+    0.87
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": 13.3
+  }
+ },
+ {
+  "label": "B:treble:1932-2163 (bar 2\u20133)",
+  "version": "B",
+  "kinds": {
+   "addition": 4
+  },
+  "n": 4,
+  "motivations": [
+   "Verschiebung auf betonte Zeit"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.336
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.43,
+    0.57
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.791
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.33,
+    0.73
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.103
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.45,
+    0.67
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.6
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.87,
+    0.87
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 3.895
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.25,
+    0.58
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 3.926
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.42,
+    0.52
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": 2.352
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.12,
+    0.3
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 1.73
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.22,
+    0.27
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -30 mm"
+  }
+ },
+ {
+  "label": "B:treble:2569-2678 (bar 5\u20136)",
+  "version": "B",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "Verschiebung auf betonte Zeit"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 22.409
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 5.916
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.5,
+    0.82
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 23.309
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 8.281
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.82,
+    0.93
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 12.1
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 13.993
+  },
+  "gourlin/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 3.458
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.23,
+    0.7
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 13.2
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 13.626
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 3.527
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.22,
+    0.43
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": 13.1
+  }
+ },
+ {
+  "label": "B:treble:3926-4074 (bar 3\u2032\u20133\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 1.137
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.18,
+    0.43
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 1.753
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.08,
+    0.4
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.225
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.27,
+    0.35
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.465
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.22,
+    0.4
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -20 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.154
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.17,
+    0.27
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.224
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.18,
+    0.23
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -31 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.033
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.13,
+    0.3
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.004
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.07,
+    0.12
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -31 mm"
+  }
+ },
+ {
+  "label": "B:treble:4580-4603 (bar 6\u2032\u20136\u2032)",
+  "version": "B",
+  "kinds": {
+   "addition": 1,
+   "redundant insertion": 1
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.125
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.08,
+    0.27
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.046
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.08,
+    0.05
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.257
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.07,
+    0.03
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.305
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.12,
+    0.02
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.112
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.0,
+    0.07
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.095
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.03,
+    0.1
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 31"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.069
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.13,
+    0.12
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.064
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.12,
+    0.18
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -32 mm"
+  }
+ },
+ {
+  "label": "B:treble:5535-5979 (bar 9\u201311)",
+  "version": "B",
+  "kinds": {
+   "addition": 11
+  },
+  "n": 11,
+  "motivations": [
+   "Dynamische Differenzierung innheralb eines Akkordes",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 33.107
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 37.651
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 1.3
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 46.935
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 50.557
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 1.2
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.052
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.57,
+    0.7
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 1.193
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.32,
+    0.62
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 10.8
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 2.821
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.87,
+    0.9
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 2.647
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.3,
+    0.57
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": 1.1
+  }
+ },
+ {
+  "label": "B:treble:6182-6182 (bar 12\u201312)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 2.6
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.43,
+    0.88
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 2.518
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.98,
+    0.95
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 4.298
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.52,
+    0.78
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 4.725
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.63,
+    0.8
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 35"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 1.439
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.17,
+    0.7
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 1.249
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.32,
+    0.63
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 1.217
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.57,
+    0.67
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 1.076
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.27,
+    0.27
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -18 mm"
+  }
+ },
+ {
+  "label": "B:treble:6339-6503 (bar 13\u201314)",
+  "version": "B",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 16.533
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 21.871
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 10.7
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 14.718
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    0.98
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 17.42
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 15.0
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 5.972
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.55,
+    0.78
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 4.143
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.7,
+    0.85
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 3.125
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 2.724
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.77,
+    0.68
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "B:treble:7431-7686 (bar 17\u201318)",
+  "version": "B",
+  "kinds": {
+   "addition": 4
+  },
+  "n": 4,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 394.791
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 78.194
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 15.9
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 366.364
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 192.357
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 10.2
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 43.812
+  },
+  "gourlin/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 33.422
+  },
+  "gourlin/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +17 mm"
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 86.768
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 25.865
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +18 mm"
+  }
+ },
+ {
+  "label": "B:treble:7952-8020 (bar 19\u201320)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 3.483
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.85,
+    0.93
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 5.298
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.63,
+    0.92
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.393
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.065
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.5,
+    0.9
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 36"
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.315
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.93,
+    0.92
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.691
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.6,
+    0.82
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -2.086
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.83,
+    0.83
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "treble": -1.731
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.78,
+    0.68
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +32 mm"
+  }
+ },
+ {
+  "label": "B:treble:8438-8498 (bar 21\u201321)",
+  "version": "B",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "has"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 45.62
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "has"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 5.879
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.68,
+    0.57
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 13.2
+  },
+  "phillipsR/B": {
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "treble": 32.298
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 2.743
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.88,
+    0.8
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 36"
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 35.455
+  },
+  "gourlin/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 4.497
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.73,
+    0.37
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -17 mm"
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 30.298
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 2.047
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.33,
+    0.33
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "B:treble:8753-9054 (bar 22\u201323)",
+  "version": "B",
+  "kinds": {
+   "addition": 4
+  },
+  "n": 4,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.389
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.22,
+    0.12
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.084
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.05,
+    0.2
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.153
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.2,
+    0.22
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.329
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.23,
+    0.42
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 36"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.263
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.15,
+    0.43
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.194
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.0,
+    0.17
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.194
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.05,
+    0.22
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.217
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.05,
+    0.15
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +32 mm"
+  }
+ },
+ {
+  "label": "B:treble:9213-9222 (bar 23\u201323)",
+  "version": "B",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.396
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.08,
+    0.25
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.256
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.08,
+    0.18
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.312
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.08,
+    0.27
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.302
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.13,
+    0.07
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -36 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.194
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.08,
+    0.02
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.169
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.2,
+    0.17
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.205
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.07,
+    0.15
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.171
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.03,
+    0.12
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -32 mm"
+  }
+ },
+ {
+  "label": "C:bass:1433-1473 (bar upbeat\u2013Auftakt)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 9.643
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.98,
+    0.98
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 20.507
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.95,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 9.741
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.98,
+    0.98
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 38.183
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 1.2
+  },
+  "gourlin/B": {
+   "bass": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": 1.21
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.37,
+    0.88
+   ]
+  },
+  "gourlin/C": {
+   "bass": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.926
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.37,
+    0.47
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.882
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.28,
+    0.4
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.38
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.08,
+    0.18
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -30 mm"
+  }
+ },
+ {
+  "label": "C:bass:1875-2077 (bar 2\u20133)",
+  "version": "C",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "Differenzierung der Mittelstimmen"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 5.007
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.97,
+    0.95
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 15.285
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.95,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 2.6
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 3.033
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.55,
+    0.82
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 17.865
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 2.4
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -6.854
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.65,
+    0.75
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -2.55
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.13,
+    0.58
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -3.723
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.58,
+    0.83
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -1.153
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.33,
+    0.4
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +17 mm"
+  }
+ },
+ {
+  "label": "C:bass:2231-2475 (bar 4\u20135)",
+  "version": "C",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -9.153
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -7.84
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 4.73
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.45,
+    0.57
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 44.46
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.217
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.23,
+    0.5
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.266
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.12,
+    0.28
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 0.0
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.603
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.0,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 6.276
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.1,
+    0.42
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 0.0
+  }
+ },
+ {
+  "label": "C:bass:2659-2671 (bar 6\u20136)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 1.269
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.3,
+    0.72
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 3.917
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.92,
+    0.92
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 8.0
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.507
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.2,
+    0.35
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 3.537
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.92,
+    0.48
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 4.8
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -1.028
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.5,
+    0.7
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.368
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.02,
+    0.62
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -31 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.582
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.18,
+    0.65
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.184
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.2,
+    0.13
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 31"
+  }
+ },
+ {
+  "label": "C:bass:2853-3109 (bar 6\u20138)",
+  "version": "C",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "Differenzierung der Mittelstimmen",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 1.102
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.73,
+    0.8
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 6.687
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.88,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 4.0
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.804
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.3,
+    0.55
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 8.217
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.95,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 2.4
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -3.108
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.37,
+    0.62
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -1.158
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.33,
+    0.47
+   ]
+  },
+  "gourlin/precision": {
+   "bass": ">= 30"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -1.768
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.18,
+    0.65
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.536
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.15,
+    0.18
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 30"
+  }
+ },
+ {
+  "label": "C:bass:3252-3263 (bar 8\u20138)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -0.088
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.4,
+    0.72
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 1.562
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.87,
+    0.28
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 18.5
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.212
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.3,
+    0.33
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 2.884
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.67,
+    0.7
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 7.3
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -0.849
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.18,
+    0.83
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.302
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.03,
+    0.32
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.737
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.25,
+    0.57
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.237
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.18,
+    0.3
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +17 mm"
+  }
+ },
+ {
+  "label": "C:bass:3863-3938 (bar 2\u2032\u20133\u2032)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Differenzierung der Mittelstimmen"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 2.049
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.65,
+    0.82
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 8.305
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.93,
+    0.92
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 5.3
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 1.243
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.62,
+    0.73
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 9.493
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.97,
+    0.97
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 4.9
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -3.643
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.37,
+    0.85
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -1.191
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.22,
+    0.33
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -2.043
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.45,
+    0.25
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.572
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.1,
+    0.22
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +18 mm"
+  }
+ },
+ {
+  "label": "C:bass:4281-4286 (bar 4\u2032\u20134\u2032)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -2.584
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.43,
+    0.82
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -7.846
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.87,
+    0.35
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 4.084
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.18,
+    0.58
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 33.816
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 1.1
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 4.262
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.32,
+    0.73
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 1.1
+  }
+ },
+ {
+  "label": "C:bass:5036-5175 (bar 7\u2032\u20138\u2032)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Differenzierung der Mittelstimmen",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -0.097
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.47,
+    0.65
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 1.321
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.97,
+    0.95
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37"
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.404
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.15,
+    0.35
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 4.333
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.47,
+    0.33
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 9.9
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -1.905
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.3,
+    0.62
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.553
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.17,
+    0.37
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.512
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.22,
+    0.58
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.069
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.08,
+    0.55
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +18 mm"
+  }
+ },
+ {
+  "label": "C:bass:6475-7227 (bar 14\u201316)",
+  "version": "C",
+  "kinds": {
+   "addition": 12
+  },
+  "n": 12,
+  "motivations": [
+   "Differenzierung der Mittelstimmen",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 25.665
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 52.926
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 1.3
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 18.239
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 82.523
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -44.688
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -22.659
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.97,
+    0.98
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -26.006
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -14.323
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -32 mm"
+  }
+ },
+ {
+  "label": "C:bass:7672-7880 (bar 18\u201319)",
+  "version": "C",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "Differenzierung der Mittelstimmen"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.824
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.6,
+    0.78
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 5.732
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.93,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 5.3
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 1.26
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.23,
+    0.43
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 10.287
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 2.5
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -3.414
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.73,
+    0.7
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -1.174
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.28,
+    0.43
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -1.826
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.45,
+    0.57
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.617
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.35,
+    0.28
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -18 mm"
+  }
+ },
+ {
+  "label": "C:bass:8210-8216 (bar 20\u201320)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 8.041
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 15.633
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 3.861
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "between"
+  },
+  "phillipsR/C/gain": {
+   "bass": 13.385
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -9.453
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.98,
+    0.95
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -2.975
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.88,
+    0.93
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -17 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -7.398
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.98,
+    0.98
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -1.988
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.97,
+    0.95
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -18 mm"
+  }
+ },
+ {
+  "label": "C:bass:8867-9156 (bar 22\u201323)",
+  "version": "C",
+  "kinds": {
+   "addition": 6
+  },
+  "n": 6,
+  "motivations": [
+   "Differenzierung der Mittelstimmen",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.333
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.43,
+    0.78
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "has"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 6.646
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.93,
+    0.93
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 4.0
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.483
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.45,
+    0.68
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has"
+  },
+  "phillipsR/C/gain": {
+   "bass": 11.004
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.9,
+    0.25
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 2.6
+  },
+  "gourlin/B": {
+   "bass": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": -5.454
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.33,
+    0.05
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -1.955
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.22,
+    0.2
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -3.376
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.25,
+    0.57
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -1.183
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.32,
+    0.13
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -32 mm"
+  }
+ },
+ {
+  "label": "C:treble:1691-8037 (bar 2\u201320)",
+  "version": "C",
+  "kinds": {
+   "redundancy removal": 1
+  },
+  "n": 1,
+  "motivations": [
+   "Ausged\u00fcnntes Crescendo im Diskant"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": null
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": null
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": null
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": null
+  }
+ },
+ {
+  "label": "C:treble:2776-2892 (bar 6\u20137)",
+  "version": "C",
+  "kinds": {
+   "addition": 1,
+   "redundancy removal": 1
+  },
+  "n": 2,
+  "motivations": [
+   "Bereinigung",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.143
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.1,
+    0.03
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.066
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.03,
+    0.42
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.238
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.18,
+    0.07
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.294
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.2,
+    0.18
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.12
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.02,
+    0.25
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.123
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.02,
+    0.18
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.308
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.07,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.296
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.18,
+    0.13
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 30"
+  }
+ },
+ {
+  "label": "C:treble:3062-3076 (bar 7\u20137)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.227
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.05,
+    0.15
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.106
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.13,
+    0.33
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.368
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.23,
+    0.07
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.345
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.1,
+    0.17
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.23
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.15,
+    0.2
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.185
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.12,
+    0.02
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.18
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.15,
+    0.13
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.095
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.15,
+    0.15
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 30"
+  }
+ },
+ {
+  "label": "C:treble:3252-3270 (bar 8\u20138)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.378
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.17,
+    0.28
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.058
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.08,
+    0.27
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.408
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.08,
+    0.25
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.3
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.18,
+    0.23
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.465
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.25,
+    0.33
+   ]
+  },
+  "gourlin/C": {
+   "treble": "lacks"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.405
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.12,
+    0.3
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +17 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.474
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.18,
+    0.2
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.397
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.03,
+    0.02
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -29 mm"
+  }
+ },
+ {
+  "label": "C:treble:3865-3888 (bar 2\u2032\u20133\u2032)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.457
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.18,
+    0.3
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.635
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.13,
+    0.6
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.398
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.07,
+    0.07
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.505
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.12,
+    0.3
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 34"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.523
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.07,
+    0.03
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.458
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.18,
+    0.35
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +18 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.433
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.18,
+    0.05
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.356
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.08,
+    0.1
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +18 mm"
+  }
+ },
+ {
+  "label": "C:treble:4816-5253 (bar 6\u2032\u20138\u2032)",
+  "version": "C",
+  "kinds": {
+   "addition": 6
+  },
+  "n": 6,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.145
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.35,
+    0.65
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.627
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.22,
+    0.38
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 15.9
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 1.109
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.43,
+    0.63
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "has"
+  },
+  "phillipsR/C/gain": {
+   "treble": 1.507
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.53,
+    0.72
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 17.2
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -1.383
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.08,
+    0.37
+   ]
+  },
+  "gourlin/C": {
+   "treble": "lacks"
+  },
+  "gourlin/C/gain": {
+   "treble": -1.174
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.07,
+    0.35
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.733
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.15,
+    0.28
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.517
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.27,
+    0.2
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +31 mm"
+  }
+ },
+ {
+  "label": "C:treble:5605-5605 (bar 10\u201310)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -10.676
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.98,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.021
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.3,
+    0.33
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -11.613
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.97,
+    0.98
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.251
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.78,
+    0.48
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 35"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -1.982
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.23,
+    0.58
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.068
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.08,
+    0.2
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -31 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -9.463
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.65,
+    0.48
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.525
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.23,
+    0.2
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -32 mm"
+  }
+ },
+ {
+  "label": "C:treble:6608-7072 (bar 14\u201316)",
+  "version": "C",
+  "kinds": {
+   "addition": 7
+  },
+  "n": 7,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.725
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.28,
+    0.18
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.637
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.65,
+    0.65
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 10.6
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.164
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.38,
+    0.27
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.142
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.57,
+    0.42
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 15.1
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.465
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.25,
+    0.2
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.346
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.15,
+    0.38
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.872
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.13,
+    0.27
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.665
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.2,
+    0.27
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "C:treble:7739-7843 (bar 18\u201319)",
+  "version": "C",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.032
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.17,
+    0.03
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.82
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.12,
+    0.43
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 18.6
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.393
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.17,
+    0.07
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.287
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.18,
+    0.08
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -20 mm"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.886
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.12,
+    0.3
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.761
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.08,
+    0.15
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.789
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.03,
+    0.28
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.649
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.05,
+    0.1
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +32 mm"
+  }
+ },
+ {
+  "label": "C:treble:8534-8605 (bar 22\u201322)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.047
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.12,
+    0.15
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.096
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.22,
+    0.35
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 21.2
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.517
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.12,
+    0.08
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.613
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.17,
+    0.17
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 20.7
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.437
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.08,
+    0.03
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.38
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.07,
+    0.07
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 16.9
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.03
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.08,
+    0.12
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.004
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.08,
+    0.23
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 31"
+  }
+ },
+ {
+  "label": "C:treble:8953-8968 (bar 23\u201323)",
+  "version": "C",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.294
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.13,
+    0.32
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.156
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.2,
+    0.1
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at +37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.518
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.15,
+    0.23
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.496
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.12,
+    0.1
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at +36 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.044
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.08,
+    0.02
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.024
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.03,
+    0.4
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +29 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.215
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.05,
+    0.13
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.171
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.03,
+    0.08
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +32 mm"
+  }
+ },
+ {
+  "label": "C:treble:9151-9163 (bar 23\u201323)",
+  "version": "C",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.217
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.13,
+    0.28
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.108
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.07,
+    0.4
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.129
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.03,
+    0.08
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.093
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.13,
+    0.08
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -36 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.32
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.15,
+    0.13
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.279
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.03,
+    0.15
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -28 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.332
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.1,
+    0.03
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.277
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.08,
+    0.02
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -30 mm"
+  }
+ },
+ {
+  "label": "B1:bass:1419-1438 (bar upbeat\u2013upbeat)",
+  "version": "B1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Zus\u00e4tzliches Crescendo im Bass"
+  ],
+  "chaseEmR/B": {
+   "bass": "has"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 6.424
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.58,
+    0.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -0.668
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37"
+  },
+  "phillipsR/B": {
+   "bass": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 5.17
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.2,
+    0.73
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -10.686
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.97,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -33 mm"
+  },
+  "gourlin/B": {
+   "bass": "has"
+  },
+  "gourlin/B/gain": {
+   "bass": 1.858
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.211
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.67,
+    0.77
+   ]
+  },
+  "gourlin/precision": {
+   "bass": ">= 31"
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -30 mm"
+  }
+ },
+ {
+  "label": "B1:bass:7365-7365 (bar 17\u201317)",
+  "version": "B1",
+  "kinds": {
+   "redundant insertion": 1
+  },
+  "n": 1,
+  "motivations": [
+   "Zus\u00e4tzliches Crescendo im Bass"
+  ],
+  "chaseEmR/B": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "bass": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -35 mm"
+  },
+  "gourlin/B": {
+   "bass": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": null
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +32 mm"
+  }
+ },
+ {
+  "label": "A1:bass:1737-1753 (bar 2\u20132)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2,
+   "redundant insertion": 1
+  },
+  "n": 3,
+  "motivations": [
+   "Crescendo zu melodischen H\u00f6hepunkten"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -1.729
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.42,
+    0.72
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -2.855
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.85,
+    0.9
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -1.001
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.55,
+    0.55
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -2.652
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.98,
+    0.95
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": ">= 34"
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -1.169
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.57,
+    0.73
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.426
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.12,
+    0.53
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -32 mm"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.531
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.63,
+    0.37
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.132
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.12,
+    0.42
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 31"
+  }
+ },
+ {
+  "label": "A1:bass:2149-2275 (bar 3\u20134)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2,
+   "redundant insertion": 1
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -4.589
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.45,
+    0.68
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -7.414
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.9,
+    0.92
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -2.094
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.08,
+    0.52
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -5.668
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.93,
+    0.28
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 1.2
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -1.819
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.92,
+    0.9
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 1.215
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.32,
+    0.67
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 3.7
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.527
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.77,
+    0.73
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.915
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.4,
+    0.22
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": 9.2
+  }
+ },
+ {
+  "label": "A1:bass:3796-3796 (bar 2\u2032\u20132\u2032)",
+  "version": "A1",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -2.087
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.37,
+    0.7
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -4.524
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.57,
+    0.92
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 7.9
+  },
+  "phillipsR/B": {
+   "bass": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": -0.545
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.05,
+    0.3
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -0.994
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.93,
+    0.93
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 11.0
+  },
+  "gourlin/B": {
+   "bass": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": -0.378
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.28,
+    0.03
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": -0.036
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.03,
+    0.4
+   ]
+  },
+  "gourlin/precision": {
+   "bass": ">= 30"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.173
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.0,
+    0.28
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.317
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.07,
+    0.07
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 31"
+  }
+ },
+ {
+  "label": "A1:bass:4056-4067 (bar 3\u2032\u20133\u2032)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -14.255
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.98,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.249
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -2.544
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.98,
+    0.97
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "between"
+  },
+  "phillipsR/C/gain": {
+   "bass": -12.492
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 2.4
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -17.92
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.95,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -8.689
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.52,
+    0.9
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +18 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -12.988
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -4.894
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.72,
+    0.83
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +18 mm"
+  }
+ },
+ {
+  "label": "A1:bass:5363-5583 (bar 8\u2032\u20139)",
+  "version": "A1",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -97.058
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -180.018
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -32.227
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -107.364
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -8.84
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -13.491
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.92,
+    0.88
+   ]
+  },
+  "gourlin/precision": {
+   "bass": 0.0
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -2.825
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.7,
+    0.73
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -1.562
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.75,
+    0.82
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +31 mm"
+  }
+ },
+ {
+  "label": "A1:bass:7924-8040 (bar 19\u201320)",
+  "version": "A1",
+  "kinds": {
+   "addition": 5
+  },
+  "n": 5,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -27.441
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -53.59
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 0.0
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -18.714
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -91.329
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": 0.0
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -62.774
+  },
+  "gourlin/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ]
+  },
+  "gourlin/C": {
+   "bass": "lacks"
+  },
+  "gourlin/C/gain": {
+   "bass": -34.116
+  },
+  "gourlin/C/power": {
+   "bass": [
+    1.0,
+    0.98
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "bass": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "bass": -29.529
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "bass": -11.277
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.95,
+    0.95
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +32 mm"
+  }
+ },
+ {
+  "label": "A1:bass:8543-8628 (bar 22\u201322)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -3.567
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    0.72,
+    0.82
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -6.714
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    0.87,
+    0.48
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37"
+  },
+  "phillipsR/B": {
+   "bass": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "bass": -1.715
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.2,
+    0.42
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "bass": -5.863
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.88,
+    0.5
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": ">= 36"
+  },
+  "gourlin/B": {
+   "bass": "lacks"
+  },
+  "gourlin/B/gain": {
+   "bass": -0.171
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.9,
+    0.92
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.562
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.28,
+    0.35
+   ]
+  },
+  "gourlin/precision": {
+   "bass": ">= 29"
+  },
+  "phillipsL/B": {
+   "bass": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.673
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.3,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.231
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.13,
+    0.32
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": ">= 31"
+  }
+ },
+ {
+  "label": "A1:soft:5507-5667 (bar 9\u201310)",
+  "version": "A1",
+  "kinds": {
+   "addition": 6
+  },
+  "n": 6,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks",
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -15.975,
+   "treble": -38.039
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks",
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -38.438,
+   "treble": -34.603
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": 5.3,
+   "treble": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "bass": -1.655,
+   "treble": -0.719
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.05,
+    0.07
+   ],
+   "treble": [
+    0.32,
+    0.12
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "lacks",
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "bass": -0.785,
+   "treble": -0.711
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.0,
+    0.1
+   ],
+   "treble": [
+    0.35,
+    0.1
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at +35 mm",
+   "treble": "best at +20 mm"
+  },
+  "gourlin/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.05,
+    0.05
+   ],
+   "treble": [
+    0.62,
+    0.37
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.007,
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.02,
+    0.03
+   ],
+   "treble": [
+    0.4,
+    0.55
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at +18 mm",
+   "treble": ">= 31"
+  },
+  "phillipsL/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "bass": -0.562,
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.03,
+    0.03
+   ],
+   "treble": [
+    0.42,
+    0.2
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "bass": -0.374,
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.4,
+    0.18
+   ],
+   "treble": [
+    0.25,
+    0.52
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at +32 mm",
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "A1:soft:6250-6250 (bar 13\u201313)",
+  "version": "A1",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "bass": "lacks",
+   "treble": "between"
+  },
+  "chaseEmR/B/gain": {
+   "bass": -42.982,
+   "treble": -7.004
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "lacks",
+   "treble": "between"
+  },
+  "chaseEmR/C/gain": {
+   "bass": -97.618,
+   "treble": -5.152
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    1.0,
+    1.0
+   ],
+   "treble": [
+    1.0,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": ">= 37",
+   "treble": ">= 37"
+  },
+  "phillipsR/B": {
+   "bass": "has",
+   "treble": "has"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.734,
+   "treble": 0.022
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    0.1,
+    0.05
+   ],
+   "treble": [
+    0.05,
+    0.08
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "has",
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "bass": 1.183,
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    0.12,
+    0.13
+   ],
+   "treble": [
+    0.18,
+    0.07
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": "best at -35 mm",
+   "treble": ">= 35"
+  },
+  "gourlin/B": {
+   "bass": "overlap",
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0,
+   "treble": 0.217
+  },
+  "gourlin/B/power": {
+   "bass": [
+    0.07,
+    0.0
+   ],
+   "treble": [
+    0.18,
+    0.2
+   ]
+  },
+  "gourlin/C": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0,
+   "treble": 0.206
+  },
+  "gourlin/C/power": {
+   "bass": [
+    0.0,
+    0.12
+   ],
+   "treble": [
+    0.53,
+    0.1
+   ]
+  },
+  "gourlin/precision": {
+   "bass": "best at -17 mm",
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0,
+   "treble": 0.069
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    0.02,
+    0.05
+   ],
+   "treble": [
+    0.18,
+    0.18
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "overlap",
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0,
+   "treble": 0.1
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    0.0,
+    0.15
+   ],
+   "treble": [
+    0.22,
+    0.17
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": "best at -18 mm",
+   "treble": ">= 31"
+  }
+ },
+ {
+  "label": "A1:treble:1964-2112 (bar 3\u20133)",
+  "version": "A1",
+  "kinds": {
+   "addition": 6
+  },
+  "n": 6,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -5.986
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.82,
+    0.85
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -11.575
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.83,
+    0.82
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at +37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -4.562
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.77,
+    0.68
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": -4.374
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.65,
+    0.82
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at +34 mm"
+  },
+  "gourlin/B": {
+   "treble": "has"
+  },
+  "gourlin/B/gain": {
+   "treble": 5.891
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.23,
+    0.37
+   ]
+  },
+  "gourlin/C": {
+   "treble": "has"
+  },
+  "gourlin/C/gain": {
+   "treble": 5.676
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.12,
+    0.55
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 0.0
+  },
+  "phillipsL/B": {
+   "treble": "has"
+  },
+  "phillipsL/B/gain": {
+   "treble": 1.723
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.2,
+    0.17
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "has"
+  },
+  "phillipsL/C/gain": {
+   "treble": 2.414
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.28,
+    0.45
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": 0.0
+  }
+ },
+ {
+  "label": "A1:treble:2636-2685 (bar 6\u20136)",
+  "version": "A1",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "Crescendo zu melodischen H\u00f6hepunkten",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -6.116
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.97,
+    0.95
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -12.665
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.98,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at +21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -4.478
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": -9.331
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at +19 mm"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.911
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.32,
+    0.55
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.689
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.1,
+    0.32
+   ]
+  },
+  "gourlin/precision": {
+   "treble": 11.1
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -1.224
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.27,
+    0.53
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.34
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.35,
+    0.37
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": 11.1
+  }
+ },
+ {
+  "label": "A1:treble:2864-2873 (bar 7\u20137)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Dynamische Differenzierung",
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -1.192
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.38,
+    0.15
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -14.437
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.442
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.28,
+    0.22
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": -15.329
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -34 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.488
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.32,
+    0.07
+   ]
+  },
+  "gourlin/C": {
+   "treble": "lacks"
+  },
+  "gourlin/C/gain": {
+   "treble": -5.525
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.62,
+    0.8
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 30"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.575
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.15,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "treble": -4.288
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.65,
+    0.85
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 30"
+  }
+ },
+ {
+  "label": "A1:treble:4561-4645 (bar 6\u2032\u20136\u2032)",
+  "version": "A1",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -1.307
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.12,
+    0.37
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "overlap"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -1.13
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.33,
+    0.48
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.358
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.55,
+    0.48
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.762
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.28,
+    0.35
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": 11.0
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -1.142
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.05,
+    0.5
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.952
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.12,
+    0.22
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -31 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.305
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.12,
+    0.4
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.153
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.33,
+    0.15
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "A1:treble:5547-5589 (bar 9\u201310)",
+  "version": "A1",
+  "kinds": {
+   "addition": 1,
+   "redundant insertion": 1
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -19.383
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -2.607
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.57,
+    0.3
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -16.281
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    1.0,
+    1.0
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": -3.676
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.47,
+    0.23
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -20 mm"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -12.327
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.82,
+    0.92
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.054
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.13,
+    0.23
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -17 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -14.182
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.97,
+    0.95
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.217
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.08,
+    0.22
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -18 mm"
+  }
+ },
+ {
+  "label": "A1:treble:5868-5892 (bar 11\u201311)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": ">= 38"
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 35"
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 31"
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": ">= 32"
+  }
+ },
+ {
+  "label": "A1:treble:6216-6458 (bar 12\u201313)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2,
+   "redundant insertion": 1
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": 13.2
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -20 mm"
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -31 mm"
+  }
+ },
+ {
+  "label": "A1:treble:7524-7568 (bar 18\u201318)",
+  "version": "A1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at +21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": ">= 36"
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": ">= 29"
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -18 mm"
+  }
+ },
+ {
+  "label": "A1:treble:7993-7993 (bar 19\u201319)",
+  "version": "A1",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -36 mm"
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at -30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -32 mm"
+  }
+ },
+ {
+  "label": "A1:treble:8449-8550 (bar 21\u201322)",
+  "version": "A1",
+  "kinds": {
+   "addition": 3
+  },
+  "n": 3,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "lacks"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -9.306
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.97,
+    0.98
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -11.312
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.97,
+    0.98
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -21 mm"
+  },
+  "phillipsR/B": {
+   "treble": "lacks"
+  },
+  "phillipsR/B/gain": {
+   "treble": -5.647
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.97,
+    0.97
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "lacks"
+  },
+  "phillipsR/C/gain": {
+   "treble": -7.925
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.98,
+    0.98
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -21 mm"
+  },
+  "gourlin/B": {
+   "treble": "lacks"
+  },
+  "gourlin/B/gain": {
+   "treble": -8.005
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.72,
+    0.8
+   ]
+  },
+  "gourlin/C": {
+   "treble": "lacks"
+  },
+  "gourlin/C/gain": {
+   "treble": -8.839
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.42,
+    0.8
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +30 mm"
+  },
+  "phillipsL/B": {
+   "treble": "lacks"
+  },
+  "phillipsL/B/gain": {
+   "treble": -6.266
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.38,
+    0.57
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "lacks"
+  },
+  "phillipsL/C/gain": {
+   "treble": -6.463
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.38,
+    0.58
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at +32 mm"
+  }
+ },
+ {
+  "label": "A1:treble:9085-9085 (bar 23\u201323)",
+  "version": "A1",
+  "kinds": {
+   "addition": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "overlap"
+  },
+  "chaseEmR/B/gain": {
+   "treble": -0.915
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    0.02,
+    0.1
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "lacks"
+  },
+  "chaseEmR/C/gain": {
+   "treble": -0.674
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    0.03,
+    0.38
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": "best at -37 mm"
+  },
+  "phillipsR/B": {
+   "treble": "overlap"
+  },
+  "phillipsR/B/gain": {
+   "treble": -0.545
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    0.13,
+    0.07
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "overlap"
+  },
+  "phillipsR/C/gain": {
+   "treble": -0.505
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    0.07,
+    0.13
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": "best at -36 mm"
+  },
+  "gourlin/B": {
+   "treble": "overlap"
+  },
+  "gourlin/B/gain": {
+   "treble": -0.476
+  },
+  "gourlin/B/power": {
+   "treble": [
+    0.12,
+    0.3
+   ]
+  },
+  "gourlin/C": {
+   "treble": "overlap"
+  },
+  "gourlin/C/gain": {
+   "treble": -0.416
+  },
+  "gourlin/C/power": {
+   "treble": [
+    0.1,
+    0.22
+   ]
+  },
+  "gourlin/precision": {
+   "treble": "best at +16 mm"
+  },
+  "phillipsL/B": {
+   "treble": "overlap"
+  },
+  "phillipsL/B/gain": {
+   "treble": -0.313
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    0.05,
+    0.1
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "overlap"
+  },
+  "phillipsL/C/gain": {
+   "treble": -0.249
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    0.07,
+    0.18
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": "best at -32 mm"
+  }
+ },
+ {
+  "label": "A1:treble:10060-10060 (bar 24\u201324)",
+  "version": "A1",
+  "kinds": {
+   "redundant insertion": 1
+  },
+  "n": 1,
+  "motivations": [
+   "\u2013"
+  ],
+  "chaseEmR/B": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "treble": null
+  },
+  "phillipsR/B": {
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "treble": null
+  },
+  "gourlin/B": {
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "treble": null
+  },
+  "phillipsL/B": {
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "treble": null
+  }
+ },
+ {
+  "label": "D1:bass:1145-1243 (bar upbeat\u2013upbeat)",
+  "version": "D1",
+  "kinds": {
+   "addition": 2
+  },
+  "n": 2,
+  "motivations": [
+   "Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich festlegt"
+  ],
+  "chaseEmR/B": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.0
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": null
+  },
+  "phillipsR/B": {
+   "bass": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": null
+  },
+  "gourlin/B": {
+   "bass": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": null
+  },
+  "phillipsL/B": {
+   "bass": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": null
+  }
+ },
+ {
+  "label": "D1:soft:6338-6338 (bar 13\u201313)",
+  "version": "D1",
+  "kinds": {
+   "redundancy removal": 1
+  },
+  "n": 1,
+  "motivations": [
+   "Der Pianozug bleibt getreten, die l\u00f6sende Stanzung fehlt"
+  ],
+  "chaseEmR/B": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "chaseEmR/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "chaseEmR/B/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/C": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "chaseEmR/C/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "chaseEmR/C/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "chaseEmR/precision": {
+   "bass": null,
+   "treble": null
+  },
+  "phillipsR/B": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "phillipsR/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsR/B/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/C": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "phillipsR/C/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsR/C/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsR/precision": {
+   "bass": null,
+   "treble": null
+  },
+  "gourlin/B": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "gourlin/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "gourlin/B/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/C": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "gourlin/C/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "gourlin/C/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "gourlin/precision": {
+   "bass": null,
+   "treble": null
+  },
+  "phillipsL/B": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "phillipsL/B/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsL/B/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/C": {
+   "bass": "\u2013",
+   "treble": "\u2013"
+  },
+  "phillipsL/C/gain": {
+   "bass": 0.0,
+   "treble": 0.0
+  },
+  "phillipsL/C/power": {
+   "bass": [
+    null,
+    null
+   ],
+   "treble": [
+    null,
+    null
+   ]
+  },
+  "phillipsL/precision": {
+   "bass": null,
+   "treble": null
+  }
+ }
+]

@@ -1,0 +1,6 @@
+45 punches of A that B moves or strikes; the reading shows: {'B': 30, 'both': 1, 'neither': 11, 'A': 3}
+  A's punch kept at  1986.7 SlowCrescendoOff:treble (witnesses W); B's edit shift-to-metrical-accent inserts [('SlowCrescendoOn', 1931.4), ('SlowCrescendoOff', 1950.4)], B's punch on the reading too: True
+  A's punch kept at  2872.9 SlowCrescendoOn:treble (witnesses W); B's edit shift-to-metrical-accent inserts [], B's punch on the reading too: False
+  A's punch kept at  4055.7 SlowCrescendoOff:bass (witnesses W); B's edit None inserts [('SlowCrescendoOff', 4046.7)], B's punch on the reading too: False
+  A's punch kept at  5582.7 SlowCrescendoOn:bass (witnesses W); B's edit None inserts [('SlowCrescendoOn', 5562.6)], B's punch on the reading too: False
+chance: 112 punches of the reading that B's text does not explain, displaced by 25 to 150 mm, hit these places 0.66 times on average, p99 5, max 7; observed 4

@@ -1,0 +1,140 @@
+archetype (A, never deleted), n=164: offset +1.00 mm; |d - offset| p50 0.79 p90 2.59 p95 3.86
+B additions matched, n=140: |d - offset| p50 0.78 p90 2.10 p95 2.73
+"same place" taken as |d - offset| <= 3.33 mm (p95 of archetype and B)
+
+-- 1400–1500 mm, local offset +1.00
+   bass     1417.2  E   SlowCrescendoOn   
+   bass     1418.8  B1  SlowCrescendoOn   S1
+   bass     1434.5  C   ForzandoOn        LS2
+   bass     1436.2  E   SlowCrescendoOff  
+   bass     1437.6  B1  SlowCrescendoOff  S1
+   bass     1440.5  C   ForzandoOff       LS2
+   bass     1462.5  C   SlowCrescendoOn   LS2
+   bass     1473.4  C   SlowCrescendoOff  LS2
+   bass     1483.3  E   ForzandoOn        
+   bass     1483.4  B   ForzandoOn        LS1S2
+   bass     1489.2  E   ForzandoOff       
+   bass     1489.4  B   ForzandoOff       LS1S2
+
+-- 2330–2500 mm, local offset +0.59
+   bass     2364.5  E   ForzandoOn        
+   bass     2365.4  C   ForzandoOn        LS2
+   bass     2370.4  C   ForzandoOff       LS2
+   bass     2372.5  E   ForzandoOff       
+   bass     2373.9  B   SlowCrescendoOn   LS1S2
+   bass     2375.5  E   SlowCrescendoOn   
+   bass     2387.9  E   SlowCrescendoOff  
+   bass     2389.3  B   SlowCrescendoOff  LS1S2
+   bass     2418.9  E   ForzandoOn        
+   bass     2419.8  B   ForzandoOn        LS1S2
+   bass     2426.7  B   ForzandoOff       LS1S2
+   bass     2427.9  E   ForzandoOff       
+   bass     2461.4  E   SlowCrescendoOn   
+   bass     2464.0  C   SlowCrescendoOn   LS2
+   bass     2472.4  E   SlowCrescendoOff  
+   bass     2475.4  C   SlowCrescendoOff  LS2
+
+-- 4250–4300 mm, local offset +0.80
+   bass     4250.1  B   SlowCrescendoOn   LS1S2
+   bass     4270.9  E   SlowCrescendoOff  
+   bass     4271.0  B   SlowCrescendoOff  LS1S2
+   bass     4281.4  C   ForzandoOn        LS2
+   bass     4282.2  E   ForzandoOn        
+   bass     4286.9  C   ForzandoOff       LS2
+   bass     4287.9  E   ForzandoOff       
+   bass     4295.9  B   SlowCrescendoOn   LS1S2
+   bass     4296.4  E   SlowCrescendoOn   
+
+-- 4780–4860 mm, local offset +0.83
+   bass     4812.9  E   SlowCrescendoOn   
+   bass     4813.6  B   SlowCrescendoOn   LS1S2
+   bass     4829.5  B   SlowCrescendoOff  LS1S2
+   bass     4829.6  E   SlowCrescendoOff  
+   treble   4789.2  E   SlowCrescendoOn   
+   treble   4809.4  E   SlowCrescendoOff  
+   treble   4816.0  C   SlowCrescendoOn   LS2
+   treble   4827.4  E   SlowCrescendoOn   
+   treble   4831.9  C   SlowCrescendoOff  LS2
+   treble   4833.4  E   SlowCrescendoOff  
+   treble   4850.3  E   SlowCrescendoOn   
+   treble   4850.3  A   SlowCrescendoOn   LS1S2W
+
+-- 5020–5070 mm, local offset +1.81
+   bass     5035.9  C   SlowCrescendoOn   LS2
+   bass     5052.4  C   SlowCrescendoOff  LS2
+   treble   5031.0  E   SlowCrescendoOn   
+   treble   5037.0  C   SlowCrescendoOn   LS2
+   treble   5054.5  E   SlowCrescendoOff  
+   treble   5056.5  C   SlowCrescendoOff  LS2
+
+-- 5140–5200 mm, local offset +1.83
+   bass     5156.4  C   SlowCrescendoOn   LS2
+   bass     5174.3  C   SlowCrescendoOff  LS2
+   treble   5157.9  E   SlowCrescendoOn   
+   treble   5158.9  C   SlowCrescendoOn   LS2
+   treble   5178.6  E   SlowCrescendoOff  
+   treble   5179.0  C   SlowCrescendoOff  LS2
+
+-- 6590–6700 mm, local offset +1.46
+   bass     6635.2  C   SlowCrescendoOn   LS2
+   bass     6645.1  C   SlowCrescendoOff  LS2
+   bass     6665.6  C   SlowCrescendoOn   LS2
+   bass     6674.0  C   SlowCrescendoOff  LS2
+   treble   6601.6  E   SlowCrescendoOn   
+   treble   6607.7  C   SlowCrescendoOn   LS2
+   treble   6624.1  C   SlowCrescendoOff  LS2
+   treble   6640.5  E   SlowCrescendoOff  
+   treble   6661.2  E   SlowCrescendoOn   
+   treble   6663.4  C   SlowCrescendoOn   LS2
+   treble   6675.5  C   SlowCrescendoOff  LS2
+   treble   6686.9  A   SlowCrescendoOn   LS1S2W
+   treble   6692.4  E   SlowCrescendoOff  
+
+-- 7800–7870 mm, local offset +1.16
+   bass     7806.0  C   SlowCrescendoOn   LS2
+   bass     7816.9  C   SlowCrescendoOff  LS2
+   bass     7839.0  C   SlowCrescendoOn   LS2
+   bass     7847.4  C   SlowCrescendoOff  LS2
+   treble   7809.7  C   SlowCrescendoOn   LS2
+   treble   7819.7  C   SlowCrescendoOff  LS2
+   treble   7829.5  E   SlowCrescendoOn   
+   treble   7831.7  C   SlowCrescendoOn   LS2
+   treble   7842.3  C   SlowCrescendoOff  LS2
+   treble   7852.9  E   SlowCrescendoOff  
+   treble   7861.2  A   SlowCrescendoOn   LS1S2W
+
+-- 7920–8150 mm, local offset +0.89
+   bass     7923.6  A   SlowCrescendoOn   W del B
+   bass     7939.2  B   SlowCrescendoOn   LS1S2
+   bass     7952.3  B   ForzandoOn        LS1S2
+   bass     7952.5  E   ForzandoOn        
+   bass     7952.7  A   SlowCrescendoOff  W del B
+   bass     7957.7  B   ForzandoOff       LS1S2
+   bass     7957.9  E   ForzandoOff       
+   bass     7968.9  A   SlowCrescendoOn   W del B
+   bass     7980.1  B   SlowCrescendoOff  LS1S2
+   bass     7997.8  A   SlowCrescendoOff  W del B
+   bass     8040.4  A   SlowCrescendoOn   W del B
+   bass     8070.3  B   SlowCrescendoOn   LS1S2
+   bass     8087.8  A   SlowCrescendoOff  LS1S2W
+   bass     8104.3  B   SlowCrescendoOn   LS1S2
+   bass     8135.8  E   SlowCrescendoOff  
+   bass     8136.3  B   SlowCrescendoOff  LS1S2
+   treble   7953.8  B   SlowCrescendoOn   LS1S2
+   treble   7953.8  E   SlowCrescendoOn   
+   treble   7993.3  A   SlowCrescendoOn   W del B
+   treble   8019.6  E   SlowCrescendoOff  
+   treble   8020.8  B   SlowCrescendoOff  LS1S2
+   treble   8036.5  A   SlowCrescendoOff  S1W del C
+   treble   8062.5  A   SlowCrescendoOn   LS1S2W
+   treble   8094.2  A   SlowCrescendoOff  LS1S2W
+   treble   8094.8  E   SlowCrescendoOff  
+C other         n= 88: within  3.3 mm of a free hole of its kind: observed 0.11, displaced 0.01
+C other         n= 88: within   10 mm of a free hole of its kind: observed 0.17, displaced 0.03
+C other         n= 88: within   30 mm of a free hole of its kind: observed 0.27, displaced 0.10
+C Mittelstimmen n= 46: within  3.3 mm of a free hole of its kind: observed 0.00, displaced 0.00
+C Mittelstimmen n= 46: within   10 mm of a free hole of its kind: observed 0.00, displaced 0.00
+C Mittelstimmen n= 46: within   30 mm of a free hole of its kind: observed 0.00, displaced 0.01
+
+S1 bass crescendo holes, lengths (mm): leader pair against the rest
+  leader: [(1418.8, 6.01, 4), (1437.6, 4.99, 3)]  median of all: 5.12 IQR [4.08 5.24]

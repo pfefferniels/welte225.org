@@ -1,0 +1,142 @@
+{
+ "chaseEmR": {
+  "bass/momentary": {
+   "engine": {
+    "slow": 0.25,
+    "decay": 0.21297887219158618,
+    "fast": 3.0,
+    "fast_decay": 12.0,
+    "forzando": "momentary",
+    "soft": 0.1
+   },
+   "cv": 0.984,
+   "r2": 0.985,
+   "map": [
+    52.22,
+    30.73
+   ],
+   "notes": 214
+  },
+  "bass/latched": {
+   "engine": {
+    "slow": 0.9799999999999999,
+    "decay": 0.35,
+    "fast": 12.0,
+    "fast_decay": 12.0,
+    "forzando": "latched",
+    "soft": 0.15
+   },
+   "cv": 0.638,
+   "r2": 0.769,
+   "map": [
+    55.5,
+    3.11
+   ],
+   "notes": 214
+  },
+  "treble/momentary": {
+   "engine": {
+    "slow": 0.41412558481697315,
+    "decay": 0.35,
+    "fast": 5.0,
+    "fast_decay": 12.0,
+    "forzando": "momentary",
+    "soft": 0.15
+   },
+   "cv": 0.833,
+   "r2": 0.837,
+   "map": [
+    56.57,
+    9.96
+   ],
+   "notes": 200
+  },
+  "treble/latched": {
+   "engine": {
+    "slow": 0.8282511696339462,
+    "decay": 0.48999999999999994,
+    "fast": 12.0,
+    "fast_decay": 3.0,
+    "forzando": "latched",
+    "soft": 0.15
+   },
+   "cv": 0.715,
+   "r2": 0.723,
+   "map": [
+    57.21,
+    1.3
+   ],
+   "notes": 200
+  }
+ },
+ "phillipsR": {
+  "bass/momentary": {
+   "engine": {
+    "slow": 0.18,
+    "decay": 0.18,
+    "fast": 3.0,
+    "fast_decay": 3.0,
+    "forzando": "momentary",
+    "soft": 0.0
+   },
+   "cv": 0.853,
+   "r2": 0.868,
+   "map": [
+    34.65,
+    70.05
+   ],
+   "notes": 211
+  },
+  "bass/latched": {
+   "engine": {
+    "slow": 0.9799999999999999,
+    "decay": 0.2958039891549808,
+    "fast": 12.0,
+    "fast_decay": 12.0,
+    "forzando": "latched",
+    "soft": 0.05
+   },
+   "cv": 0.237,
+   "r2": 0.351,
+   "map": [
+    36.67,
+    6.31
+   ],
+   "notes": 211
+  },
+  "treble/momentary": {
+   "engine": {
+    "slow": 0.2958039891549808,
+    "decay": 0.2958039891549808,
+    "fast": 5.0,
+    "fast_decay": 12.0,
+    "forzando": "momentary",
+    "soft": 0.05
+   },
+   "cv": 0.508,
+   "r2": 0.514,
+   "map": [
+    43.03,
+    29.23
+   ],
+   "notes": 199
+  },
+  "treble/latched": {
+   "engine": {
+    "slow": 0.9799999999999999,
+    "decay": 0.5916079783099616,
+    "fast": 5.0,
+    "fast_decay": 1.0,
+    "forzando": "latched",
+    "soft": 0.15
+   },
+   "cv": 0.188,
+   "r2": 0.219,
+   "map": [
+    49.84,
+    1.09
+   ],
+   "notes": 199
+  }
+ }
+}

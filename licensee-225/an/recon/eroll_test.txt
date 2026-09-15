@@ -1,0 +1,34 @@
+gourlin: degree 1, coef [0.071909, 1316.209404], matched 346, kept 346, rms 5.85 mm, max kept 14.48, outliers 0
+   profile (from mm: median residual): 1722:+2.7 2692:+4.8 3389:-10.7 4887:-6.4 5336:-3.3 5811:+1.2 6241:+5.7 6763:+6.3 7310:+4.0 7950:+2.6 8411:-1.1 9152:-10.6
+phillipsL: degree 2, coef [0.012599, 42.108891, 1409.203313], matched 298, kept 293, rms 5.08 mm, max kept 13.97, outliers 5
+   profile (from mm: median residual): 1438:+2.5 2867:+0.8 3268:-7.8 4951:-5.0 5434:-0.8 5881:+3.6 6407:+6.8 7260:+4.0 7954:+1.4 8499:-6.2
+phillipsR: degree 2, coef [0.012256, 47.718182, 1388.025672], matched 463, kept 459, rms 0.76 mm, max kept 2.14, outliers 4
+   profile (from mm: median residual): 1438:+0.1 2048:-0.5 2470:-0.2 2978:-0.1 3477:+0.2 4051:+0.8 4524:+0.3 5055:+0.0 5604:+0.2 5972:+0.5 6513:-0.5 6925:-0.8 7565:-0.7 8021:-0.5 8612:+0.5 9282:+1.7
+chaseEmR: degree 1, coef [0.082714, 1331.950994], matched 463, kept 460, rms 1.12 mm, max kept 3.10, outliers 3
+   profile (from mm: median residual): 1438:+0.2 2048:+0.3 2470:+0.0 2978:+1.2 3477:+1.0 4051:-0.0 4524:-1.8 5055:-0.7 5604:-0.3 5972:-0.7 6513:-1.0 6925:-0.6 7565:+0.2 8021:+0.1 8612:+1.1 9282:+1.7
+          unit                           Phillips LW: z (E)     Gourlin: z (E)
+in E      B1 leader pair                      -1.17 ( 14.0)       +nan (  0.0)
+in E      C forzando 2365                     +4.79 (  0.0)     -14.79 (  0.0)
+in E      C bass pair 2464                    +3.46 (  1.1)      +1.70 (  3.9)
+in E      C forzando 4281                     -1.10 (  0.1)      +0.38 (  2.7)
+in E      C treble pair 5159                  +1.77 (  0.5)      +0.39 (  2.3)
+in E      C treble 4816, shifted              -3.35 (  0.2)      -0.86 (  0.8)
+in E      C treble 5037, shifted              +1.31 (  0.7)      +1.01 (  3.9)
+in E      C treble 6607, shifted              +1.61 (  1.7)      +1.31 (  7.7)
+in E      C treble 6663, shifted              +0.82 (  3.2)      +1.26 ( 12.5)
+in E      C treble 7831, shifted              +0.12 (  0.7)      +1.01 (  3.6)
+not in E  C leader forzando                    +nan (  0.0)       +nan (  0.0)
+not in E  C leader pair                       +1.17 ( 14.0)       +nan (  0.0)
+not in E  B On 3459                           -4.74 (  0.0)      -1.00 (  0.3)
+not in E  B forzando On 4052                  -1.61 ( 30.6)      -1.50 (108.6)
+not in E  B pair 7939                         -1.63 (  5.0)      -1.00 ( 20.7)
+not in E  B On 8070                           -1.23 ( 16.4)      -1.00 ( 65.4)
+not in E  B On 8104                           -1.35 (  4.0)      -1.00 ( 15.2)
+not in E  B treble On 9043                    -5.47 (  0.1)      -2.63 (  1.0)
+not in E  C Mittelstimmen pooled (12 with E≥0.5) phillipsL: z -1.17 ± 0.40
+not in E  C Mittelstimmen pooled (20 with E≥0.5) gourlin: z -1.00 ± 0.18
+phillipsL  in E      units with E≥1:  4, pooled z -0.36 ± 0.32, sign agreeing 0.75
+phillipsL  not in E  units with E≥1:  5, pooled z -0.95 ± 0.17, sign agreeing 0.80
+gourlin    in E      units with E≥1:  7, pooled z +1.15 ± 0.23, sign agreeing 1.00
+gourlin    not in E  units with E≥1:  4, pooled z -1.26 ± 0.10, sign agreeing 1.00
+dict_keys(['gourlin/C', 'gourlin/B', 'phillipsL/C', 'phillipsL/B'])

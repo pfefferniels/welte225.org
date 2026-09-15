@@ -1,0 +1,146 @@
+[
+ {
+  "side": "bass",
+  "mode": "independent",
+  "sigma_s": 0.03,
+  "C_minus_B_mean": 0.037,
+  "min": 0.01,
+  "B_wins": 0,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "independent",
+  "sigma_s": 0.05,
+  "C_minus_B_mean": 0.077,
+  "min": 0.016,
+  "B_wins": 0,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "independent",
+  "sigma_s": 0.1,
+  "C_minus_B_mean": -0.008,
+  "min": -0.126,
+  "B_wins": 3,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "independent",
+  "sigma_s": 0.25,
+  "C_minus_B_mean": -0.018,
+  "min": -0.151,
+  "B_wins": 5,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "pair",
+  "sigma_s": 0.03,
+  "C_minus_B_mean": 0.044,
+  "min": 0.03,
+  "B_wins": 0,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "pair",
+  "sigma_s": 0.05,
+  "C_minus_B_mean": 0.044,
+  "min": 0.031,
+  "B_wins": 0,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "pair",
+  "sigma_s": 0.1,
+  "C_minus_B_mean": 0.038,
+  "min": 0.012,
+  "B_wins": 0,
+  "seeds": 8
+ },
+ {
+  "side": "bass",
+  "mode": "pair",
+  "sigma_s": 0.25,
+  "C_minus_B_mean": 0.033,
+  "min": -0.007,
+  "B_wins": 1,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "independent",
+  "sigma_s": 0.03,
+  "C_minus_B_mean": -0.002,
+  "min": -0.02,
+  "B_wins": 6,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "independent",
+  "sigma_s": 0.05,
+  "C_minus_B_mean": -0.002,
+  "min": -0.026,
+  "B_wins": 6,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "independent",
+  "sigma_s": 0.1,
+  "C_minus_B_mean": -0.0,
+  "min": -0.052,
+  "B_wins": 3,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "independent",
+  "sigma_s": 0.25,
+  "C_minus_B_mean": 0.013,
+  "min": -0.032,
+  "B_wins": 2,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "pair",
+  "sigma_s": 0.03,
+  "C_minus_B_mean": 0.001,
+  "min": -0.007,
+  "B_wins": 3,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "pair",
+  "sigma_s": 0.05,
+  "C_minus_B_mean": 0.003,
+  "min": -0.005,
+  "B_wins": 3,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "pair",
+  "sigma_s": 0.1,
+  "C_minus_B_mean": -0.006,
+  "min": -0.048,
+  "B_wins": 6,
+  "seeds": 8
+ },
+ {
+  "side": "treble",
+  "mode": "pair",
+  "sigma_s": 0.25,
+  "C_minus_B_mean": -0.009,
+  "min": -0.053,
+  "B_wins": 6,
+  "seeds": 8
+ }
+]

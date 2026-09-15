@@ -1,0 +1,192 @@
+gourlin: degree 1, coef [0.071909, 1316.209404], matched 346, kept 346, rms 5.85 mm, max kept 14.48, outliers 0
+   profile (from mm: median residual): 1722:+2.7 2692:+4.8 3389:-10.7 4887:-6.4 5336:-3.3 5811:+1.2 6241:+5.7 6763:+6.3 7310:+4.0 7950:+2.6 8411:-1.1 9152:-10.6
+phillipsL: degree 2, coef [0.012599, 42.108891, 1409.203313], matched 298, kept 293, rms 5.08 mm, max kept 13.97, outliers 5
+   profile (from mm: median residual): 1438:+2.5 2867:+0.8 3268:-7.8 4951:-5.0 5434:-0.8 5881:+3.6 6407:+6.8 7260:+4.0 7954:+1.4 8499:-6.2
+phillipsR: degree 2, coef [0.012256, 47.718182, 1388.025672], matched 463, kept 459, rms 0.76 mm, max kept 2.14, outliers 4
+   profile (from mm: median residual): 1438:+0.1 2048:-0.5 2470:-0.2 2978:-0.1 3477:+0.2 4051:+0.8 4524:+0.3 5055:+0.0 5604:+0.2 5972:+0.5 6513:-0.5 6925:-0.8 7565:-0.7 8021:-0.5 8612:+0.5 9282:+1.7
+chaseEmR: degree 1, coef [0.082714, 1331.950994], matched 463, kept 460, rms 1.12 mm, max kept 3.10, outliers 3
+   profile (from mm: median residual): 1438:+0.2 2048:+0.3 2470:+0.0 2978:+1.2 3477:+1.0 4051:-0.0 4524:-1.8 5055:-0.7 5604:-0.3 5972:-0.7 6513:-1.0 6925:-0.6 7565:+0.2 8021:+0.1 8612:+1.1 9282:+1.7
+
+== gourlin against C: same 444, duration 17, added 4, missing 2; pedal same 89, added 27, missing 14
+   dur   p62  ref  1751.9- 1864.1 [GLS1S2W]  here  1751.0- 1853.0  Δon  -0.9  Δoff  -11.0
+   dur   p70  ref  2076.5- 2123.6 [GLS1S2W]  here  2075.2- 2108.0  Δon  -1.2  Δoff  -15.6
+   dur   p49  ref  2666.3- 2856.3 [GLS1S2W]  here  2666.2- 2841.0  Δon  -0.0  Δoff  -15.3
+   dur   p57  ref  2671.1- 2943.1 [GLS1S2W]  here  2668.0- 2851.2  Δon  -3.1  Δoff  -91.9
+   dur   p65  ref  3110.5- 3257.0 [GLS1S2W]  here  3109.7- 3266.9  Δon  -0.9  Δoff   +9.9
+   dur   p50  ref  4204.7- 4257.5 [GLS1S2W]  here  4204.9- 4235.1  Δon  +0.1  Δoff  -22.4
+   dur   p54  ref  5756.4- 5797.6 [GLS1S2W]  here  5755.3- 5782.8  Δon  -1.0  Δoff  -14.8
+   dur   p67  ref  5923.0- 5970.9 [GLS1S2W]  here  5923.2- 5949.1  Δon  +0.2  Δoff  -21.7
+   dur   p57  ref  6076.5- 6138.6 [GLS1S2W]  here  6076.7- 6115.9  Δon  +0.2  Δoff  -22.7
+   dur   p76  ref  6521.2- 6596.8 [GLS1S2W]  here  6520.7- 6675.2  Δon  -0.5  Δoff  +78.4
+   dur   p73  ref  6598.1- 6632.4 [GLS1S2W]  here  6598.9- 6608.5  Δon  +0.8  Δoff  -23.9
+   dur   p64  ref  7141.6- 7249.3 [GLS1S2W]  here  7142.5- 7230.2  Δon  +0.9  Δoff  -19.1
+   dur   p67  ref  7153.9- 7249.0 [GLS1S2W]  here  7153.7- 7230.2  Δon  -0.3  Δoff  -18.8
+   dur   p50  ref  8123.3- 8174.7 [GLS1S2W]  here  8123.4- 8153.4  Δon  +0.1  Δoff  -21.3
+   dur   p77  ref  8922.4- 8958.2 [GLS1S2W]  here  8922.2- 8973.6  Δon  -0.1  Δoff  +15.4
+   dur   p62  ref  9421.0- 9520.8 [GLS1S2W]  here  9421.0- 9497.1  Δon  +0.0  Δoff  -23.7
+   dur   p60  ref  9524.4- 9774.1 [GLS1S2W]  here  9523.7- 9669.7  Δon  -0.6  Δoff -104.4
+   add   p50  here  2841.6- 2923.3   nearest same pitch in ref 2859.8-2918.1 [GLS1S2W]
+   add   p57  here  2864.6- 2948.2   nearest same pitch in ref 2671.1-2943.1 [GLS1S2W]
+   add   p73  here  6611.8- 6634.4   nearest same pitch in ref 6598.1-6632.4 [GLS1S2W]
+   add   p60  here  9674.9- 9782.3   nearest same pitch in ref 9524.4-9774.1 [GLS1S2W]
+   miss  p50  ref  2859.8- 2918.1 [GLS1S2W]   nearest here 2841.6-2923.3
+   miss  p76  ref  6611.5- 6675.4 [GLS1S2W]   nearest here 6520.7-6675.2
+   pedal +off  1353.8   nearest same kind on the other side  1630.3 (+276.6)
+   pedal +on   2587.7   nearest same kind on the other side  2704.5 (+116.8)
+   pedal +off  2659.3   nearest same kind on the other side  2560.8 (-98.5)
+   pedal +on   2680.6   nearest same kind on the other side  2704.5 (+23.9)
+   pedal -on   2704.5   nearest same kind on the other side  2680.6 (-23.9)
+   pedal +on   3285.6   nearest same kind on the other side  3220.1 (-65.4)
+   pedal +off  3329.0   nearest same kind on the other side  3254.7 (-74.3)
+   pedal +on   3588.2   nearest same kind on the other side  3668.1 (+79.9)
+   pedal +off  3661.5   nearest same kind on the other side  3549.4 (-112.0)
+   pedal -on   3668.1   nearest same kind on the other side  3682.5 (+14.4)
+   pedal +on   3682.5   nearest same kind on the other side  3668.1 (-14.4)
+   pedal +off  4473.9   nearest same kind on the other side  4465.3 (-8.6)
+   pedal -off  4591.7   nearest same kind on the other side  4604.2 (+12.4)
+   pedal +off  4604.2   nearest same kind on the other side  4591.7 (-12.4)
+   pedal -on   4615.4   nearest same kind on the other side  4624.9 (+9.4)
+   pedal +on   4624.9   nearest same kind on the other side  4615.4 (-9.4)
+   pedal +on   5542.3   nearest same kind on the other side  5391.4 (-150.9)
+   pedal +off  5593.0   nearest same kind on the other side  5523.8 (-69.2)
+   pedal -on   6716.1   nearest same kind on the other side  6737.4 (+21.3)
+   pedal +on   6737.4   nearest same kind on the other side  6716.1 (-21.3)
+   pedal +off  6795.4   nearest same kind on the other side  6879.0 (+83.6)
+   pedal +on   7111.2   nearest same kind on the other side  7156.4 (+45.2)
+   pedal +off  7133.4   nearest same kind on the other side  7243.1 (+109.7)
+   pedal -off  7516.9   nearest same kind on the other side  7526.2 (+9.2)
+   pedal +off  7526.2   nearest same kind on the other side  7516.9 (-9.2)
+   pedal -on   7537.8   nearest same kind on the other side  7549.4 (+11.5)
+   pedal +on   7549.4   nearest same kind on the other side  7537.8 (-11.5)
+   pedal -off  8078.9   nearest same kind on the other side  8086.9 (+8.0)
+   pedal +off  8086.9   nearest same kind on the other side  8078.9 (-8.0)
+   pedal -off  8543.5   nearest same kind on the other side  8561.8 (+18.3)
+   pedal +off  8561.8   nearest same kind on the other side  8543.5 (-18.3)
+   pedal -on   8572.4   nearest same kind on the other side  8587.7 (+15.3)
+   pedal +on   8587.7   nearest same kind on the other side  8572.4 (-15.3)
+   pedal -off  8757.6   nearest same kind on the other side  8767.3 (+9.7)
+   pedal +off  8767.3   nearest same kind on the other side  8757.6 (-9.7)
+   pedal +on   9089.0   nearest same kind on the other side  9102.6 (+13.6)
+   pedal -on   9102.6   nearest same kind on the other side  9089.0 (-13.6)
+   pedal -off  9514.1   nearest same kind on the other side  9522.5 (+8.5)
+   pedal +off  9522.5   nearest same kind on the other side  9514.1 (-8.5)
+   pedal -off  9969.7   nearest same kind on the other side  9986.8 (+17.1)
+   pedal +off  9986.8   nearest same kind on the other side  9969.7 (-17.1)
+
+== phillipsL against C: same 443, duration 18, added 3, missing 2; pedal same 90, added 24, missing 13
+   dur   p62  ref  1751.9- 1864.1 [GLS1S2W]  here  1751.3- 1854.4  Δon  -0.6  Δoff   -9.6
+   dur   p70  ref  2076.5- 2123.6 [GLS1S2W]  here  2074.9- 2110.1  Δon  -1.5  Δoff  -13.5
+   dur   p60  ref  2247.9- 2356.9 [GLS2]  here  2248.0- 2365.7  Δon  +0.0  Δoff   +8.8
+   dur   p49  ref  2666.3- 2856.3 [GLS1S2W]  here  2665.8- 2842.2  Δon  -0.5  Δoff  -14.1
+   dur   p57  ref  2671.1- 2943.1 [GLS1S2W]  here  2668.3- 2851.7  Δon  -2.8  Δoff  -91.4
+   dur   p65  ref  3110.5- 3257.0 [GLS1S2W]  here  3109.1- 3267.6  Δon  -1.5  Δoff  +10.6
+   dur   p50  ref  4204.7- 4257.5 [GLS1S2W]  here  4204.7- 4235.8  Δon  +0.0  Δoff  -21.7
+   dur   p81  ref  4588.2- 4622.2 [GLS1S2W]  here  4588.9- 4630.7  Δon  +0.7  Δoff   +8.5
+   dur   p54  ref  5756.4- 5797.6 [GLS1S2W]  here  5755.6- 5784.4  Δon  -0.8  Δoff  -13.2
+   dur   p67  ref  5923.0- 5970.9 [GLS1S2W]  here  5923.0- 5950.0  Δon  +0.0  Δoff  -20.9
+   dur   p57  ref  6076.5- 6138.6 [GLS1S2W]  here  6076.7- 6116.6  Δon  +0.2  Δoff  -22.0
+   dur   p76  ref  6521.2- 6596.8 [GLS1S2W]  here  6520.7- 6676.1  Δon  -0.5  Δoff  +79.3
+   dur   p64  ref  7141.6- 7249.3 [GLS1S2W]  here  7141.6- 7230.7  Δon  +0.0  Δoff  -18.6
+   dur   p67  ref  7153.9- 7249.0 [GLS1S2W]  here  7153.1- 7230.4  Δon  -0.8  Δoff  -18.6
+   dur   p50  ref  8123.3- 8174.7 [GLS1S2W]  here  8123.8- 8154.6  Δon  +0.5  Δoff  -20.1
+   dur   p77  ref  8922.4- 8958.2 [GLS1S2W]  here  8922.2- 8974.3  Δon  -0.2  Δoff  +16.1
+   dur   p62  ref  9421.0- 9520.8 [GLS1S2W]  here  9421.0- 9499.4  Δon  +0.0  Δoff  -21.4
+   dur   p60  ref  9524.4- 9774.1 [GLS1S2W]  here  9523.7- 9672.4  Δon  -0.6  Δoff -101.6
+   add   p50  here  2841.8- 2924.1   nearest same pitch in ref 2859.8-2918.1 [GLS1S2W]
+   add   p57  here  2864.4- 2949.5   nearest same pitch in ref 2671.1-2943.1 [GLS1S2W]
+   add   p60  here  9675.6- 9783.4   nearest same pitch in ref 9524.4-9774.1 [GLS1S2W]
+   miss  p50  ref  2859.8- 2918.1 [GLS1S2W]   nearest here 2841.8-2924.1
+   miss  p76  ref  6611.5- 6675.4 [GLS1S2W]   nearest here 6520.7-6676.1
+   pedal +on   2588.1   nearest same kind on the other side  2704.5 (+116.4)
+   pedal +off  2659.3   nearest same kind on the other side  2560.8 (-98.5)
+   pedal +on   2680.6   nearest same kind on the other side  2704.5 (+23.9)
+   pedal -on   2704.5   nearest same kind on the other side  2680.6 (-23.9)
+   pedal +on   3285.1   nearest same kind on the other side  3220.1 (-65.0)
+   pedal +off  3329.4   nearest same kind on the other side  3254.7 (-74.7)
+   pedal +on   3587.8   nearest same kind on the other side  3668.1 (+80.2)
+   pedal +off  3661.6   nearest same kind on the other side  3549.4 (-112.2)
+   pedal -on   3668.1   nearest same kind on the other side  3682.9 (+14.8)
+   pedal +on   3682.9   nearest same kind on the other side  3668.1 (-14.8)
+   pedal -off  4591.7   nearest same kind on the other side  4604.4 (+12.6)
+   pedal +off  4604.4   nearest same kind on the other side  4591.7 (-12.6)
+   pedal -on   4615.4   nearest same kind on the other side  4625.1 (+9.6)
+   pedal +on   4625.1   nearest same kind on the other side  4615.4 (-9.6)
+   pedal +on   5542.6   nearest same kind on the other side  5391.4 (-151.2)
+   pedal +off  5592.9   nearest same kind on the other side  5523.8 (-69.0)
+   pedal -on   6716.1   nearest same kind on the other side  6737.6 (+21.5)
+   pedal +on   6737.6   nearest same kind on the other side  6716.1 (-21.5)
+   pedal +off  6795.8   nearest same kind on the other side  6879.0 (+83.2)
+   pedal +on   7111.5   nearest same kind on the other side  7156.4 (+44.9)
+   pedal +off  7133.1   nearest same kind on the other side  7243.1 (+110.0)
+   pedal -off  7516.9   nearest same kind on the other side  7526.2 (+9.3)
+   pedal +off  7526.2   nearest same kind on the other side  7516.9 (-9.3)
+   pedal -on   7537.8   nearest same kind on the other side  7549.3 (+11.5)
+   pedal +on   7549.3   nearest same kind on the other side  7537.8 (-11.5)
+   pedal -off  8078.9   nearest same kind on the other side  8087.0 (+8.1)
+   pedal +off  8087.0   nearest same kind on the other side  8078.9 (-8.1)
+   pedal -off  8543.5   nearest same kind on the other side  8561.9 (+18.3)
+   pedal +off  8561.9   nearest same kind on the other side  8543.5 (-18.3)
+   pedal -on   8572.4   nearest same kind on the other side  8587.6 (+15.2)
+   pedal +on   8587.6   nearest same kind on the other side  8572.4 (-15.2)
+   pedal -off  8757.6   nearest same kind on the other side  8767.6 (+10.0)
+   pedal +off  8767.6   nearest same kind on the other side  8757.6 (-10.0)
+   pedal +on   9090.1   nearest same kind on the other side  9102.6 (+12.5)
+   pedal -on   9102.6   nearest same kind on the other side  9090.1 (-12.5)
+   pedal -off  9969.7   nearest same kind on the other side  9989.3 (+19.6)
+   pedal +off  9989.3   nearest same kind on the other side  9969.7 (-19.6)
+
+== gourlin against phillipsL: same 463, duration 1, added 1, missing 0; pedal same 114, added 2, missing 0
+   dur   p73  ref  6598.1- 6634.4 [P]  here  6598.9- 6608.5  Δon  +0.7  Δoff  -25.9
+   add   p73  here  6611.8- 6634.4   nearest same pitch in ref 6598.1-6634.4 [P]
+   pedal +off  1353.8   nearest same kind on the other side  1632.0 (+278.3)
+   pedal +off  4473.9   nearest same kind on the other side  4468.3 (-5.6)
+
+== Stretches: places where the displacement jumps between neighbouring aligned notes
+  gourlin: between 2073 and 2244 mm the copy has +26 mm more paper; between 3340 and 3474 mm the copy has +27 mm more paper
+  phillipsL: between 2073 and 2244 mm the copy has +29 mm more paper; between 3340 and 3474 mm the copy has +27 mm more paper; between 9058 and 9162 mm the copy has +7 mm more paper
+
+== Diagnostic readings, measured inside each source
+  c' (2248): next attacks in C: [(46, 2337.8, 'GLS1S2W'), (43, 2363.7, 'GLS1S2W'), (60, 2370.3, 'GLS1S2W'), (45, 2393.0, 'GLS1S2W'), (41, 2415.5, 'GLS1S2W')]
+    S1: c' ends +25.0 mm from the onset of p46
+    W: c' ends +29.7 mm from the onset of p46
+    S2: c' ends +18.2 mm from the onset of p46
+    L: c' ends +18.4 mm from the onset of p46
+    G: c' ends +20.5 mm from the onset of p46
+    gourlin: c' ends +25.4 mm from the onset of p46 (raw units times local slope)
+    phillipsL: c' ends +25.9 mm from the onset of p46 (raw units times local slope)
+  D1 c' restrike (5180-5320 mm):
+    C         [(5243.0, 5284.5, 'GLS1S2W')]
+    D1        [(5243.0, 5284.5, 'GLS1S2W'), (5242.4, 5284.5, 'L')]
+    D2        [(5243.0, 5284.5, 'GLS1S2W')]
+    gourlin   [(5242.7, 5286.0)]
+    phillipsL [(5242.9, 5287.0)]
+  D1 retimed c (8840-9130 mm):
+    C         [(8872.5, 8943.9, 'GS1S2W'), (8954.9, 9107.1, 'GS1S2W')]
+    D1        [(8871.5, 8931.9, 'L'), (8942.5, 9101.6, 'L')]
+    D2        [(8872.5, 8943.9, 'GS1S2W'), (8954.9, 9107.1, 'GS1S2W')]
+    gourlin   [(8872.5, 8943.8), (8955.6, 9105.7)]
+    phillipsL [(8872.9, 8944.8), (8955.6, 9108.2)]
+  D2 g longer (6440-6530 mm):
+    C         [(6471.1, 6496.6, 'LS1S2W')]
+    D1        [(6471.1, 6496.6, 'LS1S2W')]
+    D2        [(6470.4, 6508.6, 'G')]
+    gourlin   [(6472.5, 6498.8)]
+    phillipsL [(6472.1, 6499.8)]
+  D2 stray f'' (1930-1970 mm):
+    C         []
+    D1        []
+    D2        [(1947.7, 1949.3, 'G')]
+    gourlin   []
+    phillipsL []
+  pedal 5340-5400 mm:
+    C         [('On', 5391.4, 'LS1S2W'), ('Off', 5370.9, 'LS1S2')]
+    A1        [('On', 5391.4, 'LS1S2W')]
+    D2        [(5255.7, 5370.8), (5389.7, 5523.7)]
+    gourlin   [('off', 5370.9), ('on', 5393.1)]
+    phillipsL [('off', 5371.4), ('on', 5392.5)]
+  pedal 6690-6900 mm:
+    C         [('On', 6716.1, 'LS1S2W'), ('On', 6826.6, 'LS1S2W'), ('Off', 6879.0, 'LS1S2W')]
+    A1        [('On', 6716.1, 'LS1S2W'), ('On', 6826.6, 'LS1S2W'), ('Off', 6879.0, 'LS1S2W')]
+    D2        [(6715.8, 6784.6), (6797.9, 6879.7)]
+    gourlin   [('on', 6737.4), ('off', 6795.4), ('on', 6827.5), ('off', 6881.4)]
+    phillipsL [('on', 6737.6), ('off', 6795.8), ('on', 6827.6), ('off', 6881.1)]

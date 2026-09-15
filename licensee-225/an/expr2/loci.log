@@ -1,0 +1,394 @@
+{
+ "thinned_commands": [
+  {
+   "at": 1691.3,
+   "bar": "2",
+   "type": "SlowCrescendoOn",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": false,
+   "effective_in_B": false,
+   "effective_in_A1": false
+  },
+  {
+   "at": 1770.0,
+   "bar": "2",
+   "type": "SlowCrescendoOff",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": true,
+   "effective_in_B": false,
+   "effective_in_A1": true,
+   "made_redundant_by": {
+    "B_edit": "67409255-46a6-4727-9a16-cccdf5402f64",
+    "kind": "addition",
+    "command": "SlowCrescendoOff",
+    "at": 1759.1,
+    "witnesses": [
+     "L",
+     "S1",
+     "S2"
+    ]
+   }
+  },
+  {
+   "at": 2582.3,
+   "bar": "5",
+   "type": "SlowCrescendoOn",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": true,
+   "effective_in_B": false,
+   "effective_in_A1": true,
+   "made_redundant_by": {
+    "B_edit": "5ab3f742-d6af-4e34-aa2c-5ee0b3184d78",
+    "kind": "addition",
+    "command": "SlowCrescendoOn",
+    "at": 2568.6,
+    "witnesses": [
+     "L",
+     "S1",
+     "S2"
+    ]
+   }
+  },
+  {
+   "at": 2608.5,
+   "bar": "5",
+   "type": "SlowCrescendoOn",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": false,
+   "effective_in_B": false,
+   "effective_in_A1": false,
+   "made_redundant_by": {
+    "B_edit": "5ab3f742-d6af-4e34-aa2c-5ee0b3184d78",
+    "kind": "addition",
+    "command": "SlowCrescendoOn",
+    "at": 2568.6,
+    "witnesses": [
+     "L",
+     "S1",
+     "S2"
+    ]
+   }
+  },
+  {
+   "at": 7444.5,
+   "bar": "17",
+   "type": "SlowCrescendoOn",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": true,
+   "effective_in_B": false,
+   "effective_in_A1": true,
+   "made_redundant_by": {
+    "B_edit": "d38ce749-2d68-4ddd-b900-e7a8541412cc",
+    "kind": "addition",
+    "command": "SlowCrescendoOn",
+    "at": 7430.8,
+    "witnesses": [
+     "L",
+     "S1",
+     "S2"
+    ]
+   }
+  },
+  {
+   "at": 8036.8,
+   "bar": "20",
+   "type": "SlowCrescendoOff",
+   "witnesses": [
+    "S1",
+    "W"
+   ],
+   "home": "A",
+   "effective_in_A": false,
+   "effective_in_B": false,
+   "effective_in_A1": true,
+   "made_redundant_by": {
+    "B_edit": "6836151a-ce1f-488c-9a2f-2e275a28a60f",
+    "kind": "addition",
+    "command": "SlowCrescendoOff",
+    "at": 8019.6,
+    "witnesses": [
+     "L",
+     "S1",
+     "S2"
+    ]
+   }
+  }
+ ],
+ "causes": [
+  {
+   "edit": "67409255-46a6-4727-9a16-cccdf5402f64",
+   "kind": "addition",
+   "at": 1759.1,
+   "bar": "2",
+   "inserts": [
+    [
+     "SlowCrescendoOff",
+     1759.1,
+     [
+      "L",
+      "S1",
+      "S2"
+     ]
+    ]
+   ]
+  },
+  {
+   "edit": "5ab3f742-d6af-4e34-aa2c-5ee0b3184d78",
+   "kind": "addition",
+   "at": 2568.6,
+   "bar": "5",
+   "inserts": [
+    [
+     "SlowCrescendoOn",
+     2568.6,
+     [
+      "L",
+      "S1",
+      "S2"
+     ]
+    ]
+   ]
+  },
+  {
+   "edit": "d38ce749-2d68-4ddd-b900-e7a8541412cc",
+   "kind": "addition",
+   "at": 7430.8,
+   "bar": "17",
+   "inserts": [
+    [
+     "SlowCrescendoOn",
+     7430.8,
+     [
+      "L",
+      "S1",
+      "S2"
+     ]
+    ]
+   ]
+  },
+  {
+   "edit": "6836151a-ce1f-488c-9a2f-2e275a28a60f",
+   "kind": "addition",
+   "at": 8019.6,
+   "bar": "20",
+   "inserts": [
+    [
+     "SlowCrescendoOff",
+     8019.6,
+     [
+      "L",
+      "S1",
+      "S2"
+     ]
+    ]
+   ]
+  }
+ ]
+}
+{
+ "chaseEmR": {
+  "B": {
+   "B_causes": {
+    "rows": 12,
+    "gain": 2.485,
+    "critical_has": 1.138,
+    "critical_lacks": -1.763,
+    "power_has": 0.67,
+    "power_lacks": 0.58,
+    "verdict": "has",
+    "precision_mm": 13.2
+   },
+   "C_removal_in_A_state": {
+    "rows": 24,
+    "gain": -112.042,
+    "critical_has": -73.285,
+    "critical_lacks": 112.659,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "lacks"
+   }
+  },
+  "C": {
+   "B_causes": {
+    "rows": 30,
+    "gain": 69.635,
+    "critical_has": -52.209,
+    "critical_lacks": 21.69,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "has",
+    "precision_mm": 13.2
+   },
+   "C_removal_in_A_state": {
+    "rows": 24,
+    "gain": -67.664,
+    "critical_has": -30.182,
+    "critical_lacks": 57.038,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "lacks"
+   }
+  }
+ },
+ "phillipsR": {
+  "B": {
+   "B_causes": {
+    "rows": 11,
+    "gain": 4.406,
+    "critical_has": 1.242,
+    "critical_lacks": -1.049,
+    "power_has": 0.77,
+    "power_lacks": 0.8,
+    "verdict": "has",
+    "precision_mm": 8.7
+   },
+   "C_removal_in_A_state": {
+    "rows": 25,
+    "gain": -114.301,
+    "critical_has": -83.746,
+    "critical_lacks": 120.109,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "lacks"
+   }
+  },
+  "C": {
+   "B_causes": {
+    "rows": 27,
+    "gain": 84.66,
+    "critical_has": -86.495,
+    "critical_lacks": 49.869,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "has",
+    "precision_mm": 6.2
+   },
+   "C_removal_in_A_state": {
+    "rows": 25,
+    "gain": -79.876,
+    "critical_has": -50.764,
+    "critical_lacks": 83.865,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "lacks"
+   }
+  }
+ },
+ "gourlin": {
+  "B": {
+   "B_causes": {
+    "rows": 13,
+    "gain": 4.513,
+    "critical_has": 0.665,
+    "critical_lacks": -1.286,
+    "power_has": 0.68,
+    "power_lacks": 0.52,
+    "verdict": "has",
+    "precision_mm": "best at -17 mm"
+   },
+   "C_removal_in_A_state": {
+    "rows": 19,
+    "gain": 4.712,
+    "critical_has": 0.646,
+    "critical_lacks": 5.679,
+    "power_has": 1.0,
+    "power_lacks": 0.97,
+    "verdict": "undecided"
+   }
+  },
+  "C": {
+   "B_causes": {
+    "rows": 22,
+    "gain": -0.781,
+    "critical_has": -2.418,
+    "critical_lacks": -0.097,
+    "power_has": 0.97,
+    "power_lacks": 1.0,
+    "verdict": "undecided",
+    "precision_mm": "best at -17 mm"
+   },
+   "C_removal_in_A_state": {
+    "rows": 18,
+    "gain": 4.126,
+    "critical_has": 1.16,
+    "critical_lacks": 0.084,
+    "power_has": 0.88,
+    "power_lacks": 0.92,
+    "verdict": "has"
+   }
+  }
+ },
+ "phillipsL": {
+  "B": {
+   "B_causes": {
+    "rows": 11,
+    "gain": 3.649,
+    "critical_has": 1.588,
+    "critical_lacks": -2.395,
+    "power_has": 0.45,
+    "power_lacks": 0.27,
+    "verdict": "has",
+    "precision_mm": "best at -18 mm"
+   },
+   "C_removal_in_A_state": {
+    "rows": 15,
+    "gain": 1.658,
+    "critical_has": -4.422,
+    "critical_lacks": 11.875,
+    "power_has": 1.0,
+    "power_lacks": 1.0,
+    "verdict": "undecided"
+   }
+  },
+  "C": {
+   "B_causes": {
+    "rows": 19,
+    "gain": 2.567,
+    "critical_has": -0.194,
+    "critical_lacks": 0.294,
+    "power_has": 0.97,
+    "power_lacks": 0.98,
+    "verdict": "has",
+    "precision_mm": "best at -18 mm"
+   },
+   "C_removal_in_A_state": {
+    "rows": 16,
+    "gain": 0.486,
+    "critical_has": 2.852,
+    "critical_lacks": -0.18,
+    "power_has": 0.65,
+    "power_lacks": 0.83,
+    "verdict": "undecided"
+   }
+  }
+ }
+}
+chaseEmR bass {"residual_under_B_vs_C_prediction_rho": -0.873, "under_B": {"C loci": {"rows": 68, "ratio": 1.79, "p": 0.053}, "B loci": {"rows": 78, "ratio": 1.15, "p": 0.379}, "pair's own note and pedal edits": {"rows": 97, "ratio": 1.27, "p": 0.232}, "C loci outside the pair's own edits": {"rows": 39, "ratio": 1.49, "p": 0.219}}, "under_C": {"C loci": {"rows": 68, "ratio": 0.81, "p": 0.685}, "B loci": {"rows": 78, "ratio": 1.95, "p": 0.021}, "pair's own note and pedal edits": {"rows": 97, "ratio": 0.55, "p": 0.951}, "C loci outside the pair's own edits": {"rows": 39, "ratio": 1.34, "p": 0.264}}}
+chaseEmR treble {"residual_under_B_vs_C_prediction_rho": -0.152, "under_B": {"C loci": {"rows": 49, "ratio": 0.59, "p": 0.874}, "B loci": {"rows": 94, "ratio": 1.2, "p": 0.107}, "pair's own note and pedal edits": {"rows": 99, "ratio": 1.17, "p": 0.185}, "C loci outside the pair's own edits": {"rows": 21, "ratio": 0.27, "p": 0.996}}, "under_C": {"C loci": {"rows": 49, "ratio": 0.41, "p": 0.982}, "B loci": {"rows": 94, "ratio": 1.19, "p": 0.162}, "pair's own note and pedal edits": {"rows": 99, "ratio": 1.14, "p": 0.285}, "C loci outside the pair's own edits": {"rows": 21, "ratio": 0.16, "p": 1.0}}}
+phillipsR bass {"residual_under_B_vs_C_prediction_rho": -0.767, "under_B": {"C loci": {"rows": 67, "ratio": 2.11, "p": 0.0}, "B loci": {"rows": 71, "ratio": 1.07, "p": 0.495}, "pair's own note and pedal edits": {"rows": 96, "ratio": 0.58, "p": 0.93}, "C loci outside the pair's own edits": {"rows": 39, "ratio": 2.98, "p": 0.0}}, "under_C": {"C loci": {"rows": 67, "ratio": 1.15, "p": 0.338}, "B loci": {"rows": 71, "ratio": 1.86, "p": 0.01}, "pair's own note and pedal edits": {"rows": 96, "ratio": 0.33, "p": 1.0}, "C loci outside the pair's own edits": {"rows": 39, "ratio": 1.82, "p": 0.064}}}
+phillipsR treble {"residual_under_B_vs_C_prediction_rho": -0.034, "under_B": {"C loci": {"rows": 48, "ratio": 0.71, "p": 0.831}, "B loci": {"rows": 91, "ratio": 1.26, "p": 0.038}, "pair's own note and pedal edits": {"rows": 97, "ratio": 1.18, "p": 0.166}, "C loci outside the pair's own edits": {"rows": 20, "ratio": 0.32, "p": 0.975}}, "under_C": {"C loci": {"rows": 48, "ratio": 0.58, "p": 0.955}, "B loci": {"rows": 91, "ratio": 1.23, "p": 0.049}, "pair's own note and pedal edits": {"rows": 97, "ratio": 1.15, "p": 0.197}, "C loci outside the pair's own edits": {"rows": 20, "ratio": 0.23, "p": 0.994}}}
+gourlin bass {"residual_under_B_vs_C_prediction_rho": 0.705, "under_B": {"C loci": {"rows": 64, "ratio": 0.47, "p": 0.883}, "B loci": {"rows": 64, "ratio": 1.44, "p": 0.155}, "pair's own note and pedal edits": {"rows": 97, "ratio": 1.09, "p": 0.404}, "C loci outside the pair's own edits": {"rows": 36, "ratio": 0.19, "p": 0.987}}, "under_C": {"C loci": {"rows": 64, "ratio": 1.52, "p": 0.127}, "B loci": {"rows": 64, "ratio": 0.91, "p": 0.533}, "pair's own note and pedal edits": {"rows": 97, "ratio": 1.34, "p": 0.184}, "C loci outside the pair's own edits": {"rows": 36, "ratio": 0.58, "p": 0.658}}}
+gourlin treble {"residual_under_B_vs_C_prediction_rho": 0.099, "under_B": {"C loci": {"rows": 40, "ratio": 0.66, "p": 0.834}, "B loci": {"rows": 94, "ratio": 1.41, "p": 0.0}, "pair's own note and pedal edits": {"rows": 104, "ratio": 1.28, "p": 0.036}, "C loci outside the pair's own edits": {"rows": 18, "ratio": 0.36, "p": 0.943}}, "under_C": {"C loci": {"rows": 40, "ratio": 0.81, "p": 0.688}, "B loci": {"rows": 94, "ratio": 1.38, "p": 0.006}, "pair's own note and pedal edits": {"rows": 104, "ratio": 1.25, "p": 0.059}, "C loci outside the pair's own edits": {"rows": 18, "ratio": 0.68, "p": 0.784}}}
+phillipsL bass {"residual_under_B_vs_C_prediction_rho": 0.558, "under_B": {"C loci": {"rows": 62, "ratio": 0.32, "p": 0.953}, "B loci": {"rows": 58, "ratio": 1.09, "p": 0.446}, "pair's own note and pedal edits": {"rows": 98, "ratio": 0.76, "p": 0.711}, "C loci outside the pair's own edits": {"rows": 34, "ratio": 0.15, "p": 0.993}}, "under_C": {"C loci": {"rows": 62, "ratio": 0.96, "p": 0.474}, "B loci": {"rows": 58, "ratio": 1.08, "p": 0.43}, "pair's own note and pedal edits": {"rows": 98, "ratio": 1.04, "p": 0.397}, "C loci outside the pair's own edits": {"rows": 34, "ratio": 0.5, "p": 0.877}}}
+phillipsL treble {"residual_under_B_vs_C_prediction_rho": 0.158, "under_B": {"C loci": {"rows": 38, "ratio": 0.83, "p": 0.708}, "B loci": {"rows": 81, "ratio": 1.29, "p": 0.064}, "pair's own note and pedal edits": {"rows": 104, "ratio": 1.21, "p": 0.053}, "C loci outside the pair's own edits": {"rows": 17, "ratio": 0.46, "p": 0.988}}, "under_C": {"C loci": {"rows": 38, "ratio": 0.93, "p": 0.623}, "B loci": {"rows": 81, "ratio": 1.24, "p": 0.079}, "pair's own note and pedal edits": {"rows": 104, "ratio": 1.19, "p": 0.06}, "C loci outside the pair's own edits": {"rows": 17, "ratio": 0.69, "p": 0.794}}}
+wrote loci.json

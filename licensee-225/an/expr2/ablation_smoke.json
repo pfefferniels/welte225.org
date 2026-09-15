@@ -1,0 +1,822 @@
+{
+ "edit_kinds": {
+  "B": {
+   "addition": 103,
+   "redundant insertion": 1,
+   "no-op (dangling deletion)": 13
+  },
+  "C": {
+   "redundancy removal": 2,
+   "shift": 1,
+   "addition": 73
+  },
+  "B1": {
+   "redundant insertion": 1,
+   "addition": 2
+  },
+  "A1": {
+   "addition": 52,
+   "redundant insertion": 5,
+   "no-op (dangling deletion)": 1,
+   "withdrawal": 1
+  },
+  "D1": {
+   "addition": 2,
+   "redundant insertion": 3,
+   "redundancy removal": 3
+  }
+ },
+ "groups": {
+  "B:bass:1483-1609 (bar 1\u20131)": {
+   "version": "B",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2
+   },
+   "motivations": [
+    "Differenzierung der Melodie"
+   ],
+   "edits": [
+    "c1924a93-2941-43dc-8252-744b3820f319",
+    "40deac98-7425-4296-b30e-8f492c42cbd6"
+   ],
+   "span": [
+    1483.166136226775,
+    1609.1593033824447
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": "best at -37 mm"
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": "best at -31 mm"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     }
+    }
+   }
+  },
+  "B:bass:2136-2568 (bar 3\u20135)": {
+   "version": "B",
+   "scope": "bass",
+   "kinds": {
+    "addition": 6
+   },
+   "motivations": [
+    "Betonte Auftaktfigur",
+    "Dynamische Differenzierung innheralb eines Akkordes",
+    "Verschiebung auf betonte Zeit"
+   ],
+   "edits": [
+    "d574fca5-9ca0-46e4-9eda-9ac0dbf73721",
+    "bea8963d-12a3-49c0-bece-197a05403cda",
+    "6599687d-abbe-447d-ac54-875b59eaa133",
+    "72d6fe1e-52a4-44d3-93ad-8a5a340fb632",
+    "073c922f-cb31-4ae3-ade4-c5acba2c30b0",
+    "dbbb5d20-b44c-4fcf-a93b-3507894224e3"
+   ],
+   "span": [
+    2136.0083972926363,
+    2567.7653216765702
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 6,
+       "gain": 9.847
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 6,
+       "gain": 24.087,
+       "critical_has": -13.619,
+       "critical_lacks": 12.082,
+       "power_has": 1.0,
+       "power_lacks": 1.0,
+       "verdict": "has",
+       "precision_mm": 1.3
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 6,
+       "gain": 6.116,
+       "critical_has": 5.499,
+       "critical_lacks": -1.25,
+       "power_has": 0.53,
+       "power_lacks": 0.85,
+       "verdict": "has",
+       "precision_mm": "best at -18 mm"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 6,
+       "gain": 4.204
+      }
+     }
+    }
+   }
+  },
+  "B:bass:3361-3547 (bar 8\u20131\u2032)": {
+   "version": "B",
+   "scope": "bass",
+   "kinds": {
+    "addition": 4
+   },
+   "motivations": [
+    "\u2013"
+   ],
+   "edits": [
+    "52279868-d007-4c76-aa84-ff817345a3bb",
+    "7ffb7ed0-9cb9-4956-9447-47cbc55f54e7",
+    "43dfa128-5b44-432d-b2ec-8399dc0bd13d",
+    "4a29b435-d2d9-4df7-9a1e-e4914576162b"
+   ],
+   "span": [
+    3360.8372651698814,
+    3546.501426347792
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 6,
+       "gain": 8.268
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 6,
+       "gain": 24.616,
+       "critical_has": -4.628,
+       "critical_lacks": 3.896,
+       "power_has": 0.97,
+       "power_lacks": 1.0,
+       "verdict": "has",
+       "precision_mm": 4.0
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 4,
+       "gain": 10.025,
+       "critical_has": 2.017,
+       "critical_lacks": -1.384,
+       "power_has": 0.92,
+       "power_lacks": 0.92,
+       "verdict": "has",
+       "precision_mm": 5.2
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 4,
+       "gain": 6.222
+      }
+     }
+    }
+   }
+  },
+  "C:bass:1433-1473 (bar upbeat\u2013Auftakt)": {
+   "version": "C",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2
+   },
+   "motivations": [
+    "\u2013"
+   ],
+   "edits": [
+    "f776d5f7-d04e-440c-813e-95e0086fb2e4",
+    "928846de-62bc-4e4a-9b34-1ecad34c5a74"
+   ],
+   "span": [
+    1433.3414635950403,
+    1472.8863905468295
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 2,
+       "gain": 9.643
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 2,
+       "gain": 20.507,
+       "critical_has": 3.671,
+       "critical_lacks": -0.638,
+       "power_has": 0.93,
+       "power_lacks": 0.92,
+       "verdict": "has",
+       "precision_mm": 0.0
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 2,
+       "gain": 1.21,
+       "critical_has": 4.221,
+       "critical_lacks": -1.974,
+       "power_has": 0.07,
+       "power_lacks": 0.37,
+       "verdict": "undecided",
+       "precision_mm": "best at -30 mm"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 2,
+       "gain": 0.926
+      }
+     }
+    }
+   }
+  },
+  "C:bass:1875-2077 (bar 2\u20133)": {
+   "version": "C",
+   "scope": "bass",
+   "kinds": {
+    "addition": 5
+   },
+   "motivations": [
+    "Differenzierung der Mittelstimmen"
+   ],
+   "edits": [
+    "0a2d60fe-80d8-451f-853c-845d64334741",
+    "b2b54445-c96f-416d-bb66-971d404cb50f",
+    "cda12426-c971-4e30-8dc8-5cc4998cdceb",
+    "c3f61c41-70b0-4887-9bbf-9327777ff025",
+    "3f8be5af-0d0c-48de-940f-b53349af93d8"
+   ],
+   "span": [
+    1874.569194835809,
+    2076.888469929522
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 7,
+       "gain": 5.007
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 7,
+       "gain": 15.285,
+       "critical_has": -1.61,
+       "critical_lacks": 0.421,
+       "power_has": 0.95,
+       "power_lacks": 0.97,
+       "verdict": "has",
+       "precision_mm": 2.6
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 7,
+       "gain": -6.854,
+       "critical_has": 1.729,
+       "critical_lacks": 0.657,
+       "power_has": 0.9,
+       "power_lacks": 0.88,
+       "verdict": "lacks",
+       "precision_mm": "best at +17 mm"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 7,
+       "gain": -2.55
+      }
+     }
+    }
+   }
+  },
+  "C:bass:2231-2475 (bar 4\u20135)": {
+   "version": "C",
+   "scope": "bass",
+   "kinds": {
+    "addition": 3
+   },
+   "motivations": [
+    "\u2013"
+   ],
+   "edits": [
+    "0126ec0d-1e81-4809-a025-b4dc18032d1e",
+    "7f8e297b-44c4-444d-88c0-21e5305ca914",
+    "fb939f6f-8c7d-445c-b4a9-9ecf485ac1b9"
+   ],
+   "span": [
+    2231.0522078304148,
+    2474.9696192976307
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 6,
+       "gain": -9.153
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 6,
+       "gain": -7.84,
+       "critical_has": -7.478,
+       "critical_lacks": 3.511,
+       "power_has": 1.0,
+       "power_lacks": 1.0,
+       "verdict": "lacks",
+       "precision_mm": 0.0
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 4,
+       "gain": 0.217,
+       "critical_has": 1.203,
+       "critical_lacks": -1.546,
+       "power_has": 0.4,
+       "power_lacks": 0.52,
+       "verdict": "undecided",
+       "precision_mm": 0.0
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 4,
+       "gain": 0.266
+      }
+     }
+    }
+   }
+  },
+  "B1:bass:1419-1438 (bar upbeat\u2013upbeat)": {
+   "version": "B1",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2
+   },
+   "motivations": [
+    "Zus\u00e4tzliches Crescendo im Bass"
+   ],
+   "edits": [
+    "583873b8-f331-4687-acbe-450694e239ac",
+    "f7a1f802-45da-45ff-ac12-cdece63084a0"
+   ],
+   "span": [
+    1418.7623646960865,
+    1437.6273105745213
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 1,
+       "gain": 6.424
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 2,
+       "gain": -0.668,
+       "critical_has": -3.862,
+       "critical_lacks": 4.661,
+       "power_has": 0.97,
+       "power_lacks": 0.98,
+       "verdict": "undecided",
+       "precision_mm": ">= 37"
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 1,
+       "gain": 1.858,
+       "critical_has": 0.484,
+       "critical_lacks": -0.37,
+       "power_has": 0.92,
+       "power_lacks": 0.85,
+       "verdict": "has",
+       "precision_mm": ">= 31"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 1,
+       "gain": -0.211
+      }
+     }
+    }
+   }
+  },
+  "B1:bass:7365-7365 (bar 17\u201317)": {
+   "version": "B1",
+   "scope": "bass",
+   "kinds": {
+    "redundant insertion": 1
+   },
+   "motivations": [
+    "Zus\u00e4tzliches Crescendo im Bass"
+   ],
+   "edits": [
+    "9f3200d1-4b69-4f8c-8a3e-e212de8acd2e"
+   ],
+   "span": [
+    7364.688759367194,
+    7364.688759367194
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": "best at -37 mm"
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     }
+    }
+   }
+  },
+  "A1:bass:1737-1753 (bar 2\u20132)": {
+   "version": "A1",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2,
+    "redundant insertion": 1
+   },
+   "motivations": [
+    "Crescendo zu melodischen H\u00f6hepunkten"
+   ],
+   "edits": [
+    "bb2f380d-5895-45ab-8fc0-009451080100",
+    "52cc8e8f-3100-41ee-9fe3-65116b8a0cf3",
+    "92fdc1c4-f50a-4ac3-8a72-7c7e6b60f4c6"
+   ],
+   "span": [
+    1737.2974897328836,
+    1753.058572163982
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 1,
+       "gain": -1.729
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 1,
+       "gain": -2.855,
+       "critical_has": 3.559,
+       "critical_lacks": -1.281,
+       "power_has": 0.2,
+       "power_lacks": 0.8,
+       "verdict": "lacks",
+       "precision_mm": "best at -37 mm"
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 2,
+       "gain": -1.169,
+       "critical_has": 1.504,
+       "critical_lacks": -1.656,
+       "power_has": 0.18,
+       "power_lacks": 0.13,
+       "verdict": "undecided",
+       "precision_mm": "best at -32 mm"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 2,
+       "gain": -0.426
+      }
+     }
+    }
+   }
+  },
+  "A1:bass:2149-2275 (bar 3\u20134)": {
+   "version": "A1",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2,
+    "redundant insertion": 1
+   },
+   "motivations": [
+    "\u2013"
+   ],
+   "edits": [
+    "bce208f5-f49d-475a-b7cd-0036f4e88f3f",
+    "e1418816-a3c8-4a06-9006-852d5bfa1c19",
+    "9f17a4e9-be41-43a2-b640-06dcd133d7d6"
+   ],
+   "span": [
+    2149.37353200402,
+    2274.9537694389005
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 4,
+       "gain": -4.589
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 4,
+       "gain": -7.414,
+       "critical_has": 5.537,
+       "critical_lacks": -2.462,
+       "power_has": 0.43,
+       "power_lacks": 0.8,
+       "verdict": "lacks",
+       "precision_mm": 0.0
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 3,
+       "gain": -1.819,
+       "critical_has": 0.528,
+       "critical_lacks": -1.337,
+       "power_has": 0.93,
+       "power_lacks": 0.88,
+       "verdict": "lacks",
+       "precision_mm": 3.7
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 4,
+       "gain": 1.215
+      }
+     }
+    }
+   }
+  },
+  "A1:bass:3796-3796 (bar 2\u2032\u20132\u2032)": {
+   "version": "A1",
+   "scope": "bass",
+   "kinds": {
+    "addition": 1
+   },
+   "motivations": [
+    "\u2013"
+   ],
+   "edits": [
+    "81d941b4-6562-4f68-811b-e0cfe5d3cb85"
+   ],
+   "span": [
+    3796.4913830561172,
+    3796.4913830561172
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 2,
+       "gain": -2.087
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 4,
+       "gain": -4.524,
+       "critical_has": 3.167,
+       "critical_lacks": 1.052,
+       "power_has": 0.42,
+       "power_lacks": 0.9,
+       "verdict": "lacks",
+       "precision_mm": 7.9
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 2,
+       "gain": -0.378,
+       "critical_has": 1.052,
+       "critical_lacks": -1.413,
+       "power_has": 0.27,
+       "power_lacks": 0.05,
+       "verdict": "undecided",
+       "precision_mm": ">= 30"
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 2,
+       "gain": -0.036
+      }
+     }
+    }
+   }
+  },
+  "D1:bass:1145-1243 (bar upbeat\u2013upbeat)": {
+   "version": "D1",
+   "scope": "bass",
+   "kinds": {
+    "addition": 2
+   },
+   "motivations": [
+    "Mezzoforte-Haken im Bass, der die Nuancierung auf den unteren Bereich festlegt"
+   ],
+   "edits": [
+    "cdbdf3b6-3e64-4e76-946c-9b7d375c7775",
+    "d7823e67-b859-41eb-9041-87e9733a1b12"
+   ],
+   "span": [
+    1145.131328958636,
+    1242.5158264213092
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     }
+    }
+   }
+  },
+  "D1:soft:6338-6338 (bar 13\u201313)": {
+   "version": "D1",
+   "scope": "soft",
+   "kinds": {
+    "redundancy removal": 1
+   },
+   "motivations": [
+    "Der Pianozug bleibt getreten, die l\u00f6sende Stanzung fehlt"
+   ],
+   "edits": [
+    "a3b18463-e993-412e-99e9-904782d66213"
+   ],
+   "span": [
+    6338.462094700018,
+    6338.462094700018
+   ],
+   "files": {
+    "chaseEmR": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      },
+      "treble": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      },
+      "treble": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      }
+     }
+    },
+    "gourlin": {
+     "B": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      },
+      "treble": {
+       "rows": 0,
+       "gain": 0.0,
+       "design": "group changes no row of this file's model",
+       "verdict": "no rows",
+       "precision_mm": null
+      }
+     },
+     "C": {
+      "bass": {
+       "rows": 0,
+       "gain": 0.0
+      },
+      "treble": {
+       "rows": 0,
+       "gain": 0.0
+      }
+     }
+    }
+   }
+  }
+ }
+}
