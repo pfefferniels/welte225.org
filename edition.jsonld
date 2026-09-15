@@ -366,13 +366,18 @@
                             ],
                             "@type": "expression",
                             "@id": "symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "2494e2e5-d884-40c9-b25b-a83a7f705809"
-                },
-                {
-                    "insert": [
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "4f759585-c81f-462e-ae65-fbbbd9f0432e"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f"
+                        },
                         {
                             "expressionType": "SlowCrescendoOff",
                             "scope": "bass",
@@ -395,7 +400,23 @@
                         }
                     ],
                     "@type": "edit",
-                    "@id": "2148f6b2-e04b-420d-95b8-3f5a5e40f255"
+                    "@id": "2494e2e5-d884-40c9-b25b-a83a7f705809",
+                    "editType": "additional-accent",
+                    "motivation": "crescendo-onset-moved",
+                    "@annotation": {
+                        "@id": "ff55399b-416f-480a-b582-d011c423bef6",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "bccf373d-fdd8-44fc-9aba-1bc4ef4e8211",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "simpleArgumentation",
+                                    "note": "Das zweite An bei 7364,7 mm trägt allein Stanford-1. Es steht im Crescendo von 7348 bis 7396 mm und bewirkt dort nichts. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei 7364,7 mm und wurde auf 7348 mm vorgezogen, die alte Stanzung blieb stehen. B2 tilgt sie. Die Öffnung misst auf Stanford-1 7,2 mm, die Crescendo-Öffnungen im Bass dort im Median 5,1 mm, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
+                                }
+                            ]
+                        }
+                    }
                 },
                 {
                     "insert": [
@@ -4072,6 +4093,11 @@
                     "note": "Bereinigung",
                     "@type": "motivation",
                     "@id": "cleanup-b"
+                },
+                {
+                    "@type": "motivation",
+                    "@id": "crescendo-onset-moved",
+                    "note": "Das An des Crescendos rückt vor, die alte Stanzung bleibt stehen"
                 }
             ],
             "basedOn": [
@@ -4124,7 +4150,13 @@
                     }
                 }
             ],
-            "motivations": [],
+            "motivations": [
+                {
+                    "@type": "motivation",
+                    "@id": "cleanup-b2",
+                    "note": "Bereinigung"
+                }
+            ],
             "edits": [
                 {
                     "insert": [
@@ -4444,6 +4476,15 @@
                     "editType": "additional-accent",
                     "@type": "edit",
                     "@id": "5c83e6a7-8aa4-4816-8a28-d084b1e9bdc9"
+                },
+                {
+                    "@type": "edit",
+                    "@id": "113e42d2-3bee-4fec-890b-47254f70a750",
+                    "editType": "remove-redundancy",
+                    "motivation": "cleanup-b2",
+                    "delete": [
+                        "symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f"
+                    ]
                 }
             ]
         },
@@ -30423,67 +30464,6 @@
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "@type": "Version",
-            "@id": "ed5ad006-40c5-4cba-a3cd-25ad6d6b33ae",
-            "siglum": "B1",
-            "system": {
-                "name": "T-100",
-                "sameAs": [],
-                "@id": "https://w3id.org/reo/type/system/welte-t100"
-            },
-            "basedOn": [
-                {
-                    "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14",
-                    "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
-                    },
-                    "@annotation": {
-                        "@id": "0a2be328-b844-442f-9539-cfda9044ad7e",
-                        "belief": {
-                            "@type": "belief",
-                            "@id": "1713527b-8bde-423b-99cc-372e24b7bcda",
-                            "certainty": "possible",
-                            "reasons": [
-                                {
-                                    "@type": "simpleArgumentation",
-                                    "note": "Die Lesart trägt allein Stanford-1: ein Crescendo an bei 7364,7 mm, das in B redundant wäre. Es kann eine Stanzung dieses Exemplars sein oder eine Redundanz von B, die C und D3 unabhängig voneinander tilgten, was bei Redundanzen zu erwarten ist. Das Crescendo-Paar vor dem Auftakt, das früher ebenfalls hier stand, trägt auch die Licensee-Fassung D3 an derselben Stelle. Es gehört daher zu B, und C verlegt es."
-                                }
-                            ]
-                        }
-                    }
-                }
-            ],
-            "motivations": [
-                {
-                    "@type": "motivation",
-                    "@id": "bass-crescendo-added",
-                    "note": "Zusätzliches Crescendo im Bass"
-                }
-            ],
-            "edits": [
-                {
-                    "@type": "edit",
-                    "@id": "9f3200d1-4b69-4f8c-8a3e-e212de8acd2e",
-                    "motivation": "bass-crescendo-added",
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "4f759585-c81f-462e-ae65-fbbbd9f0432e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
-            "@type": "Version",
             "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521",
             "siglum": "C1",
             "system": {
@@ -30525,7 +30505,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die B zu A hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von C an deren Stelle und eine weitere nahebei (siehe B2), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein Stanford-1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von B, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von B im Diskant, die C bereinigt, behält sie. Lesarten von A1, B1 oder D1 hat sie nicht. An vier der 45 Stellen, an denen B eine Stanzung von A verschiebt oder tilgt, trägt sie die von A, an den meisten übrigen die von B. Das spricht gegen die Ableitung über B. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von C, die B2 begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber D1 ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die D1 nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von D1 80 nennt."
+                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die B zu A hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von C an deren Stelle und eine weitere nahebei (siehe B2), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein Stanford-1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von B, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von B im Diskant, die C bereinigt, behält sie. Lesarten von A1 oder D1 hat sie nicht. An vier der 45 Stellen, an denen B eine Stanzung von A verschiebt oder tilgt, trägt sie die von A, an den meisten übrigen die von B. Das spricht gegen die Ableitung über B. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von C, die B2 begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber D1 ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die D1 nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von D1 80 nennt."
                                 }
                             ]
                         }
@@ -94713,7 +94693,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder B1: mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei B, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von C ab, das Crescendo im Bass von B bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder der Schicht, die damals allein Stanford-1 zugeschrieben war (B1): mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei B, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von C ab, das Crescendo im Bass von B bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106168,7 +106148,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Schicht B1, die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für B1 und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Lesarten, die damals allein Stanford-1 zugeschrieben waren (Schicht B1), die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
