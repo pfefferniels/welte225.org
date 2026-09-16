@@ -43,6 +43,47 @@ version, not the edition. To publish a change, export the edition
 from Roll Desk and replace the file here. Identifiers must not change
 between exports; the format keeps them.
 
+## Sigla
+
+A siglum is a name, given once and not changed. A version's letter names
+the line it was first recognised in and its number counts the versions
+admitted to that line; where later work places a version elsewhere in the
+stemma, `basedOn` changes and the siglum stays. A copy's siglum is two
+letters for the collection it was read in and a number counting the copies
+of the roll held there. A siglum once given is not given again.
+
+| Version | System | Given | |
+|---|---|---|---|
+| A | T-100 | 4 Sept 2026 (`d38874b`) | no copy carries it; the 1963 recording Si1 is said to |
+| A1 | T-100 | 4 Sept 2026 (`d38874b`) | |
+| B | T-100 | 4 Sept 2026 (`d38874b`) | |
+| C | T-100 | 4 Sept 2026 (`d38874b`) | |
+| B1 | T-100 | 10 Sept 2026 (`56cc1d0`) | dissolved into B on 15 Sept 2026 (`1a7b95d`); not given again |
+| D1 | Licensee | 10 Sept 2026 (`56cc1d0`) | |
+| D2 | T-98 | 10 Sept 2026 (`56cc1d0`) | |
+| C1 | T-100 | 14 Sept 2026 (`64900d4`) | called C_S until that day |
+| B2 | T-100 | 15 Sept 2026 (`04ea9dc`) | no copy carries it |
+| D3 | Licensee | 15 Sept 2026 (`04ea9dc`) | |
+
+The letter D names the copies issued for another reproducing system, the
+group admitted on 10 September 2026. D3 joined that group although it
+derives from B2, which C also derives from.
+
+| Copy | Read in | Roll |
+|---|---|---|
+| St1 | Stanford University Archive | Condon Roll 47, red T-100 |
+| St2 | Stanford University Archive | Condon Roll 48, red T-100 |
+| Wi1 | Marc Widuch | red T-100 |
+| Ch1 | scanned by Spencer Chase, collection unknown | Licensee |
+| Bo1 | Peter Both, scanned by Julian Dyer | green T-98 |
+| Ph1 | Peter Phillips | Licensee |
+| Go1 | Philippe Gourlin, read by Warren Trachtman | Licensee |
+| Sc1 | Hans-W. Schmitz | red T-100, known from TACET's recording |
+| Si1 | Richard Simonton, now USC Libraries | red T-100, known from the 1963 recording |
+
+The copies took these sigla on 16 September 2026 (`e0868e6`). The
+dissertation called them S1, S2, W, C, P, B, G, Sc and Si before that day.
+
 ## Publishing the reconstruction
 
 `mpm/` holds the four files of an MPM Desk archive, unzipped: the
