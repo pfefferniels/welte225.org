@@ -410,7 +410,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das zweite An bei {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|7364,7 mm}} allein in St1, im Crescendo von 7348 bis {{symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b|7396 mm}} und dort wirkungslos. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|7364,7 mm}}, wurde auf {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|7348 mm}} vorgezogen, die alte Stanzung blieb stehen; {{bab25aef-f80d-4ff0-b187-63030df8305a}} tilgt sie. Die Öffnung misst auf St1 7,2 mm gegen im Median 5,1 mm bei den Crescendo-Öffnungen im Bass, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
+                                    "note": "Das zweite An bei {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|7364,7 mm}} allein in St1, im Crescendo von 7348 bis {{symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b|7396 mm}} und dort wirkungslos. Ein An nach einem An ist die Spur einer Verlegung: das An stand zuerst bei {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|7364,7 mm}}, wurde auf {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|7348 mm}} vorgezogen, die alte Stanzung blieb stehen; {{bab25aef-f80d-4ff0-b187-63030df8305a}} tilgt sie. Die Öffnung misst auf St1 7,2 mm gegen im Median 5,1 mm bei den Crescendo-Öffnungen im Bass, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
                                 }
                             ]
                         }
@@ -563,7 +563,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das An des Pianozugs bei 6250,4 mm allein in Wi1. Ohne es stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bei {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|6338,5 mm}} ein zweites Ab ohne Wirkung, wie St1 und St2 es tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hat es getilgt und das Ab stehen lassen."
+                                    "note": "Das An des Una Corda-Pedals bei {{symbol_ff2b533b-cc1f-4783-a224-31c24eee0900|6250,4 mm}} allein in Wi1. Ohne es stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bei {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|6338,5 mm}} ein zweites Ab ohne Wirkung, wie St1 und St2 es tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hat es getilgt und das Ab stehen lassen."
                                 }
                             ]
                         }
@@ -4078,7 +4078,7 @@
                     "@id": "melodic-differentiation"
                 },
                 {
-                    "note": "Verschiebung auf betonte Zeit",
+                    "note": "Verlegung auf betonte Zeit",
                     "@type": "motivation",
                     "@id": "shift-to-metrical-accent"
                 },
@@ -4140,7 +4140,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "{{bab25aef-f80d-4ff0-b187-63030df8305a}}: durch kein Exemplar überliefert, erschlossen aus dem Verhältnis von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}}.\n\nSieben Hinzufügungen, bisher {{c9050e75-97a8-4862-9533-0f4b1439802b}} allein zugeschrieben, in {{2767844e-311e-4b97-8fb2-1b78db41e220}} an genau deren Stelle, innerhalb von 3,3 mm und damit so genau wie die gemeinsamen Stanzungen: Forzandi im Bass 2365 und {{symbol_9ecc1747-1258-4e70-be6f-971ceee0f964|4281 mm}}, Crescendo im Diskant 5159 mm, je mit beiden Stanzungen; Crescendi im Diskant 4816, 5037, 6663 und 7832 mm mit einer. Das Crescendo im Bass {{symbol_7c9e1156-ad28-412a-ab0c-400137b2f6b0|2464 mm}} liegt 3,8 mm davor, knapp außerhalb, gehört aber wohl hierher: zwei unabhängige Paare so nah beieinander sind unwahrscheinlich.\n\nGleiche Stanzung an gleicher Stelle kaum zweimal unabhängig. {{2767844e-311e-4b97-8fb2-1b78db41e220}} unter {{c9050e75-97a8-4862-9533-0f4b1439802b}} erklärte das; dagegen stehen die übrigen 118 Stanzungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, von denen {{2767844e-311e-4b97-8fb2-1b78db41e220}} keine trägt, darunter keines der 23 Paare der Mittelstimmen-Differenzierung, dazu die Bereinigungen und die Verschiebung des c′ in T. 4. Wer von {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausginge, hätte das alles zurücknehmen müssen.\n\nAlso standen die sieben vor beiden: {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} gehen auf eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurück, und das ist {{bab25aef-f80d-4ff0-b187-63030df8305a}}. Ihr gehören die sieben, {{c9050e75-97a8-4862-9533-0f4b1439802b}} erst die 118 übrigen.\n\nDazu das Forzando ab 4287 mm: es macht das An von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} bei {{symbol_92c575eb-5767-4cf8-9d74-2f5de03dfcbc|4334 mm}} wirksam, das nach dem offenen An bei 4050 mm ohne Wirkung war. Eine Einfügung, die eine Redundanz wirksam macht, ist sonst nicht anzunehmen; hier liest sie sich als Korrektur."
+                                    "note": "{{bab25aef-f80d-4ff0-b187-63030df8305a}}: durch kein Exemplar überliefert, erschlossen aus dem Verhältnis von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}}.\n\nSieben Hinzufügungen, bisher {{c9050e75-97a8-4862-9533-0f4b1439802b}} allein zugeschrieben, in {{2767844e-311e-4b97-8fb2-1b78db41e220}} an genau deren Stelle, innerhalb von 3,3 mm und damit so genau wie die gemeinsamen Stanzungen: Forzandi im Bass 2365 und {{symbol_9ecc1747-1258-4e70-be6f-971ceee0f964|4281 mm}}, Crescendo im Diskant {{symbol_36fa67a1-2d4c-46e5-b1b0-852c8933c898|5159 mm}}, je mit beiden Stanzungen; Crescendi im Diskant 4816, 5037, 6663 und 7832 mm mit einer. Das Crescendo im Bass {{symbol_7c9e1156-ad28-412a-ab0c-400137b2f6b0|2464 mm}} liegt 3,8 mm davor, knapp außerhalb, gehört aber wohl hierher: zwei unabhängige Paare so nah beieinander sind unwahrscheinlich.\n\nGleiche Stanzung an gleicher Stelle kaum zweimal unabhängig. {{2767844e-311e-4b97-8fb2-1b78db41e220}} unter {{c9050e75-97a8-4862-9533-0f4b1439802b}} erklärte das; dagegen stehen die übrigen 118 Stanzungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, von denen {{2767844e-311e-4b97-8fb2-1b78db41e220}} keine trägt, darunter keines der 23 Paare der Mittelstimmen-Differenzierung, dazu die Bereinigungen und die Verlegung des c′ in T. 4. Wer von {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausginge, hätte das alles zurücknehmen müssen.\n\nAlso standen die sieben vor beiden: {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} gehen auf eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurück, und das ist {{bab25aef-f80d-4ff0-b187-63030df8305a}}. Ihr gehören die sieben, {{c9050e75-97a8-4862-9533-0f4b1439802b}} erst die 118 übrigen.\n\nDazu das Forzando ab {{symbol_23e43b39-886f-4b6c-8827-127a70774470|4287 mm}}: es macht das An von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} bei {{symbol_92c575eb-5767-4cf8-9d74-2f5de03dfcbc|4334 mm}} wirksam, das nach dem offenen An bei {{symbol_f9292c10-fe39-46d9-9169-a237822d8176|4050 mm}} ohne Wirkung war. Eine Einfügung, die eine Redundanz wirksam macht, ist sonst nicht anzunehmen; hier liest sie sich als Korrektur."
                                 }
                             ]
                         }
@@ -23360,7 +23360,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "{{755d411a-0ba4-4f59-90a7-f231be3e66ad}}: nur in Wi1, ohne Antwort auf anderem Ast – allmähliches Aufheben der Verschiebung T. 9; Rückspulstanzung; fünf Crescendo-/Forzando-Befehle T. 2, 6, 7; zwei Tilgungen (Diskant-Crescendo ab {{symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b|1708,6 mm}}; Dämpferpedal ab {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|5370,9 mm}}).\n\n45 weitere Lesarten nur in Wi1, doch schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: meist {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei gleichartig, also verschoben; sonst Auflösung einer Redundanz von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, die eine spätere Einfügung nicht nachträglich erklärte."
+                                    "note": "{{755d411a-0ba4-4f59-90a7-f231be3e66ad}}: nur in Wi1, ohne Antwort auf anderem Ast – allmähliches Aufheben der Verschiebung T. 9; Rückspulstanzung; fünf Crescendo-/Forzando-Befehle T. 2, 6, 7; zwei Tilgungen (Diskant-Crescendo ab {{symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b|1708,6 mm}}; Dämpferpedal ab {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|5370,9 mm}}).\n\n45 weitere Lesarten nur in Wi1, doch schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: meist {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei gleichartig, also verlegt; sonst Auflösung einer Redundanz von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, die eine spätere Einfügung nicht nachträglich erklärte."
                                 }
                             ]
                         }
@@ -23611,7 +23611,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die rasch wechselnden Stanzungen des Pianozugs in T. 9 trägt allein Wi1. Keine Kopie zeigt hier eine Redundanz, die sie erklären müsste, und spätere Fassungen fügen in der Regel Nuancen hinzu; sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt.\n\nDenkbar bleibt, dass sie schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} standen und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte; dann nähme {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} vier wirksame Stanzungen zurück und verlegte zwei."
+                                    "note": "Die rasch wechselnden Stanzungen des Una Corda-Pedals in T. 9 trägt allein Wi1. Keine Kopie zeigt hier eine Redundanz, die sie erklären müsste, und spätere Fassungen fügen in der Regel Nuancen hinzu; sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt.\n\nDenkbar bleibt, dass sie schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} standen und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte; dann nähme {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} vier wirksame Stanzungen zurück und verlegte zwei."
                                 }
                             ]
                         }
@@ -23637,7 +23637,7 @@
                 {
                     "@type": "motivation",
                     "@id": "una-corda-lifted-gradually",
-                    "note": "Allmähliches Aufheben der Verschiebung durch rasch wechselnde Stanzungen des Pianozugs"
+                    "note": "Allmähliches Aufheben der Verschiebung durch rasch wechselnde Stanzungen des Una Corda-Pedals"
                 }
             ],
             "system": {
@@ -23767,7 +23767,7 @@
                 {
                     "@type": "motivation",
                     "@id": "redundant-soft-pedal-release",
-                    "note": "Das zweite, wirkungslose Ab des Pianozugs entfällt"
+                    "note": "Das zweite, wirkungslose Ab des Una Corda-Pedals entfällt"
                 }
             ],
             "basedOn": [
@@ -30416,7 +30416,7 @@
                 {
                     "@type": "motivation",
                     "@id": "note-text-differs",
-                    "note": "Abweichender Notentext: ein zusätzliches f′′, ein verschobenes g"
+                    "note": "Abweichender Notentext: ein zusätzliches f′′, ein verlegtes g"
                 }
             ],
             "basedOn": [
@@ -30495,7 +30495,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Phillips' Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: bei 3459, 8104 und {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|9042 mm}} fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nDagegen: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, weit über dem Zufall liegen.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt Tempo 75, Chases Exemplar von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80."
+                                    "note": "Phillips' Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: bei 3459, 8104 und {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|9042 mm}} fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nDagegen: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, weit über dem Zufall liegen.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt Tempo 75, Chases Exemplar von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80."
                                 }
                             ]
                         }
@@ -30512,7 +30512,7 @@
                 {
                     "@type": "motivation",
                     "@id": "cancel-row",
-                    "note": "Löschreihe vor dem ersten Ton, die Pedale, Pianozug und alle Ausdrucksfunktionen zurücksetzt"
+                    "note": "Löschreihe vor dem ersten Ton, die Pedale, das Una Corda-Pedal und alle Ausdrucksfunktionen zurücksetzt"
                 },
                 {
                     "@type": "motivation",
@@ -30537,7 +30537,7 @@
                 {
                     "@type": "motivation",
                     "@id": "una-corda-dropped",
-                    "note": "Die Verschiebung durch den Pianozug entfällt im Stück"
+                    "note": "Die Verschiebung durch das Una Corda-Pedal entfällt im Stück"
                 },
                 {
                     "@type": "motivation",
@@ -30765,7 +30765,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_453db0e0-ee3d-457a-876f-ed6d82af162d|1986,7 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
+                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_453db0e0-ee3d-457a-876f-ed6d82af162d|1986,7 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31125,7 +31125,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} (2872,9 mm), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
+                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e|2872,9 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31394,7 +31394,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43|4055,7 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
+                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43|4055,7 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31615,7 +31615,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Pianozugs, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips' Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar zeigen in T. 8′ bis 15 keine Änderung durch den Pianozug."
+                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips' Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal."
                                 }
                             ]
                         }
@@ -31678,7 +31678,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} (5582,7 mm), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
+                                    "note": "Stanzung an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ({{symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5|5582,7 mm}}), überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen: entweder eigene Lesart von {{2767844e-311e-4b97-8fb2-1b78db41e220}}, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft, oder Bewahrung gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter Kontamination verträgt. Zur Abwägung siehe die Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -106056,7 +106056,7 @@
                     }
                 },
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
-                "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips' pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Perforation einen MIDI-Ton, alle mit derselben Anschlagstärke. Nummern nach seiner Regel: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15.\n\nZeiten über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne als Tonfolge an {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausgerichtet; eine Parabel nimmt den Aufwickelzug auf, ein gleitender Median über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von dem die Töne um 0,56 mm (Median) abweichen.\n\nAusdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Perforation lang ist; Enden liegen hier daher später.\n\nSpur 8, das An des Pianozugs, kommt in der ganzen Datei nicht vor; ob der Leser diese Spur liest, ist nicht bekannt. Phillips' Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
+                "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips' pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Perforation einen MIDI-Ton, alle mit derselben Anschlagstärke. Nummern nach seiner Regel: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15.\n\nZeiten über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne als Tonfolge an {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausgerichtet; eine Parabel nimmt den Aufwickelzug auf, ein gleitender Median über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von dem die Töne um 0,56 mm (Median) abweichen.\n\nAusdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Perforation lang ist; Enden liegen hier daher später.\n\nSpur 8, das An des Una Corda-Pedals, kommt in der ganzen Datei nicht vor; ob der Leser diese Spur liest, ist nicht bekannt. Phillips' Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
             },
             "siglum": "Ph1"
         },
@@ -106143,7 +106143,7 @@
                         "version": "Beta Version, Feb. 23, 2007"
                     }
                 ],
-                "note": "Bekannt allein aus Warren Trachtmans emulierter MIDI-Datei, öffentlich unter pianorollmusic.org. Ihr Kopf nennt Rollennummer C-225, Tempo 75, Echtheit „Original“ und Philippe Gourlin als Eigentümer; anderweitig belegen lassen sich diese Angaben nicht.\n\nTrachtman hat die Rolle mit 300 Zeilen auf den Zoll gescannt, am 17. März 2007 in eine e-Roll-Datei umgewandelt und deren Ausdruck emuliert. Die Datei enthält daher Töne mit Anschlagstärken und das Dämpferpedal, keine Ausdrucksstanzungen; für den Pianozug schreibt die Emulation kein Signal."
+                "note": "Bekannt allein aus Warren Trachtmans emulierter MIDI-Datei, öffentlich unter pianorollmusic.org. Ihr Kopf nennt Rollennummer C-225, Tempo 75, Echtheit „Original“ und Philippe Gourlin als Eigentümer; anderweitig belegen lassen sich diese Angaben nicht.\n\nTrachtman hat die Rolle mit 300 Zeilen auf den Zoll gescannt, am 17. März 2007 in eine e-Roll-Datei umgewandelt und deren Ausdruck emuliert. Die Datei enthält daher Töne mit Anschlagstärken und das Dämpferpedal, keine Ausdrucksstanzungen; für das Una Corda-Pedal schreibt die Emulation kein Signal."
             },
             "carries": [
                 {
@@ -106157,7 +106157,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Töne und Dämpferpedal stimmen mit Phillips' Lesung überein; abweichend allein ein cis′′ in T. 14 (Lücke von 3 mm, vermutlich eine fehlende Stanzung dieses Exemplars) und ein doppeltes Ab des Pedals bei {{symbol_1d1ecad2-6934-4afa-8204-e7a36fe30ed9|4468 mm}}.\n\nAnschlagstärken folgen der Dynamik von Phillips' Stanzungen, geprüft in deren Kodierung. Wo das Verfahren unterscheiden kann: Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt, vorhanden (sieben Einheiten, gepoolter z-Wert +1,15 ± 0,23); Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} tilgt, fehlen (vier Einheiten, −1,26 ± 0,10); Differenzierung der Mittelstimmen fehlt (−1,00 ± 0,18).\n\nAuf Phillips' eigener Standard-MIDI-Datei gibt dasselbe Verfahren wieder, was seine Stanzungen zeigen, außer vor dem ersten Ton; das Crescendo-Paar vor dem Auftakt ist daher allein durch Phillips' Lesung bezeugt.\n\nEine Änderung durch den Pianozug zeigen die Anschlagstärken in T. 8′ bis 15 nicht.",
+                                    "note": "Töne und Dämpferpedal stimmen mit Phillips' Lesung überein; abweichend allein ein cis′′ in T. 14 (Lücke von 3 mm, vermutlich eine fehlende Stanzung dieses Exemplars) und ein doppeltes Ab des Pedals bei {{symbol_1d1ecad2-6934-4afa-8204-e7a36fe30ed9|4468 mm}}.\n\nAnschlagstärken folgen der Dynamik von Phillips' Stanzungen, geprüft in deren Kodierung. Wo das Verfahren unterscheiden kann: Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt, vorhanden (sieben Einheiten, gepoolter z-Wert +1,15 ± 0,23); Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} tilgt, fehlen (vier Einheiten, −1,26 ± 0,10); Differenzierung der Mittelstimmen fehlt (−1,00 ± 0,18).\n\nAuf Phillips' eigener Standard-MIDI-Datei gibt dasselbe Verfahren wieder, was seine Stanzungen zeigen, außer vor dem ersten Ton; das Crescendo-Paar vor dem Auftakt ist daher allein durch Phillips' Lesung bezeugt.\n\nEine Änderung durch das Una Corda-Pedal zeigen die Anschlagstärken in T. 8′ bis 15 nicht.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.py",
@@ -106241,7 +106241,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Lautstärke der gehörten Töne folgt der Dynamik von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}: Anschlagstärken von Transkun R² 0,74 gegen 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und 0,52 bei {{c9050e75-97a8-4862-9533-0f4b1439802b}}; von Kong 0,69 gegen 0,52; ebenso auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators.\n\nVon 23 Passagen mit Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, beurteilbar nach der Änderung der Lautstärke, spricht eine für sie. Wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; ebenso den Crescendi, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} selbst hat, in beiden Hälften. Beschädigung der Rolle oder Ausfall am Instrument erklärt diese Lesarten nicht.\n\nAuf verformten Instrumenten emuliert – langsamere und schnellere Bälge, ausgefallene Ventile, gekrümmte Anschlagskurven – erscheinen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} in höchstens 0,5 % der Ziehungen als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}. Keine Strecke der Aufnahme weicht über den Zufall hinaus von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ab; dieselben Skripte ergeben für die Aufnahme von Schmitz' Exemplar weiterhin {{c9050e75-97a8-4862-9533-0f4b1439802b}}.\n\nDie Prämissen schließen ein Instrument unbekannter Regulierung ein, dessen Vorsetzer eine Ampico-Mechanik trug; daher nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Lautstärke der gehörten Töne folgt der Dynamik von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}: Anschlagstärken von Transkun R² 0,74 gegen 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und 0,52 bei {{c9050e75-97a8-4862-9533-0f4b1439802b}}; von Kong 0,69 gegen 0,52; ebenso auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators.\n\nVon 23 Passagen mit Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, beurteilbar nach der Änderung der Lautstärke, spricht eine für sie. Wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; ebenso den Crescendi, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} selbst hat, in beiden Hälften. Beschädigung der Rolle oder Ausfall am Instrument erklärt diese Lesarten nicht.\n\nAuf verformten Instrumenten emuliert – langsamere und schnellere Bälge, ausgefallene Ventile, gekrümmte Anschlagskurven – erscheinen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} in höchstens 0,5 % der Ziehungen als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}. Keine Strecke der Aufnahme weicht über den Zufall hinaus von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ab; dieselben Skripte ergeben für die Aufnahme von Schmitz' Exemplar weiterhin {{c9050e75-97a8-4862-9533-0f4b1439802b}}.\n\nDie Prämissen schließen ein Instrument unbekannter Regulierung ein, dessen Vorsetzer eine Ampico-Mechanik trug; daher nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -106277,7 +106277,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die allein St1 überliefert, die sieben Entfernungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von {{c9050e75-97a8-4862-9533-0f4b1439802b}} abweichen. {{8a074fdb-dfc1-480b-ac06-ae3c7a640521}} steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Lesarten, die allein St1 überliefert, die sieben Entfernungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Lesarten des Una Corda-Pedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von {{c9050e75-97a8-4862-9533-0f4b1439802b}} abweichen. {{8a074fdb-dfc1-480b-ac06-ae3c7a640521}} steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106389,7 +106389,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Pianozugs, das {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hinzufügt, ein schwacher Befund ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,65 der Stichproben vorgezogen).",
+                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Una Corda-Pedals, das {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hinzufügt, ein schwacher Befund ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,65 der Stichproben vorgezogen).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -106419,7 +106419,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Das gilt ebenso für {{bab25aef-f80d-4ff0-b187-63030df8305a}}, {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Fassungen, die auf {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurückgehen. Für die Una corda in T. 13, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, spricht die Lautstärke schwach ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,69 der Stichproben vorgezogen).",
+                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Das gilt ebenso für {{bab25aef-f80d-4ff0-b187-63030df8305a}}, {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Fassungen, die auf {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurückgehen. Für die Verschiebung in T. 13, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, spricht die Lautstärke schwach ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,69 der Stichproben vorgezogen).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
