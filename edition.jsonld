@@ -44582,7 +44582,8 @@
                 },
                 "output": "mf320jq4997_analysis.txt",
                 "note": "Die Lesung kommt aus der Analyse, die SUPRA zum eigenen Scan veröffentlicht, mf320jq4997_analysis.txt zu https://purl.stanford.edu/mf320jq4997. Dass es diese und nicht die andere rote Analyse ist, sagen deren eigene Maße, die hier eingetragenen: Ränder 54 und 117 px, Rollenbreite 3888,91 px, Spurabstand 37,7646 px. Das Exemplar trägt die Signatur „Stanford Libraries CONDON ROLL 47“ (sul:ars0163_cr47_welte_225) und kommt damit, wie das zweite Stanforder Exemplar, aus der Sammlung Denis Condon. Der Katalog vermerkt dazu allein das Papier, „Lined paper“ und „Ruled paper“; Randrisse zählt die Analyse keine, und die rote 225, die Peter Phillips gelesen hat, ist daher das andere Stanforder Exemplar. Gemessen hat Stanford, nicht die Edition, und die Längsauflösung von 300,25 dpi, die in jeder Analyse steht, ist eine Konstante ihres Geräts und keine Messung an dieser Rolle."
-            }
+            },
+            "siglum": "St1"
         },
         {
             "ops": [
@@ -58130,7 +58131,8 @@
                 },
                 "output": "wv912mm2332_analysis.txt",
                 "note": "Die Lesung kommt aus wv912mm2332_analysis.txt zu https://purl.stanford.edu/wv912mm2332, kenntlich an den hier eingetragenen Maßen: Ränder 32 und 152 px, Rollenbreite 3899,59 px, Spurabstand 37,7477 px. Die Signatur lautet „Stanford Libraries CONDON ROLL 48“ (sul:ars0163_cr48_welte_225); da beide roten Stanforder Exemplare aus der Sammlung Condon stammen, unterscheidet die Provenienz sie nicht. Der Zustand des Papiers tut es. Peter Phillips, der seine rote 225 von einer Condon-Rolle gelesen hat, notiert dazu „roll has damaged edges from half way in, otherwise good“, und die Analyse zählt hier sieben Randrisse zwischen 73 und 89 Prozent der Rollenlänge, fünf im Bass und zwei im Diskant, dazu 104 Staubausschlüsse und ein zweifelhaftes Loch, während Stanford-1 keinen einzigen Riss hat. Seine Datei „Traumerei (Schumann) Grunfeld RW.mid“ von 2022, am 8. September 2026 per Mail geschickt, zählt 463 Töne wie die Lesung dieses Exemplars, Stanford-1 zählt 464, und ihr Lautstärkeverlauf korreliert über die gemeinsamen Töne mit diesem Exemplar zu r = 0,93 (457 von 463 zugeordnet) gegen r = 0,72 bei Stanford-1 (432 Töne). Beide Vergleiche laufen über zwei verschiedene Emulatoren, seinen und midi2exp, so dass der Abstand der Werte zählt und nicht ihre Höhe. Phillips liest die Rollen pneumatisch, nicht optisch. Was er geschickt hat, ist allerdings die emulierte Fassung seiner Lesung: Tonumfang 34 bis 82, neunundzwanzig Anschlagstärken, Pedale als Controller 64 und 67. Die Ausdrucksperforationen selbst stehen nicht darin, so dass die Datei als Zeuge für Stanzorte erst taugt, wenn die E-Roll-Datei dazukommt."
-            }
+            },
+            "siglum": "St2"
         },
         {
             "ops": [
@@ -67639,7 +67641,8 @@
                 "sameAs": []
             },
             "@type": "RollCopy",
-            "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
+            "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c",
+            "siglum": "Wi1"
         },
         {
             "@type": "RollCopy",
@@ -80203,7 +80206,8 @@
                 },
                 "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll, quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb. Überführt mit cis2roll.py in ein TIFF von 300 dpi und gelesen mit tiff2holes -l auf der Licensee-Leiste; deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung des Parsers, und die Rückspulperforation auf Spur 89 legt den Versatz fest. Das Gerät ist nicht überliefert, seine Bauart aber aus der Datei ablesbar: ein Chase-Transport mit Capstan-Antrieb und ohne Positionsgeber, aus der Generation vor dem Mk3. Zuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war; beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm und im Rest auf 0,06 mm. Ein Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen."
             },
-            "scan": "/facsimiles/WelteLicensee_225"
+            "scan": "/facsimiles/WelteLicensee_225",
+            "siglum": "Ch1"
         },
         {
             "@type": "RollCopy",
@@ -94641,7 +94645,8 @@
                 },
                 "output": "WelteT98_225_Gruenfeld_Traeumerei.CIS"
             },
-            "scan": "/facsimiles/WelteT98_225"
+            "scan": "/facsimiles/WelteT98_225",
+            "siglum": "Bo1"
         },
         {
             "@type": "RollCopy",
@@ -94707,7 +94712,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "siglum": "Sc1"
         },
         {
             "@type": "RollCopy",
@@ -106022,7 +106028,8 @@
                 },
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
                 "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips' pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Perforation einen MIDI-Ton, alle mit derselben Anschlagstärke. Die Nummern sind nach seiner Regel gelesen: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15. Die Zeiten sind über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne sind als Tonfolge an C ausgerichtet, eine Parabel nimmt den Aufwickelzug auf und eine laufende Mediane über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von der die Töne um 0,56 mm (Median) abweichen. Ausdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen darum mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Perforation lang ist, so dass Enden hier später liegen. Spur 8, das An des Pianozugs, kommt in der ganzen Datei nicht vor, und ob der Leser diese Spur liest, ist nicht bekannt. Phillips' Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
-            }
+            },
+            "siglum": "Ph1"
         },
         {
             "@type": "RollCopy",
@@ -106127,7 +106134,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "siglum": "Go1"
         },
         {
             "@type": "RollCopy",
@@ -106211,7 +106219,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "siglum": "Si1"
         }
     ],
     "@included": [
