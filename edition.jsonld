@@ -63,7 +63,6 @@
     "versions": [
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
-            "siglum": "R2",
             "edits": [
                 {
                     "insert": [
@@ -411,7 +410,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das zweite An bei 7364,7 mm trägt allein St1. Es steht im Crescendo von 7348 bis 7396 mm und bewirkt dort nichts. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei 7364,7 mm und wurde auf 7348 mm vorgezogen, die alte Stanzung blieb stehen. R3 tilgt sie. Die Öffnung misst auf St1 7,2 mm, die Crescendo-Öffnungen im Bass dort im Median 5,1 mm, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
+                                    "note": "Das zweite An bei 7364,7 mm trägt allein St1. Es steht im Crescendo von 7348 bis 7396 mm und bewirkt dort nichts. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei 7364,7 mm und wurde auf 7348 mm vorgezogen, die alte Stanzung blieb stehen. {{bab25aef-f80d-4ff0-b187-63030df8305a}} tilgt sie. Die Öffnung misst auf St1 7,2 mm, die Crescendo-Öffnungen im Bass dort im Median 5,1 mm, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
                                 }
                             ]
                         }
@@ -564,7 +563,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das An des Pianozugs bei 6250,4 mm trägt allein Wi1. Ohne es stünde schon in R1 bei 6338,5 mm ein zweites Ab ohne Wirkung, wie es St1 und St2 tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in R1, und R2 hat es getilgt und das Ab stehen lassen."
+                                    "note": "Das An des Pianozugs bei 6250,4 mm trägt allein Wi1. Ohne es stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bei 6338,5 mm ein zweites Ab ohne Wirkung, wie es St1 und St2 tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hat es getilgt und das Ab stehen lassen."
                                 }
                             ]
                         }
@@ -4120,7 +4119,6 @@
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "@type": "Version",
             "@id": "bab25aef-f80d-4ff0-b187-63030df8305a",
-            "siglum": "R3",
             "system": {
                 "name": "T-100",
                 "sameAs": [],
@@ -4142,7 +4140,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "R3 ist durch kein Exemplar überliefert. Die Licensee-Fassung L1 trägt sieben Hinzufügungen von R4 an der Stelle, an der R4 sie hat, innerhalb von 3,3 mm und damit so genau wie die Stanzungen, die alle Fassungen teilen: die Forzandi im Bass bei 2365 und 4281 mm und das Crescendo im Diskant bei 5159 mm mit beiden Stanzungen, die Crescendi im Diskant bei 4816, 5037, 6663 und 7832 mm mit einer von beiden. Das Crescendo im Bass bei 2464 mm liegt mit beiden Stanzungen 3,8 mm vor der Stelle von R4, knapp außerhalb dieser Genauigkeit, und gehört wohl ebenfalls hierher, denn zwei unabhängige Paare so nah beieinander sind weniger wahrscheinlich. Die übrigen 118 Stanzungen, die R4 hinzufügt, trägt sie nicht an deren Stelle, darunter alle 23 Paare der Differenzierung der Mittelstimmen. Auch die Bereinigungen von R4 und die Verschiebung des c′ in T. 4 teilt sie nicht. Eine gleiche Hinzufügung an gleicher Stelle wird kaum unabhängig vorgenommen, und bestehende Differenzierungen werden nicht mutwillig zurückgenommen. R4 und L1 gehen daher auf eine gemeinsame Vorlage nach R2 zurück. Das Forzando ab bei 4287 mm macht dabei das An von R2 bei 4334 mm wirksam, das nach dem offenen Forzando an bei 4050 mm redundant war. Eine Einfügung, die eine Redundanz wirksam macht, ist sonst nicht anzunehmen. Hier liest sie sich als Korrektur dieses offenen Forzandos."
+                                    "note": "{{bab25aef-f80d-4ff0-b187-63030df8305a}} ist durch kein Exemplar überliefert. Die Licensee-Fassung {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt sieben Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} an der Stelle, an der {{c9050e75-97a8-4862-9533-0f4b1439802b}} sie hat, innerhalb von 3,3 mm und damit so genau wie die Stanzungen, die alle Fassungen teilen: die Forzandi im Bass bei 2365 und 4281 mm und das Crescendo im Diskant bei 5159 mm mit beiden Stanzungen, die Crescendi im Diskant bei 4816, 5037, 6663 und 7832 mm mit einer von beiden. Das Crescendo im Bass bei 2464 mm liegt mit beiden Stanzungen 3,8 mm vor der Stelle von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, knapp außerhalb dieser Genauigkeit, und gehört wohl ebenfalls hierher, denn zwei unabhängige Paare so nah beieinander sind weniger wahrscheinlich. Die übrigen 118 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, trägt sie nicht an deren Stelle, darunter alle 23 Paare der Differenzierung der Mittelstimmen. Auch die Bereinigungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Verschiebung des c′ in T. 4 teilt sie nicht. Eine gleiche Hinzufügung an gleicher Stelle wird kaum unabhängig vorgenommen, und bestehende Differenzierungen werden nicht mutwillig zurückgenommen. {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} gehen daher auf eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurück. Das Forzando ab bei 4287 mm macht dabei das An von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} bei 4334 mm wirksam, das nach dem offenen Forzando an bei 4050 mm redundant war. Eine Einfügung, die eine Redundanz wirksam macht, ist sonst nicht anzunehmen. Hier liest sie sich als Korrektur dieses offenen Forzandos."
                                 }
                             ]
                         }
@@ -4489,7 +4487,6 @@
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
-            "siglum": "R4",
             "edits": [
                 {
                     "delete": [
@@ -6595,7 +6592,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Diese Befehle bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in St2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von St1 und von Wi1. Vier von ihnen werden erst durch Bearbeitungen der Fassung R2 wirkungslos, zwei sind es schon in R1."
+                                    "note": "Diese Befehle bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in St2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von St1 und von Wi1. Vier von ihnen werden erst durch Bearbeitungen der Fassung {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}."
                                 }
                             ]
                         }
@@ -6711,7 +6708,6 @@
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
-            "siglum": "R1",
             "edits": [
                 {
                     "insert": [
@@ -23348,7 +23344,6 @@
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
-            "siglum": "R1.1",
             "basedOn": [
                 {
                     "collationTolerance": {
@@ -23365,7 +23360,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Fassung R1.1 umfasst, was allein Wi1 trägt und worauf kein anderer Ast antwortet: das allmähliche Aufheben der Verschiebung in T. 9, die Rückspulstanzung, fünf Crescendo- und Forzando-Befehle in T. 2, 6 und 7 sowie zwei Tilgungen, das Ab des Diskant-Crescendos bei 1708,6 mm und das Loslassen des Dämpferpedals bei 5370,9 mm. Weitere 45 Lesarten trägt ebenfalls allein dieses Exemplar, sie stehen aber schon in R1. An den meisten dieser Stellen trägt R2 nahebei einen gleichartigen Befehl und hat die Lesart also verschoben. An den übrigen löst sie eine Redundanz auf, die R1 sonst hätte, und eine spätere Einfügung erklärt keine bestehende Redundanz nachträglich."
+                                    "note": "Die Fassung {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} umfasst, was allein Wi1 trägt und worauf kein anderer Ast antwortet: das allmähliche Aufheben der Verschiebung in T. 9, die Rückspulstanzung, fünf Crescendo- und Forzando-Befehle in T. 2, 6 und 7 sowie zwei Tilgungen, das Ab des Diskant-Crescendos bei 1708,6 mm und das Loslassen des Dämpferpedals bei 5370,9 mm. Weitere 45 Lesarten trägt ebenfalls allein dieses Exemplar, sie stehen aber schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. An den meisten dieser Stellen trägt {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei einen gleichartigen Befehl und hat die Lesart also verschoben. An den übrigen löst sie eine Redundanz auf, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} sonst hätte, und eine spätere Einfügung erklärt keine bestehende Redundanz nachträglich."
                                 }
                             ]
                         }
@@ -23525,7 +23520,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das Loslassen bei 5370,8 mm fehlt allein auf Wi1. Es steht auf St1, St2, Ch1 und Ph1, und Bo1 hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung R2, so machte diese Zutat eine in R1 bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in R1 und dieses Exemplar hat es verloren."
+                                    "note": "Das Loslassen bei 5370,8 mm fehlt allein auf Wi1. Es steht auf St1, St2, Ch1 und Ph1, und Bo1 hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, so machte diese Zutat eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} und dieses Exemplar hat es verloren."
                                 }
                             ]
                         }
@@ -23616,7 +23611,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die rasch wechselnden Stanzungen des Pianozugs in T. 9 trägt allein Wi1. Keine Kopie zeigt hier eine Redundanz, die diese Stanzungen erklären müssten, und spätere Fassungen fügen in der Regel Nuancen hinzu. Sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus R1 verlegt. Denkbar bleibt, dass sie schon in R1 standen und R2 sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte. Dann nähme R2 vier wirksame Stanzungen zurück und verlegte zwei."
+                                    "note": "Die rasch wechselnden Stanzungen des Pianozugs in T. 9 trägt allein Wi1. Keine Kopie zeigt hier eine Redundanz, die diese Stanzungen erklären müssten, und spätere Fassungen fügen in der Regel Nuancen hinzu. Sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt. Denkbar bleibt, dass sie schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} standen und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte. Dann nähme {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} vier wirksame Stanzungen zurück und verlegte zwei."
                                 }
                             ]
                         }
@@ -23657,7 +23652,6 @@
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
             "@type": "Version",
             "@id": "e07c4be8-f44b-496d-8a6c-026006340441",
-            "siglum": "L2",
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-licensee",
                 "name": "Welte-Mignon (Licensee)",
@@ -23796,7 +23790,6 @@
             "@context": "https://w3id.org/reo/welte-green/context.jsonld",
             "@type": "Version",
             "@id": "7828b5bd-8fe2-4a8f-9b1f-f7093eb1e525",
-            "siglum": "G1",
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-green",
                 "name": "Welte-Mignon T98",
@@ -30464,7 +30457,6 @@
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "@type": "Version",
             "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521",
-            "siglum": "R4.1",
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100",
                 "name": "Welte-Mignon T100",
@@ -30482,7 +30474,6 @@
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
             "@type": "Version",
             "@id": "2767844e-311e-4b97-8fb2-1b78db41e220",
-            "siglum": "L1",
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-licensee",
                 "name": "Welte-Mignon (Licensee)",
@@ -30504,7 +30495,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die R2 zu R1 hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von R4 an deren Stelle und eine weitere nahebei (siehe R3), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein St1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von R2, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von R2 im Diskant, die R4 bereinigt, behält sie. Lesarten von R1.1 oder L2 hat sie nicht. An vier der 45 Stellen, an denen R2 eine Stanzung von R1 verschiebt oder tilgt, trägt sie die von R1, an den meisten übrigen die von R2. Das spricht gegen die Ableitung über R2. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von R4, die R3 begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber L2 ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die L2 nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von L2 80 nennt."
+                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} an deren Stelle und eine weitere nahebei (siehe {{bab25aef-f80d-4ff0-b187-63030df8305a}}), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein St1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt, behält sie. Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} oder {{e07c4be8-f44b-496d-8a6c-026006340441}} hat sie nicht. An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, an den meisten übrigen die von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Das spricht gegen die Ableitung über {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von {{e07c4be8-f44b-496d-8a6c-026006340441}} 80 nennt."
                                 }
                             ]
                         }
@@ -30774,7 +30765,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Eine Stanzung dieser Bearbeitung liegt, wo R1 sie hat (1986,7 mm), überliefert allein in Wi1, und wo R2 sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen R2 so eine Stanzung von R1 ändert, trägt diese Lesung die von R1, an den meisten übrigen die von R2. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von L1 sein, die die Stelle von R1 wieder trifft. Sie kann auch bedeuten, dass L1 hier bewahrt, was R2 änderte, was sich mit der Ableitung über R3 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Eine Stanzung dieser Bearbeitung liegt, wo {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} sie hat (1986,7 mm), überliefert allein in Wi1, und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} so eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ändert, trägt diese Lesung die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, an den meisten übrigen die von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sein, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft. Sie kann auch bedeuten, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} hier bewahrt, was {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} änderte, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31134,7 +31125,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo R1 sie hat (2872,9 mm), überliefert allein in Wi1, und wo R2 sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen R2 so eine Stanzung von R1 ändert, trägt diese Lesung die von R1, an den meisten übrigen die von R2. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von L1 sein, die die Stelle von R1 wieder trifft. Sie kann auch bedeuten, dass L1 hier bewahrt, was R2 änderte, was sich mit der Ableitung über R3 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} sie hat (2872,9 mm), überliefert allein in Wi1, und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} so eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ändert, trägt diese Lesung die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, an den meisten übrigen die von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sein, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft. Sie kann auch bedeuten, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} hier bewahrt, was {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} änderte, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31403,7 +31394,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo R1 sie hat (4055,7 mm), überliefert allein in Wi1, und wo R2 sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen R2 so eine Stanzung von R1 ändert, trägt diese Lesung die von R1, an den meisten übrigen die von R2. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von L1 sein, die die Stelle von R1 wieder trifft. Sie kann auch bedeuten, dass L1 hier bewahrt, was R2 änderte, was sich mit der Ableitung über R3 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} sie hat (4055,7 mm), überliefert allein in Wi1, und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} so eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ändert, trägt diese Lesung die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, an den meisten übrigen die von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sein, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft. Sie kann auch bedeuten, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} hier bewahrt, was {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} änderte, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31687,7 +31678,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo R1 sie hat (5582,7 mm), überliefert allein in Wi1, und wo R2 sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen R2 so eine Stanzung von R1 ändert, trägt diese Lesung die von R1, an den meisten übrigen die von R2. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von L1 sein, die die Stelle von R1 wieder trifft. Sie kann auch bedeuten, dass L1 hier bewahrt, was R2 änderte, was sich mit der Ableitung über R3 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} sie hat (5582,7 mm), überliefert allein in Wi1, und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} so eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ändert, trägt diese Lesung die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, an den meisten übrigen die von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sein, die die Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} wieder trifft. Sie kann auch bedeuten, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} hier bewahrt, was {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} änderte, was sich mit der Ableitung über {{bab25aef-f80d-4ff0-b187-63030df8305a}} nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -94727,7 +94718,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die R4 emuliert, besser als der von R1, R1.1, R2 oder der Schicht, die damals allein St1 zugeschrieben war (B1): mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei R2, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die R2 und R4 zu R1 hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen R1 oder R2 ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von R4 ab, das Crescendo im Bass von R2 bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} emuliert, besser als der von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}: mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von {{c9050e75-97a8-4862-9533-0f4b1439802b}} ab, das Crescendo im Bass von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106063,7 +106054,7 @@
                     }
                 },
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
-                "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips' pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Perforation einen MIDI-Ton, alle mit derselben Anschlagstärke. Die Nummern sind nach seiner Regel gelesen: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15. Die Zeiten sind über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne sind als Tonfolge an R4 ausgerichtet, eine Parabel nimmt den Aufwickelzug auf und eine laufende Mediane über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von der die Töne um 0,56 mm (Median) abweichen. Ausdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen darum mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Perforation lang ist, so dass Enden hier später liegen. Spur 8, das An des Pianozugs, kommt in der ganzen Datei nicht vor, und ob der Leser diese Spur liest, ist nicht bekannt. Phillips' Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
+                "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips' pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Perforation einen MIDI-Ton, alle mit derselben Anschlagstärke. Die Nummern sind nach seiner Regel gelesen: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15. Die Zeiten sind über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne sind als Tonfolge an {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausgerichtet, eine Parabel nimmt den Aufwickelzug auf und eine laufende Mediane über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von der die Töne um 0,56 mm (Median) abweichen. Ausdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen darum mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Perforation lang ist, so dass Enden hier später liegen. Spur 8, das An des Pianozugs, kommt in der ganzen Datei nicht vor, und ob der Leser diese Spur liest, ist nicht bekannt. Phillips' Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
             },
             "siglum": "Ph1"
         },
@@ -106164,7 +106155,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Töne und Dämpferpedal stimmen mit Phillips' Lesung überein. Es weichen allein ein cis′′ in T. 14, das hier eine Lücke von 3 mm hat, vermutlich eine fehlende Stanzung dieses Exemplars, und ein doppeltes Ab des Pedals bei 4468 mm ab. Die Anschlagstärken folgen der Dynamik, die Phillips' Stanzungen zeigen, geprüft in deren Kodierung. Wo das Verfahren sie überhaupt unterscheiden kann, sind die Hinzufügungen von R4 vorhanden, die L1 trägt (sieben Einheiten, gepoolter z-Wert +1,15 ± 0,23), es fehlen die Stanzungen von R2, die L1 tilgt (vier Einheiten, −1,26 ± 0,10), und es fehlt die Differenzierung der Mittelstimmen (−1,00 ± 0,18). Auf Phillips' eigener Standard-MIDI-Datei gibt dasselbe Verfahren wieder, was seine Stanzungen zeigen, außer vor dem ersten Ton, wo das Crescendo-Paar vor dem Auftakt daher allein durch Phillips' Lesung bezeugt ist. Eine Änderung durch den Pianozug zeigen die Anschlagstärken in T. 8′ bis 15 nicht.",
+                                    "note": "Töne und Dämpferpedal stimmen mit Phillips' Lesung überein. Es weichen allein ein cis′′ in T. 14, das hier eine Lücke von 3 mm hat, vermutlich eine fehlende Stanzung dieses Exemplars, und ein doppeltes Ab des Pedals bei 4468 mm ab. Die Anschlagstärken folgen der Dynamik, die Phillips' Stanzungen zeigen, geprüft in deren Kodierung. Wo das Verfahren sie überhaupt unterscheiden kann, sind die Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} vorhanden, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt (sieben Einheiten, gepoolter z-Wert +1,15 ± 0,23), es fehlen die Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} tilgt (vier Einheiten, −1,26 ± 0,10), und es fehlt die Differenzierung der Mittelstimmen (−1,00 ± 0,18). Auf Phillips' eigener Standard-MIDI-Datei gibt dasselbe Verfahren wieder, was seine Stanzungen zeigen, außer vor dem ersten Ton, wo das Crescendo-Paar vor dem Auftakt daher allein durch Phillips' Lesung bezeugt ist. Eine Änderung durch den Pianozug zeigen die Anschlagstärken in T. 8′ bis 15 nicht.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.py",
@@ -106234,7 +106225,7 @@
                         "version": "0.0.6, checkpoint note_F1=0.9677_pedal_F1=0.9186"
                     }
                 ],
-                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung in Legendary Masters of the Piano (The Classics Record Library, 1963, Katalognummer WV 6633), LP 1, Seite 2, Nr. 2, hier nach der Überspielung, die David Hertzberg 2022 auf YouTube unter der Nummer SWV 6633 veröffentlicht hat. Nach der Abschrift der Plattentasche auf mmdigest.com wurde die Kassette von Richard C. Simonton für den Book-of-the-Month Club hergestellt, von Walter S. Heebner produziert und „in Los Angeles, California, winter 1962-1963, on Steinway Concert Grand No. 261“ aufgenommen. Simontons Welte-Rollen liegen heute in den USC Libraries. Deren Verzeichnis (2000) führt Nr. 0225 in drei Exemplaren, keines davon als Rolle der amerikanischen Tochtergesellschaft vermerkt. Welches von ihnen gespielt wurde, ist nicht bekannt. Töne und Timing folgen den roten Exemplaren: die Neuanschläge von L1 sind nicht zu hören, das e′′ bei 6611,5 mm, das L1 überbindet, erklingt, und an den beiden Stellen, an denen die Licensee-Exemplare rund 27 mm länger laufen, weicht die Aufnahme um höchstens 0,2 mm ab, bei einer Streuung aller gleich langen Strecken von 1,4 mm. Die Überspielung klingt gleichbleibend 19 Cent zu hoch, durch die Geschwindigkeit oder die Stimmung. Transkribiert wurde die Monosumme nach Korrektur der Tonhöhe, mit Transkun (Yan und Duan 2024) und dem Verfahren von Kong et al. (2021), dessen Transkription viele Fehltöne enthält und daher mit der Zeitzuordnung von Transkun gepaart ist. Die Lautstärke der Töne ist aus beiden Transkriptionen und aus einer NMF-Zerlegung nach Ewert und Müller (2012) geschätzt. Transkriptionen und Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/."
+                "note": "Bekannt ist dieses Exemplar allein aus der Einspielung in Legendary Masters of the Piano (The Classics Record Library, 1963, Katalognummer WV 6633), LP 1, Seite 2, Nr. 2, hier nach der Überspielung, die David Hertzberg 2022 auf YouTube unter der Nummer SWV 6633 veröffentlicht hat. Nach der Abschrift der Plattentasche auf mmdigest.com wurde die Kassette von Richard C. Simonton für den Book-of-the-Month Club hergestellt, von Walter S. Heebner produziert und „in Los Angeles, California, winter 1962-1963, on Steinway Concert Grand No. 261“ aufgenommen. Simontons Welte-Rollen liegen heute in den USC Libraries. Deren Verzeichnis (2000) führt Nr. 0225 in drei Exemplaren, keines davon als Rolle der amerikanischen Tochtergesellschaft vermerkt. Welches von ihnen gespielt wurde, ist nicht bekannt. Töne und Timing folgen den roten Exemplaren: die Neuanschläge von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sind nicht zu hören, das e′′ bei 6611,5 mm, das {{2767844e-311e-4b97-8fb2-1b78db41e220}} überbindet, erklingt, und an den beiden Stellen, an denen die Licensee-Exemplare rund 27 mm länger laufen, weicht die Aufnahme um höchstens 0,2 mm ab, bei einer Streuung aller gleich langen Strecken von 1,4 mm. Die Überspielung klingt gleichbleibend 19 Cent zu hoch, durch die Geschwindigkeit oder die Stimmung. Transkribiert wurde die Monosumme nach Korrektur der Tonhöhe, mit Transkun (Yan und Duan 2024) und dem Verfahren von Kong et al. (2021), dessen Transkription viele Fehltöne enthält und daher mit der Zeitzuordnung von Transkun gepaart ist. Die Lautstärke der Töne ist aus beiden Transkriptionen und aus einer NMF-Zerlegung nach Ewert und Müller (2012) geschätzt. Transkriptionen und Auswertungen liegen unter https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/."
             },
             "carries": [
                 {
@@ -106248,7 +106239,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die R1 emuliert, besser als der von R2, R3 oder R4: mit den Anschlagstärken von Transkun R² 0,74 gegenüber 0,55 bei R2 und 0,52 bei R4, mit denen von Kong 0,69 gegenüber 0,52, und auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators. Von den 23 Passagen mit Hinzufügungen von R2, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, spricht eine für sie. Wo R2 eine Stanzung von R1 verschiebt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen R1. Eine Beschädigung der Rolle oder ein Ausfall am Instrument erklärt diese Lesarten von R1 nicht. Die Aufnahme folgt auch den Crescendi, die R1 selbst hat, in beiden Hälften. Auf verformten Instrumenten emuliert, mit langsameren und schnelleren Bälgen, ausgefallenen Ventilen und gebogenen Anschlagskalen, erscheinen R2 und R4 in höchstens 0,5 % der Ziehungen als R1 oder R1.1. Keine Strecke der Aufnahme weicht über den Zufall hinaus von R1 ab. Dieselben Skripte ergeben für die Aufnahme von Schmitz' Exemplar weiterhin R4. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt und dessen Vorsetzer eine Ampico-Mechanik trug, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} emuliert, besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}: mit den Anschlagstärken von Transkun R² 0,74 gegenüber 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und 0,52 bei {{c9050e75-97a8-4862-9533-0f4b1439802b}}, mit denen von Kong 0,69 gegenüber 0,52, und auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators. Von den 23 Passagen mit Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, spricht eine für sie. Wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Eine Beschädigung der Rolle oder ein Ausfall am Instrument erklärt diese Lesarten von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} nicht. Die Aufnahme folgt auch den Crescendi, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} selbst hat, in beiden Hälften. Auf verformten Instrumenten emuliert, mit langsameren und schnelleren Bälgen, ausgefallenen Ventilen und gebogenen Anschlagskalen, erscheinen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} in höchstens 0,5 % der Ziehungen als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}. Keine Strecke der Aufnahme weicht über den Zufall hinaus von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ab. Dieselben Skripte ergeben für die Aufnahme von Schmitz' Exemplar weiterhin {{c9050e75-97a8-4862-9533-0f4b1439802b}}. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt und dessen Vorsetzer eine Ampico-Mechanik trug, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -106284,7 +106275,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die damals allein St1 zugeschrieben waren (Schicht B1), die sieben Entfernungen von R4 und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von R4 abweichen. R4.1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Lesarten, die allein St1 überliefert, die sieben Entfernungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von {{c9050e75-97a8-4862-9533-0f4b1439802b}} abweichen. {{8a074fdb-dfc1-480b-ac06-ae3c7a640521}} steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106312,7 +106303,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die allein R1.1 hat, fehlen (A-posteriori-Wahrscheinlichkeit 2,5·10⁻²¹ auf dem Mittel der vier Lautstärkemaße).",
+                        "note": "Die Lesarten, die allein {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hat, fehlen (A-posteriori-Wahrscheinlichkeit 2,5·10⁻²¹ auf dem Mittel der vier Lautstärkemaße).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106340,7 +106331,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die R4 zu R2 hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Lautstärkemaße), und R4 passt mit jeder der beiden Transkriptionen allein besser als R2.",
+                        "note": "Die Lesarten, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} zu {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Lautstärkemaße), und {{c9050e75-97a8-4862-9533-0f4b1439802b}} passt mit jeder der beiden Transkriptionen allein besser als {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106368,7 +106359,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die L2 zu R4 hinzufügt, fehlen, darunter das vorgezogene c in T. 23, und die Differenzierung der Mittelstimmen, die L2 von R4 hat, fehlt ebenfalls (gepoolter z-Wert −1,00 ± 0,18).",
+                        "note": "Die Lesarten, die {{e07c4be8-f44b-496d-8a6c-026006340441}} zu {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, fehlen, darunter das vorgezogene c in T. 23, und die Differenzierung der Mittelstimmen, die {{e07c4be8-f44b-496d-8a6c-026006340441}} von {{c9050e75-97a8-4862-9533-0f4b1439802b}} hat, fehlt ebenfalls (gepoolter z-Wert −1,00 ± 0,18).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
@@ -106396,7 +106387,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Ob die Lesarten, die R1.1 zu R1 hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt R1 etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße R1.1 (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von R1.1 bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Pianozugs, das R1.1 hinzufügt, ein schwacher Befund (R1 in 0,65 der Stichproben vorgezogen).",
+                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Pianozugs, das {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hinzufügt, ein schwacher Befund ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,65 der Stichproben vorgezogen).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -106426,7 +106417,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Hinzufügungen von R2 fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo R2 Stanzungen von R1 verschiebt oder tilgt, zeigt die Aufnahme die von R1. Das gilt ebenso für R3, R4 und die Fassungen, die auf R2 zurückgehen. Für die Una corda in T. 13, die R2 tilgt, spricht die Lautstärke schwach (R1 in 0,69 der Stichproben vorgezogen).",
+                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verschiebt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Das gilt ebenso für {{bab25aef-f80d-4ff0-b187-63030df8305a}}, {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Fassungen, die auf {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurückgehen. Für die Una corda in T. 13, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, spricht die Lautstärke schwach ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,69 der Stichproben vorgezogen).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
