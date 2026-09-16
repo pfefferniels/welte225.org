@@ -412,7 +412,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das zweite An bei 7364,7 mm trägt allein Stanford-1. Es steht im Crescendo von 7348 bis 7396 mm und bewirkt dort nichts. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei 7364,7 mm und wurde auf 7348 mm vorgezogen, die alte Stanzung blieb stehen. B2 tilgt sie. Die Öffnung misst auf Stanford-1 7,2 mm, die Crescendo-Öffnungen im Bass dort im Median 5,1 mm, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
+                                    "note": "Das zweite An bei 7364,7 mm trägt allein St1. Es steht im Crescendo von 7348 bis 7396 mm und bewirkt dort nichts. Ein An nach einem An ist die Spur einer Verschiebung: das An stand zuerst bei 7364,7 mm und wurde auf 7348 mm vorgezogen, die alte Stanzung blieb stehen. B2 tilgt sie. Die Öffnung misst auf St1 7,2 mm, die Crescendo-Öffnungen im Bass dort im Median 5,1 mm, was eine eigene Stanzung dieses Exemplars nicht ausschließt."
                                 }
                             ]
                         }
@@ -565,7 +565,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das An des Pianozugs bei 6250,4 mm trägt allein das Exemplar Widuch. Ohne es stünde schon in A bei 6338,5 mm ein zweites Ab ohne Wirkung, wie es Stanford-1 und Stanford-2 tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in A, und B hat es getilgt und das Ab stehen lassen."
+                                    "note": "Das An des Pianozugs bei 6250,4 mm trägt allein Wi1. Ohne es stünde schon in A bei 6338,5 mm ein zweites Ab ohne Wirkung, wie es St1 und St2 tragen. Eine spätere Einfügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in A, und B hat es getilgt und das Ab stehen lassen."
                                 }
                             ]
                         }
@@ -6596,7 +6596,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Diese Befehle bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in Stanford-2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von Stanford-1 und vom Exemplar Widuch. Vier von ihnen werden erst durch Bearbeitungen der Fassung B wirkungslos, zwei sind es schon in A."
+                                    "note": "Diese Befehle bei 1691–1775, 2582, 2608 und 7444–8037 mm fehlen in St2, dem Zeugen dieser Fassung, und ebenso in der Licensee- und in der grünen Umstanzung. Getragen werden sie allein von St1 und von Wi1. Vier von ihnen werden erst durch Bearbeitungen der Fassung B wirkungslos, zwei sind es schon in A."
                                 }
                             ]
                         }
@@ -23366,7 +23366,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Fassung A1 umfasst, was allein das Exemplar Widuch trägt und worauf kein anderer Ast antwortet: das allmähliche Aufheben der Verschiebung in T. 9, die Rückspulstanzung, fünf Crescendo- und Forzando-Befehle in T. 2, 6 und 7 sowie zwei Tilgungen, das Ab des Diskant-Crescendos bei 1708,6 mm und das Loslassen des Dämpferpedals bei 5370,9 mm. Weitere 45 Lesarten trägt ebenfalls allein dieses Exemplar, sie stehen aber schon in A. An den meisten dieser Stellen trägt B nahebei einen gleichartigen Befehl und hat die Lesart also verschoben. An den übrigen löst sie eine Redundanz auf, die A sonst hätte, und eine spätere Einfügung erklärt keine bestehende Redundanz nachträglich."
+                                    "note": "Die Fassung A1 umfasst, was allein Wi1 trägt und worauf kein anderer Ast antwortet: das allmähliche Aufheben der Verschiebung in T. 9, die Rückspulstanzung, fünf Crescendo- und Forzando-Befehle in T. 2, 6 und 7 sowie zwei Tilgungen, das Ab des Diskant-Crescendos bei 1708,6 mm und das Loslassen des Dämpferpedals bei 5370,9 mm. Weitere 45 Lesarten trägt ebenfalls allein dieses Exemplar, sie stehen aber schon in A. An den meisten dieser Stellen trägt B nahebei einen gleichartigen Befehl und hat die Lesart also verschoben. An den übrigen löst sie eine Redundanz auf, die A sonst hätte, und eine spätere Einfügung erklärt keine bestehende Redundanz nachträglich."
                                 }
                             ]
                         }
@@ -23526,7 +23526,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Das Loslassen bei 5370,8 mm fehlt allein auf dem Exemplar Widuch. Es steht auf Stanford-1, Stanford-2 und der Licensee-Kopie, und die grüne Kopie hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung B, so machte diese Zutat eine in A bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in A und dieses Exemplar hat es verloren."
+                                    "note": "Das Loslassen bei 5370,8 mm fehlt allein auf Wi1. Es steht auf St1, St2, Ch1 und Ph1, und Bo1 hält das Pedal genau bis dorthin. Bliebe es eine Zutat der Fassung B, so machte diese Zutat eine in A bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in A und dieses Exemplar hat es verloren."
                                 }
                             ]
                         }
@@ -23617,7 +23617,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die rasch wechselnden Stanzungen des Pianozugs in T. 9 trägt allein das Exemplar Widuch. Keine Kopie zeigt hier eine Redundanz, die diese Stanzungen erklären müssten, und spätere Fassungen fügen in der Regel Nuancen hinzu. Sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus A verlegt. Denkbar bleibt, dass sie schon in A standen und B sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte. Dann nähme B vier wirksame Stanzungen zurück und verlegte zwei."
+                                    "note": "Die rasch wechselnden Stanzungen des Pianozugs in T. 9 trägt allein Wi1. Keine Kopie zeigt hier eine Redundanz, die diese Stanzungen erklären müssten, und spätere Fassungen fügen in der Regel Nuancen hinzu. Sie gelten daher als Zusatz dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus A verlegt. Denkbar bleibt, dass sie schon in A standen und B sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte. Dann nähme B vier wirksame Stanzungen zurück und verlegte zwei."
                                 }
                             ]
                         }
@@ -30505,7 +30505,7 @@
                             "reasons": [
                                 {
                                     "@type": "simpleArgumentation",
-                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die B zu A hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von C an deren Stelle und eine weitere nahebei (siehe B2), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein Stanford-1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von B, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von B im Diskant, die C bereinigt, behält sie. Lesarten von A1 oder D1 hat sie nicht. An vier der 45 Stellen, an denen B eine Stanzung von A verschiebt oder tilgt, trägt sie die von A, an den meisten übrigen die von B. Das spricht gegen die Ableitung über B. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von C, die B2 begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber D1 ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die D1 nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von D1 80 nennt."
+                                    "note": "Die Lesung von Peter Phillips zeigt 142 der 157 Stanzungen, die B zu A hinzufügt, an ihrer Stelle, dazu sieben Hinzufügungen von C an deren Stelle und eine weitere nahebei (siehe B2), außerdem das Crescendo-Paar vor dem Auftakt, das sonst allein St1 hat. Bei 3459, 8104 und 9042 mm fehlt ihr das An eines Crescendos von B, dessen Ab wirkungslos stehen bleibt. Sie fand diese Betonungen also vor und tilgte deren An. Die Redundanzen von B im Diskant, die C bereinigt, behält sie. Lesarten von A1 oder D1 hat sie nicht. An vier der 45 Stellen, an denen B eine Stanzung von A verschiebt oder tilgt, trägt sie die von A, an den meisten übrigen die von B. Das spricht gegen die Ableitung über B. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen von C, die B2 begründen, weit über dem liegen, was der Zufall ergibt. Gegenüber D1 ist sie eine eigene Umstanzung: sie beginnt mit einer Löschreihe, die D1 nicht hat, und Trachtmans Lesung von Gourlins Exemplar dieser Fassung nennt das Tempo 75, wo Chases Exemplar von D1 80 nennt."
                                 }
                             ]
                         }
@@ -30775,7 +30775,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Eine Stanzung dieser Bearbeitung liegt, wo A sie hat (1986,7 mm), überliefert allein im Exemplar Widuch, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Eine Stanzung dieser Bearbeitung liegt, wo A sie hat (1986,7 mm), überliefert allein in Wi1, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31135,7 +31135,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo A sie hat (2872,9 mm), überliefert allein im Exemplar Widuch, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo A sie hat (2872,9 mm), überliefert allein in Wi1, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31404,7 +31404,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo A sie hat (4055,7 mm), überliefert allein im Exemplar Widuch, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo A sie hat (4055,7 mm), überliefert allein in Wi1, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -31688,7 +31688,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Stanzung liegt, wo A sie hat (5582,7 mm), überliefert allein im Exemplar Widuch, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
+                                    "note": "Die Stanzung liegt, wo A sie hat (5582,7 mm), überliefert allein in Wi1, und wo B sie verschoben oder getilgt hat. An vier der 45 Stellen, an denen B so eine Stanzung von A ändert, trägt diese Lesung die von A, an den meisten übrigen die von B. Zufällig gelegte eigene Stanzungen der Lesung treffen solche Stellen im Mittel 0,7-mal und in 1000 Versuchen bis zu siebenmal. Die Bearbeitung kann daher eine eigene von D3 sein, die die Stelle von A wieder trifft. Sie kann auch bedeuten, dass D3 hier bewahrt, was B änderte, was sich mit der Ableitung über B2 nur unter der Annahme einer Vermischung vertrüge.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
@@ -58130,7 +58130,7 @@
                     "sameAs": []
                 },
                 "output": "wv912mm2332_analysis.txt",
-                "note": "Die Lesung kommt aus wv912mm2332_analysis.txt zu https://purl.stanford.edu/wv912mm2332, kenntlich an den hier eingetragenen Maßen: Ränder 32 und 152 px, Rollenbreite 3899,59 px, Spurabstand 37,7477 px. Die Signatur lautet „Stanford Libraries CONDON ROLL 48“ (sul:ars0163_cr48_welte_225); da beide roten Stanforder Exemplare aus der Sammlung Condon stammen, unterscheidet die Provenienz sie nicht. Der Zustand des Papiers tut es. Peter Phillips, der seine rote 225 von einer Condon-Rolle gelesen hat, notiert dazu „roll has damaged edges from half way in, otherwise good“, und die Analyse zählt hier sieben Randrisse zwischen 73 und 89 Prozent der Rollenlänge, fünf im Bass und zwei im Diskant, dazu 104 Staubausschlüsse und ein zweifelhaftes Loch, während Stanford-1 keinen einzigen Riss hat. Seine Datei „Traumerei (Schumann) Grunfeld RW.mid“ von 2022, am 8. September 2026 per Mail geschickt, zählt 463 Töne wie die Lesung dieses Exemplars, Stanford-1 zählt 464, und ihr Lautstärkeverlauf korreliert über die gemeinsamen Töne mit diesem Exemplar zu r = 0,93 (457 von 463 zugeordnet) gegen r = 0,72 bei Stanford-1 (432 Töne). Beide Vergleiche laufen über zwei verschiedene Emulatoren, seinen und midi2exp, so dass der Abstand der Werte zählt und nicht ihre Höhe. Phillips liest die Rollen pneumatisch, nicht optisch. Was er geschickt hat, ist allerdings die emulierte Fassung seiner Lesung: Tonumfang 34 bis 82, neunundzwanzig Anschlagstärken, Pedale als Controller 64 und 67. Die Ausdrucksperforationen selbst stehen nicht darin, so dass die Datei als Zeuge für Stanzorte erst taugt, wenn die E-Roll-Datei dazukommt."
+                "note": "Die Lesung kommt aus wv912mm2332_analysis.txt zu https://purl.stanford.edu/wv912mm2332, kenntlich an den hier eingetragenen Maßen: Ränder 32 und 152 px, Rollenbreite 3899,59 px, Spurabstand 37,7477 px. Die Signatur lautet „Stanford Libraries CONDON ROLL 48“ (sul:ars0163_cr48_welte_225); da beide roten Stanforder Exemplare aus der Sammlung Condon stammen, unterscheidet die Provenienz sie nicht. Der Zustand des Papiers tut es. Peter Phillips, der seine rote 225 von einer Condon-Rolle gelesen hat, notiert dazu „roll has damaged edges from half way in, otherwise good“, und die Analyse zählt hier sieben Randrisse zwischen 73 und 89 Prozent der Rollenlänge, fünf im Bass und zwei im Diskant, dazu 104 Staubausschlüsse und ein zweifelhaftes Loch, während St1 keinen einzigen Riss hat. Seine Datei „Traumerei (Schumann) Grunfeld RW.mid“ von 2022, am 8. September 2026 per Mail geschickt, zählt 463 Töne wie die Lesung dieses Exemplars, St1 zählt 464, und ihr Lautstärkeverlauf korreliert über die gemeinsamen Töne mit diesem Exemplar zu r = 0,93 (457 von 463 zugeordnet) gegen r = 0,72 bei St1 (432 Töne). Beide Vergleiche laufen über zwei verschiedene Emulatoren, seinen und midi2exp, so dass der Abstand der Werte zählt und nicht ihre Höhe. Phillips liest die Rollen pneumatisch, nicht optisch. Was er geschickt hat, ist allerdings die emulierte Fassung seiner Lesung: Tonumfang 34 bis 82, neunundzwanzig Anschlagstärken, Pedale als Controller 64 und 67. Die Ausdrucksperforationen selbst stehen nicht darin, so dass die Datei als Zeuge für Stanzorte erst taugt, wenn die E-Roll-Datei dazukommt."
             },
             "siglum": "St2"
         },
@@ -94698,7 +94698,7 @@
                             "reasons": [
                                 {
                                     "@type": "inference",
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder der Schicht, die damals allein Stanford-1 zugeschrieben war (B1): mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei B, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von C ab, das Crescendo im Bass von B bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik, die C emuliert, besser als der von A, A1, B oder der Schicht, die damals allein St1 zugeschrieben war (B1): mit den Anschlagstärken von Transkun allein R² 0,65 gegenüber 0,61 bei B, mit denen von Kong allein 0,55 gegenüber 0,49, und auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators. Die Lesarten, die B und C zu A hinzufügen, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße). Die Zuordnung der Töne liest nur ihr Timing, das in allen roten Fassungen gleich ist, und gegen A oder B ausgerichtet ergibt sie dieselbe Paarung. Unter den 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von C ab, das Crescendo im Bass von B bei 3360,8 mm (p = 0,013), was im Rahmen des Zufalls liegt. Die Prämissen schließen ein Instrument ein, dessen Regulierung niemand kennt, daher wird die Aussage nicht höher als wahrscheinlich gehalten.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -106241,7 +106241,7 @@
                 "reasons": [
                     {
                         "@type": "inference",
-                        "note": "Die Lesarten, die damals allein Stanford-1 zugeschrieben waren (Schicht B1), die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Lesarten, die damals allein St1 zugeschrieben waren (Schicht B1), die sieben Entfernungen von C und die Lesarten des Leisepedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Entfernungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von C abweichen. C1 steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
