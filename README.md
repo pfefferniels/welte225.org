@@ -45,17 +45,24 @@ between exports; the format keeps them.
 
 ## Sigla
 
-Identity rests in the IRI. A siglum is a label generated from the stemma
-as it stands, so it changes when the stemma does. Whoever cites one names
-the state it belongs to, and whoever needs precision cites the IRI.
+Identity rests in the IRI. A siglum is not stored: `siglaOf` in
+linked-rolls reads it off the stemma as it stands, so it changes when the
+stemma does. Whoever cites one names the state it belongs to, and whoever
+needs precision cites the IRI.
+
+The notes follow suit. Where a note speaks of a version it holds
+`{{<id>}}` rather than a label, and the viewer puts the current siglum
+there. So the prose never carries a name the stemma has meanwhile
+revised.
 
 A version's letter names the reproducing system it is coded for, its
 number counts the generations within that system, and an appended number
 marks a branch that leaves a generation. A transfer starts the first
 generation of its own system, which is why the Licensee versions count
 from one. Where several transfers enter one system, they count by the
-generation they derive from. The main line here is the T-100 chain the
-other systems derive from.
+generation they derive from. The main line runs through the child of the
+same system that carries the most of the stemma, so a generation with a
+single child of its system is continued by it.
 
 A copy's siglum does not change: two letters for the collection the copy
 was read in, and a number counting the copies of the roll held there. A
@@ -71,7 +78,7 @@ Sigla of the stemma of 16 September 2026:
 | R3 | T-100 | R2 | B2; no copy carries it |
 | R4 | T-100 | R3 | C |
 | R1.1 | T-100 | R1 | A1 |
-| R4.1 | T-100 | R4 | C1, called C_S until 14 Sept 2026 |
+| R5 | T-100 | R4 | C1, called C_S until 14 Sept 2026 |
 | L1 | Licensee | R3 | D3 |
 | L2 | Licensee | R4 | D1 |
 | G1 | T-98 | R4 | D2 |
@@ -90,12 +97,13 @@ Sigla of the stemma of 16 September 2026:
 
 Labels used earlier: the copies were named on 16 September 2026
 (`e0868e6`), and the dissertation called them S1, S2, W, C, P, B, G, Sc
-and Si before that day. B1 stood between 10 and 15 September 2026 for
-readings then given to Stanford's first copy alone; it was dissolved into
-R2 (`1a7b95d`), and two notes still mention it where they report that
-earlier attribution. The word ids of motivations (`cleanup-b2`,
-`cleanup-d3`) are identifiers and keep the letters of the labels current
-when they were minted.
+and Si before that day. The versions were called A, A1, B, B2, C, C1, D1,
+D2 and D3 until the same day. B1 stood between 10 and 15 September 2026
+for readings then given to Stanford's first copy alone, was dissolved into
+R2 (`1a7b95d`), and is named nowhere any more: the two notes that reported
+that attribution now say what the readings are. The word ids of
+motivations (`cleanup-b2`, `cleanup-d3`) are identifiers and keep the
+letters that were current when they were minted.
 
 ## Publishing the reconstruction
 
