@@ -67639,10 +67639,6 @@
                 "stretched"
             ],
             "conditions": [],
-            "keeper": {
-                "name": "Spencer Chase",
-                "sameAs": []
-            },
             "measurements": {
                 "dimensions": {
                     "width": 285.74302081598665,
@@ -80214,7 +80210,21 @@
             "conditions": [],
             "keeper": {
                 "name": "Peter Both",
-                "sameAs": []
+                "sameAs": [],
+                "@annotation": {
+                    "@id": "c39f1c2e-5081-4fbc-8d2f-6e1500466008",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "c3c3ece5-b36a-4ada-a97b-7b132a8f1a2a",
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "@type": "beliefAdoption",
+                                "note": "Nach Auskunft Julian Dyers, der die Rolle im Mai 2015 abgetastet hat (Mail, 8.9.2026)."
+                            }
+                        ]
+                    }
+                }
             },
             "production": {
                 "system": {
@@ -94679,7 +94689,21 @@
             "features": [],
             "keeper": {
                 "name": "Hans-W. Schmitz",
-                "sameAs": []
+                "sameAs": [],
+                "@annotation": {
+                    "@id": "8aa28a41-d1f2-4cfc-a610-3ffc6c076d8c",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "9c356f9f-007a-4e58-b014-05339dd988c4",
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "@type": "beliefAdoption",
+                                "note": "Nach dem Booklet der Veröffentlichung, S. 27, hat Hans-W. Schmitz die Rolle bereitgestellt. Die Aufnahme entstand 2012."
+                            }
+                        ]
+                    }
+                }
             },
             "production": {
                 "system": {
@@ -106070,7 +106094,21 @@
             "features": [],
             "keeper": {
                 "name": "Philippe Gourlin",
-                "sameAs": []
+                "sameAs": [],
+                "@annotation": {
+                    "@id": "44b6e632-5634-4fe1-9b79-af22fc16b9ae",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "8b4a1d58-799c-4b9c-9ab1-7251205a3b5f",
+                        "certainty": "possible",
+                        "reasons": [
+                            {
+                                "@type": "beliefAdoption",
+                                "note": "Die Sammlung nennen allein die Metadaten der emulierten MIDI-Datei, zusammen mit dem Scandatum. Anderweitig ist beides nicht zu belegen, und Warren Trachtman, der die Rolle 2007 gescannt hat, starb 2017."
+                            }
+                        ]
+                    }
+                }
             },
             "production": {
                 "system": {
@@ -106183,7 +106221,21 @@
             "features": [],
             "keeper": {
                 "name": "USC Libraries",
-                "sameAs": []
+                "sameAs": [],
+                "@annotation": {
+                    "@id": "de385a65-84af-47fa-abcb-ae0901507d4e",
+                    "belief": {
+                        "@type": "belief",
+                        "@id": "84ffa7a0-4646-4e4c-85b5-ff1d57e01587",
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "@type": "simpleArgumentation",
+                                "note": "Erschlossen: die Plattentasche nennt Richard C. Simonton, dessen Welte-Rollen heute in den USC Libraries liegen. Welches der drei dort verzeichneten Exemplare der Rolle 225 überspielt wurde, ist nicht bekannt."
+                            }
+                        ]
+                    }
+                }
             },
             "production": {
                 "system": {
