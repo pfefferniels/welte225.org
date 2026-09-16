@@ -32,7 +32,7 @@
                 "playing": ""
             },
             "date": {
-                "@value": "1905-01-20",
+                "within": "1905-01-20",
                 "@annotation": {
                     "belief": {
                         "certainty": "true",
@@ -52,8 +52,7 @@
                         "@id": "8b279a06-3f42-41da-a431-ca78e57ff1a8"
                     },
                     "@id": "5a1dfa78-3cbe-4664-9d68-c08c54939f3a"
-                },
-                "@type": "xsd:date"
+                }
             },
             "place": {
                 "name": "Wien",
@@ -44448,7 +44447,7 @@
             "scan": "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
             "production": {
                 "date": {
-                    "@value": "1909-01-18",
+                    "within": "1909-01-18",
                     "@annotation": {
                         "belief": {
                             "certainty": "true",
@@ -44468,8 +44467,7 @@
                             "@id": "2341a372-a633-4af1-94b0-417bb9e615fe"
                         },
                         "@id": "8dada4c2-5f83-482a-9acb-042cbf7a3b25"
-                    },
-                    "@type": "xsd:date"
+                    }
                 },
                 "company": {
                     "name": "M. Welte & Söhne",
@@ -58046,7 +58044,7 @@
             "scan": "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
             "production": {
                 "date": {
-                    "@value": "1914-01-14",
+                    "within": "1914-01-14",
                     "@annotation": {
                         "belief": {
                             "certainty": "possible",
@@ -58066,8 +58064,7 @@
                             "@id": "c86c5d9e-2fb8-4a2a-bb9c-929715354bed"
                         },
                         "@id": "0bc02ddc-82aa-4ee7-8f6c-09ba2de7ef99"
-                    },
-                    "@type": "xsd:date"
+                    }
                 },
                 "system": {
                     "name": "T-100",
@@ -67607,7 +67604,7 @@
             ],
             "production": {
                 "date": {
-                    "@value": "1910-10-28",
+                    "within": "1910-10-28",
                     "@annotation": {
                         "belief": {
                             "certainty": "likely",
@@ -67627,8 +67624,7 @@
                             "@id": "b8dffe69-90ad-4d55-9196-2453ebcfc0d0"
                         },
                         "@id": "94822d60-c67b-4c22-a69e-43094d96edfe"
-                    },
-                    "@type": "xsd:date"
+                    }
                 },
                 "system": {
                     "name": "T-100",
@@ -67694,8 +67690,7 @@
             },
             "production": {
                 "date": {
-                    "@value": "1916-01-01",
-                    "@type": "xsd:date",
+                    "after": "1916-01-01",
                     "@annotation": {
                         "@id": "b08406b5-aa63-42a7-9af0-98f11aaebe4c",
                         "belief": {
@@ -67705,7 +67700,16 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.)."
+                                },
+                                {
+                                    "@type": "inference",
+                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "premises": []
                                 }
                             ]
                         }
@@ -80230,6 +80234,32 @@
                 "company": {
                     "name": "M. Welte & Söhne",
                     "sameAs": []
+                },
+                "date": {
+                    "after": "1924-01-01",
+                    "@annotation": {
+                        "@id": "5ab1002e-7943-4a70-93a3-d831752ba142",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "93482a28-9bf8-4669-a2a3-78a1a91dabcb",
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "@type": "beliefAdoption",
+                                    "actor": {
+                                        "name": "Hagmann, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Zur Leipziger Herbstmesse 1924 brachte Welte das Mignola und das Welte heraus, beide mit der jüngeren Blockskala T 98, und verkaufte das Welte-Mignon mit dieser Skala vom selben Jahr an (Hagmann 1984, S. 42 f. und S. 117, Anm. 15). Für diese Skala gelten die grünen Rollen (ebd., S. 89)."
+                                },
+                                {
+                                    "@type": "inference",
+                                    "note": "Ein Exemplar in der grünen Umstanzung kann nicht älter sein als das System, für das es gestanzt ist. Phillips 2016, S. 21 und S. 121, setzt die Produktion der grünen Rollen in die frühen zwanziger Jahre, nennt dafür aber keine Quelle. Die Grenze wird deshalb nur als wahrscheinlich geführt.",
+                                    "premises": []
+                                }
+                            ]
+                        }
+                    }
                 }
             },
             "modifications": [],
@@ -94621,8 +94651,7 @@
                     "sameAs": []
                 },
                 "date": {
-                    "@value": "2015-05-01",
-                    "@type": "xsd:date",
+                    "within": "2015-05-01",
                     "@annotation": {
                         "@id": "0f6d4e23-4ab8-4494-83e1-30816a6b1357",
                         "belief": {
@@ -94733,8 +94762,7 @@
                     "sameAs": []
                 },
                 "date": {
-                    "@value": "1916-01-01",
-                    "@type": "xsd:date",
+                    "after": "1916-01-01",
                     "@annotation": {
                         "@id": "653c8462-c009-4f17-bed0-fa14a9c2d2de",
                         "belief": {
@@ -94744,7 +94772,16 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.)."
+                                },
+                                {
+                                    "@type": "inference",
+                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "premises": []
                                 }
                             ]
                         }
@@ -106009,8 +106046,7 @@
                     "sameAs": []
                 },
                 "date": {
-                    "@value": "2014-01-01",
-                    "@type": "xsd:date",
+                    "within": "2014-01-01",
                     "@annotation": {
                         "@id": "cd606797-6c15-4717-896c-3a1380d44254",
                         "belief": {
@@ -106050,8 +106086,7 @@
                     "sameAs": []
                 },
                 "date": {
-                    "@value": "1916-01-01",
-                    "@type": "xsd:date",
+                    "after": "1916-01-01",
                     "@annotation": {
                         "@id": "421af45e-e395-42a8-a9eb-ffd195fedc46",
                         "belief": {
@@ -106061,7 +106096,16 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Nicht vor 1916. Die Leitung des Werks in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln; die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.). Eine Licensee-Umstanzung kann also nicht älter sein. Das Format kennt kein „nicht vor“; der 1. Januar 1916 vertritt hier diese Grenze, wie andernorts der Erste eines Monats den Monat vertritt."
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.)."
+                                },
+                                {
+                                    "@type": "inference",
+                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "premises": []
                                 }
                             ]
                         }
@@ -106079,8 +106123,7 @@
                     "sameAs": []
                 },
                 "date": {
-                    "@value": "2007-03-12",
-                    "@type": "xsd:date",
+                    "within": "2007-03-12",
                     "@annotation": {
                         "@id": "053cec16-ed7c-4feb-83f5-fde9f87133ca",
                         "belief": {
