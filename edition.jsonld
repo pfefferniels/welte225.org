@@ -80190,12 +80190,12 @@
             ],
             "readFrom": {
                 "kind": "analysis",
-                "output": "225.CIS, am 12. September 2026 von Spencer Chase geschickt",
+                "output": "225.CIS, am 12. September 2026 von Bill Luecht geschickt",
                 "actor": {
                     "name": "Chase, Spencer",
                     "sameAs": []
                 },
-                "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll; quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb.\n\nÜberführt mit cis2roll.py in ein TIFF von 300 dpi, gelesen mit tiff2holes -l auf der Licensee-Leiste. Deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung von tiff2holes; die Rückspulstanzung auf Spur 89 legt den Versatz fest.\n\nDas Gerät ist nicht überliefert, seine Bauart aus der Datei ablesbar: Chase-Transport mit Capstan-Antrieb, ohne Positionsgeber, aus der Generation vor dem Mk3.\n\nZuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war. Beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm, im Rest auf 0,06 mm.\n\nEin Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen."
+                "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll; quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb.\n\nÜberführt mit cis2roll.py in ein TIFF von 300 dpi, gelesen mit tiff2holes -l auf der Licensee-Leiste. Deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung von tiff2holes; die Rückspulstanzung auf Spur 89 legt den Versatz fest.\n\nDas Gerät ist nicht überliefert, seine Bauart aus der Datei ablesbar: Chase-Transport mit Capstan-Antrieb, ohne Positionsgeber, aus der Generation vor dem Mk3.\n\nZuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war. Beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm, im Rest auf 0,06 mm.\n\nEin Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen.\n\nChase starb im Juni 2025. Die Datei kam von Bill Luecht."
             },
             "scan": "/facsimiles/WelteLicensee_225",
             "siglum": "Ch1"
