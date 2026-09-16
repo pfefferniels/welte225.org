@@ -94642,7 +94642,8 @@
                     "sameAs": []
                 },
                 "date": {
-                    "within": "2015-05-01",
+                    "after": "2015-05-01",
+                    "before": "2015-05-31",
                     "@annotation": {
                         "@id": "0f6d4e23-4ab8-4494-83e1-30816a6b1357",
                         "belief": {
@@ -94652,7 +94653,7 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Die CIS-Datei, die Julian Dyer geschickt hat, ist auf Mai 2015 datiert. Der Tag steht nicht dabei; der Erste des Monats vertritt hier den Monat."
+                                    "note": "Die CIS-Datei, die Julian Dyer geschickt hat, ist auf Mai 2015 datiert. Der Tag steht nicht dabei."
                                 }
                             ]
                         }
@@ -106037,7 +106038,8 @@
                     "sameAs": []
                 },
                 "date": {
-                    "within": "2014-01-01",
+                    "after": "2014-01-01",
+                    "before": "2014-12-31",
                     "@annotation": {
                         "@id": "cd606797-6c15-4717-896c-3a1380d44254",
                         "belief": {
@@ -106047,7 +106049,7 @@
                             "reasons": [
                                 {
                                     "@type": "beliefAdoption",
-                                    "note": "Der Kopf der Datei nennt © Peter Phillips 2014. Wann gelesen wurde, sagt er nicht, das Jahr ist daraus nur zu vermuten. Der Erste des Jahres vertritt es."
+                                    "note": "Der Kopf der Datei nennt © Peter Phillips 2014. Wann gelesen wurde, sagt er nicht, das Jahr ist daraus nur zu vermuten."
                                 }
                             ]
                         }
