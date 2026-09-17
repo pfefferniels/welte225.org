@@ -324,12 +324,6 @@
                                     "@id": "8230a0ce-1bfa-4494-a048-6b8f5b4fa63d"
                                 },
                                 {
-                                    "@id": "bdd93ba2-3a8c-4589-966b-ab1971649368"
-                                },
-                                {
-                                    "@id": "d477c5f2-edbc-4c61-b759-cd706f40739e"
-                                },
-                                {
                                     "@id": "dd524232-a3b4-4638-b69d-022a07e6f493"
                                 }
                             ],
@@ -3692,12 +3686,6 @@
                                     "@id": "17da9cd9-af4f-4607-b68a-f1ae9abf1855"
                                 },
                                 {
-                                    "@id": "883d213c-68b7-4f76-a0c3-d2d14eac1bd4"
-                                },
-                                {
-                                    "@id": "0f4a15ce-1a9e-4cac-aaf7-c766f994e2da"
-                                },
-                                {
                                     "@id": "1d5612e4-98ef-4bfe-97a9-aef014f89af6"
                                 }
                             ],
@@ -3737,12 +3725,6 @@
                             "carriers": [
                                 {
                                     "@id": "0309fedf-2ec5-4c4d-9951-ebcb9ba95549"
-                                },
-                                {
-                                    "@id": "64107ce5-322b-4e1d-b37b-0cb999709d81"
-                                },
-                                {
-                                    "@id": "5663ebca-26ea-47a1-ae02-a2aa767a5c1c"
                                 }
                             ],
                             "@type": "expression",
@@ -4054,6 +4036,164 @@
                     ],
                     "@type": "edit",
                     "@id": "b1f4cfe6-fb7c-4a21-909d-ab663fa94ed6"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 60,
+                            "@type": "note",
+                            "carriers": [
+                                {
+                                    "@id": "cd6d32a4-3d12-4667-a3f9-431d5364c1c4"
+                                },
+                                {
+                                    "@id": "27634fcc-2f2c-4856-80ed-014b979a59a4"
+                                },
+                                {
+                                    "@id": "5c48e772-fb32-4ab7-9834-07cc43909187"
+                                },
+                                {
+                                    "@id": "8a0621a1-1356-4688-bb5b-dc09f8b07b01"
+                                },
+                                {
+                                    "@id": "cb55f96a-4fc0-4c93-ba2c-e9c1be008823"
+                                }
+                            ],
+                            "@id": "symbol_a956b423-de31-4edc-a4da-a72e0e80e299"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_66a250c7-017f-4fd9-8b68-b812811010ae"
+                    ],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "0be3e06a-4973-474e-9e5c-62dfbfae58a7"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "@type": "expression",
+                            "carriers": [
+                                {
+                                    "@id": "14932adc-7e9a-41f8-aa2c-60b56a491220"
+                                },
+                                {
+                                    "@id": "7f48df8a-c643-4b18-bf24-f191fc36e92e"
+                                },
+                                {
+                                    "@id": "16fedf5e-8a97-40bc-ba41-96957770985a"
+                                },
+                                {
+                                    "@id": "a121d42c-7cac-4065-9fc1-918c7b192718"
+                                }
+                            ],
+                            "@id": "symbol_ee37bad2-a8c6-4814-98b1-7274843219ec"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_a32941b8-62d5-441a-a393-3942a26ad2e3"
+                    ],
+                    "editType": "correct-error",
+                    "@type": "edit",
+                    "@id": "f1b495e7-8155-4ea3-9bc2-7ae62514d8dc"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 60,
+                            "@type": "note",
+                            "carriers": [
+                                {
+                                    "@id": "c60231f4-cc14-428c-aeb0-beaebf634d7b"
+                                },
+                                {
+                                    "@id": "9a4b8d56-99ba-4c23-a61b-544ad9fbbd46"
+                                },
+                                {
+                                    "@id": "e3034a21-5255-4762-82d1-384032eb0f14"
+                                },
+                                {
+                                    "@id": "45dfe1d5-aa9c-4f14-adf3-836439b2738a"
+                                },
+                                {
+                                    "@id": "38d6c0b3-0eb9-42dc-944e-eb4607f81c6a"
+                                }
+                            ],
+                            "@id": "symbol_5f2c9d84-6a71-4e05-b3c8-19ad7e604b12"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_db9a905e-dfd3-42dc-8da4-31f4ade611ea"
+                    ],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "2b7e4c90-8d13-4a6f-95e2-c0b48f71a3d6"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 60,
+                            "@type": "note",
+                            "carriers": [
+                                {
+                                    "@id": "d98afef1-5776-48c1-baf3-f9c90d29994b"
+                                },
+                                {
+                                    "@id": "a69d5a38-f469-47a4-9bad-2026c34a0bb6"
+                                },
+                                {
+                                    "@id": "676d3598-29bb-4d09-9401-b3917dd6d909"
+                                },
+                                {
+                                    "@id": "7152061e-e21b-4f35-a149-5e9a1270c1d3"
+                                },
+                                {
+                                    "@id": "381f2277-342a-484f-ba1e-767347a169b4"
+                                }
+                            ],
+                            "@id": "symbol_8e41b7c2-0f59-4d3a-a681-7c25de90f4b3"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_61f35dab-ebea-4b82-8182-ca59df4add66"
+                    ],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "9c05a7f1-3e84-4b62-8d17-5fa0261cb9e8"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 55,
+                            "@type": "note",
+                            "carriers": [
+                                {
+                                    "@id": "0ab984e8-6230-40b1-b57e-03243074e8bb"
+                                },
+                                {
+                                    "@id": "71a7c1da-3c5d-4724-8edc-08541e55ac72"
+                                },
+                                {
+                                    "@id": "f3d0ed1b-3b47-41be-a005-ce30dc042105"
+                                },
+                                {
+                                    "@id": "9c2ee647-daa8-49a0-92d1-8f904beba3d3"
+                                },
+                                {
+                                    "@id": "ebdbfa1f-4b4d-4485-99ec-a557e54a73e6"
+                                }
+                            ],
+                            "@id": "symbol_a7d3e618-4c02-49b5-8f7a-2be6105d38c4"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_6083c2bc-5094-4c10-8f73-43f1ae1e473d"
+                    ],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "4d19f6b3-72ac-4e18-b905-8e3c7a14d02f"
                 }
             ],
             "motivations": [
@@ -4101,8 +4241,8 @@
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
+                        "toleranceStart": 3.5,
+                        "toleranceEnd": 5
                     },
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
@@ -4125,8 +4265,8 @@
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
+                        "toleranceStart": 5,
+                        "toleranceEnd": 5
                     },
                     "@annotation": {
                         "belief": {
@@ -6665,6 +6805,78 @@
                     ],
                     "@type": "edit",
                     "@id": "e0f3f0ec-c27b-46c2-b412-eca7be02d9b7"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "@type": "expression",
+                            "carriers": [
+                                {
+                                    "@id": "bdd93ba2-3a8c-4589-966b-ab1971649368"
+                                },
+                                {
+                                    "@id": "d477c5f2-edbc-4c61-b759-cd706f40739e"
+                                }
+                            ],
+                            "@id": "symbol_1abc8a69-ed04-49a8-9f5e-5259abc7b416"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_0846addd-08aa-4b8a-b265-4b6d21996791"
+                    ],
+                    "editType": "correct-error",
+                    "@type": "edit",
+                    "@id": "1ea1b695-442e-4c1f-a7ad-d3b40a7ca01f"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "@type": "expression",
+                            "carriers": [
+                                {
+                                    "@id": "64107ce5-322b-4e1d-b37b-0cb999709d81"
+                                },
+                                {
+                                    "@id": "5663ebca-26ea-47a1-ae02-a2aa767a5c1c"
+                                }
+                            ],
+                            "@id": "symbol_cd3a1bc4-9ed0-48a6-8f82-81f00af39c16"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_b517dbe5-f735-4134-87d2-f6babcd82e30"
+                    ],
+                    "editType": "prolong",
+                    "@type": "edit",
+                    "@id": "3306797e-9ba5-4204-b3e5-e42733079dc1"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "@type": "expression",
+                            "carriers": [
+                                {
+                                    "@id": "883d213c-68b7-4f76-a0c3-d2d14eac1bd4"
+                                },
+                                {
+                                    "@id": "0f4a15ce-1a9e-4cac-aaf7-c766f994e2da"
+                                }
+                            ],
+                            "@id": "symbol_e368ca4c-0108-4bf5-9887-7e405822464c"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_bac9ea09-c884-4fbd-b464-2ff91e57459d"
+                    ],
+                    "editType": "prolong",
+                    "@type": "edit",
+                    "@id": "e1fba83d-273a-4b38-b0eb-8611f0af6292"
                 }
             ],
             "motivations": [
@@ -6692,8 +6904,8 @@
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
+                        "toleranceStart": 5,
+                        "toleranceEnd": 5
                     },
                     "@id": "bab25aef-f80d-4ff0-b187-63030df8305a"
                 }
@@ -12132,21 +12344,6 @@
                             "carriers": [
                                 {
                                     "@id": "6290a91f-a20b-4bf7-8db5-bca770c5a9d0"
-                                },
-                                {
-                                    "@id": "c60231f4-cc14-428c-aeb0-beaebf634d7b"
-                                },
-                                {
-                                    "@id": "9a4b8d56-99ba-4c23-a61b-544ad9fbbd46"
-                                },
-                                {
-                                    "@id": "e3034a21-5255-4762-82d1-384032eb0f14"
-                                },
-                                {
-                                    "@id": "45dfe1d5-aa9c-4f14-adf3-836439b2738a"
-                                },
-                                {
-                                    "@id": "38d6c0b3-0eb9-42dc-944e-eb4607f81c6a"
                                 }
                             ],
                             "@type": "note",
@@ -19931,21 +20128,6 @@
                             "carriers": [
                                 {
                                     "@id": "7e900b3a-c5a9-4d36-aec0-ebda00cf7a1d"
-                                },
-                                {
-                                    "@id": "d98afef1-5776-48c1-baf3-f9c90d29994b"
-                                },
-                                {
-                                    "@id": "a69d5a38-f469-47a4-9bad-2026c34a0bb6"
-                                },
-                                {
-                                    "@id": "676d3598-29bb-4d09-9401-b3917dd6d909"
-                                },
-                                {
-                                    "@id": "7152061e-e21b-4f35-a149-5e9a1270c1d3"
-                                },
-                                {
-                                    "@id": "381f2277-342a-484f-ba1e-767347a169b4"
                                 }
                             ],
                             "@type": "note",
@@ -22279,21 +22461,6 @@
                             "carriers": [
                                 {
                                     "@id": "66c8037e-d4f6-4461-9247-f2a91b9275b2"
-                                },
-                                {
-                                    "@id": "0ab984e8-6230-40b1-b57e-03243074e8bb"
-                                },
-                                {
-                                    "@id": "71a7c1da-3c5d-4724-8edc-08541e55ac72"
-                                },
-                                {
-                                    "@id": "f3d0ed1b-3b47-41be-a005-ce30dc042105"
-                                },
-                                {
-                                    "@id": "9c2ee647-daa8-49a0-92d1-8f904beba3d3"
-                                },
-                                {
-                                    "@id": "ebdbfa1f-4b4d-4485-99ec-a557e54a73e6"
                                 }
                             ],
                             "@type": "note",
@@ -23228,25 +23395,13 @@
                         {
                             "expressionType": "SlowCrescendoOff",
                             "scope": "treble",
+                            "@type": "expression",
                             "carriers": [
                                 {
-                                    "@id": "14932adc-7e9a-41f8-aa2c-60b56a491220"
-                                },
-                                {
-                                    "@id": "7f48df8a-c643-4b18-bf24-f191fc36e92e"
-                                },
-                                {
-                                    "@id": "16fedf5e-8a97-40bc-ba41-96957770985a"
-                                },
-                                {
                                     "@id": "1dc6298d-2cd7-401f-bd06-b33e31d7a7d8"
-                                },
-                                {
-                                    "@id": "a121d42c-7cac-4065-9fc1-918c7b192718"
                                 }
                             ],
-                            "@type": "expression",
-                            "@id": "symbol_ee37bad2-a8c6-4814-98b1-7274843219ec"
+                            "@id": "symbol_a32941b8-62d5-441a-a393-3942a26ad2e3"
                         }
                     ],
                     "@type": "edit",
@@ -23256,28 +23411,13 @@
                     "insert": [
                         {
                             "pitch": 60,
+                            "@type": "note",
                             "carriers": [
                                 {
-                                    "@id": "cd6d32a4-3d12-4667-a3f9-431d5364c1c4"
-                                },
-                                {
-                                    "@id": "27634fcc-2f2c-4856-80ed-014b979a59a4"
-                                },
-                                {
-                                    "@id": "5c48e772-fb32-4ab7-9834-07cc43909187"
-                                },
-                                {
-                                    "@id": "8a0621a1-1356-4688-bb5b-dc09f8b07b01"
-                                },
-                                {
                                     "@id": "7596cae0-7ac8-4c97-a63d-41f37d6b9250"
-                                },
-                                {
-                                    "@id": "cb55f96a-4fc0-4c93-ba2c-e9c1be008823"
                                 }
                             ],
-                            "@type": "note",
-                            "@id": "symbol_a956b423-de31-4edc-a4da-a72e0e80e299"
+                            "@id": "symbol_66a250c7-017f-4fd9-8b68-b812811010ae"
                         }
                     ],
                     "@type": "edit",
@@ -23347,8 +23487,8 @@
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
+                        "toleranceStart": 3.5,
+                        "toleranceEnd": 5
                     },
                     "@annotation": {
                         "belief": {
@@ -30381,9 +30521,9 @@
                 {
                     "motivation": "latch-to-hold",
                     "delete": [
-                        "symbol_0846addd-08aa-4b8a-b265-4b6d21996791",
-                        "symbol_bac9ea09-c884-4fbd-b464-2ff91e57459d",
-                        "symbol_b517dbe5-f735-4134-87d2-f6babcd82e30",
+                        "symbol_1abc8a69-ed04-49a8-9f5e-5259abc7b416",
+                        "symbol_e368ca4c-0108-4bf5-9887-7e405822464c",
+                        "symbol_cd3a1bc4-9ed0-48a6-8f82-81f00af39c16",
                         "symbol_887def13-467e-4e30-a370-218aa65a8277",
                         "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9",
                         "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb",
