@@ -4041,7 +4041,6 @@
                     "insert": [
                         {
                             "pitch": 60,
-                            "@type": "note",
                             "carriers": [
                                 {
                                     "@id": "cd6d32a4-3d12-4667-a3f9-431d5364c1c4"
@@ -4059,6 +4058,7 @@
                                     "@id": "cb55f96a-4fc0-4c93-ba2c-e9c1be008823"
                                 }
                             ],
+                            "@type": "note",
                             "@id": "symbol_a956b423-de31-4edc-a4da-a72e0e80e299"
                         }
                     ],
@@ -4074,7 +4074,6 @@
                         {
                             "expressionType": "SlowCrescendoOff",
                             "scope": "treble",
-                            "@type": "expression",
                             "carriers": [
                                 {
                                     "@id": "14932adc-7e9a-41f8-aa2c-60b56a491220"
@@ -4089,6 +4088,7 @@
                                     "@id": "a121d42c-7cac-4065-9fc1-918c7b192718"
                                 }
                             ],
+                            "@type": "expression",
                             "@id": "symbol_ee37bad2-a8c6-4814-98b1-7274843219ec"
                         }
                     ],
@@ -4103,7 +4103,6 @@
                     "insert": [
                         {
                             "pitch": 60,
-                            "@type": "note",
                             "carriers": [
                                 {
                                     "@id": "c60231f4-cc14-428c-aeb0-beaebf634d7b"
@@ -4121,6 +4120,7 @@
                                     "@id": "38d6c0b3-0eb9-42dc-944e-eb4607f81c6a"
                                 }
                             ],
+                            "@type": "note",
                             "@id": "symbol_5f2c9d84-6a71-4e05-b3c8-19ad7e604b12"
                         }
                     ],
@@ -4135,7 +4135,6 @@
                     "insert": [
                         {
                             "pitch": 60,
-                            "@type": "note",
                             "carriers": [
                                 {
                                     "@id": "d98afef1-5776-48c1-baf3-f9c90d29994b"
@@ -4153,6 +4152,7 @@
                                     "@id": "381f2277-342a-484f-ba1e-767347a169b4"
                                 }
                             ],
+                            "@type": "note",
                             "@id": "symbol_8e41b7c2-0f59-4d3a-a681-7c25de90f4b3"
                         }
                     ],
@@ -4167,7 +4167,6 @@
                     "insert": [
                         {
                             "pitch": 55,
-                            "@type": "note",
                             "carriers": [
                                 {
                                     "@id": "0ab984e8-6230-40b1-b57e-03243074e8bb"
@@ -4185,6 +4184,7 @@
                                     "@id": "ebdbfa1f-4b4d-4485-99ec-a557e54a73e6"
                                 }
                             ],
+                            "@type": "note",
                             "@id": "symbol_a7d3e618-4c02-49b5-8f7a-2be6105d38c4"
                         }
                     ],
@@ -6811,7 +6811,6 @@
                         {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "treble",
-                            "@type": "expression",
                             "carriers": [
                                 {
                                     "@id": "bdd93ba2-3a8c-4589-966b-ab1971649368"
@@ -6820,6 +6819,7 @@
                                     "@id": "d477c5f2-edbc-4c61-b759-cd706f40739e"
                                 }
                             ],
+                            "@type": "expression",
                             "@id": "symbol_1abc8a69-ed04-49a8-9f5e-5259abc7b416"
                         }
                     ],
@@ -6835,7 +6835,6 @@
                         {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "treble",
-                            "@type": "expression",
                             "carriers": [
                                 {
                                     "@id": "64107ce5-322b-4e1d-b37b-0cb999709d81"
@@ -6844,6 +6843,7 @@
                                     "@id": "5663ebca-26ea-47a1-ae02-a2aa767a5c1c"
                                 }
                             ],
+                            "@type": "expression",
                             "@id": "symbol_cd3a1bc4-9ed0-48a6-8f82-81f00af39c16"
                         }
                     ],
@@ -6859,7 +6859,6 @@
                         {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "treble",
-                            "@type": "expression",
                             "carriers": [
                                 {
                                     "@id": "883d213c-68b7-4f76-a0c3-d2d14eac1bd4"
@@ -6868,6 +6867,7 @@
                                     "@id": "0f4a15ce-1a9e-4cac-aaf7-c766f994e2da"
                                 }
                             ],
+                            "@type": "expression",
                             "@id": "symbol_e368ca4c-0108-4bf5-9887-7e405822464c"
                         }
                     ],
@@ -23395,12 +23395,12 @@
                         {
                             "expressionType": "SlowCrescendoOff",
                             "scope": "treble",
-                            "@type": "expression",
                             "carriers": [
                                 {
                                     "@id": "1dc6298d-2cd7-401f-bd06-b33e31d7a7d8"
                                 }
                             ],
+                            "@type": "expression",
                             "@id": "symbol_a32941b8-62d5-441a-a393-3942a26ad2e3"
                         }
                     ],
@@ -23411,12 +23411,12 @@
                     "insert": [
                         {
                             "pitch": 60,
-                            "@type": "note",
                             "carriers": [
                                 {
                                     "@id": "7596cae0-7ac8-4c97-a63d-41f37d6b9250"
                                 }
                             ],
+                            "@type": "note",
                             "@id": "symbol_66a250c7-017f-4fd9-8b68-b812811010ae"
                         }
                     ],
