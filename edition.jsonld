@@ -44434,7 +44434,7 @@
                     },
                     "produced": [
                         {
-                            "method": "handwriting",
+                            "technique": "handwriting",
                             "depiction": "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001//3170,124010,264,1300/full/270/default.jpg",
                             "horizontal": {
                                 "from": 10497.077073317307,
@@ -44461,7 +44461,7 @@
                     "purpose": "labeling",
                     "produced": [
                         {
-                            "method": "stamp",
+                            "technique": "stamp",
                             "depiction": "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001//1489,4018,944,123/full/270/default.jpg",
                             "transcription": {
                                 "text": "Patentiert in allen Culturstaaten.",
@@ -44482,7 +44482,7 @@
                             "@id": "37bdf08f-1924-4ebf-abad-ed8e32de46ae"
                         },
                         {
-                            "method": "stamp",
+                            "technique": "stamp",
                             "horizontal": {
                                 "from": 244.95833079020184,
                                 "to": 252.8749974568685,
@@ -44523,7 +44523,7 @@
                             },
                             "features": [
                                 {
-                                    "method": "print",
+                                    "technique": "print",
                                     "transcription": {
                                         "text": "Träumerei\nR. Schumann\nGespielt von\nAlfred Grünfeld\n20. I. 1905.",
                                         "@type": "text",
@@ -44556,7 +44556,7 @@
                             },
                             "features": [
                                 {
-                                    "method": "print",
+                                    "technique": "print",
                                     "transcription": {
                                         "text": "Das Recht der Vervielfältigung\nist uns von den Künstlern aus-\ndrücklich übertragen. Jede\nanderweitige Vervielfältigung ist\nuntersagt und wird nach den\ngesetz. Bestimmungen verfolgt.\nM. WELTE & SÖHNE\nFreiburg i. Br.",
                                         "@type": "text",
@@ -60740,7 +60740,7 @@
                                 "@type": "text",
                                 "@id": "9bf2fd33-2403-4f96-a05e-65ad09074907"
                             },
-                            "method": "handwriting",
+                            "technique": "handwriting",
                             "@type": "Writing",
                             "@id": "6785938e-f472-4fc8-9cb1-ba423a7909ea"
                         }
@@ -60784,7 +60784,7 @@
                                 "unit": "track"
                             },
                             "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001//1579,3442,754,1019/full/0/default.jpg",
-                            "method": "handwriting",
+                            "technique": "handwriting",
                             "transcription": {
                                 "text": "225\nSchumann\nTraumerei\nOp 15 No 7\nAlfred Grünfeld",
                                 "@type": "text",
