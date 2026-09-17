@@ -1,0 +1,19 @@
+The perforator's advance: the strongest periods in the slot lengths.
+R runs from 0 (scattered) to 1 (every length on the comb).
+
+Copy  Source            n       best period      other peaks
+--------------------------------------------------------------------------------------------
+St1   image             150     1.011 mm (R=0.82)  0.334(R=0.23) 0.504(R=0.48)
+St1   parser            678     1.020 mm (R=0.79)  0.341(R=0.19) 0.508(R=0.47)
+Wi1   parser            10446   1.030 mm (R=0.22)  0.419(R=0.12) 0.524(R=0.13) 0.685(R=0.18)
+St2   image             354     0.504 mm (R=0.63)  
+Ch1   parser            9984    0.625 mm (R=0.48)  0.317(R=0.07) 0.446(R=0.03) 0.987(R=0.06)
+Bo1   parser            15681   0.434 mm (R=0.42)  0.313(R=0.05) 0.343(R=0.04) 0.750(R=0.13)
+
+The same advance, from the onsets of notes rather than from slot lengths.
+Differences up to five notes apart and 40 mm are folded.
+
+Copy  n       best period       other peaks
+--------------------------------------------------------------------------------------------
+St1   2875    1.005 mm (R=0.25)   0.500(R=0.06) 0.967(R=0.09) 1.045(R=0.07)
+St2   3609    0.500 mm (R=0.26)   0.491(R=0.12) 0.916(R=0.06) 1.334(R=0.05)

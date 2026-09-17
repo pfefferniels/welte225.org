@@ -1,0 +1,12 @@
+Slot and bridge of the two Stanford copies at a range of edge levels.
+Their sum, the pitch, does not move with the level; what one gains the
+other loses. A difference that holds across the range is not the level's.
+
+level |        slot (px)         |       bridge (px)        |    pitch (px)
+      |    St1     St2     diff  |    St1     St2     diff  |    St1     St2
+------------------------------------------------------------------------------
+ 0.3  | 27.746  28.446   0.700 |  7.711   7.054  -0.657 | 35.476  35.420
+ 0.4  | 27.418  28.151   0.733 |  8.118   7.418  -0.700 | 35.477  35.412
+ 0.5  | 27.110  27.852   0.742 |  8.475   7.704  -0.771 | 35.490  35.419
+ 0.6  | 26.806  27.549   0.743 |  8.797   7.977  -0.820 | 35.496  35.419
+ 0.7  | 26.472  27.206   0.734 |  9.113   8.250  -0.863 | 35.488  35.401

@@ -1,0 +1,70 @@
+A dated control: roll 3309, Backhaus, Schubert Militärmarsch,
+druid jq774vx6544, Stanford copy punched 22 Nov 1922.
+
+  Teilung                      3.194 mm
+  punch across, parser box     1.777 mm  (AVG_HOLE_WIDTH 20.86)
+  punch across, half contrast  1.877 mm  (n=150)
+  slot along the roll          1.915 mm
+  bridge                       0.579 mm
+  pitch                        2.496 mm
+  advance                      0.491 mm  (R=0.34)
+  round? slot / across         1.020
+
+The punch of 431 red Welte rolls at Stanford, from the SUPRA index.
+One machine, one threshold, one parser build, so the widths compare.
+
+  1.5 mm  ##                                                   4
+  1.6 mm  #######                                              18
+  1.7 mm  #################################################### 132
+  1.8 mm  #################################################### 133
+  1.9 mm  ########                                             21
+  2.0 mm  #####                                                13
+  2.1 mm  ############                                         30
+  2.2 mm  #################                                    44
+  2.3 mm  ########                                             20
+  2.4 mm  #####                                                13
+  2.5 mm  #                                                    2
+  2.7 mm  #                                                    1
+
+  median 1.801 mm, and the two modes fall at Hagmann's two values.
+
+Against the Welte catalogue number, which orders the titles and so
+gives each copy an earliest possible date.
+
+  Welte no.      rolls   median punch   share >= 2.0 mm
+      0-499         88      1.837 mm          38 %
+    500-999         60      1.838 mm          42 %
+   1000-1499       103      1.829 mm          40 %
+   1500-1999        30      1.835 mm          40 %
+   2000-2499        27      1.782 mm          15 %
+   2500-2999        49      1.770 mm          12 %
+   3000-3499        36      1.741 mm           0 %
+   3500-99998       38      1.767 mm           0 %
+
+  No title above Welte 2703 shows a wide punch; below that the two are
+  mixed, which is what a width belonging to the copy rather than to the
+  title would look like.
+
+Titles held both ways: one matrix, two punches, so the width is the
+copy's and not the title's. 12 of them.
+
+  Welte 365    1.705 mm (yx536mq2915)   2.264 mm (wc588rr6112)
+  Welte 570    1.691 mm (kz379jn2491)   2.145 mm (ng103jj1150)
+  Welte 660    1.508 mm (xr682fm1233)   2.185 mm (td134mh2760)
+  Welte 1033   1.666 mm (bx815rz0622)   2.156 mm (hg282mg9396)
+  Welte 1213   1.703 mm (vj076nk8220)   2.104 mm (fn111kx0654)
+  Welte 1247   1.757 mm (xm993qd2681)   2.398 mm (wp877mn0317)
+  Welte 1259   1.798 mm (zv884mc0794)   2.272 mm (qg121rz6125)
+  Welte 1263   1.685 mm (dw479gk0103)   2.082 mm (dc021nq1464)
+  Welte 1352   1.684 mm (mg285ps6787)   2.419 mm (rp146dk0477)
+  Welte 1447   1.686 mm (pz175wg5571)   2.187 mm (kg488qt3887)
+  Welte 1474   1.677 mm (ns598kr8616)   2.101 mm (fj448by1666)
+  Welte 1480   1.744 mm (vz717bq6543)   2.148 mm (bf644yy6536)
+
+The latest wide-punch rolls, as Stanford's catalogue dates them.
+
+  Welte 2703  2.220 mm  jg717nb8731  published 1913/[1913]
+      Archive of Recorded Sound copy 1: "Comments by Denis Condon on roll leader: "Dated 1913 at the reroll point."
+  Welte 2685  2.247 mm  jd052zg1047  published 1913/[1913]
+  Welte 2615  2.097 mm  rh801bs4556  published 1912/[1912]
+  Welte 2609  2.207 mm  pc364sy7115  published 1912/[1912]

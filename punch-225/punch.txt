@@ -1,0 +1,8 @@
+Copy  Keeper                     System      Punched       Teilung   ∅ across    ∅ across    slot       bridge     pitch
+                                                            (mm)      box (mm)    image (mm)  (mm)       (mm)       (mm)
+--------------------------------------------------------------------------------------------------------------------------
+St1   Stanford, Condon 47        T-100 red   18 Jan 1909   3.195     2.200       2.348       2.289      0.716      3.002     
+Wi1   Marc Widuch                T-100 red   28 Oct 1910   3.186     2.030       –           2.115      0.846      2.961     
+St2   Stanford, Condon 48        T-100 red   14 Jan 1914   3.193     2.284       2.383       2.353      0.648      2.998     
+Ch1   scanned by Spencer Chase   Licensee    after 1916    2.827     1.861       –           1.438      0.931      2.453     
+Bo1   Peter Both                 T-98 green  after 1924    2.817     1.607       –           1.607      0.677      2.200     
