@@ -32764,19 +32764,6 @@
                         "@id": "8dada4c2-5f83-482a-9acb-042cbf7a3b25"
                     }
                 },
-                "company": {
-                    "name": "M. Welte & Söhne",
-                    "sameAs": []
-                },
-                "paper": {
-                    "name": "red-lined",
-                    "sameAs": []
-                },
-                "system": {
-                    "name": "T-100",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-t100"
-                },
                 "produced": [
                     {
                         "depiction": "https://stacks.stanford.edu/image/iiif/mf320jq4997/mf320jq4997_0001/400,15914,26,134/128,/270/default.jpg",
@@ -44385,7 +44372,20 @@
                         "@type": "Hole",
                         "@id": "b0c38281-b5be-4a88-a31d-10c41012c899"
                     }
-                ]
+                ],
+                "company": {
+                    "name": "M. Welte & Söhne",
+                    "sameAs": []
+                },
+                "paper": {
+                    "name": "red-lined",
+                    "sameAs": []
+                },
+                "system": {
+                    "name": "T-100",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-t100"
+                }
             },
             "keeper": {
                 "name": "Stanford",
@@ -47336,11 +47336,6 @@
                         },
                         "@id": "0bc02ddc-82aa-4ee7-8f6c-09ba2de7ef99"
                     }
-                },
-                "system": {
-                    "name": "T-100",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-t100"
                 },
                 "produced": [
                     {
@@ -60699,7 +60694,12 @@
                         "@type": "Hole",
                         "@id": "1c939fd4-7f50-4b2b-898b-d7f4140b6b2b"
                     }
-                ]
+                ],
+                "system": {
+                    "name": "T-100",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-t100"
+                }
             },
             "keeper": {
                 "name": "Stanford",
@@ -63743,11 +63743,6 @@
                         },
                         "@id": "94822d60-c67b-4c22-a69e-43094d96edfe"
                     }
-                },
-                "system": {
-                    "name": "T-100",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-t100"
                 },
                 "produced": [
                     {
@@ -73162,7 +73157,12 @@
                         "@type": "Hole",
                         "@id": "249b81f1-eb45-47ee-af08-1f97f9891c75"
                     }
-                ]
+                ],
+                "system": {
+                    "name": "T-100",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-t100"
+                }
             },
             "keeper": {
                 "name": "Collection Marc Widuch",
@@ -75439,11 +75439,6 @@
                         },
                         "@id": "8d75eb76-7411-4a26-b051-5d2b835f7ba3"
                     }
-                },
-                "system": {
-                    "name": "Welte-Mignon (Licensee)",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 },
                 "produced": [
                     {
@@ -87853,7 +87848,12 @@
                         "@type": "Hole",
                         "@id": "5ed0fc39-8495-461d-9b03-99c3a2af74a4"
                     }
-                ]
+                ],
+                "system": {
+                    "name": "Welte-Mignon (Licensee)",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-licensee"
+                }
             },
             "readFrom": {
                 "kind": "analysis",
@@ -90838,15 +90838,6 @@
                         },
                         "@id": "5ab1002e-7943-4a70-93a3-d831752ba142"
                     }
-                },
-                "company": {
-                    "name": "M. Welte & Söhne",
-                    "sameAs": []
-                },
-                "system": {
-                    "name": "Welte-Mignon T98",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-green"
                 },
                 "produced": [
                     {
@@ -105188,7 +105179,16 @@
                         "@type": "Hole",
                         "@id": "3efb421f-5914-4532-b979-3f2269410241"
                     }
-                ]
+                ],
+                "company": {
+                    "name": "M. Welte & Söhne",
+                    "sameAs": []
+                },
+                "system": {
+                    "name": "Welte-Mignon T98",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-green"
+                }
             },
             "measurements": {
                 "dimensions": {
@@ -108692,11 +108692,6 @@
                         },
                         "@id": "653c8462-c009-4f17-bed0-fa14a9c2d2de"
                     }
-                },
-                "system": {
-                    "name": "Welte-Mignon (Licensee)",
-                    "sameAs": [],
-                    "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 },
                 "produced": [
                     {
@@ -119944,7 +119939,12 @@
                         "@type": "Hole",
                         "@id": "db1b5553-137f-487f-a6de-3c0cdc721ea8"
                     }
-                ]
+                ],
+                "system": {
+                    "name": "Welte-Mignon (Licensee)",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/system/welte-licensee"
+                }
             },
             "readFrom": {
                 "kind": "reading",
