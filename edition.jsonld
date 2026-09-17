@@ -4066,6 +4066,7 @@
                         "symbol_66a250c7-017f-4fd9-8b68-b812811010ae"
                     ],
                     "editType": "additional-accent",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "0be3e06a-4973-474e-9e5c-62dfbfae58a7"
                 },
@@ -4128,6 +4129,7 @@
                         "symbol_db9a905e-dfd3-42dc-8da4-31f4ade611ea"
                     ],
                     "editType": "additional-accent",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "2b7e4c90-8d13-4a6f-95e2-c0b48f71a3d6"
                 },
@@ -4160,6 +4162,7 @@
                         "symbol_61f35dab-ebea-4b82-8182-ca59df4add66"
                     ],
                     "editType": "additional-accent",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "9c05a7f1-3e84-4b62-8d17-5fa0261cb9e8"
                 },
@@ -4192,6 +4195,7 @@
                         "symbol_6083c2bc-5094-4c10-8f73-43f1ae1e473d"
                     ],
                     "editType": "additional-accent",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "4d19f6b3-72ac-4e18-b905-8e3c7a14d02f"
                 }
