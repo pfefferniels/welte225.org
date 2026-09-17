@@ -1,6 +1,12 @@
 """Local look at the readings that bind: offsets from neighbouring archetypal holes, windows, and nearness of C's additions."""
 import json, collections
 import numpy as np
+
+def features_of(c):
+    """Every feature the copy states, whichever act brought it about."""
+    acts = [c.get('production') or {}] + (c.get('modifications') or [])
+    return [f for a in acts for f in (a.get('produced') or []) + (a.get('added') or [])]
+
 exec(open('/private/tmp/claude-501/-Users-nielspfeffer-Projects-measuring-early-records/b3fcaa9b-5098-45c5-9d78-739ba6a01268/scratchpad/eroll/binding.py').read().split("for home in ('B1', 'C', 'D1'):")[0])
 
 anchors = sorted((symbols[k]['at'], match[k][1]) for k, s in symbols.items()
@@ -40,5 +46,5 @@ for g, ks in groups.items():
 
 print('\nS1 bass crescendo holes, lengths (mm): leader pair against the rest')
 s1 = next(c for c in json.load(open('/Users/nielspfeffer/Projects/welte225.org/edition.jsonld'))['copies'] if c['@id'].startswith('d229954b'))
-lens = [(f['horizontal']['from'], f['horizontal']['to'] - f['horizontal']['from'], f['vertical']['from']) for f in s1['features'] if f['vertical']['from'] in (3, 4)]
+lens = [(f['horizontal']['from'], f['horizontal']['to'] - f['horizontal']['from'], f['vertical']['from']) for f in features_of(s1) if f['vertical']['from'] in (3, 4)]
 print('  leader:', [(round(a, 1), round(l, 2), t) for a, l, t in lens if 1400 < a < 1440], ' median of all:', round(float(np.median([l for _, l, _ in lens])), 2), 'IQR', np.round(np.percentile([l for _, l, _ in lens], [25, 75]), 2))

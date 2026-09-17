@@ -1,6 +1,10 @@
 import json, numpy as np, mido
 doc = json.load(open('/Users/nielspfeffer/Projects/welte225.org/edition.jsonld'))
 SHORT = {'d229954b':'S1','88460599':'S2','a7ff95b7':'W','6e1ce072':'L','9ae56c3e':'G'}
+def features_of(c):
+    """Every feature the copy states, whichever act brought it about."""
+    acts = [c.get('production') or {}] + (c.get('modifications') or [])
+    return [f for a in acts for f in (a.get('produced') or []) + (a.get('added') or [])]
 
 def coherence(x, steps):
     x = np.asarray(x)
@@ -20,9 +24,9 @@ def local_step(x, lo, hi, window, n=4000):
 
 for c in doc['copies']:
     name = SHORT.get(c['@id'][:8])
-    if not name or not c.get('features'): continue
+    if not name or not features_of(c): continue
     m = c.get('measurements', {}); shift = m.get('shift', {}).get('horizontal', 0.0); scale = m.get('scale', 1.0)
-    raw = [(f['horizontal']['from'] - shift) / scale for f in c['features']]
+    raw = [(f['horizontal']['from'] - shift) / scale for f in features_of(c)]
     res = local_step(raw, 0.3, 1.2, 400)
     steps = np.array([r[0] for r in res]); good = steps[~np.isnan(steps)]
     print(name, 'raw paper mm, windows', len(res), 'step median %.4f IQR %.4f–%.4f' % (np.median(good), *np.percentile(good, [25, 75])), 'coh med %.2f' % np.median([r[1] for r in res]))

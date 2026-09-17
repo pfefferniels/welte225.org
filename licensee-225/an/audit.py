@@ -1,8 +1,13 @@
 import json, collections
 doc = json.load(open('/Users/nielspfeffer/Projects/welte225.org/edition.jsonld'))
 SHORT = {'d229954b': 'S1', '88460599': 'S2', 'a7ff95b7': 'W', '6e1ce072': 'L', '9ae56c3e': 'G'}
-feat_copy = {f['@id']: SHORT.get(c['@id'][:8], c['@id'][:8]) for c in doc['copies'] for f in c.get('features', [])}
-feat = {f['@id']: f for c in doc['copies'] for f in c.get('features', [])}
+def features_of(c):
+    """Every feature the copy states, whichever act brought it about."""
+    acts = [c.get('production') or {}] + (c.get('modifications') or [])
+    return [f for a in acts for f in (a.get('produced') or []) + (a.get('added') or [])]
+
+feat_copy = {f['@id']: SHORT.get(c['@id'][:8], c['@id'][:8]) for c in doc['copies'] for f in features_of(c)}
+feat = {f['@id']: f for c in doc['copies'] for f in features_of(c)}
 V = {v['@id']: v for v in doc['versions']}
 by_sig = {v['siglum']: v for v in doc['versions']}
 parent = lambda v: V.get(v['basedOn'][0]['@id']) if v.get('basedOn') else None

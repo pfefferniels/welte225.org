@@ -1,5 +1,10 @@
 import json, numpy as np
 doc = json.load(open('/Users/nielspfeffer/Projects/welte225.org/edition.jsonld'))
+def features_of(c):
+    """Every feature the copy states, whichever act brought it about."""
+    acts = [c.get('production') or {}] + (c.get('modifications') or [])
+    return [f for a in acts for f in (a.get('produced') or []) + (a.get('added') or [])]
+
 SHORT = {'d229954b':'S1','88460599':'S2','a7ff95b7':'W','6e1ce072':'L','9ae56c3e':'G'}
 
 def spectrum(x, steps, window):
@@ -19,10 +24,10 @@ def peaks(steps, r, k=6):
 steps = np.linspace(0.12, 1.6, 6000)
 for c in doc['copies']:
     name = SHORT.get(c['@id'][:8])
-    if not name or not c.get('features'): continue
+    if not name or not features_of(c): continue
     m = c.get('measurements', {}); shift = m.get('shift', {}).get('horizontal', 0.0); scale = m.get('scale', 1.0)
     for edge in ('from', 'to'):
-        raw = [(f['horizontal'][edge] - shift) / scale for f in c['features']]
+        raw = [(f['horizontal'][edge] - shift) / scale for f in features_of(c)]
         r = spectrum(raw, steps, 300)
         print(name, edge, 'top peaks (step mm, coherence):', peaks(steps, r))
 
