@@ -4252,8 +4252,6 @@
                 }
             ],
             "system": {
-                "name": "T-100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "@type": "Version",
@@ -4262,8 +4260,6 @@
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "system": {
-                "name": "T-100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "basedOn": [
@@ -6915,8 +6911,6 @@
                 }
             ],
             "system": {
-                "name": "T-100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "@type": "Version",
@@ -23479,8 +23473,6 @@
             ],
             "motivations": [],
             "system": {
-                "name": "T-100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "@type": "Version",
@@ -23785,8 +23777,6 @@
                 }
             ],
             "system": {
-                "name": "T-100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "@type": "Version",
@@ -23795,8 +23785,6 @@
         {
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
             "system": {
-                "name": "Welte-Mignon (Licensee)",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-licensee"
             },
             "edits": [
@@ -23923,8 +23911,6 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung vom T-100 ins Licensee-System",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-licensee"
                 }
             },
@@ -23934,8 +23920,6 @@
         {
             "@context": "https://w3id.org/reo/welte-green/context.jsonld",
             "system": {
-                "name": "Welte-Mignon T98",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-green"
             },
             "edits": [
@@ -30573,8 +30557,6 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung vom T-100 ins grüne System",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-green"
                 },
                 "actor": {
@@ -30602,8 +30584,6 @@
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
             "system": {
-                "name": "Welte-Mignon T100",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
             "basedOn": [
@@ -30619,8 +30599,6 @@
         {
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
             "system": {
-                "name": "Welte-Mignon (Licensee)",
-                "sameAs": [],
                 "@id": "https://w3id.org/reo/type/system/welte-licensee"
             },
             "basedOn": [
@@ -30648,8 +30626,6 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung vom T-100 ins Licensee-System",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-licensee"
                 }
             },
@@ -44386,8 +44362,6 @@
                     "sameAs": []
                 },
                 "system": {
-                    "name": "T-100",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
             },
@@ -60700,8 +60674,6 @@
                     }
                 ],
                 "system": {
-                    "name": "T-100",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
             },
@@ -73163,8 +73135,6 @@
                     }
                 ],
                 "system": {
-                    "name": "T-100",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
             },
@@ -87854,8 +87824,6 @@
                     }
                 ],
                 "system": {
-                    "name": "Welte-Mignon (Licensee)",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 }
             },
@@ -105189,8 +105157,6 @@
                     "sameAs": []
                 },
                 "system": {
-                    "name": "Welte-Mignon T98",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-green"
                 }
             },
@@ -108606,8 +108572,6 @@
             },
             "production": {
                 "system": {
-                    "name": "Welte-Mignon T100",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
             },
@@ -119945,8 +119909,6 @@
                     }
                 ],
                 "system": {
-                    "name": "Welte-Mignon (Licensee)",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 }
             },
@@ -122633,8 +122595,6 @@
                     }
                 },
                 "system": {
-                    "name": "Welte-Mignon (Licensee)",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 }
             },
@@ -122733,8 +122693,6 @@
             },
             "production": {
                 "system": {
-                    "name": "Welte-Mignon T100",
-                    "sameAs": [],
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
             },
