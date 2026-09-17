@@ -23779,8 +23779,9 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung für ein anderes Wiedergabesystem",
-                    "sameAs": []
+                    "name": "Umstanzung vom T-100 ins Licensee-System",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-licensee"
                 }
             },
             "@type": "Version",
@@ -30428,8 +30429,9 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung für ein anderes Wiedergabesystem",
-                    "sameAs": []
+                    "name": "Umstanzung vom T-100 ins grüne System",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-green"
                 },
                 "actor": {
                     "name": "Kähle",
@@ -30502,8 +30504,9 @@
             ],
             "creation": {
                 "procedure": {
-                    "name": "Umstanzung für ein anderes Wiedergabesystem",
-                    "sameAs": []
+                    "name": "Umstanzung vom T-100 ins Licensee-System",
+                    "sameAs": [],
+                    "@id": "https://w3id.org/reo/type/procedure/umstanzung/welte-t100-to-welte-licensee"
                 }
             },
             "motivations": [
