@@ -118,55 +118,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "ForzandoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "114e8a79-dec0-480d-b79d-e3f7e19069a7"
-                                },
-                                {
-                                    "@id": "e928c76c-23df-4815-b28d-4c562a88d93e"
-                                },
-                                {
-                                    "@id": "3f5b1ac8-b9a8-47f2-ae92-b2195d3c2333"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_f9292c10-fe39-46d9-9169-a237822d8176"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "035d8390-4602-4108-bbb5-1164480c4827"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "ForzandoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "e08915d6-ce1a-4c51-bd52-9550c09e466b"
-                                },
-                                {
-                                    "@id": "0e844c17-95b3-4afd-89fb-af0965b1784b"
-                                },
-                                {
-                                    "@id": "08f042af-8bd4-46bd-baa1-5d7b2a95dfff"
-                                },
-                                {
-                                    "@id": "aade1fc6-cc42-4068-aded-fa3caef5dcf4"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "384d679f-20c5-4d0d-b4b4-1ed3fb81ae7d"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "SlowCrescendoOff",
                             "scope": "treble",
                             "carriers": [
@@ -271,75 +222,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "ForzandoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "051ca216-ed32-4fec-b519-5ae02a02e844"
-                                },
-                                {
-                                    "@id": "b4cc960b-fbb2-43e9-bc13-b04b2a8e5217"
-                                },
-                                {
-                                    "@id": "473afba7-5db4-4fc7-aee0-e58723f5eaa7"
-                                },
-                                {
-                                    "@id": "25ad5386-9dd9-493f-bd30-981af352363c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_8ef4fb55-771e-433f-8235-94a252d7e787"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "14fbd0e3-0bd1-4747-bf8a-66f9b2fbda57"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "5b452017-b79f-490a-8237-1046f07d708f"
-                                },
-                                {
-                                    "@id": "15294813-dfee-41d5-a264-83391a5daa4b"
-                                },
-                                {
-                                    "@id": "036092c5-c809-4a27-a8fe-aa90e05fda13"
-                                },
-                                {
-                                    "@id": "c9a572e1-adde-4af4-947d-d188416a9cfb"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_2eb5e30f-7dd1-479a-a345-ea69a2443a55"
-                        },
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "8230a0ce-1bfa-4494-a048-6b8f5b4fa63d"
-                                },
-                                {
-                                    "@id": "dd524232-a3b4-4638-b69d-022a07e6f493"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_0846addd-08aa-4b8a-b265-4b6d21996791"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_d4951659-2632-4944-9f26-b433c587e607"
-                    ],
-                    "@type": "edit",
-                    "@id": "013b2f34-9fc7-4b04-a18d-d9c4afa25f09"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "bass",
                             "carriers": [
@@ -414,84 +296,6 @@
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "ddb53d61-5933-42da-93fa-05255c24f2f8"
-                                },
-                                {
-                                    "@id": "73a81fde-1284-4dcd-9474-357495f1c29d"
-                                },
-                                {
-                                    "@id": "fba6302d-f000-4a95-ab15-b5de6bce2cc1"
-                                },
-                                {
-                                    "@id": "27e5f1f2-f483-4e1a-8caa-223b5e5bd0fd"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_69aa4a60-c468-4d72-87d9-65a77db2340f"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "d38ce749-2d68-4ddd-b900-e7a8541412cc"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "db4b22cf-4e94-45ff-b1c3-47e19e4241fc"
-                                },
-                                {
-                                    "@id": "9a1ae145-238e-4fa4-bb8d-ba90fb4f5c6d"
-                                },
-                                {
-                                    "@id": "059767fb-c82d-48cc-913a-7dc97d2a6118"
-                                },
-                                {
-                                    "@id": "2cb2d721-5a6b-4c22-9b70-81c0774d1eb6"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_d4775f40-9118-405d-b1da-8a477766787e"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "6836151a-ce1f-488c-9a2f-2e275a28a60f"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "4035c407-6fc9-4acf-9d55-bb7b0e4162d7"
-                                },
-                                {
-                                    "@id": "e9e5311b-520e-40a4-a46f-550b345ed047"
-                                },
-                                {
-                                    "@id": "7574c814-a6cb-41c4-a2a3-c22e7e4b40dd"
-                                },
-                                {
-                                    "@id": "f01f5ae0-64d4-48b0-9b7a-1128d00e8802"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_4d1bf108-8f72-48b1-8e2c-d7b6a6b2aba8"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "a24251aa-edcb-4222-9946-2fa6b9108981"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
                             "scope": "bass",
                             "carriers": [
                                 {
@@ -529,20 +333,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_ae9eaaf2-663b-4565-b705-c840ce63fcfc"
-                    ],
-                    "@type": "edit",
-                    "@id": "bc0bec92-a9f7-48dd-b084-02a2fbff781c"
-                },
-                {
-                    "delete": [
-                        "symbol_9fe4b1bb-334d-441e-9d47-543601c9b018"
-                    ],
-                    "@type": "edit",
-                    "@id": "eaccead7-5894-4de6-8c2b-b489f19fe358"
-                },
-                {
-                    "delete": [
                         "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900"
                     ],
                     "motivation": "extend-area-without-una-corda",
@@ -562,20 +352,6 @@
                     },
                     "@type": "edit",
                     "@id": "a01d90cc-2b28-4c82-8f0e-9b058726d726"
-                },
-                {
-                    "delete": [
-                        "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22"
-                    ],
-                    "@type": "edit",
-                    "@id": "944e9703-4ee5-4290-ad58-f43a8f600701"
-                },
-                {
-                    "delete": [
-                        "symbol_d6fab648-eb46-45a3-85a2-ec4241586903"
-                    ],
-                    "@type": "edit",
-                    "@id": "d0660dc3-2547-4f1e-9202-6697faf2c98e"
                 },
                 {
                     "insert": [
@@ -3146,20 +2922,6 @@
                     "@id": "876649dc-4a7b-4002-9166-a5d8b0bd8b8a"
                 },
                 {
-                    "delete": [
-                        "symbol_2b8425e0-4e20-43e1-9871-c3e6fb228a77"
-                    ],
-                    "@type": "edit",
-                    "@id": "0893dd6c-7633-4dac-a438-18627f36366f"
-                },
-                {
-                    "delete": [
-                        "symbol_97618927-5791-44f2-b9c0-0a3288fda8cd"
-                    ],
-                    "@type": "edit",
-                    "@id": "efbc34b0-d6c8-4f9e-9a5c-5ef0a8bbd437"
-                },
-                {
                     "insert": [
                         {
                             "expressionType": "ForzandoOn",
@@ -3927,81 +3689,6 @@
                     "@id": "ee9ea5d8-68af-48a9-8971-3b6953d5a3c2"
                 },
                 {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "129dd481-2b60-4b89-932c-2439f2d9dd8b"
-                                },
-                                {
-                                    "@id": "b3fc13e4-fc9e-4f48-9d15-a0dfe6f88304"
-                                },
-                                {
-                                    "@id": "750ee6f5-7535-4941-9be8-ffe475e6ec17"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_887def13-467e-4e30-a370-218aa65a8277"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "345669c5-a058-456f-92c3-cc10b93e621b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "2084a7bb-3acf-4edf-845f-bc1fbfdb8989"
-                                },
-                                {
-                                    "@id": "98389600-3aec-4e16-bfac-4b08b62a4842"
-                                },
-                                {
-                                    "@id": "3dabefbc-b29a-4dd7-ac72-2afdd7ad65bd"
-                                },
-                                {
-                                    "@id": "85fbd436-2256-4fce-9368-726920c380c7"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "4d49af2d-b17f-4a8a-87b5-fc085560142b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "f75e06c3-0fa4-4e40-96ff-66bfdabdb390"
-                                },
-                                {
-                                    "@id": "4892491a-f2f6-4c1a-9fb0-070a8510db6a"
-                                },
-                                {
-                                    "@id": "bb39f2ef-b366-43ac-8496-72313b0165cf"
-                                },
-                                {
-                                    "@id": "ba37117c-86ad-48d5-9f52-e76b0f57d051"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb"
-                        }
-                    ],
-                    "@type": "edit",
-                    "@id": "dd3b456c-8048-4718-9505-45c429888a89"
-                },
-                {
                     "editType": "additional-accent",
                     "motivation": "anacrusis-accent",
                     "insert": [
@@ -4198,6 +3885,661 @@
                     "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "4d19f6b3-72ac-4e18-b905-8e3c7a14d02f"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 60,
+                            "carriers": [
+                                {
+                                    "@id": "9029facf-ebdf-47f3-8022-be0a087f672f"
+                                },
+                                {
+                                    "@id": "0f1a28c5-3d2c-4bd0-aaa3-506bb2ba0faa"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "086c8084-f540-4d30-aa25-7ab8cb30ad65"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "900fdb20-4db5-4371-b39e-f282c437360c"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedalOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "45eb146b-c4b2-4ca6-b3ea-2da85375ca74"
+                                },
+                                {
+                                    "@id": "d7f19b1d-c91f-4202-b6f5-c1c233af053c"
+                                },
+                                {
+                                    "@id": "f8f672d7-a321-4f46-89b4-e97cbe221b85"
+                                },
+                                {
+                                    "@id": "bb03ae0f-be58-48a9-a392-753370675c24"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "ccaf9846-e8af-4e56-b6a1-6f6edc12fad3"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "6e383a03-15ac-4d92-b896-c6944cc5ef1d"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "ForzandoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "114e8a79-dec0-480d-b79d-e3f7e19069a7"
+                                },
+                                {
+                                    "@id": "e928c76c-23df-4815-b28d-4c562a88d93e"
+                                },
+                                {
+                                    "@id": "3f5b1ac8-b9a8-47f2-ae92-b2195d3c2333"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_f9292c10-fe39-46d9-9169-a237822d8176"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "488f8903-98ee-4f38-8c04-0fc3f45b42a7"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedalOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "cec6d427-d40b-4d58-9932-683663ba3d53"
+                                },
+                                {
+                                    "@id": "1e77fac7-ea47-446f-b9f6-f8428cc558e2"
+                                },
+                                {
+                                    "@id": "1092470c-3a22-440f-8d3d-3285ebd0bfee"
+                                },
+                                {
+                                    "@id": "2b2678ee-5c78-4be1-9afb-b3ea4b57602a"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "a82f7705-28d4-4b22-8c22-995a17626186"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "6e5d91e1-d8f1-43b8-a4f0-daeefdb72c5c"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "ForzandoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "e08915d6-ce1a-4c51-bd52-9550c09e466b"
+                                },
+                                {
+                                    "@id": "0e844c17-95b3-4afd-89fb-af0965b1784b"
+                                },
+                                {
+                                    "@id": "08f042af-8bd4-46bd-baa1-5d7b2a95dfff"
+                                },
+                                {
+                                    "@id": "aade1fc6-cc42-4068-aded-fa3caef5dcf4"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "d249d203-1c6b-4fbd-b3c5-64304780d8cb"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedalOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "dace281f-2a87-4023-8d19-bd2fc1e3c8d4"
+                                },
+                                {
+                                    "@id": "a2321a9a-7605-4f32-95e1-60ff233efcce"
+                                },
+                                {
+                                    "@id": "2b0ad33d-b299-4f5b-8fdd-257f40417d06"
+                                },
+                                {
+                                    "@id": "45654496-db24-4982-9815-c0b700e65568"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "1ed64334-f76d-45b7-8d35-aedac9538ae0"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "5b13324d-44e0-40d8-bc00-53f75ac17e35"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 72,
+                            "carriers": [
+                                {
+                                    "@id": "4eb8e15f-c122-40ea-bc7f-bae732821a6c"
+                                },
+                                {
+                                    "@id": "0cfc4d0a-4c40-4dae-90ec-1524bf6d786e"
+                                },
+                                {
+                                    "@id": "5521d16a-e151-44d3-842f-276567feff08"
+                                },
+                                {
+                                    "@id": "b17d88b8-c2bc-41bd-9cfc-9a80d4af1dc6"
+                                },
+                                {
+                                    "@id": "f5584397-4dbd-4347-9f07-702f760566ed"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "24c172e5-bbed-44ac-9676-c1814a202f61"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "e26d9878-e676-4263-9c40-553ee88cca4e"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 48,
+                            "carriers": [
+                                {
+                                    "@id": "ab2bd771-445b-48c2-810e-406314b142df"
+                                },
+                                {
+                                    "@id": "02116953-4ed3-4030-8998-3ae25e6709d7"
+                                },
+                                {
+                                    "@id": "7d9354fc-88c2-4128-b040-e450a5b372e8"
+                                },
+                                {
+                                    "@id": "e83ec725-eca3-409b-a3c4-211402b36afe"
+                                },
+                                {
+                                    "@id": "c014490f-0d3d-41df-8d9e-31c97bce528d"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "ab9cc83d-6b0c-4c8e-9cfb-d0332edd32df"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "8d63cf95-35f0-4501-833d-ba1cf3018970"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "ForzandoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "051ca216-ed32-4fec-b519-5ae02a02e844"
+                                },
+                                {
+                                    "@id": "b4cc960b-fbb2-43e9-bc13-b04b2a8e5217"
+                                },
+                                {
+                                    "@id": "473afba7-5db4-4fc7-aee0-e58723f5eaa7"
+                                },
+                                {
+                                    "@id": "25ad5386-9dd9-493f-bd30-981af352363c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_8ef4fb55-771e-433f-8235-94a252d7e787"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "53307cc7-2085-4738-bc42-ad2901f7e591"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedalOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "ef5968cf-4345-4c13-80e5-733f283d0517"
+                                },
+                                {
+                                    "@id": "49b5746f-3fa4-439e-9cc4-58a5f4dd6901"
+                                },
+                                {
+                                    "@id": "8f3b8911-a69d-45a3-986c-6f5b02bead80"
+                                },
+                                {
+                                    "@id": "fe1ce715-c865-4e71-8739-7f6174e92dc1"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "67faf9d3-97eb-48f6-ade6-81b544f9a8ae"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "67f76971-4385-4d67-8077-83c158231c28"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "5b452017-b79f-490a-8237-1046f07d708f"
+                                },
+                                {
+                                    "@id": "15294813-dfee-41d5-a264-83391a5daa4b"
+                                },
+                                {
+                                    "@id": "036092c5-c809-4a27-a8fe-aa90e05fda13"
+                                },
+                                {
+                                    "@id": "c9a572e1-adde-4af4-947d-d188416a9cfb"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_2eb5e30f-7dd1-479a-a345-ea69a2443a55"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "a905f6e8-57d5-4ee9-a106-f21b95751caf"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "8230a0ce-1bfa-4494-a048-6b8f5b4fa63d"
+                                },
+                                {
+                                    "@id": "dd524232-a3b4-4638-b69d-022a07e6f493"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_0846addd-08aa-4b8a-b265-4b6d21996791"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "6db64ce1-1c39-4057-9a50-f13819dd5ba2"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "ddb53d61-5933-42da-93fa-05255c24f2f8"
+                                },
+                                {
+                                    "@id": "73a81fde-1284-4dcd-9474-357495f1c29d"
+                                },
+                                {
+                                    "@id": "fba6302d-f000-4a95-ab15-b5de6bce2cc1"
+                                },
+                                {
+                                    "@id": "27e5f1f2-f483-4e1a-8caa-223b5e5bd0fd"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_69aa4a60-c468-4d72-87d9-65a77db2340f"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "5cec77c3-a92f-472a-813e-d5732260afc6"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "db4b22cf-4e94-45ff-b1c3-47e19e4241fc"
+                                },
+                                {
+                                    "@id": "9a1ae145-238e-4fa4-bb8d-ba90fb4f5c6d"
+                                },
+                                {
+                                    "@id": "059767fb-c82d-48cc-913a-7dc97d2a6118"
+                                },
+                                {
+                                    "@id": "2cb2d721-5a6b-4c22-9b70-81c0774d1eb6"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_d4775f40-9118-405d-b1da-8a477766787e"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "3e40fe9a-04ca-4d59-986f-f358b94bdf10"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedalOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "8b300795-4369-400a-9247-020fa97f2d91"
+                                },
+                                {
+                                    "@id": "2edf4a72-e688-445f-9b7f-1e400d6a8f61"
+                                },
+                                {
+                                    "@id": "f6818544-460a-41b3-80c8-9c2fab878cc1"
+                                },
+                                {
+                                    "@id": "e144cdcf-2fa7-48dd-8a24-d12fd02563a6"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "b821e704-b9d9-42fb-b53a-a1ae2612d081"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "4469c134-0810-4fb8-8bbc-fbaa215526ee"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 58,
+                            "carriers": [
+                                {
+                                    "@id": "8b04d792-518a-40e4-9b36-7cd8c455e914"
+                                },
+                                {
+                                    "@id": "163dd847-f257-4ec3-a29e-accc7467031d"
+                                },
+                                {
+                                    "@id": "8e1f6cb3-8685-44a6-9601-c60da61993f9"
+                                },
+                                {
+                                    "@id": "237fb321-f637-4b73-90cc-78f47daec779"
+                                },
+                                {
+                                    "@id": "0f61be0f-f0b0-4640-8ef2-745420504ded"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "4daa9cc5-0351-44b9-b97d-0391d484ecfc"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "b0f03022-b57f-4d24-bd0e-b74208547eed"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "4035c407-6fc9-4acf-9d55-bb7b0e4162d7"
+                                },
+                                {
+                                    "@id": "e9e5311b-520e-40a4-a46f-550b345ed047"
+                                },
+                                {
+                                    "@id": "7574c814-a6cb-41c4-a2a3-c22e7e4b40dd"
+                                },
+                                {
+                                    "@id": "f01f5ae0-64d4-48b0-9b7a-1128d00e8802"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_4d1bf108-8f72-48b1-8e2c-d7b6a6b2aba8"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "cb2892dc-913c-4391-a0b6-c93faa350eaf"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "129dd481-2b60-4b89-932c-2439f2d9dd8b"
+                                },
+                                {
+                                    "@id": "b3fc13e4-fc9e-4f48-9d15-a0dfe6f88304"
+                                },
+                                {
+                                    "@id": "750ee6f5-7535-4941-9be8-ffe475e6ec17"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_887def13-467e-4e30-a370-218aa65a8277"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "9c0817c5-ab38-4bad-a14d-de7f0a840403"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "2084a7bb-3acf-4edf-845f-bc1fbfdb8989"
+                                },
+                                {
+                                    "@id": "98389600-3aec-4e16-bfac-4b08b62a4842"
+                                },
+                                {
+                                    "@id": "3dabefbc-b29a-4dd7-ac72-2afdd7ad65bd"
+                                },
+                                {
+                                    "@id": "85fbd436-2256-4fce-9368-726920c380c7"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "9e59f230-75d4-4e05-833e-98be47cb3251"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "f75e06c3-0fa4-4e40-96ff-66bfdabdb390"
+                                },
+                                {
+                                    "@id": "4892491a-f2f6-4c1a-9fb0-070a8510db6a"
+                                },
+                                {
+                                    "@id": "bb39f2ef-b366-43ac-8496-72313b0165cf"
+                                },
+                                {
+                                    "@id": "ba37117c-86ad-48d5-9f52-e76b0f57d051"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "cdaf536b-33c0-4bcb-9960-d6e595f6a3fd"
+                },
+                {
+                    "delete": [
+                        "symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "ced714ba-5a68-4548-a1eb-28f49123279a"
+                },
+                {
+                    "delete": [
+                        "symbol_c756f5da-fe5d-477d-a326-76ac9c5d7429"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "816c7bff-4f11-41d8-a0f8-22a2cc67837c"
+                },
+                {
+                    "delete": [
+                        "symbol_90b5457b-fbcf-4d49-9d8b-74dfcceae528"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "e5da578f-c1c9-4824-9dc7-6fa517dce107"
+                },
+                {
+                    "delete": [
+                        "symbol_ae9eaaf2-663b-4565-b705-c840ce63fcfc"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "aa4f4a31-e64d-44d5-809d-a6fa1aa1c925"
+                },
+                {
+                    "delete": [
+                        "symbol_9fe4b1bb-334d-441e-9d47-543601c9b018"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "f95d592c-e2a9-44cf-9c01-98aab4729d07"
+                },
+                {
+                    "delete": [
+                        "symbol_ecd03e0c-9d41-429f-b655-4b212922aed6"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "f2633693-db0a-4cce-9b3e-fba25437b86d"
+                },
+                {
+                    "delete": [
+                        "symbol_68605733-03bb-4c12-ac55-51b77579c378"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "5c2afd93-4b9c-4dd3-9a02-b61c2fab9168"
+                },
+                {
+                    "delete": [
+                        "symbol_0ba08fd6-c163-4d0b-bdad-f676bdb93aa5"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "ca5b8b93-ed55-49da-a7cf-39f8246751c0"
+                },
+                {
+                    "delete": [
+                        "symbol_8340e819-366b-4dbe-91d3-27ad38589481"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "7425c04c-eee0-4b78-8025-f62091cde35d"
+                },
+                {
+                    "delete": [
+                        "symbol_d4951659-2632-4944-9f26-b433c587e607"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "8ccc54a8-b5b6-481b-b3ae-caaa566941fc"
+                },
+                {
+                    "delete": [
+                        "symbol_2b8425e0-4e20-43e1-9871-c3e6fb228a77"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "6f1c6e3e-3b2f-43a0-b5ae-f91bb455353a"
+                },
+                {
+                    "delete": [
+                        "symbol_97618927-5791-44f2-b9c0-0a3288fda8cd"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "bc8e4aac-b7e7-4899-9517-b1d6267ad71d"
+                },
+                {
+                    "delete": [
+                        "symbol_f9bc3d99-b7b9-46f8-8722-1a71d6b9d4c6"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "dab997f1-705a-4dd1-b8b9-5b67b1ba8824"
+                },
+                {
+                    "delete": [
+                        "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "5063eec1-3945-4996-af3e-6f71c7196995"
+                },
+                {
+                    "delete": [
+                        "symbol_d6fab648-eb46-45a3-85a2-ec4241586903"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "c4ab93f1-0fe6-413e-ba6b-8b62c60ff36b"
+                },
+                {
+                    "delete": [
+                        "symbol_5b6c513f-60b3-4df4-b49e-f54ba1f6aa8b"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "a5fb111c-f758-4244-81d5-e5073de555b1"
                 }
             ],
             "motivations": [
@@ -4240,13 +4582,42 @@
                     "note": "Das An des Crescendos rückt vor, die alte Stanzung bleibt stehen",
                     "@type": "motivation",
                     "@id": "crescendo-onset-moved"
+                },
+                {
+                    "note": "Made by collating the two texts and not yet read by an editor.",
+                    "@type": "motivation",
+                    "@id": "unchecked"
                 }
             ],
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 3.5,
-                        "toleranceEnd": 5
+                        "offsetStart": 0.5788955880120097,
+                        "toleranceStart": 3.559514937377367,
+                        "offsetEnd": 0.5176832701967551,
+                        "toleranceEnd": 3.738439657323451,
+                        "annotation": {
+                            "belief": {
+                                "certainty": "likely",
+                                "reasons": [
+                                    {
+                                        "premises": [],
+                                        "used": [
+                                            "d229954b-086c-44d6-a589-aaa324d31d88",
+                                            "88460599-2e0d-4759-851c-903a5a521997",
+                                            "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad",
+                                            "6370ef20-7986-425a-a8c5-7e56d3756aec",
+                                            "9ae56c3e-b058-4972-9895-96946c6b93f8",
+                                            "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
+                                        ],
+                                        "note": "The tolerance is calculated from the scatter of the readings themselves, taken as the median absolute deviation of how far the collated copies put each symbol from where the copies read with it put it. expression: 203 readings, scattering by 1.17 mm at the start and 1.12 mm at the end about a median of 0.85 mm and 1.11 mm, with a threshold of 2.81 times the scatter. note: 459 readings, scattering by 0.98 mm at the start and 1.00 mm at the end about a median of 0.03 mm and -0.16 mm, with a threshold of 3.06 times the scatter. Each threshold is the point beyond which fewer than one reading of a sample of that size is expected to fall by chance, and the window is the threshold times the scatter about its median.",
+                                        "@type": "inference"
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "97890d9f-e4d4-4bba-a656-08d05fb7f2ec"
+                            }
+                        }
                     },
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
@@ -4657,7 +5028,7 @@
                         }
                     ],
                     "delete": [
-                        "symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0"
+                        "086c8084-f540-4d30-aa25-7ab8cb30ad65"
                     ],
                     "@type": "edit",
                     "@id": "d72e3c8e-4b75-48e2-9f9e-d28499d48fdc"
@@ -6926,13 +7297,13 @@
                             "scope": "bass",
                             "carriers": [
                                 {
+                                    "@id": "3d3de942-fe1a-4193-af9c-d311b87e4411"
+                                },
+                                {
                                     "@id": "83398b64-8aba-40b7-a161-7a081fe256fa"
                                 },
                                 {
                                     "@id": "53bc08a0-5d2e-49bf-b635-fab5ce372caa"
-                                },
-                                {
-                                    "@id": "3d3de942-fe1a-4193-af9c-d311b87e4411"
                                 },
                                 {
                                     "@id": "f493c94e-3ada-4231-8585-43ec448412a9"
@@ -8630,12 +9001,6 @@
                             "carriers": [
                                 {
                                     "@id": "75064571-cde0-4bf1-a11c-8e12386a71f4"
-                                },
-                                {
-                                    "@id": "9029facf-ebdf-47f3-8022-be0a087f672f"
-                                },
-                                {
-                                    "@id": "0f1a28c5-3d2c-4bd0-aaa3-506bb2ba0faa"
                                 }
                             ],
                             "@type": "note",
@@ -10411,18 +10776,6 @@
                             "carriers": [
                                 {
                                     "@id": "ebbcee62-5ad3-45ee-86c9-29e6c4a4ba14"
-                                },
-                                {
-                                    "@id": "45eb146b-c4b2-4ca6-b3ea-2da85375ca74"
-                                },
-                                {
-                                    "@id": "d7f19b1d-c91f-4202-b6f5-c1c233af053c"
-                                },
-                                {
-                                    "@id": "f8f672d7-a321-4f46-89b4-e97cbe221b85"
-                                },
-                                {
-                                    "@id": "bb03ae0f-be58-48a9-a392-753370675c24"
                                 }
                             ],
                             "@type": "expression",
@@ -13224,18 +13577,6 @@
                             "carriers": [
                                 {
                                     "@id": "4a867b4d-4f62-4f7e-a3f3-9aeceaeb1a12"
-                                },
-                                {
-                                    "@id": "cec6d427-d40b-4d58-9932-683663ba3d53"
-                                },
-                                {
-                                    "@id": "1e77fac7-ea47-446f-b9f6-f8428cc558e2"
-                                },
-                                {
-                                    "@id": "1092470c-3a22-440f-8d3d-3285ebd0bfee"
-                                },
-                                {
-                                    "@id": "2b2678ee-5c78-4be1-9afb-b3ea4b57602a"
                                 }
                             ],
                             "@type": "expression",
@@ -14640,18 +14981,6 @@
                             "carriers": [
                                 {
                                     "@id": "f86a33c3-9c6a-46d1-b625-3f333a11961d"
-                                },
-                                {
-                                    "@id": "dace281f-2a87-4023-8d19-bd2fc1e3c8d4"
-                                },
-                                {
-                                    "@id": "a2321a9a-7605-4f32-95e1-60ff233efcce"
-                                },
-                                {
-                                    "@id": "2b0ad33d-b299-4f5b-8fdd-257f40417d06"
-                                },
-                                {
-                                    "@id": "45654496-db24-4982-9815-c0b700e65568"
                                 }
                             ],
                             "@type": "expression",
@@ -15885,21 +16214,6 @@
                             "carriers": [
                                 {
                                     "@id": "d21a4eb3-e42c-4249-9c39-167d93cd02de"
-                                },
-                                {
-                                    "@id": "4eb8e15f-c122-40ea-bc7f-bae732821a6c"
-                                },
-                                {
-                                    "@id": "0cfc4d0a-4c40-4dae-90ec-1524bf6d786e"
-                                },
-                                {
-                                    "@id": "5521d16a-e151-44d3-842f-276567feff08"
-                                },
-                                {
-                                    "@id": "b17d88b8-c2bc-41bd-9cfc-9a80d4af1dc6"
-                                },
-                                {
-                                    "@id": "f5584397-4dbd-4347-9f07-702f760566ed"
                                 }
                             ],
                             "@type": "note",
@@ -16152,21 +16466,6 @@
                             "carriers": [
                                 {
                                     "@id": "0fced126-1c24-4c95-acd2-8c0c07ee71ff"
-                                },
-                                {
-                                    "@id": "ab2bd771-445b-48c2-810e-406314b142df"
-                                },
-                                {
-                                    "@id": "02116953-4ed3-4030-8998-3ae25e6709d7"
-                                },
-                                {
-                                    "@id": "7d9354fc-88c2-4128-b040-e450a5b372e8"
-                                },
-                                {
-                                    "@id": "e83ec725-eca3-409b-a3c4-211402b36afe"
-                                },
-                                {
-                                    "@id": "c014490f-0d3d-41df-8d9e-31c97bce528d"
                                 }
                             ],
                             "@type": "note",
@@ -16957,18 +17256,6 @@
                             "carriers": [
                                 {
                                     "@id": "c26c1cc4-be7e-4e0d-b929-a2cd3364f4e0"
-                                },
-                                {
-                                    "@id": "ef5968cf-4345-4c13-80e5-733f283d0517"
-                                },
-                                {
-                                    "@id": "49b5746f-3fa4-439e-9cc4-58a5f4dd6901"
-                                },
-                                {
-                                    "@id": "8f3b8911-a69d-45a3-986c-6f5b02bead80"
-                                },
-                                {
-                                    "@id": "fe1ce715-c865-4e71-8739-7f6174e92dc1"
                                 }
                             ],
                             "@type": "expression",
@@ -20337,18 +20624,6 @@
                             "carriers": [
                                 {
                                     "@id": "f17247c2-0902-45ad-ae47-736a125926c5"
-                                },
-                                {
-                                    "@id": "8b300795-4369-400a-9247-020fa97f2d91"
-                                },
-                                {
-                                    "@id": "2edf4a72-e688-445f-9b7f-1e400d6a8f61"
-                                },
-                                {
-                                    "@id": "f6818544-460a-41b3-80c8-9c2fab878cc1"
-                                },
-                                {
-                                    "@id": "e144cdcf-2fa7-48dd-8a24-d12fd02563a6"
                                 }
                             ],
                             "@type": "expression",
@@ -22491,21 +22766,6 @@
                             "carriers": [
                                 {
                                     "@id": "f7c081c3-5ebc-4119-91f4-eb9a86ce78bc"
-                                },
-                                {
-                                    "@id": "8b04d792-518a-40e4-9b36-7cd8c455e914"
-                                },
-                                {
-                                    "@id": "163dd847-f257-4ec3-a29e-accc7467031d"
-                                },
-                                {
-                                    "@id": "8e1f6cb3-8685-44a6-9601-c60da61993f9"
-                                },
-                                {
-                                    "@id": "237fb321-f637-4b73-90cc-78f47daec779"
-                                },
-                                {
-                                    "@id": "0f61be0f-f0b0-4640-8ef2-745420504ded"
                                 }
                             ],
                             "@type": "note",
@@ -23428,13 +23688,13 @@
                             "scope": "treble",
                             "carriers": [
                                 {
+                                    "@id": "abed02b9-6656-4589-9269-26cc8c8a0724"
+                                },
+                                {
                                     "@id": "e834135d-58a8-4fdc-bac3-370e339b7462"
                                 },
                                 {
                                     "@id": "d14880b9-278a-4ea3-809e-a1e869478fb2"
-                                },
-                                {
-                                    "@id": "abed02b9-6656-4589-9269-26cc8c8a0724"
                                 }
                             ],
                             "@type": "expression",
@@ -26100,7 +26360,7 @@
                         }
                     ],
                     "delete": [
-                        "symbol_c756f5da-fe5d-477d-a326-76ac9c5d7429",
+                        "ccaf9846-e8af-4e56-b6a1-6f6edc12fad3",
                         "symbol_3531e50e-1487-4950-a4d5-bd6aabc43aaa"
                     ],
                     "motivation": "latch-to-hold",
@@ -26262,7 +26522,7 @@
                     ],
                     "delete": [
                         "symbol_538b1a14-4ffc-41e6-b603-906e312ab793",
-                        "symbol_90b5457b-fbcf-4d49-9d8b-74dfcceae528"
+                        "a82f7705-28d4-4b22-8c22-995a17626186"
                     ],
                     "motivation": "latch-to-hold",
                     "@type": "edit",
@@ -26399,7 +26659,7 @@
                         }
                     ],
                     "delete": [
-                        "symbol_ecd03e0c-9d41-429f-b655-4b212922aed6",
+                        "1ed64334-f76d-45b7-8d35-aedac9538ae0",
                         "symbol_75fcf34b-72e2-4e26-9f6c-6d371dc35e3f"
                     ],
                     "motivation": "latch-to-hold",
@@ -26560,7 +26820,7 @@
                         }
                     ],
                     "delete": [
-                        "symbol_8340e819-366b-4dbe-91d3-27ad38589481",
+                        "67faf9d3-97eb-48f6-ade6-81b544f9a8ae",
                         "symbol_a3db027a-73c8-4083-ae44-2631c4fa6716"
                     ],
                     "motivation": "latch-to-hold",
@@ -26744,7 +27004,7 @@
                         }
                     ],
                     "delete": [
-                        "symbol_f9bc3d99-b7b9-46f8-8722-1a71d6b9d4c6",
+                        "b821e704-b9d9-42fb-b53a-a1ae2612d081",
                         "symbol_0aed73d8-705b-424d-ba69-53a83631aaff"
                     ],
                     "motivation": "latch-to-hold",
