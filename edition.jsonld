@@ -30549,8 +30549,8 @@
             "basedOn": [
                 {
                     "collationTolerance": {
-                        "toleranceStart": 8,
-                        "toleranceEnd": 8
+                        "toleranceStart": 5,
+                        "toleranceEnd": 5
                     },
                     "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
                 }
