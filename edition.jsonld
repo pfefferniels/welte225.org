@@ -24105,7 +24105,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} fehlt allein auf Wi1; es steht auf St1, St2, Ch1 und Ph1, und Bo1 hält das Pedal genau bis dorthin. Wäre es eine Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, machte diese eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und dieses Exemplar hat es verloren.",
+                                    "note": "Das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} fehlt allein auf Wi1; es steht auf St1, St2, Ch1 und Ne1, und Bo1 hält das Pedal genau bis dorthin. Wäre es eine Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, machte diese eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und dieses Exemplar hat es verloren.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -109150,8 +109150,28 @@
                 }
             },
             "keeper": {
-                "name": "Peter Phillips",
-                "sameAs": []
+                "name": "Nigel Nettheim",
+                "sameAs": [
+                    "https://nettheim.com/"
+                ],
+                "@annotation": {
+                    "belief": {
+                        "certainty": "likely",
+                        "reasons": [
+                            {
+                                "actor": {
+                                    "name": "Phillips, Peter",
+                                    "sameAs": []
+                                },
+                                "note": "Die Rolle gehört Nigel Nettheim. Das sagt Peter Phillips, der sie gelesen hat (Mail, 20.9.2026); er fügt an, Nettheim länger nicht gesehen zu haben, so dass offenbleibt, ob sie noch dort liegt.",
+                                "@type": "beliefAdoption"
+                            }
+                        ],
+                        "@type": "belief",
+                        "@id": "698488c3-678e-469b-b024-a370e59ad6a2"
+                    },
+                    "@id": "b6eda586-901a-46f9-ba8d-ea5a44c86011"
+                }
             },
             "production": {
                 "date": {
@@ -109172,6 +109192,14 @@
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
                                     "@type": "inference"
+                                },
+                                {
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Auf der Rolle steht nichts, weder ein Stanzdatum noch ein sonstiger Vermerk (Mail, 20.9.2026). Zur Datierung trägt das Exemplar selbst damit nichts bei.",
+                                    "@type": "beliefAdoption"
                                 }
                             ],
                             "@type": "belief",
@@ -120427,6 +120455,33 @@
                         "@id": "db1b5553-137f-487f-a6de-3c0cdc721ea8"
                     }
                 ],
+                "company": {
+                    "name": "De Luxe Reproducing Roll Corporation",
+                    "sameAs": [],
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "possible",
+                            "reasons": [
+                                {
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Phillips hält das Exemplar für eine Ausgabe von De Luxe: Rollen aus Poughkeepsie haben einen Vorspann aus Gewebe, den er vermerkt hätte, und seine Notizen zu dieser Rolle vermerken keinen (Mail, 20.9.2026). Nach derselben Auskunft stanzte Poughkeepsie zwischen 1914 und 1919, De Luxe in den zwanziger Jahren.",
+                                    "@type": "beliefAdoption"
+                                },
+                                {
+                                    "note": "Der Schluss ruht auf einem fehlenden Vermerk. Die Rolle selbst ist daraufhin nicht angesehen worden, und die Angabe wird deshalb nur als möglich geführt. Träfe sie zu, fiele die Stanzung in die zwanziger Jahre, deutlich hinter die untere Grenze von 1916.",
+                                    "premises": [],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "33fef56c-e18c-4b3e-93b7-722c262f40fe"
+                        },
+                        "@id": "bc745aa9-e1e9-4f20-a704-3250a399fc71"
+                    }
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 }
@@ -120442,14 +120497,17 @@
                     "sameAs": []
                 },
                 "date": {
-                    "after": "2014-01-01",
-                    "before": "2014-12-31",
+                    "within": "2014-09-08",
                     "@annotation": {
                         "belief": {
-                            "certainty": "possible",
+                            "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Der Kopf der Datei nennt © Peter Phillips 2014. Wann gelesen wurde, sagt er nicht, das Jahr ist daraus nur zu vermuten.",
+                                    "actor": {
+                                        "name": "Phillips, Peter",
+                                        "sameAs": []
+                                    },
+                                    "note": "Phillips nennt den 8. September 2014 als Tag, an dem er die Rolle digitalisiert hat (Mail, 20.9.2026). Der Kopf der Datei nennt © Peter Phillips 2014 und stimmt im Jahr damit überein.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -120462,7 +120520,7 @@
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
                 "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips’ pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Stanzung einen MIDI-Ton, alle mit derselben Anschlagstärke. Nummern nach seiner Regel: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15.\n\nZeiten über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne als Tonfolge an {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausgerichtet; eine Parabel nimmt den wachsenden Durchmesser der Aufwickelrolle auf, ein gleitender Median über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von dem die Töne um 0,56 mm (Median) abweichen.\n\nAusdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Stanzung lang ist; Enden liegen hier daher später.\n\nSpur 8, das An des Una Corda-Pedals, kommt in der ganzen Datei nicht vor; ob der Leser diese Spur liest, ist nicht bekannt. Phillips’ Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
             },
-            "siglum": "Ph1",
+            "siglum": "Ne1",
             "modifications": [],
             "@type": "RollCopy",
             "@id": "6370ef20-7986-425a-a8c5-7e56d3756aec",

@@ -68,7 +68,8 @@ single child of its system is continued by it.
 A copy's siglum does not change: two letters for the collection the copy
 was read in, and a number counting the copies of the roll held there. A
 copy is an object rather than a hypothesis, and stays the same copy
-whatever the stemma does.
+whatever the stemma does. What can change is the collection, where one
+was attributed wrongly and the correction is a fact about the object.
 
 Sigla of the stemma of 16 September 2026:
 
@@ -91,7 +92,7 @@ Sigla of the stemma of 16 September 2026:
 | Wi1 | Marc Widuch | red T-100 |
 | Ch1 | scanned by Spencer Chase, collection unknown | Licensee |
 | Bo1 | Peter Both, scanned by Julian Dyer | green T-98 |
-| Ph1 | Peter Phillips | Licensee |
+| Ne1 | Nigel Nettheim, read by Peter Phillips | Licensee |
 | Go1 | Philippe Gourlin, read by Warren Trachtman | Licensee |
 | Sc1 | Hans-W. Schmitz | red T-100, known from TACET's recording |
 | Si1 | Richard Simonton, now USC Libraries | red T-100, known from the 1963 recording |
@@ -102,7 +103,9 @@ and Si before that day. The versions were called A, A1, B, B2, C, C1, D1,
 D2 and D3 until the same day. B1 stood between 10 and 15 September 2026
 for readings then given to Stanford's first copy alone, was dissolved into
 R2 (`1a7b95d`), and is named nowhere any more: the two notes that reported
-that attribution now say what the readings are. The word ids of
+that attribution now say what the readings are. Ne1 was called Ph1 until
+20 September 2026: the copy was taken for Peter Phillips's own, and he
+reports that he read it from Nigel Nettheim's. The word ids of
 motivations (`cleanup-b2`, `cleanup-d3`) are identifiers and keep the
 letters that were current when they were minted.
 
