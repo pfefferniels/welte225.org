@@ -45082,7 +45082,7 @@
                                     "@id": "6e3340e0-8be9-4644-a555-82a14bbd985d"
                                 }
                             ],
-                            "@type": "GluedOn",
+                            "@type": "Patch",
                             "@id": "9d29f757-def4-4700-b77a-d7ae5d2e8a50",
                             "bears": [
                                 {
@@ -45115,7 +45115,7 @@
                                     "@id": "56685d4d-43e7-4fe7-8f7d-b995826113c8-1"
                                 }
                             ],
-                            "@type": "GluedOn",
+                            "@type": "Patch",
                             "@id": "56685d4d-43e7-4fe7-8f7d-b995826113c8",
                             "bears": [
                                 {
