@@ -33214,10 +33214,6 @@
                     "height": 10873.737885095752,
                     "unit": "mm"
                 },
-                "punchDiameter": {
-                    "value": -1,
-                    "unit": "mm"
-                },
                 "holeSeparation": {
                     "value": 37.7646,
                     "unit": "px"
@@ -47778,10 +47774,6 @@
                 "dimensions": {
                     "width": 329.8903780183181,
                     "height": 10953.512073272272,
-                    "unit": "mm"
-                },
-                "punchDiameter": {
-                    "value": -1,
                     "unit": "mm"
                 },
                 "holeSeparation": {
@@ -64174,10 +64166,6 @@
                     "height": 8800.031973355537,
                     "unit": "mm"
                 },
-                "punchDiameter": {
-                    "value": 2.609615237857799,
-                    "unit": "mm"
-                },
                 "holeSeparation": {
                     "value": 37.6685,
                     "unit": "px"
@@ -73643,6 +73631,17 @@
                         "@id": "249b81f1-eb45-47ee-af08-1f97f9891c75"
                     }
                 ],
+                "perforator": {
+                    "condition": {
+                        "conditionType": "setting",
+                        "punchDiameter": {
+                            "value": 2.609615237857799,
+                            "unit": "mm"
+                        },
+                        "@type": "ConditionState"
+                    },
+                    "@id": "perforator_a7ff95b7-f43a-4341-ba86-80fa4e84499c"
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
@@ -105661,6 +105660,17 @@
                         "@id": "3efb421f-5914-4532-b979-3f2269410241"
                     }
                 ],
+                "perforator": {
+                    "condition": {
+                        "conditionType": "setting",
+                        "punchDiameter": {
+                            "value": 1.7108040005766045,
+                            "unit": "mm"
+                        },
+                        "@type": "ConditionState"
+                    },
+                    "@id": "perforator_9ae56c3e-b058-4972-9895-96946c6b93f8"
+                },
                 "company": {
                     "name": "M. Welte & Söhne",
                     "sameAs": []
@@ -105673,10 +105683,6 @@
                 "dimensions": {
                     "width": 285.3149641965029,
                     "height": 8124.446960865946,
-                    "unit": "mm"
-                },
-                "punchDiameter": {
-                    "value": 1.7108040005766045,
                     "unit": "mm"
                 },
                 "holeSeparation": {
