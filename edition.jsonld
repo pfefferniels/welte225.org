@@ -44867,6 +44867,27 @@
                     }
                 ],
                 "perforator": {
+                    "drive": {
+                        "@id": "https://w3id.org/reo/type/drive/ram-head",
+                        "@annotation": {
+                            "belief": {
+                                "certainty": "likely",
+                                "reasons": [
+                                    {
+                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 69 pairs of tracks: the offset between two tracks runs at 4.52 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 46 um rms, against a noise of about 30 um and a scan line of 85 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 4 per cent of this copy's advance of 1.027 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "premises": [],
+                                        "used": [
+                                            "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                        ],
+                                        "@type": "inference"
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "c95da97d-ff24-4d10-bad2-27817395551d"
+                            },
+                            "@id": "a9d56231-c7f6-4364-80d2-020b8e7b8d7b"
+                        }
+                    },
                     "condition": {
                         "conditionType": "setting",
                         "chainPitch": {
@@ -61249,6 +61270,27 @@
                     }
                 ],
                 "perforator": {
+                    "drive": {
+                        "@id": "https://w3id.org/reo/type/drive/ram-head",
+                        "@annotation": {
+                            "belief": {
+                                "certainty": "likely",
+                                "reasons": [
+                                    {
+                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 70 pairs of tracks: the offset between two tracks runs at 0.92 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 35 um rms, against a noise of about 8 um and a scan line of 85 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 7 per cent of this copy's advance of 0.503 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "premises": [],
+                                        "used": [
+                                            "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                        ],
+                                        "@type": "inference"
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "e5011e66-05a1-4366-b309-90c12ccfbea1"
+                            },
+                            "@id": "67d50bc3-aeb2-428b-84a0-aada132a17a5"
+                        }
+                    },
                     "condition": {
                         "conditionType": "setting",
                         "chainPitch": {
@@ -88527,6 +88569,27 @@
                     }
                 ],
                 "perforator": {
+                    "drive": {
+                        "@id": "https://w3id.org/reo/type/drive/ram-head",
+                        "@annotation": {
+                            "belief": {
+                                "certainty": "likely",
+                                "reasons": [
+                                    {
+                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 84 pairs of tracks: the offset between two tracks runs at 0.29 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 21 um rms, against a noise of about 16 um and a scan line of 141 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 3 per cent of this copy's advance of 0.625 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "premises": [],
+                                        "used": [
+                                            "/facsimiles/WelteLicensee_225"
+                                        ],
+                                        "@type": "inference"
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "f9d0d0e7-23bd-49bf-ad75-f9daf1f03661"
+                            },
+                            "@id": "3b716a0e-4d35-4546-a421-40136a501057"
+                        }
+                    },
                     "condition": {
                         "conditionType": "setting",
                         "chainPitch": {
@@ -105911,6 +105974,27 @@
                     }
                 ],
                 "perforator": {
+                    "drive": {
+                        "@id": "https://w3id.org/reo/type/drive/ram-head",
+                        "@annotation": {
+                            "belief": {
+                                "certainty": "likely",
+                                "reasons": [
+                                    {
+                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 149 pairs of tracks: the offset between two tracks runs at 0.62 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 74 um rms, against a noise of about 33 um and a scan line of 71 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 17 per cent of this copy's advance of 0.434 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "premises": [],
+                                        "used": [
+                                            "/facsimiles/WelteT98_225"
+                                        ],
+                                        "@type": "inference"
+                                    }
+                                ],
+                                "@type": "belief",
+                                "@id": "83530147-b385-46c1-9c1c-561a477f162c"
+                            },
+                            "@id": "e9235613-c100-4403-8002-35f43502e233"
+                        }
+                    },
                     "condition": {
                         "conditionType": "setting",
                         "punchDiameter": {
@@ -123834,6 +123918,30 @@
                 ],
                 "@type": "belief",
                 "@id": "f79bdc7a-ad90-486d-830e-91dfa27c758d"
+            }
+        },
+        {
+            "@id": {
+                "@id": "perforator_a7ff95b7-f43a-4341-ba86-80fa4e84499c",
+                "drive": {
+                    "@id": "https://w3id.org/reo/type/drive/ram-head"
+                }
+            },
+            "annotation": "e1dbe201-1c91-460d-8925-d341cca0b2e3",
+            "belief": {
+                "certainty": "possible",
+                "reasons": [
+                    {
+                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 70 pairs of tracks: the offset between two tracks runs at 1.01 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 54 um rms, against a noise of about 35 um and a scan line of 200 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 5 per cent of this copy's advance of 1.02 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show. The scan writes a line every 0.2 mm, so this reads the rows more coarsely than on the other copies and is held no higher than possible.",
+                        "premises": [],
+                        "used": [
+                            "/facsimiles/WR0225_02"
+                        ],
+                        "@type": "inference"
+                    }
+                ],
+                "@type": "belief",
+                "@id": "9d1d5cd2-943d-456a-94bd-dcdda02d7e8e"
             }
         }
     ]
