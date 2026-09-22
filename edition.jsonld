@@ -44921,6 +44921,7 @@
                         },
                         "@type": "ConditionState"
                     },
+                    "@type": "Perforator",
                     "@id": "perforator_d229954b-086c-44d6-a589-aaa324d31d88"
                 },
                 "company": {
@@ -61302,6 +61303,7 @@
                         },
                         "@type": "ConditionState"
                     },
+                    "@type": "Perforator",
                     "@id": "perforator_88460599-2e0d-4759-851c-903a5a521997"
                 },
                 "system": {
@@ -73832,6 +73834,7 @@
                         },
                         "@type": "ConditionState"
                     },
+                    "@type": "Perforator",
                     "@id": "perforator_a7ff95b7-f43a-4341-ba86-80fa4e84499c"
                 },
                 "system": {
@@ -88575,6 +88578,7 @@
                         },
                         "@type": "ConditionState"
                     },
+                    "@type": "Perforator",
                     "@id": "perforator_6e1ce072-7490-44b6-b8e8-eb1bbffc3cad"
                 },
                 "system": {
@@ -105962,6 +105966,7 @@
                         },
                         "@type": "ConditionState"
                     },
+                    "@type": "Perforator",
                     "@id": "perforator_9ae56c3e-b058-4972-9895-96946c6b93f8"
                 },
                 "company": {
