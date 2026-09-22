@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "tb707nd8515",
+    "region": 1,
+    "inscription": "M. Schäfer.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": "M. Schäfer",
+    "confidence": "none",
+    "notes": "ink, written across the roll; a name only, no date. Crop 3 is the leader with the printed Welte label 'No. 993. Widmung, Schumann-Liszt. Gespielt von [facsimile signature] 6. XII. 05.' — printed, so the recording date, not a workshop punch date. Crops 2 and 4 blank."
+  },
+  {
+    "druid": "hk155fw7898",
+    "region": 1,
+    "inscription": "19522",
+    "reading": "19.5.22",
+    "date_iso": "1922-05-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, along the roll edge; the tops of the figures are cut off by the edge of the paper, but the run of five reads 1 9 5 2 2. No number or name beside it."
+  },
+  {
+    "druid": "zw751nw0097",
+    "region": 6,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 6 carries a few faint pencil strokes at the roll end beside the green box cloth, three or four cursive characters, too faint and too broken to transcribe; no figures can be made out. Crops 1-5 and 7 blank (scanner lines, creases, a tear, tape). Crop 8 shows the box with a printed English care label, 'Music-rolls must always be placed in Cabinet ... the winter, to prevent ... Not responsible for ...', which is the maker's instruction slip, not a workshop inscription."
+  },
+  {
+    "druid": "ry948sf9078",
+    "region": 2,
+    "inscription": "7222",
+    "reading": "7.2.22",
+    "date_iso": "1922-02-07",
+    "roll_number": "110",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, along the roll; four figures run together without separators, a crossed German 7 followed by three cursive 2s, so 7.2.22. All four figures are plain; the grouping into day, month and year follows the convention, no separators are written. The roll number comes from crop 1, which carries '110' in pencil and nothing else. No name with either."
+  },
+  {
+    "druid": "bx815rz0622",
+    "region": 1,
+    "inscription": "[five figures, steeply slanted, not resolvable]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1033",
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 carries five figures in ink, almost certainly the punch date, but they sit where the scanned strip darkens towards its edge and at this resolution I cannot separate the loops from the shading. Each figure is a steep diagonal with a bowl or loop at one end, and neither orientation gave me a reading I would stand behind, so I have left it unread rather than guess. Crop 2 carries a hand-written 1033 (last figure 3 or 9), crop 3 only perforations, crop 4 the leader with the printed label «Vorführungsrolle, Eigentum der Firma M. Welte & Söhne, Freiburg i. B.» and «WELTE-MIGNON. No. 1033, 12th Hungarian Rhapsody (As played by Liszt), Liszt, Played by [signature]», beside a later English pencil note"
+  },
+  {
+    "druid": "hg282mg9396",
+    "region": 1,
+    "inscription": "6.12.13   7033",
+    "reading": "6.12.13",
+    "date_iso": "1913-12-06",
+    "roll_number": "7033",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink on red paper, the date with its points and a four-figure number beside it. The day is the open-bowl form that can be 6 or 8; I read 6, and the month and year are plain. The number's first figure could be 7 or 1, the rest is 033"
+  },
+  {
+    "druid": "ww627mg3287",
+    "region": 1,
+    "inscription": "1035 Fritz 26 Novb. 1908.",
+    "reading": "26 Novb. 1908",
+    "date_iso": "1908-11-26",
+    "roll_number": "1035",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "ink, a full line across the roll: number, puncher, day, month spelt Novb. and the year in full. Every figure plain"
+  },
+  {
+    "druid": "kv921kh0629",
+    "region": 2,
+    "inscription": "This music r[oll is] manufactured by M. Welte & Sons, In[c.] … with the distinct understanding … the purchaser by his acceptance of [this] roll agrees … the Welte-Mig[non] … Welte & Sons, Licensee; it is further a[greed] that [this] roll is not to be used on any [other] instrument, nor is it to be reproduced [in] any form whatsoever, in whole or in part.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "no punch date on any of the four crops. Crop 1 bare red paper, crop 2 the printed American licence notice of M. Welte & Sons, Inc. across the roll (transcribed as far as the perforations allow), crop 3 the leader tab with the scanner's colour target, crop 4 a faint scuff or hair, not writing"
+  },
+  {
+    "druid": "sk293jg8184",
+    "region": 3,
+    "inscription": "WELTE-MIGNON. 1063 / 2nd SONATA / OP. 22. No. 2. G MINOR / ADANTINO / SCHUMANN. / Played by G. GROSZ",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1063",
+    "hand": null,
+    "confidence": "none",
+    "notes": "no punch date. Crop 1 bare paper with a damp stain at the roll's edge, crop 2 perforations and a small tear, crop 3 the leader with the printed title label; the number 1063 is printed on that label, not written by the workshop"
+  },
+  {
+    "druid": "hn285vs3930",
+    "region": 1,
+    "inscription": "91022.",
+    "reading": "91022",
+    "date_iso": "1922-10-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures with no separators and a closing point, read as 9.10.22. The first figure is a looped 9, the rest plain"
+  },
+  {
+    "druid": "kv601my2750",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops examined, both panels: perforated paper with small translucent repair patches over a few holes. No writing anywhere"
+  },
+  {
+    "druid": "pv151xx7555",
+    "region": 1,
+    "inscription": "17.12.19",
+    "reading": "17.12.19",
+    "date_iso": "1919-12-17",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, three groups separated by points. The month 12 and the year 19 are plain; in the day the second figure has a flat hooked top unlike the plain 1 that opens the other two groups, so I read 7, though 11.12.19 is not impossible"
+  },
+  {
+    "druid": "dc661yr7679",
+    "region": 1,
+    "inscription": "10[??]. 11. 11. 11",
+    "reading": "11. 11. 11",
+    "date_iso": "1911-11-11",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, written along the roll rather than across it, so the crop has to be turned a quarter turn. A four-figure number, then three groups of two plain strokes separated by points: 11.11.11. The date is unambiguous; of the number only the opening 10 is clear, the last two figures I cannot settle, so I have left roll_number empty"
+  },
+  {
+    "druid": "tx437pj1389",
+    "region": 2,
+    "inscription": "101024",
+    "reading": "101024",
+    "date_iso": "1924-10-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, not written: six figures in a printing face, read as 10.10.24. Crop 1 shows only a torn and folded stretch of the roll"
+  }
+]

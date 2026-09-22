@@ -1,0 +1,112 @@
+[
+  {
+    "druid": "sp773vt2651",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser, by his acceptance of this roll, agrees that it is only to be used on the Welte Philharmonic Organ, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed rights notice in the margin, not a workshop hand; e2 and e3 are blank paper and the leather end tab"
+  },
+  {
+    "druid": "wf903pd7291",
+    "region": 3,
+    "inscription": "U 58",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed label on the leather tab, cut off at the crop edge, beside a second printed slip reading '...nd placed / ...ring the / ...ss condi-'; both look like archive or box labels. e1 carries a printed text block showing through from the reverse, e2 blank. No workshop hand anywhere"
+  },
+  {
+    "druid": "ny937ph6981",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "nothing written. e1 has a single ink squiggle at the paper edge that reads as no figure in any orientation, e3 a short scratch; e2 shows the printed notice through from the reverse"
+  },
+  {
+    "druid": "xm418xm6937",
+    "region": 1,
+    "inscription": "3976",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3976",
+    "hand": null,
+    "confidence": "none",
+    "notes": "four figures in ink, written along the roll, plain and unambiguous, but no date with them. e2 carries two short lines of small stamped figures set across the roll, over-inked and blotted at the tops; the last of the upper line is a clear 4 and the others will not resolve, so I am not giving a reading. e3 blank"
+  },
+  {
+    "druid": "xb072rc7617",
+    "region": 1,
+    "inscription": "[heavy mark] 9 6 ? ? 8",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 has a heavy bar-like mark followed by five evenly spaced figures written across the roll in pencil, with a fainter set-off of the same group below it. The first, second and fifth read 9, 6 and 8; the two between them I cannot settle (they look like 4 and 2), and no grouping of the five makes a possible date, so I give none. e3 carries a later note in English cursive, '... Selections' and 'is the hole too tight?', which belongs to a keeper of the roll rather than to the workshop. e2 and e4 are torn paper with no writing"
+  },
+  {
+    "druid": "sv842td3290",
+    "region": 3,
+    "inscription": "4190",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "4190",
+    "hand": null,
+    "confidence": "none",
+    "notes": "four figures in ink at the paper edge, plain, with no date beside them. e2 carries a full signature in ink written across the roll, two initials and a surname; the surname I read as Caswell, though the third letter could be an r and the initials could be R R or K K, so I would not press the reading. e1 shows only specks, e4 a crease"
+  },
+  {
+    "druid": "jd143sb1087",
+    "region": 3,
+    "inscription": "9 11 24",
+    "reading": "9.11.24",
+    "date_iso": "1924-11-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, and preceded by the heavy fixed mark of the slug, which I have not counted as a figure: the figures alone give a possible date, so the mark is the same blob reading.md warns about. Every figure is plain in both panels. e4 carries a separate four-figure number in ink, 5553 or 6553, with the tops of the figures along the crop edge; e1 is torn, e2 and e5 hold nothing but the leader tab and the colour target"
+  },
+  {
+    "druid": "jt465zc6779",
+    "region": 1,
+    "inscription": "1 3 25",
+    "reading": "1.3.25",
+    "date_iso": "1925-03-01",
+    "roll_number": "5658",
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, with a heavy blob before the figures and a second ornament after them, both part of the slug; the figures alone give 1.3.25, so I have not read the leading blob as a 1. The four figures are crisp. The roll number is from the printed title label on the leader in e3, 'WELTE-MIGNON No. 5658 / Driftwood / Fox-trot / Lew Gold / Played by Ed. Johnson', with a rights slip of M. Welte & Söhne, Freiburg i. Br. — printed, not a written hand. e2, e4 and e5 are blank"
+  },
+  {
+    "druid": "mw198ym5807",
+    "region": 1,
+    "inscription": "5659",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "5659",
+    "hand": null,
+    "confidence": "none",
+    "notes": "four figures in ink at the paper edge, the tops just grazed by the crop but each figure clear, and no date written with them. e2 and e3 carry nothing"
+  },
+  {
+    "druid": "mr400mf6531",
+    "region": 1,
+    "inscription": "5662",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "5662",
+    "hand": null,
+    "confidence": "none",
+    "notes": "four figures in ink at the paper edge, clear, with no date beside them. The same number is on the printed title label on the leader in e3, 'WELTE-MIGNON No. 5662 / Dream Daddy / Fox-trot / L. Herscher, G. Keefer / Played by Ed. Johnson', M. Welte & Söhne, Freiburg i. Br. e2 is blank"
+  }
+]

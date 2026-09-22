@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "kj344bw3083",
+    "region": 2,
+    "inscription": "1307",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1307",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Region 2 carries only the roll number in ink, 1307, which agrees with the printed leader label in region 4 (Welte-Mignon No. 1307, Grieg, An den Fruehling). Region 1 has a short pencil scrawl of five or six characters, too coarse in this scan for me to resolve any figure; region 3 is perforations only."
+  },
+  {
+    "druid": "gc795vb4435",
+    "region": 1,
+    "inscription": "26422",
+    "reading": "26422",
+    "date_iso": "1922-04-26",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink, separators dropped: 26.4.22. All five figures plain; the two closing 2s carry the same base tick as the opening 2."
+  },
+  {
+    "druid": "tp302mb4101",
+    "region": 1,
+    "inscription": "[19].10.08. [signature]",
+    "reading": "[19].10.08",
+    "date_iso": "1908-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, upper panel upright, small and rubbed. Six figures in three pairs followed by a flourished signature I could not resolve. The month 10 and the year 08 I read with reasonable confidence; the first pair is muddied past the resolution of the scan and looks like 19, but I will not vouch for the day, so date_iso gives only the month. A quite separate later hand, in English pencil across crop 3, notes the roll's condition, is signed D. F. C. and dated 1985, and there says the roll is \"dated ... 10. 1908\"; that is an archive note, not the workshop, and I did not use it to settle the figures above. Crops 2 and 4 are blank."
+  },
+  {
+    "druid": "xy699sy1462",
+    "region": 2,
+    "inscription": "16.323",
+    "reading": "16.323",
+    "date_iso": "1923-03-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, five figures on the lower (upright) panel, each plain, with a point after the 6 and none after the 3: 16.3.23. Crop 1 shows only a fine crease running along the paper."
+  },
+  {
+    "druid": "xx766cn9843",
+    "region": 3,
+    "inscription": "WELTE-MIGNON. No. 1326. Menuett Es-dur L. v. Beethoven [facsimile signature] 19. III. 07.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1326",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crops 1 and 2 are bare paper with perforations and a small tear. Crop 3 is the cloth leader with the printed Welte artist label pasted on it, beside a second slip of care instructions. Everything on the label is printed, including the date 19. III. 07. and the artist's facsimile signature, which I read as beginning H- and ending -yer but cannot fix. A printed label date of that kind is the recording, not the punching of this copy, so I have left date_iso empty rather than enter 1907-03-19. No workshop hand anywhere in the three crops."
+  },
+  {
+    "druid": "gs573tj9547",
+    "region": 1,
+    "inscription": "1328  29. 1.12  Hohmüller / Wössler",
+    "reading": "29. 1.12",
+    "date_iso": "1912-01-29",
+    "roll_number": "1328",
+    "hand": "Hohmüller, Wössler",
+    "confidence": "high",
+    "notes": "Ink, upper panel upright: the number at the left, the date in the middle, one name to the right and a second below it. Every figure of the date is plain. Wössler is the hand already known from this corpus; the name above it I read as Hohmüller, though the minims after Hohm- could as well give Hohmüler and I cannot be sure of the umlaut."
+  },
+  {
+    "druid": "wj488tq5861",
+    "region": 1,
+    "inscription": "22. 6 09. Hohmüller",
+    "reading": "22. 6 09",
+    "date_iso": "1909-06-22",
+    "roll_number": null,
+    "hand": "Hohmüller",
+    "confidence": "medium",
+    "notes": "Fine pencil, one line on the upper (upright) panel, no roll number. The month 6 and the year 09 are plain. The day is two identical glyphs run together, each a curve over the top and a diagonal down to a curled base, which I read as 22; a reading of 77 would fit the strokes less well, since this hand crosses its sevens. The name is written fast but has the same shape as the Hohmüller on gs573tj9547 in this batch, which is how I read it here."
+  },
+  {
+    "druid": "nx970yn7253",
+    "region": 4,
+    "inscription": "\"...ust always be kept in boxes an[d] ...et containing basin of water durin[g] ...revent contraction and expansion. ...le for correct playing unless cond[i]...d adhered to.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All four crops read. Crops 1 to 3 are bare paper, the leader join and a stretch of perforations. Crop 4 shows the green cloth leader with the printed slip of care instructions pasted across it, the only text anywhere in the four, and its left edge is cut off by the crop. Nothing handwritten, no punch date."
+  },
+  {
+    "druid": "tw054jm0773",
+    "region": 1,
+    "inscription": "211024",
+    "reading": "211024",
+    "date_iso": "1924-10-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped in a small serif type on the upper (upright) panel, six figures, all plain, with a point set low before the first: 21.10.24. Nothing else in the crop."
+  },
+  {
+    "druid": "pk245pq3468",
+    "region": 1,
+    "inscription": "28 324",
+    "reading": "28 324",
+    "date_iso": "1924-03-28",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, five figures on the lower (upright) panel, separators dropped: 28.3.24. The second figure is the one reading.md warns about; enlarged, it has a closed upper loop over a lower bowl joined at a waist, so an 8 and not a 6. Nothing else in the crop."
+  },
+  {
+    "druid": "nq190zp1066",
+    "region": 2,
+    "inscription": "21 12 21",
+    "reading": "21 12 21",
+    "date_iso": "1921-12-21",
+    "roll_number": "1341",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Faint pencil, six figures in three pairs with the separators dropped: 21.12.21. The same line appears on crop 1, and on both it sits within a few millimetres of the crop's edge, so the upper halves of the figures lie in the shadow of the boundary; the reading is sure of the pairing and of the repeated 2 and 1 shapes, less sure of any single figure, hence medium. Crop 6 carries 1341 on its own, which I take for the roll number. Crop 3 shows one clipped mark, crop 4 a row of small pencil loops drawn round particular perforations, which look like a repairer's or inspector's marks rather than writing, and crop 5 the paper end."
+  },
+  {
+    "druid": "gs012fx5529",
+    "region": 1,
+    "inscription": "WELTE-MIGNON. No. 1343 Romeo and Juliette Potpourri Ch. Gounod Played by [signature]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1343",
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops read. The only text is the roll's own printing: the artist label on the cloth leader in crops 1 and 3, with a facsimile signature under \"Played by\" that I could not resolve, and beside it the printed slip of care instructions. Crop 2 is torn red paper with nothing on it. No workshop hand and no date."
+  },
+  {
+    "druid": "xx912rs1788",
+    "region": 1,
+    "inscription": "No 1346  12. 11. 10.  Hst.",
+    "reading": "12. 11. 10.",
+    "date_iso": "1910-11-12",
+    "roll_number": "1346",
+    "hand": "Hst.",
+    "confidence": "high",
+    "notes": "Ink, one line on the lower (upright) panel, in the order number, date, initials. The three pairs of the date are each plain, 12 and 11 as parallel strokes and 10 as a 1 beside an oval. Two reservations that do not touch the date: the second figure of the roll number has a flat top stroke over a single bowl and could be read 5, giving 1546 instead of 1346; and the initials at the end are three letters closed by a point, whose capital could be H or K, so Hst. is the best I can make of them."
+  },
+  {
+    "druid": "nn203bm7432",
+    "region": 1,
+    "inscription": "4 6 22",
+    "reading": "4 6 22",
+    "date_iso": "1922-06-04",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, four figures on the lower (upright) panel, nothing else in the crop. Each figure is plain: the open German 4, then 6, then two 2s set close together, spaced 4 | 6 | 22, which reads 4.6.22 with the points dropped. The reservation is the same as on sz207mm8382: a run of figures like this could in principle be a roll number 4622, and nothing else in the crop decides it, though the three groups favour a date."
+  }
+]

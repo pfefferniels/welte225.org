@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "qb477sd2923",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "3 crops, all torn paper and perforations, no writing"
+  },
+  {
+    "druid": "dx555xv9093",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 carries a short pencil scrawl of about four glyphs at the panel edge; neither orientation resolves into figures, and there are no separators or dots suggesting a date. Crops 2-4 blank"
+  },
+  {
+    "druid": "yb187qn0290",
+    "region": 1,
+    "inscription": "1946.  9.4.13,  74.",
+    "reading": "9.4.13",
+    "date_iso": "1913-04-09",
+    "roll_number": "1946",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil, single line, steeply slanted; read after deshearing. Crops 3 and 4 blank. Crop 2 shows the printed leader label 'WELTE-MIGNON No. 1246 / Sonate (Mondschein) I. und II. Teil / L. v. Beethoven', so the pencil number disagrees with the label. In the date the '1' of '13' is a short tick that could instead be a separator, which would leave '9.4.3'; the '3' could also be a '2'. The trailing '74.' is legible but unexplained."
+  },
+  {
+    "druid": "wp877mn0317",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 carries a small two-peak pencil scrawl about 90 px wide, the same in both orientations; it reads as an 'M' or a pair of strokes and holds no figures. Crop 2 shows three ink smudges, not writing. Crops 3 and 4 are perforations only"
+  },
+  {
+    "druid": "xm993qd2681",
+    "region": 1,
+    "inscription": "1247,  24, 2, 14,",
+    "reading": "24, 2, 14",
+    "date_iso": "1914-02-24",
+    "roll_number": "1247",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, one steeply slanted line, read after deshearing and a contrast stretch; the separators are low commas rather than dots. The hand's figures were fixed from within the same line: crop 2 carries the printed leader label 'WELTE-MIGNON No. 1247 Sonata C sharp minor (Moonlight) Part 3, L. v. Beethoven', and the pencil number agrees with it, which gives a 2, a 4 and a 7 to compare against. The day's two figures then match that 2 and 4, the month matches the 2, and the year is the plain 1 of the number followed by the same 4. The 4 and 7 of this hand are close, so the reading rests on that comparison rather than on the figures alone."
+  },
+  {
+    "druid": "jv484vp9065",
+    "region": 1,
+    "inscription": "[cursive word] 20204 No 1248",
+    "reading": "20204",
+    "date_iso": "1904-02-20",
+    "roll_number": "1248",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Ink, one line: a cursive word of five or six letters that I cannot letter out, then five figures with no separators, then an abbreviated No with four figures. The five figures read 2 0 2 0 4, so 20.2.04 on the corpus convention. Two reservations. The second figure is a closed oval with a short stroke rising from its upper left, so it could be a 6 rather than a 0, which would give 26.2.04. And the trailing number, which I read as 1248 though its middle figures are not firm, would sit oddly with 1904: another roll in this batch carries the printed label No. 1247 with a punch date of 1914. I record what the paper gives and leave that tension standing. Crop 2 is blank paper."
+  },
+  {
+    "druid": "hc229ht1024",
+    "region": 1,
+    "inscription": "7 10-24",
+    "reading": "7 10-24",
+    "date_iso": "1924-10-07",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped, not written, in black on the bare red paper; the impression is uneven. The figures 7, 1, 0 and 2, 4 are plain, with a hyphen between the 0 and the 2, read 7.10.24. A small broken mark stands a digit's width to the left of the 7 and matching marks and a short vertical rule stand at the right end, which I take for the stamp's frame rather than figures; if the left mark were a weakly struck figure the day would be 17 instead of 7."
+  },
+  {
+    "druid": "ft746ns5736",
+    "region": 1,
+    "inscription": "26422",
+    "reading": "26422",
+    "date_iso": "1922-04-26",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink, one short line of five figures with no separators: 2 6 4 2 2, read 26.4.22 on the corpus convention. The 6 is a closed loop entered from above right, and the month figure carries the crossbar of a 4, so it is not a 9. No number and no name in the crop."
+  },
+  {
+    "druid": "hp956bx4547",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Four crops, no writing in either orientation. Crop 1 is bare paper at the roll edge with the scanner's horizontal lines, crop 3 is bare paper with a crease, crops 2 and 4 are perforated music. A pale rectangular patch with two light blobs sits among the perforations in crop 2, which looks like a repair patch or a paper flaw rather than ink, and a single dark speck in crop 4 is a smudge."
+  },
+  {
+    "druid": "qv334zb6243",
+    "region": 1,
+    "inscription": "1254,  6, 3, 14,",
+    "reading": "6, 3, 14",
+    "date_iso": "1914-03-06",
+    "roll_number": "1254",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, one line, the number first and the date after it, separated by low commas rather than dots. The 6 and the 3 are plain and the year is a 1 followed by the crossbarred 4 of this hand. No name in the crop."
+  },
+  {
+    "druid": "sm246yb9650",
+    "region": 1,
+    "inscription": "\"This music ro[ll] ... M. Welte & Sons ... distinct underst[anding] ... chaser ... that it is n[ot] ... Welte ... that the roll ... any other Licens[ee] ... reproduced in any ... whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop hand on this roll. Crop 1 is the olive leader carrying the printed English licence notice, set across the roll so that it reads only sideways; the crop cuts the right half of every line, so the transcription above is fragmentary. Crops 2 and 3 are perforated music with a small brown smudge at the same place in each, no ink."
+  },
+  {
+    "druid": "qg121rz6125",
+    "region": 1,
+    "inscription": "1259  [name, illegible]  10 [month word, illegible] 09.",
+    "reading": "10 [month] 09",
+    "date_iso": "1909",
+    "roll_number": "1259",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Faint pencil in a Kurrent hand on paper ruled with the scanner's lines, which cross the writing. Five tokens: the number 1259, a word of five or six letters with a long bar over the middle of it, the day 10, a four-letter word, and the year 09 with a full stop. The number, the day and the year are firm. The month is written out rather than in figures and I cannot read it: its letter pattern is tall, short, tall, short, which fits Febr as well as Juli, and the initial is a looped ascender with a descender that could be either F or J. The name after the number is likewise beyond me; the bar over it is the Kurrent mark for a doubled m or n. I give the year alone in date_iso rather than guess a month."
+  },
+  {
+    "druid": "zv884mc0794",
+    "region": 1,
+    "inscription": "29825",
+    "reading": "29825",
+    "date_iso": "1925-08-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped in black on the bare red paper, the line running diagonally across the roll at about sixty degrees; read after rotating. Five figures with no separators, 2 9 8 2 5, so 29.8.25 on the corpus convention. The third figure is blotted, but thresholding shows two loops each closed on the left, which makes it an 8 and not a 3."
+  },
+  {
+    "druid": "sc188ff2842",
+    "region": 1,
+    "inscription": "1260    21. 7. 11    Krämer / Wössler",
+    "reading": "21. 7. 11",
+    "date_iso": "1911-07-21",
+    "roll_number": "1260",
+    "hand": "Krämer / Wössler",
+    "confidence": "high",
+    "notes": "Ink, the number at the left, the date in the middle, Krämer at the right with the umlaut stroke plain and Wössler written under it. The same two names and the same hand as wp442mf3514 in batch 14, which carries 25. 4. 11. The month figure is the crossbarred 7 of this hand, not the H-shaped 4 it writes elsewhere, and the year is two separate 1 strokes."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "qg041hb4569",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1-e3 all bare paper: a damp patch and scattered specks, perforations in e2 and e3, no writing in either orientation"
+  },
+  {
+    "druid": "jk842rg9750",
+    "region": "e1",
+    "inscription": "= 96128",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1: a stamp across the roll, over-inked, opening with the fixed double-bar mark, then five plain figures 9 6 1 2 8. The first figure carries a descender, so it is a 9 and not a 2; 96128 does not resolve into day-month-year under any split, so no date is entered. e2: a separate four-figure number in a steeply slanted hand right at the paper edge, most like 3187, the third and fourth figures arguable, no date and no name beside it. e3 is bare paper"
+  },
+  {
+    "druid": "rv703vf3503",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 is the cloth leader with its strap and eyelet beside the scanner's grey scale, e2 the join of leader to paper, e3 bare red paper with perforations and one dark speck. No writing in either orientation"
+  },
+  {
+    "druid": "ch401rm7382",
+    "region": "e3",
+    "inscription": "Music- / placed i... / the wint... / Not r... / tions ab...",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 and e2 are bare paper with perforations and a few specks. e3 shows the join of the green cloth leader to the red paper, with a printed English instruction slip pasted on the leader, running off the edge of the crop; printed matter of the trade, not a workshop inscription, and no date on it. No handwriting anywhere in either orientation"
+  },
+  {
+    "druid": "mw870hc7232",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1-e4 bare paper and perforations, no writing in either orientation. A small dark rectangle recurs at the same place across the frame in e1, e2 and e3; enlarged it is an even shadow with no figures in it, and its fixed position across separate crops points to the scanning setup rather than to the paper"
+  },
+  {
+    "druid": "gx107hd3026",
+    "region": "e2",
+    "inscription": "3316",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3316",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e2 carries the number 3316 in pencil across the paper, plain in the lower panel, with no date and no name beside it. e1 and e3 are bare paper. e4 is the tab with the printed Welte-Mignon label, No. 3316, Schubert 8th Symphony, and the pianist's autograph; the printed number agrees with the pencilled one but the reading is taken from the pencil"
+  },
+  {
+    "druid": "jy572md2211",
+    "region": "e2",
+    "inscription": "3333",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3333",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e2 has the number 3333 in pencil, plain in the lower panel, with no date beside it. e1 holds a faint stamp of about five figures, so broken that no figure can be settled either way up; enlarging and stretching the levels did not resolve it. e3 and e4 carry a later pencil note running along the tab, '... the repairing ... 28 April 2002 ...', the year written out in full, so a conservator's note and not a punch date. e4 also shows the printed label, Welte-Mignon No. 3333, Liszt Piano-Concert in E major, with the pianist's autograph"
+  },
+  {
+    "druid": "kz819wb8990",
+    "region": "e1",
+    "inscription": "This needs care in setting it up for good tracking & it does track well. 1. 7. 1994",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries a later note in English pencil across the paper, dated 1. 7. 1994 with the year written out, so a technician's or conservator's note and not a punch date. e2 is the join of leader to paper, blank. e3 is the tab with the printed label, Welte-Mignon No. 3505, Friml 'Sympathy' played by D. Savino, beside the printed storage instructions. Nothing in the workshop's hand on any crop"
+  },
+  {
+    "druid": "zw828tx0197",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 is punched paper with a damp speck, e2 the join of leader to paper, both blank in either orientation. e3 is the tab with the printed Welte-Mignon label, No. 3537, 'Un peu d'amour' by L. Silesu, with an autograph and the printed storage instructions. Nothing written by the workshop on any crop"
+  },
+  {
+    "druid": "sg713kb1834",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 shows the printed M. Welte & Sons copyright notice reading through from the other side of the paper, mirrored, beside the perforations. e2 is the tab with the printed label, Southern Plantation Melodies played by Orlando Merrigan, its number too soft in the scan to give with any confidence, and the same notice showing through. e3 is only the scanner's grey scale. No handwriting and no date on any crop"
+  },
+  {
+    "druid": "mn110mt1775",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 is the join of the green cloth leader to creased red paper, e2 and e3 punched paper carrying the same small dark speck. Nothing written in either orientation"
+  },
+  {
+    "druid": "nt812xg8796",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 bare paper with two dark specks, e2 the join of leader to paper, e3 the leader's strap and eyelet beside the grey scale, e4 punched paper with a short tear. No writing on any crop in either orientation"
+  },
+  {
+    "druid": "cg834ff4729",
+    "region": "e1",
+    "inscription": "Needs repair on the treble side --> should track well when it is repaired. 24. 6. 1980 D.F.C. / Repaired 29.12.1991",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Two later notes in English pencil on the same stretch of paper, one signed D.F.C. and dated 24. 6. 1980, the other 'Repaired 29.12.1991'; both write the century out, so both belong to the archive and not to the workshop. e2 is the same writing seen again from the other side of the crop, e3 the tab with the printed label, Welte-Mignon No. 3647, Cuvillier 'Lilac Domino' Hesitation Waltz played by Franz Heineck. No workshop inscription and no punch date"
+  },
+  {
+    "druid": "xy812vy7103",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 shows the printed trade notice reading through from the other side of the paper, too soft to make out; e2 is the leader strap beside the grey scale; e3 the tab with the printed Welte-Mignon label, MacDowell 'An Old Love Story' Op. 61, its number and the pianist's name running off the edge of the crop. No handwriting and no date on any crop"
+  }
+]

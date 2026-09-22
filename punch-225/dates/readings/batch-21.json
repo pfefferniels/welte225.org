@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "yg250xz9762",
+    "region": 3,
+    "inscription": "1571",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1571",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Pencil, written across the roll. Region 1 carries a second pencilled number, 2524. Region 4 shows the leader label 'WELTE-MIGNON No. 1571 / Prelude / G minor / J. J. Rachmaninoff / Played by [signature]', which carries no date. Region 2 blank. No punch date found."
+  },
+  {
+    "druid": "gr034qm4805",
+    "region": 2,
+    "inscription": "Carmen  G. Bizet  Played by [signature]  23. III. 09,",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Printed leader label with title, composer, the performer's signature and the printed date 23. III. 09. Not a workshop punch inscription: on kq525dc4373 in this batch a label of the same kind (25. III. 09) stands on a roll whose pencilled punch date is 30. 5. 23, so a label date is not the date the copy was punched. Region 1 blank roll, region 3 the box with the printed Welte-Mignon storage notice. No punch date found."
+  },
+  {
+    "druid": "tr981xw2871",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All four crops blank paper, perforations and tears. No writing."
+  },
+  {
+    "druid": "fb623cd1247",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Region 1 shows a rectangular block of very faint printing (offset or show-through from the reverse), too faint to read at this resolution; regions 2 and 3 blank. Nothing legible."
+  },
+  {
+    "druid": "sc787kg5664",
+    "region": 1,
+    "inscription": "141225",
+    "reading": "141225",
+    "date_iso": "1925-12-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped in black, no separators: 14 12 25. The 4 is blotted; the remaining figures are plain."
+  },
+  {
+    "druid": "vw531zy4220",
+    "region": 1,
+    "inscription": "1663  18. 12. 11  [name] / Wissler",
+    "reading": "18. 12. 11",
+    "date_iso": "1911-12-18",
+    "roll_number": "1663",
+    "hand": "Wissler",
+    "confidence": "high",
+    "notes": "Ink. Two names: a second name stands to the right of the date, apparently beginning 'Hohn-', not securely legible; 'Wissler' below the date is clear apart from a bar over the middle letters, so Wossler or Wussler cannot be excluded."
+  },
+  {
+    "druid": "ym117yd8356",
+    "region": 1,
+    "inscription": "14225",
+    "reading": "14225",
+    "date_iso": "1925-02-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped in black, no separators: 14 2 25. A blotted, partly inked mark follows the digits and cannot be read; it may be a second impression."
+  },
+  {
+    "druid": "bm016sg7202",
+    "region": 2,
+    "inscription": "1671",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1671",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Pencil. Region 1 carries a second pencilled group of figures reading something like 5321, which could be a date (5. 3. 21) but whose third and fourth figures are not secure, so no date is recorded. Regions 3 and 4 blank."
+  },
+  {
+    "druid": "vf252dc4872",
+    "region": 1,
+    "inscription": "24. 8. 11",
+    "reading": "24. 8. 11",
+    "date_iso": "1911-08-24",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil. The second figure of the day is the German 4 with a crossbar and could be taken for a 9; the crossbar and the absence of a closed upper loop favour 4. No name or roll number in the crop."
+  },
+  {
+    "druid": "kq525dc4373",
+    "region": 1,
+    "inscription": "30. 5. 23",
+    "reading": "30. 5. 23",
+    "date_iso": "1923-05-30",
+    "roll_number": "1755",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, written along the roll. The 3s are written with closed bowls and could be read as 8s, but 80 is impossible as a day and the year figure has the same form as the day's first figure. The month figure matches the 5s of the pencilled roll number 1755 in region 4. Region 3 shows the leader label 'WELTE-MIGNON No. 1755. Accompaniment for Sopran / Widmung (Devotion) / R. Schumann / Played by [signature] / 25. III. 09.' - a printed label date, distinct from this punch date."
+  },
+  {
+    "druid": "jh696my0069",
+    "region": 1,
+    "inscription": "23. 8. 11",
+    "reading": "23. 8. 11",
+    "date_iso": "1911-08-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil. Same hand and layout as vf252dc4872, dated a day earlier. No name or roll number in the crop."
+  },
+  {
+    "druid": "jb107tz1859",
+    "region": 1,
+    "inscription": "23222",
+    "reading": "23222",
+    "date_iso": "1922-02-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, no separators: 23 2 22. Region 2 shows the leader label 'WELTE-MIGNON No. 1772 / Kinderscenen 1-6 / R. Schumann / Played by [signature] / 28. III. 09.' - a printed label date, not the punch date. ds710xd1794, whose pencilled roll number is 1773, carries the same five figures, which fits two consecutive rolls punched on one day."
+  },
+  {
+    "druid": "ds710xd1794",
+    "region": 1,
+    "inscription": "23222",
+    "reading": "23222",
+    "date_iso": "1922-02-23",
+    "roll_number": "1773",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, no separators: 23 2 22. A second, smaller mark stands to the right of the figures in the same crop and is not legible. Region 2 carries the pencilled roll number 1773. jb107tz1859 (roll 1772) carries the same five figures."
+  },
+  {
+    "druid": "jy277ht0636",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Four crops: blank paper with perforations, a damp stain, and the cloth leader. No writing."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "rs765sm2000",
+    "region": 1,
+    "inscription": "23 1022",
+    "reading": "23 1022",
+    "date_iso": "1922-10-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, written close to the crop edge; separators dropped, as in the documented 311022 pattern"
+  },
+  {
+    "druid": "zr938kz3902",
+    "region": 3,
+    "inscription": "2413",
+    "reading": "2413",
+    "date_iso": "1913-04-02",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil, four figures with no separators, read at the crop turned 180 degrees; on the leader, 9k px into a 454k-px scan, at the treble paper edge. Only the first figure, a 2, is plain; the second and third are taken as 4 and 1 from their shape, and the last could as easily be an 8, which would give 2.4.18 instead of 2.4.13. Crops 1 and 2 hold no writing (crop 2 has a dark blot, not ink strokes)."
+  },
+  {
+    "druid": "np204br1080",
+    "region": 1,
+    "inscription": "13423",
+    "reading": "13423",
+    "date_iso": "1923-04-13",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil on pale buff paper, read at the crop turned 180 degrees; near the end of the roll (521k of 532k px), at the treble edge. Five figures, every one plain, with a faint point between the 4 and the 2. No roll number and no name in the crop."
+  },
+  {
+    "druid": "sr577gv4813",
+    "region": 3,
+    "inscription": "WELTE-MIGNON No. 2844 / [care slip] \"…always be kept in boxes and placed … ning basin of water during the contraction and expansion. … for correct playing unless condi- adhered to.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date on any of the three crops. Crop 3 is the leader with the printed Welte-Mignon label, catalogue No. 2844, and the printed care slip; both are print, not the workshop's hand. Some faint mirrored show-through of the label sits on the paper beside it, too weak to read. Crops 1 and 2 are the stained, torn end of the paper with no ink."
+  },
+  {
+    "druid": "ky458kj7325",
+    "region": 1,
+    "inscription": "869  13. 5. 13.  Mo.",
+    "reading": "13. 5. 13.",
+    "date_iso": "1913-05-13",
+    "roll_number": "869",
+    "hand": "Mo.",
+    "confidence": "high",
+    "notes": "ink on pale buff paper, read at the crop turned 180 degrees. Day, month and year are each plain and separated by points; the second figure of 13 is an open two-bowl 3, not the closed-loop 8 that stands first in the roll number. The roll number's first figure is the less certain part of the line, 8 rather than 5. The hand signs Mo."
+  },
+  {
+    "druid": "fm197wc9522",
+    "region": 1,
+    "inscription": "14125 [blotted stamp]",
+    "reading": "14125",
+    "date_iso": "1925-01-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, not written, on pale buff paper; the upper panel is the upright one. Five figures, each plain, with no separators, read as 14.1.25 on the pattern of 14114 for 14.1.1914. A sixth impression to the right is doubled and blotted, and I cannot make anything of it."
+  },
+  {
+    "druid": "fb100cb2366",
+    "region": 1,
+    "inscription": "27. 4. 17.",
+    "reading": "27. 4. 17.",
+    "date_iso": "1917-04-27",
+    "roll_number": "2948",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, treble edge, at the tail of the roll just past the last hole. Both 7s are the barred continental form (upstroke, long diagonal down-left, crossbar); the 1 before the second 7 is a plain caret with no crossbar, so 17 and not 11 or 77. The 4 is the open-top form. The crop clips the very tops of the figures at the panel edge, but the crossbars and diagonals are complete. The roll number 2948. is written separately at the head of the roll (region 2), in what looks like the same hand; its last figure is the open-loop form that can read as 6. Region 4, on the leader, carries a later note in English cursive about the roll's condition (\"... especially bass + treble ... over the ... election. ... bite -\"), a different and later hand with no date. Region 3 is a stain."
+  },
+  {
+    "druid": "rg931dy5023",
+    "region": 2,
+    "inscription": "19428",
+    "reading": "19 4 28",
+    "date_iso": "1928-04-19",
+    "roll_number": "2944",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, treble edge, near the tail of the roll. Five figures, no separators, split 3 + 2 by spacing. The 1 is a plain caret, the 9 a closed bowl with a descender matching the 9 of the roll number, the 4 the looped form this hand uses in the number. The last figure is a closed double loop, both lobes inked on the left, so an 8 and not the open-left 3; if it were a 3 the year would be 23. Crop 1 holds only an ink blot; the roll number 2944 is written at the head of the roll (crop 3)."
+  },
+  {
+    "druid": "gf160gq3516",
+    "region": 1,
+    "inscription": "12 11 24",
+    "reading": "12 11 24",
+    "date_iso": "1924-11-12",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped, not written; every figure plain."
+  },
+  {
+    "druid": "gy310qs3678",
+    "region": 1,
+    "inscription": "24 9 24",
+    "reading": "24 9 24",
+    "date_iso": "1924-09-24",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped. A further small stamped mark sits to the right of the date, cut by the crop edge."
+  },
+  {
+    "druid": "vy193qr6005",
+    "region": 1,
+    "inscription": "161025",
+    "reading": "161025",
+    "date_iso": "1925-10-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped, running across the roll rather than along it; every figure plain."
+  },
+  {
+    "druid": "qg041hb4569",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops searched. Buff paper, no writing anywhere: crop 1 blank, crop 2 perforations and a faint smudge, crop 3 a small dark stain."
+  },
+  {
+    "druid": "fk960pq3086",
+    "region": 1,
+    "inscription": "19 10 20.",
+    "reading": "191020",
+    "date_iso": "1920-10-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, treble edge. Six figures grouped 2 + 2 + 2 with a closing period. The crop cuts the tops of the figures at the panel edge, but each is traceable: two plain carets for the 1s, a bowl with a descender for the 9, plain loops for the 0s."
+  },
+  {
+    "druid": "zc118hn1152",
+    "region": 1,
+    "inscription": "28422",
+    "reading": "28422",
+    "date_iso": "1922-04-28",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, treble edge, five figures without separators. The second figure is the open-topped 8 of these hands, two strokes converging on one bottom bowl; read as 6 the day would be 26. The 4 is the most broken figure of the five. Both figures of the year match the 2 that opens the group."
+  }
+]

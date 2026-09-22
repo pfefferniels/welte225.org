@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "qq914np5449",
+    "region": 1,
+    "inscription": "324  5 3 09  Krämer",
+    "reading": "5 3 09",
+    "date_iso": "1909-03-05",
+    "roll_number": "324",
+    "hand": "Krämer",
+    "confidence": "high",
+    "notes": "ink, every figure plain; the name is written below the date and carries umlaut dots. A separate pen scribble sits to the left of the number."
+  },
+  {
+    "druid": "mv259zt7103",
+    "region": 1,
+    "inscription": "29. 10 .08. Hohnrich",
+    "reading": "29. 10. 08.",
+    "date_iso": "1908-10-29",
+    "roll_number": null,
+    "hand": "Hohnrich",
+    "confidence": "high",
+    "notes": "pencil, faint but the figures are plain. No roll number. The name is only partly legible; 'Hohnrich' is my best reading of it and could be a different name (Hofrichter?)."
+  },
+  {
+    "druid": "tt435dd2897",
+    "region": 1,
+    "inscription": "326,  26.1.14,",
+    "reading": "26.1.14",
+    "date_iso": "1914-01-26",
+    "roll_number": "326",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "The figure I read as 2 (in both '326' and '26') is written with a looped top, a diagonal and a bar, and could be taken for a crossed 7; '76' is not a possible day, so 2 seems right. Crop 3 shows the leader with the printed label 'WELTE-MIGNON No. 326 / Rondo Capriccioso, G-dur, Op. 129 / L. v. Beethoven / Gespielt von Alfred Reisenauer', which agrees with the written 326 and supports reading the figure as 2. The month is a bare stroke read as 1."
+  },
+  {
+    "druid": "bj021jc9795",
+    "region": null,
+    "inscription": null,
+    "date_iso": null,
+    "reading": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All five crops seen: perforations, a paper edge and blank ground. No writing anywhere."
+  },
+  {
+    "druid": "wb381qd3151",
+    "region": 1,
+    "inscription": "[cursive word]  4  4  08",
+    "reading": "4 4 08",
+    "date_iso": "1908-04-04",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink. The three figure groups are plain. A cursive word (presumably the puncher) stands before the date; it has a large looped capital and two long descenders, but I cannot read it with any confidence, so I have left 'hand' null."
+  },
+  {
+    "druid": "xk500gs5691",
+    "region": 1,
+    "inscription": "22. 10. 8  [signature]",
+    "reading": "22.10.8",
+    "date_iso": "1908-10-22",
+    "roll_number": null,
+    "hand": "Schäfer?",
+    "confidence": "low",
+    "notes": "Faint pencil. '22' is plain and the last figure is an 8, so 1908 is safe; the middle is either '10' with a single-figure year 8 (22 October 1908) or a month '1' with the year '08' (22 January 1908). I read the marks as '10' then '8' from their spacing, but the other reading is possible. The flourished signature that follows may be Schäfer. Crop 3 shows the leader label 'No. 337 / Berliner Luft / Marsch / P. Lincke / Gespielt von Albrecht Kupfernagel / 4. IV. 05.' — that printed date belongs to the label, not to the punching."
+  },
+  {
+    "druid": "sk565bp3463",
+    "region": 1,
+    "inscription": "9",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "A single pencilled figure, 9 or (if the other panel is the upright one) 6. Nothing else. Crop 2 shows a patch with a hole, crop 3 blank paper, crop 4 a small pencil squiggle over the perforations."
+  },
+  {
+    "druid": "rn154dd5329",
+    "region": 1,
+    "inscription": "357  3. 4. 11.  Mohr",
+    "reading": "3.4.11",
+    "date_iso": "1911-04-03",
+    "roll_number": "357",
+    "hand": "Mohr",
+    "confidence": "low",
+    "notes": "'357' and '3. 4.' are plain. What I read as the year '11.' is two tall strokes with entry ticks and could instead be an initial 'M.' belonging to the name, in which case the inscription gives no year at all. The surname is not certainly legible; 'Mohr' is my best reading."
+  },
+  {
+    "druid": "yj598pj2879",
+    "region": 4,
+    "inscription": "211222",
+    "reading": "211222",
+    "date_iso": "1922-12-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Six plain figures with no separators. 21|12|22 is the only split that yields a valid day and month, so 21 December 1922. Crops 1-3 show only creases."
+  },
+  {
+    "druid": "gf569df0451",
+    "region": 1,
+    "inscription": "9225 (stamped)",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "361",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date on any of the six crops. Crop 1 carries a stamped four-figure number 9225 with two faint stamped marks flanking it. Crop 4 has a pencilled '361'. Crop 6 shows the leader with the printed label 'WELTE-MIGNON No. 361 / Fantasia, Op. 17, C major, Part I / R. Schumann', which agrees with the pencilled 361; the roll_number given here comes from that pencilled figure, not from crop 1."
+  },
+  {
+    "druid": "kx034vy1374",
+    "region": 1,
+    "inscription": "368  1. 3. 13.",
+    "reading": "1. 3. 13.",
+    "date_iso": "1913-03-01",
+    "roll_number": "368",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Ink. The date figures are reasonably plain; the month is an old-style 3. The last figure of the roll number is the least certain and could be a 4. No puncher's name in the crop."
+  },
+  {
+    "druid": "vm096df0179",
+    "region": 1,
+    "inscription": "№ 363.  7. 1108.  Roth",
+    "reading": "7. 11. 08",
+    "date_iso": "1908-11-07",
+    "roll_number": "363",
+    "hand": "Roth",
+    "confidence": "medium",
+    "notes": "Faint pencil. '№ 363.' and 'Roth' are clear. The four figures after the day read 1-1-0-8, i.e. month 11 and year 08 with the separators dropped; if the second figure were a 9 the group would be the year '1908' and the inscription would carry no month. The day is written with a flat top bar and could be a 1 rather than a 7."
+  },
+  {
+    "druid": "rj799hj0968",
+    "region": 1,
+    "inscription": "\"This music roll manufactured by M. Welte & Sons, Inc. is sold with the distinct understanding that the purchaser by his acceptance of this roll agrees that it is only to be used on the Welte-Mignon, manufactured by M. Welte & Sons, Inc. and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\" (printed)",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Printed legal notice of the New York firm, not a punch inscription. Crop 2 holds a printed pictorial label, 'Famous Artists are reproduced on THE WELTE-MIGNON, 273 Fifth Ave. N.Y.C., Copr. M. Welte & Sons, Inc. N.Y.', with a portrait and a facsimile signature I cannot read. Crop 3 is an ink smudge. No date on any of the three crops."
+  },
+  {
+    "druid": "st828pc9818",
+    "region": 1,
+    "inscription": "28724",
+    "reading": "28724",
+    "date_iso": "1924-07-28",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Five plain figures with no separators, preceded by a small dash. 28|7|24 is the only split giving a valid day and month, so 28 July 1924."
+  }
+]

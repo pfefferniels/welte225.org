@@ -1,0 +1,154 @@
+[
+ {
+  "siglum": "St1",
+  "chain_pitch": {
+   "value": 3.0007,
+   "n": 477,
+   "method": "pitch.py, on the IIIF images",
+   "slot": 2.2857,
+   "bridge": 0.7106,
+   "spread": null
+  },
+  "advance": {
+   "value": 1.027,
+   "strength": 0.8104,
+   "n": 10910,
+   "others": [
+    [
+     0.343,
+     0.1843
+    ],
+    [
+     0.512,
+     0.4664
+    ]
+   ]
+  },
+  "steps": 2.922,
+  "advance_certainty": "likely"
+ },
+ {
+  "siglum": "St2",
+  "chain_pitch": {
+   "value": 2.9988,
+   "n": 373,
+   "method": "pitch.py, on the IIIF images",
+   "slot": 2.3503,
+   "bridge": 0.6512,
+   "spread": null
+  },
+  "advance": {
+   "value": 0.503,
+   "strength": 0.4651,
+   "n": 10441,
+   "others": [
+    [
+     0.414,
+     0.0524
+    ],
+    [
+     0.727,
+     0.0382
+    ]
+   ]
+  },
+  "steps": 5.962,
+  "advance_certainty": "likely"
+ },
+ {
+  "siglum": "Wi1",
+  "chain_pitch": {
+   "value": 3.0375,
+   "n": 427,
+   "method": "roll-image-parser slots, one sub-pixel pitch per held note",
+   "slot": null,
+   "bridge": null,
+   "spread": 0.155
+  },
+  "advance": {
+   "value": 1.02,
+   "strength": 0.2142,
+   "n": 10448,
+   "others": [
+    [
+     0.425,
+     0.1147
+    ],
+    [
+     0.528,
+     0.1303
+    ],
+    [
+     0.692,
+     0.168
+    ]
+   ]
+  },
+  "steps": 2.978,
+  "advance_certainty": "possible"
+ },
+ {
+  "siglum": "Ch1",
+  "chain_pitch": {
+   "value": 2.4283,
+   "n": 432,
+   "method": "roll-image-parser slots, one sub-pixel pitch per held note",
+   "slot": null,
+   "bridge": null,
+   "spread": 0.0169
+  },
+  "advance": {
+   "value": 0.625,
+   "strength": 0.4766,
+   "n": 9984,
+   "others": [
+    [
+     0.317,
+     0.0706
+    ],
+    [
+     0.446,
+     0.0349
+    ],
+    [
+     0.987,
+     0.0594
+    ]
+   ]
+  },
+  "steps": 3.885,
+  "advance_certainty": "likely"
+ },
+ {
+  "siglum": "Bo1",
+  "chain_pitch": {
+   "value": 2.1748,
+   "n": 527,
+   "method": "roll-image-parser slots, one sub-pixel pitch per held note",
+   "slot": null,
+   "bridge": null,
+   "spread": 0.0185
+  },
+  "advance": {
+   "value": 0.434,
+   "strength": 0.4215,
+   "n": 15681,
+   "others": [
+    [
+     0.313,
+     0.0457
+    ],
+    [
+     0.343,
+     0.0439
+    ],
+    [
+     0.75,
+     0.1318
+    ]
+   ]
+  },
+  "steps": 5.011,
+  "advance_certainty": "likely"
+ }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "jn038xx9588",
+    "region": 2,
+    "inscription": "28792",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil, five figures on one line, no separators and nothing else on the line; does not resolve to a date in the 1904-1926 range (28|7|92 would be 1892). Reads the same in both panels. Probably a workshop serial. Crops 1 and 3 hold only ruled lines and perforations, 4 and 5 only perforations."
+  },
+  {
+    "druid": "dt046tz6296",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "pale buff paper, all three crops blank in both panels; only small ink blots and paper flecks."
+  },
+  {
+    "druid": "mg285ps6787",
+    "region": 1,
+    "inscription": "61024",
+    "reading": "61024",
+    "date_iso": "1924-10-06",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped; five plain figures read as 6.10.24. A sixth stamped character follows, printed only in fragments and illegible, so a further figure cannot be ruled out. A thin pen stroke stands well to the left of the stamp."
+  },
+  {
+    "druid": "rp146dk0477",
+    "region": 1,
+    "inscription": "1352.  4. 3. 07  [cursive signature, not read]",
+    "reading": "4. 3. 07",
+    "date_iso": "1907-03-04",
+    "roll_number": "1352",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, in a fine cursive hand across the scanner's own horizontal lines. The month figure is settled by comparison with the 3 of 1352 in the same line; on its own it could be taken for a 5. A signature of roughly eight letters follows the date and I could not read it with any confidence, so it is left out of hand."
+  },
+  {
+    "druid": "yb682jn2494",
+    "region": 2,
+    "inscription": "1357",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1357",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Region 2 carries the pencil number 1357 and nothing else. Region 1 carries a group of about five small pencil figures that I could not resolve at this scan resolution: the first two look like 11 and the last like a crossed 7, which would suit a date of the form 11.?.07, but three of the figures stay indistinct under every enlargement I tried, so I record no reading. Region 3 holds only a smudge; region 4 shows the printed Welte-Mignon label, No. 1357, Chaminade, Pas des Echarpes, which is not a punch date."
+  },
+  {
+    "druid": "cp145vd3423",
+    "region": 1,
+    "inscription": "1382.  20. 1. 07.  [cursive signature, not read]",
+    "reading": "20. 1. 07",
+    "date_iso": "1907-01-20",
+    "roll_number": "1382",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, fine cursive across the scanner's lines, upper panel upright. Same hand, layout and signature as rp146dk0477 (1352, 4.3.07) in this batch. Day and month are plain; the year is a small 0 run into a crossed 7, which is why the reading is not called high. The signature of roughly eight letters after the date I could not read."
+  },
+  {
+    "druid": "np829dt9039",
+    "region": 1,
+    "inscription": "21824",
+    "reading": "21824",
+    "date_iso": "1924-08-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures without separators, read from the lower panel. Every figure is plain; the 8 has both bowls closed."
+  },
+  {
+    "druid": "fw547rc7021",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops blank in both panels. Dark red paper with perforations and a few small square repair patches, each pierced by a single hole; no pencil or ink anywhere."
+  },
+  {
+    "druid": "qp506dy4541",
+    "region": 1,
+    "inscription": "20. 8. 18",
+    "reading": "20. 8. 18",
+    "date_iso": "1918-08-20",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, large figures read from the lower panel. Both 8s have a closed upper loop and crossing strokes, so they are not 6s; the 2 carries a foot and a flourished tail."
+  },
+  {
+    "druid": "kr645mg0298",
+    "region": 1,
+    "inscription": "A. Feaster / June, 1910",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil, two lines in an English round hand with a long flourish beneath, upper panel upright. Not the workshop form: the month is an English word, the century is written out, and the lines read as a personal signature rather than as number, day-first date and puncher. I therefore record no punch date, though the paper does carry June 1910. The surname is clear as far as 'Feast-'; the last two letters are read as 'er'. Crops 2 to 5 hold only perforations, a crease and two small repair patches."
+  },
+  {
+    "druid": "mh156nr8259",
+    "region": 1,
+    "inscription": "101026",
+    "reading": "101026",
+    "date_iso": "1926-10-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped in black, six figures without separators, set across the roll at roughly 55 degrees rather than along it; read after rotating. Figures 2 and 4 are filled with ink but keep their oval outline, which is why the reading is not called high; 1, 3, 5 and 6 are plain."
+  },
+  {
+    "druid": "fz215xr4723",
+    "region": 1,
+    "inscription": "5. 4128",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1443",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Region 1 carries a stamp set across the roll at about 48 degrees, six marks: a heavy figure, a round separating dot, then four figures I read as 4, 1, 2, 8. Figures 1, 3, 5 and 6 are over-inked and their counters are filled, so each is arguable; the 1 is plain. As it stands the group does not resolve into a date in any of the workshop's forms, so I record none rather than force one. Region 4 carries the pencil number 1443, and region 5 the printed label WELTE-MIGNON, No. 1443, Sonata Appassionata, Op. 57, F minor, 2nd and 3rd movements, Beethoven, with the pianist's signature; regions 2, 3 and 6 are blank."
+  },
+  {
+    "druid": "kg488qt3887",
+    "region": 1,
+    "inscription": "1447  6 5 09  [short name, not read]",
+    "reading": "6 5 09",
+    "date_iso": "1909-05-06",
+    "roll_number": "1447",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, upper panel upright, no separators between the date figures. The 6 has a single bowl and a curved ascender, the 5 is the two-stroke form with its top bar written separately, and 09 is plain. In the roll number the fourth figure is not shaped like the leading 1: it reads most nearly as 7, though 9 cannot be excluded. A short surname follows the date, apparently beginning May- and ending in three minims; I could not read it with confidence."
+  },
+  {
+    "druid": "pz175wg5571",
+    "region": 1,
+    "inscription": "24. 4. 14. Smith.",
+    "reading": "24. 4. 14.",
+    "date_iso": "1914-04-24",
+    "roll_number": null,
+    "hand": "Smith",
+    "confidence": "high",
+    "notes": "ink, a single line read from the lower panel. The three 4s are written alike, as an open 4, which settles the month and the year against 9. The name is read as Smith, the t and h sharing one long crossbar; Smits or Smitz would also fit the final letter."
+  }
+]

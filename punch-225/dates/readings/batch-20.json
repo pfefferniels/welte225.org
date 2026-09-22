@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "fj448by1666",
+    "region": 1,
+    "inscription": "8  8  04",
+    "reading": "8 8 04",
+    "date_iso": "1904-08-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "upper panel upright; ink. A cursive group precedes the date and a short name with a long final descender follows it, neither legible to me. Day and month are the same figure, the open-topped loop over a closed bottom bowl that reading.md gives as this hand's 8; a 6 cannot be ruled out, and the line carries no other 6 or 8 to compare."
+  },
+  {
+    "druid": "ns598kr8616",
+    "region": 4,
+    "inscription": "24 10 23",
+    "reading": "24 10 23",
+    "date_iso": "1923-10-24",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "crops 1-3 carry no writing, only creases and the paper edge; crop 4 lower panel upright, dark grainy scan. Day and month plain; the last figure is a stacked double bowl, read as 3, and only came out under a median filter."
+  },
+  {
+    "druid": "rk796xd9697",
+    "region": 3,
+    "inscription": "Patentiert in allen Culturstaaten. / «WELTE-MIGNON» No. 1476. / II. Rhapsodie / J. Brahms / Gespielt von [signature, reads as Olga Samaroff] / 24. VIII. 08. / Controlliert",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crops 1-2 show only perforations, a dark repair patch and its shadow, no writing. Crop 3 is the leader with Welte's printed paper label; the date 24. VIII. 08 is printed as part of that label, under the facsimile signature, so it is the publisher's date for the title and not a punch date written on this copy. No workshop hand anywhere in the three crops."
+  },
+  {
+    "druid": "ym773gh2267",
+    "region": 3,
+    "inscription": "18123",
+    "reading": "18123",
+    "date_iso": "1923-01-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "crops 1-2 hold only creases and scanner lines; crop 3 lower panel upright, pencil, no other writing in the crop. Five figures run together with no separators, all five plain: 1 8 1 2 3. Grouped as day-month-year after the convention reading.md gives for 14114, which makes it 18.1.23. The alternative grouping 18.12. would leave a one-figure year, so it is set aside."
+  },
+  {
+    "druid": "yr522jf5585",
+    "region": 1,
+    "inscription": "30420.",
+    "reading": "30420",
+    "date_iso": "1920-04-30",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "crop 1, lower panel upright; ink, strongly slanted, nothing else written in the crop. Five figures run together, closed by a full stop: 3 0 4 2 0. The second and fifth are the same narrow slanted oval, which fixes both as 0; the 4 is plain; the 2 is the softest figure. Read as day-month-year, 30.4.20. A 31 for the day is excluded by the shape and by April having 30 days."
+  },
+  {
+    "druid": "bf644yy6536",
+    "region": 1,
+    "inscription": "1450.  11.[2 or 3].14.",
+    "reading": "11.?.14",
+    "date_iso": "1914",
+    "roll_number": "1450",
+    "hand": null,
+    "confidence": "low",
+    "notes": "crop 1, lower panel upright, pencil, one line in two groups; crop 2 is a torn roll end with no writing. The writing sits hard against the top edge of the crop, so the upper third of every figure is cut off, in both panels alike. Group 1 reads 1450. and is taken as the roll number. Group 2 is 11 . X . 14 .: the day 11 and the year 14 are firm, the month figure is a thick stroke with a base sweeping right, either a 2 or a 3, and the clipped top is exactly what would tell them apart. Day and year alone give 1914; the month is left open rather than guessed."
+  },
+  {
+    "druid": "vz717bq6543",
+    "region": 1,
+    "inscription": "19814",
+    "reading": "19814",
+    "date_iso": "1914-08-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "crop 1, lower panel upright; pencil, nothing else in the crop. Five figures, no separators: 1 9 8 1 4. The 8 has both bowls closed and crossing, so it is not the open-topped 6 that reading.md warns of; the 9 has a closed head and a descender; the two 1s share the same leading flag. Read as 19.8.14."
+  },
+  {
+    "druid": "pv279zy5193",
+    "region": 1,
+    "inscription": "1505    28.  6.12   Hohn: / W[...]",
+    "reading": "28. 6.12",
+    "date_iso": "1912-06-28",
+    "roll_number": "1505",
+    "hand": "Hohn",
+    "confidence": "high",
+    "notes": "crop 1, upper panel upright; ink, two lines. The month is the open-topped form that reading.md warns can be an 8, but the 8 in the day 28 on the same line is drawn with two closed bowls and looks nothing like it, so the month is a 6. The name beside the date is H-o-then three downstrokes: Hohn as written here, though the same strokes would also carry Holm, which German cursive does not distinguish. The second line is another name beginning with W, with a bar over its middle letters; I cannot resolve it and have not guessed."
+  },
+  {
+    "druid": "hj604wr7502",
+    "region": 1,
+    "inscription": "14 11 23",
+    "reading": "14 11 23",
+    "date_iso": "1923-11-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "crop 1, lower panel upright; pencil, one short line, nothing else in the crop. Six figures in two groups, 14 and 1123, all plain: the two 1s of the month repeat the flag of the first figure, and the 2 and 3 are distinct. Read as 14.11.23."
+  },
+  {
+    "druid": "by076cz0337",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser, by his acceptance of this roll, agrees that it is only to be used on the Welte Philharmonic Organ, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 carries the printed New York sale-condition stamp for the Welte Philharmonic Organ, set across the roll and reading only when the crop is turned a quarter turn; it bears no date. Crop 2 holds a single ink smudge, crop 3 only perforations and a dark fleck. Three crops, no workshop hand and no punch date anywhere."
+  },
+  {
+    "druid": "vj052cw2158",
+    "region": 1,
+    "inscription": "1354 .  B[...]  1. 2. 16",
+    "reading": "1. 2. 16",
+    "date_iso": "1916-02-01",
+    "roll_number": "1354",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "crop 1, upper panel upright; pencil over the scanner's ruled lines. Number 1354, then a surname in a capital B and a run of minims that I cannot resolve and have not guessed, then the date. Day 1 and month 2 are plain. The year is 1 followed by a figure made of one descending curve closing into a single bowl on the baseline, with a short detached tick at its right: a 6 rather than the two-stroke 8 reading.md warns of, whose limbs would converge into a V above the bowl. No other 6 or 8 stands on the line to compare, so the 8 cannot be ruled out entirely."
+  },
+  {
+    "druid": "fr396nf3639",
+    "region": 1,
+    "inscription": "[label on the box, printed, cut off at the left:] ...09.  [with a single ink flourish above it] / [second printed slip, cut off:] ...nd placed / ...ring the / ...n. / ...ss condi-",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops show the green cloth box and the roll's leader, not the punched paper. Crop 1 holds two pasted paper labels: one carries a printed ...09. with an ink flourish above it, the other the printed sale-condition slip; both run across the crop and both are cut off at the left, so the 09. cannot be seen to be a year rather than the tail of a printed number. It is printed and on the box, so it is not a workshop hand in any case. Crop 2 is the roll end against the box, crop 3 the same with a faint pencil stroke running off the edge of the crop, too little to read. No punch date."
+  },
+  {
+    "druid": "tj759sv4290",
+    "region": 2,
+    "inscription": "[printed label:] ·WELTE-MIGNON· / No. 1544 / Türkische Scharwache / The Turkish Patrol / Th. Michaelis / Played by [facsimile signature: Edward Brightwell] ; [stamped on the leader:] CONTROLLIERT ; [printed slip:] Music-rolls must always be kept in boxes and placed in Cabinet containing basin of water during the winter, to prevent contraction and expansion. Not responsible for correct playing unless conditions above stated adhered to.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 shows only perforations and a faint smudge; crop 3 is a blank stretch of the leader against the scanner ground. Crop 2 is the leader with Welte's printed paper label, the CONTROLLIERT stamp and the printed storage slip, all set across the roll and readable only with the crop turned a quarter turn. Nothing carries a date. The 1544 is the printed catalogue number on the publisher's label, not a number written on this copy, so roll_number is left null. No workshop hand in any of the three crops."
+  },
+  {
+    "druid": "pr464zk8674",
+    "region": 1,
+    "inscription": "1569.   18.   6.12",
+    "reading": "18. 6.12",
+    "date_iso": "1912-06-18",
+    "roll_number": "1569",
+    "hand": null,
+    "confidence": "high",
+    "notes": "crop 1, lower panel upright; pencil, one line, no name. The line settles its own 6/8 question: the 8 of the day 18 is two closed bowls, while the month figure repeats the single-bowl open-topped form of the 6 in the number 1569. Year 12."
+  }
+]

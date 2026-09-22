@@ -1,0 +1,4094 @@
+[
+ {
+  "druid": "hx184ww0780",
+  "n": 441,
+  "slot": 1.8777,
+  "bridge": 0.633,
+  "pitch": 2.5093,
+  "teilung": 3.1891,
+  "avg_hole_width": 1.7554
+ },
+ {
+  "druid": "xq762nt7491",
+  "n": 265,
+  "slot": 1.7301,
+  "bridge": 0.6575,
+  "pitch": 2.3925,
+  "teilung": 3.1986,
+  "avg_hole_width": 1.6344
+ },
+ {
+  "druid": "bj093nh2591",
+  "n": 346,
+  "slot": 1.8566,
+  "bridge": 0.6449,
+  "pitch": 2.4993,
+  "teilung": 3.1953,
+  "avg_hole_width": 1.7664
+ },
+ {
+  "druid": "rt595wj4442",
+  "n": 304,
+  "slot": 1.9319,
+  "bridge": 0.5672,
+  "pitch": 2.5037,
+  "teilung": 3.1877,
+  "avg_hole_width": 1.8307
+ },
+ {
+  "druid": "mx599qs6329",
+  "n": 278,
+  "slot": 1.8299,
+  "bridge": 0.7594,
+  "pitch": 2.583,
+  "teilung": 3.1865,
+  "avg_hole_width": 1.6995
+ },
+ {
+  "druid": "hm373bm3807",
+  "n": 203,
+  "slot": 2.2315,
+  "bridge": 0.7678,
+  "pitch": 2.996,
+  "teilung": 3.2004,
+  "avg_hole_width": 2.1301
+ },
+ {
+  "druid": "py987gg6088",
+  "n": 272,
+  "slot": 1.7485,
+  "bridge": 0.8449,
+  "pitch": 2.6011,
+  "teilung": 3.1828,
+  "avg_hole_width": 1.5879
+ },
+ {
+  "druid": "sw740gd4329",
+  "n": 27,
+  "slot": 1.5005,
+  "bridge": 1.2293,
+  "pitch": 2.5221,
+  "teilung": 3.1929,
+  "avg_hole_width": 1.7241
+ },
+ {
+  "druid": "nq628rc4181",
+  "n": 378,
+  "slot": 1.673,
+  "bridge": 0.7966,
+  "pitch": 2.4826,
+  "teilung": 3.1894,
+  "avg_hole_width": 1.6065
+ },
+ {
+  "druid": "vs059bb4318",
+  "n": 311,
+  "slot": 1.95,
+  "bridge": 0.6481,
+  "pitch": 2.601,
+  "teilung": 3.2043,
+  "avg_hole_width": 1.8391
+ },
+ {
+  "druid": "jg699wz4435",
+  "n": 350,
+  "slot": 1.7412,
+  "bridge": 0.6285,
+  "pitch": 2.3646,
+  "teilung": 3.199,
+  "avg_hole_width": 1.6217
+ },
+ {
+  "druid": "ys288dd6430",
+  "n": 415,
+  "slot": 2.2998,
+  "bridge": 0.7191,
+  "pitch": 3.0501,
+  "teilung": 3.1996,
+  "avg_hole_width": 2.3611
+ },
+ {
+  "druid": "nq087cp3030",
+  "n": 193,
+  "slot": 2.4474,
+  "bridge": 0.5656,
+  "pitch": 3.0131,
+  "teilung": 3.1919,
+  "avg_hole_width": 6.6222
+ },
+ {
+  "druid": "qg708tz0324",
+  "n": 438,
+  "slot": 1.9403,
+  "bridge": 0.5539,
+  "pitch": 2.4856,
+  "teilung": 3.1915,
+  "avg_hole_width": 1.8171
+ },
+ {
+  "druid": "jn782fq7439",
+  "n": 317,
+  "slot": 2.5224,
+  "bridge": 0.5369,
+  "pitch": 3.0834,
+  "teilung": 3.1959,
+  "avg_hole_width": 2.2858
+ },
+ {
+  "druid": "kt852zf4103",
+  "n": 459,
+  "slot": 1.9297,
+  "bridge": 0.5783,
+  "pitch": 2.4963,
+  "teilung": 3.1849,
+  "avg_hole_width": 1.7494
+ },
+ {
+  "druid": "pb477ps9097",
+  "n": 373,
+  "slot": 2.1705,
+  "bridge": 0.648,
+  "pitch": 2.8197,
+  "teilung": 3.1945,
+  "avg_hole_width": 2.1318
+ },
+ {
+  "druid": "yr287jf4422",
+  "n": 396,
+  "slot": 2.104,
+  "bridge": 0.7072,
+  "pitch": 2.8191,
+  "teilung": 3.1861,
+  "avg_hole_width": 2.0295
+ },
+ {
+  "druid": "tp747vf1137",
+  "n": 384,
+  "slot": 1.9218,
+  "bridge": 0.4739,
+  "pitch": 2.3956,
+  "teilung": 3.198,
+  "avg_hole_width": 1.8425
+ },
+ {
+  "druid": "zb497jz4405",
+  "n": 210,
+  "slot": 2.2506,
+  "bridge": 0.6559,
+  "pitch": 2.9227,
+  "teilung": 3.1899,
+  "avg_hole_width": 2.2325
+ },
+ {
+  "druid": "mh120sr5901",
+  "n": 334,
+  "slot": 1.9621,
+  "bridge": 0.5331,
+  "pitch": 2.4972,
+  "teilung": 3.1883,
+  "avg_hole_width": 1.8434
+ },
+ {
+  "druid": "bs173rx9307",
+  "n": 377,
+  "slot": 1.8093,
+  "bridge": 0.701,
+  "pitch": 2.5053,
+  "teilung": 3.1853,
+  "avg_hole_width": 1.6894
+ },
+ {
+  "druid": "gq169nf1405",
+  "n": 335,
+  "slot": 1.9543,
+  "bridge": 0.4425,
+  "pitch": 2.3877,
+  "teilung": 3.2022,
+  "avg_hole_width": 1.8442
+ },
+ {
+  "druid": "jd625tw2164",
+  "n": 441,
+  "slot": 1.7125,
+  "bridge": 0.6617,
+  "pitch": 2.3732,
+  "teilung": 3.1976,
+  "avg_hole_width": 1.631
+ },
+ {
+  "druid": "vb685pd6967",
+  "n": 227,
+  "slot": 2.3302,
+  "bridge": 0.6652,
+  "pitch": 2.995,
+  "teilung": 3.1925,
+  "avg_hole_width": 2.1817
+ },
+ {
+  "druid": "gg384dv5303",
+  "n": 388,
+  "slot": 1.7675,
+  "bridge": 0.632,
+  "pitch": 2.3998,
+  "teilung": 3.1972,
+  "avg_hole_width": 1.708
+ },
+ {
+  "druid": "mx460bt7026",
+  "n": 209,
+  "slot": 2.4524,
+  "bridge": 0.5144,
+  "pitch": 2.976,
+  "teilung": 3.192,
+  "avg_hole_width": 2.3357
+ },
+ {
+  "druid": "yg150mb0559",
+  "n": 227,
+  "slot": 2.405,
+  "bridge": 0.4091,
+  "pitch": 2.8204,
+  "teilung": 3.1849,
+  "avg_hole_width": 2.2223
+ },
+ {
+  "druid": "nf274ng7905",
+  "n": 253,
+  "slot": 2.2562,
+  "bridge": 0.7893,
+  "pitch": 3.0392,
+  "teilung": 3.191,
+  "avg_hole_width": 2.1318
+ },
+ {
+  "druid": "gh272kd2238",
+  "n": 491,
+  "slot": 1.7706,
+  "bridge": 0.7191,
+  "pitch": 2.4889,
+  "teilung": 3.189,
+  "avg_hole_width": 1.6149
+ },
+ {
+  "druid": "xn796bh4368",
+  "n": 448,
+  "slot": 2.0658,
+  "bridge": 0.9359,
+  "pitch": 2.9873,
+  "teilung": 3.1929,
+  "avg_hole_width": 1.9127
+ },
+ {
+  "druid": "mf320jq4997",
+  "n": 477,
+  "slot": 2.2857,
+  "bridge": 0.7106,
+  "pitch": 3.0007,
+  "teilung": 3.1947,
+  "avg_hole_width": 2.2037
+ },
+ {
+  "druid": "wv912mm2332",
+  "n": 373,
+  "slot": 2.3503,
+  "bridge": 0.6512,
+  "pitch": 2.9988,
+  "teilung": 3.1933,
+  "avg_hole_width": 2.235
+ },
+ {
+  "druid": "rv790qz2532",
+  "n": 327,
+  "slot": 2.2052,
+  "bridge": 0.588,
+  "pitch": 2.792,
+  "teilung": 3.1855,
+  "avg_hole_width": 2.1251
+ },
+ {
+  "druid": "ym420hv4366",
+  "n": 313,
+  "slot": 2.41,
+  "bridge": 0.5525,
+  "pitch": 2.9733,
+  "teilung": 3.1879,
+  "avg_hole_width": 2.2477
+ },
+ {
+  "druid": "mz508vq7890",
+  "n": 128,
+  "slot": 2.2763,
+  "bridge": 0.6081,
+  "pitch": 2.9213,
+  "teilung": 3.1862,
+  "avg_hole_width": 2.1936
+ },
+ {
+  "druid": "pz923dx9638",
+  "n": 332,
+  "slot": 1.9057,
+  "bridge": 0.6908,
+  "pitch": 2.5982,
+  "teilung": 3.203,
+  "avg_hole_width": 1.8061
+ },
+ {
+  "druid": "gm170gy7498",
+  "n": 289,
+  "slot": 2.2204,
+  "bridge": 0.851,
+  "pitch": 3.0645,
+  "teilung": 3.2007,
+  "avg_hole_width": 2.12
+ },
+ {
+  "druid": "yt837kd6607",
+  "n": 124,
+  "slot": 2.5606,
+  "bridge": 0.4973,
+  "pitch": 3.161,
+  "teilung": 3.1931,
+  "avg_hole_width": 2.4499
+ },
+ {
+  "druid": "vy018tw5237",
+  "n": 322,
+  "slot": 1.6671,
+  "bridge": 0.7709,
+  "pitch": 2.4471,
+  "teilung": 3.1972,
+  "avg_hole_width": 1.6962
+ },
+ {
+  "druid": "cs175wr2428",
+  "n": 407,
+  "slot": 1.8133,
+  "bridge": 0.6997,
+  "pitch": 2.5113,
+  "teilung": 3.1909,
+  "avg_hole_width": 1.6894
+ },
+ {
+  "druid": "vm351pv9656",
+  "n": 349,
+  "slot": 2.3957,
+  "bridge": 0.6041,
+  "pitch": 2.9952,
+  "teilung": 3.1952,
+  "avg_hole_width": 2.2672
+ },
+ {
+  "druid": "jf942gh3232",
+  "n": 339,
+  "slot": 2.3884,
+  "bridge": 0.6141,
+  "pitch": 2.9956,
+  "teilung": 3.1986,
+  "avg_hole_width": 2.2587
+ },
+ {
+  "druid": "zx463rv8885",
+  "n": 218,
+  "slot": 2.3289,
+  "bridge": 0.6172,
+  "pitch": 2.9617,
+  "teilung": 3.1962,
+  "avg_hole_width": 2.2638
+ },
+ {
+  "druid": "ph502kz9777",
+  "n": 274,
+  "slot": 1.8744,
+  "bridge": 0.7342,
+  "pitch": 2.6023,
+  "teilung": 3.1937,
+  "avg_hole_width": 1.7681
+ },
+ {
+  "druid": "hh429fw8081",
+  "n": 54,
+  "slot": 1.941,
+  "bridge": 0.6868,
+  "pitch": 2.6292,
+  "teilung": 3.1887,
+  "avg_hole_width": 1.8214
+ },
+ {
+  "druid": "sj250cc6451",
+  "n": 265,
+  "slot": 2.3569,
+  "bridge": 0.7079,
+  "pitch": 3.0659,
+  "teilung": 3.1883,
+  "avg_hole_width": 2.2308
+ },
+ {
+  "druid": "ch718mg2581",
+  "n": 394,
+  "slot": 1.7059,
+  "bridge": 0.6993,
+  "pitch": 2.3981,
+  "teilung": 3.1964,
+  "avg_hole_width": 1.6031
+ },
+ {
+  "druid": "yx139bt6626",
+  "n": 374,
+  "slot": 1.8871,
+  "bridge": 0.6155,
+  "pitch": 2.502,
+  "teilung": 3.1906,
+  "avg_hole_width": 1.7951
+ },
+ {
+  "druid": "hh466mq4616",
+  "n": 199,
+  "slot": 2.2973,
+  "bridge": 0.7526,
+  "pitch": 3.0742,
+  "teilung": 3.1826,
+  "avg_hole_width": 2.1893
+ },
+ {
+  "druid": "zn339mg3395",
+  "n": 404,
+  "slot": 1.8035,
+  "bridge": 0.5944,
+  "pitch": 2.4002,
+  "teilung": 3.202,
+  "avg_hole_width": 1.6987
+ },
+ {
+  "druid": "fv104hn7521",
+  "n": 359,
+  "slot": 2.092,
+  "bridge": 0.8896,
+  "pitch": 2.9961,
+  "teilung": 3.1863,
+  "avg_hole_width": 2.0379
+ },
+ {
+  "druid": "nv508pk0096",
+  "n": 274,
+  "slot": 1.7587,
+  "bridge": 0.6493,
+  "pitch": 2.398,
+  "teilung": 3.1979,
+  "avg_hole_width": 1.6809
+ },
+ {
+  "druid": "xw872bc8052",
+  "n": 308,
+  "slot": 1.8193,
+  "bridge": 0.6926,
+  "pitch": 2.506,
+  "teilung": 3.1944,
+  "avg_hole_width": 1.7215
+ },
+ {
+  "druid": "zt739gs4926",
+  "n": 363,
+  "slot": 1.9658,
+  "bridge": 0.5369,
+  "pitch": 2.506,
+  "teilung": 3.1968,
+  "avg_hole_width": 1.8434
+ },
+ {
+  "druid": "wk320bj4724",
+  "n": 420,
+  "slot": 1.8755,
+  "bridge": 0.5609,
+  "pitch": 2.4298,
+  "teilung": 3.1991,
+  "avg_hole_width": 1.7368
+ },
+ {
+  "druid": "qq914np5449",
+  "n": 197,
+  "slot": 2.5217,
+  "bridge": 0.3776,
+  "pitch": 2.935,
+  "teilung": 3.1969,
+  "avg_hole_width": 2.2663
+ },
+ {
+  "druid": "mv259zt7103",
+  "n": 353,
+  "slot": 2.1625,
+  "bridge": 0.6746,
+  "pitch": 2.8518,
+  "teilung": 3.1925,
+  "avg_hole_width": 2.1217
+ },
+ {
+  "druid": "tt435dd2897",
+  "n": 248,
+  "slot": 2.1788,
+  "bridge": 0.8163,
+  "pitch": 3.0025,
+  "teilung": 3.1967,
+  "avg_hole_width": 2.0498
+ },
+ {
+  "druid": "bj021jc9795",
+  "n": 464,
+  "slot": 2.2904,
+  "bridge": 0.7218,
+  "pitch": 3.006,
+  "teilung": 3.1943,
+  "avg_hole_width": 2.1327
+ },
+ {
+  "druid": "wb381qd3151",
+  "n": 331,
+  "slot": 2.1686,
+  "bridge": 0.852,
+  "pitch": 3.0273,
+  "teilung": 3.1991,
+  "avg_hole_width": 2.0684
+ },
+ {
+  "druid": "xk500gs5691",
+  "n": 203,
+  "slot": 2.499,
+  "bridge": 0.5425,
+  "pitch": 3.0448,
+  "teilung": 3.1999,
+  "avg_hole_width": 2.3222
+ },
+ {
+  "druid": "sk565bp3463",
+  "n": 269,
+  "slot": 1.7336,
+  "bridge": 0.7676,
+  "pitch": 2.5041,
+  "teilung": 3.1965,
+  "avg_hole_width": 1.6158
+ },
+ {
+  "druid": "rn154dd5329",
+  "n": 241,
+  "slot": 2.2147,
+  "bridge": 0.8,
+  "pitch": 3.006,
+  "teilung": 3.1947,
+  "avg_hole_width": 2.0844
+ },
+ {
+  "druid": "yj598pj2879",
+  "n": 257,
+  "slot": 1.909,
+  "bridge": 0.5871,
+  "pitch": 2.4981,
+  "teilung": 3.1935,
+  "avg_hole_width": 1.8256
+ },
+ {
+  "druid": "gf569df0451",
+  "n": 415,
+  "slot": 1.7967,
+  "bridge": 0.7142,
+  "pitch": 2.5092,
+  "teilung": 3.1962,
+  "avg_hole_width": 1.6699
+ },
+ {
+  "druid": "kx034vy1374",
+  "n": 196,
+  "slot": 2.2482,
+  "bridge": 0.7491,
+  "pitch": 3.0083,
+  "teilung": 3.1932,
+  "avg_hole_width": 2.1242
+ },
+ {
+  "druid": "vm096df0179",
+  "n": 339,
+  "slot": 2.2659,
+  "bridge": 0.5527,
+  "pitch": 2.8328,
+  "teilung": 3.1965,
+  "avg_hole_width": 2.1487
+ },
+ {
+  "druid": "rj799hj0968",
+  "n": 664,
+  "slot": 1.9416,
+  "bridge": 0.5669,
+  "pitch": 2.5094,
+  "teilung": 3.1968,
+  "avg_hole_width": 1.8095
+ },
+ {
+  "druid": "st828pc9818",
+  "n": 507,
+  "slot": 1.8622,
+  "bridge": 0.6477,
+  "pitch": 2.5145,
+  "teilung": 3.1881,
+  "avg_hole_width": 1.7351
+ },
+ {
+  "druid": "wc588rr6112",
+  "n": 312,
+  "slot": 2.4043,
+  "bridge": 0.6375,
+  "pitch": 3.0485,
+  "teilung": 3.1967,
+  "avg_hole_width": 2.2638
+ },
+ {
+  "druid": "yx536mq2915",
+  "n": 428,
+  "slot": 1.8489,
+  "bridge": 0.6334,
+  "pitch": 2.4761,
+  "teilung": 3.1932,
+  "avg_hole_width": 1.7046
+ },
+ {
+  "druid": "gs556hk6631",
+  "n": 286,
+  "slot": 1.8023,
+  "bridge": 0.7146,
+  "pitch": 2.5131,
+  "teilung": 3.1865,
+  "avg_hole_width": 1.6742
+ },
+ {
+  "druid": "bj606rp8160",
+  "n": 290,
+  "slot": 2.2902,
+  "bridge": 0.7595,
+  "pitch": 3.0446,
+  "teilung": 3.2006,
+  "avg_hole_width": 2.1885
+ },
+ {
+  "druid": "bb988jx6754",
+  "n": 277,
+  "slot": 2.1629,
+  "bridge": 0.8322,
+  "pitch": 3.0051,
+  "teilung": 3.1962,
+  "avg_hole_width": 2.0548
+ },
+ {
+  "druid": "hc909pp9868",
+  "n": 354,
+  "slot": 1.7152,
+  "bridge": 0.7954,
+  "pitch": 2.5137,
+  "teilung": 3.1988,
+  "avg_hole_width": 1.653
+ },
+ {
+  "druid": "qc650tp0469",
+  "n": 323,
+  "slot": 1.9486,
+  "bridge": 0.6498,
+  "pitch": 2.5961,
+  "teilung": 3.189,
+  "avg_hole_width": 1.8264
+ },
+ {
+  "druid": "qz671pq0609",
+  "n": 309,
+  "slot": 1.8097,
+  "bridge": 0.7912,
+  "pitch": 2.6074,
+  "teilung": 3.192,
+  "avg_hole_width": 1.6801
+ },
+ {
+  "druid": "kg263bn9176",
+  "n": 194,
+  "slot": 2.3149,
+  "bridge": 0.6868,
+  "pitch": 3.0021,
+  "teilung": 3.1986,
+  "avg_hole_width": 2.1927
+ },
+ {
+  "druid": "gq990gn6753",
+  "n": 225,
+  "slot": 1.8473,
+  "bridge": 0.6506,
+  "pitch": 2.4961,
+  "teilung": 3.1896,
+  "avg_hole_width": 1.7731
+ },
+ {
+  "druid": "sr504pc8797",
+  "n": 521,
+  "slot": 1.9825,
+  "bridge": 0.8187,
+  "pitch": 2.8082,
+  "teilung": 3.1861,
+  "avg_hole_width": 1.9838
+ },
+ {
+  "druid": "qj233tv5549",
+  "n": 141,
+  "slot": 1.5904,
+  "bridge": 0.8142,
+  "pitch": 2.4082,
+  "teilung": 3.1993,
+  "avg_hole_width": 1.5786
+ },
+ {
+  "druid": "hs635sh6729",
+  "n": 413,
+  "slot": 1.9186,
+  "bridge": 0.6694,
+  "pitch": 2.6008,
+  "teilung": 3.1926,
+  "avg_hole_width": 1.807
+ },
+ {
+  "druid": "kt568yb8982",
+  "n": 371,
+  "slot": 1.9689,
+  "bridge": 0.5355,
+  "pitch": 2.5036,
+  "teilung": 3.1853,
+  "avg_hole_width": 1.8594
+ },
+ {
+  "druid": "xh403hj3866",
+  "n": 255,
+  "slot": 1.9782,
+  "bridge": 0.5035,
+  "pitch": 2.4842,
+  "teilung": 3.1873,
+  "avg_hole_width": 1.8476
+ },
+ {
+  "druid": "st755cm2486",
+  "n": 295,
+  "slot": 2.2013,
+  "bridge": 0.7991,
+  "pitch": 3.0034,
+  "teilung": 3.1942,
+  "avg_hole_width": 2.0269
+ },
+ {
+  "druid": "bp952tr1116",
+  "n": 237,
+  "slot": 2.1525,
+  "bridge": 0.81,
+  "pitch": 2.9681,
+  "teilung": 3.2026,
+  "avg_hole_width": 2.0667
+ },
+ {
+  "druid": "ky445sz4630",
+  "n": 187,
+  "slot": 2.5256,
+  "bridge": 0.4911,
+  "pitch": 3.0295,
+  "teilung": 3.1914,
+  "avg_hole_width": 2.4017
+ },
+ {
+  "druid": "gg920pz0818",
+  "n": 223,
+  "slot": 2.1836,
+  "bridge": 0.82,
+  "pitch": 3.0092,
+  "teilung": 3.1876,
+  "avg_hole_width": 2.0371
+ },
+ {
+  "druid": "ty610zx2946",
+  "n": 519,
+  "slot": 1.807,
+  "bridge": 0.7013,
+  "pitch": 2.5022,
+  "teilung": 3.1818,
+  "avg_hole_width": 1.6919
+ },
+ {
+  "druid": "fr853pn6519",
+  "n": 278,
+  "slot": 1.8471,
+  "bridge": 0.6585,
+  "pitch": 2.5125,
+  "teilung": 3.1961,
+  "avg_hole_width": 1.7385
+ },
+ {
+  "druid": "gb034mq5877",
+  "n": 454,
+  "slot": 1.7809,
+  "bridge": 0.7341,
+  "pitch": 2.521,
+  "teilung": 3.1951,
+  "avg_hole_width": 1.6682
+ },
+ {
+  "druid": "vq227vv6345",
+  "n": 179,
+  "slot": 2.3866,
+  "bridge": 0.6193,
+  "pitch": 2.996,
+  "teilung": 3.2004,
+  "avg_hole_width": 2.2452
+ },
+ {
+  "druid": "wz719qg6993",
+  "n": 398,
+  "slot": 1.8842,
+  "bridge": 0.6189,
+  "pitch": 2.5019,
+  "teilung": 3.1906,
+  "avg_hole_width": 1.7884
+ },
+ {
+  "druid": "bc072xf6791",
+  "n": 292,
+  "slot": 2.5119,
+  "bridge": 0.4766,
+  "pitch": 2.987,
+  "teilung": 3.2007,
+  "avg_hole_width": 2.3349
+ },
+ {
+  "druid": "kv550vj8954",
+  "n": 219,
+  "slot": 1.9098,
+  "bridge": 0.5334,
+  "pitch": 2.4483,
+  "teilung": 3.1989,
+  "avg_hole_width": 1.8374
+ },
+ {
+  "druid": "mf443ns5829",
+  "n": 330,
+  "slot": 1.7061,
+  "bridge": 0.7375,
+  "pitch": 2.4519,
+  "teilung": 3.1999,
+  "avg_hole_width": 1.7461
+ },
+ {
+  "druid": "yg667ds7662",
+  "n": 324,
+  "slot": 1.7861,
+  "bridge": 0.7324,
+  "pitch": 2.5157,
+  "teilung": 3.199,
+  "avg_hole_width": 1.7072
+ },
+ {
+  "druid": "hq933dq4264",
+  "n": 254,
+  "slot": 1.9699,
+  "bridge": 0.8112,
+  "pitch": 2.7822,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.867
+ },
+ {
+  "druid": "zv706jf8277",
+  "n": 442,
+  "slot": 1.8949,
+  "bridge": 0.6094,
+  "pitch": 2.5135,
+  "teilung": 3.1989,
+  "avg_hole_width": 1.8011
+ },
+ {
+  "druid": "dp497dz1055",
+  "n": 238,
+  "slot": 1.8733,
+  "bridge": 0.7413,
+  "pitch": 2.6198,
+  "teilung": 3.1917,
+  "avg_hole_width": 1.7681
+ },
+ {
+  "druid": "vy941zv8672",
+  "n": 288,
+  "slot": 1.9684,
+  "bridge": 0.5359,
+  "pitch": 2.5027,
+  "teilung": 3.1894,
+  "avg_hole_width": 1.8374
+ },
+ {
+  "druid": "zw755dp8285",
+  "n": 352,
+  "slot": 1.9234,
+  "bridge": 0.5935,
+  "pitch": 2.512,
+  "teilung": 3.188,
+  "avg_hole_width": 1.785
+ },
+ {
+  "druid": "dp563zh2166",
+  "n": 198,
+  "slot": 2.2261,
+  "bridge": 0.7451,
+  "pitch": 2.9864,
+  "teilung": 3.2028,
+  "avg_hole_width": 2.2054
+ },
+ {
+  "druid": "bg098gg3899",
+  "n": 388,
+  "slot": 1.7876,
+  "bridge": 0.7089,
+  "pitch": 2.4908,
+  "teilung": 3.1913,
+  "avg_hole_width": 1.6665
+ },
+ {
+  "druid": "hn488rk0690",
+  "n": 288,
+  "slot": 1.8059,
+  "bridge": 0.6911,
+  "pitch": 2.4872,
+  "teilung": 3.193,
+  "avg_hole_width": 1.6665
+ },
+ {
+  "druid": "jj589sc7898",
+  "n": 58,
+  "slot": 2.6603,
+  "bridge": 0.2987,
+  "pitch": 3.078,
+  "teilung": 3.1963,
+  "avg_hole_width": 2.3526
+ },
+ {
+  "druid": "nf733yv1324",
+  "n": 295,
+  "slot": 1.8341,
+  "bridge": 0.6592,
+  "pitch": 2.4984,
+  "teilung": 3.2026,
+  "avg_hole_width": 1.7004
+ },
+ {
+  "druid": "nk632jz1564",
+  "n": 235,
+  "slot": 2.4871,
+  "bridge": 0.5001,
+  "pitch": 3.0303,
+  "teilung": 3.1932,
+  "avg_hole_width": 2.2866
+ },
+ {
+  "druid": "fd761bx2206",
+  "n": 254,
+  "slot": 1.8766,
+  "bridge": 0.6431,
+  "pitch": 2.5193,
+  "teilung": 3.1981,
+  "avg_hole_width": 1.7621
+ },
+ {
+  "druid": "mb915gc4689",
+  "n": 445,
+  "slot": 1.7027,
+  "bridge": 0.8117,
+  "pitch": 2.5172,
+  "teilung": 3.1992,
+  "avg_hole_width": 1.5498
+ },
+ {
+  "druid": "jk211zx0169",
+  "n": 183,
+  "slot": 1.8743,
+  "bridge": 0.6262,
+  "pitch": 2.5016,
+  "teilung": 3.1901,
+  "avg_hole_width": 1.7604
+ },
+ {
+  "druid": "wk295jd5289",
+  "n": 304,
+  "slot": 1.9495,
+  "bridge": 0.6378,
+  "pitch": 2.5838,
+  "teilung": 3.1926,
+  "avg_hole_width": 1.8467
+ },
+ {
+  "druid": "kp368nb7707",
+  "n": 208,
+  "slot": 2.1755,
+  "bridge": 0.629,
+  "pitch": 2.8043,
+  "teilung": 3.1839,
+  "avg_hole_width": 2.0176
+ },
+ {
+  "druid": "yg939nd3043",
+  "n": 219,
+  "slot": 1.6455,
+  "bridge": 0.8624,
+  "pitch": 2.5139,
+  "teilung": 3.1968,
+  "avg_hole_width": 1.5659
+ },
+ {
+  "druid": "zc614qh7060",
+  "n": 221,
+  "slot": 1.8153,
+  "bridge": 0.8029,
+  "pitch": 2.6151,
+  "teilung": 3.1981,
+  "avg_hole_width": 1.7156
+ },
+ {
+  "druid": "vm423wb2944",
+  "n": 379,
+  "slot": 2.3153,
+  "bridge": 0.704,
+  "pitch": 3.0181,
+  "teilung": 3.1918,
+  "avg_hole_width": 2.1716
+ },
+ {
+  "druid": "wt621xq0875",
+  "n": 386,
+  "slot": 2.4596,
+  "bridge": 0.3514,
+  "pitch": 2.8192,
+  "teilung": 3.1875,
+  "avg_hole_width": 2.3518
+ },
+ {
+  "druid": "kr397bv2881",
+  "n": 313,
+  "slot": 1.9061,
+  "bridge": 0.5839,
+  "pitch": 2.5066,
+  "teilung": 3.1906,
+  "avg_hole_width": 1.8137
+ },
+ {
+  "druid": "kt780tm7975",
+  "n": 224,
+  "slot": 1.8186,
+  "bridge": 0.6621,
+  "pitch": 2.4841,
+  "teilung": 3.1914,
+  "avg_hole_width": 1.7055
+ },
+ {
+  "druid": "rb625rv7300",
+  "n": 126,
+  "slot": 2.3014,
+  "bridge": 0.739,
+  "pitch": 3.0263,
+  "teilung": 3.2009,
+  "avg_hole_width": 2.1724
+ },
+ {
+  "druid": "kz379jn2491",
+  "n": 414,
+  "slot": 1.8251,
+  "bridge": 0.7504,
+  "pitch": 2.5853,
+  "teilung": 3.1925,
+  "avg_hole_width": 1.6911
+ },
+ {
+  "druid": "ng103jj1150",
+  "n": 261,
+  "slot": 2.2918,
+  "bridge": 0.7239,
+  "pitch": 3.0082,
+  "teilung": 3.1933,
+  "avg_hole_width": 2.1454
+ },
+ {
+  "druid": "kg327qk8426",
+  "n": 244,
+  "slot": 1.9573,
+  "bridge": 0.4475,
+  "pitch": 2.3966,
+  "teilung": 3.2031,
+  "avg_hole_width": 1.8484
+ },
+ {
+  "druid": "yw484ky7093",
+  "n": 261,
+  "slot": 2.2265,
+  "bridge": 0.7632,
+  "pitch": 2.9884,
+  "teilung": 3.2021,
+  "avg_hole_width": 2.1547
+ },
+ {
+  "druid": "xm978sg7252",
+  "n": 155,
+  "slot": 1.886,
+  "bridge": 0.6196,
+  "pitch": 2.5102,
+  "teilung": 3.199,
+  "avg_hole_width": 1.7579
+ },
+ {
+  "druid": "mj416dn1432",
+  "n": 395,
+  "slot": 1.797,
+  "bridge": 0.8044,
+  "pitch": 2.6036,
+  "teilung": 3.1884,
+  "avg_hole_width": 1.6775
+ },
+ {
+  "druid": "sq235zh0909",
+  "n": 335,
+  "slot": 2.5298,
+  "bridge": 0.5,
+  "pitch": 3.0297,
+  "teilung": 3.1984,
+  "avg_hole_width": 2.3865
+ },
+ {
+  "druid": "rt308hy9235",
+  "n": 253,
+  "slot": 2.2823,
+  "bridge": 0.7803,
+  "pitch": 3.0522,
+  "teilung": 3.1962,
+  "avg_hole_width": 2.1555
+ },
+ {
+  "druid": "td134mh2760",
+  "n": 242,
+  "slot": 2.3216,
+  "bridge": 0.6927,
+  "pitch": 3.0182,
+  "teilung": 3.19,
+  "avg_hole_width": 2.1851
+ },
+ {
+  "druid": "xr682fm1233",
+  "n": 291,
+  "slot": 1.5638,
+  "bridge": 0.8518,
+  "pitch": 2.4265,
+  "teilung": 3.1987,
+  "avg_hole_width": 1.5083
+ },
+ {
+  "druid": "zc568zf0361",
+  "n": 205,
+  "slot": 2.3073,
+  "bridge": 0.535,
+  "pitch": 2.8514,
+  "teilung": 3.1939,
+  "avg_hole_width": 2.1767
+ },
+ {
+  "druid": "hh095vc8073",
+  "n": 432,
+  "slot": 1.8092,
+  "bridge": 0.7013,
+  "pitch": 2.5097,
+  "teilung": 3.1877,
+  "avg_hole_width": 1.7012
+ },
+ {
+  "druid": "qf751dd5412",
+  "n": 339,
+  "slot": 1.7269,
+  "bridge": 0.7484,
+  "pitch": 2.4691,
+  "teilung": 3.195,
+  "avg_hole_width": 1.6682
+ },
+ {
+  "druid": "dj406yq6980",
+  "n": 175,
+  "slot": 2.4683,
+  "bridge": 0.4482,
+  "pitch": 2.9108,
+  "teilung": 3.2008,
+  "avg_hole_width": 2.301
+ },
+ {
+  "druid": "gq898yv9510",
+  "n": 199,
+  "slot": 2.3011,
+  "bridge": 0.7127,
+  "pitch": 3.008,
+  "teilung": 3.1952,
+  "avg_hole_width": 2.1707
+ },
+ {
+  "druid": "vs167qc5364",
+  "n": 397,
+  "slot": 1.6697,
+  "bridge": 0.7804,
+  "pitch": 2.448,
+  "teilung": 3.2007,
+  "avg_hole_width": 1.6572
+ },
+ {
+  "druid": "qq244fh1388",
+  "n": 292,
+  "slot": 2.16,
+  "bridge": 0.6495,
+  "pitch": 2.8338,
+  "teilung": 3.1924,
+  "avg_hole_width": 2.0785
+ },
+ {
+  "druid": "qw257qp8232",
+  "n": 411,
+  "slot": 1.884,
+  "bridge": 0.6224,
+  "pitch": 2.5064,
+  "teilung": 3.19,
+  "avg_hole_width": 1.763
+ },
+ {
+  "druid": "cw211cn1219",
+  "n": 399,
+  "slot": 1.8215,
+  "bridge": 0.7741,
+  "pitch": 2.5996,
+  "teilung": 3.199,
+  "avg_hole_width": 1.6911
+ },
+ {
+  "druid": "jh069yf5255",
+  "n": 269,
+  "slot": 1.8208,
+  "bridge": 0.7804,
+  "pitch": 2.6028,
+  "teilung": 3.2042,
+  "avg_hole_width": 1.7376
+ },
+ {
+  "druid": "xc665jf8254",
+  "n": 316,
+  "slot": 2.1677,
+  "bridge": 0.8281,
+  "pitch": 3.0194,
+  "teilung": 3.2002,
+  "avg_hole_width": 2.1259
+ },
+ {
+  "druid": "md331fy4209",
+  "n": 308,
+  "slot": 1.7053,
+  "bridge": 0.8085,
+  "pitch": 2.5197,
+  "teilung": 3.1984,
+  "avg_hole_width": 1.549
+ },
+ {
+  "druid": "sx417qf9868",
+  "n": 329,
+  "slot": 1.9424,
+  "bridge": 0.5667,
+  "pitch": 2.5098,
+  "teilung": 3.1946,
+  "avg_hole_width": 1.829
+ },
+ {
+  "druid": "st011pr3757",
+  "n": 218,
+  "slot": 1.966,
+  "bridge": 0.5383,
+  "pitch": 2.502,
+  "teilung": 3.1918,
+  "avg_hole_width": 1.8484
+ },
+ {
+  "druid": "hg174cq6672",
+  "n": 371,
+  "slot": 1.8898,
+  "bridge": 0.7309,
+  "pitch": 2.6166,
+  "teilung": 3.1947,
+  "avg_hole_width": 1.7478
+ },
+ {
+  "druid": "zk440mh1715",
+  "n": 303,
+  "slot": 1.8944,
+  "bridge": 0.7186,
+  "pitch": 2.6058,
+  "teilung": 3.1964,
+  "avg_hole_width": 1.7562
+ },
+ {
+  "druid": "gh208gz5033",
+  "n": 100,
+  "slot": 2.4196,
+  "bridge": 0.5764,
+  "pitch": 3.0086,
+  "teilung": 3.1916,
+  "avg_hole_width": 2.2951
+ },
+ {
+  "druid": "vq976gr5492",
+  "n": 259,
+  "slot": 1.8642,
+  "bridge": 0.7361,
+  "pitch": 2.5951,
+  "teilung": 3.1912,
+  "avg_hole_width": 1.7376
+ },
+ {
+  "druid": "pk349zj4179",
+  "n": 346,
+  "slot": 1.7917,
+  "bridge": 0.7199,
+  "pitch": 2.5089,
+  "teilung": 3.1935,
+  "avg_hole_width": 1.6581
+ },
+ {
+  "druid": "qz155gk0442",
+  "n": 252,
+  "slot": 2.1514,
+  "bridge": 0.8491,
+  "pitch": 3.0136,
+  "teilung": 3.1963,
+  "avg_hole_width": 2.0379
+ },
+ {
+  "druid": "fy803vj4057",
+  "n": 371,
+  "slot": 1.9594,
+  "bridge": 0.4335,
+  "pitch": 2.3912,
+  "teilung": 3.2047,
+  "avg_hole_width": 1.851
+ },
+ {
+  "druid": "tx963yw9164",
+  "n": 338,
+  "slot": 1.8006,
+  "bridge": 0.7114,
+  "pitch": 2.5125,
+  "teilung": 3.1895,
+  "avg_hole_width": 1.6649
+ },
+ {
+  "druid": "ps751km7125",
+  "n": 261,
+  "slot": 2.1986,
+  "bridge": 0.7749,
+  "pitch": 2.9781,
+  "teilung": 3.1994,
+  "avg_hole_width": 2.1014
+ },
+ {
+  "druid": "gz430tm0196",
+  "n": 190,
+  "slot": 2.1913,
+  "bridge": 0.8211,
+  "pitch": 3.0261,
+  "teilung": 3.1967,
+  "avg_hole_width": 2.0768
+ },
+ {
+  "druid": "hm523dq5554",
+  "n": 266,
+  "slot": 2.3212,
+  "bridge": 0.4936,
+  "pitch": 2.8304,
+  "teilung": 3.1977,
+  "avg_hole_width": 2.2663
+ },
+ {
+  "druid": "rp390kt0160",
+  "n": 361,
+  "slot": 1.8632,
+  "bridge": 0.6501,
+  "pitch": 2.5156,
+  "teilung": 3.1918,
+  "avg_hole_width": 1.7401
+ },
+ {
+  "druid": "ch197br4742",
+  "n": 14,
+  "slot": 2.2975,
+  "bridge": 0.7045,
+  "pitch": 3.001,
+  "teilung": 3.1942,
+  "avg_hole_width": 2.1792
+ },
+ {
+  "druid": "xp003dy0437",
+  "n": 153,
+  "slot": 2.4029,
+  "bridge": 0.5918,
+  "pitch": 3.0224,
+  "teilung": 3.2027,
+  "avg_hole_width": 2.2503
+ },
+ {
+  "druid": "ny706rg1119",
+  "n": 253,
+  "slot": 1.5965,
+  "bridge": 0.8224,
+  "pitch": 2.4284,
+  "teilung": 3.2004,
+  "avg_hole_width": 1.5862
+ },
+ {
+  "druid": "pb026mb0704",
+  "n": 291,
+  "slot": 1.8254,
+  "bridge": 0.6866,
+  "pitch": 2.5179,
+  "teilung": 3.1985,
+  "avg_hole_width": 1.7258
+ },
+ {
+  "druid": "wj177bx9196",
+  "n": 269,
+  "slot": 2.0695,
+  "bridge": 0.8978,
+  "pitch": 2.9751,
+  "teilung": 3.1933,
+  "avg_hole_width": 2.0608
+ },
+ {
+  "druid": "jf649gs2184",
+  "n": 345,
+  "slot": 1.8303,
+  "bridge": 0.6825,
+  "pitch": 2.5218,
+  "teilung": 3.1924,
+  "avg_hole_width": 1.7537
+ },
+ {
+  "druid": "rq927dq9061",
+  "n": 288,
+  "slot": 1.9919,
+  "bridge": 0.4954,
+  "pitch": 2.4997,
+  "teilung": 3.1914,
+  "avg_hole_width": 1.8738
+ },
+ {
+  "druid": "sb158jt0685",
+  "n": 288,
+  "slot": 1.7669,
+  "bridge": 0.6669,
+  "pitch": 2.4426,
+  "teilung": 3.2027,
+  "avg_hole_width": 1.7004
+ },
+ {
+  "druid": "dr971dy1221",
+  "n": 213,
+  "slot": 2.3231,
+  "bridge": 0.6425,
+  "pitch": 2.9624,
+  "teilung": 3.2024,
+  "avg_hole_width": 2.2333
+ },
+ {
+  "druid": "dz678wd2724",
+  "n": 240,
+  "slot": 2.383,
+  "bridge": 0.6038,
+  "pitch": 2.9831,
+  "teilung": 3.1976,
+  "avg_hole_width": 2.2418
+ },
+ {
+  "druid": "fd660zf8362",
+  "n": 251,
+  "slot": 1.9606,
+  "bridge": 0.4457,
+  "pitch": 2.4008,
+  "teilung": 3.1994,
+  "avg_hole_width": 1.8713
+ },
+ {
+  "druid": "tb707nd8515",
+  "n": 318,
+  "slot": 1.9773,
+  "bridge": 0.8034,
+  "pitch": 2.7804,
+  "teilung": 3.1941,
+  "avg_hole_width": 1.8239
+ },
+ {
+  "druid": "hk155fw7898",
+  "n": 217,
+  "slot": 1.8071,
+  "bridge": 0.6858,
+  "pitch": 2.4815,
+  "teilung": 3.1878,
+  "avg_hole_width": 1.6995
+ },
+ {
+  "druid": "zw751nw0097",
+  "n": 410,
+  "slot": 1.9617,
+  "bridge": 0.4391,
+  "pitch": 2.401,
+  "teilung": 3.1992,
+  "avg_hole_width": 1.8611
+ },
+ {
+  "druid": "ry948sf9078",
+  "n": 219,
+  "slot": 1.7184,
+  "bridge": 0.8874,
+  "pitch": 2.6117,
+  "teilung": 3.202,
+  "avg_hole_width": 1.664
+ },
+ {
+  "druid": "bx815rz0622",
+  "n": 377,
+  "slot": 1.7502,
+  "bridge": 0.7425,
+  "pitch": 2.5086,
+  "teilung": 3.1839,
+  "avg_hole_width": 1.6657
+ },
+ {
+  "druid": "hg282mg9396",
+  "n": 267,
+  "slot": 2.2559,
+  "bridge": 0.7602,
+  "pitch": 3.0264,
+  "teilung": 3.1919,
+  "avg_hole_width": 2.1564
+ },
+ {
+  "druid": "ww627mg3287",
+  "n": 216,
+  "slot": 2.3161,
+  "bridge": 0.6869,
+  "pitch": 3.0034,
+  "teilung": 3.1944,
+  "avg_hole_width": 2.1902
+ },
+ {
+  "druid": "kv921kh0629",
+  "n": 250,
+  "slot": 1.7945,
+  "bridge": 0.6203,
+  "pitch": 2.4044,
+  "teilung": 3.2026,
+  "avg_hole_width": 1.7063
+ },
+ {
+  "druid": "sk293jg8184",
+  "n": 199,
+  "slot": 2.5805,
+  "bridge": 0.4348,
+  "pitch": 3.012,
+  "teilung": 3.1987,
+  "avg_hole_width": 2.4457
+ },
+ {
+  "druid": "hn285vs3930",
+  "n": 291,
+  "slot": 1.8172,
+  "bridge": 0.7721,
+  "pitch": 2.5989,
+  "teilung": 3.1844,
+  "avg_hole_width": 1.7494
+ },
+ {
+  "druid": "kv601my2750",
+  "n": 427,
+  "slot": 1.9424,
+  "bridge": 0.6558,
+  "pitch": 2.6016,
+  "teilung": 3.2027,
+  "avg_hole_width": 1.8307
+ },
+ {
+  "druid": "pv151xx7555",
+  "n": 398,
+  "slot": 1.8112,
+  "bridge": 0.8005,
+  "pitch": 2.6153,
+  "teilung": 3.208,
+  "avg_hole_width": 1.7224
+ },
+ {
+  "druid": "dc661yr7679",
+  "n": 247,
+  "slot": 2.2568,
+  "bridge": 0.7355,
+  "pitch": 2.9901,
+  "teilung": 3.2024,
+  "avg_hole_width": 2.1843
+ },
+ {
+  "druid": "tx437pj1389",
+  "n": 343,
+  "slot": 1.8279,
+  "bridge": 0.7701,
+  "pitch": 2.6011,
+  "teilung": 3.1865,
+  "avg_hole_width": 1.7029
+ },
+ {
+  "druid": "cz847th6835",
+  "n": 284,
+  "slot": 1.7806,
+  "bridge": 0.6041,
+  "pitch": 2.3853,
+  "teilung": 3.197,
+  "avg_hole_width": 1.6835
+ },
+ {
+  "druid": "zf037wk3650",
+  "n": 238,
+  "slot": 2.395,
+  "bridge": 0.5927,
+  "pitch": 2.9944,
+  "teilung": 3.1973,
+  "avg_hole_width": 2.2782
+ },
+ {
+  "druid": "rk591jt8964",
+  "n": 290,
+  "slot": 1.8043,
+  "bridge": 0.7083,
+  "pitch": 2.5193,
+  "teilung": 3.1963,
+  "avg_hole_width": 1.6894
+ },
+ {
+  "druid": "zw485gh6070",
+  "n": 266,
+  "slot": 2.2554,
+  "bridge": 0.7512,
+  "pitch": 3.0246,
+  "teilung": 3.1916,
+  "avg_hole_width": 2.2393
+ },
+ {
+  "druid": "ts972sy8288",
+  "n": 230,
+  "slot": 2.1978,
+  "bridge": 0.8038,
+  "pitch": 2.9966,
+  "teilung": 3.1915,
+  "avg_hole_width": 2.0743
+ },
+ {
+  "druid": "ws749sk4778",
+  "n": 272,
+  "slot": 1.8538,
+  "bridge": 0.6419,
+  "pitch": 2.498,
+  "teilung": 3.1866,
+  "avg_hole_width": 1.7334
+ },
+ {
+  "druid": "jx095ty1753",
+  "n": 310,
+  "slot": 2.3215,
+  "bridge": 0.6838,
+  "pitch": 3.0061,
+  "teilung": 3.1947,
+  "avg_hole_width": 2.2426
+ },
+ {
+  "druid": "xj540rr2929",
+  "n": 306,
+  "slot": 1.9841,
+  "bridge": 0.484,
+  "pitch": 2.4635,
+  "teilung": 3.1822,
+  "avg_hole_width": 1.8197
+ },
+ {
+  "druid": "tj337qh7786",
+  "n": 108,
+  "slot": 2.2459,
+  "bridge": 0.8085,
+  "pitch": 3.0534,
+  "teilung": 3.195,
+  "avg_hole_width": 2.1394
+ },
+ {
+  "druid": "wq296df7434",
+  "n": 37,
+  "slot": 1.8405,
+  "bridge": 0.7565,
+  "pitch": 2.6159,
+  "teilung": 3.2006,
+  "avg_hole_width": 1.7571
+ },
+ {
+  "druid": "fn111kx0654",
+  "n": 533,
+  "slot": 2.2364,
+  "bridge": 0.7613,
+  "pitch": 3.0016,
+  "teilung": 3.2032,
+  "avg_hole_width": 2.1039
+ },
+ {
+  "druid": "vj076nk8220",
+  "n": 591,
+  "slot": 1.8248,
+  "bridge": 0.7518,
+  "pitch": 2.59,
+  "teilung": 3.1917,
+  "avg_hole_width": 1.7029
+ },
+ {
+  "druid": "wp442mf3514",
+  "n": 258,
+  "slot": 2.4261,
+  "bridge": 0.5565,
+  "pitch": 2.9857,
+  "teilung": 3.1986,
+  "avg_hole_width": 2.3619
+ },
+ {
+  "druid": "cw078rn1143",
+  "n": 230,
+  "slot": 1.6343,
+  "bridge": 0.8055,
+  "pitch": 2.4419,
+  "teilung": 3.1978,
+  "avg_hole_width": 1.6767
+ },
+ {
+  "druid": "qb477sd2923",
+  "n": 366,
+  "slot": 1.9476,
+  "bridge": 0.4604,
+  "pitch": 2.4017,
+  "teilung": 3.2016,
+  "avg_hole_width": 1.8332
+ },
+ {
+  "druid": "dx555xv9093",
+  "n": 543,
+  "slot": 1.7204,
+  "bridge": 0.7737,
+  "pitch": 2.4912,
+  "teilung": 3.19,
+  "avg_hole_width": 1.6099
+ },
+ {
+  "druid": "yb187qn0290",
+  "n": 542,
+  "slot": 1.8742,
+  "bridge": 0.6421,
+  "pitch": 2.5167,
+  "teilung": 3.1968,
+  "avg_hole_width": 1.8197
+ },
+ {
+  "druid": "wp877mn0317",
+  "n": 168,
+  "slot": 2.6063,
+  "bridge": 0.3116,
+  "pitch": 2.9385,
+  "teilung": 3.1959,
+  "avg_hole_width": 2.3983
+ },
+ {
+  "druid": "xm993qd2681",
+  "n": 273,
+  "slot": 1.831,
+  "bridge": 0.6683,
+  "pitch": 2.5122,
+  "teilung": 3.199,
+  "avg_hole_width": 1.7571
+ },
+ {
+  "druid": "jv484vp9065",
+  "n": 280,
+  "slot": 2.4052,
+  "bridge": 0.6671,
+  "pitch": 3.0739,
+  "teilung": 3.2033,
+  "avg_hole_width": 2.3095
+ },
+ {
+  "druid": "hc229ht1024",
+  "n": 363,
+  "slot": 1.9296,
+  "bridge": 0.5781,
+  "pitch": 2.5098,
+  "teilung": 3.1857,
+  "avg_hole_width": 1.8078
+ },
+ {
+  "druid": "ft746ns5736",
+  "n": 248,
+  "slot": 1.9724,
+  "bridge": 0.5256,
+  "pitch": 2.4965,
+  "teilung": 3.1839,
+  "avg_hole_width": 1.834
+ },
+ {
+  "druid": "hp956bx4547",
+  "n": 179,
+  "slot": 2.5059,
+  "bridge": 0.5382,
+  "pitch": 3.043,
+  "teilung": 3.2,
+  "avg_hole_width": 16.7255
+ },
+ {
+  "druid": "qv334zb6243",
+  "n": 226,
+  "slot": 2.1876,
+  "bridge": 0.813,
+  "pitch": 3.0049,
+  "teilung": 3.2008,
+  "avg_hole_width": 2.0895
+ },
+ {
+  "druid": "sm246yb9650",
+  "n": 252,
+  "slot": 1.7292,
+  "bridge": 0.7151,
+  "pitch": 2.4447,
+  "teilung": 3.2007,
+  "avg_hole_width": 1.6742
+ },
+ {
+  "druid": "qg121rz6125",
+  "n": 275,
+  "slot": 2.4067,
+  "bridge": 0.6131,
+  "pitch": 3.0144,
+  "teilung": 3.1958,
+  "avg_hole_width": 2.2723
+ },
+ {
+  "druid": "zv884mc0794",
+  "n": 334,
+  "slot": 1.9546,
+  "bridge": 0.6502,
+  "pitch": 2.6017,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.7977
+ },
+ {
+  "druid": "sc188ff2842",
+  "n": 266,
+  "slot": 2.3016,
+  "bridge": 0.6645,
+  "pitch": 2.9807,
+  "teilung": 3.2009,
+  "avg_hole_width": 2.191
+ },
+ {
+  "druid": "qt363fp0799",
+  "n": 297,
+  "slot": 2.5711,
+  "bridge": 0.7177,
+  "pitch": 3.2823,
+  "teilung": 3.1968,
+  "avg_hole_width": 2.4694
+ },
+ {
+  "druid": "sb487jm2092",
+  "n": 267,
+  "slot": 2.3644,
+  "bridge": 0.6315,
+  "pitch": 2.9875,
+  "teilung": 3.1969,
+  "avg_hole_width": 2.2308
+ },
+ {
+  "druid": "dc021nq1464",
+  "n": 72,
+  "slot": 2.2451,
+  "bridge": 0.6401,
+  "pitch": 2.9422,
+  "teilung": 3.1929,
+  "avg_hole_width": 2.0819
+ },
+ {
+  "druid": "dw479gk0103",
+  "n": 255,
+  "slot": 1.8097,
+  "bridge": 0.7009,
+  "pitch": 2.5025,
+  "teilung": 3.1924,
+  "avg_hole_width": 1.6852
+ },
+ {
+  "druid": "jw822wm2644",
+  "n": 145,
+  "slot": 2.4845,
+  "bridge": 0.5281,
+  "pitch": 3.0043,
+  "teilung": 3.191,
+  "avg_hole_width": 2.4279
+ },
+ {
+  "druid": "mh255vw4599",
+  "n": 192,
+  "slot": 2.3152,
+  "bridge": 0.7029,
+  "pitch": 3.0196,
+  "teilung": 3.1923,
+  "avg_hole_width": 2.2274
+ },
+ {
+  "druid": "zf882fv0052",
+  "n": 303,
+  "slot": 1.9376,
+  "bridge": 0.4652,
+  "pitch": 2.4041,
+  "teilung": 3.2019,
+  "avg_hole_width": 1.8484
+ },
+ {
+  "druid": "ps108fn1431",
+  "n": 150,
+  "slot": 2.2566,
+  "bridge": 0.5333,
+  "pitch": 2.8211,
+  "teilung": 3.1994,
+  "avg_hole_width": 2.1572
+ },
+ {
+  "druid": "sq640bh1919",
+  "n": 127,
+  "slot": 1.7863,
+  "bridge": 0.6728,
+  "pitch": 2.4548,
+  "teilung": 3.1967,
+  "avg_hole_width": 1.7824
+ },
+ {
+  "druid": "sz207mm8382",
+  "n": 105,
+  "slot": 1.8337,
+  "bridge": 0.6789,
+  "pitch": 2.5195,
+  "teilung": 3.1862,
+  "avg_hole_width": 1.7198
+ },
+ {
+  "druid": "kx695yq4528",
+  "n": 346,
+  "slot": 1.8681,
+  "bridge": 0.6442,
+  "pitch": 2.5126,
+  "teilung": 3.1917,
+  "avg_hole_width": 1.785
+ },
+ {
+  "druid": "dw083wh0675",
+  "n": 410,
+  "slot": 1.8031,
+  "bridge": 0.6457,
+  "pitch": 2.4436,
+  "teilung": 3.1966,
+  "avg_hole_width": 1.7122
+ },
+ {
+  "druid": "wv641dn9264",
+  "n": 196,
+  "slot": 1.8416,
+  "bridge": 0.5903,
+  "pitch": 2.4382,
+  "teilung": 3.1969,
+  "avg_hole_width": 1.7351
+ },
+ {
+  "druid": "yn137rt9938",
+  "n": 200,
+  "slot": 2.2994,
+  "bridge": 0.7114,
+  "pitch": 2.9965,
+  "teilung": 3.1976,
+  "avg_hole_width": 2.1834
+ },
+ {
+  "druid": "kj344bw3083",
+  "n": 350,
+  "slot": 1.7666,
+  "bridge": 0.7362,
+  "pitch": 2.5069,
+  "teilung": 3.1832,
+  "avg_hole_width": 1.7317
+ },
+ {
+  "druid": "gc795vb4435",
+  "n": 323,
+  "slot": 1.7844,
+  "bridge": 0.7113,
+  "pitch": 2.479,
+  "teilung": 3.1946,
+  "avg_hole_width": 1.6919
+ },
+ {
+  "druid": "tp302mb4101",
+  "n": 289,
+  "slot": 2.3551,
+  "bridge": 0.4357,
+  "pitch": 2.7843,
+  "teilung": 3.1914,
+  "avg_hole_width": 2.2316
+ },
+ {
+  "druid": "xy699sy1462",
+  "n": 307,
+  "slot": 1.9662,
+  "bridge": 0.5124,
+  "pitch": 2.4823,
+  "teilung": 3.1945,
+  "avg_hole_width": 1.8484
+ },
+ {
+  "druid": "xx766cn9843",
+  "n": 435,
+  "slot": 1.8109,
+  "bridge": 0.5649,
+  "pitch": 2.3771,
+  "teilung": 3.2016,
+  "avg_hole_width": 1.763
+ },
+ {
+  "druid": "gs573tj9547",
+  "n": 298,
+  "slot": 2.2738,
+  "bridge": 0.6955,
+  "pitch": 2.9823,
+  "teilung": 3.1955,
+  "avg_hole_width": 2.3585
+ },
+ {
+  "druid": "wj488tq5861",
+  "n": 233,
+  "slot": 2.3175,
+  "bridge": 0.665,
+  "pitch": 2.9908,
+  "teilung": 3.1947,
+  "avg_hole_width": 2.2249
+ },
+ {
+  "druid": "nx970yn7253",
+  "n": 503,
+  "slot": 1.9229,
+  "bridge": 0.4821,
+  "pitch": 2.4051,
+  "teilung": 3.2027,
+  "avg_hole_width": 1.8662
+ },
+ {
+  "druid": "tw054jm0773",
+  "n": 425,
+  "slot": 1.7988,
+  "bridge": 0.7121,
+  "pitch": 2.5064,
+  "teilung": 3.1908,
+  "avg_hole_width": 1.6809
+ },
+ {
+  "druid": "pk245pq3468",
+  "n": 297,
+  "slot": 1.8139,
+  "bridge": 0.7019,
+  "pitch": 2.5169,
+  "teilung": 3.1929,
+  "avg_hole_width": 1.7029
+ },
+ {
+  "druid": "nq190zp1066",
+  "n": 255,
+  "slot": 1.9526,
+  "bridge": 0.5627,
+  "pitch": 2.5064,
+  "teilung": 3.194,
+  "avg_hole_width": 1.8027
+ },
+ {
+  "druid": "gs012fx5529",
+  "n": 389,
+  "slot": 1.8153,
+  "bridge": 0.5807,
+  "pitch": 2.4002,
+  "teilung": 3.1988,
+  "avg_hole_width": 1.7385
+ },
+ {
+  "druid": "xx912rs1788",
+  "n": 444,
+  "slot": 2.2422,
+  "bridge": 0.8167,
+  "pitch": 3.067,
+  "teilung": 3.1962,
+  "avg_hole_width": 2.1411
+ },
+ {
+  "druid": "nn203bm7432",
+  "n": 428,
+  "slot": 1.8005,
+  "bridge": 0.7951,
+  "pitch": 2.5887,
+  "teilung": 3.1917,
+  "avg_hole_width": 1.6462
+ },
+ {
+  "druid": "jn038xx9588",
+  "n": 514,
+  "slot": 1.8407,
+  "bridge": 0.7447,
+  "pitch": 2.595,
+  "teilung": 3.1933,
+  "avg_hole_width": 1.7275
+ },
+ {
+  "druid": "dt046tz6296",
+  "n": 509,
+  "slot": 1.9988,
+  "bridge": 0.4984,
+  "pitch": 2.5045,
+  "teilung": 3.1896,
+  "avg_hole_width": 1.8755
+ },
+ {
+  "druid": "mg285ps6787",
+  "n": 343,
+  "slot": 1.8119,
+  "bridge": 0.6978,
+  "pitch": 2.5188,
+  "teilung": 3.1878,
+  "avg_hole_width": 1.6843
+ },
+ {
+  "druid": "rp146dk0477",
+  "n": 258,
+  "slot": 2.605,
+  "bridge": 0.2871,
+  "pitch": 2.9158,
+  "teilung": 3.1972,
+  "avg_hole_width": 2.4195
+ },
+ {
+  "druid": "yb682jn2494",
+  "n": 258,
+  "slot": 1.882,
+  "bridge": 0.7211,
+  "pitch": 2.6048,
+  "teilung": 3.1937,
+  "avg_hole_width": 1.7427
+ },
+ {
+  "druid": "cp145vd3423",
+  "n": 355,
+  "slot": 2.3039,
+  "bridge": 0.5381,
+  "pitch": 2.8672,
+  "teilung": 3.202,
+  "avg_hole_width": 2.257
+ },
+ {
+  "druid": "np829dt9039",
+  "n": 357,
+  "slot": 1.8832,
+  "bridge": 0.6331,
+  "pitch": 2.5096,
+  "teilung": 3.1932,
+  "avg_hole_width": 1.7647
+ },
+ {
+  "druid": "fw547rc7021",
+  "n": 69,
+  "slot": 2.5824,
+  "bridge": 0.4817,
+  "pitch": 3.1536,
+  "teilung": 3.1984,
+  "avg_hole_width": 2.4516
+ },
+ {
+  "druid": "qp506dy4541",
+  "n": 282,
+  "slot": 1.8753,
+  "bridge": 0.6368,
+  "pitch": 2.5091,
+  "teilung": 3.1938,
+  "avg_hole_width": 1.7588
+ },
+ {
+  "druid": "mh156nr8259",
+  "n": 429,
+  "slot": 1.9574,
+  "bridge": 0.644,
+  "pitch": 2.5969,
+  "teilung": 3.1971,
+  "avg_hole_width": 1.8459
+ },
+ {
+  "druid": "fz215xr4723",
+  "n": 410,
+  "slot": 1.8587,
+  "bridge": 0.7353,
+  "pitch": 2.605,
+  "teilung": 3.1916,
+  "avg_hole_width": 1.763
+ },
+ {
+  "druid": "kg488qt3887",
+  "n": 302,
+  "slot": 2.2358,
+  "bridge": 0.5741,
+  "pitch": 2.8388,
+  "teilung": 3.205,
+  "avg_hole_width": 2.1868
+ },
+ {
+  "druid": "pz175wg5571",
+  "n": 324,
+  "slot": 1.775,
+  "bridge": 0.7333,
+  "pitch": 2.506,
+  "teilung": 3.1937,
+  "avg_hole_width": 1.686
+ },
+ {
+  "druid": "dw005gw3358",
+  "n": 258,
+  "slot": 2.2928,
+  "bridge": 0.707,
+  "pitch": 2.9906,
+  "teilung": 3.2001,
+  "avg_hole_width": 2.2088
+ },
+ {
+  "druid": "rg591sj4242",
+  "n": 340,
+  "slot": 1.9043,
+  "bridge": 0.5975,
+  "pitch": 2.5066,
+  "teilung": 3.1991,
+  "avg_hole_width": 1.7968
+ },
+ {
+  "druid": "cz952kx0008",
+  "n": 259,
+  "slot": 1.8225,
+  "bridge": 0.6617,
+  "pitch": 2.49,
+  "teilung": 3.1949,
+  "avg_hole_width": 1.6962
+ },
+ {
+  "druid": "pd354nj6106",
+  "n": 266,
+  "slot": 2.4225,
+  "bridge": 0.6178,
+  "pitch": 3.0251,
+  "teilung": 3.1974,
+  "avg_hole_width": 2.2765
+ },
+ {
+  "druid": "bq744nq5945",
+  "n": 267,
+  "slot": 2.2956,
+  "bridge": 0.7298,
+  "pitch": 3.0435,
+  "teilung": 3.2037,
+  "avg_hole_width": 2.2401
+ },
+ {
+  "druid": "yt974cv2625",
+  "n": 264,
+  "slot": 2.1571,
+  "bridge": 0.6883,
+  "pitch": 2.8546,
+  "teilung": 3.2024,
+  "avg_hole_width": 2.1352
+ },
+ {
+  "druid": "pj688nx2384",
+  "n": 282,
+  "slot": 2.2667,
+  "bridge": 0.7422,
+  "pitch": 3.0096,
+  "teilung": 3.1971,
+  "avg_hole_width": 2.1479
+ },
+ {
+  "druid": "zw904vm6502",
+  "n": 134,
+  "slot": 2.1503,
+  "bridge": 0.7187,
+  "pitch": 2.848,
+  "teilung": 3.1992,
+  "avg_hole_width": 1.8552
+ },
+ {
+  "druid": "jk702cg2022",
+  "n": 270,
+  "slot": 1.7969,
+  "bridge": 0.7229,
+  "pitch": 2.5146,
+  "teilung": 3.1936,
+  "avg_hole_width": 1.6911
+ },
+ {
+  "druid": "mf940cg4339",
+  "n": 239,
+  "slot": 2.4146,
+  "bridge": 0.4306,
+  "pitch": 2.8753,
+  "teilung": 3.1978,
+  "avg_hole_width": 2.3678
+ },
+ {
+  "druid": "rc749wx0227",
+  "n": 222,
+  "slot": 1.9516,
+  "bridge": 0.5658,
+  "pitch": 2.5057,
+  "teilung": 3.1941,
+  "avg_hole_width": 1.829
+ },
+ {
+  "druid": "dw559kr7002",
+  "n": 319,
+  "slot": 1.9241,
+  "bridge": 0.6716,
+  "pitch": 2.6063,
+  "teilung": 3.1942,
+  "avg_hole_width": 1.8146
+ },
+ {
+  "druid": "bf074nj8801",
+  "n": 440,
+  "slot": 1.9294,
+  "bridge": 0.5664,
+  "pitch": 2.4979,
+  "teilung": 3.1895,
+  "avg_hole_width": 1.7858
+ },
+ {
+  "druid": "wz252pk3255",
+  "n": 397,
+  "slot": 1.6066,
+  "bridge": 0.8185,
+  "pitch": 2.4365,
+  "teilung": 3.199,
+  "avg_hole_width": 1.5896
+ },
+ {
+  "druid": "fj448by1666",
+  "n": 220,
+  "slot": 2.1405,
+  "bridge": 0.6773,
+  "pitch": 2.834,
+  "teilung": 3.2007,
+  "avg_hole_width": 2.1014
+ },
+ {
+  "druid": "ns598kr8616",
+  "n": 265,
+  "slot": 1.7796,
+  "bridge": 0.7328,
+  "pitch": 2.5185,
+  "teilung": 3.1871,
+  "avg_hole_width": 1.6767
+ },
+ {
+  "druid": "rk796xd9697",
+  "n": 248,
+  "slot": 2.2361,
+  "bridge": 0.815,
+  "pitch": 3.0606,
+  "teilung": 3.1977,
+  "avg_hole_width": 2.0997
+ },
+ {
+  "druid": "ym773gh2267",
+  "n": 404,
+  "slot": 1.8021,
+  "bridge": 0.7115,
+  "pitch": 2.5109,
+  "teilung": 3.196,
+  "avg_hole_width": 1.7401
+ },
+ {
+  "druid": "yr522jf5585",
+  "n": 399,
+  "slot": 1.8335,
+  "bridge": 0.6681,
+  "pitch": 2.5066,
+  "teilung": 3.2024,
+  "avg_hole_width": 1.7283
+ },
+ {
+  "druid": "bf644yy6536",
+  "n": 191,
+  "slot": 2.2325,
+  "bridge": 0.7917,
+  "pitch": 3.0253,
+  "teilung": 3.2,
+  "avg_hole_width": 2.1479
+ },
+ {
+  "druid": "vz717bq6543",
+  "n": 294,
+  "slot": 1.8267,
+  "bridge": 0.6601,
+  "pitch": 2.5018,
+  "teilung": 3.1922,
+  "avg_hole_width": 1.7444
+ },
+ {
+  "druid": "pv279zy5193",
+  "n": 352,
+  "slot": 2.4427,
+  "bridge": 0.5688,
+  "pitch": 3.0387,
+  "teilung": 3.1959,
+  "avg_hole_width": 2.3958
+ },
+ {
+  "druid": "hj604wr7502",
+  "n": 347,
+  "slot": 1.8577,
+  "bridge": 0.7354,
+  "pitch": 2.5914,
+  "teilung": 3.1893,
+  "avg_hole_width": 1.7401
+ },
+ {
+  "druid": "by076cz0337",
+  "n": 247,
+  "slot": 2.1101,
+  "bridge": 0.8809,
+  "pitch": 2.9812,
+  "teilung": 3.1983,
+  "avg_hole_width": 2.0049
+ },
+ {
+  "druid": "vj052cw2158",
+  "n": 189,
+  "slot": 2.3169,
+  "bridge": 0.708,
+  "pitch": 3.0267,
+  "teilung": 3.1983,
+  "avg_hole_width": 2.1936
+ },
+ {
+  "druid": "fr396nf3639",
+  "n": 401,
+  "slot": 1.8168,
+  "bridge": 0.5882,
+  "pitch": 2.4044,
+  "teilung": 3.198,
+  "avg_hole_width": 1.7985
+ },
+ {
+  "druid": "tj759sv4290",
+  "n": 30,
+  "slot": 1.8112,
+  "bridge": 1.1432,
+  "pitch": 2.9702,
+  "teilung": 3.2018,
+  "avg_hole_width": 2.2503
+ },
+ {
+  "druid": "pr464zk8674",
+  "n": 146,
+  "slot": 2.155,
+  "bridge": 0.8449,
+  "pitch": 3.0169,
+  "teilung": 3.2002,
+  "avg_hole_width": 2.0083
+ },
+ {
+  "druid": "yg250xz9762",
+  "n": 335,
+  "slot": 1.8876,
+  "bridge": 0.6189,
+  "pitch": 2.5059,
+  "teilung": 3.191,
+  "avg_hole_width": 1.7731
+ },
+ {
+  "druid": "gr034qm4805",
+  "n": 363,
+  "slot": 1.7664,
+  "bridge": 0.6506,
+  "pitch": 2.4102,
+  "teilung": 3.197,
+  "avg_hole_width": 1.6809
+ },
+ {
+  "druid": "tr981xw2871",
+  "n": 248,
+  "slot": 2.3761,
+  "bridge": 0.6249,
+  "pitch": 2.9957,
+  "teilung": 3.2014,
+  "avg_hole_width": 2.2435
+ },
+ {
+  "druid": "fb623cd1247",
+  "n": 414,
+  "slot": 1.745,
+  "bridge": 0.6434,
+  "pitch": 2.3991,
+  "teilung": 3.2029,
+  "avg_hole_width": 1.6522
+ },
+ {
+  "druid": "sc787kg5664",
+  "n": 388,
+  "slot": 1.8894,
+  "bridge": 0.6185,
+  "pitch": 2.5059,
+  "teilung": 3.1951,
+  "avg_hole_width": 1.7926
+ },
+ {
+  "druid": "vw531zy4220",
+  "n": 207,
+  "slot": 2.2932,
+  "bridge": 0.6944,
+  "pitch": 2.972,
+  "teilung": 3.198,
+  "avg_hole_width": 2.2206
+ },
+ {
+  "druid": "ym117yd8356",
+  "n": 352,
+  "slot": 1.7863,
+  "bridge": 0.7262,
+  "pitch": 2.5094,
+  "teilung": 3.2007,
+  "avg_hole_width": 1.6809
+ },
+ {
+  "druid": "bm016sg7202",
+  "n": 288,
+  "slot": 1.932,
+  "bridge": 0.5678,
+  "pitch": 2.5072,
+  "teilung": 3.2009,
+  "avg_hole_width": 1.8087
+ },
+ {
+  "druid": "vf252dc4872",
+  "n": 291,
+  "slot": 1.985,
+  "bridge": 0.5066,
+  "pitch": 2.5033,
+  "teilung": 3.1943,
+  "avg_hole_width": 1.8823
+ },
+ {
+  "druid": "kq525dc4373",
+  "n": 377,
+  "slot": 1.9101,
+  "bridge": 0.6815,
+  "pitch": 2.6034,
+  "teilung": 3.1905,
+  "avg_hole_width": 1.8027
+ },
+ {
+  "druid": "jh696my0069",
+  "n": 323,
+  "slot": 1.9547,
+  "bridge": 0.6398,
+  "pitch": 2.5919,
+  "teilung": 3.2031,
+  "avg_hole_width": 1.8408
+ },
+ {
+  "druid": "jb107tz1859",
+  "n": 320,
+  "slot": 1.9398,
+  "bridge": 0.6588,
+  "pitch": 2.6058,
+  "teilung": 3.1967,
+  "avg_hole_width": 1.8298
+ },
+ {
+  "druid": "ds710xd1794",
+  "n": 470,
+  "slot": 1.8868,
+  "bridge": 0.7055,
+  "pitch": 2.588,
+  "teilung": 3.1981,
+  "avg_hole_width": 1.7647
+ },
+ {
+  "druid": "jy277ht0636",
+  "n": 439,
+  "slot": 1.8139,
+  "bridge": 0.5822,
+  "pitch": 2.3986,
+  "teilung": 3.1973,
+  "avg_hole_width": 1.7647
+ },
+ {
+  "druid": "fz632cv0288",
+  "n": 323,
+  "slot": 2.3586,
+  "bridge": 0.6508,
+  "pitch": 3.0091,
+  "teilung": 3.2018,
+  "avg_hole_width": 2.2164
+ },
+ {
+  "druid": "nz678zw1579",
+  "n": 347,
+  "slot": 1.888,
+  "bridge": 0.6166,
+  "pitch": 2.5058,
+  "teilung": 3.1911,
+  "avg_hole_width": 1.7748
+ },
+ {
+  "druid": "vs880hb3425",
+  "n": 369,
+  "slot": 1.8416,
+  "bridge": 0.5696,
+  "pitch": 2.421,
+  "teilung": 3.2003,
+  "avg_hole_width": 1.8027
+ },
+ {
+  "druid": "dq276yn8963",
+  "n": 222,
+  "slot": 2.4046,
+  "bridge": 0.6245,
+  "pitch": 3.0371,
+  "teilung": 3.204,
+  "avg_hole_width": 2.2866
+ },
+ {
+  "druid": "gx118hr0306",
+  "n": 212,
+  "slot": 2.2121,
+  "bridge": 0.807,
+  "pitch": 3.0247,
+  "teilung": 3.1947,
+  "avg_hole_width": 2.0557
+ },
+ {
+  "druid": "qj203cn5343",
+  "n": 248,
+  "slot": 2.2499,
+  "bridge": 0.7543,
+  "pitch": 3.0099,
+  "teilung": 3.2005,
+  "avg_hole_width": 2.2384
+ },
+ {
+  "druid": "kq892pn7618",
+  "n": 207,
+  "slot": 2.3759,
+  "bridge": 0.6394,
+  "pitch": 3.0171,
+  "teilung": 3.192,
+  "avg_hole_width": 2.2359
+ },
+ {
+  "druid": "fn744pq2157",
+  "n": 183,
+  "slot": 1.8195,
+  "bridge": 0.7878,
+  "pitch": 2.6112,
+  "teilung": 3.1961,
+  "avg_hole_width": 1.7334
+ },
+ {
+  "druid": "kx293yk2859",
+  "n": 199,
+  "slot": 1.9988,
+  "bridge": 0.5188,
+  "pitch": 2.5187,
+  "teilung": 3.19,
+  "avg_hole_width": 1.8755
+ },
+ {
+  "druid": "cw427tw4145",
+  "n": 206,
+  "slot": 2.3532,
+  "bridge": 0.687,
+  "pitch": 3.0436,
+  "teilung": 3.1914,
+  "avg_hole_width": 2.1826
+ },
+ {
+  "druid": "sk925fn6049",
+  "n": 288,
+  "slot": 1.9474,
+  "bridge": 0.6646,
+  "pitch": 2.6134,
+  "teilung": 3.2041,
+  "avg_hole_width": 1.8273
+ },
+ {
+  "druid": "zf673fy4620",
+  "n": 377,
+  "slot": 1.8923,
+  "bridge": 0.6114,
+  "pitch": 2.4992,
+  "teilung": 3.1883,
+  "avg_hole_width": 1.7723
+ },
+ {
+  "druid": "kj388dj3308",
+  "n": 301,
+  "slot": 1.8179,
+  "bridge": 0.7793,
+  "pitch": 2.6023,
+  "teilung": 3.2072,
+  "avg_hole_width": 1.7148
+ },
+ {
+  "druid": "hy749gh2331",
+  "n": 314,
+  "slot": 1.786,
+  "bridge": 0.7281,
+  "pitch": 2.5093,
+  "teilung": 3.1883,
+  "avg_hole_width": 1.6919
+ },
+ {
+  "druid": "ps656vb4839",
+  "n": 317,
+  "slot": 1.9878,
+  "bridge": 0.5068,
+  "pitch": 2.5015,
+  "teilung": 3.1864,
+  "avg_hole_width": 1.8577
+ },
+ {
+  "druid": "qf640sj3141",
+  "n": 258,
+  "slot": 1.7927,
+  "bridge": 0.7019,
+  "pitch": 2.4871,
+  "teilung": 3.1913,
+  "avg_hole_width": 1.653
+ },
+ {
+  "druid": "bs279zc9206",
+  "n": 285,
+  "slot": 1.837,
+  "bridge": 0.6551,
+  "pitch": 2.4987,
+  "teilung": 3.2028,
+  "avg_hole_width": 1.7283
+ },
+ {
+  "druid": "yk477xx5343",
+  "n": 241,
+  "slot": 1.9136,
+  "bridge": 0.5944,
+  "pitch": 2.5144,
+  "teilung": 3.1999,
+  "avg_hole_width": 1.8095
+ },
+ {
+  "druid": "hr679fk5315",
+  "n": 193,
+  "slot": 1.9747,
+  "bridge": 0.6843,
+  "pitch": 2.6613,
+  "teilung": 3.1966,
+  "avg_hole_width": 1.8611
+ },
+ {
+  "druid": "jt308hp0877",
+  "n": 294,
+  "slot": 2.3357,
+  "bridge": 0.6851,
+  "pitch": 3.0356,
+  "teilung": 3.2007,
+  "avg_hole_width": 2.2215
+ },
+ {
+  "druid": "fk036vh7282",
+  "n": 438,
+  "slot": 1.8463,
+  "bridge": 0.6569,
+  "pitch": 2.5122,
+  "teilung": 3.1943,
+  "avg_hole_width": 1.7528
+ },
+ {
+  "druid": "pf050rx0162",
+  "n": 310,
+  "slot": 1.9556,
+  "bridge": 0.5675,
+  "pitch": 2.5194,
+  "teilung": 3.2047,
+  "avg_hole_width": 1.812
+ },
+ {
+  "druid": "ms935qj0194",
+  "n": 310,
+  "slot": 1.877,
+  "bridge": 0.6289,
+  "pitch": 2.5082,
+  "teilung": 3.1956,
+  "avg_hole_width": 1.6902
+ },
+ {
+  "druid": "cp259ms0085",
+  "n": 389,
+  "slot": 1.8061,
+  "bridge": 0.601,
+  "pitch": 2.4041,
+  "teilung": 3.2013,
+  "avg_hole_width": 1.7393
+ },
+ {
+  "druid": "pc276zv7038",
+  "n": 312,
+  "slot": 1.8322,
+  "bridge": 0.7577,
+  "pitch": 2.6088,
+  "teilung": 3.1941,
+  "avg_hole_width": 1.7198
+ },
+ {
+  "druid": "dy191sv5188",
+  "n": 205,
+  "slot": 1.8323,
+  "bridge": 0.6828,
+  "pitch": 2.5125,
+  "teilung": 3.1921,
+  "avg_hole_width": 1.7165
+ },
+ {
+  "druid": "ph692rh6823",
+  "n": 321,
+  "slot": 1.7932,
+  "bridge": 0.7301,
+  "pitch": 2.523,
+  "teilung": 3.1936,
+  "avg_hole_width": 1.6708
+ },
+ {
+  "druid": "dz112ky5575",
+  "n": 422,
+  "slot": 1.9583,
+  "bridge": 0.5665,
+  "pitch": 2.5143,
+  "teilung": 3.1949,
+  "avg_hole_width": 1.823
+ },
+ {
+  "druid": "ht339gy6128",
+  "n": 221,
+  "slot": 2.2163,
+  "bridge": 0.7967,
+  "pitch": 3.0072,
+  "teilung": 3.2014,
+  "avg_hole_width": 2.0117
+ },
+ {
+  "druid": "ks452px2704",
+  "n": 348,
+  "slot": 1.811,
+  "bridge": 0.714,
+  "pitch": 2.5232,
+  "teilung": 3.1953,
+  "avg_hole_width": 1.6699
+ },
+ {
+  "druid": "fg074rf2950",
+  "n": 762,
+  "slot": 1.8776,
+  "bridge": 0.6368,
+  "pitch": 2.5109,
+  "teilung": 3.1843,
+  "avg_hole_width": 1.7824
+ },
+ {
+  "druid": "sk832rf0203",
+  "n": 574,
+  "slot": 1.9371,
+  "bridge": 0.5626,
+  "pitch": 2.4973,
+  "teilung": 3.1876,
+  "avg_hole_width": 1.8205
+ },
+ {
+  "druid": "wn516xn5163",
+  "n": 315,
+  "slot": 1.7195,
+  "bridge": 0.7116,
+  "pitch": 2.427,
+  "teilung": 3.1809,
+  "avg_hole_width": 1.6725
+ },
+ {
+  "druid": "yc867qr9425",
+  "n": 387,
+  "slot": 1.9518,
+  "bridge": 0.4508,
+  "pitch": 2.3968,
+  "teilung": 3.1963,
+  "avg_hole_width": 1.8366
+ },
+ {
+  "druid": "dt352gh2011",
+  "n": 312,
+  "slot": 2.1626,
+  "bridge": 0.8402,
+  "pitch": 3.0051,
+  "teilung": 3.1967,
+  "avg_hole_width": 2.0295
+ },
+ {
+  "druid": "xg670df7262",
+  "n": 426,
+  "slot": 1.886,
+  "bridge": 0.626,
+  "pitch": 2.5036,
+  "teilung": 3.1914,
+  "avg_hole_width": 1.8137
+ },
+ {
+  "druid": "ry050yb9492",
+  "n": 255,
+  "slot": 2.1688,
+  "bridge": 0.8331,
+  "pitch": 3.0094,
+  "teilung": 3.1955,
+  "avg_hole_width": 2.0557
+ },
+ {
+  "druid": "rx933wn3761",
+  "n": 254,
+  "slot": 1.8955,
+  "bridge": 0.6204,
+  "pitch": 2.5232,
+  "teilung": 3.2012,
+  "avg_hole_width": 1.7892
+ },
+ {
+  "druid": "cw378sb0125",
+  "n": 288,
+  "slot": 1.7814,
+  "bridge": 0.8223,
+  "pitch": 2.6051,
+  "teilung": 3.2065,
+  "avg_hole_width": 1.6902
+ },
+ {
+  "druid": "tm408mz6807",
+  "n": 332,
+  "slot": 1.9716,
+  "bridge": 0.3608,
+  "pitch": 2.3347,
+  "teilung": 3.2027,
+  "avg_hole_width": 1.867
+ },
+ {
+  "druid": "cd435bw2771",
+  "n": 229,
+  "slot": 1.9303,
+  "bridge": 0.6686,
+  "pitch": 2.6083,
+  "teilung": 3.1924,
+  "avg_hole_width": 1.8137
+ },
+ {
+  "druid": "tr243mz6407",
+  "n": 309,
+  "slot": 1.9585,
+  "bridge": 0.533,
+  "pitch": 2.4838,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.8324
+ },
+ {
+  "druid": "sj617nc3041",
+  "n": 412,
+  "slot": 1.9867,
+  "bridge": 0.5937,
+  "pitch": 2.5973,
+  "teilung": 3.1894,
+  "avg_hole_width": 1.8823
+ },
+ {
+  "druid": "jf938sf5847",
+  "n": 476,
+  "slot": 1.822,
+  "bridge": 0.6714,
+  "pitch": 2.502,
+  "teilung": 3.197,
+  "avg_hole_width": 1.7131
+ },
+ {
+  "druid": "nz852nk6103",
+  "n": 317,
+  "slot": 1.9119,
+  "bridge": 0.4646,
+  "pitch": 2.3713,
+  "teilung": 3.1964,
+  "avg_hole_width": 1.8459
+ },
+ {
+  "druid": "rr990ym0199",
+  "n": 369,
+  "slot": 1.9561,
+  "bridge": 0.4639,
+  "pitch": 2.4137,
+  "teilung": 3.1967,
+  "avg_hole_width": 1.8645
+ },
+ {
+  "druid": "vb983gg2310",
+  "n": 402,
+  "slot": 1.7401,
+  "bridge": 0.6537,
+  "pitch": 2.3973,
+  "teilung": 3.1975,
+  "avg_hole_width": 1.6682
+ },
+ {
+  "druid": "rq642tt1626",
+  "n": 273,
+  "slot": 1.785,
+  "bridge": 0.6234,
+  "pitch": 2.4045,
+  "teilung": 3.2016,
+  "avg_hole_width": 1.6868
+ },
+ {
+  "druid": "fh358rd2268",
+  "n": 371,
+  "slot": 1.8423,
+  "bridge": 0.762,
+  "pitch": 2.6142,
+  "teilung": 3.2007,
+  "avg_hole_width": 1.7156
+ },
+ {
+  "druid": "kw738fg7467",
+  "n": 554,
+  "slot": 1.8331,
+  "bridge": 0.6443,
+  "pitch": 2.4738,
+  "teilung": 3.1822,
+  "avg_hole_width": 1.7156
+ },
+ {
+  "druid": "ps931qh5746",
+  "n": 254,
+  "slot": 1.8906,
+  "bridge": 0.561,
+  "pitch": 2.4513,
+  "teilung": 3.188,
+  "avg_hole_width": 1.7689
+ },
+ {
+  "druid": "jc718cb5784",
+  "n": 300,
+  "slot": 1.8661,
+  "bridge": 0.6175,
+  "pitch": 2.4735,
+  "teilung": 3.2041,
+  "avg_hole_width": 1.7799
+ },
+ {
+  "druid": "pc364sy7115",
+  "n": 262,
+  "slot": 2.3223,
+  "bridge": 0.6579,
+  "pitch": 2.9836,
+  "teilung": 3.1936,
+  "avg_hole_width": 2.2071
+ },
+ {
+  "druid": "qp421cd7297",
+  "n": 316,
+  "slot": 1.89,
+  "bridge": 0.7124,
+  "pitch": 2.6043,
+  "teilung": 3.1906,
+  "avg_hole_width": 1.7698
+ },
+ {
+  "druid": "rh801bs4556",
+  "n": 294,
+  "slot": 2.2065,
+  "bridge": 0.7674,
+  "pitch": 2.9718,
+  "teilung": 3.1998,
+  "avg_hole_width": 2.0971
+ },
+ {
+  "druid": "xg228jc5213",
+  "n": 330,
+  "slot": 1.957,
+  "bridge": 0.451,
+  "pitch": 2.4017,
+  "teilung": 3.2056,
+  "avg_hole_width": 1.8425
+ },
+ {
+  "druid": "zp424ps8426",
+  "n": 424,
+  "slot": 1.751,
+  "bridge": 0.6565,
+  "pitch": 2.4062,
+  "teilung": 3.2065,
+  "avg_hole_width": 1.6801
+ },
+ {
+  "druid": "fg895gs1373",
+  "n": 315,
+  "slot": 1.7853,
+  "bridge": 0.6326,
+  "pitch": 2.4174,
+  "teilung": 3.2022,
+  "avg_hole_width": 1.7148
+ },
+ {
+  "druid": "wg598sj1504",
+  "n": 356,
+  "slot": 1.8399,
+  "bridge": 0.6711,
+  "pitch": 2.5134,
+  "teilung": 3.1945,
+  "avg_hole_width": 1.7351
+ },
+ {
+  "druid": "jm300wy4714",
+  "n": 307,
+  "slot": 2.1431,
+  "bridge": 0.8545,
+  "pitch": 3.0028,
+  "teilung": 3.1953,
+  "avg_hole_width": 2.0024
+ },
+ {
+  "druid": "gt485ys0625",
+  "n": 314,
+  "slot": 1.8285,
+  "bridge": 0.6717,
+  "pitch": 2.5084,
+  "teilung": 3.1785,
+  "avg_hole_width": 1.752
+ },
+ {
+  "druid": "qk333zc6515",
+  "n": 276,
+  "slot": 1.793,
+  "bridge": 0.6163,
+  "pitch": 2.3973,
+  "teilung": 3.2041,
+  "avg_hole_width": 1.6784
+ },
+ {
+  "druid": "my670qk6863",
+  "n": 442,
+  "slot": 1.8849,
+  "bridge": 0.6344,
+  "pitch": 2.5174,
+  "teilung": 3.1989,
+  "avg_hole_width": 1.7841
+ },
+ {
+  "druid": "jd052zg1047",
+  "n": 405,
+  "slot": 2.3949,
+  "bridge": 0.6051,
+  "pitch": 3.0012,
+  "teilung": 3.1879,
+  "avg_hole_width": 2.2469
+ },
+ {
+  "druid": "jg717nb8731",
+  "n": 315,
+  "slot": 2.306,
+  "bridge": 0.6942,
+  "pitch": 3.0127,
+  "teilung": 3.2001,
+  "avg_hole_width": 2.2198
+ },
+ {
+  "druid": "dc920rk8870",
+  "n": 376,
+  "slot": 1.8835,
+  "bridge": 0.723,
+  "pitch": 2.6092,
+  "teilung": 3.1907,
+  "avg_hole_width": 1.7621
+ },
+ {
+  "druid": "ws250sr1272",
+  "n": 305,
+  "slot": 1.8548,
+  "bridge": 0.6481,
+  "pitch": 2.5105,
+  "teilung": 3.1972,
+  "avg_hole_width": 1.7698
+ },
+ {
+  "druid": "sj582bt2976",
+  "n": 397,
+  "slot": 1.8469,
+  "bridge": 0.6598,
+  "pitch": 2.5133,
+  "teilung": 3.1918,
+  "avg_hole_width": 1.7105
+ },
+ {
+  "druid": "xn585zh2707",
+  "n": 315,
+  "slot": 1.86,
+  "bridge": 0.6571,
+  "pitch": 2.518,
+  "teilung": 3.1861,
+  "avg_hole_width": 1.7731
+ },
+ {
+  "druid": "ft113cg5195",
+  "n": 326,
+  "slot": 1.902,
+  "bridge": 0.6989,
+  "pitch": 2.6047,
+  "teilung": 3.1969,
+  "avg_hole_width": 1.7774
+ },
+ {
+  "druid": "rs765sm2000",
+  "n": 368,
+  "slot": 1.9336,
+  "bridge": 0.6554,
+  "pitch": 2.5842,
+  "teilung": 3.1786,
+  "avg_hole_width": 1.8087
+ },
+ {
+  "druid": "zr938kz3902",
+  "n": 501,
+  "slot": 1.9172,
+  "bridge": 0.6051,
+  "pitch": 2.5153,
+  "teilung": 3.1954,
+  "avg_hole_width": 1.763
+ },
+ {
+  "druid": "np204br1080",
+  "n": 328,
+  "slot": 1.8248,
+  "bridge": 0.656,
+  "pitch": 2.4794,
+  "teilung": 3.1906,
+  "avg_hole_width": 1.6809
+ },
+ {
+  "druid": "sr577gv4813",
+  "n": 290,
+  "slot": 1.6789,
+  "bridge": 0.8187,
+  "pitch": 2.5076,
+  "teilung": 3.1987,
+  "avg_hole_width": 1.6014
+ },
+ {
+  "druid": "ky458kj7325",
+  "n": 265,
+  "slot": 2.172,
+  "bridge": 0.81,
+  "pitch": 2.983,
+  "teilung": 3.1886,
+  "avg_hole_width": 1.9745
+ },
+ {
+  "druid": "fm197wc9522",
+  "n": 337,
+  "slot": 1.81,
+  "bridge": 0.7005,
+  "pitch": 2.5049,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.7029
+ },
+ {
+  "druid": "rg931dy5023",
+  "n": 382,
+  "slot": 1.9091,
+  "bridge": 0.5925,
+  "pitch": 2.5012,
+  "teilung": 3.1823,
+  "avg_hole_width": 1.7765
+ },
+ {
+  "druid": "fb100cb2366",
+  "n": 318,
+  "slot": 1.8691,
+  "bridge": 0.7387,
+  "pitch": 2.6088,
+  "teilung": 3.2006,
+  "avg_hole_width": 1.7511
+ },
+ {
+  "druid": "gf160gq3516",
+  "n": 446,
+  "slot": 1.8089,
+  "bridge": 0.7934,
+  "pitch": 2.6059,
+  "teilung": 3.1877,
+  "avg_hole_width": 1.6894
+ },
+ {
+  "druid": "gy310qs3678",
+  "n": 375,
+  "slot": 1.8762,
+  "bridge": 0.64,
+  "pitch": 2.515,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.7858
+ },
+ {
+  "druid": "vy193qr6005",
+  "n": 392,
+  "slot": 1.8156,
+  "bridge": 0.7791,
+  "pitch": 2.6007,
+  "teilung": 3.1976,
+  "avg_hole_width": 1.7604
+ },
+ {
+  "druid": "qg041hb4569",
+  "n": 161,
+  "slot": 1.764,
+  "bridge": 0.7281,
+  "pitch": 2.5109,
+  "teilung": 3.1972,
+  "avg_hole_width": 1.6539
+ },
+ {
+  "druid": "fk960pq3086",
+  "n": 372,
+  "slot": 1.83,
+  "bridge": 0.6652,
+  "pitch": 2.4997,
+  "teilung": 3.1936,
+  "avg_hole_width": 1.7055
+ },
+ {
+  "druid": "zc118hn1152",
+  "n": 390,
+  "slot": 1.8373,
+  "bridge": 0.6357,
+  "pitch": 2.4699,
+  "teilung": 3.1877,
+  "avg_hole_width": 1.7232
+ },
+ {
+  "druid": "fk269mx8427",
+  "n": 359,
+  "slot": 1.9685,
+  "bridge": 0.5412,
+  "pitch": 2.5107,
+  "teilung": 3.1936,
+  "avg_hole_width": 1.8324
+ },
+ {
+  "druid": "hg709nf1997",
+  "n": 320,
+  "slot": 1.9306,
+  "bridge": 0.5701,
+  "pitch": 2.5074,
+  "teilung": 3.1922,
+  "avg_hole_width": 1.8315
+ },
+ {
+  "druid": "ty382mw3181",
+  "n": 263,
+  "slot": 1.9624,
+  "bridge": 0.6387,
+  "pitch": 2.5984,
+  "teilung": 3.1911,
+  "avg_hole_width": 1.8518
+ },
+ {
+  "druid": "jk842rg9750",
+  "n": 350,
+  "slot": 1.9016,
+  "bridge": 0.6923,
+  "pitch": 2.5975,
+  "teilung": 3.1939,
+  "avg_hole_width": 1.7909
+ },
+ {
+  "druid": "tb323rh4122",
+  "n": 301,
+  "slot": 1.8225,
+  "bridge": 0.6789,
+  "pitch": 2.5073,
+  "teilung": 3.1896,
+  "avg_hole_width": 1.7173
+ },
+ {
+  "druid": "rv703vf3503",
+  "n": 259,
+  "slot": 1.9608,
+  "bridge": 0.3765,
+  "pitch": 2.3315,
+  "teilung": 3.2022,
+  "avg_hole_width": 1.8467
+ },
+ {
+  "druid": "tq268fs9721",
+  "n": 464,
+  "slot": 1.8798,
+  "bridge": 0.6299,
+  "pitch": 2.5058,
+  "teilung": 3.1943,
+  "avg_hole_width": 1.7503
+ },
+ {
+  "druid": "gm296rz0673",
+  "n": 324,
+  "slot": 1.9097,
+  "bridge": 0.586,
+  "pitch": 2.5058,
+  "teilung": 3.1927,
+  "avg_hole_width": 1.8146
+ },
+ {
+  "druid": "rb861vm6094",
+  "n": 340,
+  "slot": 1.887,
+  "bridge": 0.7103,
+  "pitch": 2.5945,
+  "teilung": 3.1953,
+  "avg_hole_width": 1.7418
+ },
+ {
+  "druid": "ch401rm7382",
+  "n": 328,
+  "slot": 1.8755,
+  "bridge": 0.5229,
+  "pitch": 2.3896,
+  "teilung": 3.2052,
+  "avg_hole_width": 1.8171
+ },
+ {
+  "druid": "dp801zr4347",
+  "n": 423,
+  "slot": 1.812,
+  "bridge": 0.6787,
+  "pitch": 2.4934,
+  "teilung": 3.1885,
+  "avg_hole_width": 1.6962
+ },
+ {
+  "druid": "dq126tp4234",
+  "n": 334,
+  "slot": 1.7946,
+  "bridge": 0.8015,
+  "pitch": 2.5991,
+  "teilung": 3.1947,
+  "avg_hole_width": 1.7334
+ },
+ {
+  "druid": "mw870hc7232",
+  "n": 291,
+  "slot": 1.8413,
+  "bridge": 0.7728,
+  "pitch": 2.6152,
+  "teilung": 3.2025,
+  "avg_hole_width": 1.7757
+ },
+ {
+  "druid": "bd915bs0646",
+  "n": 289,
+  "slot": 1.8378,
+  "bridge": 0.7574,
+  "pitch": 2.6019,
+  "teilung": 3.1951,
+  "avg_hole_width": 1.741
+ },
+ {
+  "druid": "cd381jt9273",
+  "n": 340,
+  "slot": 1.8156,
+  "bridge": 0.7736,
+  "pitch": 2.5908,
+  "teilung": 3.1946,
+  "avg_hole_width": 1.7207
+ },
+ {
+  "druid": "sn610pr8684",
+  "n": 350,
+  "slot": 1.9327,
+  "bridge": 0.5752,
+  "pitch": 2.5078,
+  "teilung": 3.1975,
+  "avg_hole_width": 1.8222
+ },
+ {
+  "druid": "gq401ng9171",
+  "n": 202,
+  "slot": 1.8331,
+  "bridge": 0.7681,
+  "pitch": 2.6075,
+  "teilung": 3.2006,
+  "avg_hole_width": 1.7224
+ },
+ {
+  "druid": "jq774vx6544",
+  "n": 176,
+  "slot": 1.9178,
+  "bridge": 0.5752,
+  "pitch": 2.4911,
+  "teilung": 3.194,
+  "avg_hole_width": 1.7647
+ },
+ {
+  "druid": "qd784zj3903",
+  "n": 396,
+  "slot": 1.9305,
+  "bridge": 0.5685,
+  "pitch": 2.499,
+  "teilung": 3.1969,
+  "avg_hole_width": 1.8112
+ },
+ {
+  "druid": "zp866tm4852",
+  "n": 406,
+  "slot": 1.7651,
+  "bridge": 0.7269,
+  "pitch": 2.4936,
+  "teilung": 3.1935,
+  "avg_hole_width": 1.6445
+ },
+ {
+  "druid": "kf903tz5142",
+  "n": 440,
+  "slot": 1.8018,
+  "bridge": 0.8066,
+  "pitch": 2.6086,
+  "teilung": 3.1958,
+  "avg_hole_width": 1.6699
+ },
+ {
+  "druid": "cm852bp8620",
+  "n": 290,
+  "slot": 1.9358,
+  "bridge": 0.5743,
+  "pitch": 2.5104,
+  "teilung": 3.1925,
+  "avg_hole_width": 1.8264
+ },
+ {
+  "druid": "gx107hd3026",
+  "n": 410,
+  "slot": 1.842,
+  "bridge": 0.6653,
+  "pitch": 2.512,
+  "teilung": 3.1868,
+  "avg_hole_width": 1.7207
+ },
+ {
+  "druid": "rv766dc1369",
+  "n": 376,
+  "slot": 1.8056,
+  "bridge": 0.7069,
+  "pitch": 2.5144,
+  "teilung": 3.1929,
+  "avg_hole_width": 1.7122
+ },
+ {
+  "druid": "bk297ff8944",
+  "n": 426,
+  "slot": 1.9796,
+  "bridge": 0.5203,
+  "pitch": 2.5043,
+  "teilung": 3.1897,
+  "avg_hole_width": 1.8434
+ },
+ {
+  "druid": "hk752ck1008",
+  "n": 277,
+  "slot": 1.8131,
+  "bridge": 0.7776,
+  "pitch": 2.5955,
+  "teilung": 3.1912,
+  "avg_hole_width": 1.6919
+ },
+ {
+  "druid": "gr136pc5388",
+  "n": 238,
+  "slot": 1.902,
+  "bridge": 0.697,
+  "pitch": 2.6107,
+  "teilung": 3.196,
+  "avg_hole_width": 1.7951
+ },
+ {
+  "druid": "qm069fy5200",
+  "n": 541,
+  "slot": 1.848,
+  "bridge": 0.6532,
+  "pitch": 2.5079,
+  "teilung": 3.1942,
+  "avg_hole_width": 1.7604
+ },
+ {
+  "druid": "jy572md2211",
+  "n": 236,
+  "slot": 1.84,
+  "bridge": 0.6541,
+  "pitch": 2.4918,
+  "teilung": 3.1928,
+  "avg_hole_width": 1.7359
+ },
+ {
+  "druid": "dr835xg3992",
+  "n": 253,
+  "slot": 1.805,
+  "bridge": 0.7914,
+  "pitch": 2.602,
+  "teilung": 3.1838,
+  "avg_hole_width": 1.6962
+ },
+ {
+  "druid": "vp438dy0628",
+  "n": 456,
+  "slot": 1.8097,
+  "bridge": 0.7912,
+  "pitch": 2.6062,
+  "teilung": 3.1891,
+  "avg_hole_width": 1.6826
+ },
+ {
+  "druid": "kw215gn3365",
+  "n": 233,
+  "slot": 1.8001,
+  "bridge": 0.7128,
+  "pitch": 2.5134,
+  "teilung": 3.1917,
+  "avg_hole_width": 1.7038
+ },
+ {
+  "druid": "hx789sg2918",
+  "n": 335,
+  "slot": 1.8575,
+  "bridge": 0.6464,
+  "pitch": 2.501,
+  "teilung": 3.1947,
+  "avg_hole_width": 1.7325
+ },
+ {
+  "druid": "bs533ns1949",
+  "n": 325,
+  "slot": 1.7995,
+  "bridge": 0.8111,
+  "pitch": 2.6109,
+  "teilung": 3.1918,
+  "avg_hole_width": 1.6657
+ },
+ {
+  "druid": "cv806rf2664",
+  "n": 279,
+  "slot": 1.9662,
+  "bridge": 0.539,
+  "pitch": 2.4943,
+  "teilung": 3.2024,
+  "avg_hole_width": 1.856
+ },
+ {
+  "druid": "xg924dm1245",
+  "n": 372,
+  "slot": 1.6902,
+  "bridge": 0.815,
+  "pitch": 2.5049,
+  "teilung": 3.1972,
+  "avg_hole_width": 1.6488
+ },
+ {
+  "druid": "rf416pb7833",
+  "n": 244,
+  "slot": 1.9856,
+  "bridge": 0.6175,
+  "pitch": 2.6026,
+  "teilung": 3.1936,
+  "avg_hole_width": 1.8603
+ },
+ {
+  "druid": "kz819wb8990",
+  "n": 265,
+  "slot": 1.9594,
+  "bridge": 0.445,
+  "pitch": 2.3976,
+  "teilung": 3.2066,
+  "avg_hole_width": 1.8535
+ },
+ {
+  "druid": "fr859hh7893",
+  "n": 330,
+  "slot": 1.8406,
+  "bridge": 0.5678,
+  "pitch": 2.4107,
+  "teilung": 3.2033,
+  "avg_hole_width": 1.8256
+ },
+ {
+  "druid": "zw828tx0197",
+  "n": 313,
+  "slot": 1.7464,
+  "bridge": 0.6513,
+  "pitch": 2.3946,
+  "teilung": 3.2017,
+  "avg_hole_width": 1.6674
+ },
+ {
+  "druid": "sg713kb1834",
+  "n": 396,
+  "slot": 1.6752,
+  "bridge": 0.7664,
+  "pitch": 2.4486,
+  "teilung": 3.202,
+  "avg_hole_width": 1.6479
+ },
+ {
+  "druid": "jt036qh8967",
+  "n": 440,
+  "slot": 1.9025,
+  "bridge": 0.4979,
+  "pitch": 2.4036,
+  "teilung": 3.2026,
+  "avg_hole_width": 1.8264
+ },
+ {
+  "druid": "mn110mt1775",
+  "n": 342,
+  "slot": 1.7803,
+  "bridge": 0.6234,
+  "pitch": 2.3931,
+  "teilung": 3.2008,
+  "avg_hole_width": 1.7494
+ },
+ {
+  "druid": "zp085nr8664",
+  "n": 423,
+  "slot": 1.6671,
+  "bridge": 0.7726,
+  "pitch": 2.4434,
+  "teilung": 3.196,
+  "avg_hole_width": 1.6462
+ },
+ {
+  "druid": "nt812xg8796",
+  "n": 206,
+  "slot": 1.7865,
+  "bridge": 0.6242,
+  "pitch": 2.3967,
+  "teilung": 3.1976,
+  "avg_hole_width": 1.6572
+ },
+ {
+  "druid": "vd312rr8990",
+  "n": 375,
+  "slot": 1.7307,
+  "bridge": 0.6636,
+  "pitch": 2.4059,
+  "teilung": 3.199,
+  "avg_hole_width": 1.6657
+ },
+ {
+  "druid": "cg834ff4729",
+  "n": 177,
+  "slot": 1.8598,
+  "bridge": 0.6282,
+  "pitch": 2.4831,
+  "teilung": 3.1919,
+  "avg_hole_width": 1.7359
+ },
+ {
+  "druid": "qd424rx3516",
+  "n": 208,
+  "slot": 1.9698,
+  "bridge": 0.5489,
+  "pitch": 2.5074,
+  "teilung": 3.193,
+  "avg_hole_width": 1.8442
+ },
+ {
+  "druid": "xy812vy7103",
+  "n": 456,
+  "slot": 1.6155,
+  "bridge": 0.8979,
+  "pitch": 2.5081,
+  "teilung": 3.1996,
+  "avg_hole_width": 1.5422
+ },
+ {
+  "druid": "sp773vt2651",
+  "n": 386,
+  "slot": 1.954,
+  "bridge": 0.5605,
+  "pitch": 2.5159,
+  "teilung": 3.1937,
+  "avg_hole_width": 1.807
+ },
+ {
+  "druid": "wf903pd7291",
+  "n": 282,
+  "slot": 1.6919,
+  "bridge": 0.7572,
+  "pitch": 2.4501,
+  "teilung": 3.1927,
+  "avg_hole_width": 1.6589
+ },
+ {
+  "druid": "ny937ph6981",
+  "n": 419,
+  "slot": 1.8242,
+  "bridge": 0.6303,
+  "pitch": 2.4534,
+  "teilung": 3.193,
+  "avg_hole_width": 1.7291
+ },
+ {
+  "druid": "nw765mr4994",
+  "n": 304,
+  "slot": 1.7828,
+  "bridge": 0.7276,
+  "pitch": 2.5101,
+  "teilung": 3.1909,
+  "avg_hole_width": 1.6877
+ },
+ {
+  "druid": "qv976bq3639",
+  "n": 370,
+  "slot": 1.806,
+  "bridge": 0.785,
+  "pitch": 2.5876,
+  "teilung": 3.1897,
+  "avg_hole_width": 1.6606
+ },
+ {
+  "druid": "ct503bz7189",
+  "n": 367,
+  "slot": 1.9554,
+  "bridge": 0.5362,
+  "pitch": 2.4895,
+  "teilung": 3.1872,
+  "avg_hole_width": 1.84
+ },
+ {
+  "druid": "xb072rc7617",
+  "n": 346,
+  "slot": 1.8763,
+  "bridge": 0.639,
+  "pitch": 2.5102,
+  "teilung": 3.1903,
+  "avg_hole_width": 1.7689
+ },
+ {
+  "druid": "sv842td3290",
+  "n": 301,
+  "slot": 1.9015,
+  "bridge": 0.7014,
+  "pitch": 2.6067,
+  "teilung": 3.1878,
+  "avg_hole_width": 1.7934
+ },
+ {
+  "druid": "xg976jt9573",
+  "n": 254,
+  "slot": 1.9821,
+  "bridge": 0.5204,
+  "pitch": 2.5086,
+  "teilung": 3.1902,
+  "avg_hole_width": 1.8518
+ },
+ {
+  "druid": "wp666fn2104",
+  "n": 314,
+  "slot": 1.9176,
+  "bridge": 0.5893,
+  "pitch": 2.5098,
+  "teilung": 3.1902,
+  "avg_hole_width": 1.7824
+ },
+ {
+  "druid": "md908xy8241",
+  "n": 447,
+  "slot": 1.9209,
+  "bridge": 0.6718,
+  "pitch": 2.5991,
+  "teilung": 3.1922,
+  "avg_hole_width": 1.8112
+ },
+ {
+  "druid": "jd143sb1087",
+  "n": 43,
+  "slot": 1.8253,
+  "bridge": 0.7597,
+  "pitch": 2.5964,
+  "teilung": 3.1894,
+  "avg_hole_width": 1.686
+ },
+ {
+  "druid": "xm418xm6937",
+  "n": 188,
+  "slot": 1.8948,
+  "bridge": 0.7059,
+  "pitch": 2.6039,
+  "teilung": 3.1898,
+  "avg_hole_width": 1.7807
+ },
+ {
+  "druid": "rd899zb5188",
+  "n": 366,
+  "slot": 1.8074,
+  "bridge": 0.7017,
+  "pitch": 2.5102,
+  "teilung": 3.1855,
+  "avg_hole_width": 1.7055
+ },
+ {
+  "druid": "bz327kz4744",
+  "n": 286,
+  "slot": 1.9402,
+  "bridge": 0.5611,
+  "pitch": 2.5026,
+  "teilung": 3.1942,
+  "avg_hole_width": 1.8307
+ },
+ {
+  "druid": "jt465zc6779",
+  "n": 143,
+  "slot": 1.7935,
+  "bridge": 0.7251,
+  "pitch": 2.5133,
+  "teilung": 3.1916,
+  "avg_hole_width": 1.6792
+ },
+ {
+  "druid": "mw198ym5807",
+  "n": 132,
+  "slot": 1.935,
+  "bridge": 0.5649,
+  "pitch": 2.496,
+  "teilung": 3.1919,
+  "avg_hole_width": 1.8188
+ },
+ {
+  "druid": "cw965qx3168",
+  "n": 256,
+  "slot": 1.8783,
+  "bridge": 0.7187,
+  "pitch": 2.594,
+  "teilung": 3.1918,
+  "avg_hole_width": 1.7884
+ },
+ {
+  "druid": "mr400mf6531",
+  "n": 315,
+  "slot": 1.8073,
+  "bridge": 0.6923,
+  "pitch": 2.4923,
+  "teilung": 3.1869,
+  "avg_hole_width": 1.6691
+ },
+ {
+  "druid": "pp798fc0175",
+  "n": 298,
+  "slot": 1.8258,
+  "bridge": 0.7554,
+  "pitch": 2.5893,
+  "teilung": 3.1911,
+  "avg_hole_width": 1.7655
+ },
+ {
+  "druid": "mv647hz9361",
+  "n": 297,
+  "slot": 1.9116,
+  "bridge": 0.5833,
+  "pitch": 2.5025,
+  "teilung": 3.1914,
+  "avg_hole_width": 1.8061
+ },
+ {
+  "druid": "sx275gw8801",
+  "n": 218,
+  "slot": 1.9547,
+  "bridge": 0.5616,
+  "pitch": 2.5154,
+  "teilung": 3.198,
+  "avg_hole_width": 1.8154
+ },
+ {
+  "druid": "zk082zq3962",
+  "n": 352,
+  "slot": 1.9639,
+  "bridge": 0.5415,
+  "pitch": 2.5027,
+  "teilung": 3.1935,
+  "avg_hole_width": 1.8374
+ },
+ {
+  "druid": "xr433hz5827",
+  "n": 256,
+  "slot": 1.7555,
+  "bridge": 0.7452,
+  "pitch": 2.5039,
+  "teilung": 3.1905,
+  "avg_hole_width": 1.6132
+ },
+ {
+  "druid": "qk926qc7779",
+  "n": 360,
+  "slot": 1.9783,
+  "bridge": 0.5253,
+  "pitch": 2.501,
+  "teilung": 3.1954,
+  "avg_hole_width": 1.8264
+ },
+ {
+  "druid": "ys250pr2232",
+  "n": 292,
+  "slot": 1.7631,
+  "bridge": 0.7403,
+  "pitch": 2.5114,
+  "teilung": 3.1952,
+  "avg_hole_width": 1.6234
+ },
+ {
+  "druid": "yk645sm6970",
+  "n": 229,
+  "slot": 1.9032,
+  "bridge": 0.6831,
+  "pitch": 2.5936,
+  "teilung": 3.1916,
+  "avg_hole_width": 1.7824
+ },
+ {
+  "druid": "hw588xk2111",
+  "n": 0,
+  "pitch": null
+ },
+ {
+  "druid": "wh678yv0330",
+  "n": 0,
+  "pitch": null
+ },
+ {
+  "druid": "kr645mg0298",
+  "n": 4,
+  "pitch": null
+ }
+]

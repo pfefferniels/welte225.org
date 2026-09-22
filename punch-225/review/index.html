@@ -1,0 +1,582 @@
+<title>Welte Punch Dates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #ffffff;
+    --raised: #f9fafb;
+    --hover: #f3f4f6;
+    --line: #e5e7eb;
+    --line-strong: #d1d5db;
+    --ink: #16181c;
+    --muted: #6b7280;
+    --faint: #9ca3af;
+    --oxide: #8c3a25;
+    --oxide-soft: #f6ece8;
+    --slate: #3f5b7a;
+    --slate-soft: #eaf0f6;
+    --focus: #1f6feb;
+    --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0f1114; --raised: #16191d; --hover: #1c2026;
+      --line: #262a30; --line-strong: #363b43;
+      --ink: #e8eaed; --muted: #9199a5; --faint: #6b727d;
+      --oxide: #d07a5e; --oxide-soft: #2a1a15;
+      --slate: #8fb2d6; --slate-soft: #151d26;
+      --focus: #58a6ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0f1114; --raised: #16191d; --hover: #1c2026;
+    --line: #262a30; --line-strong: #363b43;
+    --ink: #e8eaed; --muted: #9199a5; --faint: #6b727d;
+    --oxide: #d07a5e; --oxide-soft: #2a1a15;
+    --slate: #8fb2d6; --slate-soft: #151d26;
+    --focus: #58a6ff;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 14px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration-color: var(--line-strong); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: var(--oxide); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+  header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; }
+  .masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding-block: 16px 10px; }
+  h1 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+  .lede { margin: 0; color: var(--muted); font-size: 13px; max-width: 60ch; }
+  .count { margin-left: auto; font: 500 12px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 0 12px; }
+  .chip { font: 500 12px/1 var(--sans); padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--muted); cursor: pointer; }
+  .chip:hover { background: var(--hover); color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  input[type="search"], input[type="text"], select { font: 400 13px/1 var(--sans); padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); }
+  input[type="search"] { min-width: 190px; flex: 1 1 190px; max-width: 300px; }
+
+  main { padding-block: 0 64px; }
+
+  .window { margin-block: 18px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--raised); overflow: hidden; }
+  .window h2 { margin: 0; padding: 12px 16px 10px; font-size: 14px; font-weight: 600; border-bottom: 1px solid var(--line); }
+  .window p { margin: 0; padding: 12px 16px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .window p b { color: var(--ink); font-weight: 600; }
+  .scroller { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 16px; white-space: nowrap; border-bottom: 1px solid var(--line); }
+  th { font: 500 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: 0.04em; color: var(--faint); }
+  td.num { font: 400 13px/1.5 var(--mono); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  tr.narrow td.num.mm { color: var(--slate); }
+  tr.wide td.num.mm { color: var(--oxide); }
+  .band { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 7px; vertical-align: baseline; }
+  .band.wide { background: var(--oxide); }
+  .band.narrow { background: var(--slate); }
+  .caveats { padding: 12px 16px 14px; border-top: 1px solid var(--line); }
+  .caveats h3 { margin: 0 0 6px; font: 500 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: 0.04em; color: var(--faint); }
+  .caveats ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+  .caveats li { margin-block: 5px; }
+  .caveats b { color: var(--ink); font-weight: 600; }
+
+  .banner { margin-block: 16px; padding: 12px 14px; border: 1px solid var(--line); border-left: 3px solid var(--oxide); border-radius: 3px; background: var(--raised); font-size: 13px; color: var(--muted); }
+  .banner b { color: var(--ink); font-weight: 600; }
+  .banner ul { margin: 8px 0 0; padding-left: 18px; }
+  .banner li { margin-block: 3px; }
+
+  .roll { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 20px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+  .meta { min-width: 0; }
+  .no { font: 500 15px/1.2 var(--mono); letter-spacing: -0.01em; }
+  .work { margin: 4px 0 0; font-size: 13px; }
+  .who { margin: 1px 0 0; font-size: 12px; color: var(--muted); }
+  .ids { margin: 8px 0 0; font: 400 11px/1.6 var(--mono); color: var(--faint); word-break: break-all; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 3px 8px; font: 500 11px/1.4 var(--mono); border-radius: 4px; border: 1px solid transparent; }
+  .pill.wide { background: var(--oxide-soft); color: var(--oxide); border-color: var(--oxide); }
+  .pill.narrow { background: var(--slate-soft); color: var(--slate); border-color: var(--slate); }
+  .pill.unknown { background: var(--hover); color: var(--muted); border-color: var(--line-strong); }
+
+  .body { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .said { padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--raised); }
+  .said .line { font: 500 14px/1.4 var(--mono); }
+  .said .parts { margin-top: 4px; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 3px 14px; }
+  .said .parts b { color: var(--ink); font-weight: 500; }
+  .conf { font: 500 10px/1.4 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 6px; border-radius: 3px; border: 1px solid var(--line-strong); color: var(--muted); }
+  .conf.high { border-color: var(--slate); color: var(--slate); }
+  .conf.low { border-color: var(--oxide); color: var(--oxide); }
+
+  figure { margin: 0; min-width: 0; }
+  figcaption { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font: 400 11px/1.4 var(--mono); color: var(--faint); margin-bottom: 4px; }
+  figcaption .why { color: var(--muted); }
+  figcaption .shows { color: var(--ink); font-weight: 500; }
+  .frame { display: block; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; background: var(--raised); line-height: 0; }
+  .frame img { width: 100%; height: auto; display: block; }
+  .others { font: 400 11px/1.7 var(--mono); color: var(--faint); }
+  .others div { display: flex; flex-wrap: wrap; gap: 3px 10px; }
+  .absent { border: 1px dashed var(--line-strong); border-radius: 3px; padding: 12px 14px; color: var(--muted); font-size: 12px; }
+  .empty { padding: 48px 0; text-align: center; color: var(--muted); }
+
+  .verdict { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .verdict label { font: 500 11px/1 var(--mono); color: var(--faint); text-transform: uppercase; letter-spacing: 0.04em; }
+  .verdict input[type="text"] { flex: 1 1 160px; min-width: 0; }
+  .mark { font: 500 12px/1 var(--sans); padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--muted); cursor: pointer; }
+  .mark:hover { background: var(--hover); color: var(--ink); }
+  .mark[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); background: var(--hover); }
+  .saved { font: 400 11px/1 var(--mono); color: var(--slate); opacity: 0; transition: opacity .2s; }
+  .saved.on { opacity: 1; }
+
+  @media (max-width: 720px) {
+    .roll { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+    .wrap { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="masthead">
+      <h1>Welte Punch Dates</h1>
+      <p class="lede">Where the date of punching is written on each of Stanford's red Welte rolls, what it says, and which perforator cut the copy.</p>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Welte no., druid, performer, title, hand" aria-label="Search rolls">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="dated" aria-pressed="false">Dated</button>
+      <button class="chip" data-filter="unread" aria-pressed="false">Unread</button>
+      <button class="chip" data-filter="wide" aria-pressed="false">wide machine</button>
+      <button class="chip" data-filter="narrow" aria-pressed="false">narrow machine</button>
+      <button class="chip" data-filter="shaky" aria-pressed="false">Low confidence</button>
+      <button class="chip" data-filter="blank" aria-pressed="false">Unread, undecided</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="window" id="window" hidden>
+    <h2>Dated copies, by the pitch their perforator cut</h2>
+    <p id="windowText"></p>
+    <div class="scroller"><table id="windowTable"></table></div>
+    <p id="advanceText"></p>
+    <div class="scroller"><table id="advanceTable"></table></div>
+    <div class="caveats" id="caveats" hidden>
+      <h3>What this table does and does not settle</h3>
+      <ul>
+        <li><b>An earlier version of this page said the change fell in thirteen weeks of
+          1914. That was wrong</b> and is withdrawn. It rested on nineteen dated copies, among
+          which no wide-punch roll happened to be dated after January 1914. With 220 the
+          absence disappears. None of the individual readings was wrong; the inference from
+          them was.</li>
+        <li><b>The pitch, not the diameter, is what is measured here.</b> It is a slot plus
+          the bridge after it. The grey level chosen for an edge moves those two against each
+          other and leaves their sum alone, so a pitch compares across scans where a diameter
+          does not. The Teilung holds at 3.19 mm in every cluster, so none of them is a
+          difference of lateral scale.</li>
+        <li><b>Two rolls carry the overlap on their own.</b> Welte 1697 reads "24. 8. 11" and
+          has a 2.500 mm pitch — the narrow machine, in August 1911, two and a half years
+          before roll 225's own copy of January 1914 at 3.00 mm. Welte 1275 reads
+          "1275. 25. 4. 22." with a signature and has a 3.015 mm pitch — the wide machine, in
+          April 1922. Both were measured twice, independently.</li>
+        <li><b>Four clusters, not two.</b> 2.50 and 3.01 mm hold most of the archive; 2.60 mm
+          holds 77 rolls and 2.83 mm holds 24. The 2.83 group is dated 1904 to 1909 and never
+          later, which makes it either an earlier setting of the wide machine or the oldest
+          paper having shrunk about six per cent along its length. A constant Teilung rules
+          out shrinkage in both directions at once, not shrinkage along the roll alone.</li>
+        <li><b>The counts are a collection, not a production record.</b> These are the copies
+          Denis Condon happened to gather. That before 1911 almost everything is wide and
+          after 1920 almost everything is narrow may describe what Welte ran or what survived;
+          these data cannot separate the two.</li>
+        <li><b>Some dates are conventions.</b> A bare digit string is split by the rule that
+          "14114" is 14.1.1914. Those readings are marked medium or low. Two rolls are flagged
+          for a wider crop before anything rests on them: ng103jj1150, whose year could be 3, 5
+          or 8, and gg384dv5303, whose written number does not match its catalogue number.</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="banner">
+    <b>These regions are suggestions; the readings are provisional.</b>
+    Each scan was searched end to end for ink on paper — not only the end margin — and every
+    patch scored on how much ink it holds, how far inside the paper edge it sits and how far past
+    the last perforation. The best-scoring patch of each roll is pictured; the others are listed
+    by box and reason. Three things imitate an inscription and are scored down: creases running
+    along the roll, damp stains, and the printed leader.
+    <ul>
+      <li>The writing runs in <b>both</b> directions along the roll, so every crop carries the
+        picture twice, the second turned 180 degrees. One of the two reads.</li>
+      <li>An inscription is usually three things: the roll's own number, the date, and the hand
+        that punched it — "660. Fritz 7 Dezb 1908". Where the number on the paper matches the
+        catalogue, the reading is anchored to the right roll.</li>
+      <li>A date built on grouping rather than separators — "2424" for 2.4.24 or 24.2.4 — is
+        marked low and should not be used.</li>
+    </ul>
+  </p>
+
+  <div id="list"></div>
+  <p class="empty" id="empty" hidden>Nothing matches that.</p>
+</main>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var DATA = (window.ROLLS && window.ROLLS.rolls) || [];
+  var PICS = (window.ROLLS && window.ROLLS.pictures) || {};
+  var BANDS = [[0, 2.55, "2.50"], [2.55, 2.70, "2.60"], [2.70, 2.92, "2.83"], [2.92, 9, "3.01"]];
+  var FAMILY = { "2.50": "narrow", "2.60": "narrow", "2.83": "wide", "3.01": "wide" };
+
+  var list = document.getElementById("list");
+  var empty = document.getElementById("empty");
+  var countEl = document.getElementById("count");
+  var search = document.getElementById("q");
+
+  var filter = "all";
+  var query = "";
+  var verdicts = Object.create(null);
+  var store = null;
+
+  function state(pitch) {
+    if (pitch == null) return null;
+    for (var i = 0; i < BANDS.length; i++) {
+      if (pitch >= BANDS[i][0] && pitch < BANDS[i][1]) return BANDS[i][2];
+    }
+    return null;
+  }
+
+  function family(roll) {
+    var name = state(roll.pitch);
+    return name ? FAMILY[name] : "unknown";
+  }
+
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function link(text, href, cls) {
+    var a = el("a", cls, text);
+    a.href = href; a.target = "_blank"; a.rel = "noopener";
+    return a;
+  }
+
+  function matches(roll) {
+    if (filter === "dated" && !roll.date) return false;
+    if (filter === "unread" && roll.reading) return false;
+    if (filter === "wide" && family(roll) !== "wide") return false;
+    if (filter === "narrow" && family(roll) !== "narrow") return false;
+    if (filter === "shaky" && roll.confidence !== "low") return false;
+    if (filter === "blank") {
+      var mark = (verdicts[roll.druid] || {}).verdict;
+      if (roll.reading || mark) return false;
+    }
+    if (!query) return true;
+    var hay = [roll.welte, roll.druid, roll.performer, roll.title, roll.callnum, roll.hand, roll.inscription]
+      .join(" ").toLowerCase();
+    return hay.indexOf(query) !== -1;
+  }
+
+  function evidence() {
+    var dated = DATA.filter(function (r) {
+      return r.date && r.pitch != null && r.confidence !== "low" && !r.flagged;
+    }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    if (dated.length < 20) return;
+
+    var names = ["2.50", "2.60", "2.83", "3.01"];
+    var years = {};
+    dated.forEach(function (roll) {
+      var year = roll.date.slice(0, 4), name = state(roll.pitch);
+      if (!name) return;
+      years[year] = years[year] || { "2.50": 0, "2.60": 0, "2.83": 0, "3.01": 0 };
+      years[year][name] += 1;
+    });
+
+    var table = document.getElementById("windowTable");
+    var head = el("tr");
+    head.appendChild(el("th", null, "Punched"));
+    names.forEach(function (name) { head.appendChild(el("th", null, name + " mm")); });
+    table.appendChild(head);
+
+    Object.keys(years).sort().forEach(function (year) {
+      var row = el("tr");
+      row.appendChild(el("td", "num", year));
+      names.forEach(function (name) {
+        var count = years[year][name];
+        var cell = el("td", "num " + (FAMILY[name] === "wide" ? "wide" : "narrow"), count || "·");
+        if (!count) cell.style.color = "var(--faint)";
+        row.appendChild(cell);
+      });
+      table.appendChild(row);
+    });
+
+    var wide = dated.filter(function (r) { return family(r) === "wide"; });
+    var narrow = dated.filter(function (r) { return family(r) === "narrow"; });
+    var text = document.getElementById("windowText");
+    text.appendChild(el("b", null, "The two punches are two machines, not two periods."));
+    if (wide.length && narrow.length) {
+      text.appendChild(document.createTextNode(
+        " The wide states run from " + wide[0].date + " to " + wide[wide.length - 1].date +
+        " over " + wide.length + " dated copies, the narrow from " + narrow[0].date + " to " +
+        narrow[narrow.length - 1].date + " over " + narrow.length + ". They overlap by years, so the" +
+        " size of a perforation says which perforator cut a copy and not when it was cut."));
+    } else {
+      text.appendChild(document.createTextNode(
+        " " + dated.length + " dated copies carry a measured pitch so far."));
+    }
+
+    advanceTable(dated);
+
+    document.getElementById("window").hidden = false;
+    var caveats = document.getElementById("caveats");
+    if (caveats) caveats.hidden = false;
+  }
+
+  function advanceTable(dated) {
+    var resolved = dated.filter(function (r) {
+      return r.advance != null && r.advanceR != null && r.advanceR >= 0.25;
+    });
+    if (resolved.length < 20) return;
+
+    var groups = [
+      ["1.00 mm", function (r) { return r.advance >= 0.95 && r.advance <= 1.10; }],
+      ["0.50 mm", function (r) { return r.advance >= 0.45 && r.advance <= 0.55; }],
+      ["other", function (r) { return !(r.advance >= 0.95 && r.advance <= 1.10) && !(r.advance >= 0.45 && r.advance <= 0.55); }]
+    ];
+
+    var table = document.getElementById("advanceTable");
+    var head = el("tr");
+    ["Advance", "Dated copies", "Earliest", "Latest"].forEach(function (name) {
+      head.appendChild(el("th", null, name));
+    });
+    table.appendChild(head);
+
+    groups.forEach(function (group) {
+      var members = resolved.filter(group[1]);
+      if (!members.length) return;
+      var row = el("tr");
+      row.appendChild(el("td", "num", group[0]));
+      row.appendChild(el("td", "num", String(members.length)));
+      row.appendChild(el("td", "num", members[0].date));
+      row.appendChild(el("td", "num", members[members.length - 1].date));
+      table.appendChild(row);
+    });
+
+    var text = document.getElementById("advanceText");
+    text.appendChild(el("b", null, "The advance, unlike the punch, does date a roll."));
+    text.appendChild(document.createTextNode(
+      " It is the smallest step the paper took between two firings, and it halved once." +
+      " On " + resolved.length + " dated copies where the period resolves it falls on the" +
+      " right side of the turn of 1909 to 1910, with one exception: Welte 569, inscribed" +
+      " 16 December 1919, which is old on every measure."));
+  }
+
+  function said(roll) {
+    var box = el("div", "said");
+    box.appendChild(el("div", "line", roll.inscription || roll.reading));
+    var parts = el("div", "parts");
+    if (roll.date) { parts.appendChild(el("span", null, "punched ")); parts.lastChild.appendChild(el("b", null, roll.date)); }
+    if (roll.onpaper != null) parts.appendChild(el("span", null, "roll no. on paper: " + roll.onpaper));
+    if (roll.hand) parts.appendChild(el("span", null, "hand: " + roll.hand));
+    parts.appendChild(el("span", "conf " + roll.confidence, roll.confidence));
+    if (roll.flagged) {
+      var warn = el("span", "conf low", "wants a wider crop");
+      warn.title = roll.flagged;
+      parts.appendChild(warn);
+    }
+    box.appendChild(parts);
+    return box;
+  }
+
+  function render(roll) {
+    var row = el("article", "roll");
+    row.id = "roll-" + roll.druid;
+
+    var meta = el("div", "meta");
+    meta.appendChild(el("div", "no", roll.welte == null ? "—" : "Welte " + roll.welte));
+    if (roll.title) meta.appendChild(el("p", "work", roll.title));
+    if (roll.performer) meta.appendChild(el("p", "who", roll.performer));
+
+    var kind = family(roll);
+    var name = state(roll.pitch);
+    meta.appendChild(el("span", "pill " + kind,
+      name ? "pitch " + roll.pitch.toFixed(3) + " mm" : "pitch not measured"));
+    var detail = [];
+    if (roll.punch != null) detail.push("punch " + roll.punch.toFixed(3) + " across");
+    if (roll.advance != null && roll.advanceR >= 0.25) detail.push("advance " + roll.advance.toFixed(3));
+    if (detail.length) meta.appendChild(el("p", "who", detail.join(" · ") + " mm"));
+
+    var ids = el("p", "ids");
+    ids.appendChild(document.createTextNode(roll.druid));
+    if (roll.callnum) { ids.appendChild(document.createElement("br")); ids.appendChild(document.createTextNode(roll.callnum)); }
+    ids.appendChild(document.createElement("br"));
+    ids.appendChild(link("purl ↗", roll.purl));
+    meta.appendChild(ids);
+    row.appendChild(meta);
+
+    var body = el("div", "body");
+    if (roll.reading || roll.inscription) body.appendChild(said(roll));
+
+    var top = roll.regions[0];
+    if (top) {
+      var fig = el("figure");
+      var cap = el("figcaption");
+      cap.appendChild(el("span", "shows", top.read
+        ? "the line that was read"
+        : "no reading — best-scoring patch, which may be a stain or blank paper"));
+      cap.appendChild(el("span", null, "region " + top.n));
+      cap.appendChild(el("span", null, top.box.join(", ")));
+      if (top.score != null) cap.appendChild(el("span", null, "score " + top.score));
+      if (top.why) cap.appendChild(el("span", "why", top.why));
+      cap.appendChild(link("open at Stanford ↗", top.view || top.url));
+      fig.appendChild(cap);
+
+      if (PICS[roll.druid]) {
+        var frame = link("", top.view || top.url, "frame");
+        var img = el("img");
+        img.src = PICS[roll.druid];
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.alt = "the best-scoring patch of ink on " + roll.druid + ", shown both ways up";
+        frame.appendChild(img);
+        fig.appendChild(frame);
+      }
+      body.appendChild(fig);
+    } else {
+      body.appendChild(el("div", "absent", "No region found — Stanford serves no image for this druid."));
+    }
+
+    if (roll.regions.length > 1) {
+      var others = el("div", "others");
+      roll.regions.slice(1).forEach(function (region) {
+        var line = el("div");
+        line.appendChild(el("span", null, "region " + region.n));
+        line.appendChild(el("span", null, region.box.join(", ")));
+        if (region.score != null) line.appendChild(el("span", null, "score " + region.score));
+        if (region.why) line.appendChild(el("span", null, region.why));
+        line.appendChild(link("↗", region.view || region.url));
+        others.appendChild(line);
+      });
+      if (roll.more) others.appendChild(el("div", null, "and " + roll.more + " more"));
+      body.appendChild(others);
+    }
+
+    body.appendChild(verdict(roll));
+    row.appendChild(body);
+    return row;
+  }
+
+  function verdict(roll) {
+    var row = el("div", "verdict");
+    var mine = verdicts[roll.druid] || {};
+
+    var read = !!roll.reading;
+    var agree = el("button", "mark", read ? "reading stands" : "a date is there, not found");
+    var doubt = el("button", "mark", read ? "wrong or unreadable" : "no date on this roll");
+    agree.title = read
+      ? "the date shown is what the roll says"
+      : "the roll carries a punch date that the search missed";
+    doubt.title = read
+      ? "the date shown is wrong, or the line cannot be read"
+      : "the roll carries no punch date at all — a finding, not a failure";
+    [agree, doubt].forEach(function (button) { row.appendChild(button); });
+
+    var label = el("label", null, "correction");
+    label.setAttribute("for", "v-" + roll.druid);
+    row.appendChild(label);
+
+    var field = el("input");
+    field.type = "text";
+    field.id = "v-" + roll.druid;
+    field.placeholder = roll.reading ? "leave blank unless it reads otherwise" : "e.g. 660. Fritz 7 Dezb 1908";
+    field.value = mine.correction || "";
+    row.appendChild(field);
+
+    var flag = el("span", "saved", "saved");
+    row.appendChild(flag);
+
+    var yes = read ? "stands" : "missed";
+    var no = read ? "wrong" : "blank";
+
+    function paint() {
+      agree.setAttribute("aria-pressed", String(mine.verdict === yes));
+      doubt.setAttribute("aria-pressed", String(mine.verdict === no));
+    }
+
+    function persist() {
+      mine.correction = field.value.trim();
+      mine.at = new Date().toISOString();
+      verdicts[roll.druid] = mine;
+      paint();
+      if (!store) return;
+      store.doc("verdicts/" + roll.druid).set({
+        verdict: mine.verdict || null,
+        correction: mine.correction || null,
+        was: roll.reading || null,
+        at: mine.at
+      }).then(function () {
+        flag.classList.add("on");
+        setTimeout(function () { flag.classList.remove("on"); }, 1200);
+      }).catch(function () {});
+    }
+
+    agree.addEventListener("click", function () { mine.verdict = mine.verdict === yes ? null : yes; persist(); });
+    doubt.addEventListener("click", function () { mine.verdict = mine.verdict === no ? null : no; persist(); });
+    field.addEventListener("change", persist);
+
+    paint();
+    return row;
+  }
+
+  function draw() {
+    var shown = DATA.filter(matches);
+    list.textContent = "";
+    var fragment = document.createDocumentFragment();
+    shown.forEach(function (roll) { fragment.appendChild(render(roll)); });
+    list.appendChild(fragment);
+    empty.hidden = shown.length > 0;
+    var read = DATA.filter(function (r) { return r.reading; }).length;
+    countEl.textContent = read + " read / " + DATA.length + " rolls";
+  }
+
+  document.querySelectorAll(".chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      filter = chip.dataset.filter;
+      document.querySelectorAll(".chip").forEach(function (other) {
+        other.setAttribute("aria-pressed", String(other === chip));
+      });
+      draw();
+    });
+  });
+
+  var typing;
+  search.addEventListener("input", function () {
+    clearTimeout(typing);
+    typing = setTimeout(function () { query = search.value.trim().toLowerCase(); draw(); }, 150);
+  });
+
+  evidence();
+  draw();
+
+  if (window.claude && window.claude.use) {
+    window.claude.use("db").then(function (db) {
+      if (!db) return;
+      store = db;
+      db.collection("verdicts").onSnapshot(function (snapshot) {
+        var docs = (snapshot && snapshot.docs) || [];
+        var changed = false;
+        docs.forEach(function (doc) {
+          var id = String(doc.id || "").replace(/^verdicts\//, "");
+          var value = doc.data || doc;
+          if (!id || !value) return;
+          var before = verdicts[id];
+          if (!before || before.at !== value.at) { verdicts[id] = value; changed = true; }
+        });
+        if (changed) draw();
+      });
+    }).catch(function () {});
+  }
+})();
+</script>

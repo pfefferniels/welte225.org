@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "fk269mx8427",
+    "region": 1,
+    "inscription": "8. 11. 21",
+    "reading": "8. 11. 21",
+    "date_iso": "1921-11-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "faint pencil, read from the lower (180 degree) panel; the figures are at the limit of the scan and the day could be 6 or 18. A separate large G-like mark stands further along the same crop. Region 2 carries a four-figure pencil number, 1808 or 1606, not a date; region 3 shows only a fibre; region 4 is the leader with the printed label WELTE-MIGNON No. 2998, Polonaise E minor Op. 46 No. 12, E. Mac Dowell, played by O. E. Gorges."
+  },
+  {
+    "druid": "hg709nf1997",
+    "region": 1,
+    "inscription": "20 913",
+    "reading": "20 913",
+    "date_iso": "1913-09-20",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, read from the lower (180 degree) panel; separators dropped, as in the documented 14114 pattern, so 20 | 9 | 13"
+  },
+  {
+    "druid": "ty382mw3181",
+    "region": 1,
+    "inscription": "141227",
+    "reading": "141227",
+    "date_iso": "1927-12-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, not written, and crisp; read along the roll, six figures without separators, as in the documented 311022 pattern. A second, much fainter stamp of about the same length stands beside it and is too broken to read."
+  },
+  {
+    "druid": "jk842rg9750",
+    "region": 1,
+    "inscription": "=96128",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3084",
+    "hand": null,
+    "confidence": "none",
+    "notes": "region 1 carries a crisp six-position stamp running along the roll: five plain figures 9 6 1 2 8 preceded by a mark of two short parallel dashes, which may be an under-inked figure. The spacing is even, so no figure is missing, and the string does not parse as a day-month-year date under the conventions used here, so I have not made one of it. Region 2 carries a pencil number read as 3084, the last figure possibly 7, which I take to be the roll number; region 3 is blank paper."
+  },
+  {
+    "druid": "tb323rh4122",
+    "region": 1,
+    "inscription": "91024",
+    "reading": "91024",
+    "date_iso": "1924-10-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped; every figure plain. A further stamped mark to the right is cut by the crop edge."
+  },
+  {
+    "druid": "rv703vf3503",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops searched, no writing. Crop 1 is the scanning rig rather than the roll: colour target, scale bar and the leader strap with its eyelet. Crop 2 is the join of the cloth leader to the paper. Crop 3 is plain paper with one small dark speck."
+  },
+  {
+    "druid": "tq268fs9721",
+    "region": 1,
+    "inscription": "[?]2 5 27",
+    "reading": "?2 5 27",
+    "date_iso": "1927-05",
+    "roll_number": "3045",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, treble edge, at the tail of the roll. Five figures, very faint and cut along their tops by the crop edge. The last is the barred 7 of these hands and the one before it a 2, giving the year 27; the middle figure matches the 5 of the roll number written at the head of the roll (crop 3), giving May; the fourth-from-last is a 2, so the day ends in 2, but its first figure is illegible and I have not guessed it. Crop 4 shows the printed leader label, WELTE-MIGNON No. 3045, Debussy Preludes, M. Welte & Soehne Freiburg i. B., with a signature in the \"Played by\" box; it carries no date. Crop 2 is a damp stain."
+  },
+  {
+    "druid": "gm296rz0673",
+    "region": 1,
+    "inscription": "11822",
+    "reading": "11822",
+    "date_iso": "1922-08-11",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, treble edge, five figures without separators. Two plain carets for the 1s, a closed double loop for the 8, and two matching 2s."
+  },
+  {
+    "druid": "rb861vm6094",
+    "region": 1,
+    "inscription": "18722",
+    "reading": "18722",
+    "date_iso": "1922-07-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil on buff paper, five figures without separators. The 7 carries the crossbar; the two 2s match each other. The second figure is the two-lobed 8 of these hands, which read as a 6 would make the day 16."
+  },
+  {
+    "druid": "ch401rm7382",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops searched, no writing. Crop 1 is a round stain, crop 2 perforations with a small dark fleck, crop 3 the join of the cloth leader to the paper with a printed English instruction slip, cut by the crop edge and carrying no date."
+  },
+  {
+    "druid": "dp801zr4347",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops searched, no writing. Crop 1 has faint smudges only, which enhancement shows to be paper grain and staining; crops 2 and 3 are perforations with a dark repair patch."
+  },
+  {
+    "druid": "dq126tp4234",
+    "region": 1,
+    "inscription": "2[?] 10 22",
+    "reading": "2?1022",
+    "date_iso": "1922-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, treble edge. Six figures grouped 2 + 2 + 2, all of them cut along the top by the crop edge, which begins at the first row of ink. The last two are the same figure, a hooked top with a diagonal and a base, giving the year 22; the middle pair are a plain diagonal and an oval, giving the month 10; the first is a 2. The second figure shows two lobes and looks like the open-topped 8, which would make the day 28, but it is not legible enough to fix and I have not completed it. Crops 2 to 4 carry only a repair patch and stains."
+  },
+  {
+    "druid": "mw870hc7232",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All four crops searched, no writing. Each shows perforations with translucent repair patches over them, and crop 4 a small dark fleck."
+  },
+  {
+    "druid": "bd915bs0646",
+    "region": 1,
+    "inscription": "30821",
+    "reading": "30821",
+    "date_iso": "1921",
+    "roll_number": "3162",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, treble edge, at the tail of the roll. Five small figures, about 27 px each, cut along the top by the crop edge. The last two are secure: the 2 matches the 2 of the roll number written at the head of the roll (crop 4) and the 1 is a plain stroke, so the year is 21. My best reading of the rest is 30 and 8, giving 30 August, but the first figure could be a 2 (day 20) and the third could be a 6 (June), so I have left date_iso at the year alone rather than complete it. Crop 2 carries a short pencil tick, crop 3 creases, crop 5 the leader join."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "jn782fq7439",
+    "region": 1,
+    "inscription": "[name, illegible]  18 2 09.  [?] 134",
+    "reading": "18 2 09",
+    "date_iso": "1909-02-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, one line. A cursive word of five or six letters stands before the date and is illegible to me; it may begin Hoff-. The day's second figure is an 8 written as two strokes converging on a single bottom bowl, so the upper loop is open; 6 can be ruled out because two strokes descend into the bowl. A three-figure group, perhaps 134, preceded by a letter, follows the date; I could not read it with confidence and have left roll_number empty."
+  },
+  {
+    "druid": "kt852zf4103",
+    "region": 1,
+    "inscription": "311022",
+    "reading": "311022",
+    "date_iso": "1922-10-31",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, six figures run together with no separators: 3, 1, 1, 0 (a narrow slanted loop), 2, 2. Read as 31.10.22. The grouping is the only doubt; the figures themselves are legible."
+  },
+  {
+    "druid": "pb477ps9097",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops examined, both panels of each. Plain paper, perforations and a repair patch; no writing."
+  },
+  {
+    "druid": "yr287jf4422",
+    "region": 1,
+    "inscription": "[short word, illegible]  1. 4. 1908",
+    "reading": "1. 4. 1908",
+    "date_iso": "1908-04-01",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil. A short word, written twice one line above the other, stands before the date; it begins with M or W and seems to carry an umlaut, but I cannot read it. The 4 is the closed-triangle form; the final 8 has a narrow slanted upper loop over a full bowl. Same hand and same date as yg150mb0559, where the year is written more clearly."
+  },
+  {
+    "druid": "tp747vf1137",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops examined, both panels of each. Plain red paper with damp staining; no writing."
+  },
+  {
+    "druid": "zb497jz4405",
+    "region": 1,
+    "inscription": "28. 10 04  Hofmann",
+    "reading": "28. 10 04",
+    "date_iso": "1904-10-28",
+    "roll_number": null,
+    "hand": "Hofmann",
+    "confidence": "low",
+    "notes": "Ink, a heavier and more upright hand than the others in this batch. Day 28 and month 10 are plain. The year's second figure is the doubtful one: an arm descends from the upper left and meets the stem at mid height, which reads as the open form of 4 rather than 7, since in 7 the stem would leave the bar at its right end. 1907 cannot be excluded. The name reads Hofmann; Hohmann is possible."
+  },
+  {
+    "druid": "mh120sr5901",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops examined, both panels of each. Buff paper with damp stains, perforations and two inked squares; no writing."
+  },
+  {
+    "druid": "bs173rx9307",
+    "region": 1,
+    "inscription": "19. 9. 24.",
+    "reading": "19. 9. 24.",
+    "date_iso": "1924-09-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Fine pencil, small and rather faint, but each figure separates cleanly: 19, then 9 (top loop with descender), then 24."
+  },
+  {
+    "druid": "gq169nf1405",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All four crops examined, both panels of each. Perforations and one faint pencil squiggle that carries no letters; no writing."
+  },
+  {
+    "druid": "jd625tw2164",
+    "region": 1,
+    "inscription": "\"This music roll manufactured by M. Welte & Sons, Inc. is sold with the distinct understanding that the purchaser by his acceptance of this roll agrees that it is only to be used on the Welte-Mignon, manufactured by M. Welte & Sons, Inc. and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Not handwriting: the printed licence notice of the American branch, stamped across the roll at right angles to it. Crops 2 and 3 hold the leader tab with the scanner's target and blank paper. No punch date on this roll."
+  },
+  {
+    "druid": "vb685pd6967",
+    "region": 1,
+    "inscription": "192.  10.  10.  11",
+    "reading": "10. 10. 11",
+    "date_iso": "1911-10-10",
+    "roll_number": "192",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil. Four groups: 192 with a stop, then three date groups. Read as roll number 192 and the date 10.10.11. The two 10s are each a 1 followed by a narrow open oval; 16 would need a bowl on the baseline and I do not see one."
+  },
+  {
+    "druid": "gg384dv5303",
+    "region": 1,
+    "inscription": "[N?]1253  24 1108  [name, illegible]",
+    "reading": "24 1108",
+    "date_iso": "1908-11-24",
+    "roll_number": "1253",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil over the ruled lines of the scan. A capital, then 1253, then 24, then 1108 run together, then a name of five or six letters with a descender in the middle that I cannot read. The 8 is the two-stroke form with an open upper loop, as on jn782fq7439."
+  },
+  {
+    "druid": "mx460bt7026",
+    "region": 1,
+    "inscription": "Kummer",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": "Kummer",
+    "confidence": "none",
+    "notes": "The puncher's name alone, in a large looping pencil hand, with no figures beside it. Crop 2 holds an unrelated pen flourish, crops 3 and 4 the cut end of the roll. No date on this roll."
+  },
+  {
+    "druid": "yg150mb0559",
+    "region": 1,
+    "inscription": "[short word, illegible]  1. 4. 1908.",
+    "reading": "1. 4. 1908.",
+    "date_iso": "1908-04-01",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, the clearest hand in the batch: 1. 4. 1908. with the final 8 fully formed. The short word before the date is the same mark as on yr287jf4422 and is illegible to me; it begins with M or W and appears to carry an umlaut."
+  }
+]

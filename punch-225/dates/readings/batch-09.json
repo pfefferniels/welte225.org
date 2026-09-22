@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "wk295jd5289",
+    "region": 1,
+    "inscription": "16.10.22.",
+    "reading": "16.10.22",
+    "date_iso": "1922-10-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, single line, read from the lower (180-degree) panel; the two year figures are identically formed and read as 2 and 2"
+  },
+  {
+    "druid": "kp368nb7707",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "region 1 holds a pencil name in cursive, five or six letters with an i-dot, which I could not read; no figures anywhere in it. Region 4 has 'STOP.' written twice between the perforations, region 2 a crease with a pencil line along it, region 3 a single long pencil line and nothing else"
+  },
+  {
+    "druid": "yg939nd3043",
+    "region": 3,
+    "inscription": "4'34\"  18. 7. 77",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "a later hand, not the workshop: a playing time of 4 minutes 34 seconds over the date 18 July 1977, in fine modern pencil beside a tissue repair strip at the leader. Region 1 is the printed English copyright notice (M. Welte & Sons), region 2 the colour target and scale of the scan"
+  },
+  {
+    "druid": "zc614qh7060",
+    "region": 1,
+    "inscription": "28.5.15.",
+    "reading": "28.5.15",
+    "date_iso": "1915-05-28",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, single line, no number or name in the crop; second figure is the open-loop form that can also read as 6, so 26.5.15 is a possible alternative"
+  },
+  {
+    "druid": "vm423wb2944",
+    "region": 1,
+    "inscription": "[cursive word, undeciphered]  II a",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 holds one line of ink in Kurrent, a word I cannot make out (it may be a name, the capital looks like H) followed by 'II a', apparently a take or part designation; crops 2 and 4 are blank; crop 3 is the printed leader label, 'No. 548 / Nocturn / Op. 15. No. 2. Fis-dur. / Fr. Chopin / Gespielt von' with a facsimile autograph and the printed date '26. IX. 05.' beside the copyright box of M. Welte & Soehne, Freiburg i. Br. That printed date belongs to the edition, not to the punching of this copy, so it is not entered as the punch date"
+  },
+  {
+    "druid": "wt621xq0875",
+    "region": 1,
+    "inscription": "561. 09. 04",
+    "reading": "09. 04",
+    "date_iso": null,
+    "roll_number": "561",
+    "hand": null,
+    "confidence": "low",
+    "notes": "ink, one line, crops 2-4 blank. The figures are legible one by one: 561, then 09, then a final group I read as 04 (a narrow oval joined to a check-mark-and-stem 4). They do not resolve into a day.month.year: taken as day and month it would be 9 April with no year written, taken as month and year September 1904. I leave date_iso null rather than complete it"
+  },
+  {
+    "druid": "kr397bv2881",
+    "region": 1,
+    "inscription": "= 91224",
+    "reading": "91224",
+    "date_iso": "1924-12-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, not written; the five figures are plain. A small double-stroke mark like an equals sign stands before them and a dot after, both apparently part of the stamp. Read as 9.12.24 on the dropped-separator convention; 91 as a day would be impossible, so the split is not in doubt"
+  },
+  {
+    "druid": "kt780tm7975",
+    "region": 2,
+    "inscription": "4'9\" - 26.1.76",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "no workshop punch date found. Crop 2 carries a pencil note on the red paper by the green leader, a length in feet and inches followed by 26.1.76; the hand is modern and rounded, unlike the workshop hands, and Welte was long gone by 1976, so I take it for a later owner's or conservator's note and not a punch date. Crop 1 is the printed leader label, 'Fr. Chopin' with the facsimile signature of Frederic Lamond, its printed date cut off at the crop edge. Crop 3 shows a white paper label on the green leader whose writing the crop cuts through, only the tops of a few characters and a '5.' legible"
+  },
+  {
+    "druid": "rb625rv7300",
+    "region": 1,
+    "inscription": "569  Hans u. Pflugel  16.12.19",
+    "reading": "16.12.19",
+    "date_iso": "1919-12-16",
+    "roll_number": "569",
+    "hand": "Hans u. Pflugel",
+    "confidence": "high",
+    "notes": "ink, one line across the sheet. The figures are plain and the 6 here is the closed form, matching the 6 of 569. 'Hans' is clear; the second name I read as Pflugel (Pf-ligature, l, u with the u-bow, g, e, l) but it is the least certain part of the line"
+  },
+  {
+    "druid": "kz379jn2491",
+    "region": 1,
+    "inscription": "251022",
+    "reading": "251022",
+    "date_iso": "1922-10-25",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Fine dark strokes, one line, lower panel upright. Six figures run together without separators, 25 10 22. All six are plain; the two 2s at the end match the 2 that opens the line. No roll number or name in this crop."
+  },
+  {
+    "druid": "ng103jj1150",
+    "region": 1,
+    "inscription": "5700.  4.9.13.",
+    "reading": "4.9.13",
+    "date_iso": "1913-09-04",
+    "roll_number": "5700",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, one line, lower panel upright. The crop is cut through the tops of the figures, so every ascender is lost and several figures are arguable. Day 4 is plain (open-top 4 with descender). The second figure of the date is a closed loop with a long descender and no lower bowl, which I read as 9, but an 8 of the two-stroke kind cannot be excluded, so the month is either September or August. The year figures read 1 and a two-bowl 3, both bowls opening left, hence 13; a 5 or 8 there is less likely but not impossible. The number group reads 5, a crossed 7 whose bar runs over the next figures, then two ovals, so 5700, with the 7 the least certain figure. Crop 2 is the scanner's calibration target, crop 3 the blank leader tab, crop 4 a conservator's note in English: 'This roll was checked on 28.5.1991 + found to be in good condition / The bass edge is feathered for the last metre or so but / it plays well'. Worth re-cropping this region with more margin above the line."
+  },
+  {
+    "druid": "kg327qk8426",
+    "region": 4,
+    "inscription": "WELTE-MIGNON No.587 Waltzes Op. 39. 1. and 2. J. BRAHMS Played by G. GALSTON | N.B. 6.12.1998 Re adjust tracking at the join. also 589 Brahms waltzes Nos. 6 & 11",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop punch date on any of the four crops. Crop 4 carries the printed leader label for Welte-Mignon No. 587 and, beside it, a felt-tip note in a modern English hand dated 6.12.1998 with the century written out, which by the rule in reading.md belongs to the archive and not to the workshop; the same note repeats on crop 2. Crop 1 is blank red paper with a repair tape down the middle, crop 3 the leader hook and the scanner's calibration target. The printed number 587 is the catalogue's, not a number written on the paper, so I have left roll_number null."
+  },
+  {
+    "druid": "yw484ky7093",
+    "region": 1,
+    "inscription": "588. 4. 6. 17.",
+    "reading": "4. 6. 17",
+    "date_iso": "1917-06-04",
+    "roll_number": "588",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink, written along the roll so the crop has to be turned a quarter turn; both panels carry it and both read once turned. Roll number 588, then the three date groups separated by dots. The 4 and the 6 are plain. The year is a plain 1 followed by a crossed 7, the bar across the stem visible under magnification, so 17 and not 11. No name in this crop."
+  },
+  {
+    "druid": "xm978sg7252",
+    "region": 2,
+    "inscription": "910204",
+    "reading": "910204",
+    "date_iso": null,
+    "roll_number": "592",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Crop 2 carries one line of six figures run together without separators, lower panel upright, in the workshop hand. Reading them one by one against the figures of the same hand on crop 4, which writes the roll number 592, the 9 and the 2 match that 9 and that 2 exactly; the second figure is a plain 1, the third and fifth are closed ovals, and the last is the open-top 4 familiar from other rolls in the corpus. That gives 910204, which does not parse as day-month-year: 9.10.20 leaves a 4 over, 9.10.24 requires throwing away one of the two ovals, and 91 is no day. I have therefore left date_iso null rather than choose a parse. Roll number 592 is taken from crop 4, where it is written in pencil beside the perforations, and it agrees with the printed leader label on crop 5, 'WELTE-MIGNON No. 592 Waltzes Op. 39, No. 15 and 16, J. Brahms, played by G. Galston'. Crops 1 and 3 are blank red paper, crop 6 the scanner's calibration card. This line is worth a second reader."
+  }
+]

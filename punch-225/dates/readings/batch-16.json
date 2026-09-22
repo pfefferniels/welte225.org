@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "qt363fp0799",
+    "region": 1,
+    "inscription": "J. Herrmann",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "ink signature across the roll, no date. Crop 2 is a leader with a later restorer's hand: 4'51\" / 6'38\" - 17.5.1981 / 4'51\" 19.10.93, lengths and archive dates, not workshop. Crops 3-4 blank but for a smudge and a single pen loop."
+  },
+  {
+    "druid": "sb487jm2092",
+    "region": 1,
+    "inscription": "1262.  20. 6. 12",
+    "reading": "20. 6. 12",
+    "date_iso": "1912-06-20",
+    "roll_number": "1262",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, single line, read from the lower panel. The 1 and 2 of the closing 12 match the opening 1262, which settles those figures; the 20 resolves to 2 + 0 under threshold."
+  },
+  {
+    "druid": "dc021nq1464",
+    "region": 1,
+    "inscription": "1863  6 3 09  Kummer",
+    "reading": "6 3 09",
+    "date_iso": "1909-03-06",
+    "roll_number": "1863",
+    "hand": "Kummer",
+    "confidence": "medium",
+    "notes": "pencil, one line; final year figure loops shut only faintly, read as 9 rather than 4"
+  },
+  {
+    "druid": "dw479gk0103",
+    "region": 2,
+    "inscription": "1263",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1263",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil roll number only, no date on any crop; the figures are clipped by the crop edge in regions 1 and 2, and both read as the same four-digit number. Region 3 is the leader with the printed label 'WELTE-MIGNON No. 1263 / Minuett / G major / Played by Paderewski'. Region 4 is a smudge, not writing."
+  },
+  {
+    "druid": "jw822wm2644",
+    "region": 1,
+    "inscription": "1275. 25. 4. 22. [signature]",
+    "reading": "25. 4. 22",
+    "date_iso": "1922-04-25",
+    "roll_number": "1275",
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, one line; all figures plain. An inked signature follows the date, a tall looped capital and some four letters ending in a long descending flourish. I could not resolve it into a name, so the hand is left open."
+  },
+  {
+    "druid": "mh255vw4599",
+    "region": 1,
+    "inscription": "N. 1236. Fritz 20 Novb 1908.",
+    "reading": "20 Novb 1908",
+    "date_iso": "1908-11-20",
+    "roll_number": "1236",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "pencil, one line above a row of perforations; the month is written out as Novb. The figures of the roll number are fainter than the date, the reading 1236 is the best I can make of them."
+  },
+  {
+    "druid": "zf882fv0052",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops read. Crop 1 is the cloth leader tab with the scanner's colour target, crop 2 the leader-to-paper join, crop 3 plain red paper with one small dark blemish. No writing in either orientation."
+  },
+  {
+    "druid": "ps108fn1431",
+    "region": 1,
+    "inscription": "N. 1288  7.1.09  [signature]",
+    "reading": "7.1.09",
+    "date_iso": "1909-01-07",
+    "roll_number": "1288",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, one line, upper panel upright. The day is a crossed 7; the year 09 matches the 9 written with a descender. The roll number ends in two of the open-topped 8s described in reading.md; its second figure sits on the baseline without a descender, so I read 2 rather than 9. A short signature of some four letters follows the date, beginning with a looped capital and ending in a long descender; I could not resolve it into a name."
+  },
+  {
+    "druid": "sq640bh1919",
+    "region": 3,
+    "inscription": "\"Famous Artists are reproduced on \"THE WELTE-MIGNON\" 273 Fifth Ave. N.Y.C.\" with the facsimile signature \"Josef Lhevinne\"; beside it a blue stamp \"Copt. M. Welte & Sons, Inc.\". Crops 1 and 2 carry the printed notice \"This roll, manufactured by M. Welte & Sons, ... is sold with the distinct understanding that it is further ... reproduced in whole or in part ...\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing handwritten on any of the three crops. All of it is the roll's own printing: the Welte & Sons licence notice on crops 1 and 2, and on crop 3 a pasted-on artist label for Josef Lhevinne with a printed facsimile signature and an inked New York copyright stamp. No punch date."
+  },
+  {
+    "druid": "sz207mm8382",
+    "region": 1,
+    "inscription": "7 124.",
+    "reading": "7 124",
+    "date_iso": "1924-01-07",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, four figures on the lower (upright) panel, no other writing in the crop. Each figure is plain: a crossed 7, then 1, 2, 4, closed by a point. The separators are dropped, as reading.md describes, and the wider gap after the 7 groups them 7 | 124, so I read 7.1.24. The reservation is that the same four figures could be a roll number 7124 rather than a date; nothing else in the crop decides it, so the confidence is medium."
+  },
+  {
+    "druid": "kx695yq4528",
+    "region": 1,
+    "inscription": "23924",
+    "reading": "23924",
+    "date_iso": "1924-09-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped, not written: five figures in a small serif type on the lower (upright) panel, with a faint point after the 3 and a short double rule to the right of the 4. Separators dropped, so 23.9.24. Nothing else in the crop."
+  },
+  {
+    "druid": "dw083wh0675",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops read. Crop 1 carries a printed paragraph of some twelve lines set across the roll, ink faded into the olive paper; at this resolution I could not make out a single word of it, and it has the shape of the maker's licence notice rather than of a workshop hand. Crop 2 is blank but for a small smudge, crop 3 the paper end and the cloth leader. No handwriting and no date."
+  },
+  {
+    "druid": "wv641dn9264",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops read. Crop 1 shows a faint printed paragraph across the paper, too far gone to read a word of. Crops 2 and 3 are not the roll at all but the pebbled box, with the remains of pasted printed labels: one gives fragments of care instructions (\"Music ... in Cabi... winter ... Not r... tions ab... and placed ... during the ... condi-\"), another a torn title slip where only a quotation mark and the figures 06 or 90 survive. Nothing handwritten, no punch date."
+  },
+  {
+    "druid": "yn137rt9938",
+    "region": 1,
+    "inscription": "1305. Fritz 9 Febr. 09",
+    "reading": "9 Febr. 09",
+    "date_iso": "1909-02-09",
+    "roll_number": "1305",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "Pencil, one line on the upper (upright) panel. The month is written out as Febr.; the day is a single 9 with the long descender this hand gives it, and the year 09 repeats the same 9. Fritz is the hand already known from this corpus."
+  }
+]

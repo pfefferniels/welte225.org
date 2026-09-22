@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "nf274ng7905",
+    "region": 1,
+    "inscription": "No 209  1. 4. 11.  II",
+    "reading": "1. 4. 11.",
+    "date_iso": "1911-04-01",
+    "roll_number": "209",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, written along the roll; 'No 209', then the three figure groups, then a two-stroke mark with a bar over it that looks like a roman II. No name. The crop is only about 1500 px wide, so the figures are small; day and month are plain, the year is two upright strokes."
+  },
+  {
+    "druid": "gh272kd2238",
+    "region": 5,
+    "inscription": "473",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "473",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crop 5 carries a three-figure number at the crop edge, read as 473; the first figure is arguable (4 or 6). Crop 1 has two short pencil marks, also on the crop edge: a single letter and, to its right, four figures that could be 1918, but not legible enough to record as a date. Crops 2 to 4 blank."
+  },
+  {
+    "druid": "xn796bh4368",
+    "region": 1,
+    "inscription": "C. Herrmann",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": "C. Herrmann",
+    "confidence": "none",
+    "notes": "A signature in ink with a long flourish, no date anywhere in the crop. The initial is a looped capital read as C, but G or J would also fit; the surname reads Herrmann. Crops 2 to 4 blank."
+  },
+  {
+    "druid": "mf320jq4997",
+    "region": 1,
+    "inscription": "225  Fritz  18 Jan 09.",
+    "reading": "18 Jan 09",
+    "date_iso": "1909-01-18",
+    "roll_number": "225",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "pencil, large and plain, month written out"
+  },
+  {
+    "druid": "wv912mm2332",
+    "region": 1,
+    "inscription": "225.  14.  114.",
+    "reading": "14. 114.",
+    "date_iso": "1914-01-14",
+    "roll_number": "225",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil. Every figure is plain; the grouping follows the corpus convention that 14114 stands for 14.1.1914."
+  },
+  {
+    "druid": "rv790qz2532",
+    "region": 1,
+    "inscription": "20. 12. 04.  [signature]",
+    "reading": "20. 12. 04.",
+    "date_iso": "1904-12-20",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink; the three figure groups are plain, with the year written as 0 and 4. A signature follows which I cannot read; it seems to begin with a capital and then something like 'Sch'. 1904 sits just before the range given for the corpus, so the year may be worth a second reader."
+  },
+  {
+    "druid": "ym420hv4366",
+    "region": 1,
+    "inscription": "Langenbach",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": "Langenbach",
+    "confidence": "none",
+    "notes": "A name in ink, no date with it. Crop 5 shows the roll's printed leader label, 'No. 231 / Lied ohne Worte / Op. 62. No. 28 / F. Mendelssohn. / Gespielt von Hermann Möhle.', with 'Patentiert in allen Kulturstaaten' and the M. Welte & Söhne copyright slip; crop 6 is a QPcard 101 colour target. Crops 2 to 4 blank."
+  },
+  {
+    "druid": "mz508vq7890",
+    "region": 1,
+    "inscription": "Kopf  12 10 09",
+    "reading": "12 10 09",
+    "date_iso": "1909-10-12",
+    "roll_number": null,
+    "hand": "Kopf",
+    "confidence": "medium",
+    "notes": "pencil on dark paper. The three figure pairs read 12, 10 and 09, the last with a clear descender on the 9. The name is less secure than the figures: read as Kopf, but the letters are cramped."
+  },
+  {
+    "druid": "pz923dx9638",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All four crops show blank paper, perforations and a small dark speck; no writing in either panel."
+  },
+  {
+    "druid": "gm170gy7498",
+    "region": 1,
+    "inscription": "234.  24.  6. 11",
+    "reading": "24. 6. 11",
+    "date_iso": "1911-06-24",
+    "roll_number": "234",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, faint, and the line sits right on the crop's edge, so the tops of the figures are clipped in both panels. Roll number 234, then 24 for the day, 6 for the month, and two upright strokes for the year."
+  },
+  {
+    "druid": "yt837kd6607",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crop 1 carries a large looping signature in faint pencil, written across the roll; I cannot read it and it holds no figures. Crop 3 has a short scrawl at the crop edge, also illegible, beside an ink blot. Crop 2 shows a paper repair, crop 4 blank paper."
+  },
+  {
+    "druid": "vy018tw5237",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crop 1 shows the roll's end label, stained and all but blank; one ink stroke survives where the label meets the crop edge, too little to read. Crops 2 and 3 show the box paper and are blank."
+  },
+  {
+    "druid": "cs175wr2428",
+    "region": 1,
+    "inscription": "191126",
+    "reading": "191126",
+    "date_iso": "1926-11-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "A six-figure stamp set in a line along the roll, read as 1 9 1 1 2 6; the last figure is heavily inked but reads as 6 rather than 8 or 0. Taken as 19.11.26 on the day-first convention, but the grouping is my inference and the string would also sit as a number, so the date is not secure. Crop 3 carries an unrelated later note in English pencil, signed and dated '4.9.1987  D.C.', about the last part of the roll being tracked by hand; crop 2 shows a tear."
+  },
+  {
+    "druid": "vm351pv9656",
+    "region": 1,
+    "inscription": "No 253  Gündner  25. 3. 09.",
+    "reading": "25. 3. 09.",
+    "date_iso": "1909-03-25",
+    "roll_number": "253",
+    "hand": "Gündner",
+    "confidence": "high",
+    "notes": "pencil on ruled red paper, the figures plain. The name is less certain than the date: it carries an umlaut and reads as Gündner, though Gärtner would also fit the strokes."
+  }
+]

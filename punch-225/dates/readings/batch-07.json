@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "xh403hj3866",
+    "region": 1,
+    "inscription": "18. 11. 19.",
+    "reading": "18.11.19",
+    "date_iso": "1919-11-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, written across the roll; no roll number or name in the crop"
+  },
+  {
+    "druid": "st755cm2486",
+    "region": 1,
+    "inscription": "390,  17. 4. 12",
+    "reading": "17. 4. 12",
+    "date_iso": "1912-04-17",
+    "roll_number": "390",
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink on dark red paper, reads upright in the lower panel"
+  },
+  {
+    "druid": "bp952tr1116",
+    "region": 1,
+    "inscription": "699  19. 4. 10  Kumer (overbar on the m) / [second signature, illegible]",
+    "reading": "19. 4. 10",
+    "date_iso": "1910-04-19",
+    "roll_number": "699",
+    "hand": "Kummer",
+    "confidence": "high",
+    "notes": "ink, two lines; the first name is written Kumer with an overbar over the m, so Kummer. A second cursive signature on the line below is not legible to me; it may be the Woessler hand seen elsewhere in the corpus, but I cannot make it out. The roll number's first figure is a single downstroke into a closed bowl, so 6 rather than 8; the two following figures match the 9 of 19 in the date"
+  },
+  {
+    "druid": "ky445sz4630",
+    "region": 1,
+    "inscription": "[cursive signature, illegible]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 holds one flowing signature written across the roll, no figures at all. Crops 2 to 5 carry only perforations, the ruled scanner lines and a few ink specks. Seems to be a signature rather than a workshop date line"
+  },
+  {
+    "druid": "gg920pz0818",
+    "region": 1,
+    "inscription": "415  5. 8. 13. Mb.",
+    "reading": "5. 8. 13.",
+    "date_iso": "1913-08-05",
+    "roll_number": "415",
+    "hand": "Mb.",
+    "confidence": "high",
+    "notes": "pencil, single line; the crop clips the tops of the tall strokes, so the initials after the date are read only from their lower halves and could be another pair of letters"
+  },
+  {
+    "druid": "ty610zx2946",
+    "region": 1,
+    "inscription": "28622",
+    "reading": "28622",
+    "date_iso": "1922-06-28",
+    "roll_number": "416",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil. Region 1 carries only the five-digit group 28622, with no separators and no name. Read as 28.6.22 on the pattern reading.md gives for 14114 = 14.1.1914, but it could as well be a serial or order number rather than a date, since the roll's own number 416 is written separately in region 3 and nothing ties 28622 to a punch date. Region 2 is blank leader, region 4 carries a pencil caret only."
+  },
+  {
+    "druid": "fr853pn6519",
+    "region": 1,
+    "inscription": "22324",
+    "reading": "22324",
+    "date_iso": "1924-03-22",
+    "roll_number": "419",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil. Region 1 holds only the five-digit group 22324, no separators and no name; region 2 has the roll's number 419 on its own, regions 3 and 4 are blank. Read as 22.3.24 on the pattern reading.md gives for 14114 = 14.1.1914, but the group could equally be a serial or order number. Same layout as ty610zx2946 in this batch, which carries 28622 in region 1 and its number 416 elsewhere."
+  },
+  {
+    "druid": "gb034mq5877",
+    "region": 1,
+    "inscription": "11822",
+    "reading": "11822",
+    "date_iso": "1922-08-11",
+    "roll_number": "422",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil. Region 1 holds only the five-digit group 11822, no separators and no name; region 3 carries the roll's number 422 on its own, region 2 is blank. Read as 11.8.22 on the pattern reading.md gives for 14114 = 14.1.1914, but the group may be a serial rather than a date. The third figure is the open-topped form that reading.md warns of, so 11.6.22 cannot be excluded."
+  },
+  {
+    "druid": "vq227vv6345",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser by his acceptance of this roll agrees that it is only to be used on the Welte-Mignon manufactured by M. Welte & Sons, Inc. and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No handwriting on any crop. Region 1 carries only the printed licence notice of M. Welte & Sons, Inc., the New York branch, set in two columns across the roll. Region 2 shows the leader with its cloth tab, region 3 is blank paper with damp staining. No punch date."
+  },
+  {
+    "druid": "wz719qg6993",
+    "region": 1,
+    "inscription": "8524",
+    "reading": "8524",
+    "date_iso": "1924-05-08",
+    "roll_number": "441",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil. Region 1 holds the group 8524 alone, no separators and no name; region 2 carries the roll's number 441 on its own. Read as 8.5.24. The group runs to four figures here where the comparable rolls in this batch have five (ty610zx2946 28622, fr853pn6519 22324, gb034mq5877 11822), which fits a one-figure day and tells against these groups being serial numbers."
+  },
+  {
+    "druid": "bc072xf6791",
+    "region": 1,
+    "inscription": "… 2002 …",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Ink, at the leader tip, written along the roll rather than across it, so it reads only with the crop turned a quarter turn. Three parallel lines run off the edge of the strip and only their ends are on the image; of these just 2002 is legible. The century written out marks it as a later archive or conservator's note, not a workshop punch date. Regions 2 and 3 carry no writing."
+  },
+  {
+    "druid": "kv550vj8954",
+    "region": 3,
+    "inscription": "WELTE-MIGNON / No. 444 / LA CAMPANELLA, / Paganini Etude, No. 3 / Liszt / Played by [facsimile signature: Ferruccio Busoni]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "444",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date in any of the three crops. Region 3 is the leader with the printed catalogue label transcribed above, together with a small printed vignette labelled THE WELTE-MIGNON; the number 444 is printed on that label, not written by the workshop, so it is not independent of the catalogue. Region 2 is the roll end in its wrapper: printed label fragments '…d placed', '…ng the', '…s condi-', and a strip of old tape under which only adhesive staining and the foot of one ink stroke survive. Region 1 shows a printed legal notice showing through from the other side of the paper, mirrored, about the roll being manufactured under licence and not to be reproduced in any form whatsoever."
+  },
+  {
+    "druid": "mf443ns5829",
+    "region": 1,
+    "inscription": "This music roll manufactured by / M. Welte & Sons, Inc. … distinct understanding … \"This music roll\" … reproduced in any form whatsoever.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date in any of the three crops. Region 1 carries no writing of its own: what shows is the printed licence notice on the other side of the paper, seen through it and therefore mirrored, of which the opening 'This music roll manufactured by M. Welte & Sons, Inc.' and the closing 'reproduced in any form whatsoever' are legible and the middle lines are not. Regions 2 and 3 show only perforations, a few small stains and one insect mark."
+  },
+  {
+    "druid": "yg667ds7662",
+    "region": 1,
+    "inscription": "7125",
+    "reading": "7125",
+    "date_iso": "1925-01-07",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Stamped, not written, in a plain sans-serif numeral type; here the UPPER panel is the upright one. The four figures are perfectly clear, the 2 filled in with ink, and two faint marks stand a little to the right of the 5, perhaps the remains of a further stamped character. Read as the usual run without separators, 7 1 25 gives 7 January 1925, which fits the corpus. What I cannot show from the image is that the group is a date at all rather than a roll or serial number, and there is no hand or separator to corroborate it, so the confidence is low for that reason and not because of any figure. Region 2 carries no writing."
+  }
+]

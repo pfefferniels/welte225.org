@@ -1,0 +1,24 @@
+[
+ {
+  "druid": "gg384dv5303",
+  "region": "d1",
+  "inscription": "d 1253  24 1108  [signature, illegible]",
+  "reading": "24 1108",
+  "date_iso": "1908-11-24",
+  "roll_number": "1253",
+  "hand": null,
+  "confidence": "low",
+  "notes": "Only d1 of the eleven carries ink; d2-d7 and d9-d11 are bare paper with scanner lines, d8 is the roll end with creases and repair tape. One line in black ink along the treble edge, upper panel upright. Four groups, gaps measured on the ink profile: a cursive letter (a lowercase d, bowl plus tall ascender turning right) at x455-484; four figures at 485-562; a 25px gap; two figures at 587-625; a 10px gap; four figures at 635-709; a 26px gap; a signature of five or six letters at 735-873, a tall looped ascender, a mid descender and a large terminal loop, which I cannot read. Figure by figure: the number is 1, 2, then a figure best read 5, then a figure best read 3 but which at high magnification shows two strokes descending to a single bottom bowl with the upper loop open, the form this corpus calls an 8, so 1258 is not excluded; in the whole-line view 1253 reads more naturally, and it disagrees with the catalogue's 194 either way. Day 24 is plain, both figures unambiguous. Month 11 is plain, the two strokes match the 1 of the number exactly. Year: the first figure is a plain closed 0; the second is a heavy blot, a stroke descending from the upper right into a filled bottom bowl, best read 8 but reading as 6 in isolation, which is the documented trap. So the year is 190-something on the paper, 1908 the likeliest and 1906 not excluded; no four-digit year is written. Crops are at native IIIF resolution, so no more detail is available; readings taken from the red channel with the ruled lines removed and the two panels of the sheet averaged."
+ },
+ {
+  "druid": "jn038xx9588",
+  "region": "d1",
+  "inscription": "28722",
+  "reading": "28722",
+  "date_iso": "1922-07-28",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "Lower panel upright. Five pencil figures on bare paper, nothing else in the crop and no name. 2 (looped top, base swept right), 8 (two stacked loops), 7 (crossed, with the diagonal running below the baseline), 2, 2. The fourth figure has no descender, so it is a 2 and not the 9 a first glance suggests. The fifth is over-inked at the top but has the same looped top and right-swept base as the first and fourth. Read as the run-together day-month-year of the corpus, 28.7.22; the parse rests on that convention, since no separators are written."
+ }
+]

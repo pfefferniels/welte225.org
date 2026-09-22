@@ -28,7 +28,6 @@ from __future__ import annotations
 import bz2
 import re
 import statistics as st
-import urllib.request
 from collections import defaultdict
 from pathlib import Path
 
@@ -53,10 +52,14 @@ def mm(pixels: float) -> float:
 
 
 def fetched(name: str, url: str) -> Path:
+    """Download once into the cache. Uses `requests`, whose certificate
+    bundle urllib does not share on this machine."""
     CACHE.mkdir(exist_ok=True)
     path = CACHE / name
     if not path.exists():
-        urllib.request.urlretrieve(url, path)
+        response = images.session.get(url, timeout=240)
+        response.raise_for_status()
+        path.write_bytes(response.content)
     return path
 
 

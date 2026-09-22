@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "jf942gh3232",
+    "region": 1,
+    "inscription": "258.  27.  12  13.",
+    "reading": "27. 12. 13.",
+    "date_iso": "1913-12-27",
+    "roll_number": "258",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink, slanted hand that loops the top of 2 and 7; the day's second figure has no closed bowl and its stroke runs down to the left, so read as 7 rather than 9; the number's last figure is the least certain and could be 9"
+  },
+  {
+    "druid": "zx463rv8885",
+    "region": 1,
+    "inscription": "265   24 - 11 - 11   Roth / Wössler",
+    "reading": "24 - 11 - 11",
+    "date_iso": "1911-11-24",
+    "roll_number": "265",
+    "hand": "Roth / Wössler",
+    "confidence": "high",
+    "notes": "ink, two lines, Wössler written under Roth; the umlaut is a bar"
+  },
+  {
+    "druid": "ph502kz9777",
+    "region": 1,
+    "inscription": "151224",
+    "reading": "151224",
+    "date_iso": "1924-12-15",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped figures, no separators, read as 15.12.24"
+  },
+  {
+    "druid": "hh429fw8081",
+    "region": 1,
+    "inscription": "15323",
+    "reading": "15323",
+    "date_iso": "1923-03-15",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, separators dropped; read as 15.3.23, the only grouping that gives a date"
+  },
+  {
+    "druid": "sj250cc6451",
+    "region": 1,
+    "inscription": "277.  12.  1.  11.",
+    "reading": "12. 1. 11.",
+    "date_iso": "1911-01-12",
+    "roll_number": "277",
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink; the number's two last figures carry the angular top of a 7, unlike the plain 1s in the date"
+  },
+  {
+    "druid": "ch718mg2581",
+    "region": 2,
+    "inscription": "WELTE-MIGNON / No. 284 / MENUETT / (from Sonata, Op. 31, E flat major) / Beethoven / Played by [facsimile signature]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "no workshop inscription on any crop. Crop 1 is the scanner's QPcard colour target, crop 2 the printed leader label recorded above (its catalogue number is 284; the pianist's facsimile signature is not legible to me), crop 3 perforations only"
+  },
+  {
+    "druid": "yx139bt6626",
+    "region": 1,
+    "inscription": "25614",
+    "reading": "25614",
+    "date_iso": "1914-06-25",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, separators dropped, read as 25.6.14; the tops of the figures sit right on the edge of the crop and the last two are less plain than 256"
+  },
+  {
+    "druid": "hh466mq4616",
+    "region": 1,
+    "inscription": "296   3. 11. 10   Hauser / Wipfel(?)",
+    "reading": "3. 11. 10",
+    "date_iso": "1910-11-03",
+    "roll_number": "296",
+    "hand": "Hauser / Wipfel(?)",
+    "confidence": "high",
+    "notes": "ink; date plain. The number's middle figure is a bowl with a long descender, read as 9, so 296 rather than 246. The second name on the line below Hauser is not certain"
+  },
+  {
+    "druid": "zn339mg3395",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 perforations with a faint offset of printed text, crop 2 perforations only, crop 3 the roll end with a printed care label of which only fragments ('…d placed', '…ng the', '…condi-') are legible; no inscription"
+  },
+  {
+    "druid": "fv104hn7521",
+    "region": 1,
+    "inscription": "N° 304  8. 10. 09  Hummel(?) / Würth(?)",
+    "reading": "8. 10. 09",
+    "date_iso": "1909-10-08",
+    "roll_number": "304",
+    "hand": "Hummel(?) / Würth(?)",
+    "confidence": "high",
+    "notes": "pencil; the number and date are plain, both names are guesses at a rapid hand and should be checked"
+  },
+  {
+    "druid": "nv508pk0096",
+    "region": 1,
+    "inscription": "\"This music roll is manufactured by M. Welte & Sons, Inc., and it is sold with the distinct understanding that it is only to be used on the Welte-Mignon, manufactured by M. Welte & Sons, Inc, and the purchaser by its acceptance of this roll agrees that this roll is not to be used on any other instrument, nor is it to be reproduced in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "the printed licence notice of the American Welte firm, stamped across the roll, not a workshop inscription; crop 2 shows tissue repairs, crop 3 perforations only"
+  },
+  {
+    "druid": "xw872bc8052",
+    "region": 1,
+    "inscription": "2622",
+    "reading": "2622",
+    "date_iso": "1922-06-02",
+    "roll_number": "321",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "grey-green paper. Crop 1 carries 2622 alone, crop 3 the number 321, crop 5 the printed label 'WELTE-MIGNON. No. 321 / Carneval / Part 1 / R. Schumann'. Since the roll's number is written separately as 321, the four figures are taken as a compressed 2.6.22, on the pattern of 14114 = 14.1.1914; the grouping is inferred, not written"
+  },
+  {
+    "druid": "zt739gs4926",
+    "region": 1,
+    "inscription": "4922",
+    "reading": "4922",
+    "date_iso": "1922-09-04",
+    "roll_number": "321",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "crop 2 carries the number 321, so the four figures on crop 1 are taken as a compressed 4.9.22; same title and same layout as xw872bc8052, which supports the reading, but the grouping is inferred, not written"
+  },
+  {
+    "druid": "wk320bj4724",
+    "region": 3,
+    "inscription": "10422",
+    "reading": "10422",
+    "date_iso": "1922-04-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, separators dropped, read as 10.4.22; crops 1 and 2 hold only ruled pencil lines. The third figure carries an extra top stroke that the two following 2s lack, so read as 4"
+  }
+]

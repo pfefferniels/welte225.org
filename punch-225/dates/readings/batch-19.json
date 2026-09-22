@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "dw005gw3358",
+    "region": 1,
+    "inscription": "1450  [name in Kurrent, not resolved]  19.1.09,",
+    "reading": "19.1.09",
+    "date_iso": "1909-01-19",
+    "roll_number": "1450",
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, upper panel upright; name between number and date is a Kurrent word with an umlaut, not legible enough to transcribe"
+  },
+  {
+    "druid": "rg591sj4242",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all four crops seen; no handwriting. Crop 2 is the printed M. Welte & Sons licence notice, crop 3 a Welte-Mignon artist stamp with a faint printed copyright line ending \"'14\" (printed, not a punch date), crops 1 and 4 blank paper and leader"
+  },
+  {
+    "druid": "cz952kx0008",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops seen; no handwriting. Crop 1 is the printed M. Welte & Sons licence notice, crop 2 the scanner's QPcard 101 colour target, crop 3 blank paper"
+  },
+  {
+    "druid": "pd354nj6106",
+    "region": 1,
+    "inscription": "1454   24…9   [cursive signature]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1454",
+    "hand": null,
+    "confidence": "none",
+    "notes": "ink, bass edge. Roll number 1454 plain, and confirmed by the printed leader label in crop 4 (Welte-Mignon No. 1454, 'God save the King'). A five-figure date group follows: the first two read 24 and the last reads 9, but the three middle figures are broken and not separable at this resolution, so no date is given. A cursive signature follows the date; possibly beginning Sch-, but not legible enough to name."
+  },
+  {
+    "druid": "bq744nq5945",
+    "region": 1,
+    "inscription": "1462   18. 2. 13   Sm.Kb. / Wössler",
+    "reading": "18. 2. 13",
+    "date_iso": "1913-02-18",
+    "roll_number": "1462",
+    "hand": "Sm.Kb.; Wössler",
+    "confidence": "high",
+    "notes": "ink, bass edge, two lines. Every figure of the date plain, the 8 with both bowls closed. The initials before Wössler are less certain; read as Sm.Kb., the capital could also be an I or L."
+  },
+  {
+    "druid": "yt974cv2625",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All five crops examined, both panels of each. No writing: crops 1, 2, 4 and 5 show only scanner lines, perforations and small smudges or dirt; crop 3 has a paper patch over a hole near the centre, which is a repair and not an inscription."
+  },
+  {
+    "druid": "pj688nx2384",
+    "region": 1,
+    "inscription": "1464.  [cursive word]  4. 11. 04.",
+    "reading": "4. 11. 04.",
+    "date_iso": "1904-11-04",
+    "roll_number": "1464",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil. Roll number 1464 plain, the third figure a 6 with a closed bottom bowl. Date figures all separate and plain: 4, then 11, then 04 with a full oval zero and an open-topped 4. A cursive word stands between the number and the date, presumably the puncher's name, but I cannot read it with any confidence."
+  },
+  {
+    "druid": "zw904vm6502",
+    "region": 2,
+    "inscription": "26. 1. 76",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops examined. Crop 1 is the scanner's colour target, no paper. Crop 2 has '26. 1. 76' written lengthwise on the grey-green leader tab, all three figure groups plain. As far as I can see this is a later note and not a workshop punch date: it stands on the replacement leader rather than on the red roll paper, and the figure forms differ from the workshop hands in this corpus, so 76 would be 1976, well outside the 1904-1926 range. I have left date_iso null rather than enter it as a punch date. Crop 3 shows printed text bleeding through from the other side of the leader, too faint to recover."
+  },
+  {
+    "druid": "jk702cg2022",
+    "region": 1,
+    "inscription": "23112 2",
+    "reading": "231122",
+    "date_iso": "1922-11-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, read from the lower panel. Six figures written without separators, the first five joined and the sixth after a pen lift: 2, 3, 1, 1, 2, 2. Both 2s carry the same loop, diagonal and foot, so the last figure is a 2 and not a 7. Day first gives 23.11.22. No roll number and no name in this crop."
+  },
+  {
+    "druid": "mf940cg4339",
+    "region": 1,
+    "inscription": "1468.  23. 4. 07.  [cursive signature, not read]",
+    "reading": "23. 4. 07",
+    "date_iso": "1907-04-23",
+    "roll_number": "1468",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, upper panel upright, in the same hand, layout and signature as rp146dk0477 (1352, 4.3.07) and cp145vd3423 (1382, 20.1.07). Day and month are plain; the year is the same small 0 run into a crossed 7 that those two carry, followed by a short dash, so the reading is called medium rather than high. The signature after the date I could not read."
+  },
+  {
+    "druid": "rc749wx0227",
+    "region": 1,
+    "inscription": "1. 9. 21",
+    "reading": "1. 9. 21",
+    "date_iso": "1921-09-01",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, one short line read from the lower panel, nothing else on the roll here. The 9 has a closed bowl and a tail below the line; the two 1s are written alike."
+  },
+  {
+    "druid": "dw559kr7002",
+    "region": 1,
+    "inscription": "2823",
+    "reading": "2823",
+    "date_iso": "1923-08-02",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, four figures without separators, read from the lower panel; taken as day, month, two-figure year on the pattern of the other undivided dates in the corpus. The second figure has a closed upper loop and crossing strokes, so it is an 8 and not a 6; the first and third are the same 2."
+  },
+  {
+    "druid": "bf074nj8801",
+    "region": 1,
+    "inscription": "4823",
+    "reading": "4823",
+    "date_iso": "1923-08-04",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, four figures without separators, read from the lower panel; day, month, two-figure year as elsewhere in the corpus. The first figure carries the crossbar and stem of an open 4, and the second has two closed loops."
+  },
+  {
+    "druid": "wz252pk3255",
+    "region": 1,
+    "inscription": "[stamped block of about ten lines of small text, illegible]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "olive-brown paper, not the usual red. Region 1 carries a rectangular stamp set across the roll, about ten lines of small type, reading as a printed notice rather than a hand; at this scan resolution the letters are a few pixels tall and I could resolve no word or figure, so no date. Region 2 shows only the scalloped tail of the roll against its red leader, region 3 the scanner's colour target."
+  }
+]

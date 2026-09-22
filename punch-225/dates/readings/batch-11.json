@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "jh069yf5255",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 4 crops seen; blank paper, roll end and perforated music area, no writing"
+  },
+  {
+    "druid": "xc665jf8254",
+    "region": 1,
+    "inscription": "1714    27. 4. 11.  [name, not read] / Wössler",
+    "reading": "27. 4. 11.",
+    "date_iso": "1911-04-27",
+    "roll_number": "1714",
+    "hand": "Wössler",
+    "confidence": "high",
+    "notes": "pencil, upper panel upright; a second name stands above Wössler on the same line as the date and I could not read it, roughly seven cursive letters with a u-bow over the penultimate"
+  },
+  {
+    "druid": "md331fy4209",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the express understanding that the purchaser, by the acceptance of this roll, agrees that it is only to be used on the Welte Philharmonic Organ, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed licence notice, not workshop writing; crop 2 shows the same block bleeding through from the reverse, crop 3 is the scanner target and strap. Paper is olive-brown, and the notice names the Welte Philharmonic Organ, so this looks like an organ roll rather than a T-100"
+  },
+  {
+    "druid": "sx417qf9868",
+    "region": 2,
+    "inscription": "[...]s damage, a few bars in, [...]ed successfully on 9. 7. 1994 by D. F.-C.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 2 is a conservator's repair note in English ink, dated 9.7.1994 and signed D. F.-C.; the century is written out and the hand is modern, so not a punch date. Its first words run off the left edge of the crop. Crop 1 carries a short pencil figure of two or three characters at the very edge of the crop, cut off at the top, which I could not settle. Crop 3 is blank but for a smudge"
+  },
+  {
+    "druid": "st011pr3757",
+    "region": 1,
+    "inscription": "16823",
+    "reading": "16823",
+    "date_iso": "1923-08-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil, single line, no separators; read as 16.8.23. Final figure is a flat-topped glyph that could equally be a 5, in which case 16.8.25. No roll number or name in this crop."
+  },
+  {
+    "druid": "hg174cq6672",
+    "region": 1,
+    "inscription": "23424",
+    "reading": "23424",
+    "date_iso": "1924-04-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, single line, no separators; 23.4.24. No roll number or name in this crop."
+  },
+  {
+    "druid": "zk440mh1715",
+    "region": 1,
+    "inscription": "23424",
+    "reading": "23424",
+    "date_iso": "1924-04-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, single line, no separators; 23.4.24. Same inscription and hand as hg174cq6672."
+  },
+  {
+    "druid": "gh208gz5033",
+    "region": 1,
+    "inscription": "763. Fritz. 18 Dezbr 1908.",
+    "reading": "18 Dezbr 1908",
+    "date_iso": "1908-12-18",
+    "roll_number": "763",
+    "hand": "Fritz",
+    "confidence": "low",
+    "notes": "Pencil on ruled paper, one line, upper panel upright. Roll number 763 and the name Fritz are plain, as are the day 18 and the year 1908. The month is written as a word abbreviated to about five letters; the initial capital reads to me as D (Dezbr, December), but a capital O (Octbr, October) cannot be ruled out from this crop, and the middle letters are indistinct. Region 2 of this roll carries perforations only, no writing."
+  },
+  {
+    "druid": "vq976gr5492",
+    "region": 1,
+    "inscription": "14.11.16.",
+    "reading": "14.11.16",
+    "date_iso": "1916-11-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Fine pencil, one line, lower panel upright. Dots separate the three groups. No roll number or name."
+  },
+  {
+    "druid": "pk349zj4179",
+    "region": 1,
+    "inscription": "19828 (stamped) | 797 (pencil, crop 2) | WELTE-MIGNON No. 797 Samson and Delilah, Finale, Act I, C. Saint-Saens, Played by [signature] (printed label, crop 3)",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "797",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No handwritten punch date found. Crop 1 carries a five-figure stamp in a serif type, set along the roll and evenly spaced with no separators. I read it as 1 9 8 2 8, the third and fifth figures being the same two-bowl form; 19628 is the other candidate, since a 6 and an 8 are hard to tell apart at this resolution. It looks to me like a production serial rather than a date: the type is a printer's face, the figures are machine-aligned, and there are no points between the groups. If it were meant as a date in the run-together style it would read 19.6.28 or 19.8.28, later than anything else read in the corpus so far, so I have not recorded it as one. Crop 2 has the roll number 797 in pencil, the two sevens crossed, agreeing with the printed leader label on crop 3."
+  },
+  {
+    "druid": "qz155gk0442",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written on any of the three crops. Crops 1 and 2 show the red paper where it meets the green cloth leader, crop 3 plain red paper with two perforations and one short dark mark about the size of a comma, which I take for a fibre or a speck of ink rather than writing."
+  },
+  {
+    "druid": "fy803vj4057",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser by his acceptance of this roll agrees that it is only to be used on the Welte-Mignon manufactured by M. Welte & Sons Inc. and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date. The only writing is the printed licence notice stamped across the paper on crop 1, in English and naming M. Welte & Sons, Inc., so this copy comes from the New York house rather than Freiburg. Crop 2 shows the leader and the scanner's calibration target, crop 3 the tapered end of the leader with its cloth reinforcement, both blank."
+  },
+  {
+    "druid": "tx963yw9164",
+    "region": 1,
+    "inscription": "15224",
+    "reading": "15224",
+    "date_iso": "1924-02-15",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, one line, lower panel upright. Five figures run together without separators, 15 2 24. The 1 and 5 are plain, the two middle figures are the same 2 with its flat base stroke, and the 4 is the open-top form. No roll number or name in this crop."
+  },
+  {
+    "druid": "ps751km7125",
+    "region": 1,
+    "inscription": "819  13. 12. 09  Roth / Wmbr",
+    "reading": "13. 12. 09",
+    "date_iso": "1909-12-13",
+    "roll_number": "819",
+    "hand": "Roth / Wmbr",
+    "confidence": "high",
+    "notes": "Ink on ruled red paper, upper panel upright, two lines. The first gives the roll number 819, then the date in three groups separated by points, then the name Roth, all of it plain. The second line is a second name written below Roth, a capital W with a small raised letter or suspension stroke after it and then mbr; I cannot resolve it further and give it as Wmbr. The ruled lines across the paper are printed, not creases."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "fr396nf3639",
+    "region": "e1",
+    "inscription": "...N» / ...e / ...v / [autograph, ends -twell] / 7. III. 09.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop inscription on the paper. e1 shows a printed slip lying on the green mount beside the roll, carrying large printed word-endings, an ink autograph ending in -twell, and a letterpress date '7. III. 09.' The date is typeset, not pencil, and the crop cuts the line at its left edge, so a leading digit (17./27.) cannot be ruled out; it reads as a certificate or box label rather than a punch date. A second, English-language conservation slip is in the same crop. e2 blank. e3 has a pencil scrawl on the red leader, but it runs off the bottom of the crop and only a few cursive humps are visible, no figures."
+  },
+  {
+    "druid": "yg250xz9762",
+    "region": "e1",
+    "inscription": "[four pencil figures at the treble edge, e1 and again in e3]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1571",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. Two pencil marks of four figures each sit hard against the treble edge, in e1 and again in e3, and both are sheared along their tops by the edge of the scanned paper, so the _e crop does not recover them. Neither is shaped like a date: no separators, no six-figure run. They look like repeated roll-number marks. e3's reads plausibly as 1571, e1's is a different set (1 5 2/7 4/1) that I cannot settle. The roll number comes from the printed leader label in e4: 'WELTE-MIGNON No. 1571 / Prelude / G minor / J. J. Rachmaninoff / Played by [autograph]', with the M. Welte & Soehne, Freiburg i. Br. imprint beside it. e2 blank."
+  },
+  {
+    "druid": "gr034qm4805",
+    "region": "e2",
+    "inscription": "Carmen / G. Bizet / Played by [autograph] / 23. III. 09.  ||  «WELTE-MIGNON» No. 1593. Selection / Carmen",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1593",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop pencil date on the paper. The date here is letterpress on the printed leader label in e2, set below the artist's ink autograph: 'Carmen / G. Bizet / Played by / [autograph, left end cut by the crop] / 23. III. 09.' Being typeset it belongs to the label, so it reads as the recording or issue date of the title rather than the punching of this copy; I have left date_iso null on that ground. The same printed-label pattern appears on fr396nf3639. e3 carries the second label, 'WELTE-MIGNON. No. 1593. Selection / Carmen', and the English care slip about keeping rolls in boxes with a basin of water. e1 blank."
+  },
+  {
+    "druid": "tr981xw2871",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. All four _e crops show bare paper out to the true edge: perforations, creases, and a good deal of tearing and lifted paper along the margin in e2 and e4, but no pencil, ink or stamp anywhere in either panel."
+  },
+  {
+    "druid": "bm016sg7202",
+    "region": "e1",
+    "inscription": "5321",
+    "reading": "5321",
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "e1 carries an isolated pencil mark of four figures written across the roll, clear of the edge and legible whole. The 5 and the 3 are plain; the third figure is a cursive 2 and the fourth a narrow closed loop that could be 1 or 0. Read as a run-together date it would be 5.3.21, or 5.3.20, but there are no separators and four figures could as easily be a production number, so I have not fixed an ISO date. e2 has a second, different four-figure mark lying along the treble edge, sheared along its tops by the edge of the scanned paper: it looks like 16?1 and is probably the roll number, but I cannot read the third figure. e3 and e4 show perforations only."
+  },
+  {
+    "druid": "jy277ht0636",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. e1 and e3 show clean paper out to the edge with only perforations; e2 has a dark mottled damp or mould stain across the middle, but nothing under or around it that resolves into strokes; e4 is the join of the red paper to the green cloth leader, both bare, with no label in the crop."
+  },
+  {
+    "druid": "fz632cv0288",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written across all five _e crops. Bare paper to the edge with perforations. e2 to e5 show a row of small darker rectangular patches just inside the margin, evenly spaced along the roll: these are marks in the paper, tape or adhesive shadow, not strokes, and they carry no figures. e1 shows only a vertical crease."
+  },
+  {
+    "druid": "nz678zw1579",
+    "region": "e2",
+    "inscription": "1939  ||  4523",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1939",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Two pencil marks, both well clear of the edge and legible whole, neither of them a date on its face. e2 reads 1939, and the printed leader label in e4 confirms this is the roll number: 'WELTE-MIGNON. No. 1939 / I. Sonata / Op. 74, B flat, 2nd movement, Andante / A. Glazounow / Played by [autograph: Alexandre Glazounow]', with the M. Welte & Soehne G.m.b.H., Freiburg i. B. copyright slip beside it. e3 carries a second four-figure mark in the same hand and the same place on the paper, 4523, whose last figure could be 8 rather than 3. What that second number is I cannot say. Read as a run-together date it would be 4.5.23, but it is written exactly like the roll number beside it, with no separators, so I have not treated it as one. e1 shows damp staining only."
+  },
+  {
+    "druid": "vs880hb3425",
+    "region": "e2",
+    "inscription": "[...]e Act. Variation III / A. Glazounow / [autograph: Glazounow] / Jan. 1910.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop writing on the paper. The only date is letterpress on the printed leader label in e2, set under Glazunov's ink autograph: 'Jan. 1910.' That is the label's own date, in the same position and the same type as the '23. III. 09.' on gr034qm4805 and the '7. III. 09.' on fr396nf3639, so it reads as the recording or issue date of the title and not as the punching of this copy. The left of the label is cut off by the crop, taking the roll number with it. e1 shows perforations only, e3 the bare join of red paper to green cloth leader."
+  },
+  {
+    "druid": "kq892pn7618",
+    "region": "e3",
+    "inscription": "WELTE-MIGNON. / 1968 / GRAND VALSE de CONCERT / OP. 41. / GLAZOUNOW. / Played by M. KIMMONTT.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1968",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date anywhere. The only writing is the printed leader label in e3, which carries no date line and no autograph. The performer's name is faint under the foxing and reads KIMMONTT or KINMONTT, I cannot settle the middle letters. e1 shows perforations only, e2 the bare tapered edge of the leader with light staining."
+  },
+  {
+    "druid": "zf673fy4620",
+    "region": "e1",
+    "inscription": "26525 [heavy mark]  ||  2068",
+    "reading": "26525",
+    "date_iso": "1925-05-26",
+    "roll_number": "2068",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped, not written. e1 carries five plain stamped figures, 26525, clear of the edge and whole, followed by a heavy over-inked mark. There is no blob before the figures, so the leading-mark trap does not apply here; the heavy mark falls after the last 5 and I cannot make out what it is, possibly a second slug. Read as day, month, two-figure year this is 26.5.25, and no other parse of five figures gives a possible date. The roll number is separate: a pencil 2068 at the edge in e2, matching the printed leader label in e4, 'WELTE-MIGNON. No. 2068 / Poeme / Op. 32, No. 1 / A. Scriabine / Played by A. Scriabine', which itself carries no date. e3 shows perforations only."
+  },
+  {
+    "druid": "bs279zc9206",
+    "region": "e1",
+    "inscription": "2160",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2160",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. The only writing is a pencil 2160 in e1, four figures, whole and legible, lying along the treble edge in the same hand and the same position as the marks that the printed labels on other rolls in this batch confirm to be roll numbers. There is no leader label in these crops to check it against. e2 shows the bare pinked edge of the leader with a stain, e3 perforations only."
+  },
+  {
+    "druid": "yk477xx5343",
+    "region": "e3",
+    "inscription": "2161",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2161",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. One pencil mark only, 2161 in e3, four figures whole and plain, in the same hand and the same place along the treble edge as the roll-number marks elsewhere in this batch. No leader label in these crops to check it against. e1 and e5 show damp staining, e2 and e4 perforations and a small tear; none of them carries writing."
+  },
+  {
+    "druid": "ms935qj0194",
+    "region": "e6",
+    "inscription": "29. 5. 2002 →",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date. This is a pale buff roll, not the usual brick red. The only dated writing is a modern conservator's note in e6, '29. 5. 2002' with an arrow drawn to a small repair patch over the perforations; the century is written out and the hand is recent, so it belongs to the archive rather than the workshop. e4 carries the printed English licence notice on the paper itself, 'This music roll is manufactured by M. Welte & Sons, Inc. and is sold with the distinct understanding that the purchaser by his acceptance of this roll agrees that it is only to be used on the Welte-Mignon, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.' It bears no date and no roll number. e1 has a dark smudge that resolves into no letterforms under magnification; e2, e3 and e5 show creases and staining only."
+  }
+]

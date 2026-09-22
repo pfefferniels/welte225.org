@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "dw479gk0103",
+    "region": "e1",
+    "inscription": "4924",
+    "reading": "4.9.24",
+    "date_iso": "1924-09",
+    "roll_number": "1263",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, four figures at the extreme treble edge, their tops shaved by the paper edge: [4 or 7] 9 2 4, i.e. 4.9.24 or 7.9.24. The first figure carries a crossbar over a descending stem, which in these hands can be either an open-topped 4 or a crossed 7, so I have left date_iso at the month. e2 carries the roll number 1263 in a smaller hand, clear of the edge; e3 shows the printed leader label WELTE-MIGNON No. 1263, Minuett G major, Paderewski; e4 blank."
+  },
+  {
+    "druid": "zf882fv0052",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. e1 is the leader tab with the colour target, e2 the cloth-to-paper joint, e3 plain paper with a single ink speck."
+  },
+  {
+    "druid": "dw083wh0675",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No handwriting. Buff paper. e1 carries a printed legal notice of eight or nine lines set across the roll (a manufacturer's and patent notice, too blurred at this resolution to transcribe, and printed rather than written); e2 has only an ink blot; e3 is the tail with its red cloth."
+  },
+  {
+    "druid": "kj344bw3083",
+    "region": "e1",
+    "inscription": "81122",
+    "reading": "8.11.22",
+    "date_iso": "1922-11",
+    "roll_number": "1307",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, five figures run together at the treble edge, steeply slanted: [8?] 1 1 2 2, i.e. 8.11.22. The month and year are plain; the first figure is two strokes converging on a single bottom bowl with the upper loop left open, the form reading.md warns is an 8 taken for a 6, so the day is either 8 or 6 and I have left date_iso at the month. e2 carries the roll number 1307 in a neater hand, which agrees with the leader label in e4 (WELTE-MIGNON No. 1307, An den Fruehling, Op. 43 No. 1, E. Grieg); e3 shows only ink offsets around the perforations."
+  },
+  {
+    "druid": "nx970yn7253",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. e1 and e3 are plain red paper with a few specks, e2 the cloth leader joint; e4 shows the printed leader labels only (WELTE-MIGNON No. 1339, Traviata, with the English care notice), which are printed rather than written."
+  },
+  {
+    "druid": "gs012fx5529",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. e1 and e3 show the cloth leader with its printed labels (WELTE-MIGNON No. 1343, Romeo and Juliette, Potpourri, Ch. Gounod, with a printed facsimile signature and the English care notice); e2 is plain red paper with a torn edge."
+  },
+  {
+    "druid": "jn038xx9588",
+    "region": "e2",
+    "inscription": "28492",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "One pencil group of five figures at the treble edge of e2, plainly legible as 2 8 4 9 2 (the third figure is the open-topped German 4, possibly a 7). Read as a date it would give 28.4.92, which cannot be a workshop date, so I take it for a number and have left reading and date_iso empty rather than force it. The other crops carry only the master's ruled pencil lines and perforations."
+  },
+  {
+    "druid": "yb682jn2494",
+    "region": "e1",
+    "inscription": "11599",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1357",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Pencil group of five figures at the treble edge of e1, steeply slanted: the first three are plainly 1 1 5, the last two are each a bowl with a descending stroke. Read straight off, 11.5.99, which cannot be a workshop date; if the fourth figure is a 0 rather than a 9 it would give 11.5.09, but I cannot see that, so I have left the date empty. Worth a second reader. e2 carries the roll number in a neater hand, 1 3 5 7 (the last figure a crossed 7 with a long tail), agreeing with the printed leader label in e4 (WELTE-MIGNON No. 1357, Pas des Echarpes, 3eme Air de Ballet Op. 37, C. Chaminade); e3 has only perforations and a small stain."
+  },
+  {
+    "druid": "kr645mg0298",
+    "region": "e1",
+    "inscription": "a Foster / June, 1910",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries a large pencil autograph across the width of the roll, two lines with a long flourish under them: a capital-F surname that I read as Foster (Faster is possible) preceded by a small a, then June, 1910. English wording and an English-looking hand, so it looks like an artist's signature and date rather than a workshop punch mark, and I have left reading and date_iso empty; the team may still want the June 1910 as a terminus. Nothing on e2 to e5 but perforations and a crease."
+  },
+  {
+    "druid": "fz215xr4723",
+    "region": "e1",
+    "inscription": "[heavy slug mark] . 4128",
+    "reading": "4.1.28",
+    "date_iso": "1928-01-04",
+    "roll_number": "1443",
+    "hand": null,
+    "confidence": "low",
+    "notes": "e1 carries a rubber stamp set diagonally across the paper, not writing: a heavy blotted mark with a tail, then a point, then four figures 4 1 [2 or 3] 8. The leading mark is the fixed blob reading.md warns about, so I have not counted it as a digit; the figures alone give 4.1.28. The third figure is clogged with ink and could as well be a 3, which would make it 4.1.38, so the year is the weak point. e4 carries the roll number 1443 in pencil, agreeing with the printed leader label in e5 (WELTE-MIGNON No. 1443, Sonata Appassionata Op. 57, 2nd and 3rd movements, Beethoven); e2, e3 and e6 are blank."
+  },
+  {
+    "druid": "rg591sj4242",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written by hand. e1 is plain paper with perforations, e2 a printed notice block (M. Welte & Sons, Inc.), e3 a pasted photographic artist label printed Famous Artists are reproduced on THE WELTE-MIGNON, 273 Fifth Ave. N.Y.C. with a portrait and a printed facsimile signature, e4 the cloth leader joint."
+  },
+  {
+    "druid": "yt974cv2625",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. The paper is ruled all over with the master's fine pencil lines, which is what shows on every crop; e1, e4 and e5 carry small graphite smudges over those lines, none of them figures."
+  },
+  {
+    "druid": "zw904vm6502",
+    "region": "e2",
+    "inscription": "26. 1. 76",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e2 shows 26. 1. 76 in pencil, plainly legible, but on the olive repair paper spliced to the head of the roll and in a later hand, so 26 January 1976 and a repairer's note rather than a workshop punch date; I have left reading and date_iso empty. e1 is the scanner's colour target, e3 a printed notice showing through from the other side of the paper."
+  },
+  {
+    "druid": "wz252pk3255",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. Olive-grey paper; e1 shows a printed notice block showing through from the other side, too faint to transcribe, e2 the pinked joint between the paper and the red cloth leader, e3 the scanner's colour target."
+  }
+]

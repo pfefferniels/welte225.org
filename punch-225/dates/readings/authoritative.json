@@ -1,0 +1,145 @@
+[
+ {
+  "druid": "bj606rp8160",
+  "region": 1,
+  "inscription": "367.  14. 9. 10.  J. H. M. / II.",
+  "reading": "14. 9. 10.",
+  "date_iso": "1910-09-14",
+  "roll_number": "367",
+  "hand": "J. H. M.",
+  "confidence": "high",
+  "notes": "read here at magnification after two readers disagreed, one giving 19.9.10 and 867, the other 14.4.10 and 864. The number reads 367, which matches the catalogue, and that agreement is the reason to prefer this reading of the figures."
+ },
+ {
+  "druid": "gm170gy7498",
+  "region": 1,
+  "inscription": "239.  24.  6. 11",
+  "reading": "24. 6. 11",
+  "date_iso": "1911-06-24",
+  "roll_number": "239",
+  "hand": null,
+  "confidence": "high",
+  "notes": "read here on a wider crop after the first reader, whose crop clipped the tops of the figures, gave the number as 234. It is 239, matching the catalogue."
+ },
+ {
+  "druid": "pj688nx2384",
+  "region": 1,
+  "inscription": "1464.  [name]  4. 11. 09.",
+  "reading": "4. 11. 09.",
+  "date_iso": "1909-11-04",
+  "roll_number": "1464",
+  "hand": null,
+  "confidence": "high",
+  "notes": "read here at magnification after the first reader gave 1904. The year's second figure is the rounded 9 of this hand, not the angular crossed 4 that opens the date; 1909 also restores the catalogue-number ordering, which 1904 broke."
+ },
+ {
+  "druid": "tt435dd2897",
+  "region": 1,
+  "inscription": "326,  26. 1. 14,",
+  "reading": "26. 1. 14",
+  "date_iso": "1914-01-26",
+  "roll_number": "326",
+  "hand": null,
+  "confidence": "high",
+  "notes": "read here at magnification; confirms the first reader, who left it at medium. Number matches the catalogue and the printed leader label."
+ },
+ {
+  "druid": "jw822wm2644",
+  "region": 1,
+  "inscription": "1275. 25. 4. 22. [signature]",
+  "reading": "25. 4. 22.",
+  "date_iso": "1922-04-25",
+  "roll_number": "1275",
+  "hand": null,
+  "confidence": "high",
+  "notes": "read here at magnification. This copy has the old pitch, 3.004 mm, at a date seven months before the 1922 control's 2.496 mm, and is one of the two rolls that show the two perforators running side by side."
+ },
+ {
+  "druid": "vf252dc4872",
+  "region": 1,
+  "inscription": "24. 8. 11",
+  "reading": "24. 8. 11",
+  "date_iso": "1911-08-24",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "read here at magnification. The day's first figure could be 2 or 9, which does not matter. This copy has the new pitch, 2.503 mm, two and a half years before roll 225's January 1914 copy has the old one."
+ },
+ {
+  "druid": "rt595wj4442",
+  "region": 1,
+  "inscription": "27. 4. 14",
+  "reading": "27. 4. 14",
+  "date_iso": "1914-04-27",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "read here at magnification after the first reader left it low. The last figure carries the same crossed form as the month's 4, so the year is 14; the day could be read 24 with the month 7, which does not move the year."
+ },
+ {
+  "druid": "jd052zg1047",
+  "region": 1,
+  "inscription": "2685.  16 8 2[4 or 7]",
+  "reading": "16. 8. 2?",
+  "date_iso": null,
+  "roll_number": "2685",
+  "hand": null,
+  "confidence": "low",
+  "notes": "16 August of either 1924 or 1927; the year's last figure is angular with a crossing stroke and this hand's 4 and barred 7 are not separable at this resolution, the tops being cut even on the crop carried past the paper edge. The reader who found it gave 27 at medium. The number 2685 is secure and agrees with the printed label. Either way this is a wide-pitch copy, 3.001 mm, dated well after 1922, so it carries the overlap whichever year it is; the year itself should not be used."
+ },
+ {
+  "druid": "ng103jj1150",
+  "region": 1,
+  "inscription": "5700.  4. 9. 13.",
+  "reading": "4. 9. 13.",
+  "date_iso": "1913-09-04",
+  "roll_number": "5700",
+  "hand": null,
+  "confidence": "high",
+  "notes": "the date is restored, having been withdrawn here earlier. Three readers gave 4.9.13 and one found the year cut; read again with the crop lengthened along the roll rather than widened across it, the line is whole. The month carries a descender, so 9 and not 8, and the year's second figure is a rounded double bowl plainly unlike the flat-topped 5 that opens the number 5700 a few centimetres away, so 3. What defeated the earlier crops was their length, not their width."
+ },
+ {
+  "druid": "dp497dz1055",
+  "region": 1,
+  "inscription": "26323",
+  "reading": "26323",
+  "date_iso": "1923-03-26",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "two readers disagreed on the fourth figure, one giving 26323 and 26 March 1923, the other 26303, which would be 1903 and so outside the corpus. Read again at native resolution the fourth figure is a 2, identical in form to the first figure of the line, and nothing like the closed loop of the 6 beside it. 26 March 1923."
+ },
+ {
+  "druid": "gg384dv5303",
+  "region": 1,
+  "inscription": "d. 1253 [or 1258].  24. 11. 0[8 or 6].  [signature]",
+  "reading": "24. 11. 0?",
+  "date_iso": null,
+  "roll_number": "1253",
+  "hand": null,
+  "confidence": "low",
+  "notes": "the year is withdrawn; the day and month are firm. Three readers: the first gave 24.11.08 at medium, the second read the middle group as the month written out, 'Nov', and found no year, and the third measured the ink profile across the whole line and found four groups — a number of four figures, then 24, then 11, then two figures of year. That third reading settles the month as two plain 1s matching the 1 of the number, so 'Nov' falls away, and it settles the year's first figure as a plain 0. Its second figure is a filled blot, best read 8 but reading 6 in isolation, which is exactly the trap this corpus sets. So the paper gives 24 November of 190-something and no more. Two other things stand against 1908 in particular: the copy's pitch of 2.400 mm would make it the earliest narrow-state copy in the archive by three years, and the written number, 1253 or 1258, does not match the catalogue's 194 for this druid."
+ },
+ {
+  "druid": "ky458kj7325",
+  "region": 1,
+  "inscription": "369  13. 5. 13.  Mo.",
+  "reading": "13. 5. 13.",
+  "date_iso": "1913-05-13",
+  "roll_number": "369",
+  "hand": "Mo.",
+  "confidence": "medium",
+  "notes": "read here at magnification. The written number 369 does not agree with the catalogue's 2882 for this druid, which is unexplained and should be checked before the reading is used."
+ },
+ {
+  "druid": "rb625rv7300",
+  "region": 1,
+  "inscription": "569  Hans u. Pflugel  16.12.09",
+  "reading": "16.12.09",
+  "date_iso": "1909-12-16",
+  "roll_number": "569",
+  "hand": "Hans u. Pflugel",
+  "confidence": "high",
+  "notes": "read by the editor on the scan on 2026-09-22: the year is 09. The reader gave 19, and a check here at native resolution wrongly agreed with it. The hand's three rolls now fall between November 1909 and January 1910."
+ }
+]

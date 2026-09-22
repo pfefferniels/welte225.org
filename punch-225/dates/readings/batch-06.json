@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "wc588rr6112",
+    "region": 4,
+    "inscription": "... the roll ... 709 ... (1939) ... g an .",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crop 4 (roll end, scalloped tail): four lines of pencil cursive in English, running along the roll and clipped at one end by the crop, of which 'the roll', '709', '(1939)' and a trailing '...g an.' are legible. English wording and the century written out mark this as a later archival or collector's note, not a workshop punch inscription. Crop 1 has an illegible three-stroke scribble, crop 2 is blank leader, crop 3 a repair patch with a pencil ring round a hole."
+  },
+  {
+    "druid": "yx536mq2915",
+    "region": 1,
+    "inscription": "291122",
+    "reading": "291122",
+    "date_iso": "1922-11-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, six figures without separators, read from the lower (180-degree) panel; the 2 is the German cursive form with a base stroke and the second figure a closed-bowl 9"
+  },
+  {
+    "druid": "gs556hk6631",
+    "region": 1,
+    "inscription": "18722",
+    "reading": "18722",
+    "date_iso": "1922-07-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures without separators, read from the lower (180-degree) panel; the second figure is a fully closed double-bowl 8, not a 6, and the third carries the continental crossbar of a 7"
+  },
+  {
+    "druid": "bj606rp8160",
+    "region": 1,
+    "inscription": "867.  19. 9. 10.  J. H. M. / II.",
+    "reading": "19. 9. 10.",
+    "date_iso": "1910-09-19",
+    "roll_number": "867",
+    "hand": "J. H. M.",
+    "confidence": "high",
+    "notes": "Pencil, read from the lower (180-degree) panel. Day, month and year each separated by a point; the year 10 is written as a narrow slanted 0 after the 1. The initials under which a Roman II. is written are less certain than the figures."
+  },
+  {
+    "druid": "bb988jx6754",
+    "region": 1,
+    "inscription": "369.  30. ?. 14",
+    "reading": "30. ?. 14",
+    "date_iso": "1914",
+    "roll_number": "369",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, faint, written close to the treble edge of the paper so that the tops of the figures run into the edge; read from the lower (180-degree) panel and checked against the upper one. The roll number 369, the day 30 and the year 14 are plain. Between them stand one or two upright strokes with a small entry hook, which could be a single 1 (30.1.14) or a pair 11 (30.11.14); the scan does not carry enough of their heads to decide, so the month is left open. Region 2 shows only a mended perforation, no writing."
+  },
+  {
+    "druid": "hc909pp9868",
+    "region": 1,
+    "inscription": "201122",
+    "reading": "201122",
+    "date_iso": "1922-11-20",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil on grey-green paper, read from the lower (180-degree) panel. Six figures run together without separators, 20 11 22; the two closing figures are both the same cursive 2 with a base stroke carried to the right, the last one looped. Nothing else is written in the crop."
+  },
+  {
+    "druid": "qc650tp0469",
+    "region": 1,
+    "inscription": "22922  [flourished monogram]",
+    "reading": "22922",
+    "date_iso": "1922-09-22",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink, read from the lower (180-degree) panel. Five figures run together without separators, 22 9 22; the middle figure has a closed bowl and a descender and is a 9, the other four are the same cursive 2. Further along the same line stands a single large flourished capital with a long descending loop, the puncher's mark; its head runs off the edge of the paper and I would not name the letter."
+  },
+  {
+    "druid": "qz671pq0609",
+    "region": 1,
+    "inscription": "91122",
+    "reading": "91122",
+    "date_iso": "1922-11-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, read from the lower (180-degree) panel. Five figures run together without separators, 9 11 22; the first has a closed bowl and a descender and is a 9, then two plain upright strokes, then two cursive 2s. Nothing else is written in the crop."
+  },
+  {
+    "druid": "kg263bn9176",
+    "region": 1,
+    "inscription": "343.  19. 10. 12",
+    "reading": "19. 10. 12",
+    "date_iso": "1912-10-19",
+    "roll_number": "343",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, read from the lower (180-degree) panel. Day, month and year each closed by a point. The middle figure of the roll number is an open two-stroke 4, so the number reads 343. No name or initials in the crop."
+  },
+  {
+    "druid": "gq990gn6753",
+    "region": 1,
+    "inscription": "141?23",
+    "reading": "14 ? 23",
+    "date_iso": "1923",
+    "roll_number": "375",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, read from the lower (180-degree) panel. A run of figures without separators, written close to the edge of the paper. The closing 2 and 3 are plain, so the year is 1923, and the run opens with a narrow 1 followed by a figure with a closed head, most likely 14 though 19 is possible. Between them stand two upright strokes joined by a short bar at mid height, which read either as a single open 4 (14.4.23) or as two figures, 11 (14.11.23) or 17 (no month). I cannot settle the middle group from this scan, so only the year is recorded. The roll number comes from region 2, which carries 375 alone, the 7 there crossed and carried on a long top bar."
+  },
+  {
+    "druid": "sr504pc8797",
+    "region": 1,
+    "inscription": "Wild / 5/10/1907",
+    "reading": "5/10/1907",
+    "date_iso": "1907-10-05",
+    "roll_number": null,
+    "hand": "Wild",
+    "confidence": "medium",
+    "notes": "Pencil in two lines, the name above the date, separated by slashes and with the year written out. Here the UPPER panel is the upright one. Day, month and the first three figures of the year are plain. The last figure I read as a 7: its right-hand stroke rises above the small loop and comes down as the bar and diagonal of a 7, unlike the plainly round-bowled 9 two places earlier. 1909 cannot be entirely excluded."
+  },
+  {
+    "druid": "qj233tv5549",
+    "region": 1,
+    "inscription": "Music… / in Cabi… / winter, / Not r… / tions ab…",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date in any of the three crops. Crop 1 shows the end of the roll inside its wrapper, with two printed paper labels stuck to it; only the left ends of the lines are on the image, giving 'Music', 'in Cabi', 'winter,', 'Not r' and 'tions ab', which reads as a printed storage instruction, not workshop writing. Crop 2 shows only the plain wrapper and the roll edge. Crop 3 shows a block of printed text showing through from the other side of the wrapper, too faint and too broken to read even after flattening."
+  },
+  {
+    "druid": "hs635sh6729",
+    "region": 1,
+    "inscription": "7?14",
+    "reading": "7 ? 14",
+    "date_iso": "1914",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, read from the lower (180-degree) panel and checked against the upper one. Four figures run together without separators, close to the edge of the paper, which clips their heads. The first is a crossed 7 and the last two are 14, so the day is 7 and the year 1914. The second figure has a closed bowl at the foot with two strokes converging on it and the upper loop left open: that is the 8 described in the reading notes, but a 3 or a 5 would sit in the same space and I cannot settle it, so the month is left open."
+  },
+  {
+    "druid": "kt568yb8982",
+    "region": 3,
+    "inscription": "382",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "382",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date in any of the three crops. Region 3 carries the roll number alone, 382 in pencil, the middle figure a fully closed double-bowl 8. Region 2 is the pale leader, written along the roll so that it reads with the crop turned a quarter turn: three lines in a modern hand, 'Meg Peat / December / 1979' (the surname could also be read Prout). The century is written out and the hand is a later one, so this is an archive note rather than a workshop punch date. Region 1 shows only perforations and a mended patch."
+  }
+]

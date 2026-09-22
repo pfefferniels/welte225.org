@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "mj416dn1432",
+    "region": 1,
+    "inscription": "15 11 22",
+    "reading": "15 11 22",
+    "date_iso": "1922-11-15",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, six figures without separators; no number or name on the line"
+  },
+  {
+    "druid": "sq235zh0909",
+    "region": 1,
+    "inscription": "[Wort] 19. 1. 09 [Wort]",
+    "reading": "19. 1. 09",
+    "date_iso": "1909-01-19",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink on ruled paper; a cursive word before the date and a second group after it, neither legible at this resolution. The month figure is small but has the same flagged form as the 1 of the day, so 1 rather than 7"
+  },
+  {
+    "druid": "rt308hy9235",
+    "region": 1,
+    "inscription": "No 646  8. 12. 10.",
+    "reading": "8. 12. 10.",
+    "date_iso": "1910-12-08",
+    "roll_number": "646",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink, damp-stained paper; the year is a plain 1 followed by a narrow closed loop, so 10 rather than 11. The middle figure of 646 is the least clear of the three"
+  },
+  {
+    "druid": "td134mh2760",
+    "region": 1,
+    "inscription": "660. Fritz 7 Dezb 1908",
+    "reading": "7 Dezb 1908",
+    "date_iso": "1908-12-07",
+    "roll_number": "660",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "pencil, same hand and same date as gq898yv9510"
+  },
+  {
+    "druid": "xr682fm1233",
+    "region": 2,
+    "inscription": "…d placed / …ing the / …s condi-",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "fragment of the printed care label on the roll end, no workshop inscription. Region 1 shows show-through only, region 3 is the scanner colour target"
+  },
+  {
+    "druid": "zc568zf0361",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops show blank paper, a torn edge or perforations"
+  },
+  {
+    "druid": "hh095vc8073",
+    "region": 1,
+    "inscription": "2424",
+    "reading": "2424",
+    "date_iso": "1924-04-02",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "four figures, no separators and nothing else on the line. Read as 2.4.24 on the corpus convention, but 24.2.4 cannot be excluded from the image alone. Region 5 carries 662 in pencil and region 4 a later felt-pen note, 'Play the other 662'"
+  },
+  {
+    "druid": "qf751dd5412",
+    "region": 1,
+    "inscription": "Famous Artists are reproduced on \"THE WELTE-MIGNON\" 273 Fifth Ave. N.Y.C. / M. WELTE & SONS, INC., N.Y. 13 — Music-rolls must always be kept in boxes and placed in Cabinet containing basin of water during the winter, to prevent contraction and expansion. Not responsible for correct playing unless conditions above stated adhered to.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed dealer and care labels on the roll end, with a printed facsimile signature; no workshop inscription in any of the three crops"
+  },
+  {
+    "druid": "dj406yq6980",
+    "region": 1,
+    "inscription": "663. 16.3.09. [Signatur]",
+    "reading": "16.3.09.",
+    "date_iso": "1909-03-16",
+    "roll_number": "663",
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink; a signature follows the date, beginning with a tall cursive capital, but I cannot read it with any confidence"
+  },
+  {
+    "druid": "gq898yv9510",
+    "region": 1,
+    "inscription": "665. Fritz 7 Dezb 1908",
+    "reading": "7 Dezb 1908",
+    "date_iso": "1908-12-07",
+    "roll_number": "665",
+    "hand": "Fritz",
+    "confidence": "high",
+    "notes": "pencil, same hand and same date as td134mh2760"
+  },
+  {
+    "druid": "vs167qc5364",
+    "region": 1,
+    "inscription": "\"This music roll … M. Welte & Sons … leased by its … it is agreed that this … reproduced in any … whole or in part\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed licence notice, seen through the paper and so mirrored; region 3 shows the printed care label on the roll end. No workshop inscription in any crop"
+  },
+  {
+    "druid": "qq244fh1388",
+    "region": 1,
+    "inscription": "No 669  16. 11. 08  E. Naumann",
+    "reading": "16. 11. 08",
+    "date_iso": "1908-11-16",
+    "roll_number": "669",
+    "hand": "E. Naumann",
+    "confidence": "high",
+    "notes": "ink on ruled paper; the date is plain, the surname less so and could as well be Neumann"
+  },
+  {
+    "druid": "qw257qp8232",
+    "region": 2,
+    "inscription": "690",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "690",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil number only. Region 1 carries a stamped serial, [blot]-5628, and region 3 the printed label \"WELTE-MIGNON No. 690, Symphonische Etude, Schumann, Gespielt von Dr. Otto Neitzel\". No punch date in any crop"
+  },
+  {
+    "druid": "cw211cn1219",
+    "region": 1,
+    "inscription": "691",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "691",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil number only, the final figure a flagged 1. Region 3 carries the printed label \"WELTE-MIGNON No. 691, Davidsbündler Dances, Schumann, Played by Dr. Otto Neitzel\". No punch date in any crop"
+  }
+]

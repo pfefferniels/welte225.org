@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "fd660zf8362",
+    "region": 3,
+    "inscription": "This roll needs repair / have a tear on the bass side - it / should even really come good. / A remarkable transcription - / quoted in Groves Dictionary / (under \"arrangement\") as a / fine example of arrangement / for the piano. / Compare with Backhaus on / the Duo-Art.  [...] that the bass flange is always sung to th[e] [...]tting.   2 8 1985",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop inscription found. e1 carries WATCH in modern black felt-tip; e2 is the leader with the printed Welte-Mignon No. 990 label (Meistersinger Vorspiel, Wagner-Bulow) and a colour target; e3 is a long pencil note in English by a later collector, dated 2 8 1985 (four-digit year, so an archive note, not a punch date). Year could also be 1983; the digit is faint."
+  },
+  {
+    "druid": "tb707nd8515",
+    "region": 1,
+    "inscription": "M. Schäfer.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date on the paper. e1 carries a single ink signature, M. Schäfer., written along the roll with no number and no figures beside it; it may be a puncher or an owner. e2 and e4 are blank leader. e3 is the leader with the printed label No. 993 Widmung, Schumann-Liszt, Gespielt von [signature], and the printed line 6. XII. 05 — that is the label's recording date, not a workshop punch date, so it is not entered as a reading."
+  },
+  {
+    "druid": "zw751nw0097",
+    "region": 6,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e6 does carry pencil figures, written along the extreme treble edge where the red paper meets the green backing, but they are too faint to read. Background subtraction on the red channel brings out five or six glyphs and a descender; the first pair could be 1 and 6 and a later pair 1 and 2, which would suit a 1912 date, but the month glyph is not legible and I will not complete the rest, so nothing is entered as a reading. e1 and e2 show only long ruled lines along the roll, e3, e4, e5, e7 blank paper and repair tape, e8 the green backing with the printed Music-rolls must always be placed in Cabinet care slip."
+  },
+  {
+    "druid": "bx815rz0622",
+    "region": 2,
+    "inscription": "1033",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "1033",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. e2 carries the roll number 1033 in ink at the paper edge, which agrees with the printed leader label on e4 (WELTE-MIGNON No. 1033, 12th Hungarian Rhapsody, Liszt). e1 carries five ink figures at the same edge, but the paper edge cuts through their upper halves and I could not settle any of them, so nothing is entered. e3 shows only perforations and repair-tape marks. e4 also carries a long later pencil note in English on the leader, an owner's or collector's comment, not a workshop inscription."
+  },
+  {
+    "druid": "kv921kh0629",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written on this roll. e1 and e4 are plain paper (e4 has a faint smudge, not writing), e3 is the colour target and tape, and e2 carries only the printed M. Welte & Sons copyright notice stamped across the paper. No workshop hand anywhere in these crops."
+  },
+  {
+    "druid": "cz847th6835",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop inscription. e1 is the leather-covered leader with the printed catalogue label (title ending -odie, an artist's signature) and the printed line 9. II. 06. — set in the label's own typeface, so a recording date belonging to the label rather than a punch date, as on other rolls here. e2 and e3 show the olive leader paper and the join to the red roll, both blank."
+  },
+  {
+    "druid": "zf037wk3650",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. e2 has one small ink scribble at the paper edge, three or four crossing strokes about a centimetre wide; it looks like a tick or a pair of initials rather than figures, and I could not resolve it either way up. e1, e3, e4, e5 and e7 are plain ruled paper with perforations and ink-ringed marks. e6 is the leader with the printed label WELTE-MIGNON No. 1127, Pierrette, Air de Ballet, Op. 41, C. Chaminade, Played by [signature]; the number there is printed, not written on the roll, so I have left roll_number null."
+  },
+  {
+    "druid": "jx095ty1753",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. e1 carries a small cursive ink scribble at the paper edge, of the same kind as on zf037wk3650: a couple of looped strokes that read as initials or a checking mark rather than figures, and I could not resolve it either way up. e2 and e4 are plain perforated paper. e3 is the leader with the printed label WELTE-MIGNON No. 1264, Sonate A-dur Nr. 9, W. A. Mozart, Gespielt von [signature], the printed date 19. II. 06. in the label's typeface (a recording date, not a punch date), and the printed line Patentiert in allen Culturstaaten; a faint pencil mark beside the eyelet is illegible."
+  },
+  {
+    "druid": "cw078rn1143",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written here. e1 is the colour target and tape, e2 and e3 show the olive leader paper and the red cloth binding at the leader, all blank."
+  },
+  {
+    "druid": "qb477sd2923",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written. All three crops show a badly torn stretch of the roll edge, with large losses and curled flaps of paper; what survives carries only perforations. If anything was written along this edge it has gone with the missing paper."
+  },
+  {
+    "druid": "dx555xv9093",
+    "region": 1,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries a short ink inscription of about four glyphs right on the paper edge, but the edge runs through the writing and only the lower halves survive; the last glyph looks like a 2 and one before it like a 9 or a 3, which is not enough to read anything. Both panels show the same clipped strokes, so the other way up does not help. e2, e3 and e4 are blank paper with creases and a faint scored line."
+  },
+  {
+    "druid": "wp877mn0317",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No date. e1 has the same small looped ink scribble at the paper edge that appears on zf037wk3650 and jx095ty1753, a checking mark or initials rather than figures. e2 shows a few smudges that look like offset ink picked up from another sheet, not writing. e3 and e4 are perforated paper only."
+  },
+  {
+    "druid": "hp956bx4547",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written on this roll. e1 shows the outer edge of the rolled paper against white, e2 and e4 perforated paper, e3 the rounded tail end with creases. No ink or pencil anywhere in these crops."
+  },
+  {
+    "druid": "qt363fp0799",
+    "region": 1,
+    "inscription": "J. Herrmann",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date. e1 carries a large cursive ink signature along the roll, J. Herrmann (the capital could be J, I or S; the surname is plain, with the double r and double n). No figures with it. e2 is the leader with three later pencil notes, playing times and modern dates: 4' 51\", then 6' 38\" - 17.5.1981, then 4' 51\" 19.10.93; the four-figure 1981 and the hand mark these as archive notes rather than workshop inscriptions. e3 has a small smudge and e4 a small ink bracket beside a perforation row, neither of them writing."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "kp368nb7707",
+    "region": 1,
+    "inscription": "[short cursive word, ~4-5 letters, unread]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries one short pencil word near the edge, a name or initials as far as I can see; no figures anywhere in it. e4 has 'STOP' written twice beside the perforations, a production mark. e2 and e3 show only a crease. No date on this roll."
+  },
+  {
+    "druid": "vm423wb2944",
+    "region": 3,
+    "inscription": "No. 548 / Nocturn / Op. 15. No. 2. Fis-dur. / Fr. Chopin / Gespielt von [autograph music quotation and signature] / 26. IX. 05.  ||  e1: [ink cursive, ~5 letters] IIa",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop punch date found. e3 shows the leader with the printed Welte label (No. 548, Chopin Nocturne op. 15/2, 'Gespielt von' plus the pianist's autograph music quotation and signature) and the printed date 26. IX. 05 at its foot; as far as I can see that is set in the label's own type, so it dates the autograph/edition rather than the punching of this copy, and I have left date_iso null. The printed 548 is likewise not a written roll number. e1 carries an ink cursive word followed by what looks like 'IIa', no figures. e2 and e4 blank."
+  },
+  {
+    "druid": "wt621xq0875",
+    "region": 1,
+    "inscription": "561. 09. [one further glyph, unread]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "561",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries one pencil line, plain apart from its last group: the figures 561, a full stop, 09, a full stop, then a single glyph I cannot resolve (a small oval joined to a shape like a 4 or a capital initial). 561 is almost certainly the roll number. Whether 09 is the year or, as in the corpus reading '225. 14. 114.', the day, turns on that last glyph, so I have left the date open rather than pick one. e2, e3, e4 blank."
+  },
+  {
+    "druid": "kt780tm7975",
+    "region": 2,
+    "inscription": "9' 9\" - 26. 1. 26",
+    "reading": "26. 1. 26",
+    "date_iso": "1926-01-26",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, written across the paper at the leader end of e2, reading up the roll. Every figure is plain: 9 feet 9 inches, a dash, then 26. 1. 26, which gives 26 January 1926 whichever way round the year stands. My reservation is over what the date records, not over the figures: it is written as one phrase with a length in feet and inches, so it may be a measuring or repair note from the American Welte side rather than the punching itself, and no roll number or puncher stands with it. e3 shows the leader label with a printed '...7. IX. 05.' (the first figure falls outside the crop), which is the label's own type and dates the autograph, not this copy. e1 is the leader and colour target."
+  },
+  {
+    "druid": "xm978sg7252",
+    "region": 2,
+    "inscription": "91824  (e4 separately: 592)",
+    "reading": "91824",
+    "date_iso": "1924",
+    "roll_number": "592",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Five pencil figures in e2, written right at the paper edge, with the top of every figure sheared off by that edge even in the extended crop; the lower halves are clear. Read 9 1 8 2 4. The first figure is built exactly like the 9 of the 592 written in e4 (closed oval with the stroke descending to the lower left), not like that hand's 2, which has a flat base to the right. The closing 2 matches the hand's 2; the last figure I take for a 4 from its lower half only. How to group them I cannot settle from the image: 9-18-24 (month first) gives 18 September 1924, while a 2 in place of the 9 would allow 21.8.24 or 2-18-24. The roll is a Welte-Mignon no. 592 with an English label (Brahms waltzes, played by G. Galston, e5), so I cannot assume the German day-first order here. Year 1924 is the part I would stand behind; the day and month I have deliberately left out. e1, e3 blank; e6 colour target."
+  },
+  {
+    "druid": "xr682fm1233",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written by hand on any of the three crops. e1 is a dark roll carrying a printed or stamped block of about ten lines of very small type across the paper; I pushed the contrast several ways and could not resolve a single word, but the block reads as a set notice (the rights text) rather than a dated entry, and no figure group stands out in it. e2 shows the box and the English instruction slip, e3 the colour target."
+  },
+  {
+    "druid": "zc568zf0361",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written here. e1 and e2 are the torn leader end, creased but bare; e3 is plain paper with perforations. No pencil, ink or stamp anywhere in the three crops."
+  },
+  {
+    "druid": "vs167qc5364",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No handwriting on any crop. e1 and e2 carry the English rights notice printed along the roll ('This music roll is manufactured by M. Welte & Sons ... not to be reproduced in whole or in part'), set type with no date in it. e3 is the leader with the storage-instruction slip, its text running off the crop. Nothing datable here."
+  },
+  {
+    "druid": "qw257qp8232",
+    "region": 1,
+    "inscription": "[slug mark] - 5 6 2 8   (e2, in pencil: 690)",
+    "reading": "5 6 28",
+    "date_iso": "1928-06-05",
+    "roll_number": "690",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Stamped across the roll in e1, reading along the paper: a heavy fixed mark of stacked bars, a hyphen, then 5 6 2 8, all four figures cleanly inked. The mark is the slug's own, not a digit - the figures alone already give a possible date, so I have not let it make the day 15. Day first gives 5 June 1928. e2 carries 690 in pencil, and the leader label in e3 reads 'WELTE-MIGNON No. 690, Symphonische Etude, Schumann, Gespielt von' with Otto Neitzel's signature, M. Welte & Söhne, Freiburg i. Br., so the roll number is certain and the hand is the German workshop's."
+  },
+  {
+    "druid": "cw211cn1219",
+    "region": 1,
+    "inscription": "691",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "691",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries the pencilled roll number 691 at the edge and nothing else: no date, no initials, and no stamp on any crop. The number agrees with the leader label in e3, 'WELTE-MIGNON No. 691, Davidsbuendler Dances, Schumann, Played by' with Otto Neitzel's signature. e2 is the bare torn leader."
+  },
+  {
+    "druid": "jh069yf5255",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Nothing written here. All four crops are bare paper: e1 plain with two small stains, e2 and e3 the creased torn leader, e4 plain paper with perforations. No pencil, ink or stamp anywhere along the edge."
+  },
+  {
+    "druid": "sx417qf9868",
+    "region": 1,
+    "inscription": "723   ||  e2: \"...s damage, a few bars in, [repair]ed successfully on 9.7.1994 by D. F-C.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "723",
+    "hand": null,
+    "confidence": "none",
+    "notes": "No punch date. e1 has three pencil figures at the edge, their tops shaved by it, which I read as 723 - a roll number, with nothing beside it. e2 carries a long ballpoint note in a modern English hand ending 'successfully on 9.7.1994 by D. F-C.'; that is a repair note of 9 July 1994, a later hand with the century written out, so it is the archive's and not the workshop's. e3 bare."
+  },
+  {
+    "druid": "pk349zj4179",
+    "region": 1,
+    "inscription": "1 9 6 2 8  (stamped)   ||  e2, in pencil: 797",
+    "reading": "19628",
+    "date_iso": "1928-06-19",
+    "roll_number": "797",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped along the paper in e1, five figures, cleanly inked: 1 9 6 2 8, which day first gives 19 June 1928. The one thing that could change this is the leading figure. It is not the slug mark the instruction warns about: that mark, which I saw on qw257qp8232 in this same batch, is a squat block of horizontal bars followed by a hyphen, while this is a well formed 1 with its own flag and foot serif, the same weight and spacing as the other four, and no hyphen follows. If it were discounted the date would be 9.6.28. Worth noting that qw257qp8232 carries a stamp of the same kind reading 5.6.28, so both fall in June 1928. e2 has 797 in pencil at the edge, a crossed 7, a 9 and a second crossed 7, agreeing with the leader label in e3: 'WELTE-MIGNON No. 797, Samson and Delilah, Finale, Act I, C. Saint-Saens', M. Welte & Soehne, Freiburg i. Br."
+  },
+  {
+    "druid": "dz678wd2724",
+    "region": 5,
+    "inscription": "No. 970 / Berceuse / Op. 26. Nr. 7. / Ludwig Schytte / Gespielt von / [autograph signature] / 5. XII. 05.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop hand anywhere. e1 to e4 are bare paper with repair tape, a tear and heavy creasing. e5 is the leader with the printed label above, whose '5. XII. 05.' is set in the label's own type and belongs with the autograph, not with the punching of this copy, so I have left date_iso null; the printed 970 is likewise not a written roll number. The leader also carries the stamped words 'Patentiert in allen Kulturstaaten' and 'Geschuetzt', both fixed wording with no figures."
+  }
+]

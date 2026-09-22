@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "cz847th6835",
+    "region": 1,
+    "inscription": "and placed / during the / on. / less condi-  |  e  |  90.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Not roll paper: crops show the leather roll box with printed paper labels pasted on. Fragments of printed English instructions ('and placed during the ... less condi-') and a printed 'e' and '90.' on a second label. No workshop hand. Crops 2 and 3 blank (plain board and leather)."
+  },
+  {
+    "druid": "zf037wk3650",
+    "region": 2,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Crop 2 carries a short pencil scrawl of two or three cursive letters, no figures; too compressed to letter out, and no date. Crop 6 shows the printed string tag: 'WELTE-MIG[NON] No. 1127 / Pierrette / Air de Ballet, Op. 41 / C. Chaminade / Played by [facsimile signature]' - printed catalogue label, not a workshop hand, so no roll_number recorded. Crops 5 and 7 have pencil rings drawn round single perforations (inspection marks). Crops 1, 3, 4 blank."
+  },
+  {
+    "druid": "rk591jt8964",
+    "region": 1,
+    "inscription": "29125",
+    "reading": "29125",
+    "date_iso": "1925-01-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Stamped, not written, in black ink on the bare red paper. Five figures with no separators: 2 9 1 2 5, read 29.1.25 on the corpus convention (14114 = 14.1.1914). The fourth figure is blotted but still a 2. A faint illegible mark sits above and right of the stamp."
+  },
+  {
+    "druid": "zw485gh6070",
+    "region": 1,
+    "inscription": "1184   3. 8. 10   Roth / [second hand, illegible]",
+    "reading": "3. 8. 10",
+    "date_iso": "1910-08-03",
+    "roll_number": "1184",
+    "hand": "Roth",
+    "confidence": "high",
+    "notes": "Ink, large and unhurried, on clear paper. Third figure of the number is the open-topped 8 of these hands, not a 6; the 8 of the date is a closed figure-eight. A second short signature sits below and right of Roth, four or five cursive letters, which I cannot letter out with any confidence."
+  },
+  {
+    "druid": "ts972sy8288",
+    "region": 1,
+    "inscription": "1196.  18.7.13.",
+    "reading": "18.7.13",
+    "date_iso": "1913-07-18",
+    "roll_number": "1196",
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil on dark red paper, sloping up to the right. The last figure of the number is a closed-bowl 6, plainly not the open-looped 8 that opens the date. The month is a crossed German 7."
+  },
+  {
+    "druid": "ws749sk4778",
+    "region": 1,
+    "inscription": "15825",
+    "reading": "15825",
+    "date_iso": "1925-08-15",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Ink, one sloping line of five figures with no separators, read 15.8.25 on the corpus convention. The third figure is the 8 of these hands: under threshold it resolves into an upper narrow loop and a lower bowl joined at a crossing node, not the single stroke of a 6. If it were a 6 the month would be June instead."
+  },
+  {
+    "druid": "jx095ty1753",
+    "region": 3,
+    "inscription": "WELTE-MIGNON / No. 1204. / Sonate / A-dur Nr. 9 / W. A. Mozart / Gespielt von [facsimile signature: Wladimir de Pachmann] / 19. II. 06.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No workshop inscription in any of the four crops. Crop 3 is the leader with the printed Welte label, whose 19. II. 06. is set in the label's own type and gives the recording date of the Pachmann performance, not the punching of this copy; below it the printed Vervielfaeltigung notice of M. Welte & Soehne, Freiburg i. Br. Crop 1 carries a short cursive mark of three or four letters, but the crop cuts it at the panel edge and leaves only the lower halves, so I cannot letter it. Crops 2 and 4 are bare perforated paper."
+  },
+  {
+    "druid": "xj540rr2929",
+    "region": 3,
+    "inscription": "3. 8. 22.",
+    "reading": "3. 8. 22.",
+    "date_iso": "1922-08-03",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Fine pencil, four figures with points between them and nothing else in the crop. Day and month are plain, the 8 showing both loops closed. The two year figures are the same glyph twice, a small top loop over a stroke that falls to the left and curls back at the foot, which I read as the cursive 2 of these hands; read as 9 it would give 1929, outside the range of the corpus. Crops 1 and 2 hold only creases and perforations."
+  },
+  {
+    "druid": "tj337qh7786",
+    "region": 1,
+    "inscription": "1211. f. Schiff[..], 21. 5. 10.",
+    "reading": "21. 5. 10.",
+    "date_iso": "1910-05-21",
+    "roll_number": "1211",
+    "hand": "Schiff[..]",
+    "confidence": "high",
+    "notes": "Ink, one sloping line. The date is plain: 21, 5 and a 1 with a narrow oval 0. Between the number and the name stands a single abbreviated letter with a descender and a crossbar, read as f. The name opens plainly Schiff and closes with one or two more letters, perhaps l or h, and a comma, which I cannot letter out."
+  },
+  {
+    "druid": "wq296df7434",
+    "region": 1,
+    "inscription": "21222",
+    "reading": "21222",
+    "date_iso": "1922-02-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Faint ink on paler buff paper, five figures and nothing else. The figures themselves are legible, four cursive 2s of one pattern and a 1, but no points divide them, so the grouping is not fixed by the paper: 21.2.22 or 2.12.22. I give 21.2.22 because the two five-figure inscriptions read so far in this corpus, 14114 and 29125, both take the first two figures as the day; the year is 1922 either way."
+  },
+  {
+    "druid": "fn111kx0654",
+    "region": 1,
+    "inscription": "1213.  18. 4. 12",
+    "reading": "18. 4. 12",
+    "date_iso": "1912-04-18",
+    "roll_number": "1213",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, one line along the roll edge, read after a contrast stretch. Figures of 1213 and of the 4 and 12 are plain. The day figure is the open-loop form: a lower bowl with a broad upper arch hooked to the right, so 8 rather than 6, but that one figure is of the ambiguous kind the instruction warns of."
+  },
+  {
+    "druid": "vj076nk8220",
+    "region": 1,
+    "inscription": "81123",
+    "reading": "81123",
+    "date_iso": "1923-11-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Ink, one line, no separators: 8 1 1 2 3, read 8.11.23 on the corpus convention. The 8 is the fully closed crossed form, so it is not the 6-like variant. No number and no name in the crop."
+  },
+  {
+    "druid": "wp442mf3514",
+    "region": 1,
+    "inscription": "12/16    25. 4. 11    Krämer / Wössler",
+    "reading": "25. 4. 11",
+    "date_iso": "1911-04-25",
+    "roll_number": "12/16",
+    "hand": "Krämer / Wössler",
+    "confidence": "high",
+    "notes": "Ink, a wide line with the number at the left, the date in the middle and Krämer at the right, Wössler written under Krämer on a second line. The day and month are plain, the year is two separate 1 strokes of the same form as the 1 in the number. The number stands as 12/16, the third stroke being a long slash with no entry hook, so it is not simply 1216."
+  },
+  {
+    "druid": "cw078rn1143",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "Three crops, none of them writing. Crop 1 is the scanner's own target: a grey step wedge with a registration cross and a millimetre rule. Crops 2 and 3 show the join of the olive paper leader to the red roll paper, both blank in either orientation."
+  }
+]

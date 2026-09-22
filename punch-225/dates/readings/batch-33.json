@@ -1,0 +1,68 @@
+[
+ {
+  "druid": "sx275gw8801",
+  "region": 1,
+  "inscription": "1428",
+  "reading": "1428",
+  "date_iso": "1928-04-01",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "low",
+  "notes": "stamped or inked, no separators; four evenly spaced figures, the last with two closed counters so an 8, not a 6. Parsed 1.4.28 on the two-digit-year convention of the other rolls, but 14.2.8 is possible. Two illegible strokes and a comma-like mark stand to the left of the figures. Crop 3 carries a faint pencil number, perhaps 332 4, and crops 2-3 a long pencil line; neither is a date."
+ },
+ {
+  "druid": "zk082zq3962",
+  "region": 1,
+  "inscription": "25126",
+  "reading": "25126",
+  "date_iso": "1926-01-25",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "stamped, no separators; all five figures plain, the last with a single counter so a 6. Parsed 25.1.26 on the pattern of 14114 = 14.1.1914; 25.12.6 would need a one-figure year. The same two horizontal strokes and comma-like mark stand to the left of the figures as on sx275gw8801, so they seem to belong to the stamp."
+ },
+ {
+  "druid": "xr433hz5827",
+  "region": 1,
+  "inscription": "241025",
+  "reading": "241025",
+  "date_iso": "1925-10-24",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped across the roll, upright in the upper panel, smudged and seemingly struck twice. The second figure carries a diagonal and a crossbar, so a 4 rather than the 1 of the third figure; the fourth is a 0 with a stray hooked stroke above it. The closing 5 is inked only along its top bar and stem."
+ },
+ {
+  "druid": "qk926qc7779",
+  "region": 1,
+  "inscription": "271025",
+  "reading": "271025",
+  "date_iso": "1925-10-27",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "stamped, upright in the lower panel; all six figures plain, the 7 with a German crossbar. Same stamp face as xr433hz5827."
+ },
+ {
+  "druid": "ys250pr2232",
+  "region": 1,
+  "inscription": "211125",
+  "reading": "211125",
+  "date_iso": "1925-11-21",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped in a lighter, unevenly inked face, upright in the upper panel. The first and fifth figures are the same character, a closed curl with a tail running down to the left and no base stroke, which taken alone would read as a 9; read as 2, since 911195 gives neither a day nor a year while 211125 gives 21.11.25. The three 1s and the closing 5 are plain. Crop 2 carries a pencilled 5436, crop 3 only a crease."
+ },
+ {
+  "druid": "yk645sm6970",
+  "region": 1,
+  "inscription": "[stamped mark] 18128",
+  "reading": "18128",
+  "date_iso": "1928-01-18",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped, running down the roll at about sixty degrees, upright in the lower panel after rotation. A heavily inked mark, a vertical with two bars projecting to the right and a detached blob below it, stands before five plain figures, 1 8 1 2 8. The same mark, down to the detached blob, precedes the figures on rd899zb5188 and jd143sb1087 in batch 32, and on none of the three can it be read as a figure without destroying the date, so I take it for a fixed slug rather than a digit. Five figures with the leading zeros dropped give 18.1.28. Later than the 1904-1926 span reading.md reports, as is md908xy8241."
+ }
+]

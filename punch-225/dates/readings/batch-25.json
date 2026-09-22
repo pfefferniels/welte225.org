@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "sj617nc3041",
+    "region": 1,
+    "inscription": "1 4 21",
+    "reading": "1.4.21",
+    "date_iso": "1921-04-01",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, four figures, separators barely visible; read from the 180-degree panel. The second figure is a 4 (apex, left diagonal, bar crossing a long descender), not a crossed 7."
+  },
+  {
+    "druid": "jf938sf5847",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked, both panels. Crop 1 perforations and a small dark patch; crop 2 an ink blot with a tiny illegible smudge beside it, no figures; crop 3 blank creased paper."
+  },
+  {
+    "druid": "nz852nk6103",
+    "region": 2,
+    "inscription": "— MFon",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 4 crops checked. Crop 2 has '— MFon' in ink written along the roll, crop 3 '— MFoff' in the same hand with a stroke after it; these read as English on/off cues for a register, not a workshop punch date. Crop 4 shows the roll's tab with the printed label 'WELTE-MIGNON No. 2556 THAIS, MEDITATION, Massenet, Played by [ink signature]' and a colour target; printed catalogue matter, so not entered as roll_number. Crop 1 blank."
+  },
+  {
+    "druid": "rr990ym0199",
+    "region": 1,
+    "inscription": "14' 09\" / Tracks perfectly / on the Steinway / cabinet player / 24.5.1980 / 12'25\" on 19.5.1981 ! / Give it a bit of room / on the treble side of / the take up spool.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked. A later owner's or conservator's note in English pencil on the leader, with playing times and the centuries written out (1980, 1981); not a workshop punch date. Crop 3 shows the same note larger and partly cut off; crop 2 is the tab, strap and colour target only. No workshop inscription anywhere on these crops."
+  },
+  {
+    "druid": "vb983gg2310",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked, both panels. Heavily repaired paper, tissue mending strips over perforations throughout; no writing of any kind."
+  },
+  {
+    "druid": "rq642tt1626",
+    "region": 3,
+    "inscription": "·WELTE·MIGNON· No. 2580 / A Canadian Rondo / A. Passing-Fancy / Louis Hervey d'Egville / [ink signature] L. H. d'Egville.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked. Crop 3 is the tab with the printed catalogue label and the composer's ink signature across it; printed matter and a signature, no date, so roll_number left null. Crop 1 perforated paper with tears at the edge, crop 2 blank leader against the green box cloth."
+  },
+  {
+    "druid": "fh358rd2268",
+    "region": 1,
+    "inscription": "18225",
+    "reading": "18225",
+    "date_iso": "1925-02-18",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Crop 1 carries a stamp in printer's type, every figure plain: a vertical rule, then 1 8 2 2 5, then a block of three horizontal rules. Read as 18.2.25 on the convention that separators are dropped, which is the only valid date parse of the five figures. Low confidence because the doubt is not in the figures but in the kind of mark: set in type between rules, it could equally be a production or serial number rather than a punch date, so roll_number left null rather than claimed either way. Crop 3 has pencil at the very top edge of the scanned strip, '25' then a two-figure group, the upper half of every figure cut off by the edge in both panels, so it cannot be read and is not used here. Crops 2 and 4 hold only perforations and damp spots."
+  },
+  {
+    "druid": "kw738fg7467",
+    "region": 1,
+    "inscription": "8622",
+    "reading": "8622",
+    "date_iso": "1922-06-08",
+    "roll_number": "2588",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Four pencil figures on crop 1, written right at the top edge of the paper so the upper part of each is clipped; read from the lower, upright panel and cross-checked against the rotated one. Separators dropped, so 8.6.22. The first figure is the open-loop form that can be taken for a 6, but it crosses at the waist and the second figure, a plain 6 beside it, has no such crossing, so I read 8 then 6; if the first were a 6 the date would be 6.6.22. Roll number 2588 written in pencil on crop 4, from a different part of the roll than the date. Crop 3 carries a later English note, 'Finish of Funeral March.', with a long rule; crop 2 has pencil clipped away almost entirely at the paper edge, crop 5 is blank."
+  },
+  {
+    "druid": "ps931qh5746",
+    "region": 1,
+    "inscription": "1. 8. 22.",
+    "reading": "1. 8. 22.",
+    "date_iso": "1922-08-01",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil at the top edge of the paper, read from the upright panel and cross-checked against the rotated one. The month figure is the open-loop form that can pass for a 6, but under magnification it shows a closed upper loop crossing at the waist into a closed bowl, so 8. Points after the day, the month and the year. Nothing else written on this crop."
+  },
+  {
+    "druid": "jc718cb5784",
+    "region": 2,
+    "inscription": "Music-ro[lls] / in Cabinet / winter, to / Not resp[onsible] / tions above / placed / the / condi-",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked, both panels. Crop 1 is the scanner's calibration target and leader. Crops 2 and 3 show the leather roll box with fragments of a printed English care label (storage instructions, disclaimer); printed matter, not a workshop inscription, and no figures anywhere."
+  },
+  {
+    "druid": "pc364sy7115",
+    "region": 1,
+    "inscription": "2609. 19.9. 17.",
+    "reading": "19.9.17",
+    "date_iso": "1917-09-19",
+    "roll_number": "2609",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, written along the roll; read from the upper panel rotated a quarter turn. Day and month plain: both 9s are a small closed bowl over a straight descender, no apex or crossbar, so 19.9 and not 14.4. The year pair is thinner and slightly rubbed, but the second figure carries a horizontal top bar, hence 17. The fourth figure of the number descends below the line, so 2609 and not 2600."
+  },
+  {
+    "druid": "qp421cd7297",
+    "region": 1,
+    "inscription": "221123",
+    "reading": "221123",
+    "date_iso": "1923-11-22",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, six figures run together with no separators; read from the lower (180-degree) panel. Figures 1, 2 and 5 each end in a horizontal base stroke and are 2s; figures 3 and 4 are plain slanted strokes, so 11; the last is a clear double-bowled 3."
+  },
+  {
+    "druid": "rh801bs4556",
+    "region": 2,
+    "inscription": "WELTE-MIGNON / No. 2615 / THE GONDOLIERS OR / THE KING OF BARA-TARIA / Sullivan / Played by / Goodall",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked, both panels. Crop 2 is the roll head with the printed Welte-Mignon title label (catalogue no. 2615), a printed care label and printed leader text; nothing in pencil or ink. The number 2615 is printed on the label, not written on the paper, so roll_number is left null. Crops 1 and 3 show perforations, a faint arc-shaped smear and a small speck, no figures."
+  },
+  {
+    "druid": "xg228jc5213",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked, both panels. Crop 1 is the roll end where the red paper meets the green cloth leader, blank apart from a tear; crops 2 and 3 show perforations with a few small ink specks and no figures."
+  }
+]

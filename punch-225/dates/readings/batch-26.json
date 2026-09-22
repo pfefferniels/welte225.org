@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "zp424ps8426",
+    "region": 2,
+    "inscription": "WELTE-MIGNON No. 2617 MIKADO, OR THE",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed box label and a printed care slip caught beside the roll end, no workshop hand; crops 1, 3, 4 blank paper and perforations only"
+  },
+  {
+    "druid": "fg895gs1373",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops show the torn roll end, plain paper and perforations, no writing"
+  },
+  {
+    "druid": "wg598sj1504",
+    "region": 3,
+    "inscription": "2621",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2621",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil 2621 in crop 3, agreeing with the printed label in crop 4 (WELTE-MIGNON No. 2621, Chopin Etude Ges dur op. 10 no. 5, Tosta di Benici). Crop 1 carries a group of four pencil figures whose upper halves fall outside the crop; the lower halves suggest a date but no figure is fully visible, so none is recorded. Crop 2 shows one cut-off glyph."
+  },
+  {
+    "druid": "jm300wy4714",
+    "region": 1,
+    "inscription": "2622,   22. 8. 12,",
+    "reading": "22. 8. 12",
+    "date_iso": "1912-08-22",
+    "roll_number": "2622",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, plain. The month figure is the open-topped 8 described in reading.md, two strokes converging on a bottom bowl, not a 6. No puncher's name in the crop."
+  },
+  {
+    "druid": "gt485ys0625",
+    "region": 1,
+    "inscription": "2635",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2635",
+    "hand": null,
+    "confidence": "none",
+    "notes": "the pencil number only, written twice (crops 1 and 3) and agreeing with the printed label in crop 4 (WELTE-MIGNON No. 2635, Sibelius Romance Des-dur op. 34 no. 9, Tosta di Benici). Crop 2 blank. No date and no name anywhere in the four crops."
+  },
+  {
+    "druid": "qk333zc6515",
+    "region": 4,
+    "inscription": "This roll is dated 14 May 1914 / Apart from odd [cut off]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "a later English hand in pencil on a pale slip at the roll end, not the workshop's inscription: the month is spelt out and the century written in full, and the wording reports a date rather than giving one. The rest of the slip is cut off by the crop. Crops 1 and 3 show plain paper and perforations; crop 2 carries the printed English M. Welte & Sons notice. No workshop punch date visible, so none recorded."
+  },
+  {
+    "druid": "my670qk6863",
+    "region": 1,
+    "inscription": "[?][?] 4 25",
+    "reading": "?.4.25",
+    "date_iso": "1925-04",
+    "roll_number": "2673",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped, not written, running across the roll; five figures of which the last three (4, 2, 5) are plain. The first figure carries the foot serif and top flag of a 1 but is only half inked, and the second shows a bottom bowl alone, so the day is left unread. Any sane split of the five figures leaves month 4 and year 25, hence 1925-04. The roll number 2673 is in pencil in crop 2 and on the printed label in crop 4 (WELTE-MIGNON No. 2673, Hymns, played by E. Adam). Crop 3 perforations only."
+  },
+  {
+    "druid": "jd052zg1047",
+    "region": 1,
+    "inscription": "2685. 16.9. [two further figures, illegible]",
+    "reading": "16.9.",
+    "date_iso": null,
+    "roll_number": "2685",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil, one line, read from the lower panel of crop 1. The crop's upper edge cuts the tops of the figures, so only the lower two thirds of each survives. The number reads 2685 (the 2 has this hand's hook at the top right); crop 2 shows the printed Welte-Mignon label for no. 2685, NEARER MY GOD TO THEE, Mason, played by E. Adam, which agrees. Day and month read 16.9.: a plain diagonal, a closed loop, and a bowl over a short stem. The two year figures are bare diagonals, one carrying a crossing stroke and neither showing the hook of this hand's 2, so 11, 21 and 14 all remain open and I have left date_iso null rather than pick one. Crops 3 and 4 are blank paper and perforations."
+  },
+  {
+    "druid": "jg717nb8731",
+    "region": 1,
+    "inscription": "2713  18.12.13  Sph. / Wössler Sph.",
+    "reading": "18.12.13",
+    "date_iso": "1913-12-18",
+    "roll_number": "2713",
+    "hand": "Sph.; Wössler",
+    "confidence": "high",
+    "notes": "ink, two lines, plain in the upper panel of crop 1. The 8 in the day is the two-stroke form the instruction warns of, two strokes converging on one bottom bowl, but the 1 beside it and the 12 and 13 that follow leave the reading firm. The first figure of the number is a 2 with a looped top, settled by its horizontal base; the second is a 7 with a long descender. The name reads Wössler, though the vowel after the W is compressed and the umlaut is not distinct."
+  },
+  {
+    "druid": "dc920rk8870",
+    "region": 1,
+    "inscription": "91125",
+    "reading": "91125",
+    "date_iso": "1925-11-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures run together with no separators; read from the lower (180-degree) panel. A 9 with a closed top loop over a long descender, two plain slanted 1s, a 2 finished with a horizontal base, and a 5 with its top bar and lower bowl. Five figures admit only the reading 9.11.25."
+  },
+  {
+    "druid": "ws250sr1272",
+    "region": 1,
+    "inscription": "10123",
+    "reading": "10123",
+    "date_iso": "1923-01-10",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, five figures run together at the edge of the sheet; read from the lower (180-degree) panel. Figures are plain: a slanted 1, a closed 0 with no descender, a second 1, a 2 with a horizontal base, and a double-bowled 3. Month and year are not in doubt, January 1923. The day is: 10123 could be read 10.1.23 or 1.01.23, and I take the first because this workshop writes a single-figure month unpadded, as in 14114 for 14.1.1914."
+  },
+  {
+    "druid": "sj582bt2976",
+    "region": 1,
+    "inscription": "198[2 figures illegible].",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 4 crops checked, both panels. Crop 1 carries a stamp of five figures along the roll, closed by a full stop; the first three read 1, 9, 8, but the fourth and fifth are so over-inked that they print as solid blobs with no countershape, and I could not fix them. Five figures closed by a stop match the run-together punch dates elsewhere in this corpus, so this is probably 19.8. plus a year, but the year is unreadable and I have left the date null rather than guess. Crop 4 has a second, pencil inscription, but the crop's edge cuts it just below the tops and only the feet of four or five strokes survive. Crops 2 and 3 are torn and creased blank paper."
+  },
+  {
+    "druid": "xn585zh2707",
+    "region": 1,
+    "inscription": "6722",
+    "reading": "6722",
+    "date_iso": "1922-07-06",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, four small figures run together, read from the lower (180-degree) panel. A 6 as a large right-opening curve closing into a bottom bowl, then a 7 with its crossbar, then two 2s, each a closed top loop over a stroke that runs down to a long horizontal base. The two 2s are written slightly differently, one loop rounder than the other, and at this resolution the first of them could be taken for a 3, which would make the year 32; the base stroke is what decides it for 2, so 6.7.22."
+  },
+  {
+    "druid": "ft113cg5195",
+    "region": 2,
+    "inscription": "16428",
+    "reading": "16428",
+    "date_iso": "1928-04-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped, not written, running along the roll; read from crop 2 turned a quarter turn. Every figure is plain, 1 6 4 2 8, the 4 with its apex and crossbar and the 8 with both counters open, and five figures admit only the parse 16.4.28. The confidence is medium not for the figures but for the parse: a stamp of five figures could in principle be a serial rather than a date, though 16428 is too long for a Welte catalogue number, and 1928 falls after the 1904 to 1926 range of the dates read so far in this corpus. A broken partial impression stands just before the 1 and is not legible. Crop 1 shows a tear repair patch and perforations, no writing."
+  }
+]

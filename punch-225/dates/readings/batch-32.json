@@ -1,0 +1,156 @@
+[
+ {
+  "druid": "xb072rc7617",
+  "region": 1,
+  "inscription": "[heavy mark] 9 6 1 2 8",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": null,
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 1 carries a single line of figures near one edge, repeated fainter a little across the paper (an offset, as far as I can see). The figures 9, 6, 2 and 8 are plain; the first is a heavy inked mark and the fourth a narrow hooked stroke, and two heavy strokes sit below the line. I could not resolve the group into a day, month and year, so nothing is entered. Crop 3 has a later English pencil note, '... Selections' and 'is the hole too tight?'; crops 2 and 4 are torn paper with no writing"
+ },
+ {
+  "druid": "sv842td3290",
+  "region": 3,
+  "inscription": "4190",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "4190",
+  "hand": null,
+  "confidence": "none",
+  "notes": "no date on any of the four crops. Crop 3 carries the four-figure number 4190 in pencil and nothing else; the third figure is looped at the top with a tail to the left, which I read as 9, though an 8 of the open form reading.md warns of is not excluded. Crop 2 has a flowing ink signature, something like 'K. K. Caswell', which I cannot transcribe with confidence and which looks like a pianist's or owner's hand rather than the workshop's. Crop 1 holds a few faint specks that do not resolve into writing; crop 4 is a crease"
+ },
+ {
+  "druid": "xg976jt9573",
+  "region": 1,
+  "inscription": "141925",
+  "reading": "141925",
+  "date_iso": "1925-04-01",
+  "roll_number": "5521",
+  "hand": null,
+  "confidence": "medium",
+  "notes": "ink, upright in the lower panel, a steeply right-leaning hand; read after shearing the line upright. Six figures, evenly spaced and without separators: 1, 4, 1, 9, 2, 5. The 9 is a closed loop with a plain descender, distinct from the 2 beside it, which carries the usual base stroke. Of the possible groupings only 1 | 4 | 1925 gives a date, so 1 April 1925; 14 | 19 | 25 would need a nineteenth month. The 4 is the least certain figure. Crop 2 carries a pencilled four-figure number, 5571 or 5521, its third figure crossed like a 7; crop 3 shows the printed label, WELTE-MIGNON No. 5521, 'My Isle of Golden Dreams', Waltz, Walter Blaufuss, played by Henry Dark. Crop 4 not needed."
+ },
+ {
+  "druid": "wp666fn2104",
+  "region": 1,
+  "inscription": "141124",
+  "reading": "141124",
+  "date_iso": "1924-11-14",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "ink, upright in the lower panel, the same steeply leaning hand as xg976jt9573; read after shearing the line upright. Six figures without separators: 1, 4, 1, 1, 2, 4, giving 14.11.24. The two 4s are written alike, a crossbar with a descender, and are the least certain figures; the 2 has the usual base stroke."
+ },
+ {
+  "druid": "md908xy8241",
+  "region": 1,
+  "inscription": "181227",
+  "reading": "181227",
+  "date_iso": "1927-12-18",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped, running down the roll at about sixty degrees; read after rotating. Six figures, 1 8 1 2 2 7. The 8 shows both loops. The fourth figure is over-inked and nearly filled, but keeps the round top, the diagonal and the base stroke of the fifth figure, a plain 2, so 18.12.27. Later than the 1904-1926 span reading.md reports, though nothing in the image argues against it."
+ },
+ {
+  "druid": "jd143sb1087",
+  "region": 3,
+  "inscription": "[over-inked figure] 0 1 1 9 4",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "5553",
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 3 carries a six-figure stamp, upright in the upper panel. The last four are plain, 1 1 9 4; the 9 is a closed bowl with a descender sweeping down to the left, not a 2, and the same figure reads as a 6 in the inverted panel. The second figure is a small ring with a separate bar above it, so 0 or 5. The first is a filled blob about one figure wide, with a flat top and a tail at the lower left, perhaps an over-inked 7 or 2; I cannot settle it. No segmentation of what is legible gives a punch year in this corpus: the closing 94 would have to be 1994, which would make this a later stamp rather than the workshop's. Nothing is entered as a date. Crop 4 carries a pencilled 5553, crop 2 a single ink blot, crop 1 torn paper, crop 5 the leader with the label gone."
+ },
+ {
+  "druid": "bz327kz4744",
+  "region": 1,
+  "inscription": "121224",
+  "reading": "121224",
+  "date_iso": "1924-12-12",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "stamped, upright in the lower panel and running slightly uphill. All six figures plain: 1 2 1 2 2 4, so 12.12.24. The same small serifed face as rd899zb5188, here evenly inked."
+ },
+ {
+  "druid": "jt465zc6779",
+  "region": 1,
+  "inscription": "[broken impression] 1 3 2 5 [broken impression]",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "5658",
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 1 carries a six-position stamp, upright in the lower panel, in the same small serifed face as bz327kz4744 and rd899zb5188. The four middle figures are plain, 1 3 2 5; the first and last positions are broken impressions that I cannot resolve, the first a loop over a solid mass, the last a fragmentary bar. The sibling stamps in this batch are day, month, year in six figures, but that layout makes the month 32 here, so the layout must differ and I cannot settle the grouping. A reading of 1.3.25 or ?1.3.25, that is March 1925, would fit the legible figures and the roll's number, but I cannot show it from the image and enter nothing. Crop 3 shows the printed label, WELTE-MIGNON No. 5658, 'Driftwood', Fox-trot, Lew Gold, played by Ed. Johnson, with a small tax stamp initialled in ink; crop 2 has two specks, crops 4 and 5 blank paper."
+ },
+ {
+  "druid": "mw198ym5807",
+  "region": 1,
+  "inscription": "5659",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "5659",
+  "hand": null,
+  "confidence": "none",
+  "notes": "no date on any of the three crops. Crop 1 carries a pencilled four-figure number and nothing else, 5659, all four figures plain, the last a loop with a descender. Crop 2 shows a thin ink streak, crop 3 the blank end of the roll."
+ },
+ {
+  "druid": "cw965qx3168",
+  "region": 1,
+  "inscription": "211125",
+  "reading": "211125",
+  "date_iso": "1925-11-21",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped, upright in the upper panel. 2 1 1 1 2 5, so 21.11.25. The fourth figure is over-inked into a solid block but keeps the flag and base of the two plain 1s before it; the closing 5 is lightly inked, though its top bar and bowl are both there."
+ },
+ {
+  "druid": "mr400mf6531",
+  "region": 1,
+  "inscription": "5662",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "5662",
+  "hand": null,
+  "confidence": "none",
+  "notes": "no date on any of the three crops. Crop 1 carries a pencilled 5662 and nothing else, which agrees with the printed label on crop 3, WELTE-MIGNON No. 5662, 'Dream Daddy', Fox-trot, L. Herscher and G. Keefer, played by Ed. Johnson. Crop 2 is creased blank paper."
+ },
+ {
+  "druid": "pp798fc0175",
+  "region": 1,
+  "inscription": "211125",
+  "reading": "211125",
+  "date_iso": "1925-11-21",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "stamped, upright in the upper panel, cleanly inked. All six figures plain: 2 1 1 1 2 5, so 21.11.25. The same stamp face and the same date as cw965qx3168, where the impression is heavier."
+ },
+ {
+  "druid": "mv647hz9361",
+  "region": 1,
+  "inscription": "[over-inked figure] 8 5 2 5",
+  "reading": "?8.5.25",
+  "date_iso": "1925-05",
+  "roll_number": "5669",
+  "hand": null,
+  "confidence": "low",
+  "notes": "stamped, upright in the upper panel, the whole impression heavily over-inked. Five positions: the first is a solid blob I cannot resolve, the other four are 8, 5, 2, 5, the 5s with their top flag and bowl and the 2 with its base stroke. Five figures read as day, month, year in the way reading.md describes for 14114, so ?8.5.25: the month and year are May 1925, the day is 8, 18 or 28 and the leading figure is not legible. Only the month is entered. Crop 3 carries a pencilled 5669 and crop 4 the printed label, WELTE-MIGNON No. 5669, 'Sergeant Percy', One-step, Richard Fall, played by Sidny Black; crop 2 is blank."
+ },
+ {
+  "druid": "rd899zb5188",
+  "region": 1,
+  "inscription": "[stamped mark] 81124",
+  "reading": "81124",
+  "date_iso": "1924-11-08",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "stamped, upright in the lower panel. Five plain figures, 8 1 1 2 4, preceded by a heavily inked mark: a vertical with two bars projecting to the right and a detached blob below. I first took that mark for an over-inked 1 and read 18.11.24. The same mark, with the same detached blob, precedes the figures on yk645sm6970 in batch 33 and on jd143sb1087 in this batch, and on yk645sm6970 it cannot be a digit, since no six-figure grouping of what follows gives a date. Read as a fixed slug, so the figures are 8.11.24. All three rolls carry the mark and five figures, the leading zeros dropped."
+ }
+]

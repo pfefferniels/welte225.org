@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "ht339gy6128",
+    "region": 1,
+    "inscription": "2313.  15.  6.12",
+    "reading": "15. 6.12",
+    "date_iso": "1912-06-15",
+    "roll_number": "2313",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, single line, no name"
+  },
+  {
+    "druid": "ks452px2704",
+    "region": 1,
+    "inscription": "21124",
+    "reading": "21124",
+    "date_iso": "1924-01-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, five digits run together, no separators. Letter spacing after deslanting groups them 21|1|24; the alternative parse 2.11.24 cannot be ruled out from the figures alone"
+  },
+  {
+    "druid": "fg074rf2950",
+    "region": 1,
+    "inscription": "25724",
+    "reading": "25724",
+    "date_iso": "1924-07-25",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five digits run together, no separators; spacing groups them 25|7|24"
+  },
+  {
+    "druid": "sk832rf0203",
+    "region": 1,
+    "inscription": "27723",
+    "reading": "27723",
+    "date_iso": "1923-07-27",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five digits run together, no separators; spacing groups them 27|7|23"
+  },
+  {
+    "druid": "wn516xn5163",
+    "region": 1,
+    "inscription": "29622",
+    "reading": "29622",
+    "date_iso": "1922-06-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, five digits run together, no separators; grouped 29|6|22. The month figure is a single stroke closing into a bottom bowl, so a 6 rather than the two-stroke 8 of this hand, but it is the one arguable figure"
+  },
+  {
+    "druid": "yc867qr9425",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all 3 crops checked in both orientations: perforations and a damp stain in 1, blank paper with a scratch in 2, the green cloth leader in 3. No writing"
+  },
+  {
+    "druid": "dt352gh2011",
+    "region": 1,
+    "inscription": "2454.  20  5.12",
+    "reading": "20  5.12",
+    "date_iso": "1912-05-20",
+    "roll_number": "2454",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, one line, no name; day written apart from month and year"
+  },
+  {
+    "druid": "xg670df7262",
+    "region": 1,
+    "inscription": "29. 8. 19.",
+    "reading": "29. 8. 19.",
+    "date_iso": "1919-08-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink, one line, no number and no name; heavily slanted, read after deslanting. Month is the two-stroke 8 of this hand. The year's first figure is an open arch, so 1 rather than 0, and its second figure has the same closed loop and descender as the 9 of the day"
+  },
+  {
+    "druid": "ry050yb9492",
+    "region": 3,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "the three crops show the loose end of the roll lying on a green cloth, the paper crumpled and creased. Crop 3 carries eight or nine characters of very faint pencil cursive along the extreme edge of the paper, running the length of the roll; the strokes are letters rather than figures and no word or date could be made out at this resolution, under median filtering, high-pass filtering and paper-colour subtraction alike. Crops 1 and 2 hold only creases."
+  },
+  {
+    "druid": "rx933wn3761",
+    "region": 1,
+    "inscription": "12128",
+    "reading": "12128",
+    "date_iso": "1928-01-12",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "the same stamp struck twice on this crop, once heavily and once so lightly that only the tops of the figures took ink. In the heavy impression the five figures read 1, 2, 1, 2 and a last figure with a closed counter above and below, so 8; the light impression left only the upper curl of that figure, which alone would read 6 and would give 1926. Both impressions carry the same short double-dash mark before the first figure, so that mark belongs to the stamp device rather than being a figure. Read as 12.1.28 with the separators dropped."
+  },
+  {
+    "druid": "cw378sb0125",
+    "region": 1,
+    "inscription": "51120",
+    "reading": "51120",
+    "date_iso": "1920-11-05",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil on dark red paper, five figures run together under the paper edge, both panels agree. The 5, the 2 and the last figure, a slanted oval crossed by a stroke and so a 0, are plain. The third figure has a longer top stroke than the second and taken alone could be a 7, but 5.17.20 is no month and 51.7.20 no day, so the only parse is 5.11.20."
+  },
+  {
+    "druid": "tm408mz6807",
+    "region": 2,
+    "inscription": "WELTE-MIGNON. No. 2538. Elevation. Romance sans paroles, Op. 76 No. 2. C. Chaminade. [facsimile signature] Yolanda Mero",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2538",
+    "hand": null,
+    "confidence": "none",
+    "notes": "no punch date. Crop 2 shows the head of the roll with the printed paper title label pasted on, carrying the catalogue number 2538, the title and the pianist's signature in facsimile, and above it the printed slip about keeping music-rolls in boxes. The roll paper beside the label carries the printed English licence notice of M. Welte & Sons, Inc. Nothing is written by hand. The number 2538 is the printed label's, not a workshop hand. Crops 1 and 3 show only the scanner's QPcard colour target and the leader strap."
+  },
+  {
+    "druid": "cd435bw2771",
+    "region": 1,
+    "inscription": "24323",
+    "reading": "24323",
+    "date_iso": "1923-03-24",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures run together under the paper edge, both panels agree. The 4 and the two 3s are plain; the first and fourth figures share the same form, a curl over a closed bowl, which is this hand's 2. Read as 24.3.23."
+  },
+  {
+    "druid": "tr243mz6407",
+    "region": 1,
+    "inscription": "41021",
+    "reading": "41021",
+    "date_iso": "1921-10-04",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures under the paper edge, both panels agree: a 4 with its crossbar, a 1, a narrow slanted 0, a 2 and a 1. Read as 4.10.21; 41 is no day, so the month is 10."
+  }
+]

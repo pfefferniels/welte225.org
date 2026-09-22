@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "gz430tm0196",
+    "region": 1,
+    "inscription": "844. 22. 8. 12.",
+    "reading": "22. 8. 12",
+    "date_iso": "1912-08-22",
+    "roll_number": "844",
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, single line, no name"
+  },
+  {
+    "druid": "hm523dq5554",
+    "region": 1,
+    "inscription": "876  26.3.09  [signature]",
+    "reading": "26.3.09",
+    "date_iso": "1909-03-26",
+    "roll_number": "876",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink; month figure arguable (3, possibly 5); a cursive signature follows the date but I cannot read it"
+  },
+  {
+    "druid": "rp390kt0160",
+    "region": 1,
+    "inscription": "14 522",
+    "reading": "14 522",
+    "date_iso": "1922-05-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil; separators dropped, read as 14.5.22 on the gap after the day"
+  },
+  {
+    "druid": "ch197br4742",
+    "region": 1,
+    "inscription": "881 Fritz 21 Dezb 1908",
+    "reading": "21 Dezb 1908",
+    "date_iso": "1908-12-21",
+    "roll_number": "881",
+    "hand": "Fritz",
+    "confidence": "medium",
+    "notes": "pencil, cursive; figures 21 and 1908 plain, the month is an abbreviated word read as Dezb (Dezember), the capital could conceivably be another letter"
+  },
+  {
+    "druid": "xp003dy0437",
+    "region": 1,
+    "inscription": "882  31. 5. 12  Kramer / Wössler",
+    "reading": "31. 5. 12",
+    "date_iso": "1912-05-31",
+    "roll_number": "882",
+    "hand": "Kramer, Wössler",
+    "confidence": "high",
+    "notes": "ink; two names, the first on the date line with two dots set above it (perhaps Krämer), Wössler on a second line below"
+  },
+  {
+    "druid": "ny706rg1119",
+    "region": null,
+    "inscription": "Music-rolls mu[st] / in Cabinet con[...] / winter, to preve[nt] / Not responsib[le] / tions above stat[ed]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops. 1: perforations and faint show-through only. 2: scanner ruler and colour target, no paper. 3: the roll end with a printed care label about storing rolls in the cabinet, its right side cut off by the crop; a few strokes of handwriting sit on the patch beside it but the crop cuts them and nothing is legible"
+  },
+  {
+    "druid": "pb026mb0704",
+    "region": 1,
+    "inscription": "131220",
+    "reading": "131220",
+    "date_iso": "1920-12-13",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil on buff paper, six figures with no separators, read as 13.12.20"
+  },
+  {
+    "druid": "wj177bx9196",
+    "region": 1,
+    "inscription": "[cursive name] 9 1111",
+    "reading": "9 1111",
+    "date_iso": "1911-11-09",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink on red paper. A flourished cursive name (perhaps Hopf or Kopf, I cannot settle it) followed by a 9 and four plain 1-strokes; separators dropped, and 9 | 11 | 11 is the only split that gives a valid day and month"
+  },
+  {
+    "druid": "jf649gs2184",
+    "region": 1,
+    "inscription": "14922",
+    "reading": "14922",
+    "date_iso": "1922-09-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, five figures with no separators, read as 14.9.22"
+  },
+  {
+    "druid": "rq927dq9061",
+    "region": 1,
+    "inscription": "8 6 2 6",
+    "reading": "8 6 2 6",
+    "date_iso": "1926-06-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil on red paper, four figures, no separators, read as 8.6.26. The first figure is a two-loop 8. The second and fourth are the open-top form that reading.md warns can be 6 or 8; I take them for 6 because this hand writes 8 with two closed loops, but 8.8.28 cannot be ruled out. The third is a plain 2"
+  },
+  {
+    "druid": "sb158jt0685",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all three crops examined, both panels: crop 1 bare buff paper with perforations and a damp stain, crop 2 the scanner's colour target at the roll end, crop 3 bare paper with one small hole. No writing"
+  },
+  {
+    "druid": "dr971dy1221",
+    "region": 3,
+    "inscription": "«WELTE-… No. … / Ballet de… / Berlioz… / Gespie[lt von] / Wandala…",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "crop 1 the leader tab and the scanner's colour target, crop 2 bare red paper, crop 3 the green cloth box with its printed labels. The printed label gives the title and composer with a handwritten performer's name, and an English care notice beside it; both are cut off at the edge of the crop, and the number after «No.» is not in view. No punch date anywhere"
+  },
+  {
+    "druid": "dz678wd2724",
+    "region": 5,
+    "inscription": "No. 970 / Berceuse / Op. 26. Nr. 7. / Ludwig Schytte / Gespielt von [facsimile signature] / 5. XII. 05.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "970",
+    "hand": null,
+    "confidence": "none",
+    "notes": "crops 1-4 show only tears, a repair patch, a crease and bare red paper. Crop 5 is the leader with the printed Welte title label, which carries No. 970 and the printed date 5. XII. 05. That is the label's date, printed with the rest of the label and not pencilled by the workshop, so I have left date_iso null rather than pass it off as a punch date. The performer's name is a facsimile signature I cannot read with confidence. No handwritten date on the paper"
+  },
+  {
+    "druid": "fd660zf8362",
+    "region": 3,
+    "inscription": "This roll needs repair / here & there on the bass side - it / should eventually come good. / A remarkable transcription - / quoted in Grove's Dictionary / (under \"arrangement\") as a / fine example of an arrangement / for the Piano. / Compare with Backhaus on / the Duo-Art / [second column] When rewinding the … / that the brass flange is / fitting. / 2 8 198[?]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "no punch date on any of the three crops. Crop 1 carries WATCH in a modern black marker, crop 2 the green box with the printed label «WELTE-MIGNON. No. 990, Meistersinger von Nürnberg, Vorspiel, Wagner-Bülow, Gespielt von [signature]», crop 3 a long English note in fine pen by a later owner or conservator, dated 2 8 198? with the century written out; the last figure of the year is not certain. All later hands, none of them the workshop's"
+  }
+]

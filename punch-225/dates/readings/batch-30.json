@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "jy572md2211",
+    "region": 2,
+    "inscription": "3333",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3333",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Region 1 holds a faint, broken stamp impression, illegible in both orientations. Region 2 is the roll number in pencil; the leader label (region 4) reads WELTE-MIGNON No. 3333, Piano-Concert E major, 1st movement, Fr. Liszt. Regions 3 and 4 carry a modern English pencil note about repair, ending 28 April 2002; not a punch date."
+  },
+  {
+    "druid": "dr835xg3992",
+    "region": 1,
+    "inscription": "811025",
+    "reading": "811025",
+    "date_iso": "1925-10",
+    "roll_number": "3335",
+    "hand": null,
+    "confidence": "low",
+    "notes": "Six-figure stamp in black ink, every figure plain: 8 1 1 0 2 5. Read as day-month-year it gives day 81, which is impossible, so the day is not recoverable. If the last four figures are month and year, as on other stamped rolls in this batch, the month is October and the year 1925. 3335 is written in pencil on region 4; region 3 holds only a smudge."
+  },
+  {
+    "druid": "vp438dy0628",
+    "region": 1,
+    "inscription": "291024",
+    "reading": "291024",
+    "date_iso": "1924-10-29",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Six-figure stamp in black ink, all figures plain. Day 29 forces the day-month-year order."
+  },
+  {
+    "druid": "kw215gn3365",
+    "region": 3,
+    "inscription": "8223",
+    "reading": "8223",
+    "date_iso": "1923-02-08",
+    "roll_number": "3357",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, separators dropped, read as 8.2.23. Region 6 carries 3357 in the same hand, which is the roll number. Regions 1, 2, 4 and 5 hold no writing."
+  },
+  {
+    "druid": "hx789sg2918",
+    "region": 1,
+    "inscription": "26522",
+    "reading": "26522",
+    "date_iso": "1922-05-26",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "Pencil, separators dropped, 26.5.22; day 26 forces the order. The leader label (region 4) reads WELTE-MIGNON No. 3376, Die Jüdin, F. Halévy, gespielt von Dr. Berend, so 26522 is not the catalogue number."
+  },
+  {
+    "druid": "bs533ns1949",
+    "region": 1,
+    "inscription": "5220",
+    "reading": "5220",
+    "date_iso": "1920-02-05",
+    "roll_number": "3398",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, four figures, read as 5.2.20. 3398 is written on region 2 and printed on the leader label (Naïla-Walzer, L. Delibes, Bearbeitung von Ernst von Dohnányi, gespielt von Alfred Grünfeld), so 5220 is not the catalogue number. Region 3 holds only brush marks."
+  },
+  {
+    "druid": "cv806rf2664",
+    "region": 1,
+    "inscription": "11922",
+    "reading": "11922",
+    "date_iso": "1922-09-11",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "Pencil, separators dropped. The middle figure is either 9 or 2, so the date is 11.9.22 or 11.2.22; the day 11 and the year 1922 are clear. Region 2 holds only a degraded line of specks."
+  },
+  {
+    "druid": "xg924dm1245",
+    "region": 1,
+    "inscription": "13222",
+    "reading": "13222",
+    "date_iso": "1922-02-13",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, separators dropped, 13.2.22. The three closing figures are consistent twos."
+  },
+  {
+    "druid": "rf416pb7833",
+    "region": 1,
+    "inscription": "8421",
+    "reading": "8421",
+    "date_iso": "1921-04-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Pencil, four figures, read as 8.4.21."
+  },
+  {
+    "druid": "kz819wb8990",
+    "region": 1,
+    "inscription": "This needs care in setting it up for good tracking & does track well. 1. 7. 1994",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "A modern English pencil note written across the roll, dated 1 July 1994; a handling note, not a punch date. The leader label (region 3) reads WELTE-MIGNON No. 3505, Sympathy (Waltz Song) from the comedy-opera The Firefly, R. Friml, played by D. Savino. No workshop writing on the paper."
+  },
+  {
+    "druid": "fr859hh7893",
+    "region": null,
+    "inscription": null,
+    "date_iso": null,
+    "reading": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No writing in any crop. Region 1 shows only the printed care slip (Music-rolls must always be kept in boxes and cabinet containing basin of water …); regions 2 and 3 are blank paper and the cloth leader."
+  },
+  {
+    "druid": "zw828tx0197",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No writing on the paper. The leader label (region 3) reads WELTE-MIGNON No. 3537, Popular Song, Un peu d'amour, L. Silesu, played by (signed) William Daly. Regions 1 and 2 hold only perforations and the cloth leader."
+  },
+  {
+    "druid": "sg713kb1834",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "No handwriting. Region 1 shows the printed M. Welte & Sons, Inc. copyright notice on the paper; region 2 the leader label, WELTE-MIGNON No. 3568, Southern Plantation Melodies (Carry Me Back To Ole Virginny, James Bland / My Old Kentucky Home, Stephen C. Foster), played by Orlando Merrigan; region 3 only the colour card."
+  },
+  {
+    "druid": "jt036qh8967",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "All three crops blank: leader tab and colour card, unmarked perforated paper, cloth leader."
+  }
+]

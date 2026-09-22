@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "cp259ms0085",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, all blank; paper torn along one edge, one small ink smudge in e1"
+  },
+  {
+    "druid": "yc867qr9425",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, all blank; e3 is the green cloth leader tab, no writing on it"
+  },
+  {
+    "druid": "ry050yb9492",
+    "region": "e3",
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e3 carries a short line of faint pencil written across the roll at the paper/cloth-leader joint, roughly seven glyphs with a dash before the last two. Enlarged and contrast-stretched it stays illegible to me, and it does not fall into a day-month-year pattern; not transcribed rather than guessed. e1 shows a printed care label, 'Music-rolls must always be kept in boxes and placed', which is not a punch date. e2 blank."
+  },
+  {
+    "druid": "jf938sf5847",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, no writing; a few ink specks in e1 and e2, creases in the blank leader end at e3"
+  },
+  {
+    "druid": "rr990ym0199",
+    "region": "e1",
+    "inscription": "14' 09\" / Tracks perfectly on the Steinway cabinet player / 24. 5. 1980 / 12' 25\" on 18. 5. 1981 / Give it a bit of room on the treble side of the take up spool.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "a later owner's or technician's note in English on the leader, in a modern hand, giving playing times and the dates 24.5.1980 and 18.5.1981 with the century written out. Not a workshop punch date. e3 shows the same note closer; e2 is the scanner's colour target. No workshop inscription anywhere in the three crops."
+  },
+  {
+    "druid": "vb983gg2310",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, no writing. The roll is heavily repaired with tissue tape along both edges; the dark rectangles under the tape are taped-over perforations, not ink"
+  },
+  {
+    "druid": "rq642tt1626",
+    "region": "e3",
+    "inscription": "WELTE-MIGNON. No. 2580 / A Canadian Rondo / A. Passing-Fancy / Louis Hervey d'Egville / L. H. d'Egville [facsimile signature]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e3 shows the printed catalogue label pasted on the cloth leader flap, with the composer's facsimile signature. That is the publisher's label, not a workshop hand, so roll_number is left null although the label reads No. 2580. e1 and e2 carry no writing; the paper edge is torn in both."
+  },
+  {
+    "druid": "xg228jc5213",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, no writing; e1 is the blank leader end with its cloth tab, e2 and e3 plain perforated paper with a few dark specks"
+  },
+  {
+    "druid": "fg895gs1373",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three edge crops, no writing. The roll edge is badly torn and frayed the whole length of all three crops, so an inscription written at the very edge could well be lost with the paper; nothing legible survives"
+  },
+  {
+    "druid": "wg598sj1504",
+    "region": "e1",
+    "inscription": "4422",
+    "reading": "4422",
+    "date_iso": "1922-04-04",
+    "roll_number": "2621",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "Four figures in ink at the extreme paper edge, no separators, read as 4.4.22. The same hand writes the roll number 2621 further along the roll (crop e3), which gives a control on the figures: its 1 is a plain rising diagonal, while both opening figures here carry the crossbar of a 4, and its 2 is the curl with a horizontal foot that matches the last two figures here. Called medium rather than high because the strokes are thick at this resolution and 1 and 4 share a descender in this hand; if the two opening figures were 1s the reading would be 1.1.22, so the year 1922 holds either way. The printed label on the leader (e4) reads 'WELTE-MIGNON. No. 2621 / Etude Ges dur, Op. 10, No. 5 (Schwarze Tasten) / Fr. Chopin / Gespielt von Tosta di Benici', agreeing with the written number. Crop e2 holds a single figure 9 standing alone, the rest of whatever it belonged to falling outside the crop."
+  },
+  {
+    "druid": "gt485ys0625",
+    "region": "e1",
+    "inscription": "2635",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2635",
+    "hand": null,
+    "confidence": "none",
+    "notes": "The roll number 2635 is written in ink at the paper edge, twice, in e1 and again in e3, in the same hand and with no other figures beside it. No date anywhere in the four crops. The printed label on the leader (e4) reads 'WELTE-MIGNON. No. 2635 / Romance / Des-dur, Op. 34, No. 9 / J. Sibelius / Gespielt von Tosta di Benici', agreeing with the written number."
+  },
+  {
+    "druid": "jd052zg1047",
+    "region": "e1",
+    "inscription": "2685  16??",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2685",
+    "hand": null,
+    "confidence": "none",
+    "notes": "Two ink groups at the paper edge in e1. The first is the roll number 2685, secure: it matches the printed leader label in e2, 'WELTE-MIGNON. 2685 / NEARER MY GOD TO THEE / MASON. / Played by E. ADAM.' The second group is four figures written in the same hand and could well be the punch date, but only the opening 16 is legible to me. The third figure sits between this hand's 8 (a narrow pinched loop, as in 2685) and its 2 (a curl with a horizontal foot), and the fourth is a loop plus a rising diagonal that could be 4 or a joined pair. Depending on how the four figures fall the date would be 16 February 1904, 1 June 1924 or 16 August 1904, which are too far apart to offer as one reading, so nothing is entered. The strokes are at the limit of this scan; a higher-resolution crop of the same spot would probably settle it. e3 and e4 carry no writing."
+  },
+  {
+    "druid": "sj582bt2976",
+    "region": "e1",
+    "inscription": "198??.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries a stamp of five figures with a full stop after them, set across the roll rather than along it. The first three read 1, 9 and 8 in a clean serif type; the fourth and fifth are so over-inked that they are solid blobs, and I will not name them. Read as a stamped date in the workshop's abbreviated form it would be 19.8. with the year lost, but the intervening stops that the other stamped rolls show are absent here, so it may be a five-figure number rather than a date. e4 holds a separate ink inscription of four figures at the paper edge, but the paper is cut through the tops of the figures and what is left does not carry a reading. e2 and e3 blank, both badly torn along the edge."
+  },
+  {
+    "druid": "sr577gv4813",
+    "region": "e3",
+    "inscription": "WELTE-MIGNON No. 2844 / RIGOLETTO / Fantasia / G. Verdi",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "The three crops show the leader end only: olive-brown wrapper paper over the red cloth flap, with the printed catalogue label and the printed care slip, 'must always be kept in boxes and placed containing basin of water during the ... vent contraction and expansion ... sible for correct playing unless condi ... ated adhered to.' Both are printed, not a workshop hand, so roll_number is left null although the label reads No. 2844. The faint columns of small type across the wrapper are the care slip showing through from its reverse. No punch date and no written inscription anywhere in the three crops."
+  }
+]

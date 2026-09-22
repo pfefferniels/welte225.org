@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "bj021jc9795",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "five edge crops, all bare paper and perforations; a faint curved scratch in e4 is not writing"
+  },
+  {
+    "druid": "sk565bp3463",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "four edge crops. e1 carries one isolated pencil figure at the crop boundary (b or 6, nothing beside it) and e4 a single pencil tick like a check mark; neither is a date and no further writing accompanies them. e2 and e3 bare."
+  },
+  {
+    "druid": "gf569df0451",
+    "region": "e1",
+    "inscription": "9225",
+    "reading": "9 2 25",
+    "date_iso": "1925-02-09",
+    "roll_number": "361",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped, not written. The slug's fixed heavy mark stands before the figures; the figures alone give a possible date, so it is not counted as a digit. Third figure over-inked but its flat base and diagonal match the plain 2 beside it. Roll number 361 is written in pencil in e4 and printed on the tab label in e6 (Welte-Mignon No. 361, Schumann, Fantasia op. 17, C major, Part I)."
+  },
+  {
+    "druid": "wc588rr6112",
+    "region": "e4",
+    "inscription": "… of the roll / 1909 / 12 (1939) / … ars an…",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e4 carries a note in English in a later hand, running lengthwise along the roll's tail; the crop catches only the right-hand ends of the lines, the rest is off the edge. It mentions 1909 and a parenthesis reading 1939 (the second figure could be 8), with the century written out. On reading.md's rule this is an archive or owner's note, not a workshop punch date, so no date is taken from it. e1 has a small cursive flourish near the paper edge, perhaps initials, with no figures. e2 and e3 bare."
+  },
+  {
+    "druid": "qj233tv5549",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops. e1 and e2 show the storage box, its maroon pebbled cover and a grey printed label (a cabinet-storage instruction, only fragments in frame). e3 shows a printed text block showing through the paper, too faint at this resolution to make out any line. No workshop hand and no date anywhere."
+  },
+  {
+    "druid": "kt568yb8982",
+    "region": "e3",
+    "inscription": "382",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "382",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e3 carries the roll number 382 in pencil at the paper edge, its figure tops just reaching the edge, with nothing written beside it; no date. e2 shows a later hand on the pale leader, 'Neg front / December 1979' (first word N or M, uncertain) - an archive note, not a workshop punch date. e1 bare but for perforations and a repair patch."
+  },
+  {
+    "druid": "vq227vv6345",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops, nothing written. e1 is the printed Welte copyright notice ('This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding...'), e2 the tail joined to black cloth with a linen tape repair, e3 bare paper with diffuse damp staining that resolves into no strokes under contrast."
+  },
+  {
+    "druid": "bc072xf6791",
+    "region": "e1",
+    "inscription": "… 2002 …",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 has a line in a modern hand running lengthwise along the tail; the crop catches the year 2002, written out with the century, and the tail ends of a word above and below it. The rest of the line falls outside the crop. On reading.md's rule a note of that date is the archive's, not the workshop's. e2 and e3 bare."
+  },
+  {
+    "druid": "kv550vj8954",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "nothing written by hand on the paper. e1 is the printed Welte copyright notice showing through from the other side, e2 the storage box with a blank tape strip (one stroke of ink at its edge, cut by the panel boundary and unreadable). e3 shows the printed tab label, Welte-Mignon No. 444, La Campanella, Paganini Etude No. 3, Liszt; that number is printed, not written on the paper, so roll_number is left null."
+  },
+  {
+    "druid": "hq933dq4264",
+    "region": "e1",
+    "inscription": "M. Schäfer.",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": "M. Schäfer.",
+    "confidence": "none",
+    "notes": "e1 carries a single name in ink, written lengthwise along the roll and legible once turned: 'M. Schäfer.' No figures accompany it, so no date. The hand is large and flowing, more a signature than the small workshop note that usually stands beside a date, so whose name it is stays open. e2 is the printed Welte copyright notice showing through, e3 the hanger and colour target, e4 the join to the pale leader with printed text running off the crop."
+  },
+  {
+    "druid": "zv706jf8277",
+    "region": "e2",
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "writing IS present but still sheared on these crops. e2 carries what looks like a run of five or six figures, a date, and e5 a shorter group of three; in both the paper ends part way down the figures and only the descenders survive, so no digit can be read without guessing. The white above the writing is background, not paper, so the crop reaches the paper's actual edge here - a wider crop would not help at this row, but the same inscription further along the roll might sit on wider paper. e6 gives the printed tab label, Welte-Mignon No. 458, Duetto (Song without Words) A flat major, F. Mendelssohn; the three figures in e5 are consistent with 458 but are not independently legible, so roll_number is left null. e1, e3, e4, e7 bare, with damp staining on e1 and e3."
+  },
+  {
+    "druid": "hn488rk0690",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops, nothing written. e1 and e2 are perforated paper with a tape repair, e3 the blank tail; the dark marks near its edge are a crease and a nick in the paper, not strokes."
+  },
+  {
+    "druid": "nf733yv1324",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "nothing written by hand. e1 is bare but for two short dashes on a crease band that read as specks rather than strokes, e2 the printed Welte copyright notice showing through, e3 the hanger and the tab label's lower half ('Fr. Chopin, Played by' with the artist's facsimile signature), e4 the tab label proper, Welte-Mignon No. 498, beside the printed cabinet-storage notice. That number is printed, so roll_number is left null."
+  },
+  {
+    "druid": "fd761bx2206",
+    "region": "e1",
+    "inscription": "518",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "518",
+    "hand": null,
+    "confidence": "none",
+    "notes": "e1 carries the roll number 518 in pencil at the paper edge, nothing beside it; the 1 and 8 are plain, the 5 has its top clipped by the edge, and the printed label agrees. No punch date anywhere. e2 shows the tab label (Welte-Mignon No. 518, Annees de Pelerinage III No. 4, Les jeux d'eau a la Villa d'Este, Fr. Liszt) and, filling the leader, a conservator's note in English: 'SET TRACKING CAREFULLY / 15. 3. 2004 / This roll seems to get wider as it goes - A problem. / Repair needed here & there / Superficial repair carried out on 28. 4. 95 - it still has problems.' Both dates there are the archive's, not the workshop's. e3 bare."
+  }
+]

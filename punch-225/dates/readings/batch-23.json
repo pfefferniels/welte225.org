@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "ps656vb4839",
+    "region": 1,
+    "inscription": "5. 9. 19",
+    "reading": "5.9.19",
+    "date_iso": "1919-09-05",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil/ink, one line, strongly slanted cursive; the 9s are written as a narrow closed loop with a long tail running down to the left, the 1 as a bare diagonal. Day 5 plain; month 9 arguable against 1 but the two glyph shapes differ consistently."
+  },
+  {
+    "druid": "qf640sj3141",
+    "region": 1,
+    "inscription": "231122",
+    "reading": "231122",
+    "date_iso": "1922-11-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "pencil, both panels legible; tops of figures clipped by scan seam"
+  },
+  {
+    "druid": "bs279zc9206",
+    "region": 1,
+    "inscription": "2160",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2160",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil, four figures only, no date; reads as the roll number. Crops 2 and 3 hold no writing (leader and perforations)."
+  },
+  {
+    "druid": "yk477xx5343",
+    "region": 3,
+    "inscription": "2161",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "2161",
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil, four figures only, no date; reads as the roll number. Crops 1, 2, 4 and 5 hold no writing."
+  },
+  {
+    "druid": "hr679fk5315",
+    "region": 1,
+    "inscription": "... this ... M. Welte & ... distinct... ... chaser ... agrees ... Welte-Mi... ... Welte & S... ... agreed tha... ... any other ... reproduc... ... whole o...",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "buff paper; printed English licence notice of M. Welte & Sons running along the roll, legible only in fragments, no handwriting. Crop 2 carries a smeared ink stamp of three groups, too blurred to read any figure; crop 3 repeats the printed notice."
+  },
+  {
+    "druid": "jt308hp0877",
+    "region": 1,
+    "inscription": "2148   2. 12. 10  Kummer / [second, illegible signature below]",
+    "reading": "2. 12. 10",
+    "date_iso": "1910-12-02",
+    "roll_number": "2148",
+    "hand": "Kummer",
+    "confidence": "high",
+    "notes": "ink, large hand, both panels agree. Date figures plain. The name is read as Kummer, the ending is cramped; a second scrawled signature sits below the date and is not legible."
+  },
+  {
+    "druid": "fk036vh7282",
+    "region": 1,
+    "inscription": "21824",
+    "reading": "21824",
+    "date_iso": "1924-08-21",
+    "roll_number": "2154",
+    "hand": null,
+    "confidence": "low",
+    "notes": "pencil, five figures run together, close under the paper edge; small and slanted. First 2, third 8 and fifth 4 are plain. The second is read as 1 against the 1 of the roll number on crop 2, written by the same hand, but a 2 is possible, which would give 22.8.24. The fourth carries the same top loop as that hand's 2. Roll number 2154 stands alone on crop 2; the series 2148, 2154, 2160, 2161 runs through this batch. Crop 3 carries a later English note in ink across the roll, 'good condition' over '1. 12. 198-' with the last figure of the year running off the crop: an archive hand, not a punch date. Crop 4 blank."
+  },
+  {
+    "druid": "pf050rx0162",
+    "region": 3,
+    "inscription": "21428",
+    "reading": "21428",
+    "date_iso": "1928-04-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped, not written: five serif figures in black ink across the roll, both panels agree. 2, 1, 4 and 2 are plain. The last has a closed upper loop over a closed bowl, so 8 rather than 6; if it were 6 the year would be 1926. Read as day.month.year with the separators dropped, 21.4.28, which falls after the 1904-1926 span of the readings so far. A faint half-inked mark stands a digit's width before the 2 and a dot follows the last figure. Crops 1 and 2 hold only perforations and brown stains."
+  },
+  {
+    "druid": "ms935qj0194",
+    "region": 6,
+    "inscription": "29. 5. 2002",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "buff paper. No punch date on any of the six crops. Crop 6 carries a modern hand in black pen along the roll, '29. 5. 2002' with a drawn arrow pointing at a small rectangular repair patch over the perforations: a conservator's note, the century written out, so an archive hand and not the workshop's. Crop 4 carries the printed English licence notice of M. Welte & Sons, Inc., no handwriting. Crops 1, 2, 3 and 5 hold only creases, faint grey smudges and perforations."
+  },
+  {
+    "druid": "cp259ms0085",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "dark brick-red paper, all three crops. Nothing written on any of them: perforations, a long tear repaired at the edge, creases and one small brown stain. Checked again with the paper colour subtracted, which brings up faint pencil elsewhere in this corpus, and no stroke appeared."
+  },
+  {
+    "druid": "pc276zv7038",
+    "region": 1,
+    "inscription": "26124",
+    "reading": "26124",
+    "date_iso": "1924-01-26",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "fine pencil, one line of five figures with the separators dropped, close under the paper edge; both panels carry it. The second figure has the tall entry stroke of a 6 falling from the upper right into a closed bowl, so 6 and not 0. Read as 26.1.24."
+  },
+  {
+    "druid": "dy191sv5188",
+    "region": 1,
+    "inscription": "8. 1. 18.",
+    "reading": "8. 1. 18.",
+    "date_iso": "1918-01-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink or hard pencil on dark olive-brown paper, one line with the points written out, both panels agree. Both 8s show two closed bowls, and the month figure has the same form as the 1 of 18."
+  },
+  {
+    "druid": "ph692rh6823",
+    "region": 2,
+    "inscription": "9811",
+    "reading": "9811",
+    "date_iso": "1911-08",
+    "roll_number": "4124",
+    "hand": null,
+    "confidence": "low",
+    "notes": "two separate groups of four pencil figures on this roll, both in the same slanted hand just under the paper edge, neither with points or a name. Crop 2 reads 9811: the 8 and the two 1s are plain, the first figure is a closed loop over a descending tail, so 9, though a 2 is possible, which would give 2.8.11 instead of 9.8.11. Either way the month and year are August 1911, so only that much is entered. Crop 1 reads 4124, taken here as the roll number because 9811 cannot be one; but 4124 would also parse as 4.1.24, and nothing on the paper settles which of the two groups is the date. Crop 3 is the roll end and crop 4 holds only a crease and a smudge."
+  },
+  {
+    "druid": "dz112ky5575",
+    "region": 1,
+    "inscription": "8124",
+    "reading": "8124",
+    "date_iso": "1924-01-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, four figures run together under the paper edge, both panels agree. The 8 shows two closed bowls, the 1 is a bare slanted stroke, the third figure has the arched top and left-falling diagonal of a 2, and the last is a 4 written as a diagonal, a long crossbar and a stroke descending through it. Read as 8.1.24 with the separators dropped; a four-figure group can also be a roll number, but 8124 lies outside the Welte red numbering, so a date is the only sensible parse."
+  }
+]

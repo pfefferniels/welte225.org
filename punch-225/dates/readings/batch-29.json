@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "cd381jt9273",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "all four crops seen: a tear, perforations with repair patches, and damp staining; no writing"
+  },
+  {
+    "druid": "sn610pr8684",
+    "region": 1,
+    "inscription": "23.12 19.",
+    "reading": "23.12 19.",
+    "date_iso": "1919-12-23",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, written along the roll on buff paper; every figure plain"
+  },
+  {
+    "druid": "gq401ng9171",
+    "region": 1,
+    "inscription": "13 3. 24",
+    "reading": "13 3. 24",
+    "date_iso": "1924-03-13",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink; the 1 is written as a plain slash stroke"
+  },
+  {
+    "druid": "jq774vx6544",
+    "region": 3,
+    "inscription": "221122",
+    "reading": "221122",
+    "date_iso": "1922-11-22",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "separators dropped; the two 1s of the month are thin cursive strokes. Crops 1 and 2 carry only long ruled lines along the roll"
+  },
+  {
+    "druid": "qd784zj3903",
+    "region": 1,
+    "inscription": "251124",
+    "reading": "251124",
+    "date_iso": "1924-11-25",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, not written; all six figures plain"
+  },
+  {
+    "druid": "zp866tm4852",
+    "region": 1,
+    "inscription": "8325",
+    "reading": "8325",
+    "date_iso": "1925-03-08",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped; the second figure is a 3, its upper bowl open at the left, unlike the closed double bowl of the 8 beside it. A small illegible mark precedes the figures"
+  },
+  {
+    "druid": "kf903tz5142",
+    "region": 1,
+    "inscription": "2812 22",
+    "reading": "2812 22",
+    "date_iso": "1922-12-28",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, hurried; the month figures run together, though 12 is the best reading of the two strokes"
+  },
+  {
+    "druid": "cm852bp8620",
+    "region": 1,
+    "inscription": "21528",
+    "reading": "21528",
+    "date_iso": "1928-05-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "stamped and lightly struck; the first figure is faint, but its bowl, diagonal and foot match the clearly struck 2 later in the same stamp. Crop 3 carries a separate pencilled number, about 3313; crop 2 is blank"
+  },
+  {
+    "druid": "gx107hd3026",
+    "region": 2,
+    "inscription": "3316",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3316",
+    "hand": null,
+    "confidence": "none",
+    "notes": "not a date: the catalogue number, matching the printed leader label in crop 4, 'WELTE-MIGNON No. 3316, 8th Symphony, B-minor, 2nd movement: Andante con moto (Unfinished), Fr. Schubert'. Crops 1 and 3 are blank"
+  },
+  {
+    "druid": "rv766dc1369",
+    "region": 1,
+    "inscription": "221122",
+    "reading": "221122",
+    "date_iso": "1922-11-22",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "pencil, separators dropped; the same hand and the same date as jq774vx6544 as far as I can see"
+  },
+  {
+    "druid": "bk297ff8944",
+    "region": 1,
+    "inscription": "141125",
+    "reading": "141125",
+    "date_iso": "1925-11-14",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "low",
+    "notes": "stamped but badly over-inked, the counters filled. The second figure is a solid blob, wider than the 1s beside it, which suits a 4, but another day in November 1925 cannot be ruled out. Roll number 3329 from crop 3 and the leader label in crop 4, 'Symphonie Pathetic Op. 74, Part I (final), P. Tschaikowsky'; crop 2 blank"
+  },
+  {
+    "druid": "hk752ck1008",
+    "region": 1,
+    "inscription": "161125",
+    "reading": "161125",
+    "date_iso": "1925-11-16",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "stamped, crisp. At full magnification the first figure is a 1 with a flag and a base serif, not a 4. Roll number 3330 from crop 2 and the leader label in crop 3, 'Symphony Pathetique Op. 74, No. 6, Part II, P. Tschaikowsky'"
+  },
+  {
+    "druid": "gr136pc5388",
+    "region": 1,
+    "inscription": "31 3 24",
+    "reading": "31 3 24",
+    "date_iso": "1924-03-31",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink; the same hand as gq401ng9171 as far as I can see"
+  },
+  {
+    "druid": "qm069fy5200",
+    "region": 1,
+    "inscription": "6123",
+    "reading": "6123",
+    "date_iso": "1923-01-06",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink, every figure plain, but no separators, so the grouping 6.1.23 rests on the usual practice rather than on the paper. Not the catalogue number: crop 2 gives 3332 and the leader label in crop 3 reads 'WELTE-MIGNON Nr. 3332, Symphony Pathetique Op. 74, No. 6, Part IV, P. Tschaikowsky'"
+  }
+]

@@ -1,0 +1,178 @@
+[
+ {
+  "druid": "fz632cv0288",
+  "region": null,
+  "inscription": null,
+  "reading": null,
+  "date_iso": null,
+  "roll_number": null,
+  "hand": null,
+  "confidence": "none",
+  "notes": "all 5 crops seen, both panels each; only perforations and faint punch shadows, no writing"
+ },
+ {
+  "druid": "nz678zw1579",
+  "region": 2,
+  "inscription": "1939",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "1939",
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 1 blank (damp stain only); crop 2 pencil '1939', which is the roll's catalogue number, matching the printed leader label in crop 4 (WELTE-MIGNON No. 1939, I. Sonata Op. 74 B flat 2nd movement, A. Glazounow); crop 3 carries a second four-figure pencil group in the same hand, first figure a 4, then 5 or 3, then 2, then 2 or 3 - possibly a punch date (4.5.22 / 4.5.23 / 4.3.23) but the figures are not plain enough to settle, so no date recorded"
+ },
+ {
+  "druid": "vs880hb3425",
+  "region": 2,
+  "inscription": "...e Act, Variation III / A. Glazounow / [facsimile signature Glazounow] / Jan. 1910.",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": null,
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 1 only perforations; crop 2 is the green cloth leader with the printed Welte label, partly cut off at the left - 'Jan. 1910' there is printed on the label, a recording/issue date, not a workshop punch inscription, so no punch date recorded; crop 3 is the join of cloth leader and red paper, blank. No handwriting anywhere in the three crops"
+ },
+ {
+  "druid": "bj606rp8160",
+  "region": 1,
+  "inscription": "864.  14. 4. 10  [three initials, dotted] / II.",
+  "reading": "14. 4. 10",
+  "date_iso": "1910-04-14",
+  "roll_number": "864",
+  "hand": null,
+  "confidence": "high",
+  "notes": "ink, one line, read from the lower (180-degree) panel; the day's second figure and the month are the same glyph, a slanted 4 with a triangular counter and a crossing stem, and the year's 0 is a narrow closed oval. In the roll number the first figure has a closed upper loop crossing at the waist over an unclosed lower bowl, so 8 rather than 3, though 3 cannot be ruled out. The three dotted initials after the date and the 'II.' written beneath them are clear as marks but I cannot make out the letters. Crop 2 carries only a smudge."
+ },
+ {
+  "druid": "dw479gk0103",
+  "region": 2,
+  "inscription": "1263",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "1263",
+  "hand": null,
+  "confidence": "none",
+  "notes": "pencil roll number only, no date on any crop; the figures are clipped by the crop edge in regions 1 and 2, and both read as the same four-digit number. Region 3 is the leader with the printed label '·WELTE-MIGNON· No. 1263 / Minuett / G major / Played by Paderewski'. Region 4 is a smudge, not writing."
+ },
+ {
+  "druid": "dq276yn8963",
+  "region": 1,
+  "inscription": "1445   1. 2. 11.  Roth / Wißler",
+  "reading": "1. 2. 11.",
+  "date_iso": "1911-02-01",
+  "roll_number": "1445",
+  "hand": "Roth, Wißler",
+  "confidence": "high",
+  "notes": "ink, upper panel upright; the year figures are two 1s formed exactly like the '1.' of the day, and quite unlike the open-top 4s of the roll number 1445; second name written below the first, read as Wißler - possibly the hand recorded elsewhere in the corpus as Wössler"
+ },
+ {
+  "druid": "gx118hr0306",
+  "region": 1,
+  "inscription": "1957.   10. 1. 11.",
+  "reading": "10. 1. 11.",
+  "date_iso": "1911-01-10",
+  "roll_number": "1957",
+  "hand": null,
+  "confidence": "high",
+  "notes": "fine pencil, lower panel upright; both year figures have the same hooked lead-in and downstroke as the day's '1' and the month's '1', with no crossbar, so the year is 11 and not 14; no puncher's name in the crop"
+ },
+ {
+  "druid": "qj203cn5343",
+  "region": 1,
+  "inscription": "1459   24. 11. 10   Roth / Wißler",
+  "reading": "24. 11. 10",
+  "date_iso": "1910-11-24",
+  "roll_number": "1459",
+  "hand": "Roth, Wißler",
+  "confidence": "high",
+  "notes": "ink, upper panel upright; same two hands and the same layout as dq276yn8963 (roll 1445), the second name written below the first"
+ },
+ {
+  "druid": "kq892pn7618",
+  "region": 3,
+  "inscription": "WELTE-MIGNON / 1968 / GRAND VALSE de CONCERT / OP. 41. / GLAZOUNOW. / Played by M. KIMMONTT.",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "1968",
+  "hand": null,
+  "confidence": "none",
+  "notes": "crop 1 perforations only (plus a small patch over the paper), crop 2 blank paper edge, crop 3 the leader with the printed Welte label; the number 1968 is printed on the label, not written by the workshop, and the label carries no date. No handwriting in any of the three crops"
+ },
+ {
+  "druid": "fn744pq2157",
+  "region": 1,
+  "inscription": "201125",
+  "reading": "201125",
+  "date_iso": "1925-11-20",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "stamped in type, not written, lower panel upright; six figures without separators, read as ddmmyy on the pattern of 311022 = 31.10.1922 given in the instructions"
+ },
+ {
+  "druid": "kx293yk2859",
+  "region": 1,
+  "inscription": "311022",
+  "reading": "311022",
+  "date_iso": "1922-10-31",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "pencil, lower panel upright; six figures without separators, ddmmyy; no roll number or name in the crop"
+ },
+ {
+  "druid": "cw427tw4145",
+  "region": 1,
+  "inscription": "2000.    30. 9.13",
+  "reading": "30. 9.13",
+  "date_iso": "1913-09-30",
+  "roll_number": "2000",
+  "hand": null,
+  "confidence": "high",
+  "notes": "crop 1, lower panel upright; ink, one line, no name. Number 2000 with a full stop, then the date with its own stops. The month is a closed loop carrying a descender below the line, a 9 and not the plain oval the three 0s of 2000 and 30 show. Year 13."
+ },
+ {
+  "druid": "sk925fn6049",
+  "region": 1,
+  "inscription": "11 1019",
+  "reading": "11 1019",
+  "date_iso": "1919-10-11",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "crop 1, lower panel upright; pencil, one line, no name. Six figures in two groups, 11 and 1019: three 1s sharing the same flag, a narrow closed 0, and a 9 with a round head and a descender below the line. Read as 11.10.19."
+ },
+ {
+  "druid": "zf673fy4620",
+  "region": 2,
+  "inscription": "[crop 2, pencil:] 2068 ; [crop 1, stamped:] 26525[?] ; [crop 4, printed label:] ·WELTE-MIGNON· / No. 2068 / Poême / Op. 32, No. 1 / A. Scriabine / Played by A. Scriabine ; [printed slip:] Das Recht der Vervielfältigung ist uns von den Künstlern ausdrücklich übertragen, eine anderweitige Vervielfältigung ist untersagt und wird nach den gesetzl. Bestimmungen verfolgt. M. WELTE & SÖHNE G.m.b.H. Freiburg i. B.",
+  "reading": null,
+  "date_iso": null,
+  "roll_number": "2068",
+  "hand": null,
+  "confidence": "none",
+  "notes": "the only workshop hand is the pencil 2068 in crop 2, which matches the No. 2068 on the printed label in crop 4; crop 3 holds only perforations and a damp fleck. Crop 1 carries a stamp in serif type reading 26525, followed by a sixth character struck twice and illegible. Taken as a date those five figures would give 26.5.25, but the digits are evenly spaced with no grouping and the over-struck character leaves the length of the string open, so I have not entered a date. Recording the stamp here in case a cleaner impression turns up on another copy."
+ },
+ {
+  "druid": "kj388dj3308",
+  "region": 1,
+  "inscription": "7. 1.20.",
+  "reading": "7. 1.20.",
+  "date_iso": "1920-01-07",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "high",
+  "notes": "crop 1, lower panel upright; pencil, one line, no number and no name. Three groups with stops between them and a stop at the end. The day is the continental 7, a top stroke and a long diagonal with a short bar across it; the month is the same diagonal without the bar, a 1. The year is a 2 with a base sweeping right and a closed narrow 0."
+ },
+ {
+  "druid": "hy749gh2331",
+  "region": 1,
+  "inscription": "24222",
+  "reading": "24222",
+  "date_iso": "1922-02-24",
+  "roll_number": null,
+  "hand": null,
+  "confidence": "medium",
+  "notes": "crop 1, lower panel upright; pencil, five figures run together with no separators, read as 24.2.22. Figures 1, 3, 4 and 5 are the same 2, drawn with a top curl and a base sweeping right. Figure 2 is the arguable one: two arms meeting at a point with a single stem running well below the baseline. I take it for a 4; a crossed 7 would give 27.2.22, but a 7 in these hands sits on the line and is cut by a bar at mid height, and this glyph has neither. Crop 2 carries a separate small ink initial with a stop, not a date."
+ }
+]

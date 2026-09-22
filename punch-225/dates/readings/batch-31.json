@@ -1,0 +1,156 @@
+[
+  {
+    "druid": "mn110mt1775",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops: green cloth flange with plain red paper, blank red paper with a few perforations; no writing in either panel"
+  },
+  {
+    "druid": "zp085nr8664",
+    "region": 3,
+    "inscription": "WELTE-MIGNON No. 3558 SERENADE G. Pierne Played by [signature, illegible]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed box label with the pianist's ink signature, plus the printed care label ('Music-rolls must always be kept in boxes ...'); crop 1 shows that care text stamped or offset onto the roll, far too smudged to read; crop 2 is the spool and colour target. No punch date. The number 3558 is printed on the label, not written on the paper, so roll_number left null"
+  },
+  {
+    "druid": "nt812xg8796",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "four crops: flange and leader, spool with colour target, plain perforated paper; no writing"
+  },
+  {
+    "druid": "vd312rr8990",
+    "region": 2,
+    "inscription": "[Tr]ack this by hand. 80 years on it is a quaint performance 1.7.94",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "pencil note by a later owner, dated 1 July 1994, running along the leader; the same note appears cut off in crop 1, crop 3 is blank. Not a punch date, so date_iso left null"
+  },
+  {
+    "druid": "cg834ff4729",
+    "region": 1,
+    "inscription": "Needs [p]repair on the treble side ---> should track well when it is repaired. 24.6.1950 D.F.C. / Repaired 29.12.1991",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "two repairer's notes in pencil, 24 June 1950 signed D.F.C. and a later line 'Repaired 29.12.1991'; crop 2 repeats part of the same note, crop 3 is the box label (WELTE-MIGNON No. 3647, 'Hesitation Waltz, LILAC DOMINO', Charles Cuvillier, played by Franz Heineck). No punch date"
+  },
+  {
+    "druid": "qd424rx3516",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser, by his acceptance of this roll, agrees that it is only to be used on the Welte Philharmonic Organ, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed licence notice stamped on the leader; crops 2 and 3 are blank buff paper. No punch date"
+  },
+  {
+    "druid": "xy812vy7103",
+    "region": 3,
+    "inscription": "WELTE-MIGNON No. 36[..] AN OLD LOV[E ...] Op. 61, N[o. ..] Edward Mac[Dowell] Played by Carolyne C[...]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed box label, its right-hand half hidden by the folded leader, so the catalogue number and the pianist's name are cut off; crop 1 shows a printed block offset onto the roll, illegible; crop 2 is the spool and colour target. No punch date"
+  },
+  {
+    "druid": "sp773vt2651",
+    "region": 1,
+    "inscription": "\"This music roll, manufactured by M. Welte & Sons, Inc., is sold with the distinct understanding that the purchaser, by his acceptance of this roll, agrees that it is only to be used on the Welte Philharmonic Organ, manufactured by M. Welte & Sons, Inc., and it is further agreed that this roll is not to be used on any other instrument, nor is it to be reproduced in any form whatsoever, in whole or in part.\"",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "printed licence notice on the leader; crops 2 and 3 are blank leader paper. No punch date"
+  },
+  {
+    "druid": "wf903pd7291",
+    "region": 3,
+    "inscription": "[...]58 [label fragment] / [...]ng the condi- [care label fragment]",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "only the edge of a printed label shows, ending in 58, with a fragment of the printed care label beside it; crop 1 holds a printed block offset onto the roll, illegible, crop 2 is blank. No punch date"
+  },
+  {
+    "druid": "ny937ph6981",
+    "region": null,
+    "inscription": null,
+    "reading": null,
+    "date_iso": null,
+    "roll_number": null,
+    "hand": null,
+    "confidence": "none",
+    "notes": "three crops of perforated paper; crop 2 shows a faint printed block showing through from the other side, not legible and not handwriting. No writing"
+  },
+  {
+    "druid": "nw765mr4994",
+    "region": 1,
+    "inscription": "[?]4 11 24",
+    "reading": "?4 11 24",
+    "date_iso": "1924-11",
+    "roll_number": "3790",
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink stamp across the roll; the first digit of the day is buried under a heavy ink blot, so the day could be 14, 24 or 4, while 11 and 24 are plain. Roll number 3790 written in pencil in crop 2; crop 3 gives the box label, WELTE-MIGNON No. 3790, 'British Folkmusic, Settings Nr. 4, Shepherd's Hey', Percy Grainger, played by John Hare"
+  },
+  {
+    "druid": "qv976bq3639",
+    "region": 1,
+    "inscription": "111222",
+    "reading": "111222",
+    "date_iso": "1922-12-11",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "medium",
+    "notes": "ink, written across the roll, every figure plain but no separators; read as 11.12.22 on the four-plus-two pattern the same hand uses on ct503bz7189 ('2111.23'). No other split gives a possible date"
+  },
+  {
+    "druid": "ct503bz7189",
+    "region": 1,
+    "inscription": "2111.23",
+    "reading": "2111.23",
+    "date_iso": "1923-11-21",
+    "roll_number": null,
+    "hand": null,
+    "confidence": "high",
+    "notes": "ink, written across the roll; the point before the year marks 2111 as day and month, so 21.11.23. Same hand as qv976bq3639"
+  },
+  {
+    "druid": "xm418xm6937",
+    "region": 1,
+    "inscription": "3976",
+    "reading": null,
+    "date_iso": null,
+    "roll_number": "3976",
+    "hand": null,
+    "confidence": "none",
+    "notes": "roll number only, written in ink across the roll; crop 2 holds a line of small ink specks too small to be writing, crop 3 is plain perforated paper. No date"
+  }
+]
