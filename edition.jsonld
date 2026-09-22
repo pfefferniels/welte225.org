@@ -44858,6 +44858,63 @@
                         "@id": "b0c38281-b5be-4a88-a31d-10c41012c899"
                     }
                 ],
+                "perforator": {
+                    "condition": {
+                        "conditionType": "setting",
+                        "chainPitch": {
+                            "value": 3.0007,
+                            "unit": "mm",
+                            "slot": 2.2857,
+                            "bridge": 0.7106,
+                            "n": 477,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "Median over 477 pitches of held notes, measured on the IIIF images by punch-225/dates/pitch.py; slot and bridge are medians of their own.",
+                                            "premises": [],
+                                            "used": [
+                                                "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "89030f39-99c9-4bcf-ac16-e75b06ddb0df"
+                                },
+                                "@id": "9bceb291-6ba9-4329-9972-0a1f656a41ae"
+                            }
+                        },
+                        "advance": {
+                            "value": 1.027,
+                            "unit": "mm",
+                            "strength": 0.8104,
+                            "n": 10910,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "The strongest period the 10910 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.343 mm at 0.1843, 0.512 mm at 0.4664. The chain pitch is 2.922 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
+                                            "premises": [],
+                                            "used": [
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "560debaf-2be3-4832-a747-591a99a66e8b"
+                                },
+                                "@id": "4a0d2c05-bc42-4388-b86c-7f22033444a2"
+                            }
+                        },
+                        "@type": "ConditionState"
+                    },
+                    "@id": "perforator_d229954b-086c-44d6-a589-aaa324d31d88"
+                },
                 "company": {
                     "name": "M. Welte & Söhne",
                     "sameAs": []
@@ -61174,6 +61231,63 @@
                         "@id": "1c939fd4-7f50-4b2b-898b-d7f4140b6b2b"
                     }
                 ],
+                "perforator": {
+                    "condition": {
+                        "conditionType": "setting",
+                        "chainPitch": {
+                            "value": 2.9988,
+                            "unit": "mm",
+                            "slot": 2.3503,
+                            "bridge": 0.6512,
+                            "n": 373,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "Median over 373 pitches of held notes, measured on the IIIF images by punch-225/dates/pitch.py; slot and bridge are medians of their own.",
+                                            "premises": [],
+                                            "used": [
+                                                "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "6eed2137-38a8-4048-80dc-bb2f519e923e"
+                                },
+                                "@id": "b2e8a0e8-8319-4c57-aaa3-5aa0a8ec880b"
+                            }
+                        },
+                        "advance": {
+                            "value": 0.503,
+                            "unit": "mm",
+                            "strength": 0.4651,
+                            "n": 10441,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "The strongest period the 10441 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.414 mm at 0.0524, 0.727 mm at 0.0382. The chain pitch is 5.962 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
+                                            "premises": [],
+                                            "used": [
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "67b761d3-7fb8-4d4b-a85b-6db2f0939f55"
+                                },
+                                "@id": "55f72b17-53c5-4f54-a1e1-50dff48a6fed"
+                            }
+                        },
+                        "@type": "ConditionState"
+                    },
+                    "@id": "perforator_88460599-2e0d-4759-851c-903a5a521997"
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
@@ -73637,6 +73751,53 @@
                         "punchDiameter": {
                             "value": 2.609615237857799,
                             "unit": "mm"
+                        },
+                        "chainPitch": {
+                            "value": 3.0375,
+                            "unit": "mm",
+                            "n": 427,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "possible",
+                                    "reasons": [
+                                        {
+                                            "note": "Median over 427 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.155 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The spread is ten times that of the other copies, so the scan's transport enters the value.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WR0225_02"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "435efaf8-6294-4d55-b29d-f4351f83b127"
+                                },
+                                "@id": "8c8b8795-1977-4757-9846-d04946c00cc2"
+                            }
+                        },
+                        "advance": {
+                            "value": 1.02,
+                            "unit": "mm",
+                            "strength": 0.2142,
+                            "n": 10448,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "possible",
+                                    "reasons": [
+                                        {
+                                            "note": "The strongest period the 10448 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.425 mm at 0.1147, 0.528 mm at 0.1303, 0.692 mm at 0.168. The chain pitch is 2.978 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WR0225_02"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "4112129e-b96b-4399-b2ea-a65f1fae1f5c"
+                                },
+                                "@id": "bb4aaa29-9b87-4d93-8f25-6635244eb4ee"
+                            }
                         },
                         "@type": "ConditionState"
                     },
@@ -88331,6 +88492,60 @@
                         "@id": "5ed0fc39-8495-461d-9b03-99c3a2af74a4"
                     }
                 ],
+                "perforator": {
+                    "condition": {
+                        "conditionType": "setting",
+                        "chainPitch": {
+                            "value": 2.4283,
+                            "unit": "mm",
+                            "n": 432,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "Median over 432 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.0169 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The scan was resampled from 180 lines per inch along the roll (cis2roll.py), so the millimetres rest on the scanner's header.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WelteLicensee_225"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "4fef9818-13da-405b-8792-c028189029c1"
+                                },
+                                "@id": "d5db1132-bbb4-4ce3-86f7-06e863cb3f23"
+                            }
+                        },
+                        "advance": {
+                            "value": 0.625,
+                            "unit": "mm",
+                            "strength": 0.4766,
+                            "n": 9984,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "The strongest period the 9984 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.317 mm at 0.0706, 0.446 mm at 0.0349, 0.987 mm at 0.0594. The chain pitch is 3.885 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WelteLicensee_225"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "e471d65b-d649-4ba1-b13a-4ca781995f73"
+                                },
+                                "@id": "41a5fad2-feaa-427c-9ee6-5b06eca21bde"
+                            }
+                        },
+                        "@type": "ConditionState"
+                    },
+                    "@id": "perforator_6e1ce072-7490-44b6-b8e8-eb1bbffc3cad"
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-licensee"
                 }
@@ -105666,6 +105881,53 @@
                         "punchDiameter": {
                             "value": 1.7108040005766045,
                             "unit": "mm"
+                        },
+                        "chainPitch": {
+                            "value": 2.1748,
+                            "unit": "mm",
+                            "n": 527,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "Median over 527 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.0185 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WelteT98_225"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "a9fbf29a-bbf8-419b-8d9a-4fbc47893f61"
+                                },
+                                "@id": "b1fcf6e1-3ee5-4098-b460-ab3e4529e815"
+                            }
+                        },
+                        "advance": {
+                            "value": 0.434,
+                            "unit": "mm",
+                            "strength": 0.4215,
+                            "n": 15681,
+                            "@annotation": {
+                                "belief": {
+                                    "certainty": "likely",
+                                    "reasons": [
+                                        {
+                                            "note": "The strongest period the 15681 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.313 mm at 0.0457, 0.343 mm at 0.0439, 0.75 mm at 0.1318. The chain pitch is 5.011 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
+                                            "premises": [],
+                                            "used": [
+                                                "/facsimiles/WelteT98_225"
+                                            ],
+                                            "@type": "inference"
+                                        }
+                                    ],
+                                    "@type": "belief",
+                                    "@id": "8af46429-fcbf-4a31-900e-2eb32c1fb006"
+                                },
+                                "@id": "f3e832b6-2b1d-4ac3-a6a0-822e6c649edf"
+                            }
                         },
                         "@type": "ConditionState"
                     },
