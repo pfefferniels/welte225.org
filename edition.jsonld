@@ -31121,7 +31121,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Phillips’ Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: an drei Stellen ({{symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9|1}}, {{symbol_583a4144-9e67-449a-a323-1a12abd38273|2}}, {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|3}}) fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nDagegen: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, weit über dem Zufall liegen.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83).",
+                                    "note": "Phillips’ Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: an drei Stellen ({{symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9|1}}, {{symbol_583a4144-9e67-449a-a323-1a12abd38273|2}}, {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|3}}) fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nDagegen: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Doch treffen zufällig gelegte Stanzungen dieser Lesung solche Stellen im Mittel 0,7-mal und bis zu siebenmal, während die Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, weit über dem Zufall liegen.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83). Tempo 75 liest auch Nettheim an seinem Exemplar (Ne1), und zwar am Vorspann selbst, der sonst leer ist (Mail, 21.9.2026). Die Angabe steht damit auf zwei Exemplaren dieser Fassung, eines davon von der Rolle abgelesen statt aus einem Dateikopf übernommen. Was auf dem Etikett von Ch1 steht, entscheidet das nicht.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -109460,7 +109460,7 @@
                 ],
                 "@annotation": {
                     "belief": {
-                        "certainty": "likely",
+                        "certainty": "true",
                         "reasons": [
                             {
                                 "actor": {
@@ -109468,6 +109468,14 @@
                                     "sameAs": []
                                 },
                                 "note": "Die Rolle gehört Nigel Nettheim. Das sagt Peter Phillips, der sie gelesen hat (Mail, 20.9.2026); er fügt an, Nettheim länger nicht gesehen zu haben, so dass offenbleibt, ob sie noch dort liegt.",
+                                "@type": "beliefAdoption"
+                            },
+                            {
+                                "actor": {
+                                    "name": "Nettheim, Nigel",
+                                    "sameAs": []
+                                },
+                                "note": "Nettheim schreibt, die Rolle liege weiterhin bei ihm: „I still have the roll Welte 225 (DeLuxe, price $2.00)“ (Mail, 21.9.2026). Damit ist die Frage beantwortet, die Phillips offenließ.",
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -120764,7 +120772,7 @@
                     "sameAs": [],
                     "@annotation": {
                         "belief": {
-                            "certainty": "possible",
+                            "certainty": "likely",
                             "reasons": [
                                 {
                                     "actor": {
@@ -120775,7 +120783,15 @@
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Der Schluss ruht auf einem fehlenden Vermerk. Die Rolle selbst ist daraufhin nicht angesehen worden, und die Angabe wird deshalb nur als möglich geführt. Träfe sie zu, fiele die Stanzung in die zwanziger Jahre, deutlich hinter die untere Grenze von 1916.",
+                                    "actor": {
+                                        "name": "Nettheim, Nigel",
+                                        "sameAs": []
+                                    },
+                                    "note": "Nettheim nennt das Exemplar eine DeLuxe-Ausgabe und schickt einen Scan des Schachteletiketts (Mail, 22.9.2026, Anhang Welte225BoxLabel.jpg). Auf dem Etikett stehen „DeLuxe Reproducing Player Roll“, die Nummer C-225 und der Preis $2.00, darunter Titel, Werkangabe, „Played by A. Grunfeld“ und „Made in U.S.A.“. Welte steht nicht darauf.",
+                                    "@type": "beliefAdoption"
+                                },
+                                {
+                                    "note": "Das Etikett nennt De Luxe unmittelbar. Es gehört der Schachtel, die von der Rolle getrennt worden sein kann, und beweist die Ausgabe deshalb nicht. Es weist aber in dieselbe Richtung wie Phillips’ Schluss aus der Rolle, so dass zwei voneinander unabhängige Anzeichen vorliegen. Offen bleibt, woran Phillips’ Argument hängt: ob der Vorspann aus Gewebe ist. Nettheim berichtet davon nichts. Er sagt allein, dass der Vorspann außer dem Tempo leer ist. Trifft die Angabe zu, fällt die Stanzung in die zwanziger Jahre, deutlich hinter die untere Grenze von 1916.",
                                     "premises": [],
                                     "@type": "inference"
                                 }
