@@ -33241,6 +33241,14 @@
                                         "7b967f0c-b0d1-42f0-98db-e492c3210370"
                                     ],
                                     "@type": "meaningComprehension"
+                                },
+                                {
+                                    "note": "Die Einstellung bestätigt das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 4. März 1907 bis 4. November 1909 belegt, danach nur noch einmal, im Dezember 1919 (Welte 569). Zwischen 4. November 1909 und 21. Mai 1910 wurde der Vorschub halbiert (punch-225/dates/README.md).",
+                                    "premises": [
+                                        "560debaf-2be3-4832-a747-591a99a66e8b",
+                                        "89030f39-99c9-4bcf-ac16-e75b06ddb0df"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -47865,6 +47873,14 @@
                                         "9bf2fd33-2403-4f96-a05e-65ad09074907"
                                     ],
                                     "@type": "meaningComprehension"
+                                },
+                                {
+                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, die zwischen 4. November 1909 und 21. Mai 1910 lag. An den datierten Stanford-Kopien ist diese Einstellung vom 21. Mai 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin. Über die Gewissheit der Lesung selbst entscheidet das nicht (punch-225/dates/README.md).",
+                                    "premises": [
+                                        "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
+                                        "6eed2137-38a8-4048-80dc-bb2f519e923e"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -64323,6 +64339,14 @@
                                     },
                                     "note": "Stanzdatum am Rollenende laut mündlicher Mitteilung Marc Widuch",
                                     "@type": "beliefAdoption"
+                                },
+                                {
+                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor die Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910, also mindestens fünf Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 nach Welte 569 (Dezember 1919) die zweite bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde (punch-225/dates/README.md).",
+                                    "premises": [
+                                        "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
+                                        "435efaf8-6294-4d55-b29d-f4351f83b127"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -73789,6 +73813,13 @@
                                             "premises": [],
                                             "used": [
                                                 "/facsimiles/WR0225_02"
+                                            ],
+                                            "@type": "inference"
+                                        },
+                                        {
+                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Nach der Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910 ist ein Vorschub von 1,00 mm an den datierten Stanford-Kopien nur noch einmal belegt, an Welte 569 vom Dezember 1919 (punch-225/dates/README.md).",
+                                            "premises": [
+                                                "b8dffe69-90ad-4d55-9196-2453ebcfc0d0"
                                             ],
                                             "@type": "inference"
                                         }
