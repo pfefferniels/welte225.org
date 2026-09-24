@@ -24426,7 +24426,7 @@
             },
             "edits": [
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SoftPedal",
@@ -24449,7 +24449,7 @@
                     "@id": "da832cef-e231-42f2-b621-341c492c408e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24472,7 +24472,7 @@
                     "@id": "9e6ad5a1-9e99-4ad2-bdde-ae62328691c7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24495,7 +24495,7 @@
                     "@id": "e18db374-a6f6-4cba-85b7-7fdc9be1a206"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24518,7 +24518,7 @@
                     "@id": "8f4d3c56-a62b-4ca4-81d0-c9c12dccd0cb"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24541,7 +24541,7 @@
                     "@id": "0c0228c1-84ef-4a25-a5f3-9b702a6ae708"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24564,7 +24564,7 @@
                     "@id": "c58a52a6-2639-4022-8429-52208f20eb59"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24587,7 +24587,7 @@
                     "@id": "1736667c-f16a-4fbe-8cca-dc0da6bfe373"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24610,7 +24610,7 @@
                     "@id": "7b75fe7a-20db-4f08-b015-a0e875c82650"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24633,7 +24633,7 @@
                     "@id": "56c86db4-6d70-4dbd-9eed-ce144741ff82"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24656,7 +24656,7 @@
                     "@id": "c7fe723a-57a8-49c7-9a3f-a3e06e19db40"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24679,7 +24679,7 @@
                     "@id": "cc75fcce-e122-44a1-8cfa-59ada7a015a6"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24713,7 +24713,7 @@
                     "@id": "6b1c34d0-e863-4d3d-9a66-121f6f0014a9"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24747,7 +24747,7 @@
                     "@id": "659ab3b0-ecdd-417c-b8d1-d2859d912483"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -24770,7 +24770,7 @@
                     "@id": "82d73e2e-3400-4bcb-a656-d686f400f30d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24793,7 +24793,7 @@
                     "@id": "3bffefa7-7053-4e35-b86d-d1b8741ef3b2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24816,7 +24816,7 @@
                     "@id": "5920e272-f963-4b9f-aaa5-384d3dadadf9"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24839,7 +24839,7 @@
                     "@id": "8d3f1c56-0a80-4d07-9491-fcf8cac26e56"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24862,7 +24862,7 @@
                     "@id": "1188a309-0a50-4f4f-bf49-80d6145f460e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24885,7 +24885,7 @@
                     "@id": "ab193021-1ab6-49b6-b5e3-207e55686411"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24908,7 +24908,7 @@
                     "@id": "27b83da4-7fe6-43fb-a189-c0d35526025b"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24931,7 +24931,7 @@
                     "@id": "2f85904a-fde6-4d13-910c-7dc4c75c1fd1"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24954,7 +24954,7 @@
                     "@id": "d8e7ee90-e1d2-4bb7-bb93-9e81ebda1b8d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -24977,7 +24977,7 @@
                     "@id": "c2917c90-ead8-411f-a9ec-3cf8215a80eb"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25000,7 +25000,7 @@
                     "@id": "c2d007c1-fa3b-4baa-befa-b937630c3881"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25023,7 +25023,7 @@
                     "@id": "526fe608-eae6-48ff-bddf-ff0653fcaf32"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25046,7 +25046,7 @@
                     "@id": "6e87275e-a8bf-4a4f-8082-e942185a0544"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25069,7 +25069,7 @@
                     "@id": "d98b69b3-fee6-40a5-a571-06137d3a8c73"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25092,7 +25092,7 @@
                     "@id": "a3416741-21d8-44e0-9d62-e432229af495"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25115,7 +25115,7 @@
                     "@id": "e22733c5-2389-4072-897f-f3184d3bdbef"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25138,7 +25138,7 @@
                     "@id": "06c79486-3b39-4cd6-9d9d-fa16b2537cc2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25161,7 +25161,7 @@
                     "@id": "1dcc6a8b-3949-4964-b8dd-38b92ce1a4e4"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25184,7 +25184,7 @@
                     "@id": "68c8a39f-97e6-49ea-a57d-596ac432d1d8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25207,7 +25207,7 @@
                     "@id": "5d976682-540e-4fc1-8228-925cae786c3f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25230,7 +25230,7 @@
                     "@id": "74525711-ad23-41f6-832c-b7887ad1c9e7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25253,7 +25253,7 @@
                     "@id": "416bed70-b350-4ff1-9133-f5259baa0d4b"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25276,7 +25276,7 @@
                     "@id": "a8a5477a-1a56-4ac2-9a83-1a7f035c1eba"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25299,7 +25299,7 @@
                     "@id": "bab05b51-9140-420c-b08e-0064d644ca83"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25322,7 +25322,7 @@
                     "@id": "4420f084-51cf-4f96-b4ba-dda09d73a1c1"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25345,7 +25345,7 @@
                     "@id": "bdd76fd4-b753-4f16-83f8-f91bc26f10c9"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25368,7 +25368,7 @@
                     "@id": "60642c20-bf1c-4146-8c2f-f8583dcc8c4c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25391,7 +25391,7 @@
                     "@id": "f675195d-e78b-45fd-9ecf-2c1f6aafd980"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25414,7 +25414,7 @@
                     "@id": "43da17ba-3364-4d19-8824-1caec42e55fe"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25437,7 +25437,7 @@
                     "@id": "ac0b36d1-9a11-4394-9b74-6cc39bc201bf"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25460,7 +25460,7 @@
                     "@id": "fa09383b-f880-4377-a439-29d08c6294d7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25483,7 +25483,7 @@
                     "@id": "27368a88-c1b8-491f-a30d-f19122d4f5f5"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25506,7 +25506,7 @@
                     "@id": "2feeaa4e-bd6c-469c-b5bb-f82090fc34f4"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25529,7 +25529,7 @@
                     "@id": "34fc54f6-a512-4b65-aba2-9b5a0d02547c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25552,7 +25552,7 @@
                     "@id": "02baeda8-035c-4594-a3f1-0c11b3c93ecf"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25575,7 +25575,7 @@
                     "@id": "4bfc7071-0b16-4161-800a-f013b03e42cf"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25598,7 +25598,7 @@
                     "@id": "3468edfe-00d0-47d7-aaf2-6b5d268b7a5c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25621,7 +25621,7 @@
                     "@id": "b8a5e242-ca43-4443-8d0a-ed63308fdee0"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25644,7 +25644,7 @@
                     "@id": "5ec6cfac-5f70-459c-9bd5-b84975cd6f74"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25667,7 +25667,7 @@
                     "@id": "46df2ce4-39f5-44b1-8aa8-b4264416680c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25690,7 +25690,7 @@
                     "@id": "daa408f3-d51c-4863-be15-50b77b5d572c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25713,7 +25713,7 @@
                     "@id": "7d9afe8b-7c29-45d7-ad94-fa8fbd619f31"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25736,7 +25736,7 @@
                     "@id": "1197957c-ebba-4c47-8f17-fa861ce159a9"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25759,7 +25759,7 @@
                     "@id": "ef90b6ac-ce01-42e5-96a5-adc92ca1673c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25782,7 +25782,7 @@
                     "@id": "d18847df-c8ce-498c-93b3-0b0f2e44d0ce"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25805,7 +25805,7 @@
                     "@id": "51c250f5-3974-48f5-8e8d-00d14d49a02f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25828,7 +25828,7 @@
                     "@id": "c82283c4-7887-4480-a6fb-f121196ab723"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25851,7 +25851,7 @@
                     "@id": "0cda269c-af0c-4112-bc75-2fabb1bfd069"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25874,7 +25874,7 @@
                     "@id": "2cc4c341-8a67-41cf-8860-561f1c8888e5"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25897,7 +25897,7 @@
                     "@id": "1d1c863d-2e45-4d9d-84ca-cc4df0c2320b"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25920,7 +25920,7 @@
                     "@id": "5718f266-4215-4d80-a0b5-cbb214063a61"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25943,7 +25943,7 @@
                     "@id": "dd0ce349-d351-430d-b088-67bfa8fab562"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25966,7 +25966,7 @@
                     "@id": "957d8e3c-7a3e-4e0f-bc8a-41e6644df005"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -25989,7 +25989,7 @@
                     "@id": "9d18d14e-5f6c-4b5a-bd2a-c571a19b2bdf"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26012,7 +26012,7 @@
                     "@id": "99347665-8c4b-4bde-813a-789ff78c48a2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26035,7 +26035,7 @@
                     "@id": "c59b33ef-cb80-40be-a7b4-1b408a39c09e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26058,7 +26058,7 @@
                     "@id": "f94fec65-fa1d-46df-95df-888e7b3441f0"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26081,7 +26081,7 @@
                     "@id": "96de4893-65bd-4154-aea1-6c248267dc76"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26104,7 +26104,7 @@
                     "@id": "280e1fc7-8394-4975-9fb9-0efdc372b2d8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26127,7 +26127,7 @@
                     "@id": "ca7a9b89-0b79-44c4-a031-a3991e7c4ec2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26150,7 +26150,7 @@
                     "@id": "ffd3f567-36c8-42fe-9d15-2cb6149627be"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26173,7 +26173,7 @@
                     "@id": "5637ded9-c381-4eed-b411-3c95eb978ab7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26196,7 +26196,7 @@
                     "@id": "1098c7e4-0ebf-4a17-99a6-45aa41e37bac"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26219,7 +26219,7 @@
                     "@id": "5491647f-d4ba-4a6b-bce3-5498c71bae55"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26242,7 +26242,7 @@
                     "@id": "ddc08514-7b73-44e4-9104-cc03f881dbe4"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26265,7 +26265,7 @@
                     "@id": "48a2756f-3fea-4818-a6c1-642af69191e8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26288,7 +26288,7 @@
                     "@id": "8d2e5d4f-b476-4827-b32d-3100d1feb3a8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26311,7 +26311,7 @@
                     "@id": "21362d15-7efb-4456-8616-37b3a572ff45"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26334,7 +26334,7 @@
                     "@id": "fe6a5c44-be36-4f1b-8c6d-14b9565a1b5c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26357,7 +26357,7 @@
                     "@id": "0a07d362-e168-4d2b-9c0f-e840d6851fa6"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26380,7 +26380,7 @@
                     "@id": "2ce6bf64-2d32-465e-acd6-ab7bb0d52743"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -26403,7 +26403,7 @@
                     "@id": "3bf500a4-8006-428b-99bd-130bae47494c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26426,7 +26426,7 @@
                     "@id": "6f59a4a4-ccb0-4c31-9139-fec7d05255cd"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26449,7 +26449,7 @@
                     "@id": "598633e6-4329-4c25-9f7c-568735a1a434"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26472,7 +26472,7 @@
                     "@id": "fef57afc-aeb7-475b-a6f9-06ed32e4e091"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26495,7 +26495,7 @@
                     "@id": "461ad5ce-95a4-4b7e-a1d5-a7ff66c2f1d3"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26518,7 +26518,7 @@
                     "@id": "96443911-7b94-4c97-9b09-96c4f385b03b"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26541,7 +26541,7 @@
                     "@id": "b41e0dfd-48a0-4c81-aa3a-acdfe6593435"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26564,7 +26564,7 @@
                     "@id": "3e09550a-4fbb-4e9c-a57d-755f49e7054f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26587,7 +26587,7 @@
                     "@id": "6e2fec6d-4271-40eb-89b2-ab8f7dbd9087"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26610,7 +26610,7 @@
                     "@id": "1bdf4193-fb71-4b47-af7b-3f296f36b841"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26633,7 +26633,7 @@
                     "@id": "abb5c5d8-58ef-4703-8a6c-5182d321cded"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26656,7 +26656,7 @@
                     "@id": "007b696a-4c8a-4d3a-9af7-a4c08d1fcffd"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26679,7 +26679,7 @@
                     "@id": "8a0dd792-142f-4f70-8fd2-08ecad263e47"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26702,7 +26702,7 @@
                     "@id": "c3a2fbe3-66ee-4d55-b5b4-86f4e8b1e5bb"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26725,7 +26725,7 @@
                     "@id": "eb749798-e13a-4bb9-956e-47368f3cef5b"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26748,7 +26748,7 @@
                     "@id": "d6d8e0da-7bc2-42c8-90df-dbc184d0b858"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26771,7 +26771,7 @@
                     "@id": "b26cd25d-8815-40b2-adc7-175b93919fb6"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26794,7 +26794,7 @@
                     "@id": "dd74a649-086b-43f2-bbcf-6ace03594a61"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26817,7 +26817,7 @@
                     "@id": "d944bc49-e356-4829-a18f-a73c5035119d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26840,7 +26840,7 @@
                     "@id": "c0ecb794-70b8-4683-b132-acca29dc27be"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26863,7 +26863,7 @@
                     "@id": "9546014c-c21d-4e3c-9347-1bd29840a5a7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26886,7 +26886,7 @@
                     "@id": "f0e08112-6dc1-43b8-b89b-e03e7f70a2ab"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26909,7 +26909,7 @@
                     "@id": "b65bc759-e328-40ce-bee5-264c089b1128"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26932,7 +26932,7 @@
                     "@id": "1e69ed34-43e7-443c-89d0-914d98b47119"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26955,7 +26955,7 @@
                     "@id": "7ebb2994-b16c-4a5e-b024-a75156b0db20"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -26978,7 +26978,7 @@
                     "@id": "a91060eb-0334-4a65-8356-26863aaa9607"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27001,7 +27001,7 @@
                     "@id": "74568bd5-5319-49c0-871a-dc984d338272"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27024,7 +27024,7 @@
                     "@id": "05852455-ec23-4146-af8e-3dd3730700f7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27047,7 +27047,7 @@
                     "@id": "cdeab429-2d0b-42e5-a7d2-a7c74e6a950c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27070,7 +27070,7 @@
                     "@id": "3a4b5dbe-abe8-4a7e-ad9b-fe0da305c9c7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27093,7 +27093,7 @@
                     "@id": "87afbd20-f89a-4306-be4c-46bb10c791bd"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27116,7 +27116,7 @@
                     "@id": "0be75e04-86cf-4dba-9834-72fddfa7790d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27139,7 +27139,7 @@
                     "@id": "5b9c1c3d-2644-4c11-b774-726eb4d52789"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27162,7 +27162,7 @@
                     "@id": "66e7e001-1487-4dde-90bf-864875e5c076"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27185,7 +27185,7 @@
                     "@id": "650ff477-d7f4-4dca-810a-c5972d1ee873"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27208,7 +27208,7 @@
                     "@id": "6be5233d-947f-433c-8fc3-46eb757fe33f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27231,7 +27231,7 @@
                     "@id": "c2badeaf-579b-4f1c-9da2-5f06431ee93a"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27254,7 +27254,7 @@
                     "@id": "6bf517a9-ca72-4576-a00a-160c9df80962"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27277,7 +27277,7 @@
                     "@id": "6a4ffec7-234a-4567-af82-cee0f38184b5"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27300,7 +27300,7 @@
                     "@id": "ad94d86a-b87b-4c8f-8a12-1453ce844c3e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27323,7 +27323,7 @@
                     "@id": "dc29000b-742f-4877-ae95-1828babe52a6"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27346,7 +27346,7 @@
                     "@id": "a580191b-b883-4735-8f2a-7a0257e1b492"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27369,7 +27369,7 @@
                     "@id": "00f0f2c2-ac5e-4046-9720-0720dbbdc912"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27392,7 +27392,7 @@
                     "@id": "f81858ed-8895-455d-81c3-5ac65cf01623"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27415,7 +27415,7 @@
                     "@id": "9127c6fa-4c50-46a0-977e-f84f0ebeedd7"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27438,7 +27438,7 @@
                     "@id": "f4106f31-fa9a-463a-93af-a074e25ca45c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27461,7 +27461,7 @@
                     "@id": "bb35aaaf-9a3c-4f1e-be52-b925c9f38479"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27484,7 +27484,7 @@
                     "@id": "c69eb837-6125-40e7-b1c1-b4414ba8acc6"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27507,7 +27507,7 @@
                     "@id": "4964af49-ec27-4ca7-ac05-490504669d64"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -27530,7 +27530,7 @@
                     "@id": "2c410343-6afb-45d3-9bb7-6fa4f4b3dc4d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27553,7 +27553,7 @@
                     "@id": "89773411-49c7-43f1-afa3-b2cabb157af2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27575,7 +27575,7 @@
                     "@id": "1ec06596-7e83-42bd-84c9-28343fb191e8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27598,7 +27598,7 @@
                     "@id": "b468d586-6f7e-4d6c-9486-d6b0d5d9fc6e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27621,7 +27621,7 @@
                     "@id": "6252bba6-d55e-4d8a-92ac-4adfbf17baaa"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27644,7 +27644,7 @@
                     "@id": "36102d52-f0c6-4ea8-b612-fed100e2bb62"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27667,7 +27667,7 @@
                     "@id": "aeb770f9-65a1-4329-af9b-f319711d6494"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27690,7 +27690,7 @@
                     "@id": "a80db000-9fd0-4ac2-bd5c-da04fc9c04cd"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27713,7 +27713,7 @@
                     "@id": "2d844c06-a595-4c38-828f-09527fc58199"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27736,7 +27736,7 @@
                     "@id": "7dfc2c5d-2130-4357-8d04-bede8cba5847"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27759,7 +27759,7 @@
                     "@id": "67f9b6d5-af6b-453f-ac15-2101e27393d1"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27782,7 +27782,7 @@
                     "@id": "22f5bcf3-6f6b-41b4-8215-79225dcc5c6a"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27805,7 +27805,7 @@
                     "@id": "8cc251fb-c322-47c8-a369-3d3d47dd867e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27828,7 +27828,7 @@
                     "@id": "4b86dcb5-9972-4e38-9d98-dd66947c32c2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27851,7 +27851,7 @@
                     "@id": "6e405132-b27a-4777-8acb-1f84bf7af332"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27874,7 +27874,7 @@
                     "@id": "e1213752-75d8-4cdd-8dc2-75454260bbf2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27897,7 +27897,7 @@
                     "@id": "15777b61-7fa0-425d-b8e5-fb6558c29e25"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27920,7 +27920,7 @@
                     "@id": "36a4cb1e-d2a7-401d-af5e-509ca5a016ba"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27943,7 +27943,7 @@
                     "@id": "2c8bdc9d-8863-4164-b603-a054fd3d3cca"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27966,7 +27966,7 @@
                     "@id": "0968c23b-bdf6-440c-9cd5-bee9efd98b14"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -27989,7 +27989,7 @@
                     "@id": "3a7a38d6-93c0-450a-b21f-4fba9294035c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28012,7 +28012,7 @@
                     "@id": "424a0caa-a473-4dcb-825e-2526fa10ba9e"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28035,7 +28035,7 @@
                     "@id": "8fee8fb3-f5ef-4010-9066-6ddd6cb0f72f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28058,7 +28058,7 @@
                     "@id": "7a6e5000-ee70-4e0b-a46e-4bc15253cb20"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28081,7 +28081,7 @@
                     "@id": "9da5c8e6-26ea-477b-9e2d-c58cdd6cc5c4"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28104,7 +28104,7 @@
                     "@id": "791df1f1-40aa-432b-9d5b-3ba50d29007a"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28127,7 +28127,7 @@
                     "@id": "38289969-f28d-40e1-9b22-3b4cae2d29de"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28150,7 +28150,7 @@
                     "@id": "5a7bb99c-af3d-4679-85ee-1892d2a8a43d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28173,7 +28173,7 @@
                     "@id": "feb4752d-af75-44e2-a426-b0be9f68c1c2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28196,7 +28196,7 @@
                     "@id": "91e94640-7c2b-431e-a4df-6e0df44194ff"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28219,7 +28219,7 @@
                     "@id": "46929f72-fcbd-47bf-8788-c1511f4d1b66"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28242,7 +28242,7 @@
                     "@id": "c03b0a98-7ef0-49a7-9142-f96c7bf4841c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28265,7 +28265,7 @@
                     "@id": "257d65cc-6a4f-422a-8299-35332a2e8a90"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28288,7 +28288,7 @@
                     "@id": "d2cf92bf-20e9-4759-9599-2639518e3162"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28311,7 +28311,7 @@
                     "@id": "60e72583-28ff-4572-b617-1e3366de6556"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28334,7 +28334,7 @@
                     "@id": "cb060f16-4139-450e-9a4d-9072e462eb05"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28357,7 +28357,7 @@
                     "@id": "110114bc-7422-4d45-b8fe-9c55e9c7f802"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28380,7 +28380,7 @@
                     "@id": "1ff0fd87-aae8-4ede-839b-d271f95fa1b2"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28403,7 +28403,7 @@
                     "@id": "fe327009-964a-4347-8103-72d32efdf2a1"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28426,7 +28426,7 @@
                     "@id": "56b12424-f449-4653-a2d3-b9dfcbeb0cc8"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28449,7 +28449,7 @@
                     "@id": "95041a3c-ddef-4732-9c08-2d29aa33c8bc"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28472,7 +28472,7 @@
                     "@id": "c8a56296-652c-4afe-a6c0-485514bbf200"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28495,7 +28495,7 @@
                     "@id": "e00a1882-ce92-43a2-9c72-4802718f8f23"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28518,7 +28518,7 @@
                     "@id": "011f1aff-051a-4f69-a7cf-14391ae96998"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28541,7 +28541,7 @@
                     "@id": "d8752860-8c9d-4ca8-984b-0134cdd1b4af"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28564,7 +28564,7 @@
                     "@id": "611cb042-0511-4055-82c5-2f3a2bf2f268"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28587,7 +28587,7 @@
                     "@id": "0b4bf4ed-91ce-4d40-bc8b-e6d903172f05"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28610,7 +28610,7 @@
                     "@id": "94273049-85ef-4db5-880a-75e60ce9351d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28633,7 +28633,7 @@
                     "@id": "00bb508d-b09e-4d56-9908-2028f177fb68"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28656,7 +28656,7 @@
                     "@id": "afed5d1b-9bd9-435d-bf53-d51357859edc"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28679,7 +28679,7 @@
                     "@id": "703a56f6-9584-45ec-98cb-2517f66a0c4a"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28702,7 +28702,7 @@
                     "@id": "dd255e38-50c7-4ebc-aa42-c6d9151888af"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28725,7 +28725,7 @@
                     "@id": "2ec9abcb-c44e-4038-9835-11ae5d0f761c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28748,7 +28748,7 @@
                     "@id": "de254f39-1252-480c-ba14-95b828510b85"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28771,7 +28771,7 @@
                     "@id": "df632f1b-df06-40ec-bdb2-e5555e537f38"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28794,7 +28794,7 @@
                     "@id": "8b832ab3-895e-4c42-bbf8-43c322869366"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28817,7 +28817,7 @@
                     "@id": "c23b307c-4492-48ef-a3a6-febc602ff8d3"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28840,7 +28840,7 @@
                     "@id": "22568a64-63db-4a47-8fe8-10c2b862d6cc"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28863,7 +28863,7 @@
                     "@id": "50091713-efd0-474a-b1ca-e0328ffb6070"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28886,7 +28886,7 @@
                     "@id": "d6c7e090-04de-4204-9502-4cc5a31a4c45"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28909,7 +28909,7 @@
                     "@id": "53c20da2-db4b-4fc8-8be8-5e0c01ade135"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28932,7 +28932,7 @@
                     "@id": "92f6b6b2-9efa-48e3-b6d0-eed9c6744847"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28955,7 +28955,7 @@
                     "@id": "cc28385b-87a9-4710-9edc-cacbcf8a9082"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -28978,7 +28978,7 @@
                     "@id": "84b731ca-95d3-4cc7-9dee-b0e2eb00c715"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29001,7 +29001,7 @@
                     "@id": "4284d4db-2313-4d57-befc-f5f62ae29f17"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29024,7 +29024,7 @@
                     "@id": "91597e03-441c-4394-b25a-4a25ed961b36"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29047,7 +29047,7 @@
                     "@id": "254b02fb-bda4-47f9-8b4b-7a97404bf189"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29070,7 +29070,7 @@
                     "@id": "764e709b-6851-4990-988f-c45091f2da9c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29093,7 +29093,7 @@
                     "@id": "19ac94e6-3fee-41e3-9708-2288dbc27f7f"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29116,7 +29116,7 @@
                     "@id": "329e41fa-c8e3-4aad-8ca7-96e1b5c86c9d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29139,7 +29139,7 @@
                     "@id": "5ea662c2-2206-4279-a89e-55179ff0646d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29162,7 +29162,7 @@
                     "@id": "de4b8250-10ac-4db3-923e-4f6793b3cf5c"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29185,7 +29185,7 @@
                     "@id": "294e888c-1d11-4a10-8c71-cafeb6304c9d"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29208,7 +29208,7 @@
                     "@id": "9e6b2d6e-bdc8-4f63-9d5a-93317b413af4"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29231,7 +29231,7 @@
                     "@id": "e8593e47-8439-4c2b-8122-4dab92672ddd"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29253,7 +29253,7 @@
                     "@id": "a50f9500-c4ce-4873-b47c-538b73fe2406"
                 },
                 {
-                    "editType": "replace-with-equivalent",
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29275,6 +29275,7 @@
                     "@id": "fd6bd5ba-d673-4c9f-b803-de63ff6e2dd5"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SoftPedal",
@@ -29288,11 +29289,11 @@
                             "@id": "symbol_753accb1-0129-4b3c-9907-40ad36eab5fc"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a83bba62-9807-4e09-9aa3-3f0c1d5c9880"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29311,6 +29312,7 @@
                     "@id": "8f7e2abc-b8ce-43cd-b740-f276fc5d82a8"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29329,6 +29331,7 @@
                     "@id": "7ddbcd62-c2c1-43ee-8571-6595d1026bb8"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29342,11 +29345,11 @@
                             "@id": "symbol_4010546f-1225-467c-b867-46f2f1594ff7"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "3e06cc4c-2392-4868-9e75-4a03640d9a06"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29360,7 +29363,6 @@
                             "@id": "symbol_6f22b8c8-a141-4129-b01b-99aeb1c99fef"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a8ef07c6-a9fe-42ae-b4d2-7b56b914f66b"
                 },
@@ -29382,6 +29384,7 @@
                     "@id": "7e05829e-de13-4379-8227-6263e9c14dc1"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29400,6 +29403,7 @@
                     "@id": "8bbab2f1-1cba-4dce-95d7-5e5efe3f707b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29413,11 +29417,11 @@
                             "@id": "symbol_bbc04f0f-91b7-4388-b45f-915600a8a245"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "5c3ce24d-c7ed-45a5-b360-f5b45523a5af"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29431,11 +29435,11 @@
                             "@id": "symbol_c5e7035e-4097-49a8-9b85-0a25941b5551"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "73cfae6e-8c55-4eab-93c6-a6d0eb9cf178"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29449,11 +29453,11 @@
                             "@id": "symbol_85bdbc29-0632-48d1-9462-9aae3de1f13d"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e1237eb6-2710-4583-92f0-b06eedb6941a"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29472,6 +29476,7 @@
                     "@id": "07b3dcf0-ac57-4ed9-a18f-65d83ae8fddf"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29485,11 +29490,11 @@
                             "@id": "symbol_278de80a-f7cf-48b3-b862-741fa4e75998"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "94740181-3450-4c7a-b442-41992316337a"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29508,6 +29513,7 @@
                     "@id": "23685ae9-567c-404d-a69d-57988c2725ae"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -29521,11 +29527,11 @@
                             "@id": "symbol_5437a722-acac-4974-9ddd-9b44153c28ba"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "47d9a9e8-50b7-422f-8523-eb3fa368ed81"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29539,11 +29545,11 @@
                             "@id": "symbol_b7bae344-5d4e-4bb3-8f63-6eb632e1ffb6"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a2bd65e6-13cd-4360-b2b7-c80fca5dc36d"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29557,11 +29563,11 @@
                             "@id": "symbol_19aa94a2-28ba-45df-ac51-e3ac327c77ef"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "b968321a-9d6a-4a1b-8103-20baf8fd54d0"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29580,6 +29586,7 @@
                     "@id": "43fe4929-352f-45b8-a9f8-1e1a09475fb4"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29593,11 +29600,11 @@
                             "@id": "symbol_714350b0-2707-4acd-ad32-b019ecf93d28"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e046a295-6102-4035-8213-ef6baf58114a"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29616,6 +29623,7 @@
                     "@id": "08228174-7b27-446f-8136-2605edd1a742"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29634,6 +29642,7 @@
                     "@id": "cf2694ea-3276-4852-b587-3191d3709b92"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29652,6 +29661,7 @@
                     "@id": "d04ba065-1fde-4e02-8fce-71f80641a104"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29665,11 +29675,11 @@
                             "@id": "symbol_d793e8ea-0042-4db9-9c4b-720783096da9"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "bc56ed54-a9b1-4c99-8ed2-ed794a453642"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29683,11 +29693,11 @@
                             "@id": "symbol_ba7573cf-a5cc-4871-b006-df93e73861e2"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "4045926b-ebe2-4581-bb62-fb9cb0227b25"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29701,11 +29711,11 @@
                             "@id": "symbol_86e6d5ca-2b75-4caa-8ca7-08bdafc95b61"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "329c4e1b-1a8c-47a2-b410-475acaa27c5f"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29724,6 +29734,7 @@
                     "@id": "9df20961-ce4f-4b23-998f-561f9ea5ab3b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29742,6 +29753,7 @@
                     "@id": "a4cd1aa6-5248-4aab-9cb3-991181c9961f"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29760,6 +29772,7 @@
                     "@id": "9406c4cd-e7ca-441b-ab79-0bd952a07f02"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29773,11 +29786,11 @@
                             "@id": "symbol_0d26ab29-31db-4248-95fb-b8d8d2887503"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "8ad0a849-00ec-4d5d-ad51-d2a2bc0fbf0d"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29791,11 +29804,11 @@
                             "@id": "symbol_ac1ab5ce-1268-47af-aa6b-3b1c3a531add"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e9fe0263-dc78-464e-ae3b-d7259c904ae2"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29809,11 +29822,11 @@
                             "@id": "symbol_08856bcb-766d-496d-bcb5-0b928bfc50a0"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "28658e63-1a22-4166-b177-c90efb84b32e"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29827,11 +29840,11 @@
                             "@id": "symbol_3fe044e9-9f01-4f92-bbc5-cfe1b10f17c8"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "34988e74-9a93-43c9-a3b4-000b476b3cac"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29850,6 +29863,7 @@
                     "@id": "fb517de3-230b-4f44-bcc7-20cbd563d63b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29868,6 +29882,7 @@
                     "@id": "d2ceab53-afdc-420e-a769-8002620ce8a1"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29881,11 +29896,11 @@
                             "@id": "symbol_2f52a4ee-72d1-44da-ad74-6b2ab4d6a5a7"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "18056f02-5785-4a60-a2b5-7da7187b00c3"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29904,6 +29919,7 @@
                     "@id": "88d5543b-85f0-47d1-998d-1739aab4e221"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29917,11 +29933,11 @@
                             "@id": "symbol_ab5d23b7-890b-4219-8426-33900ebb2f17"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "21cc22c8-f8ff-44b3-88e6-605df8cd424a"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -29940,6 +29956,7 @@
                     "@id": "2644f5be-448b-4ea4-bd73-7b0f924537bf"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -29953,11 +29970,11 @@
                             "@id": "symbol_f42c04e3-f047-4743-bf37-b1c0c7bdf65f"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "25c21b43-de5c-4731-9c82-72c9e32cc130"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29971,11 +29988,11 @@
                             "@id": "symbol_520659e3-5900-4e32-9002-ee1acb9da7d0"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "907678cb-163c-4dc3-9bcb-46cec63f10a2"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -29989,11 +30006,11 @@
                             "@id": "symbol_e8a9e1c0-03be-41cf-927e-6da4409b767f"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "4798c6e0-6646-47c4-af67-187befc6ae18"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30007,11 +30024,11 @@
                             "@id": "symbol_c87daa6e-4c38-4c46-b4c7-2f7dcd9bfda3"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e33078d8-3442-4a68-9561-ed09d56b7b86"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30030,6 +30047,7 @@
                     "@id": "5c72e3d5-44ca-4066-8027-f826bf65a18f"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30043,11 +30061,11 @@
                             "@id": "symbol_f2cff60b-49a1-4a4c-b499-d2bdcbab4d0f"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a8715031-dda2-4159-a668-9453be2b4bc7"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -30061,11 +30079,11 @@
                             "@id": "symbol_d0dfd310-e86a-4c64-8904-183aed4cbbe0"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "909c3554-2d9e-4bf2-b168-8a914e0fe82e"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30079,7 +30097,6 @@
                             "@id": "symbol_00a6fd77-381d-4612-80f1-7d67d35df536"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "38860d5a-f156-459c-ae25-867e9e65124a"
                 },
@@ -30101,6 +30118,7 @@
                     "@id": "d59ec847-276d-4d6e-aef0-85305103310b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30114,11 +30132,11 @@
                             "@id": "symbol_a854dd54-31fe-4844-a7a9-4663fe2e46b4"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "5d69a03b-627c-458e-bb37-7f8382818f1e"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30137,6 +30155,7 @@
                     "@id": "8dca54da-33c9-4be5-bbcf-ff4a2f7a72cc"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SoftPedal",
@@ -30150,11 +30169,11 @@
                             "@id": "symbol_f986602f-fdca-43d8-b307-1dec618fb73b"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "96d7e29a-bb59-494e-9449-5b193152ecc4"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -30168,11 +30187,11 @@
                             "@id": "symbol_52de11ae-e232-40c2-9608-be4713f6ab39"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ce4bcf9b-0e89-4de3-8696-f73e8f0131a7"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SustainPedal",
@@ -30186,11 +30205,11 @@
                             "@id": "symbol_6aa0a89d-b665-43ab-aecb-34a532deb23f"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "60833520-75d7-4a71-9543-0927920bf74b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30204,11 +30223,11 @@
                             "@id": "symbol_458b3919-7a0d-4eaf-9dc0-6f613a5d3245"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "08ab6cbe-8ac6-4223-a697-f101ba3dd30b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoForte",
@@ -30222,11 +30241,11 @@
                             "@id": "symbol_0b7bbfb5-f21f-4d0c-9ed1-9ef4a94a6b8b"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "b6b1bcc8-1a42-4e96-93c0-d96fac10ebb9"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30245,6 +30264,7 @@
                     "@id": "9f7bb719-e7ef-4b8c-81fc-161ff478f0cd"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30263,6 +30283,7 @@
                     "@id": "2bbbf693-2514-4186-ba5f-8597223ad0a7"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30276,11 +30297,11 @@
                             "@id": "symbol_e7488f93-09f2-47f0-bd7d-bec135746672"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "f3921fad-e820-45d0-bcd4-04267bc5c71d"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30294,11 +30315,11 @@
                             "@id": "symbol_e035b703-66b8-4a7d-97a3-e0a9b483b82e"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "4b73587d-21ed-4006-bfaa-f3a64621faf3"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30312,11 +30333,11 @@
                             "@id": "symbol_1570a310-b563-4879-9d37-29ca83e39792"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e286e0f0-deb8-4c6b-974c-75ff96b637f4"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30330,11 +30351,11 @@
                             "@id": "symbol_783b7dbd-440e-4297-97a2-14758d041a96"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a60570db-ab0a-44e2-8a61-262860c5b53b"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30353,6 +30374,7 @@
                     "@id": "9a9627be-504d-4f07-8294-541ec82fce3a"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30366,11 +30388,11 @@
                             "@id": "symbol_5d3e6903-e839-4546-b5d8-1b1b8575bbb3"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "8323c071-9747-43f0-819f-b489f051ee02"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30384,11 +30406,11 @@
                             "@id": "symbol_aa0e58f4-f597-4b09-a0ae-f424acce7ce0"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "2d37d8ba-28f2-49ef-b657-a00d84f12124"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30402,11 +30424,11 @@
                             "@id": "symbol_88a49efa-0ebd-44ee-9950-8354dd397f96"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "527da326-f8ac-4e22-a1e3-14f8c39d4509"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30420,11 +30442,11 @@
                             "@id": "symbol_45714ee0-8f13-4bc5-90ec-ec45b3f2ffcc"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "a879fcca-269f-4cfd-a9d4-8460bdacff25"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30438,11 +30460,11 @@
                             "@id": "symbol_bd557fa3-330c-425b-b078-2be55119af55"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "fdc6fb10-de3c-44ac-b716-6f4099c43dc8"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "SforzandoPiano",
@@ -30461,6 +30483,7 @@
                     "@id": "813cdf7f-daec-4650-a0ce-6277ff2dde07"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30474,11 +30497,11 @@
                             "@id": "symbol_e51a20a3-3066-4325-9e74-aa0a4171df5c"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "edbd2e7a-c470-4697-b9d6-2cebec31dd59"
                 },
                 {
+                    "editType": "recoding",
                     "insert": [
                         {
                             "expressionType": "Crescendo",
@@ -30492,335 +30515,334 @@
                             "@id": "symbol_5bb2f79d-7b7d-4197-957d-28bdb301bf5f"
                         }
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "2184a216-f350-4b1b-aa76-68909b055c56"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_c11999fe-36f4-48b9-9104-bcac8b087595"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ed787147-c145-4e87-9b08-1f9db5097d79"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_59e7d901-2edd-4759-ae8a-df12bd573c88"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "dc87dcf2-b407-4a9e-a85b-5bd228e69e47"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_659b3be6-ba8f-46a2-bf0a-2a9287472e9e"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ab9e853a-fe3a-4935-8da3-6b11975184db"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_7b9c76ae-2e74-4073-950e-a549bf18d518"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "2b751e5c-eba4-4a3b-ac6e-0a2740205790"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_2a10ade8-b969-4b06-a8cd-abd6b058da2a"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "57666274-c56d-4593-bf3f-66c511986c9c"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_b1ee8f2f-44f5-45c7-8ba3-8edc0398a5cf"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "dd7bec3d-554d-40f7-bed5-a9158a6d1f70"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_57a10a1f-5eba-40b8-b071-d0136ae7ec30"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "71657ee2-bbea-4758-9f20-6a1682d3fc0a"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "e9b2b5f9-b4cd-4efe-9a5d-8a134f7da5fa"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "3d228961-3ef6-4ee4-a749-9ace99d2bdef"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_c4e0e96c-f892-4d40-bef6-1c89d1bacbd8"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1d256dac-1c1e-4a66-9b5b-c054014fa518"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_56c33cbd-01df-4ca8-9b5a-eff1ba9baefa"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "92d6e430-756b-4e20-96e8-a56018f7d256"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_6b546385-1515-4a0b-9a69-0647602a8b99"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "c0dc8e82-8426-41a5-a379-ef41e891914b"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_134b68f6-7af4-4b57-907d-b613a103db29"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "cfaee0fc-6451-4a06-b118-ae07dff2d414"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_612d1cde-8044-4960-8627-c3ef9dba0034"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "47c3edbd-11d6-4413-bd2f-42f983505cdf"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_a71640f8-01a7-4f91-9810-07523bfc473b"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1deffff7-9ffa-42ca-a230-fea4a6c737db"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f9292c10-fe39-46d9-9169-a237822d8176"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "b8678700-4af6-44aa-a580-8c9ab93d0f95"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_9ecc1747-1258-4e70-be6f-971ceee0f964"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "6dc194eb-36e3-4694-ba3f-779af980dcd3"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_23e43b39-886f-4b6c-8827-127a70774470"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "732b3381-b2b4-40c1-965d-09bbdee20af7"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ec264ff3-db6a-4978-8e04-2fe9b47ba006"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_33043a2f-c937-4706-a4f6-0e74961cff69"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "5313d898-c1db-4dd5-b3a0-c82e377c23c9"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f5053729-1dfe-4fb3-8cd1-87a1be95dcf1"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1b94df68-4343-4707-b76a-32fd3ae14b36"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_fd08c549-236c-4509-9251-ee11eaa8ae6f"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "0e2c1347-898f-4110-a600-d012ec3f4427"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_7ad7a821-7c09-4e64-bde8-cf159cbec747"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "170c7ce5-b741-4b3d-a236-cc25e58ad64c"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_d49be165-91f5-40db-aff5-df4d12d9be94"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "fcf66308-16ce-4a26-8c40-8e3eb036196b"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_07a22f96-e819-4324-9517-335bc65e64af"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "07ff5638-6488-4391-97b8-b9f439900767"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "431bc327-f7cd-44c9-b500-149ce0a9760f"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_997afbf7-a73d-45e4-8270-0bb655f56c09"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "88d497d3-3fe2-441e-837d-9db935c5bfba"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_832bfd3a-4be6-4a4d-90cb-6265052538ad"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1432a414-8b86-4304-b39a-29833802cd88"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_c1f8c127-0c62-435d-af71-00ddd9fe4b3c"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "77798200-bdbb-4583-aa66-9f23ee74f2cd"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_6fd98ff4-ec3f-4686-84db-0f3b819adafb"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "faa385e2-4aec-4f07-ac5d-c043bb68b5fc"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_3e3c53d4-08e5-4048-a013-491a799fdb8d"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "87a3c382-d094-42fd-9c04-36ff4d226d47"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_6c3880e1-8ea7-4cf3-8688-95baa46cd99d"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "68ab0458-9dd4-4459-a668-e7959aaee4cb"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_86773506-4a6d-4789-919e-c52caec51979"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "f3300fc3-ee56-4ea7-9480-bc92c7c75219"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_773ce6be-33f3-457c-80a3-3e080888daf8"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "34edc000-f245-480f-aab9-3fef5d0651a3"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_672af8d0-ddc6-4c4f-af4b-c96688917518"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "b31edf42-03f9-4eb2-ad19-8d6655a65c17"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_a1ade749-8012-4978-b08b-acc9db4fd94e"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "6c97da7b-23dc-4307-b688-f85d2529bf03"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_1f2faf0f-7a11-4427-98d2-a77b0ea9b873"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "08fad838-0e2c-4aa3-b254-b12a916ab9a3"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_cf9fc006-6450-4b7b-94f6-a9b5b7f523bf"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "6b3a29b1-a702-405a-b891-b6951a9d7870"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_7dda6454-f23a-4225-9b3f-1e909ccadb3a"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "995d2492-7ed0-4ecd-8fb8-c8cc3a2db3c5"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_8ef4fb55-771e-433f-8235-94a252d7e787"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "aba70930-1f37-4f99-b403-af5b809d3dc9"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "cadbe90b-f840-495d-af37-a7ea8c9425b8"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_9002bfb7-dd0c-4c0c-be98-9c336ac3fac2"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "fde2a7d4-ea3e-4447-8ec9-fb5aa2e58c2c"
                 },
@@ -30833,182 +30855,183 @@
                     "@id": "bec5e9f3-8cba-4e65-aa1e-67bf94be5b68"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_828467f6-630d-47a8-a084-a7d13f56736c"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e50fa658-d4b0-481f-8ccd-e42e09183051"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_0eac3381-c3ab-4189-9f46-8ded5bc1d9f0"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "5441a20c-58d5-4502-872a-83fa6d5ea607"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_6ea7bc39-be16-4c15-b892-8d2e192f9d50"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1e0884c8-3e25-4060-82a7-0134d3a1f5a9"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_457386e9-90aa-41f9-9c99-f75566691d92"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "1a7ce253-e302-4d5f-87e5-384d7e419929"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f33e546f-b6b2-4ac4-ae53-19293e6b4dc1"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "4d549283-34b4-4d35-b409-0b697795b148"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_d955d7ce-9955-4258-92f3-d1fb2fdf9cf4"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "93b55038-84df-414e-952e-a93059cb3735"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_b77aa976-a536-41af-bad1-f08c69f85bbd"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ddc514df-75af-4b37-8db7-72c3c3143fab"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_9fc561da-5a85-4309-a7c2-d3656e9786e0"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "4daad7b8-fb29-4ed7-9f36-694478143d7d"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f8c639b4-a161-418c-8d65-7dbe858b2b6f"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "fbda9cf9-444b-4445-88f1-c1e9027aeb69"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_760acada-e7fd-47f1-80b1-b56059aebcf4"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "fffc3772-7768-4c1b-b893-cd00f0f19c46"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_f7893d1e-2cc3-492f-8693-a48c87cbb695"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "47c68df7-b478-4571-93bd-8dbdfdd7b05e"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_2975476a-7e85-4c74-aff0-38124b4210cc"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "bdb92693-1e97-415d-b67c-502c5453f0fd"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_402e18b7-d9d0-4401-81fc-fde3a4c6ded4"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "e865f5c0-dc98-4370-beb9-6c16d2a78b46"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_d7fa893d-a3d7-4ec2-ba69-789ec7142d22"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "5c72a54b-b6cb-45e2-bf03-f6f696f479cc"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_5181ca11-7eba-4a3f-ae44-3f4c855c8b78"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "0fe59689-e946-4503-a6f0-26c213450242"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "eb0336b8-ba5b-4ba6-ad67-dfaf75f40a59"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_649fb2e0-413a-4b1e-a43b-0d6fe304ea46"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "f14cc21f-a7fa-419f-9ad2-d320d8ec8ed1"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_deb4df00-9cf1-42fe-88b7-da48829b6233"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ece3c08d-aee6-4d44-9de3-1972aac7d6de"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_66a00f6c-8095-4783-a7de-3c5360fb838e"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "d2a6e6dd-a5ea-4059-90bf-dfd084e66aa3"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_5ba6d22c-957f-46c0-a5c7-0397d607c2c2"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "d7bf9fbf-7f1a-4441-91c7-b05640d5e0a3"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "symbol_dc780aa1-ee80-496c-b080-1b07f60fa941"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "ff29647f-5872-48ce-9c90-d59c85f35f2f"
                 },
                 {
+                    "editType": "recoding",
                     "delete": [
                         "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
                     ],
-                    "motivation": "expression-recoded",
                     "@type": "edit",
                     "@id": "b3417fed-1d9d-4c30-9dad-c0971b44c884"
                 },
                 {
+                    "editType": "recoding",
                     "motivation": "latch-to-hold",
                     "delete": [
                         "symbol_1abc8a69-ed04-49a8-9f5e-5259abc7b416",
@@ -31036,11 +31059,6 @@
                     "note": "Absenkung durch den eigenen Sforzando-piano-Befehl des T-98",
                     "@type": "motivation",
                     "@id": "t98-only-command"
-                },
-                {
-                    "note": "Dynamik für das grüne System neu gelegt",
-                    "@type": "motivation",
-                    "@id": "expression-recoded"
                 },
                 {
                     "note": "Abweichender Notentext: ein zusätzliches f′′, ein verlegtes g",
