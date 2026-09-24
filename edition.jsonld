@@ -6,6 +6,7 @@
         }
     ],
     "@id": "https://welte225.org/",
+    "formatVersion": 1,
     "title": "Alfred Grünfeld spielt Robert Schumann, Träumerei",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "creation": {
@@ -33196,7 +33197,6 @@
     ],
     "copies": [
         {
-            "ops": [],
             "conditions": [],
             "measurements": {
                 "dimensions": {
@@ -45274,10 +45274,6 @@
             "@id": "d229954b-086c-44d6-a589-aaa324d31d88"
         },
         {
-            "ops": [
-                "shifted",
-                "stretched"
-            ],
             "conditions": [
                 {
                     "factor": 0.9978034872721986,
@@ -58899,10 +58895,6 @@
             "@id": "88460599-2e0d-4759-851c-903a5a521997"
         },
         {
-            "ops": [
-                "shifted",
-                "stretched"
-            ],
             "conditions": [
                 {
                     "factor": 1.0016647616495822,
@@ -68474,10 +68466,6 @@
             "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
         },
         {
-            "ops": [
-                "shifted",
-                "stretched"
-            ],
             "conditions": [],
             "measurements": {
                 "dimensions": {
@@ -81114,10 +81102,6 @@
             "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad"
         },
         {
-            "ops": [
-                "shifted",
-                "stretched"
-            ],
             "conditions": [],
             "keeper": {
                 "name": "Peter Both",
@@ -95666,7 +95650,6 @@
             "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8"
         },
         {
-            "ops": [],
             "measurements": {},
             "conditions": [],
             "keeper": {
@@ -95744,9 +95727,6 @@
             "@id": "8d2c822d-b78b-46ef-9b78-9855f0a07d52"
         },
         {
-            "ops": [
-                "shortened"
-            ],
             "conditions": [],
             "measurements": {
                 "readerExtension": {
@@ -107150,7 +107130,6 @@
             "@id": "6370ef20-7986-425a-a8c5-7e56d3756aec"
         },
         {
-            "ops": [],
             "measurements": {},
             "conditions": [],
             "keeper": {
@@ -107274,7 +107253,6 @@
             "@id": "6105351d-0468-4306-a31a-23814dc1ca1c"
         },
         {
-            "ops": [],
             "measurements": {},
             "conditions": [],
             "keeper": {
