@@ -27,13 +27,20 @@ Gourlin's copy cite these files.
   edits of the "Differenzierung der Mittelstimmen" is there, nor C's
   cleanups. Hence a lost state B2 between B and C, from which both C and
   the Licensee version D3 descend.
-- **Counter-evidence.** At four of the 45 places where B moves or strikes
+- **A's punches.** At four of the 45 places where B moves or strikes
   a punch of A, known only from the Widuch copy, the reading shows A's
   punch, and at 30 of them B's (`eroll/retentions.txt`). Displaced at
   random, the reading's unexplained punches hit such places 0.66 times on
-  average and up to seven times in 1000 runs, so these four are weak
-  evidence against the derivation through B. All four lie in passages the
-  Licensee editor demonstrably reworked.
+  average and five times or more in one run of a hundred. All four lie in
+  passages the Licensee editor demonstrably reworked. The same punch is
+  hardly set twice at the same place independently, and the On at
+  2873 mm would make effective the Off that B's strike leaves standing at
+  2893 mm; since D3 descends from B all the same, the edition takes the
+  four from a second model in A's state. It holds that contamination
+  possible, not likely. Chance remains, and so does a lost state between
+  A and B with B's new punches beside A's old ones, which would explain
+  D3's two accents at 1931 and 1964 mm; but then B and C would each have
+  struck the same two sounding accents, at 1964 and 2873 mm.
 - **Gourlin's copy.** Tested in the coding Phillips's punches show
   (`an/recon/eroll_test.py`, `an/recon/eroll_test.txt`), the velocities
   of Trachtman's emulation carry the shared additions of C (seven units,
