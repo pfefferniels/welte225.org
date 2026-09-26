@@ -37772,7 +37772,7 @@
                                         "https://w3id.org/welte-premises/premises#paper-ruled-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -49904,7 +49904,7 @@
                                         "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -63544,7 +63544,7 @@
                                         "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -73021,7 +73021,7 @@
                                                 "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                             ],
                                             "used": [
-                                                "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
+                                                "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
                                             ],
                                             "@type": "inference"
                                         }
