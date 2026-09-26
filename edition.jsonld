@@ -37772,7 +37772,7 @@
                                         "https://w3id.org/welte-premises/premises#paper-ruled-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -49897,14 +49897,14 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, und am 16. Dezember 1909 wurde noch mit dem alten gestanzt (welte-premises, advance-half-mm). An den datierten Stanford-Kopien ist diese Einstellung vom 1. Februar 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin (condon-dates/dates/README.md). Über die Gewissheit der Lesung selbst entscheidet das nicht.",
+                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, und am 16. Dezember 1909 wurde noch mit dem alten gestanzt (welte-premises, advance-half-mm). An den datierten Stanford-Kopien ist diese Einstellung vom 1. Februar 1910 bis 6. März 1914 belegt, der 14. Januar 1914 liegt darin (condon-dates/dates/README.md). Über die Gewissheit der Lesung selbst entscheidet das nicht.",
                                     "premises": [
                                         "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
                                         "6eed2137-38a8-4048-80dc-bb2f519e923e",
                                         "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -63544,7 +63544,7 @@
                                         "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                     ],
                                     "used": [
-                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
+                                        "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
                                     ],
                                     "@type": "inference"
                                 }
@@ -73021,7 +73021,7 @@
                                                 "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                             ],
                                             "used": [
-                                                "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
+                                                "https://github.com/pfefferniels/condon-dates/blob/fd81ea5e706efa73b46f5506433054ae7cdac802/docs/premises.jsonld"
                                             ],
                                             "@type": "inference"
                                         }
