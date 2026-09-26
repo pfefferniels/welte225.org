@@ -16,7 +16,7 @@ and the place where the data about that roll is published.
 | `/schmitz-225/` | the comparison of TACET's recording of Hans-W. Schmitz's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/licensee-225/` | the comparison of Peter Phillips's and Philippe Gourlin's Licensee copies with the edition's versions: scripts and derived data, cited by the edition's beliefs about version D3, the lost state B2 and Gourlin's copy |
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
-| `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table, with a dated control and Stanford's 431 red rolls behind it: scripts and derived data |
+| `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table: scripts and derived data. The corpus behind it, a dated control and Stanford's red rolls, is kept in condon-dates |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages

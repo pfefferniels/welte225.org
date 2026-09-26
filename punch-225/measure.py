@@ -12,17 +12,20 @@ from __future__ import annotations
 import argparse
 import json
 import statistics as st
+import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 
-import images
-from advance import gaps, peaks
-from holes import Hole, alone, aton, from_edition, rollinfo, spread
-
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent.parent / "condon-dates" / "perforator"))   # the libraries
+
+import images                                                        # noqa: E402
+from advance import gaps, peaks                                      # noqa: E402
+from holes import Hole, alone, aton, from_edition, rollinfo, spread  # noqa: E402
+
 SCANS = HERE.parent.parent / "rollscan2image" / "scans"
 EDITION = HERE.parent / "edition.jsonld"
 FIXTURE = HERE.parent.parent / "linked-rolls" / "test" / "fixtures" / "mf320jq4997_analysis.txt"

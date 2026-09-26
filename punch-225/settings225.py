@@ -10,13 +10,13 @@ by the steps between them, which reads to a fraction of a pixel where the
 median of single distances would round to whole ones. On St1 and St2 that
 route gives 3.003 and 2.999 mm against the images' 3.001 and 2.999.
 
-The advance is the strongest period the slot lengths keep (../advance.py),
+The advance is the strongest period the slot lengths keep (condon-dates' perforator/advance.py),
 for all five alike. A period is held likely when it is found at a strength of
 at least 0.35 and the pitch is within 0.15 of a whole number of it, possible
 when only one of the two holds, and unlikely when neither does.
 
 Ch1's scan was resampled from 180 lines per inch along the roll by
-../../../rollscan2image/cis2roll.py, so its millimetres along the roll rest on
+../../rollscan2image/cis2roll.py, so its millimetres along the roll rest on
 the scanner's header; the ratio of pitch to advance does not.
 
 Writes settings225.json beside this script.
@@ -31,7 +31,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
+PERFORATOR = HERE.parent.parent / "condon-dates" / "perforator"   # the libraries and the sweeps
+sys.path.insert(0, str(PERFORATOR))
 
 import corpus                          # noqa: E402
 from advance import gaps, peaks        # noqa: E402
@@ -129,8 +130,8 @@ def folded_advance(holes: list[Hole], dpi: float) -> Advance:
 
 
 def stanford(siglum: str, druid: str) -> Setting:
-    image = {row["druid"]: row for row in json.loads((HERE / "pitch.json").read_text())}[druid]
-    step = {row["druid"]: row for row in json.loads((HERE / "step.json").read_text())}[druid]
+    image = {row["druid"]: row for row in json.loads((PERFORATOR / "pitch.json").read_text())}[druid]
+    step = {row["druid"]: row for row in json.loads((PERFORATOR / "step.json").read_text())}[druid]
     return Setting(
         siglum=siglum,
         chain_pitch=ChainPitch(value=image["pitch"], n=image["n"], method="pitch.py, on the IIIF images",
