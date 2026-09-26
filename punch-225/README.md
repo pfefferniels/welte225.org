@@ -13,15 +13,14 @@ over Stanford's red rolls, is kept in condon-dates (see below).
 
 The short of it: both of Hagmann's figures are real, and his dating of
 them is not. The two punches were not successive states of one machine.
-They belong to two perforators that ran side by side from August 1911 to
-April 1922 at least, on the copies dated so far, so the
-size of a perforation says which machine cut a copy and not when. What
-remains is a tendency rather than a bound: before 1911 almost every dated
-copy carries the wide punch, after 1920 almost every one carries the
-narrow. The roll also shows a change in the advance of the perforator,
+They belong to two perforators. On the copies dated so far the narrow one
+first appears in February 1914, and the wide one ran beside it until 1917
+at least and once more in April 1922, so a narrow perforation puts a copy
+after the turn of 1913 to 1914, while a wide one only makes it likely
+earlier. The roll also shows a change in the advance of the perforator,
 between January 1909 and December 1913, which the literature does not
 describe and which does what the punch cannot: the advance halved once,
-between December 1909 and February 1910, and on all 204 copies dated at high or
+between December 1909 and February 1910, and on all 203 copies dated at high or
 medium confidence where it resolves it falls on the right side of that date.
 
 ## What Hagmann says
@@ -124,9 +123,10 @@ something these measurements can settle.
 ## The corpus
 
 One roll could not say whether the punch dates a roll, and the question went to the red
-Welte rolls of Stanford's SUPRA archive. What it found there: two perforators ran side by
-side for more than ten years, so the punch and the pitch say which machine cut a copy and
-not when; and the advance halved once, between December 1909 and February 1910. That
+Welte rolls of Stanford's SUPRA archive. What it found there: two perforators, the narrow one first
+appearing in February 1914 and the wide one running beside it until 1917 at least, so the
+punch and the pitch bound a copy from below when they are narrow and say little when they
+are wide; and the advance halved once, between December 1909 and February 1910. That
 study, with its scripts, its sweeps over every roll and the search for the punch dates
 written on them, has been kept in condon-dates since 26 September 2026, in
 `perforator/README.md` and `dates/README.md`, beside the readings of the dates and the

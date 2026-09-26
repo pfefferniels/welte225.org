@@ -37763,12 +37763,23 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung bestätigt das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 4. März 1907 bis 4. November 1909 belegt, danach nur noch einmal, im Dezember 1919 (Welte 569). Zwischen 4. November 1909 und 21. Mai 1910 wurde der Vorschub halbiert (condon-dates/dates/README.md).",
+                                    "note": "Einstellung und Papier bestätigen das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 20. November 1908 bis 16. Dezember 1909 belegt, und spätestens am 1. Februar 1910 war der Vorschub halbiert (welte-premises, advance-1mm). Liniertes Papier, wie St1 es hat, ist an den datierten Stanford-Kopien bis zum 1. Februar 1910 belegt und danach nicht mehr (welte-premises, paper-ruled). Beide Prämissen begrenzen das Datum nur nach oben, und der 18. Januar 1909 liegt davor. St1 ist selbst unter den Kopien, auf deren Messung die Prämissen beruhen, trägt aber keine ihrer Grenzen.",
                                     "premises": [
+                                        "335c0289-1b35-489f-812c-2818e7aab932",
                                         "560debaf-2be3-4832-a747-591a99a66e8b",
-                                        "89030f39-99c9-4bcf-ac16-e75b06ddb0df"
+                                        "89030f39-99c9-4bcf-ac16-e75b06ddb0df",
+                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief",
+                                        "https://w3id.org/welte-premises/premises#paper-ruled-belief"
                                     ],
                                     "@type": "inference"
+                                },
+                                {
+                                    "adopted": [
+                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief",
+                                        "https://w3id.org/welte-premises/premises#paper-ruled-belief"
+                                    ],
+                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
+                                    "@type": "beliefAdoption"
                                 }
                             ],
                             "@type": "belief",
@@ -49422,12 +49433,11 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 477 pitches of held notes, measured on the IIIF images by condon-dates/perforator/pitch.py; slot and bridge are medians of their own.",
-                                            "premises": [],
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -49447,11 +49457,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10910 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.343 mm at 0.1843, 0.512 mm at 0.4664. The chain pitch is 2.922 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -49469,8 +49478,27 @@
                     "sameAs": []
                 },
                 "paper": {
-                    "name": "red-lined",
-                    "sameAs": []
+                    "@id": "https://w3id.org/welte-premises/papers#ruled",
+                    "name": "ruled paper",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "Gemessen an der Aufnahme mit condon-dates paper/colour.py und paper/ruling.py. Liniert: Das Profil des Papiers quer zur Rolle hat eine periodische Komponente im Spurabstand, 37,8 Pixel gegen 37,76, mit der Stärke 43,5 und in 12 von 12 Fenstern; die Linien liegen auf den Spurmitten. Unlinierte Kopien kommen auf höchstens 1,7, linierte auf mindestens 36. Rot: Der Papiergrund liest in 16 Fenstern im Median L* 30,2, a* 22,4, b* 20,1 (CIELAB, D65), korrigiert gegen die Graukarte am Anfang derselben Aufnahme; das ist warmes Rot, wie es alle linierten Kopien haben (condon-dates paper/README.md).",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/ruling.py"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "335c0289-1b35-489f-812c-2818e7aab932"
+                        },
+                        "@id": "2455e75d-a824-4ca7-aeb5-c041bbf18052"
+                    }
                 },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
@@ -49480,6 +49508,9 @@
                 "name": "Stanford",
                 "sameAs": []
             },
+            "sameAs": [
+                "https://purl.stanford.edu/mf320jq4997"
+            ],
             "readFrom": {
                 "kind": "analysis",
                 "actor": {
@@ -49871,12 +49902,20 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, die zwischen 4. November 1909 und 21. Mai 1910 lag. An den datierten Stanford-Kopien ist diese Einstellung vom 21. Mai 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin. Über die Gewissheit der Lesung selbst entscheidet das nicht (condon-dates/dates/README.md).",
+                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, und am 16. Dezember 1909 wurde noch mit dem alten gestanzt (welte-premises, advance-half-mm). An den datierten Stanford-Kopien ist diese Einstellung vom 1. Februar 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin (condon-dates/dates/README.md). Über die Gewissheit der Lesung selbst entscheidet das nicht.",
                                     "premises": [
                                         "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
-                                        "6eed2137-38a8-4048-80dc-bb2f519e923e"
+                                        "6eed2137-38a8-4048-80dc-bb2f519e923e",
+                                        "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
                                     ],
                                     "@type": "inference"
+                                },
+                                {
+                                    "adopted": [
+                                        "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
+                                    ],
+                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
+                                    "@type": "beliefAdoption"
                                 }
                             ],
                             "@type": "belief",
@@ -63279,12 +63318,11 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 373 pitches of held notes, measured on the IIIF images by condon-dates/perforator/pitch.py; slot and bridge are medians of their own.",
-                                            "premises": [],
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -63304,11 +63342,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10441 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.414 mm at 0.0524, 0.727 mm at 0.0382. The chain pitch is 5.962 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -63321,6 +63358,29 @@
                     "@type": "Perforator",
                     "@id": "perforator_88460599-2e0d-4759-851c-903a5a521997"
                 },
+                "paper": {
+                    "@id": "https://w3id.org/welte-premises/papers#red-warm",
+                    "name": "warm red paper",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "Gemessen an der Aufnahme mit condon-dates paper/colour.py und paper/ruling.py. Rot: Der Papiergrund liest in 16 Fenstern im Median L* 21,0, a* 26,0, b* 22,5 (CIELAB, D65), korrigiert gegen die Graukarte am Anfang derselben Aufnahme; das ist warmes Rot (a* mindestens 10, b* mindestens 15). Unliniert: Im Spurabstand hat das Profil die Stärke 1,1, in keinem von 12 Fenstern eine Linie (condon-dates paper/README.md).",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/ruling.py"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "e4f3c5ad-7960-4221-ad6f-167abba9e47a"
+                        },
+                        "@id": "0eb497a0-0a99-4aa4-96a9-cfc347920d39"
+                    }
+                },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
                 }
@@ -63329,6 +63389,9 @@
                 "name": "Stanford",
                 "sameAs": []
             },
+            "sameAs": [
+                "https://purl.stanford.edu/wv912mm2332"
+            ],
             "readFrom": {
                 "kind": "analysis",
                 "actor": {
@@ -63483,12 +63546,20 @@
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor die Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910, also mindestens fünf Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 nach Welte 569 (Dezember 1919) die zweite bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde (condon-dates/dates/README.md).",
+                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor den 1. Februar 1910, an dem der Vorschub spätestens halbiert war (welte-premises, advance-1mm), also fast neun Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 die einzige bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde.",
                                     "premises": [
                                         "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
-                                        "435efaf8-6294-4d55-b29d-f4351f83b127"
+                                        "435efaf8-6294-4d55-b29d-f4351f83b127",
+                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                     ],
                                     "@type": "inference"
+                                },
+                                {
+                                    "adopted": [
+                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief"
+                                    ],
+                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
+                                    "@type": "beliefAdoption"
                                 }
                             ],
                             "@type": "belief",
@@ -72928,11 +72999,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 427 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.155 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The spread is ten times that of the other copies, so the scan's transport enters the value.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WR0225_02"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -72952,18 +73022,25 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10448 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.425 mm at 0.1147, 0.528 mm at 0.1303, 0.692 mm at 0.168. The chain pitch is 2.978 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WR0225_02"
+                                            ],
+                                            "@type": "measurement"
+                                        },
+                                        {
+                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Spätestens am 1. Februar 1910 war der Vorschub halbiert (welte-premises, advance-1mm), und ein Vorschub von 1,00 mm ist an keiner später datierten Stanford-Kopie belegt.",
+                                            "premises": [
+                                                "b8dffe69-90ad-4d55-9196-2453ebcfc0d0",
+                                                "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                             ],
                                             "@type": "inference"
                                         },
                                         {
-                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Nach der Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910 ist ein Vorschub von 1,00 mm an den datierten Stanford-Kopien nur noch einmal belegt, an Welte 569 vom Dezember 1919 (condon-dates/dates/README.md).",
-                                            "premises": [
-                                                "b8dffe69-90ad-4d55-9196-2453ebcfc0d0"
+                                            "adopted": [
+                                                "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                             ],
-                                            "@type": "inference"
+                                            "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
+                                            "@type": "beliefAdoption"
                                         }
                                     ],
                                     "@type": "belief",
@@ -85520,11 +85597,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 432 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.0169 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The scan was resampled from 180 lines per inch along the roll (cis2roll.py), so the millimetres rest on the scanner's header.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteLicensee_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -85544,11 +85620,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 9984 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.317 mm at 0.0706, 0.446 mm at 0.0349, 0.987 mm at 0.0594. The chain pitch is 3.885 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteLicensee_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -100057,11 +100132,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 527 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.0185 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteT98_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -100081,11 +100155,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 15681 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.313 mm at 0.0457, 0.343 mm at 0.0439, 0.75 mm at 0.1318. The chain pitch is 5.011 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteT98_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
