@@ -21,7 +21,7 @@ copy carries the wide punch, after 1920 almost every one carries the
 narrow. The roll also shows a change in the advance of the perforator,
 between January 1909 and December 1913, which the literature does not
 describe and which does what the punch cannot: the advance halved once,
-between December 1909 and May 1910, and on all 204 copies dated at high or
+between December 1909 and February 1910, and on all 204 copies dated at high or
 medium confidence where it resolves it falls on the right side of that date.
 
 ## What Hagmann says
@@ -215,9 +215,9 @@ old-pitch copies fall after January 1914: W1254 (6 Mar 1914), W589
 (4 Jun 1917), W2609 (19 Sep 1917). A fourth, W1534 `vj052cw2158`, stood
 here as 1 Feb 1916 until the editor read its year on the scan as 10
 (condon-dates, 26 September 2026). Its paper had put the 16 in doubt: it is
-ruled, as no other copy dated after January 1910 is, and it advances
-0.5 mm, as no copy dated before December 1909 does. The table above counts
-it in 1910.
+ruled, as no other copy dated after January 1910 is. Its advance of 0.5 mm,
+found on no copy dated before December 1909, fits 1910 as well. The table
+above counts it in 1910.
 
 **The same title on both machines.** Twelve titles are held at Stanford
 in both states, and eight now have both copies dated. Pitch in
@@ -306,12 +306,15 @@ rather than by machine. Read from the analyses alone
 | advance | dated copies | range |
 |---|---|---|
 | 1.00–1.03 mm | 13 | 20 Nov 1908 to 16 Dec 1909 |
-| 0.45–0.55 mm | 223 | 21 May 1910 to 19 Jun 1928 |
+| 0.45–0.55 mm | 223 | 1 Feb 1910 to 19 Jun 1928 |
 
 Eleven of the thirteen fall on or before 31 March 1909, and the two that
 do not are rolls of 4 November and 16 December 1909, the second of which
-bounds the change. The halving is bracketed to about five months, between
-16 December 1909 and 21 May 1910. Roll 225's
+bounds the change. The halving is bracketed to seven weeks, between
+16 December 1909 and 1 February 1910. It stood at about five months, to
+21 May 1910, until the copy that now bounds it from above, W1534
+`vj052cw2158`, was read again on the scan: the reader had given its year
+as 16, the editor reads 10 (26 September 2026). Roll 225's
 own copies sit either side of it: the copy of 18 January 1909 advances
 1.027 mm, the copy of 14 January 1914 advances 0.500 mm. This closes
 what this file previously gave as "between January 1909 and December
@@ -383,7 +386,7 @@ fits both is that the smear is what an unresolved old-advance roll looks
 like, and that Fritz, Gündner and Schlegel worked on rolls with enough
 variety of slot length to show it. That is a reading, not a result.
 
-The window stays at 16 December 1909 to 21 May 1910, on the rolls that do
+The window stays at 16 December 1909 to 1 February 1910, on the rolls that do
 resolve, with that narrower base understood.
 
 **The hands are no check at all, and the reason is worth keeping.** A
@@ -423,10 +426,13 @@ sound:
 
 Eleven of the thirteen fall inside four months of 1908–09. The lower
 bound of the window rests on Schlegel's roll of 16 December 1909 alone,
-whose year is discussed below, and the upper bound on `tj337qh7786` of
-21 May 1910 alone. Two single rolls, one at each end. That is what "the
-advance halved between December 1909 and May 1910" currently rests on,
-and it should be quoted that way or not at all.
+whose year is discussed below, and the upper bound on W1534 `vj052cw2158`
+of 1 February 1910 alone; before its year was read again it rested on
+`tj337qh7786` of 21 May 1910. Two single rolls, one at each end, and both
+dated by a second reading of the scan that the measurements prompted: each
+was first read years too late, 1919 for 1909 and 1916 for 1910. That
+is what "the advance halved between December 1909 and February 1910"
+currently rests on, and it should be quoted that way or not at all.
 
 **The two settings are nested, not paired.** Where the advance
 resolves, the old advance of 1.0 mm appears only on wide-pitch rolls,

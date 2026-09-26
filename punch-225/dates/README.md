@@ -9,8 +9,8 @@ the literature offers for dating a roll from its perforations.
 The short of it: the punch does not date a roll. Two perforators with
 different punches were in service side by side for at least a decade, so the
 size of a perforation says which machine cut a copy, not when. The advance
-does date one, and closely: it halved once, between December 1909 and May
-1910, and none of the 204 copies dated at high or medium confidence whose
+does date one, and closely: it halved once, between December 1909 and
+February 1910, and none of the 204 copies dated at high or medium confidence whose
 advance resolves falls on the wrong side of that.
 
 ## What was searched, and what was found
@@ -66,7 +66,7 @@ resolved:
 | | copies | span |
 |---|---|---|
 | advance 1.00 to 1.03 mm | 11 | 20 November 1908 to 16 December 1909 |
-| advance 0.49 to 0.52 mm | 193 | 21 May 1910 to 19 June 1928 |
+| advance 0.49 to 0.52 mm | 193 | 1 February 1910 to 19 June 1928 |
 
 The latest copy with the old advance is `rb625rv7300`, Welte 569, which
 advances 1.001 mm at R = 0.80 and has the old pitch, 3.026 mm. Its
@@ -75,12 +75,20 @@ it the one exception, old on every measure ten years after the change. The
 editor read the year on the scan as 09, which puts the roll in December
 1909 and leaves no copy on the wrong side.
 
+The earliest copy with the new advance is `vj052cw2158`, Welte 1534, which
+advances 0.499 mm at R = 0.56. It was first read as `1. 2. 16`; the editor
+read the year on the scan as 10 (26 September 2026), after its ruled paper,
+otherwise found only on copies up to January 1910, had put the 16 in doubt.
+Until then the earliest was `tj337qh7786` of 21 May 1910.
+Both ends of the window thus rest on a second reading that the measurements
+prompted.
+
 `jw822wm2644` of April 1922 has the wide pitch, but its advance is noise and
 says nothing about the change.
 
 Roll 225's own two copies sit either side of the change, January 1909 at
 1.027 mm and January 1914 at 0.503 mm, which is how `../README.md` came to
-bracket it between those dates. The corpus closes that to about five months.
+bracket it between those dates. The corpus closes that to seven weeks.
 
 **A third state, in the pitch, that does have a boundary.** Fifteen dated
 copies have a pitch between 2.78 and 2.92 mm, and every one of them falls
@@ -109,12 +117,12 @@ step and how many steps pass between firings:
 | punch | step | fires every | pitch | rolls | dated |
 |---|---|---|---|---|---|
 | wide | 1.00 mm | 3rd | 3.00 mm | 17 | Nov 1908 – Dec 1909 |
-| wide | 0.50 mm | 6th | 3.00 mm | 39 | May 1910 – Sep 1917 |
+| wide | 0.50 mm | 6th | 3.00 mm | 39 | Feb 1910 – Sep 1917 |
 | narrow | 0.50 mm | 5th | 2.50 mm | 159 | 1911 – 1928 |
 | narrow | 0.52 mm | 5th | 2.60 mm | 75 | 1911 – 1928 |
 
 The first two rows are one change seen from both sides. Between December
-1909 and May 1910 the wide machine's step halved and it fired twice as often,
+1909 and February 1910 the wide machine's step halved and it fired twice as often,
 so its pitch stayed at 3.0 mm. That is why the advance moves there while the
 pitch does not, which roll 225's two copies had shown without explaining.
 
