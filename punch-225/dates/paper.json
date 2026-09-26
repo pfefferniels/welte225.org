@@ -1,0 +1,4923 @@
+[
+ {
+  "druid": "fj448by1666",
+  "welte": "1474",
+  "punched": "1904-08-08",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 38.64,
+  "ground": [
+   117,
+   57,
+   40
+  ],
+  "lines": [
+   116,
+   56,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rv790qz2532",
+  "welte": "226",
+  "punched": "1904-12-20",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 38.96,
+  "ground": [
+   92,
+   45,
+   33
+  ],
+  "lines": [
+   92,
+   45,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cp145vd3423",
+  "welte": "1382",
+  "punched": "1907-01-20",
+  "where": "tail",
+  "strength": 8667.0,
+  "period": 37.86,
+  "ground": [
+   121,
+   58,
+   41
+  ],
+  "lines": [
+   87,
+   44,
+   32
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "rp146dk0477",
+  "welte": "1352",
+  "punched": "1907-03-04",
+  "where": "tail",
+  "strength": 9143.6,
+  "period": 37.78,
+  "ground": [
+   126,
+   62,
+   44
+  ],
+  "lines": [
+   95,
+   49,
+   35
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "mf940cg4339",
+  "welte": "1468",
+  "punched": "1907-04-23",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 39.0,
+  "ground": [
+   127,
+   66,
+   48
+  ],
+  "lines": [
+   126,
+   65,
+   47
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sr504pc8797",
+  "welte": "376",
+  "punched": "1907-10-05",
+  "where": "tail",
+  "strength": 2.3,
+  "period": 37.09,
+  "ground": [
+   128,
+   63,
+   44
+  ],
+  "lines": [
+   127,
+   62,
+   43
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dp563zh2166",
+  "welte": "492",
+  "punched": "1907-12-27",
+  "where": "tail",
+  "strength": 3.0,
+  "period": 38.31,
+  "ground": [
+   136,
+   71,
+   51
+  ],
+  "lines": [
+   135,
+   70,
+   49
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yr287jf4422",
+  "welte": "144",
+  "punched": "1908-04-01",
+  "where": "tail",
+  "strength": 6918.1,
+  "period": 37.48,
+  "ground": [
+   84,
+   40,
+   30
+  ],
+  "lines": [
+   63,
+   30,
+   23
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "yg150mb0559",
+  "welte": "207",
+  "punched": "1908-04-01",
+  "where": "tail",
+  "strength": 0.8,
+  "period": 39.1,
+  "ground": [
+   88,
+   41,
+   30
+  ],
+  "lines": [
+   90,
+   42,
+   30
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wb381qd3151",
+  "welte": "330",
+  "punched": "1908-04-04",
+  "where": "tail",
+  "strength": 1.9,
+  "period": 37.4,
+  "ground": [
+   124,
+   58,
+   41
+  ],
+  "lines": [
+   123,
+   57,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mv259zt7103",
+  "welte": "325",
+  "punched": "1908-10-29",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 37.52,
+  "ground": [
+   128,
+   62,
+   42
+  ],
+  "lines": [
+   127,
+   61,
+   41
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vm096df0179",
+  "welte": "363",
+  "punched": "1908-11-07",
+  "where": "tail",
+  "strength": 6.1,
+  "period": 38.68,
+  "ground": [
+   120,
+   53,
+   37
+  ],
+  "lines": [
+   119,
+   53,
+   36
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qq244fh1388",
+  "welte": "669",
+  "punched": "1908-11-16",
+  "where": "tail",
+  "strength": 7002.0,
+  "period": 37.86,
+  "ground": [
+   126,
+   57,
+   40
+  ],
+  "lines": [
+   95,
+   45,
+   32
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "mh255vw4599",
+  "welte": "1276",
+  "punched": "1908-11-20",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 39.15,
+  "ground": [
+   118,
+   57,
+   38
+  ],
+  "lines": [
+   117,
+   56,
+   36
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ww627mg3287",
+  "welte": "1035",
+  "punched": "1908-11-26",
+  "where": "tail",
+  "strength": 4.1,
+  "period": 38.16,
+  "ground": [
+   136,
+   62,
+   42
+  ],
+  "lines": [
+   135,
+   62,
+   41
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "td134mh2760",
+  "welte": "660",
+  "punched": "1908-12-07",
+  "where": "tail",
+  "strength": 1.5,
+  "period": 37.48,
+  "ground": [
+   114,
+   54,
+   37
+  ],
+  "lines": [
+   113,
+   54,
+   35
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gq898yv9510",
+  "welte": "665",
+  "punched": "1908-12-07",
+  "where": "tail",
+  "strength": 3.4,
+  "period": 37.17,
+  "ground": [
+   117,
+   52,
+   34
+  ],
+  "lines": [
+   116,
+   52,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ch197br4742",
+  "welte": "881",
+  "punched": "1908-12-21",
+  "where": "tail",
+  "strength": 5199.7,
+  "period": 37.58,
+  "ground": [
+   126,
+   59,
+   41
+  ],
+  "lines": [
+   89,
+   44,
+   31
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "ps108fn1431",
+  "welte": "1288",
+  "punched": "1909-01-07",
+  "where": "tail",
+  "strength": 3631.6,
+  "period": 37.96,
+  "ground": [
+   113,
+   56,
+   38
+  ],
+  "lines": [
+   87,
+   45,
+   31
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "mf320jq4997",
+  "welte": "225",
+  "punched": "1909-01-18",
+  "where": "tail",
+  "strength": 5152.4,
+  "period": 37.64,
+  "ground": [
+   88,
+   43,
+   32
+  ],
+  "lines": [
+   69,
+   34,
+   26
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "sq235zh0909",
+  "welte": "612",
+  "punched": "1909-01-19",
+  "where": "tail",
+  "strength": 5130.3,
+  "period": 37.9,
+  "ground": [
+   124,
+   64,
+   47
+  ],
+  "lines": [
+   92,
+   50,
+   37
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "dw005gw3358",
+  "welte": "1450",
+  "punched": "1909-01-19",
+  "where": "middle",
+  "strength": 7337.8,
+  "period": 37.86,
+  "ground": [
+   138,
+   69,
+   52
+  ],
+  "lines": [
+   101,
+   54,
+   41
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "yn137rt9938",
+  "welte": "1305",
+  "punched": "1909-02-09",
+  "where": "tail",
+  "strength": 4931.4,
+  "period": 37.84,
+  "ground": [
+   125,
+   61,
+   44
+  ],
+  "lines": [
+   93,
+   48,
+   34
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "jn782fq7439",
+  "welte": "134",
+  "punched": "1909-02-18",
+  "where": "tail",
+  "strength": 8383.6,
+  "period": 37.58,
+  "ground": [
+   84,
+   41,
+   31
+  ],
+  "lines": [
+   58,
+   28,
+   22
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "qq914np5449",
+  "welte": "324",
+  "punched": "1909-03-05",
+  "where": "tail",
+  "strength": 6.1,
+  "period": 37.15,
+  "ground": [
+   121,
+   63,
+   45
+  ],
+  "lines": [
+   120,
+   62,
+   43
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dc021nq1464",
+  "welte": "1263",
+  "punched": "1909-03-06",
+  "where": "tail",
+  "strength": 3691.6,
+  "period": 37.64,
+  "ground": [
+   124,
+   64,
+   46
+  ],
+  "lines": [
+   86,
+   47,
+   34
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "dj406yq6980",
+  "welte": "663",
+  "punched": "1909-03-16",
+  "where": "tail",
+  "strength": 3.3,
+  "period": 36.73,
+  "ground": [
+   118,
+   57,
+   40
+  ],
+  "lines": [
+   118,
+   56,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vm351pv9656",
+  "welte": "253",
+  "punched": "1909-03-25",
+  "where": "tail",
+  "strength": 6116.1,
+  "period": 37.58,
+  "ground": [
+   109,
+   54,
+   37
+  ],
+  "lines": [
+   86,
+   44,
+   31
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "hm523dq5554",
+  "welte": "876",
+  "punched": "1909-03-26",
+  "where": "tail",
+  "strength": 3.4,
+  "period": 39.08,
+  "ground": [
+   110,
+   49,
+   36
+  ],
+  "lines": [
+   110,
+   48,
+   35
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kg488qt3887",
+  "welte": "1447",
+  "punched": "1909-05-06",
+  "where": "tail",
+  "strength": 6.9,
+  "period": 37.9,
+  "ground": [
+   122,
+   61,
+   43
+  ],
+  "lines": [
+   122,
+   60,
+   42
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wj488tq5861",
+  "welte": "1338",
+  "punched": "1909-06-22",
+  "where": "tail",
+  "strength": 3.1,
+  "period": 37.96,
+  "ground": [
+   114,
+   57,
+   40
+  ],
+  "lines": [
+   113,
+   56,
+   38
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fv104hn7521",
+  "welte": "304",
+  "punched": "1909-10-08",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 38.06,
+  "ground": [
+   108,
+   44,
+   30
+  ],
+  "lines": [
+   107,
+   44,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mz508vq7890",
+  "welte": "232",
+  "punched": "1909-10-12",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 38.31,
+  "ground": [
+   84,
+   40,
+   29
+  ],
+  "lines": [
+   85,
+   40,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pj688nx2384",
+  "welte": "1464",
+  "punched": "1909-11-04",
+  "where": "tail",
+  "strength": 4339.8,
+  "period": 37.82,
+  "ground": [
+   119,
+   48,
+   32
+  ],
+  "lines": [
+   97,
+   41,
+   27
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "ps751km7125",
+  "welte": "814",
+  "punched": "1909-12-13",
+  "where": "tail",
+  "strength": 5404.1,
+  "period": 37.82,
+  "ground": [
+   130,
+   58,
+   40
+  ],
+  "lines": [
+   95,
+   45,
+   31
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "rb625rv7300",
+  "welte": "569",
+  "punched": "1909-12-16",
+  "where": "tail",
+  "strength": 2877.6,
+  "period": 37.84,
+  "ground": [
+   112,
+   48,
+   32
+  ],
+  "lines": [
+   94,
+   42,
+   27
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "nk632jz1564",
+  "welte": "501",
+  "punched": "1910-01-04",
+  "where": "tail",
+  "strength": 4456.3,
+  "period": 37.84,
+  "ground": [
+   109,
+   47,
+   32
+  ],
+  "lines": [
+   86,
+   40,
+   27
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "ys288dd6430",
+  "welte": "118",
+  "punched": "1910-04-14",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 38.85,
+  "ground": [
+   110,
+   48,
+   33
+  ],
+  "lines": [
+   109,
+   48,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bp952tr1116",
+  "welte": "399",
+  "punched": "1910-04-19",
+  "where": "tail",
+  "strength": 1.4,
+  "period": 38.22,
+  "ground": [
+   111,
+   49,
+   34
+  ],
+  "lines": [
+   111,
+   49,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tj337qh7786",
+  "welte": "1211",
+  "punched": "1910-05-21",
+  "where": "tail",
+  "strength": 5.2,
+  "period": 37.03,
+  "ground": [
+   116,
+   51,
+   36
+  ],
+  "lines": [
+   116,
+   50,
+   34
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zw485gh6070",
+  "welte": "1184",
+  "punched": "1910-08-03",
+  "where": "tail",
+  "strength": 4.7,
+  "period": 37.15,
+  "ground": [
+   116,
+   50,
+   35
+  ],
+  "lines": [
+   115,
+   49,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bj606rp8160",
+  "welte": "367",
+  "punched": "1910-09-14",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 38.7,
+  "ground": [
+   118,
+   50,
+   36
+  ],
+  "lines": [
+   117,
+   50,
+   34
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hh466mq4616",
+  "welte": "296",
+  "punched": "1910-11-03",
+  "where": "tail",
+  "strength": 15.4,
+  "period": 37.64,
+  "ground": [
+   106,
+   44,
+   30
+  ],
+  "lines": [
+   105,
+   43,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xx912rs1788",
+  "welte": "1346",
+  "punched": "1910-11-12",
+  "where": "tail",
+  "strength": 7.1,
+  "period": 38.94,
+  "ground": [
+   110,
+   44,
+   30
+  ],
+  "lines": [
+   110,
+   43,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qj203cn5343",
+  "welte": "1959",
+  "punched": "1910-11-24",
+  "where": "tail",
+  "strength": 3.5,
+  "period": 37.38,
+  "ground": [
+   128,
+   53,
+   39
+  ],
+  "lines": [
+   127,
+   53,
+   38
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jt308hp0877",
+  "welte": "2198",
+  "punched": "1910-12-02",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 37.54,
+  "ground": [
+   111,
+   45,
+   31
+  ],
+  "lines": [
+   110,
+   44,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rt308hy9235",
+  "welte": "646",
+  "punched": "1910-12-08",
+  "where": "tail",
+  "strength": 8.2,
+  "period": 38.54,
+  "ground": [
+   135,
+   59,
+   43
+  ],
+  "lines": [
+   134,
+   58,
+   41
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gx118hr0306",
+  "welte": "1957",
+  "punched": "1911-01-10",
+  "where": "tail",
+  "strength": 6.3,
+  "period": 38.7,
+  "ground": [
+   96,
+   40,
+   29
+  ],
+  "lines": [
+   95,
+   39,
+   27
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sj250cc6451",
+  "welte": "277",
+  "punched": "1911-01-12",
+  "where": "tail",
+  "strength": 4.1,
+  "period": 37.62,
+  "ground": [
+   76,
+   28,
+   21
+  ],
+  "lines": [
+   76,
+   28,
+   20
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dq276yn8963",
+  "welte": "1945",
+  "punched": "1911-02-01",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 39.17,
+  "ground": [
+   109,
+   44,
+   31
+  ],
+  "lines": [
+   108,
+   44,
+   30
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nf274ng7905",
+  "welte": "209",
+  "punched": "1911-04-01",
+  "where": "middle",
+  "strength": 3.1,
+  "period": 37.88,
+  "ground": [
+   82,
+   33,
+   25
+  ],
+  "lines": [
+   83,
+   33,
+   24
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wp442mf3514",
+  "welte": "1216",
+  "punched": "1911-04-25",
+  "where": "tail",
+  "strength": 6.6,
+  "period": 36.33,
+  "ground": [
+   109,
+   43,
+   29
+  ],
+  "lines": [
+   109,
+   43,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xc665jf8254",
+  "welte": "719",
+  "punched": "1911-04-27",
+  "where": "tail",
+  "strength": 1.9,
+  "period": 36.8,
+  "ground": [
+   115,
+   46,
+   32
+  ],
+  "lines": [
+   114,
+   46,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gm170gy7498",
+  "welte": "239",
+  "punched": "1911-06-24",
+  "where": "tail",
+  "strength": 4.2,
+  "period": 38.51,
+  "ground": [
+   103,
+   42,
+   29
+  ],
+  "lines": [
+   102,
+   42,
+   27
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sc188ff2842",
+  "welte": "1260",
+  "punched": "1911-07-21",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 38.66,
+  "ground": [
+   112,
+   44,
+   31
+  ],
+  "lines": [
+   111,
+   44,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jh696my0069",
+  "welte": "1765",
+  "punched": "1911-08-23",
+  "where": "tail",
+  "strength": 1.3,
+  "period": 37.56,
+  "ground": [
+   117,
+   48,
+   35
+  ],
+  "lines": [
+   116,
+   47,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vf252dc4872",
+  "welte": "1697",
+  "punched": "1911-08-24",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 37.11,
+  "ground": [
+   124,
+   84,
+   79
+  ],
+  "lines": [
+   123,
+   83,
+   78
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vb685pd6967",
+  "welte": "192",
+  "punched": "1911-10-10",
+  "where": "tail",
+  "strength": 1.4,
+  "period": 39.21,
+  "ground": [
+   102,
+   43,
+   31
+  ],
+  "lines": [
+   101,
+   42,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wj177bx9196",
+  "welte": "931",
+  "punched": "1911-11-09",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 37.38,
+  "ground": [
+   144,
+   76,
+   55
+  ],
+  "lines": [
+   143,
+   75,
+   53
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dc661yr7679",
+  "welte": "1085",
+  "punched": "1911-11-11",
+  "where": "tail",
+  "strength": 1.3,
+  "period": 37.21,
+  "ground": [
+   109,
+   45,
+   30
+  ],
+  "lines": [
+   108,
+   44,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zx463rv8885",
+  "welte": "265",
+  "punched": "1911-11-24",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 38.31,
+  "ground": [
+   114,
+   46,
+   32
+  ],
+  "lines": [
+   113,
+   46,
+   30
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vw531zy4220",
+  "welte": "1663",
+  "punched": "1911-12-18",
+  "where": "tail",
+  "strength": 1.9,
+  "period": 37.88,
+  "ground": [
+   115,
+   44,
+   30
+  ],
+  "lines": [
+   114,
+   44,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gs573tj9547",
+  "welte": "1328",
+  "punched": "1912-01-29",
+  "where": "tail",
+  "strength": 1.8,
+  "period": 37.25,
+  "ground": [
+   99,
+   40,
+   26
+  ],
+  "lines": [
+   98,
+   40,
+   24
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "st755cm2486",
+  "welte": "390",
+  "punched": "1912-04-17",
+  "where": "tail",
+  "strength": 4.3,
+  "period": 39.04,
+  "ground": [
+   103,
+   42,
+   29
+  ],
+  "lines": [
+   102,
+   42,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fn111kx0654",
+  "welte": "1213",
+  "punched": "1912-04-18",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 38.72,
+  "ground": [
+   112,
+   47,
+   32
+  ],
+  "lines": [
+   112,
+   46,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dt352gh2011",
+  "welte": "2457",
+  "punched": "1912-05-20",
+  "where": "tail",
+  "strength": 0.9,
+  "period": 38.27,
+  "ground": [
+   108,
+   43,
+   29
+  ],
+  "lines": [
+   106,
+   43,
+   27
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xp003dy0437",
+  "welte": "882",
+  "punched": "1912-05-31",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 37.27,
+  "ground": [
+   101,
+   42,
+   29
+  ],
+  "lines": [
+   100,
+   41,
+   27
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ht339gy6128",
+  "welte": "2313",
+  "punched": "1912-06-15",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 38.24,
+  "ground": [
+   120,
+   49,
+   35
+  ],
+  "lines": [
+   120,
+   48,
+   34
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pr464zk8674",
+  "welte": "1567",
+  "punched": "1912-06-18",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 38.31,
+  "ground": [
+   101,
+   41,
+   28
+  ],
+  "lines": [
+   100,
+   41,
+   25
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sb487jm2092",
+  "welte": "1262",
+  "punched": "1912-06-20",
+  "where": "middle",
+  "strength": 5.6,
+  "period": 38.68,
+  "ground": [
+   98,
+   39,
+   26
+  ],
+  "lines": [
+   97,
+   39,
+   25
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pv279zy5193",
+  "welte": "1505",
+  "punched": "1912-06-28",
+  "where": "tail",
+  "strength": 1.6,
+  "period": 38.51,
+  "ground": [
+   107,
+   42,
+   29
+  ],
+  "lines": [
+   106,
+   42,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gz430tm0196",
+  "welte": "844",
+  "punched": "1912-08-22",
+  "where": "tail",
+  "strength": 5.6,
+  "period": 37.15,
+  "ground": [
+   114,
+   45,
+   31
+  ],
+  "lines": [
+   114,
+   44,
+   30
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jm300wy4714",
+  "welte": "2622",
+  "punched": "1912-08-22",
+  "where": "tail",
+  "strength": 3.4,
+  "period": 37.21,
+  "ground": [
+   109,
+   46,
+   32
+  ],
+  "lines": [
+   109,
+   46,
+   30
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kg263bn9176",
+  "welte": "373",
+  "punched": "1912-10-19",
+  "where": "tail",
+  "strength": 3.1,
+  "period": 38.66,
+  "ground": [
+   116,
+   47,
+   34
+  ],
+  "lines": [
+   115,
+   47,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bq744nq5945",
+  "welte": "1462",
+  "punched": "1913-02-18",
+  "where": "tail",
+  "strength": 5.0,
+  "period": 39.0,
+  "ground": [
+   111,
+   45,
+   33
+  ],
+  "lines": [
+   111,
+   45,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kx034vy1374",
+  "welte": "362",
+  "punched": "1913-03-01",
+  "where": "tail",
+  "strength": 12.0,
+  "period": 37.88,
+  "ground": [
+   99,
+   41,
+   29
+  ],
+  "lines": [
+   98,
+   40,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ky458kj7325",
+  "welte": "2882",
+  "punched": "1913-05-13",
+  "where": "tail",
+  "strength": 6.9,
+  "period": 38.45,
+  "ground": [
+   105,
+   41,
+   28
+  ],
+  "lines": [
+   104,
+   41,
+   26
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ts972sy8288",
+  "welte": "1196",
+  "punched": "1913-07-18",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 37.27,
+  "ground": [
+   107,
+   43,
+   30
+  ],
+  "lines": [
+   107,
+   43,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gg920pz0818",
+  "welte": "415",
+  "punched": "1913-08-05",
+  "where": "tail",
+  "strength": 4.9,
+  "period": 37.05,
+  "ground": [
+   111,
+   45,
+   29
+  ],
+  "lines": [
+   110,
+   44,
+   28
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ng103jj1150",
+  "welte": "570",
+  "punched": "1913-09-04",
+  "where": "tail",
+  "strength": 4.2,
+  "period": 37.54,
+  "ground": [
+   99,
+   40,
+   28
+  ],
+  "lines": [
+   99,
+   40,
+   25
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hg709nf1997",
+  "welte": "3019",
+  "punched": "1913-09-20",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 36.76,
+  "ground": [
+   131,
+   75,
+   73
+  ],
+  "lines": [
+   130,
+   74,
+   72
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cw427tw4145",
+  "welte": "2000",
+  "punched": "1913-09-30",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 38.31,
+  "ground": [
+   118,
+   49,
+   36
+  ],
+  "lines": [
+   117,
+   49,
+   35
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nq087cp3030",
+  "welte": "120",
+  "punched": "1913-10-24",
+  "where": "tail",
+  "strength": 5.7,
+  "period": 39.02,
+  "ground": [
+   125,
+   49,
+   32
+  ],
+  "lines": [
+   124,
+   48,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hg282mg9396",
+  "welte": "1033",
+  "punched": "1913-12-06",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 37.13,
+  "ground": [
+   105,
+   45,
+   32
+  ],
+  "lines": [
+   105,
+   44,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jg717nb8731",
+  "welte": "2703",
+  "punched": "1913-12-18",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 38.74,
+  "ground": [
+   95,
+   33,
+   20
+  ],
+  "lines": [
+   95,
+   33,
+   19
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jf942gh3232",
+  "welte": "258",
+  "punched": "1913-12-27",
+  "where": "tail",
+  "strength": 4.9,
+  "period": 38.28,
+  "ground": [
+   87,
+   32,
+   20
+  ],
+  "lines": [
+   87,
+   31,
+   18
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wv912mm2332",
+  "welte": "225",
+  "punched": "1914-01-14",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 37.15,
+  "ground": [
+   86,
+   31,
+   19
+  ],
+  "lines": [
+   86,
+   30,
+   16
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tt435dd2897",
+  "welte": "326",
+  "punched": "1914-01-26",
+  "where": "tail",
+  "strength": 1.4,
+  "period": 38.0,
+  "ground": [
+   108,
+   44,
+   30
+  ],
+  "lines": [
+   107,
+   43,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xm993qd2681",
+  "welte": "1247",
+  "punched": "1914-02-24",
+  "where": "tail",
+  "strength": 1.0,
+  "period": 38.08,
+  "ground": [
+   110,
+   46,
+   33
+  ],
+  "lines": [
+   110,
+   46,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qv334zb6243",
+  "welte": "1254",
+  "punched": "1914-03-06",
+  "where": "tail",
+  "strength": 7.5,
+  "period": 37.64,
+  "ground": [
+   112,
+   46,
+   32
+  ],
+  "lines": [
+   111,
+   46,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pz175wg5571",
+  "welte": "1447",
+  "punched": "1914-04-24",
+  "where": "tail",
+  "strength": 4.7,
+  "period": 37.5,
+  "ground": [
+   79,
+   27,
+   16
+  ],
+  "lines": [
+   79,
+   27,
+   14
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rt595wj4442",
+  "welte": "28",
+  "punched": "1914-04-27",
+  "where": "tail",
+  "strength": 1.2,
+  "period": 36.78,
+  "ground": [
+   79,
+   27,
+   16
+  ],
+  "lines": [
+   78,
+   26,
+   15
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yx139bt6626",
+  "welte": "292",
+  "punched": "1914-06-25",
+  "where": "tail",
+  "strength": 4.4,
+  "period": 37.39,
+  "ground": [
+   144,
+   61,
+   45
+  ],
+  "lines": [
+   143,
+   60,
+   43
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vz717bq6543",
+  "welte": "1480",
+  "punched": "1914-08-19",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 38.31,
+  "ground": [
+   114,
+   62,
+   61
+  ],
+  "lines": [
+   113,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zc614qh7060",
+  "welte": "545",
+  "punched": "1915-05-28",
+  "where": "tail",
+  "strength": 6.8,
+  "period": 37.5,
+  "ground": [
+   84,
+   28,
+   17
+  ],
+  "lines": [
+   83,
+   28,
+   16
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vj052cw2158",
+  "welte": "1534",
+  "punched": "1916-02-01",
+  "where": "tail",
+  "strength": 4313.1,
+  "period": 38.0,
+  "ground": [
+   123,
+   54,
+   38
+  ],
+  "lines": [
+   92,
+   43,
+   30
+  ],
+  "ruled": true
+ },
+ {
+  "druid": "vq976gr5492",
+  "welte": "767",
+  "punched": "1916-11-14",
+  "where": "tail",
+  "strength": 4.3,
+  "period": 38.18,
+  "ground": [
+   106,
+   36,
+   24
+  ],
+  "lines": [
+   105,
+   36,
+   22
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fb100cb2366",
+  "welte": "2948",
+  "punched": "1917-04-27",
+  "where": "tail",
+  "strength": 5.0,
+  "period": 36.56,
+  "ground": [
+   94,
+   33,
+   21
+  ],
+  "lines": [
+   93,
+   33,
+   20
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yw484ky7093",
+  "welte": "589",
+  "punched": "1917-06-04",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 38.8,
+  "ground": [
+   107,
+   43,
+   31
+  ],
+  "lines": [
+   107,
+   43,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pc364sy7115",
+  "welte": "2609",
+  "punched": "1917-09-19",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 36.78,
+  "ground": [
+   114,
+   47,
+   33
+  ],
+  "lines": [
+   114,
+   47,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dy191sv5188",
+  "welte": "2261",
+  "punched": "1918-01-08",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 39.04,
+  "ground": [
+   76,
+   70,
+   58
+  ],
+  "lines": [
+   76,
+   70,
+   56
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qp506dy4541",
+  "welte": "1398",
+  "punched": "1918-08-20",
+  "where": "tail",
+  "strength": 2.9,
+  "period": 37.13,
+  "ground": [
+   112,
+   45,
+   31
+  ],
+  "lines": [
+   111,
+   45,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xg670df7262",
+  "welte": "2466",
+  "punched": "1919-08-29",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 39.1,
+  "ground": [
+   111,
+   75,
+   68
+  ],
+  "lines": [
+   110,
+   74,
+   66
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ps656vb4839",
+  "welte": "2086",
+  "punched": "1919-09-05",
+  "where": "tail",
+  "strength": 6.0,
+  "period": 37.11,
+  "ground": [
+   111,
+   74,
+   69
+  ],
+  "lines": [
+   110,
+   74,
+   67
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sk925fn6049",
+  "welte": "2021",
+  "punched": "1919-10-11",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 37.23,
+  "ground": [
+   91,
+   37,
+   25
+  ],
+  "lines": [
+   90,
+   36,
+   23
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xh403hj3866",
+  "welte": "384",
+  "punched": "1919-11-18",
+  "where": "middle",
+  "strength": 2.9,
+  "period": 37.9,
+  "ground": [
+   136,
+   113,
+   84
+  ],
+  "lines": [
+   135,
+   112,
+   82
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pv151xx7555",
+  "welte": "1083",
+  "punched": "1919-12-17",
+  "where": "tail",
+  "strength": 4.8,
+  "period": 37.6,
+  "ground": [
+   120,
+   49,
+   34
+  ],
+  "lines": [
+   120,
+   49,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sn610pr8684",
+  "welte": "3184",
+  "punched": "1919-12-23",
+  "where": "tail",
+  "strength": 3.4,
+  "period": 37.19,
+  "ground": [
+   154,
+   129,
+   99
+  ],
+  "lines": [
+   153,
+   128,
+   97
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kj388dj3308",
+  "welte": "2079",
+  "punched": "1920-01-07",
+  "where": "tail",
+  "strength": 10.7,
+  "period": 38.37,
+  "ground": [
+   93,
+   38,
+   25
+  ],
+  "lines": [
+   92,
+   38,
+   23
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bg098gg3899",
+  "welte": "494",
+  "punched": "1920-01-23",
+  "where": "middle",
+  "strength": 1.1,
+  "period": 37.5,
+  "ground": [
+   147,
+   123,
+   93
+  ],
+  "lines": [
+   146,
+   122,
+   92
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bs533ns1949",
+  "welte": "3398",
+  "punched": "1920-02-05",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 36.45,
+  "ground": [
+   128,
+   70,
+   69
+  ],
+  "lines": [
+   127,
+   69,
+   67
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yr522jf5585",
+  "welte": "1478",
+  "punched": "1920-04-30",
+  "where": "tail",
+  "strength": 4.1,
+  "period": 36.43,
+  "ground": [
+   96,
+   37,
+   24
+  ],
+  "lines": [
+   95,
+   36,
+   23
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vs059bb4318",
+  "welte": "104",
+  "punched": "1920-07-10",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 38.22,
+  "ground": [
+   100,
+   41,
+   27
+  ],
+  "lines": [
+   99,
+   41,
+   25
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fk960pq3086",
+  "welte": "2995",
+  "punched": "1920-10-19",
+  "where": "tail",
+  "strength": 15.2,
+  "period": 39.19,
+  "ground": [
+   100,
+   39,
+   27
+  ],
+  "lines": [
+   99,
+   39,
+   26
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cw378sb0125",
+  "welte": "2538",
+  "punched": "1920-11-05",
+  "where": "tail",
+  "strength": 3.4,
+  "period": 37.96,
+  "ground": [
+   102,
+   39,
+   27
+  ],
+  "lines": [
+   101,
+   39,
+   26
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pb026mb0704",
+  "welte": "921",
+  "punched": "1920-12-13",
+  "where": "tail",
+  "strength": 3.0,
+  "period": 38.78,
+  "ground": [
+   132,
+   108,
+   80
+  ],
+  "lines": [
+   131,
+   107,
+   78
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sj617nc3041",
+  "welte": "2543",
+  "punched": "1921-04-01",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 37.96,
+  "ground": [
+   144,
+   121,
+   93
+  ],
+  "lines": [
+   142,
+   120,
+   90
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rf416pb7833",
+  "welte": "3452",
+  "punched": "1921-04-08",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 39.04,
+  "ground": [
+   120,
+   57,
+   41
+  ],
+  "lines": [
+   120,
+   56,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rc749wx0227",
+  "welte": "1471",
+  "punched": "1921-09-01",
+  "where": "tail",
+  "strength": 6.3,
+  "period": 38.68,
+  "ground": [
+   123,
+   58,
+   41
+  ],
+  "lines": [
+   122,
+   57,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tr243mz6407",
+  "welte": "2540",
+  "punched": "1921-10-04",
+  "where": "tail",
+  "strength": 3.5,
+  "period": 36.8,
+  "ground": [
+   125,
+   89,
+   82
+  ],
+  "lines": [
+   124,
+   88,
+   80
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nq190zp1066",
+  "welte": "1341",
+  "punched": "1921-12-21",
+  "where": "tail",
+  "strength": 1.0,
+  "period": 38.43,
+  "ground": [
+   113,
+   80,
+   73
+  ],
+  "lines": [
+   113,
+   79,
+   71
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ry948sf9078",
+  "welte": "1032",
+  "punched": "1922-02-07",
+  "where": "tail",
+  "strength": 2.5,
+  "period": 39.08,
+  "ground": [
+   122,
+   85,
+   79
+  ],
+  "lines": [
+   121,
+   85,
+   77
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xg924dm1245",
+  "welte": "3430",
+  "punched": "1922-02-13",
+  "where": "tail",
+  "strength": 1.6,
+  "period": 37.13,
+  "ground": [
+   128,
+   91,
+   84
+  ],
+  "lines": [
+   127,
+   90,
+   82
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jb107tz1859",
+  "welte": "1772",
+  "punched": "1922-02-23",
+  "where": "tail",
+  "strength": 6.9,
+  "period": 38.62,
+  "ground": [
+   112,
+   57,
+   56
+  ],
+  "lines": [
+   111,
+   57,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ds710xd1794",
+  "welte": "1773",
+  "punched": "1922-02-23",
+  "where": "tail",
+  "strength": 6.3,
+  "period": 37.58,
+  "ground": [
+   132,
+   93,
+   88
+  ],
+  "lines": [
+   131,
+   92,
+   86
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hy749gh2331",
+  "welte": "2086",
+  "punched": "1922-02-24",
+  "where": "tail",
+  "strength": 3.8,
+  "period": 36.92,
+  "ground": [
+   108,
+   58,
+   56
+  ],
+  "lines": [
+   108,
+   57,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wg598sj1504",
+  "welte": "2621",
+  "punched": "1922-04-04",
+  "where": "tail",
+  "strength": 3.8,
+  "period": 37.19,
+  "ground": [
+   122,
+   51,
+   35
+  ],
+  "lines": [
+   121,
+   51,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wk320bj4724",
+  "welte": "322",
+  "punched": "1922-04-10",
+  "where": "tail",
+  "strength": 11.0,
+  "period": 39.15,
+  "ground": [
+   130,
+   74,
+   75
+  ],
+  "lines": [
+   89,
+   54,
+   53
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jw822wm2644",
+  "welte": "1275",
+  "punched": "1922-04-25",
+  "where": "tail",
+  "strength": 5.6,
+  "period": 37.56,
+  "ground": [
+   101,
+   42,
+   28
+  ],
+  "lines": [
+   101,
+   41,
+   26
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ft746ns5736",
+  "welte": "1253",
+  "punched": "1922-04-26",
+  "where": "tail",
+  "strength": 1.7,
+  "period": 37.74,
+  "ground": [
+   114,
+   63,
+   61
+  ],
+  "lines": [
+   113,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gc795vb4435",
+  "welte": "1319",
+  "punched": "1922-04-26",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 37.21,
+  "ground": [
+   103,
+   41,
+   27
+  ],
+  "lines": [
+   103,
+   41,
+   25
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zc118hn1152",
+  "welte": "2995",
+  "punched": "1922-04-28",
+  "where": "tail",
+  "strength": 4.3,
+  "period": 38.6,
+  "ground": [
+   123,
+   67,
+   67
+  ],
+  "lines": [
+   122,
+   66,
+   66
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rp390kt0160",
+  "welte": "879",
+  "punched": "1922-05-14",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 38.74,
+  "ground": [
+   126,
+   51,
+   35
+  ],
+  "lines": [
+   125,
+   51,
+   33
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "py987gg6088",
+  "welte": "57",
+  "punched": "1922-05-16",
+  "where": "tail",
+  "strength": 3.5,
+  "period": 37.94,
+  "ground": [
+   83,
+   43,
+   45
+  ],
+  "lines": [
+   83,
+   43,
+   44
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hk155fw7898",
+  "welte": "1005",
+  "punched": "1922-05-19",
+  "where": "tail",
+  "strength": 0.8,
+  "period": 37.52,
+  "ground": [
+   93,
+   37,
+   24
+  ],
+  "lines": [
+   92,
+   36,
+   22
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hx789sg2918",
+  "welte": "3376",
+  "punched": "1922-05-26",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 37.25,
+  "ground": [
+   119,
+   50,
+   34
+  ],
+  "lines": [
+   118,
+   49,
+   32
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xw872bc8052",
+  "welte": "321",
+  "punched": "1922-06-02",
+  "where": "tail",
+  "strength": 2.5,
+  "period": 37.21,
+  "ground": [
+   80,
+   83,
+   68
+  ],
+  "lines": [
+   79,
+   82,
+   67
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nn203bm7432",
+  "welte": "1347",
+  "punched": "1922-06-04",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 38.37,
+  "ground": [
+   108,
+   59,
+   59
+  ],
+  "lines": [
+   108,
+   58,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kw738fg7467",
+  "welte": "2588",
+  "punched": "1922-06-08",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 38.68,
+  "ground": [
+   120,
+   68,
+   67
+  ],
+  "lines": [
+   119,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wn516xn5163",
+  "welte": "2430",
+  "punched": "1922-06-29",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 39.0,
+  "ground": [
+   118,
+   67,
+   66
+  ],
+  "lines": [
+   117,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xn585zh2707",
+  "welte": "2805",
+  "punched": "1922-07-06",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 38.98,
+  "ground": [
+   112,
+   62,
+   60
+  ],
+  "lines": [
+   111,
+   62,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gs556hk6631",
+  "welte": "366",
+  "punched": "1922-07-18",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 36.73,
+  "ground": [
+   123,
+   66,
+   66
+  ],
+  "lines": [
+   122,
+   66,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rb861vm6094",
+  "welte": "3056",
+  "punched": "1922-07-18",
+  "where": "tail",
+  "strength": 4.8,
+  "period": 38.66,
+  "ground": [
+   131,
+   107,
+   77
+  ],
+  "lines": [
+   130,
+   106,
+   76
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jn038xx9588",
+  "welte": "1348",
+  "punched": "1922-07-28",
+  "where": "tail",
+  "strength": 6.3,
+  "period": 39.08,
+  "ground": [
+   112,
+   63,
+   62
+  ],
+  "lines": [
+   110,
+   62,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vy941zv8672",
+  "welte": "470",
+  "punched": "1922-07-31",
+  "where": "tail",
+  "strength": 2.3,
+  "period": 38.24,
+  "ground": [
+   127,
+   69,
+   68
+  ],
+  "lines": [
+   126,
+   68,
+   66
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ps931qh5746",
+  "welte": "2591",
+  "punched": "1922-08-01",
+  "where": "tail",
+  "strength": 11.3,
+  "period": 39.17,
+  "ground": [
+   123,
+   68,
+   67
+  ],
+  "lines": [
+   122,
+   67,
+   66
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xj540rr2929",
+  "welte": "1208",
+  "punched": "1922-08-03",
+  "where": "tail",
+  "strength": 4.6,
+  "period": 38.56,
+  "ground": [
+   117,
+   66,
+   65
+  ],
+  "lines": [
+   116,
+   65,
+   63
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gm296rz0673",
+  "welte": "3055",
+  "punched": "1922-08-11",
+  "where": "tail",
+  "strength": 1.4,
+  "period": 38.64,
+  "ground": [
+   119,
+   65,
+   64
+  ],
+  "lines": [
+   119,
+   64,
+   63
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mx599qs6329",
+  "welte": "40",
+  "punched": "1922-08-12",
+  "where": "tail",
+  "strength": 4.7,
+  "period": 38.78,
+  "ground": [
+   113,
+   62,
+   62
+  ],
+  "lines": [
+   112,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zt739gs4926",
+  "welte": "321",
+  "punched": "1922-09-04",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 38.74,
+  "ground": [
+   130,
+   71,
+   70
+  ],
+  "lines": [
+   129,
+   70,
+   68
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nq628rc4181",
+  "welte": "83",
+  "punched": "1922-09-14",
+  "where": "tail",
+  "strength": 5.8,
+  "period": 39.01,
+  "ground": [
+   88,
+   49,
+   36
+  ],
+  "lines": [
+   87,
+   49,
+   35
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jf649gs2184",
+  "welte": "936",
+  "punched": "1922-09-14",
+  "where": "tail",
+  "strength": 2.5,
+  "period": 37.44,
+  "ground": [
+   115,
+   63,
+   61
+  ],
+  "lines": [
+   114,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qc650tp0469",
+  "welte": "371",
+  "punched": "1922-09-22",
+  "where": "tail",
+  "strength": 2.5,
+  "period": 37.82,
+  "ground": [
+   120,
+   67,
+   66
+  ],
+  "lines": [
+   119,
+   66,
+   64
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hn285vs3930",
+  "welte": "1064",
+  "punched": "1922-10-09",
+  "where": "tail",
+  "strength": 4.1,
+  "period": 37.46,
+  "ground": [
+   129,
+   74,
+   72
+  ],
+  "lines": [
+   128,
+   73,
+   71
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wk295jd5289",
+  "welte": "527",
+  "punched": "1922-10-16",
+  "where": "tail",
+  "strength": 12.2,
+  "period": 39.1,
+  "ground": [
+   57,
+   67,
+   58
+  ],
+  "lines": [
+   56,
+   67,
+   56
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rs765sm2000",
+  "welte": "2822",
+  "punched": "1922-10-23",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 39.08,
+  "ground": [
+   116,
+   64,
+   63
+  ],
+  "lines": [
+   115,
+   63,
+   61
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kz379jn2491",
+  "welte": "570",
+  "punched": "1922-10-25",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 37.31,
+  "ground": [
+   115,
+   63,
+   61
+  ],
+  "lines": [
+   114,
+   62,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kt852zf4103",
+  "welte": "137",
+  "punched": "1922-10-31",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 38.45,
+  "ground": [
+   82,
+   42,
+   43
+  ],
+  "lines": [
+   83,
+   43,
+   42
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kx293yk2859",
+  "welte": "1996",
+  "punched": "1922-10-31",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 37.9,
+  "ground": [
+   121,
+   67,
+   66
+  ],
+  "lines": [
+   121,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qz671pq0609",
+  "welte": "372",
+  "punched": "1922-11-09",
+  "where": "tail",
+  "strength": 8.9,
+  "period": 38.72,
+  "ground": [
+   132,
+   72,
+   72
+  ],
+  "lines": [
+   131,
+   71,
+   70
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mj416dn1432",
+  "welte": "594",
+  "punched": "1922-11-15",
+  "where": "tail",
+  "strength": 3.1,
+  "period": 37.42,
+  "ground": [
+   128,
+   73,
+   71
+  ],
+  "lines": [
+   127,
+   72,
+   69
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hc909pp9868",
+  "welte": "371",
+  "punched": "1922-11-20",
+  "where": "tail",
+  "strength": 4.9,
+  "period": 38.71,
+  "ground": [
+   75,
+   79,
+   66
+  ],
+  "lines": [
+   74,
+   78,
+   64
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jq774vx6544",
+  "welte": "3309",
+  "punched": "1922-11-22",
+  "where": "tail",
+  "strength": 2.7,
+  "period": 39.06,
+  "ground": [
+   123,
+   68,
+   68
+  ],
+  "lines": [
+   122,
+   67,
+   66
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rv766dc1369",
+  "welte": "3328",
+  "punched": "1922-11-22",
+  "where": "tail",
+  "strength": 4.7,
+  "period": 37.54,
+  "ground": [
+   113,
+   62,
+   60
+  ],
+  "lines": [
+   112,
+   62,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jk702cg2022",
+  "welte": "1466",
+  "punched": "1922-11-23",
+  "where": "tail",
+  "strength": 3.7,
+  "period": 38.68,
+  "ground": [
+   123,
+   65,
+   66
+  ],
+  "lines": [
+   122,
+   64,
+   64
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qf640sj3141",
+  "welte": "2159",
+  "punched": "1922-11-23",
+  "where": "tail",
+  "strength": 3.5,
+  "period": 37.25,
+  "ground": [
+   125,
+   69,
+   67
+  ],
+  "lines": [
+   124,
+   68,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yx536mq2915",
+  "welte": "365",
+  "punched": "1922-11-29",
+  "where": "tail",
+  "strength": 1.8,
+  "period": 38.8,
+  "ground": [
+   119,
+   64,
+   63
+  ],
+  "lines": [
+   119,
+   63,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qv976bq3639",
+  "welte": "3791",
+  "punched": "1922-12-11",
+  "where": "tail",
+  "strength": 4.2,
+  "period": 38.85,
+  "ground": [
+   123,
+   66,
+   67
+  ],
+  "lines": [
+   122,
+   65,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yj598pj2879",
+  "welte": "360",
+  "punched": "1922-12-21",
+  "where": "tail",
+  "strength": 0.9,
+  "period": 39.06,
+  "ground": [
+   119,
+   62,
+   60
+  ],
+  "lines": [
+   118,
+   61,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kf903tz5142",
+  "welte": "3312",
+  "punched": "1922-12-28",
+  "where": "tail",
+  "strength": 9.1,
+  "period": 39.12,
+  "ground": [
+   120,
+   64,
+   65
+  ],
+  "lines": [
+   119,
+   63,
+   63
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qm069fy5200",
+  "welte": "3332",
+  "punched": "1923-01-06",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 37.64,
+  "ground": [
+   107,
+   57,
+   56
+  ],
+  "lines": [
+   107,
+   56,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ws250sr1272",
+  "welte": "2739",
+  "punched": "1923-01-10",
+  "where": "tail",
+  "strength": 6.2,
+  "period": 39.06,
+  "ground": [
+   113,
+   60,
+   59
+  ],
+  "lines": [
+   78,
+   45,
+   46
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ym773gh2267",
+  "welte": "1478",
+  "punched": "1923-01-18",
+  "where": "tail",
+  "strength": 5.6,
+  "period": 39.25,
+  "ground": [
+   120,
+   63,
+   64
+  ],
+  "lines": [
+   119,
+   63,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kw215gn3365",
+  "welte": "3357",
+  "punched": "1923-02-08",
+  "where": "tail",
+  "strength": 6.9,
+  "period": 39.08,
+  "ground": [
+   119,
+   63,
+   63
+  ],
+  "lines": [
+   117,
+   62,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hh429fw8081",
+  "welte": "274",
+  "punched": "1923-03-15",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 38.24,
+  "ground": [
+   127,
+   73,
+   71
+  ],
+  "lines": [
+   126,
+   72,
+   69
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xy699sy1462",
+  "welte": "1324",
+  "punched": "1923-03-16",
+  "where": "tail",
+  "strength": 6.6,
+  "period": 39.12,
+  "ground": [
+   107,
+   60,
+   57
+  ],
+  "lines": [
+   61,
+   38,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cd435bw2771",
+  "welte": "2539",
+  "punched": "1923-03-24",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 39.04,
+  "ground": [
+   116,
+   64,
+   62
+  ],
+  "lines": [
+   115,
+   64,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dp497dz1055",
+  "welte": "469",
+  "punched": "1923-03-26",
+  "where": "tail",
+  "strength": 1.7,
+  "period": 39.06,
+  "ground": [
+   119,
+   65,
+   62
+  ],
+  "lines": [
+   118,
+   64,
+   61
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "np204br1080",
+  "welte": "2844",
+  "punched": "1923-04-13",
+  "where": "tail",
+  "strength": 5.1,
+  "period": 36.6,
+  "ground": [
+   122,
+   67,
+   66
+  ],
+  "lines": [
+   121,
+   66,
+   64
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kq525dc4373",
+  "welte": "1755",
+  "punched": "1923-05-30",
+  "where": "tail",
+  "strength": 4.4,
+  "period": 38.53,
+  "ground": [
+   114,
+   59,
+   57
+  ],
+  "lines": [
+   114,
+   59,
+   56
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jk211zx0169",
+  "welte": "525",
+  "punched": "1923-06-19",
+  "where": "tail",
+  "strength": 1.2,
+  "period": 37.23,
+  "ground": [
+   113,
+   63,
+   60
+  ],
+  "lines": [
+   113,
+   62,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sk832rf0203",
+  "welte": "2388",
+  "punched": "1923-07-27",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 38.78,
+  "ground": [
+   113,
+   61,
+   61
+  ],
+  "lines": [
+   112,
+   61,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dw559kr7002",
+  "welte": "1472",
+  "punched": "1923-08-02",
+  "where": "tail",
+  "strength": 2.6,
+  "period": 39.06,
+  "ground": [
+   118,
+   61,
+   62
+  ],
+  "lines": [
+   118,
+   61,
+   61
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bf074nj8801",
+  "welte": "1473",
+  "punched": "1923-08-04",
+  "where": "tail",
+  "strength": 3.3,
+  "period": 39.08,
+  "ground": [
+   131,
+   74,
+   74
+  ],
+  "lines": [
+   130,
+   73,
+   72
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ns598kr8616",
+  "welte": "1474",
+  "punched": "1923-10-24",
+  "where": "tail",
+  "strength": 8.3,
+  "period": 39.02,
+  "ground": [
+   132,
+   73,
+   73
+  ],
+  "lines": [
+   78,
+   48,
+   50
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vj076nk8220",
+  "welte": "1213",
+  "punched": "1923-11-08",
+  "where": "tail",
+  "strength": 2.3,
+  "period": 37.27,
+  "ground": [
+   136,
+   58,
+   42
+  ],
+  "lines": [
+   135,
+   57,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hj604wr7502",
+  "welte": "1526",
+  "punched": "1923-11-14",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 37.12,
+  "ground": [
+   146,
+   62,
+   46
+  ],
+  "lines": [
+   146,
+   61,
+   44
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ct503bz7189",
+  "welte": "3842",
+  "punched": "1923-11-21",
+  "where": "tail",
+  "strength": 4.8,
+  "period": 36.37,
+  "ground": [
+   116,
+   60,
+   60
+  ],
+  "lines": [
+   115,
+   60,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qp421cd7297",
+  "welte": "2613",
+  "punched": "1923-11-22",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 36.43,
+  "ground": [
+   119,
+   66,
+   65
+  ],
+  "lines": [
+   119,
+   65,
+   63
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sz207mm8382",
+  "welte": "1296",
+  "punched": "1924-01-07",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 39.25,
+  "ground": [
+   114,
+   63,
+   61
+  ],
+  "lines": [
+   114,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dz112ky5575",
+  "welte": "2312",
+  "punched": "1924-01-08",
+  "where": "tail",
+  "strength": 3.8,
+  "period": 37.54,
+  "ground": [
+   130,
+   73,
+   72
+  ],
+  "lines": [
+   129,
+   72,
+   70
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ks452px2704",
+  "welte": "2314",
+  "punched": "1924-01-21",
+  "where": "tail",
+  "strength": 3.8,
+  "period": 38.68,
+  "ground": [
+   117,
+   66,
+   64
+  ],
+  "lines": [
+   116,
+   65,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pc276zv7038",
+  "welte": "2260",
+  "punched": "1924-01-26",
+  "where": "tail",
+  "strength": 3.0,
+  "period": 39.23,
+  "ground": [
+   122,
+   68,
+   67
+  ],
+  "lines": [
+   122,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tx963yw9164",
+  "welte": "807",
+  "punched": "1924-02-15",
+  "where": "tail",
+  "strength": 3.1,
+  "period": 38.66,
+  "ground": [
+   115,
+   64,
+   62
+  ],
+  "lines": [
+   115,
+   63,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gq401ng9171",
+  "welte": "3309",
+  "punched": "1924-03-13",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 37.29,
+  "ground": [
+   142,
+   57,
+   41
+  ],
+  "lines": [
+   141,
+   56,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pk245pq3468",
+  "welte": "1340",
+  "punched": "1924-03-28",
+  "where": "tail",
+  "strength": 1.2,
+  "period": 39.21,
+  "ground": [
+   110,
+   61,
+   58
+  ],
+  "lines": [
+   109,
+   61,
+   56
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gr136pc5388",
+  "welte": "3331",
+  "punched": "1924-03-31",
+  "where": "tail",
+  "strength": 2.4,
+  "period": 37.58,
+  "ground": [
+   136,
+   54,
+   38
+  ],
+  "lines": [
+   135,
+   53,
+   37
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hg174cq6672",
+  "welte": "757",
+  "punched": "1924-04-23",
+  "where": "tail",
+  "strength": 4.6,
+  "period": 37.23,
+  "ground": [
+   117,
+   65,
+   62
+  ],
+  "lines": [
+   116,
+   64,
+   61
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zk440mh1715",
+  "welte": "757",
+  "punched": "1924-04-23",
+  "where": "tail",
+  "strength": 2.5,
+  "period": 37.25,
+  "ground": [
+   138,
+   56,
+   41
+  ],
+  "lines": [
+   137,
+   56,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wz719qg6993",
+  "welte": "441",
+  "punched": "1924-05-08",
+  "where": "tail",
+  "strength": 1.9,
+  "period": 37.23,
+  "ground": [
+   134,
+   57,
+   41
+  ],
+  "lines": [
+   133,
+   57,
+   39
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zw755dp8285",
+  "welte": "483",
+  "punched": "1924-07-05",
+  "where": "tail",
+  "strength": 4.9,
+  "period": 36.76,
+  "ground": [
+   103,
+   58,
+   55
+  ],
+  "lines": [
+   103,
+   58,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fg074rf2950",
+  "welte": "2386",
+  "punched": "1924-07-25",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 37.44,
+  "ground": [
+   107,
+   59,
+   57
+  ],
+  "lines": [
+   106,
+   58,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "st828pc9818",
+  "welte": "364",
+  "punched": "1924-07-28",
+  "where": "tail",
+  "strength": 1.3,
+  "period": 38.54,
+  "ground": [
+   120,
+   68,
+   67
+  ],
+  "lines": [
+   119,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "np829dt9039",
+  "welte": "1386",
+  "punched": "1924-08-21",
+  "where": "tail",
+  "strength": 4.4,
+  "period": 38.33,
+  "ground": [
+   131,
+   74,
+   71
+  ],
+  "lines": [
+   130,
+   73,
+   70
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bs173rx9307",
+  "welte": "188",
+  "punched": "1924-09-19",
+  "where": "tail",
+  "strength": 2.4,
+  "period": 39.27,
+  "ground": [
+   71,
+   38,
+   27
+  ],
+  "lines": [
+   71,
+   37,
+   26
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kx695yq4528",
+  "welte": "1301",
+  "punched": "1924-09-23",
+  "where": "tail",
+  "strength": 3.3,
+  "period": 38.68,
+  "ground": [
+   119,
+   66,
+   65
+  ],
+  "lines": [
+   118,
+   65,
+   63
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gy310qs3678",
+  "welte": "2987",
+  "punched": "1924-09-24",
+  "where": "tail",
+  "strength": 3.9,
+  "period": 39.12,
+  "ground": [
+   134,
+   76,
+   75
+  ],
+  "lines": [
+   133,
+   76,
+   74
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mg285ps6787",
+  "welte": "1352",
+  "punched": "1924-10-06",
+  "where": "tail",
+  "strength": 2.3,
+  "period": 38.72,
+  "ground": [
+   101,
+   55,
+   51
+  ],
+  "lines": [
+   101,
+   54,
+   49
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hc229ht1024",
+  "welte": "1249",
+  "punched": "1924-10-07",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 38.92,
+  "ground": [
+   116,
+   64,
+   63
+  ],
+  "lines": [
+   115,
+   64,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tb323rh4122",
+  "welte": "3031",
+  "punched": "1924-10-09",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 38.68,
+  "ground": [
+   131,
+   72,
+   71
+  ],
+  "lines": [
+   130,
+   71,
+   69
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tx437pj1389",
+  "welte": "1108",
+  "punched": "1924-10-10",
+  "where": "middle",
+  "strength": 4.4,
+  "period": 38.65,
+  "ground": [
+   113,
+   63,
+   61
+  ],
+  "lines": [
+   112,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "tw054jm0773",
+  "welte": "1339",
+  "punched": "1924-10-21",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 38.82,
+  "ground": [
+   108,
+   59,
+   57
+  ],
+  "lines": [
+   107,
+   59,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vp438dy0628",
+  "welte": "3356",
+  "punched": "1924-10-29",
+  "where": "tail",
+  "strength": 4.6,
+  "period": 38.22,
+  "ground": [
+   117,
+   65,
+   64
+  ],
+  "lines": [
+   116,
+   64,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rd899zb5188",
+  "welte": "5608",
+  "punched": "1924-11-08",
+  "where": "tail",
+  "strength": 7.0,
+  "period": 37.82,
+  "ground": [
+   109,
+   59,
+   56
+  ],
+  "lines": [
+   108,
+   58,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jd143sb1087",
+  "welte": "5553",
+  "punched": "1924-11-09",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 37.46,
+  "ground": [
+   117,
+   62,
+   62
+  ],
+  "lines": [
+   116,
+   62,
+   60
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gf160gq3516",
+  "welte": "2979",
+  "punched": "1924-11-12",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 38.66,
+  "ground": [
+   140,
+   57,
+   41
+  ],
+  "lines": [
+   139,
+   57,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "wp666fn2104",
+  "welte": "5537",
+  "punched": "1924-11-14",
+  "where": "tail",
+  "strength": 1.6,
+  "period": 38.74,
+  "ground": [
+   136,
+   59,
+   43
+  ],
+  "lines": [
+   135,
+   58,
+   41
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "nw765mr4994",
+  "welte": "3790",
+  "punched": "1924-11-15",
+  "where": "tail",
+  "strength": 6.9,
+  "period": 38.16,
+  "ground": [
+   106,
+   58,
+   55
+  ],
+  "lines": [
+   105,
+   58,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qd784zj3903",
+  "welte": "3310",
+  "punched": "1924-11-25",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 37.94,
+  "ground": [
+   118,
+   62,
+   61
+  ],
+  "lines": [
+   117,
+   62,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bj093nh2591",
+  "welte": "28",
+  "punched": "1924-12-08",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 37.27,
+  "ground": [
+   138,
+   57,
+   41
+  ],
+  "lines": [
+   137,
+   56,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kr397bv2881",
+  "welte": "562",
+  "punched": "1924-12-09",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 37.44,
+  "ground": [
+   110,
+   60,
+   57
+  ],
+  "lines": [
+   110,
+   59,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "bz327kz4744",
+  "welte": "5634",
+  "punched": "1924-12-12",
+  "where": "tail",
+  "strength": 3.3,
+  "period": 37.48,
+  "ground": [
+   111,
+   62,
+   60
+  ],
+  "lines": [
+   111,
+   61,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ph502kz9777",
+  "welte": "270",
+  "punched": "1924-12-15",
+  "where": "tail",
+  "strength": 1.7,
+  "period": 39.03,
+  "ground": [
+   145,
+   66,
+   49
+  ],
+  "lines": [
+   144,
+   66,
+   47
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fm197wc9522",
+  "welte": "2908",
+  "punched": "1925-01-14",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 36.78,
+  "ground": [
+   135,
+   76,
+   76
+  ],
+  "lines": [
+   134,
+   75,
+   74
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sw740gd4329",
+  "welte": "76",
+  "punched": "1925-01-27",
+  "where": "tail",
+  "strength": 3.2,
+  "period": 38.45,
+  "ground": [
+   75,
+   42,
+   30
+  ],
+  "lines": [
+   75,
+   42,
+   29
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hx184ww0780",
+  "welte": "10",
+  "punched": "1925-01-28",
+  "where": "tail",
+  "strength": 4.5,
+  "period": 38.87,
+  "ground": [
+   102,
+   42,
+   32
+  ],
+  "lines": [
+   104,
+   42,
+   31
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rk591jt8964",
+  "welte": "1148",
+  "punched": "1925-01-29",
+  "where": "tail",
+  "strength": 1.6,
+  "period": 37.66,
+  "ground": [
+   140,
+   57,
+   41
+  ],
+  "lines": [
+   139,
+   57,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "gf569df0451",
+  "welte": "361",
+  "punched": "1925-02-09",
+  "where": "tail",
+  "strength": 5.6,
+  "period": 38.85,
+  "ground": [
+   138,
+   55,
+   39
+  ],
+  "lines": [
+   138,
+   55,
+   38
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ym117yd8356",
+  "welte": "1670",
+  "punched": "1925-02-14",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 37.62,
+  "ground": [
+   152,
+   65,
+   49
+  ],
+  "lines": [
+   152,
+   65,
+   47
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "jt465zc6779",
+  "welte": "5658",
+  "punched": "1925-03-01",
+  "where": "tail",
+  "strength": 5.8,
+  "period": 38.31,
+  "ground": [
+   112,
+   63,
+   61
+  ],
+  "lines": [
+   111,
+   62,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zp866tm4852",
+  "welte": "3310",
+  "punched": "1925-03-08",
+  "where": "tail",
+  "strength": 1.5,
+  "period": 36.52,
+  "ground": [
+   107,
+   59,
+   57
+  ],
+  "lines": [
+   106,
+   59,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xg976jt9573",
+  "welte": "5521",
+  "punched": "1925-04-01",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 37.13,
+  "ground": [
+   110,
+   60,
+   59
+  ],
+  "lines": [
+   109,
+   59,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "my670qk6863",
+  "welte": "2673",
+  "punched": "1925-04-15",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 36.78,
+  "ground": [
+   143,
+   58,
+   41
+  ],
+  "lines": [
+   142,
+   57,
+   40
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zf673fy4620",
+  "welte": "2068",
+  "punched": "1925-05-26",
+  "where": "tail",
+  "strength": 4.9,
+  "period": 37.38,
+  "ground": [
+   107,
+   59,
+   57
+  ],
+  "lines": [
+   107,
+   59,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ws749sk4778",
+  "welte": "1203",
+  "punched": "1925-08-15",
+  "where": "tail",
+  "strength": 5.1,
+  "period": 38.8,
+  "ground": [
+   113,
+   63,
+   60
+  ],
+  "lines": [
+   112,
+   62,
+   58
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zv884mc0794",
+  "welte": "1259",
+  "punched": "1925-08-29",
+  "where": "tail",
+  "strength": 1.0,
+  "period": 37.84,
+  "ground": [
+   145,
+   60,
+   44
+  ],
+  "lines": [
+   144,
+   60,
+   42
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "vy193qr6005",
+  "welte": "2988",
+  "punched": "1925-10-16",
+  "where": "tail",
+  "strength": 5.0,
+  "period": 38.93,
+  "ground": [
+   122,
+   68,
+   66
+  ],
+  "lines": [
+   122,
+   68,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "xr433hz5827",
+  "welte": "5718",
+  "punched": "1925-10-24",
+  "where": "tail",
+  "strength": 6.8,
+  "period": 37.44,
+  "ground": [
+   139,
+   64,
+   48
+  ],
+  "lines": [
+   138,
+   63,
+   46
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qk926qc7779",
+  "welte": "5728",
+  "punched": "1925-10-27",
+  "where": "tail",
+  "strength": 3.0,
+  "period": 36.45,
+  "ground": [
+   117,
+   66,
+   62
+  ],
+  "lines": [
+   116,
+   65,
+   61
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "dc920rk8870",
+  "welte": "2733",
+  "punched": "1925-11-09",
+  "where": "tail",
+  "strength": 5.5,
+  "period": 37.56,
+  "ground": [
+   117,
+   65,
+   64
+  ],
+  "lines": [
+   117,
+   64,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "hk752ck1008",
+  "welte": "3330",
+  "punched": "1925-11-16",
+  "where": "tail",
+  "strength": 5.5,
+  "period": 37.48,
+  "ground": [
+   106,
+   59,
+   55
+  ],
+  "lines": [
+   106,
+   59,
+   53
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "fn744pq2157",
+  "welte": "1990",
+  "punched": "1925-11-20",
+  "where": "tail",
+  "strength": 3.1,
+  "period": 38.72,
+  "ground": [
+   124,
+   70,
+   68
+  ],
+  "lines": [
+   123,
+   70,
+   67
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cw965qx3168",
+  "welte": "5661",
+  "punched": "1925-11-21",
+  "where": "tail",
+  "strength": 2.1,
+  "period": 36.8,
+  "ground": [
+   130,
+   52,
+   36
+  ],
+  "lines": [
+   129,
+   51,
+   34
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pp798fc0175",
+  "welte": "5667",
+  "punched": "1925-11-21",
+  "where": "tail",
+  "strength": 4.0,
+  "period": 39.08,
+  "ground": [
+   109,
+   61,
+   57
+  ],
+  "lines": [
+   108,
+   60,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ys250pr2232",
+  "welte": "5736",
+  "punched": "1925-11-21",
+  "where": "tail",
+  "strength": 2.2,
+  "period": 36.43,
+  "ground": [
+   107,
+   60,
+   56
+  ],
+  "lines": [
+   106,
+   60,
+   54
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "sc787kg5664",
+  "welte": "1654",
+  "punched": "1925-12-14",
+  "where": "tail",
+  "strength": 2.7,
+  "period": 37.15,
+  "ground": [
+   111,
+   63,
+   59
+  ],
+  "lines": [
+   110,
+   62,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "zk082zq3962",
+  "welte": "5707",
+  "punched": "1926-01-25",
+  "where": "tail",
+  "strength": 4.3,
+  "period": 37.54,
+  "ground": [
+   113,
+   63,
+   61
+  ],
+  "lines": [
+   112,
+   63,
+   59
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "kt780tm7975",
+  "welte": "568",
+  "punched": "1926-01-26",
+  "where": "tail",
+  "strength": 2.8,
+  "period": 39.02,
+  "ground": [
+   79,
+   28,
+   17
+  ],
+  "lines": [
+   79,
+   28,
+   16
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "mh156nr8259",
+  "welte": "1442",
+  "punched": "1926-10-10",
+  "where": "middle",
+  "strength": 4.0,
+  "period": 39.27,
+  "ground": [
+   106,
+   62,
+   59
+  ],
+  "lines": [
+   105,
+   61,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ty382mw3181",
+  "welte": "3026",
+  "punched": "1927-12-14",
+  "where": "tail",
+  "strength": 5.8,
+  "period": 39.04,
+  "ground": [
+   117,
+   70,
+   67
+  ],
+  "lines": [
+   116,
+   69,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "md908xy8241",
+  "welte": "5551",
+  "punched": "1927-12-18",
+  "where": "middle",
+  "strength": 2.6,
+  "period": 38.24,
+  "ground": [
+   106,
+   63,
+   59
+  ],
+  "lines": [
+   105,
+   63,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rx933wn3761",
+  "welte": "2537",
+  "punched": "1928-01-12",
+  "where": "tail",
+  "strength": 2.0,
+  "period": 37.21,
+  "ground": [
+   121,
+   68,
+   64
+  ],
+  "lines": [
+   120,
+   67,
+   62
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "yk645sm6970",
+  "welte": "5905",
+  "punched": "1928-01-18",
+  "where": "tail",
+  "strength": 6.6,
+  "period": 36.45,
+  "ground": [
+   114,
+   70,
+   67
+  ],
+  "lines": [
+   113,
+   69,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "ft113cg5195",
+  "welte": "2810",
+  "punched": "1928-04-16",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 39.19,
+  "ground": [
+   107,
+   62,
+   59
+  ],
+  "lines": [
+   106,
+   61,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "rg931dy5023",
+  "welte": "2944",
+  "punched": "1928-04-19",
+  "where": "tail",
+  "strength": 7.4,
+  "period": 36.94,
+  "ground": [
+   110,
+   58,
+   57
+  ],
+  "lines": [
+   109,
+   57,
+   55
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pf050rx0162",
+  "welte": "2254",
+  "punched": "1928-04-21",
+  "where": "middle",
+  "strength": 2.8,
+  "period": 38.08,
+  "ground": [
+   117,
+   68,
+   66
+  ],
+  "lines": [
+   116,
+   67,
+   65
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "cm852bp8620",
+  "welte": "3313",
+  "punched": "1928-05-21",
+  "where": "tail",
+  "strength": 3.6,
+  "period": 38.33,
+  "ground": [
+   114,
+   64,
+   43
+  ],
+  "lines": [
+   114,
+   64,
+   42
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "qw257qp8232",
+  "welte": "690",
+  "punched": "1928-06-05",
+  "where": "tail",
+  "strength": 2.7,
+  "period": 39.1,
+  "ground": [
+   107,
+   62,
+   59
+  ],
+  "lines": [
+   107,
+   62,
+   57
+  ],
+  "ruled": false
+ },
+ {
+  "druid": "pk349zj4179",
+  "welte": "797",
+  "punched": "1928-06-19",
+  "where": "tail",
+  "strength": 5.4,
+  "period": 38.47,
+  "ground": [
+   112,
+   67,
+   65
+  ],
+  "lines": [
+   112,
+   66,
+   63
+  ],
+  "ruled": false
+ }
+]

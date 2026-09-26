@@ -170,6 +170,39 @@ open with a day above twelve, and a month-first writer would have written
 Welte perforated rolls in America is a documentary question these scans
 cannot answer, and the answer would settle much of this.
 
+## The ruled paper
+
+Some red rolls are ruled: thin dark lines run the length of the paper, one
+to every track. They are the paper's and not the scanner's: they keep the
+track spacing, 37.8 pixels against 37.76 on roll 225's January 1909 copy,
+and 241 of the dated rolls, through the same scanner, show none.
+Stanford's catalogue notes "Lined paper" and "Ruled paper" for that copy,
+but `paper.py` does not rely on the catalogue: it reads the ruling off each
+dated scan, as a comb at the track spacing in the profile across the tail.
+The comb is either there or not: its strength is at least 2878 on the
+ruled copies and at most 15 on the plain ones, with nothing between.
+
+| | copies | span |
+|---|---|---|
+| ruled | 18 | 20 January 1907 to 4 January 1910, and once in 1916 |
+| plain | 241 | 8 August 1904 to 19 June 1928 |
+
+Ruled paper is an early paper but not the early one. Plain paper ran beside
+it the whole time: in 1907 to 1909 there are 16 ruled copies and 18 plain.
+Of the eleven copies with the old advance, seven are ruled and four plain;
+of the 193 with the halved advance, one is ruled. So a ruled copy was most
+likely punched before 1910, and a plain one could have been punched at any
+time.
+
+The one late copy is `vj052cw2158`, catalogued as Welte 1534, which has the
+halved advance, 0.499 mm, and so was cut after the change. Its reading,
+`1354 . B[...] 1. 2. 16`, was made at medium confidence: the reader took the
+last figure for a 6 but could not rule out an 8, and the number on the paper
+does not match the catalogue's. Either year puts it after 1910.
+
+The readers were told the lines were the scanner's own (`reading.md`); on
+the ruled copies they are not, which does not touch the dates they read.
+
 ## How a date was got
 
 Finding the ink is arithmetic, reading it is not, so the work splits.
@@ -391,8 +424,9 @@ any reader looked at.
 | `merge.py` | the rule that ranked the readers' files into one reading per roll |
 | `pitch.py` | the pitch of every roll, measured on the scan |
 | `step.py` | the advance of every roll, from the analyses |
+| `paper.py` | whether the paper of each dated roll is ruled, and its colour; writes `paper.json` |
 | `summary.py` | the tables above; writes `summary.txt` |
 | `reading.md` | what the readers were told |
 | `candidates.json` | one record per roll: catalogue, regions, search notes |
-| `pitch.json`, `step.json` | the measurements |
+| `pitch.json`, `step.json`, `paper.json` | the measurements |
 | `readings/` | what each reader wrote, and `authoritative.json` for rolls re-read here; kept as written, the readings live in condon-dates |

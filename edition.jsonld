@@ -37763,8 +37763,9 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung bestätigt das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 4. März 1907 bis 4. November 1909 belegt, danach nur noch einmal, im Dezember 1919 (Welte 569). Zwischen 4. November 1909 und 21. Mai 1910 wurde der Vorschub halbiert (punch-225/dates/README.md).",
+                                    "note": "Die Einstellung bestätigt das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 20. November 1908 bis 16. Dezember 1909 belegt. Zwischen 16. Dezember 1909 und 21. Mai 1910 wurde der Vorschub halbiert (punch-225/dates/README.md). Das linierte Papier weist in dieselbe Zeit. Liniertes rotes Papier ist an den datierten Stanford-Kopien vom 20. Januar 1907 bis 4. Januar 1910 belegt, danach nur noch einmal, unsicher gelesen, 1916; unliniertes lief die ganze Zeit daneben (punch-225/dates/README.md).",
                                     "premises": [
+                                        "335c0289-1b35-489f-812c-2818e7aab932",
                                         "560debaf-2be3-4832-a747-591a99a66e8b",
                                         "89030f39-99c9-4bcf-ac16-e75b06ddb0df"
                                     ],
@@ -49422,12 +49423,11 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 477 pitches of held notes, measured on the IIIF images by punch-225/dates/pitch.py; slot and bridge are medians of their own.",
-                                            "premises": [],
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -49447,11 +49447,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10910 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.343 mm at 0.1843, 0.512 mm at 0.4664. The chain pitch is 2.922 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -49470,7 +49469,24 @@
                 },
                 "paper": {
                     "name": "red-lined",
-                    "sameAs": []
+                    "sameAs": [],
+                    "@annotation": {
+                        "@id": "2455e75d-a824-4ca7-aeb5-c041bbf18052",
+                        "belief": {
+                            "@type": "belief",
+                            "@id": "335c0289-1b35-489f-812c-2818e7aab932",
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "@type": "measurement",
+                                    "note": "Gemessen an der Aufnahme, an zwei Streifen von 3000 Pixeln in voller Auflösung aus der Mitte und vom Ende der Musik, ohne die Löcher. Rot: Der Papiergrund liest im Median R 87, G 42, B 32, im Rotkanal doppelt so hell wie im Grünkanal. Das Mittelgrau der Graukarte am Anfang derselben Aufnahme liest 34, 35, 34, fast neutral, die Röte ist also die des Papiers. Liniert: Der Länge nach laufen dunkle Linien über das Papier (R 63, G 31, B 24), eine auf jede Spur; ihr Abstand ist 37,8 Pixel, der Spurabstand 37,76 Pixel. Auf dem Schluss hinter dem letzten Loch findet punch-225/dates/paper.py die Linien mit der Stärke 5152, unlinierte Kopien kommen dort höchstens auf 15 (punch-225/dates/README.md).",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
                 },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
@@ -49871,7 +49887,7 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, die zwischen 4. November 1909 und 21. Mai 1910 lag. An den datierten Stanford-Kopien ist diese Einstellung vom 21. Mai 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin. Über die Gewissheit der Lesung selbst entscheidet das nicht (punch-225/dates/README.md).",
+                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, die zwischen 16. Dezember 1909 und 21. Mai 1910 lag. An den datierten Stanford-Kopien ist diese Einstellung vom 21. Mai 1910 bis 19. September 1917 belegt, der 14. Januar 1914 liegt darin. Über die Gewissheit der Lesung selbst entscheidet das nicht (punch-225/dates/README.md).",
                                     "premises": [
                                         "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
                                         "6eed2137-38a8-4048-80dc-bb2f519e923e"
@@ -63279,12 +63295,11 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 373 pitches of held notes, measured on the IIIF images by punch-225/dates/pitch.py; slot and bridge are medians of their own.",
-                                            "premises": [],
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -63304,11 +63319,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10441 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.414 mm at 0.0524, 0.727 mm at 0.0382. The chain pitch is 5.962 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -63483,7 +63497,7 @@
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor die Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910, also mindestens fünf Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 nach Welte 569 (Dezember 1919) die zweite bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde (punch-225/dates/README.md).",
+                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor die Halbierung des Vorschubs zwischen 16. Dezember 1909 und 21. Mai 1910, also mindestens fünf Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 die einzige bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde (punch-225/dates/README.md).",
                                     "premises": [
                                         "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
                                         "435efaf8-6294-4d55-b29d-f4351f83b127"
@@ -72928,11 +72942,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 427 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.155 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The spread is ten times that of the other copies, so the scan's transport enters the value.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WR0225_02"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -72952,14 +72965,13 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 10448 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.425 mm at 0.1147, 0.528 mm at 0.1303, 0.692 mm at 0.168. The chain pitch is 2.978 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WR0225_02"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         },
                                         {
-                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Nach der Halbierung des Vorschubs zwischen 4. November 1909 und 21. Mai 1910 ist ein Vorschub von 1,00 mm an den datierten Stanford-Kopien nur noch einmal belegt, an Welte 569 vom Dezember 1919 (punch-225/dates/README.md).",
+                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Nach der Halbierung des Vorschubs zwischen 16. Dezember 1909 und 21. Mai 1910 ist ein Vorschub von 1,00 mm an den datierten Stanford-Kopien nicht mehr belegt (punch-225/dates/README.md).",
                                             "premises": [
                                                 "b8dffe69-90ad-4d55-9196-2453ebcfc0d0"
                                             ],
@@ -85520,11 +85532,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 432 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.0169 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The scan was resampled from 180 lines per inch along the roll (cis2roll.py), so the millimetres rest on the scanner's header.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteLicensee_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -85544,11 +85555,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 9984 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.317 mm at 0.0706, 0.446 mm at 0.0349, 0.987 mm at 0.0594. The chain pitch is 3.885 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteLicensee_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -100057,11 +100067,10 @@
                                     "reasons": [
                                         {
                                             "note": "Median over 527 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/dates/settings225.py); interquartile spread 0.0185 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteT98_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
@@ -100081,11 +100090,10 @@
                                     "reasons": [
                                         {
                                             "note": "The strongest period the 15681 slot lengths keep, by punch-225/advance.py (punch-225/dates/settings225.py); runners-up 0.313 mm at 0.0457, 0.343 mm at 0.0439, 0.75 mm at 0.1318. The chain pitch is 5.011 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
-                                            "premises": [],
                                             "used": [
                                                 "/facsimiles/WelteT98_225"
                                             ],
-                                            "@type": "inference"
+                                            "@type": "measurement"
                                         }
                                     ],
                                     "@type": "belief",
