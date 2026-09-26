@@ -184,11 +184,11 @@ neither is shrunken paper. Set against the punch dates:
 
 | year | 3.00 mm | 2.50 mm | | year | 3.00 mm | 2.50 mm |
 |---|---|---|---|---|---|---|
-| 1904 | 3 | 0 | | 1916 | 1 | 1 |
+| 1904 | 3 | 0 | | 1916 | 0 | 1 |
 | 1907 | 4 | 0 | | 1917 | 2 | 1 |
 | 1908 | 11 | 1 | | 1918 | 0 | 2 |
 | 1909 | 16 | 0 | | 1919 | 0 | 4 |
-| 1910 | 10 | 0 | | 1920 | 0 | 6 |
+| 1910 | 11 | 0 | | 1920 | 0 | 6 |
 | 1911 | 11 | 2 | | 1921 | 0 | 2 |
 | 1912 | 11 | 0 | | 1922 | 1 | 41 |
 | 1913 | 9 | 1 | | 1923 | 0 | 16 |
@@ -210,9 +210,14 @@ The second is legible at a glance and its written number matches the
 catalogue. A roll cut on the 3.00 mm machine in April 1922 stands seven
 months later than the 3309 control cut on the 2.50 mm machine, and a roll
 cut on the 2.50 mm machine in August 1911 stands two and a half years
-before roll 225's own copy of January 1914, which is 3.00 mm. Four more
-old-pitch copies fall after January 1914: W1254 (6 Mar 1914), W1534
-(1 Feb 1916), W589 (4 Jun 1917), W2609 (19 Sep 1917).
+before roll 225's own copy of January 1914, which is 3.00 mm. Three more
+old-pitch copies fall after January 1914: W1254 (6 Mar 1914), W589
+(4 Jun 1917), W2609 (19 Sep 1917). A fourth, W1534 `vj052cw2158`, stood
+here as 1 Feb 1916 until the editor read its year on the scan as 10
+(condon-dates, 26 September 2026). Its paper had put the 16 in doubt: it is
+ruled, as no other copy dated after January 1910 is, and it advances
+0.5 mm, as no copy dated before December 1909 does. The table above counts
+it in 1910.
 
 **The same title on both machines.** Twelve titles are held at Stanford
 in both states, and eight now have both copies dated. Pitch in

@@ -49,8 +49,9 @@ two and a half years before roll 225's copy of January 1914 has the old one
 at 2.999 mm; and a copy punched 25 April 1922 (`jw822wm2644`, Welte 1275)
 still has the old pitch at 3.004 mm, seven months before the control of
 November 1922 has the new one at 2.496 mm. Both were read at magnification
-rather than taken from a reader. Four more old-pitch copies fall between,
-dated 1914, 1916 and 1917 twice.
+rather than taken from a reader. Three more old-pitch copies fall between,
+dated 1914 and 1917 twice; a fourth, Welte 1534, once read as 1916, was
+punched on 1 February 1910 (see ../README.md).
 
 So Hagmann's "rot-alt until about 1910 and rot-neu after" is wrong in a way
 a corrected date would not repair: the two were never consecutive states of
