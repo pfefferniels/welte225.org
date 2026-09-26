@@ -37771,15 +37771,10 @@
                                         "https://w3id.org/welte-premises/premises#advance-1mm-belief",
                                         "https://w3id.org/welte-premises/premises#paper-ruled-belief"
                                     ],
-                                    "@type": "inference"
-                                },
-                                {
-                                    "adopted": [
-                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief",
-                                        "https://w3id.org/welte-premises/premises#paper-ruled-belief"
+                                    "used": [
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
                                     ],
-                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
-                                    "@type": "beliefAdoption"
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -49908,14 +49903,10 @@
                                         "6eed2137-38a8-4048-80dc-bb2f519e923e",
                                         "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
                                     ],
-                                    "@type": "inference"
-                                },
-                                {
-                                    "adopted": [
-                                        "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
+                                    "used": [
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
                                     ],
-                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
-                                    "@type": "beliefAdoption"
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -63552,14 +63543,10 @@
                                         "435efaf8-6294-4d55-b29d-f4351f83b127",
                                         "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                     ],
-                                    "@type": "inference"
-                                },
-                                {
-                                    "adopted": [
-                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief"
+                                    "used": [
+                                        "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
                                     ],
-                                    "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
-                                    "@type": "beliefAdoption"
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -73033,14 +73020,10 @@
                                                 "b8dffe69-90ad-4d55-9196-2453ebcfc0d0",
                                                 "https://w3id.org/welte-premises/premises#advance-1mm-belief"
                                             ],
-                                            "@type": "inference"
-                                        },
-                                        {
-                                            "adopted": [
-                                                "https://w3id.org/welte-premises/premises#advance-1mm-belief"
+                                            "used": [
+                                                "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld"
                                             ],
-                                            "note": "Übernommen aus den Prämissen zur Datierung von Welte-Rollen (https://w3id.org/welte-premises/premises), im Stand von condon-dates 4e99afa (https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/docs/premises.jsonld), CC BY 4.0. Sie beruhen auf der Messung der roten Welte-Rollen der Sammlung Condon in Stanford; was die Edition von ihrer eigenen Kopie hält, misst und sagt sie selbst.",
-                                            "@type": "beliefAdoption"
+                                            "@type": "inference"
                                         }
                                     ],
                                     "@type": "belief",
