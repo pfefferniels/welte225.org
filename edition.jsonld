@@ -49855,6 +49855,230 @@
                         "@id": "fecf4d64-b805-4830-a091-4cad706aeac5"
                     },
                     "conditionType": "paper-stretch"
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 7903.551807459152,
+                        "to": 7946.854318699299
+                    },
+                    "edge": "treble",
+                    "depth": {
+                        "value": 4.991174021648626,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/3877,94726,59,513/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "trebletear001",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "44c0d19f-3bd6-407e-a826-ee593ecf8439"
+                        },
+                        "@id": "293d8e66-ab37-4c0c-a8e8-a93df2045639"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 8936.650121432178,
+                        "to": 8939.520073444197
+                    },
+                    "edge": "treble",
+                    "depth": {
+                        "value": 2.5378850957535386,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/3906,106965,30,34/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "trebletear002",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "193c0695-e374-476b-a930-70f8e801f6ea"
+                        },
+                        "@id": "bb61e5fe-f014-4a6e-9e60-209aa3297487"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 9067.401758685566,
+                        "to": 9116.697405009632
+                    },
+                    "edge": "bass",
+                    "depth": {
+                        "value": 5.92173189009159,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/34,108514,70,584/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "basstear001",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "64365f47-cda3-42e6-8f0e-1fec68642cae"
+                        },
+                        "@id": "a9a2d6a8-139e-4e90-9bf7-ec4ac128636d"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 9182.115428812973,
+                        "to": 9193.00436438798
+                    },
+                    "edge": "bass",
+                    "depth": {
+                        "value": 4.399000832639468,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/35,109873,52,129/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "basstear002",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "a7c5faed-553b-465c-af9b-dbc60610ad81"
+                        },
+                        "@id": "ce13a983-c3f0-4a59-b689-e36aae506830"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 9269.142503059742,
+                        "to": 9281.382004287463
+                    },
+                    "edge": "bass",
+                    "depth": {
+                        "value": 3.0454621149042462,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/35,110904,36,145/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "basstear003",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "0a7c8c04-4578-45a7-b0a1-2c8d5bee0e20"
+                        },
+                        "@id": "11ca653a-c8f5-4d46-8c6d-af2cfacb801e"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 9520.854176584338,
+                        "to": 9522.964435416705
+                    },
+                    "edge": "bass",
+                    "depth": {
+                        "value": 2.5378850957535386,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/36,113886,30,25/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "basstear005",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "05206773-5b17-4fab-b2bf-67ed91c16f8f"
+                        },
+                        "@id": "eeabb6f9-8857-4037-80be-c7eaa23d7dee"
+                    }
+                },
+                {
+                    "conditionType": "torn",
+                    "horizontal": {
+                        "unit": "mm",
+                        "from": 9645.359447693923,
+                        "to": 9666.884087784058
+                    },
+                    "edge": "bass",
+                    "depth": {
+                        "value": 2.5378850957535386,
+                        "unit": "mm"
+                    },
+                    "depiction": "https://stacks.stanford.edu/image/iiif/wv912mm2332/wv912mm2332_0001/36,115361,30,255/128,/270/default.jpg",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "basstear004",
+                                    "used": [
+                                        "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
+                                        "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                    ],
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "5f113532-dc62-4ca1-94d1-651546ed05b0"
+                        },
+                        "@id": "00adaca3-26b8-4d82-8ab7-b937fd7b785d"
+                    }
                 }
             ],
             "measurements": {
