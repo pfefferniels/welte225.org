@@ -28696,7 +28696,7 @@
                     "@id": "bass-mezzoforte-set"
                 },
                 {
-                    "note": "Das zweite c vorgezogen, das erste dafür verkürzt",
+                    "note": "Der Basston c wird vor den Akkord gezogen, das c davor endet dafür früher",
                     "@type": "motivation",
                     "@id": "note-retimed"
                 },
@@ -35558,12 +35558,17 @@
                     "@id": "cancel-row"
                 },
                 {
-                    "note": "Der gehaltene Ton endet kurz nach dem nächsten Anschlag",
+                    "note": "Sauberes Spiel: Der überlang liegende Ton endet mit dem nächsten Anschlag, das Fingerpedal entfällt",
                     "@type": "motivation",
                     "@id": "held-note-shortened"
                 },
                 {
-                    "note": "Der Ton wird abgesetzt und neu angeschlagen",
+                    "note": "Der Basston wird vor den Akkord gezogen, der vorhergehende endet dafür früher, sodass der Wechsel sauber klingt",
+                    "@type": "motivation",
+                    "@id": "bass-anticipated"
+                },
+                {
+                    "note": "Der überbundene Ton wird mit dem folgenden Akkord neu angeschlagen",
                     "@type": "motivation",
                     "@id": "note-restruck"
                 },
@@ -35987,6 +35992,7 @@
                 },
                 {
                     "editType": "shorten",
+                    "motivation": "bass-anticipated",
                     "insert": [
                         {
                             "pitch": 49,
@@ -36109,6 +36115,7 @@
                 },
                 {
                     "editType": "shift",
+                    "motivation": "bass-anticipated",
                     "insert": [
                         {
                             "pitch": 50,
@@ -36847,6 +36854,7 @@
                 },
                 {
                     "editType": "shorten",
+                    "motivation": "held-note-shortened",
                     "insert": [
                         {
                             "pitch": 54,
@@ -36888,6 +36896,7 @@
                 },
                 {
                     "editType": "shorten",
+                    "motivation": "held-note-shortened",
                     "insert": [
                         {
                             "pitch": 57,
@@ -37061,6 +37070,7 @@
                 },
                 {
                     "editType": "shorten",
+                    "motivation": "held-note-shortened",
                     "insert": [
                         {
                             "pitch": 64,
@@ -37081,6 +37091,7 @@
                 },
                 {
                     "editType": "shorten",
+                    "motivation": "held-note-shortened",
                     "insert": [
                         {
                             "pitch": 67,
