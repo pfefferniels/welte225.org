@@ -44,6 +44,31 @@ version, not the edition. To publish a change, export the edition
 from Roll Desk and replace the file here. Identifiers must not change
 between exports; the format keeps them.
 
+## Places along the roll
+
+Every place the edition gives along the roll, in its notes as in Roll
+Desk, is a place on the axis: millimetres of St1's paper, counted from
+where its scan begins. The file names St1 as `referenceCopy`.
+
+The file holds each copy's features and tears at the copy's own places,
+as they were read, and beside them the alignment that carries them onto
+the axis: `x_axis = (x + shift) · scale`. The alignment is found by
+matching the copy's notes with St1's and records how well it rests
+(notes matched, residual, standard error of the scale) and when it was
+found. A script that reads the file without linked-rolls has to apply
+it; `importJsonLd` does.
+
+What the scales say about the paper is worked out, not stated: how far
+each copy's paper has stretched along the roll, and how long Licensee
+and green paper are against red. As of 28 September 2026 St2 stands at
++0.20 %, Wi1 at −0.18 % and St1 at −0.02 %, each ± 0.11 %; Licensee
+paper at 0.7684 and green at 0.7733 of red, ± 0.0017. The 8.3 ft/min
+read off Ch1's `.ann` gives a ratio 9.3 % above the Licensee paper's,
+which `alignmentProblems` reports.
+
+The file needs linked-rolls after 0.62.0 to be read with its copies in
+place; an older Roll Desk puts the aligned copies at their own places.
+
 ## Sigla
 
 Identity rests in the IRI. A siglum is not stored: `siglaOf` in
