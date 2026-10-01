@@ -3862,10 +3862,33 @@
                             ],
                             "@type": "note",
                             "@id": "symbol_a7d3e618-4c02-49b5-8f7a-2be6105d38c4"
+                        },
+                        {
+                            "pitch": 58,
+                            "carriers": [
+                                {
+                                    "@id": "8b04d792-518a-40e4-9b36-7cd8c455e914"
+                                },
+                                {
+                                    "@id": "0f61be0f-f0b0-4640-8ef2-745420504ded"
+                                },
+                                {
+                                    "@id": "237fb321-f637-4b73-90cc-78f47daec779"
+                                },
+                                {
+                                    "@id": "163dd847-f257-4ec3-a29e-accc7467031d"
+                                },
+                                {
+                                    "@id": "8e1f6cb3-8685-44a6-9601-c60da61993f9"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "4daa9cc5-0351-44b9-b97d-0391d484ecfc"
                         }
                     ],
                     "delete": [
-                        "symbol_6083c2bc-5094-4c10-8f73-43f1ae1e473d"
+                        "symbol_6083c2bc-5094-4c10-8f73-43f1ae1e473d",
+                        "symbol_5b6c513f-60b3-4df4-b49e-f54ba1f6aa8b"
                     ],
                     "editType": "additional-accent",
                     "motivation": "chord-shading",
@@ -3873,6 +3896,7 @@
                     "@id": "4d19f6b3-72ac-4e18-b905-8e3c7a14d02f"
                 },
                 {
+                    "editType": "shorten",
                     "insert": [
                         {
                             "pitch": 60,
@@ -3888,9 +3912,26 @@
                             "@id": "086c8084-f540-4d30-aa25-7ab8cb30ad65"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "delete": [
+                        "symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0"
+                    ],
+                    "motivation": "uncertain",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "Das {{symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0|c′}} endet in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} 3 mm vor dem {{symbol_978ae676-bfe0-44d2-9485-be875e9d6786|nächsten Anschlag desselben Tons}}; in {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} {{086c8084-f540-4d30-aa25-7ab8cb30ad65|endet es}} knapp 4 mm früher, sodass zwischen beiden Löchern 6,7 mm bleiben, und {{c9050e75-97a8-4862-9533-0f4b1439802b}} {{symbol_bc5958aa-5fee-4daf-8457-9d96b98208a4|kürzt es}} noch einmal um knapp 7 mm. Die längste Lesung trägt allein Wi1, die mittlere St1 und Ne1, die kürzeste St2, Bo1 und Ch1; am Ende des Tons liegt Wi1 4,3 mm hinter St1, bei den benachbarten Tönen höchstens 1,8 mm. Warum der Ton gekürzt wurde, ist ungewiss. Vielleicht soll die Wiederholung des c′ sicherer anschlagen: bei 3 mm bleiben zwischen dem Ende des Tons und dem neuen Anschlag nur etwa 60 ms.",
+                                    "@type": "simpleArgumentation"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "2022640e-a56b-4d58-b4e5-274c97bfeeb8"
+                        },
+                        "@id": "d18d231c-cc7e-449a-bf99-02225b3c0a14"
+                    },
                     "@type": "edit",
-                    "@id": "900fdb20-4db5-4371-b39e-f282c437360c"
+                    "@id": "0f9e0ba7-35bc-4a65-ad24-dfb7117256e2"
                 },
                 {
                     "insert": [
@@ -4304,35 +4345,6 @@
                 {
                     "insert": [
                         {
-                            "pitch": 58,
-                            "carriers": [
-                                {
-                                    "@id": "8b04d792-518a-40e4-9b36-7cd8c455e914"
-                                },
-                                {
-                                    "@id": "0f61be0f-f0b0-4640-8ef2-745420504ded"
-                                },
-                                {
-                                    "@id": "237fb321-f637-4b73-90cc-78f47daec779"
-                                },
-                                {
-                                    "@id": "163dd847-f257-4ec3-a29e-accc7467031d"
-                                },
-                                {
-                                    "@id": "8e1f6cb3-8685-44a6-9601-c60da61993f9"
-                                }
-                            ],
-                            "@type": "note",
-                            "@id": "4daa9cc5-0351-44b9-b97d-0391d484ecfc"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "b0f03022-b57f-4d24-bd0e-b74208547eed"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "bass",
                             "carriers": [
@@ -4431,14 +4443,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "ced714ba-5a68-4548-a1eb-28f49123279a"
-                },
-                {
-                    "delete": [
                         "symbol_c756f5da-fe5d-477d-a326-76ac9c5d7429"
                     ],
                     "motivation": "unchecked",
@@ -4532,14 +4536,6 @@
                     "motivation": "unchecked",
                     "@type": "edit",
                     "@id": "c4ab93f1-0fe6-413e-ba6b-8b62c60ff36b"
-                },
-                {
-                    "delete": [
-                        "symbol_5b6c513f-60b3-4df4-b49e-f54ba1f6aa8b"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "a5fb111c-f758-4244-81d5-e5073de555b1"
                 }
             ],
             "motivations": [
