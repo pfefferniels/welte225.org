@@ -4053,11 +4053,26 @@
                     "delete": [
                         "symbol_68605733-03bb-4c12-ac55-51b77579c378"
                     ],
-                    "motivation": "unchecked",
+                    "motivation": "uncertain",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "Das {{symbol_68605733-03bb-4c12-ac55-51b77579c378|c″}} reicht in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bis an den Anschlag des folgenden {{symbol_c51e13e9-87a6-404f-9305-3799c16ca187|b′}}; in {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} endet {{24c172e5-bbed-44ac-9676-c1814a202f61|es}} gut 3 mm (etwa 65 ms) früher und wird vor dem b′ abgesetzt. Die längere Lesung trägt allein Wi1, die kürzere tragen St1, St2, Ne1, Ch1 und Bo1; am Ende des Tons liegt Wi1 3,8 mm hinter St1, bei den benachbarten Tönen höchstens 2,5 mm. Warum der Ton gekürzt wurde, ist ungewiss. Vielleicht soll das b′ durch das Absetzen hervorgehoben werden; die Stärke seines Anschlags ändert sich dadurch nicht.",
+                                    "@type": "simpleArgumentation"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "87bb7aea-49e7-48eb-ac30-d99bd6c65f84"
+                        },
+                        "@id": "f110d4bb-2f03-4b45-919e-21643440e1af"
+                    },
                     "@type": "edit",
                     "@id": "ce105d69-6ac4-44e3-ba9e-64da5e0cc0a7"
                 },
                 {
+                    "editType": "shift",
                     "insert": [
                         {
                             "pitch": 48,
@@ -4082,9 +4097,26 @@
                             "@id": "ab9cc83d-6b0c-4c8e-9cfb-d0332edd32df"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "delete": [
+                        "symbol_0ba08fd6-c163-4d0b-bdad-f676bdb93aa5"
+                    ],
+                    "motivation": "uncertain",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "Das {{symbol_0ba08fd6-c163-4d0b-bdad-f676bdb93aa5|c}} setzt in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} zugleich mit dem {{symbol_3c55065b-2ea3-4dde-aa80-dffe51ea3c7e|fis}} ein, in {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} {{ab9cc83d-6b0c-4c8e-9cfb-d0332edd32df|gut 3 mm (etwa 60 ms) früher}}; sein Ende bleibt. Den späteren Einsatz trägt allein Wi1, den früheren tragen St1, St2, Ne1, Ch1 und Bo1. Warum der Ton vorgezogen wurde, ist ungewiss. Die Bewegung gleicht den vorgezogenen Akkordtönen, mit denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Akkorde dynamisch differenziert; dort öffnet sich zwischen den Anschlägen aber ein Forzando im Bass, hier läuft nur das {{symbol_08033aa3-a49f-41cb-ad39-86dd61980e9a|Crescendo}}, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Bass hinzufügt, und die Emulation gibt dem c kaum weniger Kraft als dem fis (44,5 gegen 45,6).",
+                                    "@type": "simpleArgumentation"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "dd949fb4-b5b0-4c21-980c-f6dfd1b3f79d"
+                        },
+                        "@id": "9dd944df-ae96-45f0-bc3d-274cdbb8fef1"
+                    },
                     "@type": "edit",
-                    "@id": "8d63cf95-35f0-4501-833d-ba1cf3018970"
+                    "@id": "3453c6d0-f971-4d11-be55-8cdd5fd55bba"
                 },
                 {
                     "insert": [
@@ -4447,14 +4479,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_0ba08fd6-c163-4d0b-bdad-f676bdb93aa5"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "ca5b8b93-ed55-49da-a7cf-39f8246751c0"
-                },
-                {
-                    "delete": [
                         "symbol_8340e819-366b-4dbe-91d3-27ad38589481"
                     ],
                     "motivation": "unchecked",
@@ -4558,6 +4582,11 @@
                     "note": "Das An des Crescendos rückt vor, die alte Stanzung bleibt stehen",
                     "@type": "motivation",
                     "@id": "crescendo-onset-moved"
+                },
+                {
+                    "note": "Gelesen, der Grund der Änderung bleibt aber ungewiss",
+                    "@type": "motivation",
+                    "@id": "uncertain"
                 },
                 {
                     "note": "Made by collating the two texts and not yet read by an editor.",
