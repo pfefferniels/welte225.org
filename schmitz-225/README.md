@@ -94,6 +94,11 @@ for each keyboard half, selected by `PER_HALF=1`.
   Each comes out as the text it was rendered from, except B1, which
   comes out as B; the two differ audibly in one note only.
 
+**Score-HPT** (`score-hpt/`). The score-informed velocity model of He,
+Togneri and Huang (arXiv:2508.07757) on the same notes, through the
+same analyses. It also finds C, less clearly than Transkun; see its
+README.
+
 ## Software
 
 - Python 3.13.5 with numpy 2.2.6, scipy 1.16.1, librosa 0.11.0,
