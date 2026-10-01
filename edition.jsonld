@@ -4025,6 +4025,7 @@
                     "@id": "5b13324d-44e0-40d8-bc00-53f75ac17e35"
                 },
                 {
+                    "editType": "shorten",
                     "insert": [
                         {
                             "pitch": 72,
@@ -4049,9 +4050,12 @@
                             "@id": "24c172e5-bbed-44ac-9676-c1814a202f61"
                         }
                     ],
+                    "delete": [
+                        "symbol_68605733-03bb-4c12-ac55-51b77579c378"
+                    ],
                     "motivation": "unchecked",
                     "@type": "edit",
-                    "@id": "e26d9878-e676-4263-9c40-553ee88cca4e"
+                    "@id": "ce105d69-6ac4-44e3-ba9e-64da5e0cc0a7"
                 },
                 {
                     "insert": [
@@ -4440,14 +4444,6 @@
                     "motivation": "unchecked",
                     "@type": "edit",
                     "@id": "f2633693-db0a-4cce-9b3e-fba25437b86d"
-                },
-                {
-                    "delete": [
-                        "symbol_68605733-03bb-4c12-ac55-51b77579c378"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "5c2afd93-4b9c-4dd3-9a02-b61c2fab9168"
                 },
                 {
                     "delete": [
