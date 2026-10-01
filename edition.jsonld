@@ -7103,6 +7103,7 @@
                     "@id": "e1fba83d-273a-4b38-b0eb-8611f0af6292"
                 },
                 {
+                    "editType": "shorten",
                     "insert": [
                         {
                             "pitch": 60,
@@ -7121,9 +7122,26 @@
                             "@id": "symbol_bc5958aa-5fee-4daf-8457-9d96b98208a4"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "delete": [
+                        "086c8084-f540-4d30-aa25-7ab8cb30ad65"
+                    ],
+                    "motivation": "uncertain",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "note": "In {{c9050e75-97a8-4862-9533-0f4b1439802b}} {{symbol_bc5958aa-5fee-4daf-8457-9d96b98208a4|endet das c′}} noch einmal knapp 7 mm früher als {{086c8084-f540-4d30-aa25-7ab8cb30ad65|in}} {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, sodass vor dem {{symbol_978ae676-bfe0-44d2-9485-be875e9d6786|nächsten Anschlag desselben Tons}} 13,5 mm bleiben. Die kürzere Lesung tragen St2, Bo1 und Ch1, die längere St1 und Ne1; am Ende des Tons liegt St2 6,1 mm vor St1, bei den benachbarten Tönen weichen beide um höchstens 1,8 mm voneinander ab. Warum der Ton noch einmal gekürzt wurde, ist ungewiss; vielleicht, wie schon in {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, damit die Wiederholung des c′ sicher anschlägt.",
+                                    "@type": "simpleArgumentation"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "3b7dad5d-818e-438b-86b9-3f9acd9eafdd"
+                        },
+                        "@id": "af072999-ebe9-4fcb-8586-581d93bf866f"
+                    },
                     "@type": "edit",
-                    "@id": "61232056-ba15-4020-ab3e-f2ce176b1952"
+                    "@id": "3b6ada31-39f2-483c-a28a-922f42473ed4"
                 },
                 {
                     "insert": [
@@ -7463,14 +7481,6 @@
                 },
                 {
                     "delete": [
-                        "086c8084-f540-4d30-aa25-7ab8cb30ad65"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "afb58fa9-9712-4979-bbb2-59c4a9409ff8"
-                },
-                {
-                    "delete": [
                         "symbol_e22ac75f-56d7-4e14-92ea-0bbd2168a0e6"
                     ],
                     "motivation": "unchecked",
@@ -7522,6 +7532,11 @@
                     "note": "Das Crescendo vor dem Auftakt rückt hinter ihn, der Auftakt erhält ein Forzando",
                     "@type": "motivation",
                     "@id": "swell-behind-upbeat"
+                },
+                {
+                    "note": "Gelesen, der Grund der Änderung bleibt aber ungewiss",
+                    "@type": "motivation",
+                    "@id": "uncertain"
                 },
                 {
                     "note": "Made by collating the two texts and not yet read by an editor.",
