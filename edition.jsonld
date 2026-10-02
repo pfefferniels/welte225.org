@@ -4978,32 +4978,6 @@
                     ],
                     "@type": "edit",
                     "@id": "113e42d2-3bee-4fec-890b-47254f70a750"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "4f6cbd82-3753-4762-ba67-36feb3ce05d7"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "334d1576-8e93-4116-9216-67edc8a1e76a"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "479b4ef5-862b-4c5e-a22e-0ac4966870f6"
-                },
-                {
-                    "delete": [
-                        "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "98ff1325-e52e-4bae-9a2c-ac303052046d"
                 }
             ],
             "@id": "bab25aef-f80d-4ff0-b187-63030df8305a",
@@ -6834,7 +6808,7 @@
                     "motivation": "treble-crescendo-thinned",
                     "delete": [
                         "symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea",
-                        "334d1576-8e93-4116-9216-67edc8a1e76a"
+                        "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
                     ],
                     "@annotation": {
                         "belief": {
@@ -37672,6 +37646,32 @@
                     "motivation": "unchecked",
                     "@type": "edit",
                     "@id": "ca1729ca-ccd9-48b5-9165-d357f134602d"
+                },
+                {
+                    "delete": [
+                        "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "98ff1325-e52e-4bae-9a2c-ac303052046d"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "4f6cbd82-3753-4762-ba67-36feb3ce05d7"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "334d1576-8e93-4116-9216-67edc8a1e76a"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "479b4ef5-862b-4c5e-a22e-0ac4966870f6"
                 }
             ],
             "@id": "2767844e-311e-4b97-8fb2-1b78db41e220"
