@@ -44,6 +44,26 @@ version, not the edition. To publish a change, export the edition
 from Roll Desk and replace the file here. Identifiers must not change
 between exports; the format keeps them.
 
+## Versions and citations
+
+The edition states its version (`version`, read as `owl:versionInfo`)
+and the day that version was published (`creation.publicationDate`).
+Version 1.0 was published on 2 October 2026. Both are raised by hand
+for a release, in Roll Desk's metadata dialog or in the file, the date
+together with the version. A push to `main` that brings a version not
+yet tagged tags its commit `v<version>`
+(`.github/workflows/tag-version.yml`), so that a cited version can be
+fetched by its name.
+
+The file goes on changing between versions. Roll Desk's Cite button
+therefore names, beside the version, the commit whose file the reader
+saw: it hashes the bytes it loaded and looks among the latest commits
+touching `edition.jsonld` for the one holding exactly those. Where none
+does, as in the minute before GitHub Pages serves a new push, the
+citation names no commit rather than a wrong one. A siglum or a place
+along the roll is cited precisely only with that commit; an IRI holds
+as long as the entity does.
+
 ## Places along the roll
 
 Every place the edition gives along the roll, in its notes as in Roll

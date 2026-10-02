@@ -1,0 +1,38 @@
+# Tags the commit that publishes a new version of the edition with v and the
+# version it states, so that a version a reader cites can be fetched by its
+# name, e.g. https://raw.githubusercontent.com/pfefferniels/welte225.org/v1.0/edition.jsonld.
+# A version tagged already is left where it was tagged. The edition goes on
+# changing between versions, and the commit a citation names beside the
+# version says which state the reader saw.
+
+name: Tag the version of the edition
+
+on:
+  push:
+    branches: [main]
+    paths: [edition.jsonld]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Tag the version the edition states, unless it is tagged already
+        run: |
+          version=$(jq -r '.version // empty' edition.jsonld)
+          if [ -z "$version" ]; then
+            echo "The edition states no version"
+            exit 0
+          fi
+          tag="v$version"
+          if git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null; then
+            echo "$tag exists already"
+          else
+            git tag "$tag"
+            git push origin "$tag"
+          fi

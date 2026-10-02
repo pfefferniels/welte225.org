@@ -8,12 +8,13 @@
     "@id": "https://welte225.org/",
     "title": "Alfred Grünfeld spielt Robert Schumann, Träumerei",
     "license": "https://creativecommons.org/licenses/by/4.0/",
+    "version": "1.0",
     "creation": {
         "publisher": {
             "name": "Niels Pfeffer",
             "sameAs": []
         },
-        "publicationDate": "2025-09-05",
+        "publicationDate": "2026-10-02",
         "editors": []
     },
     "roll": {
