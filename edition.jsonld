@@ -8,7 +8,6 @@
     "@id": "https://welte225.org/",
     "title": "Alfred Grünfeld spielt Robert Schumann, Träumerei",
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "version": "1.0",
     "creation": {
         "publisher": {
             "name": "Niels Pfeffer",
@@ -4606,7 +4605,8 @@
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
-            "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+            "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
@@ -5026,7 +5026,8 @@
                     "@id": "de5eea87-f11f-4dbf-93ad-a75996102667"
                 }
             ],
-            "@id": "bab25aef-f80d-4ff0-b187-63030df8305a"
+            "@id": "bab25aef-f80d-4ff0-b187-63030df8305a",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
@@ -6898,7 +6899,7 @@
                 },
                 {
                     "editType": "remove-redundancy",
-                    "motivation": "treble-crescendo-thinned",
+                    "motivation": "cleanup-c",
                     "delete": [
                         "symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d"
                     ],
@@ -6921,7 +6922,7 @@
                 },
                 {
                     "editType": "remove-redundancy",
-                    "motivation": "treble-crescendo-thinned",
+                    "motivation": "cleanup-c",
                     "delete": [
                         "symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845"
                     ],
@@ -7130,48 +7131,6 @@
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "9136ed2b-8f47-40db-a922-89dbd8c366e7"
-                                },
-                                {
-                                    "@id": "774be7ff-3de7-4e46-a694-fc20cc20a0ac"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "ef0e3453-9ef0-43fd-98ab-d818db8a9efe"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "28f2a37f-ae0d-4aae-a1f9-a78691e9dddf"
-                                },
-                                {
-                                    "@id": "b8a1cf00-e8a0-4923-aa51-0fea907f69a8"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_6b546385-1515-4a0b-9a69-0647602a8b99"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "62747e79-ec1d-4001-a12b-a52eff3b6464"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
                             "scope": "treble",
                             "carriers": [
                                 {
@@ -7196,48 +7155,6 @@
                             "scope": "treble",
                             "carriers": [
                                 {
-                                    "@id": "d1f59bcc-25f4-4283-9b2d-edb4678b4fa1"
-                                },
-                                {
-                                    "@id": "496cb75b-3384-4a77-bde9-3abf9819db46"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_de121890-2032-4f64-bc31-0a59e96bc610"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "2292f5c1-44dc-4e81-a541-7f69a40540cf"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "ce381619-731a-4e47-ade9-e9dc7258a25d"
-                                },
-                                {
-                                    "@id": "64b2f790-799a-42a7-9a8e-f67e9853e0f0"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_07a22f96-e819-4324-9517-335bc65e64af"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "e00f15a5-a09c-47a0-8585-6be3f004f144"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "treble",
-                            "carriers": [
-                                {
                                     "@id": "a0387a89-298c-44df-bfcf-3a07fef15e23"
                                 },
                                 {
@@ -7251,27 +7168,6 @@
                     "motivation": "unchecked",
                     "@type": "edit",
                     "@id": "c1367727-8fff-4556-ae96-eefbd1dadb3e"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "e0179adc-4bef-4021-af26-a3eef55e9779"
-                                },
-                                {
-                                    "@id": "e684ffd4-5305-442b-b437-883d179b891e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "c3c548cd-cbd1-4009-bcd2-df95234f3ade"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "8cad0eb3-86dd-4fb1-818b-9ae5c76fb7ee"
                 },
                 {
                     "insert": [
@@ -7337,111 +7233,6 @@
                     "@id": "408fe8b9-62bf-49c4-a411-0fb8cd4e6e31"
                 },
                 {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "357a0a4a-2d29-4736-96d9-a5e95e283acc"
-                                },
-                                {
-                                    "@id": "d5e3226f-abcd-40fc-a9a8-b33810087b13"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "bf7e28cc-9e2d-477a-bf64-3083cdbceb8f"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "da278a92-ba47-44d9-991b-2b17e5dedbc6"
-                                },
-                                {
-                                    "@id": "63d9604e-02d4-4573-bae1-6880303a6fcd"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_649fb2e0-413a-4b1e-a43b-0d6fe304ea46"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "202ff7d9-a7e4-45b9-90ac-f39e6e6bcb3e"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "a9e07887-a20b-48e2-ad15-4ae7aee60f58"
-                                },
-                                {
-                                    "@id": "bfe36077-e6b5-4a01-8331-41f3cbbb194c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_68c88440-9fdd-4703-8f58-995f06321cdc"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "91b47b48-22fe-4481-b381-ea27565074b1"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "0ef85aff-29e7-4551-8259-0091a7e3864a"
-                                },
-                                {
-                                    "@id": "de39432b-cc78-4296-a71f-0e739701b24a"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_e93405aa-b53a-4281-af88-35be2c572065"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "81eca22f-7830-4e29-8a3b-4468f475336b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "e9e5311b-520e-40a4-a46f-550b345ed047"
-                                },
-                                {
-                                    "@id": "7574c814-a6cb-41c4-a2a3-c22e7e4b40dd"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "fdb31bda-db49-4182-a897-b390171dab24"
-                },
-                {
                     "delete": [
                         "086c8084-f540-4d30-aa25-7ab8cb30ad65"
                     ],
@@ -7466,12 +7257,198 @@
                     "@id": "823b90f4-9f1f-4641-9285-f97b9fdbfa63"
                 },
                 {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "9136ed2b-8f47-40db-a922-89dbd8c366e7"
+                                },
+                                {
+                                    "@id": "774be7ff-3de7-4e46-a694-fc20cc20a0ac"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c"
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "28f2a37f-ae0d-4aae-a1f9-a78691e9dddf"
+                                },
+                                {
+                                    "@id": "b8a1cf00-e8a0-4923-aa51-0fea907f69a8"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_6b546385-1515-4a0b-9a69-0647602a8b99"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "delete": [],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "a26bd131-e03d-4276-924e-751b7cd115e8"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "d1f59bcc-25f4-4283-9b2d-edb4678b4fa1"
+                                },
+                                {
+                                    "@id": "496cb75b-3384-4a77-bde9-3abf9819db46"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_de121890-2032-4f64-bc31-0a59e96bc610"
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "ce381619-731a-4e47-ade9-e9dc7258a25d"
+                                },
+                                {
+                                    "@id": "64b2f790-799a-42a7-9a8e-f67e9853e0f0"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_07a22f96-e819-4324-9517-335bc65e64af"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "delete": [],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "2a72b1ea-ba2a-4188-b3aa-a1b3b73ff5f7"
+                },
+                {
                     "delete": [
                         "9db273e1-5039-432c-941b-9684c2896188"
                     ],
                     "motivation": "unchecked",
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "e0179adc-4bef-4021-af26-a3eef55e9779"
+                                },
+                                {
+                                    "@id": "e684ffd4-5305-442b-b437-883d179b891e"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "c3c548cd-cbd1-4009-bcd2-df95234f3ade"
+                        }
+                    ],
+                    "editType": "correct-error",
                     "@type": "edit",
-                    "@id": "13284881-b3c2-4c8c-b38c-690fb7ba710d"
+                    "@id": "28312d83-2629-4433-b723-3781321f1199"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "da278a92-ba47-44d9-991b-2b17e5dedbc6"
+                                },
+                                {
+                                    "@id": "63d9604e-02d4-4573-bae1-6880303a6fcd"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_649fb2e0-413a-4b1e-a43b-0d6fe304ea46"
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "0ef85aff-29e7-4551-8259-0091a7e3864a"
+                                },
+                                {
+                                    "@id": "de39432b-cc78-4296-a71f-0e739701b24a"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_e93405aa-b53a-4281-af88-35be2c572065"
+                        }
+                    ],
+                    "motivation": "80f176bd-1722-4c5c-bf78-856fe49dc8e8",
+                    "delete": [],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "3f9f23bd-59e7-4359-8a27-8e0f3d047f12"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "a9e07887-a20b-48e2-ad15-4ae7aee60f58"
+                                },
+                                {
+                                    "@id": "bfe36077-e6b5-4a01-8331-41f3cbbb194c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_68c88440-9fdd-4703-8f58-995f06321cdc"
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "357a0a4a-2d29-4736-96d9-a5e95e283acc"
+                                },
+                                {
+                                    "@id": "d5e3226f-abcd-40fc-a9a8-b33810087b13"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b"
+                        }
+                    ],
+                    "motivation": "80f176bd-1722-4c5c-bf78-856fe49dc8e8",
+                    "delete": [],
+                    "editType": "additional-accent",
+                    "@type": "edit",
+                    "@id": "3c208954-a4cd-4331-a939-715390f86b51"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "e9e5311b-520e-40a4-a46f-550b345ed047"
+                                },
+                                {
+                                    "@id": "7574c814-a6cb-41c4-a2a3-c22e7e4b40dd"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "fdb31bda-db49-4182-a897-b390171dab24"
                 },
                 {
                     "delete": [
@@ -7507,6 +7484,11 @@
                     "note": "Made by collating the two texts and not yet read by an editor.",
                     "@type": "motivation",
                     "@id": "unchecked"
+                },
+                {
+                    "note": "Akkordbetonung",
+                    "@type": "motivation",
+                    "@id": "80f176bd-1722-4c5c-bf78-856fe49dc8e8"
                 }
             ],
             "basedOn": [
@@ -7545,7 +7527,8 @@
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
-            "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
+            "@id": "c9050e75-97a8-4862-9533-0f4b1439802b",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
@@ -28255,7 +28238,8 @@
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
-            "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
+            "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-t100/context.jsonld",
@@ -28558,7 +28542,8 @@
             "system": {
                 "@id": "https://w3id.org/reo/type/system/welte-t100"
             },
-            "@id": "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+            "@id": "755d411a-0ba4-4f59-90a7-f231be3e66ad",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
@@ -35513,7 +35498,8 @@
             ],
             "motivations": [],
             "edits": [],
-            "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521"
+            "@id": "8a074fdb-dfc1-480b-ac06-ae3c7a640521",
+            "creation": {}
         },
         {
             "@context": "https://w3id.org/reo/welte-licensee/context.jsonld",
@@ -63674,11 +63660,55 @@
                 "dimensions": {
                     "width": 328.2695154038301,
                     "height": 8800.031973355537,
-                    "unit": "mm"
+                    "unit": "mm",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Aug 31 2026 08:11:03"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-03"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c-dimensions-belief"
+                        },
+                        "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c-dimensions-annotation"
+                    }
                 },
                 "holeSeparation": {
                     "value": 37.6685,
-                    "unit": "px"
+                    "unit": "px",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Aug 31 2026 08:11:03"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-03"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c-holeSeparation-belief"
+                        },
+                        "@id": "a7ff95b7-f43a-4341-ba86-80fa4e84499c-holeSeparation-annotation"
+                    }
                 },
                 "margins": {
                     "treble": 99,
@@ -63690,11 +63720,6 @@
                     "offset": 2.79191,
                     "separation": 37.6685,
                     "shift": -4
-                },
-                "measuredBy": {
-                    "software": "https://github.com/pianoroll/roll-image-parser",
-                    "version": "Aug 31 2026 08:11:03",
-                    "date": "2026-09-03"
                 },
                 "alignment": {
                     "against": "d229954b-086c-44d6-a589-aaa324d31d88",
@@ -73256,11 +73281,55 @@
                 "dimensions": {
                     "width": 285.74302081598665,
                     "height": 7654.007660283098,
-                    "unit": "mm"
+                    "unit": "mm",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Sep 12 2026 08:00:43"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-12"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad-dimensions-belief"
+                        },
+                        "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad-dimensions-annotation"
+                    }
                 },
                 "holeSeparation": {
                     "value": 33.413,
-                    "unit": "px"
+                    "unit": "px",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Sep 12 2026 08:00:43"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-12"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad-holeSeparation-belief"
+                        },
+                        "@id": "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad-holeSeparation-annotation"
+                    }
                 },
                 "margins": {
                     "treble": 347,
@@ -73276,11 +73345,6 @@
                     "offset": -8.4018,
                     "separation": 33.413,
                     "shift": -12
-                },
-                "measuredBy": {
-                    "software": "https://github.com/pianoroll/roll-image-parser",
-                    "version": "Sep 12 2026 08:00:43",
-                    "date": "2026-09-12"
                 },
                 "alignment": {
                     "against": "d229954b-086c-44d6-a589-aaa324d31d88",
@@ -100372,11 +100436,55 @@
                 "dimensions": {
                     "width": 285.3149641965029,
                     "height": 8124.446960865946,
-                    "unit": "mm"
+                    "unit": "mm",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Sep  8 2026 19:44:10"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-08"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8-dimensions-belief"
+                        },
+                        "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8-dimensions-annotation"
+                    }
                 },
                 "holeSeparation": {
                     "value": 33.2957,
-                    "unit": "px"
+                    "unit": "px",
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "true",
+                            "reasons": [
+                                {
+                                    "software": [
+                                        {
+                                            "name": "https://github.com/pianoroll/roll-image-parser",
+                                            "version": "Sep  8 2026 19:44:10"
+                                        }
+                                    ],
+                                    "date": {
+                                        "within": "2026-09-08"
+                                    },
+                                    "@type": "measurement"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8-holeSeparation-belief"
+                        },
+                        "@id": "9ae56c3e-b058-4972-9895-96946c6b93f8-holeSeparation-annotation"
+                    }
                 },
                 "margins": {
                     "treble": 358,
@@ -100392,11 +100500,6 @@
                     "offset": 1.51476,
                     "separation": 33.2957,
                     "shift": -12
-                },
-                "measuredBy": {
-                    "software": "https://github.com/pianoroll/roll-image-parser",
-                    "version": "Sep  8 2026 19:44:10",
-                    "date": "2026-09-08"
                 },
                 "alignment": {
                     "against": "d229954b-086c-44d6-a589-aaa324d31d88",
@@ -112168,6 +112271,7 @@
         }
     ],
     "referenceCopy": "d229954b-086c-44d6-a589-aaa324d31d88",
+    "version": "1.0",
     "@included": [
         {
             "@id": {
