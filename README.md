@@ -32,6 +32,12 @@ a motivation goes by a word – the redirect page sends on anything shaped
 like an identifier and lets Roll Desk, which holds the ids, say where it
 knows none.
 
+The start of an id names the entity as well, eight characters of its
+UUID at least (`/19fd4209`, `/symbol_05589b14`), as long as no other id
+starts the same way; Roll Desk settles the address on the full id. Its
+suggested citations give that short form, longer where eight characters
+are shared.
+
 Data of further projects goes into directories of its own, with a
 line in the redirect table of `404.html` for their entity paths.
 
@@ -55,9 +61,9 @@ yet tagged tags its commit `v<version>`
 (`.github/workflows/tag-version.yml`), so that a cited version can be
 fetched by its name.
 
-The file goes on changing between versions. Roll Desk's Cite button
-therefore names, beside the version, the commit whose file the reader
-saw: it hashes the bytes it loaded and looks among the latest commits
+The file goes on changing between versions. Roll Desk's suggested
+citation, in English and in German, therefore names, beside the version,
+the commit whose file the reader saw: it hashes the bytes it loaded and looks among the latest commits
 touching `edition.jsonld` for the one holding exactly those. Where none
 does, as in the minute before GitHub Pages serves a new push, the
 citation names no commit rather than a wrong one. A siglum or a place
