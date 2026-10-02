@@ -2051,6 +2051,12 @@
                             "carriers": [
                                 {
                                     "@id": "6c063569-1a94-4f38-b866-ac4562f83914"
+                                },
+                                {
+                                    "@id": "e0179adc-4bef-4021-af26-a3eef55e9779"
+                                },
+                                {
+                                    "@id": "e684ffd4-5305-442b-b437-883d179b891e"
                                 }
                             ],
                             "@type": "expression",
@@ -4992,38 +4998,12 @@
                     "@id": "479b4ef5-862b-4c5e-a22e-0ac4966870f6"
                 },
                 {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "9aedbb2e-2a9a-4e67-8e59-520c327ca3ca"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "9db273e1-5039-432c-941b-9684c2896188"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "ca1729ca-ccd9-48b5-9165-d357f134602d"
-                },
-                {
                     "delete": [
                         "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
                     ],
                     "motivation": "unchecked",
                     "@type": "edit",
                     "@id": "98ff1325-e52e-4bae-9a2c-ac303052046d"
-                },
-                {
-                    "delete": [
-                        "symbol_33f28cd2-b247-4179-adcd-d31d0606a73a"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "de5eea87-f11f-4dbf-93ad-a75996102667"
                 }
             ],
             "@id": "bab25aef-f80d-4ff0-b187-63030df8305a",
@@ -7329,31 +7309,6 @@
                     "editType": "additional-accent",
                     "@type": "edit",
                     "@id": "2a72b1ea-ba2a-4188-b3aa-a1b3b73ff5f7"
-                },
-                {
-                    "delete": [
-                        "9db273e1-5039-432c-941b-9684c2896188"
-                    ],
-                    "motivation": "unchecked",
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "e0179adc-4bef-4021-af26-a3eef55e9779"
-                                },
-                                {
-                                    "@id": "e684ffd4-5305-442b-b437-883d179b891e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "c3c548cd-cbd1-4009-bcd2-df95234f3ade"
-                        }
-                    ],
-                    "editType": "correct-error",
-                    "@type": "edit",
-                    "@id": "28312d83-2629-4433-b723-3781321f1199"
                 },
                 {
                     "insert": [
@@ -32825,7 +32780,7 @@
                     ],
                     "delete": [
                         "symbol_28af7f56-9890-41b0-a9e7-c1047ad38292",
-                        "c3c548cd-cbd1-4009-bcd2-df95234f3ade"
+                        "symbol_33f28cd2-b247-4179-adcd-d31d0606a73a"
                     ],
                     "motivation": "latch-to-hold",
                     "@type": "edit",
@@ -35584,6 +35539,11 @@
                     "note": "Eine Stanzung der Mutterrolle, die eine spätere Revision verlegt oder getilgt hat, vermutlich aus einer zweiten Vorlage übernommen",
                     "@type": "motivation",
                     "@id": "taken-from-mother-roll"
+                },
+                {
+                    "note": "Made by collating the two texts and not yet read by an editor.",
+                    "@type": "motivation",
+                    "@id": "unchecked"
                 }
             ],
             "edits": [
@@ -37686,6 +37646,32 @@
                     ],
                     "@type": "edit",
                     "@id": "5895bdf3-422f-45c6-81aa-91fcb2d3cbc9"
+                },
+                {
+                    "delete": [
+                        "symbol_33f28cd2-b247-4179-adcd-d31d0606a73a"
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "de5eea87-f11f-4dbf-93ad-a75996102667"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "9aedbb2e-2a9a-4e67-8e59-520c327ca3ca"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "9db273e1-5039-432c-941b-9684c2896188"
+                        }
+                    ],
+                    "motivation": "unchecked",
+                    "@type": "edit",
+                    "@id": "ca1729ca-ccd9-48b5-9165-d357f134602d"
                 }
             ],
             "@id": "2767844e-311e-4b97-8fb2-1b78db41e220"
