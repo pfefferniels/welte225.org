@@ -11,7 +11,10 @@
     "creation": {
         "publisher": {
             "name": "Niels Pfeffer",
-            "sameAs": []
+            "sameAs": [
+                "https://d-nb.info/gnd/1287287557",
+                "https://orcid.org/0000-0002-6210-7255"
+            ]
         },
         "publicationDate": "2026-10-02",
         "editors": []
@@ -22,9 +25,12 @@
             "recorded": {
                 "pianist": {
                     "name": "Grünfeld, Alfred",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/116888652",
+                        "http://www.wikidata.org/entity/Q78657"
+                    ]
                 },
-                "playing": ""
+                "playing": "https://d-nb.info/gnd/300145322"
             },
             "date": {
                 "within": "1905-01-20",
@@ -51,7 +57,11 @@
             },
             "place": {
                 "name": "Wien",
-                "sameAs": []
+                "sameAs": [
+                    "https://d-nb.info/gnd/4066009-6",
+                    "http://www.wikidata.org/entity/Q1741",
+                    "https://sws.geonames.org/2761369/"
+                ]
             }
         }
     },
@@ -28276,7 +28286,10 @@
                                             {
                                                 "actor": {
                                                     "name": "Niels Pfeffer",
-                                                    "sameAs": []
+                                                    "sameAs": [
+                                                        "https://d-nb.info/gnd/1287287557",
+                                                        "https://orcid.org/0000-0002-6210-7255"
+                                                    ]
                                                 },
                                                 "note": "Bezöge sich das Forzando ab nicht auf die zwei unmittelbar folgenden Noten, hätte das vorlaufende Crescendo keinen Sinn.",
                                                 "@type": "simpleArgumentation"
@@ -49422,7 +49435,10 @@
                 },
                 "company": {
                     "name": "M. Welte & Söhne",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/5125268-5",
+                        "http://www.wikidata.org/entity/Q537623"
+                    ]
                 },
                 "paper": {
                     "name": "ruled paper",
@@ -49453,7 +49469,10 @@
             },
             "keeper": {
                 "name": "Stanford",
-                "sameAs": []
+                "sameAs": [
+                    "https://d-nb.info/gnd/90222-6",
+                    "http://www.wikidata.org/entity/Q7598806"
+                ]
             },
             "sameAs": [
                 "https://purl.stanford.edu/mf320jq4997"
@@ -49462,7 +49481,10 @@
                 "kind": "analysis",
                 "actor": {
                     "name": "Stanford University Libraries",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/90222-6",
+                        "http://www.wikidata.org/entity/Q7598806"
+                    ]
                 },
                 "device": {
                     "name": "Rollenscanner der Stanford University Libraries",
@@ -63540,7 +63562,10 @@
             },
             "keeper": {
                 "name": "Stanford",
-                "sameAs": []
+                "sameAs": [
+                    "https://d-nb.info/gnd/90222-6",
+                    "http://www.wikidata.org/entity/Q7598806"
+                ]
             },
             "sameAs": [
                 "https://purl.stanford.edu/wv912mm2332"
@@ -63549,7 +63574,10 @@
                 "kind": "analysis",
                 "actor": {
                     "name": "Stanford University Libraries",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/90222-6",
+                        "http://www.wikidata.org/entity/Q7598806"
+                    ]
                 },
                 "device": {
                     "name": "Rollenscanner der Stanford University Libraries",
@@ -85975,7 +86003,10 @@
                                 {
                                     "actor": {
                                         "name": "Hagmann, Peter",
-                                        "sameAs": []
+                                        "sameAs": [
+                                            "https://d-nb.info/gnd/1036333507",
+                                            "http://www.wikidata.org/entity/Q95314399"
+                                        ]
                                     },
                                     "note": "Zur Leipziger Herbstmesse 1924 brachte Welte das Mignola und das Welte heraus, beide mit der jüngeren Blockskala T-98, und verkaufte das Welte-Mignon mit dieser Skala vom selben Jahr an (Hagmann 1984, S. 42 f. und S. 117, Anm. 15). Für diese Skala gelten die grünen Rollen (ebd., S. 89).",
                                     "@type": "beliefAdoption"
@@ -100412,7 +100443,10 @@
                 },
                 "company": {
                     "name": "M. Welte & Söhne",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/5125268-5",
+                        "http://www.wikidata.org/entity/Q537623"
+                    ]
                 },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-green"
@@ -100546,7 +100580,9 @@
             "conditions": [],
             "keeper": {
                 "name": "Hans-W. Schmitz",
-                "sameAs": [],
+                "sameAs": [
+                    "http://www.wikidata.org/entity/Q138844916"
+                ],
                 "@annotation": {
                     "belief": {
                         "certainty": "likely",
@@ -100571,7 +100607,10 @@
                 "kind": "recording",
                 "actor": {
                     "name": "TACET",
-                    "sameAs": []
+                    "sameAs": [
+                        "https://d-nb.info/gnd/16010439-7",
+                        "http://id.loc.gov/authorities/names/no2010034907"
+                    ]
                 },
                 "output": "https://www.youtube.com/watch?v=Myn21YML3P0",
                 "software": [
@@ -100648,6 +100687,8 @@
             "keeper": {
                 "name": "Nigel Nettheim",
                 "sameAs": [
+                    "https://d-nb.info/gnd/1047657759",
+                    "http://www.wikidata.org/entity/Q139198104",
                     "https://nettheim.com/"
                 ],
                 "@annotation": {
@@ -100665,7 +100706,10 @@
                             {
                                 "actor": {
                                     "name": "Nettheim, Nigel",
-                                    "sameAs": []
+                                    "sameAs": [
+                                        "https://d-nb.info/gnd/1047657759",
+                                        "http://www.wikidata.org/entity/Q139198104"
+                                    ]
                                 },
                                 "note": "Nettheim schreibt, die Rolle liege weiterhin bei ihm: „I still have the roll Welte 225 (DeLuxe, price $2.00)“ (Mail, 21.9.2026). Damit ist die Frage beantwortet, die Phillips offenließ.",
                                 "@type": "beliefAdoption"
@@ -111961,7 +112005,9 @@
                 ],
                 "company": {
                     "name": "De Luxe Reproducing Roll Corporation",
-                    "sameAs": [],
+                    "sameAs": [
+                        "http://id.loc.gov/authorities/names/no99039210"
+                    ],
                     "@annotation": {
                         "belief": {
                             "certainty": "likely",
@@ -111977,7 +112023,10 @@
                                 {
                                     "actor": {
                                         "name": "Nettheim, Nigel",
-                                        "sameAs": []
+                                        "sameAs": [
+                                            "https://d-nb.info/gnd/1047657759",
+                                            "http://www.wikidata.org/entity/Q139198104"
+                                        ]
                                     },
                                     "note": "Nettheim nennt das Exemplar eine DeLuxe-Ausgabe und schickt einen Scan des Schachteletiketts (Mail, 22.9.2026, Anhang Welte225BoxLabel.jpg). Auf dem Etikett stehen „DeLuxe Reproducing Player Roll“, die Nummer C-225 und der Preis $2.00, darunter Titel, Werkangabe, „Played by A. Grunfeld“ und „Made in U.S.A.“. Welte steht nicht darauf.",
                                     "@type": "beliefAdoption"
@@ -112165,7 +112214,10 @@
             "conditions": [],
             "keeper": {
                 "name": "USC Libraries",
-                "sameAs": [],
+                "sameAs": [
+                    "https://d-nb.info/gnd/1229956-X",
+                    "http://www.wikidata.org/entity/Q7896339"
+                ],
                 "@annotation": {
                     "belief": {
                         "certainty": "likely",
@@ -112190,7 +112242,9 @@
                 "kind": "recording",
                 "actor": {
                     "name": "Heebner, Walter S.",
-                    "sameAs": []
+                    "sameAs": [
+                        "http://id.loc.gov/authorities/names/no2026024262"
+                    ]
                 },
                 "output": "https://www.youtube.com/watch?v=ma3FOR-eUQQ",
                 "instrument": {
