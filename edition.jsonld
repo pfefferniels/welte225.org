@@ -3256,6 +3256,7 @@
                         "symbol_85f626a1-7963-42f6-8117-177508d532f0"
                     ],
                     "editType": "correct-error",
+                    "motivation": "ffa13660-0893-4644-92f3-e2fda59d01ab",
                     "@type": "edit",
                     "@id": "0431e2f2-4d80-4135-8a3a-1cf696fb9a22"
                 },
@@ -3286,6 +3287,7 @@
                         "symbol_d0298992-4507-492e-a023-d7805c92ccea"
                     ],
                     "editType": "correct-error",
+                    "motivation": "ffa13660-0893-4644-92f3-e2fda59d01ab",
                     "@type": "edit",
                     "@id": "a0c6d58c-3997-441c-b555-61fc93b235f1"
                 },
@@ -4517,7 +4519,7 @@
                     "delete": [
                         "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22"
                     ],
-                    "motivation": "unchecked",
+                    "motivation": "ffa13660-0893-4644-92f3-e2fda59d01ab",
                     "@type": "edit",
                     "@id": "5063eec1-3945-4996-af3e-6f71c7196995"
                 },
@@ -4583,6 +4585,11 @@
                     "note": "Made by collating the two texts and not yet read by an editor.",
                     "@type": "motivation",
                     "@id": "unchecked"
+                },
+                {
+                    "note": "dynamische Rücknahme der Betonung des Nonakkords",
+                    "@type": "motivation",
+                    "@id": "ffa13660-0893-4644-92f3-e2fda59d01ab"
                 }
             ],
             "basedOn": [
@@ -6815,54 +6822,6 @@
                 },
                 {
                     "editType": "remove-redundancy",
-                    "motivation": "treble-crescendo-thinned",
-                    "delete": [
-                        "symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea",
-                        "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
-                    ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "b113949a-901c-4bb4-a309-2c8fe6a111c1"
-                        },
-                        "@id": "948cbb92-3301-43f2-a3cf-5777fb455ba5"
-                    },
-                    "@type": "edit",
-                    "@id": "e0241c7a-0478-4315-a4f3-a34ae4d3a214"
-                },
-                {
-                    "editType": "remove-redundancy",
-                    "motivation": "treble-crescendo-thinned",
-                    "delete": [
-                        "symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8",
-                        "symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18"
-                    ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "b2401833-b8d9-4c3c-9b80-503a92febcc7"
-                        },
-                        "@id": "ed56a9c3-472a-4144-8070-5ea58b64a4ef"
-                    },
-                    "@type": "edit",
-                    "@id": "863fc916-b20d-4f34-9b70-0eb856502335"
-                },
-                {
-                    "editType": "remove-redundancy",
                     "motivation": "cleanup-c",
                     "delete": [
                         "symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d"
@@ -7050,71 +7009,6 @@
                 {
                     "insert": [
                         {
-                            "pitch": 60,
-                            "carriers": [
-                                {
-                                    "@id": "37553779-85cc-4a63-b1a8-33df610d4b1e"
-                                },
-                                {
-                                    "@id": "a9e4f029-d922-41bc-9b1b-57f035eb8a26"
-                                },
-                                {
-                                    "@id": "661bac26-7431-4127-9f1f-e474017c2e22"
-                                }
-                            ],
-                            "@type": "note",
-                            "@id": "symbol_bc5958aa-5fee-4daf-8457-9d96b98208a4"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "61232056-ba15-4020-ab3e-f2ce176b1952"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "ForzandoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5bf2ce6d-2003-42cc-8328-2b18593d0830"
-                                },
-                                {
-                                    "@id": "1f1c95ad-aa62-47c2-93e0-4e1512af13dc"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "e9b2b5f9-b4cd-4efe-9a5d-8a134f7da5fa"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "e802ea64-b128-4b39-bfcf-272cf78d98f7"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "21e5f27d-3553-455d-9d38-e856d37d55aa"
-                                },
-                                {
-                                    "@id": "a111ed71-584e-4b87-9cd8-06cf57b20bf5"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "3b71cd2a-8b25-4a01-b6b6-65d25cd7465b"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "c89bd0c2-11f1-4ceb-838d-91cd758bce79"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "SlowCrescendoOn",
                             "scope": "treble",
                             "carriers": [
@@ -7129,51 +7023,9 @@
                             "@id": "symbol_47820b6b-3e7c-43f1-823f-d650218bb144"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "motivation": "f4eb34a4-1022-4bbc-90c8-79e4ca1f4d3b",
                     "@type": "edit",
                     "@id": "c1367727-8fff-4556-ae96-eefbd1dadb3e"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOff",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "1790c285-bc01-4526-b4fc-b2b10eeb0c24"
-                                },
-                                {
-                                    "@id": "0c766e1a-34d5-4a93-827f-f6e642961872"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_828467f6-630d-47a8-a084-a7d13f56736c"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "42202f73-ae92-4c49-8d42-0c3fef2b31f1"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SlowCrescendoOn",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "6b7fd278-ad77-4b0b-9e55-25c1959e1fb4"
-                                },
-                                {
-                                    "@id": "0c86935c-c22d-498f-b271-e5a67fb91f80"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_e7c6945f-c87a-46ee-844f-52d8b189f2ab"
-                        }
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "f410c7a7-f48c-4665-b3ae-bdd31a731536"
                 },
                 {
                     "insert": [
@@ -7192,33 +7044,9 @@
                             "@id": "symbol_bb63c682-45cb-4d0b-8234-f57b7e01a959"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "motivation": "96621e39-4bda-496a-8f7e-62ed78dcba05",
                     "@type": "edit",
                     "@id": "408fe8b9-62bf-49c4-a411-0fb8cd4e6e31"
-                },
-                {
-                    "delete": [
-                        "086c8084-f540-4d30-aa25-7ab8cb30ad65"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "afb58fa9-9712-4979-bbb2-59c4a9409ff8"
-                },
-                {
-                    "delete": [
-                        "symbol_e22ac75f-56d7-4e14-92ea-0bbd2168a0e6"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "c95ded52-f5fc-404f-8f2a-3489375140f2"
-                },
-                {
-                    "delete": [
-                        "symbol_89b316e0-bc3a-464d-99a4-cb8d1b14eea1"
-                    ],
-                    "motivation": "unchecked",
-                    "@type": "edit",
-                    "@id": "823b90f4-9f1f-4641-9285-f97b9fdbfa63"
                 },
                 {
                     "insert": [
@@ -7369,6 +7197,104 @@
                     "@id": "3c208954-a4cd-4331-a939-715390f86b51"
                 },
                 {
+                    "delete": [
+                        "symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea"
+                    ],
+                    "motivation": "cleanup-c",
+                    "@type": "edit",
+                    "@id": "953eaf21-c795-4797-a18d-e42b4951a19e"
+                },
+                {
+                    "delete": [
+                        "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
+                    ],
+                    "motivation": "cleanup-c",
+                    "@type": "edit",
+                    "@id": "85de21d2-16a5-4750-9dff-56b8ea54db4c"
+                },
+                {
+                    "delete": [
+                        "symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8"
+                    ],
+                    "motivation": "cleanup-c",
+                    "@type": "edit",
+                    "@id": "025d8100-0d10-4c97-8b1d-e7d0f8e87cad"
+                },
+                {
+                    "delete": [
+                        "symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18"
+                    ],
+                    "motivation": "cleanup-c",
+                    "@type": "edit",
+                    "@id": "f5c4a2ee-8409-40ce-91f8-0994ab4ef721"
+                },
+                {
+                    "delete": [
+                        "symbol_89b316e0-bc3a-464d-99a4-cb8d1b14eea1"
+                    ],
+                    "motivation": "unchecked",
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "21e5f27d-3553-455d-9d38-e856d37d55aa"
+                                },
+                                {
+                                    "@id": "a111ed71-584e-4b87-9cd8-06cf57b20bf5"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "3b71cd2a-8b25-4a01-b6b6-65d25cd7465b"
+                        }
+                    ],
+                    "editType": "prolong",
+                    "@type": "edit",
+                    "@id": "12e264f6-5150-4814-b736-f6f1c87ca1b5"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SlowCrescendoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "1790c285-bc01-4526-b4fc-b2b10eeb0c24"
+                                },
+                                {
+                                    "@id": "0c766e1a-34d5-4a93-827f-f6e642961872"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_828467f6-630d-47a8-a084-a7d13f56736c"
+                        },
+                        {
+                            "expressionType": "SlowCrescendoOn",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "6b7fd278-ad77-4b0b-9e55-25c1959e1fb4"
+                                },
+                                {
+                                    "@id": "0c86935c-c22d-498f-b271-e5a67fb91f80"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_e7c6945f-c87a-46ee-844f-52d8b189f2ab"
+                        }
+                    ],
+                    "motivation": "5636914a-758b-41d1-b25a-a8bb94629155",
+                    "delete": [],
+                    "editType": "correct-error",
+                    "@type": "edit",
+                    "@id": "c7c1aa0d-bb00-4dde-ad2c-d5ff1fa5dde0"
+                },
+                {
+                    "delete": [
+                        "symbol_4d1bf108-8f72-48b1-8e2c-d7b6a6b2aba8"
+                    ],
+                    "motivation": "07e34faf-b7d3-4129-b5a8-9b8211e9252e",
                     "insert": [
                         {
                             "expressionType": "SlowCrescendoOn",
@@ -7385,17 +7311,61 @@
                             "@id": "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
                         }
                     ],
-                    "motivation": "unchecked",
+                    "editType": "correct-error",
                     "@type": "edit",
-                    "@id": "fdb31bda-db49-4182-a897-b390171dab24"
+                    "@id": "bacfc3d0-b6d6-4121-95b4-66a1cc9269e4"
                 },
                 {
                     "delete": [
-                        "symbol_4d1bf108-8f72-48b1-8e2c-d7b6a6b2aba8"
+                        "symbol_e22ac75f-56d7-4e14-92ea-0bbd2168a0e6"
                     ],
-                    "motivation": "unchecked",
+                    "motivation": "caa296fc-00d2-4860-bcbc-f8c49bedc1c1",
+                    "insert": [
+                        {
+                            "expressionType": "ForzandoOff",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5bf2ce6d-2003-42cc-8328-2b18593d0830"
+                                },
+                                {
+                                    "@id": "1f1c95ad-aa62-47c2-93e0-4e1512af13dc"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "e9b2b5f9-b4cd-4efe-9a5d-8a134f7da5fa"
+                        }
+                    ],
+                    "editType": "prolong",
                     "@type": "edit",
-                    "@id": "e39d8166-0fd2-43a0-b568-438f6224f34e"
+                    "@id": "a2c16ed6-94b0-464e-859e-ee1ffe044eef"
+                },
+                {
+                    "insert": [
+                        {
+                            "pitch": 60,
+                            "carriers": [
+                                {
+                                    "@id": "37553779-85cc-4a63-b1a8-33df610d4b1e"
+                                },
+                                {
+                                    "@id": "a9e4f029-d922-41bc-9b1b-57f035eb8a26"
+                                },
+                                {
+                                    "@id": "661bac26-7431-4127-9f1f-e474017c2e22"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "symbol_bc5958aa-5fee-4daf-8457-9d96b98208a4"
+                        }
+                    ],
+                    "motivation": "82d4f5b6-33f2-4dda-8f5e-7b449c3ca7be",
+                    "delete": [
+                        "086c8084-f540-4d30-aa25-7ab8cb30ad65"
+                    ],
+                    "editType": "shorten",
+                    "@type": "edit",
+                    "@id": "0522f842-39c9-4a94-9749-4d469935494c"
                 }
             ],
             "motivations": [
@@ -7428,6 +7398,36 @@
                     "note": "Akkordbetonung",
                     "@type": "motivation",
                     "@id": "80f176bd-1722-4c5c-bf78-856fe49dc8e8"
+                },
+                {
+                    "note": "Verstärkung des Sforzando",
+                    "@type": "motivation",
+                    "@id": "f4eb34a4-1022-4bbc-90c8-79e4ca1f4d3b"
+                },
+                {
+                    "note": "Differenzierung parallel zum Diskant",
+                    "@type": "motivation",
+                    "@id": "5636914a-758b-41d1-b25a-a8bb94629155"
+                },
+                {
+                    "note": "Hervorhebung des Melodietons",
+                    "@type": "motivation",
+                    "@id": "96621e39-4bda-496a-8f7e-62ed78dcba05"
+                },
+                {
+                    "note": "Stärkere Betonung des folgenden Akkords",
+                    "@type": "motivation",
+                    "@id": "07e34faf-b7d3-4129-b5a8-9b8211e9252e"
+                },
+                {
+                    "note": "Betonung durch Kürzung der vorhergehenden Note",
+                    "@type": "motivation",
+                    "@id": "82d4f5b6-33f2-4dda-8f5e-7b449c3ca7be"
+                },
+                {
+                    "note": "Weniger extreme Hervorhebung",
+                    "@type": "motivation",
+                    "@id": "caa296fc-00d2-4860-bcbc-f8c49bedc1c1"
                 }
             ],
             "basedOn": [
