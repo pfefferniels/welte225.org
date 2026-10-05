@@ -1,11 +1,16 @@
-# Tags the commit that publishes a new version of the edition with v and the
-# version it states, so that a version a reader cites can be fetched by its
-# name, e.g. https://raw.githubusercontent.com/pfefferniels/welte225.org/v1.0/edition.jsonld.
-# A version tagged already is left where it was tagged. The edition goes on
-# changing between versions, and the commit a citation names beside the
-# version says which state the reader saw.
+# Releases every published state of the edition as a version of its own and
+# tags it v<version>, so that a version a reader cites names one state of the
+# file and can be fetched by its name, e.g.
+# https://raw.githubusercontent.com/pfefferniels/welte225.org/v1.0/edition.jsonld.
+#
+# A push that raises the version itself, in Roll Desk's metadata dialog or in
+# the file, has its commit tagged with that version. A push that changes the
+# file under a version tagged already gets the next patch version: the last
+# number is raised, the publication date set to the day, and the result
+# committed and tagged (.github/release-edition.mjs). A version tagged already
+# is left where it was tagged.
 
-name: Tag the version of the edition
+name: Release the edition
 
 on:
   push:
@@ -15,24 +20,56 @@ on:
 
 permissions:
   contents: write
+  pages: write
+
+concurrency:
+  group: release-edition
+  cancel-in-progress: false
 
 jobs:
-  tag:
+  release:
     runs-on: ubuntu-latest
     steps:
+      # The tip of main rather than the pushed commit, so that a run queued
+      # behind another releases the state that is published now. The tags
+      # come with the history, to compare the file with them.
       - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
-      - name: Tag the version the edition states, unless it is tagged already
+      - name: Settle the version
+        id: version
+        run: node .github/release-edition.mjs
+
+      - name: Commit the raised version
+        if: steps.version.outputs.raised == 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
-          version=$(jq -r '.version // empty' edition.jsonld)
-          if [ -z "$version" ]; then
-            echo "The edition states no version"
-            exit 0
-          fi
-          tag="v$version"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898299+github-actions[bot]@users.noreply.github.com'
+          git commit --quiet -m "Release version $VERSION of the edition" -- edition.jsonld
+          git push origin HEAD:main
+
+      - name: Tag the version, unless it is tagged already
+        if: steps.version.outputs.version != ''
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          tag="v$VERSION"
           if git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null; then
             echo "$tag exists already"
           else
             git tag "$tag"
             git push origin "$tag"
           fi
+
+      # A push made with the workflow's own token may not start a Pages
+      # build, so one is asked for.
+      - name: Have Pages publish the raised version
+        if: steps.version.outputs.raised == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

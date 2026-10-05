@@ -54,16 +54,27 @@ between exports; the format keeps them.
 
 The edition states its version (`version`, read as `owl:versionInfo`)
 and the day that version was published (`creation.publicationDate`).
-Version 1.0 was published on 2 October 2026. Both are raised by hand
-for a release, in Roll Desk's metadata dialog or in the file, the date
-together with the version. A push to `main` that brings a version not
-yet tagged tags its commit `v<version>`
-(`.github/workflows/tag-version.yml`), so that a cited version can be
-fetched by its name.
+Version 1.0 was published on 2 October 2026. Every push to `main` that
+changes `edition.jsonld` releases a version, tagged `v<version>`, so
+that a cited version names one state of the file and can be fetched by
+its name (`.github/workflows/tag-version.yml`):
 
-The file goes on changing between versions. Roll Desk's suggested
-citation, in English and in German, therefore names, beside the version,
-the commit whose file the reader saw: it hashes the bytes it loaded and looks among the latest commits
+- A version raised by hand, in Roll Desk's metadata dialog or in the
+  file, together with its date, is tagged as it stands. Raise it so for
+  a release that deserves a number of its own.
+- A change that keeps a version tagged already is released as the next
+  patch version: the workflow raises the last number (1.0 to 1.0.1,
+  1.0.1 to 1.0.2), sets the publication date to the day, commits that
+  as github-actions and tags it (`.github/release-edition.mjs`). It
+  rewrites only those two fields, and only in a file written as Roll
+  Desk writes it; otherwise it fails and the version has to be raised
+  by hand.
+
+After such a push a local checkout of `main` is one commit behind the
+remote until it pulls.
+
+Roll Desk's suggested citation, in English and in German, names beside
+the version the commit whose file the reader saw: it hashes the bytes it loaded and looks among the latest commits
 touching `edition.jsonld` for the one holding exactly those. Where none
 does, as in the minute before GitHub Pages serves a new push, the
 citation names no commit rather than a wrong one. A siglum or a place
