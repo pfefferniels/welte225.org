@@ -20,7 +20,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 concurrency:
   group: release-edition
@@ -64,12 +63,3 @@ jobs:
             git tag "$tag"
             git push origin "$tag"
           fi
-
-      # A push made with the workflow's own token may not start a Pages
-      # build, so one is asked for.
-      - name: Have Pages publish the raised version
-        if: steps.version.outputs.raised == 'true'
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
