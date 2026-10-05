@@ -17,7 +17,16 @@
             ]
         },
         "publicationDate": "2026-10-02",
-        "editors": []
+        "editors": [
+            {
+                "name": "Niels Pfeffer",
+                "sameAs": [
+                    "https://d-nb.info/gnd/1287287557",
+                    "https://orcid.org/0000-0002-6210-7255"
+                ],
+                "role": "editor"
+            }
+        ]
     },
     "roll": {
         "catalogueNumber": "WM 225",
