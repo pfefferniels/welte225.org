@@ -10,7 +10,7 @@ and the place where the data about that roll is published.
 |---|---|
 | `/` | the landing page |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
-| `/rules` | the rules the edition's inferences apply (`applies`, CRMinf J3 applied), one section and anchor per rule, `rules#<id>`, with the same rules as JSON-LD in the page |
+| `/rules` | the editorial principles the edition's inferences apply (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
 | `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
