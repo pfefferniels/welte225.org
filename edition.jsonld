@@ -28280,7 +28280,6 @@
                                     "note": "{{755d411a-0ba4-4f59-90a7-f231be3e66ad}}: nur in Wi1, ohne Antwort auf anderem Ast – allmähliches Aufheben der Verschiebung T. 9; Rückspulstanzung; fünf Crescendo-/Forzando-Befehle T. 2, 6, 7; zwei Tilgungen ({{symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b|Ab des Diskant-Crescendos}}; {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Ab des Dämpferpedals}}).\n\n45 weitere Lesarten nur in Wi1, doch schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: meist {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei gleichartig, also verlegt; sonst Auflösung einer Redundanz von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, die eine spätere Hinzufügung nicht nachträglich erklärte.",
                                     "premises": [],
                                     "applies": [
-                                        "rules#edit-kinds",
                                         "rules#shared-addition",
                                         "rules#explain-redundancy"
                                     ],
@@ -86177,8 +86176,7 @@
                                     "note": "Ein Exemplar in der grünen Umstanzung kann nicht älter sein als das System, für das es gestanzt ist. Phillips 2016, S. 21 und S. 121, setzt die Produktion der grünen Rollen in die frühen zwanziger Jahre, nennt dafür aber keine Quelle. Die Grenze wird deshalb nur als wahrscheinlich geführt.",
                                     "premises": [],
                                     "applies": [
-                                        "rules#system-terminus",
-                                        "rules#weakest-premise"
+                                        "rules#system-terminus"
                                     ],
                                     "@type": "inference"
                                 }
@@ -100811,8 +100809,7 @@
                                         "c9050e75-97a8-4862-9533-0f4b1439802b"
                                     ],
                                     "applies": [
-                                        "rules#loudness-comparison",
-                                        "rules#weakest-premise"
+                                        "rules#loudness-comparison"
                                     ],
                                     "@type": "inference"
                                 }
@@ -112476,8 +112473,7 @@
                                         "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                                     ],
                                     "applies": [
-                                        "rules#loudness-comparison",
-                                        "rules#weakest-premise"
+                                        "rules#loudness-comparison"
                                     ],
                                     "@type": "inference"
                                 }
@@ -112545,8 +112541,7 @@
                             "/facsimiles/WR0225_02"
                         ],
                         "applies": [
-                            "rules#aligned-rows",
-                            "rules#weakest-premise"
+                            "rules#aligned-rows"
                         ],
                         "@type": "inference"
                     }
