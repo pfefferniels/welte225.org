@@ -4639,6 +4639,27 @@
                             }
                         }
                     },
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "note": "Die 172 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, trägt St1; 164 davon auch St2 und Ch1, 155 auch Ne1; Wi1 keine. Die 59, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt oder verlegt, trägt allein Wi1; dass sie schon {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} angehören, begründet die Ableitung von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}.\n\nDichter als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: 57 zusätzliche Betonungen, 25 berichtigte Fehler.",
+                                    "premises": [
+                                        "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267"
+                                    ],
+                                    "applies": [
+                                        "rules#shared-addition",
+                                        "rules#refinement"
+                                    ],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "fccd4c81-f1d9-4d0c-ab7c-c638462dbebc"
+                        },
+                        "@id": "3d989307-8d2d-4d10-b480-8cffc1a34738"
+                    },
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
             ],
@@ -4680,6 +4701,25 @@
                                 "@id": "c5754bf9-dc43-4166-b724-b27895e10648"
                             }
                         }
+                    },
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "note": "Acht Betonungen, die St1 nicht hat, tragen St2, Ch1 und Ne1 an der gleichen Stelle, jede mit wenigstens einer Stanzung in allen dreien: Sie verbinden {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} durch eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Hinzufügungen beide tragen (St2 164, Ne1 155 von 172).\n\nDie eine Redundanz von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die hier getilgt ist, zählt dafür nicht: Ihr Tilgen kann in zwei Ästen unabhängig geschehen.",
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#shared-addition",
+                                        "rules#independent-cleanup"
+                                    ],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "1f5e9388-9398-4e9d-b37f-ac0207c2be7f"
+                        },
+                        "@id": "bf82f23c-55f4-4e79-82c1-a9fae3faa88a"
                     },
                     "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                 }
@@ -7484,6 +7524,25 @@
                                 "@id": "bc1244f9-f8c2-4a60-b208-187eac66ddf4"
                             }
                         }
+                    },
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "note": "Die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, trägt St2, ebenso Ch1 und, umgestanzt, Bo1; Ne1 und St1 keine. Die acht Betonungen von {{bab25aef-f80d-4ff0-b187-63030df8305a}} trägt St2, zwei davon verlängert.\n\nDichter als {{bab25aef-f80d-4ff0-b187-63030df8305a}}: 55 zusätzliche Betonungen; dazu drei Redundanzen und vier weitere Stanzungen getilgt, die St1 noch trägt.",
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#shared-addition",
+                                        "rules#refinement"
+                                    ],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "d99f7916-6e0e-41aa-9878-6caba46755be"
+                        },
+                        "@id": "4056c785-f67d-4c15-a0bf-8fd3e6ef19f0"
                     },
                     "@id": "bab25aef-f80d-4ff0-b187-63030df8305a"
                 }
@@ -28705,6 +28764,24 @@
                             }
                         }
                     },
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "note": "Ch1 trägt alle 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, und keine der 102, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} hinzufügt: eine eigene Umstanzung aus {{c9050e75-97a8-4862-9533-0f4b1439802b}}, nicht aus {{2767844e-311e-4b97-8fb2-1b78db41e220}}.\n\nEigen: ein Mezzoforte und drei Töne; vier Stanzungen getilgt.",
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#shared-addition"
+                                    ],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "eac33c2a-1299-432a-ba73-0927643b2571"
+                        },
+                        "@id": "c29327a6-ab63-48f7-99d2-55635a2803f6"
+                    },
                     "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
                 }
             ],
@@ -35439,6 +35516,24 @@
                     "collationTolerance": {
                         "toleranceStart": 5,
                         "toleranceEnd": 5
+                    },
+                    "@annotation": {
+                        "belief": {
+                            "certainty": "likely",
+                            "reasons": [
+                                {
+                                    "note": "Bo1 trägt die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, an ihrer Stelle: 124 in grüner Kodierung unter den 349 Umstanzungen, eine unverändert. Die drei Töne, die {{e07c4be8-f44b-496d-8a6c-026006340441}} hinzufügt, fehlen.\n\nEigen: zwei Töne; eine Stanzung getilgt.",
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#shared-addition"
+                                    ],
+                                    "@type": "inference"
+                                }
+                            ],
+                            "@type": "belief",
+                            "@id": "94d0d496-865a-49cf-bfbc-a1577982e0a0"
+                        },
+                        "@id": "1b06b4f5-2e1e-4a2f-8298-76d49b2447e2"
                     },
                     "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
                 }
