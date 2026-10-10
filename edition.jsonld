@@ -49518,9 +49518,6 @@
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
                                         ],
-                                        "applies": [
-                                            "rules#aligned-rows"
-                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -63621,9 +63618,6 @@
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                         ],
-                                        "applies": [
-                                            "rules#aligned-rows"
-                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -73550,9 +73544,6 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
-                                    "applies": [
-                                        "rules#system-terminus"
-                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -86000,9 +85991,6 @@
                                         "used": [
                                             "/facsimiles/WelteLicensee_225"
                                         ],
-                                        "applies": [
-                                            "rules#aligned-rows"
-                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -86175,9 +86163,6 @@
                                 {
                                     "note": "Ein Exemplar in der grünen Umstanzung kann nicht älter sein als das System, für das es gestanzt ist. Phillips 2016, S. 21 und S. 121, setzt die Produktion der grünen Rollen in die frühen zwanziger Jahre, nennt dafür aber keine Quelle. Die Grenze wird deshalb nur als wahrscheinlich geführt.",
                                     "premises": [],
-                                    "applies": [
-                                        "rules#system-terminus"
-                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -100540,9 +100525,6 @@
                                         "used": [
                                             "/facsimiles/WelteT98_225"
                                         ],
-                                        "applies": [
-                                            "rules#aligned-rows"
-                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -100808,9 +100790,6 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/matched_transkun.json",
                                         "c9050e75-97a8-4862-9533-0f4b1439802b"
                                     ],
-                                    "applies": [
-                                        "rules#loudness-comparison"
-                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -100909,9 +100888,6 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
-                                    "applies": [
-                                        "rules#system-terminus"
-                                    ],
                                     "@type": "inference"
                                 },
                                 {
@@ -112298,9 +112274,6 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
-                                    "applies": [
-                                        "rules#system-terminus"
-                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -112368,9 +112341,6 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/expr2/soft_test.json",
                                         "2767844e-311e-4b97-8fb2-1b78db41e220"
-                                    ],
-                                    "applies": [
-                                        "rules#loudness-comparison"
                                     ],
                                     "@type": "inference"
                                 }
@@ -112472,9 +112442,6 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                                         "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                                     ],
-                                    "applies": [
-                                        "rules#loudness-comparison"
-                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -112540,9 +112507,6 @@
                         "used": [
                             "/facsimiles/WR0225_02"
                         ],
-                        "applies": [
-                            "rules#aligned-rows"
-                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112570,9 +112534,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "c9050e75-97a8-4862-9533-0f4b1439802b"
-                        ],
-                        "applies": [
-                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
@@ -112602,9 +112563,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "755d411a-0ba4-4f59-90a7-f231be3e66ad"
                         ],
-                        "applies": [
-                            "rules#loudness-comparison"
-                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112633,9 +112591,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                         ],
-                        "applies": [
-                            "rules#loudness-comparison"
-                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112663,9 +112618,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/findings.md",
                             "e07c4be8-f44b-496d-8a6c-026006340441"
-                        ],
-                        "applies": [
-                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
@@ -112697,9 +112649,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                             "755d411a-0ba4-4f59-90a7-f231be3e66ad"
                         ],
-                        "applies": [
-                            "rules#loudness-comparison"
-                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112729,9 +112678,6 @@
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched_transkun.json",
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                             "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
-                        ],
-                        "applies": [
-                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
