@@ -127,7 +127,8 @@
     .statements dt { color: var(--muted); }
     .literals { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); row-gap: 0.4rem; align-items: baseline; }
     .lang { font-family: Menlo, Consolas, monospace; font-size: 0.75rem; color: var(--muted); }
-    .name { font-weight: 600; font-size: 1.15rem; }
+    .secondary { font-size: 0.88rem; color: var(--muted); }
+    .secondary.label { font-weight: 600; }
     @media (max-width: 640px) {
       .statements { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
       .statements dt { font-size: 0.9rem; }
@@ -157,7 +158,7 @@
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Refinement</h2>
-          <span class="lang">de</span><div class="name" lang="de">Verfeinerung</div>
+          <span class="lang">de</span><div class="secondary label" lang="de">Verfeinerung</div>
         </dd>
         <dt>IRI</dt>
         <dd><a href="#refinement"><code>https://welte225.org/rules#refinement</code></a></dd>
@@ -166,7 +167,7 @@
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
         <dd class="literals">
           <span class="lang">en</span><div lang="en">Later versions tend to have more and denser dynamic perforations than earlier ones. At the same time, superfluous or ineffective perforations are usually removed in later stages.</div>
-          <span class="lang">de</span><div lang="de">Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.</div>
         </dd>
       </dl>
     </section>
@@ -176,7 +177,7 @@
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Shared addition</h2>
-          <span class="lang">de</span><div class="name" lang="de">Gemeinsame Hinzufügung</div>
+          <span class="lang">de</span><div class="secondary label" lang="de">Gemeinsame Hinzufügung</div>
         </dd>
         <dt>IRI</dt>
         <dd><a href="#shared-addition"><code>https://welte225.org/rules#shared-addition</code></a></dd>
@@ -185,7 +186,7 @@
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
         <dd class="literals">
           <span class="lang">en</span><div lang="en">Only when an added perforation is found at exactly the same place in several versions are they connected by a common exemplar that the other versions do not share. It is very unlikely that the same addition was made independently at the same place.</div>
-          <span class="lang">de</span><div lang="de">Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.</div>
         </dd>
       </dl>
     </section>
@@ -195,7 +196,7 @@
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Explaining redundancies</h2>
-          <span class="lang">de</span><div class="name" lang="de">Redundanzen erklären</div>
+          <span class="lang">de</span><div class="secondary label" lang="de">Redundanzen erklären</div>
         </dd>
         <dt>IRI</dt>
         <dd><a href="#explain-redundancy"><code>https://welte225.org/rules#explain-redundancy</code></a></dd>
@@ -204,7 +205,7 @@
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
         <dd class="literals">
           <span class="lang">en</span><div lang="en">Editing steps are to be ordered so that they explain how redundancies arose – or, ex negativo: edits never turn an existing redundancy into something meaningful by insertions. A crescendo on after a crescendo on may thus be the trace of a preceding edit and so, by its exact position, possibly allow conclusions about the order of the edits.</div>
-          <span class="lang">de</span><div lang="de">Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.</div>
         </dd>
       </dl>
     </section>
@@ -214,7 +215,7 @@
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Independent cleanup</h2>
-          <span class="lang">de</span><div class="name" lang="de">Unabhängige Bereinigung</div>
+          <span class="lang">de</span><div class="secondary label" lang="de">Unabhängige Bereinigung</div>
         </dd>
         <dt>IRI</dt>
         <dd><a href="#independent-cleanup"><code>https://welte225.org/rules#independent-cleanup</code></a></dd>
@@ -223,7 +224,7 @@
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
         <dd class="literals">
           <span class="lang">en</span><div lang="en">The removal of redundancies is to be expected and can happen independently in two branches.</div>
-          <span class="lang">de</span><div lang="de">Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.</div>
         </dd>
       </dl>
     </section>
@@ -233,7 +234,7 @@
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">No contamination</h2>
-          <span class="lang">de</span><div class="name" lang="de">Keine Kontamination</div>
+          <span class="lang">de</span><div class="secondary label" lang="de">Keine Kontamination</div>
         </dd>
         <dt>IRI</dt>
         <dd><a href="#no-contamination"><code>https://welte225.org/rules#no-contamination</code></a></dd>
@@ -242,7 +243,7 @@
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
         <dd class="literals">
           <span class="lang">en</span><div lang="en">It is assumed that contamination plays no part in the editing history of piano rolls.</div>
-          <span class="lang">de</span><div lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</div>
         </dd>
       </dl>
     </section>
