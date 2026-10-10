@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Editorial principles · WM 225</title>
-  <meta name="description" content="The editorial principles by which the edition of WM 225 draws its conclusions.">
+  <meta name="description" content="Suggested editorial principles for the filiation of piano rolls, to be named by inferences in the Roll Edition Format.">
   <link rel="alternate" type="application/ld+json" href="/edition.jsonld" title="Roll edition of WM 225 as JSON-LD">
   <script type="application/ld+json">
   {
@@ -139,9 +139,9 @@
 </head>
 <body>
   <main>
-    <h1>Editorial principles of the edition</h1>
-    <p>The principles by which the <a href="/">edition of WM 225</a> draws its conclusions. Each is a rule of reasoning, a CRMinf <i>I3 Inference Logic</i>, stated in words and so also a CRM <i>E33 Linguistic Object</i>. An inference in the edition, a CRMinf <i>I5 Inference Making</i>, names the principles it applies by <i>J3 applied</i>: <code>applies</code> in the edition's JSON-LD, with the principle's IRI written relative to the edition, e.g. <code>"applies": ["rules#shared-addition"]</code>.</p>
-    <p>Below, each principle is given with the statements that make it up, each under the property it states, its name and text in English and German. The page carries the same statements as JSON-LD. The prefixes stand for:</p>
+    <h1>Editorial principles</h1>
+    <p>Suggested editorial principles for the filiation of piano rolls. They are meant to be named by the inferences of an edition in the <a href="https://pfefferniels.github.io/linked-rolls/">Roll Edition Format</a>, see <a href="https://pfefferniels.github.io/linked-rolls/#Inference.applies"><code>Inference.applies</code></a>. The following principles were used in the <a href="/">edition of Welte-Mignon roll 225</a>.</p>
+    <p>Each principle is given in English and German, under the properties that state it, with these prefixes:</p>
     <dl class="prefixes">
         <dt><code>crm:</code></dt>
         <dd><code>http://www.cidoc-crm.org/cidoc-crm/</code></dd>
@@ -155,13 +155,13 @@
 
     <section id="refinement">
       <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#refinement"><code>https://welte225.org/rules#refinement</code></a></dd>
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Refinement</h2>
           <span class="lang">de</span><div class="secondary label" lang="de">Verfeinerung</div>
         </dd>
-        <dt>IRI</dt>
-        <dd><a href="#refinement"><code>https://welte225.org/rules#refinement</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
@@ -174,13 +174,13 @@
 
     <section id="shared-addition">
       <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#shared-addition"><code>https://welte225.org/rules#shared-addition</code></a></dd>
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Shared addition</h2>
           <span class="lang">de</span><div class="secondary label" lang="de">Gemeinsame Hinzufügung</div>
         </dd>
-        <dt>IRI</dt>
-        <dd><a href="#shared-addition"><code>https://welte225.org/rules#shared-addition</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
@@ -193,13 +193,13 @@
 
     <section id="explain-redundancy">
       <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#explain-redundancy"><code>https://welte225.org/rules#explain-redundancy</code></a></dd>
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Explaining redundancies</h2>
           <span class="lang">de</span><div class="secondary label" lang="de">Redundanzen erklären</div>
         </dd>
-        <dt>IRI</dt>
-        <dd><a href="#explain-redundancy"><code>https://welte225.org/rules#explain-redundancy</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
@@ -212,13 +212,13 @@
 
     <section id="independent-cleanup">
       <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#independent-cleanup"><code>https://welte225.org/rules#independent-cleanup</code></a></dd>
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">Independent cleanup</h2>
           <span class="lang">de</span><div class="secondary label" lang="de">Unabhängige Bereinigung</div>
         </dd>
-        <dt>IRI</dt>
-        <dd><a href="#independent-cleanup"><code>https://welte225.org/rules#independent-cleanup</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
@@ -231,13 +231,13 @@
 
     <section id="no-contamination">
       <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#no-contamination"><code>https://welte225.org/rules#no-contamination</code></a></dd>
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
         <dd class="literals">
           <span class="lang">en</span><h2 lang="en">No contamination</h2>
           <span class="lang">de</span><div class="secondary label" lang="de">Keine Kontamination</div>
         </dd>
-        <dt>IRI</dt>
-        <dd><a href="#no-contamination"><code>https://welte225.org/rules#no-contamination</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
