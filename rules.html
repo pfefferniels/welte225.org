@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules · WM 225</title>
+  <meta name="description" content="The rules by which the edition of WM 225 draws its conclusions.">
+  <link rel="alternate" type="application/ld+json" href="/edition.jsonld" title="Roll edition of WM 225 as JSON-LD">
+  <script type="application/ld+json">
+  {
+    "@context": {
+      "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+      "crminf": "http://www.cidoc-crm.org/extensions/crminf/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "@base": "https://welte225.org/rules",
+      "@language": "de",
+      "name": "rdfs:label",
+      "text": "crm:P190_has_symbolic_content",
+      "source": "dcterms:source"
+    },
+    "@graph": [
+      {
+        "@id": "#edit-kinds",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Arten der Bearbeitung",
+        "text": "Bearbeitungen fügen neue Stanzungen hinzu, verschieben Stanzungen (wobei neue Redundanzen entstehen können) oder tilgen Redundanzen.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 1"
+      },
+      {
+        "@id": "#shared-addition",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Gemeinsame Hinzufügung",
+        "text": "Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 2"
+      },
+      {
+        "@id": "#explain-redundancy",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Redundanzen erklären",
+        "text": "Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 3"
+      },
+      {
+        "@id": "#independent-cleanup",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Unabhängige Bereinigung",
+        "text": "Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 4"
+      },
+      {
+        "@id": "#refinement",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Verfeinerung",
+        "text": "Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“"
+      },
+      {
+        "@id": "#no-contamination",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Keine Kontamination",
+        "text": "Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.",
+        "source": "Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Abschnitt „Modell“"
+      },
+      {
+        "@id": "#system-terminus",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Nicht älter als das System",
+        "text": "Ein Exemplar kann nicht älter sein als das System, für das es gestanzt ist, und eine Umstanzung nicht älter als die Rechte, aus denen sie hervorgeht."
+      },
+      {
+        "@id": "#weakest-premise",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Nicht gewisser als die Prämissen",
+        "text": "Ein Schluss wird nicht gewisser gehalten, als seine Prämissen es zulassen. Schließen sie ein Instrument unbekannter Regulierung ein, eine gröbere Abtastung als die der übrigen Kopien oder eine Angabe ohne Quelle, so wird er höchstens als wahrscheinlich oder möglich geführt."
+      },
+      {
+        "@id": "#aligned-rows",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Stanzreihen und Antrieb",
+        "text": "Liegen die Stanzreihen gleichzeitig gehaltener Ketten quer über die Spuren in einer Linie, so trieb ein Stempelkopf alle Stanzen; sind sie gegeneinander versetzt, so hatte jede Stanze einen eigenen Antrieb.",
+        "source": "Peter Phillips, Piano Rolls and Contemporary Player Pianos, Diss. University of Sydney 2016, S. 112 f."
+      },
+      {
+        "@id": "#loudness-comparison",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name": "Lautstärkevergleich",
+        "text": "Welche Fassung eine Aufnahme wiedergibt, wird an der Lautstärke der gehörten Töne entschieden: Sie wird mit der Dynamik verglichen, die die Emulation jeder in Frage kommenden Fassung ergibt, auf mehreren Lautstärkemaßen und unter verformten Einstellungen des Emulators. Eine Lesart gilt nur dort als vorhanden oder fehlend, wo sie die Lautstärke genug ändert, um sie aus der Aufnahme zu beurteilen."
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --ground: #ffffff;
+      --ink: #16181d;
+      --muted: #5b6270;
+      --rule: #e5e7eb;
+      --soft: #f3f4f6;
+      --accent: #a3232f;
+      --link: #1f4e8c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    h1 { font-weight: 600; font-size: 1.6rem; margin: 0; text-wrap: balance; }
+    h2 { font-weight: 600; margin: 2.8rem 0 0; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 1.4rem; text-wrap: balance; }
+    h3 { font-weight: 600; margin: 1.8rem 0 0; font-size: 1.1rem; }
+    p { margin: 0.8rem 0; max-width: 64ch; }
+    section { scroll-margin-top: 1rem; }
+    section:target { background: var(--soft); border-radius: 6px; padding: 0.1rem 1.2rem 0.2rem; margin: 0 -1.2rem; }
+    .source { font-size: 0.9rem; color: var(--muted); margin-top: 0.3rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover, a:focus-visible { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    code { font-family: Menlo, Consolas, monospace; font-size: 0.86em; background: var(--soft); padding: 0.05em 0.35em; border-radius: 3px; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Rules of the edition</h1>
+    <p>The rules by which the <a href="/">edition of WM 225</a> draws its conclusions. Each inference in the edition names the rules it applies (<code>applies</code>, CRMinf <i>J3 applied</i>), by the anchor of the rule on this page, e.g. <code>https://welte225.org/rules#shared-addition</code>. The first six are quoted from the dissertation <i>Grünfelds Geist</i>, the others are the edition's own. The page also carries the rules as JSON-LD, each an <i>I3 Inference Logic</i>.</p>
+
+    <h2>From the dissertation</h2>
+
+    <section id="edit-kinds">
+      <h3>Arten der Bearbeitung</h3>
+      <p lang="de">Bearbeitungen fügen neue Stanzungen hinzu, verschieben Stanzungen (wobei neue Redundanzen entstehen können) oder tilgen Redundanzen.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 1 · <a href="#edit-kinds"><code>rules#edit-kinds</code></a></p>
+    </section>
+
+    <section id="shared-addition">
+      <h3>Gemeinsame Hinzufügung</h3>
+      <p lang="de">Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 2 · <a href="#shared-addition"><code>rules#shared-addition</code></a></p>
+    </section>
+
+    <section id="explain-redundancy">
+      <h3>Redundanzen erklären</h3>
+      <p lang="de">Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 3 · <a href="#explain-redundancy"><code>rules#explain-redundancy</code></a></p>
+    </section>
+
+    <section id="independent-cleanup">
+      <h3>Unabhängige Bereinigung</h3>
+      <p lang="de">Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Regel 4 · <a href="#independent-cleanup"><code>rules#independent-cleanup</code></a></p>
+    </section>
+
+    <section id="refinement">
+      <h3>Verfeinerung</h3>
+      <p lang="de">Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“ · <a href="#refinement"><code>rules#refinement</code></a></p>
+    </section>
+
+    <section id="no-contamination">
+      <h3>Keine Kontamination</h3>
+      <p lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</p>
+      <p class="source">Niels Pfeffer, Grünfelds Geist, Tübingen 2026, Kap. „Varianten“, Abschnitt „Modell“ · <a href="#no-contamination"><code>rules#no-contamination</code></a></p>
+    </section>
+
+    <h2>The edition's own</h2>
+
+    <section id="system-terminus">
+      <h3>Nicht älter als das System</h3>
+      <p lang="de">Ein Exemplar kann nicht älter sein als das System, für das es gestanzt ist, und eine Umstanzung nicht älter als die Rechte, aus denen sie hervorgeht.</p>
+      <p class="source"><a href="#system-terminus"><code>rules#system-terminus</code></a></p>
+    </section>
+
+    <section id="weakest-premise">
+      <h3>Nicht gewisser als die Prämissen</h3>
+      <p lang="de">Ein Schluss wird nicht gewisser gehalten, als seine Prämissen es zulassen. Schließen sie ein Instrument unbekannter Regulierung ein, eine gröbere Abtastung als die der übrigen Kopien oder eine Angabe ohne Quelle, so wird er höchstens als wahrscheinlich oder möglich geführt.</p>
+      <p class="source"><a href="#weakest-premise"><code>rules#weakest-premise</code></a></p>
+    </section>
+
+    <section id="aligned-rows">
+      <h3>Stanzreihen und Antrieb</h3>
+      <p lang="de">Liegen die Stanzreihen gleichzeitig gehaltener Ketten quer über die Spuren in einer Linie, so trieb ein Stempelkopf alle Stanzen; sind sie gegeneinander versetzt, so hatte jede Stanze einen eigenen Antrieb.</p>
+      <p class="source">Peter Phillips, Piano Rolls and Contemporary Player Pianos, Diss. University of Sydney 2016, S. 112 f. · <a href="#aligned-rows"><code>rules#aligned-rows</code></a></p>
+    </section>
+
+    <section id="loudness-comparison">
+      <h3>Lautstärkevergleich</h3>
+      <p lang="de">Welche Fassung eine Aufnahme wiedergibt, wird an der Lautstärke der gehörten Töne entschieden: Sie wird mit der Dynamik verglichen, die die Emulation jeder in Frage kommenden Fassung ergibt, auf mehreren Lautstärkemaßen und unter verformten Einstellungen des Emulators. Eine Lesart gilt nur dort als vorhanden oder fehlend, wo sie die Lautstärke genug ändert, um sie aus der Aufnahme zu beurteilen.</p>
+      <p class="source"><a href="#loudness-comparison"><code>rules#loudness-comparison</code></a></p>
+    </section>
+
+    <footer>
+      Niels Pfeffer ·
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
+      <a href="https://github.com/pfefferniels/welte225.org">source of this site</a>
+    </footer>
+  </main>
+</body>
+</html>
