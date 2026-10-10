@@ -295,7 +295,11 @@
                             "reasons": [
                                 {
                                     "note": "Das {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|zweite An}} des Crescendos im Bass trägt allein St1; es steht zwischen dem {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|An}} und dem {{symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b|Ab}} und ist dort wirkungslos. Ein An nach einem An ist die Spur einer Verlegung: das An stand zuerst an der {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|späteren}} Stelle und wurde auf die {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|frühere}} vorgezogen, die alte Stanzung blieb stehen; {{bab25aef-f80d-4ff0-b187-63030df8305a}} tilgt sie. Das Loch misst auf St1 7,2 mm gegen im Median 5,1 mm bei den Crescendo-Löchern im Bass, was eine eigene Stanzung dieses Exemplars nicht ausschließt.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#explain-redundancy"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -356,7 +360,11 @@
                             "reasons": [
                                 {
                                     "note": "Das {{symbol_ff2b533b-cc1f-4783-a224-31c24eee0900|An des Una Corda-Pedals}} trägt allein Wi1. Ohne es stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} das {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|zweite Ab}} ohne Wirkung, wie St1 und St2 es tragen. Eine spätere Hinzufügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hat es getilgt und das Ab stehen lassen.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#explain-redundancy"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -6841,7 +6849,11 @@
                             "reasons": [
                                 {
                                     "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#refinement"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -6864,7 +6876,11 @@
                             "reasons": [
                                 {
                                     "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#refinement"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -28203,7 +28219,13 @@
                             "reasons": [
                                 {
                                     "note": "{{755d411a-0ba4-4f59-90a7-f231be3e66ad}}: nur in Wi1, ohne Antwort auf anderem Ast – allmähliches Aufheben der Verschiebung T. 9; Rückspulstanzung; fünf Crescendo-/Forzando-Befehle T. 2, 6, 7; zwei Tilgungen ({{symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b|Ab des Diskant-Crescendos}}; {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Ab des Dämpferpedals}}).\n\n45 weitere Lesarten nur in Wi1, doch schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: meist {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei gleichartig, also verlegt; sonst Auflösung einer Redundanz von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, die eine spätere Hinzufügung nicht nachträglich erklärte.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#edit-kinds",
+                                        "rules#shared-addition",
+                                        "rules#explain-redundancy"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -28365,7 +28387,11 @@
                             "reasons": [
                                 {
                                     "note": "Das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} fehlt allein auf Wi1; es steht auf St1, St2, Ch1 und Ne1, und Bo1 hält das Pedal genau bis dorthin. Wäre es eine Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, machte diese eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und dieses Exemplar hat es verloren.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#explain-redundancy"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -28456,7 +28482,12 @@
                             "reasons": [
                                 {
                                     "note": "Die rasch wechselnden Stanzungen des Una Corda-Pedals in T. 9 trägt allein Wi1. Kein Exemplar zeigt hier eine Redundanz, die sie erklären müsste, und spätere Fassungen fügen in der Regel Nuancen hinzu; sie gelten daher als Hinzufügung dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt.\n\nDenkbar bleibt, dass sie schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} standen und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte; dann nähme {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} vier wirksame Stanzungen zurück und verlegte zwei.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#refinement",
+                                        "rules#explain-redundancy"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -35469,7 +35500,11 @@
                             "reasons": [
                                 {
                                     "note": "Phillips’ Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: an drei Stellen ({{symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9|1}}, {{symbol_583a4144-9e67-449a-a323-1a12abd38273|2}}, {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|3}}) fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nNicht aus dieser Vorlage: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Sie kommen vermutlich aus einer zweiten Vorlage; siehe die Ableitung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83). Tempo 75 liest auch Nettheim an seinem Exemplar (Ne1), und zwar am Vorspann selbst, der sonst leer ist (Mail, 21.9.2026). Die Angabe steht damit auf zwei Exemplaren dieser Fassung, eines davon von der Rolle abgelesen statt aus einem Dateikopf übernommen. Was auf dem Etikett von Ch1 steht, entscheidet das nicht.",
-                                    "@type": "simpleArgumentation"
+                                    "premises": [],
+                                    "applies": [
+                                        "rules#shared-addition"
+                                    ],
+                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -35748,7 +35783,9 @@
                             "reasons": [
                                 {
                                     "note": "Eine {{symbol_453db0e0-ee3d-457a-876f-ed6d82af162d|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "premises": [],
+                                    "premises": [
+                                        "38273a55-76b7-4667-9262-f1b9c4772512"
+                                    ],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
@@ -36108,10 +36145,15 @@
                             "reasons": [
                                 {
                                     "note": "Eine {{symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Als eigene Einfügung machte sie das {{symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a|Ab}} wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ.",
-                                    "premises": [],
+                                    "premises": [
+                                        "38273a55-76b7-4667-9262-f1b9c4772512"
+                                    ],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
+                                    ],
+                                    "applies": [
+                                        "rules#explain-redundancy"
                                     ],
                                     "@type": "inference"
                                 }
@@ -36378,7 +36420,9 @@
                             "reasons": [
                                 {
                                     "note": "Eine {{symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "premises": [],
+                                    "premises": [
+                                        "38273a55-76b7-4667-9262-f1b9c4772512"
+                                    ],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
@@ -36747,7 +36791,9 @@
                             "reasons": [
                                 {
                                     "note": "Eine {{symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
-                                    "premises": [],
+                                    "premises": [
+                                        "38273a55-76b7-4667-9262-f1b9c4772512"
+                                    ],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
@@ -49377,6 +49423,9 @@
                                         "premises": [],
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                        ],
+                                        "applies": [
+                                            "rules#aligned-rows"
                                         ],
                                         "@type": "inference"
                                     }
@@ -63478,6 +63527,9 @@
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
                                         ],
+                                        "applies": [
+                                            "rules#aligned-rows"
+                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -73404,6 +73456,9 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
+                                    "applies": [
+                                        "rules#system-terminus"
+                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -85851,6 +85906,9 @@
                                         "used": [
                                             "/facsimiles/WelteLicensee_225"
                                         ],
+                                        "applies": [
+                                            "rules#aligned-rows"
+                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -86023,6 +86081,10 @@
                                 {
                                     "note": "Ein Exemplar in der grünen Umstanzung kann nicht älter sein als das System, für das es gestanzt ist. Phillips 2016, S. 21 und S. 121, setzt die Produktion der grünen Rollen in die frühen zwanziger Jahre, nennt dafür aber keine Quelle. Die Grenze wird deshalb nur als wahrscheinlich geführt.",
                                     "premises": [],
+                                    "applies": [
+                                        "rules#system-terminus",
+                                        "rules#weakest-premise"
+                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -100385,6 +100447,9 @@
                                         "used": [
                                             "/facsimiles/WelteT98_225"
                                         ],
+                                        "applies": [
+                                            "rules#aligned-rows"
+                                        ],
                                         "@type": "inference"
                                     }
                                 ],
@@ -100650,6 +100715,10 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/matched_transkun.json",
                                         "c9050e75-97a8-4862-9533-0f4b1439802b"
                                     ],
+                                    "applies": [
+                                        "rules#loudness-comparison",
+                                        "rules#weakest-premise"
+                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -100748,6 +100817,9 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
+                                    "applies": [
+                                        "rules#system-terminus"
+                                    ],
                                     "@type": "inference"
                                 },
                                 {
@@ -112134,6 +112206,9 @@
                                 {
                                     "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
                                     "premises": [],
+                                    "applies": [
+                                        "rules#system-terminus"
+                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -112201,6 +112276,9 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/expr2/soft_test.json",
                                         "2767844e-311e-4b97-8fb2-1b78db41e220"
+                                    ],
+                                    "applies": [
+                                        "rules#loudness-comparison"
                                     ],
                                     "@type": "inference"
                                 }
@@ -112302,6 +112380,10 @@
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                                         "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                                     ],
+                                    "applies": [
+                                        "rules#loudness-comparison",
+                                        "rules#weakest-premise"
+                                    ],
                                     "@type": "inference"
                                 }
                             ],
@@ -112337,7 +112419,13 @@
                 "reasons": [
                     {
                         "note": "An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt {{2767844e-311e-4b97-8fb2-1b78db41e220}} die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, innerhalb von 3,3 mm: das Ab des Diskant-Crescendos bei 1987 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit seinem An auf 1931 und 1950 mm vorzieht ({{2767844e-311e-4b97-8fb2-1b78db41e220}} hat beide Betonungen), das An im Diskant bei 2873 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, das Ab im Bass bei 4056 mm und das An im Bass bei 5583 mm, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} auf 4047 und 5563 mm verlegt. Alle vier liegen in Passagen, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} auch sonst überarbeitet.\n\nDie gleiche Stanzung an gleicher Stelle wird kaum zweimal unabhängig gesetzt, und in einer Vorlage im Stand von {{bab25aef-f80d-4ff0-b187-63030df8305a}} stand sie nicht mehr. Das An bei 2873 mm machte als eigene Einfügung zudem das Ab bei 2893 mm wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ; eine Einfügung, die eine Redundanz wirksam macht, ist nicht anzunehmen. {{2767844e-311e-4b97-8fb2-1b78db41e220}} steht dennoch unter {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, wie die Ableitung aus {{bab25aef-f80d-4ff0-b187-63030df8305a}} zeigt, und folgt an 20 der 25 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} einen Fehler berichtigt, dessen Berichtigung. Am einfachsten erklärt das eine zweite Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, eine Kontamination. Welche Kopie es gewesen sein könnte, ist nicht bekannt.\n\nGewiss ist das nicht, und es geht gegen die Annahme, dass Kontamination in der Überlieferung der Rollen keine Rolle spielt. Zwei Erklärungen ohne Kontamination bleiben möglich, jede um den Preis eines Zufalls. Der Bearbeiter von {{2767844e-311e-4b97-8fb2-1b78db41e220}} kann die vier Stanzungen neu gesetzt haben: zufällig gelegte Stanzungen dieser Lesung treffen solche Stellen im Mittel 0,7-mal, viermal also selten, aber nicht nie. Oder {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{bab25aef-f80d-4ff0-b187-63030df8305a}} gehen auf einen verlorenen Stand zurück, in dem die neuen Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} schon neben den alten stehen; das erklärte, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} bei 1987 mm beide Betonungen trägt. Dann hätten {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} die alten je für sich getilgt. Bei 4056 und 5583 mm wären das Redundanzen, deren Tilgung in zwei Ästen unabhängig geschehen kann. Die Betonungen bei 1964 und 2873 mm aber sind wirksam: ohne sie klingen in der Emulation auf dem T-100 die folgenden sechs und sieben Töne um bis zu 7,8 von 127 Stufen der Anschlagstärke leiser. Beide Äste hätten also dieselben zwei klingenden Betonungen zurücknehmen müssen.",
-                        "@type": "simpleArgumentation"
+                        "premises": [],
+                        "applies": [
+                            "rules#shared-addition",
+                            "rules#explain-redundancy",
+                            "rules#independent-cleanup"
+                        ],
+                        "@type": "inference"
                     }
                 ],
                 "@type": "belief",
@@ -112360,6 +112448,10 @@
                         "premises": [],
                         "used": [
                             "/facsimiles/WR0225_02"
+                        ],
+                        "applies": [
+                            "rules#aligned-rows",
+                            "rules#weakest-premise"
                         ],
                         "@type": "inference"
                     }
@@ -112389,6 +112481,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "c9050e75-97a8-4862-9533-0f4b1439802b"
                         ],
+                        "applies": [
+                            "rules#loudness-comparison"
+                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112416,6 +112511,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "755d411a-0ba4-4f59-90a7-f231be3e66ad"
+                        ],
+                        "applies": [
+                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
@@ -112445,6 +112543,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/rec_composite.json",
                             "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                         ],
+                        "applies": [
+                            "rules#loudness-comparison"
+                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112472,6 +112573,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/findings.md",
                             "e07c4be8-f44b-496d-8a6c-026006340441"
+                        ],
+                        "applies": [
+                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
@@ -112503,6 +112607,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                             "755d411a-0ba4-4f59-90a7-f231be3e66ad"
                         ],
+                        "applies": [
+                            "rules#loudness-comparison"
+                        ],
                         "@type": "inference"
                     }
                 ],
@@ -112532,6 +112639,9 @@
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched_transkun.json",
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/matched.json",
                             "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
+                        ],
+                        "applies": [
+                            "rules#loudness-comparison"
                         ],
                         "@type": "inference"
                     }
