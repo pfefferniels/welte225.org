@@ -13,9 +13,22 @@
       "crminf": "http://www.cidoc-crm.org/extensions/crminf/",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "@base": "https://welte225.org/rules",
-      "@language": "de",
-      "name": "rdfs:label",
-      "text": "crm:P190_has_symbolic_content"
+      "name_de": {
+        "@id": "rdfs:label",
+        "@language": "de"
+      },
+      "name_en": {
+        "@id": "rdfs:label",
+        "@language": "en"
+      },
+      "text_de": {
+        "@id": "crm:P190_has_symbolic_content",
+        "@language": "de"
+      },
+      "text_en": {
+        "@id": "crm:P190_has_symbolic_content",
+        "@language": "en"
+      }
     },
     "@graph": [
       {
@@ -24,8 +37,10 @@
           "crminf:I3_Inference_Logic",
           "crm:E33_Linguistic_Object"
         ],
-        "name": "Verfeinerung",
-        "text": "Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt."
+        "name_de": "Verfeinerung",
+        "name_en": "Refinement",
+        "text_de": "Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.",
+        "text_en": "Later versions tend to have more and denser dynamic perforations than earlier ones. At the same time, superfluous or ineffective perforations are as a rule removed in later stages."
       },
       {
         "@id": "#shared-addition",
@@ -33,8 +48,10 @@
           "crminf:I3_Inference_Logic",
           "crm:E33_Linguistic_Object"
         ],
-        "name": "Gemeinsame Hinzufügung",
-        "text": "Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde."
+        "name_de": "Gemeinsame Hinzufügung",
+        "name_en": "Shared addition",
+        "text_de": "Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.",
+        "text_en": "Only when an added perforation is found at exactly the same place in several versions are they connected by a common exemplar that the other versions do not share. It is very unlikely that the same addition was made independently at the same place."
       },
       {
         "@id": "#explain-redundancy",
@@ -42,8 +59,10 @@
           "crminf:I3_Inference_Logic",
           "crm:E33_Linguistic_Object"
         ],
-        "name": "Redundanzen erklären",
-        "text": "Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen."
+        "name_de": "Redundanzen erklären",
+        "name_en": "Explaining redundancies",
+        "text_de": "Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.",
+        "text_en": "Editing steps are to be ordered so that they explain how redundancies arose – or, ex negativo: edits never turn an existing redundancy into something meaningful by insertions. A crescendo on after a crescendo on may thus be the trace of a preceding edit and so, by its exact position, possibly allow conclusions about the order of the edits."
       },
       {
         "@id": "#independent-cleanup",
@@ -51,8 +70,10 @@
           "crminf:I3_Inference_Logic",
           "crm:E33_Linguistic_Object"
         ],
-        "name": "Unabhängige Bereinigung",
-        "text": "Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen."
+        "name_de": "Unabhängige Bereinigung",
+        "name_en": "Independent cleanup",
+        "text_de": "Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.",
+        "text_en": "The removal of redundancies is to be expected and can happen independently in two branches."
       },
       {
         "@id": "#no-contamination",
@@ -60,8 +81,10 @@
           "crminf:I3_Inference_Logic",
           "crm:E33_Linguistic_Object"
         ],
-        "name": "Keine Kontamination",
-        "text": "Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt."
+        "name_de": "Keine Kontamination",
+        "name_en": "No contamination",
+        "text_de": "Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.",
+        "text_en": "It is assumed that contamination plays no part in the editing history of piano rolls."
       }
     ]
   }
@@ -102,6 +125,9 @@
     section:target { background: var(--soft); border-radius: 6px; border-top-color: transparent; padding: 1.2rem; margin-left: -1.2rem; margin-right: -1.2rem; }
     .statements { display: grid; grid-template-columns: 15.5rem minmax(0, 1fr); column-gap: 1.2rem; row-gap: 0.5rem; align-items: baseline; }
     .statements dt { color: var(--muted); }
+    .literals { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); row-gap: 0.4rem; align-items: baseline; }
+    .lang { font-family: Menlo, Consolas, monospace; font-size: 0.75rem; color: var(--muted); }
+    .name { font-weight: 600; font-size: 1.15rem; }
     @media (max-width: 640px) {
       .statements { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
       .statements dt { font-size: 0.9rem; }
@@ -114,7 +140,7 @@
   <main>
     <h1>Editorial principles of the edition</h1>
     <p>The principles by which the <a href="/">edition of WM 225</a> draws its conclusions. Each is a rule of reasoning, a CRMinf <i>I3 Inference Logic</i>, stated in words and so also a CRM <i>E33 Linguistic Object</i>. An inference in the edition, a CRMinf <i>I5 Inference Making</i>, names the principles it applies by <i>J3 applied</i>: <code>applies</code> in the edition's JSON-LD, with the principle's IRI written relative to the edition, e.g. <code>"applies": ["rules#shared-addition"]</code>.</p>
-    <p>Below, each principle is given with the statements that make it up, each under the property it states. The page carries the same statements as JSON-LD. The prefixes stand for:</p>
+    <p>Below, each principle is given with the statements that make it up, each under the property it states, its name and text in German and English. The page carries the same statements as JSON-LD. The prefixes stand for:</p>
     <dl class="prefixes">
         <dt><code>crm:</code></dt>
         <dd><code>http://www.cidoc-crm.org/cidoc-crm/</code></dd>
@@ -129,65 +155,95 @@
     <section id="refinement">
       <dl class="statements">
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
-        <dd><h2 lang="de">Verfeinerung</h2></dd>
+        <dd class="literals">
+          <span class="lang">de</span><h2 lang="de">Verfeinerung</h2>
+          <span class="lang">en</span><div class="name" lang="en">Refinement</div>
+        </dd>
         <dt>IRI</dt>
         <dd><a href="#refinement"><code>https://welte225.org/rules#refinement</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
-        <dd lang="de">Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.</dd>
+        <dd class="literals">
+          <span class="lang">de</span><div lang="de">Spätere Fassungen weisen in der Tendenz mehr und dichtere Dynamikstanzungen auf als frühere. Gleichzeitig werden in späteren Stadien überflüssige oder effektlose Stanzungen in der Regel entfernt.</div>
+          <span class="lang">en</span><div lang="en">Later versions tend to have more and denser dynamic perforations than earlier ones. At the same time, superfluous or ineffective perforations are as a rule removed in later stages.</div>
+        </dd>
       </dl>
     </section>
 
     <section id="shared-addition">
       <dl class="statements">
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
-        <dd><h2 lang="de">Gemeinsame Hinzufügung</h2></dd>
+        <dd class="literals">
+          <span class="lang">de</span><h2 lang="de">Gemeinsame Hinzufügung</h2>
+          <span class="lang">en</span><div class="name" lang="en">Shared addition</div>
+        </dd>
         <dt>IRI</dt>
         <dd><a href="#shared-addition"><code>https://welte225.org/rules#shared-addition</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
-        <dd lang="de">Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.</dd>
+        <dd class="literals">
+          <span class="lang">de</span><div lang="de">Ausschließlich wenn sich eine hinzugefügte Stanzung an exakt der gleichen Stelle in mehreren Fassungen findet, sind sie durch eine gemeinsame Vorlage verbunden, die die übrigen Versionen nicht teilen. Es ist sehr unwahrscheinlich, dass eine gleiche Hinzufügung an der gleichen Stelle unabhängig vorgenommen wurde.</div>
+          <span class="lang">en</span><div lang="en">Only when an added perforation is found at exactly the same place in several versions are they connected by a common exemplar that the other versions do not share. It is very unlikely that the same addition was made independently at the same place.</div>
+        </dd>
       </dl>
     </section>
 
     <section id="explain-redundancy">
       <dl class="statements">
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
-        <dd><h2 lang="de">Redundanzen erklären</h2></dd>
+        <dd class="literals">
+          <span class="lang">de</span><h2 lang="de">Redundanzen erklären</h2>
+          <span class="lang">en</span><div class="name" lang="en">Explaining redundancies</div>
+        </dd>
         <dt>IRI</dt>
         <dd><a href="#explain-redundancy"><code>https://welte225.org/rules#explain-redundancy</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
-        <dd lang="de">Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.</dd>
+        <dd class="literals">
+          <span class="lang">de</span><div lang="de">Bearbeitungsschritte sind so anzuordnen, dass sie die Entstehung von Redundanzen erklären – bzw. ex negativo: Bearbeitungen wandeln niemals durch Einfügungen eine bestehende Redundanz in etwas Sinnvolles. Crescendo an nach Crescendo an kann also die Spur einer vorhergehenden Bearbeitung sein und damit durch seine exakte Position möglicherweise Rückschlüsse auf die Reihenfolge der Bearbeitungen zulassen.</div>
+          <span class="lang">en</span><div lang="en">Editing steps are to be ordered so that they explain how redundancies arose – or, ex negativo: edits never turn an existing redundancy into something meaningful by insertions. A crescendo on after a crescendo on may thus be the trace of a preceding edit and so, by its exact position, possibly allow conclusions about the order of the edits.</div>
+        </dd>
       </dl>
     </section>
 
     <section id="independent-cleanup">
       <dl class="statements">
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
-        <dd><h2 lang="de">Unabhängige Bereinigung</h2></dd>
+        <dd class="literals">
+          <span class="lang">de</span><h2 lang="de">Unabhängige Bereinigung</h2>
+          <span class="lang">en</span><div class="name" lang="en">Independent cleanup</div>
+        </dd>
         <dt>IRI</dt>
         <dd><a href="#independent-cleanup"><code>https://welte225.org/rules#independent-cleanup</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
-        <dd lang="de">Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.</dd>
+        <dd class="literals">
+          <span class="lang">de</span><div lang="de">Das Tilgen von Redundanzen ist erwartbar und kann in zwei Ästen unabhängig geschehen.</div>
+          <span class="lang">en</span><div lang="en">The removal of redundancies is to be expected and can happen independently in two branches.</div>
+        </dd>
       </dl>
     </section>
 
     <section id="no-contamination">
       <dl class="statements">
         <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
-        <dd><h2 lang="de">Keine Kontamination</h2></dd>
+        <dd class="literals">
+          <span class="lang">de</span><h2 lang="de">Keine Kontamination</h2>
+          <span class="lang">en</span><div class="name" lang="en">No contamination</div>
+        </dd>
         <dt>IRI</dt>
         <dd><a href="#no-contamination"><code>https://welte225.org/rules#no-contamination</code></a></dd>
         <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
         <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
         <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
-        <dd lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</dd>
+        <dd class="literals">
+          <span class="lang">de</span><div lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</div>
+          <span class="lang">en</span><div lang="en">It is assumed that contamination plays no part in the editing history of piano rolls.</div>
+        </dd>
       </dl>
     </section>
 
