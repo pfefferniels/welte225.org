@@ -1,0 +1,76 @@
+matrix matrix_blind.json
+
+=== blind, Bo1 via recoding links, Dollo G=10 eps=.25  (22472 admissible trees)
+optimum cost 97.250; trees at optimum cost: 2 (with same #hidden: 1)
+   1.    97.250 (+ 0.000) hidden=4  *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   2.    97.250 (+ 0.000) hidden=5  *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)
+   3.   102.250 (+ 5.000) hidden=4  *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)
+   4.   102.250 (+ 5.000) hidden=5  *(*(*(*(*(Bo1,Ch1),St2),St1),Ne1),Wi1)
+  [editor] cost 174.750 (+77.500) rank 61
+  [St1 sibling leaf] cost 132.000 (+34.750) rank 24
+  [no r3 (Ne1 child of St1)] cost 296.250 (+199.000) rank 461
+  [Wi1 = root (no r1)] cost 230.000 (+132.750) rank 131
+  [St1 = root] cost 333.000 (+235.750) rank 613
+  [Ch1,Bo1 sisters under St2 via hidden] cost 174.750 (+77.500) rank 62
+  [Bo1 at r3] cost 270.000 (+172.750) rank 277
+  [Ch1 at r3] cost 301.750 (+204.500) rank 497
+  [Ch1+Ne1 Licensee clade] cost 301.500 (+204.250) rank 496
+  [Ne1 under St2] cost 387.250 (+290.000) rank 1173
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 57.50 | no +  0.00
+   St1 is a sampled ancestor (internal node)     yes + 57.50 | no +  0.00
+   St1 is an ancestor of St2 and Ne1             yes + 57.50 | no +  0.00
+   Wi1 branches off at an unobserved root        yes +  0.00 | no + 50.00
+   Ch1 is a child of St2                         yes +  0.00 | no +  0.00
+   Bo1 is a child of St2                         yes + 25.00 | no +  0.00
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  7.75 | no +  0.00
+   exact editor topology                         yes + 77.50 | no +  0.00
+
+=== blind, Bo1 own near-match  (22472 admissible trees)
+optimum cost 93.250; trees at optimum cost: 2 (with same #hidden: 1)
+   1.    93.250 (+ 0.000) hidden=4  *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   2.    93.250 (+ 0.000) hidden=5  *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)
+   3.    96.250 (+ 3.000) hidden=4  *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)
+   4.    96.250 (+ 3.000) hidden=5  *(*(*(*(*(Bo1,Ch1),St2),St1),Ne1),Wi1)
+  [editor] cost 154.750 (+61.500) rank 45
+  [St1 sibling leaf] cost 112.000 (+18.750) rank 16
+  [no r3 (Ne1 child of St1)] cost 276.250 (+183.000) rank 393
+  [Wi1 = root (no r1)] cost 210.000 (+116.750) rank 103
+  [St1 = root] cost 313.000 (+219.750) rank 557
+  [Ch1,Bo1 sisters under St2 via hidden] cost 154.750 (+61.500) rank 46
+  [Bo1 at r3] cost 271.250 (+178.000) rank 340
+  [Ch1 at r3] cost 281.750 (+188.500) rank 443
+  [Ch1+Ne1 Licensee clade] cost 281.500 (+188.250) rank 436
+  [Ne1 under St2] cost 367.250 (+274.000) rank 914
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 59.50 | no +  0.00
+   St1 is a sampled ancestor (internal node)     yes + 59.50 | no +  0.00
+   St1 is an ancestor of St2 and Ne1             yes + 59.50 | no +  0.00
+   Wi1 branches off at an unobserved root        yes +  0.00 | no + 50.00
+   Ch1 is a child of St2                         yes +  0.00 | no +  0.00
+   Bo1 is a child of St2                         yes +  9.00 | no +  0.00
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  9.75 | no +  0.00
+   exact editor topology                         yes + 61.50 | no +  0.00
+
+=== blind, Bo1 red expr missing  (22472 admissible trees)
+optimum cost 82.250; trees at optimum cost: 8 (with same #hidden: 1)
+   1.    82.250 (+ 0.000) hidden=3  *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)
+   2.    82.250 (+ 0.000) hidden=4  *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)
+   3.    82.250 (+ 0.000) hidden=4  *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   4.    82.250 (+ 0.000) hidden=4  *(*(*(*(Ch1,St2(Bo1)),St1),Ne1),Wi1)
+  [editor] cost 134.750 (+52.500) rank 125
+  [St1 sibling leaf] cost 92.000 (+9.750) rank 27
+  [no r3 (Ne1 child of St1)] cost 256.250 (+174.000) rank 907
+  [Wi1 = root (no r1)] cost 190.000 (+107.750) rank 285
+  [St1 = root] cost 293.000 (+210.750) rank 1405
+  [Ch1,Bo1 sisters under St2 via hidden] cost 134.750 (+52.500) rank 126
+  [Bo1 at r3] cost 136.750 (+54.500) rank 145
+  [Ch1 at r3] cost 261.750 (+179.500) rank 1034
+  [Ch1+Ne1 Licensee clade] cost 261.500 (+179.250) rank 1031
+  [Ne1 under St2] cost 347.250 (+265.000) rank 1890
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 52.50 | no +  0.00
+   St1 is a sampled ancestor (internal node)     yes + 12.00 | no +  0.00
+   St1 is an ancestor of St2 and Ne1             yes + 52.50 | no +  0.00
+   Wi1 branches off at an unobserved root        yes +  0.00 | no +  3.00
+   Ch1 is a child of St2                         yes +  0.00 | no +  0.00
+   Bo1 is a child of St2                         yes +  0.00 | no +  0.00
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  9.75 | no +  0.00
+   exact editor topology                         yes + 52.50 | no +  0.00

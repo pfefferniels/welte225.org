@@ -1,0 +1,68 @@
+clusters 1409 written to blind-matrix.json
+edition symbols reproduced exactly 1372 / 1428
+┌──────────────┬─────┬───────┬───────┬───────┬─────────────┬─────────┐
+│ (index)      │ n   │ exact │ split │ merge │ split+merge │ dropped │
+├──────────────┼─────┼───────┼───────┼───────┼─────────────┼─────────┤
+│ red/Lic expr │ 652 │ 616   │ 1     │ 34    │ 0           │ 1       │
+│ note         │ 498 │ 478   │ 4     │ 16    │ 0           │ 0       │
+│ green expr   │ 278 │ 278   │ 0     │ 0     │ 0           │ 0       │
+└──────────────┴─────┴───────┴───────┴───────┴─────────────┴─────────┘
+┌─────────┬─────┬───────┬───────┬───────┬─────────────┬─────────┐
+│ (index) │ n   │ exact │ split │ merge │ split+merge │ dropped │
+├─────────┼─────┼───────┼───────┼───────┼─────────────┼─────────┤
+│ R2      │ 172 │ 156   │ 0     │ 16    │ 0           │ 0       │
+│ r3      │ 16  │ 15    │ 0     │ 1     │ 0           │ 0       │
+│ R4      │ 125 │ 120   │ 0     │ 5     │ 0           │ 0       │
+│ r1      │ 716 │ 691   │ 5     │ 20    │ 0           │ 0       │
+│ R1.1    │ 12  │ 11    │ 0     │ 0     │ 0           │ 1       │
+│ L2      │ 5   │ 5     │ 0     │ 0     │ 0           │ 0       │
+│ G1      │ 280 │ 280   │ 0     │ 0     │ 0           │ 0       │
+│ L1      │ 102 │ 94    │ 0     │ 8     │ 0           │ 0       │
+└─────────┴─────┴───────┴───────┴───────┴─────────────┴─────────┘
+┌─────────┬──────────┬──────────────┬────────┐
+│ (index) │ readings │ sameGrouping │ pct    │
+├─────────┼──────────┼──────────────┼────────┤
+│ St1     │ 829      │ 804          │ '97.0' │
+│ St2     │ 953      │ 929          │ '97.5' │
+│ Wi1     │ 723      │ 698          │ '96.5' │
+│ Ch1     │ 955      │ 931          │ '97.5' │
+│ Bo1     │ 742      │ 731          │ '98.5' │
+│ Ne1     │ 865      │ 836          │ '96.6' │
+└─────────┴──────────┴──────────────┴────────┘
+pairs only in edition by copy pair {
+  'Wi1-Ne1': 5,
+  'St1-Ne1': 5,
+  'St2-Ne1': 5,
+  'Ch1-Ne1': 5,
+  'Bo1-Ne1': 4
+}
+pairs only in blind by copy pair {
+  'St1-Ne1': 4,
+  'Wi1-Ne1': 20,
+  'St1-Wi1': 12,
+  'Ch1-Ne1': 7,
+  'St2-Ne1': 7,
+  'St2-Wi1': 11,
+  'Wi1-Ch1': 11,
+  'Wi1-Bo1': 6,
+  'Bo1-Ne1': 1,
+  'St1-St2': 4,
+  'St1-Ch1': 4
+}
+Bo1 presence on exactly reproduced red expression symbols: agree 595/616; blind links where edition has none 21; edition recodes but blind finds no link 0
+expression patterns with green links [
+  [ 'St1+St2+Wi1+Ch1+Bo1+Ne1', 146 ],
+  [ 'St1+St2+Ch1+Bo1+Ne1', 124 ],
+  [ 'St2+Ch1+Bo1', 111 ],
+  [ 'Ne1', 74 ],
+  [ 'Wi1', 52 ],
+  [ 'St1+St2+Wi1+Ch1+Bo1', 30 ],
+  [ 'St1+St2+Ch1+Ne1', 18 ],
+  [ 'St1+St2+Ch1+Bo1', 15 ],
+  [ 'St1+St2+Wi1+Ch1+Ne1', 13 ],
+  [ 'St2+Ch1+Bo1+Ne1', 12 ],
+  [ 'St2+Ch1', 11 ],
+  [ 'St1+Wi1+Ne1', 6 ],
+  [ 'St1+St2+Wi1+Ch1', 5 ],
+  [ 'Wi1+Ne1', 4 ]
+]

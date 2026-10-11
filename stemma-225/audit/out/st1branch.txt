@@ -1,0 +1,3 @@
+total Dollo events: A (St1 = R2, editor) 2014  B (St1 on own branch from R2) 2012
+   7364.69 expr:SlowCrescendoOn/bass [St1] editor R2>r3 | A R2>r3 cost 2 | B St1leaf> cost 1
+   9041.89 expr:SlowCrescendoOn/treble [St1] editor R2>R4/L1 | A R2>r3 cost 2 | B St1leaf> cost 1

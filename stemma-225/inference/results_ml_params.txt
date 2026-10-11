@@ -1,0 +1,18 @@
+editor tree: *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1) logL -2623.23  delta(flip) 0.00103
+   edge r1         -> R1.1(Wi1)   birth mass g=0.0629  loss prob p=0.0726
+   edge r1         -> R2(St1)     birth mass g=0.1690  loss prob p=0.0360
+   edge R2(St1)    -> r3          birth mass g=0.0165  loss prob p=0.0027
+   edge r3         -> R4(St2)     birth mass g=0.1761  loss prob p=0.0143
+   edge R4(St2)    -> L2(Ch1)     birth mass g=0.0060  loss prob p=0.0032
+   edge R4(St2)    -> G1(Bo1)     birth mass g=0.4249  loss prob p=0.0115
+   edge r3         -> L1(Ne1)     birth mass g=0.1422  loss prob p=0.0891
+parsimony optimum: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1) logL -2637.85  delta(flip) 0.00104
+   edge r1         -> r3          birth mass g=0.2636  loss prob p=0.0000
+   edge r3         -> h           birth mass g=0.0014  loss prob p=0.0000
+   edge h          -> h2          birth mass g=0.1912  loss prob p=0.0154
+   edge h2         -> G1(Bo1)     birth mass g=0.4651  loss prob p=0.0101
+   edge h2         -> R4(St2)     birth mass g=0.0025  loss prob p=0.0000
+   edge R4(St2)    -> L2(Ch1)     birth mass g=0.0062  loss prob p=0.0031
+   edge h          -> R2(St1)     birth mass g=0.0021  loss prob p=0.0130
+   edge r3         -> L1(Ne1)     birth mass g=0.1569  loss prob p=0.0884
+   edge r1         -> R1.1(Wi1)   birth mass g=0.1057  loss prob p=0.0130

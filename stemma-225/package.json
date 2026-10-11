@@ -1,0 +1,14 @@
+{
+  "name": "stemma-225",
+  "private": true,
+  "type": "module",
+  "description": "Can the stemma of the WM 225 edition be derived automatically? Scripts and outputs of an exploratory analysis.",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "immer": "11.1.18",
+    "linked-rolls": "0.71.0",
+    "welte-mignon-emulator": "1.1.0"
+  }
+}

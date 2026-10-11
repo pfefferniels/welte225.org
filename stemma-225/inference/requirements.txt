@@ -1,0 +1,2 @@
+# The Python scripts in inference/ need Python 3 (run with 3.13) and, beyond the standard library, only numpy.
+numpy>=2  # run with 2.5.3

@@ -1,0 +1,49 @@
+
+== lambda sweep (near5m); cost = losses (+G per extra gain) + lambda * #hidden nodes
+  lambda=   0: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   91.50 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +0.00
+  lambda= 0.5: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   93.50 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +0.50
+  lambda=   1: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   95.50 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +1.00
+  lambda=   2: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   99.50 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +2.00
+  lambda=   3: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost  103.50 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +3.00
+  lambda=   4: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost  107.50 hidden 4  runner-up *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1) +4.00
+  lambda=   6: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost  115.50 hidden 4  runner-up *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1) +4.00
+  lambda=  10: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost  131.50 hidden 4  runner-up *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1) +4.00
+  lambda=  20: *(*(Ne1,St1,St2(Bo1,Ch1)),Wi1)                cost  164.75 hidden 2  runner-up *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1) +0.00
+
+== lambda sweep (near5m + Ne1 merge 10mm); cost = losses (+G per extra gain) + lambda * #hidden nodes
+  lambda=   0: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   75.00 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +0.00
+  lambda= 0.5: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   77.00 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +0.50
+  lambda=   1: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   79.00 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +1.00
+  lambda=   2: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   83.00 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +2.00
+  lambda=   3: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   87.00 hidden 4  runner-up *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1) +3.00
+  lambda=   4: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   91.00 hidden 4  runner-up *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1) +3.75
+  lambda=   6: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost   99.00 hidden 4  runner-up *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1) +3.75
+  lambda=  10: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)          cost  115.00 hidden 4  runner-up *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1) +3.75
+  lambda=  20: *(*(Ne1,St1,St2(Bo1,Ch1)),Wi1)                cost  150.25 hidden 2  runner-up *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1) +1.75
+
+== symmetric Wagner parsimony, root state free (no outgroup): optimum 874.0, 30 trees tie; e.g.
+    *(*(*(Bo1,St2(Ch1)),St1),Ne1,Wi1) hidden 3
+    *(*(*(Ne1,Wi1),St1),Bo1,St2(Ch1)) hidden 3
+    *(*(Bo1,St2(Ch1)),*(Ne1,Wi1),St1) hidden 3
+    St1(*(*(Bo1,St2(Ch1)),*(Ne1,Wi1))) hidden 3
+    St2(*(*(*(Ne1,Wi1),St1),Bo1),Ch1) hidden 3
+    Wi1(*(*(*(Bo1,St2(Ch1)),St1),Ne1)) hidden 3
+    *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1) hidden 4
+    *(*(*(*(Bo1,St2(Ch1)),St1),Wi1),Ne1) hidden 4
+    *(*(*(*(Ch1,St2),Bo1),St1),Ne1,Wi1) hidden 4
+    *(*(*(*(Ne1,Wi1),St1),Bo1),Ch1,St2) hidden 4
+    *(*(*(*(Ne1,Wi1),St1),Bo1),St2(Ch1)) hidden 4
+    *(*(*(*(Ne1,Wi1),St1),St2(Ch1)),Bo1) hidden 4
+   root splits among tied optima: [('*:Ne1,Wi1,{Bo1,Ch1,St1,St2}', 2), ('*:Bo1,{Ch1,St2},{Ne1,St1,Wi1}', 2), ('*:St1,{Bo1,Ch1,St2},{Ne1,Wi1}', 2), ('St1:{Bo1,Ch1,Ne1,St2,Wi1}', 2), ('Wi1:{Bo1,Ch1,Ne1,St1,St2}', 2), ('*:Wi1,{Bo1,Ch1,Ne1,St1,St2}', 2), ('*:Ne1,{Bo1,Ch1,St1,St2,Wi1}', 2), ('*:{Bo1,Ne1,St1,Wi1},{Ch1,St2}', 2), ('*:Bo1,{Ch1,Ne1,St1,St2,Wi1}', 2), ('*:St1,{Bo1,Ch1,Ne1,St2,Wi1}', 2)]
+
+== robustness of the parsimony optimum (lambda=0, ties -> fewer hidden nodes)
+  base optimum: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+  Ne1 near-complement readings -> ? (6.6 mm): *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)  (margin to next 0.00) editor-like rank: 35
+  Ne1 near-complement readings -> ? (10 mm): *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)  (margin to next 0.00) editor-like rank: 35
+  redundancy = all carriers: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)  (margin to next 0.00) editor-like rank: 35
+  redundancy = none: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)  (margin to next 0.00) editor-like rank: 35
+  noise 1% x20 seeds: [('*(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)', 19), ('*(*(*(*(*(Ch1,St2),Bo1),Ne1),St1),Wi1)', 1)]
+  noise 2% x20 seeds: [('*(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)', 16), ('*(*(*(*(*(Ch1,St2),Bo1),Ne1),St1),Wi1)', 3), ('*(*(*(*(Ch1,St2),Bo1),*(Ne1,St1)),Wi1)', 1)]
+  noise 5% x20 seeds: [('*(*(*(*(*(Ch1,St2),Bo1),Ne1),St1),Wi1)', 12), ('*(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)', 7), ('*(*(*(*(Ch1,St2),Bo1),*(Ne1,St1)),Wi1)', 1)]
+  redundancy flags flipped at random (10%) x20: [('*(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)', 20)]
+  redundancy flags flipped at random (30%) x20: [('*(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)', 18), ('*(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)', 2)]

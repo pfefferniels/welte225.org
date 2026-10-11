@@ -1,0 +1,136 @@
+matrix=matrix.json bo1=near5m; columns: lambda | best tree | =editor? | editor rank, delta | best non-editor tree delta | best tree without r3 split delta
+readings     kappa=1.0  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    35 (+ 33.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    35 (+ 31.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    35 (+ 29.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    31 (+ 25.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    22 (+ 17.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    27 (+ 14.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    22 (+ 12.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    16 (+ 10.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=2.0  lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank     9 (+  6.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=2.0  lam=8  best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)                      editor rank     2 (+  0.50); best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)        ; no-r3 +0.00
+readings     kappa=1.0  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    29 (+ 10.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    22 (+  8.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=1.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    17 (+  6.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+readings     kappa=1.0  cdev=1.0  lam=4  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank     5 (+  3.75); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+readings     kappa=1.0  cdev=1.0  lam=8  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank     2 (+  3.75); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+readings     kappa=0.5  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 28.38); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 26.38); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 24.38); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    34 (+ 20.38); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    19 (+ 12.38); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    27 (+  8.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    17 (+  6.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     7 (+  4.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)       +0.00; no-r3 +3.38
+readings     kappa=0.5  cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)       +4.00; no-r3 +7.38
+readings     kappa=0.5  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    13 (+  4.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     5 (+  2.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.5  cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)       +0.00; no-r3 +3.38
+readings     kappa=0.5  cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)       +2.00; no-r3 +4.12
+readings     kappa=0.5  cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          +4.12; no-r3 +4.12
+readings     kappa=0.25 cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 28.19); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 26.19); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 24.19); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    32 (+ 20.19); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    17 (+ 12.19); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.38
+readings     kappa=0.25 cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    19 (+  7.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    12 (+  5.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     6 (+  3.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +5.06
+readings     kappa=0.25 cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +4.00; no-r3 +7.38
+readings     kappa=0.25 cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    11 (+  3.00); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +5.06
+readings     kappa=0.25 cdev=1.0  lam=1  best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)          ed-unrooted editor rank     3 (+  1.00); best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        ; no-r3 +5.06
+readings     kappa=0.25 cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +4.12
+readings     kappa=0.25 cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +2.00; no-r3 +4.12
+readings     kappa=0.25 cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(St1(Ne1),St2(Bo1,Ch1)),Wi1)          +4.12; no-r3 +4.12
+units        kappa=1.0  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 35.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 33.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 31.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    34 (+ 27.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    24 (+ 19.25); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    34 (+ 16.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    28 (+ 14.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    18 (+ 12.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=2.0  lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    11 (+  8.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=2.0  lam=8  best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)                      editor rank     3 (+  3.50); best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)        ; no-r3 +0.00
+units        kappa=1.0  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    31 (+ 12.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    23 (+ 10.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=1.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    19 (+  8.50); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units        kappa=1.0  cdev=1.0  lam=4  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank    13 (+  6.75); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+units        kappa=1.0  cdev=1.0  lam=8  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank     4 (+  6.75); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+units        kappa=0.5  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 27.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 25.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 23.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 19.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    25 (+ 11.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    30 (+  7.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    26 (+  5.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    11 (+  3.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +0.38
+units        kappa=0.5  cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +4.00; no-r3 +4.38
+units        kappa=0.5  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    23 (+  3.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     8 (+  1.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.5  cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +0.38
+units        kappa=0.5  cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          +1.12; no-r3 +1.12
+units        kappa=0.5  cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          +1.12; no-r3 +1.12
+units        kappa=0.25 cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 27.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 25.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 23.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    40 (+ 19.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    24 (+ 11.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units        kappa=0.25 cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    27 (+  6.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    16 (+  4.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     6 (+  2.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +3.06
+units        kappa=0.25 cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +4.00; no-r3 +4.38
+units        kappa=0.25 cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    11 (+  2.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units        kappa=0.25 cdev=1.0  lam=1  best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)          ed-unrooted editor rank     3 (+  1.00); best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        ; no-r3 +3.06
+units        kappa=0.25 cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +2.12
+units        kappa=0.25 cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +2.00; no-r3 +2.12
+units        kappa=0.25 cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(Ne1,St2(Bo1,Ch1)),Wi1)             +1.44; no-r3 +1.44
+units+orphan kappa=1.0  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 33.75); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 31.75); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    38 (+ 29.75); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    34 (+ 25.75); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    24 (+ 17.75); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    34 (+ 15.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    27 (+ 13.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    17 (+ 11.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=2.0  lam=4  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank     9 (+  7.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=2.0  lam=8  best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)                      editor rank     2 (+  2.00); best *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)        ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    31 (+ 11.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    24 (+  9.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=1.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)                   editor rank    19 (+  7.00); best *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)     ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=1.0  lam=4  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank     9 (+  5.25); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+units+orphan kappa=1.0  cdev=1.0  lam=8  best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)                        editor rank     3 (+  5.25); best *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          ; no-r3 +0.00
+units+orphan kappa=0.5  cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 27.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 25.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    38 (+ 23.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    36 (+ 19.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    25 (+ 11.88); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.50
+units+orphan kappa=0.5  cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    30 (+  7.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    26 (+  5.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    11 (+  3.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +0.88
+units+orphan kappa=0.5  cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +4.00; no-r3 +4.50
+units+orphan kappa=0.5  cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    21 (+  3.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=1.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     7 (+  1.50); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.88
+units+orphan kappa=0.5  cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +0.88
+units+orphan kappa=0.5  cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(Ne1,St1(St2(Bo1,Ch1))),Wi1)          +1.62; no-r3 +1.62
+units+orphan kappa=0.5  cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(Ne1,St2(Bo1,Ch1)),Wi1)             +1.62; no-r3 +1.62
+units+orphan kappa=0.25 cdev=None lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 27.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=None lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 25.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=None lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    59 (+ 23.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=None lam=4  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    40 (+ 19.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=None lam=8  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    24 (+ 11.94); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +0.38
+units+orphan kappa=0.25 cdev=2.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    27 (+  6.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=2.0  lam=1  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    16 (+  4.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=2.0  lam=2  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank     6 (+  2.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=2.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +3.06
+units+orphan kappa=0.25 cdev=2.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +4.00; no-r3 +4.38
+units+orphan kappa=0.25 cdev=1.0  lam=0  best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)                   editor rank    11 (+  2.75); best *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)     ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=1.0  lam=1  best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)          ed-unrooted editor rank     3 (+  1.00); best *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        ; no-r3 +3.06
+units+orphan kappa=0.25 cdev=1.0  lam=2  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +0.00; no-r3 +2.12
+units+orphan kappa=0.25 cdev=1.0  lam=4  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)        +2.00; no-r3 +2.12
+units+orphan kappa=0.25 cdev=1.0  lam=8  best *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            EDITOR      editor rank     1 (+  0.00); runner-up *(St1(Ne1,St2(Bo1,Ch1)),Wi1)             +1.44; no-r3 +1.44

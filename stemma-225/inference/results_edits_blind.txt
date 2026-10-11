@@ -1,0 +1,15 @@
+
+== blind matrix, editor topology, Dollo/MRCA
+clusters 1409; inserting version agrees with mapped edition symbol: 1332/1409; deletion sets agree for 507 of 572 clusters the editor deletes somewhere
+per version (mine / editor counts): r1 664/716 ins 0/0 del, R1.1 59/12 ins 0/4 del, R2 165/172 ins 0/59 del, r3 12/16 ins 3/1 del, R4 124/125 ins 9/16 del, L2 6/5 ins 4/4 del, G1 280/280 ins 490/491 del, L1 104/102 ins 76/80 del
+disagreements (editor -> mine): [(('r1', 'R1.1'), 46), (('R2', 'r1'), 12), (('r1', 'R2'), 5), (('r1', 'L1'), 5), (('r3', 'R4'), 3), (('L1', 'R1.1'), 2), (('R4', 'R2'), 2), (('R4', 'r3'), 1), (('r3', 'L1'), 1)]
+
+== blind matrix, editor topology, Dollo/MRCA + refinement root-edge rule d=20
+clusters 1409; inserting version agrees with mapped edition symbol: 1360/1409; deletion sets agree for 535 of 572 clusters the editor deletes somewhere
+per version (mine / editor counts): r1 695/716 ins 0/0 del, R1.1 28/12 ins 0/4 del, R2 165/172 ins 31/59 del, r3 12/16 ins 3/1 del, R4 124/125 ins 9/16 del, L2 6/5 ins 4/4 del, G1 280/280 ins 490/491 del, L1 104/102 ins 76/80 del
+disagreements (editor -> mine): [(('r1', 'R1.1'), 17), (('R2', 'r1'), 12), (('r1', 'R2'), 5), (('r1', 'L1'), 5), (('r3', 'R4'), 3), (('R4', 'R2'), 2), (('r1', 'R4'), 1), (('R1.1', 'r1'), 1), (('L1', 'R1.1'), 1), (('R4', 'r3'), 1)]
+
+== blind matrix, editor topology, Dollo/MRCA + refinement root-edge rule d=50
+clusters 1409; inserting version agrees with mapped edition symbol: 1373/1409; deletion sets agree for 548 of 572 clusters the editor deletes somewhere
+per version (mine / editor counts): r1 709/716 ins 0/0 del, R1.1 14/12 ins 0/4 del, R2 165/172 ins 45/59 del, r3 12/16 ins 3/1 del, R4 124/125 ins 9/16 del, L2 6/5 ins 4/4 del, G1 280/280 ins 490/491 del, L1 104/102 ins 76/80 del
+disagreements (editor -> mine): [(('R2', 'r1'), 12), (('r1', 'L1'), 6), (('r1', 'R2'), 5), (('r1', 'R1.1'), 4), (('r3', 'R4'), 3), (('R4', 'R2'), 2), (('r1', 'R4'), 1), (('R1.1', 'r1'), 1), (('R4', 'r3'), 1), (('r3', 'L1'), 1)]

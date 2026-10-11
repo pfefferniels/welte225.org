@@ -1,0 +1,962 @@
+[
+ {
+  "kind": "note:62",
+  "a": {
+   "from": 1751.25,
+   "to": 1852.9,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 1751.93,
+   "to": 1864.15,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "dFrom": 0.68,
+  "dTo": 11.25,
+  "union": 6
+ },
+ {
+  "kind": "expr:SlowCrescendoOff/treble",
+  "a": {
+   "from": 1986.65,
+   "to": 1991.48,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "shift/shift-to-metrical-accent"
+  },
+  "b": {
+   "from": 1988.88,
+   "to": 1993.91,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "additional-accent",
+   "mot": "taken-from-mother-roll",
+   "delEt": ""
+  },
+  "dFrom": 2.23,
+  "dTo": 2.43,
+  "union": 2
+ },
+ {
+  "kind": "note:70",
+  "a": {
+   "from": 2074.44,
+   "to": 2108.11,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "held-note-shortened",
+   "delEt": ""
+  },
+  "b": {
+   "from": 2076.22,
+   "to": 2123.33,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/held-note-shortened"
+  },
+  "dFrom": 1.78,
+  "dTo": 15.22,
+  "union": 6
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 2247.81,
+   "to": 2367.29,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 2247.97,
+   "to": 2363.64,
+   "v": "R2>R4",
+   "car": "St1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "shorten/uuid:82d4f5b6"
+  },
+  "dFrom": 0.16,
+  "dTo": -3.65,
+  "union": 3
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 2247.81,
+   "to": 2367.29,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 2248.26,
+   "to": 2356.85,
+   "v": "R4",
+   "car": "St2+Ch1+Bo1",
+   "et": "shorten",
+   "mot": "uuid:82d4f5b6",
+   "delEt": ""
+  },
+  "dFrom": 0.45,
+  "dTo": -10.44,
+  "union": 4
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 2247.97,
+   "to": 2363.64,
+   "v": "R2>R4",
+   "car": "St1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "shorten/uuid:82d4f5b6"
+  },
+  "b": {
+   "from": 2248.26,
+   "to": 2356.85,
+   "v": "R4",
+   "car": "St2+Ch1+Bo1",
+   "et": "shorten",
+   "mot": "uuid:82d4f5b6",
+   "delEt": ""
+  },
+  "dFrom": 0.29,
+  "dTo": -6.79,
+  "union": 5
+ },
+ {
+  "kind": "note:49",
+  "a": {
+   "from": 2665.93,
+   "to": 2840.99,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 2666.24,
+   "to": 2856.31,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "dFrom": 0.31,
+  "dTo": 15.32,
+  "union": 6
+ },
+ {
+  "kind": "note:57",
+  "a": {
+   "from": 2668.26,
+   "to": 2850.33,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "note-restruck",
+   "delEt": ""
+  },
+  "b": {
+   "from": 2670.78,
+   "to": 2943.52,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/note-restruck"
+  },
+  "dFrom": 2.52,
+  "dTo": 93.19,
+  "union": 6
+ },
+ {
+  "kind": "expr:SlowCrescendoOn/treble",
+  "a": {
+   "from": 2872.91,
+   "to": 2877.74,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/shift-to-metrical-accent"
+  },
+  "b": {
+   "from": 2873.07,
+   "to": 2878.69,
+   "v": "L1",
+   "car": "Ne1",
+   "et": null,
+   "mot": "taken-from-mother-roll",
+   "delEt": ""
+  },
+  "dFrom": 0.16,
+  "dTo": 0.95,
+  "union": 2
+ },
+ {
+  "kind": "note:65",
+  "a": {
+   "from": 3109.46,
+   "to": 3265.96,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "prolong",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 3110.91,
+   "to": 3257.1,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "prolong/null"
+  },
+  "dFrom": 1.45,
+  "dTo": -8.86,
+  "union": 6
+ },
+ {
+  "kind": "expr:SustainPedalOn/treble",
+  "a": {
+   "from": 3131.19,
+   "to": 3135.51,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 3132.22,
+   "to": 3139.61,
+   "v": "R2>G1",
+   "car": "St1+St2+Ch1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 1.03,
+  "dTo": 4.1,
+  "union": 5
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 4050.65,
+   "to": 4164.71,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": "additional-accent",
+   "mot": "chord-shading",
+   "delEt": ""
+  },
+  "b": {
+   "from": 4054.31,
+   "to": 4165.66,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "additional-accent/chord-shading"
+  },
+  "dFrom": 3.66,
+  "dTo": 0.95,
+  "union": 6
+ },
+ {
+  "kind": "expr:SlowCrescendoOff/bass",
+  "a": {
+   "from": 4055.67,
+   "to": 4060.84,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "correct-error/null"
+  },
+  "b": {
+   "from": 4058.76,
+   "to": 4062.99,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shift",
+   "mot": "taken-from-mother-roll",
+   "delEt": ""
+  },
+  "dFrom": 3.09,
+  "dTo": 2.15,
+  "union": 2
+ },
+ {
+  "kind": "note:50",
+  "a": {
+   "from": 4204.72,
+   "to": 4257.05,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/held-note-shortened"
+  },
+  "b": {
+   "from": 4204.76,
+   "to": 4234.05,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "held-note-shortened",
+   "delEt": ""
+  },
+  "dFrom": 0.04,
+  "dTo": -23,
+  "union": 6
+ },
+ {
+  "kind": "expr:SustainPedalOff/treble",
+  "a": {
+   "from": 4463.17,
+   "to": 4468.34,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 4466.38,
+   "to": 4472.53,
+   "v": "R2>G1",
+   "car": "St1+St2+Ch1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 3.21,
+  "dTo": 4.19,
+  "union": 5
+ },
+ {
+  "kind": "note:81",
+  "a": {
+   "from": 4587.82,
+   "to": 4622.61,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "prolong/null"
+  },
+  "b": {
+   "from": 4588.91,
+   "to": 4629.19,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "prolong",
+   "mot": null,
+   "delEt": ""
+  },
+  "dFrom": 1.09,
+  "dTo": 6.58,
+  "union": 6
+ },
+ {
+  "kind": "expr:SustainPedalOn/treble",
+  "a": {
+   "from": 5102.25,
+   "to": 5107.17,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 5104.18,
+   "to": 5111.65,
+   "v": "R2>G1",
+   "car": "St1+St2+Ch1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 1.93,
+  "dTo": 4.48,
+  "union": 5
+ },
+ {
+  "kind": "expr:SlowCrescendoOn/bass",
+  "a": {
+   "from": 5582.63,
+   "to": 5589.58,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "correct-error/null"
+  },
+  "b": {
+   "from": 5583.29,
+   "to": 5586.96,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shift",
+   "mot": "taken-from-mother-roll",
+   "delEt": ""
+  },
+  "dFrom": 0.66,
+  "dTo": -2.62,
+  "union": 2
+ },
+ {
+  "kind": "note:54",
+  "a": {
+   "from": 5755.67,
+   "to": 5782.86,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 5756.14,
+   "to": 5797.46,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "dFrom": 0.47,
+  "dTo": 14.6,
+  "union": 6
+ },
+ {
+  "kind": "note:72",
+  "a": {
+   "from": 5759.73,
+   "to": 5787.77,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 5760.83,
+   "to": 5784.25,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": ""
+  },
+  "dFrom": 1.1,
+  "dTo": -3.52,
+  "union": 6
+ },
+ {
+  "kind": "note:48",
+  "a": {
+   "from": 5851.29,
+   "to": 5888.82,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": ""
+  },
+  "b": {
+   "from": 5854.55,
+   "to": 5887.93,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "dFrom": 3.26,
+  "dTo": -0.89,
+  "union": 6
+ },
+ {
+  "kind": "note:54",
+  "a": {
+   "from": 5854.03,
+   "to": 5882.9,
+   "v": "r1>L2",
+   "car": "St1+St2+Wi1+Bo1+Ne1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 5854.26,
+   "to": 5890.03,
+   "v": "L2",
+   "car": "Ch1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": ""
+  },
+  "dFrom": 0.23,
+  "dTo": 7.13,
+  "union": 6
+ },
+ {
+  "kind": "note:67",
+  "a": {
+   "from": 5923.01,
+   "to": 5970.63,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/held-note-shortened"
+  },
+  "b": {
+   "from": 5923.07,
+   "to": 5948.42,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "held-note-shortened",
+   "delEt": ""
+  },
+  "dFrom": 0.06,
+  "dTo": -22.21,
+  "union": 6
+ },
+ {
+  "kind": "note:57",
+  "a": {
+   "from": 6075.88,
+   "to": 6138.26,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "b": {
+   "from": 6076.76,
+   "to": 6114.98,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "dFrom": 0.88,
+  "dTo": -23.28,
+  "union": 6
+ },
+ {
+  "kind": "expr:SustainPedalOn/treble",
+  "a": {
+   "from": 6248.74,
+   "to": 6253.91,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 6250.54,
+   "to": 6257.87,
+   "v": "R2>G1",
+   "car": "St1+St2+Ch1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 1.8,
+  "dTo": 3.96,
+  "union": 5
+ },
+ {
+  "kind": "note:55",
+  "a": {
+   "from": 6470.45,
+   "to": 6508.62,
+   "v": "G1",
+   "car": "Bo1",
+   "et": null,
+   "mot": "note-text-differs",
+   "delEt": ""
+  },
+  "b": {
+   "from": 6471.35,
+   "to": 6496.34,
+   "v": "r1>G1",
+   "car": "St1+St2+Wi1+Ch1+Ne1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/note-text-differs"
+  },
+  "dFrom": 0.9,
+  "dTo": -12.28,
+  "union": 6
+ },
+ {
+  "kind": "note:76",
+  "a": {
+   "from": 6520.73,
+   "to": 6674.54,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "prolong",
+   "mot": "repetition-tied",
+   "delEt": ""
+  },
+  "b": {
+   "from": 6520.98,
+   "to": 6596.77,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "prolong/repetition-tied"
+  },
+  "dFrom": 0.25,
+  "dTo": -77.77,
+  "union": 6
+ },
+ {
+  "kind": "note:64",
+  "a": {
+   "from": 7141.67,
+   "to": 7249.13,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "b": {
+   "from": 7141.69,
+   "to": 7229.03,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "dFrom": 0.02,
+  "dTo": -20.1,
+  "union": 6
+ },
+ {
+  "kind": "note:67",
+  "a": {
+   "from": 7153.19,
+   "to": 7228.67,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 7153.58,
+   "to": 7249.13,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "dFrom": 0.39,
+  "dTo": 20.46,
+  "union": 6
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 7951.18,
+   "to": 8055.79,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": "additional-accent",
+   "mot": "chord-shading",
+   "delEt": ""
+  },
+  "b": {
+   "from": 7954.75,
+   "to": 8055.93,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "additional-accent/chord-shading"
+  },
+  "dFrom": 3.57,
+  "dTo": 0.14,
+  "union": 6
+ },
+ {
+  "kind": "expr:SustainPedalOn/treble",
+  "a": {
+   "from": 8027.54,
+   "to": 8032.11,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "b": {
+   "from": 8030.06,
+   "to": 8037.29,
+   "v": "R2>G1",
+   "car": "St1+St2+Ch1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 2.52,
+  "dTo": 5.18,
+  "union": 5
+ },
+ {
+  "kind": "note:50",
+  "a": {
+   "from": 8123.3,
+   "to": 8174.73,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/held-note-shortened"
+  },
+  "b": {
+   "from": 8123.76,
+   "to": 8153.18,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "held-note-shortened",
+   "delEt": ""
+  },
+  "dFrom": 0.46,
+  "dTo": -21.55,
+  "union": 6
+ },
+ {
+  "kind": "note:48",
+  "a": {
+   "from": 8871.48,
+   "to": 8931.91,
+   "v": "L2",
+   "car": "Ch1",
+   "et": null,
+   "mot": "note-retimed",
+   "delEt": ""
+  },
+  "b": {
+   "from": 8872.71,
+   "to": 8943.56,
+   "v": "r1>L2",
+   "car": "St1+St2+Wi1+Bo1+Ne1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/note-retimed"
+  },
+  "dFrom": 1.23,
+  "dTo": 11.65,
+  "union": 6
+ },
+ {
+  "kind": "note:77",
+  "a": {
+   "from": 8922.08,
+   "to": 8972.75,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "prolong",
+   "mot": null,
+   "delEt": ""
+  },
+  "b": {
+   "from": 8922.36,
+   "to": 8958.4,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "prolong/null"
+  },
+  "dFrom": 0.28,
+  "dTo": -14.35,
+  "union": 6
+ },
+ {
+  "kind": "expr:SlowCrescendoOn/treble",
+  "a": {
+   "from": 8996.35,
+   "to": 8999.26,
+   "v": "R2>R4",
+   "car": "St1+Ne1",
+   "et": "additional-accent",
+   "mot": null,
+   "delEt": "prolong/null"
+  },
+  "b": {
+   "from": 8996.46,
+   "to": 9002.07,
+   "v": "R4>G1",
+   "car": "St2+Ch1",
+   "et": "prolong",
+   "mot": null,
+   "delEt": "recoding/latch-to-hold"
+  },
+  "dFrom": 0.11,
+  "dTo": 2.81,
+  "union": 4
+ },
+ {
+  "kind": "expr:SlowCrescendoOn/treble",
+  "a": {
+   "from": 9041.75,
+   "to": 9047.99,
+   "v": "R4>G1",
+   "car": "St2+Ch1",
+   "et": "prolong",
+   "mot": null,
+   "delEt": "recoding/latch-to-hold"
+  },
+  "b": {
+   "from": 9041.89,
+   "to": 9044.09,
+   "v": "R2>R4/L1",
+   "car": "St1",
+   "et": "additional-accent",
+   "mot": null,
+   "delEt": "prolong/null,null/accent-withdrawn"
+  },
+  "dFrom": 0.14,
+  "dTo": -3.9,
+  "union": 3
+ },
+ {
+  "kind": "note:55",
+  "a": {
+   "from": 9417.16,
+   "to": 9579.08,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": "additional-accent",
+   "mot": "chord-shading",
+   "delEt": ""
+  },
+  "b": {
+   "from": 9420.19,
+   "to": 9577.63,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "additional-accent/chord-shading"
+  },
+  "dFrom": 3.03,
+  "dTo": -1.45,
+  "union": 6
+ },
+ {
+  "kind": "note:58",
+  "a": {
+   "from": 9417.33,
+   "to": 9577.48,
+   "v": "R2",
+   "car": "St1+St2+Ch1+Bo1+Ne1",
+   "et": null,
+   "mot": "unchecked",
+   "delEt": ""
+  },
+  "b": {
+   "from": 9420.78,
+   "to": 9577.04,
+   "v": "r1>R2",
+   "car": "Wi1",
+   "et": null,
+   "mot": null,
+   "delEt": "null/unchecked"
+  },
+  "dFrom": 3.45,
+  "dTo": -0.44,
+  "union": 6
+ },
+ {
+  "kind": "note:62",
+  "a": {
+   "from": 9420.42,
+   "to": 9520.72,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/null"
+  },
+  "b": {
+   "from": 9421.05,
+   "to": 9497.87,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": null,
+   "delEt": ""
+  },
+  "dFrom": 0.63,
+  "dTo": -22.85,
+  "union": 6
+ },
+ {
+  "kind": "note:60",
+  "a": {
+   "from": 9523.83,
+   "to": 9671.6,
+   "v": "L1",
+   "car": "Ne1",
+   "et": "shorten",
+   "mot": "note-restruck",
+   "delEt": ""
+  },
+  "b": {
+   "from": 9525.18,
+   "to": 9773.08,
+   "v": "r1>L1",
+   "car": "St1+St2+Wi1+Ch1+Bo1",
+   "et": null,
+   "mot": null,
+   "delEt": "shorten/note-restruck"
+  },
+  "dFrom": 1.35,
+  "dTo": 101.48,
+  "union": 6
+ }
+]

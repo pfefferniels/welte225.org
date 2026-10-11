@@ -1,0 +1,118 @@
+{"from":1737.27,"kind":"expr:SlowCrescendoOn/bass","editor":"R1.1 ins","editType":null,"motivation":"uuid:b64a5621","shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-146,"redundantInOwnText":false}
+{"from":1752.69,"kind":"expr:ForzandoOff/bass","editor":"R1.1 ins","editType":null,"motivation":"uuid:b64a5621","shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-262.9,"redundantInOwnText":true}
+{"from":1753.03,"kind":"expr:SlowCrescendoOff/bass","editor":"R1.1 ins","editType":null,"motivation":"uuid:b64a5621","shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-143.6,"redundantInOwnText":false}
+{"from":1964.02,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@1931.99 expr:SlowCrescendoOff/treble@1952.64","replDelta":-32,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-32,"redundantInOwnText":false}
+{"from":1986.65,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@1931.99 expr:SlowCrescendoOff/treble@1952.64","replDelta":-54.7,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-34,"redundantInOwnText":false}
+{"from":2029.19,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@2001.39 expr:SlowCrescendoOff/treble@2023.13","replDelta":-27.8,"sameKindReplacement":true,"nearestSameKindInR2notWi1":13.5,"redundantInOwnText":false}
+{"from":2046.56,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@2001.39 expr:SlowCrescendoOff/treble@2023.13","replDelta":-45.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":22.9,"redundantInOwnText":false}
+{"from":2087.57,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@2042.71 expr:SlowCrescendoOff/treble@2069.45","replDelta":-44.9,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-44.9,"redundantInOwnText":false}
+{"from":2111.81,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"2i/2d","replacement":"expr:SlowCrescendoOn/treble@2042.71 expr:SlowCrescendoOff/treble@2069.45","replDelta":-69.1,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-42.4,"redundantInOwnText":false}
+{"from":2149.34,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@2161.19","replDelta":11.8,"sameKindReplacement":true,"nearestSameKindInR2notWi1":11.8,"redundantInOwnText":false}
+{"from":2247.81,"kind":"note:60","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":0.2,"redundantInOwnText":null}
+{"from":2251.11,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"remove-redundancy","motivation":"cleanup-b","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":137.6,"redundantInOwnText":true}
+{"from":2274.92,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"shift","motivation":"anacrusis-accent","shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@2258.01","replDelta":-16.9,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-16.9,"redundantInOwnText":false}
+{"from":2636.33,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@2622.25","replDelta":-14.1,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-14.1,"redundantInOwnText":false}
+{"from":2666.83,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"shift","motivation":"shift-to-metrical-accent","shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@2677.96","replDelta":11.1,"sameKindReplacement":true,"nearestSameKindInR2notWi1":11.1,"redundantInOwnText":false}
+{"from":2685.05,"kind":"expr:ForzandoOn/treble","editor":"R1.1 ins","editType":null,"motivation":"uuid:b64a5621","shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":2919.4,"redundantInOwnText":false}
+{"from":2863.68,"kind":"expr:ForzandoOff/treble","editor":"R1.1 ins","editType":null,"motivation":"uuid:03d22e22","shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":1739,"redundantInOwnText":false}
+{"from":2872.91,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"shift-to-metrical-accent","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-194.9,"redundantInOwnText":false}
+{"from":3131.19,"kind":"expr:SustainPedalOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":1,"redundantInOwnText":false}
+{"from":3796.46,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@3805.96","replDelta":9.5,"sameKindReplacement":true,"nearestSameKindInR2notWi1":9.5,"redundantInOwnText":false}
+{"from":4054.31,"kind":"note:60","editor":"r1, R2 del","editType":"additional-accent","motivation":"chord-shading","shape":"1i/1d","replacement":"note:60@4050.65","replDelta":-3.7,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-3.7,"redundantInOwnText":null}
+{"from":4055.67,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/bass@4046.74","replDelta":-8.9,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-8.9,"redundantInOwnText":false}
+{"from":4066.52,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@4081.89","replDelta":15.4,"sameKindReplacement":true,"nearestSameKindInR2notWi1":15.4,"redundantInOwnText":false}
+{"from":4463.17,"kind":"expr:SustainPedalOff/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":3.2,"redundantInOwnText":false}
+{"from":4561.38,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@4580.62","replDelta":19.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":19.2,"redundantInOwnText":false}
+{"from":4614.68,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-34.1,"redundantInOwnText":false}
+{"from":4644.51,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-570.2,"redundantInOwnText":false}
+{"from":5102.25,"kind":"expr:SustainPedalOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":1.9,"redundantInOwnText":false}
+{"from":5362.48,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@5344.27","replDelta":-18.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-18.2,"redundantInOwnText":false}
+{"from":5384.34,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/bass@5374.11","replDelta":-10.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-10.2,"redundantInOwnText":false}
+{"from":5468.49,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@5456.65","replDelta":-11.8,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-11.8,"redundantInOwnText":false}
+{"from":5506.96,"kind":"expr:SoftPedalOff/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-191.2,"redundantInOwnText":false}
+{"from":5510.69,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/bass@5527.45","replDelta":16.8,"sameKindReplacement":true,"nearestSameKindInR2notWi1":16.8,"redundantInOwnText":false}
+{"from":5534.84,"kind":"expr:SoftPedalOn/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":235.8,"redundantInOwnText":false}
+{"from":5546.78,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@5534.9","replDelta":-11.9,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-11.9,"redundantInOwnText":false}
+{"from":5549.41,"kind":"expr:SoftPedalOff/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-233.6,"redundantInOwnText":false}
+{"from":5563.82,"kind":"expr:SoftPedalOn/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":206.8,"redundantInOwnText":false}
+{"from":5582.63,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@5562.62","replDelta":-20,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-20,"redundantInOwnText":false}
+{"from":5583.47,"kind":"expr:SoftPedalOff/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-267.7,"redundantInOwnText":false}
+{"from":5589.07,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"chord-shading","shape":"2i/1d","replacement":"expr:SlowCrescendoOff/treble@5584.63 expr:SlowCrescendoOn/treble@5627.83","replDelta":-4.4,"sameKindReplacement":true,"nearestSameKindInR2notWi1":38.8,"redundantInOwnText":true}
+{"from":5646.77,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@5654.97","replDelta":8.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":8.2,"redundantInOwnText":false}
+{"from":5666.77,"kind":"expr:SoftPedalOn/bass","editor":"R1.1 ins","editType":null,"motivation":"una-corda-lifted-gradually","shape":"6i/2d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":103.8,"redundantInOwnText":false}
+{"from":5759.73,"kind":"note:72","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":1.1,"redundantInOwnText":null}
+{"from":5854.55,"kind":"note:48","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-3.3,"redundantInOwnText":null}
+{"from":5868.11,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@5842","replDelta":-26.1,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-26.1,"redundantInOwnText":false}
+{"from":5892.17,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@5882.47","replDelta":-9.7,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-9.7,"redundantInOwnText":false}
+{"from":6083.25,"kind":"note:60","editor":"r1, R2 del","editType":"additional-accent","motivation":"chord-shading","shape":"1i/1d","replacement":"note:60@6078.26","replDelta":-5,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-5,"redundantInOwnText":null}
+{"from":6215.53,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@6182.01","replDelta":-33.5,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-33.5,"redundantInOwnText":false}
+{"from":6248.74,"kind":"expr:SustainPedalOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":1.8,"redundantInOwnText":false}
+{"from":6250.35,"kind":"expr:SoftPedalOn/bass","editor":"r1, R2 del","editType":null,"motivation":"extend-area-without-una-corda","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-479.8,"redundantInOwnText":false}
+{"from":6360.17,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@6340.14","replDelta":-20,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-20,"redundantInOwnText":false}
+{"from":6457.53,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":50,"redundantInOwnText":true}
+{"from":7523.86,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@7505.18","replDelta":-18.7,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-18.7,"redundantInOwnText":false}
+{"from":7568.1,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@7555.6","replDelta":-12.5,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-12.5,"redundantInOwnText":false}
+{"from":7923.57,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@7939.03","replDelta":15.5,"sameKindReplacement":true,"nearestSameKindInR2notWi1":15.5,"redundantInOwnText":false}
+{"from":7952.63,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":27.3,"redundantInOwnText":false}
+{"from":7954.75,"kind":"note:60","editor":"r1, R2 del","editType":"additional-accent","motivation":"chord-shading","shape":"1i/1d","replacement":"note:60@7951.18","replDelta":-3.6,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-3.6,"redundantInOwnText":null}
+{"from":7968.82,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-29.8,"redundantInOwnText":false}
+{"from":7993.31,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@7953.11","replDelta":-40.2,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-40.2,"redundantInOwnText":false}
+{"from":7997.71,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/bass@7979.97","replDelta":-17.7,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-17.7,"redundantInOwnText":false}
+{"from":8027.54,"kind":"expr:SustainPedalOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":2.5,"redundantInOwnText":false}
+{"from":8040.33,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@8070.12","replDelta":29.8,"sameKindReplacement":true,"nearestSameKindInR2notWi1":29.8,"redundantInOwnText":false}
+{"from":8449.19,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOn/treble@8438.05","replDelta":-11.1,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-11.1,"redundantInOwnText":false}
+{"from":8514.95,"kind":"expr:SlowCrescendoOff/treble","editor":"r1, R2 del","editType":"correct-error","motivation":null,"shape":"1i/1d","replacement":"expr:SlowCrescendoOff/treble@8498.68","replDelta":-16.3,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-16.3,"redundantInOwnText":false}
+{"from":8542.99,"kind":"expr:SlowCrescendoOn/bass","editor":"r1, R2 del","editType":"correct-error","motivation":"uuid:ffa13660","shape":"1i/1d","replacement":"expr:SlowCrescendoOn/bass@8553.6","replDelta":10.6,"sameKindReplacement":true,"nearestSameKindInR2notWi1":10.6,"redundantInOwnText":false}
+{"from":8549.94,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"uuid:ffa13660","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-111.9,"redundantInOwnText":false}
+{"from":8627.48,"kind":"expr:SlowCrescendoOff/bass","editor":"r1, R2 del","editType":"correct-error","motivation":"uuid:ffa13660","shape":"1i/1d","replacement":"expr:SlowCrescendoOff/bass@8568.21","replDelta":-59.3,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-59.3,"redundantInOwnText":false}
+{"from":9085.05,"kind":"expr:SlowCrescendoOn/treble","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-43.2,"redundantInOwnText":false}
+{"from":9420.19,"kind":"note:55","editor":"r1, R2 del","editType":"additional-accent","motivation":"chord-shading","shape":"1i/1d","replacement":"note:55@9417.16","replDelta":-3,"sameKindReplacement":true,"nearestSameKindInR2notWi1":-3,"redundantInOwnText":null}
+{"from":9420.78,"kind":"note:58","editor":"r1, R2 del","editType":null,"motivation":"unchecked","shape":"0i/1d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":-3.5,"redundantInOwnText":null}
+{"from":10059.7,"kind":"expr:Rewind/treble","editor":"R1.1 ins","editType":null,"motivation":null,"shape":"1i/0d","replacement":"","replDelta":null,"sameKindReplacement":false,"nearestSameKindInR2notWi1":null,"redundantInOwnText":null}
+{
+  'R1.1 ins | 1i/0d -': 6,
+  'r1, R2 del | 2i/2d shift': 6,
+  'r1, R2 del | 1i/1d shift': 4,
+  'r1, R2 del | 0i/1d -': 18,
+  'r1, R2 del | 0i/1d remove-redundancy': 1,
+  'r1, R2 del | 1i/1d correct-error': 25,
+  'r1, R2 del | 1i/1d additional-accent': 4,
+  'R1.1 ins | 6i/2d -': 6,
+  'r1, R2 del | 2i/1d -': 1
+}
+replace with same kind: {
+  'R1.1 ins | sameKindRepl=false': 12,
+  'r1, R2 del | sameKindRepl=true': 40,
+  'r1, R2 del | sameKindRepl=false': 19
+}
+nearest same-kind non-Wi1 reading in R2 within 30mm: {
+  'R1.1 ins | false': 12,
+  'r1, R2 del | false': 16,
+  'r1, R2 del | true': 43
+}
+redundant in own text: {
+  'R1.1 ins | false': 10,
+  'R1.1 ins | true': 1,
+  'r1, R2 del | false': 48,
+  'r1, R2 del | null': 8,
+  'r1, R2 del | true': 3,
+  'R1.1 ins | null': 1
+}
+kind: {
+  'R1.1 ins | expr:SlowCrescendoOn/bass': 1,
+  'R1.1 ins | expr:ForzandoOff/bass': 1,
+  'R1.1 ins | expr:SlowCrescendoOff/bass': 1,
+  'r1, R2 del | expr:SlowCrescendoOn/treble': 17,
+  'r1, R2 del | expr:SlowCrescendoOff/treble': 10,
+  'r1, R2 del | expr:SlowCrescendoOn/bass': 11,
+  'r1, R2 del | note': 8,
+  'r1, R2 del | expr:SlowCrescendoOff/bass': 7,
+  'R1.1 ins | expr:ForzandoOn/treble': 1,
+  'R1.1 ins | expr:ForzandoOff/treble': 1,
+  'r1, R2 del | expr:SustainPedalOn/treble': 4,
+  'r1, R2 del | expr:SustainPedalOff/treble': 1,
+  'R1.1 ins | expr:SoftPedalOff/bass': 3,
+  'R1.1 ins | expr:SoftPedalOn/bass': 3,
+  'r1, R2 del | expr:SoftPedalOn/bass': 1,
+  'R1.1 ins | expr:Rewind/treble': 1
+}

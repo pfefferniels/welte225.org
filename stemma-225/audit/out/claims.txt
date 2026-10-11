@@ -1,0 +1,7 @@
+R2 ins 172 St1 172 St2&Ch1 164 Ne1 155 Wi1 0
+R2 ins not deleted by R4/r3: 164  Ne1 among R2 ins not deleted by r3: 155 of 171 ; not deleted by L1: 156 Ne1 155
+R4 ins 125 St2 125 Ch1 125 Bo1 raw 1 Bo1 via recoding link 105 deleted by G1 124 Ne1 0 St1 0
+L1 ins carried by Ch1 0
+R2 correct-error edits 25 ; their inserted symbols carried by Ne1 20
+L2 ins carried by Bo1 0 notes 3
+G1 recoding edits 276

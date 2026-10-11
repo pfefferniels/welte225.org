@@ -1,0 +1,632 @@
+[
+ {
+  "at": 1768.9,
+  "key": "expression treble SlowCrescendoOff",
+  "type": "merge",
+  "edition": [
+   "St1+Wi1 [ins r1; struck by R4:cleanup-c; struck by L1:unchecked]",
+   "Ne1 [ins L1:unchecked]"
+  ],
+  "blind": [
+   "St1+Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 4.69,
+   "dEnd": 4.16,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.52,
+   "zEnd": 0.36
+  }
+ },
+ {
+  "at": 1964,
+  "key": "expression treble SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "Wi1 [ins r1; struck by R2:shift:shift-to-metrical-accent]",
+   "Ne1 [ins L1:additional-accent:taken-from-mother-roll]"
+  ],
+  "blind": [
+   "Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 4.15,
+   "dEnd": 2.52,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.41,
+   "zEnd": 0.02
+  }
+ },
+ {
+  "at": 1986.6,
+  "key": "expression treble SlowCrescendoOff",
+  "type": "merge",
+  "edition": [
+   "Wi1 [ins r1; struck by R2:shift:shift-to-metrical-accent]",
+   "Ne1 [ins L1:additional-accent:taken-from-mother-roll]"
+  ],
+  "blind": [
+   "Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 2.23,
+   "dEnd": 2.43,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0,
+   "zEnd": 0
+  }
+ },
+ {
+  "at": 2130.1,
+  "key": "expression treble SustainPedalOff",
+  "type": "split",
+  "edition": [
+   "Ch1+Ne1+St1+St2+Wi1 [ins r1]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1",
+   "Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": -6.52,
+   "dEnd": -5.42,
+   "windowOnset": "1.06±4.95",
+   "windowEnd": "1.49±5.65",
+   "zOnset": 1.53,
+   "zEnd": 1.22
+  }
+ },
+ {
+  "at": 2247.8,
+  "key": "note 60",
+  "type": "merge",
+  "edition": [
+   "Ne1+St1 [ins R2:unchecked; struck by R4:shorten:(motivated)]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": -0.32,
+   "dEnd": 3.03,
+   "windowOnset": "-0.06±4.06",
+   "windowEnd": "-0.03±6.05",
+   "zOnset": 0.07,
+   "zEnd": 0.51
+  }
+ },
+ {
+  "at": 2367.7,
+  "key": "expression bass ForzandoOff",
+  "type": "merge",
+  "edition": [
+   "Ne1 [ins r3:additional-accent; struck by R4:prolong:(motivated)]",
+   "Ch1+St2 [ins R4:prolong:(motivated)]"
+  ],
+  "blind": [
+   "St2+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-St2",
+   "dOnset": -3.31,
+   "dEnd": -1.77,
+   "windowOnset": "-1.04±3.54",
+   "windowEnd": "-0.62±4.80",
+   "zOnset": 0.64,
+   "zEnd": 0.24
+  }
+ },
+ {
+  "at": 2872.9,
+  "key": "expression treble SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "Wi1 [ins r1; struck by R2:shift-to-metrical-accent]",
+   "Ne1 [ins L1:taken-from-mother-roll]"
+  ],
+  "blind": [
+   "Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 0.16,
+   "dEnd": 0.94,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.43,
+   "zEnd": 0.31
+  }
+ },
+ {
+  "at": 3131.2,
+  "key": "expression treble SustainPedalOn",
+  "type": "merge",
+  "edition": [
+   "Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Wi1",
+   "dOnset": -0.52,
+   "dEnd": -2.69,
+   "windowOnset": "-0.70±5.44",
+   "windowEnd": "-0.62±5.32",
+   "zOnset": 0.03,
+   "zEnd": 0.39
+  }
+ },
+ {
+  "at": 4049.2,
+  "key": "note 60",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:additional-accent:chord-shading]",
+   "Wi1 [ins r1; struck by R2:additional-accent:chord-shading]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": 3.66,
+   "dEnd": 1.59,
+   "windowOnset": "-0.06±4.06",
+   "windowEnd": "-0.03±6.05",
+   "zOnset": 0.92,
+   "zEnd": 0.27
+  }
+ },
+ {
+  "at": 4055.7,
+  "key": "expression bass SlowCrescendoOff",
+  "type": "merge",
+  "edition": [
+   "Wi1 [ins r1; struck by R2:correct-error]",
+   "Ne1 [ins L1:shift:taken-from-mother-roll]"
+  ],
+  "blind": [
+   "Wi1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 3.09,
+   "dEnd": 2.15,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.19,
+   "zEnd": 0.06
+  }
+ },
+ {
+  "at": 4463.2,
+  "key": "expression treble SustainPedalOff",
+  "type": "merge",
+  "edition": [
+   "Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "St2-Wi1",
+   "dOnset": -2.47,
+   "dEnd": -3.88,
+   "windowOnset": "-0.85±3.22",
+   "windowEnd": "-1.43±3.54",
+   "zOnset": 0.5,
+   "zEnd": 0.69
+  }
+ },
+ {
+  "at": 4587.1,
+  "key": "note 81",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+St1+St2+Wi1 [ins r1; struck by L1:prolong]",
+   "Ne1 [ins L1:prolong]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": -1.27,
+   "dEnd": 5.88,
+   "windowOnset": "0.12±4.33",
+   "windowEnd": "0.70±6.87",
+   "zOnset": 0.32,
+   "zEnd": 0.75
+  }
+ },
+ {
+  "at": 5101.5,
+  "key": "expression treble SustainPedalOn",
+  "type": "merge",
+  "edition": [
+   "Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "St1-Wi1",
+   "dOnset": 0.77,
+   "dEnd": -2.52,
+   "windowOnset": "0.23±3.30",
+   "windowEnd": "-0.24±3.57",
+   "zOnset": 0.16,
+   "zEnd": 0.64
+  }
+ },
+ {
+  "at": 5241.4,
+  "key": "note 48",
+  "type": "split",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2+Wi1 [ins r1]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1",
+   "Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": 1.62,
+   "dEnd": -6.72,
+   "windowOnset": "0.12±4.33",
+   "windowEnd": "0.70±6.87",
+   "zOnset": 0.34,
+   "zEnd": 1.08
+  }
+ },
+ {
+  "at": 5307.4,
+  "key": "note 46",
+  "type": "split",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2+Wi1 [ins r1]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1",
+   "Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": -1.02,
+   "dEnd": -6.31,
+   "windowOnset": "0.12±4.33",
+   "windowEnd": "0.70±6.87",
+   "zOnset": 0.26,
+   "zEnd": 1.02
+  }
+ },
+ {
+  "at": 5584.9,
+  "key": "note 72",
+  "type": "split",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2+Wi1 [ins r1]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1",
+   "Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": 0.54,
+   "dEnd": -7.65,
+   "windowOnset": "0.12±4.33",
+   "windowEnd": "0.70±6.87",
+   "zOnset": 0.1,
+   "zEnd": 1.22
+  }
+ },
+ {
+  "at": 5759.7,
+  "key": "note 72",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": -1.18,
+   "dEnd": 2.68,
+   "windowOnset": "-0.06±4.06",
+   "windowEnd": "-0.03±6.05",
+   "zOnset": 0.28,
+   "zEnd": 0.45
+  }
+ },
+ {
+  "at": 5851,
+  "key": "note 48",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": 2.58,
+   "dEnd": -1.49,
+   "windowOnset": "-0.06±4.06",
+   "windowEnd": "-0.03±6.05",
+   "zOnset": 0.65,
+   "zEnd": 0.24
+  }
+ },
+ {
+  "at": 6248.5,
+  "key": "expression treble SustainPedalOn",
+  "type": "merge",
+  "edition": [
+   "Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "St2-Wi1",
+   "dOnset": -1.2,
+   "dEnd": -3.71,
+   "windowOnset": "-0.85±3.22",
+   "windowEnd": "-1.43±3.54",
+   "zOnset": 0.11,
+   "zEnd": 0.64
+  }
+ },
+ {
+  "at": 6500.6,
+  "key": "expression treble SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "Ne1+St1 [ins R2:unchecked; struck by R4:correct-error]",
+   "Ch1+St2 [ins R4:correct-error]"
+  ],
+  "blind": [
+   "St1+St2+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Ch1",
+   "dOnset": -5.77,
+   "dEnd": -4.18,
+   "windowOnset": "-1.06±4.95",
+   "windowEnd": "-1.49±5.65",
+   "zOnset": 0.95,
+   "zEnd": 0.47
+  }
+ },
+ {
+  "at": 7559.1,
+  "key": "note 65",
+  "type": "split",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2+Wi1 [ins r1]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1",
+   "Ne1"
+  ],
+  "decisive": {
+   "pair": "Ch1-Ne1",
+   "dOnset": -6.75,
+   "dEnd": 0.12,
+   "windowOnset": "0.12±4.33",
+   "windowEnd": "0.70±6.87",
+   "zOnset": 1.59,
+   "zEnd": 0.08
+  }
+ },
+ {
+  "at": 7950.1,
+  "key": "note 60",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:additional-accent:chord-shading]",
+   "Wi1 [ins r1; struck by R2:additional-accent:chord-shading]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": 1.83,
+   "dEnd": 0.48,
+   "windowOnset": "-0.06±4.06",
+   "windowEnd": "-0.03±6.05",
+   "zOnset": 0.46,
+   "zEnd": 0.08
+  }
+ },
+ {
+  "at": 8027.5,
+  "key": "expression treble SustainPedalOn",
+  "type": "merge",
+  "edition": [
+   "Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Wi1",
+   "dOnset": -3.26,
+   "dEnd": -5.01,
+   "windowOnset": "-2.21±4.77",
+   "windowEnd": "-2.43±4.82",
+   "zOnset": 0.22,
+   "zEnd": 0.54
+  }
+ },
+ {
+  "at": 8866,
+  "key": "expression treble SustainPedalOff",
+  "type": "merge",
+  "edition": [
+   "Ch1+St1+St2+Wi1 [ins r1; struck by L1:shift]",
+   "Ne1 [ins L1:shift]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 6.75,
+   "dEnd": 6.21,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.95,
+   "zEnd": 0.78
+  }
+ },
+ {
+  "at": 8948.2,
+  "key": "expression treble SustainPedalOff",
+  "type": "merge",
+  "edition": [
+   "Ch1+St1+St2+Wi1 [ins r1; struck by L1:shift]",
+   "Ne1 [ins L1:shift]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Wi1-Ne1",
+   "dOnset": 6.83,
+   "dEnd": 7.19,
+   "windowOnset": "2.21±4.77",
+   "windowEnd": "2.43±4.82",
+   "zOnset": 0.97,
+   "zEnd": 0.99
+  }
+ },
+ {
+  "at": 8995.5,
+  "key": "expression treble SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "Ne1+St1 [ins R2:additional-accent; struck by R4:prolong]",
+   "Ch1+St2 [ins R4:prolong]"
+  ],
+  "blind": [
+   "St1+St2+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Ne1-Ch1",
+   "dOnset": -1.47,
+   "dEnd": -0.02,
+   "windowOnset": "-1.06±4.95",
+   "windowEnd": "-1.49±5.65",
+   "zOnset": 0.08,
+   "zEnd": 0.26
+  }
+ },
+ {
+  "at": 9040.9,
+  "key": "expression treble SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "St1 [ins R2:additional-accent; struck by R4:prolong; struck by L1:accent-withdrawn]",
+   "Ch1+St2 [ins R4:prolong]"
+  ],
+  "blind": [
+   "St1+St2+Ch1"
+  ],
+  "decisive": {
+   "pair": "St1-Ch1",
+   "dOnset": -1.01,
+   "dEnd": 2.51,
+   "windowOnset": "0.46±6.54",
+   "windowEnd": "0.13±6.23",
+   "zOnset": 0.22,
+   "zEnd": 0.38
+  }
+ },
+ {
+  "at": 9414,
+  "key": "note 55",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:additional-accent:chord-shading]",
+   "Wi1 [ins r1; struck by R2:additional-accent:chord-shading]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Bo1-Wi1",
+   "dOnset": -0.34,
+   "dEnd": -1.06,
+   "windowOnset": "0.00±2.87",
+   "windowEnd": "-0.17±2.60",
+   "zOnset": 0.12,
+   "zEnd": 0.34
+  }
+ },
+ {
+  "at": 9414,
+  "key": "note 58",
+  "type": "merge",
+  "edition": [
+   "Bo1+Ch1+Ne1+St1+St2 [ins R2:unchecked]",
+   "Wi1 [ins r1; struck by R2:unchecked]"
+  ],
+  "blind": [
+   "St1+St2+Wi1+Ch1+Bo1+Ne1"
+  ],
+  "decisive": {
+   "pair": "Bo1-Wi1",
+   "dOnset": 0.25,
+   "dEnd": -0.45,
+   "windowOnset": "0.00±2.87",
+   "windowEnd": "-0.17±2.60",
+   "zOnset": 0.09,
+   "zEnd": 0.11
+  }
+ },
+ {
+  "at": 9499.3,
+  "key": "expression bass SlowCrescendoOn",
+  "type": "merge",
+  "edition": [
+   "Ne1+St1 [ins R2:unchecked; struck by R4:correct-error:(motivated)]",
+   "Ch1+St2 [ins R4:correct-error:(motivated)]"
+  ],
+  "blind": [
+   "St1+St2+Ch1+Ne1"
+  ],
+  "decisive": {
+   "pair": "St1-St2",
+   "dOnset": -1.2,
+   "dEnd": -1.21,
+   "windowOnset": "0.70±4.19",
+   "windowEnd": "1.14±3.98",
+   "zOnset": 0.45,
+   "zEnd": 0.59
+  }
+ }
+]

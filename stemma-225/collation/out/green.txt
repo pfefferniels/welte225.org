@@ -1,0 +1,39 @@
+edition recodings with both sides: 210
+
+tolerance 3.5 mm
+┌─────────┬───────┬───────────────┬──────────────────┐
+│ (index) │ copy  │ substitutions │ agreeWithEdition │
+├─────────┼───────┼───────────────┼──────────────────┤
+│ 0       │ 'St1' │ 145           │ 138              │
+│ 1       │ 'St2' │ 194           │ 185              │
+│ 2       │ 'Wi1' │ 77            │ 76               │
+│ 3       │ 'Ch1' │ 173           │ 168              │
+│ 4       │ 'Ne1' │ 88            │ 83               │
+└─────────┴───────┴───────────────┴──────────────────┘
+union over copies: 210 green runs linked, 1 linked differently through different copies; agree with edition 198/210; edition links not found 7
+
+tolerance 5 mm
+┌─────────┬───────┬───────────────┬──────────────────┐
+│ (index) │ copy  │ substitutions │ agreeWithEdition │
+├─────────┼───────┼───────────────┼──────────────────┤
+│ 0       │ 'St1' │ 151           │ 144              │
+│ 1       │ 'St2' │ 216           │ 206              │
+│ 2       │ 'Wi1' │ 78            │ 76               │
+│ 3       │ 'Ch1' │ 207           │ 199              │
+│ 4       │ 'Ne1' │ 116           │ 108              │
+└─────────┴───────┴───────────────┴──────────────────┘
+union over copies: 220 green runs linked, 2 linked differently through different copies; agree with edition 205/210; edition links not found 0
+
+tolerance 8 mm
+┌─────────┬───────┬───────────────┬──────────────────┐
+│ (index) │ copy  │ substitutions │ agreeWithEdition │
+├─────────┼───────┼───────────────┼──────────────────┤
+│ 0       │ 'St1' │ 149           │ 140              │
+│ 1       │ 'St2' │ 211           │ 199              │
+│ 2       │ 'Wi1' │ 80            │ 76               │
+│ 3       │ 'Ch1' │ 216           │ 204              │
+│ 4       │ 'Ne1' │ 120           │ 109              │
+└─────────┴───────┴───────────────┴──────────────────┘
+union over copies: 220 green runs linked, 7 linked differently through different copies; agree with edition 200/210; edition links not found 2
+
+edition one-sided recodings: 66 insert-only, 73 delete-only

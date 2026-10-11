@@ -1,0 +1,61 @@
+G1 deletions 491 {
+  '0i/1d recoding/null': 63,
+  '1i/2d recoding/latch-to-hold': 410,
+  '1i/1d recoding/latch-to-hold': 3,
+  '0i/1d recoding/latch-to-hold': 10,
+  '0i/1d null/note-text-differs': 1,
+  '2i/2d recoding/latch-to-hold': 4
+}
+G1 pure deletions by kind {
+  'expr:SoftPedalOn/bass': 2,
+  'expr:SlowCrescendoOn/bass': 15,
+  'expr:SlowCrescendoOff/bass': 15,
+  'expr:SlowCrescendoOn/treble': 10,
+  'expr:ForzandoOn/bass': 6,
+  'expr:ForzandoOff/bass': 5,
+  'expr:SustainPedalOn/treble': 3,
+  'expr:SustainPedalOff/treble': 2,
+  'expr:ForzandoOff/treble': 3,
+  'expr:ForzandoOn/treble': 3,
+  'expr:SlowCrescendoOff/treble': 7,
+  'expr:SoftPedalOff/bass': 2,
+  'note:55': 1
+}
+G1 insertions w/o deletion by kind {
+  'expr:SoftPedal/treble recoding/null': 2,
+  'expr:SforzandoPiano/bass recoding/t98-only-command': 18,
+  'expr:Crescendo/bass recoding/null': 22,
+  'note:77 null/note-text-differs': 1,
+  'expr:SforzandoForte/bass recoding/null': 7,
+  'expr:SustainPedal/bass recoding/null': 3,
+  'expr:SforzandoPiano/treble recoding/t98-only-command': 4,
+  'expr:SforzandoForte/treble recoding/null': 3,
+  'expr:Crescendo/treble recoding/null': 7,
+  'note:55 null/note-text-differs': 1
+}
+recoded red symbol -> green replacement onset distance: median 4.1 p90 50.0 max 414.5
+R4 insertions with Bo1 (raw) 1 with Bo1 via transfer 105 / 125
+R4 insertions lacking Bo1 even via transfer: [
+  '2368.9 expr:ForzandoOff/bass del G1:0i/1d recoding/null',
+  '3251.86 expr:SlowCrescendoOn/bass del G1:0i/1d recoding/latch-to-hold',
+  '3262.92 expr:SlowCrescendoOff/bass del G1:0i/1d recoding/null',
+  '5231.46 expr:SlowCrescendoOn/treble del G1:0i/1d recoding/latch-to-hold',
+  '5252.96 expr:SlowCrescendoOff/treble del G1:0i/1d recoding/null',
+  '6474.9 expr:SlowCrescendoOff/bass del G1:0i/1d recoding/null',
+  '6501.19 expr:SlowCrescendoOn/treble del G1:0i/1d recoding/latch-to-hold',
+  '7053.18 expr:SlowCrescendoOn/bass del G1:0i/1d recoding/null',
+  '7067.07 expr:SlowCrescendoOff/bass del G1:0i/1d recoding/null',
+  '7145.53 expr:SlowCrescendoOn/bass del G1:0i/1d recoding/null',
+  '7156.07 expr:SlowCrescendoOff/bass del G1:0i/1d recoding/null',
+  '7220.95 expr:ForzandoOn/bass del G1:0i/1d recoding/null',
+  '7226.44 expr:ForzandoOff/bass del G1:0i/1d recoding/null',
+  '8996.46 expr:SlowCrescendoOn/treble del G1:0i/1d recoding/latch-to-hold',
+  '9041.75 expr:SlowCrescendoOn/treble del G1:0i/1d recoding/latch-to-hold',
+  '9144.62 expr:SlowCrescendoOn/bass del G1:0i/1d recoding/null',
+  '9151.04 expr:SlowCrescendoOn/treble del G1:0i/1d recoding/null',
+  '9155.94 expr:SlowCrescendoOff/bass del G1:0i/1d recoding/latch-to-hold',
+  '9163.28 expr:SlowCrescendoOff/treble del G1:0i/1d recoding/latch-to-hold',
+  '9501.34 expr:SlowCrescendoOn/bass del G1:0i/1d recoding/null'
+]
+0i/1d recoding deletions: 73; with a green same-function command (same scope) within 15 mm or spanning it: 55
+without: 1345.82 expr:SoftPedalOn/bass r1 ; 2896.59 expr:SustainPedalOn/treble r1 ; 2934.09 expr:SustainPedalOff/treble r1 ; 3360.82 expr:SlowCrescendoOn/bass R2 ; 4813.94 expr:SlowCrescendoOn/bass R2 ; 4830.61 expr:SlowCrescendoOff/bass R2 ; 5315.78 expr:SoftPedalOff/bass r1 ; 5562.62 expr:SlowCrescendoOn/bass R2 ; 5869.98 expr:SlowCrescendoOn/bass R2 ; 5878.76 expr:SlowCrescendoOff/bass R2 ; 6338.73 expr:SoftPedalOff/bass r1 ; 6715.44 expr:SoftPedalOn/bass r1 ; 6715.72 expr:SustainPedalOn/treble r1 ; 6827.23 expr:SustainPedalOn/treble r1 ; 6880.25 expr:SustainPedalOff/treble r1 ; 7145.53 expr:SlowCrescendoOn/bass R4 ; 7156.07 expr:SlowCrescendoOff/bass R4 ; 9107.71 expr:SlowCrescendoOff/treble r1

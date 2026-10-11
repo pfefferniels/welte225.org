@@ -1,0 +1,641 @@
+[
+ {
+  "id": "symbol_90ce9677-568e-42ca-9872-e657496bf006",
+  "sym": "CrOn.b@1737.3",
+  "truth": "R1.1",
+  "nearest": "CrOn.b@1591.3",
+  "d": 145.97461964117406,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_2edece7b-1389-42cc-a44d-4069100f98a7",
+  "sym": "FzOff.b@1752.7",
+  "truth": "R1.1",
+  "nearest": "FzOff.b@1489.8",
+  "d": 262.8493232290498,
+  "redWi1": true,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_cc354252-f2cc-4266-bfa2-71b923ccc9d5",
+  "sym": "CrOff.b@1753.0",
+  "truth": "R1.1",
+  "nearest": "CrOff.b@1609.5",
+  "d": 143.57364702960285,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_a10a4120-fbcc-42a2-965d-40f92fa71dbf",
+  "sym": "CrOn.t@1964.0",
+  "truth": "r1",
+  "nearest": "CrOn.t@1932.0",
+  "d": 32.036487544821284,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_453db0e0-ee3d-457a-876f-ed6d82af162d",
+  "sym": "CrOff.t@1986.6",
+  "truth": "r1",
+  "nearest": "CrOff.t@1952.6",
+  "d": 34.00881386797573,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_10715b5c-63b3-4420-af3f-f8851a5cb8e8",
+  "sym": "CrOn.t@2029.2",
+  "truth": "r1",
+  "nearest": "CrOn.t@2042.7",
+  "d": 13.524139028518448,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_7146e5c6-1d80-4120-90a3-daecbfbd6935",
+  "sym": "CrOff.t@2046.6",
+  "truth": "r1",
+  "nearest": "CrOff.t@2069.5",
+  "d": 22.894694821462735,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_1fa31b0a-002d-47c1-b168-ca54d1e4a135",
+  "sym": "CrOn.t@2087.6",
+  "truth": "r1",
+  "nearest": "CrOn.t@2042.7",
+  "d": 44.85954837131658,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_1637c1c6-d4d6-4a81-9eaa-c2042dff5026",
+  "sym": "CrOff.t@2111.8",
+  "truth": "r1",
+  "nearest": "CrOff.t@2069.5",
+  "d": 42.35267740952986,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_2d3b7b9e-274c-46cd-8727-f8986303d817",
+  "sym": "CrOn.b@2149.3",
+  "truth": "r1",
+  "nearest": "CrOn.b@2161.2",
+  "d": 11.84942875382876,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_c365caf3-577d-4cb6-b5dd-ec9221af00d0",
+  "sym": "n60@2247.8",
+  "truth": "r1",
+  "nearest": "n60@2248.0",
+  "d": 0.15895569475515003,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_93a33469-9270-433b-8279-e0660afa037b",
+  "sym": "CrOff.b@2251.1",
+  "truth": "r1",
+  "nearest": "CrOff.b@2388.7",
+  "d": 137.6290130325042,
+  "redWi1": true,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_d5639aa1-c681-4d7d-8d3c-deecde234110",
+  "sym": "CrOn.b@2274.9",
+  "truth": "r1",
+  "nearest": "CrOn.b@2258.0",
+  "d": 16.91214717315188,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_c257ecc2-f50b-4f27-8666-e40987ce07fc",
+  "sym": "CrOff.t@2636.3",
+  "truth": "r1",
+  "nearest": "CrOff.t@2622.2",
+  "d": 14.07733118076203,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_8395eced-571b-4802-9ea2-69f039527d83",
+  "sym": "CrOn.t@2666.8",
+  "truth": "r1",
+  "nearest": "CrOn.t@2678.0",
+  "d": 11.12311820590321,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_2277f60f-e5a7-4e54-9133-9661401e477c",
+  "sym": "FzOn.t@2685.1",
+  "truth": "R1.1",
+  "nearest": "FzOn.t@5604.5",
+  "d": 2919.40430718366,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_06495160-8a9a-45d2-8b53-83ce9d22ece5",
+  "sym": "FzOff.t@2863.7",
+  "truth": "R1.1",
+  "nearest": "FzOff.t@4602.7",
+  "d": 1738.9958859304252,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e",
+  "sym": "CrOn.t@2872.9",
+  "truth": "r1",
+  "nearest": "CrOn.t@2678.0",
+  "d": 194.9568930704695,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_c756f5da-fe5d-477d-a326-76ac9c5d7429",
+  "sym": "PedOn@3131.2",
+  "truth": "r1",
+  "nearest": "PedOn@3132.2",
+  "d": 1.0286827832278505,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_8a47bc85-838e-4116-90b8-97c18ce892da",
+  "sym": "CrOn.b@3796.5",
+  "truth": "r1",
+  "nearest": "CrOn.b@3806.0",
+  "d": 9.498564406926107,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_db9a905e-dfd3-42dc-8da4-31f4ade611ea",
+  "sym": "n60@4054.3",
+  "truth": "r1",
+  "nearest": "n60@4050.7",
+  "d": 3.662329002917886,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43",
+  "sym": "CrOff.b@4055.7",
+  "truth": "r1",
+  "nearest": "CrOff.b@4046.7",
+  "d": 8.92643671600672,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_ed962bbb-74a2-4edf-8f41-16748af0f85c",
+  "sym": "CrOn.b@4066.5",
+  "truth": "r1",
+  "nearest": "CrOn.b@4081.9",
+  "d": 15.373404389762982,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_90b5457b-fbcf-4d49-9d8b-74dfcceae528",
+  "sym": "PedOff@4463.2",
+  "truth": "r1",
+  "nearest": "PedOff@4466.4",
+  "d": 3.207859344021017,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_5ec9a884-0fd7-4005-92eb-099c210bfb2e",
+  "sym": "CrOn.t@4561.4",
+  "truth": "r1",
+  "nearest": "CrOn.t@4580.6",
+  "d": 19.246392496340377,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_ae9eaaf2-663b-4565-b705-c840ce63fcfc",
+  "sym": "CrOn.t@4614.7",
+  "truth": "r1",
+  "nearest": "CrOn.t@4580.6",
+  "d": 34.053084288438185,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_9fe4b1bb-334d-441e-9d47-543601c9b018",
+  "sym": "CrOff.t@4644.5",
+  "truth": "r1",
+  "nearest": "CrOff.t@4074.3",
+  "d": 570.192488209786,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_ecd03e0c-9d41-429f-b655-4b212922aed6",
+  "sym": "PedOn@5102.3",
+  "truth": "r1",
+  "nearest": "PedOn@5104.2",
+  "d": 1.9263616059861306,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_c70b19f3-c43d-4738-806b-e11e0e8726ab",
+  "sym": "CrOn.b@5362.5",
+  "truth": "r1",
+  "nearest": "CrOn.b@5344.3",
+  "d": 18.210070624775653,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_5e61514c-3a01-40a5-8455-a2ea50911a58",
+  "sym": "CrOff.b@5384.3",
+  "truth": "r1",
+  "nearest": "CrOff.b@5374.1",
+  "d": 10.231467906604848,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_e21603a1-224d-4830-85b0-c27093566b2a",
+  "sym": "CrOn.b@5468.5",
+  "truth": "r1",
+  "nearest": "CrOn.b@5456.7",
+  "d": 11.832251408629418,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_5530b9bb-cdc1-46eb-907c-fdfd816b8e9c",
+  "sym": "SoftOff@5507.0",
+  "truth": "R1.1",
+  "nearest": "SoftOff@5315.8",
+  "d": 191.17712272959943,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_f322f32f-ed6b-4b72-a85f-b8f386b87f2b",
+  "sym": "CrOff.b@5510.7",
+  "truth": "r1",
+  "nearest": "CrOff.b@5527.5",
+  "d": 16.768422678293064,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_77ac825c-2410-46ce-8932-9d5f25cb33bc",
+  "sym": "SoftOn@5534.8",
+  "truth": "R1.1",
+  "nearest": "SoftOn@5770.6",
+  "d": 235.76701257955392,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_b06a34a0-655c-4fa0-911b-a183997cd8bf",
+  "sym": "CrOn.t@5546.8",
+  "truth": "r1",
+  "nearest": "CrOn.t@5534.9",
+  "d": 11.886972968840382,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_c563f947-8067-4812-aa94-361dacf83682",
+  "sym": "SoftOff@5549.4",
+  "truth": "R1.1",
+  "nearest": "SoftOff@5315.8",
+  "d": 233.63028286781628,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_8c2a6b5a-fa0f-497c-a942-b137b3b11816",
+  "sym": "SoftOn@5563.8",
+  "truth": "R1.1",
+  "nearest": "SoftOn@5770.6",
+  "d": 206.7870110720687,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5",
+  "sym": "CrOn.b@5582.6",
+  "truth": "r1",
+  "nearest": "CrOn.b@5562.6",
+  "d": 20.005648173615555,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_37a7260a-2686-45e5-bedb-881b810e3caa",
+  "sym": "SoftOff@5583.5",
+  "truth": "R1.1",
+  "nearest": "SoftOff@5315.8",
+  "d": 267.6944959920211,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_7c068e1c-86a6-4319-8ebc-0707480c88a6",
+  "sym": "CrOn.t@5589.1",
+  "truth": "r1",
+  "nearest": "CrOn.t@5627.8",
+  "d": 38.76692639630619,
+  "redWi1": true,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_a32941b8-62d5-441a-a393-3942a26ad2e3",
+  "sym": "CrOff.t@5646.8",
+  "truth": "r1",
+  "nearest": "CrOff.t@5655.0",
+  "d": 8.195886769247409,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_9ba2dfbd-4c8c-4edb-ac66-48ab10d46901",
+  "sym": "SoftOn@5666.8",
+  "truth": "R1.1",
+  "nearest": "SoftOn@5770.6",
+  "d": 103.83174160969156,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_68605733-03bb-4c12-ac55-51b77579c378",
+  "sym": "n72@5759.7",
+  "truth": "r1",
+  "nearest": "n72@5760.8",
+  "d": 1.103168035847375,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_0ba08fd6-c163-4d0b-bdad-f676bdb93aa5",
+  "sym": "n48@5854.5",
+  "truth": "r1",
+  "nearest": "n48@5851.3",
+  "d": 3.252978513916787,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_84fce17c-c347-4334-9bec-c5783442eb54",
+  "sym": "CrOn.t@5868.1",
+  "truth": "r1",
+  "nearest": "CrOn.t@5842.0",
+  "d": 26.105205447254775,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_e10aae05-88b4-4220-aa06-750147e269eb",
+  "sym": "CrOff.t@5892.2",
+  "truth": "r1",
+  "nearest": "CrOff.t@5882.5",
+  "d": 9.696066126361075,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_66a250c7-017f-4fd9-8b68-b812811010ae",
+  "sym": "n60@6083.3",
+  "truth": "r1",
+  "nearest": "n60@6078.3",
+  "d": 4.995200716457475,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_1ade814f-b729-4826-a18b-efb181a759da",
+  "sym": "CrOn.t@6215.5",
+  "truth": "r1",
+  "nearest": "CrOn.t@6182.0",
+  "d": 33.520845818588896,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_8340e819-366b-4dbe-91d3-27ad38589481",
+  "sym": "PedOn@6248.7",
+  "truth": "r1",
+  "nearest": "PedOn@6250.5",
+  "d": 1.7942173513620219,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900",
+  "sym": "SoftOn@6250.4",
+  "truth": "r1",
+  "nearest": "SoftOn@5770.6",
+  "d": 479.75092235873853,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_ffe87be1-e659-47a4-b1c6-e96c55967514",
+  "sym": "CrOn.t@6360.2",
+  "truth": "r1",
+  "nearest": "CrOn.t@6340.1",
+  "d": 20.036542361464853,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_d4951659-2632-4944-9f26-b433c587e607",
+  "sym": "CrOn.t@6457.5",
+  "truth": "r1",
+  "nearest": "CrOn.t@6507.5",
+  "d": 49.99934049451804,
+  "redWi1": true,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_69f5c28c-e7f3-40ff-947b-099aa0d65c9f",
+  "sym": "CrOff.t@7523.9",
+  "truth": "r1",
+  "nearest": "CrOff.t@7505.2",
+  "d": 18.68296624460436,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_31e2cfbc-5bd8-4cc5-9308-63190937ce43",
+  "sym": "CrOff.t@7568.1",
+  "truth": "r1",
+  "nearest": "CrOff.t@7555.6",
+  "d": 12.500122128654766,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_f9742099-f60e-4996-99f2-4ddf04da7bcf",
+  "sym": "CrOn.b@7923.6",
+  "truth": "r1",
+  "nearest": "CrOn.b@7939.0",
+  "d": 15.458609553096721,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_2b8425e0-4e20-43e1-9871-c3e6fb228a77",
+  "sym": "CrOff.b@7952.6",
+  "truth": "r1",
+  "nearest": "CrOff.b@7980.0",
+  "d": 27.33373023011336,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_61f35dab-ebea-4b82-8182-ca59df4add66",
+  "sym": "n60@7954.8",
+  "truth": "r1",
+  "nearest": "n60@7951.2",
+  "d": 3.5692103611754646,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_97618927-5791-44f2-b9c0-0a3288fda8cd",
+  "sym": "CrOn.b@7968.8",
+  "truth": "r1",
+  "nearest": "CrOn.b@7939.0",
+  "d": 29.790865922568628,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_ba07e2d7-4241-4e82-99e5-022a77298f1c",
+  "sym": "CrOn.t@7993.3",
+  "truth": "r1",
+  "nearest": "CrOn.t@7953.1",
+  "d": 40.199070203210795,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_f71387f4-f594-4a76-a506-ccb45a7522a5",
+  "sym": "CrOff.b@7997.7",
+  "truth": "r1",
+  "nearest": "CrOff.b@7980.0",
+  "d": 17.74627189227249,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_f9bc3d99-b7b9-46f8-8722-1a71d6b9d4c6",
+  "sym": "PedOn@8027.5",
+  "truth": "r1",
+  "nearest": "PedOn@8030.1",
+  "d": 2.5223155288986163,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_d2dd2104-4704-4242-82a8-2fabdabde751",
+  "sym": "CrOn.b@8040.3",
+  "truth": "r1",
+  "nearest": "CrOn.b@8070.1",
+  "d": 29.783195619193066,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_05589b14-529e-4296-b513-207f7d065a79",
+  "sym": "CrOn.t@8449.2",
+  "truth": "r1",
+  "nearest": "CrOn.t@8438.1",
+  "d": 11.134837350484304,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_ed167462-e205-4f6f-9739-b28c5db203b4",
+  "sym": "CrOff.t@8514.9",
+  "truth": "r1",
+  "nearest": "CrOff.t@8498.7",
+  "d": 16.267360102379826,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_85f626a1-7963-42f6-8117-177508d532f0",
+  "sym": "CrOn.b@8543.0",
+  "truth": "r1",
+  "nearest": "CrOn.b@8553.6",
+  "d": 10.605155001876483,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_36878bed-6071-47a6-8535-d0e18bfb5c22",
+  "sym": "CrOn.t@8549.9",
+  "truth": "r1",
+  "nearest": "CrOn.t@8438.1",
+  "d": 111.88694821189529,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_d0298992-4507-492e-a023-d7805c92ccea",
+  "sym": "CrOff.b@8627.5",
+  "truth": "r1",
+  "nearest": "CrOff.b@8568.2",
+  "d": 59.26276576832424,
+  "redWi1": false,
+  "redSt1ctx": true
+ },
+ {
+  "id": "symbol_d6fab648-eb46-45a3-85a2-ec4241586903",
+  "sym": "CrOn.t@9085.1",
+  "truth": "r1",
+  "nearest": "CrOn.t@9041.9",
+  "d": 43.16246249052347,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_6083c2bc-5094-4c10-8f73-43f1ae1e473d",
+  "sym": "n55@9420.2",
+  "truth": "r1",
+  "nearest": "n55@9417.2",
+  "d": 3.028082228913263,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_5b6c513f-60b3-4df4-b49e-f54ba1f6aa8b",
+  "sym": "n58@9420.8",
+  "truth": "r1",
+  "nearest": "n58@9417.3",
+  "d": 3.4479637389795244,
+  "redWi1": false,
+  "redSt1ctx": false
+ },
+ {
+  "id": "symbol_924274fc-32ea-40be-88b0-ea2f0e5e7928",
+  "sym": "Rewind@10059.7",
+  "truth": "R1.1",
+  "nearest": null,
+  "d": null,
+  "redWi1": false,
+  "redSt1ctx": false
+ }
+]

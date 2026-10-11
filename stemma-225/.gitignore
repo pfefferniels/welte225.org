@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pkl
+# large regenerable outputs (see MISSING.md in each directory)
+inference/ml_all_near5m.jsonl
+# local copies of third-party or history data (see history/MISSING.md, literature/MISSING.md)
+history/hist/
+history/*.git/
+literature/dl/

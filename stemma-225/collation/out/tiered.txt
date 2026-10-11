@@ -1,0 +1,1 @@
+tiered: clusters 1423 exact 1374 96.2% {"red/Lic expr":{"n":652,"exact":617,"split":2,"merge":30,"split+merge":2,"dropped":1},"note":{"n":498,"exact":479,"split":9,"merge":8,"split+merge":2,"dropped":0},"green expr":{"n":278,"exact":278,"split":0,"merge":0,"split+merge":0,"dropped":0}} pairs onlyEd 69 onlyBl 60

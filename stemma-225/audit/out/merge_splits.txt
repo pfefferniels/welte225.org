@@ -1,0 +1,72 @@
+
+T=4 mm: 14 split candidates, 4 Dollo violations after merging
+   1986.65 expr:SlowCrescendoOff/treble: r1[Wi1] + L1[Ne1] dOn 2.2 dOff 2.4 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   2247.81 note:60: r1[Wi1] + R2[St1+Ne1] dOn 0.2 dOff -3.7 → [St1+Wi1+Ne1] rule r1>R4
+   2872.91 expr:SlowCrescendoOn/treble: r1[Wi1] + L1[Ne1] dOn 0.2 dOff 1.0 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   4050.65 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.7 dOff 0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   4055.67 expr:SlowCrescendoOff/bass: r1[Wi1] + L1[Ne1] dOn 3.1 dOff 2.1 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   5582.63 expr:SlowCrescendoOn/bass: r1[Wi1] + L1[Ne1] dOn 0.7 dOff -2.6 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   5759.73 note:72: r1[Wi1] + R2[St1+St2+Ch1+Bo1+Ne1] dOn 1.1 dOff -3.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   5851.29 note:48: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.3 dOff -0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   6248.74 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.8 dOff 4.0 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   7951.18 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.6 dOff 0.1 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   8996.35 expr:SlowCrescendoOn/treble: R2[St1+Ne1] + R4[St2+Ch1] dOn 0.1 dOff 2.8 → [St1+St2+Ch1+Ne1] rule R2>G1
+   9041.75 expr:SlowCrescendoOn/treble: R4[St2+Ch1] + R2[St1] dOn 0.1 dOff -3.9 → [St1+St2+Ch1] rule R2>G1/L1
+   9417.16 note:55: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.0 dOff -1.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   9417.33 note:58: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.5 dOff -0.4 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+
+T=5 mm: 20 split candidates, 5 Dollo violations after merging
+   1964.02 expr:SlowCrescendoOn/treble: r1[Wi1] + L1[Ne1] dOn 4.2 dOff 2.5 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   1986.65 expr:SlowCrescendoOff/treble: r1[Wi1] + L1[Ne1] dOn 2.2 dOff 2.4 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   2247.81 note:60: r1[Wi1] + R2[St1+Ne1] dOn 0.2 dOff -3.7 → [St1+Wi1+Ne1] rule r1>R4
+   2368.9 expr:ForzandoOff/bass: R4[St2+Ch1] + r3[Ne1] dOn 4.5 dOff 3.3 → [St2+Ch1+Ne1] rule r3>G1
+   2872.91 expr:SlowCrescendoOn/treble: r1[Wi1] + L1[Ne1] dOn 0.2 dOff 1.0 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   3131.19 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.0 dOff 4.1 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   4050.65 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.7 dOff 0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   4055.67 expr:SlowCrescendoOff/bass: r1[Wi1] + L1[Ne1] dOn 3.1 dOff 2.1 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   4463.17 expr:SustainPedalOff/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 3.2 dOff 4.2 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   5102.25 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.9 dOff 4.5 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   5582.63 expr:SlowCrescendoOn/bass: r1[Wi1] + L1[Ne1] dOn 0.7 dOff -2.6 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   5759.73 note:72: r1[Wi1] + R2[St1+St2+Ch1+Bo1+Ne1] dOn 1.1 dOff -3.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   5851.29 note:48: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.3 dOff -0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   6078.26 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 5.0 dOff -0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   6248.74 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.8 dOff 4.0 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   7951.18 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.6 dOff 0.1 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   8996.35 expr:SlowCrescendoOn/treble: R2[St1+Ne1] + R4[St2+Ch1] dOn 0.1 dOff 2.8 → [St1+St2+Ch1+Ne1] rule R2>G1
+   9041.75 expr:SlowCrescendoOn/treble: R4[St2+Ch1] + R2[St1] dOn 0.1 dOff -3.9 → [St1+St2+Ch1] rule R2>G1/L1
+   9417.16 note:55: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.0 dOff -1.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   9417.33 note:58: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.5 dOff -0.4 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+
+T=8 mm: 32 split candidates, 6 Dollo violations after merging
+   1741.83 expr:SlowCrescendoOn/treble: r1[St2+Wi1+Ch1] + L1[Ne1] dOn 8.0 dOff 7.1 → [St2+Wi1+Ch1+Ne1] rule r1>G1 VIOLATION lacking St1
+   1769.99 expr:SlowCrescendoOff/treble: r1[St1+Wi1] + L1[Ne1] dOn 5.8 dOff 4.4 → [St1+Wi1+Ne1] rule r1>R4
+   1964.02 expr:SlowCrescendoOn/treble: r1[Wi1] + L1[Ne1] dOn 4.2 dOff 2.5 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   1986.65 expr:SlowCrescendoOff/treble: r1[Wi1] + L1[Ne1] dOn 2.2 dOff 2.4 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   2247.81 note:60: r1[Wi1] + R2[St1+Ne1] dOn 0.2 dOff -3.7 → [St1+Wi1+Ne1] rule r1>R4
+   2247.97 note:60: R2[St1+Ne1] + R4[St2+Ch1+Bo1] dOn 0.3 dOff -6.8 → [St1+St2+Ch1+Bo1+Ne1] rule R2
+   2368.9 expr:ForzandoOff/bass: R4[St2+Ch1] + r3[Ne1] dOn 4.5 dOff 3.3 → [St2+Ch1+Ne1] rule r3>G1
+   2872.91 expr:SlowCrescendoOn/treble: r1[Wi1] + L1[Ne1] dOn 0.2 dOff 1.0 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   3131.19 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.0 dOff 4.1 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   4050.65 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.7 dOff 0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   4055.67 expr:SlowCrescendoOff/bass: r1[Wi1] + L1[Ne1] dOn 3.1 dOff 2.1 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   4463.17 expr:SustainPedalOff/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 3.2 dOff 4.2 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   4587.82 note:81: r1[St1+St2+Wi1+Ch1+Bo1] + L1[Ne1] dOn 1.1 dOff 6.6 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   5032.69 expr:SlowCrescendoOn/treble: r3[Ne1] + R4[St2+Ch1] dOn 4.5 dOff 6.2 → [St2+Ch1+Ne1] rule r3>G1
+   5102.25 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.9 dOff 4.5 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   5582.63 expr:SlowCrescendoOn/bass: r1[Wi1] + L1[Ne1] dOn 0.7 dOff -2.6 → [Wi1+Ne1] rule r1>R4 VIOLATION lacking St1
+   5759.73 note:72: r1[Wi1] + R2[St1+St2+Ch1+Bo1+Ne1] dOn 1.1 dOff -3.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   5851.29 note:48: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.3 dOff -0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   5854.03 note:54: r1[St1+St2+Wi1+Bo1+Ne1] + L2[Ch1] dOn 0.2 dOff 7.1 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   6078.26 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 5.0 dOff -0.9 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   6248.74 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 1.8 dOff 4.0 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   6501.19 expr:SlowCrescendoOn/treble: R4[St2+Ch1] + R2[St1+Ne1] dOn 6.3 dOff 5.8 → [St1+St2+Ch1+Ne1] rule R2>G1
+   6603.1 expr:SlowCrescendoOn/treble: L1[Ne1] + R4[St2+Ch1] dOn 4.6 dOff 7.1 → [St2+Ch1+Ne1] rule r3>G1
+   7951.18 note:60: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.6 dOff 0.1 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   8027.54 expr:SustainPedalOn/treble: r1[Wi1] + R2[St1+St2+Ch1+Ne1] dOn 2.5 dOff 5.2 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   8867.42 expr:SustainPedalOff/treble: r1[St1+St2+Wi1+Ch1] + L1[Ne1] dOn 7.2 dOff 6.7 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   8948.99 expr:SustainPedalOff/treble: r1[St1+St2+Wi1+Ch1] + L1[Ne1] dOn 7.1 dOff 6.9 → [St1+St2+Wi1+Ch1+Ne1] rule r1>G1
+   8996.35 expr:SlowCrescendoOn/treble: R2[St1+Ne1] + R4[St2+Ch1] dOn 0.1 dOff 2.8 → [St1+St2+Ch1+Ne1] rule R2>G1
+   9041.75 expr:SlowCrescendoOn/treble: R4[St2+Ch1] + R2[St1] dOn 0.1 dOff -3.9 → [St1+St2+Ch1] rule R2>G1/L1
+   9417.16 note:55: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.0 dOff -1.5 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   9417.33 note:58: R2[St1+St2+Ch1+Bo1+Ne1] + r1[Wi1] dOn 3.5 dOff -0.4 → [St1+St2+Wi1+Ch1+Bo1+Ne1] rule r1
+   9501.34 expr:SlowCrescendoOn/bass: R4[St2+Ch1] + R2[St1+Ne1] dOn 5.1 dOff 4.2 → [St1+St2+Ch1+Ne1] rule R2>G1

@@ -1,0 +1,21 @@
+theta=0.5: 2206 admissible; best Wi1(*(Bo1,Ne1,St1,St2(Ch1))) (violations 0, hidden 1, min carry 0.56); editor: rank 920 (violations 3, hidden 2, min carry 0.89)
+      next: Wi1(*(Bo1,Ch1,Ne1,St1,St2))                violations 0 hidden 1 min carry 0.54 total 13.45
+      next: *(Bo1,Ne1,St1,St2(Ch1),Wi1)                violations 0 hidden 1 min carry 0.68 total 12.30
+      next: *(Bo1,Ch1,Ne1,St1,St2,Wi1)                 violations 0 hidden 1 min carry 0.68 total 10.27
+      next: Wi1(*(*(Bo1,St2(Ch1)),Ne1,St1))            violations 0 hidden 2 min carry 0.82 total 19.15
+      next: Wi1(*(*(Ne1,St1,St2(Ch1)),Bo1))            violations 0 hidden 2 min carry 0.53 total 18.86
+theta=0.8: 144 admissible; best Wi1(*(*(Bo1,St2(Ch1)),Ne1,St1)) (violations 0, hidden 2, min carry 0.82); editor: rank 76 (violations 3, hidden 2, min carry 0.89)
+      next: Wi1(*(*(Bo1,Ch1,St2),Ne1,St1))             violations 0 hidden 2 min carry 0.82 total 17.14
+      next: Wi1(*(*(*(Bo1,St2(Ch1)),St1),Ne1))         violations 0 hidden 3 min carry 0.82 total 23.17
+      next: Wi1(*(*(*(Bo1,St2(Ch1)),Ne1),St1))         violations 0 hidden 3 min carry 0.82 total 23.05
+      next: Wi1(*(*(Bo1,St2(Ch1)),*(Ne1,St1)))         violations 0 hidden 3 min carry 0.82 total 21.23
+      next: Wi1(*(*(*(Bo1,Ch1,St2),St1),Ne1))          violations 0 hidden 3 min carry 0.82 total 21.15
+theta=0.9: 32 admissible; best *(*(*(Bo1,St2(Ch1)),Ne1,St1),Wi1) (violations 0, hidden 3, min carry 0.91); editor: inadmissible
+      next: *(*(*(Bo1,Ch1,St2),Ne1,St1),Wi1)           violations 0 hidden 3 min carry 0.91 total 18.57
+      next: *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)       violations 0 hidden 4 min carry 0.91 total 24.60
+      next: *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)       violations 0 hidden 4 min carry 0.90 total 24.48
+      next: *(*(*(Bo1,St2(Ch1)),*(Ne1,St1)),Wi1)       violations 0 hidden 4 min carry 0.91 total 22.66
+      next: *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)        violations 0 hidden 4 min carry 0.91 total 22.59
+max-min-carry variant: *(*(*(Bo1,St2(Ch1)),Ne1,St1),Wi1) (min carry 0.908, viol 0, hidden 3); *(*(*(Bo1,Ch1,St2),Ne1,St1),Wi1) (min carry 0.908, viol 0, hidden 3); *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1) (min carry 0.908, viol 0, hidden 4); *(*(*(*(Ch1,St2),Bo1),Ne1,St1),Wi1) (min carry 0.908, viol 0, hidden 4); *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1) (min carry 0.908, viol 0, hidden 4)
+editor tree: min carry 0.892, violations 3, hidden 2
+editor tree carries below 0.95: Ne1 of node#2 0.89 (n=176), Ne1 of node#0 0.91 (n=653), Ch1 of node#3 0.92 (n=12), St2 of node#3 0.92 (n=12), Bo1 of node#2 0.94 (n=161)

@@ -1,0 +1,13 @@
+72 readings Dollo assigns to R1.1 (Wi1-side), 5 of them redundant (moved by the redundancy clause at any d); editor: 60 of them in r1.
+ d mm | ins agree /1428 | del agree /655 | R1.1 ins | R2 del | rule hits (non-red.) | of which editor r1 | null: expected coincidental hits (rate)
+    5 |            1380 |            600 |       49 |     23 |                   18 |                 18 |    3.8 of 67 (6%)
+   20 |            1403 |            623 |       26 |     46 |                   41 |                 41 |   13.4 of 67 (20%)
+   30 |            1409 |            629 |       20 |     52 |                   47 |                 47 |   18.2 of 67 (27%)
+   42 |            1413 |            633 |       16 |     56 |                   51 |                 51 |   23.1 of 67 (34%)
+   50 |            1415 |            635 |       14 |     58 |                   53 |                 53 |   25.4 of 67 (38%)
+   60 |            1416 |            636 |       13 |     59 |                   54 |                 54 |   27.9 of 67 (42%)
+  100 |            1416 |            636 |       13 |     59 |                   54 |                 54 |   34.7 of 67 (52%)
+candidates never hit up to 100 mm: 13 Counter({'SoftPedalOn': 4, 'SoftPedalOff': 3, 'SlowCrescendoOff': 2, 'SlowCrescendoOn': 1, 'ForzandoOff': 1, 'ForzandoOn': 1, 'Rewind': 1}) in editor r1: 2
+  null for these 13 at d=20: expected coincidental hits 1.0; P(0 hits) under shifts 0.403
+  null for these 13 at d=50: expected coincidental hits 2.1; P(0 hits) under shifts 0.120
+  null for these 13 at d=100: expected coincidental hits 2.9; P(0 hits) under shifts 0.007

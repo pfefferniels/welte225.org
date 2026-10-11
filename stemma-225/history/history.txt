@@ -1,0 +1,392 @@
+
+d38874b 09-04 20:19 Publish the landing page and the edition of WM 225
+  copies: St1,St2,Wi1
+  carries: 
+  R2(B)      <- r1(A)                      edits  118 ins  160 del  54 unchk   0 bare  21 | St1+St2:154 St1:6
+  R4(C)      <- R2(B)                      edits   88 ins  135 del  19 unchk   0 bare  23 | St2:135
+  r1(A)      <- ROOT                       edits    1 ins  720 del   0 unchk   0 bare   1 | St1+St2+Wi1:656 Wi1:55 St1+Wi1:8
+  R1.1(A1)   <- r1(A)                      edits    6 ins    5 del   1 unchk   0 bare   0 | Wi1:5
+f155ba5 09-04 21:01 Spell Träumerei correctly in the edition's title  (stemma unchanged)
+6398133 09-04 23:13 Move the site to welte225.org  (stemma unchanged)
+
+1ea0ad3 09-10 13:06 Take the Licensee and the green copy into the edition
+  copies: St1,St2,Wi1,Ch1,Bo1
+  carries: 
+  R2(B)      <- r1(A)@8.00                 edits  117 ins  158 del  52 unchk   0 bare  23 | Ch1+St1+St2:158
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  668 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 St1+Wi1:8
+  R1.1(A1)   <- r1(A)@8.00                 edits   59 ins   57 del   2 unchk   0 bare   0 | Wi1:57
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  342 ins  280 del 481 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)@8.00                 edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+
+56cc1d0 09-10 13:30 Finish the transfer to the green system
+  copies: St1,St2,Wi1,Ch1,Bo1
+  carries: 
+  R2(B)      <- r1(A)@8.00                 edits  117 ins  158 del  52 unchk   0 bare  23 | Ch1+St1+St2:158
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  668 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 St1+Wi1:8
+  R1.1(A1)   <- r1(A)@8.00                 edits   59 ins   57 del   2 unchk   0 bare   0 | Wi1:57
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)@8.00                 edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+
+97801c3 09-10 13:39 Say what each edit does musically, not why it sits there
+  copies: St1,St2,Wi1,Ch1,Bo1
+  carries: 
+  R2(B)      <- r1(A)@8.00                 edits  117 ins  158 del  52 unchk   0 bare  23 | Ch1+St1+St2:158
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  668 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 St1+Wi1:8
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits   59 ins   57 del   2 unchk   0 bare  52 | Wi1:57
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[likely]@8.00         edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+76692f8 09-12 08:58 Read the Licensee copy from Chase's scan, not from his .bar  (stemma unchanged)
+ab0f39d 09-12 09:35 Give the added opening a terminus post quem  (stemma unchanged)
+f80ddae 09-12 10:11 Give the added opening the span it was measured at  (stemma unchanged)
+23b0399 09-12 15:46 Say Spur where a track is meant, date the Licensee copy  (stemma unchanged)
+ae3330a 09-12 19:08 Address every entity of the edition by its id alone  (stemma unchanged)
+8557bff 09-13 22:11 State what the two Stanford copies were read from  (stemma unchanged)
+
+af2983c 09-13 22:12 Add Schmitz's copy, known only from TACET's recording
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1
+  carries: Sc1→R4(C)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  117 ins  158 del  52 unchk   0 bare  23 | Ch1+St1+St2:158
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  668 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 St1+Wi1:8
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits   59 ins   57 del   2 unchk   0 bare  52 | Wi1:57
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[likely]@8.00         edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+  r5(C_S)    <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+d48b1bc 09-13 22:26 Name the composite the Schmitz statements rest on  (stemma unchanged)
+
+64900d4 09-14 11:00 Rename C_S to C1 and record Schmitz as the copy's keeper
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1
+  carries: Sc1→R4(C)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  117 ins  158 del  52 unchk   0 bare  23 | Ch1+St1+St2:158
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  668 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 St1+Wi1:8
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits   59 ins   57 del   2 unchk   0 bare  52 | Wi1:57
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[likely]@8.00         edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+d9d3440 09-14 11:06 Drop the version type from every version  (stemma unchanged)
+
+36aedf6 09-14 14:17 Return the shifted Widuch readings to version A
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1
+  carries: Sc1→R4(C)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  108 ins  155 del  45 unchk   0 bare  18 | Ch1+St1+St2:155
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 Wi1:45
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2(D1)     <- R4(C)@8.00                 edits    8 ins    5 del   3 unchk   0 bare   0 | Ch1:5
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[likely]@8.00         edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+
+39c403f 09-14 23:32 Read the split c′ of bar 8′ on Chase's copy as one hole
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1
+  carries: Sc1→R4(C)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  108 ins  155 del  45 unchk   0 bare  18 | Ch1+St1+St2:155
+  R4(C)      <- R2(B)@8.00                 edits   76 ins  135 del   8 unchk   0 bare  13 | Ch1+St2:134 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+St1+St2+Wi1:459 Ch1+St1+St2+Wi1:196 Wi1:45
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2(D1)     <- R4(C)@8.00                 edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[likely]@8.00         edits    3 ins    3 del   0 unchk   0 bare   0 | St1:3
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+
+04ea9dc 09-15 07:29 Add the Licensee version D3 and the lost state B2
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1
+  carries: Sc1→R4(C)[likely]; Go1→L1(D3)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  109 ins  157 del  45 unchk   0 bare  18 | Ch1+Ne1+St1+St2:140 Ch1+St1+St2:15 Ne1+St1:2
+  r3(B2)     <- R2(B)[likely]@8.00         edits    8 ins   16 del   0 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4(C)      <- r3(B2)@8.00                edits   67 ins  119 del  10 unchk   0 bare  13 | Ch1+St2:118 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:439 Ch1+Ne1+St1+St2+Wi1:160 Wi1:45
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2(D1)     <- R4(C)@8.00                 edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  ∅(B1)      <- R2(B)[possible]@8.00       edits    1 ins    1 del   0 unchk   0 bare   0 | St1:1
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1(D3)     <- r3(B2)[likely]@8.00        edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+1a7b95d 09-15 08:35 Dissolve version B1 into B
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1
+  carries: Sc1→R4(C)[likely]; Go1→L1(D3)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  108 ins  158 del  45 unchk   0 bare  16 | Ch1+Ne1+St1+St2:140 Ch1+St1+St2:15 Ne1+St1:2
+  r3(B2)     <- R2(B)[likely]@8.00         edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4(C)      <- r3(B2)@8.00                edits   67 ins  119 del  10 unchk   0 bare  13 | Ch1+St2:118 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:439 Ch1+Ne1+St1+St2+Wi1:160 Wi1:45
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2(D1)     <- R4(C)@8.00                 edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1(D3)     <- r3(B2)[likely]@8.00        edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+192afab 09-15 10:17 Add Simonton's copy, known only from the 1963 recording
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4(C)[likely]; Go1→L1(D3)[likely]; Si1→r1(A)[likely]
+  R2(B)      <- r1(A)@8.00                 edits  108 ins  158 del  45 unchk   0 bare  16 | Ch1+Ne1+St1+St2:140 Ch1+St1+St2:15 Ne1+St1:2
+  r3(B2)     <- R2(B)[likely]@8.00         edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4(C)      <- r3(B2)@8.00                edits   67 ins  119 del  10 unchk   0 bare  13 | Ch1+St2:118 Bo1+Ch1+St2:1
+  r1(A)      <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:439 Ch1+Ne1+St1+St2+Wi1:160 Wi1:45
+  R1.1(A1)   <- r1(A)[likely]@8.00         edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2(D1)     <- R4(C)@8.00                 edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1(D2)     <- R4(C)@8.00                 edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5(C1)     <- R4(C)                      edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1(D3)     <- r3(B2)[likely]@8.00        edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+9487ea8 09-15 11:35 Record the USC Libraries as keeper of Simonton's copy  (stemma unchanged)
+e0868e6 09-16 08:11 Name every copy by its siglum  (stemma unchanged)
+c1ce675 09-16 08:18 Name the copies by their sigla in the notes  (stemma unchanged)
+431c5b6 09-16 10:49 Date the copies with bounds where no day is known  (stemma unchanged)
+
+812617f 09-16 10:53 Name every version by system and generation
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1(R1)[likely]
+  R2         <- r1(R1)@8.00                edits  108 ins  158 del  45 unchk   0 bare  16 | Ch1+Ne1+St1+St2:140 Ch1+St1+St2:15 Ne1+St1:2
+  r3(R3)     <- R2[likely]@8.00            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4         <- r3(R3)@8.00                edits   67 ins  119 del  10 unchk   0 bare  13 | Ch1+St2:118 Bo1+Ch1+St2:1
+  r1(R1)     <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:439 Ch1+Ne1+St1+St2+Wi1:160 Wi1:45
+  R1.1       <- r1(R1)[likely]@8.00        edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@8.00                    edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1         <- R4@8.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5(R4.1)   <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3(R3)[likely]@8.00        edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+9544687 09-16 11:13 Let the notes refer to versions instead of naming them
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@8.00                    edits  108 ins  158 del  45 unchk   0 bare  16 | Ch1+Ne1+St1+St2:140 Ch1+St1+St2:15 Ne1+St1:2
+  r3         <- R2[likely]@8.00            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4         <- r3@8.00                    edits   67 ins  119 del  10 unchk   0 bare  13 | Ch1+St2:118 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:439 Ch1+Ne1+St1+St2+Wi1:160 Wi1:45
+  R1.1       <- r1[likely]@8.00            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@8.00                    edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1         <- R4@8.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+e5b30a1 09-16 12:38 Bound the two readings that name a month or a year  (stemma unchanged)
+93f3135 09-16 18:11 Set out the argument for R3 in steps  (stemma unchanged)
+d52b0a5 09-16 20:12 Set the notes in the register of an apparatus  (stemma unchanged)
+5638b64 09-16 20:38 Link the millimetre figures to their perforations  (stemma unchanged)
+d06abbe 09-16 20:59 Settle the vocabulary of the una corda, and link six more places  (stemma unchanged)
+bae1957 09-16 21:06 Set the quotation mark and the genitive apostrophes  (stemma unchanged)
+3f36eff 09-16 21:14 Name the punchings instead of measuring them  (stemma unchanged)
+ab69aaf 09-16 21:35 Number the seven additions that ground R3  (stemma unchanged)
+6b09204 09-16 21:43 Take the last position figures out of the prose  (stemma unchanged)
+e120820 09-16 21:50 Settle the vocabulary the audit found split  (stemma unchanged)
+04c0eb1 09-16 21:57 Überliefert allein in Trachtmans MIDI-Datei  (stemma unchanged)
+db48537 09-16 22:00 Say überliefert, not bekannt, of a copy  (stemma unchanged)
+3920092 09-16 22:06 Stop repeating in Si1's prose what its fields already carry  (stemma unchanged)
+bd81d34 09-16 22:52 Say what a keeper rests on, and drop the one nobody knows  (stemma unchanged)
+3512221 09-16 22:56 Name Bill Luecht as the sender of the Chase scan  (stemma unchanged)
+068eae9 09-17 07:50 Put every feature in the act that brought it about  (stemma unchanged)
+2fd0740 09-17 20:34 Name the Umstanzung each version was made by  (stemma unchanged)
+
+f39a03e 09-17 22:45 Restore the collation splits the wider tolerance absorbed
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.50                    edits  113 ins  163 del  50 unchk   0 bare  16 | Ch1+Ne1+St1+St2:139 Ch1+St1+St2:14 Ne1+St1:4
+  r3         <- R2[likely]@5.00            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4         <- r3@5.00                    edits   70 ins  122 del  13 unchk   0 bare  13 | Ch1+St2:121 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:435 Ch1+Ne1+St1+St2+Wi1:159 Wi1:50
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@8.00                    edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1         <- R4@8.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+3f46447 09-17 22:53 Rename the method of each writing to technique  (stemma unchanged)
+1f8302e 09-17 22:55 Write the new symbol nodes in the exporter's key order  (stemma unchanged)
+0d3581b 09-17 22:59 Put the production nodes in the exporter's key order  (stemma unchanged)
+4e36dee 09-17 23:06 Say that the four displaced tones shade a chord  (stemma unchanged)
+db06a3c 09-17 23:10 Name the declared concepts by IRI alone  (stemma unchanged)
+
+257821c 09-18 09:38 Collate the green transfer at the default tolerance
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.50                    edits  113 ins  163 del  50 unchk   0 bare  16 | Ch1+Ne1+St1+St2:139 Ch1+St1+St2:14 Ne1+St1:4
+  r3         <- R2[likely]@5.00            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4         <- r3@5.00                    edits   70 ins  122 del  13 unchk   0 bare  13 | Ch1+St2:121 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:435 Ch1+Ne1+St1+St2+Wi1:159 Wi1:50
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@8.00                    edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1         <- R4@5.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+f1c76ea 09-18 22:04 Take the reader's extension off Phillips's copy  (stemma unchanged)
+
+a715f3b 09-18 22:04 Collate the second state at its readings' own tolerance
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:144 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2[likely]@5.00            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:13 Ch1+St2:3
+  R4         <- r3@5.00                    edits   70 ins  122 del  13 unchk   0 bare  13 | Ch1+St2:121 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:432 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@8.00                    edits    7 ins    4 del   3 unchk   0 bare   0 | Ch1:4
+  G1         <- R4@5.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+1d90b2c 09-18 22:25 Collate four more derivations at their readings' tolerance
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   79 ins  126 del  17 unchk  22 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:153 Wi1:59
+  R1.1       <- r1@3.48                    edits   13 ins   14 del   6 unchk   5 bare   0 | Wi1:14
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+81a92f6 09-18 22:32 Leave the branch off the archetype collated as it was
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   79 ins  126 del  17 unchk  22 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits    5 ins  716 del   0 unchk   0 bare   5 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  343 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits   97 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+d00427f 09-20 13:35 Rename Ph1 to Ne1 and record Phillips's report  (stemma unchanged)
+812c31d 09-22 02:47 State the punch diameters on the perforators  (stemma unchanged)
+edaf30e 09-22 02:51 State chain pitch and advance on the perforators  (stemma unchanged)
+1dc77f3 09-22 03:01 Weigh the perforator settings against the punch dates  (stemma unchanged)
+b6cbc17 09-22 13:49 Type the perforators as linked-rolls 0.54.0 states them  (stemma unchanged)
+90cc4e8 09-22 15:17 Type the holes as chains, as linked-rolls 0.55.0 names them  (stemma unchanged)
+6d71a3e 09-22 16:20 Type the patches as linked-rolls 0.56.0 names them  (stemma unchanged)
+83ccf82 09-22 20:18 Take Nettheim's report on Ne1 into the edition  (stemma unchanged)
+c4d2d00 09-23 01:32 State the drive of every perforator as the rows show it  (stemma unchanged)
+a9404f5 09-23 09:39 Drop what linked-rolls 0.57.0 leaves to a reasoner  (stemma unchanged)
+c511a74 09-24 11:12 Bring the edition to linked-rolls 0.58.0  (stemma unchanged)
+b14a736 09-24 11:27 State no revision of the format  (stemma unchanged)
+6098724 09-24 20:11 Type the green transfer's edits as recodings  (stemma unchanged)
+
+93c5321 09-24 23:15 Keep every edit at one place
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   82 ins  126 del  17 unchk  22 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  101 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+0f6bcfb 09-25 09:56 Take L1's four readings of R1 from a possible second model
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   82 ins  126 del  17 unchk  22 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00,r1[possible] edits  101 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+a0ba858 09-26 12:08 Keep only the copies of WM 225 in punch-225  (stemma unchanged)
+7afb9ab 09-26 12:36 Date St1, St2 and Wi1 on the premises of welte-premises  (stemma unchanged)
+1a42300 09-26 13:22 Infer from the premises of welte-premises, adopting nothing  (stemma unchanged)
+7d545c0 09-26 21:04 Follow condon-dates in setting aside Welte 2609  (stemma unchanged)
+3f2cffd 09-26 21:11 Cite the premises in the state that checks their edges (condon-dates 639609f)  (stemma unchanged)
+02becd0 09-27 09:13 State St2's seven edge tears as conditions of the copy (linked-rolls 733f522)  (stemma unchanged)
+
+8c93467 09-28 09:11 Keep each copy at its own places and align it by its notes (linked-rolls 218ad1b)
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   82 ins  126 del  17 unchk  22 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  101 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+fc71626 09-29 06:43 Drop the edition-wide collation tolerance nothing reads  (stemma unchanged)
+291e18c 10-02 08:09 Publish the edition as version 1.0  (stemma unchanged)
+
+e167d27 10-02 13:57 Classify R4's crescendo pulses and redundant swells
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:14 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   13 ins   18 del   3 unchk   4 bare   0 | Ch1+Ne1+St2:11 Ne1:4 Ch1+St2:3
+  R4         <- r3@4.08                    edits   77 ins  126 del  17 unchk  15 bare   0 | Ch1+St2:125 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  101 ins  100 del  78 unchk   0 bare  24 | Ne1:100
+
+1ab8a3d 10-02 14:09 Reconstruct r3's treble Off at 5776 from R2 and R4
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:15 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits   11 ins   17 del   2 unchk   2 bare   0 | Ch1+Ne1+St2:11 Ne1:3 Ch1+St2:3
+  R4         <- r3@4.08                    edits   76 ins  125 del  16 unchk  14 bare   0 | Ch1+St2:124 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  103 ins  101 del  79 unchk   2 bare  24 | Ne1:101
+
+ec2ef23 10-02 14:09 Reconstruct r3's treble Off at 1769 from R2
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  36 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:15 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:11 Ch1+St2:3 Ne1:2
+  R4         <- r3@4.08                    edits   76 ins  125 del  16 unchk  14 bare   0 | Ch1+St2:124 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  105 ins  102 del  80 unchk   4 bare  24 | Ne1:102
+064bf21 10-04 06:48 Link the edition's people, places and bodies to authority records  (stemma unchanged)
+
+58a58db 10-04 20:38 Motivate and classify R4's unchecked edits
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1@3.56                    edits  133 ins  172 del  59 unchk  35 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:15 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2@4.67                    edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:11 Ch1+St2:3 Ne1:2
+  R4         <- r3@4.08                    edits   73 ins  125 del  16 unchk   3 bare   0 | Ch1+St2:124 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4@4.89                    edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4@5.00                    edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  105 ins  102 del  80 unchk   4 bare  24 | Ne1:102
+e2aeae9 10-05 19:15 Name Niels Pfeffer as the edition's editor  (stemma unchanged)
+809dcad 10-05 19:30 Release version 1.0.1 of the edition  (stemma unchanged)
+50847d0 10-10 11:34 Name the rules each inference of the edition applies  (stemma unchanged)
+0c1d448 10-10 11:55 Release version 1.0.2 of the edition  (stemma unchanged)
+
+3f2bc45 10-10 12:44 Give the main stemma's derivations their reasons
+  copies: St1,St2,Wi1,Ch1,Bo1,Sc1,Ne1,Go1,Si1
+  carries: Sc1→R4[likely]; Go1→L1[likely]; Si1→r1[likely]
+  R2         <- r1[likely]@3.56            edits  133 ins  172 del  59 unchk  35 bare   0 | Ch1+Ne1+St1+St2:142 Ch1+St1+St2:15 Bo1+Ch1+Ne1+St1+St2:7
+  r3         <- R2[likely]@4.67            edits    9 ins   16 del   1 unchk   0 bare   0 | Ch1+Ne1+St2:11 Ch1+St2:3 Ne1:2
+  R4         <- r3[likely]@4.08            edits   73 ins  125 del  16 unchk   3 bare   0 | Ch1+St2:124 Bo1+Ch1+St2:1
+  r1         <- ROOT                       edits  716 ins  716 del   0 unchk   0 bare 716 | Bo1+Ch1+Ne1+St1+St2+Wi1:431 Ch1+Ne1+St1+St2+Wi1:154 Wi1:59
+  R1.1       <- r1[likely]@3.50            edits    9 ins   12 del   4 unchk   0 bare   1 | Wi1:12
+  L2         <- R4[likely]@4.89            edits    9 ins    5 del   4 unchk   2 bare   0 | Ch1:5
+  G1         <- R4[likely]@5.00            edits  352 ins  280 del 491 unchk   0 bare   0 | Bo1:280
+  r5         <- R4                         edits    0 ins    0 del   0 unchk   0 bare   0 | 
+  L1         <- r3[likely]@8.00            edits  105 ins  102 del  80 unchk   4 bare  24 | Ne1:102
+0c1b043 10-10 12:45 Release version 1.0.3 of the edition  (stemma unchanged)
+4b919bb 10-10 19:06 Leave out the rules that state no reasoning of their own  (stemma unchanged)
+c1da265 10-10 19:06 Release version 1.0.4 of the edition  (stemma unchanged)
+5cbe272 10-10 19:31 Keep only the principles that are rules of inference  (stemma unchanged)
+409fd57 10-10 19:32 Release version 1.0.5 of the edition  (stemma unchanged)

@@ -1,0 +1,2 @@
+D=30: shared (non-Wi1-only) expression readings of Wi1 with a same-kind non-Wi1 R2 reading within D: 6/198
+D=60: shared (non-Wi1-only) expression readings of Wi1 with a same-kind non-Wi1 R2 reading within D: 30/198

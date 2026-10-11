@@ -1,0 +1,3 @@
+single    clusters 1409 exact 1372 96.1% notes {"n":498,"exact":478,"split":4,"merge":16,"split+merge":0,"dropped":0} expr {"n":652,"exact":616,"split":1,"merge":34,"split+merge":0,"dropped":1} pairs onlyEd 24 onlyBl 87
+average   clusters 1427 exact 1371 96.0% notes {"n":498,"exact":473,"split":15,"merge":8,"split+merge":2,"dropped":0} expr {"n":652,"exact":620,"split":1,"merge":30,"split+merge":0,"dropped":1} pairs onlyEd 97 onlyBl 56
+complete  clusters 1493 exact 1330 93.1% notes {"n":498,"exact":439,"split":53,"merge":3,"split+merge":3,"dropped":0} expr {"n":652,"exact":613,"split":16,"merge":20,"split+merge":2,"dropped":1} pairs onlyEd 387 onlyBl 26

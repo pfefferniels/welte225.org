@@ -1,0 +1,54 @@
+note:62                       1751.25 dFrom  0.68 dTo  11.25 | L1 [Ne1] shorten/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null
+expr:SlowCrescendoOff/treble  1986.65 dFrom  2.23 dTo   2.43 | r1>R2 [Wi1] / del:shift/shift-to-metrical-accent | L1 [Ne1] additional-accent/taken-from-mother-roll del:
+note:70                       2074.44 dFrom  1.78 dTo  15.22 | L1 [Ne1] shorten/held-note-shortened del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/held-note-shortened
+note:60                       2247.81 dFrom  0.16 dTo  -3.65 | r1>R2 [Wi1] / del:null/unchecked | R2>R4 [St1+Ne1] /unchecked del:shorten/uuid:82d4f5b6
+note:60                       2247.81 dFrom  0.45 dTo -10.44 | r1>R2 [Wi1] / del:null/unchecked | R4 [St2+Ch1+Bo1] shorten/uuid:82d4f5b6 del:
+note:60                       2247.97 dFrom  0.29 dTo  -6.79 | R2>R4 [St1+Ne1] /unchecked del:shorten/uuid:82d4f5b6 | R4 [St2+Ch1+Bo1] shorten/uuid:82d4f5b6 del:
+note:49                       2665.93 dFrom  0.31 dTo  15.32 | L1 [Ne1] shorten/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null
+note:57                       2668.26 dFrom  2.52 dTo  93.19 | L1 [Ne1] shorten/note-restruck del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/note-restruck
+expr:SlowCrescendoOn/treble   2872.91 dFrom  0.16 dTo   0.95 | r1>R2 [Wi1] / del:null/shift-to-metrical-accent | L1 [Ne1] /taken-from-mother-roll del:
+note:65                       3109.46 dFrom  1.45 dTo  -8.86 | L1 [Ne1] prolong/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:prolong/null
+expr:SustainPedalOn/treble    3131.19 dFrom  1.03 dTo    4.1 | r1>R2 [Wi1] / del:null/unchecked | R2>G1 [St1+St2+Ch1+Ne1] /unchecked del:recoding/latch-to-hold
+note:60                       4050.65 dFrom  3.66 dTo   0.95 | R2 [St1+St2+Ch1+Bo1+Ne1] additional-accent/chord-shading del: | r1>R2 [Wi1] / del:additional-accent/chord-shading
+expr:SlowCrescendoOff/bass    4055.67 dFrom  3.09 dTo   2.15 | r1>R2 [Wi1] / del:correct-error/null | L1 [Ne1] shift/taken-from-mother-roll del:
+note:50                       4204.72 dFrom  0.04 dTo    -23 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/held-note-shortened | L1 [Ne1] shorten/held-note-shortened del:
+expr:SustainPedalOff/treble   4463.17 dFrom  3.21 dTo   4.19 | r1>R2 [Wi1] / del:null/unchecked | R2>G1 [St1+St2+Ch1+Ne1] /unchecked del:recoding/latch-to-hold
+note:81                       4587.82 dFrom  1.09 dTo   6.58 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:prolong/null | L1 [Ne1] prolong/ del:
+expr:SustainPedalOn/treble    5102.25 dFrom  1.93 dTo   4.48 | r1>R2 [Wi1] / del:null/unchecked | R2>G1 [St1+St2+Ch1+Ne1] /unchecked del:recoding/latch-to-hold
+expr:SlowCrescendoOn/bass     5582.63 dFrom  0.66 dTo  -2.62 | r1>R2 [Wi1] / del:correct-error/null | L1 [Ne1] shift/taken-from-mother-roll del:
+note:54                       5755.67 dFrom  0.47 dTo   14.6 | L1 [Ne1] shorten/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null
+note:72                       5759.73 dFrom   1.1 dTo  -3.52 | r1>R2 [Wi1] / del:null/unchecked | R2 [St1+St2+Ch1+Bo1+Ne1] /unchecked del:
+note:48                       5851.29 dFrom  3.26 dTo  -0.89 | R2 [St1+St2+Ch1+Bo1+Ne1] /unchecked del: | r1>R2 [Wi1] / del:null/unchecked
+note:54                       5854.03 dFrom  0.23 dTo   7.13 | r1>L2 [St1+St2+Wi1+Bo1+Ne1] / del:null/unchecked | L2 [Ch1] /unchecked del:
+note:67                       5923.01 dFrom  0.06 dTo -22.21 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/held-note-shortened | L1 [Ne1] shorten/held-note-shortened del:
+note:57                       6075.88 dFrom  0.88 dTo -23.28 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null | L1 [Ne1] shorten/ del:
+expr:SustainPedalOn/treble    6248.74 dFrom   1.8 dTo   3.96 | r1>R2 [Wi1] / del:null/unchecked | R2>G1 [St1+St2+Ch1+Ne1] /unchecked del:recoding/latch-to-hold
+note:55                       6470.45 dFrom   0.9 dTo -12.28 | G1 [Bo1] /note-text-differs del: | r1>G1 [St1+St2+Wi1+Ch1+Ne1] / del:null/note-text-differs
+note:76                       6520.73 dFrom  0.25 dTo -77.77 | L1 [Ne1] prolong/repetition-tied del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:prolong/repetition-tied
+note:64                       7141.67 dFrom  0.02 dTo  -20.1 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null | L1 [Ne1] shorten/ del:
+note:67                       7153.19 dFrom  0.39 dTo  20.46 | L1 [Ne1] shorten/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null
+note:60                       7951.18 dFrom  3.57 dTo   0.14 | R2 [St1+St2+Ch1+Bo1+Ne1] additional-accent/chord-shading del: | r1>R2 [Wi1] / del:additional-accent/chord-shading
+expr:SustainPedalOn/treble    8027.54 dFrom  2.52 dTo   5.18 | r1>R2 [Wi1] / del:null/unchecked | R2>G1 [St1+St2+Ch1+Ne1] /unchecked del:recoding/latch-to-hold
+note:50                        8123.3 dFrom  0.46 dTo -21.55 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/held-note-shortened | L1 [Ne1] shorten/held-note-shortened del:
+note:48                       8871.48 dFrom  1.23 dTo  11.65 | L2 [Ch1] /note-retimed del: | r1>L2 [St1+St2+Wi1+Bo1+Ne1] / del:null/note-retimed
+note:77                       8922.08 dFrom  0.28 dTo -14.35 | L1 [Ne1] prolong/ del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:prolong/null
+expr:SlowCrescendoOn/treble   8996.35 dFrom  0.11 dTo   2.81 | R2>R4 [St1+Ne1] additional-accent/ del:prolong/null | R4>G1 [St2+Ch1] prolong/ del:recoding/latch-to-hold
+expr:SlowCrescendoOn/treble   9041.75 dFrom  0.14 dTo   -3.9 | R4>G1 [St2+Ch1] prolong/ del:recoding/latch-to-hold | R2>R4/L1 [St1] additional-accent/ del:prolong/null,null/accent-withdrawn
+note:55                       9417.16 dFrom  3.03 dTo  -1.45 | R2 [St1+St2+Ch1+Bo1+Ne1] additional-accent/chord-shading del: | r1>R2 [Wi1] / del:additional-accent/chord-shading
+note:58                       9417.33 dFrom  3.45 dTo  -0.44 | R2 [St1+St2+Ch1+Bo1+Ne1] /unchecked del: | r1>R2 [Wi1] / del:null/unchecked
+note:62                       9420.42 dFrom  0.63 dTo -22.85 | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/null | L1 [Ne1] shorten/ del:
+note:60                       9523.83 dFrom  1.35 dTo 101.48 | L1 [Ne1] shorten/note-restruck del: | r1>L1 [St1+St2+Wi1+Ch1+Bo1] / del:shorten/note-restruck
+40 pairs within 4 mm
+{
+  'L1[Ne1] ~ r1[St1+St2+Wi1+Ch1+Bo1]': 17,
+  'L1[Ne1] ~ r1[Wi1]': 4,
+  'R2[St1+Ne1] ~ r1[Wi1]': 1,
+  'R4[St2+Ch1+Bo1] ~ r1[Wi1]': 1,
+  'R2[St1+Ne1] ~ R4[St2+Ch1+Bo1]': 1,
+  'R2[St1+St2+Ch1+Ne1] ~ r1[Wi1]': 5,
+  'R2[St1+St2+Ch1+Bo1+Ne1] ~ r1[Wi1]': 6,
+  'L2[Ch1] ~ r1[St1+St2+Wi1+Bo1+Ne1]': 2,
+  'G1[Bo1] ~ r1[St1+St2+Wi1+Ch1+Ne1]': 1,
+  'R2[St1+Ne1] ~ R4[St2+Ch1]': 1,
+  'R2[St1] ~ R4[St2+Ch1]': 1
+}

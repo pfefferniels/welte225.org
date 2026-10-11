@@ -1,0 +1,47 @@
+R2: 2-symbol insert edits 52; single-symbol rule right for 104/104 symbols; union rule right for 52/52 pairs []
+R4: 2-symbol insert edits 56; single-symbol rule right for 112/112 symbols; union rule right for 56/56 pairs []
+L1: 2-symbol insert edits 12; single-symbol rule right for 24/24 symbols; union rule right for 12/12 pairs []
+r3: 2-symbol insert edits 8; single-symbol rule right for 11/16 symbols; union rule right for 8/8 pairs []
+mechanical pairing changes 42 symbol assignments: fixes 15, breaks 27
+   1749.81 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair R2
+   1968.17 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair r1
+   1986.65 expr:SlowCrescendoOff/treble [Wi1] editor r1: single R1.1 → pair r1
+   2042.71 expr:SlowCrescendoOn/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   2046.56 expr:SlowCrescendoOff/treble [Wi1] editor r1: single R1.1 → pair r1
+   2153.76 expr:SlowCrescendoOff/treble [Ne1] editor L1: single L1 → pair R2
+   2368.9 expr:ForzandoOff/bass [St2+Ch1] editor R4: single R4 → pair r3
+   2541.14 expr:SlowCrescendoOff/bass [Ne1] editor L1: single L1 → pair R2
+   2559.34 expr:SlowCrescendoOn/bass [Ne1] editor L1: single L1 → pair R2
+   2760.47 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair r3
+   2787.01 expr:SlowCrescendoOff/treble [St2+Ch1] editor R4: single R4 → pair r3
+   4815.91 expr:SlowCrescendoOn/treble [St2+Ch1] editor r3: single R4 → pair r3
+   4828.44 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair r3
+   5032.69 expr:SlowCrescendoOn/treble [Ne1] editor r3: single L1 → pair r3
+   5037.2 expr:SlowCrescendoOn/treble [St2+Ch1] editor R4: single R4 → pair r3
+   5362.48 expr:SlowCrescendoOn/bass [Wi1] editor r1: single R1.1 → pair r1
+   5374.11 expr:SlowCrescendoOff/bass [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   5546.78 expr:SlowCrescendoOn/treble [Wi1] editor r1: single R1.1 → pair r1
+   5584.63 expr:SlowCrescendoOff/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   5627.83 expr:SlowCrescendoOn/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   5646.77 expr:SlowCrescendoOff/treble [Wi1] editor r1: single R1.1 → pair r1
+   5768.5 expr:SlowCrescendoOff/treble [Ne1] editor L1: single L1 → pair R2
+   5868.11 expr:SlowCrescendoOn/treble [Wi1] editor r1: single R1.1 → pair r1
+   5882.47 expr:SlowCrescendoOff/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   6457.53 expr:SlowCrescendoOn/treble [Wi1] editor r1: single R1.1 → pair r1
+   6466.59 expr:SlowCrescendoOff/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   6603.1 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair r3
+   6624.88 expr:SlowCrescendoOff/treble [St2+Ch1] editor R4: single R4 → pair r3
+   6676.5 expr:SlowCrescendoOff/treble [St2+Ch1] editor r3: single R4 → pair r3
+   7842.87 expr:SlowCrescendoOff/treble [St2+Ch1] editor r3: single R4 → pair r3
+   7939.03 expr:SlowCrescendoOn/bass [St1+St2+Ch1] editor R2: single R2 → pair r1
+   7952.63 expr:SlowCrescendoOff/bass [Wi1] editor r1: single R1.1 → pair r1
+   7968.82 expr:SlowCrescendoOn/bass [Wi1] editor r1: single R1.1 → pair r1
+   7979.97 expr:SlowCrescendoOff/bass [St1+St2+Ch1] editor R2: single R2 → pair r1
+   7993.31 expr:SlowCrescendoOn/treble [Wi1] editor r1: single R1.1 → pair r1
+   8020.19 expr:SlowCrescendoOff/treble [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   8542.99 expr:SlowCrescendoOn/bass [Wi1] editor r1: single R1.1 → pair r1
+   8568.21 expr:SlowCrescendoOff/bass [St1+St2+Ch1+Ne1] editor R2: single R2 → pair r1
+   8741.06 expr:SlowCrescendoOn/treble [Ne1] editor L1: single L1 → pair R2
+   8996.46 expr:SlowCrescendoOn/treble [St2+Ch1] editor R4: single R4 → pair R2
+   9041.75 expr:SlowCrescendoOn/treble [St2+Ch1] editor R4: single R4 → pair R2
+   9501.34 expr:SlowCrescendoOn/bass [St2+Ch1] editor R4: single R4 → pair R2

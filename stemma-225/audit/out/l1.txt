@@ -1,0 +1,74 @@
+L1 insertions 102 {
+  '8i/0d -/cancel-row': 8,
+  '1i/1d shift/-': 31,
+  '1i/1d shorten/-': 7,
+  '1i/0d -/unchecked': 2,
+  '2i/0d additional-accent/-': 16,
+  '2i/0d additional-accent/taken-from-mother-roll': 2,
+  '1i/1d shorten/held-note-shortened': 4,
+  '1i/0d -/-': 9,
+  '2i/1d shorten/note-restruck': 4,
+  '1i/0d -/taken-from-mother-roll': 1,
+  '1i/1d prolong/-': 4,
+  '2i/0d -/-': 6,
+  '1i/0d add-redundancy/-': 3,
+  '1i/1d shift/taken-from-mother-roll': 2,
+  '1i/2d prolong/repetition-tied': 1,
+  '1i/0d -/uuid:followin': 1,
+  '1i/0d add-redundancy/closing-release': 1
+}
+L1 insertions by kind {
+  MezzoforteOff: 2,
+  SoftPedalOff: 2,
+  SlowCrescendoOff: 21,
+  ForzandoOff: 7,
+  SustainPedalOff: 16,
+  SlowCrescendoOn: 20,
+  note: 21,
+  SustainPedalOn: 12,
+  ForzandoOn: 1
+}
+L1 deletions 80 {
+  '1i/1d shift/-': 31,
+  '1i/1d shorten/-': 7,
+  '0i/1d -/-': 8,
+  '0i/1d -/unchecked': 2,
+  '1i/1d shorten/held-note-shortened': 4,
+  '0i/2d -/-': 8,
+  '2i/1d shorten/note-restruck': 2,
+  '1i/1d prolong/-': 4,
+  '0i/1d -/accent-withdrawn': 4,
+  '1i/1d shift/taken-from-mother-roll': 2,
+  '0i/1d -/una-corda-dropped': 5,
+  '1i/2d prolong/repetition-tied': 2,
+  '0i/1d remove-redundancy/cleanup-d3': 1
+}
+L1 deletions by inserting version { r1: 61, R2: 16, r3: 3 } by kind {
+  SlowCrescendoOn: 20,
+  note: 20,
+  SlowCrescendoOff: 18,
+  SustainPedalOn: 7,
+  ForzandoOn: 1,
+  SustainPedalOff: 9,
+  SoftPedalOff: 3,
+  SoftPedalOn: 2
+}
+same-kind replace pairs 54
+  shift: n=33 |dFrom| median 12.42 min 6.87 max 24.49 ; <=3.3mm: 0, <=8mm: 4 ; |dTo| median 12.21
+  shorten: n=15 |dFrom| median 0.63 min 0.02 max 193.61 ; <=3.3mm: 13, <=8mm: 13 ; |dTo| median 20.46
+  prolong: n=6 |dFrom| median 1.45 min 0.25 max 90.81 ; <=3.3mm: 4, <=8mm: 5 ; |dTo| median 8.86
+shift pairs |dFrom| list: -6.87 7.06 7.2 7.98 8.17 8.23 -8.97 9.47 9.82 10.07 11.22 -11.46 11.54 -11.72 12.02 -12.06 12.42 -12.46 12.53 12.63 14.41 14.49 14.81 15.24 -15.57 -17.69 18.02 20.57 20.67 -21.48 21.96 -23.95 -24.49
+shift pairs by kind {
+  'expr:SlowCrescendoOn/treble': 9,
+  'expr:SlowCrescendoOff/treble': 4,
+  'expr:SlowCrescendoOff/bass': 2,
+  'expr:SustainPedalOn/treble': 7,
+  note: 1,
+  'expr:SustainPedalOff/treble': 9,
+  'expr:SlowCrescendoOn/bass': 1
+}
+Ne1-St2 onset diff on shared notes: n=442 median 0.11 MAD 0.72 p95|d-med| 2.44
+Ne1-St2 onset diff on shared expressions: n=308 median 1.02 MAD 0.75 p95|d-med| 2.73
+Wi1-St2 expression onset: median -0.82 MAD 0.77
+Ch1-St2 expression onset: median -0.18 MAD 0.99
+St1-St2 expression onset: median -0.70 MAD 0.95

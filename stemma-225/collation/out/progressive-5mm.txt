@@ -1,0 +1,29 @@
+tolerance {"toleranceStart":5,"toleranceEnd":5} orders 720 distinct results 352
+exact edition symbols: min 1341 max 1371 of 1428
+readings handed to two symbols: min 1 max 122
+symbols reading one copy twice: min 0 max 0
+symbols: min 1424 max 1457
+{
+  order: 'St1,St2,Wi1,Ch1,Bo1,Ne1',
+  h: 'ab1b77c2f3',
+  symbols: 1432,
+  doubled: 8,
+  sameCopyTwice: 0,
+  exact: 1364
+}
+{
+  order: 'Ne1,Ch1,Bo1,Wi1,St2,St1',
+  h: '7149850361',
+  symbols: 1457,
+  doubled: 120,
+  sameCopyTwice: 0,
+  exact: 1342
+}
+{
+  order: 'Wi1,St1,St2,Ch1,Ne1,Bo1',
+  h: '6784a8de5c',
+  symbols: 1432,
+  doubled: 12,
+  sameCopyTwice: 0,
+  exact: 1364
+}

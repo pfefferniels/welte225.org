@@ -1,0 +1,30 @@
+
+== A near5m G=10 eps=.25: optimum *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1) cost 91.5
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 22.25 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   St1 is a sampled ancestor (internal node)     yes + 22.25 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   St1 is an ancestor of St2 and Ne1             yes + 22.25 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   Wi1 branches off at an unobserved root        yes +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)       | no + 67.00 Wi1(*(*(*(Bo1,St2(Ch1)),St1),Ne1))
+   Ch1 is a child of St2                         yes +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)       | no +  0.00 *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)
+   Bo1 is a child of St2                         yes + 17.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)          | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  4.50 *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)       | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   exact editor topology                         yes + 33.25 *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+
+== A2 + Ne1 merge 10mm: optimum *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1) cost 75.0
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 61.75 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   St1 is a sampled ancestor (internal node)     yes + 61.75 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   St1 is an ancestor of St2 and Ne1             yes + 61.75 *(St1(*(*(Bo1,St2(Ch1)),Ne1)),Wi1)         | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   Wi1 branches off at an unobserved root        yes +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)       | no + 62.00 Wi1(*(*(*(Bo1,St2(Ch1)),St1),Ne1))
+   Ch1 is a child of St2                         yes +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)       | no +  0.00 *(*(*(*(*(Ch1,St2),Bo1),St1),Ne1),Wi1)
+   Bo1 is a child of St2                         yes + 17.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)          | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  3.75 *(*(*(*(Bo1,St2(Ch1)),Ne1),St1),Wi1)       | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+   exact editor topology                         yes + 72.75 *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            | no +  0.00 *(*(*(*(Bo1,St2(Ch1)),St1),Ne1),Wi1)
+
+== B Bo1 missing: optimum *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1) cost 78.5
+   r3: MRCA(St2,Ne1) is a hidden node below St1  yes + 16.25 *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            | no +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)
+   St1 is a sampled ancestor (internal node)     yes + 11.00 *(*(*(St1(Bo1),St2(Ch1)),Ne1),Wi1)         | no +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)
+   St1 is an ancestor of St2 and Ne1             yes + 16.25 *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            | no +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)
+   Wi1 branches off at an unobserved root        yes +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)          | no +  9.00 *(*(*(*(St1,St2(Ch1)),Ne1),Wi1),Bo1)
+   Ch1 is a child of St2                         yes +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)          | no +  0.00 *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)
+   Bo1 is a child of St2                         yes +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)          | no +  0.00 *(*(*(*(Bo1,Ch1,St2),St1),Ne1),Wi1)
+   Ne1 groups with St2 (not with Wi1/St1)        yes +  5.50 *(*(*(Ne1,St2(Bo1,Ch1)),St1),Wi1)          | no +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)
+   exact editor topology                         yes + 16.25 *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1)            | no +  0.00 *(*(*(St1,St2(Bo1,Ch1)),Ne1),Wi1)

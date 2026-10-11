@@ -1,0 +1,134 @@
+{
+ "raw": {
+  "r1": {
+   "insE": 716,
+   "insR": 653,
+   "insBoth": 653,
+   "delE": 0,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "R1.1": {
+   "insE": 12,
+   "insR": 71,
+   "insBoth": 12,
+   "delE": 4,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "R2": {
+   "insE": 172,
+   "insR": 176,
+   "insBoth": 172,
+   "delE": 59,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "r3": {
+   "insE": 16,
+   "insR": 11,
+   "insBoth": 11,
+   "delE": 1,
+   "delR": 4,
+   "delBoth": 1
+  },
+  "R4": {
+   "insE": 125,
+   "insR": 128,
+   "insBoth": 125,
+   "delE": 16,
+   "delR": 11,
+   "delBoth": 11
+  },
+  "L2": {
+   "insE": 5,
+   "insR": 5,
+   "insBoth": 5,
+   "delE": 4,
+   "delR": 4,
+   "delBoth": 4
+  },
+  "G1": {
+   "insE": 280,
+   "insR": 280,
+   "insBoth": 280,
+   "delE": 491,
+   "delR": 491,
+   "delBoth": 491
+  },
+  "L1": {
+   "insE": 102,
+   "insR": 104,
+   "insBoth": 102,
+   "delE": 80,
+   "delR": 75,
+   "delBoth": 74
+  }
+ },
+ "transfer": {
+  "r1": {
+   "insE": 716,
+   "insR": 653,
+   "insBoth": 653,
+   "delE": 0,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "R1.1": {
+   "insE": 12,
+   "insR": 71,
+   "insBoth": 12,
+   "delE": 4,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "R2": {
+   "insE": 172,
+   "insR": 176,
+   "insBoth": 172,
+   "delE": 59,
+   "delR": 0,
+   "delBoth": 0
+  },
+  "r3": {
+   "insE": 16,
+   "insR": 11,
+   "insBoth": 11,
+   "delE": 1,
+   "delR": 4,
+   "delBoth": 1
+  },
+  "R4": {
+   "insE": 125,
+   "insR": 128,
+   "insBoth": 125,
+   "delE": 16,
+   "delR": 11,
+   "delBoth": 11
+  },
+  "L2": {
+   "insE": 5,
+   "insR": 5,
+   "insBoth": 5,
+   "delE": 4,
+   "delR": 4,
+   "delBoth": 4
+  },
+  "G1": {
+   "insE": 68,
+   "insR": 68,
+   "insBoth": 68,
+   "delE": 74,
+   "delR": 74,
+   "delBoth": 74
+  },
+  "L1": {
+   "insE": 102,
+   "insR": 104,
+   "insBoth": 102,
+   "delE": 80,
+   "delR": 75,
+   "delBoth": 74
+  }
+ }
+}

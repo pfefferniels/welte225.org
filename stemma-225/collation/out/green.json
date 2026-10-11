@@ -1,0 +1,101 @@
+{
+ "5": {
+  "rows": [
+   {
+    "copy": "St1",
+    "substitutions": 151,
+    "agreeWithEdition": 144
+   },
+   {
+    "copy": "St2",
+    "substitutions": 216,
+    "agreeWithEdition": 206
+   },
+   {
+    "copy": "Wi1",
+    "substitutions": 78,
+    "agreeWithEdition": 76
+   },
+   {
+    "copy": "Ch1",
+    "substitutions": 207,
+    "agreeWithEdition": 199
+   },
+   {
+    "copy": "Ne1",
+    "substitutions": 116,
+    "agreeWithEdition": 108
+   }
+  ],
+  "linked": 220,
+  "ambiguous": 2,
+  "agree": 205,
+  "missed": 0
+ },
+ "8": {
+  "rows": [
+   {
+    "copy": "St1",
+    "substitutions": 149,
+    "agreeWithEdition": 140
+   },
+   {
+    "copy": "St2",
+    "substitutions": 211,
+    "agreeWithEdition": 199
+   },
+   {
+    "copy": "Wi1",
+    "substitutions": 80,
+    "agreeWithEdition": 76
+   },
+   {
+    "copy": "Ch1",
+    "substitutions": 216,
+    "agreeWithEdition": 204
+   },
+   {
+    "copy": "Ne1",
+    "substitutions": 120,
+    "agreeWithEdition": 109
+   }
+  ],
+  "linked": 220,
+  "ambiguous": 7,
+  "agree": 200,
+  "missed": 2
+ },
+ "3.5": {
+  "rows": [
+   {
+    "copy": "St1",
+    "substitutions": 145,
+    "agreeWithEdition": 138
+   },
+   {
+    "copy": "St2",
+    "substitutions": 194,
+    "agreeWithEdition": 185
+   },
+   {
+    "copy": "Wi1",
+    "substitutions": 77,
+    "agreeWithEdition": 76
+   },
+   {
+    "copy": "Ch1",
+    "substitutions": 173,
+    "agreeWithEdition": 168
+   },
+   {
+    "copy": "Ne1",
+    "substitutions": 88,
+    "agreeWithEdition": 83
+   }
+  ],
+  "linked": 210,
+  "ambiguous": 1,
+  "agree": 198,
+  "missed": 7
+ }
+}

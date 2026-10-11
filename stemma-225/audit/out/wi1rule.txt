@@ -1,0 +1,10 @@
+D=10mm  R1.1 11/12  r1 21/59
+D=20mm  R1.1 11/12  r1 40/59
+D=30mm  R1.1 11/12  r1 47/59
+   wrong: 1964.02:expr:SlowCrescendoOn/treble:r1(2i/2d shift/shift-to-metrical-accent) ; 1986.65:expr:SlowCrescendoOff/treble:r1(2i/2d shift/shift-to-metrical-accent) ; 2087.57:expr:SlowCrescendoOn/treble:r1(2i/2d shift/shift-to-metrical-accent) ; 2111.81:expr:SlowCrescendoOff/treble:r1(2i/2d shift/shift-to-metrical-accent) ; 2251.11:expr:SlowCrescendoOff/bass:r1(0i/1d remove-redundancy/cleanup-b) ; 2685.05:expr:ForzandoOn/treble:R1.1(uuid:b64a5621) ; 4614.68:expr:SlowCrescendoOn/treble:r1(0i/1d /unchecked) ; 4644.51:expr:SlowCrescendoOff/treble:r1(0i/1d /unchecked) ; 5589.07:expr:SlowCrescendoOn/treble:r1(2i/1d /chord-shading) ; 6215.53:expr:SlowCrescendoOn/treble:r1(1i/1d correct-error/) ; 6457.53:expr:SlowCrescendoOn/treble:r1(0i/1d /unchecked) ; 7993.31:expr:SlowCrescendoOn/treble:r1(1i/1d correct-error/) ; 8627.48:expr:SlowCrescendoOff/bass:r1(1i/1d correct-error/uuid:ffa13660)
+D=45mm  R1.1 11/12  r1 55/59
+D=60mm  R1.1 11/12  r1 57/59
+   wrong: 2251.11:expr:SlowCrescendoOff/bass:r1(0i/1d remove-redundancy/cleanup-b) ; 2685.05:expr:ForzandoOn/treble:R1.1(uuid:b64a5621) ; 4644.51:expr:SlowCrescendoOff/treble:r1(0i/1d /unchecked)
+D=75mm  R1.1 11/12  r1 57/59
+r1>R2 criteria at 30mm { moved: 43, expl: 4, both: 0, none: 12 }
+R1.1 ins explaining redundancy in R2 text: [ '2685.05:expr:ForzandoOn/treble' ]

@@ -1,0 +1,8 @@
+{"id":"symbol_c11999fe-36f4-48b9-9104-bcac8b087595","kind":"expr:SoftPedalOn/bass","from":1345.82,"to":1356.6,"insV":"r1","del":[{"v":"G1","edit":"ed787147-c145-4e87-9b08-1f9db5097d79","editType":"recoding","motivation":null,"shape":"0i/1d","replacedBy":[]}],"carriers":["Wi1@1345.87-1356.8t8","St1@1346.26-1357.6t8","St2@1345.77-1356.4t8","Ch1@1344.12-1353.03t8"],"expected":["St1","St2","Wi1","Ch1","Ne1"]}
+{"id":"symbol_7b9c76ae-2e74-4073-950e-a549bf18d518","kind":"expr:SlowCrescendoOn/treble","from":1741.83,"to":1746.88,"insV":"r1","del":[{"v":"G1","edit":"2b751e5c-eba4-4a3b-ac6e-0a2740205790","editType":"recoding","motivation":null,"shape":"0i/1d","replacedBy":[]},{"v":"L1","edit":"57d464a1-438a-4c01-8a6d-569e23e65734","editType":"shift","motivation":null,"shape":"1i/1d","replacedBy":["symbol_ecfa7451-2954-4ab5-886c-4120de5b62e6"]}],"carriers":["Wi1@1741.68-1746t97","St2@1741.83-1746.98t97","Ch1@1741.92-1746.88t95"],"expected":["St1","St2","Wi1","Ch1"]}
+   nb expr:SlowCrescendoOn/treble 1691.34 1696.93 r1 R4 St1+Wi1+Ne1 null null
+   nb expr:SlowCrescendoOn/treble 1749.81 1754.02 L1  Ne1 shift null
+   replacedBy L1 expr:SlowCrescendoOn/treble 1749.81 Ne1
+[
+  '{"v":"G1","edit":"ed787147-c145-4e87-9b08-1f9db5097d79","editType":"recoding","motivation":null,"shape":"0i/1d","replacedBy":[]}'
+] []

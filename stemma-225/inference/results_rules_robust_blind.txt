@@ -1,0 +1,57 @@
+594 candidate trees
+
+== rule config k.5 cdev2 lam8
+  base                           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 red expr missing           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 library subst              x 1: {'no-r3+St1-leaf': 1}
+  redundancy=none                x 1: {'no-r3+St1-leaf': 1}
+  redundancy=all carriers        x 1: {'EDITOR': 1}; margin to runner-up when editor: median 0.25 min 0.25
+  Ne1 near-compl -> ? 6.6mm      x 1: {'no-r3+St1-leaf': 1}
+  Ne1 displaced merged 10mm      x 1: {'r3+St1-leaf': 1}
+  noise 1%                       x20: {'no-r3+St1-leaf': 10, 'r3+St1-leaf': 10}
+  noise 2%                       x20: {'r3+St1-leaf': 19, 'no-r3+St1-leaf': 1}
+  noise 5%                       x20: {'r3+St1-leaf': 20}
+  redundancy flags flipped 10%   x20: {'no-r3+St1-leaf': 17, 'r3+St1-leaf': 3}
+  redundancy flags flipped 30%   x20: {'no-r3+St1-leaf': 16, 'r3+St1-leaf': 4}
+
+== rule config k.5 cdev2 lam4
+  base                           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 red expr missing           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 library subst              x 1: {'no-r3+St1-leaf': 1}
+  redundancy=none                x 1: {'no-r3+St1-leaf': 1}
+  redundancy=all carriers        x 1: {'no-r3+St1-leaf': 1}
+  Ne1 near-compl -> ? 6.6mm      x 1: {'no-r3+St1-leaf': 1}
+  Ne1 displaced merged 10mm      x 1: {'r3+St1-leaf': 1}
+  noise 1%                       x20: {'no-r3+St1-leaf': 10, 'r3+St1-leaf': 10}
+  noise 2%                       x20: {'r3+St1-leaf': 19, 'no-r3+St1-leaf': 1}
+  noise 5%                       x20: {'r3+St1-leaf': 20}
+  redundancy flags flipped 10%   x20: {'no-r3+St1-leaf': 17, 'r3+St1-leaf': 3}
+  redundancy flags flipped 30%   x20: {'no-r3+St1-leaf': 16, 'r3+St1-leaf': 4}
+
+== rule config k.25 cdev1 lam4
+  base                           x 1: {'EDITOR': 1}; margin to runner-up when editor: median 2.00 min 2.00
+  Bo1 red expr missing           x 1: {'EDITOR': 1}; margin to runner-up when editor: median 0.50 min 0.50
+  Bo1 library subst              x 1: {'EDITOR': 1}; margin to runner-up when editor: median 0.50 min 0.50
+  redundancy=none                x 1: {'EDITOR': 1}; margin to runner-up when editor: median 2.00 min 2.00
+  redundancy=all carriers        x 1: {'EDITOR': 1}; margin to runner-up when editor: median 2.75 min 2.75
+  Ne1 near-compl -> ? 6.6mm      x 1: {'EDITOR': 1}; margin to runner-up when editor: median 2.00 min 2.00
+  Ne1 displaced merged 10mm      x 1: {'EDITOR': 1}; margin to runner-up when editor: median 2.00 min 2.00
+  noise 1%                       x20: {'EDITOR': 12, 'r3+St1-anc': 8}; margin to runner-up when editor: median 0.88 min 0.00
+  noise 2%                       x20: {'r3+St1-anc': 17, 'r3+St1-leaf': 3}
+  noise 5%                       x20: {'r3+St1-anc': 11, 'r3+St1-leaf': 9}
+  redundancy flags flipped 10%   x20: {'EDITOR': 20}; margin to runner-up when editor: median 2.00 min 0.50
+  redundancy flags flipped 30%   x20: {'EDITOR': 18, 'r3+St1-leaf': 2}; margin to runner-up when editor: median 1.25 min 0.50
+
+== rule config k.5 only (lam0)
+  base                           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 red expr missing           x 1: {'no-r3+St1-leaf': 1}
+  Bo1 library subst              x 1: {'no-r3+St1-leaf': 1}
+  redundancy=none                x 1: {'no-r3+St1-leaf': 1}
+  redundancy=all carriers        x 1: {'no-r3+St1-leaf': 1}
+  Ne1 near-compl -> ? 6.6mm      x 1: {'no-r3+St1-leaf': 1}
+  Ne1 displaced merged 10mm      x 1: {'r3+St1-leaf': 1}
+  noise 1%                       x20: {'no-r3+St1-leaf': 10, 'r3+St1-leaf': 10}
+  noise 2%                       x20: {'r3+St1-leaf': 19, 'no-r3+St1-leaf': 1}
+  noise 5%                       x20: {'r3+St1-leaf': 20}
+  redundancy flags flipped 10%   x20: {'no-r3+St1-leaf': 17, 'r3+St1-leaf': 3}
+  redundancy flags flipped 30%   x20: {'no-r3+St1-leaf': 16, 'r3+St1-leaf': 4}

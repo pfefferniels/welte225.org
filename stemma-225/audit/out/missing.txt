@@ -1,0 +1,172 @@
+{
+ "St1": {
+  "chains": 837,
+  "carrying": 828,
+  "firstChain": 683.8,
+  "lastChain": 10287.7,
+  "contentFrom": 1346.3,
+  "contentTo": 9978.6,
+  "uncarried": [
+   "10211t91",
+   "702t2[Alteration:technical-improvement]",
+   "686t4[Alteration:technical-improvement]",
+   "685t6[Alteration:technical-improvement]",
+   "686t9[Alteration:technical-improvement]",
+   "712t10[Alteration:technical-improvement]",
+   "700t99[Alteration:technical-improvement]",
+   "684t95[Alteration:technical-improvement]",
+   "684t97[Alteration:technical-improvement]"
+  ],
+  "laterFeaturesCarrying": [],
+  "tears": [],
+  "mods": [
+   "Alteration:control:1",
+   "Alteration:labeling:2",
+   "Attachment:labeling:2",
+   "Alteration:technical-improvement:8"
+  ]
+ },
+ "St2": {
+  "chains": 954,
+  "carrying": 953,
+  "firstChain": 1345.8,
+  "lastChain": 10261.3,
+  "contentFrom": 1345.8,
+  "contentTo": 9979.1,
+  "uncarried": [
+   "10209t91"
+  ],
+  "laterFeaturesCarrying": [],
+  "tears": [
+   {
+    "from": 7903.4,
+    "to": 7946.7,
+    "edge": "treble",
+    "depth": 5
+   },
+   {
+    "from": 8936.5,
+    "to": 8939.4,
+    "edge": "treble",
+    "depth": 2.5
+   },
+   {
+    "from": 9067.3,
+    "to": 9116.6,
+    "edge": "bass",
+    "depth": 5.9
+   },
+   {
+    "from": 9182,
+    "to": 9192.9,
+    "edge": "bass",
+    "depth": 4.4
+   },
+   {
+    "from": 9269,
+    "to": 9281.3,
+    "edge": "bass",
+    "depth": 3
+   },
+   {
+    "from": 9520.7,
+    "to": 9522.8,
+    "edge": "bass",
+    "depth": 2.5
+   },
+   {
+    "from": 9645.2,
+    "to": 9666.8,
+    "edge": "bass",
+    "depth": 2.5
+   }
+  ],
+  "mods": [
+   "Alteration:dating:1",
+   "Alteration:glossing:1"
+  ]
+ },
+ "Wi1": {
+  "chains": 724,
+  "carrying": 724,
+  "firstChain": 1345.9,
+  "lastChain": 10082,
+  "contentFrom": 1345.9,
+  "contentTo": 10082,
+  "uncarried": [],
+  "laterFeaturesCarrying": [],
+  "tears": [],
+  "mods": [
+   "Alteration:repair:0"
+  ]
+ },
+ "Ch1": {
+  "chains": 955,
+  "carrying": 954,
+  "firstChain": 1145.1,
+  "lastChain": 10260.4,
+  "contentFrom": 1242.5,
+  "contentTo": 9975.3,
+  "uncarried": [
+   "10209t89"
+  ],
+  "laterFeaturesCarrying": [
+   "1145t0.8[Alteration:technical-improvement]"
+  ],
+  "tears": [],
+  "mods": [
+   "Alteration:technical-improvement:1"
+  ]
+ },
+ "Bo1": {
+  "chains": 1103,
+  "carrying": 742,
+  "firstChain": 1396.5,
+  "lastChain": 11746.7,
+  "contentFrom": 1396.5,
+  "contentTo": 9971.3,
+  "uncarried": [
+   "10325t1",
+   "10971t93",
+   "11443t81",
+   "11444t73",
+   "11444t65",
+   "11444t57",
+   "11445t49",
+   "11445t25",
+   "11445t33",
+   "11446t17",
+   "11446t41",
+   "11446t9"
+  ],
+  "laterFeaturesCarrying": [],
+  "tears": [],
+  "mods": []
+ },
+ "Ne1": {
+  "chains": 865,
+  "carrying": 865,
+  "firstChain": 1389,
+  "lastChain": 9996.8,
+  "contentFrom": 1389,
+  "contentTo": 9996.8,
+  "uncarried": [],
+  "laterFeaturesCarrying": [],
+  "tears": [],
+  "mods": []
+ }
+}
+common content range 1396.5 9971.3
+St1 symbols outside its content range: 4 1145.14:expr:MezzoforteOn/bass:L2:Ch1 (absent;expected=false) ; 1242.52:expr:MezzoforteOff/bass:L2:Ch1 (absent;expected=false) ; 9990.98:expr:SustainPedalOff/treble:L1:Ne1 (absent;expected=false) ; 10059.7:expr:Rewind/treble:R1.1:Wi1 (absent;expected=false)
+St2 symbols outside its content range: 4 1145.14:expr:MezzoforteOn/bass:L2:Ch1 (absent;expected=false) ; 1242.52:expr:MezzoforteOff/bass:L2:Ch1 (absent;expected=false) ; 9990.98:expr:SustainPedalOff/treble:L1:Ne1 (absent;expected=false) ; 10059.7:expr:Rewind/treble:R1.1:Wi1 (absent;expected=false)
+Wi1 symbols outside its content range: 2 1145.14:expr:MezzoforteOn/bass:L2:Ch1 (absent;expected=false) ; 1242.52:expr:MezzoforteOff/bass:L2:Ch1 (absent;expected=false)
+Ch1 symbols outside its content range: 3 1145.14:expr:MezzoforteOn/bass:L2:Ch1 ; 9990.98:expr:SustainPedalOff/treble:L1:Ne1 (absent;expected=false) ; 10059.7:expr:Rewind/treble:R1.1:Wi1 (absent;expected=false)
+Bo1 symbols outside its content range: 5 1145.14:expr:MezzoforteOn/bass:L2:Ch1 (absent;expected=false) ; 1242.52:expr:MezzoforteOff/bass:L2:Ch1 (absent;expected=false) ; 1345.82:expr:SoftPedalOn/bass:r1:St1+St2+Wi1+Ch1 (absent;expected=false) ; 9990.98:expr:SustainPedalOff/treble:L1:Ne1 (absent;expected=false) ; 10059.7:expr:Rewind/treble:R1.1:Wi1 (absent;expected=false)
+Ne1 symbols outside its content range: 4 1145.14:expr:MezzoforteOn/bass:L2:Ch1 (absent;expected=false) ; 1242.52:expr:MezzoforteOff/bass:L2:Ch1 (absent;expected=false) ; 1345.82:expr:SoftPedalOn/bass:r1:St1+St2+Wi1+Ch1 (absent;expected=true) ; 10059.7:expr:Rewind/treble:R1.1:Wi1 (absent;expected=false)
+tear {"from":7903.4,"to":7946.7,"edge":"treble","depth":5} edge-region symbols nearby: 6713.14:expr:SoftPedal/treble:G1:[Bo1]St2:N ; 7893.99:expr:SustainPedalOn/treble:r1>G1:[St1+St2+Wi1+Ch1+Ne1]St2:Y ; 7897.33:expr:SlowCrescendoOff/treble:r1>G1:[St1+St2+Wi1+Ch1+Ne1]St2:Y ; 7947.21:expr:SustainPedalOff/treble:r1>G1:[St1+St2+Wi1+Ch1+Ne1]St2:Y
+tear {"from":8936.5,"to":8939.4,"edge":"treble","depth":2.5} edge-region symbols nearby: 6713.14:expr:SoftPedal/treble:G1:[Bo1]St2:N
+tear {"from":9067.3,"to":9116.6,"edge":"bass","depth":5.9} edge-region symbols nearby: 9102.7:expr:SustainPedal/bass:G1:[Bo1]St2:N
+tear {"from":9182,"to":9192.9,"edge":"bass","depth":4.4} edge-region symbols nearby: 9173.46:expr:SustainPedal/bass:G1:[Bo1]St2:N
+tear {"from":9269,"to":9281.3,"edge":"bass","depth":3} edge-region symbols nearby: 9234.6:expr:SustainPedal/bass:G1:[Bo1]St2:N
+tear {"from":9520.7,"to":9522.8,"edge":"bass","depth":2.5} edge-region symbols nearby: 9504.86:expr:Crescendo/bass:G1:[Bo1]St2:N ; 9523.78:expr:SlowCrescendoOff/bass:R2>G1/L1:[St1+St2+Ch1]St2:Y
+tear {"from":9645.2,"to":9666.8,"edge":"bass","depth":2.5} edge-region symbols nearby: 9548.06:expr:SustainPedal/bass:G1:[Bo1]St2:N ; 9657.96:expr:ForzandoOff/bass:L1:[Ne1]St2:N ; 9664.08:expr:SlowCrescendoOn/bass:R2>G1:[St1+St2+Ch1+Ne1]St2:Y ; 9664.21:expr:Crescendo/bass:G1:[Bo1]St2:N
