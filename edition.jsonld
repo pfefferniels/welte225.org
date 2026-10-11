@@ -4644,7 +4644,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die 172 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, trägt St1; 164 davon auch St2 und Ch1, 155 auch Ne1; Wi1 keine. Die 59, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt oder verlegt, trägt allein Wi1; dass sie schon {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} angehören, begründet die Ableitung von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}.\n\nDichter als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: 57 zusätzliche Betonungen, 25 berichtigte Fehler.",
                                     "premises": [
                                         "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267"
                                     ],
@@ -4707,7 +4706,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Acht Betonungen, die St1 nicht hat, tragen St2, Ch1 und Ne1 an der gleichen Stelle, jede mit wenigstens einer Stanzung in allen dreien: Sie verbinden {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} durch eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Hinzufügungen beide tragen (St2 164, Ne1 155 von 172).\n\nDie eine Redundanz von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die hier getilgt ist, zählt dafür nicht: Ihr Tilgen kann in zwei Ästen unabhängig geschehen.",
                                     "premises": [],
                                     "applies": [
                                         "rules#shared-addition",
@@ -7530,7 +7528,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, trägt St2, ebenso Ch1 und, umgestanzt, Bo1; Ne1 und St1 keine. Die acht Betonungen von {{bab25aef-f80d-4ff0-b187-63030df8305a}} trägt St2, zwei davon verlängert.\n\nDichter als {{bab25aef-f80d-4ff0-b187-63030df8305a}}: 55 zusätzliche Betonungen; dazu drei Redundanzen und vier weitere Stanzungen getilgt, die St1 noch trägt.",
                                     "premises": [],
                                     "applies": [
                                         "rules#shared-addition",
@@ -28768,7 +28765,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Ch1 trägt alle 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, und keine der 102, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} hinzufügt: eine eigene Umstanzung aus {{c9050e75-97a8-4862-9533-0f4b1439802b}}, nicht aus {{2767844e-311e-4b97-8fb2-1b78db41e220}}.\n\nEigen: ein Mezzoforte und drei Töne; vier Stanzungen getilgt.",
                                     "premises": [],
                                     "applies": [
                                         "rules#shared-addition"
@@ -35521,7 +35517,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Bo1 trägt die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, an ihrer Stelle: 124 in grüner Kodierung unter den 349 Umstanzungen, eine unverändert. Die drei Töne, die {{e07c4be8-f44b-496d-8a6c-026006340441}} hinzufügt, fehlen.\n\nEigen: zwei Töne; eine Stanzung getilgt.",
                                     "premises": [],
                                     "applies": [
                                         "rules#shared-addition"
@@ -35593,7 +35588,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Phillips’ Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: an drei Stellen ({{symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9|1}}, {{symbol_583a4144-9e67-449a-a323-1a12abd38273|2}}, {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|3}}) fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nNicht aus dieser Vorlage: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Sie kommen vermutlich aus einer zweiten Vorlage; siehe die Ableitung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83). Tempo 75 liest auch Nettheim an seinem Exemplar (Ne1), und zwar am Vorspann selbst, der sonst leer ist (Mail, 21.9.2026). Die Angabe steht damit auf zwei Exemplaren dieser Fassung, eines davon von der Rolle abgelesen statt aus einem Dateikopf übernommen. Was auf dem Etikett von Ch1 steht, entscheidet das nicht.",
+                                    "note": "Gegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83). Tempo 75 liest auch Nettheim an seinem Exemplar (Ne1), und zwar am Vorspann selbst, der sonst leer ist (Mail, 21.9.2026). Die Angabe steht damit auf zwei Exemplaren dieser Fassung, eines davon von der Rolle abgelesen statt aus einem Dateikopf übernommen. Was auf dem Etikett von Ch1 steht, entscheidet das nicht.",
                                     "premises": [],
                                     "applies": [
                                         "rules#shared-addition"
@@ -112476,7 +112471,7 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt {{2767844e-311e-4b97-8fb2-1b78db41e220}} die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, innerhalb von 3,3 mm: das Ab des Diskant-Crescendos bei 1987 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit seinem An auf 1931 und 1950 mm vorzieht ({{2767844e-311e-4b97-8fb2-1b78db41e220}} hat beide Betonungen), das An im Diskant bei 2873 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, das Ab im Bass bei 4056 mm und das An im Bass bei 5583 mm, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} auf 4047 und 5563 mm verlegt. Alle vier liegen in Passagen, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} auch sonst überarbeitet.\n\nDie gleiche Stanzung an gleicher Stelle wird kaum zweimal unabhängig gesetzt, und in einer Vorlage im Stand von {{bab25aef-f80d-4ff0-b187-63030df8305a}} stand sie nicht mehr. Das An bei 2873 mm machte als eigene Einfügung zudem das Ab bei 2893 mm wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ; eine Einfügung, die eine Redundanz wirksam macht, ist nicht anzunehmen. {{2767844e-311e-4b97-8fb2-1b78db41e220}} steht dennoch unter {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, wie die Ableitung aus {{bab25aef-f80d-4ff0-b187-63030df8305a}} zeigt, und folgt an 20 der 25 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} einen Fehler berichtigt, dessen Berichtigung. Am einfachsten erklärt das eine zweite Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, eine Kontamination. Welche Kopie es gewesen sein könnte, ist nicht bekannt.\n\nGewiss ist das nicht, und es geht gegen die Annahme, dass Kontamination in der Überlieferung der Rollen keine Rolle spielt. Zwei Erklärungen ohne Kontamination bleiben möglich, jede um den Preis eines Zufalls. Der Bearbeiter von {{2767844e-311e-4b97-8fb2-1b78db41e220}} kann die vier Stanzungen neu gesetzt haben: zufällig gelegte Stanzungen dieser Lesung treffen solche Stellen im Mittel 0,7-mal, viermal also selten, aber nicht nie. Oder {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{bab25aef-f80d-4ff0-b187-63030df8305a}} gehen auf einen verlorenen Stand zurück, in dem die neuen Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} schon neben den alten stehen; das erklärte, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} bei 1987 mm beide Betonungen trägt. Dann hätten {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} die alten je für sich getilgt. Bei 4056 und 5583 mm wären das Redundanzen, deren Tilgung in zwei Ästen unabhängig geschehen kann. Die Betonungen bei 1964 und 2873 mm aber sind wirksam: ohne sie klingen in der Emulation auf dem T-100 die folgenden sechs und sieben Töne um bis zu 7,8 von 127 Stufen der Anschlagstärke leiser. Beide Äste hätten also dieselben zwei klingenden Betonungen zurücknehmen müssen.",
+                        "note": "Die vier Stellen, an denen {{2767844e-311e-4b97-8fb2-1b78db41e220}} gegen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} die Lesung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hat, erklärt am einfachsten eine zweite Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Ohne sie bliebe je ein Zufall: Zufällige Stanzungen träfen solche Stellen im Mittel 0,7-mal, nicht viermal; ein gemeinsamer verlorener Stand von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{bab25aef-f80d-4ff0-b187-63030df8305a}} verlangte, dass beide Äste dieselben zwei wirksamen Betonungen bei 1964 und 2873 mm zurücknehmen.",
                         "premises": [],
                         "applies": [
                             "rules#shared-addition",
