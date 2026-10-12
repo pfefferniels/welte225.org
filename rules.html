@@ -85,6 +85,61 @@
         "name_en": "No contamination",
         "text_de": "Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.",
         "text_en": "It is assumed that contamination plays no part in the editing history of piano rolls."
+      },
+      {
+        "@id": "#recut-loss",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name_de": "Verluste beim Umstanzen",
+        "name_en": "Losses in a re-cut",
+        "text_de": "Eine für ein anderes Wiedergabesystem umgestanzte Rolle ging durch einen eigenen Bearbeitungsgang. Was ihr von der Fassung fehlt, nach der sie gestanzt wurde, sagt daher wenig darüber, wonach sie gestanzt wurde, und zählt weniger als das, was anderen Fassungen fehlt.",
+        "text_en": "A roll re-cut for another reproducing system went through an editorial pass of its own. What it lacks of the version it was cut from therefore says little about where it was cut from, and counts for less than what other versions lack."
+      },
+      {
+        "@id": "#copy-deviation",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name_de": "Abweichende Exemplare",
+        "name_en": "Deviating copies",
+        "text_de": "Einem Exemplar kann eine Stanzung der Fassung fehlen, die es trägt, beim Stanzen ausgelassen oder später verloren. Was einem Exemplar fehlt, fehlt darum nicht seiner Fassung, die weiterhin Vorlage anderer sein kann, die die Stanzung tragen.",
+        "text_en": "A copy may lack a perforation of the version it carries, missed in punching it or lost later. What a copy lacks is not therefore lacking in its version, which may still be the exemplar of others that carry the perforation."
+      },
+      {
+        "@id": "#lost-states",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name_de": "Verlorene Stadien",
+        "name_en": "Lost states",
+        "text_de": "Ein verlorenes Stadium wird nur angenommen, wo Hinzufügungen, die mehrere Fassungen teilen, eine gemeinsame Vorlage verlangen, die kein erhaltenes Exemplar trägt.",
+        "text_en": "A lost state is assumed only where additions shared by several versions require a common exemplar that no surviving copy carries."
+      },
+      {
+        "@id": "#one-text",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name_de": "Ein Text",
+        "name_en": "One text",
+        "text_de": "Exemplare desselben Systems, die sich in nicht mehr als wenigen Stanzungen unterscheiden, tragen einen Text, wie es von einer Masterrolle gestanzte Exemplare tun. Was einem von ihnen fehlt, ist eine Abweichung dieses Exemplars.",
+        "text_en": "Copies of the same system that differ in no more than a few perforations carry one text, as copies punched from one master do. What one of them lacks is a deviation of that copy."
+      },
+      {
+        "@id": "#one-place",
+        "@type": [
+          "crminf:I3_Inference_Logic",
+          "crm:E33_Linguistic_Object"
+        ],
+        "name_de": "Eine Stelle",
+        "name_en": "One place",
+        "text_de": "Eine Bearbeitung geschieht an einer Stelle: Sie reicht nicht über eine Stanzung hinweg, die beide Fassungen behalten. Änderungen zu beiden Seiten einer solchen Stanzung sind getrennte Bearbeitungen.",
+        "text_en": "An edit is made at one place: it does not reach across a perforation that both versions keep. Changes on either side of such a perforation are separate edits."
       }
     ]
   }
@@ -243,6 +298,101 @@
         <dd class="literals">
           <span class="lang">en</span><div lang="en">It is assumed that contamination plays no part in the editing history of piano rolls.</div>
           <span class="lang">de</span><div class="secondary" lang="de">Es wird davon ausgegangen, dass in der Bearbeitungsgeschichte von Klavierrollen Kontamination keine Rolle spielt.</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="recut-loss">
+      <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#recut-loss"><code>https://welte225.org/rules#recut-loss</code></a></dd>
+        <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><h2 lang="en">Losses in a re-cut</h2>
+          <span class="lang">de</span><div class="secondary label" lang="de">Verluste beim Umstanzen</div>
+        </dd>
+        <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
+        <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
+        <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><div lang="en">A roll re-cut for another reproducing system went through an editorial pass of its own. What it lacks of the version it was cut from therefore says little about where it was cut from, and counts for less than what other versions lack.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Eine für ein anderes Wiedergabesystem umgestanzte Rolle ging durch einen eigenen Bearbeitungsgang. Was ihr von der Fassung fehlt, nach der sie gestanzt wurde, sagt daher wenig darüber, wonach sie gestanzt wurde, und zählt weniger als das, was anderen Fassungen fehlt.</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="copy-deviation">
+      <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#copy-deviation"><code>https://welte225.org/rules#copy-deviation</code></a></dd>
+        <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><h2 lang="en">Deviating copies</h2>
+          <span class="lang">de</span><div class="secondary label" lang="de">Abweichende Exemplare</div>
+        </dd>
+        <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
+        <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
+        <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><div lang="en">A copy may lack a perforation of the version it carries, missed in punching it or lost later. What a copy lacks is not therefore lacking in its version, which may still be the exemplar of others that carry the perforation.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Einem Exemplar kann eine Stanzung der Fassung fehlen, die es trägt, beim Stanzen ausgelassen oder später verloren. Was einem Exemplar fehlt, fehlt darum nicht seiner Fassung, die weiterhin Vorlage anderer sein kann, die die Stanzung tragen.</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="lost-states">
+      <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#lost-states"><code>https://welte225.org/rules#lost-states</code></a></dd>
+        <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><h2 lang="en">Lost states</h2>
+          <span class="lang">de</span><div class="secondary label" lang="de">Verlorene Stadien</div>
+        </dd>
+        <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
+        <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
+        <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><div lang="en">A lost state is assumed only where additions shared by several versions require a common exemplar that no surviving copy carries.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Ein verlorenes Stadium wird nur angenommen, wo Hinzufügungen, die mehrere Fassungen teilen, eine gemeinsame Vorlage verlangen, die kein erhaltenes Exemplar trägt.</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="one-text">
+      <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#one-text"><code>https://welte225.org/rules#one-text</code></a></dd>
+        <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><h2 lang="en">One text</h2>
+          <span class="lang">de</span><div class="secondary label" lang="de">Ein Text</div>
+        </dd>
+        <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
+        <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
+        <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><div lang="en">Copies of the same system that differ in no more than a few perforations carry one text, as copies punched from one master do. What one of them lacks is a deviation of that copy.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Exemplare desselben Systems, die sich in nicht mehr als wenigen Stanzungen unterscheiden, tragen einen Text, wie es von einer Masterrolle gestanzte Exemplare tun. Was einem von ihnen fehlt, ist eine Abweichung dieses Exemplars.</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="one-place">
+      <dl class="statements">
+        <dt>IRI</dt>
+        <dd><a href="#one-place"><code>https://welte225.org/rules#one-place</code></a></dd>
+        <dt><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><h2 lang="en">One place</h2>
+          <span class="lang">de</span><div class="secondary label" lang="de">Eine Stelle</div>
+        </dd>
+        <dt><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></dt>
+        <dd><code title="http://www.cidoc-crm.org/extensions/crminf/I3_Inference_Logic">crminf:I3_Inference_Logic</code><br><code title="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">crm:E33_Linguistic_Object</code></dd>
+        <dt><code title="http://www.cidoc-crm.org/cidoc-crm/P190_has_symbolic_content">crm:P190_has_symbolic_content</code></dt>
+        <dd class="literals">
+          <span class="lang">en</span><div lang="en">An edit is made at one place: it does not reach across a perforation that both versions keep. Changes on either side of such a perforation are separate edits.</div>
+          <span class="lang">de</span><div class="secondary" lang="de">Eine Bearbeitung geschieht an einer Stelle: Sie reicht nicht über eine Stanzung hinweg, die beide Fassungen behalten. Änderungen zu beiden Seiten einer solchen Stanzung sind getrennte Bearbeitungen.</div>
         </dd>
       </dl>
     </section>
