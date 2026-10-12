@@ -1174,7 +1174,8 @@
                     "delete": [
                         "symbol_8a47bc85-838e-4116-90b8-97c18ce892da"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "f58a6e46-1484-4550-b2f7-2e87d6876101"
                 },
@@ -1295,7 +1296,8 @@
                     "delete": [
                         "symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "fbf3fcad-dd97-4b56-ae83-20b2dead7d01"
                 },
@@ -1325,7 +1327,8 @@
                     "delete": [
                         "symbol_ed962bbb-74a2-4edf-8f41-16748af0f85c"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "a88da22c-16e2-49dc-ba61-e2f6133fd9ae"
                 },
@@ -1590,7 +1593,8 @@
                     "delete": [
                         "symbol_5ec9a884-0fd7-4005-92eb-099c210bfb2e"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "2271b739-6ff6-4abc-98bb-7cf25f1b6b23"
                 },
@@ -1714,7 +1718,8 @@
                     "delete": [
                         "symbol_c70b19f3-c43d-4738-806b-e11e0e8726ab"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "7f7938b3-7ea6-4117-8bc7-3aa743a21fa2"
                 },
@@ -1791,7 +1796,8 @@
                     "delete": [
                         "symbol_5e61514c-3a01-40a5-8455-a2ea50911a58"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "249157e9-1043-480b-85bf-32f76cb6cedc"
                 },
@@ -1915,7 +1921,8 @@
                     "delete": [
                         "symbol_e21603a1-224d-4830-85b0-c27093566b2a"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "a9be1536-727c-4966-bf13-29a79f0a48f5"
                 },
@@ -1945,7 +1952,8 @@
                     "delete": [
                         "symbol_f322f32f-ed6b-4b72-a85f-b8f386b87f2b"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "e94cae9c-418e-46a1-bb86-7f2d4a7e6ad4"
                 },
@@ -1972,7 +1980,8 @@
                     "delete": [
                         "symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "28e076bb-38db-4514-a809-d1b70205aad4"
                 },
@@ -2002,7 +2011,8 @@
                     "delete": [
                         "symbol_b06a34a0-655c-4fa0-911b-a183997cd8bf"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "94c523ea-7f09-448a-973b-042c3fe74bf6"
                 },
@@ -2309,7 +2319,8 @@
                     "delete": [
                         "symbol_84fce17c-c347-4334-9bec-c5783442eb54"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "87c8e7c5-7a7d-4b2e-ab32-d099bac2f394"
                 },
@@ -2339,7 +2350,8 @@
                     "delete": [
                         "symbol_e10aae05-88b4-4220-aa06-750147e269eb"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "617c1330-5358-4ce3-b14f-4e0cf25bb427"
                 },
@@ -2604,7 +2616,8 @@
                     "delete": [
                         "symbol_1ade814f-b729-4826-a18b-efb181a759da"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "57f9c91f-b324-4f18-baed-fc7ed3898322"
                 },
@@ -2634,7 +2647,8 @@
                     "delete": [
                         "symbol_ffe87be1-e659-47a4-b1c6-e96c55967514"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "cc465272-eabc-415a-9a76-997d614096d5"
                 },
@@ -2711,7 +2725,8 @@
                     "delete": [
                         "symbol_69f5c28c-e7f3-40ff-947b-099aa0d65c9f"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "24d88ee5-41c7-4c4c-97fe-818d093af79a"
                 },
@@ -2741,7 +2756,8 @@
                     "delete": [
                         "symbol_31e2cfbc-5bd8-4cc5-9308-63190937ce43"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "aa5be012-eb02-47e4-a639-67fe0091099f"
                 },
@@ -2909,7 +2925,8 @@
                     "delete": [
                         "symbol_f9742099-f60e-4996-99f2-4ddf04da7bcf"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "e19b2c9a-ffa1-4616-b8de-7eff6c61c40e"
                 },
@@ -2936,7 +2953,8 @@
                     "delete": [
                         "symbol_f71387f4-f594-4a76-a506-ccb45a7522a5"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "876649dc-4a7b-4002-9166-a5d8b0bd8b8a"
                 },
@@ -3010,7 +3028,8 @@
                     "delete": [
                         "symbol_d2dd2104-4704-4242-82a8-2fabdabde751"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "afcab5b4-1792-456d-a7ca-4a617a90fbc8"
                 },
@@ -3272,7 +3291,7 @@
                     "delete": [
                         "symbol_85f626a1-7963-42f6-8117-177508d532f0"
                     ],
-                    "editType": "correct-error",
+                    "editType": "shift",
                     "motivation": "ffa13660-0893-4644-92f3-e2fda59d01ab",
                     "@type": "edit",
                     "@id": "0431e2f2-4d80-4135-8a3a-1cf696fb9a22"
@@ -3303,7 +3322,7 @@
                     "delete": [
                         "symbol_d0298992-4507-492e-a023-d7805c92ccea"
                     ],
-                    "editType": "correct-error",
+                    "editType": "shift",
                     "motivation": "ffa13660-0893-4644-92f3-e2fda59d01ab",
                     "@type": "edit",
                     "@id": "a0c6d58c-3997-441c-b555-61fc93b235f1"
@@ -3334,7 +3353,8 @@
                     "delete": [
                         "symbol_05589b14-529e-4296-b513-207f7d065a79"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "ed7c99f6-d6d4-485d-b4c5-208343b32867"
                 },
@@ -3364,7 +3384,8 @@
                     "delete": [
                         "symbol_ed167462-e205-4f6f-9739-b28c5db203b4"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "333a573e-e55f-406f-b0c4-953402fe583b"
                 },
@@ -3705,7 +3726,8 @@
                     "delete": [
                         "symbol_ba07e2d7-4241-4e82-99e5-022a77298f1c"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "ee9ea5d8-68af-48a9-8971-3b6953d5a3c2"
                 },
@@ -3804,7 +3826,8 @@
                     "delete": [
                         "symbol_a32941b8-62d5-441a-a393-3942a26ad2e3"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "f1b495e7-8155-4ea3-9bc2-7ae62514d8dc"
                 },
@@ -4607,6 +4630,11 @@
                     "note": "dynamische Rücknahme der Betonung des Nonakkords",
                     "@type": "motivation",
                     "@id": "ffa13660-0893-4644-92f3-e2fda59d01ab"
+                },
+                {
+                    "note": "Puts right an error of the version it derives from.",
+                    "@type": "motivation",
+                    "@id": "corrected-error"
                 }
             ],
             "basedOn": [
@@ -7019,7 +7047,8 @@
                     "delete": [
                         "symbol_0846addd-08aa-4b8a-b265-4b6d21996791"
                     ],
-                    "editType": "correct-error",
+                    "motivation": "corrected-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "1ea1b695-442e-4c1f-a7ad-d3b40a7ca01f"
                 },
@@ -7351,7 +7380,6 @@
                     ],
                     "motivation": "5636914a-758b-41d1-b25a-a8bb94629155",
                     "delete": [],
-                    "editType": "correct-error",
                     "@type": "edit",
                     "@id": "c7c1aa0d-bb00-4dde-ad2c-d5ff1fa5dde0"
                 },
@@ -7376,7 +7404,7 @@
                             "@id": "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
                         }
                     ],
-                    "editType": "correct-error",
+                    "editType": "shift",
                     "@type": "edit",
                     "@id": "bacfc3d0-b6d6-4121-95b4-66a1cc9269e4"
                 },
@@ -7493,6 +7521,11 @@
                     "note": "Weniger extreme Hervorhebung",
                     "@type": "motivation",
                     "@id": "caa296fc-00d2-4860-bcbc-f8c49bedc1c1"
+                },
+                {
+                    "note": "Puts right an error of the version it derives from.",
+                    "@type": "motivation",
+                    "@id": "corrected-error"
                 }
             ],
             "basedOn": [
