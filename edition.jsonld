@@ -4668,25 +4668,7 @@
                         }
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Die 172 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, trägt St1; 164 davon auch St2 und Ch1, 155 auch Ne1; Wi1 keine. Die 59, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt oder verlegt, trägt allein Wi1; dass sie schon {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} angehören, begründet die Ableitung von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}.\n\nDichter als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: 57 zusätzliche Betonungen, 25 berichtigte Fehler.",
-                                    "premises": [
-                                        "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267"
-                                    ],
-                                    "applies": [
-                                        "rules#shared-addition",
-                                        "rules#refinement"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "fccd4c81-f1d9-4d0c-ab7c-c638462dbebc"
-                        },
-                        "@id": "3d989307-8d2d-4d10-b480-8cffc1a34738"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
@@ -4731,23 +4713,7 @@
                         }
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Acht Betonungen, die St1 nicht hat, tragen St2, Ch1 und Ne1 an der gleichen Stelle, jede mit wenigstens einer Stanzung in allen dreien: Sie verbinden {{c9050e75-97a8-4862-9533-0f4b1439802b}} und {{2767844e-311e-4b97-8fb2-1b78db41e220}} durch eine gemeinsame Vorlage nach {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Hinzufügungen beide tragen (St2 164, Ne1 155 von 172).\n\nDie eine Redundanz von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die hier getilgt ist, zählt dafür nicht: Ihr Tilgen kann in zwei Ästen unabhängig geschehen.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition",
-                                        "rules#independent-cleanup"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "1f5e9388-9398-4e9d-b37f-ac0207c2be7f"
-                        },
-                        "@id": "bf82f23c-55f4-4e79-82c1-a9fae3faa88a"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "19fd4209-81cc-4d03-b2c3-fc7518dbba14"
                 }
@@ -7559,23 +7525,7 @@
                         }
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, trägt St2, ebenso Ch1 und, umgestanzt, Bo1; Ne1 und St1 keine. Die acht Betonungen von {{bab25aef-f80d-4ff0-b187-63030df8305a}} trägt St2, zwei davon verlängert.\n\nDichter als {{bab25aef-f80d-4ff0-b187-63030df8305a}}: 55 zusätzliche Betonungen; dazu drei Redundanzen und vier weitere Stanzungen getilgt, die St1 noch trägt.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition",
-                                        "rules#refinement"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "d99f7916-6e0e-41aa-9878-6caba46755be"
-                        },
-                        "@id": "4056c785-f67d-4c15-a0bf-8fd3e6ef19f0"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "bab25aef-f80d-4ff0-b187-63030df8305a"
                 }
@@ -28306,23 +28256,7 @@
                         "toleranceEnd": 5
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "{{755d411a-0ba4-4f59-90a7-f231be3e66ad}}: nur in Wi1, ohne Antwort auf anderem Ast – allmähliches Aufheben der Verschiebung T. 9; Rückspulstanzung; fünf Crescendo-/Forzando-Befehle T. 2, 6, 7; zwei Tilgungen ({{symbol_b145db1a-a9d1-43db-bed6-d3fd7e24575b|Ab des Diskant-Crescendos}}; {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Ab des Dämpferpedals}}).\n\n45 weitere Lesarten nur in Wi1, doch schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}: meist {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} nahebei gleichartig, also verlegt; sonst Auflösung einer Redundanz von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, die eine spätere Hinzufügung nicht nachträglich erklärte.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition",
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "2ca95c5c-1b6b-4ac0-bf0f-06aa480c0267"
-                        },
-                        "@id": "3660f926-55c8-49ae-aeff-2a1b69f9cb57"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "0e5f443d-0dd9-4810-9dbe-7f5007df490f"
                 }
@@ -28797,22 +28731,7 @@
                         }
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ch1 trägt alle 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, und keine der 102, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} hinzufügt: eine eigene Umstanzung aus {{c9050e75-97a8-4862-9533-0f4b1439802b}}, nicht aus {{2767844e-311e-4b97-8fb2-1b78db41e220}}.\n\nEigen: ein Mezzoforte und drei Töne; vier Stanzungen getilgt.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "eac33c2a-1299-432a-ba73-0927643b2571"
-                        },
-                        "@id": "c29327a6-ab63-48f7-99d2-55635a2803f6"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
                 }
@@ -35550,22 +35469,7 @@
                         "toleranceEnd": 5
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Bo1 trägt die 125 Stanzungen, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, an ihrer Stelle: 124 in grüner Kodierung unter den 349 Umstanzungen, eine unverändert. Die drei Töne, die {{e07c4be8-f44b-496d-8a6c-026006340441}} hinzufügt, fehlen.\n\nEigen: zwei Töne; eine Stanzung getilgt.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "94d0d496-865a-49cf-bfbc-a1577982e0a0"
-                        },
-                        "@id": "1b06b4f5-2e1e-4a2f-8298-76d49b2447e2"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "c9050e75-97a8-4862-9533-0f4b1439802b"
                 }
@@ -35622,22 +35526,7 @@
                         "toleranceEnd": 8
                     },
                     "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Phillips’ Lesung: 142 der 157 Stanzungen, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, an ihrer Stelle; dazu die sieben Hinzufügungen, die {{bab25aef-f80d-4ff0-b187-63030df8305a}} begründen, und eine weitere nahebei; dazu das Crescendo-Paar vor dem Auftakt, sonst nur in St1.\n\nEigen: an drei Stellen ({{symbol_ca35af75-d7df-4a1b-bd7e-989a86543bf9|1}}, {{symbol_583a4144-9e67-449a-a323-1a12abd38273|2}}, {{symbol_b517dbe5-f735-4134-87d2-f6babcd82e30|3}}) fehlt das An eines Crescendos von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, dessen Ab wirkungslos stehen bleibt – die Betonungen also vorgefunden und deren An getilgt.\n\nNicht vorhanden: Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{e07c4be8-f44b-496d-8a6c-026006340441}}. Erhalten: die Redundanzen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} im Diskant, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} bereinigt.\n\nNicht aus dieser Vorlage: an vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt sie die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Sie kommen vermutlich aus einer zweiten Vorlage; siehe die Ableitung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.\n\nGegenüber {{e07c4be8-f44b-496d-8a6c-026006340441}} eine eigene Umstanzung: beginnt mit einer Löschreihe, die {{e07c4be8-f44b-496d-8a6c-026006340441}} nicht hat; Trachtmans Lesung von Gourlins Exemplar (Go1) dieser Fassung nennt Tempo 75, Chases Exemplar (Ch1) von {{e07c4be8-f44b-496d-8a6c-026006340441}} dagegen 80 (so der Scankopf; W225E.ann nennt 83). Tempo 75 liest auch Nettheim an seinem Exemplar (Ne1), und zwar am Vorspann selbst, der sonst leer ist (Mail, 21.9.2026). Die Angabe steht damit auf zwei Exemplaren dieser Fassung, eines davon von der Rolle abgelesen statt aus einem Dateikopf übernommen. Was auf dem Etikett von Ch1 steht, entscheidet das nicht.",
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#shared-addition"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "f9e8c74d-8c3f-4761-89ca-e1a58315902f"
-                        },
-                        "@id": "fa5e1754-05d5-4f9c-8d57-3d8410735a18"
+                        "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed"
                     },
                     "@id": "bab25aef-f80d-4ff0-b187-63030df8305a"
                 }
@@ -112717,6 +112606,58 @@
                 ],
                 "@type": "belief",
                 "@id": "f79bdc7a-ad90-486d-830e-91dfa27c758d"
+            }
+        }
+    ],
+    "propositionSets": [
+        {
+            "@type": "propositionSet",
+            "@id": "propositions_7606daa7-4965-5bcf-91cc-74c62ae0ebed",
+            "belief": {
+                "@type": "belief",
+                "@id": "belief_3fe359c7-85e7-5274-8707-35002567bd2c",
+                "certainty": "likely",
+                "reasons": [
+                    {
+                        "@type": "inference",
+                        "actor": {
+                            "name": "Niels Pfeffer",
+                            "sameAs": [
+                                "https://d-nb.info/gnd/1287287557",
+                                "https://orcid.org/0000-0002-6210-7255"
+                            ]
+                        },
+                        "note": "The stemma *(St1(*(Ne1,St2(Bo1,Ch1))),Wi1), the best of 22472 that St1, St2, Wi1, Ch1, Bo1, Ne1 admit, at a cost of 47.5. A reading arising costs 10, a reading lost 1, a redundancy lost 0.25, a reading lost on the way into another system 0.25, a copy lacking a reading of its version 1, and a lost state 4. Copies of one system differing in no more than 3 readings are taken for one text; a reading of the same kind within 25 mm on the other side of the root for a moved one; and 3 mm beyond a copy's text or a tear for what the copy cannot show. The copies decide its groupings by: St2, Ch1, Bo1 together by 29; St2 above Ch1, Bo1 by 4; St2, Ch1, Bo1, Ne1 together by 3.75; St1, St2, Ch1, Bo1, Ne1 together by 140.06; St1 above St2, Ch1, Bo1, Ne1 by 2.",
+                        "premises": [],
+                        "used": [
+                            "d229954b-086c-44d6-a589-aaa324d31d88",
+                            "88460599-2e0d-4759-851c-903a5a521997",
+                            "a7ff95b7-f43a-4341-ba86-80fa4e84499c",
+                            "6e1ce072-7490-44b6-b8e8-eb1bbffc3cad",
+                            "9ae56c3e-b058-4972-9895-96946c6b93f8",
+                            "6370ef20-7986-425a-a8c5-7e56d3756aec"
+                        ],
+                        "applies": [
+                            "https://welte225.org/rules#shared-addition",
+                            "https://welte225.org/rules#independent-cleanup",
+                            "https://welte225.org/rules#recut-loss",
+                            "https://welte225.org/rules#copy-deviation",
+                            "https://welte225.org/rules#lost-states",
+                            "https://welte225.org/rules#one-text",
+                            "https://welte225.org/rules#refinement",
+                            "https://welte225.org/rules#no-contamination"
+                        ],
+                        "software": [
+                            {
+                                "name": "linked-rolls",
+                                "version": "0.75.0"
+                            }
+                        ],
+                        "date": {
+                            "within": "2026-10-13"
+                        }
+                    }
+                ]
             }
         }
     ]
