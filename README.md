@@ -10,7 +10,7 @@ and the place where the data about that roll is published.
 |---|---|
 | `/` | the landing page |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
-| `/rules` | the editorial principles the edition's inferences apply (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
+| `/rules` | the editorial principles the edition follows, named by its creation (`principles`, CRM P33 used specific technique) and by an inference that applies one (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
 | `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
@@ -169,8 +169,11 @@ R2 (`1a7b95d`), and is named nowhere any more: the two notes that reported
 that attribution now say what the readings are. Ne1 was called Ph1 until
 20 September 2026: the copy was taken for Peter Phillips's own, and he
 reports that he read it from Nigel Nettheim's. The word ids of
-motivations (`cleanup-b2`, `cleanup-d3`) are identifiers and keep the
-letters that were current when they were minted.
+motivations are identifiers and keep the words they were minted with.
+The cleanups were once motivated as `cleanup-b`, `cleanup-b2`, `cleanup-c`
+and `cleanup-d3`, after the letters then current; since the edition moved
+to linked-rolls 0.76 a technical change states no motivation, and those
+ids name nothing any more.
 
 ## Publishing the reconstruction
 
