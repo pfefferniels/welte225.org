@@ -308,7 +308,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Das {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|zweite An}} des Crescendos im Bass trägt allein St1; es steht zwischen dem {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|An}} und dem {{symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b|Ab}} und ist dort wirkungslos. Ein An nach einem An ist die Spur einer Verlegung: das An stand zuerst an der {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|späteren}} Stelle und wurde auf die {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|frühere}} vorgezogen, die alte Stanzung blieb stehen; {{bab25aef-f80d-4ff0-b187-63030df8305a}} tilgt sie. Das Loch misst auf St1 7,2 mm gegen im Median 5,1 mm bei den Crescendo-Löchern im Bass, was eine eigene Stanzung dieses Exemplars nicht ausschließt.",
+                                    "note": "Das {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|zweite An}} ist die stehen gebliebene Stanzung des auf das {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|frühere An}} vorgezogenen Crescendos.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
@@ -372,7 +372,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Das {{symbol_ff2b533b-cc1f-4783-a224-31c24eee0900|An des Una Corda-Pedals}} trägt allein Wi1. Ohne es stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} das {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|zweite Ab}} ohne Wirkung, wie St1 und St2 es tragen. Eine spätere Hinzufügung, die eine bestehende Redundanz nachträglich erklärt, ist unwahrscheinlich. Also steht das An in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hat es getilgt und das Ab stehen lassen.",
+                                    "note": "Ohne das {{symbol_ff2b533b-cc1f-4783-a224-31c24eee0900|An des Una Corda-Pedals}}, das allein Wi1 trägt, stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} das {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|zweite Ab}} ohne Wirkung.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
@@ -4570,7 +4570,6 @@
                                             "9ae56c3e-b058-4972-9895-96946c6b93f8",
                                             "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
                                         ],
-                                        "note": "The tolerance is calculated from the scatter of the readings themselves, taken as the median absolute deviation of how far the collated copies put each symbol from where the copies read with it put it. expression: 203 readings, scattering by 1.17 mm at the start and 1.12 mm at the end about a median of 0.85 mm and 1.11 mm, with a threshold of 2.81 times the scatter. note: 459 readings, scattering by 0.98 mm at the start and 1.00 mm at the end about a median of 0.03 mm and -0.16 mm, with a threshold of 3.06 times the scatter. Each threshold is the point beyond which fewer than one reading of a sample of that size is expected to fall by chance, and the window is the threshold times the scatter about its median.",
                                         "@type": "inference"
                                     }
                                 ],
@@ -4612,7 +4611,6 @@
                                             "6370ef20-7986-425a-a8c5-7e56d3756aec",
                                             "d229954b-086c-44d6-a589-aaa324d31d88"
                                         ],
-                                        "note": "The tolerance is calculated from the scatter of the readings themselves, taken as the median absolute deviation of how far the collated copies put each symbol from where the copies read with it put it. expression: 363 readings, scattering by 1.56 mm at the start and 1.39 mm at the end about a median of 0.95 mm and 1.21 mm, with a threshold of 2.99 times the scatter. note: 463 readings, scattering by 0.79 mm at the start and 0.92 mm at the end about a median of 0.07 mm and -0.16 mm, with a threshold of 3.07 times the scatter. Each threshold is the point beyond which fewer than one reading of a sample of that size is expected to fall by chance, and the window is the threshold times the scatter about its median.",
                                         "@type": "inference"
                                     }
                                 ],
@@ -6749,7 +6747,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
+                                    "note": "Die sechs Befehle sind wirkungslos, vier erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, zwei schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement"
@@ -6775,7 +6773,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Sechs Befehle ({{symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea|1}}, {{symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7|2}}, {{symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8|3}}, {{symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18|4}}, {{symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d|5}}, {{symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845|6}}) fehlen in St2, dem Zeugen dieser Fassung, ebenso in der Licensee- und in der grünen Umstanzung; getragen allein von St1 und Wi1. Vier von ihnen werden erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} wirkungslos, zwei sind es schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
+                                    "note": "Die sechs Befehle sind wirkungslos, vier erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, zwei schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement"
@@ -7305,7 +7303,6 @@
                                             "6370ef20-7986-425a-a8c5-7e56d3756aec",
                                             "a7ff95b7-f43a-4341-ba86-80fa4e84499c"
                                         ],
-                                        "note": "The tolerance is calculated from the scatter of the readings themselves, taken as the median absolute deviation of how far the collated copies put each symbol from where the copies read with it put it. expression: 366 readings, scattering by 1.36 mm at the start and 1.43 mm at the end about a median of -0.00 mm and 0.14 mm, with a threshold of 3.00 times the scatter. note: 462 readings, scattering by 0.69 mm at the start and 0.97 mm at the end about a median of -0.01 mm and -0.09 mm, with a threshold of 3.07 times the scatter. Each threshold is the point beyond which fewer than one reading of a sample of that size is expected to fall by chance, and the window is the threshold times the scatter about its median.",
                                         "@type": "inference"
                                     }
                                 ],
@@ -28194,7 +28191,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} fehlt allein auf Wi1; es steht auf St1, St2, Ch1 und Ne1, und Bo1 hält das Pedal genau bis dorthin. Wäre es eine Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, machte diese eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bereits stehende Redundanz sinnvoll, was Bearbeitungen nicht tun. Also steht es in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und dieses Exemplar hat es verloren.",
+                                    "note": "Als Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} machte das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bestehende Redundanz sinnvoll; es steht also in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und Wi1 hat es verloren.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
@@ -28289,7 +28286,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die rasch wechselnden Stanzungen des Una Corda-Pedals in T. 9 trägt allein Wi1. Kein Exemplar zeigt hier eine Redundanz, die sie erklären müsste, und spätere Fassungen fügen in der Regel Nuancen hinzu; sie gelten daher als Hinzufügung dieser Fassung, die dafür Beginn und Ende der schlichten Aufhebung aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt.\n\nDenkbar bleibt, dass sie schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} standen und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie tilgte, etwa weil der schnelle Wechsel störende Geräusche verursachte; dann nähme {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} vier wirksame Stanzungen zurück und verlegte zwei.",
+                                    "note": "Die rasch wechselnden Stanzungen des Una Corda-Pedals in T. 9 trägt allein Wi1, und keine Redundanz spricht dafür, dass {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie getilgt hat.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement",
@@ -28461,7 +28458,6 @@
                                             "6370ef20-7986-425a-a8c5-7e56d3756aec",
                                             "9ae56c3e-b058-4972-9895-96946c6b93f8"
                                         ],
-                                        "note": "The tolerance is calculated from the scatter of the readings themselves, taken as the median absolute deviation of how far the collated copies put each symbol from where the copies read with it put it. expression: 489 readings, scattering by 1.58 mm at the start and 1.65 mm at the end about a median of -0.28 mm and -0.84 mm, with a threshold of 3.08 times the scatter. note: 461 readings, scattering by 1.35 mm at the start and 1.38 mm at the end about a median of -0.05 mm and -0.60 mm, with a threshold of 3.07 times the scatter. Each threshold is the point beyond which fewer than one reading of a sample of that size is expected to fall by chance, and the window is the threshold times the scatter about its median.",
                                         "@type": "inference"
                                     }
                                 ],
@@ -34961,7 +34957,7 @@
                             "certainty": "possible",
                             "reasons": [
                                 {
-                                    "note": "Rex Lawson, The Pianola Journal 20 (2009), S. 26: auf einigen der zweiten Masterrollen in USC steht der Name Kähle als desjenigen, der sie für das spätere 98-tönige grüne System „corrigiert“ habe, wobei die Arbeit zum Teil darin bestand, die Pedalspuren so neu zu legen, dass keine Stanzung lang genug wurde, um das Papier zu schwächen. Die Aufschrift nennt einen Mann, der zweite Master korrigiert hat. Dass er diesen korrigiert hat, sagt sie nicht.",
+                                    "note": "Rex Lawson, The Pianola Journal 20 (2009), S. 26.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -35211,7 +35207,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Eine {{symbol_453db0e0-ee3d-457a-876f-ed6d82af162d|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [
                                         "38273a55-76b7-4667-9262-f1b9c4772512"
                                     ],
@@ -35576,7 +35571,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Eine {{symbol_094529d8-ffa4-4398-b18a-e4b9a3e6881e|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Als eigene Einfügung machte sie das {{symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a|Ab}} wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ.",
+                                    "note": "Als eigene Einfügung machte die Stanzung das {{symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a|Ab}} wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ.",
                                     "premises": [
                                         "38273a55-76b7-4667-9262-f1b9c4772512"
                                     ],
@@ -35855,7 +35850,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Eine {{symbol_24440ecd-f24a-4d6f-9c39-79438a3d4b43|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [
                                         "38273a55-76b7-4667-9262-f1b9c4772512"
                                     ],
@@ -36075,7 +36069,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips’ Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar (Go1) (Go1) (Go1) (Go1) (Go1) (Go1) zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal.",
+                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -36097,7 +36091,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips’ Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar (Go1) (Go1) (Go1) (Go1) (Go1) (Go1) zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal.",
+                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -36119,7 +36113,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips’ Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar (Go1) (Go1) (Go1) (Go1) (Go1) (Go1) zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal.",
+                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -36141,7 +36135,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips’ Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar (Go1) (Go1) (Go1) (Go1) (Go1) (Go1) zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal.",
+                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -36163,7 +36157,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lesung zeigt keine Ab-Stanzung des Una Corda-Pedals, obwohl der Schalter von Spur 7 in der Löschreihe und nach dem letzten Ton anspricht. Das An auf Spur 8 kommt in der ganzen Datei nicht vor; ob Phillips’ Leser diese Spur liest, ist nicht bekannt, daher bleibt das Entfallen der An-Stanzungen offen. Die Anschlagstärken in Trachtmans Emulation von Gourlins Exemplar (Go1) (Go1) (Go1) (Go1) (Go1) (Go1) zeigen in T. 8′ bis 15 keine Änderung durch das Una Corda-Pedal.",
+                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -36227,7 +36221,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Eine {{symbol_baf595b7-4ca6-4610-99f8-6fb7cee39ae5|Stanzung}} an der Stelle von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, überliefert allein in Wi1, dort wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie verlegt oder getilgt hat. Eine von vier solchen Stellen, wohl nicht neu gesetzt, sondern aus einer zweiten Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} übernommen; wie unsicher das ist, steht bei der Ableitung von {{2767844e-311e-4b97-8fb2-1b78db41e220}} aus {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [
                                         "38273a55-76b7-4667-9262-f1b9c4772512"
                                     ],
@@ -37225,7 +37218,6 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Einstellung und Papier bestätigen das Datum. Ein Vorschub von 1,027 mm bei 3,0 mm Kettenteilung (Einstellung 1,00 × 3) ist an den datierten Stanford-Kopien vom 20. November 1908 bis 16. Dezember 1909 belegt, und spätestens am 1. Februar 1910 war der Vorschub halbiert (welte-premises, advance-1mm). Liniertes Papier, wie St1 es hat, ist an den datierten Stanford-Kopien bis zum 1. Februar 1910 belegt und danach nicht mehr (welte-premises, paper-ruled). Beide Prämissen begrenzen das Datum nur nach oben, und der 18. Januar 1909 liegt davor. St1 ist selbst unter den Kopien, auf deren Messung die Prämissen beruhen, trägt aber keine ihrer Grenzen.",
                                     "premises": [
                                         "335c0289-1b35-489f-812c-2818e7aab932",
                                         "560debaf-2be3-4832-a747-591a99a66e8b",
@@ -48861,7 +48853,7 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 69 pairs of tracks: the offset between two tracks runs at 4.52 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 46 um rms, against a noise of about 30 um and a scan line of 85 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 4 per cent of this copy's advance of 1.027 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "note": "In line across 69 pairs of tracks: 46 µm rms per track once the scanner's tilt is taken out, against a noise of about 30 µm and a scan line of 85 µm.",
                                         "premises": [],
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
@@ -48889,10 +48881,10 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "Median over 477 pitches of held notes, measured on the IIIF images by condon-dates/perforator/pitch.py; slot and bridge are medians of their own.",
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
-                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -48913,9 +48905,9 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "The strongest period the 10910 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.343 mm at 0.1843, 0.512 mm at 0.4664. The chain pitch is 2.922 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
                                             "used": [
-                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -48944,7 +48936,7 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "Gemessen an der Aufnahme mit condon-dates paper/colour.py und paper/ruling.py. Liniert: Das Profil des Papiers quer zur Rolle hat eine periodische Komponente im Spurabstand, 37,8 Pixel gegen 37,76, mit der Stärke 43,5 und in 12 von 12 Fenstern; die Linien liegen auf den Spurmitten. Unlinierte Kopien kommen auf höchstens 1,7, linierte auf mindestens 36. Rot: Der Papiergrund liest in 16 Fenstern im Median L* 30,2, a* 22,4, b* 20,1 (CIELAB, D65), korrigiert gegen die Graukarte am Anfang derselben Aufnahme; das ist warmes Rot, wie es alle linierten Kopien haben (condon-dates paper/README.md).",
+                                    "note": "Linierung im Spurabstand mit der Stärke 43,5 (unlinierte Kopien höchstens 1,7, linierte mindestens 36), Papiergrund L* 30,2, a* 22,4, b* 20,1 (CIELAB, D65).",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
                                         "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
@@ -48988,7 +48980,7 @@
                     "sameAs": []
                 },
                 "output": "mf320jq4997_analysis.txt",
-                "note": "Lesung aus der Analyse, die SUPRA zum eigenen Scan veröffentlicht: mf320jq4997_analysis.txt zu https://purl.stanford.edu/mf320jq4997. Dass es diese und nicht die andere rote Analyse ist, sagen die hier eingetragenen Maße: Ränder 54 und 117 px, Rollenbreite 3888,91 px, Spurabstand 37,7646 px.\n\nSignatur „Stanford Libraries CONDON ROLL 47“ (sul:ars0163_cr47_welte_225), wie das zweite Stanforder Exemplar aus der Sammlung Denis Condon. Der Katalog vermerkt allein das Papier, „Lined paper“ und „Ruled paper“.\n\nRandrisse zählt die Analyse keine; die rote 225, die Peter Phillips gelesen hat, ist daher das andere Stanforder Exemplar.\n\nGemessen hat Stanford, nicht die Edition. Die Längsauflösung von 300,25 dpi, in jeder Analyse gleich, ist eine Konstante des Geräts und keine Messung an dieser Rolle."
+                "note": "Signatur „Stanford Libraries CONDON ROLL 47“, aus der Sammlung Denis Condon."
             },
             "siglum": "St1",
             "modifications": [
@@ -49166,7 +49158,7 @@
                                 "certainty": "possible",
                                 "reasons": [
                                     {
-                                        "note": "Ähnlich ausgeführte, händische Stanzungen finden sich auch auf der Condon-Rolle 395 (Welte-Mignon [Deluxe] Test Roll) – dort wurden sie offensichtlich von Denis Condon selbst ausgeführt – und der Condon-Rolle 1367 (linierte T-100-Rolle auf beigem Papier).",
+                                        "note": "Ähnliche händische Stanzungen finden sich auf den Condon-Rollen 395, dort von Denis Condon selbst, und 1367.",
                                         "actor": {
                                             "name": "",
                                             "sameAs": []
@@ -49578,7 +49570,6 @@
                                     "@type": "meaningComprehension"
                                 },
                                 {
-                                    "note": "Die Einstellung stützt die Lesung und begrenzt das Datum nach unten. Ein Vorschub von 0,503 mm bei 3,0 mm Kettenteilung (Einstellung 0,50 × 6) setzt die Halbierung des Vorschubs voraus, und am 16. Dezember 1909 wurde noch mit dem alten gestanzt (welte-premises, advance-half-mm). An den datierten Stanford-Kopien ist diese Einstellung vom 1. Februar 1910 bis 6. März 1914 belegt, der 14. Januar 1914 liegt darin (condon-dates/dates/README.md). Über die Gewissheit der Lesung selbst entscheidet das nicht.",
                                     "premises": [
                                         "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
                                         "6eed2137-38a8-4048-80dc-bb2f519e923e",
@@ -62961,7 +62952,7 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 70 pairs of tracks: the offset between two tracks runs at 0.92 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 35 um rms, against a noise of about 8 um and a scan line of 85 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 7 per cent of this copy's advance of 0.503 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "note": "In line across 70 pairs of tracks: 35 µm rms per track once the scanner's tilt is taken out, against a noise of about 8 µm and a scan line of 85 µm.",
                                         "premises": [],
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -62989,10 +62980,10 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "Median over 373 pitches of held notes, measured on the IIIF images by condon-dates/perforator/pitch.py; slot and bridge are medians of their own.",
                                             "used": [
                                                 "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
-                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -63013,9 +63004,9 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "The strongest period the 10441 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.414 mm at 0.0524, 0.727 mm at 0.0382. The chain pitch is 5.962 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
                                             "used": [
-                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
+                                                "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -63037,7 +63028,7 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "Gemessen an der Aufnahme mit condon-dates paper/colour.py und paper/ruling.py. Rot: Der Papiergrund liest in 16 Fenstern im Median L* 21,0, a* 26,0, b* 22,5 (CIELAB, D65), korrigiert gegen die Graukarte am Anfang derselben Aufnahme; das ist warmes Rot (a* mindestens 10, b* mindestens 15). Unliniert: Im Spurabstand hat das Profil die Stärke 1,1, in keinem von 12 Fenstern eine Linie (condon-dates paper/README.md).",
+                                    "note": "Papiergrund L* 21,0, a* 26,0, b* 22,5 (CIELAB, D65), Linierung im Spurabstand mit der Stärke 1,1.",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
@@ -63081,7 +63072,7 @@
                     "sameAs": []
                 },
                 "output": "wv912mm2332_analysis.txt",
-                "note": "Lesung aus wv912mm2332_analysis.txt zu https://purl.stanford.edu/wv912mm2332, kenntlich an den hier eingetragenen Maßen: Ränder 32 und 152 px, Rollenbreite 3899,59 px, Spurabstand 37,7477 px.\n\nSignatur „Stanford Libraries CONDON ROLL 48“ (sul:ars0163_cr48_welte_225). Da beide roten Stanforder Exemplare aus der Sammlung Condon stammen, unterscheidet die Provenienz sie nicht; der Zustand des Papiers tut es. Phillips, der seine rote 225 von einer Condon-Rolle gelesen hat, notiert „roll has damaged edges from half way in, otherwise good“; die Analyse zählt hier sieben Randrisse zwischen 73 und 89 Prozent der Rollenlänge, fünf im Bass, zwei im Diskant, dazu 104 als Staub ausgeschiedene Löcher und ein zweifelhaftes Loch, während St1 keinen einzigen Riss hat.\n\nSeine Datei „Traumerei (Schumann) Grunfeld RW.mid“ von 2022, am 8. September 2026 per Mail geschickt, zählt 463 Töne wie die Lesung dieses Exemplars, St1 zählt 464. Ihr Lautstärkeverlauf korreliert über die gemeinsamen Töne mit diesem Exemplar zu r = 0,93 (457 von 463 zugeordnet), mit St1 zu r = 0,72 (432 Töne). Beide Vergleiche laufen über zwei verschiedene Emulatoren, seinen und midi2exp; es zählt daher der Abstand der Werte, nicht ihre Höhe.\n\nPhillips liest pneumatisch, nicht optisch. Geschickt hat er die emulierte Fassung seiner Lesung: Tonumfang 34 bis 82, neunundzwanzig Anschlagstärken, Pedale als Controller 64 und 67. Die Ausdrucksstanzungen fehlen darin; als Zeuge für Stanzorte taugt die Datei erst mit der E-Roll-Datei."
+                "note": "Signatur „Stanford Libraries CONDON ROLL 48“; Peter Phillips’ Lesung einer roten Condon-Rolle („Traumerei (Schumann) Grunfeld RW.mid“, Mail, 8.9.2026) ist von diesem Exemplar, dem einzigen mit Randrissen, dessen Lautstärkeverlauf sie zu r = 0,93 folgt (St1: 0,72)."
             },
             "siglum": "St2",
             "modifications": [
@@ -63268,7 +63259,7 @@
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Der Vorschub spricht gegen das Datum. Als Vorschub der Maschine genommen, legen 1,020 mm bei 3,04 mm Kettenteilung (Einstellung 1,00 × 3) die Kopie vor den 1. Februar 1910, an dem der Vorschub spätestens halbiert war (welte-premises, advance-1mm), also fast neun Monate vor den 28. Oktober 1910. Der Vorschub ist nur mit der Stärke 0,21 gefunden und gilt als möglich, das Datum bleibt deshalb wahrscheinlich. Treffen beide zu, ist Wi1 die einzige bekannte Kopie, die nach der Umstellung noch mit der alten Einstellung gestanzt wurde.",
+                                    "note": "Der Vorschub von 1,020 mm legte die Kopie vor den 1. Februar 1910, ist aber nur mit der Stärke 0,21 gefunden und gilt als möglich, so dass das Datum wahrscheinlich bleibt.",
                                     "premises": [
                                         "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
                                         "435efaf8-6294-4d55-b29d-f4351f83b127",
@@ -72716,9 +72707,10 @@
                                     "certainty": "possible",
                                     "reasons": [
                                         {
-                                            "note": "Median over 427 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.155 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The spread is ten times that of the other copies, so the scan's transport enters the value.",
+                                            "note": "The interquartile spread of 0.155 mm is ten times that of the other copies, so the scan's transport enters the value.",
                                             "used": [
-                                                "/facsimiles/WR0225_02"
+                                                "/facsimiles/WR0225_02",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -72739,14 +72731,13 @@
                                     "certainty": "possible",
                                     "reasons": [
                                         {
-                                            "note": "The strongest period the 10448 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.425 mm at 0.1147, 0.528 mm at 0.1303, 0.692 mm at 0.168. The chain pitch is 2.978 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
                                             "used": [
-                                                "/facsimiles/WR0225_02"
+                                                "/facsimiles/WR0225_02",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         },
                                         {
-                                            "note": "Das Datum 28. Oktober 1910 spricht dagegen, dass dies der Vorschub der Maschine ist. Spätestens am 1. Februar 1910 war der Vorschub halbiert (welte-premises, advance-1mm), und ein Vorschub von 1,00 mm ist an keiner später datierten Stanford-Kopie belegt.",
                                             "premises": [
                                                 "b8dffe69-90ad-4d55-9196-2453ebcfc0d0",
                                                 "https://w3id.org/welte-premises/premises#advance-1mm-belief"
@@ -72886,11 +72877,11 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.).",
+                                    "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
                                     "premises": [],
                                     "@type": "inference"
                                 }
@@ -72909,7 +72900,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Datei W225E.ann nennt roll_tempo 83. Der Leser rechnet zehn Einheiten auf den Fuß je Minute. Das Feld ist als das auf der Rolle aufgedruckte Tempo definiert, und Licensee-Rollen tragen ein solches, während die roten T-100-Rollen keines tragen. Der Kopf des Scans selbst nennt 80, ebenso Chases eigene Dateien von 2004 und 2006, Trachtmans Lesung eines anderen Licensee-Exemplars 75, so dass höchstens eine dieser Angaben vom Etikett stammen kann.",
+                                    "note": "W225E.ann nennt roll_tempo 83, als das auf der Rolle aufgedruckte Tempo definiert; der Kopf des Scans nennt 80.",
                                     "@type": "simpleArgumentation"
                                 }
                             ],
@@ -85334,7 +85325,7 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 84 pairs of tracks: the offset between two tracks runs at 0.29 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 21 um rms, against a noise of about 16 um and a scan line of 141 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 3 per cent of this copy's advance of 0.625 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "note": "In line across 84 pairs of tracks: 21 µm rms per track once the scanner's tilt is taken out, against a noise of about 16 µm and a scan line of 141 µm.",
                                         "premises": [],
                                         "used": [
                                             "/facsimiles/WelteLicensee_225"
@@ -85360,9 +85351,10 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "Median over 432 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.0169 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999. The scan was resampled from 180 lines per inch along the roll (cis2roll.py), so the millimetres rest on the scanner's header.",
+                                            "note": "The scan was resampled from 180 lines per inch along the roll, so the millimetres rest on the scanner's header.",
                                             "used": [
-                                                "/facsimiles/WelteLicensee_225"
+                                                "/facsimiles/WelteLicensee_225",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -85383,9 +85375,9 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "The strongest period the 9984 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.317 mm at 0.0706, 0.446 mm at 0.0349, 0.987 mm at 0.0594. The chain pitch is 3.885 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
                                             "used": [
-                                                "/facsimiles/WelteLicensee_225"
+                                                "/facsimiles/WelteLicensee_225",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -85411,7 +85403,15 @@
                     "name": "Chase, Spencer",
                     "sameAs": []
                 },
-                "note": "Der Rollenscan selbst, 2432 × 54286 Punkte, im frühen CIS-Kopf von 2002, der weder Gerät noch Querauflösung nennt. Längs 180 Zeilen auf den Zoll; quer aus der Scanbreite erschlossen und vom gemessenen Spurabstand bestätigt: 203,6 dpi gegen die 204, die Chases eigene Software in ihre Dateien schrieb.\n\nÜberführt mit cis2roll.py in ein TIFF von 300 dpi, gelesen mit tiff2holes -l auf der Licensee-Leiste. Deren Nummerierung sitzt zwölf Stellen unter der Spaltenzählung von tiff2holes; die Rückspulstanzung auf Spur 89 legt den Versatz fest.\n\nDas Gerät ist nicht überliefert, seine Bauart aus der Datei ablesbar: Chase-Transport mit Capstan-Antrieb, ohne Positionsgeber, aus der Generation vor dem Mk3.\n\nZuvor stand hier Chases eigene Lochliste W225E.bar mit W225E.ann, deren Raster von 400 Zeilen auf den Zoll aus den 180 des Scans interpoliert war. Beide Lesungen stimmen auf 953 von 955 Löchern überein, im Mittel auf 0,000 mm, im Rest auf 0,06 mm.\n\nEin Vorbehalt bleibt, ein anderer fällt fort: Stanzorte liegen jetzt so genau wie der Scan, doch liest dieser quer zur Rolle 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen.\n\nChase starb im Juni 2025. Die Datei kam von Bill Luecht."
+                "note": "Quer liest der Scan 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen.",
+                "software": [
+                    {
+                        "name": "cis2roll.py"
+                    },
+                    {
+                        "name": "tiff2holes"
+                    }
+                ]
             },
             "scan": "/facsimiles/WelteLicensee_225",
             "siglum": "Ch1",
@@ -85426,7 +85426,7 @@
                                 "certainty": "possible",
                                 "reasons": [
                                     {
-                                        "note": "Das Loch ist 0,19 Zoll breit und überdeckt die Spuren 1 und 2 zugleich, also Mezzoforte-Aus und Mezzoforte-Ein; jedes andere Loch dieser Rolle misst 0,079 Zoll und sitzt auf einer Spur. Ihre Enden laufen nicht rund aus. Bei jeder Stanzung und auch bei der Rückspulstanzung weichen beide Ränder gleichmäßig zur Mitte hin zurück; hier steht der bassseitige Rand still, während der diskantseitige quer aufzieht, und am Ende bleibt ein Rest allein auf der Diskantseite stehen. Zwei zugleich geöffnete Ventile von Mezzoforte-Aus und Mezzoforte-Ein ergeben auch keinen Befehl, den die Mechanik lesen könnte.",
+                                        "note": "Das Loch überdeckt die Spuren 1 und 2 zugleich, Mezzoforte-Aus und -Ein, was keinen lesbaren Befehl ergibt, und seine Enden laufen nicht rund aus wie die der gestanzten.",
                                         "actor": {
                                             "name": "",
                                             "sameAs": []
@@ -85434,7 +85434,7 @@
                                         "@type": "simpleArgumentation"
                                     },
                                     {
-                                        "note": "Dagegen steht die Geradheit der Längsränder. Um eine Ausgleichsgerade streuen sie mit 0,50 und 0,53 Pixeln, die maschinell gestanzte Rückspulstanzung derselben Rolle mit 0,56 und 0,57, und die Breite hält über 2,2 Zoll auf 0,6 Pixel; ein Pixel sind quer 0,005 Zoll. So gerade schneidet eine Hand nicht ohne Weiteres. Auch die schrägen Enden ließen sich durch zwei um wenige Zeilen gegeneinander versetzte Stanzungen auf den Spuren 1 und 2 erklären. Gemessen am Scan von Spencer Chase, 203,6 dpi quer und 180 Zeilen auf den Zoll längs.",
+                                        "note": "Dagegen sind die Längsränder so gerade wie die der maschinell gestanzten Rückspulstanzung derselben Rolle, 0,50 und 0,53 gegen 0,56 und 0,57 Pixel Streuung.",
                                         "actor": {
                                             "name": "",
                                             "sameAs": []
@@ -85480,7 +85480,7 @@
                         "certainty": "likely",
                         "reasons": [
                             {
-                                "note": "Nach Auskunft Julian Dyers, der die Rolle im Mai 2015 abgetastet hat (Mail, 8.9.2026).",
+                                "note": "Julian Dyer, Mail, 8.9.2026.",
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -85505,11 +85505,11 @@
                                             "http://www.wikidata.org/entity/Q95314399"
                                         ]
                                     },
-                                    "note": "Zur Leipziger Herbstmesse 1924 brachte Welte das Mignola und das Welte heraus, beide mit der jüngeren Blockskala T-98, und verkaufte das Welte-Mignon mit dieser Skala vom selben Jahr an (Hagmann 1984, S. 42 f. und S. 117, Anm. 15). Für diese Skala gelten die grünen Rollen (ebd., S. 89).",
+                                    "note": "Hagmann 1984, S. 42 f., 89 und 117, Anm. 15.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Ein Exemplar in der grünen Umstanzung kann nicht älter sein als das System, für das es gestanzt ist. Phillips 2016, S. 21 und S. 121, setzt die Produktion der grünen Rollen in die frühen zwanziger Jahre, nennt dafür aber keine Quelle. Die Grenze wird deshalb nur als wahrscheinlich geführt.",
+                                    "note": "Ein Exemplar der grünen Umstanzung ist nicht älter als das System, für das es gestanzt ist.",
                                     "premises": [],
                                     "@type": "inference"
                                 }
@@ -99868,7 +99868,7 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 149 pairs of tracks: the offset between two tracks runs at 0.62 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 74 um rms, against a noise of about 33 um and a scan line of 71 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 17 per cent of this copy's advance of 0.434 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show.",
+                                        "note": "In line across 149 pairs of tracks: 74 µm rms per track once the scanner's tilt is taken out, against a noise of about 33 µm and a scan line of 71 µm.",
                                         "premises": [],
                                         "used": [
                                             "/facsimiles/WelteT98_225"
@@ -99898,9 +99898,9 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "Median over 527 held notes of the pitch each keeps from its first inner slot to its last, read to a fraction of a pixel from roll-image-parser's slots (punch-225/settings225.py); interquartile spread 0.0185 mm. The route gives 3.003 and 2.999 mm on St1 and St2, where the images give 3.001 and 2.999.",
                                             "used": [
-                                                "/facsimiles/WelteT98_225"
+                                                "/facsimiles/WelteT98_225",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -99921,9 +99921,9 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "The strongest period the 15681 slot lengths keep, by condon-dates/perforator/advance.py (punch-225/settings225.py); runners-up 0.313 mm at 0.0457, 0.343 mm at 0.0439, 0.75 mm at 0.1318. The chain pitch is 5.011 of it. Held likely when found at a strength of at least 0.35 with the pitch within 0.15 of a whole number of it, possible when one of the two holds, unlikely when neither does.",
                                             "used": [
-                                                "/facsimiles/WelteT98_225"
+                                                "/facsimiles/WelteT98_225",
+                                                "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
                                             ],
                                             "@type": "measurement"
                                         }
@@ -100049,7 +100049,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die CIS-Datei, die Julian Dyer geschickt hat, ist auf Mai 2015 datiert. Der Tag steht nicht dabei.",
+                                    "note": "Datum der CIS-Datei.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -100059,12 +100059,20 @@
                         "@id": "0f6d4e23-4ab8-4494-83e1-30816a6b1357"
                     }
                 },
-                "note": "Optische Abtastung durch Julian Dyer aus der Sammlung Peter Both. Die CIS-Datei kam am 8. September 2026 per Mail, überführt mit cis2roll.py in ein lesbares TIFF, analysiert mit dem roll-image-parser von SUPRA.\n\nRückspulbefehl: ein 499 mm langes Loch auf der Bassspur 1, zugleich die Sforzando-piano-Position, beginnend bei 10324,6 mm der Editionsachse. Dahinter ein treppenförmiges Prüfmuster über alle 98 Spuren, 361 Löcher, die zum Scanner gehören und nicht auf das Papier.",
+                "note": "Das treppenförmige Prüfmuster über alle 98 Spuren hinter dem Rückspulbefehl, 361 Löcher, gehört zum Scanner, nicht zum Papier.",
                 "actor": {
                     "name": "Dyer, Julian",
                     "sameAs": []
                 },
-                "output": "WelteT98_225_Gruenfeld_Traeumerei.CIS"
+                "output": "WelteT98_225_Gruenfeld_Traeumerei.CIS",
+                "software": [
+                    {
+                        "name": "cis2roll.py"
+                    },
+                    {
+                        "name": "roll-image-parser"
+                    }
+                ]
             },
             "scan": "/facsimiles/WelteT98_225",
             "siglum": "Bo1",
@@ -100085,7 +100093,7 @@
                         "certainty": "likely",
                         "reasons": [
                             {
-                                "note": "Nach dem Booklet der Veröffentlichung, S. 27, hat Hans-W. Schmitz die Rolle bereitgestellt. Die Aufnahme entstand 2012.",
+                                "note": "Booklet zu TACET 220, S. 27.",
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -100120,7 +100128,7 @@
                         "version": "2.0.1, model 2.0"
                     }
                 ],
-                "note": "Überliefert allein in der Einspielung von TACET, The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), hier nach der YouTube-Veröffentlichung von Naxos of America (Video Myn21YML3P0). Das Exemplar bei Hans-W. Schmitz.\n\nVon welcher Rolle kopiert, ist nicht bekannt; auf welchem Instrument in welcher Regulierung gespielt, nennt die Veröffentlichung nicht.\n\nTöne zweimal transkribiert, mit dem Verfahren von Kong et al. (2021) und mit Transkun (Yan und Duan 2024). Der Vergleich mit den Fassungen stützt sich auf das Mittel von vier standardisierten Lautstärkemaßen: die Anschlagstärken beider Transkriptionen und die Lautstärke aus einer NMF-Zerlegung nach Ewert und Müller (2012), am Obertonmaximum und am Anschlag.\n\nTranskriptionen und Auswertungen: https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/."
+                "note": "TACET, The Welte Mignon Mystery, Vol. XXI (TACET 220, 2016), nach der YouTube-Veröffentlichung von Naxos of America."
             },
             "carries": [
                 {
@@ -100129,7 +100137,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Lautstärke der gehörten Töne folgt der Dynamik von {{c9050e75-97a8-4862-9533-0f4b1439802b}} besser als der von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}: Anschlagstärken von Transkun allein R² 0,65 gegen 0,61 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}; von Kong allein 0,55 gegen 0,49; ebenso auf dem Mittel der vier Lautstärkemaße unter allen sieben Einstellungen des Emulators.\n\nDie Lesarten, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügen, vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Maße).\n\nZuordnung der Töne allein über ihr Timing, das in allen roten Fassungen gleich ist; gegen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} ausgerichtet dieselbe Paarung.\n\nVon 33 Passagen, deren Lesarten die Lautstärke genug ändern, um sie zu beurteilen, weicht eine von {{c9050e75-97a8-4862-9533-0f4b1439802b}} ab: das {{symbol_134b68f6-7af4-4b57-907d-b613a103db29|Crescendo im Bass}} von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} (p = 0,013), im Rahmen des Zufalls.\n\nDie Prämissen schließen ein Instrument unbekannter Regulierung ein; daher nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik von {{c9050e75-97a8-4862-9533-0f4b1439802b}} besser als der von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, mit den Anschlagstärken von Transkun zu R² 0,65 gegen 0,61 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -100197,7 +100205,7 @@
                                     "name": "Phillips, Peter",
                                     "sameAs": []
                                 },
-                                "note": "Die Rolle gehört Nigel Nettheim. Das sagt Peter Phillips, der sie gelesen hat (Mail, 20.9.2026); er fügt an, Nettheim länger nicht gesehen zu haben, so dass offenbleibt, ob sie noch dort liegt.",
+                                "note": "Mail, 20.9.2026.",
                                 "@type": "beliefAdoption"
                             },
                             {
@@ -100208,7 +100216,7 @@
                                         "http://www.wikidata.org/entity/Q139198104"
                                     ]
                                 },
-                                "note": "Nettheim schreibt, die Rolle liege weiterhin bei ihm: „I still have the roll Welte 225 (DeLuxe, price $2.00)“ (Mail, 21.9.2026). Damit ist die Frage beantwortet, die Phillips offenließ.",
+                                "note": "Mail, 21.9.2026.",
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -100230,11 +100238,11 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.).",
+                                    "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
                                     "premises": [],
                                     "@type": "inference"
                                 },
@@ -100243,7 +100251,7 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Auf der Rolle steht nichts, weder ein Stanzdatum noch ein sonstiger Vermerk (Mail, 20.9.2026). Zur Datierung trägt das Exemplar selbst damit nichts bei.",
+                                    "note": "Mail, 20.9.2026: kein Vermerk auf der Rolle.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -111514,7 +111522,7 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Phillips hält das Exemplar für eine Ausgabe von De Luxe: Rollen aus Poughkeepsie haben einen Vorspann aus Gewebe, den er vermerkt hätte, und seine Notizen zu dieser Rolle vermerken keinen (Mail, 20.9.2026). Nach derselben Auskunft stanzte Poughkeepsie zwischen 1914 und 1919, De Luxe in den zwanziger Jahren.",
+                                    "note": "Mail, 20.9.2026.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
@@ -111525,11 +111533,11 @@
                                             "http://www.wikidata.org/entity/Q139198104"
                                         ]
                                     },
-                                    "note": "Nettheim nennt das Exemplar eine DeLuxe-Ausgabe und schickt einen Scan des Schachteletiketts (Mail, 22.9.2026, Anhang Welte225BoxLabel.jpg). Auf dem Etikett stehen „DeLuxe Reproducing Player Roll“, die Nummer C-225 und der Preis $2.00, darunter Titel, Werkangabe, „Played by A. Grunfeld“ und „Made in U.S.A.“. Welte steht nicht darauf.",
+                                    "note": "Mail, 22.9.2026, mit dem Scan des Schachteletiketts (Welte225BoxLabel.jpg).",
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Das Etikett nennt De Luxe unmittelbar. Es gehört der Schachtel, die von der Rolle getrennt worden sein kann, und beweist die Ausgabe deshalb nicht. Es weist aber in dieselbe Richtung wie Phillips’ Schluss aus der Rolle, so dass zwei voneinander unabhängige Anzeichen vorliegen. Offen bleibt, woran Phillips’ Argument hängt: ob der Vorspann aus Gewebe ist. Nettheim berichtet davon nichts. Er sagt allein, dass der Vorspann außer dem Tempo leer ist. Trifft die Angabe zu, fällt die Stanzung in die zwanziger Jahre, deutlich hinter die untere Grenze von 1916.",
+                                    "note": "Etikett der Schachtel und fehlender Gewebevorspann sind zwei voneinander unabhängige Anzeichen für De Luxe.",
                                     "premises": [],
                                     "@type": "inference"
                                 }
@@ -111565,7 +111573,7 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Phillips nennt den 8. September 2014 als Tag, an dem er die Rolle digitalisiert hat (Mail, 20.9.2026). Der Kopf der Datei nennt © Peter Phillips 2014 und stimmt im Jahr damit überein.",
+                                    "note": "Mail, 20.9.2026.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -111576,7 +111584,7 @@
                     }
                 },
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
-                "note": "Die e-Roll-Datei ist die unbearbeitete Ausgabe von Phillips’ pneumatischem Rollenleser: jede Spur schreibt beim Durchlauf ihrer Stanzung einen MIDI-Ton, alle mit derselben Anschlagstärke. Nummern nach seiner Regel: ein Ton trägt die MIDI-Nummer seiner Tonhöhe, eine Ausdrucksspur ihre Position auf der Licensee-Leiste plus 15.\n\nZeiten über die Töne auf die Achse der Edition gelegt: 461 der 464 Töne als Tonfolge an {{c9050e75-97a8-4862-9533-0f4b1439802b}} ausgerichtet; eine Parabel nimmt den wachsenden Durchmesser der Aufwickelrolle auf, ein gleitender Median über dreizehn Töne die örtlichen Dehnungen des umgestanzten Papiers, von dem die Töne um 0,56 mm (Median) abweichen.\n\nAusdrucksstanzungen liegen danach im Median 1,2 mm hinter ihren Symbolen und streuen mit 0,9 mm (Median) und 3,2 mm (95 %). Ein Schalter bleibt länger offen, als die Stanzung lang ist; Enden liegen hier daher später.\n\nSpur 8, das An des Una Corda-Pedals, kommt in der ganzen Datei nicht vor; ob der Leser diese Spur liest, ist nicht bekannt. Phillips’ Standard-MIDI-Datei desselben Exemplars ist dieselbe Lesung, um 1274 Ticks versetzt."
+                "note": "Ausdrucksstanzungen liegen im Median 1,2 mm hinter ihren Symbolen, ihre Enden später, und Spur 8, das An des Una Corda-Pedals, kommt in der Datei nicht vor."
             },
             "siglum": "Ne1",
             "modifications": [],
@@ -111594,7 +111602,7 @@
                         "certainty": "possible",
                         "reasons": [
                             {
-                                "note": "Die Sammlung nennen allein die Metadaten der emulierten MIDI-Datei, zusammen mit dem Scandatum. Anderweitig ist beides nicht zu belegen, und Warren Trachtman, der die Rolle 2007 gescannt hat, starb 2017.",
+                                "note": "Metadaten der emulierten MIDI-Datei.",
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -111616,11 +111624,11 @@
                                         "name": "Phillips, Peter",
                                         "sameAs": []
                                     },
-                                    "note": "Das Werk in Poughkeepsie räumte der Auto Pneumatic Action Company 1916 die Rechte an den Welte-Mignon-Patenten ein, um das Licensee-Instrument zu entwickeln. Die Rollen dafür entstanden von da an in Poughkeepsie aus den vorhandenen Welte-Mignon-Matrizen (Phillips 2016, S. 19 f.).",
+                                    "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Eine Licensee-Umstanzung kann nicht älter sein als die Rechte, aus denen sie hervorgeht. Die untere Grenze ist damit das Jahr 1916.",
+                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
                                     "premises": [],
                                     "@type": "inference"
                                 }
@@ -111652,7 +111660,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Der Kopf der MIDI-Datei nennt den 12. März 2007 als Tag des Scans.",
+                                    "note": "Kopf der MIDI-Datei.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -111673,7 +111681,7 @@
                         "version": "Beta Version, Feb. 23, 2007"
                     }
                 ],
-                "note": "Überliefert allein in Warren Trachtmans emulierter MIDI-Datei, öffentlich unter pianorollmusic.org. Trachtman hat die Rolle mit 300 DPI gescannt, am 17.3.2007 in eine e-Roll-Datei umgewandelt und emuliert. Una Corda-Pedal ist in der Emulation nicht erhalten."
+                "note": "Das Una Corda-Pedal ist in der Emulation nicht erhalten."
             },
             "carries": [
                 {
@@ -111682,7 +111690,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Töne und Dämpferpedal stimmen mit Phillips’ Lesung überein; abweichend allein ein cis′′ in T. 14 (Lücke von 3 mm, vermutlich eine fehlende Stanzung dieses Exemplars) und ein doppeltes {{symbol_1d1ecad2-6934-4afa-8204-e7a36fe30ed9|Ab des Pedals}}.\n\nAnschlagstärken folgen der Dynamik von Phillips’ Stanzungen, geprüft in deren Kodierung. Wo das Verfahren unterscheiden kann: Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt, vorhanden (sieben Stellen, zusammengefasster z-Wert +1,15 ± 0,23); Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} tilgt, fehlen (vier Stellen, −1,26 ± 0,10); Differenzierung der Mittelstimmen fehlt (−1,00 ± 0,18).\n\nAuf Phillips’ eigener Standard-MIDI-Datei gibt dasselbe Verfahren wieder, was seine Stanzungen zeigen, außer vor dem ersten Ton; das Crescendo-Paar vor dem Auftakt ist daher allein durch Phillips’ Lesung bezeugt.\n\nEine Änderung durch das Una Corda-Pedal zeigen die Anschlagstärken in T. 8′ bis 15 nicht.",
+                                    "note": "Töne und Dämpferpedal stimmen bis auf ein cis′′ in T. 14 mit Ne1 überein, und die Anschlagstärken zeigen die Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt (z = +1,15 ± 0,23), nicht aber die Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die es tilgt (z = −1,26 ± 0,10).",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.py",
@@ -111720,7 +111728,7 @@
                         "certainty": "likely",
                         "reasons": [
                             {
-                                "note": "Erschlossen: die Plattentasche nennt Richard C. Simonton, dessen Welte-Rollen heute in den USC Libraries liegen. Welches der drei dort verzeichneten Exemplare der Rolle 225 überspielt wurde, ist nicht bekannt.",
+                                "note": "Die Plattentasche nennt Richard C. Simonton, dessen Welte-Rollen heute in den USC Libraries liegen.",
                                 "@type": "simpleArgumentation"
                             }
                         ],
@@ -111752,7 +111760,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Plattentasche nennt den Steinway-Konzertflügel Nr. 261. Dass der Vorsetzer Kenneth K. Caswell gehörte und Caswell darin eine Ampico-Mechanik an die Stelle der Welte-Mechanik gesetzt hatte, berichtet Rex Lawson nach Caswells Erinnerung („On the Right Track“, The Pianola Journal 20 (2009), S. 37).",
+                                    "note": "Plattentasche; Rex Lawson, „On the Right Track“, The Pianola Journal 20 (2009), S. 37.",
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -111772,7 +111780,7 @@
                         "version": "0.0.6, checkpoint note_F1=0.9677_pedal_F1=0.9186"
                     }
                 ],
-                "note": "Überliefert allein in der Einspielung auf Legendary Masters of the Piano (The Classics Record Library, 1963, Katalognummer WV 6633), LP 1, Seite 2, Nr. 2, hier nach David Hertzbergs Überspielung von 2022 (SWV 6633).\n\nNach der Abschrift der Plattentasche auf mmdigest.com stellte Richard C. Simonton die Kassette für den Book-of-the-Month Club her; aufgenommen wurde sie „in Los Angeles, California, winter 1962-1963“.\n\nSimontons Welte-Rollen liegen heute in den USC Libraries; deren Verzeichnis (2000) führt Nr. 0225 in drei Exemplaren, keines als Rolle der amerikanischen Tochtergesellschaft vermerkt. Welches gespielt wurde, ist nicht bekannt.\n\nTöne und Timing folgen den roten Exemplaren: die Neuanschläge von {{2767844e-311e-4b97-8fb2-1b78db41e220}} sind nicht zu hören; das {{symbol_3b996240-61ae-4877-95a8-da238593e86a|e′′}}, das {{2767844e-311e-4b97-8fb2-1b78db41e220}} überbindet, erklingt; an den beiden Stellen, an denen die Licensee-Exemplare rund 27 mm länger laufen, weicht die Aufnahme um höchstens 0,2 mm ab, bei einer Streuung aller gleich langen Strecken von 1,4 mm.\n\nDie Überspielung klingt gleichbleibend 19 Cent zu hoch, durch Geschwindigkeit oder Stimmung. Transkribiert wurde die Monosumme nach Korrektur der Tonhöhe, mit Transkun (Yan und Duan 2024) und dem Verfahren von Kong et al. (2021); dessen Transkription enthält viele Fehltöne und ist daher mit der Zeitzuordnung von Transkun gepaart. Die Lautstärke der Töne ist aus beiden Transkriptionen und aus einer NMF-Zerlegung nach Ewert und Müller (2012) geschätzt.\n\nTranskriptionen und Auswertungen: https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/."
+                "note": "Legendary Masters of the Piano (The Classics Record Library, 1963, WV 6633), LP 1, Seite 2, Nr. 2, nach David Hertzbergs Überspielung von 2022 (SWV 6633)."
             },
             "carries": [
                 {
@@ -111781,7 +111789,7 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Lautstärke der gehörten Töne folgt der Dynamik von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}: Anschlagstärken von Transkun R² 0,74 gegen 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und 0,52 bei {{c9050e75-97a8-4862-9533-0f4b1439802b}}; von Kong 0,69 gegen 0,52; ebenso auf dem Mittel von vier Lautstärkemaßen unter allen sieben Einstellungen des Emulators.\n\nVon 23 Passagen mit Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, beurteilbar nach der Änderung der Lautstärke, spricht eine für sie. Wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, folgt die Aufnahme in allen 15 beurteilbaren Passagen {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}; ebenso den Crescendi, die {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} selbst hat, in beiden Hälften. Beschädigung der Rolle oder Ausfall am Instrument erklärt diese Lesarten nicht.\n\nAuf verformten Instrumenten emuliert – langsamere und schnellere Bälge, ausgefallene Ventile, gekrümmte Anschlagskurven – erscheinen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} in höchstens 0,5 % der Stichproben als {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} oder {{755d411a-0ba4-4f59-90a7-f231be3e66ad}}. Keine Strecke der Aufnahme weicht über den Zufall hinaus von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} ab; dieselben Skripte ergeben für die Aufnahme von Schmitz’ Exemplar (Sc1) (Sc1) (Sc1) (Sc1) (Sc1) (Sc1) weiterhin {{c9050e75-97a8-4862-9533-0f4b1439802b}}.\n\nDie Prämissen schließen ein Instrument unbekannter Regulierung ein, dessen Vorsetzer eine Ampico-Mechanik trug; daher nicht höher als wahrscheinlich gehalten.",
+                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}, mit den Anschlagstärken von Transkun zu R² 0,74 gegen 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -111991,7 +111999,7 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt {{2767844e-311e-4b97-8fb2-1b78db41e220}} die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, innerhalb von 3,3 mm: das Ab des Diskant-Crescendos bei 1987 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit seinem An auf 1931 und 1950 mm vorzieht ({{2767844e-311e-4b97-8fb2-1b78db41e220}} hat beide Betonungen), das An im Diskant bei 2873 mm, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, das Ab im Bass bei 4056 mm und das An im Bass bei 5583 mm, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} auf 4047 und 5563 mm verlegt. Alle vier liegen in Passagen, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} auch sonst überarbeitet.\n\nDie gleiche Stanzung an gleicher Stelle wird kaum zweimal unabhängig gesetzt, und in einer Vorlage im Stand von {{bab25aef-f80d-4ff0-b187-63030df8305a}} stand sie nicht mehr. Das An bei 2873 mm machte als eigene Einfügung zudem das Ab bei 2893 mm wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ; eine Einfügung, die eine Redundanz wirksam macht, ist nicht anzunehmen. {{2767844e-311e-4b97-8fb2-1b78db41e220}} steht dennoch unter {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, wie die Ableitung aus {{bab25aef-f80d-4ff0-b187-63030df8305a}} zeigt, und folgt an 20 der 25 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} einen Fehler berichtigt, dessen Berichtigung. Am einfachsten erklärt das eine zweite Vorlage im Stand von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, eine Kontamination. Welche Kopie es gewesen sein könnte, ist nicht bekannt.\n\nGewiss ist das nicht, und es geht gegen die Annahme, dass Kontamination in der Überlieferung der Rollen keine Rolle spielt. Zwei Erklärungen ohne Kontamination bleiben möglich, jede um den Preis eines Zufalls. Der Bearbeiter von {{2767844e-311e-4b97-8fb2-1b78db41e220}} kann die vier Stanzungen neu gesetzt haben: zufällig gelegte Stanzungen dieser Lesung treffen solche Stellen im Mittel 0,7-mal, viermal also selten, aber nicht nie. Oder {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{bab25aef-f80d-4ff0-b187-63030df8305a}} gehen auf einen verlorenen Stand zurück, in dem die neuen Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} schon neben den alten stehen; das erklärte, dass {{2767844e-311e-4b97-8fb2-1b78db41e220}} bei 1987 mm beide Betonungen trägt. Dann hätten {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} und {{c9050e75-97a8-4862-9533-0f4b1439802b}} die alten je für sich getilgt. Bei 4056 und 5583 mm wären das Redundanzen, deren Tilgung in zwei Ästen unabhängig geschehen kann. Die Betonungen bei 1964 und 2873 mm aber sind wirksam: ohne sie klingen in der Emulation auf dem T-100 die folgenden sechs und sieben Töne um bis zu 7,8 von 127 Stufen der Anschlagstärke leiser. Beide Äste hätten also dieselben zwei klingenden Betonungen zurücknehmen müssen.",
+                        "note": "An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt {{2767844e-311e-4b97-8fb2-1b78db41e220}} die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, obwohl es sonst unter {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} steht.",
                         "premises": [],
                         "applies": [
                             "rules#shared-addition",
@@ -112017,7 +112025,7 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "The punch rows of chains held at the same time lie in line across the tracks. They are read from the interiors of chains, which carry the machine's firing rows and none of the pianist's timing, over 70 pairs of tracks: the offset between two tracks runs at 1.01 um per mm across the roll, which is the roll's tilt in the scanner, and what is left per track once that tilt is taken out is 54 um rms, against a noise of about 35 um and a scan line of 200 um. Phillips (2016, pp. 112 f.) reads rows in line as the mark of one ram head driving all the punches and staggered rows as the mark of a driver per punch. What is left are hundredths of a millimetre, 5 per cent of this copy's advance of 1.02 mm, and is as likely the mounting of the punches as anything in the drive. A stagger under about one scan line would not show. The scan writes a line every 0.2 mm, so this reads the rows more coarsely than on the other copies and is held no higher than possible.",
+                        "note": "In line across 70 pairs of tracks: 54 µm rms per track once the scanner's tilt is taken out, against a noise of about 35 µm and a scan line of 200 µm.",
                         "premises": [],
                         "used": [
                             "/facsimiles/WR0225_02"
@@ -112043,7 +112051,7 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "Die Lesarten, die allein St1 überliefert, die sieben Tilgungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Lesarten des Una Corda-Pedals ändern die Lautstärke der Töne nicht genug, um sie aus der Aufnahme zu beurteilen (A-posteriori-Wahrscheinlichkeit 0,35 für jene Lesarten und 0,50 für die Tilgungen, auf dem Mittel der vier Lautstärkemaße). Das Exemplar kann darin von {{c9050e75-97a8-4862-9533-0f4b1439802b}} abweichen. {{8a074fdb-dfc1-480b-ac06-ae3c7a640521}} steht für diesen Text, dessen Bearbeitungen niemand angeben kann.",
+                        "note": "Die Lesarten, die allein St1 überliefert, die sieben Tilgungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die des Una Corda-Pedals sind aus der Aufnahme nicht zu beurteilen, so dass {{8a074fdb-dfc1-480b-ac06-ae3c7a640521}} für einen Text steht, dessen Bearbeitungen niemand angeben kann.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -112155,7 +112163,7 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht. Mit den Anschlagstärken von Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47). Dort liegt die A-posteriori-Wahrscheinlichkeit der Lesarten von {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} bei 0,92, über der Hälfte aber nur in 0,57 der Stichproben. In T. 8′ bis 10 zeigt die Lautstärke keine Spur des Flackerns des Una Corda-Pedals, das {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hinzufügt, ein schwacher Befund ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,65 der Stichproben vorgezogen).",
+                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht: mit Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -112185,7 +112193,7 @@
                 "certainty": "unlikely",
                 "reasons": [
                     {
-                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}. Das gilt ebenso für {{bab25aef-f80d-4ff0-b187-63030df8305a}}, {{c9050e75-97a8-4862-9533-0f4b1439802b}} und die Fassungen, die auf {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} zurückgehen. Für die Verschiebung in T. 13, die {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} tilgt, spricht die Lautstärke schwach ({{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} in 0,69 der Stichproben vorgezogen).",
+                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
