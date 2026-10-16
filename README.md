@@ -171,9 +171,12 @@ that attribution now say what the readings are. Ne1 was called Ph1 until
 reports that he read it from Nigel Nettheim's. The word ids of
 motivations are identifiers and keep the words they were minted with.
 The cleanups were once motivated as `cleanup-b`, `cleanup-b2`, `cleanup-c`
-and `cleanup-d3`, after the letters then current; since the edition moved
-to linked-rolls 0.76 a technical change states no motivation, and those
-ids name nothing any more.
+and `cleanup-d3`, after the letters then current. Since the edition moved
+to linked-rolls 0.76, every change of a version that derives from another
+states whether it is musical or technical, by the two motivations the
+vocabulary publishes, and reasons are given for musical changes only. The
+cleanups, `redundant-soft-pedal-release` and `closing-release` are
+technical changes, and those ids name nothing any more.
 
 ## Publishing the reconstruction
 
