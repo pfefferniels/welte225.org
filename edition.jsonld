@@ -64,10 +64,6 @@
                         "certainty": "true",
                         "reasons": [
                             {
-                                "actor": {
-                                    "name": "",
-                                    "sameAs": []
-                                },
                                 "comprehends": [
                                     "b9665f62-b032-4d73-a9ba-89a19cd08c43"
                                 ],
@@ -34963,6 +34959,10 @@
                             "reasons": [
                                 {
                                     "note": "Rex Lawson, The Pianola Journal 20 (2009), S. 26.",
+                                    "actor": {
+                                        "name": "Lawson, Rex",
+                                        "sameAs": []
+                                    },
                                     "@type": "beliefAdoption"
                                 }
                             ],
@@ -37213,10 +37213,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "actor": {
-                                        "name": "",
-                                        "sameAs": []
-                                    },
                                     "comprehends": [
                                         "7b967f0c-b0d1-42f0-98db-e492c3210370"
                                     ],
@@ -48996,10 +48992,6 @@
                                 "certainty": "true",
                                 "reasons": [
                                     {
-                                        "actor": {
-                                            "name": "",
-                                            "sameAs": []
-                                        },
                                         "comprehends": [
                                             "7b967f0c-b0d1-42f0-98db-e492c3210370"
                                         ],
@@ -49161,10 +49153,6 @@
                                 "reasons": [
                                     {
                                         "note": "Ähnliche händische Stanzungen finden sich auf den Condon-Rollen 395, dort von Denis Condon selbst, und 1367.",
-                                        "actor": {
-                                            "name": "",
-                                            "sameAs": []
-                                        },
                                         "@type": "simpleArgumentation"
                                     }
                                 ],
@@ -49555,10 +49543,6 @@
                             "certainty": "possible",
                             "reasons": [
                                 {
-                                    "actor": {
-                                        "name": "",
-                                        "sameAs": []
-                                    },
                                     "comprehends": [
                                         "9bf2fd33-2403-4f96-a05e-65ad09074907"
                                     ],
@@ -63106,10 +63090,6 @@
                                 "reasons": [
                                     {
                                         "note": "Gleiche Handschrift",
-                                        "actor": {
-                                            "name": "",
-                                            "sameAs": []
-                                        },
                                         "@type": "simpleArgumentation"
                                     }
                                 ],
@@ -63242,12 +63222,10 @@
                             "reasons": [
                                 {
                                     "actor": {
-                                        "name": "",
-                                        "sameAs": [
-                                            ""
-                                        ]
+                                        "name": "Widuch, Marc",
+                                        "sameAs": []
                                     },
-                                    "note": "Stanzdatum am Rollenende laut mündlicher Mitteilung Marc Widuch",
+                                    "note": "Mündliche Mitteilung: Stanzdatum am Rollenende.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
@@ -85408,18 +85386,10 @@
                                 "reasons": [
                                     {
                                         "note": "Das Loch überdeckt die Spuren 1 und 2 zugleich, Mezzoforte-Aus und -Ein, was keinen lesbaren Befehl ergibt, und seine Enden laufen nicht rund aus wie die der gestanzten.",
-                                        "actor": {
-                                            "name": "",
-                                            "sameAs": []
-                                        },
                                         "@type": "simpleArgumentation"
                                     },
                                     {
                                         "note": "Dagegen sind die Längsränder so gerade wie die der maschinell gestanzten Rückspulstanzung derselben Rolle, 0,50 und 0,53 gegen 0,56 und 0,57 Pixel Streuung.",
-                                        "actor": {
-                                            "name": "",
-                                            "sameAs": []
-                                        },
                                         "@type": "simpleArgumentation"
                                     }
                                 ],
@@ -85461,7 +85431,11 @@
                         "certainty": "likely",
                         "reasons": [
                             {
-                                "note": "Julian Dyer, Mail, 8.9.2026.",
+                                "note": "Mail, 8.9.2026.",
+                                "actor": {
+                                    "name": "Dyer, Julian",
+                                    "sameAs": []
+                                },
                                 "@type": "beliefAdoption"
                             }
                         ],
@@ -111698,6 +111672,10 @@
                             "reasons": [
                                 {
                                     "note": "Plattentasche; Rex Lawson, „On the Right Track“, The Pianola Journal 20 (2009), S. 37.",
+                                    "actor": {
+                                        "name": "Lawson, Rex",
+                                        "sameAs": []
+                                    },
                                     "@type": "beliefAdoption"
                                 }
                             ],
