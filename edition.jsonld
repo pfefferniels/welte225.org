@@ -63225,7 +63225,7 @@
                                         "name": "Widuch, Marc",
                                         "sameAs": []
                                     },
-                                    "note": "Stanzdatum am Rollenende laut mündlicher Mitteilung Marc Widuch",
+                                    "note": "Mündliche Mitteilung: Stanzdatum am Rollenende.",
                                     "@type": "beliefAdoption"
                                 },
                                 {
@@ -85431,7 +85431,7 @@
                         "certainty": "likely",
                         "reasons": [
                             {
-                                "note": "Julian Dyer, Mail, 8.9.2026.",
+                                "note": "Mail, 8.9.2026.",
                                 "actor": {
                                     "name": "Dyer, Julian",
                                     "sameAs": []
