@@ -4656,7 +4656,7 @@
                             "@id": "symbol_e22ac75f-56d7-4e14-92ea-0bbd2168a0e6"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "7f8e297b-44c4-444d-88c0-21e5305ca914"
                 },
@@ -4697,7 +4697,7 @@
                             "@id": "symbol_09b7c3eb-6de0-40e4-bbf9-16dea91c4dbe"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "fb939f6f-8c7d-445c-b4a9-9ecf485ac1b9"
                 },
@@ -4738,7 +4738,7 @@
                             "@id": "symbol_23e43b39-886f-4b6c-8827-127a70774470"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "2ab33014-d2ce-4c40-b3df-7213993d55a3"
                 },
@@ -4776,7 +4776,7 @@
                             "@id": "symbol_8fb460ac-9885-4b90-8b79-012e0d86b7f8"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "ea208aa8-c323-44d6-8667-9f47aa66a9ef"
                 },
@@ -4811,7 +4811,7 @@
                             "@id": "symbol_22166ae2-018b-42f4-a072-5656e9492283"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "b6bcfb71-633d-4066-9354-83cb4959c541"
                 },
@@ -4852,7 +4852,7 @@
                             "@id": "symbol_ccf1f792-e182-403a-bfba-22ae431a040c"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "30c02b21-f748-4910-ab89-f476f10e57e3"
                 },
@@ -4890,7 +4890,7 @@
                             "@id": "symbol_9de0f850-5187-4e51-a40a-cbbdc1decc1f"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "44889eb1-b985-4611-8035-125cac2e5e25"
                 },
@@ -4928,7 +4928,7 @@
                             "@id": "symbol_efb8f72d-2302-4369-bdc2-dc8c4fb03c50"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "5c83e6a7-8aa4-4816-8a28-d084b1e9bdc9"
                 },
@@ -7119,7 +7119,7 @@
                     "delete": [
                         "symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "cleanup-c",
                     "@type": "edit",
                     "@id": "953eaf21-c795-4797-a18d-e42b4951a19e"
                 },
@@ -7127,7 +7127,7 @@
                     "delete": [
                         "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "cleanup-c",
                     "@type": "edit",
                     "@id": "85de21d2-16a5-4750-9dff-56b8ea54db4c"
                 },
@@ -7135,7 +7135,7 @@
                     "delete": [
                         "symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "cleanup-c",
                     "@type": "edit",
                     "@id": "025d8100-0d10-4c97-8b1d-e7d0f8e87cad"
                 },
@@ -7143,7 +7143,7 @@
                     "delete": [
                         "symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "cleanup-c",
                     "@type": "edit",
                     "@id": "f5c4a2ee-8409-40ce-91f8-0994ab4ef721"
                 },
@@ -28392,7 +28392,7 @@
                     "delete": [
                         "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "redundant-soft-pedal-release",
                     "@type": "edit",
                     "@id": "a3b18463-e993-412e-99e9-904782d66213"
                 },
@@ -35100,7 +35100,7 @@
                             "@id": "symbol_b7371e26-b85f-44ee-b966-f37684309e8b"
                         }
                     ],
-                    "motivation": "cancel-row",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "7ceeca04-e793-40e7-9808-95c9bd120e1e"
                 },
@@ -35178,7 +35178,7 @@
                             "@id": "symbol_1411a7db-4373-4e55-979b-02b480fc20d3"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "grosse-melodische-entwicklung-hin-zum-g",
                     "@type": "edit",
                     "@id": "adf012e1-e3c2-4426-aa38-829a96e057f5"
                 },
@@ -35227,7 +35227,7 @@
                         },
                         "@id": "db223dc8-80e6-4390-b793-4e2c664c0382"
                     },
-                    "motivation": "taken-from-mother-roll",
+                    "motivation": "grosse-melodische-entwicklung-hin-zum-g",
                     "@type": "edit",
                     "@id": "de7cad42-2f6b-4901-b3c5-19643a72cd97"
                 },
@@ -35491,7 +35491,7 @@
                             "@id": "symbol_cf591959-8c79-4ead-b033-86bfad744283"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "446b4793-9c20-4e06-97c6-932e2c9b906c"
                 },
@@ -35512,7 +35512,7 @@
                     "delete": [
                         "symbol_0cb074e6-70dd-4dcf-900c-b14f64479690"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "dee46650-c363-4249-b78e-9ed03adfe8ae"
                 },
@@ -35553,7 +35553,7 @@
                     "delete": [
                         "symbol_c6636814-bbd5-4c22-b1d6-e286a3b30661"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "106d5468-d1b3-47fc-b49f-c95cd321ae6e"
                 },
@@ -35595,7 +35595,7 @@
                         },
                         "@id": "7667e927-95d2-42b6-9dec-03ba9c75bef6"
                     },
-                    "motivation": "taken-from-mother-roll",
+                    "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "3264624a-fc41-4420-9462-178606fa9a6f"
                 },
@@ -35829,7 +35829,7 @@
                             "@id": "symbol_ecb33632-e2fc-4960-ba92-4d5476160e8d"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "957fb2a0-b613-4429-a320-aa6308cc2bde"
                 },
@@ -35907,7 +35907,7 @@
                     "delete": [
                         "symbol_39dc8bad-8b78-46f6-8373-67b4fcbcb40d"
                     ],
-                    "motivation": "held-note-shortened",
+                    "motivation": "sauberes-legato",
                     "@type": "edit",
                     "@id": "cf23f518-2b92-433f-91aa-de4d28af43e4"
                 },
@@ -36083,7 +36083,7 @@
                         },
                         "@id": "324b6633-9a86-4245-b3f9-27062c8729f1"
                     },
-                    "motivation": "una-corda-dropped",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "ce95be9d-aa16-4d11-bf4a-73a9d8031221"
                 },
@@ -36105,7 +36105,7 @@
                         },
                         "@id": "e1c08c99-60bb-49c1-8e71-b5c0c99ddf36"
                     },
-                    "motivation": "una-corda-dropped",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "12b3faa5-d93b-42ed-baed-8aedd9ba0928"
                 },
@@ -36127,7 +36127,7 @@
                         },
                         "@id": "92d925f9-2806-476b-9c98-dacae1ce23a0"
                     },
-                    "motivation": "una-corda-dropped",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "52641ef3-76b9-4079-9c59-47f430f2b93c"
                 },
@@ -36149,7 +36149,7 @@
                         },
                         "@id": "68eab8c0-16aa-43c6-97d7-6e6dd2ee1088"
                     },
-                    "motivation": "una-corda-dropped",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "ff91a62d-0422-4aae-85fb-0ba7559a59c7"
                 },
@@ -36171,7 +36171,7 @@
                         },
                         "@id": "32b9fe03-8fb3-41a0-abe3-39aed5128c36"
                     },
-                    "motivation": "una-corda-dropped",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "702f6986-8f2b-460c-ab41-bb4e4c186b14"
                 },
@@ -36282,7 +36282,7 @@
                     "delete": [
                         "symbol_01150949-f506-4c85-b945-08ecefcca01f"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "sauberes-legato",
                     "@type": "edit",
                     "@id": "c3cfe1b5-cae9-4135-a1c9-c23110fe21d3"
                 },
@@ -36302,7 +36302,7 @@
                     "delete": [
                         "symbol_1d4e89c3-c2ef-45cb-8665-5737c87761bf"
                     ],
-                    "motivation": "held-note-shortened",
+                    "motivation": "sauberes-legato",
                     "@type": "edit",
                     "@id": "4bb5bf42-ca8d-4b3c-8482-b65ddf80ccec"
                 },
@@ -36322,7 +36322,7 @@
                     "delete": [
                         "symbol_7947b0a6-f563-4864-aa96-c439e00e79be"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "sauberes-legato",
                     "@type": "edit",
                     "@id": "64939eae-0d61-4144-b5af-a9cd2d64d0b7"
                 },
@@ -36372,7 +36372,7 @@
                             "@id": "symbol_7900a69c-885c-44b4-b063-b5c9a0d06595"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "melodic-differentiation",
                     "@type": "edit",
                     "@id": "a6343cbd-6c4f-4bdd-9287-88ade9daa001"
                 },
@@ -36380,7 +36380,7 @@
                     "delete": [
                         "symbol_efb8f72d-2302-4369-bdc2-dc8c4fb03c50"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "melodic-differentiation",
                     "@type": "edit",
                     "@id": "dcbaadc3-3086-4021-8444-349c460de660"
                 },
@@ -36388,7 +36388,7 @@
                     "delete": [
                         "symbol_ca1fbbe3-3eaf-4e95-b3cf-33f850826c13"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "melodic-differentiation",
                     "@type": "edit",
                     "@id": "8b2425af-b893-4fac-abb5-82f4ad381165"
                 },
@@ -36409,7 +36409,7 @@
                     "delete": [
                         "symbol_fd059737-b094-4dea-acc1-edd817147fbd"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "melodic-differentiation",
                     "@type": "edit",
                     "@id": "e885c221-0ffb-48df-bac5-8c0647c4e6da"
                 },
@@ -36448,7 +36448,7 @@
                             "@id": "symbol_eecdec7c-42cc-40cd-8926-35967f225f69"
                         }
                     ],
-                    "motivation": "following-command-made-effective",
+                    "motivation": "reperatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "c1ff3c8f-2943-4601-8a0d-f833d91bd953"
                 },
@@ -37104,7 +37104,7 @@
                             "@id": "symbol_3086065e-1eb7-446e-8b81-02cf1a8598b3"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "50e0d3ff-3fac-4eba-b671-b6af927a5198"
                 },
@@ -111763,7 +111763,7 @@
             "@id": "anacrusis-accent"
         },
         {
-            "note": "Das An des Crescendos rückt vor, die alte Stanzung bleibt stehen",
+            "note": "Stärkere Betonung des e",
             "@type": "motivation",
             "@id": "crescendo-onset-moved"
         },
@@ -111776,6 +111776,11 @@
             "note": "Differenzierung der Mittelstimmen",
             "@type": "motivation",
             "@id": "426a0404-1911-49d7-a070-c53ca269bc83"
+        },
+        {
+            "note": "Bereinigung",
+            "@type": "motivation",
+            "@id": "cleanup-c"
         },
         {
             "note": "Das Crescendo vor dem Auftakt rückt hinter ihn, der Auftakt erhält ein Forzando",
@@ -111848,14 +111853,14 @@
             "@id": "note-retimed"
         },
         {
+            "note": "Das zweite, wirkungslose Ab des Una Corda-Pedals entfällt",
+            "@type": "motivation",
+            "@id": "redundant-soft-pedal-release"
+        },
+        {
             "note": "Abweichender Notentext: ein zusätzliches f′′, ein verlegtes g",
             "@type": "motivation",
             "@id": "note-text-differs"
-        },
-        {
-            "note": "Löschreihe vor dem ersten Ton, die Pedale, das Una Corda-Pedal und alle Ausdrucksfunktionen zurücksetzt",
-            "@type": "motivation",
-            "@id": "cancel-row"
         },
         {
             "note": "Der gehaltene Ton endet kurz nach dem nächsten Anschlag",
@@ -111868,19 +111873,9 @@
             "@id": "note-restruck"
         },
         {
-            "note": "Die Stanzung macht den folgenden Befehl derselben Funktion wirksam, der sonst redundant bliebe",
-            "@type": "motivation",
-            "@id": "following-command-made-effective"
-        },
-        {
             "note": "Die Betonung entfällt mit ihrer An-Stanzung, die Ab-Stanzung bleibt wirkungslos stehen",
             "@type": "motivation",
             "@id": "accent-withdrawn"
-        },
-        {
-            "note": "Die Verschiebung durch das Una Corda-Pedal entfällt im Stück",
-            "@type": "motivation",
-            "@id": "una-corda-dropped"
         },
         {
             "note": "Die Wiederholung des Tons entfällt, er klingt durch",
@@ -111891,6 +111886,31 @@
             "note": "Eine Stanzung der Mutterrolle, die eine spätere Revision verlegt oder getilgt hat, vermutlich aus einer zweiten Vorlage übernommen",
             "@type": "motivation",
             "@id": "taken-from-mother-roll"
+        },
+        {
+            "@type": "motivation",
+            "@id": "reperatur-einer-ansonsten-redundanten",
+            "note": "Reperatur"
+        },
+        {
+            "@type": "motivation",
+            "@id": "durchgaengiges-una-corda",
+            "note": "Durchgängiges Una Corda"
+        },
+        {
+            "@type": "motivation",
+            "@id": "grosse-melodische-entwicklung-hin-zum-g",
+            "note": "Große melodische Entwicklung hin zum g"
+        },
+        {
+            "@type": "motivation",
+            "@id": "folgen-der-melodischen-kontur",
+            "note": "Folgen der melodischen Kontur"
+        },
+        {
+            "@type": "motivation",
+            "@id": "sauberes-legato",
+            "note": "Sauberes Legato"
         }
     ],
     "@included": [
