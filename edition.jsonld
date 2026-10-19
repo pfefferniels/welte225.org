@@ -111800,11 +111800,6 @@
             "@id": "426a0404-1911-49d7-a070-c53ca269bc83"
         },
         {
-            "note": "Ausgedünntes Crescendo im Diskant",
-            "@type": "motivation",
-            "@id": "treble-crescendo-thinned"
-        },
-        {
             "note": "Das Crescendo vor dem Auftakt rückt hinter ihn, der Auftakt erhält ein Forzando",
             "@type": "motivation",
             "@id": "swell-behind-upbeat"
