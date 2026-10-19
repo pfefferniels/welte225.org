@@ -308,10 +308,13 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Das {{symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f|zweite An}} ist die stehen gebliebene Stanzung des auf das {{symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4|frühere An}} vorgezogenen Crescendos.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
+                                    ],
+                                    "used": [
+                                        "symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f",
+                                        "symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4"
                                     ],
                                     "@type": "inference"
                                 }
@@ -372,10 +375,13 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Ohne das {{symbol_ff2b533b-cc1f-4783-a224-31c24eee0900|An des Una Corda-Pedals}}, das allein Wi1 trägt, stünde schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} das {{symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b|zweite Ab}} ohne Wirkung.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
+                                    ],
+                                    "used": [
+                                        "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900",
+                                        "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                                     ],
                                     "@type": "inference"
                                 }
@@ -6747,7 +6753,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die sechs Befehle sind wirkungslos, vier erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, zwei schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement"
@@ -6773,7 +6778,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die sechs Befehle sind wirkungslos, vier erst durch Bearbeitungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, zwei schon in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement"
@@ -28191,10 +28195,12 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Als Hinzufügung von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} machte das {{symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3|Loslassen des Dämpferpedals}} eine in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} bestehende Redundanz sinnvoll; es steht also in {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, und Wi1 hat es verloren.",
                                     "premises": [],
                                     "applies": [
                                         "rules#explain-redundancy"
+                                    ],
+                                    "used": [
+                                        "symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3"
                                     ],
                                     "@type": "inference"
                                 }
@@ -28286,7 +28292,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die rasch wechselnden Stanzungen des Una Corda-Pedals in T. 9 trägt allein Wi1, und keine Redundanz spricht dafür, dass {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} sie getilgt hat.",
                                     "premises": [],
                                     "applies": [
                                         "rules#refinement",
@@ -35571,13 +35576,13 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Als eigene Einfügung machte die Stanzung das {{symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a|Ab}} wieder wirksam, das {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} mit der Tilgung wirkungslos stehen ließ.",
                                     "premises": [
                                         "38273a55-76b7-4667-9262-f1b9c4772512"
                                     ],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
+                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt",
+                                        "symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a"
                                     ],
                                     "applies": [
                                         "rules#explain-redundancy"
@@ -48853,7 +48858,6 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "In line across 69 pairs of tracks: 46 µm rms per track once the scanner's tilt is taken out, against a noise of about 30 µm and a scan line of 85 µm.",
                                         "premises": [],
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/m/mf320jq4997_analysis.txt.bz2"
@@ -48936,7 +48940,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "Linierung im Spurabstand mit der Stärke 43,5 (unlinierte Kopien höchstens 1,7, linierte mindestens 36), Papiergrund L* 30,2, a* 22,4, b* 20,1 (CIELAB, D65).",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/mf320jq4997%2Fmf320jq4997_0001/",
                                         "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
@@ -48979,8 +48982,7 @@
                     "name": "Rollenscanner der Stanford University Libraries",
                     "sameAs": []
                 },
-                "output": "mf320jq4997_analysis.txt",
-                "note": "Signatur „Stanford Libraries CONDON ROLL 47“, aus der Sammlung Denis Condon."
+                "output": "mf320jq4997_analysis.txt"
             },
             "siglum": "St1",
             "modifications": [
@@ -49312,7 +49314,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "trebletear001",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49344,7 +49345,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "trebletear002",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49376,7 +49376,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "basstear001",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49408,7 +49407,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "basstear002",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49440,7 +49438,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "basstear003",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49472,7 +49469,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "basstear005",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -49504,7 +49500,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "basstear004",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -62952,7 +62947,6 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "In line across 70 pairs of tracks: 35 µm rms per track once the scanner's tilt is taken out, against a noise of about 8 µm and a scan line of 85 µm.",
                                         "premises": [],
                                         "used": [
                                             "https://raw.githubusercontent.com/pianoroll/piano-roll-analyses/main/analysis/w/wv912mm2332_analysis.txt.bz2"
@@ -63028,7 +63022,6 @@
                             "certainty": "true",
                             "reasons": [
                                 {
-                                    "note": "Papiergrund L* 21,0, a* 26,0, b* 22,5 (CIELAB, D65), Linierung im Spurabstand mit der Stärke 1,1.",
                                     "used": [
                                         "https://stacks.stanford.edu/image/iiif/wv912mm2332%2Fwv912mm2332_0001/",
                                         "https://github.com/pfefferniels/condon-dates/blob/4e99afa1cca4835ba4d0495a4ed84a019e8930ca/paper/colour.py",
@@ -63071,8 +63064,7 @@
                     "name": "Rollenscanner der Stanford University Libraries",
                     "sameAs": []
                 },
-                "output": "wv912mm2332_analysis.txt",
-                "note": "Signatur „Stanford Libraries CONDON ROLL 48“; Peter Phillips’ Lesung einer roten Condon-Rolle („Traumerei (Schumann) Grunfeld RW.mid“, Mail, 8.9.2026) ist von diesem Exemplar, dem einzigen mit Randrissen, dessen Lautstärkeverlauf sie zu r = 0,93 folgt (St1: 0,72)."
+                "output": "wv912mm2332_analysis.txt"
             },
             "siglum": "St2",
             "modifications": [
@@ -63259,7 +63251,6 @@
                                     "@type": "beliefAdoption"
                                 },
                                 {
-                                    "note": "Der Vorschub von 1,020 mm legte die Kopie vor den 1. Februar 1910, ist aber nur mit der Stärke 0,21 gefunden und gilt als möglich, so dass das Datum wahrscheinlich bleibt.",
                                     "premises": [
                                         "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
                                         "435efaf8-6294-4d55-b29d-f4351f83b127",
@@ -72707,7 +72698,6 @@
                                     "certainty": "possible",
                                     "reasons": [
                                         {
-                                            "note": "The interquartile spread of 0.155 mm is ten times that of the other copies, so the scan's transport enters the value.",
                                             "used": [
                                                 "/facsimiles/WR0225_02",
                                                 "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
@@ -72879,11 +72869,6 @@
                                     },
                                     "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
-                                },
-                                {
-                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
-                                    "premises": [],
-                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -78798,8 +78783,7 @@
                             "to": 3303.209058
                         },
                         "condition": {
-                            "conditionType": "missing-perforation",
-                            "description": "Nach der ersten Stanzung der Kette fehlt vermutlich ein Stanzschritt: die Brücke misst im Scan 1,6 mm, die übrigen 0,8 bis 0,9 mm."
+                            "conditionType": "missing-perforation"
                         },
                         "@type": "HoleChain",
                         "@id": "2f4a1b57-e67b-41c7-9dd7-b50ac470d4eb"
@@ -85325,7 +85309,6 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "In line across 84 pairs of tracks: 21 µm rms per track once the scanner's tilt is taken out, against a noise of about 16 µm and a scan line of 141 µm.",
                                         "premises": [],
                                         "used": [
                                             "/facsimiles/WelteLicensee_225"
@@ -85351,7 +85334,6 @@
                                     "certainty": "likely",
                                     "reasons": [
                                         {
-                                            "note": "The scan was resampled from 180 lines per inch along the roll, so the millimetres rest on the scanner's header.",
                                             "used": [
                                                 "/facsimiles/WelteLicensee_225",
                                                 "https://github.com/pfefferniels/welte225.org/blob/a0ba858/punch-225/settings225.py"
@@ -85403,7 +85385,6 @@
                     "name": "Chase, Spencer",
                     "sameAs": []
                 },
-                "note": "Quer liest der Scan 0,012 Zoll zu breit, so dass Lochbreiten auf diesem Exemplar nicht als Befund taugen.",
                 "software": [
                     {
                         "name": "cis2roll.py"
@@ -85507,11 +85488,6 @@
                                     },
                                     "note": "Hagmann 1984, S. 42 f., 89 und 117, Anm. 15.",
                                     "@type": "beliefAdoption"
-                                },
-                                {
-                                    "note": "Ein Exemplar der grünen Umstanzung ist nicht älter als das System, für das es gestanzt ist.",
-                                    "premises": [],
-                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -99868,7 +99844,6 @@
                                 "certainty": "likely",
                                 "reasons": [
                                     {
-                                        "note": "In line across 149 pairs of tracks: 74 µm rms per track once the scanner's tilt is taken out, against a noise of about 33 µm and a scan line of 71 µm.",
                                         "premises": [],
                                         "used": [
                                             "/facsimiles/WelteT98_225"
@@ -100137,7 +100112,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik von {{c9050e75-97a8-4862-9533-0f4b1439802b}} besser als der von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} und {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, mit den Anschlagstärken von Transkun zu R² 0,65 gegen 0,61 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -100240,11 +100214,6 @@
                                     },
                                     "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
-                                },
-                                {
-                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
-                                    "premises": [],
-                                    "@type": "inference"
                                 },
                                 {
                                     "actor": {
@@ -111535,11 +111504,6 @@
                                     },
                                     "note": "Mail, 22.9.2026, mit dem Scan des Schachteletiketts (Welte225BoxLabel.jpg).",
                                     "@type": "beliefAdoption"
-                                },
-                                {
-                                    "note": "Etikett der Schachtel und fehlender Gewebevorspann sind zwei voneinander unabhängige Anzeichen für De Luxe.",
-                                    "premises": [],
-                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -111584,7 +111548,7 @@
                     }
                 },
                 "output": "Traumerei (Schumann) Grunfeld LW e.mid, am 15. September 2026 von Peter Phillips geschickt",
-                "note": "Ausdrucksstanzungen liegen im Median 1,2 mm hinter ihren Symbolen, ihre Enden später, und Spur 8, das An des Una Corda-Pedals, kommt in der Datei nicht vor."
+                "note": "Spur 8, das An des Una Corda-Pedals, kommt in der Datei nicht vor."
             },
             "siglum": "Ne1",
             "modifications": [],
@@ -111626,11 +111590,6 @@
                                     },
                                     "note": "Phillips 2016, S. 19 f.",
                                     "@type": "beliefAdoption"
-                                },
-                                {
-                                    "note": "Eine Licensee-Umstanzung ist nicht älter als die Rechte von 1916, aus denen sie hervorgeht.",
-                                    "premises": [],
-                                    "@type": "inference"
                                 }
                             ],
                             "@type": "belief",
@@ -111690,7 +111649,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Töne und Dämpferpedal stimmen bis auf ein cis′′ in T. 14 mit Ne1 überein, und die Anschlagstärken zeigen die Hinzufügungen von {{c9050e75-97a8-4862-9533-0f4b1439802b}}, die {{2767844e-311e-4b97-8fb2-1b78db41e220}} trägt (z = +1,15 ± 0,23), nicht aber die Stanzungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, die es tilgt (z = −1,26 ± 0,10).",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.py",
@@ -111717,27 +111675,6 @@
         {
             "measurements": {},
             "conditions": [],
-            "keeper": {
-                "name": "USC Libraries",
-                "sameAs": [
-                    "https://d-nb.info/gnd/1229956-X",
-                    "http://www.wikidata.org/entity/Q7896339"
-                ],
-                "@annotation": {
-                    "belief": {
-                        "certainty": "likely",
-                        "reasons": [
-                            {
-                                "note": "Die Plattentasche nennt Richard C. Simonton, dessen Welte-Rollen heute in den USC Libraries liegen.",
-                                "@type": "simpleArgumentation"
-                            }
-                        ],
-                        "@type": "belief",
-                        "@id": "84ffa7a0-4646-4e4c-85b5-ff1d57e01587"
-                    },
-                    "@id": "de385a65-84af-47fa-abcb-ae0901507d4e"
-                }
-            },
             "production": {
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
@@ -111789,7 +111726,6 @@
                             "certainty": "likely",
                             "reasons": [
                                 {
-                                    "note": "Die Lautstärke der gehörten Töne folgt der Dynamik von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} besser als der von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}, {{bab25aef-f80d-4ff0-b187-63030df8305a}} oder {{c9050e75-97a8-4862-9533-0f4b1439802b}}, mit den Anschlagstärken von Transkun zu R² 0,74 gegen 0,55 bei {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                                     "premises": [],
                                     "used": [
                                         "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -111999,7 +111935,6 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "An vier der 45 Stellen, an denen {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} eine Stanzung von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, trägt {{2767844e-311e-4b97-8fb2-1b78db41e220}} die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}, obwohl es sonst unter {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} steht.",
                         "premises": [],
                         "applies": [
                             "rules#shared-addition",
@@ -112025,7 +111960,6 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "In line across 70 pairs of tracks: 54 µm rms per track once the scanner's tilt is taken out, against a noise of about 35 µm and a scan line of 200 µm.",
                         "premises": [],
                         "used": [
                             "/facsimiles/WR0225_02"
@@ -112079,7 +112013,6 @@
                 "certainty": "unlikely",
                 "reasons": [
                     {
-                        "note": "Die Lesarten, die allein {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} hat, fehlen (A-posteriori-Wahrscheinlichkeit 2,5·10⁻²¹ auf dem Mittel der vier Lautstärkemaße).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -112107,7 +112040,6 @@
                 "certainty": "unlikely",
                 "reasons": [
                     {
-                        "note": "Die Lesarten, die {{c9050e75-97a8-4862-9533-0f4b1439802b}} zu {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} hinzufügt, sind vorhanden (A-posteriori-Wahrscheinlichkeit 1,00 auf dem Mittel der vier Lautstärkemaße), und {{c9050e75-97a8-4862-9533-0f4b1439802b}} passt mit jeder der beiden Transkriptionen allein besser als {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}}.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/f2b1477/schmitz-225/trans/report_data.json",
@@ -112135,7 +112067,6 @@
                 "certainty": "unlikely",
                 "reasons": [
                     {
-                        "note": "Die Lesarten, die {{e07c4be8-f44b-496d-8a6c-026006340441}} zu {{c9050e75-97a8-4862-9533-0f4b1439802b}} hinzufügt, fehlen, darunter das vorgezogene c in T. 23, und die Differenzierung der Mittelstimmen, die {{e07c4be8-f44b-496d-8a6c-026006340441}} von {{c9050e75-97a8-4862-9533-0f4b1439802b}} hat, fehlt ebenfalls (zusammengefasster z-Wert −1,00 ± 0,18).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/an/recon/eroll_test.txt",
@@ -112163,7 +112094,6 @@
                 "certainty": "possible",
                 "reasons": [
                     {
-                        "note": "Ob die Lesarten, die {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} zu {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} hinzufügt, vorhanden sind, entscheidet die Aufnahme nicht: mit Transkun passt {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} etwas besser (R² 0,74 gegenüber 0,73), auf dem Mittel der vier Lautstärkemaße {{755d411a-0ba4-4f59-90a7-f231be3e66ad}} (0,48 gegenüber 0,47).",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
@@ -112193,7 +112123,6 @@
                 "certainty": "unlikely",
                 "reasons": [
                     {
-                        "note": "Die Hinzufügungen von {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} fehlen (A-posteriori-Wahrscheinlichkeit 0,00 auf dem Mittel der vier Lautstärkemaße), und wo {{19fd4209-81cc-4d03-b2c3-fc7518dbba14}} Stanzungen von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}} verlegt oder tilgt, zeigt die Aufnahme die von {{0e5f443d-0dd9-4810-9dbe-7f5007df490f}}.",
                         "premises": [],
                         "used": [
                             "https://github.com/pfefferniels/welte225.org/blob/df38575/simonton-225/trans/report_data.json",
