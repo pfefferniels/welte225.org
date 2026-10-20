@@ -28512,226 +28512,6 @@
                             "scope": "bass",
                             "carriers": [
                                 {
-                                    "@id": "617f2cf5-85a4-4d75-b42c-96b0249f8430"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_7a4230f4-7451-4a7a-8ee7-687395882ab5"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_4efd31e0-ee7c-48c5-8383-eb100698ab14",
-                        "symbol_f16b36a6-6f50-4546-9f9d-56c7eb15e4e6"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "9e6ad5a1-9e99-4ad2-bdde-ae62328691c7"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "89c49980-6522-47c7-80d5-b89b4c51f297"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_7db1342c-6f2e-47d5-91c1-a435a4911e3a"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_635ab925-7c60-495f-bc85-8cb9d27b3f41",
-                        "symbol_dc6d76be-0206-487b-80f1-d61672aecc65"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "e18db374-a6f6-4cba-85b7-7fdc9be1a206"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "dc80efea-86c4-4e8c-a2b6-935848b9ca01"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_eafe4606-16c8-4836-ae25-2faa11aee26d"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_641bc685-3d4f-404f-9ddb-03a198a43311",
-                        "symbol_1dade7b6-12e5-4456-bba0-4dbcae212304"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "8f4d3c56-a62b-4ca4-81d0-c9c12dccd0cb"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "b46ae8fc-2f26-4007-82c2-b39252bd4284"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_24213ca8-700a-4268-a11c-ea1ee3681ca8"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_5750fa55-ddc0-41ce-80df-c4f594ed1d87",
-                        "symbol_b2fe2b5c-85ef-4bc4-8cd7-4b97b449e14e"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "0c0228c1-84ef-4a25-a5f3-9b702a6ae708"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "6e680f7a-7d28-4652-9bf8-9fef488d867b"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_ed371434-581e-40e4-8c43-6099ad23e626"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_66552792-c215-45c9-828e-7b645a0a6b7f",
-                        "symbol_26a62aab-29c4-4f67-9d95-b07addbb5214"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "c58a52a6-2639-4022-8429-52208f20eb59"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "6096dcd7-e86a-432e-bca9-46584b283f38"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_69a32e8c-b1d5-4873-a4e4-da25313f180f"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_92c575eb-5767-4cf8-9d74-2f5de03dfcbc",
-                        "symbol_a1d1d9b6-bfbb-43cc-8564-3cbc5277105f"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1736667c-f16a-4fbe-8cca-dc0da6bfe373"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5ee6c2ce-8621-4719-92b3-98c3e217310b"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_c77f6df2-1cff-42de-84d8-e6b971153c50"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_f761b4d6-4de3-4adc-9198-4849353f72bb",
-                        "symbol_eda638b5-d697-4448-a49c-bdc6db476b2a"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "7b75fe7a-20db-4f08-b015-a0e875c82650"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "fa22ad54-815a-4922-89f7-cfa312c1509b"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_4adc51a9-cbdf-4e0c-92b8-c37c9068356c"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_5eecb459-5675-427a-be2e-4a9b35f04eb5",
-                        "symbol_f34264a1-426d-4ffc-9a3a-02b977977a6d"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "56c86db4-6d70-4dbd-9eed-ce144741ff82"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "bf449e11-f8bc-475b-828d-899385b4fb1c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_00ce730b-257d-4a57-a422-58651b870acd"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_46200256-524e-4172-8d78-9b80ed951d86",
-                        "symbol_38813377-f5bb-4fdb-abf9-6dd4f19dba93"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "c7fe723a-57a8-49c7-9a3f-a3e06e19db40"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "b7384f5b-cd8b-4095-b3ae-7d680678a0a9"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_6d33e14b-3777-4230-bbaa-b4a0a48a9afb"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_d6dcdfb6-6d10-458f-99df-c098bce58344",
-                        "symbol_f39f1b72-3ab8-4586-a3f1-8c14e59115ee"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "cc75fcce-e122-44a1-8cfa-59ada7a015a6"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
                                     "@id": "af3f6674-3c2a-46d7-b151-f9cb2e456b23"
                                 }
                             ],
@@ -28790,28 +28570,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "659ab3b0-ecdd-417c-b8d1-d2859d912483"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "d33df862-18ca-4528-a2d0-fcc12a7c413a"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_8f628537-e486-40a9-ae46-e3d49e535e47"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_57960ab8-5b12-42ce-832a-cdbb9456df80",
-                        "symbol_4e662b02-ef96-4f47-afb1-4a2397ede15a"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "82d73e2e-3400-4bcb-a656-d686f400f30d"
                 },
                 {
                     "insert": [
@@ -29296,28 +29054,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "a8a5477a-1a56-4ac2-9a83-1a7f035c1eba"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "752b0303-3be6-4a86-9aab-83b1dbb38aea"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_35283e3f-0ef5-4b4c-a99e-0c897b2ba567"
-                        }
-                    ],
-                    "delete": [
-                        "symbol_4590816c-e5b9-499b-be93-11702b8ef0b6",
-                        "symbol_70b7ac56-1a46-454a-be5a-37adb41c1483"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "bab05b51-9140-420c-b08e-0064d644ca83"
                 },
                 {
                     "insert": [
@@ -33125,78 +32861,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SoftPedal",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "0a2efb18-2d7c-4c05-952b-a8badc6a4394"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_753accb1-0129-4b3c-9907-40ad36eab5fc"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "a83bba62-9807-4e09-9aa3-3f0c1d5c9880"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5281aaf4-8823-4c50-bccf-8b0410edf36a"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_0c89525d-b94f-4e31-ac05-c7752244e148"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "8f7e2abc-b8ce-43cd-b740-f276fc5d82a8"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "3c94a56c-062b-47ef-949c-cf328276d3d1"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_68943181-d4b2-4650-8339-c7492a80c921"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "7ddbcd62-c2c1-43ee-8571-6595d1026bb8"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "d7cd2daa-e539-4b7d-b2a8-99d6728c7194"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_4010546f-1225-467c-b867-46f2f1594ff7"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "3e06cc4c-2392-4868-9e75-4a03640d9a06"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "Crescendo",
                             "scope": "bass",
                             "carriers": [
@@ -33232,42 +32896,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "bc2ec11a-33e6-4dc7-80fa-3dfd6525028e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_dd862edf-aae2-4aff-a3de-52ad0a243337"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "8bbab2f1-1cba-4dce-95d7-5e5efe3f707b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "0be17957-0ab7-4b71-9bbe-4f4f27e394bf"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_bbc04f0f-91b7-4388-b45f-915600a8a245"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "5c3ce24d-c7ed-45a5-b360-f5b45523a5af"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "Crescendo",
                             "scope": "bass",
                             "carriers": [
@@ -33282,42 +32910,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "73cfae6e-8c55-4eab-93c6-a6d0eb9cf178"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "103032db-3a37-4a86-9631-e39a507c243c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_85bdbc29-0632-48d1-9462-9aae3de1f13d"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "e1237eb6-2710-4583-92f0-b06eedb6941a"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "6f817d42-2690-43a8-a60c-c62ae4090f0d"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_e134394d-c324-43ab-84c8-02da324ce83c"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "07b3dcf0-ac57-4ed9-a18f-65d83ae8fddf"
                 },
                 {
                     "insert": [
@@ -33340,186 +32932,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5aea8bbb-b372-44c3-a1fb-5cdac9c4ad39"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_cb88814d-c012-43f8-a586-3f4303fb211e"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "23685ae9-567c-404d-a69d-57988c2725ae"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SustainPedal",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "3cf77031-3167-4bb2-a342-45a0dafc627a"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_5437a722-acac-4974-9ddd-9b44153c28ba"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "47d9a9e8-50b7-422f-8523-eb3fa368ed81"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "11111abe-4dd5-43d9-87b0-21099a9438ba"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_b7bae344-5d4e-4bb3-8f63-6eb632e1ffb6"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "a2bd65e6-13cd-4360-b2b7-c80fca5dc36d"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "36843602-ae1a-4411-8662-05c1999f1a9d"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_19aa94a2-28ba-45df-ac51-e3ac327c77ef"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "b968321a-9d6a-4a1b-8103-20baf8fd54d0"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "7a392c53-0da1-4cc6-a8fc-221cbb0751f1"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_2af30e44-6eae-42b6-a120-a54d7912dcb3"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "43fe4929-352f-45b8-a9f8-1e1a09475fb4"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5e966eed-ed60-40f2-9236-1eb949f6d78e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_714350b0-2707-4acd-ad32-b019ecf93d28"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "e046a295-6102-4035-8213-ef6baf58114a"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "ae6dd151-4534-4100-82a9-88b9954b203f"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_9152c71e-3bdf-4712-a3f8-ea29c76b1abe"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "08228174-7b27-446f-8136-2605edd1a742"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "33b9e05e-b82a-42db-8a38-f462fa1fee7f"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_3426b7d5-49fb-402d-a95a-43eae5c70a37"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "cf2694ea-3276-4852-b587-3191d3709b92"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "894bdaf5-c1bf-468b-bcd7-c275e5f12975"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_dc8fdab4-708c-4b9d-9ece-18cce9c4da77"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "d04ba065-1fde-4e02-8fce-71f80641a104"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "a0b4584f-bea4-4713-a442-f73ca8c4569f"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_d793e8ea-0042-4db9-9c4b-720783096da9"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "bc56ed54-a9b1-4c99-8ed2-ed794a453642"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "Crescendo",
                             "scope": "bass",
                             "carriers": [
@@ -33538,96 +32950,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "fe3e7e98-dc0a-4bd5-9849-1391e749fdf3"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_86e6d5ca-2b75-4caa-8ca7-08bdafc95b61"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "329c4e1b-1a8c-47a2-b410-475acaa27c5f"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "f7bd9ec5-3603-4316-bd79-97dbc6ec4a3c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_b6d5088c-ed77-44fd-8887-2b0f89c9f429"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "9df20961-ce4f-4b23-998f-561f9ea5ab3b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "c6f65a12-64fa-4145-91e7-bc2097c84e96"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_a42d2fff-6ca0-4d18-a010-ae42eaa73f95"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "a4cd1aa6-5248-4aab-9cb3-991181c9961f"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "a5625dfe-c290-4c24-a23b-c86db29105fe"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_91c277a4-461e-4ce0-b4fd-4c01b34eb81c"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "9406c4cd-e7ca-441b-ab79-0bd952a07f02"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "a4bf460c-3e06-4d4a-95cb-b3d8d6bff164"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_0d26ab29-31db-4248-95fb-b8d8d2887503"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "8ad0a849-00ec-4d5d-ad51-d2a2bc0fbf0d"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "Crescendo",
                             "scope": "treble",
                             "carriers": [
@@ -33642,168 +32964,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "e9fe0263-dc78-464e-ae3b-d7259c904ae2"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "ee81b900-ba13-422a-b530-bff2387737f2"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_08856bcb-766d-496d-bcb5-0b928bfc50a0"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "28658e63-1a22-4166-b177-c90efb84b32e"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "267a363a-4c61-4e6e-84c0-f61e50b01d0b"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_3fe044e9-9f01-4f92-bbc5-cfe1b10f17c8"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "34988e74-9a93-43c9-a3b4-000b476b3cac"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "b2f79ccb-0039-40c0-ae0e-d95cf484d73c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_5d0bc267-fa5a-4b64-86f6-f1e42899f8e4"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "fb517de3-230b-4f44-bcc7-20cbd563d63b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "25450822-513e-40e5-9942-2621278ff02d"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_94abb120-1e49-44d4-8769-3b79386f34ec"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "d2ceab53-afdc-420e-a769-8002620ce8a1"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "6241b41e-3b86-4bbe-8835-da382e93276f"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_2f52a4ee-72d1-44da-ad74-6b2ab4d6a5a7"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "18056f02-5785-4a60-a2b5-7da7187b00c3"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "da888777-d311-40ae-99f9-06ca00fcec43"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_6338d00c-d658-4131-a5d4-e98c96944ad9"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "88d5543b-85f0-47d1-998d-1739aab4e221"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "bcf01ccb-a452-475c-a65d-faf07aee0da7"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_ab5d23b7-890b-4219-8426-33900ebb2f17"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "21cc22c8-f8ff-44b3-88e6-605df8cd424a"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "cee62ba5-9bd7-441a-867d-4ee4677d8e33"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_9367a553-d0ea-40bf-9e9d-0cb4a02d2aff"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "2644f5be-448b-4ea4-bd73-7b0f924537bf"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "db8b8186-16f6-4a3d-8fc0-7405fe621c84"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_f42c04e3-f047-4743-bf37-b1c0c7bdf65f"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "25c21b43-de5c-4731-9c82-72c9e32cc130"
                 },
                 {
                     "insert": [
@@ -33862,24 +33022,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "13f5379b-bf58-4529-a24c-9ad8e7477ba3"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_90d6c709-206b-4bb8-9b7c-48c207f7ec4f"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "5c72e3d5-44ca-4066-8027-f826bf65a18f"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "Crescendo",
                             "scope": "bass",
                             "carriers": [
@@ -33891,62 +33033,9 @@
                             "@id": "symbol_f2cff60b-49a1-4a4c-b499-d2bdcbab4d0f"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "426a0404-1911-49d7-a070-c53ca269bc83",
                     "@type": "edit",
                     "@id": "a8715031-dda2-4159-a668-9453be2b4bc7"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "455ed281-2f51-410c-b8c9-c4e244bd48c8"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_d0dfd310-e86a-4c64-8904-183aed4cbbe0"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "909c3554-2d9e-4bf2-b168-8a914e0fe82e"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "0ab161ab-4c1b-4e6f-a915-ab0eaafd410e"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_00a6fd77-381d-4612-80f1-7d67d35df536"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "38860d5a-f156-459c-ae25-867e9e65124a"
-                },
-                {
-                    "insert": [
-                        {
-                            "pitch": 55,
-                            "carriers": [
-                                {
-                                    "@id": "ccbb1a88-56f7-44d9-b4f6-f52cf36e5d66"
-                                }
-                            ],
-                            "@type": "note",
-                            "@id": "symbol_f42ce342-10fe-423e-94c9-2610702303f0"
-                        }
-                    ],
-                    "motivation": "note-text-differs",
-                    "@type": "edit",
-                    "@id": "d59ec847-276d-4d6e-aef0-85305103310b"
                 },
                 {
                     "insert": [
@@ -33987,24 +33076,6 @@
                 {
                     "insert": [
                         {
-                            "expressionType": "SoftPedal",
-                            "scope": "treble",
-                            "carriers": [
-                                {
-                                    "@id": "0fba056f-cf34-4e11-9df9-e5d03d40e3a5"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_f986602f-fdca-43d8-b307-1dec618fb73b"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "96d7e29a-bb59-494e-9449-5b193152ecc4"
-                },
-                {
-                    "insert": [
-                        {
                             "expressionType": "SustainPedal",
                             "scope": "bass",
                             "carriers": [
@@ -34016,7 +33087,7 @@
                             "@id": "symbol_52de11ae-e232-40c2-9608-be4713f6ab39"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "reperatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "ce4bcf9b-0e89-4de3-8696-f73e8f0131a7"
                 },
@@ -34034,7 +33105,7 @@
                             "@id": "symbol_6aa0a89d-b665-43ab-aecb-34a532deb23f"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "reperatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "60833520-75d7-4a71-9543-0927920bf74b"
                 },
@@ -34055,60 +33126,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "08ab6cbe-8ac6-4223-a697-f101ba3dd30b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoForte",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "5900717a-83fa-4982-a386-ee909baacda5"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_0b7bbfb5-f21f-4d0c-9ed1-9ef4a94a6b8b"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "b6b1bcc8-1a42-4e96-93c0-d96fac10ebb9"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "28839831-6b8a-4855-a7fc-f90afc8d7a8c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_6f0df217-43f0-4a66-9da3-084fbc9297fd"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "9f7bb719-e7ef-4b8c-81fc-161ff478f0cd"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "cd9483b2-e313-41cc-9760-8c0953b2177c"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_0978712a-be25-4cf3-9bf8-0f14d9aecf83"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "2bbbf693-2514-4186-ba5f-8597223ad0a7"
                 },
                 {
                     "insert": [
@@ -34160,7 +33177,7 @@
                             "@id": "symbol_1570a310-b563-4879-9d37-29ca83e39792"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "e286e0f0-deb8-4c6b-974c-75ff96b637f4"
                 },
@@ -34178,27 +33195,9 @@
                             "@id": "symbol_783b7dbd-440e-4297-97a2-14758d041a96"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "chord-shading",
                     "@type": "edit",
                     "@id": "a60570db-ab0a-44e2-8a61-262860c5b53b"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "ff0798fd-0422-4a22-8501-e50fc20475bb"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_edfab107-f1b2-445d-9560-9e0cfb762424"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "9a9627be-504d-4f07-8294-541ec82fce3a"
                 },
                 {
                     "insert": [
@@ -34214,7 +33213,7 @@
                             "@id": "symbol_5d3e6903-e839-4546-b5d8-1b1b8575bbb3"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "5636914a-758b-41d1-b25a-a8bb94629155",
                     "@type": "edit",
                     "@id": "8323c071-9747-43f0-819f-b489f051ee02"
                 },
@@ -34240,42 +33239,6 @@
                     "insert": [
                         {
                             "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "c9e0263a-2142-4350-ac29-71373738a548"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_88a49efa-0ebd-44ee-9950-8354dd397f96"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "527da326-f8ac-4e22-a1e3-14f8c39d4509"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "909764e2-78be-4f54-837c-bf02488f8117"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_45714ee0-8f13-4bc5-90ec-ec45b3f2ffcc"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "a879fcca-269f-4cfd-a9d4-8460bdacff25"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
                             "scope": "treble",
                             "carriers": [
                                 {
@@ -34291,242 +33254,12 @@
                     "@id": "fdc6fb10-de3c-44ac-b716-6f4099c43dc8"
                 },
                 {
-                    "insert": [
-                        {
-                            "expressionType": "SforzandoPiano",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "568a36f4-7057-42c3-a279-737bf746b2c2"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_98489caf-499c-4512-a03f-8e3759c4d9d4"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "813cdf7f-daec-4650-a0ce-6277ff2dde07"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "2450dd16-0a97-4a4d-a4a4-1b8e916d9694"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_e51a20a3-3066-4325-9e74-aa0a4171df5c"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "edbd2e7a-c470-4697-b9d6-2cebec31dd59"
-                },
-                {
-                    "insert": [
-                        {
-                            "expressionType": "Crescendo",
-                            "scope": "bass",
-                            "carriers": [
-                                {
-                                    "@id": "caba411e-7772-41de-a5b1-563a0502f603"
-                                }
-                            ],
-                            "@type": "expression",
-                            "@id": "symbol_5bb2f79d-7b7d-4197-957d-28bdb301bf5f"
-                        }
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "2184a216-f350-4b1b-aa76-68909b055c56"
-                },
-                {
-                    "delete": [
-                        "symbol_c11999fe-36f4-48b9-9104-bcac8b087595"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "ed787147-c145-4e87-9b08-1f9db5097d79"
-                },
-                {
-                    "delete": [
-                        "symbol_59e7d901-2edd-4759-ae8a-df12bd573c88"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "dc87dcf2-b407-4a9e-a85b-5bd228e69e47"
-                },
-                {
-                    "delete": [
-                        "symbol_659b3be6-ba8f-46a2-bf0a-2a9287472e9e"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "ab9e853a-fe3a-4935-8da3-6b11975184db"
-                },
-                {
                     "delete": [
                         "symbol_7b9c76ae-2e74-4073-950e-a549bf18d518"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "2b751e5c-eba4-4a3b-ac6e-0a2740205790"
-                },
-                {
-                    "delete": [
-                        "symbol_2a10ade8-b969-4b06-a8cd-abd6b058da2a"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "57666274-c56d-4593-bf3f-66c511986c9c"
-                },
-                {
-                    "delete": [
-                        "symbol_b1ee8f2f-44f5-45c7-8ba3-8edc0398a5cf"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "dd7bec3d-554d-40f7-bed5-a9158a6d1f70"
-                },
-                {
-                    "delete": [
-                        "symbol_57a10a1f-5eba-40b8-b071-d0136ae7ec30"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "71657ee2-bbea-4758-9f20-6a1682d3fc0a"
-                },
-                {
-                    "delete": [
-                        "e9b2b5f9-b4cd-4efe-9a5d-8a134f7da5fa"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "3d228961-3ef6-4ee4-a749-9ace99d2bdef"
-                },
-                {
-                    "delete": [
-                        "symbol_c4e0e96c-f892-4d40-bef6-1c89d1bacbd8"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1d256dac-1c1e-4a66-9b5b-c054014fa518"
-                },
-                {
-                    "delete": [
-                        "symbol_56c33cbd-01df-4ca8-9b5a-eff1ba9baefa"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "92d6e430-756b-4e20-96e8-a56018f7d256"
-                },
-                {
-                    "delete": [
-                        "symbol_6b546385-1515-4a0b-9a69-0647602a8b99"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "c0dc8e82-8426-41a5-a379-ef41e891914b"
-                },
-                {
-                    "delete": [
-                        "symbol_134b68f6-7af4-4b57-907d-b613a103db29"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "cfaee0fc-6451-4a06-b118-ae07dff2d414"
-                },
-                {
-                    "delete": [
-                        "symbol_612d1cde-8044-4960-8627-c3ef9dba0034"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "47c3edbd-11d6-4413-bd2f-42f983505cdf"
-                },
-                {
-                    "delete": [
-                        "symbol_a71640f8-01a7-4f91-9810-07523bfc473b"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1deffff7-9ffa-42ca-a230-fea4a6c737db"
-                },
-                {
-                    "delete": [
-                        "symbol_f9292c10-fe39-46d9-9169-a237822d8176"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "b8678700-4af6-44aa-a580-8c9ab93d0f95"
-                },
-                {
-                    "delete": [
-                        "symbol_9ecc1747-1258-4e70-be6f-971ceee0f964"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "6dc194eb-36e3-4694-ba3f-779af980dcd3"
-                },
-                {
-                    "delete": [
-                        "symbol_23e43b39-886f-4b6c-8827-127a70774470"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "732b3381-b2b4-40c1-965d-09bbdee20af7"
-                },
-                {
-                    "delete": [
-                        "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "ec264ff3-db6a-4978-8e04-2fe9b47ba006"
-                },
-                {
-                    "delete": [
-                        "symbol_33043a2f-c937-4706-a4f6-0e74961cff69"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "5313d898-c1db-4dd5-b3a0-c82e377c23c9"
-                },
-                {
-                    "delete": [
-                        "symbol_f5053729-1dfe-4fb3-8cd1-87a1be95dcf1"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1b94df68-4343-4707-b76a-32fd3ae14b36"
-                },
-                {
-                    "delete": [
-                        "symbol_fd08c549-236c-4509-9251-ee11eaa8ae6f"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "0e2c1347-898f-4110-a600-d012ec3f4427"
-                },
-                {
-                    "delete": [
-                        "symbol_7ad7a821-7c09-4e64-bde8-cf159cbec747"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "170c7ce5-b741-4b3d-a236-cc25e58ad64c"
-                },
-                {
-                    "delete": [
-                        "symbol_d49be165-91f5-40db-aff5-df4d12d9be94"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "fcf66308-16ce-4a26-8c40-8e3eb036196b"
                 },
                 {
                     "delete": [
@@ -34538,83 +33271,11 @@
                 },
                 {
                     "delete": [
-                        "symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "431bc327-f7cd-44c9-b500-149ce0a9760f"
-                },
-                {
-                    "delete": [
-                        "symbol_997afbf7-a73d-45e4-8270-0bb655f56c09"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "88d497d3-3fe2-441e-837d-9db935c5bfba"
-                },
-                {
-                    "delete": [
-                        "symbol_832bfd3a-4be6-4a4d-90cb-6265052538ad"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1432a414-8b86-4304-b39a-29833802cd88"
-                },
-                {
-                    "delete": [
-                        "symbol_c1f8c127-0c62-435d-af71-00ddd9fe4b3c"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "77798200-bdbb-4583-aa66-9f23ee74f2cd"
-                },
-                {
-                    "delete": [
-                        "symbol_6fd98ff4-ec3f-4686-84db-0f3b819adafb"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "faa385e2-4aec-4f07-ac5d-c043bb68b5fc"
-                },
-                {
-                    "delete": [
-                        "symbol_3e3c53d4-08e5-4048-a013-491a799fdb8d"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "87a3c382-d094-42fd-9c04-36ff4d226d47"
-                },
-                {
-                    "delete": [
-                        "symbol_6c3880e1-8ea7-4cf3-8688-95baa46cd99d"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "68ab0458-9dd4-4459-a668-e7959aaee4cb"
-                },
-                {
-                    "delete": [
-                        "symbol_86773506-4a6d-4789-919e-c52caec51979"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "f3300fc3-ee56-4ea7-9480-bc92c7c75219"
-                },
-                {
-                    "delete": [
                         "symbol_773ce6be-33f3-457c-80a3-3e080888daf8"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "34edc000-f245-480f-aab9-3fef5d0651a3"
-                },
-                {
-                    "delete": [
-                        "symbol_672af8d0-ddc6-4c4f-af4b-c96688917518"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "b31edf42-03f9-4eb2-ad19-8d6655a65c17"
                 },
                 {
                     "delete": [
@@ -34626,35 +33287,11 @@
                 },
                 {
                     "delete": [
-                        "symbol_1f2faf0f-7a11-4427-98d2-a77b0ea9b873"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "08fad838-0e2c-4aa3-b254-b12a916ab9a3"
-                },
-                {
-                    "delete": [
-                        "symbol_cf9fc006-6450-4b7b-94f6-a9b5b7f523bf"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "6b3a29b1-a702-405a-b891-b6951a9d7870"
-                },
-                {
-                    "delete": [
                         "symbol_7dda6454-f23a-4225-9b3f-1e909ccadb3a"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "995d2492-7ed0-4ecd-8fb8-c8cc3a2db3c5"
-                },
-                {
-                    "delete": [
-                        "symbol_8ef4fb55-771e-433f-8235-94a252d7e787"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "aba70930-1f37-4f99-b403-af5b809d3dc9"
                 },
                 {
                     "delete": [
@@ -34666,30 +33303,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_9002bfb7-dd0c-4c0c-be98-9c336ac3fac2"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "fde2a7d4-ea3e-4447-8ec9-fb5aa2e58c2c"
-                },
-                {
-                    "delete": [
-                        "symbol_1e852aa1-323f-478b-b793-55d86cbf6576"
-                    ],
-                    "motivation": "note-text-differs",
-                    "@type": "edit",
-                    "@id": "bec5e9f3-8cba-4e65-aa1e-67bf94be5b68"
-                },
-                {
-                    "delete": [
-                        "symbol_828467f6-630d-47a8-a084-a7d13f56736c"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "e50fa658-d4b0-481f-8ccd-e42e09183051"
-                },
-                {
-                    "delete": [
                         "symbol_0eac3381-c3ab-4189-9f46-8ded5bc1d9f0"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
@@ -34698,17 +33311,9 @@
                 },
                 {
                     "delete": [
-                        "symbol_6ea7bc39-be16-4c15-b892-8d2e192f9d50"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "1e0884c8-3e25-4060-82a7-0134d3a1f5a9"
-                },
-                {
-                    "delete": [
                         "symbol_457386e9-90aa-41f9-9c99-f75566691d92"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "motivation": "reperatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "1a7ce253-e302-4d5f-87e5-384d7e419929"
                 },
@@ -34762,22 +33367,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_f7893d1e-2cc3-492f-8693-a48c87cbb695"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "47c68df7-b478-4571-93bd-8dbdfdd7b05e"
-                },
-                {
-                    "delete": [
-                        "symbol_2975476a-7e85-4c74-aff0-38124b4210cc"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "bdb92693-1e97-415d-b67c-502c5453f0fd"
-                },
-                {
-                    "delete": [
                         "symbol_402e18b7-d9d0-4401-81fc-fde3a4c6ded4"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
@@ -34802,35 +33391,11 @@
                 },
                 {
                     "delete": [
-                        "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "eb0336b8-ba5b-4ba6-ad67-dfaf75f40a59"
-                },
-                {
-                    "delete": [
                         "symbol_649fb2e0-413a-4b1e-a43b-0d6fe304ea46"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "f14cc21f-a7fa-419f-9ad2-d320d8ec8ed1"
-                },
-                {
-                    "delete": [
-                        "symbol_deb4df00-9cf1-42fe-88b7-da48829b6233"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "ece3c08d-aee6-4d44-9de3-1972aac7d6de"
-                },
-                {
-                    "delete": [
-                        "symbol_66a00f6c-8095-4783-a7de-3c5360fb838e"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "d2a6e6dd-a5ea-4059-90bf-dfd084e66aa3"
                 },
                 {
                     "delete": [
@@ -34847,22 +33412,6 @@
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "ff29647f-5872-48ce-9c90-d59c85f35f2f"
-                },
-                {
-                    "delete": [
-                        "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "b3417fed-1d9d-4c30-9dad-c0971b44c884"
-                },
-                {
-                    "delete": [
-                        "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "bbe8ddd9-ca9a-4d9f-87a5-10bd298cbaf5"
                 },
                 {
                     "delete": [
@@ -34898,14 +33447,6 @@
                 },
                 {
                     "delete": [
-                        "symbol_68c88440-9fdd-4703-8f58-995f06321cdc"
-                    ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "510b5fe1-753d-402e-878a-28194ad263f2"
-                },
-                {
-                    "delete": [
                         "symbol_e93405aa-b53a-4281-af88-35be2c572065"
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
@@ -34913,28 +33454,1081 @@
                     "@id": "c8cd8ac8-a5dc-4b12-9f14-c22a213c5a2c"
                 },
                 {
+                    "insert": [
+                        {
+                            "expressionType": "SustainPedal",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "3cf77031-3167-4bb2-a342-45a0dafc627a"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_5437a722-acac-4974-9ddd-9b44153c28ba"
+                        }
+                    ],
                     "delete": [
+                        "symbol_c4e0e96c-f892-4d40-bef6-1c89d1bacbd8",
+                        "symbol_56c33cbd-01df-4ca8-9b5a-eff1ba9baefa"
+                    ],
+                    "motivation": "verlaengertes-pedal",
+                    "@type": "edit",
+                    "@id": "d3f7b612-a7df-48b3-bb39-e28e543297ba"
+                },
+                {
+                    "delete": [
+                        "symbol_f9292c10-fe39-46d9-9169-a237822d8176"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "a0b4584f-bea4-4713-a442-f73ca8c4569f"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_d793e8ea-0042-4db9-9c4b-720783096da9"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "1c6f50f3-a083-46d3-a7eb-70d67822280e"
+                },
+                {
+                    "delete": [
+                        "symbol_9ecc1747-1258-4e70-be6f-971ceee0f964",
+                        "symbol_23e43b39-886f-4b6c-8827-127a70774470"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "fe3e7e98-dc0a-4bd5-9849-1391e749fdf3"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_86e6d5ca-2b75-4caa-8ca7-08bdafc95b61"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "f7bd9ec5-3603-4316-bd79-97dbc6ec4a3c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_b6d5088c-ed77-44fd-8887-2b0f89c9f429"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "a92e6b47-8ec5-4d96-bcd6-954b9768acb1"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "6096dcd7-e86a-432e-bca9-46584b283f38"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_69a32e8c-b1d5-4873-a4e4-da25313f180f"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "c6f65a12-64fa-4145-91e7-bc2097c84e96"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_a42d2fff-6ca0-4d18-a010-ae42eaa73f95"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_92c575eb-5767-4cf8-9d74-2f5de03dfcbc",
+                        "symbol_a1d1d9b6-bfbb-43cc-8564-3cbc5277105f"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "aa9c019b-9d18-4d16-bcb2-923ff5110386"
+                },
+                {
+                    "delete": [
+                        "symbol_f5053729-1dfe-4fb3-8cd1-87a1be95dcf1",
+                        "symbol_fd08c549-236c-4509-9251-ee11eaa8ae6f"
+                    ],
+                    "insert": [],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "8244d82e-1f9b-49ef-aa98-cc809d8c655c"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "a5625dfe-c290-4c24-a23b-c86db29105fe"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_91c277a4-461e-4ce0-b4fd-4c01b34eb81c"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_a0062ba9-c88f-4ac4-a15f-de5de53a933d"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "8b2e6eea-8529-4cda-8200-f2a7e2b86abd"
+                },
+                {
+                    "delete": [
+                        "symbol_33043a2f-c937-4706-a4f6-0e74961cff69"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "a4bf460c-3e06-4d4a-95cb-b3d8d6bff164"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_0d26ab29-31db-4248-95fb-b8d8d2887503"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "4bc6a595-fc49-4374-8aac-c43dd0c17450"
+                },
+                {
+                    "delete": [
+                        "symbol_c1f8c127-0c62-435d-af71-00ddd9fe4b3c",
+                        "symbol_86773506-4a6d-4789-919e-c52caec51979"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "6241b41e-3b86-4bbe-8835-da382e93276f"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_2f52a4ee-72d1-44da-ad74-6b2ab4d6a5a7"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "8c67bdbe-2e1f-4909-b03c-d83866737f4e"
+                },
+                {
+                    "delete": [
+                        "symbol_1f2faf0f-7a11-4427-98d2-a77b0ea9b873",
+                        "symbol_cf9fc006-6450-4b7b-94f6-a9b5b7f523bf"
+                    ],
+                    "insert": [],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "103d22ae-91be-4a64-9a5b-3ce48c7a775a"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "fa22ad54-815a-4922-89f7-cfa312c1509b"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_4adc51a9-cbdf-4e0c-92b8-c37c9068356c"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "13f5379b-bf58-4529-a24c-9ad8e7477ba3"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_90d6c709-206b-4bb8-9b7c-48c207f7ec4f"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_5eecb459-5675-427a-be2e-4a9b35f04eb5",
+                        "symbol_f34264a1-426d-4ffc-9a3a-02b977977a6d"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "587d9240-897c-4290-96d0-df4bbc5ad1b0"
+                },
+                {
+                    "delete": [
+                        "symbol_8ef4fb55-771e-433f-8235-94a252d7e787"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "455ed281-2f51-410c-b8c9-c4e244bd48c8"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_d0dfd310-e86a-4c64-8904-183aed4cbbe0"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "aad8a0f9-9822-47dd-84bc-158ab2b91e29"
+                },
+                {
+                    "delete": [
+                        "symbol_1e852aa1-323f-478b-b793-55d86cbf6576"
+                    ],
+                    "insert": [
+                        {
+                            "pitch": 55,
+                            "carriers": [
+                                {
+                                    "@id": "ccbb1a88-56f7-44d9-b4f6-f52cf36e5d66"
+                                }
+                            ],
+                            "@type": "note",
+                            "@id": "symbol_f42ce342-10fe-423e-94c9-2610702303f0"
+                        }
+                    ],
+                    "motivation": "sauberes-legato",
+                    "@type": "edit",
+                    "@id": "a06a85fd-a508-4f41-ba8f-d5626323fa78"
+                },
+                {
+                    "delete": [
+                        "symbol_9002bfb7-dd0c-4c0c-be98-9c336ac3fac2",
+                        "symbol_828467f6-630d-47a8-a084-a7d13f56736c"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "0ab161ab-4c1b-4e6f-a915-ab0eaafd410e"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_00a6fd77-381d-4612-80f1-7d67d35df536"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "ff5a3c14-f3d8-4f41-a83f-0cddd2c05f3f"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SoftPedal",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "0fba056f-cf34-4e11-9df9-e5d03d40e3a5"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_f986602f-fdca-43d8-b307-1dec618fb73b"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_6ea7bc39-be16-4c15-b892-8d2e192f9d50"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "a674888c-e4e8-4ebb-8332-92ce432da486"
+                },
+                {
+                    "delete": [
+                        "symbol_f7893d1e-2cc3-492f-8693-a48c87cbb695",
+                        "symbol_2975476a-7e85-4c74-aff0-38124b4210cc"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5900717a-83fa-4982-a386-ee909baacda5"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_0b7bbfb5-f21f-4d0c-9ed1-9ef4a94a6b8b"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "28839831-6b8a-4855-a7fc-f90afc8d7a8c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_6f0df217-43f0-4a66-9da3-084fbc9297fd"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "c5867fc7-f811-4152-aa6f-109a25312cb3"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "bf449e11-f8bc-475b-828d-899385b4fb1c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_00ce730b-257d-4a57-a422-58651b870acd"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "cd9483b2-e313-41cc-9760-8c0953b2177c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_0978712a-be25-4cf3-9bf8-0f14d9aecf83"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_46200256-524e-4172-8d78-9b80ed951d86",
+                        "symbol_38813377-f5bb-4fdb-abf9-6dd4f19dba93"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "28ebfc7c-cd4e-4e7a-b5d9-0746e7e00f5f"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "ff0798fd-0422-4a22-8501-e50fc20475bb"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_edfab107-f1b2-445d-9560-9e0cfb762424"
+                        },
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "b7384f5b-cd8b-4095-b3ae-7d680678a0a9"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_6d33e14b-3777-4230-bbaa-b4a0a48a9afb"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_d6dcdfb6-6d10-458f-99df-c098bce58344",
+                        "symbol_f39f1b72-3ab8-4586-a3f1-8c14e59115ee"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "2d99c05b-2af6-4835-a336-ad8abddcbb62"
+                },
+                {
+                    "delete": [
+                        "symbol_bf37594f-7c31-492f-b97c-87eb3c34192b",
+                        "symbol_68c88440-9fdd-4703-8f58-995f06321cdc"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "c9e0263a-2142-4350-ac29-71373738a548"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_88a49efa-0ebd-44ee-9950-8354dd397f96"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "b3e38cb6-9a5f-4dee-85b3-6770c7c6797d"
+                },
+                {
+                    "delete": [
+                        "symbol_deb4df00-9cf1-42fe-88b7-da48829b6233",
+                        "symbol_66a00f6c-8095-4783-a7de-3c5360fb838e"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "909764e2-78be-4f54-837c-bf02488f8117"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_45714ee0-8f13-4bc5-90ec-ec45b3f2ffcc"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "c9faf7bb-92fc-4121-a292-874b1f3ac25a"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "d33df862-18ca-4528-a2d0-fcc12a7c413a"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_8f628537-e486-40a9-ae46-e3d49e535e47"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "568a36f4-7057-42c3-a279-737bf746b2c2"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_98489caf-499c-4512-a03f-8e3759c4d9d4"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_57960ab8-5b12-42ce-832a-cdbb9456df80",
+                        "symbol_4e662b02-ef96-4f47-afb1-4a2397ede15a"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "00b8ece3-41b5-4af0-9cac-8e56ca95b3c9"
+                },
+                {
+                    "delete": [
+                        "039eeb93-3b9e-461a-8c3f-5977f2f6bdb7",
                         "symbol_887def13-467e-4e30-a370-218aa65a8277"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/technical",
-                    "@type": "edit",
-                    "@id": "75c48a1a-0788-4280-b331-afbd8d3d74dd"
-                },
-                {
-                    "delete": [
-                        "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9"
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "2450dd16-0a97-4a4d-a4a4-1b8e916d9694"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_e51a20a3-3066-4325-9e74-aa0a4171df5c"
+                        }
                     ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
-                    "@id": "827bcdc0-cb41-44a4-bafe-513453e9a03a"
+                    "@id": "5e4d2dd3-4574-46b1-96c1-d680f70f63ec"
                 },
                 {
                     "delete": [
+                        "symbol_13cbcae2-cb84-41d6-a4b1-ee887f1b7ec9",
                         "symbol_2b784858-942b-4bfa-96b2-95e152f02fcb"
                     ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "caba411e-7772-41de-a5b1-563a0502f603"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_5bb2f79d-7b7d-4197-957d-28bdb301bf5f"
+                        }
+                    ],
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
-                    "@id": "529a72a7-7401-48d7-9531-052c0a4ad7d5"
+                    "@id": "0c5d77a3-de2a-4a44-9591-32159afa2916"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "103032db-3a37-4a86-9631-e39a507c243c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_85bdbc29-0632-48d1-9462-9aae3de1f13d"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "6f817d42-2690-43a8-a60c-c62ae4090f0d"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_e134394d-c324-43ab-84c8-02da324ce83c"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_57a10a1f-5eba-40b8-b071-d0136ae7ec30",
+                        "e9b2b5f9-b4cd-4efe-9a5d-8a134f7da5fa"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "60a1c2ab-bc97-44cc-b98e-3778e46effdb"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "b46ae8fc-2f26-4007-82c2-b39252bd4284"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_24213ca8-700a-4268-a11c-ea1ee3681ca8"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5aea8bbb-b372-44c3-a1fb-5cdac9c4ad39"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_cb88814d-c012-43f8-a586-3f4303fb211e"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_5750fa55-ddc0-41ce-80df-c4f594ed1d87",
+                        "symbol_b2fe2b5c-85ef-4bc4-8cd7-4b97b449e14e"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "ea1f6349-f4cc-4aad-a73e-5eea65ff88f0"
+                },
+                {
+                    "delete": [
+                        "symbol_bcc3fa5f-8988-4002-9542-0f064d25ad2c",
+                        "symbol_6b546385-1515-4a0b-9a69-0647602a8b99"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "11111abe-4dd5-43d9-87b0-21099a9438ba"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_b7bae344-5d4e-4bb3-8f63-6eb632e1ffb6"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "0ed61295-bb9f-431a-8b1b-5e6b76131c3e"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "6e680f7a-7d28-4652-9bf8-9fef488d867b"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_ed371434-581e-40e4-8c43-6099ad23e626"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "33b9e05e-b82a-42db-8a38-f462fa1fee7f"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_3426b7d5-49fb-402d-a95a-43eae5c70a37"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_66552792-c215-45c9-828e-7b645a0a6b7f",
+                        "symbol_26a62aab-29c4-4f67-9d95-b07addbb5214"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "47c49cad-059d-4952-8fa6-034a4fbf8f52"
+                },
+                {
+                    "delete": [
+                        "symbol_134b68f6-7af4-4b57-907d-b613a103db29",
+                        "symbol_612d1cde-8044-4960-8627-c3ef9dba0034"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "7a392c53-0da1-4cc6-a8fc-221cbb0751f1"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_2af30e44-6eae-42b6-a120-a54d7912dcb3"
+                        },
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "36843602-ae1a-4411-8662-05c1999f1a9d"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_19aa94a2-28ba-45df-ac51-e3ac327c77ef"
+                        },
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5e966eed-ed60-40f2-9236-1eb949f6d78e"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_714350b0-2707-4acd-ad32-b019ecf93d28"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "ae6dd151-4534-4100-82a9-88b9954b203f"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_9152c71e-3bdf-4712-a3f8-ea29c76b1abe"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "f6438de5-d485-4fc9-af53-070558d3737f"
+                },
+                {
+                    "delete": [
+                        "symbol_7ad7a821-7c09-4e64-bde8-cf159cbec747",
+                        "symbol_d49be165-91f5-40db-aff5-df4d12d9be94"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "ee81b900-ba13-422a-b530-bff2387737f2"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_08856bcb-766d-496d-bcb5-0b928bfc50a0"
+                        }
+                    ],
+                    "motivation": "chord-shading",
+                    "@type": "edit",
+                    "@id": "1c39e5d7-28d3-4aea-ab89-db152d76d1dc"
+                },
+                {
+                    "delete": [
+                        "symbol_997afbf7-a73d-45e4-8270-0bb655f56c09",
+                        "symbol_832bfd3a-4be6-4a4d-90cb-6265052538ad"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "267a363a-4c61-4e6e-84c0-f61e50b01d0b"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_3fe044e9-9f01-4f92-bbc5-cfe1b10f17c8"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "b2f79ccb-0039-40c0-ae0e-d95cf484d73c"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_5d0bc267-fa5a-4b64-86f6-f1e42899f8e4"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "f7e07048-fc16-42bb-af4b-4b9795434790"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SoftPedal",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "0a2efb18-2d7c-4c05-952b-a8badc6a4394"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_753accb1-0129-4b3c-9907-40ad36eab5fc"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8",
+                        "symbol_c11999fe-36f4-48b9-9104-bcac8b087595"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "d99c614c-e99b-4f27-8051-32d1e363b180"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5ee6c2ce-8621-4719-92b3-98c3e217310b"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_c77f6df2-1cff-42de-84d8-e6b971153c50"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "25450822-513e-40e5-9942-2621278ff02d"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_94abb120-1e49-44d4-8769-3b79386f34ec"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_f761b4d6-4de3-4adc-9198-4849353f72bb",
+                        "symbol_eda638b5-d697-4448-a49c-bdc6db476b2a"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "b43afeb3-2fee-4641-9129-88d80740d72f"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "da888777-d311-40ae-99f9-06ca00fcec43"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_6338d00c-d658-4131-a5d4-e98c96944ad9"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_6fd98ff4-ec3f-4686-84db-0f3b819adafb"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "d943a95a-15bd-47a8-8c5b-0d7aff658922"
+                },
+                {
+                    "delete": [
+                        "symbol_3e3c53d4-08e5-4048-a013-491a799fdb8d"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "bcf01ccb-a452-475c-a65d-faf07aee0da7"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_ab5d23b7-890b-4219-8426-33900ebb2f17"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "64e41217-6fc7-4877-a271-fa307cbbee56"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "cee62ba5-9bd7-441a-867d-4ee4677d8e33"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_9367a553-d0ea-40bf-9e9d-0cb4a02d2aff"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_6c3880e1-8ea7-4cf3-8688-95baa46cd99d"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "982caace-f1a9-4fcb-adc7-196c7299193b"
+                },
+                {
+                    "delete": [
+                        "symbol_672af8d0-ddc6-4c4f-af4b-c96688917518"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "treble",
+                            "carriers": [
+                                {
+                                    "@id": "db8b8186-16f6-4a3d-8fc0-7405fe621c84"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_f42c04e3-f047-4743-bf37-b1c0c7bdf65f"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "b750fc91-31d3-4bd6-a640-202dde390599"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "752b0303-3be6-4a86-9aab-83b1dbb38aea"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_35283e3f-0ef5-4b4c-a99e-0c897b2ba567"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "894bdaf5-c1bf-468b-bcd7-c275e5f12975"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_dc8fdab4-708c-4b9d-9ece-18cce9c4da77"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_4590816c-e5b9-499b-be93-11702b8ef0b6",
+                        "symbol_70b7ac56-1a46-454a-be5a-37adb41c1483",
+                        "symbol_a71640f8-01a7-4f91-9810-07523bfc473b"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "59ffde14-4ac1-4982-872d-ffb7c6501e0c"
+                },
+                {
+                    "delete": [
+                        "symbol_2a10ade8-b969-4b06-a8cd-abd6b058da2a",
+                        "symbol_b1ee8f2f-44f5-45c7-8ba3-8edc0398a5cf"
+                    ],
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "0be17957-0ab7-4b71-9bbe-4f4f27e394bf"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_bbc04f0f-91b7-4388-b45f-915600a8a245"
+                        }
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "d3215f59-019d-4f33-ab39-552a967ce302"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "dc80efea-86c4-4e8c-a2b6-935848b9ca01"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_eafe4606-16c8-4836-ae25-2faa11aee26d"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "bc2ec11a-33e6-4dc7-80fa-3dfd6525028e"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_dd862edf-aae2-4aff-a3de-52ad0a243337"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_641bc685-3d4f-404f-9ddb-03a198a43311",
+                        "symbol_1dade7b6-12e5-4456-bba0-4dbcae212304"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "2e4f640e-ed2e-487d-a929-c80b8a9478cc"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "Crescendo",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "d7cd2daa-e539-4b7d-b2a8-99d6728c7194"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_4010546f-1225-467c-b867-46f2f1594ff7"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_59e7d901-2edd-4759-ae8a-df12bd573c88",
+                        "symbol_659b3be6-ba8f-46a2-bf0a-2a9287472e9e"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "c2de14f2-4d27-4e15-bc7b-be575e7d0737"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "89c49980-6522-47c7-80d5-b89b4c51f297"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_7db1342c-6f2e-47d5-91c1-a435a4911e3a"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "3c94a56c-062b-47ef-949c-cf328276d3d1"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_68943181-d4b2-4650-8339-c7492a80c921"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_635ab925-7c60-495f-bc85-8cb9d27b3f41",
+                        "symbol_dc6d76be-0206-487b-80f1-d61672aecc65"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "98818c9b-9ff7-422c-a17e-a97e787b870d"
+                },
+                {
+                    "insert": [
+                        {
+                            "expressionType": "SforzandoForte",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "617f2cf5-85a4-4d75-b42c-96b0249f8430"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_7a4230f4-7451-4a7a-8ee7-687395882ab5"
+                        },
+                        {
+                            "expressionType": "SforzandoPiano",
+                            "scope": "bass",
+                            "carriers": [
+                                {
+                                    "@id": "5281aaf4-8823-4c50-bccf-8b0410edf36a"
+                                }
+                            ],
+                            "@type": "expression",
+                            "@id": "symbol_0c89525d-b94f-4e31-ac05-c7752244e148"
+                        }
+                    ],
+                    "delete": [
+                        "symbol_4efd31e0-ee7c-48c5-8383-eb100698ab14",
+                        "symbol_f16b36a6-6f50-4546-9f9d-56c7eb15e4e6"
+                    ],
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
+                    "@type": "edit",
+                    "@id": "e6810b56-099c-402a-a7c6-61cf243802aa"
                 }
             ],
             "basedOn": [
@@ -111888,29 +111482,34 @@
             "@id": "taken-from-mother-roll"
         },
         {
+            "note": "Reperatur",
             "@type": "motivation",
-            "@id": "reperatur-einer-ansonsten-redundanten",
-            "note": "Reperatur"
+            "@id": "reperatur-einer-ansonsten-redundanten"
         },
         {
+            "note": "Durchgängiges Una Corda",
             "@type": "motivation",
-            "@id": "durchgaengiges-una-corda",
-            "note": "Durchgängiges Una Corda"
+            "@id": "durchgaengiges-una-corda"
         },
         {
+            "note": "Große melodische Entwicklung hin zum g",
             "@type": "motivation",
-            "@id": "grosse-melodische-entwicklung-hin-zum-g",
-            "note": "Große melodische Entwicklung hin zum g"
+            "@id": "grosse-melodische-entwicklung-hin-zum-g"
         },
         {
+            "note": "Folgen der melodischen Kontur",
             "@type": "motivation",
-            "@id": "folgen-der-melodischen-kontur",
-            "note": "Folgen der melodischen Kontur"
+            "@id": "folgen-der-melodischen-kontur"
         },
         {
+            "note": "Sauberes Legato",
             "@type": "motivation",
-            "@id": "sauberes-legato",
-            "note": "Sauberes Legato"
+            "@id": "sauberes-legato"
+        },
+        {
+            "note": "Verlängertes Pedal",
+            "@type": "motivation",
+            "@id": "verlaengertes-pedal"
         }
     ],
     "@included": [
