@@ -10865,7 +10865,7 @@
     {
       "id": "2e2d8bb7-aa9c-42c0-8a9f-0b51753161d7",
       "note": "Nachschlag schattieren",
-      "continues": "argumentation-46b51284",
+      "continues": "c4541ed6-74f7-4b28-a80c-eb6f20861a52",
       "elements": [
         "tempo_65880",
         "rubato_65520",
@@ -10877,7 +10877,7 @@
     {
       "id": "f5ee836d-e79d-48be-b749-df0283eeb837",
       "note": "Nachschlag schattieren",
-      "continues": "argumentation-28ed32b3",
+      "continues": "ec57a047-fb4c-49e3-b289-f8d6a9fd7e6f",
       "elements": [
         "accentuationPattern_66960",
         "sustain-67320_start",
@@ -11167,7 +11167,7 @@
     {
       "id": "09b6094a-1db8-459b-9c33-427adcd1d8c4",
       "note": "Intensivieren",
-      "continues": "argumentation-232ca7b0",
+      "continues": "6ed49811-53dc-4716-bf02-2b503488060b",
       "elements": [
         "ornament_20520",
         "rubato_20160"
@@ -11258,7 +11258,7 @@
     {
       "id": "2a2de3ed-ab69-4b52-9ff5-b9c7843060dc",
       "note": "langsamer und deutlicher werden",
-      "continues": "argumentation-8e3cbc2d",
+      "continues": "6e60a45b-5bff-40fd-92ea-939e468d8f84",
       "elements": [
         "ornament_35280",
         "ornament_34560",
@@ -11270,7 +11270,7 @@
     {
       "id": "7e3a3e05-becf-4477-afce-1c8a0ca57a3b",
       "note": "Nachschlag etwas abschattieren",
-      "continues": "argumentation-c118a7a5",
+      "continues": "6598edf0-779e-41ce-b4a6-9aa69dd3b186",
       "elements": [
         "ornament_12960",
         "tempo_12240",
@@ -11326,7 +11326,7 @@
     {
       "id": "e236c037-e1f9-4fe2-af75-1762d3bd8ab4",
       "note": "Hinspielen zum Quartsextakkord",
-      "continues": "argumentation-1a04ff8d",
+      "continues": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c",
       "elements": [
         "ornament_53640",
         "ornament_54000",
@@ -11612,7 +11612,7 @@
     {
       "id": "4c3500c4-4468-4947-ba94-c8a930a454ef",
       "note": "Zum B-Dur-Akkord hin entspannen",
-      "continues": "argumentation-90aa6158",
+      "continues": "e7667c94-7c6d-4691-a796-d79e84865442",
       "elements": [
         "tempo_25920",
         "sustain-27360_start",
@@ -11850,7 +11850,7 @@
     {
       "id": "780e8cb3-9be3-44aa-aa24-f523fa45553a",
       "note": "Minimal Zeit lassen auf b",
-      "continues": "argumentation-0369dca0",
+      "continues": "c176332d-9fd7-4a36-8875-6a65769b96e2",
       "elements": [
         "rubato_60480"
       ]
@@ -11950,7 +11950,7 @@
     {
       "id": "cf7fa33d-4d72-4af3-a330-92f84738c2ae",
       "note": "Schattieren des d unter dem a",
-      "continues": "argumentation-270564c1",
+      "continues": "62c0a4a5-95fc-41be-b21b-efb33cc3b458",
       "elements": [
         "accentuationPattern_64440"
       ]
@@ -12037,7 +12037,7 @@
     {
       "id": "31ead4dc-2b32-480d-a73a-e933994272dd",
       "note": "Zurücknehmen",
-      "continues": "argumentation-3fd3e6c8",
+      "continues": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0",
       "elements": [
         "sustain-86760_moveUp",
         "sustain-86760_end"
