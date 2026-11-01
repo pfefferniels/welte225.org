@@ -10713,1390 +10713,556 @@
   "segments": [
     {
       "id": "d8682d73-0822-49d4-b19e-9314c1668952",
-      "note": "Unbestimmt",
-      "elements": []
+      "note": "Unbestimmt"
     },
     {
       "id": "0fad3105-f846-4c6f-88da-0682d76b1afd",
-      "note": "Nachschlag als Ereignis: vor dem Schlag arpeggiert",
-      "elements": [
-        "ornament_1440",
-        "articulation_1440"
-      ]
+      "note": "Nachschlag als Ereignis: vor dem Schlag arpeggiert"
     },
     {
       "id": "f4a992c8-3216-4627-9057-9bce57714988",
-      "note": "Bewegung zum d-Moll hin stark zurücknehmen",
-      "elements": [
-        "tempo_16560",
-        "dynamics_16920",
-        "accentuationPattern_16920"
-      ]
+      "note": "Bewegung zum d-Moll hin stark zurücknehmen"
     },
     {
       "id": "6ed49811-53dc-4716-bf02-2b503488060b",
-      "note": "Arpeggio schattieren",
-      "elements": [
-        "tempo_19440",
-        "rubato_19440",
-        "accentuationPattern_19440"
-      ]
+      "note": "Arpeggio schattieren"
     },
     {
       "id": "b86cea25-33b2-46a9-83d4-40fb1e7747ce",
-      "note": "Richtung durch Inegalité",
-      "elements": [
-        "ornament_30960",
-        "ornament_30240",
-        "rubato_30240",
-        "accentuationPattern_30240"
-      ]
+      "note": "Richtung durch Inegalité"
     },
     {
       "id": "4a301aa8-e25f-40e0-975b-1d925653d9b2",
-      "note": "Nachschlag schattieren",
-      "elements": [
-        "ornament_36000",
-        "tempo_35280",
-        "dynamics_35280",
-        "accentuationPattern_35280",
-        "articulation_36000",
-        "sustain-36000_start",
-        "sustain-36000_moveDown",
-        "sustain-36000_moveUp",
-        "sustain-36000_end"
-      ]
+      "note": "Nachschlag schattieren"
     },
     {
       "id": "3ec504f3-7d4a-4362-a15a-ca6c33d7dd93",
-      "note": "\"Heineinfallen\"",
-      "elements": [
-        "ornament_41040",
-        "rubato_40320"
-      ]
+      "note": "\"Heineinfallen\""
     },
     {
       "id": "0ddac397-c9e9-404f-a7c6-0531e3ab57fb",
-      "note": "nachschlagende Akkordbrechung schattieren",
-      "elements": [
-        "ornament_42480",
-        "tempo_42480",
-        "rubato_42480",
-        "accentuationPattern_42480",
-        "sustain-43200_start",
-        "sustain-43200_moveDown",
-        "sustain-43200_moveUp",
-        "sustain-43200_end"
-      ]
+      "note": "nachschlagende Akkordbrechung schattieren"
     },
     {
       "id": "3603c14a-8b03-4583-b77d-6a728834b342",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_4320",
-        "dynamics_3600"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "6e60a45b-5bff-40fd-92ea-939e468d8f84",
-      "note": "Auftakt unter C-Dur schattieren: schneller und leiser werden",
-      "elements": [
-        "tempo_33480",
-        "dynamics_33120",
-        "articulation_33840"
-      ]
+      "note": "Auftakt unter C-Dur schattieren: schneller und leiser werden"
     },
     {
       "id": "a4ef5a2d-3e62-4a82-a7fe-37712d7de1ab",
-      "note": "Intensivierung der Integalité",
-      "elements": [
-        "ornament_44640",
-        "ornament_45360",
-        "tempo_43920",
-        "rubato_43920",
-        "accentuationPattern_43920",
-        "accentuationPattern_44640",
-        "sustain-43920_start",
-        "sustain-43920_moveDown",
-        "sustain-43920_moveUp",
-        "sustain-43920_end",
-        "sustain-45000_start",
-        "sustain-45000_moveDown"
-      ]
+      "note": "Intensivierung der Integalité"
     },
     {
       "id": "9917074b-2f5d-43d1-8ce8-af260f860373",
-      "note": "Überleitung wird träger",
-      "elements": [
-        "ornament_46440",
-        "ornament_46800",
-        "tempo_45360",
-        "accentuationPattern_45360",
-        "sustain-45720_start",
-        "sustain-45720_moveDown",
-        "sustain-45720_moveUp",
-        "sustain-45720_end"
-      ]
+      "note": "Überleitung wird träger"
     },
     {
       "id": "11d46f48-200c-4ae3-aea4-0caafdda21ea",
-      "note": "Großangelegtes Decrescendo — der dynamische Verlauf folgt dem Tonhöhenverlauf",
-      "elements": [
-        "tempo_55440",
-        "dynamics_54000",
-        "dynamics_55440"
-      ]
+      "note": "Großangelegtes Decrescendo — der dynamische Verlauf folgt dem Tonhöhenverlauf"
     },
     {
       "id": "878584e2-421b-472f-86d9-c8e0922c2258",
-      "note": "Dranbleiben, auf melodischen Höhepunkt hin",
-      "elements": [
-        "tempo_58320",
-        "dynamics_58320"
-      ]
+      "note": "Dranbleiben, auf melodischen Höhepunkt hin"
     },
     {
       "id": "6078a08e-f0c5-4190-828e-b606c54cf8e2",
-      "note": "Zurücknehmen",
-      "elements": [
-        "rubato_56880"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "2e2d8bb7-aa9c-42c0-8a9f-0b51753161d7",
       "note": "Nachschlag schattieren",
-      "continues": "c4541ed6-74f7-4b28-a80c-eb6f20861a52",
-      "elements": [
-        "tempo_65880",
-        "rubato_65520",
-        "accentuationPattern_65520",
-        "sustain-64800_moveUp",
-        "sustain-64800_end"
-      ]
+      "continues": "c4541ed6-74f7-4b28-a80c-eb6f20861a52"
     },
     {
       "id": "f5ee836d-e79d-48be-b749-df0283eeb837",
       "note": "Nachschlag schattieren",
-      "continues": "ec57a047-fb4c-49e3-b289-f8d6a9fd7e6f",
-      "elements": [
-        "accentuationPattern_66960",
-        "sustain-67320_start",
-        "sustain-67320_moveDown",
-        "sustain-67320_moveUp",
-        "sustain-67320_end"
-      ]
+      "continues": "ec57a047-fb4c-49e3-b289-f8d6a9fd7e6f"
     },
     {
       "id": "279dd975-ddb8-42d9-90d4-1324200e976a",
-      "note": "großflächig dynamisch langsam zurückgehen",
-      "elements": [
-        "dynamics_65520",
-        "dynamics_66600",
-        "dynamics_68040"
-      ]
+      "note": "großflächig dynamisch langsam zurückgehen"
     },
     {
       "id": "7473dcf7-6749-455f-a400-f8ffa313c3bb",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_69840",
-        "dynamics_69480",
-        "sustain-69480_start",
-        "sustain-69480_moveDown",
-        "sustain-69480_moveUp",
-        "sustain-69480_end"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "4fe7a110-4d91-4326-a1e2-5b0f93df2f1b",
-      "note": "Nachschlag schattieren",
-      "elements": [
-        "ornament_70560",
-        "accentuationPattern_69840",
-        "sustain-70560_start",
-        "sustain-70560_moveDown",
-        "sustain-70560_moveUp",
-        "sustain-70560_end"
-      ]
+      "note": "Nachschlag schattieren"
     },
     {
       "id": "8be75870-c4f6-413a-b544-e2e7435594aa",
-      "note": "mit Inegalité vorwärts zum b",
-      "elements": [
-        "ornament_76320",
-        "ornament_77040",
-        "tempo_76320",
-        "rubato_76320",
-        "rubato_77040",
-        "accentuationPattern_76320",
-        "accentuationPattern_77040",
-        "accentuationPattern_78480",
-        "sustain-77400_start",
-        "sustain-77400_moveDown",
-        "sustain-77400_moveUp",
-        "sustain-77400_end"
-      ]
+      "note": "mit Inegalité vorwärts zum b"
     },
     {
       "id": "bc04b5da-81b3-4607-9faa-23573fd67b2d",
-      "note": "Hineinfallen",
-      "elements": [
-        "ornament_78120",
-        "ornament_78480",
-        "ornament_77760",
-        "tempo_77760",
-        "rubato_77760",
-        "rubato_78480",
-        "sustain-78840_start",
-        "sustain-78840_moveDown",
-        "sustain-78840_moveUp",
-        "sustain-78840_end"
-      ]
+      "note": "Hineinfallen"
     },
     {
       "id": "669b43e1-e13c-4870-98be-8a782552554a",
-      "note": "Gut-schlecht Akzente",
-      "elements": [
-        "accentuationPattern_79200",
-        "accentuationPattern_79920",
-        "accentuationPattern_80640"
-      ]
+      "note": "Gut-schlecht Akzente"
     },
     {
       "id": "68f3844c-d70a-41f5-985d-f779b91b9642",
-      "note": "Nachschlag schattieren",
-      "elements": [
-        "ornament_82080",
-        "tempo_81360",
-        "dynamics_81360",
-        "accentuationPattern_81360",
-        "sustain-82080_start",
-        "sustain-82080_moveDown",
-        "sustain-82080_moveUp",
-        "sustain-82080_end"
-      ]
+      "note": "Nachschlag schattieren"
     },
     {
       "id": "e7dead82-8936-4849-bd72-61123b73b3d1",
-      "note": "zum Quartsextakkord",
-      "elements": [
-        "ornament_87120",
-        "dynamics_86400",
-        "accentuationPattern_86400",
-        "accentuationPattern_87120",
-        "sustain-87480_start",
-        "sustain-87480_moveDown",
-        "sustain-87480_moveUp",
-        "sustain-87480_end"
-      ]
+      "note": "zum Quartsextakkord"
     },
     {
       "id": "ab593be2-ae87-42a8-a4ac-12907e2904f9",
-      "note": "Zurücknehmen",
-      "elements": [
-        "ornament_90720",
-        "dynamics_90000"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "a3233bdf-d3d3-4da6-863d-86086b776335",
-      "note": "Unbestimmt",
-      "elements": [
-        "ornament_91080"
-      ]
+      "note": "Unbestimmt"
     },
     {
       "id": "ae978e18-b878-4d59-bb09-536ca6ffb25e",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_21600",
-        "ornament_20880",
-        "ornament_22320",
-        "tempo_20880",
-        "rubato_20880",
-        "dynamics_21600",
-        "accentuationPattern_20880",
-        "accentuationPattern_21600",
-        "articulation_21240",
-        "sustain-21240_moveUp",
-        "sustain-21240_end",
-        "sustain-21240_start",
-        "sustain-21240_moveDown",
-        "sustain-21960_start",
-        "sustain-21960_moveDown",
-        "sustain-21960_moveUp",
-        "sustain-21960_end"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "018ee72f-65e0-4cc7-bb81-2b0c050ab60d",
-      "note": "Hinspielen auf 1",
-      "elements": [
-        "ornament_5760",
-        "ornament_6120",
-        "ornament_6480",
-        "tempo_5760",
-        "rubato_5760",
-        "rubato_6480",
-        "dynamics_5760",
-        "accentuationPattern_5760",
-        "accentuationPattern_6480",
-        "articulation_6480",
-        "sustain-6840_start",
-        "sustain-6840_moveDown",
-        "sustain-6840_moveUp",
-        "sustain-6840_end"
-      ]
+      "note": "Hinspielen auf 1"
     },
     {
       "id": "80d8e0d0-7814-4566-b9a0-b700191ebc2d",
-      "note": "Hinspielen auf Taktmitte",
-      "elements": [
-        "ornament_7200",
-        "ornament_7560",
-        "ornament_7920",
-        "tempo_7200",
-        "rubato_7200",
-        "rubato_7920",
-        "accentuationPattern_7200",
-        "accentuationPattern_7920",
-        "articulation_7920",
-        "sustain-8280_start",
-        "sustain-8280_moveDown",
-        "sustain-8280_moveUp",
-        "sustain-8280_end"
-      ]
+      "note": "Hinspielen auf Taktmitte"
     },
     {
       "id": "7938a94a-fe29-42d0-bca8-b134a6776a96",
-      "note": "Auftaktenergie hin zur 1",
-      "elements": [
-        "ornament_720",
-        "tempo_0",
-        "dynamics_0"
-      ]
+      "note": "Auftaktenergie hin zur 1"
     },
     {
       "id": "58eb812f-2628-49f4-af8b-85296eb0a48a",
-      "note": "Beruhigen",
-      "elements": [
-        "ornament_84960",
-        "sustain-84960_start",
-        "sustain-84960_moveDown",
-        "sustain-84960_moveUp",
-        "sustain-84960_end"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "f53ec81a-c3c1-42f0-9092-ed0fa2a231cd",
-      "note": "Klang öffnen (\"gelüftete\" Artikulation + Pedal, Arpeggi)",
-      "elements": [
-        "ornament_10080",
-        "ornament_9360",
-        "ornament_9000",
-        "ornament_8640",
-        "tempo_8640",
-        "rubato_9360",
-        "rubato_8640",
-        "accentuationPattern_8640",
-        "accentuationPattern_9360",
-        "articulation_9360",
-        "articulation_8640",
-        "articulation_9000",
-        "articulation_8640_1",
-        "articulation_9000_1",
-        "sustain-9720_start",
-        "sustain-9720_moveDown",
-        "sustain-9720_moveUp",
-        "sustain-9720_end"
-      ]
+      "note": "Klang öffnen (\"gelüftete\" Artikulation + Pedal, Arpeggi)"
     },
     {
       "id": "6598edf0-779e-41ce-b4a6-9aa69dd3b186",
-      "note": "Verbinden zur nächsten Phrase: \"nach vorne\", lombardische Achtel, legato",
-      "elements": [
-        "ornament_11520",
-        "ornament_12240",
-        "tempo_10440",
-        "rubato_10800",
-        "rubato_11520",
-        "dynamics_10800",
-        "accentuationPattern_10800",
-        "accentuationPattern_11520",
-        "articulation_10080",
-        "articulation_10800",
-        "articulation_11160",
-        "articulation_11520",
-        "articulation_11880"
-      ]
+      "note": "Verbinden zur nächsten Phrase: \"nach vorne\", lombardische Achtel, legato"
     },
     {
       "id": "b1300a25-c157-4941-8afe-3969e84f881d",
-      "note": "\"Aufweichen\": Decrescendo und Arpeggio zum a'",
-      "elements": [
-        "ornament_15840",
-        "dynamics_15120"
-      ]
+      "note": "\"Aufweichen\": Decrescendo und Arpeggio zum a'"
     },
     {
       "id": "d472996d-738c-4dd1-9ee4-b8c0cc37cdc5",
-      "note": "Richtung zum Quartsexkkord, Vorwärts-\"Lilt\"",
-      "elements": [
-        "ornament_18000",
-        "ornament_19080",
-        "ornament_19440",
-        "tempo_18360",
-        "rubato_18720",
-        "dynamics_18000",
-        "articulation_17280",
-        "articulation_17640",
-        "articulation_18000",
-        "articulation_18360",
-        "articulation_18720",
-        "articulation_19080",
-        "sustain-18720_moveUp",
-        "sustain-18720_end",
-        "sustain-18720_start",
-        "sustain-18720_moveDown",
-        "sustain-18000_moveUp",
-        "sustain-18000_end",
-        "sustain-18000_start",
-        "sustain-18000_moveDown"
-      ]
+      "note": "Richtung zum Quartsexkkord, Vorwärts-\"Lilt\""
     },
     {
       "id": "09b6094a-1db8-459b-9c33-427adcd1d8c4",
       "note": "Intensivieren",
-      "continues": "6ed49811-53dc-4716-bf02-2b503488060b",
-      "elements": [
-        "ornament_20520",
-        "rubato_20160"
-      ]
+      "continues": "6ed49811-53dc-4716-bf02-2b503488060b"
     },
     {
       "id": "aaedcf8b-e357-4b15-bf26-5c63a828584d",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_23400",
-        "ornament_23760"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "74da407d-21dc-4292-8720-be3f520eec90",
-      "note": "Geste des Nachlauschens",
-      "elements": [
-        "ornament_24480",
-        "accentuationPattern_23760",
-        "articulation_24480",
-        "sustain-24480_start",
-        "sustain-24480_moveDown",
-        "sustain-24480_moveUp",
-        "sustain-24480_end"
-      ]
+      "note": "Geste des Nachlauschens"
     },
     {
       "id": "cf7d37a3-4ffd-4b49-9e5d-62b7c4b5134b",
-      "note": "Überlegato",
-      "elements": [
-        "ornament_27360",
-        "articulation_25560",
-        "articulation_25920",
-        "articulation_26280",
-        "articulation_26640",
-        "articulation_27000",
-        "sustain-27360_moveUp",
-        "sustain-27360_end"
-      ]
+      "note": "Überlegato"
     },
     {
       "id": "ad9d5d44-b501-44d1-8cd9-58664ccdc241",
-      "note": "Vorwärtsbewegung durch Inegalité",
-      "elements": [
-        "ornament_28800",
-        "rubato_28800",
-        "accentuationPattern_28800"
-      ]
+      "note": "Vorwärtsbewegung durch Inegalité"
     },
     {
       "id": "e49e1685-8c27-465c-9a38-c5dfa4e473be",
-      "note": "\"Innehalten\"",
-      "elements": [
-        "ornament_29520",
-        "rubato_29520",
-        "accentuationPattern_29520",
-        "sustain-29880_start",
-        "sustain-29880_moveDown",
-        "sustain-29880_moveUp",
-        "sustain-29880_end"
-      ]
+      "note": "\"Innehalten\""
     },
     {
       "id": "ee4513f4-5a09-47b6-ae3d-50531c13397a",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_31680",
-        "ornament_32040",
-        "ornament_32400",
-        "rubato_31680",
-        "accentuationPattern_31680"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "a665df3a-e6fc-4a14-92f2-664ac98b5ad4",
-      "note": "\"Hineinfallen\" und Verweilen",
-      "elements": [
-        "ornament_38880",
-        "rubato_39600",
-        "dynamics_38520",
-        "dynamics_38880",
-        "sustain-38880_start",
-        "sustain-38880_moveDown",
-        "sustain-38880_moveUp",
-        "sustain-38880_end"
-      ]
+      "note": "\"Hineinfallen\" und Verweilen"
     },
     {
       "id": "2a2de3ed-ab69-4b52-9ff5-b9c7843060dc",
       "note": "langsamer und deutlicher werden",
-      "continues": "6e60a45b-5bff-40fd-92ea-939e468d8f84",
-      "elements": [
-        "ornament_35280",
-        "ornament_34560",
-        "tempo_34560",
-        "dynamics_34200",
-        "articulation_34560"
-      ]
+      "continues": "6e60a45b-5bff-40fd-92ea-939e468d8f84"
     },
     {
       "id": "7e3a3e05-becf-4477-afce-1c8a0ca57a3b",
       "note": "Nachschlag etwas abschattieren",
-      "continues": "6598edf0-779e-41ce-b4a6-9aa69dd3b186",
-      "elements": [
-        "ornament_12960",
-        "tempo_12240",
-        "dynamics_12240",
-        "accentuationPattern_12240",
-        "sustain-12960_start",
-        "sustain-12960_moveDown",
-        "sustain-12960_moveUp",
-        "sustain-12960_end"
-      ]
+      "continues": "6598edf0-779e-41ce-b4a6-9aa69dd3b186"
     },
     {
       "id": "26b2e9af-f98d-40b7-a53a-e82c70585940",
-      "note": "Verfrühtes Einsetzen (der Mollsubdominante)",
-      "elements": [
-        "ornament_42120",
-        "rubato_41760"
-      ]
+      "note": "Verfrühtes Einsetzen (der Mollsubdominante)"
     },
     {
       "id": "672c670d-fd25-4eb9-a3c4-c37e6816ea24",
-      "note": "Verfrühtes Einsetzen (des verminderten Septakkords)",
-      "elements": [
-        "ornament_43920",
-        "ornament_43560",
-        "rubato_43200"
-      ]
+      "note": "Verfrühtes Einsetzen (des verminderten Septakkords)"
     },
     {
       "id": "7a978bbb-224d-46de-b467-42f45a180ba9",
-      "note": "schattierter Nachklang",
-      "elements": [
-        "ornament_47520",
-        "tempo_46800",
-        "dynamics_46800",
-        "accentuationPattern_46800",
-        "articulation_47520",
-        "sustain-47520_start",
-        "sustain-47520_moveDown",
-        "sustain-47520_moveUp",
-        "sustain-47520_end"
-      ]
+      "note": "schattierter Nachklang"
     },
     {
       "id": "76900ab5-b659-49eb-b0c8-2c6ed1da292e",
-      "note": "Verfrühung des Spannungsakkords (Mollsubdominante)",
-      "elements": [
-        "ornament_50040",
-        "ornament_50400",
-        "rubato_49680"
-      ]
+      "note": "Verfrühung des Spannungsakkords (Mollsubdominante)"
     },
     {
       "id": "e236c037-e1f9-4fe2-af75-1762d3bd8ab4",
       "note": "Hinspielen zum Quartsextakkord",
-      "continues": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c",
-      "elements": [
-        "ornament_53640",
-        "ornament_54000",
-        "tempo_53640",
-        "dynamics_53280"
-      ]
+      "continues": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c"
     },
     {
       "id": "19411a04-17bf-41c7-b445-9921ddc29692",
-      "note": "Weiter zurück",
-      "elements": [
-        "ornament_52200",
-        "tempo_51480",
-        "dynamics_52560"
-      ]
+      "note": "Weiter zurück"
     },
     {
       "id": "8835f067-f57c-4bea-b61e-1eac5942a2a0",
-      "note": "Ausgedehntes g-Moll",
-      "elements": [
-        "ornament_52560",
-        "rubato_52560",
-        "articulation_52560",
-        "sustain-52920_start",
-        "sustain-52920_moveDown",
-        "sustain-52920_moveUp",
-        "sustain-52920_end"
-      ]
+      "note": "Ausgedehntes g-Moll"
     },
     {
       "id": "a379d774-0173-4f61-8b61-f04b30f8f11b",
-      "note": "Hinspielen zum B-Dur",
-      "elements": [
-        "ornament_58320",
-        "ornament_57960",
-        "tempo_56880",
-        "dynamics_56880"
-      ]
+      "note": "Hinspielen zum B-Dur"
     },
     {
       "id": "ecc57d79-1a69-4f54-8524-36f9dc3c5477",
-      "note": "Subdominante etwas früher und arpeggiert",
-      "elements": [
-        "ornament_55080",
-        "rubato_54720",
-        "articulation_55080"
-      ]
+      "note": "Subdominante etwas früher und arpeggiert"
     },
     {
       "id": "c358481c-0609-4222-ba34-8501b618310d",
-      "note": "Kurze \"Station\" auf Quartsextakkord",
-      "elements": [
-        "ornament_55440",
-        "rubato_55440",
-        "sustain-55800_start",
-        "sustain-55800_moveDown",
-        "sustain-55800_moveUp",
-        "sustain-55800_end"
-      ]
+      "note": "Kurze \"Station\" auf Quartsextakkord"
     },
     {
       "id": "dd042a2c-91ef-40f2-a025-b9fbfa6a9338",
-      "note": "Interessante Harmonien früher",
-      "elements": [
-        "ornament_56520",
-        "rubato_56160",
-        "articulation_56520"
-      ]
+      "note": "Interessante Harmonien früher"
     },
     {
       "id": "624f2bdf-2f1c-4ce9-9cc8-895be809cd72",
-      "note": "Abschattieren",
-      "elements": [
-        "ornament_59040",
-        "accentuationPattern_58320",
-        "articulation_59040"
-      ]
+      "note": "Abschattieren"
     },
     {
       "id": "7900f7ff-a5f9-4a4b-b480-8e5244322d2e",
       "note": "fließend in Dominantseptnonakkord",
-      "continues": "8a143343-1778-4720-83b2-aa0ac720fef1",
-      "elements": [
-        "ornament_61560",
-        "ornament_61920",
-        "rubato_61200"
-      ]
+      "continues": "8a143343-1778-4720-83b2-aa0ac720fef1"
     },
     {
       "id": "663f4859-f1d7-4634-8aaf-59eda8cb9a89",
-      "note": "Beruhigen",
-      "elements": [
-        "ornament_63360",
-        "ornament_63720",
-        "ornament_64080",
-        "tempo_63360"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "c4541ed6-74f7-4b28-a80c-eb6f20861a52",
-      "note": "Hineinfallen in Quartsextakkord",
-      "elements": [
-        "ornament_65160",
-        "ornament_65520",
-        "rubato_64800"
-      ]
+      "note": "Hineinfallen in Quartsextakkord"
     },
     {
       "id": "fbe387f3-0e0d-41cc-9afa-0acef598d46f",
-      "note": "kleine Verzögerung — durch gedachtes Portamento (imitiert als Arpeggio)",
-      "elements": [
-        "ornament_33120",
-        "tempo_32760"
-      ]
+      "note": "kleine Verzögerung — durch gedachtes Portamento (imitiert als Arpeggio)"
     },
     {
       "id": "ec57a047-fb4c-49e3-b289-f8d6a9fd7e6f",
-      "note": "Zum Quartsextakkord",
-      "elements": [
-        "ornament_66600",
-        "ornament_66960",
-        "tempo_66600"
-      ]
+      "note": "Zum Quartsextakkord"
     },
     {
       "id": "5e6e6105-b808-4ecf-a4a9-79bcdf63be4c",
-      "note": "Beruhigung vor Phrasenende",
-      "elements": [
-        "ornament_68040",
-        "ornament_68400",
-        "ornament_69120",
-        "tempo_67320"
-      ]
+      "note": "Beruhigung vor Phrasenende"
     },
     {
       "id": "5ca4980b-fbef-469c-9eac-9daccf02ab3f",
-      "note": "zum B-Dur-Akkord",
-      "elements": [
-        "ornament_73440",
-        "tempo_72000",
-        "rubato_72000",
-        "rubato_72720",
-        "sustain-72360_start",
-        "sustain-72360_moveDown",
-        "sustain-72360_moveUp",
-        "sustain-72360_end"
-      ]
+      "note": "zum B-Dur-Akkord"
     },
     {
       "id": "48ec9583-f24b-41f0-ac09-fd99270af4e4",
-      "note": "hin zum Quartsextakkord",
-      "elements": [
-        "ornament_74880",
-        "ornament_75240",
-        "ornament_75600",
-        "tempo_74880",
-        "dynamics_73440"
-      ]
+      "note": "hin zum Quartsextakkord"
     },
     {
       "id": "65fb4f9a-9c1c-437b-b76f-5193f2748a2b",
-      "note": "Weich ins F-Dur",
-      "elements": [
-        "ornament_81360",
-        "ornament_80640",
-        "tempo_80280"
-      ]
+      "note": "Weich ins F-Dur"
     },
     {
       "id": "0411e9c3-b0aa-4270-a395-2acd90dc8758",
-      "note": "Zurücknehmen",
-      "elements": [
-        "ornament_87840",
-        "dynamics_87840",
-        "accentuationPattern_87840",
-        "accentuationPattern_88560",
-        "sustain-88920_start",
-        "sustain-88920_moveDown",
-        "sustain-88920_moveUp",
-        "sustain-88920_end"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "f9d73caf-538f-49a3-ab16-f59a59ee64e3",
-      "note": "Intensivieren",
-      "elements": [
-        "ornament_89280",
-        "ornament_89640",
-        "ornament_90000",
-        "dynamics_88920",
-        "sustain-89640_start",
-        "sustain-89640_moveDown",
-        "sustain-89640_moveUp",
-        "sustain-89640_end",
-        "sustain-90360_start",
-        "sustain-90360_moveDown",
-        "sustain-90360_moveUp",
-        "sustain-90360_end"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "d0c6a809-f8fc-4436-b260-5b7bd28fa5cc",
-      "note": "Unbestimmt",
-      "elements": [
-        "ornament_91440",
-        "articulation_91440"
-      ]
+      "note": "Unbestimmt"
     },
     {
       "id": "646f927c-8e4e-4e2b-b09a-6db176eee1c8",
       "note": "der Harmonie \"nachlauschen\": dynamische Reduktion, leichte zeitliche Dehnung",
-      "continues": "7938a94a-fe29-42d0-bca8-b134a6776a96",
-      "elements": [
-        "tempo_720",
-        "dynamics_720",
-        "accentuationPattern_720",
-        "sustain-1440_start",
-        "sustain-1440_moveDown",
-        "sustain-1440_moveUp",
-        "sustain-1440_end"
-      ]
+      "continues": "7938a94a-fe29-42d0-bca8-b134a6776a96"
     },
     {
       "id": "047fa902-3259-4497-a972-23e89ca1ea65",
-      "note": "Hinspielen zur 1",
-      "elements": [
-        "tempo_2160",
-        "tempo_2880",
-        "rubato_2880",
-        "dynamics_2520",
-        "accentuationPattern_2880",
-        "articulation_2880",
-        "articulation_3240",
-        "articulation_3600",
-        "articulation_3960"
-      ]
+      "note": "Hinspielen zur 1"
     },
     {
       "id": "d3889a97-57b7-4fd6-aaf5-926474bb7325",
-      "note": "\"Nachlauschen\"",
-      "elements": [
-        "tempo_4320",
-        "dynamics_4320",
-        "sustain-4320_start",
-        "sustain-4320_moveDown",
-        "sustain-4320_moveUp",
-        "sustain-4320_end"
-      ]
+      "note": "\"Nachlauschen\""
     },
     {
       "id": "24386f8c-4add-4da7-80fa-883902af44f5",
-      "note": "Stete Verlangsamung zum melodischen Höhepunkt (A-Dur)",
-      "elements": [
-        "tempo_13680",
-        "tempo_14400",
-        "rubato_16560",
-        "rubato_13680",
-        "accentuationPattern_14400",
-        "sustain-16920_start",
-        "sustain-16920_moveDown",
-        "sustain-16920_moveUp",
-        "sustain-16920_end"
-      ]
+      "note": "Stete Verlangsamung zum melodischen Höhepunkt (A-Dur)"
     },
     {
       "id": "436cd72b-5ef4-46a7-8e99-d36e0a71f9c6",
-      "note": "Neue Phrase vorbereiten",
-      "elements": [
-        "tempo_22320",
-        "rubato_22320",
-        "rubato_23040",
-        "dynamics_22320"
-      ]
+      "note": "Neue Phrase vorbereiten"
     },
     {
       "id": "e7667c94-7c6d-4691-a796-d79e84865442",
-      "note": "in die nächste Phrase weiterführen: Kein ausgeprägtes Naschlauschen",
-      "elements": [
-        "tempo_23760",
-        "rubato_25200"
-      ]
+      "note": "in die nächste Phrase weiterführen: Kein ausgeprägtes Naschlauschen"
     },
     {
       "id": "4c3500c4-4468-4947-ba94-c8a930a454ef",
       "note": "Zum B-Dur-Akkord hin entspannen",
-      "continues": "e7667c94-7c6d-4691-a796-d79e84865442",
-      "elements": [
-        "tempo_25920",
-        "sustain-27360_start",
-        "sustain-27360_moveDown"
-      ]
+      "continues": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "57f29be6-43e8-4dbc-b425-38219be9ace6",
-      "note": "kurzes Verweilen auf Quartsextakkord; Beruhigen (dynamisch und agogisch)",
-      "elements": [
-        "tempo_28800",
-        "dynamics_28800"
-      ]
+      "note": "kurzes Verweilen auf Quartsextakkord; Beruhigen (dynamisch und agogisch)"
     },
     {
       "id": "803284bf-4997-418e-8546-50b76a5c348d",
-      "note": "etwas aktiver, nach vorne",
-      "elements": [
-        "tempo_30240",
-        "dynamics_30240"
-      ]
+      "note": "etwas aktiver, nach vorne"
     },
     {
       "id": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d",
-      "note": "Spannung aufbauen",
-      "elements": [
-        "tempo_31680",
-        "dynamics_31680"
-      ]
+      "note": "Spannung aufbauen"
     },
     {
       "id": "a15d8a21-0e3c-40f2-8225-02c9b8be9013",
-      "note": "konstante, leichte Verlangsamung",
-      "elements": [
-        "tempo_36720"
-      ]
+      "note": "konstante, leichte Verlangsamung"
     },
     {
       "id": "00fae607-0737-4b14-a723-841dabca0f66",
-      "note": "Schneller und leiser",
-      "elements": [
-        "tempo_39600",
-        "dynamics_39960",
-        "sustain-40680_start",
-        "sustain-40680_moveDown",
-        "sustain-40680_moveUp",
-        "sustain-40680_end"
-      ]
+      "note": "Schneller und leiser"
     },
     {
       "id": "ece08c1a-e163-434e-9291-aab3c47deb45",
-      "note": "Hinspielen auf Quartsextakkord",
-      "elements": [
-        "tempo_41040",
-        "rubato_41040",
-        "dynamics_41040"
-      ]
+      "note": "Hinspielen auf Quartsextakkord"
     },
     {
       "id": "565c9628-4d9f-4545-96d1-9f77e579bb41",
-      "note": "Intensivieren",
-      "elements": [
-        "tempo_48294.11764705881",
-        "articulation_48600",
-        "articulation_48960",
-        "articulation_49320",
-        "articulation_49680"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "3c2c274b-a3a3-41ab-ac65-5ebb6962e82c",
-      "note": "Anlauf",
-      "elements": [
-        "tempo_49680",
-        "dynamics_48960",
-        "dynamics_49320"
-      ]
+      "note": "Anlauf"
     },
     {
       "id": "c9720aed-c67b-4509-8930-e1bd674421d5",
-      "note": "Arpeggio schattieren unter Quartsextakkord",
-      "elements": [
-        "tempo_54360",
-        "rubato_54000",
-        "accentuationPattern_54000",
-        "articulation_54360",
-        "sustain-54360_start",
-        "sustain-54360_moveDown",
-        "sustain-54360_moveUp",
-        "sustain-54360_end"
-      ]
+      "note": "Arpeggio schattieren unter Quartsextakkord"
     },
     {
       "id": "8a143343-1778-4720-83b2-aa0ac720fef1",
-      "note": "Kurz entspannen",
-      "elements": [
-        "tempo_60840"
-      ]
+      "note": "Kurz entspannen"
     },
     {
       "id": "de01b528-2586-4a9f-8fdc-32e2edda6369",
-      "note": "Etwas flüchtiger werden",
-      "elements": [
-        "tempo_61560",
-        "dynamics_61920",
-        "accentuationPattern_61920",
-        "accentuationPattern_62640",
-        "accentuationPattern_63360"
-      ]
+      "note": "Etwas flüchtiger werden"
     },
     {
       "id": "d9f14011-3e85-414e-96d8-c0aaab9a9d07",
-      "note": "Hinspielen auf Quartsextakkord",
-      "elements": [
-        "tempo_64440",
-        "dynamics_64080"
-      ]
+      "note": "Hinspielen auf Quartsextakkord"
     },
     {
       "id": "8ae251b2-3ca4-4f2e-ba2f-fbf4c97e655a",
-      "note": "vorwärts ...",
-      "elements": [
-        "tempo_69840"
-      ]
+      "note": "vorwärts ..."
     },
     {
       "id": "8230f96b-1e39-4515-b654-dce80e3dca4b",
-      "note": "Resonanz durch Pedal halten, aber etwas verkürzt",
-      "elements": [
-        "tempo_73440",
-        "sustain-73440_start",
-        "sustain-73440_moveDown",
-        "sustain-73440_moveUp",
-        "sustain-73440_end"
-      ]
+      "note": "Resonanz durch Pedal halten, aber etwas verkürzt"
     },
     {
       "id": "cd238c20-e1b3-4746-affc-c5e8c2c0ceba",
-      "note": "gedehntes d",
-      "elements": [
-        "tempo_79200",
-        "rubato_79200",
-        "articulation_79560"
-      ]
+      "note": "gedehntes d"
     },
     {
       "id": "36f41eff-e10e-4c60-86e8-cf2a9e32a222",
-      "note": "Bewegen",
-      "elements": [
-        "tempo_83520",
-        "dynamics_83520",
-        "dynamics_84960"
-      ]
+      "note": "Bewegen"
     },
     {
       "id": "ba9a8bcb-ba44-41ee-bdcd-36b51ff25ba4",
-      "note": "Zurücknehmen",
-      "elements": [
-        "tempo_86400"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "6f95d440-48db-4b13-90c5-5bd109aa339f",
-      "note": "Unbestimmt",
-      "elements": []
+      "note": "Unbestimmt"
     },
     {
       "id": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c",
-      "note": "Wichtige Harmonien etwas zu früh",
-      "elements": [
-        "rubato_53280"
-      ]
+      "note": "Wichtige Harmonien etwas zu früh"
     },
     {
       "id": "de292c8f-0d9d-469c-af87-7b6d26f840bf",
-      "note": "Zurücknehmen",
-      "elements": [
-        "rubato_32400",
-        "sustain-32760_start",
-        "sustain-32760_moveDown",
-        "sustain-32760_moveUp",
-        "sustain-32760_end"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "a164d06d-5c67-4208-b876-0388f5d2d755",
-      "note": "Ankommen, Klang öffnen",
-      "elements": [
-        "rubato_30960",
-        "accentuationPattern_30960",
-        "sustain-31320_start",
-        "sustain-31320_moveDown",
-        "sustain-31320_moveUp",
-        "sustain-31320_end"
-      ]
+      "note": "Ankommen, Klang öffnen"
     },
     {
       "id": "5a6b448d-5922-4ef8-aee3-69e632fab865",
-      "note": "Intensivieren",
-      "elements": [
-        "rubato_51120",
-        "rubato_50400"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "5222c4c2-639e-46d9-a153-e8ccd41ac893",
-      "note": "Kurzes Entspannen auf C-Dur",
-      "elements": [
-        "rubato_10080",
-        "dynamics_10080",
-        "accentuationPattern_10080"
-      ]
+      "note": "Kurzes Entspannen auf C-Dur"
     },
     {
       "id": "eb7cd8ea-1a3d-4d18-918a-3a04469d68c4",
-      "note": "Zurücknehmen",
-      "elements": [
-        "rubato_75600",
-        "dynamics_75600",
-        "sustain-75960_start",
-        "sustain-75960_moveDown",
-        "sustain-75960_moveUp",
-        "sustain-75960_end"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "62c0a4a5-95fc-41be-b21b-efb33cc3b458",
-      "note": "Verfrühtes a",
-      "elements": [
-        "rubato_64080",
-        "sustain-64800_start",
-        "sustain-64800_moveDown"
-      ]
+      "note": "Verfrühtes a"
     },
     {
       "id": "780e8cb3-9be3-44aa-aa24-f523fa45553a",
       "note": "Minimal Zeit lassen auf b",
-      "continues": "c176332d-9fd7-4a36-8875-6a65769b96e2",
-      "elements": [
-        "rubato_60480"
-      ]
+      "continues": "c176332d-9fd7-4a36-8875-6a65769b96e2"
     },
     {
       "id": "c176332d-9fd7-4a36-8875-6a65769b96e2",
-      "note": "Hinspielen auf b",
-      "elements": [
-        "rubato_59760",
-        "sustain-59040_moveUp",
-        "sustain-59040_end"
-      ]
+      "note": "Hinspielen auf b"
     },
     {
       "id": "cf0555f0-d19c-46fb-a13e-840bc7c79075",
-      "note": "Konstantes \"Dranbleiben\" (dynamisch und agogisch)",
-      "elements": [
-        "dynamics_7200"
-      ]
+      "note": "Konstantes \"Dranbleiben\" (dynamisch und agogisch)"
     },
     {
       "id": "ee29477f-1b22-4ae8-8faf-1c0091772918",
-      "note": "Hinspielen auf c",
-      "elements": [
-        "dynamics_14040"
-      ]
+      "note": "Hinspielen auf c"
     },
     {
       "id": "b712355a-1ce3-473c-b5bd-4f58b5703174",
-      "note": "Hin zur Paenultima (Dominate + Sexte)",
-      "elements": [
-        "dynamics_19440",
-        "dynamics_20520"
-      ]
+      "note": "Hin zur Paenultima (Dominate + Sexte)"
     },
     {
       "id": "61cfb25f-8a56-4744-af8f-cad4da376dd3",
-      "note": "Beruhigen",
-      "elements": [
-        "dynamics_23760"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "98d54f68-c139-4bef-a6ad-28c88e3065b5",
-      "note": "dynamisch Weiterführen",
-      "elements": [
-        "dynamics_26640"
-      ]
+      "note": "dynamisch Weiterführen"
     },
     {
       "id": "f7685af4-6084-4d8b-841b-ba8517c97f5e",
-      "note": "als Dreiklang aufwärts entspannen",
-      "elements": [
-        "dynamics_37440",
-        "sustain-38160_start",
-        "sustain-38160_moveDown",
-        "sustain-38160_moveUp",
-        "sustain-38160_end"
-      ]
+      "note": "als Dreiklang aufwärts entspannen"
     },
     {
       "id": "2cf2e441-b702-4c25-9a5d-e14c378d4ff2",
-      "note": "Bewegen",
-      "elements": [
-        "dynamics_42480"
-      ]
+      "note": "Bewegen"
     },
     {
       "id": "887902a3-f80c-415c-a067-9a88ff31ae0f",
-      "note": "Dynamisch etwas zurück",
-      "elements": [
-        "dynamics_50400"
-      ]
+      "note": "Dynamisch etwas zurück"
     },
     {
       "id": "6a3c300f-b1b4-4518-af94-fdea24322eef",
-      "note": "dynamisch etwas zurück",
-      "elements": [
-        "dynamics_69840"
-      ]
+      "note": "dynamisch etwas zurück"
     },
     {
       "id": "fa4f9d02-b3ba-47d3-923e-66cca29191d8",
-      "note": "Intensivieren",
-      "elements": [
-        "dynamics_76320"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "cb7a4d16-e43f-41c2-8b06-f18d6172ac37",
-      "note": "Zurücknehmen",
-      "elements": [
-        "dynamics_78480",
-        "dynamics_79920"
-      ]
+      "note": "Zurücknehmen"
     },
     {
       "id": "cf7fa33d-4d72-4af3-a330-92f84738c2ae",
       "note": "Schattieren des d unter dem a",
-      "continues": "62c0a4a5-95fc-41be-b21b-efb33cc3b458",
-      "elements": [
-        "accentuationPattern_64440"
-      ]
+      "continues": "62c0a4a5-95fc-41be-b21b-efb33cc3b458"
     },
     {
       "id": "91601f33-6fa7-4aef-9786-57f9c42b51f7",
-      "note": "Richtung zum \"a\"",
-      "elements": [
-        "accentuationPattern_83520",
-        "accentuationPattern_84240"
-      ]
+      "note": "Richtung zum \"a\""
     },
     {
       "id": "9e8ee1a1-97f1-4ea5-88ad-1b764a4edc2b",
-      "note": "Unbestimmt",
-      "elements": []
+      "note": "Unbestimmt"
     },
     {
       "id": "9ca6b1f2-8d05-46d1-9953-0807f08b453c",
-      "note": "Gut-schlecht-Akzente",
-      "elements": []
+      "note": "Gut-schlecht-Akzente"
     },
     {
       "id": "68f476cd-267c-4bbd-8f96-0e1bf38d1137",
-      "note": "Unbestimmt",
-      "elements": []
+      "note": "Unbestimmt"
     },
     {
       "id": "46d700fe-006a-4a8f-8255-61d882377188",
-      "note": "Unbestimmt",
-      "elements": []
+      "note": "Unbestimmt"
     },
     {
       "id": "b1703afe-823a-4261-9969-dbab1ae85531",
-      "note": "Intensivieren",
-      "elements": [
-        "articulation_33480",
-        "articulation_33120"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "821fda57-7ea5-4a05-ab4f-2b221a141996",
       "note": "Drücken des Verschiebungspedals",
-      "continues": "7938a94a-fe29-42d0-bca8-b134a6776a96",
-      "elements": [
-        "soft-0_start",
-        "soft-0_moveDown"
-      ]
+      "continues": "7938a94a-fe29-42d0-bca8-b134a6776a96"
     },
     {
       "id": "b6fdbb8c-bf4c-4868-9a1c-641053b7c880",
-      "note": "Klang langsam öffnen",
-      "elements": [
-        "soft-0_moveUp",
-        "soft-0_end"
-      ]
+      "note": "Klang langsam öffnen"
     },
     {
       "id": "fec1014a-9125-4ea6-b2b9-79a7a2dce859",
-      "note": "Intensivieren",
-      "elements": [
-        "sustain-59040_start",
-        "sustain-59040_moveDown"
-      ]
+      "note": "Intensivieren"
     },
     {
       "id": "cea2dae7-4b97-482e-a10c-6279d51f4074",
-      "note": "Legato in der aufsteigenden Sexte c-a",
-      "elements": [
-        "sustain-84600_start",
-        "sustain-84600_moveDown",
-        "sustain-84600_moveUp",
-        "sustain-84600_end"
-      ]
+      "note": "Legato in der aufsteigenden Sexte c-a"
     },
     {
       "id": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0",
-      "note": "Bewegen",
-      "elements": [
-        "sustain-86760_start",
-        "sustain-86760_moveDown"
-      ]
+      "note": "Bewegen"
     },
     {
       "id": "31ead4dc-2b32-480d-a73a-e933994272dd",
       "note": "Zurücknehmen",
-      "continues": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0",
-      "elements": [
-        "sustain-86760_moveUp",
-        "sustain-86760_end"
-      ]
+      "continues": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0"
     },
     {
       "id": "1d66d419-868e-47e1-8a86-848b18fa1792",
-      "note": "Verbindung der absteigenden Quinte a-d",
-      "elements": [
-        "sustain-41400_start",
-        "sustain-41400_moveDown",
-        "sustain-41400_moveUp",
-        "sustain-41400_end"
-      ]
+      "note": "Verbindung der absteigenden Quinte a-d"
     },
     {
       "id": "42342851-85e9-4914-a953-e5a22cf7c755",
-      "note": "Beruhigen",
-      "elements": [
-        "sustain-45000_moveUp",
-        "sustain-45000_end"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "d6c9eda5-c1e0-4355-bbe3-e3c45674e429",
-      "note": "Beruhigen",
-      "elements": [
-        "sustain-91080_start",
-        "sustain-91080_moveDown"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "6ce75790-2f4a-4ac3-81b0-54e3e661661f",
-      "note": "Beruhigen",
-      "elements": [
-        "sustain-91080_moveUp",
-        "sustain-91080_end"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "19f76f43-610e-43cc-945c-e7bea414cdf3",
-      "note": "Beruhigen",
-      "elements": [
-        "sustain-91440_start",
-        "sustain-91440_moveDown"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "a05e0fda-7ae6-4262-b8a2-0a9367b6a283",
-      "note": "Beruhigen",
-      "elements": [
-        "sustain-91440_moveUp",
-        "sustain-91440_end"
-      ]
+      "note": "Beruhigen"
     },
     {
       "id": "295062a2-65ac-4234-8bbb-df669caae6e2",
-      "note": "Beruhigen",
-      "elements": []
+      "note": "Beruhigen"
     },
     {
       "id": "e6120cab-d164-49be-bcaf-e0dd46c53552",
