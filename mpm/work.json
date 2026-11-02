@@ -8,8 +8,7 @@
       "name": "MakeChoice",
       "options": {
         "prefer": "c9050e75-97a8-4862-9533-0f4b1439802b"
-      },
-      "segment": "d8682d73-0822-49d4-b19e-9314c1668952"
+      }
     },
     {
       "id": "9f8b5d24-4423-431f-80dc-5178e79af043",
@@ -24,8 +23,7 @@
       "range": {
         "from": 1440,
         "to": 1440
-      },
-      "segment": "0fad3105-f846-4c6f-88da-0682d76b1afd"
+      }
     },
     {
       "id": "69f91e58-1ffa-4352-97a8-f797b3cb2fd4",
@@ -85,8 +83,7 @@
       "range": {
         "from": 16920,
         "to": 18360
-      },
-      "segment": "f4a992c8-3216-4627-9057-9bce57714988"
+      }
     },
     {
       "id": "b75ee127-70da-4a11-b45d-41cb43b22fcc",
@@ -101,8 +98,7 @@
       "range": {
         "from": 17640,
         "to": 18000
-      },
-      "segment": "f4a992c8-3216-4627-9057-9bce57714988"
+      }
     },
     {
       "id": "2aac2b1a-7be2-4182-8503-7cc3d7a03229",
@@ -186,8 +182,7 @@
       "range": {
         "from": 19800,
         "to": 20160
-      },
-      "segment": "6ed49811-53dc-4716-bf02-2b503488060b"
+      }
     },
     {
       "id": "0b186337-6944-4fa8-bf31-e1eded2d538a",
@@ -202,8 +197,7 @@
       "range": {
         "from": 20160,
         "to": 20160
-      },
-      "segment": "6ed49811-53dc-4716-bf02-2b503488060b"
+      }
     },
     {
       "id": "db9f7266-850f-4bf6-bf0d-9f76d6080fbf",
@@ -277,8 +271,7 @@
       "range": {
         "from": 30600,
         "to": 30600
-      },
-      "segment": "b86cea25-33b2-46a9-83d4-40fb1e7747ce"
+      }
     },
     {
       "id": "4614d4c5-696c-404a-8255-2a6da3b84d6a",
@@ -367,8 +360,7 @@
       "range": {
         "from": 36000,
         "to": 36000
-      },
-      "segment": "4a301aa8-e25f-40e0-975b-1d925653d9b2"
+      }
     },
     {
       "id": "f5c41495-9134-4745-9967-bd0eddb7d9f5",
@@ -532,8 +524,7 @@
       "range": {
         "from": 40680,
         "to": 40680
-      },
-      "segment": "3ec504f3-7d4a-4362-a15a-ca6c33d7dd93"
+      }
     },
     {
       "id": "22e4272e-7940-4490-99f5-5d7e278a951d",
@@ -551,7 +542,7 @@
         "from": 41040,
         "to": null
       },
-      "segment": "3ec504f3-7d4a-4362-a15a-ca6c33d7dd93"
+      "segment": "00fae607-0737-4b14-a723-841dabca0f66"
     },
     {
       "id": "0fefa643-7094-4360-8875-4d2e55e69d83",
@@ -568,7 +559,7 @@
         "from": 40320,
         "to": 41040
       },
-      "segment": "3ec504f3-7d4a-4362-a15a-ca6c33d7dd93"
+      "segment": "00fae607-0737-4b14-a723-841dabca0f66"
     },
     {
       "id": "4576e759-d534-4c2e-a0d3-8e31b07b73e9",
@@ -583,8 +574,7 @@
       "range": {
         "from": 43200,
         "to": 43200
-      },
-      "segment": "0ddac397-c9e9-404f-a7c6-0531e3ab57fb"
+      }
     },
     {
       "id": "5e644aed-96ad-4d28-a90c-a3fb2152b128",
@@ -717,8 +707,7 @@
       "range": {
         "from": 4320,
         "to": 4320
-      },
-      "segment": "3603c14a-8b03-4583-b77d-6a728834b342"
+      }
     },
     {
       "id": "d6ed9ef4-635e-456b-9be4-092a6ad8cd97",
@@ -734,8 +723,7 @@
       "range": {
         "from": 4320,
         "to": 4320
-      },
-      "segment": "3603c14a-8b03-4583-b77d-6a728834b342"
+      }
     },
     {
       "id": "182b412f-fe92-4a94-8229-85b292b1b65b",
@@ -796,8 +784,7 @@
       "range": {
         "from": 34200,
         "to": 34200
-      },
-      "segment": "6e60a45b-5bff-40fd-92ea-939e468d8f84"
+      }
     },
     {
       "id": "eb405007-8d7b-467b-8e48-d24135a570f0",
@@ -893,8 +880,7 @@
       "range": {
         "from": 44280,
         "to": 44280
-      },
-      "segment": "a4ef5a2d-3e62-4a82-a7fe-37712d7de1ab"
+      }
     },
     {
       "id": "bd7bdad5-d2b3-49f6-bdb5-d13d31d2041b",
@@ -1106,8 +1092,7 @@
       "range": {
         "from": 45720,
         "to": 45720
-      },
-      "segment": "9917074b-2f5d-43d1-8ce8-af260f860373"
+      }
     },
     {
       "id": "656e0b15-c1d5-4f5b-b257-768c0ac798e0",
@@ -1240,8 +1225,7 @@
       "range": {
         "from": 55800,
         "to": 55800
-      },
-      "segment": "11d46f48-200c-4ae3-aea4-0caafdda21ea"
+      }
     },
     {
       "id": "a2cb7475-09ac-4231-abe9-4603a9f10cbd",
@@ -1256,8 +1240,7 @@
       "range": {
         "from": 56160,
         "to": 56160
-      },
-      "segment": "11d46f48-200c-4ae3-aea4-0caafdda21ea"
+      }
     },
     {
       "id": "9383b88b-bbb3-421f-a08c-2cbbe6a2823f",
@@ -1379,8 +1362,7 @@
       "range": {
         "from": 56520,
         "to": 61200
-      },
-      "segment": "878584e2-421b-472f-86d9-c8e0922c2258"
+      }
     },
     {
       "id": "b6032711-a39c-47dd-86f1-4cae8e13c9f6",
@@ -1459,8 +1441,7 @@
       "range": {
         "from": 57240,
         "to": 57240
-      },
-      "segment": "6078a08e-f0c5-4190-828e-b606c54cf8e2"
+      }
     },
     {
       "id": "ca89c13b-f044-45a9-8de4-2dd070bf0946",
@@ -1492,8 +1473,7 @@
       "range": {
         "from": 65880,
         "to": 66240
-      },
-      "segment": "2e2d8bb7-aa9c-42c0-8a9f-0b51753161d7"
+      }
     },
     {
       "id": "c1992520-d109-4eac-bf30-87fa415c6446",
@@ -1508,8 +1488,7 @@
       "range": {
         "from": 66240,
         "to": 66240
-      },
-      "segment": "2e2d8bb7-aa9c-42c0-8a9f-0b51753161d7"
+      }
     },
     {
       "id": "b66c2a25-71d7-4d2e-98ac-d04553316a92",
@@ -1603,8 +1582,7 @@
       "range": {
         "from": 67320,
         "to": 67680
-      },
-      "segment": "f5ee836d-e79d-48be-b749-df0283eeb837"
+      }
     },
     {
       "id": "70d2a454-eaff-45e2-b79a-bd202f3f147e",
@@ -1619,8 +1597,7 @@
       "range": {
         "from": 67680,
         "to": 67680
-      },
-      "segment": "f5ee836d-e79d-48be-b749-df0283eeb837"
+      }
     },
     {
       "id": "52bc8e32-0f9e-467a-9459-364d7fa80703",
@@ -1696,8 +1673,7 @@
       "range": {
         "from": 68760,
         "to": 68760
-      },
-      "segment": "279dd975-ddb8-42d9-90d4-1324200e976a"
+      }
     },
     {
       "id": "12b9f08b-cbe6-4b91-811b-51a781e70f46",
@@ -1841,8 +1817,7 @@
       "range": {
         "from": 69480,
         "to": 69480
-      },
-      "segment": "7473dcf7-6749-455f-a400-f8ffa313c3bb"
+      }
     },
     {
       "id": "ef273c4e-2d65-4dd2-b3a6-bd2639b5d100",
@@ -1958,8 +1933,7 @@
       "range": {
         "from": 70560,
         "to": 70560
-      },
-      "segment": "4fe7a110-4d91-4326-a1e2-5b0f93df2f1b"
+      }
     },
     {
       "id": "0a4760d2-2ba1-41a9-a19a-6ff97204db71",
@@ -2053,8 +2027,7 @@
       "range": {
         "from": 76680,
         "to": 76680
-      },
-      "segment": "8be75870-c4f6-413a-b544-e2e7435594aa"
+      }
     },
     {
       "id": "f8bec790-b9e2-4b12-a1fc-e1a40dfcf55a",
@@ -2243,8 +2216,7 @@
       "range": {
         "from": 78120,
         "to": 78120
-      },
-      "segment": "bc04b5da-81b3-4607-9faa-23573fd67b2d"
+      }
     },
     {
       "id": "d1276ca6-6452-4c79-92e2-3f67651a6919",
@@ -2408,8 +2380,7 @@
       "range": {
         "from": 80280,
         "to": 80280
-      },
-      "segment": "669b43e1-e13c-4870-98be-8a782552554a"
+      }
     },
     {
       "id": "4838d841-464a-4ef5-a98f-6950c3cffc5f",
@@ -2487,8 +2458,7 @@
       "range": {
         "from": 82080,
         "to": 82080
-      },
-      "segment": "68f3844c-d70a-41f5-985d-f779b91b9642"
+      }
     },
     {
       "id": "966b93d6-b27a-4e61-9506-602ff66c6af6",
@@ -2646,8 +2616,7 @@
       "range": {
         "from": 86760,
         "to": 86760
-      },
-      "segment": "e7dead82-8936-4849-bd72-61123b73b3d1"
+      }
     },
     {
       "id": "ca77154e-d17b-4d87-b7dc-f791305eede1",
@@ -2784,8 +2753,7 @@
       "range": {
         "from": 90360,
         "to": 91440
-      },
-      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
+      }
     },
     {
       "id": "795d7de1-ffa6-45d7-8116-36c37eab6a94",
@@ -2861,8 +2829,7 @@
       "range": {
         "from": 91080,
         "to": 91080
-      },
-      "segment": "a3233bdf-d3d3-4da6-863d-86086b776335"
+      }
     },
     {
       "id": "cb756905-5e71-425c-b60d-4641b334c6b2",
@@ -2880,7 +2847,7 @@
         "from": 91080,
         "to": null
       },
-      "segment": "a3233bdf-d3d3-4da6-863d-86086b776335"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "3f1b9f7c-3f2a-4ac4-8da0-3891db773f61",
@@ -2896,8 +2863,7 @@
       "range": {
         "from": 21240,
         "to": 21240
-      },
-      "segment": "ae978e18-b878-4d59-bb09-536ca6ffb25e"
+      }
     },
     {
       "id": "39710772-26e5-438e-b865-0581e72ba12a",
@@ -3812,8 +3778,7 @@
         "ornament_89640",
         "ornament_90000",
         "ornament_90720"
-      ],
-      "segment": "e6120cab-d164-49be-bcaf-e0dd46c53552"
+      ]
     },
     {
       "id": "a847020a-a92a-4c8c-97e6-000c84877590",
@@ -4668,7 +4633,7 @@
         "from": 23400,
         "to": null
       },
-      "segment": "aaedcf8b-e357-4b15-bf26-5c63a828584d"
+      "segment": "436cd72b-5ef4-46a7-8e99-d36e0a71f9c6"
     },
     {
       "id": "e830a292-f1be-4472-933f-0e09e7b26ea9",
@@ -4686,7 +4651,7 @@
         "from": 23760,
         "to": null
       },
-      "segment": "aaedcf8b-e357-4b15-bf26-5c63a828584d"
+      "segment": "436cd72b-5ef4-46a7-8e99-d36e0a71f9c6"
     },
     {
       "id": "1c01492d-87a8-4762-9875-2eb3f327be57",
@@ -4704,7 +4669,7 @@
         "from": 24480,
         "to": null
       },
-      "segment": "74da407d-21dc-4292-8720-be3f520eec90"
+      "segment": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "7a1153de-13cb-4a3a-91f3-6ea342ccc024",
@@ -4725,7 +4690,7 @@
         "from": 23760,
         "to": 25560
       },
-      "segment": "74da407d-21dc-4292-8720-be3f520eec90"
+      "segment": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "ddb6996a-4276-4f65-a181-6cfb6caaa811",
@@ -4752,7 +4717,7 @@
         "from": 24480,
         "to": 24480
       },
-      "segment": "74da407d-21dc-4292-8720-be3f520eec90"
+      "segment": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "cb08d3e2-7aa2-4aa2-a527-cbea127a796b",
@@ -4772,7 +4737,7 @@
         "from": 23860.107360387217,
         "to": 24060.107360387217
       },
-      "segment": "74da407d-21dc-4292-8720-be3f520eec90"
+      "segment": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "659b05dc-446b-4a3a-b272-47d5ad428009",
@@ -4792,7 +4757,7 @@
         "from": 25352.239218237886,
         "to": 25662.239218237886
       },
-      "segment": "74da407d-21dc-4292-8720-be3f520eec90"
+      "segment": "e7667c94-7c6d-4691-a796-d79e84865442"
     },
     {
       "id": "3c3c52c2-bb13-468f-969f-aa9c05ec2239",
@@ -4937,7 +4902,7 @@
         "from": 29520,
         "to": null
       },
-      "segment": "e49e1685-8c27-465c-9a38-c5dfa4e473be"
+      "segment": "57f29be6-43e8-4dbc-b425-38219be9ace6"
     },
     {
       "id": "f7198c89-00e4-4f32-baec-dd76dfcdfee2",
@@ -4954,7 +4919,7 @@
         "from": 29520,
         "to": 30240
       },
-      "segment": "e49e1685-8c27-465c-9a38-c5dfa4e473be"
+      "segment": "57f29be6-43e8-4dbc-b425-38219be9ace6"
     },
     {
       "id": "37d034d9-e060-4c6a-933f-fd545630d080",
@@ -4975,7 +4940,7 @@
         "from": 29520,
         "to": 30240
       },
-      "segment": "e49e1685-8c27-465c-9a38-c5dfa4e473be"
+      "segment": "57f29be6-43e8-4dbc-b425-38219be9ace6"
     },
     {
       "id": "69d60ebc-1771-43df-8347-b95c24aa110e",
@@ -4995,7 +4960,7 @@
         "from": 29550.363430887533,
         "to": 29750.363430887533
       },
-      "segment": "e49e1685-8c27-465c-9a38-c5dfa4e473be"
+      "segment": "57f29be6-43e8-4dbc-b425-38219be9ace6"
     },
     {
       "id": "b0b98343-d635-4d07-b434-32fa2e6fd8f4",
@@ -5015,7 +4980,7 @@
         "from": 30081.79408079666,
         "to": 30281.79408079666
       },
-      "segment": "e49e1685-8c27-465c-9a38-c5dfa4e473be"
+      "segment": "57f29be6-43e8-4dbc-b425-38219be9ace6"
     },
     {
       "id": "a2fd1b51-9c79-46bf-b766-2cd3d1713f56",
@@ -5033,7 +4998,7 @@
         "from": 31680,
         "to": null
       },
-      "segment": "ee4513f4-5a09-47b6-ae3d-50531c13397a"
+      "segment": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d"
     },
     {
       "id": "a55b812c-3ade-485e-a82a-35119e574776",
@@ -5051,7 +5016,7 @@
         "from": 32040,
         "to": null
       },
-      "segment": "ee4513f4-5a09-47b6-ae3d-50531c13397a"
+      "segment": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d"
     },
     {
       "id": "f4c5aa95-d26a-4437-aa00-49e3d399e071",
@@ -5069,7 +5034,7 @@
         "from": 32400,
         "to": null
       },
-      "segment": "ee4513f4-5a09-47b6-ae3d-50531c13397a"
+      "segment": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d"
     },
     {
       "id": "eaa896e0-b943-49dd-ab18-071c494e4265",
@@ -5086,7 +5051,7 @@
         "from": 31680,
         "to": 32400
       },
-      "segment": "ee4513f4-5a09-47b6-ae3d-50531c13397a"
+      "segment": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d"
     },
     {
       "id": "3ffa5d9d-869d-45e2-a41a-24d7a29ca16d",
@@ -5107,7 +5072,7 @@
         "from": 31680,
         "to": 32400
       },
-      "segment": "ee4513f4-5a09-47b6-ae3d-50531c13397a"
+      "segment": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d"
     },
     {
       "id": "8030ced2-2231-46e7-a2d4-37102fd3630c",
@@ -6436,7 +6401,7 @@
         "from": 61560,
         "to": null
       },
-      "segment": "7900f7ff-a5f9-4a4b-b480-8e5244322d2e"
+      "segment": "8a143343-1778-4720-83b2-aa0ac720fef1"
     },
     {
       "id": "f2108196-7f25-4c90-a803-2ea5b2eb8bc8",
@@ -6454,7 +6419,7 @@
         "from": 61920,
         "to": null
       },
-      "segment": "7900f7ff-a5f9-4a4b-b480-8e5244322d2e"
+      "segment": "8a143343-1778-4720-83b2-aa0ac720fef1"
     },
     {
       "id": "3b4b88fd-6587-48c0-a91a-27bef8c1ccee",
@@ -6471,7 +6436,7 @@
         "from": 61200,
         "to": 61920
       },
-      "segment": "7900f7ff-a5f9-4a4b-b480-8e5244322d2e"
+      "segment": "8a143343-1778-4720-83b2-aa0ac720fef1"
     },
     {
       "id": "7019d314-5899-4097-890c-3491b247ea0e",
@@ -7396,7 +7361,7 @@
         "from": 91440,
         "to": null
       },
-      "segment": "d0c6a809-f8fc-4436-b260-5b7bd28fa5cc"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "02a7186d-c68e-4afc-a49c-c4bda55e744d",
@@ -7427,7 +7392,7 @@
         "from": 91440,
         "to": 91440
       },
-      "segment": "d0c6a809-f8fc-4436-b260-5b7bd28fa5cc"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "1e3a886c-b56e-4cd6-9a7b-7cb3783f642f",
@@ -9296,8 +9261,7 @@
         "ornament_90720",
         "ornament_91080",
         "ornament_91440"
-      ],
-      "segment": "6f95d440-48db-4b13-90c5-5bd109aa339f"
+      ]
     },
     {
       "id": "fb87b18c-d7a7-4d54-ad1a-59c29992cdc2",
@@ -9314,7 +9278,7 @@
         "from": 53280,
         "to": 54000
       },
-      "segment": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c"
+      "segment": "e236c037-e1f9-4fe2-af75-1762d3bd8ab4"
     },
     {
       "id": "dbeb0196-0e8d-4962-85da-106fa1c4c9a4",
@@ -9702,7 +9666,7 @@
         "from": 60480,
         "to": 61200
       },
-      "segment": "780e8cb3-9be3-44aa-aa24-f523fa45553a"
+      "segment": "c176332d-9fd7-4a36-8875-6a65769b96e2"
     },
     {
       "id": "930facf4-1b04-4d48-9213-b677dec65cf5",
@@ -10239,7 +10203,7 @@
         "from": 64440,
         "to": 65160
       },
-      "segment": "cf7fa33d-4d72-4af3-a330-92f84738c2ae"
+      "segment": "62c0a4a5-95fc-41be-b21b-efb33cc3b458"
     },
     {
       "id": "31e9f3fd-b858-4acc-a13b-efccbca5b6bd",
@@ -10294,8 +10258,7 @@
         ],
         "into": "good-bad-4x",
         "scope": "global"
-      },
-      "segment": "9e8ee1a1-97f1-4ea5-88ad-1b764a4edc2b"
+      }
     },
     {
       "id": "b4acace8-890e-4fb5-9a76-7e72ffe770fb",
@@ -10314,8 +10277,7 @@
         "accentuationPattern_2880",
         "accentuationPattern_10800",
         "accentuationPattern_14400"
-      ],
-      "segment": "9ca6b1f2-8d05-46d1-9953-0807f08b453c"
+      ]
     },
     {
       "id": "dab63316-8563-4561-9a9a-106d1b1a3032",
@@ -10337,8 +10299,7 @@
         "accentuationPattern_7920",
         "accentuationPattern_8640",
         "accentuationPattern_9360"
-      ],
-      "segment": "68f476cd-267c-4bbd-8f96-0e1bf38d1137"
+      ]
     },
     {
       "id": "d8848bb5-7843-42ad-9105-556d88f7bb0b",
@@ -10358,8 +10319,7 @@
         "accentuationPattern_30240",
         "accentuationPattern_30960",
         "accentuationPattern_31680"
-      ],
-      "segment": "46d700fe-006a-4a8f-8255-61d882377188"
+      ]
     },
     {
       "id": "fd158008-4606-4968-87e2-5adc450f7175",
@@ -10469,7 +10429,7 @@
         "from": 58331.62992079884,
         "to": 58531.62992079884
       },
-      "segment": "fec1014a-9125-4ea6-b2b9-79a7a2dce859"
+      "segment": "624f2bdf-2f1c-4ce9-9cc8-895be809cd72"
     },
     {
       "id": "d453a10f-d5b4-4f3f-9e92-c3554b6d9dbd",
@@ -10529,7 +10489,7 @@
         "from": 86631.61575628327,
         "to": 86831.61575628327
       },
-      "segment": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0"
+      "segment": "e7dead82-8936-4849-bd72-61123b73b3d1"
     },
     {
       "id": "648d79b9-1a51-4ed2-b106-63b2e6300b4f",
@@ -10549,7 +10509,7 @@
         "from": 86873.45199822437,
         "to": 87073.45199822437
       },
-      "segment": "31ead4dc-2b32-480d-a73a-e933994272dd"
+      "segment": "e7dead82-8936-4849-bd72-61123b73b3d1"
     },
     {
       "id": "31ea31ca-69d5-4bee-8d00-8899c2eaef74",
@@ -10609,7 +10569,7 @@
         "from": 45078.33802776485,
         "to": 45168.33802776485
       },
-      "segment": "42342851-85e9-4914-a953-e5a22cf7c755"
+      "segment": "a4ef5a2d-3e62-4a82-a7fe-37712d7de1ab"
     },
     {
       "id": "8d1efda4-c50b-47b2-ad3e-ff048dfb2366",
@@ -10629,7 +10589,7 @@
         "from": 90752.5902733298,
         "to": 90817.5902733298
       },
-      "segment": "d6c9eda5-c1e0-4355-bbe3-e3c45674e429"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "00dd89ee-12f6-442d-8717-2872df07a6b0",
@@ -10649,7 +10609,7 @@
         "from": 90926.75024141555,
         "to": 91126.75024141555
       },
-      "segment": "6ce75790-2f4a-4ac3-81b0-54e3e661661f"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "0848ad2b-a45f-4f57-98ca-3934d2daaf80",
@@ -10669,7 +10629,7 @@
         "from": 91133.7158750996,
         "to": 91233.7158750996
       },
-      "segment": "19f76f43-610e-43cc-945c-e7bea414cdf3"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "b12353c9-0b32-4abb-81a1-075a01695069",
@@ -10689,7 +10649,7 @@
         "from": 91403.90369617002,
         "to": 91463.90369617002
       },
-      "segment": "a05e0fda-7ae6-4262-b8a2-0a9367b6a283"
+      "segment": "ab593be2-ae87-42a8-a4ac-12907e2904f9"
     },
     {
       "id": "eb650893-9eb1-42df-8f73-b8380a3cb49d",
@@ -10706,15 +10666,10 @@
             "text": "Rekonstruktion der Welte Mignon-Klavierrolle 225, Alfred Grünfeld spielt Robert Schumann, Träumerei"
           }
         ]
-      },
-      "segment": "295062a2-65ac-4234-8bbb-df669caae6e2"
+      }
     }
   ],
   "segments": [
-    {
-      "id": "d8682d73-0822-49d4-b19e-9314c1668952",
-      "note": "Unbestimmt"
-    },
     {
       "id": "0fad3105-f846-4c6f-88da-0682d76b1afd",
       "note": "Nachschlag als Ereignis: vor dem Schlag arpeggiert"
@@ -10736,10 +10691,6 @@
       "note": "Nachschlag schattieren"
     },
     {
-      "id": "3ec504f3-7d4a-4362-a15a-ca6c33d7dd93",
-      "note": "\"Heineinfallen\""
-    },
-    {
       "id": "0ddac397-c9e9-404f-a7c6-0531e3ab57fb",
       "note": "nachschlagende Akkordbrechung schattieren"
     },
@@ -10753,7 +10704,7 @@
     },
     {
       "id": "a4ef5a2d-3e62-4a82-a7fe-37712d7de1ab",
-      "note": "Intensivierung der Integalité"
+      "note": "Intensivierung der Inegalité"
     },
     {
       "id": "9917074b-2f5d-43d1-8ce8-af260f860373",
@@ -10815,11 +10766,7 @@
     },
     {
       "id": "ab593be2-ae87-42a8-a4ac-12907e2904f9",
-      "note": "Zurücknehmen"
-    },
-    {
-      "id": "a3233bdf-d3d3-4da6-863d-86086b776335",
-      "note": "Unbestimmt"
+      "note": "Zurücknehmen und beruhigen: leiser, Pedal mit jedem Basston erneuert"
     },
     {
       "id": "ae978e18-b878-4d59-bb09-536ca6ffb25e",
@@ -10851,24 +10798,16 @@
     },
     {
       "id": "b1300a25-c157-4941-8afe-3969e84f881d",
-      "note": "\"Aufweichen\": Decrescendo und Arpeggio zum a'"
+      "note": "„Aufweichen“: Decrescendo und Arpeggio zum a″"
     },
     {
       "id": "d472996d-738c-4dd1-9ee4-b8c0cc37cdc5",
-      "note": "Richtung zum Quartsexkkord, Vorwärts-\"Lilt\""
+      "note": "Richtung zum Quartsextakkord, Vorwärts-„Lilt“"
     },
     {
       "id": "09b6094a-1db8-459b-9c33-427adcd1d8c4",
       "note": "Intensivieren",
       "continues": "6ed49811-53dc-4716-bf02-2b503488060b"
-    },
-    {
-      "id": "aaedcf8b-e357-4b15-bf26-5c63a828584d",
-      "note": "Intensivieren"
-    },
-    {
-      "id": "74da407d-21dc-4292-8720-be3f520eec90",
-      "note": "Geste des Nachlauschens"
     },
     {
       "id": "cf7d37a3-4ffd-4b49-9e5d-62b7c4b5134b",
@@ -10877,14 +10816,6 @@
     {
       "id": "ad9d5d44-b501-44d1-8cd9-58664ccdc241",
       "note": "Vorwärtsbewegung durch Inegalité"
-    },
-    {
-      "id": "e49e1685-8c27-465c-9a38-c5dfa4e473be",
-      "note": "\"Innehalten\""
-    },
-    {
-      "id": "ee4513f4-5a09-47b6-ae3d-50531c13397a",
-      "note": "Intensivieren"
     },
     {
       "id": "a665df3a-e6fc-4a14-92f2-664ac98b5ad4",
@@ -10918,8 +10849,7 @@
     },
     {
       "id": "e236c037-e1f9-4fe2-af75-1762d3bd8ab4",
-      "note": "Hinspielen zum Quartsextakkord",
-      "continues": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c"
+      "note": "Hinspielen zum Quartsextakkord: wichtige Harmonien etwas zu früh"
     },
     {
       "id": "19411a04-17bf-41c7-b445-9921ddc29692",
@@ -10948,11 +10878,6 @@
     {
       "id": "624f2bdf-2f1c-4ce9-9cc8-895be809cd72",
       "note": "Abschattieren"
-    },
-    {
-      "id": "7900f7ff-a5f9-4a4b-b480-8e5244322d2e",
-      "note": "fließend in Dominantseptnonakkord",
-      "continues": "8a143343-1778-4720-83b2-aa0ac720fef1"
     },
     {
       "id": "663f4859-f1d7-4634-8aaf-59eda8cb9a89",
@@ -10995,10 +10920,6 @@
       "note": "Intensivieren"
     },
     {
-      "id": "d0c6a809-f8fc-4436-b260-5b7bd28fa5cc",
-      "note": "Unbestimmt"
-    },
-    {
       "id": "646f927c-8e4e-4e2b-b09a-6db176eee1c8",
       "note": "der Harmonie \"nachlauschen\": dynamische Reduktion, leichte zeitliche Dehnung",
       "continues": "7938a94a-fe29-42d0-bca8-b134a6776a96"
@@ -11021,7 +10942,7 @@
     },
     {
       "id": "e7667c94-7c6d-4691-a796-d79e84865442",
-      "note": "in die nächste Phrase weiterführen: Kein ausgeprägtes Naschlauschen"
+      "note": "Nachlauschen nur angedeutet: Nachschlag kurz und leise, ohne Dehnung in die Phrase weiterführen"
     },
     {
       "id": "4c3500c4-4468-4947-ba94-c8a930a454ef",
@@ -11030,7 +10951,7 @@
     },
     {
       "id": "57f29be6-43e8-4dbc-b425-38219be9ace6",
-      "note": "kurzes Verweilen auf Quartsextakkord; Beruhigen (dynamisch und agogisch)"
+      "note": "Kurzes Verweilen auf Quartsextakkord („Innehalten“); Beruhigen (dynamisch und agogisch)"
     },
     {
       "id": "803284bf-4997-418e-8546-50b76a5c348d",
@@ -11046,7 +10967,7 @@
     },
     {
       "id": "00fae607-0737-4b14-a723-841dabca0f66",
-      "note": "Schneller und leiser"
+      "note": "Schneller und leiser, in den d-Moll-Akkord „hineinfallen“"
     },
     {
       "id": "ece08c1a-e163-434e-9291-aab3c47deb45",
@@ -11066,7 +10987,7 @@
     },
     {
       "id": "8a143343-1778-4720-83b2-aa0ac720fef1",
-      "note": "Kurz entspannen"
+      "note": "Kurz entspannen, dann fließend in den Dominantseptnonakkord"
     },
     {
       "id": "de01b528-2586-4a9f-8fdc-32e2edda6369",
@@ -11097,14 +11018,6 @@
       "note": "Zurücknehmen"
     },
     {
-      "id": "6f95d440-48db-4b13-90c5-5bd109aa339f",
-      "note": "Unbestimmt"
-    },
-    {
-      "id": "070aa4ca-b2ee-4a3e-a0a8-ad5bbf0ff13c",
-      "note": "Wichtige Harmonien etwas zu früh"
-    },
-    {
       "id": "de292c8f-0d9d-469c-af87-7b6d26f840bf",
       "note": "Zurücknehmen"
     },
@@ -11129,17 +11042,12 @@
       "note": "Verfrühtes a"
     },
     {
-      "id": "780e8cb3-9be3-44aa-aa24-f523fa45553a",
-      "note": "Minimal Zeit lassen auf b",
-      "continues": "c176332d-9fd7-4a36-8875-6a65769b96e2"
-    },
-    {
       "id": "c176332d-9fd7-4a36-8875-6a65769b96e2",
-      "note": "Hinspielen auf b"
+      "note": "Hinspielen auf b, dort minimal Zeit lassen"
     },
     {
       "id": "cf0555f0-d19c-46fb-a13e-840bc7c79075",
-      "note": "Konstantes \"Dranbleiben\" (dynamisch und agogisch)"
+      "note": "Dynamisch dranbleiben"
     },
     {
       "id": "ee29477f-1b22-4ae8-8faf-1c0091772918",
@@ -11147,7 +11055,7 @@
     },
     {
       "id": "b712355a-1ce3-473c-b5bd-4f58b5703174",
-      "note": "Hin zur Paenultima (Dominate + Sexte)"
+      "note": "Hin zur Paenultima (Dominante + Sexte)"
     },
     {
       "id": "61cfb25f-8a56-4744-af8f-cad4da376dd3",
@@ -11182,29 +11090,8 @@
       "note": "Zurücknehmen"
     },
     {
-      "id": "cf7fa33d-4d72-4af3-a330-92f84738c2ae",
-      "note": "Schattieren des d unter dem a",
-      "continues": "62c0a4a5-95fc-41be-b21b-efb33cc3b458"
-    },
-    {
       "id": "91601f33-6fa7-4aef-9786-57f9c42b51f7",
       "note": "Richtung zum \"a\""
-    },
-    {
-      "id": "9e8ee1a1-97f1-4ea5-88ad-1b764a4edc2b",
-      "note": "Unbestimmt"
-    },
-    {
-      "id": "9ca6b1f2-8d05-46d1-9953-0807f08b453c",
-      "note": "Gut-schlecht-Akzente"
-    },
-    {
-      "id": "68f476cd-267c-4bbd-8f96-0e1bf38d1137",
-      "note": "Unbestimmt"
-    },
-    {
-      "id": "46d700fe-006a-4a8f-8255-61d882377188",
-      "note": "Unbestimmt"
     },
     {
       "id": "b1703afe-823a-4261-9969-dbab1ae85531",
@@ -11220,53 +11107,12 @@
       "note": "Klang langsam öffnen"
     },
     {
-      "id": "fec1014a-9125-4ea6-b2b9-79a7a2dce859",
-      "note": "Intensivieren"
-    },
-    {
       "id": "cea2dae7-4b97-482e-a10c-6279d51f4074",
       "note": "Legato in der aufsteigenden Sexte c-a"
     },
     {
-      "id": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0",
-      "note": "Bewegen"
-    },
-    {
-      "id": "31ead4dc-2b32-480d-a73a-e933994272dd",
-      "note": "Zurücknehmen",
-      "continues": "a8ba08e7-bced-46c3-a10a-88eca8c3bdc0"
-    },
-    {
       "id": "1d66d419-868e-47e1-8a86-848b18fa1792",
       "note": "Verbindung der absteigenden Quinte a-d"
-    },
-    {
-      "id": "42342851-85e9-4914-a953-e5a22cf7c755",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "d6c9eda5-c1e0-4355-bbe3-e3c45674e429",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "6ce75790-2f4a-4ac3-81b0-54e3e661661f",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "19f76f43-610e-43cc-945c-e7bea414cdf3",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "a05e0fda-7ae6-4262-b8a2-0a9367b6a283",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "295062a2-65ac-4234-8bbb-df669caae6e2",
-      "note": "Beruhigen"
-    },
-    {
-      "id": "e6120cab-d164-49be-bcaf-e0dd46c53552",
-      "note": "[Pauschale Werte, vorläufig]"
     }
   ],
   "secondary": {
