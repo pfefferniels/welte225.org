@@ -43,8 +43,34 @@
     footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
     @media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: 0.2rem 0; } dd { margin-bottom: 0.6rem; } dd:last-child { margin-bottom: 0; } }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/journey/journey.css">
+  <script type="module" src="/journey/journey.js"></script>
 </head>
 <body>
+  <section class="journey" data-journey="/journey/" aria-label="WM 225 from an idea to a physical object">
+    <div class="journey-head">
+      <div class="inner">
+        <h1 class="journey-title">Alfred Grünfeld plays Schumann’s <i>Träumerei</i>, Welte-Mignon 225 <span>· from an idea to a physical object</span></h1>
+        <div class="journey-slider">
+          <input type="range" min="0" max="9" step="1" value="0" aria-label="Step from the idea to the physical copy">
+          <div class="journey-marks"></div>
+        </div>
+        <p class="journey-caption" aria-live="polite"></p>
+        <div class="journey-overview" title="Where in the piece the view is"><div class="window"></div></div>
+      </div>
+    </div>
+    <div class="journey-scroll">
+      <div class="journey-stage">
+        <div class="journey-idea"></div>
+      </div>
+    </div>
+    <div class="journey-card" hidden></div>
+    <noscript><p>The view from the idea of the performance to the physical roll needs JavaScript. The projects and data it draws on are listed below.</p></noscript>
+  </section>
+
   <main>
     <p>This site collects the various projects that I have created as part of my dissertation <i>Grünfelds Geist</i>. All of them have Grünfeld's recording of Schumann's <i>Träumerei</i> for Welte-Mignon (1905) as their subject.</p>
 
