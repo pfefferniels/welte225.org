@@ -8,8 +8,8 @@ and the place where the data about that roll is published.
 
 | Path | Content |
 |---|---|
-| `/` | the landing page: the roll from an idea to a physical object, in steps along a slider, and below it the projects and data |
-| `/journey/` | what the landing page draws, written by `scripts/recordJourney.ts` in mpm-desk (`data.json`, `score.svg`), and the script and styles that draw it |
+| `/` | the landing page |
+| `/journey/` | the roll from an idea to a physical object, in steps along a slider: the page, the script and styles that draw it, and what they draw, written by `scripts/recordJourney.ts` in mpm-desk (`data.json`, `score.svg`) |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/rules` | the editorial principles the edition follows, named by its creation (`principles`, CRM P33 used specific technique) and by an inference that applies one (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
@@ -198,10 +198,10 @@ eight characters names the segment as well, as long as no second
 segment shares it; the viewer settles the address on the identifier.
 Identifiers must not change between exports.
 
-## The landing page
+## From an idea to a physical object
 
-The landing page follows the roll from an idea to a physical object.
-A slider leads through ten steps, and the view passes from one to the
+`/journey/` follows the roll from an idea to a physical object. A
+slider leads through ten steps, and the view passes from one to the
 next frame by frame: the idea of the performance; the reconstruction's
 gestures, packed as MPM Desk's viewer packs them; the MPM instructions
 drawn into the score as the viewer draws them; the performance they

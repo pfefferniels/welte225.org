@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WM 225 · from an idea to a physical object</title>
+  <meta name="description" content="Alfred Grünfeld's Welte-Mignon roll 225 followed from the idea of the performance through its gestures, its MPM instructions and its recording to the versions of the roll's text and the paper of a surviving copy.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ground: #ffffff;
+      --ink: #16181d;
+      --muted: #5b6270;
+      --rule: #e5e7eb;
+      --soft: #f3f4f6;
+      --accent: #a3232f;
+      --link: #1f4e8c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover, a:focus-visible { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    footer { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem 2rem; font-size: 0.9rem; color: var(--muted); }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/journey/journey.css">
+  <script type="module" src="/journey/journey.js"></script>
+</head>
+<body>
+  <section class="journey" data-journey="/journey/" aria-label="WM 225 from an idea to a physical object">
+    <div class="journey-head">
+      <div class="inner">
+        <h1 class="journey-title">Alfred Grünfeld plays Schumann’s <i>Träumerei</i>, Welte-Mignon 225 <span>· from an idea to a physical object</span></h1>
+        <div class="journey-slider">
+          <input type="range" min="0" max="9" step="1" value="0" aria-label="Step from the idea to the physical copy">
+          <div class="journey-marks"></div>
+        </div>
+        <p class="journey-caption" aria-live="polite"></p>
+        <div class="journey-overview" title="Where in the piece the view is"><div class="window"></div></div>
+      </div>
+    </div>
+    <div class="journey-scroll">
+      <div class="journey-stage">
+        <div class="journey-idea"></div>
+      </div>
+    </div>
+    <div class="journey-card" hidden></div>
+    <noscript><p>The view from the idea of the performance to the physical roll needs JavaScript. The projects and data it draws on are listed on the <a href="/">start page</a>.</p></noscript>
+  </section>
+
+  <footer>
+    <a href="/">WM 225</a> ·
+    <a href="https://mpmdesk.welte225.org/">MPM Desk</a> ·
+    <a href="https://rolldesk.welte225.org/">Roll Desk</a> ·
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
+    <a href="https://github.com/pfefferniels/welte225.org">source of this site</a>
+  </footer>
+</body>
+</html>
