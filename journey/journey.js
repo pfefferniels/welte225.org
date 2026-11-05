@@ -3,14 +3,14 @@
  *
  * A slider leads through the layers of the dissertation's projects, and the view passes from one
  * to the next frame by frame, as digital-louis does: the idea of the performance unfolds into the
- * reconstruction's gestures, the gestures into the MPM instructions drawn into the score, the
- * instructions into the performance as the recording roll took it down in ink, the ink into the
- * text of the roll as it was first perforated (R1), that text through its revisions (R2–R4), and
- * the last of them onto the paper of Stanford's copy St2, with what the paper went through since.
+ * reconstruction's gestures, each gesture folds into the MPM instructions it is made of, drawn as
+ * signs, the signs unfold into the notes as the recording roll took them down in ink, the ink into
+ * the text of the roll as it was first perforated (R1), that text through its revisions (R2–R4),
+ * and the last of them onto the paper of Stanford's copy St2, with what the paper went through.
+ * There is no score on the way: the signs stand where the notes they act on will be.
  *
- * Everything drawn comes from `data.json` and `score.svg`, written by `scripts/recordJourney.ts`
- * in mpm-desk from the published reconstruction and edition. The page computes nothing but the
- * drawing.
+ * Everything drawn comes from `data.json`, written by `scripts/recordJourney.ts` in mpm-desk from
+ * the published reconstruction and edition. The page computes nothing but the drawing.
  */
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -30,12 +30,12 @@ const STEPS = [
   {
     key: 'instructions',
     title: 'Instructions',
-    caption: 'Each gesture is made of performance instructions, encoded in MPM and drawn into the score: tempo, dynamics, rubato, accents, arpeggios, pedal. Point at a word or a sign to see what belongs together.',
+    caption: 'Each gesture folds into the performance instructions it is made of, encoded in MPM: tempo, dynamics, rubato, accents, arpeggios, pedal. Point at a sign for its gesture and its encoding.',
   },
   {
     key: 'recording',
     title: 'Recording',
-    caption: 'The instructions played as one performance, as the recording roll took it down: an ink stroke for every note, the broader the louder.',
+    caption: 'The instructions unfold into the notes as they were played, and as the recording roll took them down: an ink stroke for every note, the broader the louder.',
   },
   {
     key: 'R1',
@@ -89,7 +89,7 @@ const PAD_RIGHT = 120;
 const TOP = 28;
 
 const COLORS = {
-  engraving: '#3f4651',
+  notated: '#9aa3b2',
   word: '#374151',
   ink: '#1d3270',
   note: '#334155',
@@ -123,8 +123,6 @@ const smooth = (a, b, x) => {
   const t = clamp01((x - a) / (b - a));
   return t * t * (3 - 2 * t);
 };
-/** Up and down again over [a, b]. */
-const bump = (a, b, x) => (x <= a || x >= b ? 0 : Math.sin((Math.PI * (x - a)) / (b - a)));
 
 const hex = (color) => [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16));
 const mix = (from, to, t) => {
@@ -171,10 +169,7 @@ const pill = (node, x0, x1, cy, h) => {
 const root = document.querySelector('[data-journey]');
 const base = root.dataset.journey;
 
-const [data, scoreText] = await Promise.all([
-  fetch(`${base}data.json`).then((r) => r.json()),
-  fetch(`${base}score.svg`).then((r) => r.text()),
-]);
+const data = await fetch(`${base}data.json`).then((r) => r.json());
 
 const { score, tree, claims, signs, performance, roll, copy } = data;
 
@@ -182,12 +177,13 @@ const X = (tick) => PAD_LEFT + tick * score.pxPerTick;
 const XR = (mm) => PAD_LEFT + roll.axis.a + roll.axis.b * mm;
 const pxPerMm = roll.axis.b;
 /** The paper in true proportion: a track as wide across as a millimetre is long. */
-const rowH = TRACK_MM * pxPerMm;
-const centreY = TOP + tree.above;
-const bandH = score.bandHeight;
-const midY = centreY + bandH / 2;
+const rowH = roll.rowH ?? TRACK_MM * pxPerMm;
+/** Half the paper's width, from the middle of the roll, which is where the trunk lies. */
+const half = 50 * rowH + 24;
+/** The trunk the gestures grow from, and the middle of the roll their signs and notes are drawn on. */
+const midY = TOP + Math.max(tree.above, half);
 const rowY = (track) => midY + (50.5 - track) * rowH;
-const stageH = Math.ceil(centreY + bandH + tree.below + 24);
+const stageH = Math.ceil(midY + Math.max(tree.below, half) + 24);
 
 // The leader of the paper, where Condon wrote, lies far before the music: the axis is broken
 // just before the first perforation, and what lies before is drawn close to it.
@@ -220,54 +216,86 @@ const defs = el('defs', {}, svg);
 const gGrid = el('g', { class: 'grid' }, svg);
 const gPaper = el('g', { class: 'paper' }, svg);
 const gTrunk = el('g', { class: 'trunk' }, svg);
-const gBand = el('g', { class: 'band' }, svg);
-const gThreads = el('g', { class: 'threads' }, svg);
+const gBars = el('g', { class: 'bars' }, svg);
+const gSigns = el('g', { class: 'signs', transform: `translate(${PAD_LEFT}, ${midY})` }, svg);
+const gTravel = el('g', { class: 'travel' }, svg);
 const gClaims = el('g', { class: 'claims' }, svg);
 const gSymbols = el('g', { class: 'symbols' }, svg);
-const gTravel = el('g', { class: 'travel' }, svg);
 const gHoles = el('g', { class: 'holes' }, svg);
 const gLater = el('g', { class: 'later' }, svg);
 
 // ---- the trunk, and the idea above it ---------------------------------------------------------
 
-const trunk = el('line', { x1: PAD_LEFT - 40, x2: X(score.end) + 40, y1: centreY, y2: centreY, stroke: '#9ca3af', 'stroke-width': 1 }, gTrunk);
-const trunkBelow = el('line', { x1: PAD_LEFT - 40, x2: X(score.end) + 40, y1: centreY, y2: centreY, stroke: '#9ca3af', 'stroke-width': 1 }, gTrunk);
+el('line', { x1: PAD_LEFT - 40, x2: X(score.end) + 40, y1: midY, y2: midY, stroke: '#9ca3af', 'stroke-width': 1 }, gTrunk);
 
 const idea = root.querySelector('.journey-idea');
-idea.innerHTML = IDEA.map((phrase) => `<span>${phrase}</span>`).join('<span class="dot" aria-hidden="true">·</span>');
-idea.style.top = `${centreY * zoom}px`;
+idea.innerHTML = IDEA.map((phrase) => `<span>${phrase}</span>`).join('<span class="dot" aria-hidden="true">\u00b7</span>');
+idea.style.top = `${midY * zoom}px`;
 
-// ---- the score band -------------------------------------------------------------------------
+// ---- the bars, faintly, while the piece is in the time of the score --------------------------
 
-const bandClip = el('clipPath', { id: 'band-clip' }, defs);
-const bandClipRect = el('rect', { x: 0, y: centreY, width: stageW, height: 0 }, bandClip);
-const bandInner = el('g', { 'clip-path': 'url(#band-clip)' }, gBand);
-const bandBg = el('rect', { x: PAD_LEFT - 40, y: centreY, width: X(score.end) - PAD_LEFT + 80, height: bandH, fill: '#fdfdfc' }, bandInner);
-const bandRules = el('path', { d: '', stroke: '#e5e7eb', fill: 'none' }, bandInner);
-const bandAt = el('g', { transform: `translate(${PAD_LEFT}, ${centreY})` }, bandInner);
-
-const engraving = el('g', { class: 'engraving', color: COLORS.engraving }, bandAt);
 {
-  const parsed = new DOMParser().parseFromString(scoreText, 'image/svg+xml').documentElement;
-  const nested = document.importNode(parsed, true);
-  nested.setAttribute('x', String(-score.offset));
-  nested.setAttribute('y', String(score.padTop));
-  engraving.appendChild(nested);
-}
-// The heads of the notes that are played leave the engraving to travel; the rest fade with it.
-const flying = new Set(performance.notes.map((n) => n.id));
-for (const note of engraving.querySelectorAll('g.note[data-id]')) {
-  if (flying.has(note.getAttribute('data-id'))) note.classList.add('flies');
-}
-
-const gBars = el('g', { class: 'bars', 'font-size': 11, fill: '#9ca3af' }, gBand);
-for (const bar of score.bars) {
-  if (bar.n < 2) continue;
-  const t = el('text', { x: PAD_LEFT + bar.x + 2, y: centreY + bandH + 13 }, gBars);
-  t.textContent = String(bar.n - 1);
+  const top = rowY(96);
+  const bottom = rowY(5);
+  el('path', {
+    d: score.bars.map((bar) => `M${X(bar.tick).toFixed(1)} ${top.toFixed(1)}V${bottom.toFixed(1)}`).join(''),
+    stroke: '#eceef2',
+    'stroke-width': 1,
+  }, gBars);
+  for (const bar of score.bars) {
+    const t = el('text', { x: X(bar.tick) + 3, y: top - 4, 'font-size': 10, fill: '#b4bac5' }, gBars);
+    t.textContent = String(bar.n);
+  }
 }
 
-const gSigns = el('g', { class: 'signs' }, bandAt);
+// ---- the gestures ---------------------------------------------------------------------------
+
+const claimRank = new Map(
+  [...claims.keys()]
+    .sort((i, j) => (claims[j].to - claims[j].from) - (claims[i].to - claims[i].from))
+    .map((index, rank) => [index, claims.length > 1 ? rank / (claims.length - 1) : 0]),
+);
+
+/** The signs of each claim, for lighting them, and for the word to fold into. */
+const signsOfClaim = claims.map(() => []);
+signs.forEach((sign, index) => sign.segments.forEach((claim) => signsOfClaim[claim]?.push(index)));
+
+const claimNodes = claims.map((claim, index) => {
+  const g = el('g', { class: 'claim', 'data-claim': index }, gClaims);
+  const inner = el('g', {}, g);
+  el('path', { id: `arc-${index}`, d: claim.d, fill: 'none' }, inner);
+  const text = el('text', {
+    'font-size': claim.fontSize,
+    fill: COLORS.word,
+    'fill-opacity': claim.opacity,
+    'dominant-baseline': 'middle',
+  }, inner);
+  const path = el('textPath', { href: `#arc-${index}` }, text);
+  path.textContent = claim.word;
+  const rank = claimRank.get(index);
+  const own = signsOfClaim[index];
+  return {
+    g,
+    inner,
+    claim,
+    // the broad gestures first, the concrete ones after, and quicker
+    start: 0.12 + 0.55 * rank,
+    span: 0.32 - 0.17 * rank,
+    /** Where the word folds to: the middle of its signs, on the stage. */
+    into: own.length
+      ? {
+          x: PAD_LEFT + own.reduce((sum, i) => sum + signs[i].anchor.x, 0) / own.length,
+          y: midY + own.reduce((sum, i) => sum + signs[i].anchor.y, 0) / own.length,
+        }
+      : null,
+  };
+});
+
+/** Where a claim's word stands at rest, on the stage. */
+const footOf = (claim) => ({ x: X(claim.tick), y: midY + claim.side * claim.offset });
+
+// ---- the signs, which the words fold into ---------------------------------------------------
+
 const signNodes = signs.map((sign, index) => {
   const color = SIGN_COLORS[sign.type] ?? '#666';
   const g = el('g', { class: 'sign', 'data-sign': index }, gSigns);
@@ -284,46 +312,11 @@ const signNodes = signs.map((sign, index) => {
       }, g)
     : null;
   if (sign.fill) el('path', { d: sign.fill, fill: color }, g);
-  return { g, stroke, sign };
+  const claim = claims[sign.segments[0]];
+  // the word it comes out of, in the signs' own coordinates
+  const foot = claim ? footOf(claim) : { x: PAD_LEFT + sign.anchor.x, y: midY + sign.anchor.y };
+  return { g, stroke, sign, claim: sign.segments[0], from: { x: foot.x - PAD_LEFT, y: foot.y - midY } };
 });
-
-// ---- the gestures ---------------------------------------------------------------------------
-
-const claimRank = new Map(
-  [...claims.keys()]
-    .sort((i, j) => (claims[j].to - claims[j].from) - (claims[i].to - claims[i].from))
-    .map((index, rank) => [index, claims.length > 1 ? rank / (claims.length - 1) : 0]),
-);
-
-const claimNodes = claims.map((claim, index) => {
-  const g = el('g', { class: 'claim', 'data-claim': index }, gClaims);
-  const inner = el('g', {}, g);
-  el('path', { id: `arc-${index}`, d: claim.d, fill: 'none' }, inner);
-  const text = el('text', {
-    'font-size': claim.fontSize,
-    fill: COLORS.word,
-    'fill-opacity': claim.opacity,
-    'dominant-baseline': 'middle',
-  }, inner);
-  const path = el('textPath', { href: `#arc-${index}` }, text);
-  path.textContent = claim.word;
-  const rank = claimRank.get(index);
-  return {
-    g,
-    inner,
-    claim,
-    // the broad gestures first, the concrete ones after, and quicker
-    start: 0.12 + 0.55 * rank,
-    span: 0.32 - 0.17 * rank,
-  };
-});
-
-/** The signs of each claim, for lighting them and for the threads between the two. */
-const signsOfClaim = claims.map(() => []);
-signs.forEach((sign, index) => sign.segments.forEach((claim) => signsOfClaim[claim]?.push(index)));
-
-const threadNodes = claims.map((claim, index) =>
-  el('path', { d: '', fill: 'none', stroke: '#64748b', 'stroke-width': 0.7, 'data-claim': index }, gThreads));
 
 // ---- the tracks -----------------------------------------------------------------------------
 
@@ -364,12 +357,12 @@ const symbolColor = (symbol) => {
 };
 
 const travellers = performance.notes.flatMap((note) => {
-  const head = score.notes[note.id];
   const symbol = note.symbol !== undefined ? roll.symbols[note.symbol] : undefined;
-  const node = el('rect', { fill: COLORS.engraving }, gTravel);
+  const node = el('rect', { fill: COLORS.notated }, gTravel);
   return [{
     node,
-    head: head && { x0: PAD_LEFT + head.x, x1: PAD_LEFT + head.x + head.w, cy: centreY + head.y, h: head.h * 0.82 },
+    // where the score has the note, under the signs that act on it
+    notated: { x0: X(note.tick), x1: X(note.tick + note.dur), cy: rowY(note.pitch - 13), h: rowH * 0.55 },
     ink: { x0: XR(note.from), x1: XR(note.to), cy: rowY(note.pitch - 13), h: inkH(note.velocity) },
     symbol: symbol && symbol.since === 0 ? { x0: XR(symbol.from), x1: XR(symbol.to), cy: rowY(symbol.track), h: holeH, color: symbolColor(symbol) } : undefined,
   }];
@@ -530,101 +523,97 @@ const draw = (s) => {
   const p7 = p(7);
   const p8 = p(8);
 
-  // -- the camera: on the trunk while the idea unfolds, on the band and the roll after
-  if (following) {
-    const focus = lerp(centreY, midY, smooth(0, 1, p1));
-    scroller.scrollTop = focus * zoom - scroller.clientHeight / 2;
-  }
+  // -- the camera: on the middle of the roll, where the trunk is
+  if (following) scroller.scrollTop = midY * zoom - scroller.clientHeight / 2;
 
   // -- the idea, and the trunk it lies on
   const ideaOut = smooth(0, 0.5, p0);
   idea.style.opacity = String(1 - ideaOut);
   idea.style.transform = `translate(-50%, ${-100 + 60 * ideaOut}%) scale(${1 - 0.15 * ideaOut})`;
   idea.style.visibility = ideaOut >= 1 ? 'hidden' : 'visible';
+  opacity(gTrunk, (0.55 + 0.45 * (1 - smooth(0, 0.5, p0))) * (1 - smooth(0.2, 0.8, p1)));
 
-  const gap = bandH * smooth(0, 0.85, p1);
-  const trunkAlpha = 1 - smooth(0, 0.4, p2);
-  opacity(gTrunk, trunkAlpha * (0.55 + 0.45 * (1 - smooth(0.6, 1, p1))));
-  set(trunkBelow, 'y1', centreY + gap);
-  set(trunkBelow, 'y2', centreY + gap);
-
-  // -- the gestures
-  const claimsAlpha = 1 - smooth(0, 0.35, p2);
-  opacity(gClaims, claimsAlpha);
-  if (claimsAlpha > 0) {
-    for (const c of claimNodes) {
+  // -- the gestures: unfolding out of the trunk, then folding into their signs, as read
+  const fold = (index) => {
+    const c = claimNodes[index];
+    if (!c) return 0;
+    const order = inView(X(c.claim.tick));
+    return smooth(0.3 * order, 0.3 * order + 0.6, p1);
+  };
+  opacity(gClaims, s < 2 ? 1 : 0);
+  if (s < 2) {
+    for (const [index, c] of claimNodes.entries()) {
       const grow = smooth(c.start, c.start + c.span, p0);
-      const lit = spotlit === null || spotlit.claims.has(Number(c.g.dataset.claim));
-      opacity(c.g, grow * (lit ? 1 : 0.25));
-      const foot = c.claim.side * c.claim.offset * (0.25 + 0.75 * grow);
-      const y = c.claim.side === 1 ? centreY + gap + foot : centreY + foot;
-      set(c.g, 'transform', `translate(${X(c.claim.tick).toFixed(1)}, ${y.toFixed(1)})`);
-      set(c.inner, 'transform', `scale(${(0.55 + 0.45 * grow).toFixed(3)})`);
+      const q = fold(index);
+      const lit = spotlit === null || spotlit.claims.has(index);
+      opacity(c.g, grow * (lit ? 1 : 0.25) * (1 - smooth(0.35, 0.95, q)));
+      const foot = footOf(c.claim);
+      const reach = midY + c.claim.side * c.claim.offset * (0.25 + 0.75 * grow);
+      const to = c.into ?? foot;
+      const x = lerp(foot.x, to.x, q);
+      const y = lerp(reach, to.y, q);
+      set(c.g, 'transform', `translate(${x.toFixed(1)}, ${y.toFixed(1)})`);
+      set(c.inner, 'transform', `scale(${((0.55 + 0.45 * grow) * (1 - 0.6 * q)).toFixed(3)})`);
     }
   }
 
-  // -- the band, opening between the two halves of the tree
-  set(bandClipRect, 'height', gap);
-  const bandAlpha = 1 - smooth(0.25, 0.8, p2);
-  opacity(gBand, bandAlpha);
-  set(bandRules, 'd', gap > 0 ? `M${PAD_LEFT - 40} ${centreY + 0.5}H${X(score.end) + 40}M${PAD_LEFT - 40} ${centreY + gap - 0.5}H${X(score.end) + 40}` : '');
-  opacity(bandBg, 1);
-  opacity(engraving, smooth(0.2, 0.7, p1) * (1 - smooth(0.05, 0.45, p2)));
-  engraving.classList.toggle('travelling', p2 > 0);
-  opacity(gBars, smooth(0.6, 1, p1));
-
-  // -- the signs, and for a moment the threads from the words to them
-  const signsAlpha = smooth(0.45, 1, p1) * (1 - smooth(0, 0.3, p2));
+  // -- the signs, coming out of their words; before that, a word pointed at shows its own
+  const signsAlpha = s <= 1 ? (spotlit ? 1 : 0) : 1 - smooth(0.35, 0.8, p2);
   opacity(gSigns, signsAlpha);
   if (signsAlpha > 0) {
-    for (const { g, stroke, sign } of signNodes) {
-      const lit = spotlit !== null && sign.segments.some((c) => spotlit.claims.has(c));
-      opacity(g, spotlit === null ? 0.6 : lit ? 1 : 0.12);
-      if (stroke) set(stroke, 'stroke-width', (lit ? 2.2 : 1.4) * (sign.weight ?? 1));
+    for (const n of signNodes) {
+      const lit = spotlit !== null && n.sign.segments.some((c) => spotlit.claims.has(c));
+      let alpha;
+      let transform = '';
+      if (s <= 1) {
+        alpha = lit ? 0.75 : 0;
+      } else {
+        const q = fold(n.claim);
+        alpha = smooth(0.15, 0.7, q) * (spotlit === null || s < 1.5 ? 0.65 : lit ? 1 : 0.12);
+        if (q < 1) {
+          const k = 0.2 + 0.8 * q;
+          const { x: ax, y: ay } = n.sign.anchor;
+          const tx = lerp(n.from.x, ax, q) - k * ax;
+          const ty = lerp(n.from.y, ay, q) - k * ay;
+          transform = `translate(${tx.toFixed(1)}, ${ty.toFixed(1)}) scale(${k.toFixed(3)})`;
+        }
+      }
+      set(n.g, 'transform', transform);
+      opacity(n.g, alpha);
+      if (n.stroke) set(n.stroke, 'stroke-width', (lit && s >= 1 ? 2.2 : 1.4) * (n.sign.weight ?? 1));
     }
   }
-  const threadsAlpha = 0.55 * bump(0.4, 1.0, p1);
-  const spotThreads = spotlit !== null && s >= 1.5 && s <= 2.2 ? 0.8 : 0;
-  opacity(gThreads, Math.max(threadsAlpha, spotThreads) * claimsAlpha);
-  if (threadsAlpha > 0 || spotThreads > 0) {
-    claims.forEach((claim, index) => {
-      const lit = spotlit === null ? threadsAlpha > 0 : spotlit.claims.has(index);
-      if (!lit) {
-        set(threadNodes[index], 'd', '');
-        return;
-      }
-      const footY = claim.side === 1 ? centreY + gap + claim.offset : centreY - claim.offset;
-      const x = X(claim.tick);
-      set(threadNodes[index], 'd', signsOfClaim[index]
-        .map((i) => `M${x.toFixed(1)} ${footY.toFixed(1)}L${(PAD_LEFT + signs[i].anchor.x).toFixed(1)} ${(centreY + signs[i].anchor.y).toFixed(1)}`)
-        .join(''));
-    });
-  }
+
+  // -- the bars, while the piece is in the score's time
+  opacity(gBars, smooth(0.5, 1, p1) * (1 - smooth(0, 0.4, p2)));
 
   // -- the tracks of the roll, while it is a text
   opacity(gGrid, smooth(0.3, 1, p3) * (1 - smooth(0, 0.6, p7)));
 
-  // -- the travellers: score → ink → R1
+  // -- the notes: out of the signs where the score has them, into the performance, into R1
   const travelling = s > 2 && s < 4;
   opacity(gTravel, travelling ? 1 : 0);
   if (travelling) {
     for (const t of travellers) {
-      const order = inView(t.ink.x0);
       let shape;
       let fill;
       let alpha = 1;
       if (s < 3) {
-        const way = smooth(0.32 * order, 0.32 * order + 0.6, p2);
-        const from = t.head ?? t.ink;
+        // first the notes unfold under the signs, as read; then each takes on how it was played
+        const order = inView(t.notated.x0);
+        const unfold = smooth(0.3 * order, 0.3 * order + 0.4, p2);
+        const way = smooth(0.42 + 0.18 * order, 0.42 + 0.18 * order + 0.38, p2);
+        const at = { ...t.notated, x1: lerp(t.notated.x0, t.notated.x1, unfold) };
         shape = {
-          x0: lerp(from.x0, t.ink.x0, way),
-          x1: lerp(from.x1, t.ink.x1, way),
-          cy: lerp(from.cy, t.ink.cy, way),
-          h: lerp(from.h, t.ink.h, way),
+          x0: lerp(at.x0, t.ink.x0, way),
+          x1: lerp(at.x1, t.ink.x1, way),
+          cy: lerp(at.cy, t.ink.cy, way),
+          h: lerp(at.h, t.ink.h, way),
         };
-        fill = mix(COLORS.engraving, COLORS.ink, smooth(0.3, 1, way));
-        if (!t.head) alpha = way;
+        fill = mix(COLORS.notated, COLORS.ink, way);
+        alpha = smooth(0, 0.3, unfold);
       } else {
+        const order = inView(t.ink.x0);
         const way = smooth(0.25 * order, 0.25 * order + 0.65, p3);
         if (t.symbol) {
           shape = {
@@ -644,7 +633,7 @@ const draw = (s) => {
       set(t.node, 'fill', fill);
       opacity(t.node, alpha * (s < 3 ? 1 : 0.85 + 0.15 * smooth(0, 1, p3)));
     }
-    opacity(pedalInk, s < 3 ? 0.75 * smooth(0.5, 1, p2) : 0.75 * (1 - smooth(0, 0.5, p3)));
+    opacity(pedalInk, s < 3 ? 0.75 * smooth(0.6, 1, p2) : 0.75 * (1 - smooth(0, 0.5, p3)));
   }
 
   // -- the versions: R1 at 4, R4 at 7

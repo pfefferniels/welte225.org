@@ -173,10 +173,6 @@
   cursor: default;
 }
 
-.journey-svg .engraving.travelling g.note.flies > .notehead {
-  visibility: hidden;
-}
-
 .journey-card {
   position: fixed;
   z-index: 5;
@@ -243,7 +239,6 @@
 }
 
 /* Only the words, the signs and the revised perforations answer the pointer. */
-.journey-svg .threads,
 .journey-svg .travel,
 .journey-svg .grid,
 .journey-svg .paper,
