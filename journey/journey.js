@@ -3,11 +3,11 @@
  *
  * A slider leads through the layers of the dissertation's projects, and the view passes from one
  * to the next frame by frame, as digital-louis does: the idea of the performance unfolds into the
- * reconstruction's gestures, each gesture folds into the MPM instructions it is made of, drawn as
- * signs, the signs unfold into the notes as the recording roll took them down in ink, the ink into
- * the text of the roll as it was first perforated (R1), that text through its revisions (R2–R4),
- * and the last of them onto the paper of Stanford's copy St2, with what the paper went through.
- * There is no score on the way: the signs stand where the notes they act on will be.
+ * reconstruction's gestures, each gesture folds into a pile of signs, one for every MPM instruction
+ * it is made of, the piles unfold into the notes as the recording roll took them down in ink, the
+ * ink into the text of the roll as it was first perforated (R1), that text through its revisions
+ * (R2–R4), and the last of them onto the paper of Stanford's copy St2, with what the paper went
+ * through. There is no score on the way.
  *
  * Everything drawn comes from `data.json`, written by `scripts/recordJourney.ts` in mpm-desk from
  * the published reconstruction and edition. The page computes nothing but the drawing.
@@ -30,12 +30,12 @@ const STEPS = [
   {
     key: 'instructions',
     title: 'Instructions',
-    caption: 'Each gesture folds into the performance instructions it is made of, encoded in MPM: tempo, dynamics, rubato, accents, arpeggios, pedal. Point at a sign for its gesture and its encoding.',
+    caption: 'Each gesture folds into a pile of signs, one for every performance instruction it is made of, encoded in MPM: tempo, dynamics, rubato, accents, arpeggios, pedal. Point at a sign for its gesture and its encoding.',
   },
   {
     key: 'recording',
     title: 'Recording',
-    caption: 'The instructions unfold into the notes as they were played, and as the recording roll took them down: an ink stroke for every note, the broader the louder.',
+    caption: 'The piles unfold into the notes as they were played, and as the recording roll took them down: an ink stroke for every note, the broader the louder.',
   },
   {
     key: 'R1',
@@ -180,11 +180,6 @@ const pxPerMm = roll.axis.b;
 const rowH = roll.rowH ?? TRACK_MM * pxPerMm;
 /** Half the paper's width, from the middle of the roll, which is where the trunk lies. */
 const half = 50 * rowH + 24;
-/** The trunk the gestures grow from, and the middle of the roll their signs and notes are drawn on. */
-const midY = TOP + Math.max(tree.above, half);
-const rowY = (track) => midY + (50.5 - track) * rowH;
-const stageH = Math.ceil(midY + Math.max(tree.below, half) + 24);
-
 // The leader of the paper, where Condon wrote, lies far before the music: the axis is broken
 // just before the first perforation, and what lies before is drawn close to it.
 const firstMm = Math.min(...roll.symbols.map((s) => s.from), ...copy.holes.map((h) => h.from));
@@ -205,10 +200,9 @@ const zoom = window.matchMedia('(max-width: 700px)').matches ? 0.72 : 1;
 
 const stage = root.querySelector('.journey-stage');
 const scroller = root.querySelector('.journey-scroll');
-const svg = el('svg', { width: stageW * zoom, height: stageH * zoom, viewBox: `0 0 ${stageW} ${stageH}`, class: 'journey-svg' });
+// sized once the piles are packed, which decide how much room there is to be above and below
+const svg = el('svg', { class: 'journey-svg' });
 stage.appendChild(svg);
-stage.style.width = `${stageW * zoom}px`;
-stage.style.height = `${stageH * zoom}px`;
 
 const defs = el('defs', {}, svg);
 
@@ -216,13 +210,144 @@ const defs = el('defs', {}, svg);
 const gGrid = el('g', { class: 'grid' }, svg);
 const gPaper = el('g', { class: 'paper' }, svg);
 const gTrunk = el('g', { class: 'trunk' }, svg);
-const gBars = el('g', { class: 'bars' }, svg);
-const gSigns = el('g', { class: 'signs', transform: `translate(${PAD_LEFT}, ${midY})` }, svg);
+const gPiles = el('g', { class: 'piles' }, svg);
 const gTravel = el('g', { class: 'travel' }, svg);
 const gClaims = el('g', { class: 'claims' }, svg);
 const gSymbols = el('g', { class: 'symbols' }, svg);
 const gHoles = el('g', { class: 'holes' }, svg);
 const gLater = el('g', { class: 'later' }, svg);
+
+// ---- the piles: every gesture's signs, gathered --------------------------------------------
+
+/** The signs of each claim. */
+const signsOfClaim = claims.map(() => []);
+signs.forEach((sign, index) => sign.segments.forEach((claim) => signsOfClaim[claim]?.push(index)));
+
+/** In a pile, the signs go by kind: how fast, how flexible, how loud, then note by note, then the pedal. */
+const KIND_ORDER = ['tempo', 'rubato', 'dynamics', 'accentuationPattern', 'articulation', 'ornament', 'movement'];
+/** How wide a pile grows before it wraps, and the largest a sign is drawn in it. */
+const PILE_W = 156;
+const SIGN_W = 64;
+const SIGN_H = 28;
+
+const pileNodes = claims.map((claim, index) => {
+  const g = el('g', { class: 'pile', 'data-claim': index }, gPiles);
+  const inner = el('g', {}, g);
+  // a card under the pile, so that it reads as one
+  const card = el('rect', { rx: 7, fill: '#f6f7f9', stroke: '#eceef2' }, inner);
+  const drawSign = (i, parent) => {
+    const sign = signs[i];
+    const color = SIGN_COLORS[sign.type] ?? '#666';
+    const sg = el('g', { class: 'sign', 'data-sign': i }, parent);
+    el('path', { d: sign.stroke + sign.fill, fill: 'none', stroke: 'transparent', 'stroke-width': 8, 'vector-effect': 'non-scaling-stroke' }, sg);
+    const stroke = sign.stroke
+      ? el('path', {
+          d: sign.stroke,
+          fill: 'none',
+          stroke: color,
+          'stroke-width': 1.4 * (sign.weight ?? 1),
+          'stroke-linecap': 'round',
+          'stroke-linejoin': 'round',
+          'vector-effect': 'non-scaling-stroke',
+          ...(sign.dashed && { 'stroke-dasharray': '3 2' }),
+        }, sg)
+      : null;
+    if (sign.fill) el('path', { d: sign.fill, fill: color }, sg);
+    return { sg, stroke, sign };
+  };
+  const sorted = signsOfClaim[index]
+    .slice()
+    .sort((a, b) => KIND_ORDER.indexOf(signs[a].type) - KIND_ORDER.indexOf(signs[b].type));
+  // one item a sign, but the pedal's steps, which are instructions of their own, as the one line they draw
+  const units = [];
+  for (const i of sorted) {
+    if (signs[i].type === 'movement' && units.at(-1)?.kind === 'movement') units.at(-1).signs.push(i);
+    else units.push({ kind: signs[i].type, signs: [i] });
+  }
+  const items = units.map((unit) => {
+    const sg = unit.signs.length > 1 ? el('g', {}, inner) : inner;
+    const drawn = unit.signs.map((i) => drawSign(i, sg));
+    const node = unit.signs.length > 1 ? sg : drawn[0].sg;
+    const box = node.getBBox();
+    const k = Math.min(2.2, SIGN_W / Math.max(1, box.width), SIGN_H / Math.max(1, box.height));
+    return { sg: node, strokes: drawn.filter((d) => d.stroke), box, k, w: Math.max(3, box.width * k), h: Math.max(3, box.height * k) };
+  });
+  // one row after another, each sign upright in it
+  const rows = [[]];
+  let x = 0;
+  for (const item of items) {
+    if (x > 0 && x + item.w > PILE_W) {
+      rows.push([]);
+      x = 0;
+    }
+    rows.at(-1).push(item);
+    x += item.w + 6;
+  }
+  let y = 0;
+  let w = 0;
+  for (const row of rows) {
+    const height = Math.max(0, ...row.map((item) => item.h));
+    let at = 0;
+    for (const item of row) {
+      const tx = at - item.box.x * item.k;
+      const ty = y + (height - item.h) / 2 - item.box.y * item.k;
+      item.sg.setAttribute('transform', `translate(${tx.toFixed(1)}, ${ty.toFixed(1)}) scale(${item.k.toFixed(3)})`);
+      at += item.w + 6;
+    }
+    w = Math.max(w, at - 6);
+    y += height + 5;
+  }
+  const pad = 7;
+  for (const item of items) {
+    const t = item.sg.getAttribute('transform');
+    const m = t.match(/translate\(([-\d.]+), ([-\d.]+)\)(.*)/);
+    item.sg.setAttribute('transform', `translate(${(Number(m[1]) + pad).toFixed(1)}, ${(Number(m[2]) + pad).toFixed(1)})${m[3]}`);
+  }
+  const pw = Math.max(4, w) + 2 * pad;
+  const ph = Math.max(4, y - 5) + 2 * pad;
+  card.setAttribute('width', String(pw));
+  card.setAttribute('height', String(ph));
+  return { g, inner, claim, items, w: pw, h: ph };
+});
+
+// The piles stand in the order of the piece, each where its word set off, on the side its word
+// leaned to: the broad gestures nearest the trunk, as their words were.
+{
+  const placed = { [-1]: [], [1]: [] };
+  const order = [...claims.keys()].sort((i, j) => (claims[j].to - claims[j].from) - (claims[i].to - claims[i].from));
+  for (const index of order) {
+    const pile = pileNodes[index];
+    const side = claims[index].side;
+    const x0 = X(claims[index].tick) - 6;
+    const x1 = x0 + pile.w + 16;
+    let off = 14;
+    const clashes = () => placed[side].some((o) => o.x0 < x1 && x0 < o.x1 && o.off < off + pile.h + 8 && off < o.off + o.h + 8);
+    while (clashes()) off += 4;
+    placed[side].push({ x0, x1, off, h: pile.h });
+    pile.off = off;
+    pile.side = side;
+    pile.x = x0 + 6;
+  }
+}
+const pilesAbove = Math.max(0, ...pileNodes.filter((p) => p.side === -1).map((p) => p.off + p.h));
+const pilesBelow = Math.max(0, ...pileNodes.filter((p) => p.side === 1).map((p) => p.off + p.h));
+
+/** The trunk the gestures grow from, the middle of the piles, and of the roll their notes go to. */
+const midY = TOP + Math.max(tree.above, half, pilesAbove + 16);
+const rowY = (track) => midY + (50.5 - track) * rowH;
+const stageH = Math.ceil(midY + Math.max(tree.below, half, pilesBelow + 16) + 24);
+
+svg.setAttribute('width', String(stageW * zoom));
+svg.setAttribute('height', String(stageH * zoom));
+svg.setAttribute('viewBox', `0 0 ${stageW} ${stageH}`);
+stage.style.width = `${stageW * zoom}px`;
+stage.style.height = `${stageH * zoom}px`;
+
+for (const pile of pileNodes) {
+  pile.y = pile.side === -1 ? midY - pile.off - pile.h : midY + pile.off;
+  pile.cx = pile.x + pile.w / 2;
+  pile.cy = pile.y + pile.h / 2;
+}
 
 // ---- the trunk, and the idea above it ---------------------------------------------------------
 
@@ -232,22 +357,6 @@ const idea = root.querySelector('.journey-idea');
 idea.innerHTML = IDEA.map((phrase) => `<span>${phrase}</span>`).join('<span class="dot" aria-hidden="true">\u00b7</span>');
 idea.style.top = `${midY * zoom}px`;
 
-// ---- the bars, faintly, while the piece is in the time of the score --------------------------
-
-{
-  const top = rowY(96);
-  const bottom = rowY(5);
-  el('path', {
-    d: score.bars.map((bar) => `M${X(bar.tick).toFixed(1)} ${top.toFixed(1)}V${bottom.toFixed(1)}`).join(''),
-    stroke: '#eceef2',
-    'stroke-width': 1,
-  }, gBars);
-  for (const bar of score.bars) {
-    const t = el('text', { x: X(bar.tick) + 3, y: top - 4, 'font-size': 10, fill: '#b4bac5' }, gBars);
-    t.textContent = String(bar.n);
-  }
-}
-
 // ---- the gestures ---------------------------------------------------------------------------
 
 const claimRank = new Map(
@@ -255,10 +364,6 @@ const claimRank = new Map(
     .sort((i, j) => (claims[j].to - claims[j].from) - (claims[i].to - claims[i].from))
     .map((index, rank) => [index, claims.length > 1 ? rank / (claims.length - 1) : 0]),
 );
-
-/** The signs of each claim, for lighting them, and for the word to fold into. */
-const signsOfClaim = claims.map(() => []);
-signs.forEach((sign, index) => sign.segments.forEach((claim) => signsOfClaim[claim]?.push(index)));
 
 const claimNodes = claims.map((claim, index) => {
   const g = el('g', { class: 'claim', 'data-claim': index }, gClaims);
@@ -273,7 +378,6 @@ const claimNodes = claims.map((claim, index) => {
   const path = el('textPath', { href: `#arc-${index}` }, text);
   path.textContent = claim.word;
   const rank = claimRank.get(index);
-  const own = signsOfClaim[index];
   return {
     g,
     inner,
@@ -281,42 +385,13 @@ const claimNodes = claims.map((claim, index) => {
     // the broad gestures first, the concrete ones after, and quicker
     start: 0.12 + 0.55 * rank,
     span: 0.32 - 0.17 * rank,
-    /** Where the word folds to: the middle of its signs, on the stage. */
-    into: own.length
-      ? {
-          x: PAD_LEFT + own.reduce((sum, i) => sum + signs[i].anchor.x, 0) / own.length,
-          y: midY + own.reduce((sum, i) => sum + signs[i].anchor.y, 0) / own.length,
-        }
-      : null,
+    /** Where the word folds to: the middle of its pile. */
+    into: { x: pileNodes[index].cx, y: pileNodes[index].cy },
   };
 });
 
 /** Where a claim's word stands at rest, on the stage. */
 const footOf = (claim) => ({ x: X(claim.tick), y: midY + claim.side * claim.offset });
-
-// ---- the signs, which the words fold into ---------------------------------------------------
-
-const signNodes = signs.map((sign, index) => {
-  const color = SIGN_COLORS[sign.type] ?? '#666';
-  const g = el('g', { class: 'sign', 'data-sign': index }, gSigns);
-  el('path', { d: sign.stroke + sign.fill, fill: 'none', stroke: 'transparent', 'stroke-width': 10 }, g);
-  const stroke = sign.stroke
-    ? el('path', {
-        d: sign.stroke,
-        fill: 'none',
-        stroke: color,
-        'stroke-width': 1.4 * (sign.weight ?? 1),
-        'stroke-linecap': 'round',
-        'stroke-linejoin': 'round',
-        ...(sign.dashed && { 'stroke-dasharray': '4 3' }),
-      }, g)
-    : null;
-  if (sign.fill) el('path', { d: sign.fill, fill: color }, g);
-  const claim = claims[sign.segments[0]];
-  // the word it comes out of, in the signs' own coordinates
-  const foot = claim ? footOf(claim) : { x: PAD_LEFT + sign.anchor.x, y: midY + sign.anchor.y };
-  return { g, stroke, sign, claim: sign.segments[0], from: { x: foot.x - PAD_LEFT, y: foot.y - midY } };
-});
 
 // ---- the tracks -----------------------------------------------------------------------------
 
@@ -356,17 +431,36 @@ const symbolColor = (symbol) => {
   return /Pedal/.test(symbol.type ?? '') ? COLORS.pedal : COLORS.dynamics;
 };
 
+/** The pile a note comes out of: that of the narrowest claim about the stretch it is in, or the nearest. */
+const pileOf = (tick) => {
+  let best = -1;
+  let score = Infinity;
+  claims.forEach((claim, index) => {
+    const inside = claim.from <= tick && tick <= claim.to;
+    const value = inside ? claim.to - claim.from : 1e9 + Math.min(Math.abs(claim.from - tick), Math.abs(claim.to - tick));
+    if (value < score) {
+      score = value;
+      best = index;
+    }
+  });
+  return pileNodes[best];
+};
+
 const travellers = performance.notes.flatMap((note) => {
   const symbol = note.symbol !== undefined ? roll.symbols[note.symbol] : undefined;
   const node = el('rect', { fill: COLORS.notated }, gTravel);
   return [{
     node,
-    // where the score has the note, under the signs that act on it
-    notated: { x0: X(note.tick), x1: X(note.tick + note.dur), cy: rowY(note.pitch - 13), h: rowH * 0.55 },
+    pile: pileOf(note.tick),
     ink: { x0: XR(note.from), x1: XR(note.to), cy: rowY(note.pitch - 13), h: inkH(note.velocity) },
     symbol: symbol && symbol.since === 0 ? { x0: XR(symbol.from), x1: XR(symbol.to), cy: rowY(symbol.track), h: holeH, color: symbolColor(symbol) } : undefined,
   }];
 });
+// Within a pile, the notes leave in the order they are played.
+for (const pile of pileNodes) {
+  const own = travellers.filter((t) => t.pile === pile).sort((a, b) => a.ink.x0 - b.ink.x0);
+  own.forEach((t, i) => { t.rank = own.length > 1 ? i / (own.length - 1) : 0; });
+}
 const carriedByTraveller = new Set(performance.notes.flatMap((n) => {
   const symbol = n.symbol !== undefined ? roll.symbols[n.symbol] : undefined;
   return symbol && symbol.since === 0 ? [n.symbol] : [];
@@ -557,35 +651,34 @@ const draw = (s) => {
     }
   }
 
-  // -- the signs, coming out of their words; before that, a word pointed at shows its own
-  const signsAlpha = s <= 1 ? (spotlit ? 1 : 0) : 1 - smooth(0.35, 0.8, p2);
-  opacity(gSigns, signsAlpha);
-  if (signsAlpha > 0) {
-    for (const n of signNodes) {
-      const lit = spotlit !== null && n.sign.segments.some((c) => spotlit.claims.has(c));
+  // -- the piles, each coming out of its word; before that, a word pointed at shows its own
+  const pilesAlpha = s <= 1 ? (spotlit ? 1 : 0) : 1;
+  opacity(gPiles, s < 3 ? pilesAlpha : 0);
+  if (pilesAlpha > 0 && s < 3) {
+    for (const [index, pile] of pileNodes.entries()) {
+      const lit = spotlit !== null && spotlit.claims.has(index);
       let alpha;
-      let transform = '';
+      let q = 1;
       if (s <= 1) {
-        alpha = lit ? 0.75 : 0;
+        alpha = lit ? 0.8 : 0;
       } else {
-        const q = fold(n.claim);
-        alpha = smooth(0.15, 0.7, q) * (spotlit === null || s < 1.5 ? 0.65 : lit ? 1 : 0.12);
-        if (q < 1) {
-          const k = 0.2 + 0.8 * q;
-          const { x: ax, y: ay } = n.sign.anchor;
-          const tx = lerp(n.from.x, ax, q) - k * ax;
-          const ty = lerp(n.from.y, ay, q) - k * ay;
-          transform = `translate(${tx.toFixed(1)}, ${ty.toFixed(1)}) scale(${k.toFixed(3)})`;
-        }
+        q = fold(index);
+        // the notes take the pile apart as they leave it
+        const leaving = smooth(0.05 + 0.4 * inView(pile.cx), 0.45 + 0.4 * inView(pile.cx), p2);
+        alpha = smooth(0.15, 0.7, q) * (1 - leaving) * (spotlit === null || s < 1.5 ? 1 : lit ? 1 : 0.2);
       }
-      set(n.g, 'transform', transform);
-      opacity(n.g, alpha);
-      if (n.stroke) set(n.stroke, 'stroke-width', (lit && s >= 1 ? 2.2 : 1.4) * (n.sign.weight ?? 1));
+      const foot = footOf(pile.claim);
+      const x = lerp(foot.x - pile.w / 2, pile.x, q);
+      const y = lerp(foot.y - pile.h / 2, pile.y, q);
+      const k = 0.2 + 0.8 * q;
+      set(pile.g, 'transform', `translate(${x.toFixed(1)}, ${y.toFixed(1)})`);
+      set(pile.inner, 'transform', q < 1 ? `translate(${(pile.w / 2).toFixed(1)}, ${(pile.h / 2).toFixed(1)}) scale(${k.toFixed(3)}) translate(${(-pile.w / 2).toFixed(1)}, ${(-pile.h / 2).toFixed(1)})` : '');
+      opacity(pile.g, alpha);
+      for (const item of pile.items) {
+        for (const { stroke, sign } of item.strokes) set(stroke, 'stroke-width', (lit && s > 1 ? 2.1 : 1.4) * (sign.weight ?? 1));
+      }
     }
   }
-
-  // -- the bars, while the piece is in the score's time
-  opacity(gBars, smooth(0.5, 1, p1) * (1 - smooth(0, 0.4, p2)));
 
   // -- the tracks of the roll, while it is a text
   opacity(gGrid, smooth(0.3, 1, p3) * (1 - smooth(0, 0.6, p7)));
@@ -599,19 +692,19 @@ const draw = (s) => {
       let fill;
       let alpha = 1;
       if (s < 3) {
-        // first the notes unfold under the signs, as read; then each takes on how it was played
-        const order = inView(t.notated.x0);
-        const unfold = smooth(0.3 * order, 0.3 * order + 0.4, p2);
-        const way = smooth(0.42 + 0.18 * order, 0.42 + 0.18 * order + 0.38, p2);
-        const at = { ...t.notated, x1: lerp(t.notated.x0, t.notated.x1, unfold) };
+        // each note leaves the pile it belongs to, as read, and becomes what was played
+        const order = inView(t.pile.cx);
+        const start = 0.05 + 0.32 * order + 0.14 * t.rank;
+        const way = smooth(start, start + 0.5, p2);
+        const from = { x0: t.pile.cx, x1: t.pile.cx, cy: t.pile.cy, h: 2.5 };
         shape = {
-          x0: lerp(at.x0, t.ink.x0, way),
-          x1: lerp(at.x1, t.ink.x1, way),
-          cy: lerp(at.cy, t.ink.cy, way),
-          h: lerp(at.h, t.ink.h, way),
+          x0: lerp(from.x0, t.ink.x0, way),
+          x1: lerp(from.x1, t.ink.x1, way),
+          cy: lerp(from.cy, t.ink.cy, way),
+          h: lerp(from.h, t.ink.h, way),
         };
-        fill = mix(COLORS.notated, COLORS.ink, way);
-        alpha = smooth(0, 0.3, unfold);
+        fill = mix(COLORS.notated, COLORS.ink, smooth(0.2, 0.9, way));
+        alpha = smooth(0, 0.12, way);
       } else {
         const order = inView(t.ink.x0);
         const way = smooth(0.25 * order, 0.25 * order + 0.65, p3);
@@ -880,7 +973,7 @@ gClaims.addEventListener('click', (event) => {
   if (g) window.open(SEGMENT_URL(claims[Number(g.dataset.claim)].id), '_blank', 'noopener');
 });
 
-gSigns.addEventListener('pointerover', (event) => {
+gPiles.addEventListener('pointerover', (event) => {
   const g = event.target.closest('.sign');
   if (!g) return;
   const sign = signs[Number(g.dataset.sign)];
@@ -888,10 +981,10 @@ gSigns.addEventListener('pointerover', (event) => {
   const words = sign.segments.map((c) => `<div class="word">${escape(claims[c].word)}</div>`).join('');
   showCard(event, `${words}<pre>${escape(sign.encoding)}</pre>`);
 });
-gSigns.addEventListener('pointermove', (event) => {
+gPiles.addEventListener('pointermove', (event) => {
   if (!card.hidden && event.target.closest('.sign')) showCard(event, card.innerHTML);
 });
-gSigns.addEventListener('pointerout', (event) => {
+gPiles.addEventListener('pointerout', (event) => {
   if (event.target.closest('.sign') && !event.relatedTarget?.closest?.('.sign')) {
     light(null);
     hideCard();
