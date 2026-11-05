@@ -204,8 +204,10 @@ Identifiers must not change between exports.
 slider leads through ten steps, and the view passes from one to the
 next frame by frame: the idea of the performance; the reconstruction's
 gestures, packed as MPM Desk's viewer packs them; each gesture folded
-into a pile of signs, one for every MPM instruction it is made of, drawn
-as the viewer draws them; the notes unfolding out of the piles into the
+into the signs of the MPM instructions it is made of, drawn as the
+viewer draws them, each where it acts in time and as long as it lasts,
+but a gesture's signs kept together in a band of their own about where
+the gesture's word was; the notes unfolding out of the bands into the
 performance the instructions render, as an ink stroke per note, the
 broader the louder; the text of
 the roll as R1, through R2, R3 and R4, each step marking what its
