@@ -1,12 +1,15 @@
-// Piano and voice each through their own fader, and each sent into one room: a natural small
-// hall, the voice a little further into it and after a short pre-delay, so it keeps its clarity.
+// Piano (the piece, and its harmonies) and voice each through their own gain, and each sent into
+// one room: a natural small hall, the voice a little further into it and after a short pre-delay,
+// so it keeps its clarity.
 import { seededRandom } from '../shared/math.ts';
 
 export interface AudioGraph {
   readonly context: AudioContext;
   /** Faded out and in around a switch between renderings. */
   readonly master: GainNode;
+  /** The piano playing the piece, and playing its harmonies: one fader sets both (see mix.ts). */
   readonly piano: GainNode;
+  readonly harmonies: GainNode;
   readonly hum: GainNode;
 }
 
@@ -108,12 +111,15 @@ export function createAudioGraph(): AudioGraph {
   room.connect(wet);
   wet.connect(master);
 
-  const piano = context.createGain();
   const pianoSend = context.createGain();
   pianoSend.gain.value = SENDS.piano;
-  piano.connect(master);
-  piano.connect(pianoSend);
   pianoSend.connect(room);
+  const piano = context.createGain();
+  const harmonies = context.createGain();
+  for (const bus of [piano, harmonies]) {
+    bus.connect(master);
+    bus.connect(pianoSend);
+  }
 
   const hum = context.createGain();
   const humSend = context.createGain();
@@ -124,5 +130,5 @@ export function createAudioGraph(): AudioGraph {
   hum.connect(humSend);
   humSend.connect(predelay);
   predelay.connect(room);
-  return { context, master, piano, hum };
+  return { context, master, piano, harmonies, hum };
 }

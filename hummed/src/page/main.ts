@@ -4,6 +4,7 @@ import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogra
 import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
+import { heard, mix } from './mix.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
 import { VoicePool, workerCount } from './pool.ts';
@@ -15,8 +16,10 @@ const playButton = element('play', HTMLButtonElement);
 const playIcon = element('icon-play', SVGSVGElement);
 const pauseIcon = element('icon-pause', SVGSVGElement);
 const positionSlider = element('pos', HTMLInputElement);
-const levelSlider = element('exag', HTMLInputElement);
-const levelOutput = element('o-exag', HTMLOutputElement);
+const abstractSlider = element('abstract', HTMLInputElement);
+const abstractOutput = element('o-abstract', HTMLOutputElement);
+const levelSlider = element('saturation', HTMLInputElement);
+const levelOutput = element('o-saturation', HTMLOutputElement);
 const statusLine = element('status', HTMLElement);
 const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
@@ -27,7 +30,7 @@ const requestedStyle = new URLSearchParams(location.search).get('spectrogram');
 const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle : 'melodic';
 
 const graph = createAudioGraph();
-const piano = new PianoSampler(graph.context, graph.piano);
+const piano = new PianoSampler(graph.context);
 // the voice is rendered by several workers side by side, as many as there are cores to spare
 const pool = new VoicePool(workerCount(), (event) => {
   player.receive(event);
@@ -83,22 +86,29 @@ const player = new Player(graph, piano, pool, {
     requestAnimationFrame(redraw);
   },
 });
-/* ---------- faders ---------- */
-function fader(id: string, outputId: string, gain: GainNode): void {
-  const input = element(id, HTMLInputElement);
-  const output = element(outputId, HTMLOutputElement);
-  const apply = (): void => {
-    const x = Number(input.value) / 100;
-    const g = x * x;
-    gain.gain.setTargetAtTime(g, graph.context.currentTime, 0.02);
-    output.value = g === 0 ? 'off' : `${(20 * Math.log10(g)).toFixed(1).replace('-', '−')} dB`;
-    setFill(input, x);
-  };
-  input.addEventListener('input', apply);
-  apply();
-}
-fader('g-piano', 'o-piano', graph.piano);
-fader('g-hum', 'o-hum', graph.hum);
+/* ---------- the faders: abstractness sets the mix, saturation the performance ---------- */
+const setGain = (gain: GainNode, value: number): void => {
+  gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
+};
+// the piano's two parts are both always playing: the gains, gliding, crossfade between them
+const applyAbstractness = (): void => {
+  const a = Number(abstractSlider.value) / 100;
+  const gains = mix(a);
+  setGain(graph.hum, gains.hum);
+  setGain(graph.harmonies, gains.harmonies);
+  setGain(graph.piano, gains.piece);
+  const what = heard(a);
+  abstractOutput.value = what;
+  abstractSlider.setAttribute(
+    'aria-valuetext',
+    { humming: 'the humming alone', harmonies: 'humming and harmonies', piece: 'the piece, humming along' }[
+      what
+    ],
+  );
+  setFill(abstractSlider, a);
+};
+abstractSlider.addEventListener('input', applyAbstractness);
+applyAbstractness();
 
 let levelTimer: ReturnType<typeof setTimeout> | undefined;
 const showLevel = (): void => {

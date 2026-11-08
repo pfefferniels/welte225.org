@@ -1,7 +1,7 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
-// front page, play, switch the exaggeration, seek, open and close the info card, and fail on any
-// page error. Needs Playwright with
-// Chromium installed (not a dependency of this project):   npm run smoke
+// front page, play, switch the saturation, seek, move the abstractness, open and close the info
+// card, and fail on any page error. Needs Playwright with Chromium installed (not a dependency of
+// this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { createRequire } from 'node:module';
@@ -83,7 +83,7 @@ try {
   await report('played 6 s');
   const total = await text('total');
   await page.evaluate(
-    "(() => { const e = document.getElementById('exag'); e.value = 0.5; e.dispatchEvent(new Event('input')); })()",
+    "(() => { const e = document.getElementById('saturation'); e.value = 0.5; e.dispatchEvent(new Event('input')); })()",
   );
   await page.waitForFunction(
     `document.getElementById('total').textContent !== ${JSON.stringify(total)}`,
@@ -99,6 +99,19 @@ try {
   );
   await page.waitForTimeout(5000);
   await report('seeked to 1:30');
+  for (const [value, expected] of [
+    [80, 'harmonies'],
+    [100, 'humming'],
+    [33, 'piece'],
+  ] as const) {
+    await page.evaluate(
+      `(() => { const e = document.getElementById('abstract'); e.value = ${value}; e.dispatchEvent(new Event('input')); })()`,
+    );
+    await page.waitForTimeout(1500);
+    const shown = await text('o-abstract');
+    if (shown !== expected) errors.push(`abstractness ${value} shows ${shown}, not ${expected}`);
+  }
+  console.log('abstractness: harmonies, humming alone, the piece');
   const cardOpen = (): Promise<boolean> =>
     page.evaluate("document.getElementById('info').matches(':popover-open')");
   await page.click('.info-button');

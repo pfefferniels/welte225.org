@@ -45,3 +45,11 @@ export interface Reduction {
   /** The downbeat of every bar but the upbeat. */
   readonly bars: readonly Bar[];
 }
+
+/** A grace note of the harmonies (reduction/harmonies.mei), sounding just before the note it leads to. */
+export interface Grace {
+  readonly id: string;
+  readonly pitch: Midi;
+  /** The `xml:id` of the note it leads to. */
+  readonly before: string;
+}

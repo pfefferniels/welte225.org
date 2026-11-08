@@ -22,6 +22,7 @@ export class Rendering {
   readonly duration: Seconds;
   readonly bars: readonly (readonly [Seconds, string])[];
   readonly piano: readonly PianoNote[];
+  readonly harmonies: readonly PianoNote[];
   readonly timings: Timings;
   readonly startSeconds: Seconds;
   readonly audio: Float32Array;
@@ -40,6 +41,7 @@ export class Rendering {
     this.duration = plan.duration;
     this.bars = plan.bars;
     this.piano = plan.piano;
+    this.harmonies = plan.harmonies;
     this.timings = plan.timings;
     this.startSeconds = plan.startSeconds;
     this.#clock = plan.clock;

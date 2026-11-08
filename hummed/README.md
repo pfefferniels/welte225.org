@@ -2,21 +2,23 @@
 
 Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 225), played from the
 roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
-the browser by VocalTractLab, for any exaggeration of the performance from 0 to 2.
+the browser by VocalTractLab, at any saturation of the performance from 0 to 2 and any degree of
+abstraction, from the piece itself with the humming under it to the humming alone.
 
 <https://welte225.org/>: the site's front page. The page is the repository's root `index.html`;
 it loads everything else from here (`<base href="/hummed/">`), and `/hummed/` itself sends
 visitors on to it.
 
 The page shows the hum's spectrogram filling the window, scrolling under a playhead. Over it, on
-the left, three faders: the piano, the humming, and the exaggeration; on the right, the
-transport. Moving the exaggeration renders the voice anew and takes it over at the same place in
-the score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
+the left, two faders: abstractness, which sets what is heard (below), and saturation, how far the
+performance departs from the plain score (the MPM exaggerated by espressivo: 0 without
+expression, 1 as Grünfeld played, 2 every deviation doubled); on the right, the transport. Moving
+the saturation renders the voice anew and takes it over at the same place in the score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
 from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text for readers
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
 to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
-info buttons beside Humming and Exaggeration explain those two. The cards are native popovers:
+info buttons beside Abstractness and Saturation explain those two. The cards are native popovers:
 closed until asked for, and closed again by Escape or a click anywhere else.
 
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
@@ -70,9 +72,31 @@ What the MEI says, and how the voice reads it:
 After changing the reduction, run `npm run calibrate` (below) so the new notes are as loud as the
 dynamics ask; until then they sound uncorrected, which is close.
 
+## Abstractness: the humming, the harmonies, the piece
+
+`reduction/harmonies.mei` is a harmonic reduction of the piece: its chords, one or two to a bar,
+with the repeat written out. espressivo converts it to a score (MSM) as it converted the piece's;
+the worker puts back the three grace notes the converter leaves out, each a thirty-second before
+the note it leads to (`src/worker/harmonies.ts`), and performs it with the same MPM as the roll, at
+the same saturation. Tempo, rubato, dynamics, arpeggios and pedalling apply to the harmonies as to
+the piece; notes that no arpeggio moves start on the same millisecond as the piece's. What the MPM
+says of single notes of the piece (articulation by note) finds nothing to apply to.
+
+The abstractness fader (`src/page/mix.ts`) sets three gains:
+
+- At its most abstract, the humming alone, at full level.
+- Less abstract, the harmonies come in from silence under it and grow, as the square of the way
+  down, to the piano's level (−5 dB) at the middle.
+- Below the middle, the piano plays the piece instead, at the same level.
+
+The humming falls evenly in decibels all the way, from 0 dB to −11 dB at the middle and −22 dB at
+the bottom, where it is a pianist humming along. The page plays both the piece and the harmonies
+all the time, each into its own gain, so passing the middle crossfades between them, even in the
+middle of a chord. It starts a third of the way up: the piece, with the humming at −15 dB.
+
 ## How the voice hums
 
-For one exaggeration level a worker (`src/worker/worker.ts`) does this:
+For one saturation (an exaggeration of the MPM) a worker (`src/worker/worker.ts`) does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
    for the piano at the level, and for the voice a step further. The voice is the inner guide of
@@ -108,8 +132,8 @@ page in blocks with their spectrogram columns. Of the work, VocalTractLab's acou
 quarters and its geometry a fifth; the spectrogram adds a twentieth. Three workers render the
 voice 5.3 times as fast as it plays where one renders it 1.9 times as fast (in Chromium on four
 cores of a cloud server); the first sound comes as soon. The page (`src/page/`) plays the
-voice as it arrives, plays the roll on a sampled grand from the same performance, holds notes with
-the sustain pedal as the roll does, and sends both into one small room: early reflections and a
+voice as it arrives, plays the roll and its harmonies on a sampled grand from the same performance,
+holds notes with the sustain pedal as the roll does, and sends all into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
 voice a little further in than the piano and after a 20 ms pre-delay.
 
@@ -125,15 +149,15 @@ of its chord, and gives a note that ends too early a length, before the piano or
 | `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                   |
 | `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is           |
 | `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                        |
-| `src/reduction/`                 | reading the reduction's MEI                                                                                                       |
+| `src/reduction/`                 | reading the reduction's MEI, and the harmonies' grace notes                                                                       |
 | `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                   |
 | `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                 |
-| `src/worker/`                    | the worker: levels, piano notes, spectrogram, the render loop                                                                     |
-| `src/page/`                      | the page: audio graph and room, piano sampler, renderings, transport, spectrogram view                                            |
+| `src/worker/`                    | the worker: levels, the harmonies' score, piano notes, spectrogram, the render loop                                               |
+| `src/page/`                      | the page: audio graph and room, the abstractness mix, piano sampler, renderings, transport, spectrogram view                      |
 | `src/shared/`                    | what both sides use: units, maths, the messages between them                                                                      |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s                                                |
-| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, and the script that drafted it                                                   |
+| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                  |
 | `tools/`                         | build, calibration, a browser smoke test, and what they share for running in Node                                                 |
 | `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                              |
 | `vtl/`                           | the VocalTractLab build and its patch                                                                                             |

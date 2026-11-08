@@ -1,7 +1,8 @@
-// A voice worker: for an exaggeration level, espressivo performs the exaggerated MPM, the hummer
-// turns that performance into two gestural scores, VocalTractLab (WebAssembly) turns them into tract
-// states and then, chunk by chunk as the page hands them out, into sound, streamed to the page in
-// blocks with their spectrogram columns. The page runs several such workers side by side.
+// A voice worker: for an exaggeration level, espressivo performs the exaggerated MPM (on the piece,
+// and on its harmonies for the piano's lower half), the hummer turns that performance into two
+// gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
+// chunk as the page hands them out, into sound, streamed to the page in blocks with their
+// spectrogram columns. The page runs several such workers side by side.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { readPerformance, renderVoice, repair, type Calibration, type HumStyle } from '../hummer/index.ts';
@@ -12,6 +13,7 @@ import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.t
 import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
+import { harmoniesScore } from './harmonies.ts';
 import { pianoFactors, voiceFactors, VOICE_LEAD, withSubNoteDynamics } from './levels.ts';
 import { pianoNotes } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
@@ -36,6 +38,8 @@ const BLOCK_STATES = 40;
 
 interface Resources {
   readonly msm: string;
+  /** The harmonies as a score (reduction/harmonies.mei, grace notes put back). */
+  readonly harmonies: string;
   readonly mpm: string;
   readonly style: HumStyle;
   readonly calibration: Calibration;
@@ -62,8 +66,9 @@ async function load(): Promise<Resources> {
     if (!response.ok) throw new Error(`${url}: ${response.status}`);
     return response;
   };
-  const [msm, mpm, speaker, style, calibration] = await Promise.all([
+  const [msm, harmonies, mpm, speaker, style, calibration] = await Promise.all([
     get('../mpm/score.msm').then((r) => r.text()),
+    get('reduction/harmonies.mei').then((r) => r.text()),
     get('../mpm/performance.mpm').then((r) => r.text()),
     get('data/hummer.speaker.xml').then((r) => r.text()),
     get('data/hum-style.json').then((r) => r.json() as Promise<unknown>),
@@ -74,6 +79,7 @@ async function load(): Promise<Resources> {
   const module = await createVtl({ print: () => undefined, printErr: () => undefined });
   return {
     msm,
+    harmonies: harmoniesScore(harmonies),
     mpm,
     style: parseHumStyle(style),
     calibration: parseCalibration(calibration),
@@ -84,10 +90,9 @@ async function load(): Promise<Resources> {
 function prepare(r: Resources, hummed: Reduction, level: number): Level {
   const t0 = performance.now();
   const piano = pianoFactors(level);
-  const pianoData = performMsmToData({
-    msm: r.msm,
-    mpm: piano ? exaggerateMpm(r.mpm, { factors: piano }).mpm : r.mpm,
-  });
+  const pianoMpm = piano ? exaggerateMpm(r.mpm, { factors: piano }).mpm : r.mpm;
+  const pianoData = performMsmToData({ msm: r.msm, mpm: pianoMpm });
+  const harmoniesData = performMsmToData({ msm: r.harmonies, mpm: pianoMpm });
   const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level) }).mpm;
   const voiceData = performMsmToData({ msm: r.msm, mpm: voiceMpm });
   const dynamics = performMsmToData({ msm: r.msm, mpm: withSubNoteDynamics(voiceMpm) });
@@ -108,6 +113,8 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
   const t3 = performance.now();
   const { notes, sustain } = readPerformance(pianoData);
   repair(notes);
+  const harmonies = readPerformance(harmoniesData);
+  repair(harmonies.notes);
   const timings: Timings = { espressivo: t1 - t0, hummer: t2 - t1, gestures: t3 - t2 };
   const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;
   const seams = voice.seams
@@ -127,6 +134,7 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
       bars: voice.bars,
       clock: { ticks: voice.clock.ticks, ms: voice.clock.ms },
       piano: pianoNotes(notes, sustain),
+      harmonies: pianoNotes(harmonies.notes, harmonies.sustain),
       timings,
       stateCount: states.closed.count,
       seams,

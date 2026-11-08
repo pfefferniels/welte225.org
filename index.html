@@ -32,37 +32,32 @@
     ></canvas>
 
     <div class="controls">
-      <section class="panel mix" aria-label="Mix and exaggeration">
-        <div class="fader">
-          <label for="g-piano">Piano</label>
-          <input id="g-piano" type="range" min="0" max="100" step="1" value="75" />
-          <output id="o-piano" for="g-piano">−5.0 dB</output>
-        </div>
+      <section class="panel mix" aria-label="Abstractness and saturation">
         <div class="fader">
           <span class="name">
-            <label for="g-hum">Humming</label>
-            <button class="hint" type="button" popovertarget="hum-info" aria-label="About the humming">
+            <label for="abstract">Abstractness</label>
+            <button class="hint" type="button" popovertarget="abstract-info" aria-label="About abstractness">
               <svg viewBox="0 0 20 20" aria-hidden="true">
                 <circle cx="10" cy="5.5" r="1.3" />
                 <path d="M8.4 8.5h2.6v6.3h1.5v1.4H7.6v-1.4h1.5V9.9h-.7z" />
               </svg>
             </button>
           </span>
-          <input id="g-hum" type="range" min="0" max="100" step="1" value="40" />
-          <output id="o-hum" for="g-hum">−15.9 dB</output>
+          <input id="abstract" class="split" type="range" min="0" max="100" step="1" value="33" />
+          <output id="o-abstract" for="abstract">piece</output>
         </div>
         <div class="fader">
           <span class="name">
-            <label for="exag">Exaggeration</label>
-            <button class="hint" type="button" popovertarget="exag-info" aria-label="How exaggeration works">
+            <label for="saturation">Saturation</label>
+            <button class="hint" type="button" popovertarget="saturation-info" aria-label="About saturation">
               <svg viewBox="0 0 20 20" aria-hidden="true">
                 <circle cx="10" cy="5.5" r="1.3" />
                 <path d="M8.4 8.5h2.6v6.3h1.5v1.4H7.6v-1.4h1.5V9.9h-.7z" />
               </svg>
             </button>
           </span>
-          <input id="exag" type="range" min="0" max="2" step="0.05" value="1" disabled />
-          <output id="o-exag" for="exag">×1.00</output>
+          <input id="saturation" type="range" min="0" max="2" step="0.05" value="1" disabled />
+          <output id="o-saturation" for="saturation">×1.00</output>
         </div>
       </section>
 
@@ -118,25 +113,29 @@
       </p>
     </section>
 
-    <section id="hum-info" class="card hint-card" popover aria-labelledby="hum-info-title">
-      <h2 id="hum-info-title">The humming</h2>
+    <section id="abstract-info" class="card hint-card" popover aria-labelledby="abstract-info-title">
+      <h2 id="abstract-info-title">Abstractness</h2>
       <p>
-        What a pianist might hum while playing: a bass line that moves between melody, tenor and bass, within
-        about an octave, with a breath wherever it changes hands. It is written out in MEI, and each sung note
-        takes its timing and loudness from the piano note it follows.
+        Fully abstract, only the humming: what a pianist might hum while playing, a bass line that moves
+        between melody, tenor and bass, within about an octave, with a breath wherever it changes hands. Less
+        abstract, the harmonies come in under it, the piece reduced to its chords, and the humming recedes.
+        Below the middle, the piano plays the piece itself, and the humming goes on quietly, as a pianist hums
+        along.
       </p>
       <p>
-        VocalTractLab, a model of the human vocal tract, sings it as you listen, here in your browser: the
-        lips, tongue and glottis move, and the sound comes from the air passing through them.
+        Each sung note takes its timing and loudness from the piano note it follows. VocalTractLab, a model of
+        the human vocal tract, sings it as you listen, here in your browser: the lips, tongue and glottis
+        move, and the sound comes from the air passing through them.
       </p>
     </section>
 
-    <section id="exag-info" class="card hint-card" popover aria-labelledby="exag-info-title">
-      <h2 id="exag-info-title">Exaggeration</h2>
+    <section id="saturation-info" class="card hint-card" popover aria-labelledby="saturation-info-title">
+      <h2 id="saturation-info-title">Saturation</h2>
       <p>
         How far the performance departs from the plain score, in tempo, rubato, dynamics, accents,
         articulation, arpeggios and pedalling. At 0 the roll plays without expression, at 1 as Grünfeld played
-        it, at 2 with every deviation doubled; espressivo computes each from the reconstruction.
+        it, at 2 with every deviation doubled; espressivo computes each from the reconstruction, for the piece
+        and its harmonies alike.
       </p>
       <p>
         The voice always goes a little further than the piano, except in timing, which the two share. A new

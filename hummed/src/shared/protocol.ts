@@ -51,6 +51,8 @@ export interface Plan {
   /** Score time against performed ms (without the padding), for keeping a place across levels. */
   readonly clock: { readonly ticks: readonly Ticks[]; readonly ms: readonly number[] };
   readonly piano: readonly PianoNote[];
+  /** The harmonies (reduction/harmonies.mei) in the same performance, for the piano's lower half. */
+  readonly harmonies: readonly PianoNote[];
   readonly timings: Timings;
   /** Where the sound starts coming, and its tract state (at the start of a 10 ms slot). */
   readonly startSeconds: Seconds;

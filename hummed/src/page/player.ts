@@ -1,6 +1,7 @@
-// The transport: the voice played from the stream in short buffers, the piano from its notes,
-// and a new rendering taking over at the same place in the score once it has sound there.
-import type { StartAt } from '../shared/protocol.ts';
+// The transport: the voice played from the stream in short buffers, the piano from its notes (the
+// piece's and the harmonies', each into its own bus, both always: the abstractness decides which
+// is heard), and a new rendering taking over at the same place in the score once it has sound there.
+import type { PianoNote, StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoSampler } from './piano.ts';
@@ -174,13 +175,22 @@ export class Player {
     this.#pianoFrom = t;
     this.#waiting = false;
     // notes already sounding at t (held by the pedal) come in where they are
-    for (const note of cur.piano) {
-      if (note.on < t && note.on + note.duration > t + 0.05) {
-        const source = this.#piano.play(note, this.#startAt, t - note.on);
-        if (source) this.#active.push(source);
+    for (const [notes, output] of this.#pianoParts(cur))
+      for (const note of notes) {
+        if (note.on < t && note.on + note.duration > t + 0.05) {
+          const source = this.#piano.play(note, output, this.#startAt, t - note.on);
+          if (source) this.#active.push(source);
+        }
       }
-    }
     this.#schedule();
+  }
+
+  /** The piano's two parts: the piece, and its harmonies. */
+  #pianoParts(cur: Rendering): readonly (readonly [readonly PianoNote[], AudioNode])[] {
+    return [
+      [cur.piano, this.#graph.piano],
+      [cur.harmonies, this.#graph.harmonies],
+    ];
   }
 
   #contextTime(t: Seconds): number {
@@ -208,12 +218,13 @@ export class Player {
       this.#voiceUntil = t1;
     }
     const until = Math.min(horizon, this.#voiceUntil);
-    for (const note of cur.piano) {
-      if (note.on >= this.#pianoFrom && note.on < until) {
-        const source = this.#piano.play(note, this.#contextTime(note.on), 0);
-        if (source) this.#active.push(source);
+    for (const [notes, output] of this.#pianoParts(cur))
+      for (const note of notes) {
+        if (note.on >= this.#pianoFrom && note.on < until) {
+          const source = this.#piano.play(note, output, this.#contextTime(note.on), 0);
+          if (source) this.#active.push(source);
+        }
       }
-    }
     this.#pianoFrom = Math.max(this.#pianoFrom, until);
     if (this.#active.length > 400) this.#active = this.#active.slice(-300);
     if (this.#voiceUntil < cur.duration && this.#voiceUntil - t < 0.05) {

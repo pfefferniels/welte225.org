@@ -203,6 +203,27 @@ input[type='range']::-moz-range-thumb {
   background: var(--bg);
   border: 2px solid var(--accent);
 }
+/* the abstractness fader: a gap at its middle, where the piano passes from the harmonies to the piece */
+input.split::-webkit-slider-runnable-track {
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - 1.5px),
+      var(--bg) calc(50% - 1.5px) calc(50% + 1.5px),
+      transparent calc(50% + 1.5px)
+    ),
+    linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
+}
+input.split::-moz-range-track {
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - 1.5px),
+      var(--bg) calc(50% - 1.5px) calc(50% + 1.5px),
+      transparent calc(50% + 1.5px)
+    ),
+    var(--rule);
+}
 input[type='range']:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
