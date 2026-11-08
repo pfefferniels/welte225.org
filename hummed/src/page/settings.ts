@@ -1,6 +1,6 @@
 // The settings card: which piano plays. The Bösendorfer as Pianoteq rendered it ahead (where there
-// are recordings; the saturation then moves in their steps), the Salamander grand sampled as you
-// listen (any saturation), or an instrument of the visitor's own over MIDI, with its delay. The
+// are recordings, one for each setting of the elaboration), the Salamander grand sampled as you
+// listen, or an instrument of the visitor's own over MIDI, with its delay. The
 // browser is asked for MIDI only when the visitor chooses it.
 import type { RecordingsManifest } from '../shared/recordings.ts';
 import { element } from './dom.ts';
@@ -93,7 +93,9 @@ export class PianoSettings {
     element('choice-recorded', HTMLElement).hidden = false;
     element('recorded-name', HTMLElement).textContent = manifest.instrument;
     element('recorded-note', HTMLElement).textContent =
-      `Pianoteq, rendered ahead: saturation in steps of ${manifest.step}.`;
+      manifest.step > 0.05 + 1e-9
+        ? `Pianoteq, rendered ahead at every ${manifest.step} of the elaboration; the sampled grand between.`
+        : 'Played by Pianoteq, rendered ahead.';
     if (load(KIND_KEY) !== 'sampled' && this.#kind === 'sampled') void this.#choose('recorded');
   }
 

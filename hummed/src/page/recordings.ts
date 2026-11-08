@@ -1,21 +1,21 @@
-// The Pianoteq recordings on the page: a level's two parts are fetched and decoded when it is asked
-// for, and the page keeps no more than the level playing and the one it is changing to (a decoded
+// The Pianoteq recordings on the page: a setting's two parts are fetched and decoded when it is asked
+// for, and the page keeps no more than the setting playing and the one it is changing to (a decoded
 // part of three minutes is some 30 MB).
-import { parseManifest, type RecordedLevel, type RecordingsManifest } from '../shared/recordings.ts';
+import { parseManifest, type RecordedSetting, type RecordingsManifest } from '../shared/recordings.ts';
 
 const BASE = 'piano/pianoteq/';
 
-export interface LevelBuffers {
+export interface SettingBuffers {
   readonly piece: AudioBuffer;
   readonly harmonies: AudioBuffer;
 }
 
-const keyOf = (level: number): number => Math.round(level * 100);
+const keyOf = (elaboration: number): number => Math.round(elaboration * 100);
 
 export class Recordings {
   readonly manifest: RecordingsManifest;
   readonly #context: AudioContext;
-  readonly #loaded = new Map<number, LevelBuffers>();
+  readonly #loaded = new Map<number, SettingBuffers>();
   readonly #loading = new Set<number>();
   readonly #failed = new Set<number>();
   #playing: number | null = null;
@@ -33,21 +33,21 @@ export class Recordings {
     return manifest && new Recordings(context, manifest);
   }
 
-  /** The level's entry in the manifest, if it was rendered. */
-  level(level: number): RecordedLevel | null {
-    return this.manifest.levels.find((l) => keyOf(l.level) === keyOf(level)) ?? null;
+  /** The setting's entry in the manifest, if it was rendered. */
+  setting(elaboration: number): RecordedSetting | null {
+    return this.manifest.settings.find((s) => keyOf(s.elaboration) === keyOf(elaboration)) ?? null;
   }
 
-  failed(level: number): boolean {
-    return this.#failed.has(keyOf(level));
+  failed(elaboration: number): boolean {
+    return this.#failed.has(keyOf(elaboration));
   }
 
-  /** The level's sound, null while it loads (the first ask starts it) or where it failed. */
-  buffers(level: number): LevelBuffers | null {
-    const key = keyOf(level);
+  /** The setting's sound, null while it loads (the first ask starts it) or where it failed. */
+  buffers(elaboration: number): SettingBuffers | null {
+    const key = keyOf(elaboration);
     const loaded = this.#loaded.get(key);
     if (loaded) return loaded;
-    const entry = this.level(level);
+    const entry = this.setting(elaboration);
     if (!entry || this.#failed.has(key) || this.#loading.has(key)) return null;
     for (const k of this.#loaded.keys()) if (k !== this.#playing) this.#loaded.delete(k);
     this.#loading.add(key);
@@ -59,18 +59,21 @@ export class Recordings {
       (error: unknown) => {
         this.#loading.delete(key);
         this.#failed.add(key);
-        console.warn(`The Pianoteq recording of ×${level} did not load; the sampled grand plays it.`, error);
+        console.warn(
+          `The Pianoteq recording of ${elaboration} did not load; the sampled grand plays it.`,
+          error,
+        );
       },
     );
     return null;
   }
 
-  /** The level now playing, kept while others come and go. */
-  playing(level: number): void {
-    this.#playing = keyOf(level);
+  /** The setting now playing, kept while others come and go. */
+  playing(elaboration: number): void {
+    this.#playing = keyOf(elaboration);
   }
 
-  async #fetch(entry: RecordedLevel): Promise<LevelBuffers> {
+  async #fetch(entry: RecordedSetting): Promise<SettingBuffers> {
     const get = async (file: string): Promise<AudioBuffer> => {
       const response = await fetch(BASE + file);
       if (!response.ok) throw new Error(`${file}: ${response.status}`);

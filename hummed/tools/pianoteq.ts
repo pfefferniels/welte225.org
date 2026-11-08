@@ -1,14 +1,15 @@
-// The piano rendered ahead by Pianoteq, for the page to play: for each level of saturation on a grid,
-// both of the piano's parts (the piece and its harmonies) as MIDI, as the page would send them to an
-// instrument; Pianoteq renders each to sound, which is moved into place against the messages (to the
-// millisecond, so that it plays with the voice), given one gain for all levels, made mono and
-// written as MP3 to piano/pianoteq/, with manifest.json saying what was rendered.
+// The piano rendered ahead by Pianoteq, for the page to play: for each setting of the elaboration the
+// voice is rendered for (every 0.05), the piano as exaggerated as that elaboration has it, both of its
+// parts (the piece and its harmonies) as MIDI, as the page would send them to an instrument; Pianoteq
+// renders each to sound, which is moved into place against the messages (to the millisecond, so that
+// it plays with the voice), given one gain for all settings, made mono and written as MP3 to
+// piano/pianoteq/, with manifest.json saying what was rendered.
 //
-//   npm run pianoteq -- render --pianoteq <program> --preset <name> [--step 0.25] [--levels 1,0.5]
+//   npm run pianoteq -- render --pianoteq <program> --preset <name> [--step 0.05] [--elaborations 1,0.65]
 //                              [--fxp <file> instead of --preset] [--instrument <name>] [--credit <text>]
-//   npm run pianoteq -- midi [--out <dir>] [--step 0.25] [--levels …]   (only the MIDI files)
+//   npm run pianoteq -- midi [--out <dir>] [--step 0.05] [--elaborations …]   (only the MIDI files)
 //
-// Needs Pianoteq (any edition; the preset with its reverb off, the page has its own room) and ffmpeg.
+// Needs Pianoteq (the preset with its reverb off: the page has its own room) and ffmpeg.
 // The program is Pianoteq's executable, e.g. on a Mac
 // "/Applications/Pianoteq 9/Pianoteq 9.app/Contents/MacOS/Pianoteq 9"; or set PIANOTEQ.
 import { spawnSync } from 'node:child_process';
@@ -26,14 +27,15 @@ import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { fingerprint, midiEvents, type MidiEvent, type PianoPart } from '../src/shared/piano.ts';
 import {
-  gridLevels,
-  levelName,
+  elaborationSteps,
   parseManifest,
-  type RecordedLevel,
+  settingName,
   type RecordedPart,
+  type RecordedSetting,
   type RecordingsManifest,
 } from '../src/shared/recordings.ts';
 import { SAMPLE_RATE } from '../src/shared/units.ts';
+import { pianoLevel } from '../src/worker/levels.ts';
 import { performPiano } from '../src/worker/piano.ts';
 import { expectedOnsets, findLag, lagDrift, loudness, onsetStrength, peak } from './audio.ts';
 import { loadPianoScore, ROOT } from './node-support.ts';
@@ -58,8 +60,8 @@ const { values, positionals } = parseArgs({
     pianoteq: { type: 'string', default: process.env['PIANOTEQ'] ?? '' },
     preset: { type: 'string' },
     fxp: { type: 'string' },
-    step: { type: 'string', default: '0.25' },
-    levels: { type: 'string' },
+    step: { type: 'string', default: '0.05' },
+    elaborations: { type: 'string' },
     out: { type: 'string' },
     instrument: { type: 'string', default: 'Bösendorfer 280VC' },
     credit: { type: 'string' },
@@ -71,29 +73,44 @@ const fail = (message: string): never => {
   process.exit(1);
 };
 
+/** The steps the voice is rendered in (mix.ts: `voiceElaboration`): a rendering is only ever of one of them. */
+const VOICE_STEP = 0.05;
 const step = Number(values.step);
-if (!(step > 0) || Math.abs(Math.round(1 / step) * step - 1) > 1e-9)
-  fail(`--step ${values.step}: the grid must reach ×1, e.g. 0.25, 0.2, 0.1`);
-const levels = values.levels ? values.levels.split(',').map(Number) : gridLevels(step);
-const offGrid = levels.filter((l) => !gridLevels(step).some((g) => Math.abs(g - l) < 1e-9));
-if (offGrid.length > 0) fail(`levels not on the grid of ${step}: ${offGrid.join(', ')}`);
+if (
+  !(step > 0) ||
+  Math.abs(Math.round(step / VOICE_STEP) * VOICE_STEP - step) > 1e-9 ||
+  Math.round(1 / step) * step !== 1
+)
+  fail(`--step ${values.step}: steps of the voice's 0.05 that reach 1, e.g. 0.05, 0.1, 0.25`);
+const elaborations = values.elaborations
+  ? values.elaborations.split(',').map(Number)
+  : elaborationSteps(step);
+const offStep = elaborations.filter((e) => !elaborationSteps(step).some((g) => Math.abs(g - e) < 1e-9));
+if (offStep.length > 0) fail(`elaborations not in steps of ${step}: ${offStep.join(', ')}`);
 
 const score = loadPianoScore();
-/** Each level's parts as the page plays them, and their messages. */
-const performed = levels.map((level) => {
+/** Each setting's parts as the page plays them, and their messages. */
+const performed = elaborations.map((elaboration) => {
+  const level = pianoLevel(elaboration);
   const parts = performPiano(score, level);
   const events = (part: PianoPart): readonly MidiEvent[] => midiEvents(part);
-  return { level, parts, events: { piece: events(parts.piece), harmonies: events(parts.harmonies) } };
+  return {
+    elaboration,
+    level,
+    parts,
+    events: { piece: events(parts.piece), harmonies: events(parts.harmonies) },
+  };
 });
-const fileName = (level: number, part: string, ext: string): string => `${levelName(level)}-${part}.${ext}`;
+const fileName = (elaboration: number, part: string, ext: string): string =>
+  `${settingName(elaboration)}-${part}.${ext}`;
 
 function writeMidi(dir: string): void {
   mkdirSync(dir, { recursive: true });
-  for (const { level, events } of performed)
+  for (const { elaboration, level, events } of performed)
     for (const part of PARTS)
       writeFileSync(
-        join(dir, fileName(level, part, 'mid')),
-        midiFile(events[part], `WM 225, ${part}, saturation ×${level}`),
+        join(dir, fileName(elaboration, part, 'mid')),
+        midiFile(events[part], `WM 225, ${part}, elaboration ${elaboration} (×${level.toFixed(4)})`),
       );
 }
 
@@ -160,7 +177,7 @@ function trimmed(samples: Float32Array, gain: number): Float32Array {
 const db = (x: number): number => 20 * Math.log10(x);
 
 interface Rendered {
-  readonly level: number;
+  readonly elaboration: number;
   readonly part: (typeof PARTS)[number];
   readonly samples: Float32Array;
   readonly keys: number;
@@ -184,11 +201,11 @@ function render(): void {
   const rendered: Rendered[] = [];
   try {
     writeMidi(work);
-    for (const { level, parts, events } of performed)
+    for (const { elaboration, level, parts, events } of performed)
       for (const part of PARTS) {
-        const mid = join(work, fileName(level, part, 'mid'));
-        const wav = join(work, fileName(level, part, 'wav'));
-        console.log(`×${level.toFixed(2)} ${part}: rendering`);
+        const mid = join(work, fileName(elaboration, part, 'mid'));
+        const wav = join(work, fileName(elaboration, part, 'wav'));
+        console.log(`elaboration ${elaboration.toFixed(2)} (×${level.toFixed(2)}) ${part}: rendering`);
         run(program, ['--headless', ...preset, '--midi', mid, '--wav', wav, '--rate', String(SAMPLE_RATE)]);
         if (!existsSync(wav)) fail(`Pianoteq wrote no ${wav}`);
         const sound = readSound(wav);
@@ -200,7 +217,7 @@ function render(): void {
         const note = lag.clarity < CLEAR ? ' (uncertain!)' : '';
         console.log(`  lag ${lag.ms} ms, clarity ${lag.clarity.toFixed(1)}${note}, drift ${driftMs} ms`);
         rendered.push({
-          level,
+          elaboration,
           part,
           samples: shifted(sound, lag.ms),
           keys: parts[part].keys.length,
@@ -213,12 +230,13 @@ function render(): void {
     rmSync(work, { recursive: true, force: true });
   }
 
-  // one gain for all: the piece at ×1 as loud as the sampled grand, no recording above the ceiling
+  // one gain for all: the piece at ×1 (the elaboration 1) as loud as the sampled grand plays it, no
+  // recording above the ceiling
   const existing = readManifest();
-  const reference = rendered.find((r) => Math.abs(r.level - 1) < 1e-9 && r.part === 'piece');
+  const reference = rendered.find((r) => Math.abs(r.elaboration - 1) < 1e-9 && r.part === 'piece');
   const loudnessGain = reference
     ? SAMPLER_LOUDNESS_DB - loudness(reference.samples, SAMPLE_RATE)
-    : (existing?.gainDb ?? fail('Render ×1 as well: its loudness sets the gain of all levels.'));
+    : (existing?.gainDb ?? fail('Render the elaboration 1 as well: its loudness sets the gain of all.'));
   const ceilingGain = CEILING_DB - db(Math.max(...rendered.map((r) => peak(r.samples))));
   const gainDb = Number(Math.min(loudnessGain, ceilingGain).toFixed(2));
   if (ceilingGain < loudnessGain)
@@ -232,9 +250,9 @@ function render(): void {
   for (const r of rendered) {
     const samples = trimmed(r.samples, gain);
     for (let i = 0; i < samples.length; i++) samples[i] *= gain;
-    const file = fileName(r.level, r.part, 'mp3');
+    const file = fileName(r.elaboration, r.part, 'mp3');
     writeMp3(samples, join(OUT, file));
-    parts.set(`${r.level}:${r.part}`, {
+    parts.set(`${r.elaboration}:${r.part}`, {
       file,
       keys: r.keys,
       fingerprint: r.fingerprint,
@@ -243,17 +261,18 @@ function render(): void {
       driftMs: r.driftMs,
     });
   }
-  const renderedLevels = levels.map((level): RecordedLevel => ({
-    level,
-    piece: parts.get(`${level}:piece`) ?? fail(`no piece at ×${level}`),
-    harmonies: parts.get(`${level}:harmonies`) ?? fail(`no harmonies at ×${level}`),
+  const renderedSettings = performed.map(({ elaboration, level }): RecordedSetting => ({
+    elaboration,
+    pianoLevel: Number(level.toFixed(4)),
+    piece: parts.get(`${elaboration}:piece`) ?? fail(`no piece at ${elaboration}`),
+    harmonies: parts.get(`${elaboration}:harmonies`) ?? fail(`no harmonies at ${elaboration}`),
   }));
   const kept =
     existing?.step === step
-      ? existing.levels.filter((l) => !levels.some((level) => Math.abs(level - l.level) < 1e-9))
+      ? existing.settings.filter((s) => !elaborations.some((e) => Math.abs(e - s.elaboration) < 1e-9))
       : [];
   if (existing && kept.length > 0 && Math.abs(existing.gainDb - gainDb) > 0.05)
-    console.warn(`The levels rendered before have a gain of ${existing.gainDb} dB, these ${gainDb} dB.`);
+    console.warn(`The settings rendered before have a gain of ${existing.gainDb} dB, these ${gainDb} dB.`);
   const manifest: RecordingsManifest = {
     instrument: values.instrument,
     credit: values.credit ?? `${values.instrument}, played by Pianoteq (Modartt)`,
@@ -261,13 +280,13 @@ function render(): void {
     rendered: new Date().toISOString().slice(0, 10),
     step,
     gainDb,
-    levels: [...kept, ...renderedLevels].sort((a, b) => a.level - b.level),
+    settings: [...kept, ...renderedSettings].sort((a, b) => a.elaboration - b.elaboration),
   };
   writeFileSync(join(OUT, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-  const listed = new Set(manifest.levels.flatMap((l) => [l.piece.file, l.harmonies.file]));
+  const listed = new Set(manifest.settings.flatMap((l) => [l.piece.file, l.harmonies.file]));
   for (const file of readdirSync(OUT))
     if (file.endsWith('.mp3') && !listed.has(file)) rmSync(join(OUT, file));
-  console.log(`${manifest.levels.length} levels in piano/pianoteq/, gain ${gainDb} dB`);
+  console.log(`${manifest.settings.length} settings in piano/pianoteq/, gain ${gainDb} dB`);
 }
 
 function readManifest(): RecordingsManifest | null {

@@ -6,31 +6,33 @@ import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { seededRandom } from '../src/shared/math.ts';
 import { fingerprint, midiEvents } from '../src/shared/piano.ts';
-import { gridLevels, levelName, ManifestError, parseManifest } from '../src/shared/recordings.ts';
+import { elaborationSteps, ManifestError, parseManifest, settingName } from '../src/shared/recordings.ts';
+import { pianoLevel } from '../src/worker/levels.ts';
 import { performPiano } from '../src/worker/piano.ts';
 import { findLag, lagDrift, loudness, onsetStrength } from '../tools/audio.ts';
 import { loadPianoScore, ROOT } from '../tools/node-support.ts';
 
 describe('the recordings’ manifest', () => {
-  it('says nothing is rendered while it lists no levels', () => {
-    assert.equal(parseManifest({ levels: [] }), null);
+  it('says nothing is rendered while it lists no settings', () => {
+    assert.equal(parseManifest({ settings: [] }), null);
   });
-  it('refuses a level without its parts', () => {
+  it('refuses a setting without its parts', () => {
     const manifest = {
       instrument: 'x',
       credit: 'x',
       renderer: 'x',
       rendered: '2026-11-08',
-      step: 0.25,
+      step: 0.05,
       gainDb: 0,
-      levels: [{ level: 1 }],
+      settings: [{ elaboration: 1, pianoLevel: 1 }],
     };
     assert.throws(() => parseManifest(manifest), ManifestError);
   });
-  it('names levels and lays out grids', () => {
-    assert.equal(levelName(1), 'x100');
-    assert.equal(levelName(0.25), 'x025');
-    assert.deepEqual(gridLevels(0.5), [0, 0.5, 1, 1.5, 2]);
+  it('names settings and lays out their steps', () => {
+    assert.equal(settingName(1), 'e100');
+    assert.equal(settingName(0.05), 'e005');
+    assert.deepEqual(elaborationSteps(0.25), [0, 0.25, 0.5, 0.75, 1]);
+    assert.equal(elaborationSteps(0.05).length, 21);
   });
 });
 
@@ -40,11 +42,11 @@ describe('the recordings in piano/pianoteq/', () => {
   );
   it('are of the performance as it is now', { skip: manifest ? false : 'none rendered yet' }, () => {
     const score = loadPianoScore();
-    for (const level of manifest?.levels ?? []) {
-      const parts = performPiano(score, level.level);
+    for (const setting of manifest?.settings ?? []) {
+      const parts = performPiano(score, pianoLevel(setting.elaboration));
       for (const name of ['piece', 'harmonies'] as const) {
-        const recorded = level[name];
-        const message = `×${level.level} ${name} was rendered from another performance: npm run pianoteq`;
+        const recorded = setting[name];
+        const message = `${setting.elaboration} ${name} was rendered from another performance: npm run pianoteq`;
         assert.equal(recorded.keys, parts[name].keys.length, message);
         assert.equal(recorded.fingerprint, fingerprint(midiEvents(parts[name])), message);
       }

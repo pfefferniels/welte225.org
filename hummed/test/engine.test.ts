@@ -16,7 +16,7 @@ import { assertGolden } from './golden.ts';
 describe('VocalTractLab', async () => {
   const engine = await loadEngine();
   const voice = renderVoice({
-    ...voicePerformance(1),
+    ...voicePerformance(),
     reduction: loadReduction(),
     style: loadStyle(),
     calibration: loadCalibration(),

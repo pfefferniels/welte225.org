@@ -19,8 +19,9 @@ const harmonies: PianoPart = { keys: [{ on: 1, off: 2, pitch: 41, velocity: 30 }
 const plan: Plan = {
   type: 'plan',
   id: 1,
-  setting: { level: 1, elaboration: 0.65 },
-  voiceLevel: 1.3,
+  setting: { elaboration: 1 },
+  pianoLevel: 1,
+  voiceLevel: 1.1,
   duration: 4,
   bars: [],
   clock: { ticks: [0, 720], ms: [0, 1000] },

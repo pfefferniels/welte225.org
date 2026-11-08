@@ -1,4 +1,4 @@
-// How the piano sounds: in the page (the Pianoteq recordings, or the sampled grand where a level has
+// How the piano sounds: in the page (the Pianoteq recordings, or the sampled grand where a setting has
 // none) or on an instrument over MIDI (midi.ts). The player hands either the rendering it plays, from
 // where, and what falls due; each sounds it its own way.
 import type { Seconds } from '../shared/units.ts';
@@ -24,7 +24,7 @@ const PARTS: readonly PianoPartName[] = ['piece', 'harmonies'];
 
 /**
  * The piano in the page, both parts at once into their own buses (the elaboration fades between
- * them): a level's Pianoteq recordings where they are of the performance as it is, else the sampler.
+ * them): the setting's Pianoteq recordings where they are of the performance as it is, else the sampler.
  */
 export class BuiltInPiano implements PianoOutput {
   readonly lead = 0;
@@ -48,14 +48,14 @@ export class BuiltInPiano implements PianoOutput {
   /** Whether the rendering is played from a recording (else by the sampler). */
   recorded(rendering: Rendering): boolean {
     const recordings = this.#recordings;
-    const entry = recordings?.level(rendering.setting.level);
-    if (!recordings || !entry || recordings.failed(rendering.setting.level)) return false;
+    const entry = recordings?.setting(rendering.setting.elaboration);
+    if (!recordings || !entry || recordings.failed(rendering.setting.elaboration)) return false;
     const { piece, harmonies } = rendering.parts;
     if (entry.piece.keys === piece.keys.length && entry.harmonies.keys === harmonies.keys.length) return true;
-    if (!this.#warned.has(rendering.setting.level)) {
-      this.#warned.add(rendering.setting.level);
+    if (!this.#warned.has(rendering.setting.elaboration)) {
+      this.#warned.add(rendering.setting.elaboration);
       console.warn(
-        `The Pianoteq recording of ×${rendering.setting.level} is of another performance: run npm run pianoteq.`,
+        `The Pianoteq recording of ×${rendering.setting.elaboration} is of another performance: run npm run pianoteq.`,
       );
     }
     return false;
@@ -63,9 +63,9 @@ export class BuiltInPiano implements PianoOutput {
 
   ready(rendering: Rendering): boolean {
     if (this.recorded(rendering)) {
-      if (this.#recordings?.buffers(rendering.setting.level)) return true;
-      // a recording that failed to load leaves the level to the sampler
-      if (!this.#recordings?.failed(rendering.setting.level)) return false;
+      if (this.#recordings?.buffers(rendering.setting.elaboration)) return true;
+      // a recording that failed to load leaves the setting to the sampler
+      if (!this.#recordings?.failed(rendering.setting.elaboration)) return false;
     }
     return this.#sampler.ready();
   }
@@ -76,10 +76,12 @@ export class BuiltInPiano implements PianoOutput {
 
   start(rendering: Rendering, t: Seconds, when: number): void {
     this.stop();
-    const buffers = this.recorded(rendering) ? this.#recordings?.buffers(rendering.setting.level) : null;
+    const buffers = this.recorded(rendering)
+      ? this.#recordings?.buffers(rendering.setting.elaboration)
+      : null;
     this.#sampling = !buffers;
     if (buffers) {
-      this.#recordings?.playing(rendering.setting.level);
+      this.#recordings?.playing(rendering.setting.elaboration);
       for (const part of PARTS) {
         const buffer = buffers[part];
         if (t >= buffer.duration) continue;

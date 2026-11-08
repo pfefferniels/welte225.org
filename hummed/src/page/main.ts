@@ -21,8 +21,6 @@ const pauseIcon = element('icon-pause', SVGSVGElement);
 const positionSlider = element('pos', HTMLInputElement);
 const elaborationSlider = element('elaboration', HTMLInputElement);
 const elaborationOutput = element('o-elaboration', HTMLOutputElement);
-const levelSlider = element('saturation', HTMLInputElement);
-const levelOutput = element('o-saturation', HTMLOutputElement);
 const statusLine = element('status', HTMLElement);
 const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
@@ -84,7 +82,6 @@ const player = new Player(graph, sampled, pool, {
     totalText.textContent = formatTime(rendering.duration);
     playButton.disabled = false;
     positionSlider.disabled = false;
-    levelSlider.disabled = false;
   },
   status: setStatus,
   playingChanged(playing: boolean) {
@@ -108,17 +105,15 @@ const settings = new PianoSettings({
   part: instrumentPart,
   chosen(output: PianoOutput) {
     player.setPiano(output);
-    applyGrid();
   },
   status: setStatus,
 });
 
-/* ---------- the faders: elaboration sets the mix and the voice, saturation the performance ---------- */
+/* ---------- the fader: elaboration sets the mix, the performance and the voice ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
 const elaboration = (): number => Number(elaborationSlider.value) / 100;
-const saturation = (): number => Number(levelSlider.value);
 // the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
 // voice itself is rendered anew for the elaboration once the fader rests
 let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
@@ -149,34 +144,7 @@ elaborationSlider.addEventListener('input', () => {
 });
 applyElaboration();
 
-let levelTimer: ReturnType<typeof setTimeout> | undefined;
-const showLevel = (): void => {
-  levelOutput.value = `×${Number(levelSlider.value).toFixed(2)}`;
-  setFill(levelSlider, Number(levelSlider.value) / Number(levelSlider.max));
-};
-levelSlider.addEventListener('input', () => {
-  showLevel();
-  clearTimeout(levelTimer);
-  levelTimer = setTimeout(() => {
-    player.change({ level: saturation() });
-  }, 250);
-});
-showLevel();
-
-/** The saturation in fine steps; in the recordings' steps while the page plays them. */
-const FREE_STEP = 0.05;
-function applyGrid(): void {
-  const step = recordings && settings.kind === 'recorded' ? recordings.manifest.step : FREE_STEP;
-  levelSlider.step = String(step);
-  const value = Number(levelSlider.value);
-  const snapped = Number((Math.round(value / step) * step).toFixed(4));
-  if (Math.abs(snapped - value) < 1e-9) return;
-  levelSlider.value = String(snapped);
-  showLevel();
-  if (player.current) player.change({ level: snapped });
-}
-
-/** The Pianoteq recordings, if there are any: they name the piano, set the saturation's steps. */
+/** The Pianoteq recordings, if there are any: they name the piano, and play unless declined. */
 async function loadRecordings(): Promise<void> {
   try {
     recordings = await Recordings.load(graph.context);
@@ -189,7 +157,7 @@ async function loadRecordings(): Promise<void> {
       `${recordings.manifest.credit}; Salamander Grand Piano by Alexander Holm (CC BY 3.0)`;
     settings.offerRecorded(recorded, recordings.manifest);
   }
-  // the sampled grand plays, or stands in where a level is not rendered: load it now
+  // the sampled grand plays, or stands in where a setting is not rendered: load it now
   if (settings.kind === 'sampled') sampler.ready();
 }
 
@@ -259,7 +227,7 @@ async function start(): Promise<void> {
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
   await loadRecordings();
-  player.request({ level: saturation(), elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
+  player.request({ elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();

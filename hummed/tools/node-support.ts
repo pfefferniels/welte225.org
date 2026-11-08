@@ -17,7 +17,8 @@ import {
   approximateness,
   DEFAULT_ELABORATION,
   voiceFactors,
-  voiceLead,
+  pianoLevel,
+  voiceLevel,
   withSubNoteDynamics,
 } from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
@@ -46,13 +47,15 @@ export function loadPianoScore(): PianoScore {
   return { ...loadScore(), harmonies: harmoniesScore(read('reduction/harmonies.mei')) };
 }
 
-/** The voice's performance at a saturation and an elaboration, as the worker renders it, and how loosely it sings. */
-export function voicePerformance(
-  level: number,
-  elaboration = DEFAULT_ELABORATION,
-): { performance: PerformanceData; dynamics: PerformanceData; approximateness: number } {
+/** The voice's performance at an elaboration, as the worker renders it, and how loosely it sings. */
+export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
+  performance: PerformanceData;
+  dynamics: PerformanceData;
+  approximateness: number;
+} {
   const { msm, mpm } = loadScore();
-  const voiceMpm = exaggerateMpm(mpm, { factors: voiceFactors(level, voiceLead(elaboration)) }).mpm;
+  const factors = voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration));
+  const voiceMpm = exaggerateMpm(mpm, { factors }).mpm;
   return {
     performance: performMsmToData({ msm, mpm: voiceMpm }),
     dynamics: performMsmToData({ msm, mpm: withSubNoteDynamics(voiceMpm) }),

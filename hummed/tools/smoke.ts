@@ -1,5 +1,5 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
-// front page, play, switch the saturation, seek, move the elaboration, open and close the info
+// front page, play, move the elaboration (the voice rendered anew), seek, open and close the info
 // card, choose each piano in the settings (an instrument over MIDI played by a stand-in that keeps
 // what it is sent), and fail on any page error. Needs Playwright with Chromium installed (not a
 // dependency of this project):   npm run smoke
@@ -99,17 +99,17 @@ try {
   await report(`ready in ${((Date.now() - started) / 1000).toFixed(1)} s`);
   const chosen = (): Promise<string> =>
     page.evaluate("document.querySelector('input[name=piano]:checked').value");
-  const step = (): Promise<string> => page.evaluate("document.getElementById('saturation').step");
   const recorded = await page.evaluate<boolean>("!document.getElementById('choice-recorded').hidden");
-  console.log(`piano: ${await chosen()}, saturation in steps of ${await step()}`);
+  console.log(`piano: ${await chosen()}`);
   if ((await chosen()) !== (recorded ? 'recorded' : 'sampled'))
     errors.push('the Pianoteq recordings are not the piano where there are some');
   await page.click('#play');
   await page.waitForTimeout(6000);
   await report('played 6 s');
+  // a barer setting is more exaggerated, slower in places: the piece's length changes when it takes over
   const total = await text('total');
   await page.evaluate(
-    "(() => { const e = document.getElementById('saturation'); e.value = 0.5; e.dispatchEvent(new Event('input')); })()",
+    "(() => { const e = document.getElementById('elaboration'); e.value = 30; e.dispatchEvent(new Event('input')); })()",
   );
   await page.waitForFunction(
     `document.getElementById('total').textContent !== ${JSON.stringify(total)}`,
@@ -119,7 +119,7 @@ try {
     },
   );
   await page.waitForTimeout(3000);
-  await report('switched to ×0.5');
+  await report('elaboration 0.3 took over');
   await page.evaluate(
     "(() => { const r = document.getElementById('pos'); r.value = 90; r.dispatchEvent(new Event('input')); })()",
   );
@@ -151,12 +151,12 @@ try {
   console.log(`info card: opens ${opened}, closes on Escape ${closed}`);
   if (!opened || !closed) errors.push('the info card does not open and close');
 
-  // the settings: the sampled grand at any saturation, then an instrument over MIDI
+  // the settings: the sampled grand, then an instrument over MIDI
   await page.click('.settings-button');
   await page.click('input[name=piano][value=sampled]');
   await page.waitForTimeout(2500);
-  await report(`sampled grand, step ${await step()}`);
-  if ((await step()) !== '0.05') errors.push('the sampled grand does not free the saturation');
+  await report('sampled grand');
+  if ((await chosen()) !== 'sampled') errors.push('the sampled grand was not chosen');
   await page.click('input[name=piano][value=midi]');
   await page.evaluate(
     "(() => { const d = document.getElementById('midi-delay'); d.value = '500'; d.dispatchEvent(new Event('change')); })()",
@@ -190,7 +190,7 @@ try {
   await page.click('.settings-button');
   await page.click(`input[name=piano][value=${recorded ? 'recorded' : 'sampled'}]`);
   await page.keyboard.press('Escape');
-  console.log(`back to ${await chosen()}, step ${await step()}`);
+  console.log(`back to ${await chosen()}`);
 } finally {
   await browser.close();
   server.close();
