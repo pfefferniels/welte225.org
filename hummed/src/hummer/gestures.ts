@@ -16,7 +16,24 @@ import {
 } from './vocal-map.ts';
 
 /** How fast each kind of gesture reaches its target (VocalTractLab's time constants), ms. */
-export const TIME_CONSTANT_MS = { posture: 30, glottis: 30, pitch: 30, pressure: 12 } as const;
+export const TIME_CONSTANT_MS = {
+  posture: 30,
+  glottis: 30,
+  pitch: 30,
+  pressure: 12,
+  lip: 12,
+  tongueTip: 12,
+  velum: 15,
+} as const;
+
+/**
+ * VocalTractLab moves each gesture towards its target as a fifth-order critically damped system: a
+ * change is half done 4.67 time constants after the target changes (the median of an Erlang(5)).
+ * Where a gesture must land on a moment (a pitch, a consonant, a dip of breath), its target changes
+ * that much earlier.
+ */
+const MIDPOINT = 4.67;
+const lagOf = (timeConstantMs: Ms): Ms => MIDPOINT * timeConstantMs;
 /** The voice sounds this much before the piano note it follows. */
 export const LATENCY_MS: Ms = 15;
 
@@ -24,6 +41,8 @@ export const LATENCY_MS: Ms = 15;
 const EFFORT = { vRef: 45, pRef: 7000, exponent: 1.5, breathyAt: 33, modalAt: 48, stepMs: 30 } as const;
 /** Voiceless air: the lung pressure at depth 1 for each passage (dPa), and what it fades to. */
 export const AIR = { teeth: 4000, lips: 8000, fade: 0.25 } as const;
+/** How far the lips part for a 'd' (of their widest humming opening). */
+const D_OPENING = 0.45;
 /** Lung pressure while breathing in, at depth 1 (dPa). */
 const BREATH_PRESSURE = 1400;
 
@@ -217,7 +236,9 @@ function effort(
 
   const dip = new Float64Array(n).fill(1);
   const fine: Ms[] = [];
-  for (const [s0, a] of articulations) {
+  // each dip of breath where it is meant to be heard: its target that much earlier (see MIDPOINT)
+  for (const [t, a] of articulations) {
+    const s0 = t - lagOf(TIME_CONSTANT_MS.pressure);
     const d = a.durationMs;
     const depth = a.type === 'stop' ? 0 : a.depth;
     const down = Math.min(25, d / 3);
@@ -265,12 +286,6 @@ function effort(
 }
 
 /**
- * VocalTractLab moves its pitch towards each target as a fifth-order critically damped system: a
- * change is half done 4.67 time constants after the target changes (the median of an Erlang(5)).
- */
-const PITCH_MIDPOINT = 4.67;
-
-/**
  * The pitch line: for each sung note a target that holds still (a moving one would overshoot: the
  * pitch would go on at its speed past the next), taking over early enough that the pitch is half
  * way there when the note is heard, or in the middle of a slide. A breath-led note scoops up from
@@ -288,7 +303,7 @@ function pitchLine(
   const a = clip(approximateness, 0, 1);
   const random = seededRandom(1);
   const timeConstantMs = TIME_CONSTANT_MS.pitch + 10 * a;
-  const lead = PITCH_MIDPOINT * timeConstantMs;
+  const lead = lagOf(timeConstantMs);
   // the voice follows the piano: half way to a new pitch this long after the note (and LATENCY_MS)
   const follow = 10 + 40 * a;
   const lateness = 25 * a;
@@ -427,10 +442,23 @@ export function gestures(input: GesturesInput): Gestures {
       weight[i] = Math.max(weight[i], Math.min(1, (i - (s - 80)) / 80, (end + 80 - i) / 80));
   }
 
-  // the lips close between notes where the mouth was open and the voice stops
-  for (const e of eventsOf(events, 'lips')) {
-    const s = T(e.date);
-    tiers.lip.push(segment(s, s + e.durationMs, 'll-labial-closure'));
+  // consonants: the tongue tip closes at the ridge behind the teeth and lets go as the note begins.
+  // For an 'n' the velum stays low and the voice goes on through the nose; for a 'd' the velum
+  // closes, so that the air pressed behind the tongue bursts out, and the lips part, if they were
+  // closed, from shortly before the closure until the vowel has begun, so that the 'd' is heard
+  for (const e of eventsOf(events, 'consonant')) {
+    const on = T(e.date);
+    const close = on - e.durationMs;
+    // the targets earlier by each gesture's lag, so that the tongue lets go as the note begins
+    const tongue = lagOf(TIME_CONSTANT_MS.tongueTip);
+    tiers.tongueTip.push(segment(close - tongue, on - tongue, 'tt-alveolar-closure'));
+    if (e.sound !== 'd') continue;
+    const velum = lagOf(TIME_CONSTANT_MS.velum);
+    tiers.velic = splice(tiers.velic, close - 20 - velum, on + 15 - velum, 0);
+    const a = close - 40;
+    const b = on + 160;
+    for (let i = Math.max(0, Math.floor(a)); i < Math.min(weight.length, Math.ceil(b)); i++)
+      weight[i] = Math.max(weight[i], D_OPENING * Math.min(1, (i - a) / 60, (b - i) / 100));
   }
   return { tiers, weight, endMs, silences: silences(tiers.pressure) };
 }

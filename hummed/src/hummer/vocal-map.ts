@@ -1,5 +1,5 @@
-// The voice's decisions about a performance: breaths, scoops and falls, the mouth's posture,
-// pulses and stops between notes, slides, and the effort over each phrase.
+// The voice's decisions about a performance: breaths, scoops and sags, the mouth's posture, pulses,
+// stops and consonants between notes, slides, and the effort over each phrase.
 import type { Air, AirPassage } from '../reduction/types.ts';
 import { clip, fixed, groupBy, interp, seededRandom } from '../shared/math.ts';
 import type { Ms, Seconds, Ticks } from '../shared/units.ts';
@@ -20,6 +20,15 @@ export const OPEN_MAX = 0.3;
 const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
+/**
+ * The consonants that articulate a note as the piano's touch does: a detached note begins with a
+ * 'd', the tongue closed this long before it (the lungs push again a little before, behind the
+ * closure); a portato or a repeated note with an 'n', the tongue closed this long, the voice going on
+ * through the nose.
+ */
+const D_CLOSURE: Ms = 80;
+const D_PRESS: Ms = 50;
+const N_CLOSURE: Ms = 80;
 
 export type VocalEvent =
   | { readonly tag: 'breath'; readonly date: Ticks; readonly duration: Ticks; readonly depth: number }
@@ -59,7 +68,14 @@ export type VocalEvent =
       readonly depth: number;
       readonly durationMs: Ms;
     }
-  | { readonly tag: 'lips'; readonly date: Ticks; readonly durationMs: Ms }
+  | {
+      readonly tag: 'consonant';
+      /** The note it begins, at whose onset the tongue lets go. */
+      readonly date: Ticks;
+      readonly sound: 'd' | 'n';
+      /** How long the tongue is closed before the onset. */
+      readonly durationMs: Ms;
+    }
   | {
       readonly tag: 'pressure';
       readonly date: Ticks;
@@ -263,18 +279,14 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       const gap = n.onsetMs - before.keyOffMs;
       const same = n.pitch === before.pitch;
       if (gap >= STOP_FROM) {
+        // detached: the lungs stop, then push again behind the tongue, which lets go with a 'd'
         add({
           tag: 'articulation',
           date: clock.toTicks(before.keyOffMs),
           type: 'stop',
-          durationMs: Math.round(gap),
+          durationMs: Math.round(Math.max(30, gap - D_PRESS)),
         });
-        if (cur > 0.05)
-          add({
-            tag: 'lips',
-            date: clock.toTicks(onMs - Math.min(gap, 120)),
-            durationMs: Math.round(Math.min(gap, 120)),
-          });
+        add({ tag: 'consonant', date, sound: 'd', durationMs: Math.round(Math.min(gap, D_CLOSURE)) });
       } else if (gap > LEGATO_WITHIN || same) {
         const dur = Math.max(70, gap);
         const x = Math.max(0, gap - LEGATO_WITHIN) / (STOP_FROM - LEGATO_WITHIN);
@@ -287,6 +299,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
           depth: fixed(depth, 2),
           durationMs: Math.round(dur),
         });
+        add({ tag: 'consonant', date, sound: 'n', durationMs: N_CLOSURE });
       } else if (gap < -SLUR_FROM && !portamento) glideMs = Math.round(clip(-gap * 0.5, 30, 120));
     }
     add({

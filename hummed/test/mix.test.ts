@@ -48,9 +48,9 @@ describe('elaboration', () => {
       assert.ok(approximateness(b) < approximateness(a));
     }
     for (const e of positions) assert.ok(voiceLevel(e) >= pianoLevel(e));
-    // the humming alone doubled; the piece as the MPM sets it down, the voice a little beyond it
-    assert.equal(pianoLevel(0), 2);
-    assert.equal(voiceLevel(0), 2);
+    // the humming alone ×1.6; the piece as the MPM sets it down, the voice a little beyond it
+    assert.ok(Math.abs(pianoLevel(0) - 1.6) < 1e-9);
+    assert.ok(Math.abs(voiceLevel(0) - 1.6) < 1e-9);
     assert.equal(pianoLevel(1), 1);
     assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);
