@@ -1,5 +1,5 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
-// front page, play, switch the saturation, seek, move the abstractness, open and close the info
+// front page, play, switch the saturation, seek, move the elaboration, open and close the info
 // card, and fail on any page error. Needs Playwright with Chromium installed (not a dependency of
 // this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
@@ -100,18 +100,18 @@ try {
   await page.waitForTimeout(5000);
   await report('seeked to 1:30');
   for (const [value, expected] of [
-    [80, 'harmonies'],
-    [100, 'humming'],
-    [33, 'piece'],
+    [20, 'harmonies'],
+    [0, 'humming'],
+    [67, 'piece'],
   ] as const) {
     await page.evaluate(
-      `(() => { const e = document.getElementById('abstract'); e.value = ${value}; e.dispatchEvent(new Event('input')); })()`,
+      `(() => { const e = document.getElementById('elaboration'); e.value = ${value}; e.dispatchEvent(new Event('input')); })()`,
     );
     await page.waitForTimeout(1500);
-    const shown = await text('o-abstract');
-    if (shown !== expected) errors.push(`abstractness ${value} shows ${shown}, not ${expected}`);
+    const shown = await text('o-elaboration');
+    if (shown !== expected) errors.push(`elaboration ${value} shows ${shown}, not ${expected}`);
   }
-  console.log('abstractness: harmonies, humming alone, the piece');
+  console.log('elaboration: harmonies, humming alone, the piece');
   const cardOpen = (): Promise<boolean> =>
     page.evaluate("document.getElementById('info').matches(':popover-open')");
   await page.click('.info-button');

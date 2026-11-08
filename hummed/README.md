@@ -3,14 +3,14 @@
 Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 225), played from the
 roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
 the browser by VocalTractLab, at any saturation of the performance from 0 to 2 and any degree of
-abstraction, from the piece itself with the humming under it to the humming alone.
+elaboration, from the humming alone to the piece itself with the humming under it.
 
 <https://welte225.org/>: the site's front page. The page is the repository's root `index.html`;
 it loads everything else from here (`<base href="/hummed/">`), and `/hummed/` itself sends
 visitors on to it.
 
 The page shows the hum's spectrogram filling the window, scrolling under a playhead. Over it, on
-the left, two faders: abstractness, which sets what is heard (below), and saturation, how far the
+the left, two faders: elaboration, which sets what is heard (below), and saturation, how far the
 performance departs from the plain score (the MPM exaggerated by espressivo: 0 without
 expression, 1 as Grünfeld played, 2 every deviation doubled); on the right, the transport. Moving
 the saturation renders the voice anew and takes it over at the same place in the score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
@@ -18,7 +18,7 @@ from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
 to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
-info buttons beside Abstractness and Saturation explain those two. The cards are native popovers:
+info buttons beside Elaboration and Saturation explain those two. The cards are native popovers:
 closed until asked for, and closed again by Escape or a click anywhere else.
 
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
@@ -72,7 +72,7 @@ What the MEI says, and how the voice reads it:
 After changing the reduction, run `npm run calibrate` (below) so the new notes are as loud as the
 dynamics ask; until then they sound uncorrected, which is close.
 
-## Abstractness: the humming, the harmonies, the piece
+## Elaboration: the humming, the harmonies, the piece
 
 `reduction/harmonies.mei` is a harmonic reduction of the piece: its chords, one or two to a bar,
 with the repeat written out. espressivo converts it to a score (MSM) as it converted the piece's;
@@ -82,17 +82,17 @@ the same saturation. Tempo, rubato, dynamics, arpeggios and pedalling apply to t
 the piece; notes that no arpeggio moves start on the same millisecond as the piece's. What the MPM
 says of single notes of the piece (articulation by note) finds nothing to apply to.
 
-The abstractness fader (`src/page/mix.ts`) sets three gains:
+The elaboration fader (`src/page/mix.ts`) sets three gains, from left to right:
 
-- At its most abstract, the humming alone, at full level.
-- Less abstract, the harmonies come in from silence under it and grow, as the square of the way
-  down, to the piano's level (−5 dB) at the middle.
-- Below the middle, the piano plays the piece instead, at the same level.
+- At 0, the humming alone, at full level.
+- Rising, the harmonies come in from silence under it and grow, as the square of the way up, to
+  the piano's level (−5 dB) at the middle.
+- From the middle on, the piano plays the piece instead, at the same level.
 
 The humming falls evenly in decibels all the way, from 0 dB to −11 dB at the middle and −22 dB at
-the bottom, where it is a pianist humming along. The page plays both the piece and the harmonies
-all the time, each into its own gain, so passing the middle crossfades between them, even in the
-middle of a chord. It starts a third of the way up: the piece, with the humming at −15 dB.
+the top, where it is a pianist humming along. The page plays both the piece and the harmonies all
+the time, each into its own gain, so passing the middle crossfades between them, even in the
+middle of a chord. It starts two thirds of the way up: the piece, with the humming at −15 dB.
 
 ## How the voice hums
 
@@ -153,7 +153,7 @@ of its chord, and gives a note that ends too early a length, before the piano or
 | `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                   |
 | `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                 |
 | `src/worker/`                    | the worker: levels, the harmonies' score, piano notes, spectrogram, the render loop                                               |
-| `src/page/`                      | the page: audio graph and room, the abstractness mix, piano sampler, renderings, transport, spectrogram view                      |
+| `src/page/`                      | the page: audio graph and room, the elaboration mix, piano sampler, renderings, transport, spectrogram view                       |
 | `src/shared/`                    | what both sides use: units, maths, the messages between them                                                                      |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s                                                |

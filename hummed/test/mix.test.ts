@@ -1,38 +1,39 @@
-// The abstractness fader: the humming alone at the top, the harmonies coming in under it, the
-// piece from the middle down with the humming quieter.
+// The elaboration fader: the humming alone at 0, the harmonies coming in under it, the piece from
+// the middle up with the humming quieter.
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { heard, mix, PIECE_BELOW } from '../src/page/mix.ts';
+import { heard, mix, PIECE_FROM } from '../src/page/mix.ts';
 
 const positions = Array.from({ length: 101 }, (_, i) => i / 100);
 
-describe('abstractness', () => {
-  it('is the humming alone at the top', () => {
-    assert.deepEqual(mix(1), { hum: 1, harmonies: 0, piece: 0 });
-    assert.equal(heard(1), 'humming');
+describe('elaboration', () => {
+  it('is the humming alone at 0', () => {
+    assert.deepEqual(mix(0), { hum: 1, harmonies: 0, piece: 0 });
+    assert.equal(heard(0), 'humming');
   });
 
   it('brings the harmonies in under the humming, which recedes', () => {
-    const upper = positions.filter((a) => a >= PIECE_BELOW).reverse();
-    for (const [a, b] of upper.slice(1).map((x, i) => [upper[i], x] as const)) {
+    const lower = positions.filter((e) => e < PIECE_FROM);
+    for (const [a, b] of lower.slice(1).map((x, i) => [lower[i], x] as const)) {
       assert.ok(mix(b).harmonies > mix(a).harmonies);
       assert.ok(mix(b).hum < mix(a).hum);
       assert.equal(heard(b), 'harmonies');
     }
-    assert.ok(mix(PIECE_BELOW).harmonies > mix(PIECE_BELOW).hum);
+    assert.ok(mix(PIECE_FROM - 0.01).harmonies > mix(PIECE_FROM - 0.01).hum);
   });
 
   it('passes from the harmonies to the piece at the middle, as loud', () => {
-    assert.ok(Math.abs(mix(PIECE_BELOW).harmonies - mix(PIECE_BELOW - 0.01).piece) < 1e-12);
-    assert.equal(heard(PIECE_BELOW - 0.01), 'piece');
+    const justBelow = mix(PIECE_FROM - 1e-9).harmonies;
+    assert.ok(Math.abs(justBelow - mix(PIECE_FROM).piece) < 1e-6);
+    assert.equal(heard(PIECE_FROM), 'piece');
   });
 
-  it('keeps the humming on under the piece, quieter towards the bottom', () => {
-    assert.ok(mix(0).hum > 0.05 && mix(0).hum < mix(PIECE_BELOW).hum);
-    assert.ok(mix(0).hum < mix(0).piece / 5);
+  it('keeps the humming on under the piece, quieter towards the top', () => {
+    assert.ok(mix(1).hum > 0.05 && mix(1).hum < mix(PIECE_FROM).hum);
+    assert.ok(mix(1).hum < mix(1).piece / 5);
   });
 
   it('sounds one of the piano’s parts at a time', () => {
-    for (const a of positions) assert.ok(mix(a).harmonies === 0 || mix(a).piece === 0);
+    for (const e of positions) assert.ok(mix(e).harmonies === 0 || mix(e).piece === 0);
   });
 });

@@ -16,8 +16,8 @@ const playButton = element('play', HTMLButtonElement);
 const playIcon = element('icon-play', SVGSVGElement);
 const pauseIcon = element('icon-pause', SVGSVGElement);
 const positionSlider = element('pos', HTMLInputElement);
-const abstractSlider = element('abstract', HTMLInputElement);
-const abstractOutput = element('o-abstract', HTMLOutputElement);
+const elaborationSlider = element('elaboration', HTMLInputElement);
+const elaborationOutput = element('o-elaboration', HTMLOutputElement);
 const levelSlider = element('saturation', HTMLInputElement);
 const levelOutput = element('o-saturation', HTMLOutputElement);
 const statusLine = element('status', HTMLElement);
@@ -86,29 +86,29 @@ const player = new Player(graph, piano, pool, {
     requestAnimationFrame(redraw);
   },
 });
-/* ---------- the faders: abstractness sets the mix, saturation the performance ---------- */
+/* ---------- the faders: elaboration sets the mix, saturation the performance ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
 // the piano's two parts are both always playing: the gains, gliding, crossfade between them
-const applyAbstractness = (): void => {
-  const a = Number(abstractSlider.value) / 100;
-  const gains = mix(a);
+const applyElaboration = (): void => {
+  const e = Number(elaborationSlider.value) / 100;
+  const gains = mix(e);
   setGain(graph.hum, gains.hum);
   setGain(graph.harmonies, gains.harmonies);
   setGain(graph.piano, gains.piece);
-  const what = heard(a);
-  abstractOutput.value = what;
-  abstractSlider.setAttribute(
+  const what = heard(e);
+  elaborationOutput.value = what;
+  elaborationSlider.setAttribute(
     'aria-valuetext',
     { humming: 'the humming alone', harmonies: 'humming and harmonies', piece: 'the piece, humming along' }[
       what
     ],
   );
-  setFill(abstractSlider, a);
+  setFill(elaborationSlider, e);
 };
-abstractSlider.addEventListener('input', applyAbstractness);
-applyAbstractness();
+elaborationSlider.addEventListener('input', applyElaboration);
+applyElaboration();
 
 let levelTimer: ReturnType<typeof setTimeout> | undefined;
 const showLevel = (): void => {

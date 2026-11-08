@@ -1,5 +1,5 @@
 // The transport: the voice played from the stream in short buffers, the piano from its notes (the
-// piece's and the harmonies', each into its own bus, both always: the abstractness decides which
+// piece's and the harmonies', each into its own bus, both always: the elaboration decides which
 // is heard), and a new rendering taking over at the same place in the score once it has sound there.
 import type { PianoNote, StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
