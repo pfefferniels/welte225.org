@@ -9,13 +9,12 @@ import { loadReduction, loadStyle, voicePerformance } from '../tools/node-suppor
 import { assertGolden } from './golden.ts';
 
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
-const render = (): Voice =>
-  renderVoice({
-    ...voicePerformance(1),
-    reduction: loadReduction(),
-    style: loadStyle(),
-    calibration: { gain: 1, notes: {} },
-  });
+const base = (elaboration?: number) => ({
+  ...voicePerformance(1, elaboration),
+  reduction: loadReduction(),
+  style: loadStyle(),
+});
+const render = (): Voice => renderVoice({ ...base(), calibration: { gain: 1, notes: {} } });
 const fingerprint = (v: Voice): string =>
   createHash('sha256')
     .update(v.closedScore)
@@ -46,5 +45,33 @@ describe('the voice', () => {
   it('opens the lips only as far as the open score allows', () => {
     assert.ok(voice.weight.every((w) => w >= 0 && w <= 1));
     assert.equal(voice.weight.length, Math.ceil(voice.endMs));
+  });
+
+  // the f0 gestures of a score: target (semitones), slope, time constant (ms)
+  const pitchTargets = (v: Voice): { st: number; slope: number; tauMs: number }[] => {
+    const tier = v.closedScore.split('type="f0-gestures"')[1]?.split('</gesture_sequence>')[0] ?? '';
+    return [
+      ...tier.matchAll(/value="([-\d.]+)" slope="([-\d.]+)" duration_s="[\d.]+" time_constant_s="([\d.]+)"/g),
+    ].map((m) => ({ st: Number(m[1]), slope: Number(m[2]), tauMs: Number(m[3]) * 1000 }));
+  };
+
+  it('holds every pitch target still: a sliding one would carry the pitch past the next', () => {
+    const targets = pitchTargets(voice);
+    assert.ok(targets.length > 500);
+    assert.ok(targets.every((g) => g.slope === 0));
+  });
+
+  it('keeps more loosely to the pitch the barer the music around it', () => {
+    // how far the targets lie from the nearest written pitch (equal temperament, A4 = 440 Hz)
+    const looseness = (v: Voice): { off: number; tauMs: number } => {
+      const targets = pitchTargets(v);
+      const grid = 12 * Math.log2(440) - Math.floor(12 * Math.log2(440));
+      const offs = targets.map((g) => Math.abs(g.st - grid - Math.round(g.st - grid))).sort((x, y) => x - y);
+      return { off: offs[offs.length >> 1] ?? 0, tauMs: targets[0]?.tauMs ?? 0 };
+    };
+    const alone = looseness(renderVoice({ ...base(0), calibration: { gain: 1, notes: {} } }));
+    const underPiece = looseness(renderVoice({ ...base(1), calibration: { gain: 1, notes: {} } }));
+    assert.ok(alone.off > 1.5 * underPiece.off, `${alone.off} against ${underPiece.off}`);
+    assert.ok(alone.tauMs > underPiece.tauMs && alone.tauMs <= 40);
   });
 });

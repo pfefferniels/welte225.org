@@ -26,6 +26,11 @@ export function mix(elaboration: number): Mix {
   return { hum, harmonies: PIANO * rise * rise, piece: 0 };
 }
 
+/** The elaboration the voice is rendered for: in steps, so that moving the fader renders anew only at each. */
+const ELABORATION_STEPS = 20;
+export const voiceElaboration = (elaboration: number): number =>
+  Math.round(Math.min(1, Math.max(0, elaboration)) * ELABORATION_STEPS) / ELABORATION_STEPS;
+
 /** What the fader shows: what the piano plays, or that the humming is alone. */
 export function heard(elaboration: number): 'humming' | 'harmonies' | 'piece' {
   const { harmonies, piece } = mix(elaboration);

@@ -2,7 +2,7 @@
 // voice is silent (early in a breath), in the order they will be heard from where playback is; a
 // worker that finishes one is handed the next. One worker answers for the plan.
 import type { Reduction } from '../reduction/types.ts';
-import type { FromWorker, Plan, StartAt, ToWorker } from '../shared/protocol.ts';
+import type { FromWorker, Plan, Setting, StartAt, ToWorker } from '../shared/protocol.ts';
 import type { SpectrogramStyleName } from '../shared/spectrogram.ts';
 import { SAMPLE_RATE, STATE_STEP } from '../shared/units.ts';
 
@@ -44,7 +44,7 @@ export function chunkOrder(plan: Pick<Plan, 'stateCount' | 'seams' | 'startState
 
 interface Job {
   readonly id: number;
-  readonly level: number;
+  readonly setting: Setting;
   queue: Chunk[];
   /** The chunk each busy worker is rendering. */
   readonly busy: Map<Worker, Chunk>;
@@ -74,11 +74,11 @@ export class VoicePool {
     this.#postAll({ type: 'setup', reduction, spectrogram });
   }
 
-  /** Render a level from a place; stops whatever was being rendered before. */
-  request(id: number, level: number, start: StartAt): void {
-    this.#job = { id, level, queue: [], busy: new Map() };
+  /** Render a setting from a place; stops whatever was being rendered before. */
+  request(id: number, setting: Setting, start: StartAt): void {
+    this.#job = { id, setting, queue: [], busy: new Map() };
     // the first worker answers with the plan; the others stop, and leave it the processor meanwhile
-    this.#workers.at(0)?.postMessage({ type: 'plan', id, level, start } satisfies ToWorker);
+    this.#workers.at(0)?.postMessage({ type: 'plan', id, setting, start } satisfies ToWorker);
     for (const worker of this.#workers.slice(1)) worker.postMessage({ type: 'stop', id } satisfies ToWorker);
   }
 
@@ -128,7 +128,7 @@ export class VoicePool {
     worker.postMessage({
       type: 'chunk',
       id: job.id,
-      level: job.level,
+      setting: job.setting,
       from: chunk[0],
       to: chunk[1],
     } satisfies ToWorker);

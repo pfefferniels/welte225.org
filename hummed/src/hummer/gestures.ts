@@ -264,54 +264,78 @@ function effort(
   return { pressure: runs(grid, pq, endMs), glottal: runs(grid, gq, endMs) };
 }
 
-/** The pitch line: scoops into breath-led notes, slides, a wobble, and the falls at phrase ends. */
+/**
+ * VocalTractLab moves its pitch towards each target as a fifth-order critically damped system: a
+ * change is half done 4.67 time constants after the target changes (the median of an Erlang(5)).
+ */
+const PITCH_MIDPOINT = 4.67;
+
+/**
+ * The pitch line: for each sung note a target that holds still (a moving one would overshoot: the
+ * pitch would go on at its speed past the next), taking over early enough that the pitch is half
+ * way there when the note is heard, or in the middle of a slide. A breath-led note scoops up from
+ * below; a note lands a little off its pitch and settles nearer it, never quite on it; the pitch
+ * wobbles about it; a phrase's last note falls. How loose all this is, is `approximateness`:
+ * from 0 (close, the wobble as measured) to 1 (later, further off, slower to settle, wider).
+ */
 function pitchLine(
   pitches: readonly PitchEvent[],
   inflections: readonly [Ms, VocalEventOf<'inflection'>][],
   endMs: Ms,
   style: HumStyle,
-): Tier<number> {
+  approximateness: number,
+): { readonly f0: Tier<number>; readonly timeConstantMs: Ms } {
+  const a = clip(approximateness, 0, 1);
   const random = seededRandom(1);
-  const step = 125;
-  const amp = (style.wobbleCents / 100) * Math.SQRT2;
-  let f0: Tier<number> = [];
+  const timeConstantMs = TIME_CONSTANT_MS.pitch + 10 * a;
+  const lead = PITCH_MIDPOINT * timeConstantMs;
+  // the voice follows the piano: half way to a new pitch this long after the note (and LATENCY_MS)
+  const follow = 10 + 40 * a;
+  const lateness = 25 * a;
+  const landSd = 0.1 + 0.3 * a;
+  const settleMs = 160 + 120 * a;
+  const keep = 0.35;
+  const wobble = (style.wobbleCents / 100) * Math.SQRT1_2 * (0.85 + 0.5 * a);
+  const step = 125 * (1 + 0.6 * a);
+  const scoopScale = 0.8 * (0.8 + 0.4 * a);
+
+  // when each note's target takes over, in order
+  const takeover: Ms[] = [];
+  for (const p of pitches) {
+    const heard = p.glide ? (p.glide[0] + p.glide[1]) / 2 : p.on;
+    const at = heard + LATENCY_MS + follow + random.normal(0, 1) * lateness - lead;
+    takeover.push(Math.max(at, (takeover.at(-1) ?? -Infinity) + 40));
+  }
+
+  const f0: Tier<number> = [];
+  const hold = (t0: Ms, t1: Ms, st: number): void => {
+    if (t1 > t0) f0.push(segment(t0, t1, st));
+  };
   pitches.forEach((p, i) => {
+    const start = Math.max(0, takeover[i]);
+    const next = i + 1 < pitches.length ? takeover[i + 1] : endMs;
     const nextOn = i + 1 < pitches.length ? pitches[i + 1].on : endMs;
-    let glide = p.glide;
-    if (glide && i > 0) {
-      const prevSt = pitches[i - 1].st;
-      const need = (Math.abs(p.st - prevSt) / 80) * 1000;
-      if (glide[1] - glide[0] < need) glide = [glide[1] - need, glide[1]];
-      const from = glide[0];
-      f0 = f0
-        .filter((g) => g.start < from)
-        .map((g) => segment(g.start, Math.min(g.end, from), g.value, g.slope));
-      f0.push(
-        segment(glide[0], glide[1], prevSt, (p.st - prevSt) / Math.max(1e-3, (glide[1] - glide[0]) / 1000)),
-      );
-    }
-    let t0 = glide && i > 0 ? Math.max(p.on, glide[1]) : p.on;
-    const scoop = inflections.find(([t, a]) => a.type === 'scoop' && p.on - 300 <= t && t <= p.on + 50);
+    const off = random.normal(0, 1) * landSd;
+    let t = start;
+    const scoop = inflections.find(([at, e]) => e.type === 'scoop' && p.on - 300 <= at && at <= p.on + 50);
     if (scoop) {
-      const { durationMs: d, depthSt: depth } = scoop[1];
-      f0.push(segment(t0, t0 + d, p.st + depth, -depth / (d / 1000)));
-      t0 += d;
+      const low = Math.min(next, t + 0.45 * scoop[1].durationMs);
+      hold(t, low, p.st + scoop[1].depthSt * scoopScale);
+      t = low;
     }
-    const fall = inflections.find(([t, a]) => a.type === 'fall' && p.on < t && t < nextOn);
-    const stop = fall ? fall[0] : nextOn;
-    while (t0 < stop - 1) {
-      const t1 = Math.min(stop, t0 + step * random.uniform(0.7, 1.3));
-      f0.push(segment(t0, t1, p.st + random.normal(0, amp / 2)));
-      t0 = t1;
+    const fall = inflections.find(([at, e]) => e.type === 'fall' && p.on < at && at < nextOn);
+    const stop = fall ? clip(fall[0], t + 40, next) : next;
+    const settled = Math.min(stop, t + settleMs);
+    hold(t, settled, p.st + off);
+    t = settled;
+    while (t < stop - 1) {
+      const t1 = Math.min(stop, t + step * random.uniform(0.7, 1.3));
+      hold(t, t1, p.st + keep * off + random.normal(0, 1) * wobble);
+      t = t1;
     }
-    if (fall) {
-      const [t, a] = fall;
-      const d = Math.max(30, a.durationMs);
-      f0.push(segment(t, t + d, p.st, a.depthSt / (d / 1000)));
-      f0.push(segment(t + d, nextOn, p.st + a.depthSt));
-    }
+    if (fall) hold(stop, next, p.st + keep * off + fall[1].depthSt);
   });
-  return f0;
+  return { f0, timeConstantMs };
 }
 
 export interface GesturesInput {
@@ -321,10 +345,12 @@ export interface GesturesInput {
   readonly dynamics: DynamicsCurve;
   readonly style: HumStyle;
   readonly calibration: Calibration;
+  /** How loosely the voice keeps to the written pitch, 0 to 1 (see `pitchLine`). */
+  readonly approximateness: number;
 }
 
 export function gestures(input: GesturesInput): Gestures {
-  const { notes, events, clock, dynamics, style, calibration } = input;
+  const { notes, events, clock, dynamics, style, calibration, approximateness } = input;
   const T = (date: number): Ms => clock.toMs(date) + PAD_MS - LATENCY_MS;
   const timed = <K extends VocalEvent['tag']>(tag: K): [Ms, VocalEventOf<K>][] =>
     eventsOf(events, tag).map((e) => [T(e.date), e]);
@@ -348,8 +374,10 @@ export function gestures(input: GesturesInput): Gestures {
   const mouth = postures(timed('posture'), endMs);
   const velum = timed('velum');
   const force = effort(timed('pressure'), timed('articulation'), pitches, endMs, dynamics, calibration);
+  const pitch = pitchLine(pitches, timed('inflection'), endMs, style, approximateness);
   const tiers: Tiers = {
-    f0: pitchLine(pitches, timed('inflection'), endMs, style),
+    f0: pitch.f0,
+    f0TimeConstantMs: pitch.timeConstantMs,
     lip: [],
     tongueTip: [],
     vowelClosed: mouth.vowelClosed,

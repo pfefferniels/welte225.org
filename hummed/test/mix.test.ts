@@ -1,8 +1,12 @@
 // The elaboration fader: the humming alone at 0, the harmonies coming in under it, the piece from
 // the middle up with the humming quieter.
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { heard, mix, PIECE_FROM } from '../src/page/mix.ts';
+import { heard, mix, PIECE_FROM, voiceElaboration } from '../src/page/mix.ts';
+import { approximateness, DEFAULT_ELABORATION, voiceLead } from '../src/worker/levels.ts';
+import { ROOT } from '../tools/node-support.ts';
 
 const positions = Array.from({ length: 101 }, (_, i) => i / 100);
 
@@ -35,5 +39,29 @@ describe('elaboration', () => {
 
   it('sounds one of the piano’s parts at a time', () => {
     for (const e of positions) assert.ok(mix(e).harmonies === 0 || mix(e).piece === 0);
+  });
+
+  it('takes the voice further, and lets it sing more loosely, the barer the music', () => {
+    for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
+      assert.ok(voiceLead(b) < voiceLead(a));
+      assert.ok(approximateness(b) < approximateness(a));
+    }
+    assert.ok(Math.abs(voiceLead(0) - 0.7) < 1e-9 && Math.abs(voiceLead(1) - 0.1) < 1e-9);
+    assert.equal(approximateness(0), 1);
+    assert.equal(approximateness(1), 0);
+  });
+
+  it('renders the voice anew only at steps of the fader', () => {
+    assert.equal(voiceElaboration(0.66), 0.65);
+    assert.equal(voiceElaboration(0.68), 0.7);
+    assert.equal(voiceElaboration(-1), 0);
+    assert.equal(voiceElaboration(2), 1);
+  });
+
+  it('starts where the tools render the voice', () => {
+    const page = readFileSync(join(ROOT, '../index.html'), 'utf8');
+    const value = /id="elaboration"[^>]*value="(\d+)"/.exec(page)?.[1];
+    assert.equal(Number(value) / 100, DEFAULT_ELABORATION);
+    assert.equal(voiceElaboration(DEFAULT_ELABORATION), DEFAULT_ELABORATION);
   });
 });
