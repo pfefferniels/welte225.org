@@ -6,9 +6,24 @@ import type { Midi, Seconds, Ticks } from './units.ts';
 /** Where a rendering starts: a place in the score (kept across levels) or a time in this level. */
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
 
+/**
+ * The page runs several workers. Each prepares the levels it is asked about (the same for all: the
+ * chain is deterministic); the first is asked for the plan, the others only to stop what they were
+ * doing, so that the plan comes as soon as it can; then every worker renders the chunks it is
+ * handed, ranges of tract states between places where the voice is silent. A message with a newer
+ * request id stops the work for an older one.
+ */
 export type ToWorker =
   | { readonly type: 'setup'; readonly reduction: Reduction; readonly spectrogram: SpectrogramStyleName }
-  | { readonly type: 'render'; readonly id: number; readonly level: number; readonly start: StartAt };
+  | { readonly type: 'plan'; readonly id: number; readonly level: number; readonly start: StartAt }
+  | { readonly type: 'stop'; readonly id: number }
+  | {
+      readonly type: 'chunk';
+      readonly id: number;
+      readonly level: number;
+      readonly from: number;
+      readonly to: number;
+    };
 
 /** A piano note as the page plays it: held by the sustain pedal as on the roll. */
 export interface PianoNote {
@@ -37,8 +52,12 @@ export interface Plan {
   readonly clock: { readonly ticks: readonly Ticks[]; readonly ms: readonly number[] };
   readonly piano: readonly PianoNote[];
   readonly timings: Timings;
-  /** Where the sound starts coming. */
+  /** Where the sound starts coming, and its tract state (at the start of a 10 ms slot). */
   readonly startSeconds: Seconds;
+  readonly startState: number;
+  /** Tract states in all (110 samples each), and those where the voice is silent, to cut at. */
+  readonly stateCount: number;
+  readonly seams: readonly number[];
 }
 
 export interface AudioMessage {
@@ -58,5 +77,5 @@ export interface AudioMessage {
 export type FromWorker =
   | Plan
   | AudioMessage
-  | { readonly type: 'done'; readonly id: number }
+  | { readonly type: 'chunkDone'; readonly id: number; readonly from: number; readonly to: number }
   | { readonly type: 'error'; readonly id: number; readonly message: string };

@@ -13,7 +13,7 @@ const tone = (hz: number, amplitude: number): Float32Array =>
 describe('the spectrogram styles', () => {
   for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
     it(`${name}: draws a 220 Hz tone in its row, dark on white`, () => {
-      const column = makeSpectrogram(style)(tone(220, 0.1), 50, 51);
+      const column = makeSpectrogram(style)(tone(220, 0.1), 0, 50, 51);
       const darkest = column.indexOf(Math.min(...column));
       const rowOf = (hz: number): number =>
         ((Math.log(style.fmax) - Math.log(hz)) / (Math.log(style.fmax) - Math.log(style.fmin))) *

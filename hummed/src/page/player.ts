@@ -1,9 +1,10 @@
 // The transport: the voice played from the stream in short buffers, the piano from its notes,
 // and a new rendering taking over at the same place in the score once it has sound there.
-import type { FromWorker, StartAt, ToWorker } from '../shared/protocol.ts';
+import type { StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoSampler } from './piano.ts';
+import type { VoiceEvent, VoicePool } from './pool.ts';
 import { Rendering } from './rendering.ts';
 
 /** How far ahead sound is scheduled, and in what lengths the voice is handed to the audio graph. */
@@ -25,7 +26,7 @@ export interface PlayerView {
 export class Player {
   readonly #graph: AudioGraph;
   readonly #piano: PianoSampler;
-  readonly #worker: Worker;
+  readonly #pool: VoicePool;
   readonly #view: PlayerView;
   readonly #renders = new Map<number, Rendering>();
   #nextId = 1;
@@ -40,10 +41,10 @@ export class Player {
   #pianoFrom: Seconds = 0;
   #active: AudioScheduledSourceNode[] = [];
 
-  constructor(graph: AudioGraph, piano: PianoSampler, worker: Worker, view: PlayerView) {
+  constructor(graph: AudioGraph, piano: PianoSampler, pool: VoicePool, view: PlayerView) {
     this.#graph = graph;
     this.#piano = piano;
-    this.#worker = worker;
+    this.#pool = pool;
     this.#view = view;
     setInterval(() => {
       this.#tick();
@@ -70,8 +71,7 @@ export class Player {
   /** Ask the worker for a level, starting where given. */
   request(level: number, start: StartAt): void {
     const id = this.#nextId++;
-    const message: ToWorker = { type: 'render', id, level, start };
-    this.#worker.postMessage(message);
+    this.#pool.request(id, level, start);
     this.#pending = { id, level };
     for (const key of [...this.#renders.keys()]) if (key !== this.#current?.id) this.#renders.delete(key);
     this.#view.status(`Rendering ×${level.toFixed(2)}…`);
@@ -87,7 +87,7 @@ export class Player {
     this.request(level, { tick: cur ? cur.toTick(t) : 0 });
   }
 
-  receive(message: FromWorker): void {
+  receive(message: VoiceEvent): void {
     if (message.type === 'error') {
       this.#view.status(`VocalTractLab stopped: ${message.message}`);
       return;

@@ -1,12 +1,12 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
-import type { FromWorker, ToWorker } from '../shared/protocol.ts';
 import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
 import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
+import { VoicePool, workerCount } from './pool.ts';
 import type { Rendering } from './rendering.ts';
 import { SpectrogramView } from './spectrogram-view.ts';
 
@@ -28,7 +28,10 @@ const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle
 
 const graph = createAudioGraph();
 const piano = new PianoSampler(graph.context, graph.piano);
-const worker = new Worker('worker.js');
+// the voice is rendered by several workers side by side, as many as there are cores to spare
+const pool = new VoicePool(workerCount(), (event) => {
+  player.receive(event);
+});
 let seeking = false;
 
 const setStatus = (text: string): void => {
@@ -62,7 +65,7 @@ function redraw(): void {
   view.draw(player.current, player.position());
 }
 
-const player = new Player(graph, piano, worker, {
+const player = new Player(graph, piano, pool, {
   adopted(rendering: Rendering) {
     positionSlider.max = rendering.duration.toFixed(2);
     totalText.textContent = formatTime(rendering.duration);
@@ -80,10 +83,6 @@ const player = new Player(graph, piano, worker, {
     requestAnimationFrame(redraw);
   },
 });
-worker.onmessage = (event: MessageEvent<FromWorker>) => {
-  player.receive(event.data);
-};
-
 /* ---------- faders ---------- */
 function fader(id: string, outputId: string, gain: GainNode): void {
   const input = element(id, HTMLInputElement);
@@ -179,12 +178,7 @@ async function start(): Promise<void> {
   const response = await fetch('reduction/reduction.mei');
   if (!response.ok) throw new Error(`reduction.mei: ${response.status}`);
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
-  const setup: ToWorker = {
-    type: 'setup',
-    reduction: readReduction(doc.documentElement),
-    spectrogram: spectrogramStyle,
-  };
-  worker.postMessage(setup);
+  pool.setup(readReduction(doc.documentElement), spectrogramStyle);
   player.request(1, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }

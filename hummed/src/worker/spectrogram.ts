@@ -20,10 +20,18 @@ function greyOf(scale: SpectrogramScale, m0: number, m1: number, f: number): num
   return Math.round(255 * (1 - Math.pow(amplitude, scale.power)));
 }
 
-/** A function drawing columns `first` up to `end` of the audio, each centred on its hop. */
-export function makeSpectrogram(
-  style: SpectrogramStyle,
-): (audio: Float32Array, first: number, end: number) => Uint8Array {
+/**
+ * Columns `first` up to `end`, each centred on its hop, of sound of which `audio` holds the part from
+ * sample `offset` on (silence elsewhere).
+ */
+export type SpectrogramColumns = (
+  audio: Float32Array,
+  offset: number,
+  first: number,
+  end: number,
+) => Uint8Array;
+
+export function makeSpectrogram(style: SpectrogramStyle): SpectrogramColumns {
   const { rows, hop } = SPECTROGRAM;
   const fft = makeFft(style.fftSize);
   const hann = Float64Array.from(
@@ -37,12 +45,12 @@ export function makeSpectrogram(
       ((style.fmax * Math.pow(style.fmin / style.fmax, r / (rows - 1))) / SAMPLE_RATE) * style.fftSize,
   );
   const frame = new Float64Array(style.window);
-  return (audio, first, end) => {
+  return (audio, offset, first, end) => {
     const out = new Uint8Array((end - first) * rows);
     for (let c = first; c < end; c++) {
       const centre = c * hop;
       for (let i = 0; i < style.window; i++) {
-        const k = centre - style.window / 2 + i;
+        const k = centre - style.window / 2 + i - offset;
         frame[i] = (k >= 0 && k < audio.length ? audio[k] : 0) * hann[i];
       }
       const { re, im } = fft(frame);

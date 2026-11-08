@@ -1,6 +1,7 @@
-// The live voice: for an exaggeration level, espressivo performs the exaggerated MPM, the hummer
+// A voice worker: for an exaggeration level, espressivo performs the exaggerated MPM, the hummer
 // turns that performance into two gestural scores, VocalTractLab (WebAssembly) turns them into tract
-// states and then into sound, streamed to the page in blocks with their spectrogram columns.
+// states and then, chunk by chunk as the page hands them out, into sound, streamed to the page in
+// blocks with their spectrogram columns. The page runs several such workers side by side.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { readPerformance, renderVoice, repair, type Calibration, type HumStyle } from '../hummer/index.ts';
@@ -13,7 +14,7 @@ import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { pianoFactors, voiceFactors, VOICE_LEAD, withSubNoteDynamics } from './levels.ts';
 import { pianoNotes } from './piano.ts';
-import { makeSpectrogram } from './spectrogram.ts';
+import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
 interface WorkerScope {
   postMessage(message: FromWorker, transfer?: Transferable[]): void;
@@ -24,8 +25,12 @@ const post = (message: FromWorker, transfer: Transferable[] = []): void => {
   scope.postMessage(message, transfer);
 };
 
-/** Sound before a start point that is rendered to settle the voice but not sent. */
-const PREROLL: Seconds = 0.3;
+/**
+ * Sound before a chunk that is rendered to settle the voice but not sent: longer where the chunk
+ * starts in the middle of the voice (a seek), short where it starts at a silence.
+ */
+const SETTLE: Seconds = 0.3;
+const SETTLE_AT_SEAM: Seconds = 0.05;
 /** Tract states per audio block. */
 const BLOCK_STATES = 40;
 
@@ -37,16 +42,18 @@ interface Resources {
   readonly engine: VtlEngine;
 }
 
-/** One exaggeration level, from the MPM to tract states, kept for seeking within it. */
+/** One exaggeration level, from the MPM to tract states, kept while it is being rendered. */
 interface Level {
   readonly level: number;
   readonly states: StatePair;
   readonly weight: Float32Array;
-  readonly plan: Omit<Plan, 'id' | 'startSeconds'>;
+  readonly seams: ReadonlySet<number>;
+  readonly plan: Omit<Plan, 'id' | 'startSeconds' | 'startState'>;
 }
 
 let resources: Promise<Resources> | null = null;
 let prepared: Level | null = null;
+/** The newest request seen: work for an older one stops. */
 let current = 0;
 
 async function load(): Promise<Resources> {
@@ -102,10 +109,15 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
   const { notes, sustain } = readPerformance(pianoData);
   repair(notes);
   const timings: Timings = { espressivo: t1 - t0, hummer: t2 - t1, gestures: t3 - t2 };
+  const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;
+  const seams = voice.seams
+    .map((ms) => Math.round(ms / msPerState))
+    .filter((i) => i > 0 && i < states.closed.count);
   return {
     level,
     states,
     weight: voice.weight,
+    seams: new Set(seams),
     plan: {
       type: 'plan',
       level,
@@ -116,6 +128,8 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
       clock: { ticks: voice.clock.ticks, ms: voice.clock.ms },
       piano: pianoNotes(notes, sustain),
       timings,
+      stateCount: states.closed.count,
+      seams,
     },
   };
 }
@@ -131,112 +145,121 @@ const yieldNow = (() => {
     });
 })();
 
-/** Render from the start to the end, then from the beginning up to the start; stop when a newer request comes. */
-async function render(r: Resources, setup: Setup, id: number, level: number, start: StartAt): Promise<void> {
-  const { style, columns } = setup;
-  if (prepared?.level !== level) {
-    prepared = null;
-    prepared = prepare(r, setup.reduction, level);
-  }
-  const L = prepared;
-  if (id !== current) return;
-  const startSeconds =
-    'tick' in start
-      ? interp(start.tick, L.plan.clock.ticks, L.plan.clock.ms) / 1000 + PAD_MS / 1000
-      : start.seconds;
-  post({ ...L.plan, id, startSeconds });
-
-  const audio = new Float32Array(Math.ceil(L.plan.duration * SAMPLE_RATE));
-  const gain = r.calibration.gain;
-  const count = L.states.closed.count;
-  // the first state at or before the 10 ms slot of the start: the page counts sound per slot
-  const slot = SAMPLE_RATE / 100;
-  const first = Math.max(
-    0,
-    Math.min(count - 1, Math.floor((Math.floor(startSeconds * 100) * slot) / STATE_STEP)),
-  );
-  const preroll = Math.round((PREROLL * SAMPLE_RATE) / STATE_STEP);
-  // states from..to sound up to to−1, so the wrap-around runs one state further, to meet the start
-  const passes = [
-    { from: Math.max(0, first - preroll), keepFrom: first, to: count },
-    { from: 0, keepFrom: 0, to: first > 0 ? first + 1 : 0 },
-  ];
-  for (const { from, keepFrom, to } of passes) {
-    if (to <= from) continue;
-    let column = Math.floor((keepFrom * STATE_STEP) / SPECTROGRAM.hop);
-    for (const block of r.engine.synthesize(L.states, L.weight, from, to, { blockStates: BLOCK_STATES })) {
-      const skip = Math.max(0, keepFrom - (block.firstState - 1)) * STATE_STEP; // the preroll is not sent
-      if (skip < block.samples.length) {
-        const samples = block.samples.slice(skip);
-        const at = (block.firstState - 1) * STATE_STEP + skip;
-        for (let i = 0; i < samples.length; i++) samples[i] *= gain;
-        audio.set(samples, at);
-        const upto = Math.floor((at + samples.length - style.window / 2) / SPECTROGRAM.hop);
-        const pixels = upto > column ? columns(audio, column, upto) : null;
-        post(
-          {
-            type: 'audio',
-            id,
-            start: at,
-            samples,
-            spectrogram: pixels ? { column, count: upto - column, pixels } : null,
-          },
-          pixels ? [samples.buffer, pixels.buffer] : [samples.buffer],
-        );
-        if (pixels) column = upto;
-      }
-      await yieldNow();
-      if (id !== current) return;
-    }
-    if (keepFrom === 0 && first > 0) {
-      // where the two passes meet: the first drew its first columns without the sound before
-      const upto = Math.min(
-        Math.floor(audio.length / SPECTROGRAM.hop),
-        Math.floor((first * STATE_STEP) / SPECTROGRAM.hop) + Math.ceil(style.window / 2 / SPECTROGRAM.hop),
-      );
-      if (upto > column) {
-        const pixels = columns(audio, column, upto);
-        post(
-          {
-            type: 'audio',
-            id,
-            start: 0,
-            samples: new Float32Array(0),
-            spectrogram: { column, count: upto - column, pixels },
-          },
-          [pixels.buffer],
-        );
-      }
-    }
-  }
-  post({ type: 'done', id });
-}
-
 /** What the page sends once: what is hummed, and how to draw it. */
 interface Setup {
   readonly reduction: Reduction;
   readonly style: SpectrogramStyle;
-  readonly columns: (audio: Float32Array, first: number, end: number) => Uint8Array;
+  readonly columns: SpectrogramColumns;
 }
 let setupDone: (setup: Setup) => void = () => undefined;
 const setupReady = new Promise<Setup>((resolve) => {
   setupDone = resolve;
 });
 
+function levelOf(r: Resources, setup: Setup, level: number): Level {
+  if (prepared?.level !== level) {
+    prepared = null;
+    prepared = prepare(r, setup.reduction, level);
+  }
+  return prepared;
+}
+
+/** The plan of a level: how long, where its bars and seams are, where the sound starts. */
+function plan(L: Level, id: number, start: StartAt): Plan {
+  const startSeconds =
+    'tick' in start
+      ? interp(start.tick, L.plan.clock.ticks, L.plan.clock.ms) / 1000 + PAD_MS / 1000
+      : start.seconds;
+  // the first state at or before the 10 ms slot of the start: the page counts sound per slot
+  const slot = SAMPLE_RATE / 100;
+  const startState = Math.max(
+    0,
+    Math.min(L.plan.stateCount - 1, Math.floor((Math.floor(startSeconds * 100) * slot) / STATE_STEP)),
+  );
+  return { ...L.plan, id, startSeconds, startState };
+}
+
+/**
+ * Render the states [from, to): settle the voice a little before `from`, and render on past `to`
+ * for the last spectrogram columns, but send only the samples of [from, to) and the columns whose
+ * centres fall in them. Stop when a newer request comes.
+ */
+async function renderChunk(
+  r: Resources,
+  setup: Setup,
+  L: Level,
+  id: number,
+  from: number,
+  to: number,
+): Promise<void> {
+  const { style, columns } = setup;
+  const { hop } = SPECTROGRAM;
+  const count = L.states.closed.count;
+  const settle = from === 0 ? 0 : L.seams.has(from) ? SETTLE_AT_SEAM : SETTLE;
+  const a = Math.max(0, from - Math.round((settle * SAMPLE_RATE) / STATE_STEP));
+  const b = Math.min(count, to + Math.ceil(style.window / 2 / STATE_STEP) + 1);
+  const offset = a * STATE_STEP;
+  const local = new Float32Array((b - a) * STATE_STEP);
+  const keep0 = from * STATE_STEP;
+  const keep1 = Math.min(to * STATE_STEP, (count - 1) * STATE_STEP);
+  const lastColumn = Math.ceil(keep1 / hop);
+  let column = Math.ceil(keep0 / hop);
+  const gain = r.calibration.gain;
+  const send = (start: number, samples: Float32Array, upto: number): void => {
+    const pixels = upto > column ? columns(local, offset, column, upto) : null;
+    if (samples.length === 0 && !pixels) return;
+    post(
+      {
+        type: 'audio',
+        id,
+        start,
+        samples,
+        spectrogram: pixels ? { column, count: upto - column, pixels } : null,
+      },
+      pixels ? [samples.buffer, pixels.buffer] : [samples.buffer],
+    );
+    if (pixels) column = upto;
+  };
+  for (const block of r.engine.synthesize(L.states, L.weight, a, b, { blockStates: BLOCK_STATES })) {
+    const at = (block.firstState - 1) * STATE_STEP;
+    const samples = block.samples;
+    for (let i = 0; i < samples.length; i++) samples[i] *= gain;
+    local.set(samples, at - offset);
+    const filled = at + samples.length;
+    const s0 = Math.max(at, keep0);
+    const s1 = Math.min(filled, keep1);
+    // the columns whose window the rendered sound now covers
+    const ready = Math.min(lastColumn, Math.floor((filled - style.window / 2) / hop) + 1);
+    send(s1 > s0 ? s0 : 0, s1 > s0 ? samples.slice(s0 - at, s1 - at) : new Float32Array(0), ready);
+    await yieldNow();
+    if (id !== current) return;
+  }
+  send(0, new Float32Array(0), lastColumn); // at the end of the piece, with silence after it
+  post({ type: 'chunkDone', id, from, to });
+}
+
 scope.onmessage = (event) => {
   const message = event.data;
   if (message.type === 'setup') {
     const style = SPECTROGRAM_STYLES[message.spectrogram];
     setupDone({ reduction: message.reduction, style, columns: makeSpectrogram(style) });
+    // load VocalTractLab and the data now, so that the first chunk need only prepare its level
+    resources ??= load();
+    resources.catch(() => undefined); // a failure is reported with the request that meets it
     return;
   }
+  if (message.id < current) return;
   current = message.id;
+  if (message.type === 'stop') return;
   void (async () => {
     try {
       resources ??= load();
       const [r, setup] = await Promise.all([resources, setupReady]);
       if (message.id !== current) return;
-      await render(r, setup, message.id, message.level, message.start);
+      const L = levelOf(r, setup, message.level);
+      if (message.id !== current) return;
+      if (message.type === 'plan') post(plan(L, message.id, message.start));
+      else await renderChunk(r, setup, L, message.id, message.from, message.to);
     } catch (error) {
       post({
         type: 'error',

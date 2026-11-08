@@ -32,6 +32,18 @@ describe('VocalTractLab', async () => {
     assert.ok(Math.abs((states.closed.count * STATE_STEP) / SAMPLE_RATE - voice.endMs / 1000) < 0.1);
   });
 
+  it('is silent where the voice may be cut', () => {
+    const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;
+    assert.ok(voice.seams.length >= 5);
+    for (const seam of voice.seams.slice(1, 4).map((ms) => Math.round(ms / msPerState))) {
+      // settled from 0.3 s before, as a continuous rendering would be there
+      const blocks = [...engine.synthesize(states, voice.weight, seam - 120, seam + 4, { blockStates: 40 })];
+      const tail = blocks.flatMap((b) => Array.from(b.samples)).slice(-4 * STATE_STEP);
+      const rms = Math.sqrt(tail.reduce((s, x) => s + x * x, 0) / tail.length);
+      assert.ok(20 * Math.log10(rms + 1e-12) < -80, `${(20 * Math.log10(rms)).toFixed(0)} dB at a seam`);
+    }
+  });
+
   it('hums the first notes (0.5 to 3 s)', () => {
     const from = Math.round((0.5 * SAMPLE_RATE) / STATE_STEP);
     const to = Math.round((3 * SAMPLE_RATE) / STATE_STEP);

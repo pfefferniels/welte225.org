@@ -42,6 +42,30 @@ export interface Gestures {
   /** How far the lips are open, per ms, 0 to 1: blends the two scores' tubes. */
   readonly weight: Float32Array;
   readonly endMs: Ms;
+  /** Where the voice is silent: ms of the rendering where it may be cut without a seam. */
+  readonly silences: readonly Ms[];
+}
+
+/**
+ * Where the lungs have pushed no air for `SILENT_AFTER` and push none for `SILENT_BEFORE` more:
+ * places to cut the rendering. The voice dies away slowly once the lungs stop (the folds go on
+ * vibrating, some 0.3 dB a millisecond): 250 ms after, it is some 100 dB down.
+ */
+const SILENT_AFTER: Ms = 250;
+const SILENT_BEFORE: Ms = 30;
+export function silences(pressure: Tier<number>): Ms[] {
+  const out: Ms[] = [];
+  let quietFrom: Ms | null = null;
+  for (const g of [...pressure].sort((a, b) => a.start - b.start)) {
+    if (g.value === 0) {
+      quietFrom ??= g.start;
+      if (g.end - quietFrom >= SILENT_AFTER + SILENT_BEFORE) {
+        const at = quietFrom + SILENT_AFTER;
+        if (out.at(-1) !== at) out.push(at);
+      }
+    } else quietFrom = null;
+  }
+  return out;
 }
 
 /** A sequence of keyed values at times, interpolated linearly, held after the last. */
@@ -379,5 +403,5 @@ export function gestures(input: GesturesInput): Gestures {
     const s = T(e.date);
     tiers.lip.push(segment(s, s + e.durationMs, 'll-labial-closure'));
   }
-  return { tiers, weight, endMs };
+  return { tiers, weight, endMs, silences: silences(tiers.pressure) };
 }

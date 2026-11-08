@@ -72,7 +72,7 @@ dynamics ask; until then they sound uncorrected, which is close.
 
 ## How the voice hums
 
-For one exaggeration level the worker (`src/worker/worker.ts`) does this:
+For one exaggeration level a worker (`src/worker/worker.ts`) does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
    for the piano at the level, and for the voice a step further. The voice is the inner guide of
@@ -95,17 +95,23 @@ For one exaggeration level the worker (`src/worker/worker.ts`) does this:
    that blends them, lagged as VocalTractLab lags a gesture (`src/hummer/gestural-score.ts`).
 4. **Sound** (`src/vtl/engine.ts`): VocalTractLab in WebAssembly turns both scores into tract
    states, and the tract states into sound, 110 samples (2.5 ms) at a time. The tube geometry is
-   computed every 10 ms and only where the tract has moved, and interpolated in between (under
-   0.02 dB from computing it every step); the closed and open tubes are blended by the opening,
-   so the lips part gradually rather than with VocalTractLab's jump.
+   computed every 10 ms and only where the tract has moved by more than 0.03, and interpolated in
+   between (0.03 dB from computing it every step, in the median); the closed and open tubes are
+   blended by the opening, so the lips part gradually rather than with VocalTractLab's jump.
 
-The worker streams the sound to the page in blocks, with their spectrogram columns, from the
-requested place to the end and then from the beginning up to it. The page (`src/page/`) plays the
+The page runs several such workers side by side (`src/page/pool.ts`; as many as there are cores
+to spare, at most four). Each prepares the level itself, and renders the chunks of the voice it is
+handed: the voice is cut where it is silent, 250 ms after the lungs have stopped pushing air, when
+it is some 100 dB down, so the chunks join without a seam. They are handed out in the order they
+will be heard, from where playback is to the end and then from the beginning, and streamed to the
+page in blocks with their spectrogram columns. Of the work, VocalTractLab's acoustics take four
+fifths and its geometry one fifth; the spectrogram adds a twentieth. Three workers render the
+voice 3.8 times as fast as it plays where one rendered it 1.3 times as fast (on four cores of a
+cloud server); the first sound comes as soon. The page (`src/page/`) plays the
 voice as it arrives, plays the roll on a sampled grand from the same performance, holds notes with
 the sustain pedal as the roll does, and sends both into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
-voice a little further in than the piano and after a 20 ms pre-delay. A recent laptop renders the
-voice about twice as fast as it plays.
+voice a little further in than the piano and after a 20 ms pre-delay.
 
 espressivo 0.11, strongly exaggerated (from about ×1.8), leaves a few arpeggiated notes with
 impossible times: an onset equal to the note's tick position or tens of seconds past the end, or

@@ -37,6 +37,11 @@ export interface Voice {
   /** Each bar's downbeat in the rendering, in seconds. */
   readonly bars: readonly (readonly [Seconds, string])[];
   readonly events: readonly VocalEvent[];
+  /**
+   * Where the voice is silent (the lungs have stopped pushing air a while ago): ms of the rendering
+   * where it may be cut and rendered in parts without a seam.
+   */
+  readonly seams: readonly Ms[];
 }
 
 export function renderVoice(input: VoiceInput): Voice {
@@ -65,5 +70,6 @@ export function renderVoice(input: VoiceInput): Voice {
     clock,
     bars: input.reduction.bars.map((b) => [clock.toMs(b.tick) / 1000 + PAD_MS / 1000, b.label] as const),
     events,
+    seams: g.silences,
   };
 }
