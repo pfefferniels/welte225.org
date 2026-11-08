@@ -1,23 +1,49 @@
-import type { Note, PedalPoint } from '../hummer/performance.ts';
-import type { PianoNote } from '../shared/protocol.ts';
-import { PAD_MS, type Seconds } from '../shared/units.ts';
+// The piano at a level: the piece and its harmonies performed with the exaggerated MPM, as the roll
+// plays them. The worker sends them with each plan; `npm run pianoteq` renders them from the same.
+import { exaggerateMpm, performMsmToData } from 'espressivo';
+import { readPerformance, repair, type PedalPoint, type Performance } from '../hummer/performance.ts';
+import type { PedalStep, PianoPart } from '../shared/piano.ts';
+import { PAD_MS } from '../shared/units.ts';
+import { pianoFactors } from './levels.ts';
 
-/** Every note of the roll, held by the sustain pedal as on the roll, at least 0.3 s long. */
-export function pianoNotes(notes: readonly Note[], sustain: readonly PedalPoint[]): PianoNote[] {
-  const pedal: [Seconds, number][] = sustain.map((p) => [p.ms / 1000, p.value]);
-  const lastEnd = Math.max(...notes.map((n) => n.endMs)) / 1000;
-  return notes
-    .map((n): PianoNote => {
-      const on = n.onMs / 1000;
-      let off = Math.max(n.endMs / 1000, on + 0.3);
-      let i = -1;
-      while (i + 1 < pedal.length && pedal[i + 1][0] <= off) i++;
-      if (i >= 0 && pedal[i][1] >= 64) {
-        let j = i;
-        while (j < pedal.length && pedal[j][1] >= 64) j++;
-        off = j < pedal.length ? pedal[j][0] : lastEnd + 0.6;
-      }
-      return { on: on + PAD_MS / 1000, duration: off - on, pitch: n.pitch, velocity: n.velocity };
-    })
-    .sort((a, b) => a.on - b.on);
+/** What the piano plays from: the piece's score, the harmonies' score (MSM) and the MPM. */
+export interface PianoScore {
+  readonly msm: string;
+  readonly harmonies: string;
+  readonly mpm: string;
+}
+
+const PAD = PAD_MS / 1000;
+const steps = (points: readonly PedalPoint[]): PedalStep[] =>
+  points.map((p) => ({ at: p.ms / 1000 + PAD, value: p.value }));
+
+/** A performed part in a rendering's time, its keys in the order they are pressed. */
+export function pianoPart({ notes, sustain, soft }: Performance): PianoPart {
+  return {
+    keys: notes
+      .map((n) => ({
+        on: n.onMs / 1000 + PAD,
+        off: n.endMs / 1000 + PAD,
+        pitch: n.pitch,
+        velocity: n.velocity,
+      }))
+      .sort((a, b) => a.on - b.on),
+    sustain: steps(sustain),
+    soft: steps(soft),
+  };
+}
+
+/** The piano's two parts at a level of exaggeration. */
+export function performPiano(
+  score: PianoScore,
+  level: number,
+): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
+  const factors = pianoFactors(level);
+  const mpm = factors ? exaggerateMpm(score.mpm, { factors }).mpm : score.mpm;
+  const part = (msm: string): PianoPart => {
+    const performance = readPerformance(performMsmToData({ msm, mpm }));
+    repair(performance.notes);
+    return pianoPart(performance);
+  };
+  return { piece: part(score.msm), harmonies: part(score.harmonies) };
 }

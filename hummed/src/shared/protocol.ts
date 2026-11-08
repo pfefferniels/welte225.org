@@ -1,7 +1,8 @@
 // What the page and the worker say to each other.
 import type { Reduction } from '../reduction/types.ts';
+import type { PianoPart } from './piano.ts';
 import type { SpectrogramStyleName } from './spectrogram.ts';
-import type { Midi, Seconds, Ticks } from './units.ts';
+import type { Seconds, Ticks } from './units.ts';
 
 /** Where a rendering starts: a place in the score (kept across levels) or a time in this level. */
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
@@ -33,14 +34,6 @@ export type ToWorker =
       readonly to: number;
     };
 
-/** A piano note as the page plays it: held by the sustain pedal as on the roll. */
-export interface PianoNote {
-  readonly on: Seconds;
-  readonly duration: Seconds;
-  readonly pitch: Midi;
-  readonly velocity: Midi;
-}
-
 export interface Timings {
   readonly espressivo: number;
   readonly hummer: number;
@@ -59,9 +52,9 @@ export interface Plan {
   readonly bars: readonly (readonly [Seconds, string])[];
   /** Score time against performed ms (without the padding), for keeping a place across levels. */
   readonly clock: { readonly ticks: readonly Ticks[]; readonly ms: readonly number[] };
-  readonly piano: readonly PianoNote[];
-  /** The harmonies (reduction/harmonies.mei) in the same performance, for the piano's lower half. */
-  readonly harmonies: readonly PianoNote[];
+  /** The piano's two parts: the piece, and its harmonies (reduction/harmonies.mei) in the same performance. */
+  readonly piece: PianoPart;
+  readonly harmonies: PianoPart;
   readonly timings: Timings;
   /** Where the sound starts coming, and its tract state (at the start of a 10 ms slot). */
   readonly startSeconds: Seconds;

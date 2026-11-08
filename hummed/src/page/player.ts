@@ -1,10 +1,10 @@
-// The transport: the voice played from the stream in short buffers, the piano from its notes (the
-// piece's and the harmonies', each into its own bus, both always: the elaboration decides which
-// is heard), and a new rendering taking over at the same place in the score once it has sound there.
-import type { PianoNote, Setting, StartAt } from '../shared/protocol.ts';
+// The transport: the voice played from the stream in short buffers, the piano handed to its output
+// (outputs.ts: in the page, or on an instrument over MIDI) as it falls due, and a new rendering
+// taking over at the same place in the score once it has sound there.
+import type { Setting, StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
-import type { PianoSampler } from './piano.ts';
+import type { PianoOutput } from './outputs.ts';
 import type { VoiceEvent, VoicePool } from './pool.ts';
 import { Rendering } from './rendering.ts';
 
@@ -13,6 +13,8 @@ const LOOKAHEAD: Seconds = 0.6;
 const SEGMENT: Seconds = 0.25;
 /** How far the old voice may carry on while a new setting renders, at most. */
 const MAX_SWITCH_LEAD: Seconds = 1.2;
+/** From a start to the first sound: time to schedule it. */
+const START_MARGIN: Seconds = 0.06;
 
 export interface PlayerView {
   /** A rendering has taken over: its length, its bars. */
@@ -26,7 +28,7 @@ export interface PlayerView {
 
 export class Player {
   readonly #graph: AudioGraph;
-  readonly #piano: PianoSampler;
+  #piano: PianoOutput;
   readonly #pool: VoicePool;
   readonly #view: PlayerView;
   readonly #renders = new Map<number, Rendering>();
@@ -42,9 +44,10 @@ export class Player {
   #offset: Seconds = 0;
   #voiceUntil: Seconds = 0;
   #pianoFrom: Seconds = 0;
+  /** The voice's buffers handed to the audio graph. */
   #active: AudioScheduledSourceNode[] = [];
 
-  constructor(graph: AudioGraph, piano: PianoSampler, pool: VoicePool, view: PlayerView) {
+  constructor(graph: AudioGraph, piano: PianoOutput, pool: VoicePool, view: PlayerView) {
     this.#graph = graph;
     this.#piano = piano;
     this.#pool = pool;
@@ -60,6 +63,25 @@ export class Player {
 
   get playing(): boolean {
     return this.#playing;
+  }
+
+  /** Sound the piano another way; playing goes on from where it is, after a short stop. */
+  setPiano(piano: PianoOutput): void {
+    const playing = this.#playing;
+    if (playing) this.pause();
+    this.#piano.stop();
+    this.#piano = piano;
+    if (playing) this.play();
+  }
+
+  /** Start the piano afresh a little ahead, the voice going on (an instrument's part has changed). */
+  restartPiano(): void {
+    this.#piano.stop();
+    const cur = this.#current;
+    if (!cur || !this.#playing || this.#waiting) return;
+    const t = this.position() + this.#piano.lead + START_MARGIN;
+    this.#piano.start(cur, t, this.#contextTime(t));
+    this.#pianoFrom = t;
   }
 
   position(): Seconds {
@@ -167,6 +189,7 @@ export class Player {
       }
     }
     this.#active = [];
+    this.#piano.stop();
   }
 
   #startFrom(t: Seconds): void {
@@ -174,27 +197,18 @@ export class Player {
     if (!cur) return;
     this.#stopAll();
     this.#offset = t;
-    this.#startAt = this.#graph.context.currentTime + 0.06;
+    if (!this.#piano.ready(cur)) {
+      // its sound is still loading: wait, as for the voice
+      this.#waiting = true;
+      this.#view.status('Loading the piano…');
+      return;
+    }
+    this.#startAt = this.#graph.context.currentTime + START_MARGIN + this.#piano.lead;
     this.#voiceUntil = t;
     this.#pianoFrom = t;
     this.#waiting = false;
-    // notes already sounding at t (held by the pedal) come in where they are
-    for (const [notes, output] of this.#pianoParts(cur))
-      for (const note of notes) {
-        if (note.on < t && note.on + note.duration > t + 0.05) {
-          const source = this.#piano.play(note, output, this.#startAt, t - note.on);
-          if (source) this.#active.push(source);
-        }
-      }
+    this.#piano.start(cur, t, this.#startAt);
     this.#schedule();
-  }
-
-  /** The piano's two parts: the piece, and its harmonies. */
-  #pianoParts(cur: Rendering): readonly (readonly [readonly PianoNote[], AudioNode])[] {
-    return [
-      [cur.piano, this.#graph.piano],
-      [cur.harmonies, this.#graph.harmonies],
-    ];
   }
 
   #contextTime(t: Seconds): number {
@@ -221,14 +235,12 @@ export class Player {
       this.#active.push(source);
       this.#voiceUntil = t1;
     }
-    const until = Math.min(horizon, this.#voiceUntil);
-    for (const [notes, output] of this.#pianoParts(cur))
-      for (const note of notes) {
-        if (note.on >= this.#pianoFrom && note.on < until) {
-          const source = this.#piano.play(note, output, this.#contextTime(note.on), 0);
-          if (source) this.#active.push(source);
-        }
-      }
+    // the piano as far as the voice has sound, and an instrument's delay further where it has
+    const ahead = Math.min(cur.duration, horizon + this.#piano.lead);
+    const until = cur.rendered(this.#voiceUntil, ahead)
+      ? Math.max(this.#voiceUntil, ahead)
+      : this.#voiceUntil;
+    this.#piano.schedule(cur, this.#pianoFrom, until, (x) => this.#contextTime(x));
     this.#pianoFrom = Math.max(this.#pianoFrom, until);
     if (this.#active.length > 400) this.#active = this.#active.slice(-300);
     if (this.#voiceUntil < cur.duration && this.#voiceUntil - t < 0.05) {
@@ -243,7 +255,12 @@ export class Player {
   #tick(): void {
     const cur = this.#current;
     if (this.#pending) this.#maybeSwitch();
-    if (this.#playing && this.#waiting && cur?.rendered(this.#offset, this.#offset + 0.5)) {
+    if (
+      this.#playing &&
+      this.#waiting &&
+      cur?.rendered(this.#offset, this.#offset + 0.5) &&
+      this.#piano.ready(cur)
+    ) {
       this.#startFrom(this.#offset);
       if (!this.#pending) this.#view.status('');
     }
@@ -262,8 +279,13 @@ export class Player {
     const next = this.#renders.get(this.#pending.id);
     if (!next) return;
     const cur = this.#current;
+    const pianoReady = (): boolean => {
+      const ready = this.#piano.ready(next);
+      if (!ready) this.#view.status('Loading the piano…');
+      return ready;
+    };
     if (!cur) {
-      if (next.rendered(0, 0.5)) this.#adopt(next, 0);
+      if (next.rendered(0, 0.5) && pianoReady()) this.#adopt(next, 0);
       return;
     }
     let t = next.toSeconds(cur.toTick(this.position()));
@@ -272,7 +294,7 @@ export class Player {
       if (this.#playing && !this.#waiting) return;
       t = next.startSeconds;
     }
-    if (next.rendered(t, t + 0.4)) this.#adopt(next, t);
+    if (next.rendered(t, t + 0.4) && pianoReady()) this.#adopt(next, t);
   }
 
   #adopt(next: Rendering, t: Seconds): void {

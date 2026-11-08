@@ -1,6 +1,7 @@
 // The roll (or its harmonies) on a sampled grand: every third pitch from A1, four velocity layers,
-// transposed to the note.
-import type { PianoNote } from '../shared/protocol.ts';
+// transposed to the note. Loaded only when the page needs it: where no Pianoteq rendering of a level
+// is there to play.
+import type { HeldNote } from '../shared/piano.ts';
 
 const BASES = [33, 36, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81] as const;
 const LAYERS = [3, 5, 7, 9] as const;
@@ -14,13 +15,32 @@ const nearest = <T extends number>(options: readonly T[], target: number): T =>
 export class PianoSampler {
   readonly #context: AudioContext;
   readonly #samples = new Map<string, AudioBuffer>();
+  readonly #failed: (error: unknown) => void;
+  #loading: Promise<void> | null = null;
+  #loaded = false;
 
-  constructor(context: AudioContext) {
+  constructor(context: AudioContext, failed: (error: unknown) => void) {
     this.#context = context;
+    this.#failed = failed;
   }
 
-  /** Load every sample (piano/p<pitch>v<layer>.mp3). */
-  async load(): Promise<void> {
+  /** Whether the samples are there; the first ask loads them. */
+  ready(): boolean {
+    if (this.#loading === null)
+      this.#loading = this.#load().then(
+        () => {
+          this.#loaded = true;
+        },
+        (error: unknown) => {
+          this.#loading = null;
+          this.#failed(error);
+        },
+      );
+    return this.#loaded;
+  }
+
+  /** Every sample (piano/p<pitch>v<layer>.mp3). */
+  async #load(): Promise<void> {
     await Promise.all(
       BASES.flatMap((base) =>
         LAYERS.map(async (layer) => {
@@ -37,7 +57,7 @@ export class PianoSampler {
    * Play a note into `output` at context time `when`, from `from` seconds into it; null while its
    * sample is missing.
    */
-  play(note: PianoNote, output: AudioNode, when: number, from: number): AudioBufferSourceNode | null {
+  play(note: HeldNote, output: AudioNode, when: number, from: number): AudioBufferSourceNode | null {
     const base = nearest(BASES, note.pitch);
     const layer = nearest(LAYERS, Math.max(1, Math.min(16, Math.round((note.velocity / 127) * 15) + 1)));
     const buffer = this.#samples.get(`${base}:${layer}`);

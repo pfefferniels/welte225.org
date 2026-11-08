@@ -29,13 +29,15 @@ export interface DynamicsCurve {
 export interface Performance {
   readonly notes: readonly Note[];
   readonly sustain: readonly PedalPoint[];
+  /** The soft pedal (una corda); empty where the performance has none. */
+  readonly soft: readonly PedalPoint[];
 }
 
 export class PerformanceError extends Error {
   override name = 'PerformanceError';
 }
 
-/** The notes (every part) and the sustain pedal of a performance. */
+/** The notes (every part) and the pedals of a performance. */
 export function readPerformance(data: PerformanceData): Performance {
   const notes = data.parts.flatMap((part) =>
     part.notes.map((n): Note => ({
@@ -49,10 +51,13 @@ export function readPerformance(data: PerformanceData): Performance {
       endMs: n.milliseconds.end,
     })),
   );
-  const pedal = data.parts[0]?.controlChanges.find((c) => c.controller === 'sustain');
-  if (!pedal) throw new PerformanceError('the performance has no sustain pedal');
-  const sustain = pedal.points.map((p) => ({ date: p.date, ms: p.milliseconds, value: p.value }));
-  return { notes, sustain };
+  const pedal = (name: string): readonly PedalPoint[] | null =>
+    data.parts[0]?.controlChanges
+      .find((c) => c.controller === name)
+      ?.points.map((p) => ({ date: p.date, ms: p.milliseconds, value: p.value })) ?? null;
+  const sustain = pedal('sustain');
+  if (!sustain) throw new PerformanceError('the performance has no sustain pedal');
+  return { notes, sustain, soft: pedal('soft') ?? [] };
 }
 
 /**

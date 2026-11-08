@@ -22,6 +22,8 @@ import {
   voiceLevel,
   withSubNoteDynamics,
 } from '../src/worker/levels.ts';
+import { harmoniesScore } from '../src/worker/harmonies.ts';
+import type { PianoScore } from '../src/worker/piano.ts';
 
 /** The hummed/ directory. */
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -40,6 +42,11 @@ export const loadScore = (): { msm: string; mpm: string } => ({
   msm: read('../mpm/score.msm'),
   mpm: read('../mpm/performance.mpm'),
 });
+
+/** What the piano plays from, as the worker reads it: the piece, its harmonies, the MPM. */
+export function loadPianoScore(): PianoScore {
+  return { ...loadScore(), harmonies: harmoniesScore(read('reduction/harmonies.mei')) };
+}
 
 /**
  * The voice's performance at an elaboration, as the worker renders it, how loosely it sings, and

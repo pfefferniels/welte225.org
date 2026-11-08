@@ -7,9 +7,7 @@ import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import {
   dynamicsRange,
-  readPerformance,
   renderVoice,
-  repair,
   type Calibration,
   type DynamicsRange,
   type HumStyle,
@@ -22,15 +20,8 @@ import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { harmoniesScore } from './harmonies.ts';
-import {
-  approximateness,
-  pianoFactors,
-  pianoLevel,
-  voiceFactors,
-  voiceLevel,
-  withSubNoteDynamics,
-} from './levels.ts';
-import { pianoNotes } from './piano.ts';
+import { approximateness, pianoLevel, voiceFactors, voiceLevel, withSubNoteDynamics } from './levels.ts';
+import { performPiano } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
 interface WorkerScope {
@@ -110,10 +101,7 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
   const { elaboration } = setting;
   const level = pianoLevel(elaboration);
   const voiceAt = voiceLevel(elaboration);
-  const piano = pianoFactors(level);
-  const pianoMpm = piano ? exaggerateMpm(r.mpm, { factors: piano }).mpm : r.mpm;
-  const pianoData = performMsmToData({ msm: r.msm, mpm: pianoMpm });
-  const harmoniesData = performMsmToData({ msm: r.harmonies, mpm: pianoMpm });
+  const { piece, harmonies } = performPiano(r, level);
   const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level, voiceAt) }).mpm;
   const voiceData = performMsmToData({ msm: r.msm, mpm: voiceMpm });
   const dynamics = performMsmToData({ msm: r.msm, mpm: withSubNoteDynamics(voiceMpm) });
@@ -134,10 +122,6 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
     open: r.engine.states(voice.openScore, maxStates),
   };
   const t3 = performance.now();
-  const { notes, sustain } = readPerformance(pianoData);
-  repair(notes);
-  const harmonies = readPerformance(harmoniesData);
-  repair(harmonies.notes);
   const timings: Timings = { espressivo: t1 - t0, hummer: t2 - t1, gestures: t3 - t2 };
   const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;
   const seams = voice.seams
@@ -157,8 +141,8 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
       duration: ((states.closed.count - 1) * STATE_STEP) / SAMPLE_RATE,
       bars: voice.bars,
       clock: { ticks: voice.clock.ticks, ms: voice.clock.ms },
-      piano: pianoNotes(notes, sustain),
-      harmonies: pianoNotes(harmonies.notes, harmonies.sustain),
+      piece,
+      harmonies,
       timings,
       stateCount: states.closed.count,
       seams,
