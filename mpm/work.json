@@ -11,6 +11,576 @@
       }
     },
     {
+      "id": "abc327ad-4a25-4002-9c3f-40cdade2cf9e",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -15,
+        "noteIDs": [
+          "nd80ywu",
+          "n1yas34a",
+          "n1obi0t8",
+          "n1ubfgy0",
+          "nrbga5m",
+          "ntu78d0",
+          "nh71je6",
+          "n105patq",
+          "n1yb3fgn",
+          "n1rph3w3",
+          "nxj8uux",
+          "n80m4vn",
+          "n1h9lqkp",
+          "ncr5i92",
+          "n12yqrz8",
+          "nu3c214",
+          "nw4587c",
+          "n1ewgtq3",
+          "n1vmhu38",
+          "n1273g3u",
+          "nrma14f",
+          "nh1xkvc",
+          "nuygr2l",
+          "n1rj5zce",
+          "nrjozf4",
+          "n15idfx1",
+          "n1gal8jt",
+          "nug82qr",
+          "nsaytqf",
+          "n1ayu725",
+          "nblqaln",
+          "ndk2f5a",
+          "n1t9pywj",
+          "n1wnssb3",
+          "n9bflex",
+          "n1eudopy",
+          "n5fmh88",
+          "n1g16m33",
+          "n1q1eidl",
+          "nn61gi6",
+          "negi5d2",
+          "nxm18jk",
+          "n1woldc5",
+          "nxj6lah",
+          "n1aq7lwx",
+          "n1qu7m3y",
+          "neu2xna",
+          "n4vqmkc-rend2",
+          "n10g2bbj-rend2",
+          "ntu78d0-rend2",
+          "n1yb3fgn-rend2",
+          "n1rph3w3-rend2",
+          "ni5wp4g-rend2",
+          "nxj8uux-rend2",
+          "n1v81yp6-rend2",
+          "n1ewgtq3-rend2",
+          "n1vmhu38-rend2",
+          "n18s8imu-rend2",
+          "n1rj5zce-rend2",
+          "n15idfx1-rend2",
+          "n6knmhg-rend2",
+          "n30gj7x-rend2",
+          "n1wi1vv4-rend2",
+          "n1gal8jt-rend2",
+          "nug82qr-rend2",
+          "nsaytqf-rend2",
+          "n1ayu725-rend2",
+          "nblqaln-rend2",
+          "ndk2f5a-rend2",
+          "n9bflex-rend2",
+          "n1uy01i7-rend2",
+          "n5fmh88-rend2",
+          "n1g16m33-rend2",
+          "n1q1eidl-rend2",
+          "ntt204r-rend2",
+          "n7cbkms-rend2",
+          "n72gs54-rend2",
+          "negi5d2-rend2",
+          "n1woldc5-rend2",
+          "nc05e7t-rend2",
+          "no9jks4-rend2",
+          "neu2xna-rend2",
+          "nalznu1-rend2",
+          "n1gojfmr",
+          "n5u1hcx",
+          "n5nysb5",
+          "nbn54ti",
+          "neg1mzs",
+          "nyt9pai",
+          "n1gydxff",
+          "n1xrytus",
+          "nf58gnm",
+          "n8ktpzu",
+          "n1b1x96n",
+          "nrq15ic",
+          "n1jkvyel",
+          "nxm2ouz",
+          "n1w4q0p7",
+          "n12o6arg",
+          "nn3fv9c",
+          "n1i87jv4",
+          "ndr0b0t",
+          "nukoobp",
+          "njmdnew",
+          "n1oj565h",
+          "n9e28c5",
+          "n1tf5y4p",
+          "nbg2wsu",
+          "n1jvwgn1",
+          "n18wt6zr",
+          "nkzo23o",
+          "n19r71p",
+          "ne23mm",
+          "n1daxsdz",
+          "n4yp3ca",
+          "ntct390",
+          "n11bq8gx",
+          "nkm23ji",
+          "n1n8d528",
+          "n1yr8ak2",
+          "nnq12pc",
+          "n1wmk5oy",
+          "nrx4267",
+          "n106t88r",
+          "n1uzdgsy",
+          "n1das3a4",
+          "n21ql58",
+          "n1fgvf8",
+          "n1kq1vgo",
+          "n1h3q1xa",
+          "nlynh35",
+          "nwzza18",
+          "n1mrqvbh",
+          "n1n3f1wh",
+          "n1sdtoih",
+          "nkn8twe",
+          "n1qpw3rr",
+          "nrerwmn",
+          "nvo7t6h",
+          "ninh7ne",
+          "nv57jn4",
+          "n1rd0xeb",
+          "n1xgu3l9",
+          "n1ey09c6",
+          "nh8j2tc",
+          "n1kpi3zo",
+          "napoy3h",
+          "n2flj9f",
+          "n1nqlb5b",
+          "nmkz0qu",
+          "nmvtw2i",
+          "n9borlx",
+          "n1ajwzom",
+          "n1r7cqm8",
+          "noul1y4",
+          "niemthr",
+          "n12des2z",
+          "n1uoxl4l",
+          "n1kmo182",
+          "n1hcubn9",
+          "n1dj8c44",
+          "n1pf4x9p",
+          "nh7btqp",
+          "nzg3ymt",
+          "n1cc677x",
+          "netx6tx",
+          "n5biyt4",
+          "n1dkdu1",
+          "n1tx276h",
+          "n16w4euy",
+          "n14kyg9r",
+          "niduwx5",
+          "n9oo343",
+          "n1ennzqw",
+          "n1wgljx2",
+          "n8biwve",
+          "n1qurr9w"
+        ]
+      },
+      "range": {
+        "from": 1440,
+        "to": 91440
+      }
+    },
+    {
+      "id": "8463b29f-36ab-4d77-83f9-4d9739316364",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -14,
+        "noteIDs": [
+          "n4vqmkc",
+          "n1ogvejs",
+          "n1qzl4hr",
+          "n3tz9qd",
+          "n1i66osm",
+          "n1ml02qv",
+          "n116bigf",
+          "n1sw27dc",
+          "n43bpi4",
+          "n1hdo2gg",
+          "naq8f7d",
+          "ni5wp4g",
+          "n1v81yp6",
+          "n1qopko1",
+          "nfl0rmk",
+          "n171h9f6",
+          "ntj2e8n",
+          "n1pkbpqe",
+          "n18s8imu",
+          "n7e8ajb",
+          "n6knmhg",
+          "n30gj7x",
+          "n1wi1vv4",
+          "n104mme9",
+          "nt5mh08",
+          "nu68um5",
+          "n1lt30h1",
+          "n1tg2sth",
+          "n1szwl1m",
+          "ne7iads",
+          "n1n9s7yx",
+          "n4tf26j",
+          "n13ad33c",
+          "n1uy01i7",
+          "n1ynqscg",
+          "nlus68v",
+          "n1f7pg0g",
+          "nlnxt25",
+          "ntt204r",
+          "n7cbkms",
+          "n72gs54",
+          "nc05e7t",
+          "no9jks4",
+          "nalznu1",
+          "nd80ywu-rend2",
+          "n1yas34a-rend2",
+          "n1obi0t8-rend2",
+          "n1ubfgy0-rend2",
+          "nrbga5m-rend2",
+          "n1ogvejs-rend2",
+          "n1qzl4hr-rend2",
+          "nv84jxp-rend2",
+          "n162mama-rend2",
+          "nh71je6-rend2",
+          "n3tz9qd-rend2",
+          "n105patq-rend2",
+          "n1i66osm-rend2",
+          "n1ml02qv-rend2",
+          "n116bigf-rend2",
+          "n43bpi4-rend2",
+          "n1hdo2gg-rend2",
+          "naq8f7d-rend2",
+          "n1ix0t3p-rend2",
+          "n80m4vn-rend2",
+          "n1qopko1-rend2",
+          "n1h9lqkp-rend2",
+          "ncr5i92-rend2",
+          "nfl0rmk-rend2",
+          "n12yqrz8-rend2",
+          "nu3c214-rend2",
+          "nw4587c-rend2",
+          "n171h9f6-rend2",
+          "n1273g3u-rend2",
+          "nrma14f-rend2",
+          "nh1xkvc-rend2",
+          "nuygr2l-rend2",
+          "nrjozf4-rend2",
+          "n7e8ajb-rend2",
+          "n18bx34c-rend2",
+          "n1nt4vth-rend2",
+          "nt5mh08-rend2",
+          "nu68um5-rend2",
+          "n1lt30h1-rend2",
+          "n1tg2sth-rend2",
+          "n1t9pywj-rend2",
+          "n1wnssb3-rend2",
+          "n1szwl1m-rend2",
+          "ne7iads-rend2",
+          "n1n9s7yx-rend2",
+          "n1eudopy-rend2",
+          "n4tf26j-rend2",
+          "n13ad33c-rend2",
+          "n1ynqscg-rend2",
+          "nn61gi6-rend2",
+          "nlus68v-rend2",
+          "n1f7pg0g-rend2",
+          "nlnxt25-rend2",
+          "n1qoq9d6-rend2",
+          "nxm18jk-rend2",
+          "n1qt93kv",
+          "n1dddcnp",
+          "nq3miud",
+          "n1hh8ny7",
+          "n12igpp6",
+          "n1diq0re",
+          "nnvjq93",
+          "n12kv12s",
+          "nzsoxz2",
+          "nh8rhao",
+          "n1ubdq6b",
+          "ngrsvqi",
+          "n12gko3a",
+          "n1oo2nf3",
+          "n12abewe",
+          "n6n2m0o",
+          "n1y1ooj",
+          "n1619a7x",
+          "n17azrn2",
+          "nps5o4g",
+          "n15uh9gq",
+          "n1rdm3it",
+          "ns7w3yx",
+          "n1f4kg3w",
+          "nccuymd",
+          "n146z984",
+          "n6f5s8u",
+          "ncyeubn",
+          "nnbtfo3",
+          "n7qjuyp",
+          "nvfwbn8",
+          "n9qremk",
+          "nkkxtbx",
+          "n8exyzq",
+          "nljgblh",
+          "nm6p2kc",
+          "n734q5i",
+          "n8io0h4",
+          "n1a7tss7",
+          "n1o2z40g",
+          "n51m1q",
+          "nwx023v",
+          "n1d897no",
+          "n16qnxnb",
+          "n1fo3s7x",
+          "n1bcemst",
+          "na5fmln",
+          "n1upvcik",
+          "n6y72zs",
+          "n2oaybz",
+          "n1i60aan",
+          "ni0peq7",
+          "n11xjvx3",
+          "n1f7rb5h",
+          "n1w9qztw",
+          "ntulbgi",
+          "n1ovdmwz",
+          "n1a1rtly",
+          "notbuk2",
+          "n1kr29sz",
+          "ngipoh7",
+          "n96slkt",
+          "nazvjqs",
+          "nyugz05",
+          "n1uye991",
+          "n1qybs75",
+          "n1xofq7a",
+          "nc829zl",
+          "nnd6j3e",
+          "nax4mru",
+          "n13zueey",
+          "n104n1t1",
+          "nomyb1w",
+          "n1b1dxbk",
+          "n1ck8irg",
+          "nl57kn6",
+          "nbfrkhj",
+          "n1ajvrni"
+        ]
+      },
+      "range": {
+        "from": 720,
+        "to": 90000
+      }
+    },
+    {
+      "id": "2a2033f7-384f-46cd-8fa1-12bc2e95a1c2",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -13,
+        "noteIDs": [
+          "npk4lw6",
+          "nxbdd6x",
+          "n1nv0ztz",
+          "n1ix0t3p",
+          "nlbef7n",
+          "nusg357",
+          "n8cacvt",
+          "nhbmeod",
+          "n1nt4vth",
+          "n1qoq9d6",
+          "n8645ck",
+          "nxbdd6x-rend2",
+          "n1nv0ztz-rend2",
+          "n1sw27dc-rend2",
+          "nlbef7n-rend2",
+          "ntj2e8n-rend2",
+          "n1pkbpqe-rend2",
+          "n8cacvt-rend2",
+          "n3vsg4k-rend2",
+          "n115d2p7-rend2",
+          "nhbmeod-rend2",
+          "n104mme9-rend2",
+          "nxj6lah-rend2",
+          "n1aq7lwx-rend2",
+          "n1qu7m3y-rend2",
+          "n8645ck-rend2",
+          "nicjai7",
+          "n3cigbz",
+          "n1cd1now",
+          "n1wnb9gd",
+          "n1mtexet",
+          "njybem0",
+          "njlj1ol",
+          "n1wk0yl8",
+          "nr2w40x",
+          "n1bu3z2m",
+          "n15u273y",
+          "n1hd827s",
+          "nln4n4s"
+        ]
+      },
+      "range": {
+        "from": 0,
+        "to": 84240
+      }
+    },
+    {
+      "id": "ae0198a4-0d70-4355-bf03-1102b6f8aa83",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -12,
+        "noteIDs": [
+          "n10g2bbj",
+          "n162mama",
+          "n3x6yrh",
+          "n3vsg4k",
+          "n115d2p7",
+          "nusg357-rend2",
+          "n3x6yrh-rend2",
+          "nmcrdu5-rend2",
+          "ntgel2l",
+          "n1vktx96",
+          "nvlszd",
+          "n1d8eyr1",
+          "nel8wtc",
+          "n1l7fz88",
+          "nzj3vm0",
+          "n1yjao9g",
+          "n37omq0",
+          "n1th2zai",
+          "nd7zg49",
+          "nvzg0f1",
+          "nmr4y85",
+          "nwqgwkz",
+          "n5irkqt",
+          "n1z0ua2q",
+          "n1so03gq",
+          "np65yn7",
+          "n1wi5y4d"
+        ]
+      },
+      "range": {
+        "from": 3600,
+        "to": 83520
+      }
+    },
+    {
+      "id": "4b550591-05fc-42a3-abcf-34dec9e9a4a1",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -11,
+        "noteIDs": [
+          "nv84jxp",
+          "nmcrdu5",
+          "n18bx34c",
+          "nq5a381",
+          "n31oyt7",
+          "nap2mb5",
+          "n1gj9vis",
+          "n1i5ujk",
+          "nqbn6v7",
+          "n1wyaxu1",
+          "ntbn0u4",
+          "n24lxzb",
+          "n68c87b",
+          "nmus63s",
+          "n158xhp4"
+        ]
+      },
+      "range": {
+        "from": 3960,
+        "to": 89640
+      }
+    },
+    {
+      "id": "2b969de3-22df-4879-a0ac-dabe3ccffb41",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -10,
+        "noteIDs": [
+          "n4pgv9b",
+          "nx5c5ea",
+          "n1njss1z",
+          "ne9jc0c",
+          "n1v86dzt",
+          "n1bpwvh2",
+          "n1eurgxv",
+          "nl2s10u"
+        ]
+      },
+      "range": {
+        "from": 48960,
+        "to": 89640
+      }
+    },
+    {
+      "id": "2998e865-122d-4726-bd04-e0a6b210ed5f",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -9,
+        "noteIDs": [
+          "np0a80i",
+          "ny3j1yd",
+          "nkpzuzt",
+          "n811bdd",
+          "n1jeevyo"
+        ]
+      },
+      "range": {
+        "from": 50040,
+        "to": 61920
+      }
+    },
+    {
+      "id": "437ce3ca-bb50-402c-89a7-c27a04c7370b",
+      "name": "Modify",
+      "options": {
+        "scope": "global",
+        "aspect": "velocity",
+        "change": -8,
+        "noteIDs": [
+          "njdnyph",
+          "n8ifr85"
+        ]
+      },
+      "range": {
+        "from": 61200,
+        "to": 61920
+      }
+    },
+    {
       "id": "9f8b5d24-4423-431f-80dc-5178e79af043",
       "name": "Modify",
       "options": {
@@ -18,7 +588,7 @@
         "to": 1440,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 1440,
@@ -78,7 +648,7 @@
         "to": 18360,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 16920,
@@ -93,7 +663,7 @@
         "to": 18000,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 17640,
@@ -132,7 +702,7 @@
           "value": [
             [
               18000,
-              31
+              11
             ]
           ]
         },
@@ -177,7 +747,7 @@
         "to": 20160,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 19800,
@@ -192,7 +762,7 @@
         "to": 20160,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 20160,
@@ -266,7 +836,7 @@
         "to": 30600,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 30600,
@@ -355,7 +925,7 @@
         "to": 36000,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 36000,
@@ -519,7 +1089,7 @@
         "to": 40680,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 40680,
@@ -569,7 +1139,7 @@
         "to": 43200,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 43200,
@@ -699,7 +1269,7 @@
       "options": {
         "scope": "global",
         "aspect": "velocity",
-        "change": -3,
+        "change": -6,
         "noteIDs": [
           "ntu78d0"
         ]
@@ -715,7 +1285,7 @@
       "options": {
         "scope": "global",
         "aspect": "velocity",
-        "change": -2,
+        "change": -4,
         "noteIDs": [
           "nh71je6"
         ]
@@ -753,7 +1323,7 @@
           "value": [
             [
               5760,
-              41
+              28
             ]
           ]
         },
@@ -776,7 +1346,7 @@
       "options": {
         "scope": "global",
         "aspect": "velocity",
-        "change": -2,
+        "change": -4,
         "noteIDs": [
           "n1rj5zce-rend2"
         ]
@@ -817,15 +1387,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              41
+              28
             ]
           ]
         },
@@ -875,7 +1445,7 @@
         "to": 44280,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 44280,
@@ -1087,7 +1657,7 @@
         "to": 45720,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 45720,
@@ -1220,7 +1790,7 @@
         "to": 55800,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 55800,
@@ -1235,7 +1805,7 @@
         "to": 56160,
         "scope": "global",
         "aspect": "velocity",
-        "change": -5
+        "change": -10
       },
       "range": {
         "from": 56160,
@@ -1273,23 +1843,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1316,23 +1886,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1357,7 +1927,7 @@
         "to": 61200,
         "scope": "global",
         "aspect": "velocity",
-        "change": -5
+        "change": -10
       },
       "range": {
         "from": 56520,
@@ -1395,23 +1965,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1436,7 +2006,7 @@
         "to": 57240,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 57240,
@@ -1468,7 +2038,7 @@
         "to": 66240,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 65880,
@@ -1483,7 +2053,7 @@
         "to": 66240,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 66240,
@@ -1577,7 +2147,7 @@
         "to": 67680,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 67320,
@@ -1592,7 +2162,7 @@
         "to": 67680,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 67680,
@@ -1668,7 +2238,7 @@
         "to": 68760,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 68760,
@@ -1685,23 +2255,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1728,23 +2298,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1771,23 +2341,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1812,7 +2382,7 @@
         "to": 69480,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 69480,
@@ -1847,23 +2417,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -1928,7 +2498,7 @@
         "to": 70560,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 70560,
@@ -2022,7 +2592,7 @@
         "to": 76680,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 76680,
@@ -2211,7 +2781,7 @@
         "to": 78120,
         "scope": "global",
         "aspect": "velocity",
-        "change": -1
+        "change": -2
       },
       "range": {
         "from": 78120,
@@ -2375,7 +2945,7 @@
         "to": 80280,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 80280,
@@ -2453,7 +3023,7 @@
         "to": 82080,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 82080,
@@ -2509,23 +3079,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -2611,7 +3181,7 @@
         "to": 86760,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 86760,
@@ -2748,7 +3318,7 @@
         "to": 91440,
         "scope": "global",
         "aspect": "velocity",
-        "change": -3
+        "change": -6
       },
       "range": {
         "from": 90360,
@@ -2783,23 +3353,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -2824,7 +3394,7 @@
         "to": 91080,
         "scope": "global",
         "aspect": "velocity",
-        "change": -2
+        "change": -4
       },
       "range": {
         "from": 91080,
@@ -2855,7 +3425,7 @@
       "options": {
         "scope": "global",
         "aspect": "velocity",
-        "change": -1,
+        "change": -2,
         "noteIDs": [
           "negi5d2"
         ]
@@ -3245,15 +3815,15 @@
           "value": [
             [
               5760,
-              39
+              25
             ],
             [
               7200,
-              37
+              23
             ],
             [
               6480,
-              37
+              23
             ]
           ]
         },
@@ -4211,7 +4781,7 @@
           "value": [
             [
               11520,
-              38
+              24
             ]
           ]
         },
@@ -4332,7 +4902,7 @@
           "value": [
             [
               18000,
-              33
+              13
             ]
           ]
         },
@@ -4450,7 +5020,7 @@
           "value": [
             [
               18000,
-              31
+              11
             ]
           ]
         },
@@ -5142,7 +5712,7 @@
           "value": [
             [
               41040,
-              38
+              24
             ]
           ]
         },
@@ -5265,7 +5835,7 @@
           "value": [
             [
               41040,
-              38
+              24
             ]
           ]
         },
@@ -5359,11 +5929,11 @@
           "value": [
             [
               14040,
-              41
+              28
             ],
             [
               14400,
-              46
+              35
             ]
           ]
         },
@@ -5577,15 +6147,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -5810,15 +6380,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -5884,15 +6454,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -6076,23 +6646,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -6935,23 +7505,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -7053,23 +7623,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -7232,23 +7802,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -7683,7 +8253,7 @@
           "value": [
             [
               5760,
-              39
+              25
             ]
           ]
         },
@@ -8064,15 +8634,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              39
+              25
             ]
           ]
         },
@@ -8120,15 +8690,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              41
+              28
             ]
           ]
         },
@@ -8176,15 +8746,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              41
+              28
             ]
           ]
         },
@@ -8254,7 +8824,7 @@
           "value": [
             [
               41040,
-              34
+              19
             ]
           ]
         },
@@ -8358,11 +8928,11 @@
           "value": [
             [
               41040,
-              34
+              19
             ],
             [
               46800,
-              46
+              35
             ]
           ]
         },
@@ -8462,15 +9032,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -8497,15 +9067,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -8698,23 +9268,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -8825,23 +9395,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -9055,23 +9625,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -9098,23 +9668,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -9476,7 +10046,7 @@
           "value": [
             [
               11520,
-              38
+              24
             ]
           ]
         },
@@ -9541,23 +10111,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -9715,15 +10285,15 @@
           "value": [
             [
               5760,
-              39
+              25
             ],
             [
               7200,
-              37
+              23
             ],
             [
               6480,
-              37
+              23
             ]
           ]
         },
@@ -9751,11 +10321,11 @@
           "value": [
             [
               14040,
-              41
+              28
             ],
             [
               14400,
-              42
+              30
             ]
           ]
         },
@@ -9825,15 +10395,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              39
+              25
             ]
           ]
         },
@@ -9860,15 +10430,15 @@
           "value": [
             [
               30240,
-              36
+              21
             ],
             [
               31680,
-              39
+              25
             ],
             [
               28800,
-              39
+              25
             ]
           ]
         },
@@ -9957,11 +10527,11 @@
           "value": [
             [
               41040,
-              34
+              19
             ],
             [
               46800,
-              43
+              31
             ]
           ]
         },
@@ -9988,15 +10558,15 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              38
+              24
             ]
           ]
         },
@@ -10023,23 +10593,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -10066,23 +10636,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              41
+              28
             ]
           ]
         },
@@ -10109,23 +10679,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
@@ -10152,23 +10722,23 @@
           "value": [
             [
               46800,
-              43
+              31
             ],
             [
               48960,
-              48
+              38
             ],
             [
               54360,
-              44
+              32
             ],
             [
               54720,
-              43
+              31
             ],
             [
               78840,
-              47
+              36
             ]
           ]
         },
