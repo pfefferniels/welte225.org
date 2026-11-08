@@ -104,10 +104,10 @@ to spare, at most four). Each prepares the level itself, and renders the chunks 
 handed: the voice is cut where it is silent, 250 ms after the lungs have stopped pushing air, when
 it is some 100 dB down, so the chunks join without a seam. They are handed out in the order they
 will be heard, from where playback is to the end and then from the beginning, and streamed to the
-page in blocks with their spectrogram columns. Of the work, VocalTractLab's acoustics take four
-fifths and its geometry one fifth; the spectrogram adds a twentieth. Three workers render the
-voice 3.8 times as fast as it plays where one rendered it 1.3 times as fast (on four cores of a
-cloud server); the first sound comes as soon. The page (`src/page/`) plays the
+page in blocks with their spectrogram columns. Of the work, VocalTractLab's acoustics take three
+quarters and its geometry a fifth; the spectrogram adds a twentieth. Three workers render the
+voice 5.3 times as fast as it plays where one renders it 1.9 times as fast (in Chromium on four
+cores of a cloud server); the first sound comes as soon. The page (`src/page/`) plays the
 voice as it arrives, plays the roll on a sampled grand from the same performance, holds notes with
 the sustain pedal as the roll does, and sends both into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
