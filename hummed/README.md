@@ -4,12 +4,15 @@ Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 22
 roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
 the browser by VocalTractLab, for any exaggeration of the performance from 0 to 2.
 
-<https://welte225.org/hummed/>
+<https://welte225.org/>: the site's front page. The page is the repository's root `index.html`;
+it loads everything else from here (`<base href="/hummed/">`), and `/hummed/` itself sends
+visitors on to it.
 
 The page shows the hum's spectrogram filling the window, scrolling under a playhead. Over it, on
 the left, three faders: the piano, the humming, and the exaggeration; on the right, the
 transport. Moving the exaggeration renders the voice anew and takes it over at the same place in
-the score.
+the score. A small info button opens a card saying what this is, with the credits and a link to
+the overview of the site's projects (`/overview/`).
 
 ## What is hummed: a reduction for a pianist's voice
 
@@ -103,7 +106,7 @@ of its chord, and gives a note that ends too early a length, before the piano or
 
 | Path                             | What it is                                                                                                                        |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `index.html`, `style.css`        | the page                                                                                                                          |
+| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                   |
 | `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is           |
 | `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                        |
 | `src/reduction/`                 | reading the reduction's MEI                                                                                                       |
@@ -132,11 +135,11 @@ npm ci
 npm run check        # types (tsc, strict), lint (typescript-eslint, strict, type-aware), format, tests
 npm run build        # app.js and worker.js
 npm run calibrate    # after changing the reduction, the hum style or the reconstruction
-npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks
+npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info
 ```
 
-Serve the repository root (`python3 -m http.server`) and open `/hummed/`: the page fetches
-`../mpm/`.
+Serve the repository root (`python3 -m http.server`) and open `/`: the page loads `/hummed/` and
+`/mpm/`.
 
 `test/voice.test.ts` holds the voice to a fingerprint (`test/golden.json`), taken when the
 TypeScript was shown to produce gestural scores byte for byte identical to the JavaScript it

@@ -8,7 +8,8 @@ and the place where the data about that roll is published.
 
 | Path | Content |
 |---|---|
-| `/` | the landing page |
+| `/` | the front page: *Träumerei, hummed* (below, `/hummed/`), with an info card leading to the overview |
+| `/overview/` | the overview: the projects of the dissertation, the data, the identifiers |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/rules` | the editorial principles the edition follows, named by its creation (`principles`, CRM P33 used specific technique) and by an inference that applies one (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
@@ -18,7 +19,7 @@ and the place where the data about that roll is published.
 | `/licensee-225/` | the comparison of Peter Phillips's and Philippe Gourlin's Licensee copies with the edition's versions: scripts and derived data, cited by the edition's beliefs about version D3, the lost state B2 and Gourlin's copy |
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table: scripts and derived data. The corpus behind it, a dated control and Stanford's red rolls, is kept in condon-dates |
-| `/hummed/` | *Träumerei, hummed*: the performance with a pianist's inner voice humming along, rendered live by VocalTractLab from `/mpm/` and a reduction written in MEI; its TypeScript sources, data and research (`hummed/README.md`) |
+| `/hummed/` | *Träumerei, hummed*, the front page's files: the performance with a pianist's inner voice humming along, rendered live by VocalTractLab from `/mpm/` and a reduction written in MEI; its TypeScript sources, data and research (`hummed/README.md`). `/hummed/` itself sends visitors on to `/` |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages

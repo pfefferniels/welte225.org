@@ -213,18 +213,68 @@ input[type='range']:disabled {
   cursor: progress;
 }
 
-.credit {
+/* the info: a small button at the top right, and a card it opens (a popover: it closes on a click
+   anywhere else or on Escape, and covers nothing until asked) */
+.info-button {
   position: fixed;
+  top: max(10px, env(safe-area-inset-top, 0px));
   right: var(--gutter);
-  top: max(4px, env(safe-area-inset-top, 0px));
-  padding: 1px 6px;
-  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
   background: var(--panel);
   color: var(--muted);
-  font-size: 11px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
-.credit a {
-  color: inherit;
+.info-button:hover,
+.info-button:focus-visible {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+.info-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.info-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.info-card {
+  position: fixed;
+  inset: auto;
+  top: calc(max(10px, env(safe-area-inset-top, 0px)) + 38px);
+  right: var(--gutter);
+  margin: 0;
+  width: min(340px, calc(100vw - 2 * var(--gutter)));
+  padding: 14px 16px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.94);
+  color: var(--fg);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.info-card h1 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.info-card p {
+  margin: 0 0 8px;
+}
+.info-card a {
+  color: var(--fg);
+}
+.info-card .credits {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
 }
 
 @media (max-width: 640px) {

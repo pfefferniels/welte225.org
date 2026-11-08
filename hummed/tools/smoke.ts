@@ -1,5 +1,6 @@
-// The page in a real browser: serve the site (the repository root, as GitHub Pages does), open
-// /hummed/, play, switch the exaggeration, seek, and fail on any page error. Needs Playwright with
+// The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
+// front page, play, switch the exaggeration, seek, open and close the info card, and fail on any
+// page error. Needs Playwright with
 // Chromium installed (not a dependency of this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -16,6 +17,7 @@ interface Page {
   textContent(selector: string): Promise<string | null>;
   click(selector: string): Promise<void>;
   waitForTimeout(ms: number): Promise<void>;
+  readonly keyboard: { press(key: string): Promise<void> };
   on(event: 'pageerror', listener: (error: Error) => void): void;
   on(event: 'console', listener: (message: { type(): string; text(): string }) => void): void;
 }
@@ -73,7 +75,7 @@ try {
     );
   };
   const started = Date.now();
-  await page.goto(`http://localhost:${port}/hummed/`);
+  await page.goto(`http://localhost:${port}/`);
   await page.waitForFunction("!document.getElementById('play').disabled", undefined, { timeout: 90000 });
   await report(`ready in ${((Date.now() - started) / 1000).toFixed(1)} s`);
   await page.click('#play');
@@ -97,6 +99,14 @@ try {
   );
   await page.waitForTimeout(5000);
   await report('seeked to 1:30');
+  const cardOpen = (): Promise<boolean> =>
+    page.evaluate("document.getElementById('info').matches(':popover-open')");
+  await page.click('.info-button');
+  const opened = await cardOpen();
+  await page.keyboard.press('Escape');
+  const closed = !(await cardOpen());
+  console.log(`info card: opens ${opened}, closes on Escape ${closed}`);
+  if (!opened || !closed) errors.push('the info card does not open and close');
 } finally {
   await browser.close();
   server.close();
