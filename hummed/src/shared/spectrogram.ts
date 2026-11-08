@@ -1,14 +1,52 @@
-/** The spectrogram both sides draw: 360 log-spaced rows from 70 Hz to 4.5 kHz, 100 columns per second. */
+// How the voice is drawn: 360 log-spaced rows, 100 columns per second, black on white, in one of
+// two styles. The full spectrogram shows the hum's harmonics up to 4.5 kHz in decibels; the melodic
+// range (after Sonic Visualiser's "Melodic Range Spectrogram") shows 40 Hz to 1.5 kHz with a long
+// window and in amplitude rather than decibels, so the sung line and its first harmonics stand out.
+
+/** What the page and the worker share about every style. */
 export const SPECTROGRAM = {
   rows: 360,
-  fmin: 70,
-  fmax: 4500,
   columnsPerSecond: 100,
   /** Samples between columns. */
   hop: 441,
-  window: 4096,
-  fftSize: 8192,
-  /** The level drawn darkest, dB, and the range below it that is drawn at all. */
-  topDb: 41.09,
-  rangeDb: 60,
 } as const;
+
+/** How a level becomes a grey. */
+export type SpectrogramScale =
+  /** Decibels: `topDb` (of the raw FFT magnitude) darkest, `rangeDb` below it white. */
+  | { readonly kind: 'db'; readonly topDb: number; readonly rangeDb: number }
+  /** Amplitude: `full` (raw FFT magnitude) darkest, the fraction of it raised to `power`. */
+  | { readonly kind: 'amplitude'; readonly full: number; readonly power: number };
+
+export interface SpectrogramStyle {
+  readonly fmin: number;
+  readonly fmax: number;
+  /** The analysis window (Hann), and the FFT it is zero-padded to. */
+  readonly window: number;
+  readonly fftSize: number;
+  readonly scale: SpectrogramScale;
+}
+
+export const SPECTROGRAM_STYLES = {
+  full: {
+    fmin: 70,
+    fmax: 4500,
+    window: 4096,
+    fftSize: 8192,
+    scale: { kind: 'db', topDb: 41.09, rangeDb: 60 },
+  },
+  // the voice's strongest partials (the 99th percentile of each column's peak) at full black; the
+  // power lifts the weaker harmonics into view as a light ladder above the line
+  melodic: {
+    fmin: 40,
+    fmax: 1500,
+    window: 8192,
+    fftSize: 8192,
+    scale: { kind: 'amplitude', full: 217, power: 0.6 },
+  },
+} as const satisfies Record<string, SpectrogramStyle>;
+
+export type SpectrogramStyleName = keyof typeof SPECTROGRAM_STYLES;
+
+export const isSpectrogramStyleName = (name: string | null): name is SpectrogramStyleName =>
+  name !== null && Object.hasOwn(SPECTROGRAM_STYLES, name);

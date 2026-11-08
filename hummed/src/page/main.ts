@@ -1,6 +1,7 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
 import type { FromWorker, ToWorker } from '../shared/protocol.ts';
+import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
 import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
@@ -20,6 +21,10 @@ const statusLine = element('status', HTMLElement);
 const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
 const barText = element('bar', HTMLElement);
+
+// the spectrogram's style: the full one, or ?spectrogram=melodic for the melodic range
+const requestedStyle = new URLSearchParams(location.search).get('spectrogram');
+const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle : 'full';
 
 const graph = createAudioGraph();
 const piano = new PianoSampler(graph.context, graph.piano);
@@ -49,7 +54,7 @@ function updateReadout(): void {
   positionSlider.setAttribute('aria-valuetext', `${formatTime(t)}, ${bar.toLowerCase()}`);
 }
 
-const view = new SpectrogramView(canvas, () => {
+const view = new SpectrogramView(canvas, SPECTROGRAM_STYLES[spectrogramStyle], () => {
   redraw();
 });
 function redraw(): void {
@@ -174,7 +179,11 @@ async function start(): Promise<void> {
   const response = await fetch('reduction/reduction.mei');
   if (!response.ok) throw new Error(`reduction.mei: ${response.status}`);
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
-  const setup: ToWorker = { type: 'setup', reduction: readReduction(doc.documentElement) };
+  const setup: ToWorker = {
+    type: 'setup',
+    reduction: readReduction(doc.documentElement),
+    spectrogram: spectrogramStyle,
+  };
   worker.postMessage(setup);
   player.request(1, { seconds: 0 });
   setStatus('Starting VocalTractLab…');

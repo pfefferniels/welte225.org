@@ -1,9 +1,10 @@
 // The strip: the spectrogram scrolling under a fixed playhead, note names, bar lines.
-import { SPECTROGRAM as SPEC } from '../shared/spectrogram.ts';
+import { SPECTROGRAM as SPEC, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import type { Seconds } from '../shared/units.ts';
 import { TILE, type Rendering } from './rendering.ts';
 
 const NOTE_NAMES: readonly (readonly [string, number])[] = [
+  ['C2', 65.41],
   ['C3', 130.81],
   ['C4', 261.63],
   ['C5', 523.25],
@@ -15,14 +16,16 @@ const NOTE_NAMES: readonly (readonly [string, number])[] = [
 export class SpectrogramView {
   readonly #canvas: HTMLCanvasElement;
   readonly #g: CanvasRenderingContext2D;
+  readonly #style: SpectrogramStyle;
   #width = 0;
   #height = 0;
   #dpr = 1;
 
-  constructor(canvas: HTMLCanvasElement, onResize: () => void) {
+  constructor(canvas: HTMLCanvasElement, style: SpectrogramStyle, onResize: () => void) {
     const g = canvas.getContext('2d');
     if (!g) throw new Error('no 2D canvas');
     this.#canvas = canvas;
+    this.#style = style;
     this.#g = g;
     new ResizeObserver(() => {
       this.#dpr = window.devicePixelRatio || 1;
@@ -46,7 +49,8 @@ export class SpectrogramView {
 
   #y(frequency: number): number {
     return (
-      ((Math.log(SPEC.fmax) - Math.log(frequency)) / (Math.log(SPEC.fmax) - Math.log(SPEC.fmin))) *
+      ((Math.log(this.#style.fmax) - Math.log(frequency)) /
+        (Math.log(this.#style.fmax) - Math.log(this.#style.fmin))) *
       this.#height
     );
   }

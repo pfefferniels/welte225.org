@@ -1,12 +1,13 @@
 // What the page and the worker say to each other.
 import type { Reduction } from '../reduction/types.ts';
+import type { SpectrogramStyleName } from './spectrogram.ts';
 import type { Midi, Seconds, Ticks } from './units.ts';
 
 /** Where a rendering starts: a place in the score (kept across levels) or a time in this level. */
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
 
 export type ToWorker =
-  | { readonly type: 'setup'; readonly reduction: Reduction }
+  | { readonly type: 'setup'; readonly reduction: Reduction; readonly spectrogram: SpectrogramStyleName }
   | { readonly type: 'render'; readonly id: number; readonly level: number; readonly start: StartAt };
 
 /** A piano note as the page plays it: held by the sustain pedal as on the roll. */

@@ -6,14 +6,14 @@ import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { readPerformance, renderVoice, repair, type Calibration, type HumStyle } from '../hummer/index.ts';
 import { interp } from '../shared/math.ts';
 import type { FromWorker, Plan, StartAt, Timings, ToWorker } from '../shared/protocol.ts';
-import { SPECTROGRAM } from '../shared/spectrogram.ts';
+import { SPECTROGRAM, SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { pianoFactors, voiceFactors, VOICE_LEAD, withSubNoteDynamics } from './levels.ts';
 import { pianoNotes } from './piano.ts';
-import { spectrogramColumns } from './spectrogram.ts';
+import { makeSpectrogram } from './spectrogram.ts';
 
 interface WorkerScope {
   postMessage(message: FromWorker, transfer?: Transferable[]): void;
@@ -132,16 +132,11 @@ const yieldNow = (() => {
 })();
 
 /** Render from the start to the end, then from the beginning up to the start; stop when a newer request comes. */
-async function render(
-  r: Resources,
-  hummed: Reduction,
-  id: number,
-  level: number,
-  start: StartAt,
-): Promise<void> {
+async function render(r: Resources, setup: Setup, id: number, level: number, start: StartAt): Promise<void> {
+  const { style, columns } = setup;
   if (prepared?.level !== level) {
     prepared = null;
-    prepared = prepare(r, hummed, level);
+    prepared = prepare(r, setup.reduction, level);
   }
   const L = prepared;
   if (id !== current) return;
@@ -176,8 +171,8 @@ async function render(
         const at = (block.firstState - 1) * STATE_STEP + skip;
         for (let i = 0; i < samples.length; i++) samples[i] *= gain;
         audio.set(samples, at);
-        const upto = Math.floor((at + samples.length - SPECTROGRAM.window / 2) / SPECTROGRAM.hop);
-        const pixels = upto > column ? spectrogramColumns(audio, column, upto) : null;
+        const upto = Math.floor((at + samples.length - style.window / 2) / SPECTROGRAM.hop);
+        const pixels = upto > column ? columns(audio, column, upto) : null;
         post(
           {
             type: 'audio',
@@ -197,11 +192,10 @@ async function render(
       // where the two passes meet: the first drew its first columns without the sound before
       const upto = Math.min(
         Math.floor(audio.length / SPECTROGRAM.hop),
-        Math.floor((first * STATE_STEP) / SPECTROGRAM.hop) +
-          Math.ceil(SPECTROGRAM.window / 2 / SPECTROGRAM.hop),
+        Math.floor((first * STATE_STEP) / SPECTROGRAM.hop) + Math.ceil(style.window / 2 / SPECTROGRAM.hop),
       );
       if (upto > column) {
-        const pixels = spectrogramColumns(audio, column, upto);
+        const pixels = columns(audio, column, upto);
         post(
           {
             type: 'audio',
@@ -218,24 +212,31 @@ async function render(
   post({ type: 'done', id });
 }
 
-let setupDone: (r: Reduction) => void = () => undefined;
-const reductionReady = new Promise<Reduction>((resolve) => {
+/** What the page sends once: what is hummed, and how to draw it. */
+interface Setup {
+  readonly reduction: Reduction;
+  readonly style: SpectrogramStyle;
+  readonly columns: (audio: Float32Array, first: number, end: number) => Uint8Array;
+}
+let setupDone: (setup: Setup) => void = () => undefined;
+const setupReady = new Promise<Setup>((resolve) => {
   setupDone = resolve;
 });
 
 scope.onmessage = (event) => {
   const message = event.data;
   if (message.type === 'setup') {
-    setupDone(message.reduction);
+    const style = SPECTROGRAM_STYLES[message.spectrogram];
+    setupDone({ reduction: message.reduction, style, columns: makeSpectrogram(style) });
     return;
   }
   current = message.id;
   void (async () => {
     try {
       resources ??= load();
-      const [r, hummed] = await Promise.all([resources, reductionReady]);
+      const [r, setup] = await Promise.all([resources, setupReady]);
       if (message.id !== current) return;
-      await render(r, hummed, message.id, message.level, message.start);
+      await render(r, setup, message.id, message.level, message.start);
     } catch (error) {
       post({
         type: 'error',
