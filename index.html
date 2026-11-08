@@ -32,7 +32,7 @@
     ></canvas>
 
     <div class="controls">
-      <section class="panel mix" aria-label="Elaboration and saturation">
+      <section class="panel mix" aria-label="Elaboration">
         <div class="fader">
           <span class="name">
             <label for="elaboration">Elaboration</label>
@@ -50,19 +50,6 @@
           </span>
           <input id="elaboration" class="split" type="range" min="0" max="100" step="1" value="65" />
           <output id="o-elaboration" for="elaboration">piece</output>
-        </div>
-        <div class="fader">
-          <span class="name">
-            <label for="saturation">Saturation</label>
-            <button class="hint" type="button" popovertarget="saturation-info" aria-label="About saturation">
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                <circle cx="10" cy="5.5" r="1.3" />
-                <path d="M8.4 8.5h2.6v6.3h1.5v1.4H7.6v-1.4h1.5V9.9h-.7z" />
-              </svg>
-            </button>
-          </span>
-          <input id="saturation" type="range" min="0" max="2" step="0.05" value="1" disabled />
-          <output id="o-saturation" for="saturation">×1.00</output>
         </div>
       </section>
 
@@ -121,31 +108,19 @@
     <section id="elaboration-info" class="card hint-card" popover aria-labelledby="elaboration-info-title">
       <h2 id="elaboration-info-title">Elaboration</h2>
       <p>
-        How much of the music is there. At the start, only the humming: what a pianist might hum while
-        playing, a bass line that moves between melody, tenor and bass, within about an octave, with a breath
-        wherever it changes hands. Then the harmonies come in under it, the piece reduced to its chords, and
-        the humming recedes. From the middle on, the piano plays the piece itself, and the humming goes on
-        quietly, as a pianist hums along. The barer the music, the further the voice exaggerates and the more
-        loosely it keeps to the pitch; a new setting of the voice is rendered once the fader rests.
+        How much of the music is there, and how refined it is. At the start, only the humming: what a pianist
+        might hum while playing, a bass line that moves between melody, tenor and bass, within about an
+        octave, with a breath wherever it changes hands, its gestures raw, twice as large as Grünfeld's and
+        loosely on pitch. Then the harmonies come in under it, the piece reduced to its chords, and the
+        humming recedes. From the middle on, the piano plays the piece itself, and the humming goes on
+        quietly, as a pianist hums along. The further along, the subtler it all becomes, until at the end the
+        piano plays Grünfeld's performance as the reconstruction sets it down.
       </p>
       <p>
         Each sung note takes its timing and loudness from the piano note it follows. VocalTractLab, a model of
         the human vocal tract, sings it as you listen, here in your browser: the lips, tongue and glottis
-        move, and the sound comes from the air passing through them.
-      </p>
-    </section>
-
-    <section id="saturation-info" class="card hint-card" popover aria-labelledby="saturation-info-title">
-      <h2 id="saturation-info-title">Saturation</h2>
-      <p>
-        How far the performance departs from the plain score, in tempo, rubato, dynamics, accents,
-        articulation, arpeggios and pedalling. At 0 the roll plays without expression, at 1 as Grünfeld played
-        it, at 2 with every deviation doubled; espressivo computes each from the reconstruction, for the piece
-        and its harmonies alike.
-      </p>
-      <p>
-        The voice always goes further than the piano, the more so the barer the music, except in timing, which
-        the two share. A new setting is rendered afresh and takes over at the same place in the piece.
+        move, and the sound comes from the air passing through them. A new setting is rendered once the fader
+        rests and takes over at the same place in the piece.
       </p>
     </section>
   </body>

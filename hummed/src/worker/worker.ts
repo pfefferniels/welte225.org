@@ -1,4 +1,4 @@
-// A voice worker: for a setting (saturation, elaboration), espressivo performs the exaggerated MPM (on the piece,
+// A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on the piece,
 // and on its harmonies for the piano's lower half), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk as the page hands them out, into sound, streamed to the page in blocks with their
@@ -14,7 +14,14 @@ import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { approximateness, pianoFactors, voiceFactors, voiceLead, withSubNoteDynamics } from './levels.ts';
+import {
+  approximateness,
+  pianoFactors,
+  pianoLevel,
+  voiceFactors,
+  voiceLevel,
+  withSubNoteDynamics,
+} from './levels.ts';
 import { pianoNotes } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
@@ -89,13 +96,14 @@ async function load(): Promise<Resources> {
 
 function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
   const t0 = performance.now();
-  const { level, elaboration } = setting;
-  const lead = voiceLead(elaboration);
+  const { elaboration } = setting;
+  const level = pianoLevel(elaboration);
+  const voiceAt = voiceLevel(elaboration);
   const piano = pianoFactors(level);
   const pianoMpm = piano ? exaggerateMpm(r.mpm, { factors: piano }).mpm : r.mpm;
   const pianoData = performMsmToData({ msm: r.msm, mpm: pianoMpm });
   const harmoniesData = performMsmToData({ msm: r.harmonies, mpm: pianoMpm });
-  const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level, lead) }).mpm;
+  const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level, voiceAt) }).mpm;
   const voiceData = performMsmToData({ msm: r.msm, mpm: voiceMpm });
   const dynamics = performMsmToData({ msm: r.msm, mpm: withSubNoteDynamics(voiceMpm) });
   const t1 = performance.now();
@@ -131,7 +139,8 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
     plan: {
       type: 'plan',
       setting,
-      voiceLevel: level + lead,
+      pianoLevel: level,
+      voiceLevel: voiceAt,
       // states i..j sound from i to j−1
       duration: ((states.closed.count - 1) * STATE_STEP) / SAMPLE_RATE,
       bars: voice.bars,
@@ -169,7 +178,7 @@ const setupReady = new Promise<Setup>((resolve) => {
 
 function levelOf(r: Resources, setup: Setup, setting: Setting): Level {
   const kept = prepared;
-  if (kept?.setting.level === setting.level && kept.setting.elaboration === setting.elaboration) return kept;
+  if (kept?.setting.elaboration === setting.elaboration) return kept;
   prepared = null;
   const next = prepare(r, setup.reduction, setting);
   prepared = next;

@@ -1,5 +1,5 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
-// front page, play, switch the saturation, seek, move the elaboration, open and close the info
+// front page, play, move the elaboration (the voice rendered anew), seek, open and close the info
 // card, and fail on any page error. Needs Playwright with Chromium installed (not a dependency of
 // this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
@@ -81,9 +81,10 @@ try {
   await page.click('#play');
   await page.waitForTimeout(6000);
   await report('played 6 s');
+  // a barer setting is more exaggerated, slower in places: the piece's length changes when it takes over
   const total = await text('total');
   await page.evaluate(
-    "(() => { const e = document.getElementById('saturation'); e.value = 0.5; e.dispatchEvent(new Event('input')); })()",
+    "(() => { const e = document.getElementById('elaboration'); e.value = 30; e.dispatchEvent(new Event('input')); })()",
   );
   await page.waitForFunction(
     `document.getElementById('total').textContent !== ${JSON.stringify(total)}`,
@@ -93,7 +94,7 @@ try {
     },
   );
   await page.waitForTimeout(3000);
-  await report('switched to ×0.5');
+  await report('elaboration 0.3 took over');
   await page.evaluate(
     "(() => { const r = document.getElementById('pos'); r.value = 90; r.dispatchEvent(new Event('input')); })()",
   );

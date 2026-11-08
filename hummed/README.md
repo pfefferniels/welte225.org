@@ -2,23 +2,22 @@
 
 Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 225), played from the
 roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
-the browser by VocalTractLab, at any saturation of the performance from 0 to 2 and any degree of
-elaboration, from the humming alone to the piece itself with the humming under it.
+the browser by VocalTractLab, at any degree of elaboration: from the humming alone, its gestures
+raw and doubled, to the piece itself as the reconstruction sets it down, the humming under it.
 
 <https://welte225.org/>: the site's front page. The page is the repository's root `index.html`;
 it loads everything else from here (`<base href="/hummed/">`), and `/hummed/` itself sends
 visitors on to it.
 
 The page shows the hum's spectrogram filling the window, scrolling under a playhead. Over it, on
-the left, two faders: elaboration, which sets what is heard (below), and saturation, how far the
-performance departs from the plain score (the MPM exaggerated by espressivo: 0 without
-expression, 1 as Grünfeld played, 2 every deviation doubled); on the right, the transport. Moving
-the saturation renders the voice anew and takes it over at the same place in the score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
+the left, one fader, elaboration, which sets what is heard and how refined it is (below); on the
+right, the transport. Moving it renders the voice anew and takes it over at the same place in the
+score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
 from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text for readers
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
 to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
-info buttons beside Elaboration and Saturation explain those two. The cards are native popovers:
+info button beside Elaboration explains it. The cards are native popovers:
 closed until asked for, and closed again by Escape or a click anywhere else.
 
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
@@ -77,8 +76,8 @@ dynamics ask; until then they sound uncorrected, which is close.
 `reduction/harmonies.mei` is a harmonic reduction of the piece: its chords, one or two to a bar,
 with the repeat written out. espressivo converts it to a score (MSM) as it converted the piece's;
 the worker puts back the three grace notes the converter leaves out, each a thirty-second before
-the note it leads to (`src/worker/harmonies.ts`), and performs it with the same MPM as the roll, at
-the same saturation. Tempo, rubato, dynamics, arpeggios and pedalling apply to the harmonies as to
+the note it leads to (`src/worker/harmonies.ts`), and performs it with the same MPM as the roll,
+exaggerated as much. Tempo, rubato, dynamics, arpeggios and pedalling apply to the harmonies as to
 the piece; notes that no arpeggio moves start on the same millisecond as the piece's. What the MPM
 says of single notes of the piece (articulation by note) finds nothing to apply to.
 
@@ -94,20 +93,27 @@ the top, where it is a pianist humming along. The page plays both the piece and 
 the time, each into its own gain, so passing the middle crossfades between them, even in the
 middle of a chord. It starts at 0.65: the piece, with the humming at −14 dB.
 
-The fader also shapes the voice itself (`src/worker/levels.ts`), so moving it renders the voice
-anew once it rests (in steps of 0.05), as moving the saturation does; the gains change at once.
-The barer the music, the further the voice's expression goes beyond the piano's (0.7 at 0, 0.31 at
-0.65, 0.1 at 1) and the more loosely it keeps to the pitch: its approximateness, 1 at 0 and 0 at
-1 (below).
+The fader also sets how exaggerated the performance is, and so the voice itself
+(`src/worker/levels.ts`): elaboration in the sense of making things subtle. The barer the music,
+the rawer its gestures; the more of it there is, the more refined, until at 1 the piano plays
+Grünfeld's performance as the MPM sets it down, with all its editorial decisions. espressivo
+exaggerates the MPM (`exaggerateMpm`) to:
+
+- the piano: `1 + (1 − e)²`, ×2 at 0, ×1.25 at the middle, ×1.12 at 0.65, ×1 at 1;
+- the voice: `1.1 + 0.9 (1 − e)²`, ×2 alone, ×1.21 at 0.65, ×1.1 under the piece, a little beyond
+  the piano except in timing.
+
+The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
+and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
+gains change at once.
 
 ## How the voice hums
 
-For one saturation (an exaggeration of the MPM) and elaboration a worker (`src/worker/worker.ts`)
-does this:
+For one elaboration a worker (`src/worker/worker.ts`) does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
-   for the piano at the level, and for the voice further. The voice is the inner guide of the
-   playing: always more exaggerated than the piano (0.1 to 0.7, by the elaboration), except in the dimensions that move
+   for the piano at its level, and for the voice at its own. The voice is the inner guide of the
+   playing: a little more exaggerated than the piano, except in the dimensions that move
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the
    millisecond. A third rendering, with sub-note dynamics, gives the dynamics as a curve.
@@ -146,9 +152,9 @@ approximateness. Within a note:
   scaled by 0.85 to 1.35), and a phrase's last note falls.
 
 Each range runs from approximateness 0 to 1, and the time constant from 30 to 40 ms (VocalTractLab
-allows at most 40). At 0.65, 300 ms into a note, the pitch is 11 cents off its note in the median
-(32 at the 90th percentile), and half way to a new note 28 ms after it sounds. At 0 these are 21
-cents (48) and 50 ms, at 1 8 cents (21) and 11 ms.
+allows at most 40). At 0.65, 300 ms into a note, the pitch is 12 cents off its note in the median
+(27 at the 90th percentile), and half way to a new note 28 ms after it sounds. At 0 these are 26
+cents (68) and 59 ms, at 1 8 cents (21) and 11 ms.
 
 The page runs several such workers side by side (`src/page/pool.ts`; as many as there are cores
 to spare, at most four). Each prepares the level itself, and renders the chunks of the voice it is
@@ -215,7 +221,7 @@ intended change to what the voice does, `UPDATE_GOLDEN=1 npm test`. CI
 (`.github/workflows/hummed.yml`) runs the checks on every change to `hummed/` or `mpm/`, and fails
 if the committed bundles are not what the sources build to.
 
-`npm run calibrate` renders the voice at ×1 in Node, measures each sung note's level against what
+`npm run calibrate` renders the voice at the page's first elaboration in Node, measures each sung note's level against what
 the dynamics ask, and writes per-note corrections (by `xml:id`) and the output gain to
 `data/calibration.json`; two rounds bring the notes within 0.01 dB of the dynamics.
 

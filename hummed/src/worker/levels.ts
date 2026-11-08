@@ -1,8 +1,8 @@
-// The exaggeration of the piano and of the voice, and how loosely the voice sings. The voice is the
-// inner guide of the playing: always more exaggerated than the piano, except where notes move in
-// time, which it shares with the piano so that the two stay together. How much more, and how
-// loosely it keeps to the written pitch, depend on the elaboration: the barer the music around it,
-// the further and the looser it goes.
+// How exaggerated the performance is, and how loosely the voice sings: both follow the elaboration.
+// The barer the music (0, the humming alone), the rawer the gestures: the MPM doubled; the more of
+// it there is, the subtler, until at 1 the piano plays the reconstruction as the MPM sets it down.
+// The voice is the inner guide of the playing: a little more exaggerated than the piano, except
+// where notes move in time, which it shares with the piano so that the two stay together.
 import {
   EXPRESSION_DIMENSIONS,
   type ExaggerationFactors,
@@ -10,13 +10,18 @@ import {
   weightedFactors,
 } from 'espressivo';
 
-/** How much further than the piano the voice's expression goes: 0.7 alone, 0.1 under the piece. */
-export const voiceLead = (elaboration: number): number => 0.7 - 0.6 * elaboration;
+const unit = (x: number): number => Math.min(1, Math.max(0, x));
+
+/** The piano's exaggeration (and the voice's timing): ×2 at 0, falling fast, then gently, to ×1 at 1. */
+export const pianoLevel = (elaboration: number): number => 1 + Math.pow(1 - unit(elaboration), 2);
+
+/** The voice's, except in timing: ×2 alone, a little beyond the piano's elsewhere, ×1.1 under the piece. */
+export const voiceLevel = (elaboration: number): number => 1.1 + 0.9 * Math.pow(1 - unit(elaboration), 2);
 
 /** How loosely the voice keeps to the written pitch, 0 to 1: loosest alone, closest under the piece. */
-export const approximateness = (elaboration: number): number => Math.min(1, Math.max(0, 1 - elaboration));
+export const approximateness = (elaboration: number): number => 1 - unit(elaboration);
 
-/** Where the page starts (index.html): the piece, the humming under it, 0.3 further than the piano. */
+/** Where the page starts (index.html): the piece (×1.12), the humming under it (×1.21). */
 export const DEFAULT_ELABORATION = 0.65;
 
 const TIMING: ReadonlySet<ExpressionDimension> = new Set<ExpressionDimension>([
@@ -34,9 +39,9 @@ export function pianoFactors(s: number): ExaggerationFactors | null {
   return Math.abs(s - 1) < 1e-9 ? null : weightedFactors(s, {});
 }
 
-/** The voice at level `s`, `lead` beyond it except in timing. */
-export function voiceFactors(s: number, lead: number): ExaggerationFactors {
-  return Object.fromEntries(EXPRESSION_DIMENSIONS.map((d) => [d, TIMING.has(d) ? s : s + lead]));
+/** The voice: the dimensions that move notes in time at `timing` (the piano's), the others at `level`. */
+export function voiceFactors(timing: number, level: number): ExaggerationFactors {
+  return Object.fromEntries(EXPRESSION_DIMENSIONS.map((d) => [d, TIMING.has(d) ? timing : level]));
 }
 
 /** The same MPM with every dynamics map rendered within notes too, for the voice's effort curve. */

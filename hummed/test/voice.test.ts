@@ -10,7 +10,7 @@ import { assertGolden } from './golden.ts';
 
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
 const base = (elaboration?: number) => ({
-  ...voicePerformance(1, elaboration),
+  ...voicePerformance(elaboration),
   reduction: loadReduction(),
   style: loadStyle(),
 });

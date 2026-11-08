@@ -7,12 +7,10 @@ import type { Midi, Seconds, Ticks } from './units.ts';
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
 
 /**
- * What a rendering is of: the saturation (`level`: how far the piano's performance is exaggerated;
- * the voice goes further) and the elaboration, of which the voice takes how much further it goes
- * and how loosely it keeps to the pitch.
+ * What a rendering is of: the elaboration, which sets how exaggerated the piano's performance is,
+ * how much more the voice's, and how loosely the voice keeps to the pitch.
  */
 export interface Setting {
-  readonly level: number;
   readonly elaboration: number;
 }
 
@@ -53,7 +51,8 @@ export interface Plan {
   readonly type: 'plan';
   readonly id: number;
   readonly setting: Setting;
-  /** The voice's exaggeration (further than the piano's, except in timing). */
+  /** The piano's exaggeration, and the voice's (further, except in timing). */
+  readonly pianoLevel: number;
   readonly voiceLevel: number;
   /** The rendering's length. */
   readonly duration: Seconds;

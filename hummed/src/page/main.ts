@@ -18,8 +18,6 @@ const pauseIcon = element('icon-pause', SVGSVGElement);
 const positionSlider = element('pos', HTMLInputElement);
 const elaborationSlider = element('elaboration', HTMLInputElement);
 const elaborationOutput = element('o-elaboration', HTMLOutputElement);
-const levelSlider = element('saturation', HTMLInputElement);
-const levelOutput = element('o-saturation', HTMLOutputElement);
 const statusLine = element('status', HTMLElement);
 const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
@@ -74,7 +72,6 @@ const player = new Player(graph, piano, pool, {
     totalText.textContent = formatTime(rendering.duration);
     playButton.disabled = false;
     positionSlider.disabled = false;
-    levelSlider.disabled = false;
   },
   status: setStatus,
   playingChanged(playing: boolean) {
@@ -86,12 +83,11 @@ const player = new Player(graph, piano, pool, {
     requestAnimationFrame(redraw);
   },
 });
-/* ---------- the faders: elaboration sets the mix and the voice, saturation the performance ---------- */
+/* ---------- the fader: elaboration sets the mix, the performance and the voice ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
 const elaboration = (): number => Number(elaborationSlider.value) / 100;
-const saturation = (): number => Number(levelSlider.value);
 // the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
 // voice itself is rendered anew for the elaboration once the fader rests
 let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
@@ -119,20 +115,6 @@ elaborationSlider.addEventListener('input', () => {
   }, 300);
 });
 applyElaboration();
-
-let levelTimer: ReturnType<typeof setTimeout> | undefined;
-const showLevel = (): void => {
-  levelOutput.value = `×${Number(levelSlider.value).toFixed(2)}`;
-  setFill(levelSlider, Number(levelSlider.value) / Number(levelSlider.max));
-};
-levelSlider.addEventListener('input', () => {
-  showLevel();
-  clearTimeout(levelTimer);
-  levelTimer = setTimeout(() => {
-    player.change({ level: saturation() });
-  }, 250);
-});
-showLevel();
 
 /* ---------- seeking: the slider, dragging the strip, the wheel, the keys ---------- */
 positionSlider.addEventListener('pointerdown', () => {
@@ -199,7 +181,7 @@ async function start(): Promise<void> {
   if (!response.ok) throw new Error(`reduction.mei: ${response.status}`);
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
-  player.request({ level: saturation(), elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
+  player.request({ elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();

@@ -1,7 +1,7 @@
-// Calibrate the voice: render it at ×1 and the page's first elaboration (the voice further, as the
-// page does), measure each sung note's level against what the dynamics ask, and store per-note
-// corrections (by xml:id) and the output gain in data/calibration.json. Run after changing the
-// reduction, the hum style, the voice's pitch line or the reconstruction:   npm run calibrate [-- rounds]
+// Calibrate the voice: render it at the page's first elaboration (as the page does), measure each
+// sung note's level against what the dynamics ask, and store per-note corrections (by xml:id) and
+// the output gain in data/calibration.json. Run after changing the reduction, the hum style, the
+// voice's pitch line, its exaggeration or the reconstruction:   npm run calibrate [-- rounds]
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderVoice } from '../src/hummer/index.ts';
@@ -33,7 +33,7 @@ const quantile = (values: readonly number[], q: number): number => {
 const engine = await loadEngine();
 const reduction = loadReduction();
 const style = loadStyle();
-const { performance: voiceData, dynamics, approximateness } = voicePerformance(1);
+const { performance: voiceData, dynamics, approximateness } = voicePerformance();
 let calibration: Calibration = loadCalibration();
 
 // the sung notes as the voice holds them, and the dynamics they should follow

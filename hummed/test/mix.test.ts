@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { heard, mix, PIECE_FROM, voiceElaboration } from '../src/page/mix.ts';
-import { approximateness, DEFAULT_ELABORATION, voiceLead } from '../src/worker/levels.ts';
+import { approximateness, DEFAULT_ELABORATION, pianoLevel, voiceLevel } from '../src/worker/levels.ts';
 import { ROOT } from '../tools/node-support.ts';
 
 const positions = Array.from({ length: 101 }, (_, i) => i / 100);
@@ -41,12 +41,18 @@ describe('elaboration', () => {
     for (const e of positions) assert.ok(mix(e).harmonies === 0 || mix(e).piece === 0);
   });
 
-  it('takes the voice further, and lets it sing more loosely, the barer the music', () => {
+  it('exaggerates the more, and lets the voice sing the more loosely, the barer the music', () => {
     for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
-      assert.ok(voiceLead(b) < voiceLead(a));
+      assert.ok(pianoLevel(b) < pianoLevel(a));
+      assert.ok(voiceLevel(b) < voiceLevel(a));
       assert.ok(approximateness(b) < approximateness(a));
     }
-    assert.ok(Math.abs(voiceLead(0) - 0.7) < 1e-9 && Math.abs(voiceLead(1) - 0.1) < 1e-9);
+    for (const e of positions) assert.ok(voiceLevel(e) >= pianoLevel(e));
+    // the humming alone doubled; the piece as the MPM sets it down, the voice a little beyond it
+    assert.equal(pianoLevel(0), 2);
+    assert.equal(voiceLevel(0), 2);
+    assert.equal(pianoLevel(1), 1);
+    assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);
     assert.equal(approximateness(1), 0);
   });

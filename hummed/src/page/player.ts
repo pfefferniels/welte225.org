@@ -81,17 +81,11 @@ export class Player {
     this.#view.status('Rendering…');
   }
 
-  /** Another saturation or elaboration, from a little ahead: where the playhead will be when it is ready. */
-  change(change: Partial<Setting>): void {
+  /** Another setting, from a little ahead: where the playhead will be when it is ready. */
+  change(setting: Setting): void {
     const cur = this.#current;
     const base = this.#wanted ?? cur?.setting;
-    if (!base) return;
-    const setting = { ...base, ...change };
-    if (
-      Math.abs(setting.level - base.level) < 1e-9 &&
-      Math.abs(setting.elaboration - base.elaboration) < 1e-9
-    )
-      return;
+    if (!base || Math.abs(setting.elaboration - base.elaboration) < 1e-9) return;
     const lead =
       this.#playing && cur ? Math.max(0, Math.min(MAX_SWITCH_LEAD, cur.aheadOf(this.position()) - 0.3)) : 0;
     const t = cur ? Math.min(cur.duration, this.position() + lead) : 0;
