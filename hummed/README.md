@@ -159,7 +159,8 @@ Serve the repository root (`python3 -m http.server`) and open `/`: the page load
 
 `test/voice.test.ts` holds the voice to a fingerprint (`test/golden.json`), taken when the
 TypeScript was shown to produce gestural scores byte for byte identical to the JavaScript it
-replaced; after an intended change to what the voice does, `UPDATE_GOLDEN=1 npm test`. CI
+replaced, and `test/engine.test.ts` holds six seconds of VocalTractLab's sound to another; after an
+intended change to what the voice does, `UPDATE_GOLDEN=1 npm test`. CI
 (`.github/workflows/hummed.yml`) runs the checks on every change to `hummed/` or `mpm/`, and fails
 if the committed bundles are not what the sources build to.
 
@@ -170,7 +171,19 @@ the dynamics ask, and writes per-note corrections (by `xml:id`) and the output g
 `vtl/build.sh` rebuilds `vtl.js` (Emscripten 3.1.6): VocalTractLab 2.4.2 with
 `vtl/vocaltractlab.patch`, which raises the gestural model's limit from 60 s to 240 s (in one pass
 over the whole piece every parameter froze after a minute) and adds `vtlGesturalScoreToStates`,
-which returns a score's tract states in memory. `research/scripts/prep_static.py` wrote the
+which returns a score's tract states in memory. The patch also makes the acoustic simulation about
+1.4 times as fast without changing its output by a bit. Every arithmetic operation that remains is
+the one VocalTractLab does, in the same order. The patch keeps from one sample to the next whatever
+has not changed:
+
+- a tube section's resistances and inductances while its shape stays;
+- the factorization of the trachea's rows of the network's matrix;
+- the glottis's sine table;
+- the noise filters.
+
+It also leaves out the products of the factorization that are zero, and compares numbers inline where
+WebAssembly would call `memcmp`. The sound's fingerprint in the tests was taken with the build
+before these changes. The whole piece at ×0, ×1 and ×2 was also compared sample by sample. `research/scripts/prep_static.py` wrote the
 speaker, the hum style and the piano samples from the offline pipeline.
 
 ## Research

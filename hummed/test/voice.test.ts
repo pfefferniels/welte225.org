@@ -3,13 +3,11 @@
 // After an intended change:  UPDATE_GOLDEN=1 npm test
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { renderVoice, type Voice } from '../src/hummer/index.ts';
-import { loadReduction, loadStyle, ROOT, voicePerformance } from '../tools/node-support.ts';
+import { loadReduction, loadStyle, voicePerformance } from '../tools/node-support.ts';
+import { assertGolden } from './golden.ts';
 
-const GOLDEN = join(ROOT, 'test/golden.json');
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
 const render = (): Voice =>
   renderVoice({
@@ -33,11 +31,7 @@ describe('the voice', () => {
   });
 
   it('matches its fingerprint', () => {
-    const actual = fingerprint(voice);
-    if (process.env['UPDATE_GOLDEN'])
-      writeFileSync(GOLDEN, JSON.stringify({ voiceAt1: actual }, null, 2) + '\n');
-    const golden = JSON.parse(readFileSync(GOLDEN, 'utf8')) as { voiceAt1: string };
-    assert.equal(actual, golden.voiceAt1);
+    assertGolden('voiceAt1', fingerprint(voice));
   });
 
   it('breathes, hums every sung note and breathes out through teeth and lips', () => {

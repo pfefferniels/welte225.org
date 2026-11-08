@@ -2,8 +2,10 @@
 # Build vtl.js: VocalTractLab 2.4.2 (GPL-3.0, Peter Birkholz et al.), from the
 # vocaltractlab-cython 0.0.17 sdist on PyPI, with vocaltractlab.patch applied, compiled to
 # WebAssembly with Emscripten 3.1.6 (the Ubuntu package) into one file, the wasm inlined.
-# The patch raises the gestural model's limit from 60 s to 240 s and adds
-# vtlGesturalScoreToStates, which returns a score's tract states in memory.
+# The patch raises the gestural model's limit from 60 s to 240 s, adds
+# vtlGesturalScoreToStates, which returns a score's tract states in memory, and makes the
+# time-domain simulation about 1.4 times as fast with the same results to the bit (what it
+# reuses and leaves out is marked "Speed (same results)" in the code).
 #   vtl/build.sh [output file, default ../vtl.js]
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)

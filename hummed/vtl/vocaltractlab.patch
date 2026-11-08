@@ -9,6 +9,70 @@
    static const int MAX_PARAM_TARGETS = 512;
  
    enum GestureType
+--- a/include/VocalTractLabBackend/TdsModel.h
++++ b/include/VocalTractLabBackend/TdsModel.h
+@@ -117,6 +117,15 @@
+     double inputBuffer[NUM_NOISE_BUFFER_SAMPLES];
+     double outputBuffer[NUM_NOISE_BUFFER_SAMPLES];
+     double sample;        ///< The current sampling point of the noise source
++    // Speed (same results): whether the buffers are known to be all zero, and the shaping
++    // filter's coefficients for the cutoff they were made for.
++    bool buffersClear;
++    bool filterValid;
++    bool filterFirstOrder;
++    double filterFreqRatio;
++    int filterOrder;
++    double filterA[3];
++    double filterB[3];
+   };
+ 
+   // ************************************************************************
+@@ -223,6 +232,16 @@
+   NoiseSource lipsDipoleSource;   ///< Last noise source at the mouth opening
+ 
+   TubeSection tubeSection[Tube::NUM_SECTIONS];
++  // Speed (same results): per section, the components that depend only on its geometry, with
++  // the geometry they were computed for (prepareTimeStep() reuses them while it is unchanged).
++  struct SectionGeometryCache
++  {
++    bool valid;
++    bool softWalls;
++    double key[6];        // area, length, volume, Mw, Bw, Kw
++    double L, C, R0, alpha, wallC1, wallC2, Lw;
++  };
++  SectionGeometryCache sectionCache[Tube::NUM_SECTIONS];
+   BranchCurrent branchCurrent[NUM_BRANCH_CURRENTS];
+ 
+   // Help variables to effectively solve the system of eqs. with Gauss-Seidel
+@@ -233,6 +252,20 @@
+   int numFilledRowValuesSymmetricEnvelope[NUM_BRANCH_CURRENTS];
+   int filledRowIndexSymmetricEnvelope[NUM_BRANCH_CURRENTS][MAX_CONCERNED_MATRIX_COLUMNS_SYMMETRIC_ENVELOPE];
+   int numFilledColumnValuesSymmetricEnvelope[NUM_BRANCH_CURRENTS];
++  // Speed (same results): the first column of each row's envelope, when every envelope is one
++  // contiguous range up to the diagonal (as it is built), so the loops need no index lists.
++  int envelopeFirstColumn[NUM_BRANCH_CURRENTS];
++  bool envelopesContiguous;
++  // Speed (same results): the leading rows of the matrix that the factorization in
++  // factorizationMatrix was computed from, to reuse it for the rows that have not changed
++  // since (see solveEquationsCholeskyContiguous()); previousMatrixRows = 0: none.
++  int previousMatrixRows;
++  double previousMatrix[NUM_BRANCH_CURRENTS][NUM_BRANCH_CURRENTS];
++  // Speed (same results): values that change only with the time step or the aspiration strength.
++  bool noiseFilterCoeffValid;
++  double noiseFilterCoeffTimeStep, noiseFilterCoeffCached;
++  bool aspirationGainValid;
++  double aspirationGainStrength_dB, aspirationGainCached;
+   int filledColumnIndexSymmetricEnvelope[NUM_BRANCH_CURRENTS][MAX_CONCERNED_MATRIX_ROWS_SYMMETRIC_ENVELOPE];
+ 
+   bool doNetworkInitialization;
+@@ -293,6 +326,7 @@
+ 
+   void solveEquationsSor(const string &matrixFileName = "");
+   void solveEquationsCholesky();
++  void solveEquationsCholeskyContiguous();
+   int getSampleIndex() { return position; }
+   void getSectionFlow(int sectionIndex, double &inflow, double &outflow);
+   double getSectionPressure(int sectionIndex);
 --- a/src/VocalTractLabApi/VocalTractLabApi.cpp
 +++ b/src/VocalTractLabApi/VocalTractLabApi.cpp
 @@ -3097,3 +3097,36 @@
@@ -48,3 +112,441 @@
 +  delete gs;
 +  return 0;
 +}
+--- a/src/VocalTractLabBackend/GeometricGlottis.cpp
++++ b/src/VocalTractLabBackend/GeometricGlottis.cpp
+@@ -325,6 +325,22 @@
+   endX[0] = controlParam[LOWER_END_X].x;
+   endX[1] = controlParam[UPPER_END_X].x;
+ 
++  // Speed (same results): sin(t*M_PI) at the points t below is the same in every time step;
++  // it is computed once, by the same sin() at run time (the volatile keeps the compiler from
++  // working it out itself, possibly to another last bit).
++  static double sinOfT[NUM_SAMPLES + 1];
++  static bool sinOfTReady = false;
++  if (!sinOfTReady)
++  {
++    volatile int numSamples = NUM_SAMPLES;
++    for (k = 1; k <= NUM_SAMPLES; k++)
++    {
++      t = (double)k / (double)numSamples;
++      sinOfT[k] = sin(t*M_PI);
++    }
++    sinOfTReady = true;
++  }
++
+   for (i=0; i < 2; i++)
+   {
+     x = 0.0;
+@@ -334,7 +350,7 @@
+     for (k=1; k <= NUM_SAMPLES; k++)
+     {
+       t = (double)k / (double)NUM_SAMPLES;    // 0 <= t <= 1
+-      x = endX[i] * t + displacement[i] * sin(t*M_PI);
++      x = endX[i] * t + displacement[i] * sinOfT[k];
+       if (x < 0.0) { x = 0.0; }
+       area[i]+= DELTA_LENGTH*(prevX + x);
+       prevX = x;
+--- a/src/VocalTractLabBackend/TdsModel.cpp
++++ b/src/VocalTractLabBackend/TdsModel.cpp
+@@ -20,6 +20,8 @@
+ // ****************************************************************************
+ 
+ #include "VocalTractLabBackend/TdsModel.h"
++#include <cstring>
++#include <cstdint>
+ #include <fstream>
+ #include <iomanip>
+ #include <cstdlib>
+@@ -27,6 +29,21 @@
+ #include <iostream>
+ #include <random>
+ 
++// Speed (same results): whether runs of doubles are the same to the bit (unlike ==, which
++// takes 0 and -0 for the same and NaN for different from itself), inline where memcmp is
++// a call (in WebAssembly).
++static inline bool sameBits(const double *a, const double *b, int count)
++{
++  for (int i = 0; i < count; i++)
++  {
++    uint64_t x, y;
++    memcpy(&x, &a[i], sizeof(x));
++    memcpy(&y, &b[i], sizeof(y));
++    if (x != y) { return false; }
++  }
++  return true;
++}
++
+ // For theta = 0.505, the TDS bandwidths are about the same as those
+ // of the FDS for frequencies up to 5 kHz. Above 5 kHz, the TDS resonance
+ // peaks become lower than in the FDS.
+@@ -312,6 +329,20 @@
+     }
+   }
+ 
++  // The envelopes as ranges (see envelopeFirstColumn).
++  envelopesContiguous = true;
++  previousMatrixRows = 0;
++  for (i = 0; i < NUM_BRANCH_CURRENTS; i++)
++  {
++    int count = numFilledRowValuesSymmetricEnvelope[i];
++    envelopeFirstColumn[i] = (count > 0) ? filledRowIndexSymmetricEnvelope[i][0] : i;
++    if (envelopeFirstColumn[i] + count != i) { envelopesContiguous = false; }
++    for (int v = 0; v < count; v++)
++    {
++      if (filledRowIndexSymmetricEnvelope[i][v] != envelopeFirstColumn[i] + v) { envelopesContiguous = false; }
++    }
++  }
++
+   // ****************************************************************
+   // Init the matrix and the help structures for the Gauss-Seidel 
+   // method.
+@@ -393,6 +424,11 @@
+   BranchCurrent *bc;
+   int i, k;
+ 
++  for (i = 0; i < Tube::NUM_SECTIONS; i++) { sectionCache[i].valid = false; }
++  noiseFilterCoeffValid = false;
++  aspirationGainValid = false;
++  previousMatrixRows = 0;
++
+   // ****************************************************************
+   // Reinitialize the random number generator with a constant seed
+   // so that the noise in every synthesis is exactly the same.
+@@ -431,6 +467,8 @@
+     ts->monopoleSource.isFirstOrder = false;
+     ts->monopoleSource.cutoffFreq = 1.0;
+     ts->monopoleSource.sample = 0.0;
++    ts->monopoleSource.buffersClear = false;
++    ts->monopoleSource.filterValid = false;
+     for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
+     {
+       ts->monopoleSource.inputBuffer[k] = 0.0;
+@@ -442,6 +480,8 @@
+     ts->dipoleSource.isFirstOrder = false;
+     ts->dipoleSource.cutoffFreq = 1.0;
+     ts->dipoleSource.sample = 0.0;
++    ts->dipoleSource.buffersClear = false;
++    ts->dipoleSource.filterValid = false;
+     
+     for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
+     {
+@@ -457,6 +497,8 @@
+   lipsDipoleSource.isFirstOrder = false;
+   lipsDipoleSource.cutoffFreq = 1.0;
+   lipsDipoleSource.sample = 0.0;
++  lipsDipoleSource.buffersClear = false;
++  lipsDipoleSource.filterValid = false;
+ 
+   for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
+   {
+@@ -665,7 +707,16 @@
+     // will get a kind of chirp or ringing right after oral closures 
+     // (as in /udu/), because the front cavity is excited too strongly.
+ 
+-    if ((filtering) && (i >= Tube::FIRST_PHARYNX_SECTION) && (i <= Tube::LAST_MOUTH_SECTION))
++    if ((filtering) && (i >= Tube::FIRST_PHARYNX_SECTION) && (i <= Tube::LAST_MOUTH_SECTION) &&
++      sameBits(&target->area, &source->area_cm2, 1))
++    {
++      // An unchanged area: the smoothing below would leave it as it is.
++      target->pos = source->pos_cm;
++      target->area = source->area_cm2;
++      target->length = source->length_cm;
++      target->volume = source->length_cm * source->area_cm2;
++    }
++    else if ((filtering) && (i >= Tube::FIRST_PHARYNX_SECTION) && (i <= Tube::LAST_MOUTH_SECTION))
+     {
+       oldArea_cm2 = target->area;
+       newArea_cm2 = source->area_cm2;
+@@ -935,6 +986,33 @@
+     }
+ 
+     ts->S = 0.0;      // No pressure source at the inlet of the section
++
++    const bool walls = (options.softWalls) && (i != Tube::LOWER_GLOTTIS_SECTION) && (i != Tube::UPPER_GLOTTIS_SECTION);
++    SectionGeometryCache *cache = &sectionCache[i];
++    const double key[6] = { ts->area, ts->length, ts->volume, ts->Mw, ts->Bw, ts->Kw };
++
++    // The same geometry as in the sample before: the same components, computed then
++    // (only the wall's state enters beta anew, with the same expression).
++    if (cache->valid && cache->softWalls == walls && sameBits(cache->key, key, 6))
++    {
++      ts->L = cache->L;
++      ts->C = cache->C;
++      ts->R[0] = cache->R0;
++      ts->R[1] = cache->R0;
++      ts->alpha = cache->alpha;
++      ts->beta = 0.0;
++      if (walls)
++      {
++        Lw = cache->Lw;
++        ts->beta = ts->alpha*(
++          ts->wallCurrent*cache->wallC1 +
++          ts->wallCurrentRate*cache->wallC2 +
++          ts->wallCurrentRate2*Lw*(THETA1/THETA)
++          );
++      }
++      continue;
++    }
++
+     circ = 2.0*sqrt(ts->area*M_PI);
+ 
+     // **************************************************************
+@@ -984,8 +1062,11 @@
+ 
+     ts->alpha = 0.0;
+     ts->beta = 0.0;
++    double wallC1 = 0.0;
++    double wallC2 = 0.0;
++    Lw = 0.0;
+ 
+-  	if ((options.softWalls) && (i != Tube::LOWER_GLOTTIS_SECTION) && (i != Tube::UPPER_GLOTTIS_SECTION))
++  	if (walls)
+   	{
+       // What is the area of the wall ?
+       if ((i >= Tube::FIRST_SINUS_SECTION) && (i <= Tube::LAST_SINUS_SECTION))
+@@ -1007,13 +1088,25 @@
+       Cw = surface / ts->Kw;
+ 
+       ts->alpha = 1.0 / (Lw / (timeStep*timeStep*THETA*THETA) + Rw / (timeStep*THETA) + 1.0/Cw);
++      wallC1 = (Lw/(timeStep*timeStep*THETA*THETA) + Rw/(timeStep*THETA));
++      wallC2 = (Lw*(THETA1/THETA + 1.0)/(timeStep*THETA) + Rw*(THETA1/THETA));
+       ts->beta = ts->alpha*(
+-        ts->wallCurrent*(Lw/(timeStep*timeStep*THETA*THETA) + Rw/(timeStep*THETA)) +
+-        ts->wallCurrentRate*(Lw*(THETA1/THETA + 1.0)/(timeStep*THETA) + Rw*(THETA1/THETA)) +
++        ts->wallCurrent*wallC1 +
++        ts->wallCurrentRate*wallC2 +
+         ts->wallCurrentRate2*Lw*(THETA1/THETA)
+         );
+   	}
+ 
++    cache->valid = true;
++    cache->softWalls = walls;
++    for (int k = 0; k < 6; k++) { cache->key[k] = key[k]; }
++    cache->L = ts->L;
++    cache->C = ts->C;
++    cache->R0 = ts->R[0];
++    cache->alpha = ts->alpha;
++    cache->wallC1 = wallC1;
++    cache->wallC2 = wallC2;
++    cache->Lw = Lw;
+   }
+ 
+ 
+@@ -1543,7 +1636,14 @@
+     if (cons->articulator == Tube::VOCAL_FOLDS)
+     {
+       // The gain can vary by 40 dB for different degrees of aspiration.
+-      cons->gain = 1.0e-6 * pow(10.0, aspirationStrength_dB / 20.0);
++      // Speed (same results): computed anew only when the aspiration strength changes.
++      if (!aspirationGainValid || !sameBits(&aspirationGainStrength_dB, &aspirationStrength_dB, 1))
++      {
++        aspirationGainCached = 1.0e-6 * pow(10.0, aspirationStrength_dB / 20.0);
++        aspirationGainStrength_dB = aspirationStrength_dB;
++        aspirationGainValid = true;
++      }
++      cons->gain = aspirationGainCached;
+ 
+       // According to Badin et al. (1994), the aspiration noise source
+       // spectrum is essentially flat -> very high f_c.
+@@ -1807,12 +1907,16 @@
+   {
+     s->currentAmp1kHz = 0.0;
+ 
+-    // Clear the noise sample buffers.
+-    int k;
+-    for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
++    // Clear the noise sample buffers (once: they stay clear while the source is off).
++    if (!s->buffersClear)
+     {
+-      s->inputBuffer[k] = 0.0;
+-      s->outputBuffer[k] = 0.0;
++      int k;
++      for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
++      {
++        s->inputBuffer[k] = 0.0;
++        s->outputBuffer[k] = 0.0;
++      }
++      s->buffersClear = true;
+     }
+ 
+     // Return with a sample value of zero.
+@@ -1824,18 +1928,27 @@
+   // The source is active.
+   // ****************************************************************
+   
+-  // Setup the IIR-filter to get the filter coefficients.
+-  IirFilter filter;
+-
+-  if (s->isFirstOrder)
+-  {
+-    filter.createSinglePoleLowpass(s->cutoffFreq*timeStep);
+-  }
+-  else
++  // Setup the IIR-filter to get the filter coefficients: made anew only when the cutoff
++  // frequency or the order has changed (the same coefficients as making them every sample).
++  const double freqRatio = s->cutoffFreq * timeStep;
++  if (!s->filterValid || s->filterFirstOrder != s->isFirstOrder || !sameBits(&s->filterFreqRatio, &freqRatio, 1))
+   {
+-    // Always assume a critically damped 2nd order low-pass filter.
+-    const double Q = 1.0 / sqrt(2.0);
+-    filter.createSecondOrderLowpass(s->cutoffFreq * timeStep, Q);
++    IirFilter filter;
++    if (s->isFirstOrder)
++    {
++      filter.createSinglePoleLowpass(freqRatio);
++    }
++    else
++    {
++      // Always assume a critically damped 2nd order low-pass filter.
++      const double Q = 1.0 / sqrt(2.0);
++      filter.createSecondOrderLowpass(freqRatio, Q);
++    }
++    s->filterValid = true;
++    s->filterFirstOrder = s->isFirstOrder;
++    s->filterFreqRatio = freqRatio;
++    s->filterOrder = filter.order;
++    for (int k = 0; k < 3; k++) { s->filterA[k] = filter.a[k]; s->filterB[k] = filter.b[k]; }
+   }
+ 
+   // ****************************************************************
+@@ -1871,13 +1984,14 @@
+   } 
+   while ((inputSample < -1.0) || (inputSample > 1.0));
+   
++  s->buffersClear = false;
+   s->inputBuffer[position & NOISE_BUFFER_MASK] = inputSample;
+-  double sum = filter.a[0] * inputSample;
++  double sum = s->filterA[0] * inputSample;
+   int k;
+-  for (k = 1; k <= filter.order; k++)
++  for (k = 1; k <= s->filterOrder; k++)
+   {
+-    sum += filter.a[k] * s->inputBuffer[(position - k) & NOISE_BUFFER_MASK];
+-    sum += filter.b[k] * s->outputBuffer[(position - k) & NOISE_BUFFER_MASK];
++    sum += s->filterA[k] * s->inputBuffer[(position - k) & NOISE_BUFFER_MASK];
++    sum += s->filterB[k] * s->outputBuffer[(position - k) & NOISE_BUFFER_MASK];
+   }
+   s->outputBuffer[position & NOISE_BUFFER_MASK] = sum;
+   s->sample = sum * filterGain;      // Resulting magnitude
+@@ -2234,7 +2348,14 @@
+   // The new currents and their derivatives
+   // ****************************************************************
+ 
+-  double noiseFilterCoeff = exp(-2.0*M_PI*NOISE_CUTOFF_FREQ*timeStep);
++  // Speed (same results): computed anew only when the time step changes.
++  if (!noiseFilterCoeffValid || !sameBits(&noiseFilterCoeffTimeStep, &timeStep, 1))
++  {
++    noiseFilterCoeffCached = exp(-2.0*M_PI*NOISE_CUTOFF_FREQ*timeStep);
++    noiseFilterCoeffTimeStep = timeStep;
++    noiseFilterCoeffValid = true;
++  }
++  const double noiseFilterCoeff = noiseFilterCoeffCached;
+ 
+   for (i=0; i < NUM_BRANCH_CURRENTS; i++)
+   {
+@@ -2409,6 +2530,12 @@
+ {
+   int k, i, j, u, v;
+ 
++  if (envelopesContiguous)
++  {
++    solveEquationsCholeskyContiguous();
++    return;
++  }
++
+   // ****************************************************************
+   // Negate the whole matrix and the right-hand side vector.
+   // ****************************************************************
+@@ -2490,6 +2617,92 @@
+   }
+ }
+ 
++
++// ****************************************************************************
++/// solveEquationsCholesky() for envelopes that are contiguous ranges, with the
++/// same results to the bit: the same arithmetic operations in the same order,
++/// with simpler bookkeeping of the indices, without the products with the zeros
++/// left of a row's envelope (which change no result), and without factorizing
++/// anew the leading rows that have not changed since the previous time step.
++// ****************************************************************************
++
++void TdsModel::solveEquationsCholeskyContiguous()
++{
++  int k, i, j, u;
++
++  // The leading rows whose entries equal those of the previous time step have the same
++  // factorization as then, which is still in factorizationMatrix (the trachea's rows, while
++  // the glottis and the tract above it change). The first row that differs is kept for the
++  // next time step, so that previousMatrix holds this time step's rows up to it.
++  int reused = 0;
++  while ((reused < previousMatrixRows) && sameBits(&previousMatrix[reused][envelopeFirstColumn[reused]],
++    &matrix[reused][envelopeFirstColumn[reused]], reused - envelopeFirstColumn[reused] + 1))
++  {
++    reused++;
++  }
++  if (reused < NUM_BRANCH_CURRENTS)
++  {
++    for (j = envelopeFirstColumn[reused]; j <= reused; j++) { previousMatrix[reused][j] = matrix[reused][j]; }
++    previousMatrixRows = reused + 1;
++  }
++
++  // Negate the matrix (the rows not reused) and the right-hand side vector.
++  for (i = reused; i < NUM_BRANCH_CURRENTS; i++)
++  {
++    double *F = factorizationMatrix[i];
++    const double *M = matrix[i];
++    F[i] = -M[i];
++    for (j = envelopeFirstColumn[i]; j < i; j++) { F[j] = -M[j]; }
++  }
++  for (i = 0; i < NUM_BRANCH_CURRENTS; i++) { solutionVector[i] = -solutionVector[i]; }
++
++  // Cholesky factorization, and the forward substitution of each row as soon as the row is
++  // factorized (the same operations as one after the other, but the two chains of dependent
++  // operations can overlap).
++  for (k = 0; k < NUM_BRANCH_CURRENTS; k++)
++  {
++    double *Fk = factorizationMatrix[k];
++    const int first = envelopeFirstColumn[k];
++    if (k >= reused)
++    {
++      double diagonal = Fk[k];
++      for (j = first; j < k; j++) { diagonal -= Fk[j] * Fk[j]; }
++      if (diagonal < 0) printf("Error: Cholesky factorization: Matrix is not positive definite!\n");
++      Fk[k] = sqrt(diagonal);
++    }
++    const double diagonal = Fk[k];
++
++    for (u = 0; u < numFilledColumnValuesSymmetricEnvelope[k]; u++)
++    {
++      const int row = filledColumnIndexSymmetricEnvelope[k][u];
++      if (row < reused) { continue; }
++      double *Fi = factorizationMatrix[row];
++      double value = Fi[k];
++      // the entries left of row i's envelope are zero, and so are their products
++      const int start = envelopeFirstColumn[row] > first ? envelopeFirstColumn[row] : first;
++      for (j = start; j < k; j++) { value -= Fi[j] * Fk[j]; }
++      Fi[k] = value / diagonal;
++    }
++
++    double value = solutionVector[k];
++    for (j = first; j < k; j++) { value -= Fk[j] * solutionVector[j]; }
++    solutionVector[k] = value / diagonal;
++  }
++
++  // backward substitution
++  for (k = NUM_BRANCH_CURRENTS - 1; k >= 0; --k)
++  {
++    double value = solutionVector[k];
++    for (u = 0; u < numFilledColumnValuesSymmetricEnvelope[k]; u++)
++    {
++      i = filledColumnIndexSymmetricEnvelope[k][u];
++      value -= factorizationMatrix[i][k] * flowVector[i];
++    }
++    solutionVector[k] = value;
++    flowVector[k] = value / factorizationMatrix[k][k];
++  }
++}
++
+ 
+ // ****************************************************************************
+ /// Returns the volume velocity into the given tube section.

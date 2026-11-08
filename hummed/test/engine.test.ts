@@ -1,5 +1,6 @@
 // VocalTractLab itself (vtl.js): the speaker loads, a score becomes states, the states become sound.
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { describe, it } from 'node:test';
 import { renderVoice } from '../src/hummer/index.ts';
 import { SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
@@ -10,6 +11,7 @@ import {
   loadStyle,
   voicePerformance,
 } from '../tools/node-support.ts';
+import { assertGolden } from './golden.ts';
 
 describe('VocalTractLab', async () => {
   const engine = await loadEngine();
@@ -54,5 +56,15 @@ describe('VocalTractLab', async () => {
     assert.ok(audio.every(Number.isFinite));
     const rms = Math.sqrt(audio.reduce((s, x) => s + x * x, 0) / audio.length);
     assert.ok(rms > 1e-3, `rms ${rms}`);
+  });
+
+  // taken with the build before its speed-ups, which leave the sound as it was to the bit
+  it('sounds as it did, to the bit (3 to 9 s: notes, a breath)', () => {
+    const from = Math.round((3 * SAMPLE_RATE) / STATE_STEP);
+    const to = Math.round((9 * SAMPLE_RATE) / STATE_STEP);
+    const hash = createHash('sha256');
+    for (const block of engine.synthesize(states, voice.weight, from, to, { blockStates: 40 }))
+      hash.update(new Uint8Array(block.samples.buffer, block.samples.byteOffset, block.samples.byteLength));
+    assertGolden('vtlAudio3to9s', hash.digest('hex'));
   });
 });
