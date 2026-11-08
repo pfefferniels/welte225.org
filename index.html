@@ -93,6 +93,23 @@
       </section>
     </div>
 
+    <button class="info-button settings-button" type="button" popovertarget="settings" aria-label="Settings">
+      <svg viewBox="0 0 20 20" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M10 4.6a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm0 3.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4z"
+        />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(45 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(90 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(135 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(180 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(225 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(270 10 10)" />
+        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(315 10 10)" />
+      </svg>
+    </button>
+
     <button class="info-button" type="button" popovertarget="info" aria-label="About this page">
       <svg viewBox="0 0 20 20" aria-hidden="true">
         <circle cx="10" cy="5.5" r="1.3" />
@@ -114,7 +131,47 @@
         <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed#readme">Source and licences</a>
       </p>
       <p class="credits">
-        Piano: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Voice: VocalTractLab 2.4 (GPL-3.0).
+        Piano: <span id="piano-credit">Salamander Grand Piano by Alexander Holm (CC BY 3.0)</span>. Voice:
+        VocalTractLab 2.4 (GPL-3.0).
+      </p>
+    </section>
+
+    <section id="settings" class="card" popover aria-labelledby="settings-title">
+      <h2 id="settings-title">Piano</h2>
+      <div class="choices" role="radiogroup" aria-labelledby="settings-title">
+        <label id="choice-recorded" class="choice" hidden>
+          <input type="radio" name="piano" value="recorded" />
+          <span>
+            <b id="recorded-name">Bösendorfer 280VC</b>
+            <small id="recorded-note">Pianoteq, rendered ahead: saturation in steps.</small>
+          </span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="piano" value="sampled" checked />
+          <span>
+            <b>Salamander Grand</b>
+            <small>Sampled, played as you listen: any saturation.</small>
+          </span>
+        </label>
+        <label id="choice-midi" class="choice" hidden>
+          <input type="radio" name="piano" value="midi" />
+          <span>
+            <b>Your instrument, over MIDI</b>
+            <small>A Disklavier, or Pianoteq listening on a MIDI port: any saturation.</small>
+          </span>
+        </label>
+      </div>
+      <div id="midi-settings" class="midi" hidden>
+        <label for="midi-port">Instrument</label>
+        <select id="midi-port"></select>
+        <label for="midi-delay">Delay</label>
+        <span><input id="midi-delay" type="number" min="0" max="2000" step="10" value="0" /> ms</span>
+      </div>
+      <p class="note">
+        Your instrument gets the roll's keys and its sustain and soft pedals as you listen: the piece, or the
+        harmonies, as the elaboration has it, without the page's room. Chrome, Edge and Firefox can send MIDI,
+        after asking you. If it sounds late, give its delay; a Disklavier usually waits half a second (500
+        ms).
       </p>
     </section>
 

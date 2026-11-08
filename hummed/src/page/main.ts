@@ -5,10 +5,13 @@ import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
 import { heard, mix } from './mix.ts';
+import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
 import { VoicePool, workerCount } from './pool.ts';
-import type { Rendering } from './rendering.ts';
+import { Recordings } from './recordings.ts';
+import type { PianoPartName, Rendering } from './rendering.ts';
+import { PianoSettings } from './settings.ts';
 import { SpectrogramView } from './spectrogram-view.ts';
 
 const canvas = element('spec', HTMLCanvasElement);
@@ -30,7 +33,14 @@ const requestedStyle = new URLSearchParams(location.search).get('spectrogram');
 const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle : 'melodic';
 
 const graph = createAudioGraph();
-const piano = new PianoSampler(graph.context);
+const sampler = new PianoSampler(graph.context, () => {
+  setStatus('The piano samples did not load. Reload the page to try again.');
+});
+/** The sampled grand alone, and the Pianoteq recordings (the sampled grand where a level has none). */
+const sampled = new BuiltInPiano(graph, sampler);
+const recorded = new BuiltInPiano(graph, sampler);
+/** The Pianoteq recordings, once their manifest is read; null where there are none. */
+let recordings: Recordings | null = null;
 // the voice is rendered by several workers side by side, as many as there are cores to spare
 const pool = new VoicePool(workerCount(), (event) => {
   player.receive(event);
@@ -68,7 +78,7 @@ function redraw(): void {
   view.draw(player.current, player.position());
 }
 
-const player = new Player(graph, piano, pool, {
+const player = new Player(graph, sampled, pool, {
   adopted(rendering: Rendering) {
     positionSlider.max = rendering.duration.toFixed(2);
     totalText.textContent = formatTime(rendering.duration);
@@ -86,6 +96,23 @@ const player = new Player(graph, piano, pool, {
     requestAnimationFrame(redraw);
   },
 });
+/* ---------- the piano: in the page, or an instrument over MIDI ---------- */
+/** The part an instrument over MIDI plays: the one the elaboration lets be heard. */
+const instrumentPart = (): PianoPartName | null => {
+  const what = heard(Number(elaborationSlider.value) / 100);
+  return what === 'humming' ? null : what;
+};
+const settings = new PianoSettings({
+  context: graph.context,
+  sampled,
+  part: instrumentPart,
+  chosen(output: PianoOutput) {
+    player.setPiano(output);
+    applyGrid();
+  },
+  status: setStatus,
+});
+
 /* ---------- the faders: elaboration sets the mix, saturation the performance ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
@@ -106,6 +133,8 @@ const applyElaboration = (): void => {
     ],
   );
   setFill(elaborationSlider, e);
+  // an instrument plays one part: the other, or none, from where playing is
+  if (settings.setPart(instrumentPart())) player.restartPiano();
 };
 elaborationSlider.addEventListener('input', applyElaboration);
 applyElaboration();
@@ -123,6 +152,36 @@ levelSlider.addEventListener('input', () => {
   }, 250);
 });
 showLevel();
+
+/** The saturation in fine steps; in the recordings' steps while the page plays them. */
+const FREE_STEP = 0.05;
+function applyGrid(): void {
+  const step = recordings && settings.kind === 'recorded' ? recordings.manifest.step : FREE_STEP;
+  levelSlider.step = String(step);
+  const value = Number(levelSlider.value);
+  const snapped = Number((Math.round(value / step) * step).toFixed(4));
+  if (Math.abs(snapped - value) < 1e-9) return;
+  levelSlider.value = String(snapped);
+  showLevel();
+  if (player.current) player.changeLevel(snapped);
+}
+
+/** The Pianoteq recordings, if there are any: they name the piano, set the saturation's steps. */
+async function loadRecordings(): Promise<void> {
+  try {
+    recordings = await Recordings.load(graph.context);
+  } catch (error) {
+    console.warn('The Pianoteq recordings could not be read; the sampled grand plays.', error);
+  }
+  recorded.recordings = recordings;
+  if (recordings) {
+    element('piano-credit', HTMLElement).textContent =
+      `${recordings.manifest.credit}; Salamander Grand Piano by Alexander Holm (CC BY 3.0)`;
+    settings.offerRecorded(recorded, recordings.manifest);
+  }
+  // the sampled grand plays, or stands in where a level is not rendered: load it now
+  if (settings.kind === 'sampled') sampler.ready();
+}
 
 /* ---------- seeking: the slider, dragging the strip, the wheel, the keys ---------- */
 positionSlider.addEventListener('pointerdown', () => {
@@ -189,14 +248,12 @@ async function start(): Promise<void> {
   if (!response.ok) throw new Error(`reduction.mei: ${response.status}`);
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
+  await loadRecordings();
   player.request(1, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();
 void showMpmTitle(element('info-title', HTMLElement)).catch(() => undefined);
-piano.load().catch(() => {
-  setStatus('The piano samples did not load. Reload the page to try again.');
-});
 start().catch((error: unknown) => {
   setStatus(`The voice could not start: ${error instanceof Error ? error.message : String(error)}`);
 });

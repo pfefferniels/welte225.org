@@ -18,8 +18,9 @@ from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
 to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
-info buttons beside Elaboration and Saturation explain those two. The cards are native popovers:
-closed until asked for, and closed again by Escape or a click anywhere else.
+info buttons beside Elaboration and Saturation explain those two. A gear beside the info button
+opens the settings: which piano plays (below). The cards are native popovers: closed until asked
+for, and closed again by Escape or a click anywhere else.
 
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
 in decibels), and the melodic range after Sonic Visualiser's "Melodic Range Spectrogram" (40 Hz to
@@ -132,8 +133,8 @@ page in blocks with their spectrogram columns. Of the work, VocalTractLab's acou
 quarters and its geometry a fifth; the spectrogram adds a twentieth. Three workers render the
 voice 5.3 times as fast as it plays where one renders it 1.9 times as fast (in Chromium on four
 cores of a cloud server); the first sound comes as soon. The page (`src/page/`) plays the
-voice as it arrives, plays the roll and its harmonies on a sampled grand from the same performance,
-holds notes with the sustain pedal as the roll does, and sends all into one small room: early reflections and a
+voice as it arrives, hands the roll and its harmonies, from the same performance, to the piano
+chosen (below), and sends all into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
 voice a little further in than the piano and after a 20 ms pre-delay.
 
@@ -142,26 +143,69 @@ impossible times: an onset equal to the note's tick position or tens of seconds 
 an end before the onset. `repair` (`src/hummer/performance.ts`) puts such a note back at the head
 of its chord, and gives a note that ends too early a length, before the piano or the voice uses it.
 
+## The piano
+
+The worker sends the piano with every plan as the roll plays it: each part's keys with their own
+releases, its sustain pedal and its soft pedal (`src/worker/piano.ts`, `src/shared/piano.ts`). The
+settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `midi.ts`):
+
+- **The Bösendorfer 280VC as Pianoteq rendered it ahead**, where there are recordings in
+  `piano/pianoteq/`: both parts at every level of saturation on a grid (0.25 by default), mono
+  MP3s listed in `manifest.json`. A level is loaded when it is asked for, and the page keeps the
+  one playing and the one coming; the saturation moves in the grid's steps. A level that was not
+  rendered, or whose recording is not of the performance as it is (its keys counted against the
+  manifest), is played by the sampled grand. Where there are recordings they play, unless the
+  visitor chose the sampled grand on an earlier visit.
+- **The Salamander grand, sampled as you listen** (`src/page/piano.ts`), at any saturation: each
+  key held while the sustain pedal is down, at least 0.3 s. The page loads it only when it plays.
+- **The visitor's own instrument over MIDI** (Web MIDI: Chrome, Edge and Firefox, which ask
+  first), at any saturation: a Disklavier, or Pianoteq or another program listening on a MIDI
+  port. It plays the part the elaboration lets be heard (none while the humming is alone): the
+  keys, the sustain pedal with the MPM's positions between up and down (controller 64) and the soft
+  pedal (67), each message timed for when its sound is to be heard. The instrument's delay, which
+  the visitor gives (a Disklavier waits about half a second), is sent that much earlier, and the
+  voice starts that much later. A key pressed again while it still sounds is let up just before,
+  and two presses of a key at one time (six in the piece, where the score doubles a note) are one.
+  On a pause the instrument is silenced. What was already sent for later is cancelled where the
+  browser can; where it cannot, the keys that would still go down are let up again after the last
+  of them. The page's room does not reach the instrument.
+
+`npm run pianoteq` makes the recordings (`tools/pianoteq.ts`). For each level it writes both parts
+as MIDI files, the messages an instrument would be sent (`tools/smf.ts`, a tick of half a
+millisecond), and has Pianoteq render them (`--headless --midi … --wav …`, with the preset given,
+its reverb off: the page has its own room). It finds where the sound lies against the messages by
+the strikes of the keys (`tools/audio.ts`: the rise in the energy of the sound's first difference,
+millisecond by millisecond, against the keys' times weighted by their velocities, refined to a
+tenth of a millisecond; a stand-in renderer's 37.3 ms came out at 36.9 to 37.4) and moves it into
+place, and reports a lag that changes from the beginning to the end. All levels get one gain: the
+piece at ×1 as loud as the sampled grand plays it (−20.4 dB, measured in Chromium), and no
+recording above −0.5 dBFS. Chromium decodes the MP3s without moving them (it takes the encoder's
+delay out), as measured against the messages; other browsers were not measured.
+
+The manifest records each part's keys and the fingerprint of its messages, and
+`test/recordings.test.ts` compares them with the performance as it is: after a change to the
+reconstruction, the harmonies or the chain, CI fails until the recordings are rendered again.
+
 ## Code
 
-| Path                             | What it is                                                                                                                        |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                   |
-| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is           |
-| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                        |
-| `src/reduction/`                 | reading the reduction's MEI, and the harmonies' grace notes                                                                       |
-| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                   |
-| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                 |
-| `src/worker/`                    | the worker: levels, the harmonies' score, piano notes, spectrogram, the render loop                                               |
-| `src/page/`                      | the page: audio graph and room, the elaboration mix, piano sampler, renderings, transport, spectrogram view                       |
-| `src/shared/`                    | what both sides use: units, maths, the messages between them                                                                      |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration |
-| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s                                                |
-| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                  |
-| `tools/`                         | build, calibration, a browser smoke test, and what they share for running in Node                                                 |
-| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                              |
-| `vtl/`                           | the VocalTractLab build and its patch                                                                                             |
-| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                         |
+| Path                             | What it is                                                                                                                                              |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                         |
+| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                 |
+| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                              |
+| `src/reduction/`                 | reading the reduction's MEI, and the harmonies' grace notes                                                                                             |
+| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                         |
+| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                       |
+| `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, spectrogram, the render loop                                                               |
+| `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, transport, spectrogram view |
+| `src/shared/`                    | what both sides use: units, maths, the messages between them, the piano's parts and their MIDI messages, the recordings' manifest                       |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration                       |
+| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest          |
+| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                        |
+| `tools/`                         | build, calibration, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                              |
+| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                    |
+| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                   |
+| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                               |
 
 The score and the performance are the site's own (`/mpm/score.msm`, `/mpm/performance.mpm`), so
 the voice follows the reconstruction as it is published.
@@ -175,8 +219,15 @@ npm ci
 npm run check        # types (tsc, strict), lint (typescript-eslint, strict, type-aware), format, tests
 npm run build        # app.js and worker.js
 npm run calibrate    # after changing the reduction, the hum style or the reconstruction
-npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info
+npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, pianos
+npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
+npm run pianoteq -- midi --out <dir>   # only the MIDI files of every level
 ```
+
+`npm run pianoteq` needs Pianoteq (the program itself, e.g. on a Mac `/Applications/Pianoteq
+9/Pianoteq 9.app/Contents/MacOS/Pianoteq 9`, or in `PIANOTEQ`) and ffmpeg. `--step` sets the grid,
+`--levels 1,0.5` renders only those levels (the others in the manifest stay), `--fxp` takes a
+preset file instead, and `--instrument` and `--credit` name the instrument on the page.
 
 Serve the repository root (`python3 -m http.server`) and open `/`: the page loads `/hummed/` and
 `/mpm/`.
@@ -245,3 +296,6 @@ line).
 - The reduction, the data and the texts are CC BY 4.0, like the rest of the site.
 - The piano samples are from the Salamander Grand Piano by Alexander Holm, CC BY 3.0, trimmed and
   made mono.
+- The recordings in `piano/pianoteq/` are the performance as Pianoteq (Modartt) played it, with
+  its Bösendorfer 280VC. Pianoteq's licence lets the sound it makes be distributed within a musical
+  context, and not in forms that would let it be used as a sample-based instrument.

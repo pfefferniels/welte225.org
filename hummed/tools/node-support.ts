@@ -14,6 +14,8 @@ import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl } from '../src/vtl/module.ts';
 import { voiceFactors, withSubNoteDynamics } from '../src/worker/levels.ts';
+import { harmoniesScore } from '../src/worker/harmonies.ts';
+import type { PianoScore } from '../src/worker/piano.ts';
 
 /** The hummed/ directory. */
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -32,6 +34,11 @@ export const loadScore = (): { msm: string; mpm: string } => ({
   msm: read('../mpm/score.msm'),
   mpm: read('../mpm/performance.mpm'),
 });
+
+/** What the piano plays from, as the worker reads it: the piece, its harmonies, the MPM. */
+export function loadPianoScore(): PianoScore {
+  return { ...loadScore(), harmonies: harmoniesScore(read('reduction/harmonies.mei')) };
+}
 
 /** The voice's performance at a level, as the worker renders it. */
 export function voicePerformance(level: number): { performance: PerformanceData; dynamics: PerformanceData } {

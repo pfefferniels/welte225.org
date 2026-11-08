@@ -1,11 +1,14 @@
 // One rendering of the voice as it streams in from the worker: its sound, which 10 ms slots of it
 // have arrived, its spectrogram tiles, and its place in the score.
 import { interp } from '../shared/math.ts';
-import type { AudioMessage, PianoNote, Plan, Timings } from '../shared/protocol.ts';
+import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
+import type { AudioMessage, Plan, Timings } from '../shared/protocol.ts';
 import { SPECTROGRAM as SPEC } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
 
 const SLOT = SAMPLE_RATE / 100;
+
+export type PianoPartName = 'piece' | 'harmonies';
 /** Spectrogram columns per tile canvas. */
 export const TILE = 2048;
 
@@ -21,13 +24,14 @@ export class Rendering {
   readonly voiceLevel: number;
   readonly duration: Seconds;
   readonly bars: readonly (readonly [Seconds, string])[];
-  readonly piano: readonly PianoNote[];
-  readonly harmonies: readonly PianoNote[];
+  /** The piano's two parts as the roll plays them. */
+  readonly parts: { readonly piece: PianoPart; readonly harmonies: PianoPart };
   readonly timings: Timings;
   readonly startSeconds: Seconds;
   readonly audio: Float32Array;
   readonly tiles: Tile[] = [];
   readonly #clock: Plan['clock'];
+  readonly #held = new Map<PianoPartName, readonly HeldNote[]>();
   /** Samples arrived per 10 ms slot. */
   readonly #have: Uint16Array;
   readonly #began = performance.now();
@@ -40,8 +44,7 @@ export class Rendering {
     this.voiceLevel = plan.voiceLevel;
     this.duration = plan.duration;
     this.bars = plan.bars;
-    this.piano = plan.piano;
-    this.harmonies = plan.harmonies;
+    this.parts = { piece: plan.piece, harmonies: plan.harmonies };
     this.timings = plan.timings;
     this.startSeconds = plan.startSeconds;
     this.#clock = plan.clock;
@@ -67,6 +70,16 @@ export class Rendering {
     for (let c = a; c < b; c++)
       if (this.#have[c] < Math.min(SLOT, this.audio.length - c * SLOT)) return false;
     return true;
+  }
+
+  /** A part's notes as the sampler plays them, held by the sustain pedal. */
+  held(part: PianoPartName): readonly HeldNote[] {
+    let notes = this.#held.get(part);
+    if (!notes) {
+      notes = heldNotes(this.parts[part]);
+      this.#held.set(part, notes);
+    }
+    return notes;
   }
 
   /** How far ahead of `t` the sound has arrived without a gap. */
