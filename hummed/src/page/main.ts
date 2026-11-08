@@ -4,7 +4,7 @@ import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogra
 import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
-import { heard, mix } from './mix.ts';
+import { heard, mix, voiceElaboration } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
@@ -99,7 +99,7 @@ const player = new Player(graph, sampled, pool, {
 /* ---------- the piano: in the page, or an instrument over MIDI ---------- */
 /** The part an instrument over MIDI plays: the one the elaboration lets be heard. */
 const instrumentPart = (): PianoPartName | null => {
-  const what = heard(Number(elaborationSlider.value) / 100);
+  const what = heard(elaboration());
   return what === 'humming' ? null : what;
 };
 const settings = new PianoSettings({
@@ -113,13 +113,17 @@ const settings = new PianoSettings({
   status: setStatus,
 });
 
-/* ---------- the faders: elaboration sets the mix, saturation the performance ---------- */
+/* ---------- the faders: elaboration sets the mix and the voice, saturation the performance ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
-// the piano's two parts are both always playing: the gains, gliding, crossfade between them
+const elaboration = (): number => Number(elaborationSlider.value) / 100;
+const saturation = (): number => Number(levelSlider.value);
+// the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
+// voice itself is rendered anew for the elaboration once the fader rests
+let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
 const applyElaboration = (): void => {
-  const e = Number(elaborationSlider.value) / 100;
+  const e = elaboration();
   const gains = mix(e);
   setGain(graph.hum, gains.hum);
   setGain(graph.harmonies, gains.harmonies);
@@ -136,7 +140,13 @@ const applyElaboration = (): void => {
   // an instrument plays one part: the other, or none, from where playing is
   if (settings.setPart(instrumentPart())) player.restartPiano();
 };
-elaborationSlider.addEventListener('input', applyElaboration);
+elaborationSlider.addEventListener('input', () => {
+  applyElaboration();
+  clearTimeout(elaborationTimer);
+  elaborationTimer = setTimeout(() => {
+    player.change({ elaboration: voiceElaboration(elaboration()) });
+  }, 300);
+});
 applyElaboration();
 
 let levelTimer: ReturnType<typeof setTimeout> | undefined;
@@ -148,7 +158,7 @@ levelSlider.addEventListener('input', () => {
   showLevel();
   clearTimeout(levelTimer);
   levelTimer = setTimeout(() => {
-    player.changeLevel(Number(levelSlider.value));
+    player.change({ level: saturation() });
   }, 250);
 });
 showLevel();
@@ -163,7 +173,7 @@ function applyGrid(): void {
   if (Math.abs(snapped - value) < 1e-9) return;
   levelSlider.value = String(snapped);
   showLevel();
-  if (player.current) player.changeLevel(snapped);
+  if (player.current) player.change({ level: snapped });
 }
 
 /** The Pianoteq recordings, if there are any: they name the piano, set the saturation's steps. */
@@ -249,7 +259,7 @@ async function start(): Promise<void> {
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
   await loadRecordings();
-  player.request(1, { seconds: 0 });
+  player.request({ level: saturation(), elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();

@@ -48,14 +48,14 @@ export class BuiltInPiano implements PianoOutput {
   /** Whether the rendering is played from a recording (else by the sampler). */
   recorded(rendering: Rendering): boolean {
     const recordings = this.#recordings;
-    const entry = recordings?.level(rendering.level);
-    if (!recordings || !entry || recordings.failed(rendering.level)) return false;
+    const entry = recordings?.level(rendering.setting.level);
+    if (!recordings || !entry || recordings.failed(rendering.setting.level)) return false;
     const { piece, harmonies } = rendering.parts;
     if (entry.piece.keys === piece.keys.length && entry.harmonies.keys === harmonies.keys.length) return true;
-    if (!this.#warned.has(rendering.level)) {
-      this.#warned.add(rendering.level);
+    if (!this.#warned.has(rendering.setting.level)) {
+      this.#warned.add(rendering.setting.level);
       console.warn(
-        `The Pianoteq recording of ×${rendering.level} is of another performance: run npm run pianoteq.`,
+        `The Pianoteq recording of ×${rendering.setting.level} is of another performance: run npm run pianoteq.`,
       );
     }
     return false;
@@ -63,9 +63,9 @@ export class BuiltInPiano implements PianoOutput {
 
   ready(rendering: Rendering): boolean {
     if (this.recorded(rendering)) {
-      if (this.#recordings?.buffers(rendering.level)) return true;
+      if (this.#recordings?.buffers(rendering.setting.level)) return true;
       // a recording that failed to load leaves the level to the sampler
-      if (!this.#recordings?.failed(rendering.level)) return false;
+      if (!this.#recordings?.failed(rendering.setting.level)) return false;
     }
     return this.#sampler.ready();
   }
@@ -76,10 +76,10 @@ export class BuiltInPiano implements PianoOutput {
 
   start(rendering: Rendering, t: Seconds, when: number): void {
     this.stop();
-    const buffers = this.recorded(rendering) ? this.#recordings?.buffers(rendering.level) : null;
+    const buffers = this.recorded(rendering) ? this.#recordings?.buffers(rendering.setting.level) : null;
     this.#sampling = !buffers;
     if (buffers) {
-      this.#recordings?.playing(rendering.level);
+      this.#recordings?.playing(rendering.setting.level);
       for (const part of PARTS) {
         const buffer = buffers[part];
         if (t >= buffer.duration) continue;

@@ -2,7 +2,7 @@
 // have arrived, its spectrogram tiles, and its place in the score.
 import { interp } from '../shared/math.ts';
 import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
-import type { AudioMessage, Plan, Timings } from '../shared/protocol.ts';
+import type { AudioMessage, Plan, Setting, Timings } from '../shared/protocol.ts';
 import { SPECTROGRAM as SPEC } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
 
@@ -20,7 +20,7 @@ export interface Tile {
 
 export class Rendering {
   readonly id: number;
-  readonly level: number;
+  readonly setting: Setting;
   readonly voiceLevel: number;
   readonly duration: Seconds;
   readonly bars: readonly (readonly [Seconds, string])[];
@@ -40,7 +40,7 @@ export class Rendering {
 
   constructor(plan: Plan) {
     this.id = plan.id;
-    this.level = plan.level;
+    this.setting = plan.setting;
     this.voiceLevel = plan.voiceLevel;
     this.duration = plan.duration;
     this.bars = plan.bars;

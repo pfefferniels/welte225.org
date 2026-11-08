@@ -13,7 +13,13 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl } from '../src/vtl/module.ts';
-import { voiceFactors, withSubNoteDynamics } from '../src/worker/levels.ts';
+import {
+  approximateness,
+  DEFAULT_ELABORATION,
+  voiceFactors,
+  voiceLead,
+  withSubNoteDynamics,
+} from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
 import type { PianoScore } from '../src/worker/piano.ts';
 
@@ -40,13 +46,17 @@ export function loadPianoScore(): PianoScore {
   return { ...loadScore(), harmonies: harmoniesScore(read('reduction/harmonies.mei')) };
 }
 
-/** The voice's performance at a level, as the worker renders it. */
-export function voicePerformance(level: number): { performance: PerformanceData; dynamics: PerformanceData } {
+/** The voice's performance at a saturation and an elaboration, as the worker renders it, and how loosely it sings. */
+export function voicePerformance(
+  level: number,
+  elaboration = DEFAULT_ELABORATION,
+): { performance: PerformanceData; dynamics: PerformanceData; approximateness: number } {
   const { msm, mpm } = loadScore();
-  const voiceMpm = exaggerateMpm(mpm, { factors: voiceFactors(level) }).mpm;
+  const voiceMpm = exaggerateMpm(mpm, { factors: voiceFactors(level, voiceLead(elaboration)) }).mpm;
   return {
     performance: performMsmToData({ msm, mpm: voiceMpm }),
     dynamics: performMsmToData({ msm, mpm: withSubNoteDynamics(voiceMpm) }),
+    approximateness: approximateness(elaboration),
   };
 }
 

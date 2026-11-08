@@ -93,15 +93,22 @@ The elaboration fader (`src/page/mix.ts`) sets three gains, from left to right:
 The humming falls evenly in decibels all the way, from 0 dB to −11 dB at the middle and −22 dB at
 the top, where it is a pianist humming along. The page plays both the piece and the harmonies all
 the time, each into its own gain, so passing the middle crossfades between them, even in the
-middle of a chord. It starts two thirds of the way up: the piece, with the humming at −15 dB.
+middle of a chord. It starts at 0.65: the piece, with the humming at −14 dB.
+
+The fader also shapes the voice itself (`src/worker/levels.ts`), so moving it renders the voice
+anew once it rests (in steps of 0.05), as moving the saturation does; the gains change at once.
+The barer the music, the further the voice's expression goes beyond the piano's (0.7 at 0, 0.31 at
+0.65, 0.1 at 1) and the more loosely it keeps to the pitch: its approximateness, 1 at 0 and 0 at
+1 (below).
 
 ## How the voice hums
 
-For one saturation (an exaggeration of the MPM) a worker (`src/worker/worker.ts`) does this:
+For one saturation (an exaggeration of the MPM) and elaboration a worker (`src/worker/worker.ts`)
+does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
-   for the piano at the level, and for the voice a step further. The voice is the inner guide of
-   the playing: always 0.3 more exaggerated than the piano, except in the dimensions that move
+   for the piano at the level, and for the voice further. The voice is the inner guide of the
+   playing: always more exaggerated than the piano (0.1 to 0.7, by the elaboration), except in the dimensions that move
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the
    millisecond. A third rendering, with sub-note dynamics, gives the dynamics as a curve.
@@ -113,7 +120,7 @@ For one saturation (an exaggeration of the MPM) a worker (`src/worker/worker.ts`
    note. The mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
    open shapes, less before high notes, and closes as each phrase fades; the humming shape changes
    at pedal presses and in long notes.
-3. **Gestures** (`src/hummer/gestures.ts`): the pitch line with its wobble; the effort, lung
+3. **Gestures** (`src/hummer/gestures.ts`): the pitch line; the effort, lung
    pressure following the dynamics within held notes (velocity^1.5, each note offset by its own
    velocity against the curve, corrected by the calibration) and the glottis from breathy to modal
    with loudness; two gestural scores, lips closed and lips open at their widest, and the opening
@@ -123,6 +130,26 @@ For one saturation (an exaggeration of the MPM) a worker (`src/worker/worker.ts`
    computed every 10 ms and only where the tract has moved by more than 0.03, and interpolated in
    between (0.03 dB from computing it every step, in the median); the closed and open tubes are
    blended by the opening, so the lips part gradually rather than with VocalTractLab's jump.
+
+The pitch line holds every target still. VocalTractLab moves the pitch towards a target as a
+fifth-order critically damped system that follows a sloped target exactly and then carries its
+speed past the end of the slope: the slides and scoops that were written as slopes overshot the
+next note by one to two semitones. A target that holds still cannot be overshot. Such a change is
+half done 4.67 time constants (140 ms at 30 ms) after the target changes, which had put every new
+pitch some 0.12 s behind the piano; each target now takes over that much earlier, so the pitch is
+half way when the note is heard (or in the middle of a slide), plus a little that grows with the
+approximateness. Within a note:
+
+- A note led by a breath starts below its pitch: the scoop, held low, then let go.
+- The note lands off its pitch by a random amount (sd 10 to 40 cents) and after 160 to 280 ms
+  settles to a third of that, never quite on it.
+- About it the pitch wobbles, a new random target every 125 to 200 ms (the measured 29 cents,
+  scaled by 0.85 to 1.35), and a phrase's last note falls.
+
+Each range runs from approximateness 0 to 1, and the time constant from 30 to 40 ms (VocalTractLab
+allows at most 40). At 0.65, 300 ms into a note, the pitch is 11 cents off its note in the median
+(32 at the 90th percentile), and half way to a new note 28 ms after it sounds. At 0 these are 21
+cents (48) and 50 ms, at 1 8 cents (21) and 11 ms.
 
 The page runs several such workers side by side (`src/page/pool.ts`; as many as there are cores
 to spare, at most four). Each prepares the level itself, and renders the chunks of the voice it is

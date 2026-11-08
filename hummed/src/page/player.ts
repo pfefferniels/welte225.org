@@ -1,7 +1,7 @@
 // The transport: the voice played from the stream in short buffers, the piano handed to its output
 // (outputs.ts: in the page, or on an instrument over MIDI) as it falls due, and a new rendering
 // taking over at the same place in the score once it has sound there.
-import type { StartAt } from '../shared/protocol.ts';
+import type { Setting, StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoOutput } from './outputs.ts';
@@ -11,7 +11,7 @@ import { Rendering } from './rendering.ts';
 /** How far ahead sound is scheduled, and in what lengths the voice is handed to the audio graph. */
 const LOOKAHEAD: Seconds = 0.6;
 const SEGMENT: Seconds = 0.25;
-/** How far the old voice may carry on while a new level renders, at most. */
+/** How far the old voice may carry on while a new setting renders, at most. */
 const MAX_SWITCH_LEAD: Seconds = 1.2;
 /** From a start to the first sound: time to schedule it. */
 const START_MARGIN: Seconds = 0.06;
@@ -34,7 +34,9 @@ export class Player {
   readonly #renders = new Map<number, Rendering>();
   #nextId = 1;
   #current: Rendering | null = null;
-  #pending: { readonly id: number; readonly level: number } | null = null;
+  #pending: { readonly id: number; readonly setting: Setting } | null = null;
+  /** The setting last asked for: the pending one's, else the current one's. */
+  #wanted: Setting | null = null;
   #playing = false;
   /** Playing, but stopped where the voice has not been rendered yet. */
   #waiting = false;
@@ -91,23 +93,31 @@ export class Player {
     );
   }
 
-  /** Ask the worker for a level, starting where given. */
-  request(level: number, start: StartAt): void {
+  /** Ask the workers for a setting, starting where given. */
+  request(setting: Setting, start: StartAt): void {
     const id = this.#nextId++;
-    this.#pool.request(id, level, start);
-    this.#pending = { id, level };
+    this.#pool.request(id, setting, start);
+    this.#pending = { id, setting };
+    this.#wanted = setting;
     for (const key of [...this.#renders.keys()]) if (key !== this.#current?.id) this.#renders.delete(key);
-    this.#view.status(`Rendering ×${level.toFixed(2)}…`);
+    this.#view.status('Rendering…');
   }
 
-  /** Another exaggeration, from a little ahead: where the playhead will be when it is ready. */
-  changeLevel(level: number): void {
+  /** Another saturation or elaboration, from a little ahead: where the playhead will be when it is ready. */
+  change(change: Partial<Setting>): void {
     const cur = this.#current;
-    if (cur && Math.abs(level - cur.level) < 1e-9) return;
+    const base = this.#wanted ?? cur?.setting;
+    if (!base) return;
+    const setting = { ...base, ...change };
+    if (
+      Math.abs(setting.level - base.level) < 1e-9 &&
+      Math.abs(setting.elaboration - base.elaboration) < 1e-9
+    )
+      return;
     const lead =
       this.#playing && cur ? Math.max(0, Math.min(MAX_SWITCH_LEAD, cur.aheadOf(this.position()) - 0.3)) : 0;
     const t = cur ? Math.min(cur.duration, this.position() + lead) : 0;
-    this.request(level, { tick: cur ? cur.toTick(t) : 0 });
+    this.request(setting, { tick: cur ? cur.toTick(t) : 0 });
   }
 
   receive(message: VoiceEvent): void {
@@ -157,7 +167,7 @@ export class Player {
     const cur = this.#current;
     if (!cur) return;
     t = Math.max(0, Math.min(cur.duration, t));
-    if (!cur.rendered(t, t + 0.3)) this.request(cur.level, { seconds: t });
+    if (!cur.rendered(t, t + 0.3)) this.request(this.#wanted ?? cur.setting, { seconds: t });
     this.#offset = t;
     if (this.#playing) this.#startFrom(t);
     this.#view.changed();
