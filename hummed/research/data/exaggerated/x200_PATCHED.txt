@@ -1,0 +1,1 @@
+espressivo 0.11 at s=2 ends n1ennzqw, n1wgljx2, n8biwve before they start (end 194801 ms); their ends were set to onset + 1793 ms, the final note's length at s=1.

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Träumerei, hummed</title>
+    <meta
+      name="description"
+      content="Grünfeld's 1905 Welte-Mignon recording of Schumann's Träumerei (WM 225), with the pianist's inner voice humming along, rendered live in the browser by VocalTractLab."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <canvas
+      id="spec"
+      tabindex="0"
+      role="img"
+      aria-label="Spectrogram of the hum, drawn as it is rendered. Drag sideways, or use the arrow keys, to move through the piece."
+    ></canvas>
+
+    <div class="controls">
+      <section class="panel mix" aria-label="Mix and exaggeration">
+        <div class="fader">
+          <label for="g-piano">Piano</label>
+          <input id="g-piano" type="range" min="0" max="100" step="1" value="75" />
+          <output id="o-piano" for="g-piano">−5.0 dB</output>
+        </div>
+        <div class="fader">
+          <label for="g-hum">Humming</label>
+          <input id="g-hum" type="range" min="0" max="100" step="1" value="40" />
+          <output id="o-hum" for="g-hum">−15.9 dB</output>
+        </div>
+        <div class="fader">
+          <label for="exag">Exaggeration</label>
+          <input id="exag" type="range" min="0" max="2" step="0.05" value="1" disabled />
+          <output id="o-exag" for="exag">×1.00</output>
+        </div>
+      </section>
+
+      <section class="panel transport" aria-label="Transport">
+        <button id="play" type="button" aria-label="Play" disabled>
+          <svg id="icon-play" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 2.5v13l11-6.5z" /></svg>
+          <svg id="icon-pause" viewBox="0 0 18 18" aria-hidden="true" hidden>
+            <path d="M3.5 2.5h4v13h-4zM10.5 2.5h4v13h-4z" />
+          </svg>
+        </button>
+        <div class="seek">
+          <input
+            id="pos"
+            type="range"
+            min="0"
+            max="165"
+            step="0.01"
+            value="0"
+            aria-label="Position in the piece"
+            disabled
+          />
+          <div class="readout">
+            <span id="bar">Upbeat</span>
+            <span><b id="now">0:00</b> / <span id="total">–:––</span></span>
+          </div>
+        </div>
+        <p id="status" role="status">Starting VocalTractLab…</p>
+      </section>
+    </div>
+
+    <footer class="credit">
+      <a href="/">welte225.org</a> ·
+      <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed#readme">source and licences</a>
+    </footer>
+  </body>
+</html>

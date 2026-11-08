@@ -1,0 +1,235 @@
+/* The spectrogram fills the window; the faders (left) and the transport (right) float over its
+   bottom edge, on panels it shows through. */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #5b6270;
+  --rule: #d4d4d4;
+  --accent: #111111;
+  --panel: rgb(255 255 255 / 0.7);
+  --spec-lo: #ffffff;
+  --spec-label: #4d4d4d;
+  --spec-head: #000000;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 13px;
+}
+
+#spec {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+}
+#spec.dragging {
+  cursor: grabbing;
+}
+#spec:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.controls {
+  position: fixed;
+  bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.panel {
+  pointer-events: auto;
+  background: var(--panel);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.transport {
+  flex: 0 1 460px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 6px 14px;
+}
+
+#play {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+#play:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+#play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+#play:disabled {
+  opacity: 0.45;
+  cursor: progress;
+}
+#play svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+#play svg[hidden] {
+  display: none;
+}
+
+.seek {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.readout {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.readout b {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+#status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+#status[hidden] {
+  display: none;
+}
+
+.mix {
+  flex: 0 1 330px;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.fader {
+  display: grid;
+  grid-template-columns: 6.8em minmax(0, 1fr) 4.6em;
+  align-items: center;
+  gap: 10px;
+}
+.fader label {
+  font-size: 13px;
+}
+.fader output {
+  color: var(--muted);
+  text-align: right;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  height: 22px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  --p: 0%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
+}
+input[type='range']::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--rule);
+}
+input[type='range']::-moz-range-progress {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  margin-top: -5.5px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+input[type='range']::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+input[type='range']:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+input[type='range']:disabled {
+  opacity: 0.45;
+  cursor: progress;
+}
+
+.credit {
+  position: fixed;
+  right: var(--gutter);
+  top: max(4px, env(safe-area-inset-top, 0px));
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 11px;
+}
+.credit a {
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .transport,
+  .mix {
+    flex-basis: 100%;
+  }
+}

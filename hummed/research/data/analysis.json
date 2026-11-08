@@ -1,0 +1,222 @@
+{
+ "sine_roll": {
+  "id": "sine_roll",
+  "n": 19,
+  "pitch_median_abs_cents": 1.7437258620529974,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 129.1643948743797,
+  "arrival_iqr_ms": 108.91448253358416,
+  "arrival_n": 9,
+  "dynamics_r": 0.9999996299345713
+ },
+ "piano_melody": {
+  "id": "piano_melody",
+  "n": 158,
+  "pitch_median_abs_cents": 5.443321896596444,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 20.194572909161934,
+  "arrival_iqr_ms": 6.125486708100425,
+  "arrival_n": 113,
+  "dynamics_r": 0.21138260912611256
+ },
+ "sine_deadpan": {
+  "id": "sine_deadpan",
+  "n": 19,
+  "pitch_median_abs_cents": 1.7366433436891384,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 159.1746642097096,
+  "arrival_iqr_ms": 129.59770574876825,
+  "arrival_n": 8,
+  "dynamics_r": null
+ },
+ "additive_deadpan": {
+  "id": "additive_deadpan",
+  "n": 162,
+  "pitch_median_abs_cents": 3.5608151224241738,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 15.353178847654192,
+  "arrival_iqr_ms": 16.122525979757274,
+  "arrival_n": 112,
+  "dynamics_r": null
+ },
+ "additive_hum": {
+  "id": "additive_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 3.758650094627683,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.164394874384811,
+  "arrival_iqr_ms": 15.210823659493332,
+  "arrival_n": 115,
+  "dynamics_r": 0.9388434718257672
+ },
+ "lf_hum": {
+  "id": "lf_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 3.935223851700812,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.321840111364281,
+  "arrival_iqr_ms": 13.54098961214234,
+  "arrival_n": 115,
+  "dynamics_r": 0.9022847703224829
+ },
+ "lf_ooh": {
+  "id": "lf_ooh",
+  "n": 162,
+  "pitch_median_abs_cents": 3.9151280293308446,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.189969820009196,
+  "arrival_iqr_ms": 15.218602575419737,
+  "arrival_n": 115,
+  "dynamics_r": 0.8893255492326353
+ },
+ "pt_hum": {
+  "id": "pt_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 4.285531193835595,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.321840111364281,
+  "arrival_iqr_ms": 14.104747593330025,
+  "arrival_n": 115,
+  "dynamics_r": 0.8947720589096595
+ },
+ "ds_kiritan_hum": {
+  "id": "ds_kiritan_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 3.8022770804359425,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 15.375671706991056,
+  "arrival_iqr_ms": 14.35270789110099,
+  "arrival_n": 114,
+  "dynamics_r": 0.8548590136750811
+ },
+ "ds_kiritan_deadpan": {
+  "id": "ds_kiritan_deadpan",
+  "n": 162,
+  "pitch_median_abs_cents": 3.769723268974758,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 15.706357695307815,
+  "arrival_iqr_ms": 14.16266789514875,
+  "arrival_n": 111,
+  "dynamics_r": null
+ },
+ "espnet_kurumi_hum": {
+  "id": "espnet_kurumi_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 8.196728257955328,
+  "pitch_within_50": 0.8950617283950617,
+  "arrival_median_ms": 34.98398943057879,
+  "arrival_iqr_ms": 30.529428590334362,
+  "arrival_n": 101,
+  "dynamics_r": 0.944663609117723
+ },
+ "ds_kiritan_orig": {
+  "id": "ds_kiritan_orig",
+  "n": 158,
+  "pitch_median_abs_cents": 4.026627152378296,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.856100536647432,
+  "arrival_iqr_ms": 15.165286468047157,
+  "arrival_n": 111,
+  "dynamics_r": 0.48914730450381433
+ },
+ "pt_ooh": {
+  "id": "pt_ooh",
+  "n": 162,
+  "pitch_median_abs_cents": 3.903213152349963,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 14.9480473815089,
+  "arrival_iqr_ms": 13.995995874800826,
+  "arrival_n": 115,
+  "dynamics_r": 0.6820391818671171
+ },
+ "vtl_hum": {
+  "id": "vtl_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 4.4749409237947475,
+  "pitch_within_50": 0.9938271604938271,
+  "arrival_median_ms": 16.30598432937802,
+  "arrival_iqr_ms": 12.680333811066369,
+  "arrival_n": 115,
+  "dynamics_r": 0.9446177858652831
+ },
+ "vtl_ooh": {
+  "id": "vtl_ooh",
+  "n": 162,
+  "pitch_median_abs_cents": 4.5355057132878756,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 15.814226388087604,
+  "arrival_iqr_ms": 12.234755361147265,
+  "arrival_n": 115,
+  "dynamics_r": 0.945514059291501
+ },
+ "espnet_ofuton_hum": {
+  "id": "espnet_ofuton_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 14.663115871089303,
+  "pitch_within_50": 0.6481481481481481,
+  "arrival_median_ms": 48.47749954653224,
+  "arrival_iqr_ms": 26.536214633502198,
+  "arrival_n": 84,
+  "dynamics_r": 0.944842113648861
+ },
+ "espnet_kiritan_hum": {
+  "id": "espnet_kiritan_hum",
+  "n": 162,
+  "pitch_median_abs_cents": 63.62612632343735,
+  "pitch_within_50": 0.4074074074074074,
+  "arrival_median_ms": 111.05723620994468,
+  "arrival_iqr_ms": 137.69314416455813,
+  "arrival_n": 71,
+  "dynamics_r": 0.941487920165318
+ },
+ "ddsp_violin": {
+  "id": "ddsp_violin",
+  "n": 162,
+  "pitch_median_abs_cents": 4.3890046004398755,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 46.00679655537476,
+  "arrival_iqr_ms": 91.2053495021099,
+  "arrival_n": 115,
+  "dynamics_r": 0.4141996099314394
+ },
+ "sinsy_hum": {
+  "id": "sinsy_hum",
+  "n": 161,
+  "pitch_median_abs_cents": 93.70980370648431,
+  "pitch_within_50": 0.32919254658385094,
+  "arrival_median_ms": 29.149373926436795,
+  "arrival_iqr_ms": 44.895915502205064,
+  "arrival_n": 66,
+  "dynamics_r": 0.20639270074195645
+ },
+ "ddsp_flute": {
+  "id": "ddsp_flute",
+  "n": 154,
+  "pitch_median_abs_cents": 4.37636014617965,
+  "pitch_within_50": 0.9675324675324676,
+  "arrival_median_ms": 99.98398943057651,
+  "arrival_iqr_ms": 93.79893966450936,
+  "arrival_n": 101,
+  "dynamics_r": 0.705148419964964
+ },
+ "seedvc_s12": {
+  "id": "seedvc_s12",
+  "n": 42,
+  "pitch_median_abs_cents": 5.257035470442133,
+  "pitch_within_50": 1.0,
+  "arrival_median_ms": 24.18996982001076,
+  "arrival_iqr_ms": 13.242947207791957,
+  "arrival_n": 29,
+  "dynamics_r": 0.8171166763354973
+ },
+ "vtl_hummer": {
+  "id": "vtl_hummer",
+  "n": 161,
+  "pitch_median_abs_cents": 9.387877308569841,
+  "pitch_within_50": 0.9627329192546584,
+  "arrival_median_ms": 192.75433786101814,
+  "arrival_iqr_ms": 208.9248834303099,
+  "arrival_n": 109,
+  "dynamics_r": 0.9429719995969952
+ }
+}

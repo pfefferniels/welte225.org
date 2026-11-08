@@ -1,0 +1,12 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import { convertMeiToMsm, performMsmToData } from 'espressivo';
+const dir = '../data/';
+const mei = readFileSync(dir + 'transcription.mei', 'utf-8');
+let mpm = readFileSync(dir + 'performance.mpm', 'utf-8');
+mpm = mpm.replace(/<dynamics /g, '<dynamics subNoteDynamics="true" ');
+const [movement] = convertMeiToMsm(mei, { sourceName: 'transcription.mei' });
+const data = performMsmToData({ msm: movement.msm, mpm });
+const cv = data.parts[0].controlChanges.find(c => c.kind === 'channelVolume');
+writeFileSync('dynamics_curve.json', JSON.stringify(cv.points));
+console.log(cv.points.length, cv.points.slice(0, 5), cv.points.slice(-3));
+console.log(data.parts[0].notes.slice(0,3).map(n=>[n.id,n.velocity]));

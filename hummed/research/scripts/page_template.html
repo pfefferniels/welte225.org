@@ -1,0 +1,534 @@
+<title>Träumerei, hummed</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a listening desk. One roll strip (Grünfeld's melody as perforations, the hummed
+   pitch drawn over it) stays in view; the versions are a catalogue below; findings and method
+   read as text. */
+:root {
+  --paper: #f6f7f4;
+  --panel: #ecefea;
+  --ink: #16191d;
+  --ink-2: #555b62;
+  --ink-3: #80868d;
+  --rule: #d6dad3;
+  --accent: #2459c4;
+  --accent-ink: #ffffff;
+  --note: #2d3238;
+  --warn: #9a5a00;
+  --font-display: "Libre Caslon Display", "Libre Caslon Text", Georgia, serif;
+  --font-body: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: 2.4rem;
+  --step-4: 3.4rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121417; --panel: #1b1e22; --ink: #eceee9; --ink-2: #a9aeb5; --ink-3: #7c828a;
+    --rule: #2d3136; --accent: #77a2f2; --accent-ink: #0d1117; --note: #dfe2dc; --warn: #e3a64a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121417; --panel: #1b1e22; --ink: #eceee9; --ink-2: #a9aeb5; --ink-3: #7c828a;
+  --rule: #2d3136; --accent: #77a2f2; --accent-ink: #0d1117; --note: #dfe2dc; --warn: #e3a64a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap { max-width: 68rem; margin: 0 auto; }
+.measure { max-width: 40rem; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.4rem, 7vw, var(--step-4)); letter-spacing: -0.01em; }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible, canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.eyebrow, .label { font-family: var(--font-data); font-size: var(--step--1); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+header.top { display: grid; gap: 1.1rem; padding-block: 3.5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+header.top .dek { font-size: var(--step-1); max-width: 42rem; color: var(--ink); }
+header.top .facts { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; font-family: var(--font-data); font-size: var(--step--1); color: var(--ink-2); }
+header.top .facts b { color: var(--ink); font-weight: 500; }
+
+section { padding-block: 2.75rem; border-bottom: 1px solid var(--rule); display: grid; gap: 1.25rem; }
+.answer { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 2rem; }
+.answer .verdict { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.2; }
+.answer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.9rem; }
+.answer li { padding-left: 1.1rem; position: relative; }
+.answer li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.42rem; height: 0.42rem; border-radius: 50%; background: var(--ink-3); }
+.answer .more { margin-top: 0.4rem; font-family: var(--font-data); font-size: var(--step--1); }
+
+/* the desk */
+.desk { position: relative; z-index: 5; background: var(--paper); padding-block: 0.9rem 0.7rem; border-bottom: 1px solid var(--rule); display: grid; gap: 0.55rem; }
+.transport { display: flex; align-items: center; gap: 0.9rem; min-width: 0; }
+.play { flex: none; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 0; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; cursor: pointer; }
+.play svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }
+.now { min-width: 0; display: grid; }
+.now .t { font-family: var(--font-body); font-weight: 600; font-size: var(--step-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.now .f { font-family: var(--font-data); font-size: var(--step--1); color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.clock { margin-left: auto; text-align: right; font-family: var(--font-data); font-size: var(--step--1); color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.clock b { color: var(--ink); font-weight: 500; font-size: var(--step-0); }
+.rollbox { position: relative; background: var(--panel); border-radius: 6px; overflow: hidden; }
+canvas { display: block; width: 100%; cursor: pointer; touch-action: manipulation; }
+#detail { height: 210px; }
+#overview { height: 34px; border-top: 1px solid var(--rule); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; font-family: var(--font-data); font-size: var(--step--1); color: var(--ink-2); }
+.legend i { display: inline-block; vertical-align: middle; margin-right: 0.45rem; }
+.legend .k-note { width: 1.4rem; height: 0.5rem; background: var(--note); opacity: 0.55; border-radius: 2px; }
+.legend .k-f0 { width: 1.4rem; height: 2px; background: var(--accent); }
+.legend .k-head { width: 2px; height: 0.9rem; background: var(--ink); }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-family: var(--font-data); font-size: 0.75rem; line-height: 1.35; padding: 0.35rem 0.5rem; border-radius: 4px; white-space: nowrap; transform: translate(-50%, calc(-100% - 8px)); }
+
+/* catalogue */
+.family { display: grid; gap: 0.2rem; padding-top: 1.6rem; }
+.family > header { display: grid; gap: 0.35rem; padding-bottom: 0.5rem; }
+.family > header p { color: var(--ink-2); max-width: 46rem; }
+.v { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) minmax(0, 13.5rem); gap: 0.4rem 1rem; align-items: start; padding: 0.85rem 0.6rem; border-top: 1px solid var(--rule); border-radius: 4px; cursor: pointer; }
+.v:hover { background: var(--panel); }
+.v[aria-current="true"] { background: var(--panel); box-shadow: inset 3px 0 0 var(--accent); }
+.v .pick { width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.v[aria-current="true"] .pick { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.v .pick svg { width: 0.8rem; height: 0.8rem; fill: currentColor; }
+.v .body { display: grid; gap: 0.35rem; min-width: 0; }
+.v .name { font-weight: 600; }
+.v .name .badge { font-family: var(--font-data); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 3px; padding: 0.05rem 0.35rem; margin-left: 0.45rem; white-space: nowrap; vertical-align: 0.12em; }
+.v .how { color: var(--ink-2); font-size: 0.97rem; }
+.v .chips { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; font-family: var(--font-data); font-size: 0.74rem; color: var(--ink-2); }
+.v .chips span b { color: var(--ink); font-weight: 500; }
+.v dl { margin: 0; display: grid; grid-template-columns: auto auto; gap: 0.15rem 0.8rem; font-family: var(--font-data); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+.v dt { color: var(--ink-2); }
+.v dd { margin: 0; text-align: right; color: var(--ink); }
+.v dd.bad { color: var(--warn); }
+
+.method { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.4rem; }
+.method h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 600; margin-bottom: 0.4rem; }
+.method p + p { margin-top: 0.6rem; }
+.small { font-size: 0.94rem; color: var(--ink-2); }
+.credits { columns: 2 18rem; column-gap: 2.4rem; font-size: 0.92rem; color: var(--ink-2); }
+.credits p { break-inside: avoid; margin-bottom: 0.55rem; }
+code, .mono { font-family: var(--font-data); font-size: 0.86em; }
+pre.xml { margin: 0; background: var(--panel); border-radius: 6px; padding: 0.9rem 1rem; overflow-x: auto; font: 0.78rem/1.5 var(--font-data); color: var(--ink); max-height: 32rem; }
+
+@media (max-width: 760px) {
+  .answer, .method { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+  .v { grid-template-columns: 2.4rem minmax(0, 1fr); }
+  .v dl { grid-column: 2; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0.1rem 0.7rem; }
+  .v dd { text-align: left; }
+  #detail { height: 170px; }
+  .clock .bar { display: none; }
+}
+@media (min-width: 761px) and (min-height: 720px) { .desk { position: sticky; top: env(safe-area-inset-top, 0px); } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Welte-Mignon roll 225 · Alfred Grünfeld, 1905 · Schumann, <i>Träumerei</i> op. 15 no. 7</div>
+    <h1>Träumerei, hummed</h1>
+    <p class="dek">The melody of Grünfeld's roll, sung back by the voice synthesisers available in 2026: signal processing, articulatory models, neural singing synthesis, voice conversion. Every version takes its onsets, note ends and dynamics from the same MPM reconstruction, to the millisecond, so what differs is only the voice.</p>
+    <div class="facts" id="facts"></div>
+  </header>
+
+  <section aria-labelledby="h-answer">
+    <h2 id="h-answer">Can a model hum it perfectly?</h2>
+    <div class="answer">
+      <p class="verdict">Not yet. Timing and pitch can be dictated exactly; the voice is the bottleneck.</p>
+      <div>
+        <ul>
+          <li><b>No published system has been shown, in a listening test, to be indistinguishable from real singing.</b> The best score-based singers stay 0.3–0.6 MOS points below the recordings in their own tests (HiFiSinger 3.76 vs 4.03, DiffSinger 3.85 vs 4.30, TCSinger 2 4.13 vs 4.58). The only claim of parity is Dreamtonics' own unpublished test of Synthesizer V.</li>
+          <li><b>Nothing has been trained to hum.</b> Humming exists in datasets only as input (query-by-humming, HumTrans' 56 hours of "da-da"), and models such as Vevo2 turn humming <i>into</i> singing. Synthesisers hum the way this page does: a nasal syllable (ん, m) on every note.</li>
+          <li><b>Exact timing and pitch are the easy part.</b> DiffSinger, Synthesizer V and ESPnet accept phoneme timing in seconds and, in DiffSinger's case, a pitch curve on a 5 ms grid. Here the forced durations hold Grünfeld's onsets to within one frame (about 11 ms), and models that take our pitch curve follow it within 4 cents.</li>
+          <li><b>Range is the hard limit for open models.</b> Träumerei spans 22 semitones up to B♭5. Most freely available voices are trained on an hour or two of one singer and break above it: they sing the top notes a sixth low, an octave low, or as noise. Only one of the open voices tried here (VISinger2, Oniku Kurumi) covers the whole melody at pitch.</li>
+          <li><b>Reinforcement learning plays a small part.</b> It appears since 2025 as post-training of large singing models (Vevo2, YingMusic-Singer) to improve lyric intelligibility and melody accuracy. RL agents playing articulatory models (VocalTractLab, Pink Trombone) have so far learned vowel transitions, without pitch control.</li>
+        </ul>
+        <p class="more"><a href="report.html">Read the full research report, with sources →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="listen">
+  <div class="desk" id="desk" aria-label="Player">
+    <div class="transport">
+      <button class="play" id="play" aria-label="Play"><svg viewBox="0 0 16 16" aria-hidden="true"><path id="playIcon" d="M3 1.5v13l11-6.5z"/></svg></button>
+      <div class="now"><span class="t" id="nowTitle">—</span><span class="f" id="nowFamily"></span></div>
+      <div class="clock"><span class="bar" id="barLabel">bar —</span><br><b id="clockNow">0:00.0</b> / <span id="clockTotal">0:00</span></div>
+    </div>
+    <div class="rollbox" id="rollbox">
+      <canvas id="detail" tabindex="0" aria-label="Melody notes and the pitch of the version you are hearing; click to jump"></canvas>
+      <canvas id="overview" aria-label="The whole piece; click to jump"></canvas>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <div class="legend"><span><i class="k-note"></i>Grünfeld's melody notes, darker when louder</span><span><i class="k-f0"></i>pitch of this version, tracked from its audio</span><span><i class="k-head"></i>playhead</span></div>
+  </div>
+
+  <section aria-labelledby="h-versions" style="border-bottom:0">
+    <div class="measure" style="display:grid;gap:0.6rem">
+      <h2 id="h-versions">The versions</h2>
+      <p>Pick any version, then switch while it plays: the new one picks up at the same note, so you can compare two voices on one phrase. Space plays and pauses; the arrow keys skip five seconds. Transposed versions are drawn at the written pitch.</p>
+      <p class="small">Figures beside each version, measured from its audio: <span class="mono">in tune</span> is the share of notes whose sustained pitch lies within 50 cents of the target; <span class="mono">arrival</span> is the median time at which the pitch settles on a new note, relative to Grünfeld's onset; <span class="mono">dynamics r</span> is the correlation of note levels with the levels his velocities call for.</p>
+    </div>
+    <div id="catalogue"></div>
+  </section>
+  </div>
+
+  <section aria-labelledby="h-vocalmap">
+    <h2 id="h-vocalmap">The vocal map inside the MPM</h2>
+    <div class="measure" style="display:grid;gap:0.8rem">
+      <p>The hum is not a separate file: it is one more map in the performance, next to the tempo, dynamics, articulation and ornamentation maps, dated in the same ticks. Rendering it goes through the same date-to-time mapping as the piano, so the voice cannot drift from Grünfeld's rubato. A portamento names the &lt;ornament&gt; whose arpeggio it rides; pitches name their notes; values in milliseconds carry an <span class="mono">Ms</span> suffix, as in MPM. The style in the header says how this voice does things: its synthesiser, transposition and time constants, its wobble, and its mouth postures (here fitted from a recorded hum). A converter turns the map into a VocalTractLab gestural score.</p>
+      <p>A <span class="mono">&lt;posture&gt;</span> names a closed hum, the open posture it leans toward, how far (<span class="mono">amount</span>, 0 = lips closed) and how long the move takes. The amount follows the smoothed dynamics, so the mouth opens a little over a second or two on the louder stretches (less on high notes) and closes as a phrase fades; the velum stays open, so even the open sound stays nasal. VocalTractLab's lips part with a jump (from closed to an opening of 0.07 cm² at once), so the converter renders the score twice, lips held closed and lips following the opening, and fades from one to the other as the amount rises (with their glottal cycles lined up first: they drift apart by up to a millisecond): the way parting lips add the mouth's sound to the nose's.</p>
+      <p>The dynamics are not copied into the map: an <span class="mono">&lt;effortDef source="dynamicsMap"&gt;</span> in the style says that the voice's effort follows the performance's own dynamicsMap, as espressivo renders it below the note level. Lung pressure rises with the velocity and the vocal folds close from breathy to modal, so the hum swells and fades <em>inside</em> held notes, where a piano tone can only decay: on the long B♭ of bar 14 it falls with Grünfeld's diminuendo. Each note keeps its own accent from the velocities; the map's <span class="mono">&lt;pressure&gt;</span> events only shape the effort, a swell into each phrase and a release at its end.</p>
+      <p class="small">Proposed, not part of the MPM standard. espressivo ignores the map: with it inserted, all 476 notes of the piano render exactly as before.</p>
+    </div>
+    <pre class="xml" tabindex="0">/*VOCALMAP*/</pre>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <h2 id="h-method">How the versions were made</h2>
+    <div class="method">
+      <div>
+        <h3>Grünfeld's timing and dynamics</h3>
+        <p>The MEI transcription and the MPM performance of roll 225 (welte225.org/mpm) were rendered with espressivo 0.11, the TypeScript port of meico. The melody is staff 1, layer 1, the top note where it has a chord: 162 notes over 2:41, with bars 1–8 played twice. Onsets are his, arpeggiation included.</p>
+        <p>A voice cannot decay like a string, so each note lasts as long as the piano lets it sound: to the key release, or while the sustain pedal is down, to the pedal release, never past the next melody onset. The level follows the MPM dynamics curve (its transitions sampled continuously) plus each note's own velocity offset from accentuation and arpeggios, converted with 40·log₁₀(v/127). His melody spans velocities 28–53, about 10 dB.</p>
+      </div>
+      <div>
+        <h3>One shared voice model</h3>
+        <p>Breaths at the nine phrase starts and wherever Grünfeld lifts his hand for 120 ms or more after a longer note, at most one every three seconds: fifteen in all. Repeated notes are re-articulated, everything else is legato.</p>
+        <p>The pitch contour follows Saitou et al. (2007): their overshoot filter (ω = 0.0348 rad/ms, ζ = 0.542) forwards and preparation filter (ω = 0.0292 rad/ms, ζ = 0.668) backwards over the note steps, so a transition centres on the onset; vibrato of 5.6 Hz rising by a tenth through the note, ±20–35 cents, from 0.32 s into notes of 0.45 s or longer; a slow drift of about 6 cents and a fine fluctuation of 3. The signal-processing, articulatory, DiffSinger and DDSP versions all sing this one contour.</p>
+      </div>
+      <div>
+        <h3>The neural singers</h3>
+        <p>DiffSinger (an OpenUtau voicebank of Tohoku Kiritan with OpenVPI's NSF-HiFiGAN vocoder) and ESPnet's VISinger models received phoneme durations equal to Grünfeld's notes, quantised cumulatively to their frame grid. DiffSinger also took our pitch curve; the ESPnet models predict their own. Neither has a loudness input, so their note levels were moved afterwards to the levels the MPM asks for, keeping each voice's own shaping within the note.</p>
+      </div>
+      <div>
+        <h3>Making them comparable</h3>
+        <p>Every file was level-normalised and played through the same small hall (1.1 s reverberation, 16 dB below the direct sound). The figures are computed on the dry files with WORLD's Harvest pitch tracker. Renders ran on four CPU cores; Seed-VC was too slow there for more than the first eight bars.</p>
+        <p class="small">Scripts, notes and the report are in the branch <span class="mono">claude/ecstatic-davinci-hmt310</span> of pfefferniels/welte-ads, folder <span class="mono">traeumerei-humming/</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-credits" style="border-bottom:0">
+    <h2 id="h-credits">Sources and licences</h2>
+    <div class="credits">
+      <p><b>Performance:</b> reconstruction of Welte-Mignon roll 225 by Niels Pfeffer (MEI, MPM), rendered with espressivo (GPL-3.0).</p>
+      <p><b>Piano:</b> Salamander Grand Piano by Alexander Holm (CC BY 3.0), as served for @tonejs/piano.</p>
+      <p><b>VocalTractLab 2.4</b> by Peter Birkholz, through the vocaltractlab Python package.</p>
+      <p><b>DiffSinger</b> (OpenVPI, Apache-2.0); Tohoku Kiritan DiffSinger voicebank from the Hugging Face dataset mitsudate/DiffSinger_opencpop_JPN; NSF-HiFiGAN vocoder by OpenVPI (CC BY-NC-SA 4.0).</p>
+      <p><b>ESPnet</b> VISinger/VISinger2 checkpoints: espnet/oniku_kurumi_utagoe_db_svs_visinger2, espnet/ofuton_p_utagoe_db_svs_visinger2 (CC BY 4.0), espnet/kiritan_svs_visinger, each trained on its singer's database under that database's terms.</p>
+      <p><b>Sinsy</b> (Modified BSD) with the NIT SONG070 F001 voice (CC BY 3.0), through pysinsy.</p>
+      <p><b>Seed-VC</b> by Plachtaa (GPL-3.0); timbre reference vocadito track 17, singer S12 (Bittner et al., CC BY 4.0).</p>
+      <p><b>DDSP</b> solo violin and flute checkpoints by Google Magenta (Apache-2.0).</p>
+      <p>Non-commercial research use; several voices carry their singers' own terms.</p>
+    </div>
+  </section>
+</div>
+
+<audio id="audio" preload="auto"></audio>
+<script id="page-data" type="application/json">/*DATA*/</script>
+<script>
+(() => {
+  const D = JSON.parse(document.getElementById('page-data').textContent);
+  const FAMILY_ORDER = ['Grünfeld hums along', 'Reference', 'Signal processing', 'Articulatory', 'Neural singing synthesis',
+    'Voice conversion', 'Pre-neural singing synthesis', 'Neural instrument (DDSP)',
+    "With the roll's accompaniment", 'Where the models break'];
+  const FAMILY_TEXT = {
+    'Grünfeld hums along': 'The pianist humming while he plays, written into the MPM as one more map: a &lt;vocalMap&gt; of postures, velum, voice quality, pitch, pressure, lip closures and breaths, dated in ticks like the dynamics and the ornaments, so it follows Grünfeld\u2019s tempo and rubato. Each rolled chord under a melody note is a portamento over exactly the arpeggio\u2019s span. Rendered as a VocalTractLab gestural score in the style of a recorded hum.',
+    'Reference': 'The roll itself, and the data stripped bare. The deadpan sine is the yardstick: the score at one tempo and one level.',
+    'Signal processing': 'Formant synthesis: a glottal source and the resonances of a nasal or vowel tract, computed directly. Every parameter is known, so pitch, timing and loudness follow the voice model exactly.',
+    'Articulatory': 'A physical model of the vocal tract: the sound comes from simulated air flow through a 3D tract shaped for [m] or [u], a self-oscillating glottis and the lung pressure the dynamics set. This is the kind of model RL agents are trained to play.',
+    'Neural singing synthesis': 'Networks trained on recordings of one singer. DiffSinger takes our pitch curve; VISinger2 predicts its own and keeps only the timing. Both hum on the moraic nasal ん.',
+    'Voice conversion': 'A two-step route: render the exact contour with any synthesiser, then let a network re-voice it in the timbre of a real recording.',
+    'Pre-neural singing synthesis': 'Statistical parametric singing (hidden Markov models), the state of the art before 2016.',
+    'Neural instrument (DDSP)': 'Differentiable DSP decodes exactly an f0 curve and a loudness curve. Magenta published no voice weights, so these are the same curves on a learned violin and flute.',
+    "With the roll's accompaniment": 'Because the onsets are Grünfeld’s, a hum fits under his own left hand.',
+    'Where the models break': 'The same open models at the edge of their training: Träumerei climbs to B♭5, beyond what their singers recorded.'
+  };
+  const DEFAULT = 'mix_vtl_piano_full';
+  const V = new Map(D.versions.map(v => [v.id, v]));
+  const audio = document.getElementById('audio');
+  let cur = V.get(DEFAULT) || D.versions[0];
+
+  // ---------- helpers
+  const fmt = s => { s = Math.max(0, s); const m = Math.floor(s / 60); return `${m}:${(s - m * 60).toFixed(1).padStart(4, '0')}`; };
+  const fmtShort = s => { const m = Math.floor(s / 60); return `${m}:${String(Math.round(s - m * 60)).padStart(2, '0')}`; };
+  const NAMES = ['C', 'C♯', 'D', 'E♭', 'E', 'F', 'F♯', 'G', 'A♭', 'A', 'B♭', 'B'];
+  const noteName = p => NAMES[p % 12] + (Math.floor(p / 12) - 1);
+  const notesOf = v => (v && v.timing === 'deadpan') ? D.deadpan : D.notes;
+  const barsOf = v => (v && v.timing === 'deadpan') ? D.deadpan_bars : D.bars;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  // position in the music: note index + fraction, so a switch keeps the place
+  function musicPos(v, t) {
+    const ns = notesOf(v);
+    let i = 0;
+    while (i + 1 < ns.length && ns[i + 1].t <= t) i++;
+    if (t < ns[0].t) return { i: 0, f: (t - ns[0].t) };
+    const span = (i + 1 < ns.length ? ns[i + 1].t : ns[i].t + ns[i].d) - ns[i].t;
+    return { i, f: Math.min(1, (t - ns[i].t) / Math.max(span, 1e-3)) };
+  }
+  function timeAt(v, pos) {
+    const ns = notesOf(v);
+    if (pos.i === 0 && pos.f < 0) return Math.max(0, ns[0].t + pos.f);
+    const n = ns[pos.i];
+    const span = (pos.i + 1 < ns.length ? ns[pos.i + 1].t : n.t + n.d) - n.t;
+    return n.t + pos.f * span;
+  }
+
+  // ---------- facts line
+  const g = D.notes;
+  const vel = g.map(n => n.v);
+  document.getElementById('facts').innerHTML =
+    `<span><b>${g.length}</b> melody notes</span><span><b>${fmtShort(g[g.length - 1].t + g[g.length - 1].d)}</b> with the repeat</span>` +
+    `<span>velocity <b>${Math.floor(Math.min(...vel))}–${Math.round(Math.max(...vel))}</b></span><span><b>${D.versions.length}</b> versions</span>`;
+
+  // ---------- catalogue
+  const cat = document.getElementById('catalogue');
+  const ctlText = v => {
+    const c = v.control;
+    const timing = v.timing === 'deadpan' ? 'deadpan score' : (c.includes('timing') ? 'Grünfeld' : '—');
+    const pitch = v.family === 'Reference' ? 'written' : c.includes('vocalmap') ? 'vocal map' : (c.includes('f0') ? 'shared contour' : 'model’s own');
+    const dyn = c.includes('dyn-level') ? 'drive the voice, levelled' : c.includes('dyn') ? 'drive the voice' : (c.includes('dyn-post') ? 'set afterwards' : 'none');
+    return `<span>timing <b>${timing}</b></span><span>pitch <b>${pitch}</b></span><span>dynamics <b>${dyn}</b></span>`;
+  };
+  const noArrival = new Set(['sine_roll', 'sine_deadpan', 'piano_melody', 'piano_full']);
+  const metricHtml = v => {
+    const m = v.metrics;
+    if (!m) return '<dl><dt>figures</dt><dd>—</dd></dl>';
+    const inTune = Math.round(m.pitch_within_50 * 100);
+    const arr = noArrival.has(v.id) || m.arrival_median_ms == null ? '—' : `${m.arrival_median_ms >= 0 ? '+' : ''}${Math.round(m.arrival_median_ms)} ms`;
+    const dyn = (m.dynamics_r == null || v.timing === 'deadpan' || v.id.startsWith('piano')) ? '—' : m.dynamics_r.toFixed(2);
+    return `<dl><dt>in tune</dt><dd class="${inTune < 85 ? 'bad' : ''}">${inTune} %</dd>` +
+      `<dt>arrival</dt><dd>${arr}</dd><dt>dynamics r</dt><dd>${dyn}</dd></dl>`;
+  };
+  const PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5v13l11-6.5z"/></svg>';
+  FAMILY_ORDER.forEach(fam => {
+    const vs = D.versions.filter(v => v.family === fam);
+    if (!vs.length) return;
+    const box = document.createElement('div');
+    box.className = 'family';
+    box.innerHTML = `<header><div class="label">${vs.length} version${vs.length > 1 ? 's' : ''}</div><h3>${fam}</h3><p>${FAMILY_TEXT[fam] || ''}</p></header>`;
+    vs.forEach(v => {
+      const row = document.createElement('div');
+      row.className = 'v';
+      row.dataset.id = v.id;
+      const badges = (v.transpose ? `<span class="badge">${v.transpose === -12 ? '8vb' : (v.transpose > 0 ? '+' : '') + v.transpose + ' st'}</span>` : '') +
+        (v.excerpt ? `<span class="badge">${v.excerpt}</span>` : '');
+      row.innerHTML = `<button class="pick" aria-label="Play ${v.title}">${PLAY}</button>` +
+        `<div class="body"><div class="name">${v.title}${badges}</div><p class="how">${v.how}</p><div class="chips">${ctlText(v)}</div></div>` +
+        metricHtml(v);
+      row.addEventListener('click', () => select(v.id, true));
+      box.appendChild(row);
+    });
+    cat.appendChild(box);
+  });
+
+  // ---------- player
+  const playBtn = document.getElementById('play');
+  const playIcon = document.getElementById('playIcon');
+  function setIcon() {
+    const playing = !audio.paused;
+    playIcon.setAttribute('d', playing ? 'M3 1.5h3.5v13H3zM9.5 1.5H13v13H9.5z' : 'M3 1.5v13l11-6.5z');
+    playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+  }
+  function select(id, play) {
+    const next = V.get(id);
+    if (!next) return;
+    const wasPlaying = !audio.paused;
+    const pos = musicPos(cur, nowT());
+    const changed = next !== cur || !audio.src;
+    cur = next;
+    document.querySelectorAll('.v').forEach(r => r.setAttribute('aria-current', r.dataset.id === id ? 'true' : 'false'));
+    document.getElementById('nowTitle').textContent = cur.title;
+    document.getElementById('nowFamily').textContent = cur.family + (cur.transpose ? ` · sung ${cur.transpose === -12 ? 'an octave' : Math.abs(cur.transpose) + ' semitones'} lower` : '') + (cur.excerpt ? ` · ${cur.excerpt} only` : '');
+    document.getElementById('clockTotal').textContent = fmtShort(cur.duration);
+    if (changed) {
+      let t = timeAt(cur, pos);
+      if (t > cur.duration - 0.5) t = 0;
+      audio.src = cur.audio;
+      const go = () => { try { audio.currentTime = t; } catch (e) {} if (play || wasPlaying) audio.play().catch(() => {}); };
+      audio.addEventListener('loadedmetadata', go, { once: true });
+      audio.load();
+      viewT = t;
+    } else if (play) {
+      audio.paused ? audio.play().catch(() => {}) : audio.pause();
+    }
+    draw();
+  }
+  playBtn.addEventListener('click', () => { if (!audio.src) select(cur.id, true); else audio.paused ? audio.play().catch(() => {}) : audio.pause(); });
+  audio.addEventListener('play', setIcon);
+  audio.addEventListener('pause', setIcon);
+  audio.addEventListener('ended', setIcon);
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea')) return;
+    if (e.code === 'Space' && !e.target.closest('button')) { e.preventDefault(); playBtn.click(); }
+    if (e.code === 'ArrowRight') { seek(nowT() + 5); }
+    if (e.code === 'ArrowLeft') { seek(nowT() - 5); }
+  });
+  function seek(t) {
+    t = Math.max(0, Math.min(cur.duration - 0.05, t));
+    viewT = t;
+    if (!audio.src) select(cur.id, false);
+    else if (audio.readyState > 0) audio.currentTime = t;
+    else audio.addEventListener('loadedmetadata', () => { audio.currentTime = t; }, { once: true });
+    draw();
+  }
+  function nowT() { return audio.src && audio.readyState > 0 ? audio.currentTime : viewT; }
+
+  // ---------- roll drawing
+  const det = document.getElementById('detail');
+  const ov = document.getElementById('overview');
+  const tip = document.getElementById('tip');
+  const WINDOW = () => (det.clientWidth < 600 ? 7 : 12);
+  const PMIN = 55, PMAX = 85;
+  let viewT = 0;
+  function fit(c) {
+    const r = window.devicePixelRatio || 1;
+    const w = c.clientWidth, h = c.clientHeight;
+    if (c.width !== Math.round(w * r) || c.height !== Math.round(h * r)) { c.width = Math.round(w * r); c.height = Math.round(h * r); }
+    const x = c.getContext('2d');
+    x.setTransform(r, 0, 0, r, 0, 0);
+    return [x, w, h];
+  }
+  const total = () => Math.max(...D.versions.map(v => v.duration));
+  function draw() {
+    const t = nowT();
+    const ns = notesOf(cur);
+    const [x, w, h] = fit(det);
+    const ink = css('--ink'), ink3 = css('--ink-3'), rule = css('--rule'), note = css('--note'), acc = css('--accent');
+    const padL = 34, padB = 16;
+    const win = WINDOW();
+    let t0 = t - win * 0.3;
+    t0 = Math.max(0, Math.min(t0, total() - win));
+    const X = s => padL + (s - t0) / win * (w - padL);
+    const Y = p => (h - padB) - (p - PMIN) / (PMAX - PMIN) * (h - padB - 6);
+    x.clearRect(0, 0, w, h);
+    // pitch grid: C and F lines, labelled
+    x.font = '11px ' + css('--font-data');
+    x.textBaseline = 'middle';
+    for (let p = PMIN; p <= PMAX; p++) {
+      if (p % 12 !== 0 && p % 12 !== 5) continue;
+      x.strokeStyle = rule; x.lineWidth = 1;
+      x.beginPath(); x.moveTo(padL, Y(p) + 0.5); x.lineTo(w, Y(p) + 0.5); x.stroke();
+      x.fillStyle = ink3; x.fillText(noteName(p), 4, Y(p));
+    }
+    // bar lines
+    x.textBaseline = 'alphabetic';
+    barsOf(cur).forEach(b => {
+      if (b.t < t0 - 1 || b.t > t0 + win) return;
+      const bx = Math.round(X(b.t)) + 0.5;
+      if (bx < padL) return;
+      x.strokeStyle = rule; x.beginPath(); x.moveTo(bx, 0); x.lineTo(bx, h - padB); x.stroke();
+      x.fillStyle = ink3; x.fillText(b.b, bx + 3, h - 4);
+    });
+    // notes
+    const vmin = 28, vmax = 53;
+    ns.forEach(n => {
+      if (n.t + n.d < t0 || n.t > t0 + win) return;
+      const a = 0.25 + 0.6 * Math.min(1, Math.max(0, (n.v - vmin) / (vmax - vmin)));
+      x.globalAlpha = a; x.fillStyle = note;
+      const x0 = Math.max(padL, X(n.t)), x1 = X(n.t + n.d) - 1.5;
+      if (x1 > x0) { roundRect(x, x0, Y(n.p) - 4, x1 - x0, 8, 2); x.fill(); }
+      x.globalAlpha = 1;
+    });
+    // f0 of the current version
+    if (cur.f0) {
+      const fp = D.frame_ms / 1000;
+      x.strokeStyle = acc; x.lineWidth = 2; x.lineJoin = 'round';
+      x.beginPath();
+      let pen = false;
+      const i0 = Math.max(0, Math.floor(t0 / fp)), i1 = Math.min(cur.f0.length, Math.ceil((t0 + win) / fp));
+      for (let i = i0; i < i1; i++) {
+        const m = cur.f0[i] / 10;
+        if (!m || m < PMIN - 2 || m > PMAX + 2) { pen = false; continue; }
+        const px = X(i * fp), py = Y(m);
+        if (px < padL) { pen = false; continue; }
+        pen ? x.lineTo(px, py) : x.moveTo(px, py);
+        pen = true;
+      }
+      x.stroke();
+    }
+    // playhead
+    const hx = Math.round(X(t)) + 0.5;
+    x.strokeStyle = ink; x.lineWidth = 1.5;
+    x.beginPath(); x.moveTo(hx, 0); x.lineTo(hx, h - padB); x.stroke();
+    // overview
+    const [o, ow, oh] = fit(ov);
+    o.clearRect(0, 0, ow, oh);
+    const T = total();
+    const OX = s => s / T * ow;
+    const OY = p => oh - 4 - (p - PMIN) / (PMAX - PMIN) * (oh - 8);
+    o.fillStyle = note;
+    ns.forEach(n => { o.globalAlpha = 0.45; o.fillRect(OX(n.t), OY(n.p) - 1, Math.max(1, OX(n.d) - 0.5), 2); });
+    o.globalAlpha = 0.12; o.fillStyle = acc; o.fillRect(OX(t0), 0, OX(win), oh); o.globalAlpha = 1;
+    o.strokeStyle = acc; o.lineWidth = 1; o.strokeRect(OX(t0) + 0.5, 0.5, OX(win) - 1, oh - 1);
+    // clock and bar
+    document.getElementById('clockNow').textContent = fmt(t);
+    const ni = musicPos(cur, t).i;
+    document.getElementById('barLabel').textContent = `bar ${ns[ni].b === '0' ? 'upbeat' : ns[ni].b}`;
+    det._map = { X, Y, t0, win, padL };
+  }
+  function roundRect(x, a, b, w, h, r) {
+    r = Math.min(r, w / 2, h / 2);
+    x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r);
+    x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath();
+  }
+  det.addEventListener('click', e => {
+    const m = det._map; if (!m) return;
+    const r = det.getBoundingClientRect();
+    const px = e.clientX - r.left;
+    if (px < m.padL) return;
+    seek(m.t0 + (px - m.padL) / (r.width - m.padL) * m.win);
+  });
+  ov.addEventListener('click', e => {
+    const r = ov.getBoundingClientRect();
+    seek((e.clientX - r.left) / r.width * total());
+  });
+  det.addEventListener('mousemove', e => {
+    const m = det._map; if (!m) return;
+    const r = det.getBoundingClientRect();
+    const px = e.clientX - r.left, py = e.clientY - r.top;
+    const hit = notesOf(cur).find(n => px >= m.X(n.t) && px <= m.X(n.t + n.d) && Math.abs(py - m.Y(n.p)) <= 7);
+    if (!hit) { tip.hidden = true; return; }
+    tip.hidden = false;
+    tip.innerHTML = `bar ${hit.b === '0' ? 'upbeat' : hit.b} · ${noteName(hit.p)}<br>onset ${hit.t.toFixed(3)} s · sounds ${Math.round(hit.d * 1000)} ms<br>velocity ${hit.v}${hit.br ? ' · breath before' : ''}`;
+    tip.style.left = Math.min(Math.max(px, 90), r.width - 90) + 'px';
+    tip.style.top = (m.Y(hit.p) + det.offsetTop) + 'px';
+  });
+  det.addEventListener('mouseleave', () => { tip.hidden = true; });
+  det.addEventListener('keydown', e => {
+    if (e.code === 'ArrowRight' || e.code === 'ArrowLeft') e.stopPropagation();
+    if (e.code === 'ArrowRight') seek(nowT() + 1);
+    if (e.code === 'ArrowLeft') seek(nowT() - 1);
+  });
+
+  function loop() { if (!audio.paused) draw(); requestAnimationFrame(loop); }
+  requestAnimationFrame(loop);
+  window.addEventListener('resize', draw);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  audio.addEventListener('seeked', () => { viewT = audio.currentTime; draw(); });
+  audio.addEventListener('pause', () => { viewT = audio.currentTime; });
+
+  // initial state: the default version selected, not yet loaded
+  document.querySelectorAll('.v').forEach(r => r.setAttribute('aria-current', r.dataset.id === cur.id ? 'true' : 'false'));
+  document.getElementById('nowTitle').textContent = cur.title;
+  document.getElementById('nowFamily').textContent = cur.family;
+  document.getElementById('clockTotal').textContent = fmtShort(cur.duration);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  draw();
+})();
+</script>

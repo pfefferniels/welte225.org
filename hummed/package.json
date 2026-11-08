@@ -1,0 +1,35 @@
+{
+  "name": "welte225-hummed",
+  "private": true,
+  "description": "Träumerei, hummed: Grünfeld's Welte-Mignon roll 225 with a pianist's inner voice, rendered live by VocalTractLab",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "node tools/build.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test 'test/**/*.test.ts'",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test",
+    "calibrate": "node tools/calibrate.ts",
+    "smoke": "node tools/smoke.ts"
+  },
+  "dependencies": {
+    "espressivo": "0.11.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.5",
+    "@xmldom/xmldom": "0.9.12",
+    "esbuild": "0.28.2",
+    "eslint": "10.14.0",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1"
+  }
+}

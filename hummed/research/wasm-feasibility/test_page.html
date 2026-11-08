@@ -1,0 +1,189 @@
+<title>VocalTractLab in the Browser</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: a single test sheet, checks top to bottom, the verdict and the sound at the end. */
+:root {
+  --bg: #ffffff; --fg: #18202c; --muted: #5a6575; --rule: #dde2e8; --panel: #f5f7f9;
+  --accent: #b5600b; --good: #1f7a3f; --bad: #b3261e; --wait: #8a6d00;
+  --font-text: "Source Serif 4", Georgia, serif;
+  --font-data: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #101318; --fg: #e5e8ed; --muted: #8d97a5; --rule: #2a313b; --panel: #171b21;
+    --accent: #f0a73a; --good: #5cc98a; --bad: #ff8a80; --wait: #e8c45a; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #101318; --fg: #e5e8ed; --muted: #8d97a5; --rule: #2a313b; --panel: #171b21;
+  --accent: #f0a73a; --good: #5cc98a; --bad: #ff8a80; --wait: #e8c45a; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-text); font-size: 17px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px; }
+.sheet { max-width: 46rem; margin: 0 auto; display: grid; gap: 22px; }
+h1 { font-size: 1.9rem; line-height: 1.15; margin: 0; font-weight: 600; text-wrap: balance; }
+p { margin: 0; }
+.lede { color: var(--muted); max-width: 40rem; }
+.checks { display: grid; border-top: 1px solid var(--rule); }
+.check { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.check .what { font-size: 16px; }
+.check .detail { grid-column: 1 / -1; color: var(--muted); font-family: var(--font-data); font-size: 12.5px; min-width: 0; overflow-wrap: anywhere; }
+.chip { font-family: var(--font-data); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+.chip.good { color: var(--good); } .chip.bad { color: var(--bad); } .chip.wait { color: var(--wait); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+button { font-family: var(--font-data); font-size: 14px; padding: 10px 16px; border-radius: 6px; cursor: pointer;
+  border: 1.5px solid var(--accent); background: var(--accent); color: var(--bg); }
+button.quiet { background: transparent; color: var(--accent); }
+button:disabled { opacity: 0.45; cursor: progress; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.verdict { background: var(--panel); padding: 16px 18px; border-radius: 6px; display: grid; gap: 8px; }
+.verdict b { font-weight: 600; }
+pre { margin: 0; font-family: var(--font-data); font-size: 12.5px; white-space: pre-wrap; color: var(--muted); }
+#status { font-family: var(--font-data); font-size: 13px; color: var(--muted); min-height: 1.4em; }
+</style>
+
+<div class="sheet">
+  <h1>VocalTractLab in the browser</h1>
+  <p class="lede">VocalTractLab 2.4, compiled to WebAssembly, synthesizes 10 seconds of the Träumerei hum here, on your computer. The test checks whether this page may run it, how fast it runs, and whether two voices fit at once. It takes about a minute, and the fan may spin up.</p>
+
+  <div class="row">
+    <button id="run" type="button">Run the test</button>
+    <span id="status" role="status">Not run yet.</span>
+  </div>
+
+  <div class="checks">
+    <div class="check"><span class="what">WebAssembly allowed in this page</span><span class="chip" id="c-wasm">not run</span><span class="detail" id="d-wasm"></span></div>
+    <div class="check"><span class="what">VocalTractLab loads</span><span class="chip" id="c-load">not run</span><span class="detail" id="d-load"></span></div>
+    <div class="check"><span class="what">Geometry only when the tract moves (the real-time candidate)</span><span class="chip" id="c-tube">not run</span><span class="detail" id="d-tube"></span></div>
+    <div class="check"><span class="what">VocalTractLab's own path, geometry every 2.5 ms</span><span class="chip" id="c-tract">not run</span><span class="detail" id="d-tract"></span></div>
+    <div class="check"><span class="what">Two voices at once (lips closed and lips open)</span><span class="chip" id="c-two">not run</span><span class="detail" id="d-two"></span></div>
+  </div>
+
+  <div class="verdict" id="verdict" hidden>
+    <p id="v-text"></p>
+    <div class="row">
+      <button id="play" type="button" class="quiet">Play the 10 s rendered here</button>
+      <button id="copy" type="button" class="quiet">Copy the results</button>
+    </div>
+    <pre id="summary"></pre>
+  </div>
+  <p class="lede" style="font-size: 14px">VocalTractLab is free software under the GPL-3.0 by Peter Birkholz and colleagues. This page runs its backend, version 2.4.2, unchanged, compiled with Emscripten 3.1.6; the source is <a href="https://github.com/TUD-STKS/VocalTractLabBackend-dev" target="_blank" rel="noopener">VocalTractLabBackend-dev</a>, as shipped in vocaltractlab-cython 0.0.17.</p>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const ENGINES = [
+    { file: 'vtl_wasm_simd.js', factory: 'createVTL', name: 'WebAssembly with SIMD' },
+    { file: 'vtl_wasm.js', factory: 'createVTL', name: 'WebAssembly' },
+    { file: 'vtl_js.js', factory: 'createVTLjs', name: 'plain JavaScript (no WebAssembly)' },
+  ];
+  const results = {};
+  let rendered = null;
+  const set = (key, chip, cls, detail) => {
+    const c = $('c-' + key); c.textContent = chip; c.className = 'chip ' + (cls || '');
+    if (detail !== undefined) $('d-' + key).textContent = detail;
+  };
+  const rt = r => (r.secs / r.ms * 1000);
+  const fmt = x => x.toFixed(2) + '× real time';
+  const cls = x => x >= 1.2 ? 'good' : x >= 1 ? 'wait' : 'bad';
+
+  function job(engine, msg) {
+    return new Promise((resolve) => {
+      let w;
+      try { w = new Worker('worker.js'); } catch (e) { resolve({ ok: false, error: 'Workers are not allowed here: ' + e.message }); return; }
+      w.onmessage = e => { resolve(e.data); w.terminate(); };
+      w.onerror = e => { resolve({ ok: false, error: e.message || 'the worker failed' }); w.terminate(); };
+      w.postMessage(Object.assign({ engine }, msg));
+    });
+  }
+
+  async function run() {
+    $('run').disabled = true; $('verdict').hidden = true;
+    ['wasm', 'load', 'tube', 'tract', 'two'].forEach(k => set(k, 'waiting', 'wait', ''));
+    const status = t => { $('status').textContent = t; };
+
+    // 1. may this page compile WebAssembly at all?
+    status('Checking WebAssembly…');
+    try {
+      await WebAssembly.compile(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0]));
+      results.wasm = 'allowed'; set('wasm', 'allowed', 'good', '');
+    } catch (e) {
+      results.wasm = 'blocked: ' + e.message; set('wasm', 'blocked', 'bad', e.message);
+    }
+
+    // 2 + 3. load VTL and run the real-time candidate, trying the engines in turn
+    status('Loading VocalTractLab and synthesizing 10 s (geometry only when the tract moves)…');
+    let engine = null, tube = null;
+    const errors = [];
+    for (const eng of ENGINES) {
+      if (eng.factory === 'createVTL' && results.wasm !== 'allowed') continue;
+      const r = await job(eng, { task: 'tube', tol: 0.01, fast: true });
+      if (r.ok) { engine = eng; tube = r; break; }
+      errors.push(eng.name + ': ' + r.error);
+    }
+    if (!engine) {
+      set('load', 'failed', 'bad', errors.join(' · ')); ['tube', 'tract', 'two'].forEach(k => set(k, 'skipped', '', ''));
+      results.load = 'failed: ' + errors.join(' | ');
+      finish(); return;
+    }
+    results.engine = engine.name; results.version = tube.version;
+    set('load', 'yes', 'good', `${engine.name} · ${tube.version}` + (errors.length ? ` · fell back after: ${errors.join(' · ')}` : ''));
+    results.tube = rt(tube);
+    set('tube', fmt(results.tube), cls(results.tube), `${tube.secs.toFixed(1)} s of audio in ${(tube.ms / 1000).toFixed(1)} s · geometry ${tube.calcs} times instead of 4009`);
+    rendered = tube.audio;
+
+    // 4. VTL's own path for comparison
+    status('Synthesizing the same 10 s the way VocalTractLab normally does…');
+    const tract = await job(engine, { task: 'tract' });
+    if (tract.ok) { results.tract = rt(tract); set('tract', fmt(results.tract), cls(results.tract), `${(tract.ms / 1000).toFixed(1)} s for ${tract.secs.toFixed(1)} s of audio`); }
+    else set('tract', 'failed', 'bad', tract.error);
+
+    // 5. two at once, as the lips-closed and lips-open renderings would run
+    status('Running two voices at the same time…');
+    const two = await Promise.all([job(engine, { task: 'tube', tol: 0.01, fast: true }), job(engine, { task: 'tube', tol: 0.01, fast: true })]);
+    if (two.every(r => r.ok)) {
+      results.two = two.map(rt); const lo = Math.min(...results.two);
+      set('two', fmt(lo), cls(lo), `each: ${results.two.map(x => x.toFixed(2) + '×').join(' and ')} · ${navigator.hardwareConcurrency || '?'} logical cores`);
+    } else set('two', 'failed', 'bad', two.map(r => r.error).filter(Boolean).join(' · '));
+    finish();
+  }
+
+  function finish() {
+    $('run').disabled = false; $('status').textContent = 'Done.';
+    let text;
+    if (!results.engine) text = 'VocalTractLab could not run in this page. The details above say what refused it.';
+    else if (results.tube >= 1.2 && results.two && Math.min(...results.two) >= 1.0)
+      text = `<b>Real time works here.</b> One voice runs at ${results.tube.toFixed(2)}× real time and two at once still keep up, so the hum can be re-rendered while it plays.`;
+    else if (results.tube >= 1.0)
+      text = `<b>Just about real time.</b> One voice runs at ${results.tube.toFixed(2)}× real time${results.two ? `, two at once at ${Math.min(...results.two).toFixed(2)}×` : ''}. Streaming would need a head start, or the second voice only during crossfades.`;
+    else text = `<b>Not real time here.</b> One voice runs at ${results.tube.toFixed(2)}× real time. Re-rendering would have to work ahead of playback.`;
+    $('v-text').innerHTML = text;
+    $('summary').textContent = [
+      'VocalTractLab in the browser — test results',
+      'WebAssembly: ' + results.wasm,
+      'engine: ' + (results.engine || results.load || '-') + (results.version ? ' (' + results.version + ')' : ''),
+      'geometry when moved: ' + (results.tube ? results.tube.toFixed(2) + 'x' : '-'),
+      'VTL own path: ' + (results.tract ? results.tract.toFixed(2) + 'x' : '-'),
+      'two at once: ' + (results.two ? results.two.map(x => x.toFixed(2) + 'x').join(', ') : '-'),
+      'cores: ' + (navigator.hardwareConcurrency || '?') + ' · ' + navigator.userAgent,
+    ].join('\n');
+    $('play').disabled = !rendered;
+    $('verdict').hidden = false;
+  }
+
+  $('run').addEventListener('click', run);
+  $('play').addEventListener('click', () => {
+    if (!rendered) return;
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const peak = rendered.reduce((m, x) => Math.max(m, Math.abs(x)), 1e-9);
+    const b = ctx.createBuffer(1, rendered.length, 44100);
+    b.getChannelData(0).set(rendered.map(x => x / peak * 0.8));
+    const s = ctx.createBufferSource(); s.buffer = b; s.connect(ctx.destination); s.start();
+  });
+  $('copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('summary').textContent); $('copy').textContent = 'Copied'; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents($('summary')); getSelection().removeAllRanges(); getSelection().addRange(r); $('copy').textContent = 'Selected: press Ctrl+C'; }
+  });
+})();
+</script>

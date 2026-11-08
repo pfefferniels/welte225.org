@@ -1,0 +1,33 @@
+{
+  // One configuration for the page, the worker, the tools and the tests. Nothing is emitted:
+  // esbuild bundles the page and the worker, Node runs the tools and tests by stripping types.
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2023", "dom", "dom.iterable", "webworker.importscripts"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true,
+    // Left off on purpose: the signal processing indexes typed arrays in loops whose bounds hold
+    // by construction, and every such read would otherwise need an assertion.
+    "noUncheckedIndexedAccess": false
+  },
+  "include": ["src", "test", "tools"]
+}

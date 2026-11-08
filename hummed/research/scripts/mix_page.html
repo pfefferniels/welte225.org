@@ -1,0 +1,375 @@
+<title>Träumerei, hummed</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
+<style>
+/* Layout: one instrument panel. A sonogram strip scrolls under a fixed playhead; transport and three faders sit beneath it. */
+:root {
+  --bg: #ffffff;          /* one look in both themes: white page */
+  --fg: #18202c;
+  --muted: #5a6575;
+  --rule: #d5dae1;
+  --accent: #b5600b;      /* amber playhead and controls */
+  --spec-lo: #ffffff;     /* the spectrogram: black on white (the tiles are drawn that way) */
+  --spec-label: #4d4d4d;
+  --spec-head: #c85a0a;
+  --font-label: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-data); font-size: 13px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px;
+  box-sizing: border-box;
+}
+.deck { max-width: 1280px; margin: 0 auto; display: grid; gap: 18px; }
+.strip { position: relative; height: clamp(220px, 56vh, 460px); background: var(--spec-lo); overflow: hidden; }
+#spec { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; }
+#spec.dragging { cursor: grabbing; }
+#spec:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.transport { display: flex; align-items: center; gap: 14px; }
+#play {
+  flex: none; width: 48px; height: 48px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: transparent; color: var(--accent);
+  display: grid; place-items: center; cursor: pointer;
+}
+#play:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+#play:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#play:disabled { opacity: 0.45; cursor: progress; }
+#play svg { width: 18px; height: 18px; fill: currentColor; }
+#play svg[hidden] { display: none; }
+.seek { flex: 1; min-width: 0; display: grid; gap: 6px; }
+.readout { display: flex; justify-content: space-between; gap: 12px; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.02em; font-size: 12px; }
+.readout b { color: var(--fg); font-weight: 500; }
+.faders { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px 32px; }
+.fader { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.fader label { font-family: var(--font-label); font-style: italic; font-size: 17px; min-width: 5.2em; }
+.fader output { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 8.5ch; text-align: right; font-size: 12px; }
+.fader.exag output { color: var(--fg); }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none; width: 100%; min-width: 0; height: 24px;
+  background: transparent; margin: 0; cursor: pointer; --p: 0%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px; border-radius: 2px;
+  background: linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
+}
+input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--rule); }
+input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; margin-top: -6px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
+}
+input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+input[type="range"]:disabled { opacity: 0.45; cursor: progress; }
+#status { color: var(--muted); font-size: 12px; min-height: 1.2em; }
+@media (max-width: 560px) { .fader label { font-size: 16px; } }
+</style>
+
+<div class="deck">
+  <div class="strip">
+    <canvas id="spec" tabindex="0" role="img"
+      aria-label="Spectrogram of the hum. Drag sideways, or use the arrow keys, to move through the piece."></canvas>
+  </div>
+
+  <div class="transport">
+    <button id="play" type="button" aria-label="Play" disabled>
+      <svg id="icon-play" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 2.5v13l11-6.5z"/></svg>
+      <svg id="icon-pause" viewBox="0 0 18 18" aria-hidden="true" hidden><path d="M3.5 2.5h4v13h-4zM10.5 2.5h4v13h-4z"/></svg>
+    </button>
+    <div class="seek">
+      <input id="pos" type="range" min="0" max="165" step="0.01" value="0" aria-label="Position in the piece" disabled>
+      <div class="readout"><span id="bar">Upbeat</span><span><b id="now">0:00</b> / <span id="total">2:45</span></span></div>
+    </div>
+  </div>
+
+  <div class="faders">
+    <div class="fader">
+      <label for="g-piano">Piano</label>
+      <input id="g-piano" type="range" min="0" max="100" step="1" value="75">
+      <output id="o-piano" for="g-piano">−5.0 dB</output>
+    </div>
+    <div class="fader">
+      <label for="g-hum">Humming</label>
+      <input id="g-hum" type="range" min="0" max="100" step="1" value="40">
+      <output id="o-hum" for="g-hum">−15.9 dB</output>
+    </div>
+    <div class="fader exag">
+      <label for="exag">Exaggeration</label>
+      <input id="exag" type="range" min="0" max="4" step="1" value="2" disabled
+        aria-describedby="o-exag">
+      <output id="o-exag" for="exag">×1 as played</output>
+    </div>
+  </div>
+  <div id="status" role="status">Loading the audio…</div>
+</div>
+
+<script>
+(() => {
+  const NOTES = [["C3",130.81],["C4",261.63],["C5",523.25],["C6",1046.5],["C7",2093.0],["C8",4186.0]];
+  const SPEC = { tile: 2048, colsPerSec: 100, fmin: 70, fmax: 4500 };
+  const EXAG_LABELS = ["×0 no expression", "×½", "×1 as played", "×1½", "×2"];
+  const $ = id => document.getElementById(id);
+  const canvas = $("spec"), g = canvas.getContext("2d");
+  const playBtn = $("play"), pos = $("pos"), exag = $("exag");
+
+  let LEVELS = null, cur = -1, dur = 165;
+
+  /* ---------- audio graph: two stems, a small hall, a limiter ---------- */
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ctx = new AC();
+  const limiter = ctx.createDynamicsCompressor();
+  limiter.threshold.value = -3; limiter.knee.value = 0; limiter.ratio.value = 20;
+  limiter.attack.value = 0.003; limiter.release.value = 0.15;
+  const master = ctx.createGain(); master.gain.value = 1.0;
+  master.connect(limiter); limiter.connect(ctx.destination);
+  const bus = ctx.createGain();
+  const hall = ctx.createConvolver(); hall.normalize = false; hall.buffer = roomIR();
+  const wet = ctx.createGain(); wet.gain.value = Math.pow(10, -16 / 20) * 3;
+  bus.connect(master); bus.connect(hall); hall.connect(wet); wet.connect(master);
+  const gains = { piano: ctx.createGain(), hum: ctx.createGain() };
+  for (const k in gains) gains[k].connect(bus);
+
+  // decaying stereo noise, darkened above 5 kHz, silent for the first 12 ms: rt60 1.1 s
+  function roomIR() {
+    const sr = ctx.sampleRate, rt = 1.1, n = Math.floor(rt * 1.3 * sr);
+    const buf = ctx.createBuffer(2, n, sr), a = 1 - Math.exp(-2 * Math.PI * 5000 / sr);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch); let y = 0, e = 0;
+      for (let i = 0; i < n; i++) {
+        const x = i < 0.012 * sr ? 0 : (Math.random() * 2 - 1) * Math.exp(-6.9 * i / sr / rt);
+        y += a * (x - y); d[i] = y; e += y * y;
+      }
+      const k = 1 / Math.sqrt(e); for (let i = 0; i < n; i++) d[i] *= k;
+    }
+    return buf;
+  }
+
+  /* ---------- levels: compressed files kept, at most two levels decoded ---------- */
+  const packed = new Map(), decoded = new Map();
+  function fetchLevel(key) {
+    if (!packed.has(key)) packed.set(key, Promise.all(["piano", "hum"].map(s =>
+      fetch(`levels/${key}/${s}.mp3`).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); }))));
+    return packed.get(key);
+  }
+  function decode(buf) {
+    return new Promise((res, rej) => { const p = ctx.decodeAudioData(buf.slice(0), res, rej); if (p && p.then) p.then(res, rej); });
+  }
+  async function getLevel(key) {
+    if (!decoded.has(key)) {
+      decoded.set(key, fetchLevel(key).then(([p, h]) => Promise.all([decode(p), decode(h)]))
+        .then(([piano, hum]) => ({ piano, hum })));
+      while (decoded.size > 2) {                        // keep the current level and this one
+        const old = [...decoded.keys()].find(k => k !== key && (cur < 0 || k !== LEVELS[cur].key));
+        if (!old) break; decoded.delete(old);
+      }
+    }
+    return decoded.get(key);
+  }
+  const tileSets = new Map();
+  function tilesFor(L) {
+    if (!tileSets.has(L.key)) {
+      tileSets.set(L.key, L.tiles.map(name => {
+        const img = new Image(); img.onload = draw; img.src = `levels/${L.key}/spec/${name}`; return img;
+      }));
+      for (const k of [...tileSets.keys()]) if (k !== L.key && (cur < 0 || k !== LEVELS[cur].key)) tileSets.delete(k);
+    }
+    return tileSets.get(L.key);
+  }
+
+  // score position <-> seconds, linear between performed onsets, extrapolated past the ends
+  function interp(x, xs, ys) {
+    let i = 0, j = xs.length - 1;
+    if (x <= xs[0]) j = 1; else if (x >= xs[j]) i = j - 1;
+    else { while (j - i > 1) { const m = (i + j) >> 1; if (xs[m] <= x) i = m; else j = m; } }
+    return ys[i] + (ys[j] - ys[i]) * (x - xs[i]) / (xs[j] - xs[i]);
+  }
+  const toTick = (L, t) => interp(t, L.sec, L.tick), toSec = (L, k) => interp(k, L.tick, L.sec);
+
+  /* ---------- transport ---------- */
+  let playing = false, startAt = 0, offset = 0, sources = [], bufs = null;
+  function position() { return playing ? Math.min(dur, offset + Math.max(0, ctx.currentTime - startAt)) : offset; }
+  function stopSources() { sources.forEach(s => { try { s.onended = null; s.stop(); } catch (e) {} }); sources = []; }
+  function startFrom(t) {
+    stopSources();
+    const when = ctx.currentTime + 0.05;
+    for (const k of ["piano", "hum"]) {
+      const s = ctx.createBufferSource(); s.buffer = bufs[k]; s.connect(gains[k]); s.start(when, Math.min(t, bufs[k].duration));
+      sources.push(s);
+    }
+    startAt = when; offset = t;
+  }
+  function play() { if (offset >= dur - 0.05) offset = 0; ctx.resume(); startFrom(offset); playing = true; setIcon(); loop(); }
+  function pause() { offset = position(); playing = false; stopSources(); setIcon(); draw(); }
+  function seek(t) { t = Math.max(0, Math.min(dur, t)); if (playing) startFrom(t); else offset = t; updateReadout(); draw(); }
+  function setIcon() { $("icon-play").hidden = playing; $("icon-pause").hidden = !playing; playBtn.setAttribute("aria-label", playing ? "Pause" : "Play"); }
+  function loop() {
+    if (!playing) return;
+    if (position() >= dur) { playing = false; offset = dur; stopSources(); setIcon(); }
+    updateReadout(); draw(); requestAnimationFrame(loop);
+  }
+
+  // switch to another exaggeration: same place in the score, a short dip to hide the seam
+  let switchToken = 0;
+  async function setLevel(i) {
+    const token = ++switchToken, L = LEVELS[i];
+    if (cur >= 0) $("status").textContent = `Loading ${EXAG_LABELS[i]}…`;
+    tilesFor(L);
+    let b;
+    try { b = await getLevel(L.key); } catch (e) { $("status").textContent = "The audio did not load. Reload the page to try again."; return; }
+    if (token !== switchToken) return;
+    const apply = () => {
+      const t = cur >= 0 ? toSec(L, toTick(LEVELS[cur], position())) : 0;
+      cur = i; bufs = b; dur = L.dur;
+      pos.max = dur.toFixed(2); $("total").textContent = fmt(dur);
+      if (playing) startFrom(Math.max(0, Math.min(dur, t))); else offset = Math.max(0, Math.min(dur, t));
+      updateReadout(); draw();
+      $("status").textContent = "";
+    };
+    if (playing) {
+      master.gain.setTargetAtTime(0, ctx.currentTime, 0.01);
+      setTimeout(() => { apply(); master.gain.setTargetAtTime(1, ctx.currentTime + 0.05, 0.02); }, 45);
+    } else apply();
+  }
+
+  /* ---------- faders ---------- */
+  function fader(id, out, stem) {
+    const el = $(id), o = $(out);
+    const apply = () => {
+      const x = el.value / 100, gain = x * x;
+      gains[stem].gain.setTargetAtTime(gain, ctx.currentTime, 0.02);
+      o.value = gain === 0 ? "off" : (20 * Math.log10(gain)).toFixed(1).replace("-", "−") + " dB";
+      el.style.setProperty("--p", el.value + "%");
+    };
+    el.addEventListener("input", apply); apply();
+  }
+  fader("g-piano", "o-piano", "piano");
+  fader("g-hum", "o-hum", "hum");
+  let exagTimer = 0;
+  function showExag() { $("o-exag").value = EXAG_LABELS[exag.value]; exag.style.setProperty("--p", (exag.value / 4 * 100) + "%"); }
+  exag.addEventListener("input", () => {
+    showExag(); clearTimeout(exagTimer);
+    exagTimer = setTimeout(() => setLevel(+exag.value), 200);
+  });
+  showExag();
+
+  /* ---------- drawing ---------- */
+  let W = 0, H = 0, dpr = 1;
+  const pps = () => Math.max(36, Math.min(90, W / 16));
+  const playX = () => Math.round(W * 0.3);
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    const r = canvas.getBoundingClientRect(); W = r.width; H = r.height;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr); draw();
+  }
+  new ResizeObserver(resize).observe(canvas);
+  const yOf = f => (Math.log(SPEC.fmax) - Math.log(f)) / (Math.log(SPEC.fmax) - Math.log(SPEC.fmin)) * H;
+  function draw() {
+    if (!W) return;
+    const t = position(), s = pps(), px = playX(), t0 = t - px / s, t1 = t + (W - px) / s;
+    const st = getComputedStyle(document.documentElement);
+    const ink = st.getPropertyValue("--spec-label").trim(), head = st.getPropertyValue("--spec-head").trim();
+    const paper = st.getPropertyValue("--spec-lo").trim();
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.globalAlpha = 1; g.fillStyle = paper; g.fillRect(0, 0, W, H);
+    const L = cur >= 0 ? LEVELS[cur] : null;
+    if (L) {
+      g.imageSmoothingEnabled = true;
+      tilesFor(L).forEach((img, i) => {
+        if (!img.complete || !img.naturalWidth) return;
+        const ts = i * SPEC.tile / SPEC.colsPerSec, te = ts + img.naturalWidth / SPEC.colsPerSec;
+        if (te < t0 || ts > t1) return;
+        const a = Math.max(ts, t0), b = Math.min(te, t1);
+        g.drawImage(img, (a - ts) * SPEC.colsPerSec, 0, (b - a) * SPEC.colsPerSec, img.naturalHeight, px + (a - t) * s, 0, (b - a) * s, H);
+      });
+    }
+    g.font = "500 10px " + getComputedStyle(document.body).fontFamily;
+    g.textBaseline = "middle";
+    NOTES.forEach(([n, f]) => {
+      const y = yOf(f);
+      if (y < 10 || y > H - 8) return;
+      g.globalAlpha = 0.75; g.fillStyle = paper; g.fillRect(0, y - 7, 30, 14);
+      g.globalAlpha = 0.9; g.fillStyle = ink; g.fillRect(0, Math.round(y), 6, 1); g.fillText(n, 9, y);
+    });
+    if (L) {
+      g.textBaseline = "top"; g.strokeStyle = ink; g.fillStyle = ink;
+      L.bars.forEach(([bt, label]) => {
+        if (bt < t0 - 1 || bt > t1) return;
+        const x = Math.round(px + (bt - t) * s) + 0.5;
+        g.globalAlpha = 0.35; g.beginPath(); g.moveTo(x, 18); g.lineTo(x, H); g.lineWidth = 1; g.stroke();
+        g.globalAlpha = 0.9; g.fillText(label, x + 3, 5);
+      });
+    }
+    g.globalAlpha = 1; g.fillStyle = head;
+    g.fillRect(px - 1, 0, 2, H);
+    g.beginPath(); g.moveTo(px - 6, 0); g.lineTo(px + 6, 0); g.lineTo(px, 7); g.closePath(); g.fill();
+  }
+
+  /* ---------- readout, seek bar, dragging ---------- */
+  const fmt = t => Math.floor(t / 60) + ":" + String(Math.floor(t % 60)).padStart(2, "0");
+  let seeking = false;
+  function updateReadout() {
+    const t = position();
+    $("now").textContent = fmt(t);
+    let bar = "Upbeat";
+    if (cur >= 0) for (const [bt, label] of LEVELS[cur].bars) if (bt <= t + 0.02) bar = "Bar " + label;
+    $("bar").textContent = bar;
+    if (!seeking) { pos.value = t; pos.style.setProperty("--p", (t / dur * 100) + "%"); }
+    pos.setAttribute("aria-valuetext", fmt(t) + ", " + bar.toLowerCase());
+  }
+  pos.addEventListener("pointerdown", () => { seeking = true; });
+  pos.addEventListener("input", () => { pos.style.setProperty("--p", (pos.value / dur * 100) + "%"); seek(+pos.value); });
+  pos.addEventListener("change", () => { seeking = false; });
+  window.addEventListener("pointerup", () => { seeking = false; });
+  playBtn.addEventListener("click", () => (playing ? pause() : play()));
+
+  let drag = null;
+  canvas.addEventListener("pointerdown", e => {
+    drag = { x: e.clientX, t: position(), wasPlaying: playing };
+    if (playing) { offset = position(); playing = false; stopSources(); }
+    canvas.setPointerCapture(e.pointerId); canvas.classList.add("dragging");
+  });
+  canvas.addEventListener("pointermove", e => {
+    if (!drag) return;
+    offset = Math.max(0, Math.min(dur, drag.t - (e.clientX - drag.x) / pps()));
+    updateReadout(); draw();
+  });
+  const endDrag = () => {
+    if (!drag) return;
+    canvas.classList.remove("dragging");
+    if (drag.wasPlaying && bufs) { startFrom(offset); playing = true; loop(); }
+    drag = null; setIcon();
+  };
+  canvas.addEventListener("pointerup", endDrag);
+  canvas.addEventListener("pointercancel", endDrag);
+  canvas.addEventListener("wheel", e => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault(); seek(position() + e.deltaX / pps());
+  }, { passive: false });
+  canvas.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") { seek(position() + 5); e.preventDefault(); }
+    else if (e.key === "ArrowLeft") { seek(position() - 5); e.preventDefault(); }
+    else if (e.key === " " && !playBtn.disabled) { playing ? pause() : play(); e.preventDefault(); }
+  });
+
+  /* ---------- start at ×1, then fetch the other levels in the background ---------- */
+  fetch("levels.json").then(r => r.json()).then(async levels => {
+    LEVELS = levels;
+    await setLevel(2);
+    if (cur < 0) return;
+    playBtn.disabled = false; pos.disabled = false; exag.disabled = false;
+    $("status").textContent = "";
+    for (const i of [3, 1, 4, 0]) await fetchLevel(LEVELS[i].key).catch(() => {});
+  }).catch(() => { $("status").textContent = "The audio did not load. Reload the page to try again."; });
+  updateReadout();
+})();
+</script>

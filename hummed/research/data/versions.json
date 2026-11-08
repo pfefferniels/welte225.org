@@ -1,0 +1,338 @@
+[
+ {
+  "id": "piano_full",
+  "family": "Reference",
+  "title": "Grünfeld, whole roll (piano)",
+  "file": "piano_full.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn"
+  ],
+  "analyse": false,
+  "how": "All 476 notes of the reconstruction rendered with espressivo and played on Salamander Grand samples (the samples @tonejs/piano uses), with the roll's pedalling."
+ },
+ {
+  "id": "piano_melody",
+  "family": "Reference",
+  "title": "Melody only (piano)",
+  "file": "piano_melody.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn"
+  ],
+  "how": "Only the 162 melody notes (staff 1, layer 1), same samples and pedal."
+ },
+ {
+  "id": "sine_roll",
+  "family": "Reference",
+  "title": "Sine tones, literal roll data",
+  "file": "sine_roll.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn"
+  ],
+  "how": "One sine per note from key-down to key-up, level from velocity (40 log10 v/127). Nothing added: the data as data."
+ },
+ {
+  "id": "sine_deadpan",
+  "family": "Reference",
+  "title": "Sine tones, deadpan score",
+  "file": "sine_deadpan.wav",
+  "transpose": 0,
+  "control": [],
+  "timing": "deadpan",
+  "how": "The score at one tempo (Grünfeld's mean, so the same total length) and one velocity (his median): what the timing and dynamics are measured against."
+ },
+ {
+  "id": "additive_deadpan",
+  "family": "Signal processing",
+  "title": "Additive hum, deadpan score",
+  "file": "additive_deadpan.wav",
+  "transpose": 0,
+  "control": [
+   "f0"
+  ],
+  "timing": "deadpan",
+  "how": "The same voice model as below (transitions, vibrato, breaths), but on the deadpan score: hear what Grünfeld's timing and dynamics add."
+ },
+ {
+  "id": "additive_hum",
+  "family": "Signal processing",
+  "title": "Additive hum \"mmm\"",
+  "file": "additive_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "how": "Harmonic sum; each partial weighted by a source slope (brighter when louder) and the Klatt [m] nasal-murmur envelope (270 Hz nasal pole, 450 Hz zero)."
+ },
+ {
+  "id": "lf_hum",
+  "family": "Signal processing",
+  "title": "Glottal source + nasal tract \"mmm\"",
+  "file": "lf_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "how": "Liljencrants-Fant glottal pulses (Rd follows loudness: softer is laxer), jitter, aspiration, through a Klatt cascade for [m]: a classic formant synthesiser."
+ },
+ {
+  "id": "lf_ooh",
+  "family": "Signal processing",
+  "title": "Glottal source + vowel tract \"ooh\"",
+  "file": "lf_ooh.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "how": "Same source through a female [u] tract, F1 tuned to f0 on high notes as sopranos do."
+ },
+ {
+  "id": "vtl_hum",
+  "family": "Articulatory",
+  "title": "VocalTractLab hum (male, 8vb)",
+  "file": "vtl_hum.wav",
+  "transpose": -12,
+  "control": [
+   "timing",
+   "f0",
+   "dyn",
+   "dyn-level"
+  ],
+  "how": "Birkholz's 3D vocal-tract model with a self-oscillating glottis: lips closed, velum open, lung pressure from the dynamics. Its glottis stops at 600 Hz, so an octave lower."
+ },
+ {
+  "id": "vtl_ooh",
+  "family": "Articulatory",
+  "title": "VocalTractLab \"ooh\" (male, 8vb)",
+  "file": "vtl_ooh.wav",
+  "transpose": -12,
+  "control": [
+   "timing",
+   "f0",
+   "dyn",
+   "dyn-level"
+  ],
+  "how": "Same model, tract shaped for [u], velum closed."
+ },
+ {
+  "id": "pt_hum",
+  "family": "Articulatory",
+  "title": "Pink Trombone hum",
+  "file": "pt_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn",
+   "dyn-level"
+  ],
+  "how": "Neil Thapen's Pink Trombone (MIT), the toy articulatory synthesiser RL experiments play: an LF glottis and a 44-section waveguide tract with a nasal branch, run offline. Lips closed, velum open; tenseness and amplitude follow the dynamics."
+ },
+ {
+  "id": "pt_ooh",
+  "family": "Articulatory",
+  "title": "Pink Trombone \"ooh\"",
+  "file": "pt_ooh.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn",
+   "dyn-level"
+  ],
+  "how": "The same tract with the tongue back and raised and the lips rounded: [u]."
+ },
+ {
+  "id": "ds_kiritan_hum",
+  "family": "Neural singing synthesis",
+  "title": "DiffSinger, our pitch curve (minor sixth lower)",
+  "file": "ds_kiritan_hum8vb.wav",
+  "transpose": -8,
+  "control": [
+   "timing",
+   "f0",
+   "dyn-post"
+  ],
+  "how": "OpenVPI DiffSinger acoustic model (a community OpenUtau voicebank of Tohoku Kiritan) and NSF-HiFiGAN vocoder, run with onnxruntime. Phonemes ん/N on Grünfeld's onsets, breaths as the model's AP token, f0 = our contour; note levels set to the MPM dynamics afterwards. A minor sixth lower (top note D5): above E5 this voicebank collapses."
+ },
+ {
+  "id": "ds_kiritan_deadpan",
+  "family": "Neural singing synthesis",
+  "title": "DiffSinger, deadpan score",
+  "file": "ds_kiritan_deadpan.wav",
+  "transpose": -8,
+  "control": [
+   "f0"
+  ],
+  "timing": "deadpan",
+  "how": "The same, on the deadpan score: one tempo, one level."
+ },
+ {
+  "id": "espnet_kurumi_hum",
+  "family": "Neural singing synthesis",
+  "title": "VISinger2 (Oniku Kurumi)",
+  "file": "espnet_kurumi_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn-post"
+  ],
+  "how": "ESPnet VISinger2, 44.1 kHz, trained on the Oniku Kurumi singing database. Notes on ん with Grünfeld's durations forced; the network predicts its own pitch contour."
+ },
+ {
+  "id": "ds_kiritan_orig",
+  "family": "Where the models break",
+  "title": "DiffSinger at the written pitch",
+  "file": "ds_kiritan_orig.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn-post"
+  ],
+  "how": "The same DiffSinger voicebank given the exact f0 at the written pitch: from about E5 up its mel output turns to noise (bars 2-3, 7, 15)."
+ },
+ {
+  "id": "espnet_kiritan_hum",
+  "family": "Where the models break",
+  "title": "VISinger (Kiritan) at the written pitch",
+  "file": "espnet_kiritan_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn-post"
+  ],
+  "how": "ESPnet VISinger on the Kiritan database: above about E5 its pitch predictor falls back into the singer's training range, a fourth to a sixth too low."
+ },
+ {
+  "id": "espnet_ofuton_hum",
+  "family": "Where the models break",
+  "title": "VISinger2 (Ofuton P, male, 8vb)",
+  "file": "espnet_ofuton_hum.wav",
+  "transpose": -12,
+  "control": [
+   "timing",
+   "dyn-post"
+  ],
+  "how": "ESPnet VISinger2, male singer, an octave lower: it still sings several of the top notes an octave low, regressing to its average range."
+ },
+ {
+  "id": "sinsy_hum",
+  "family": "Pre-neural singing synthesis",
+  "title": "Sinsy (HMM), \"moo\" vocalise",
+  "file": "sinsy_hum.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "dyn-post"
+  ],
+  "how": "Sinsy with the NIT SONG070 F001 voice (CC BY 3.0), the statistical (HMM) singing synthesis of 2009-2013, from a MusicXML score at 60 bpm with 1 ms divisions. ん is nearly silent with this voice, so each phrase opens on む and continues on う. Its f0 stops near C#5: the top notes are capped."
+ },
+ {
+  "id": "seedvc_s12",
+  "family": "Voice conversion",
+  "title": "Seed-VC: hum to a real voice (bars 1-8)",
+  "file": "seedvc_s12.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn-post"
+  ],
+  "excerpt": "bars 1-8",
+  "how": "Zero-shot singing voice conversion (Seed-VC, f0-conditioned 44 kHz model, 15 diffusion steps) of the glottal-source hum into the timbre of vocadito singer S12 (CC BY 4.0, a \"la la\" recording). The conversion does not keep the source's loudness, so note levels were set afterwards; it sings the long A5 of bar 7 an octave low. CPU-bound (44 times slower than real time), so only the first eight bars."
+ },
+ {
+  "id": "ddsp_violin",
+  "family": "Neural instrument (DDSP)",
+  "title": "DDSP violin, same curves",
+  "file": "ddsp_violin.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "how": "Magenta DDSP solo-violin autoencoder decoding exactly our f0 and loudness curves: the f0 + loudness to audio idea, with no voice weights published."
+ },
+ {
+  "id": "ddsp_flute",
+  "family": "Neural instrument (DDSP)",
+  "title": "DDSP flute, same curves",
+  "file": "ddsp_flute.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "how": "The same with the solo-flute model."
+ },
+ {
+  "id": "vtl_hummer",
+  "family": "Grünfeld hums along",
+  "title": "The hum alone (VocalTractLab, vocal map)",
+  "file": "vtl_gruenfeld_hum.wav",
+  "transpose": -12,
+  "control": [
+   "timing",
+   "vocalmap",
+   "dyn",
+   "dyn-level"
+  ],
+  "how": "A &lt;vocalMap&gt; written into the MPM and rendered as a VocalTractLab gestural score, an octave lower, in the style of a recorded hum: postures fitted from that recording, its wobble, scoops and falls, breathy voice. The voice's effort (lung pressure, how firmly the vocal folds close) follows the MPM dynamics continuously, also inside held notes, where the piano cannot. Rolled chords become portamenti over the arpeggio's span; on the louder stretches the closed hum opens slowly, a little, and stays nasal (at most a third of the way to an open vowel, less on high notes, over 1-2 s, closing again as the phrase fades); the pedal changes move the mouth; the joins between notes follow the fingers: where the keys overlap the voice slides, short gaps become breath pulses, long ones stop the voice; breaths at the phrase breaks."
+ },
+ {
+  "id": "mix_vtl_piano_full",
+  "family": "Grünfeld hums along",
+  "title": "Grünfeld plays and hums",
+  "file": "mix_vtl_piano_full.wav",
+  "transpose": -12,
+  "control": [
+   "timing",
+   "vocalmap",
+   "dyn"
+  ],
+  "analyse": false,
+  "how": "The whole roll on the piano with the hum underneath, 7 dB below it, as a pianist humming while he plays."
+ },
+ {
+  "id": "mix_ds_piano",
+  "family": "With the roll's accompaniment",
+  "title": "DiffSinger hum + Grünfeld's accompaniment (minor sixth lower)",
+  "file": "mix_ds_piano.wav",
+  "transpose": -8,
+  "control": [
+   "timing",
+   "f0",
+   "dyn-post"
+  ],
+  "analyse": false,
+  "how": "The DiffSinger hum over the roll's other 314 notes on the piano, all a minor sixth lower, the transposition the voicebank needs."
+ },
+ {
+  "id": "mix_lf_piano",
+  "family": "With the roll's accompaniment",
+  "title": "Formant hum + Grünfeld's accompaniment",
+  "file": "mix_lf_piano.wav",
+  "transpose": 0,
+  "control": [
+   "timing",
+   "f0",
+   "dyn"
+  ],
+  "analyse": false,
+  "how": "The glottal-source hum over the roll's accompaniment."
+ }
+]

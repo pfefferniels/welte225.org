@@ -19,6 +19,7 @@ and the place where the data about that roll is published.
 | `/licensee-225/` | the comparison of Peter Phillips's and Philippe Gourlin's Licensee copies with the edition's versions: scripts and derived data, cited by the edition's beliefs about version D3, the lost state B2 and Gourlin's copy |
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table: scripts and derived data. The corpus behind it, a dated control and Stanford's red rolls, is kept in condon-dates |
+| `/hummed/` | *Träumerei, hummed*: the performance with a pianist's inner voice humming along, rendered live by VocalTractLab from `/mpm/` and a reduction written in MEI; its TypeScript sources, data and research (`hummed/README.md`) |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages
@@ -187,7 +188,9 @@ of transformer calls and claims (`work.json`), the MPM the chain wrote
 (`performance.mpm`) and the score it is performed against
 (`score.msm`). The viewer at `mpmdesk.welte225.org` loads them from
 here and bundles none. To publish a change made in the editor, replace
-the files. After a change to the chain, `scripts/recordOutcomes.ts` in
+the files. `/hummed/` hums along to them too: after a change, run
+`npm run calibrate` there, and its tests (run by CI on every change to
+`mpm/`) say whether the voice changed. After a change to the chain, `scripts/recordOutcomes.ts` in
 mpm-desk rewrites the last three in a checkout of this repository, and
 mpm-desk's tests read that checkout.
 

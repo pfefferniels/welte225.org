@@ -1,0 +1,50 @@
+--- a/include/VocalTractLabBackend/GesturalScore.h
++++ b/include/VocalTractLabBackend/GesturalScore.h
+@@ -140,7 +140,7 @@
+   static const double REFERENCE_FREQUENCY;
+   static const double DEFAULT_TIME_CONSTANT_S;
+   static const int CURVE_SAMPLING_RATE = 400;   // 400 Hz = 2.5 ms point spacing
+-  static const int MAX_CURVE_SAMPLES = CURVE_SAMPLING_RATE * 60;
++  static const int MAX_CURVE_SAMPLES = CURVE_SAMPLING_RATE * 240;   // patched: 60 s -> 240 s
+   static const int MAX_PARAM_TARGETS = 512;
+ 
+   enum GestureType
+--- a/src/VocalTractLabApi/VocalTractLabApi.cpp
++++ b/src/VocalTractLabApi/VocalTractLabApi.cpp
+@@ -3097,3 +3097,36 @@
+ 
+   return 0;
+ }
++
++
++// ****************************************************************************
++// Added for the browser build: a gestural score file -> the vocal tract and
++// glottis states every 110 samples, written into caller memory (stride: the
++// number of tract / glottis parameters), so that a caller can synthesize them
++// incrementally with vtlSynthesisAddTube() or vtlSynthesisAddTract().
++// Returns 0 on success, 1 not initialized, 2 load failed, 3 out of range.
++// ****************************************************************************
++
++extern "C" int vtlGesturalScoreToStates(const char* gesFileName, double* tractParams,
++  double* glottisParams, int maxStates, int* numStates)
++{
++  if (!vtlApiInitialized) return 1;
++  GesturalScore* gs = new GesturalScore(vocalTract, glottis[selectedGlottis]);
++  bool inRange = true;
++  if (gs->loadGesturesXml(string(gesFileName), inRange) == false) { delete gs; return 2; }
++  if (inRange == false) { delete gs; return 3; }
++  gs->calcCurves();
++  int n = (int)(gs->getDuration_pt() / Synthesizer::NUM_CHUNCK_SAMPLES) + 2;
++  if (n > maxStates) n = maxStates;
++  int nG = (int)glottis[selectedGlottis]->controlParam.size();
++  double g[Glottis::MAX_CONTROL_PARAMS];
++  for (int i = 0; i < n; i++)
++  {
++    double pos_s = (double)i * Synthesizer::NUM_CHUNCK_SAMPLES / SAMPLING_RATE;
++    gs->getParams(pos_s, tractParams + i * VocalTract::NUM_PARAMS, g);
++    for (int k = 0; k < nG; k++) glottisParams[i * nG + k] = g[k];
++  }
++  *numStates = n;
++  delete gs;
++  return 0;
++}
