@@ -1,4 +1,4 @@
-// A voice worker: for an exaggeration level, espressivo performs the exaggerated MPM (on the piece,
+// A voice worker: for a setting (saturation, elaboration), espressivo performs the exaggerated MPM (on the piece,
 // and on its harmonies for the piano's lower half), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk as the page hands them out, into sound, streamed to the page in blocks with their
@@ -7,14 +7,14 @@ import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { readPerformance, renderVoice, repair, type Calibration, type HumStyle } from '../hummer/index.ts';
 import { interp } from '../shared/math.ts';
-import type { FromWorker, Plan, StartAt, Timings, ToWorker } from '../shared/protocol.ts';
+import type { FromWorker, Plan, Setting, StartAt, Timings, ToWorker } from '../shared/protocol.ts';
 import { SPECTROGRAM, SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { pianoFactors, voiceFactors, VOICE_LEAD, withSubNoteDynamics } from './levels.ts';
+import { approximateness, pianoFactors, voiceFactors, voiceLead, withSubNoteDynamics } from './levels.ts';
 import { pianoNotes } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
@@ -46,9 +46,9 @@ interface Resources {
   readonly engine: VtlEngine;
 }
 
-/** One exaggeration level, from the MPM to tract states, kept while it is being rendered. */
+/** One setting, from the MPM to tract states, kept while it is being rendered. */
 interface Level {
-  readonly level: number;
+  readonly setting: Setting;
   readonly states: StatePair;
   readonly weight: Float32Array;
   readonly seams: ReadonlySet<number>;
@@ -87,13 +87,15 @@ async function load(): Promise<Resources> {
   };
 }
 
-function prepare(r: Resources, hummed: Reduction, level: number): Level {
+function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
   const t0 = performance.now();
+  const { level, elaboration } = setting;
+  const lead = voiceLead(elaboration);
   const piano = pianoFactors(level);
   const pianoMpm = piano ? exaggerateMpm(r.mpm, { factors: piano }).mpm : r.mpm;
   const pianoData = performMsmToData({ msm: r.msm, mpm: pianoMpm });
   const harmoniesData = performMsmToData({ msm: r.harmonies, mpm: pianoMpm });
-  const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level) }).mpm;
+  const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level, lead) }).mpm;
   const voiceData = performMsmToData({ msm: r.msm, mpm: voiceMpm });
   const dynamics = performMsmToData({ msm: r.msm, mpm: withSubNoteDynamics(voiceMpm) });
   const t1 = performance.now();
@@ -103,6 +105,7 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
     reduction: hummed,
     style: r.style,
     calibration: r.calibration,
+    approximateness: approximateness(elaboration),
   });
   const t2 = performance.now();
   const maxStates = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
@@ -121,14 +124,14 @@ function prepare(r: Resources, hummed: Reduction, level: number): Level {
     .map((ms) => Math.round(ms / msPerState))
     .filter((i) => i > 0 && i < states.closed.count);
   return {
-    level,
+    setting,
     states,
     weight: voice.weight,
     seams: new Set(seams),
     plan: {
       type: 'plan',
-      level,
-      voiceLevel: level + VOICE_LEAD,
+      setting,
+      voiceLevel: level + lead,
       // states i..j sound from i to j−1
       duration: ((states.closed.count - 1) * STATE_STEP) / SAMPLE_RATE,
       bars: voice.bars,
@@ -164,12 +167,13 @@ const setupReady = new Promise<Setup>((resolve) => {
   setupDone = resolve;
 });
 
-function levelOf(r: Resources, setup: Setup, level: number): Level {
-  if (prepared?.level !== level) {
-    prepared = null;
-    prepared = prepare(r, setup.reduction, level);
-  }
-  return prepared;
+function levelOf(r: Resources, setup: Setup, setting: Setting): Level {
+  const kept = prepared;
+  if (kept?.setting.level === setting.level && kept.setting.elaboration === setting.elaboration) return kept;
+  prepared = null;
+  const next = prepare(r, setup.reduction, setting);
+  prepared = next;
+  return next;
 }
 
 /** The plan of a level: how long, where its bars and seams are, where the sound starts. */
@@ -264,7 +268,7 @@ scope.onmessage = (event) => {
       resources ??= load();
       const [r, setup] = await Promise.all([resources, setupReady]);
       if (message.id !== current) return;
-      const L = levelOf(r, setup, message.level);
+      const L = levelOf(r, setup, message.setting);
       if (message.id !== current) return;
       if (message.type === 'plan') post(plan(L, message.id, message.start));
       else await renderChunk(r, setup, L, message.id, message.from, message.to);

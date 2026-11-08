@@ -1,7 +1,7 @@
-// Calibrate the voice: render it at ×1 (the voice a step further, as the page does), measure each
-// sung note's level against what the dynamics ask, and store per-note corrections (by xml:id) and
-// the output gain in data/calibration.json. Run after changing the reduction, the hum style or the
-// reconstruction:   npm run calibrate [-- rounds]
+// Calibrate the voice: render it at ×1 and the page's first elaboration (the voice further, as the
+// page does), measure each sung note's level against what the dynamics ask, and store per-note
+// corrections (by xml:id) and the output gain in data/calibration.json. Run after changing the
+// reduction, the hum style, the voice's pitch line or the reconstruction:   npm run calibrate [-- rounds]
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderVoice } from '../src/hummer/index.ts';
@@ -33,7 +33,7 @@ const quantile = (values: readonly number[], q: number): number => {
 const engine = await loadEngine();
 const reduction = loadReduction();
 const style = loadStyle();
-const { performance: voiceData, dynamics } = voicePerformance(1);
+const { performance: voiceData, dynamics, approximateness } = voicePerformance(1);
 let calibration: Calibration = loadCalibration();
 
 // the sung notes as the voice holds them, and the dynamics they should follow
@@ -45,7 +45,7 @@ const curve = readDynamics(dynamics);
 const pad = PAD_MS / 1000;
 
 for (let round = 1; round <= ROUNDS; round++) {
-  const v = renderVoice({ performance: voiceData, dynamics, reduction, style, calibration });
+  const v = renderVoice({ performance: voiceData, dynamics, reduction, style, calibration, approximateness });
   const max = Math.ceil(((v.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
   const states = { closed: engine.states(v.closedScore, max), open: engine.states(v.openScore, max) };
   const y = new Float32Array(states.closed.count * STATE_STEP);

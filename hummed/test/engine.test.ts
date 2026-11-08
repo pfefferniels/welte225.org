@@ -58,7 +58,7 @@ describe('VocalTractLab', async () => {
     assert.ok(rms > 1e-3, `rms ${rms}`);
   });
 
-  // taken with the build before its speed-ups, which leave the sound as it was to the bit
+  // the sound to the bit: a new VocalTractLab build must leave it as it is (its speed-ups did)
   it('sounds as it did, to the bit (3 to 9 s: notes, a breath)', () => {
     const from = Math.round((3 * SAMPLE_RATE) / STATE_STEP);
     const to = Math.round((9 * SAMPLE_RATE) / STATE_STEP);

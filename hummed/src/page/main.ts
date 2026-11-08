@@ -4,7 +4,7 @@ import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogra
 import { createAudioGraph } from './audio-graph.ts';
 import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
-import { heard, mix } from './mix.ts';
+import { heard, mix, voiceElaboration } from './mix.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
 import { VoicePool, workerCount } from './pool.ts';
@@ -86,13 +86,17 @@ const player = new Player(graph, piano, pool, {
     requestAnimationFrame(redraw);
   },
 });
-/* ---------- the faders: elaboration sets the mix, saturation the performance ---------- */
+/* ---------- the faders: elaboration sets the mix and the voice, saturation the performance ---------- */
 const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
-// the piano's two parts are both always playing: the gains, gliding, crossfade between them
+const elaboration = (): number => Number(elaborationSlider.value) / 100;
+const saturation = (): number => Number(levelSlider.value);
+// the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
+// voice itself is rendered anew for the elaboration once the fader rests
+let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
 const applyElaboration = (): void => {
-  const e = Number(elaborationSlider.value) / 100;
+  const e = elaboration();
   const gains = mix(e);
   setGain(graph.hum, gains.hum);
   setGain(graph.harmonies, gains.harmonies);
@@ -107,7 +111,13 @@ const applyElaboration = (): void => {
   );
   setFill(elaborationSlider, e);
 };
-elaborationSlider.addEventListener('input', applyElaboration);
+elaborationSlider.addEventListener('input', () => {
+  applyElaboration();
+  clearTimeout(elaborationTimer);
+  elaborationTimer = setTimeout(() => {
+    player.change({ elaboration: voiceElaboration(elaboration()) });
+  }, 300);
+});
 applyElaboration();
 
 let levelTimer: ReturnType<typeof setTimeout> | undefined;
@@ -119,7 +129,7 @@ levelSlider.addEventListener('input', () => {
   showLevel();
   clearTimeout(levelTimer);
   levelTimer = setTimeout(() => {
-    player.changeLevel(Number(levelSlider.value));
+    player.change({ level: saturation() });
   }, 250);
 });
 showLevel();
@@ -189,7 +199,7 @@ async function start(): Promise<void> {
   if (!response.ok) throw new Error(`reduction.mei: ${response.status}`);
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
-  player.request(1, { seconds: 0 });
+  player.request({ level: saturation(), elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();

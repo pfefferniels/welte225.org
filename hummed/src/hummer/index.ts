@@ -24,6 +24,8 @@ export interface VoiceInput {
   readonly reduction: Reduction;
   readonly style: HumStyle;
   readonly calibration: Calibration;
+  /** How loosely the voice keeps to the written pitch, 0 (close) to 1 (more or less). */
+  readonly approximateness: number;
 }
 
 export interface Voice {
@@ -61,7 +63,15 @@ export function renderVoice(input: VoiceInput): Voice {
     clock,
     style: input.style,
   });
-  const g = gestures({ notes, events, clock, dynamics, style: input.style, calibration: input.calibration });
+  const g = gestures({
+    notes,
+    events,
+    clock,
+    dynamics,
+    style: input.style,
+    calibration: input.calibration,
+    approximateness: input.approximateness,
+  });
   return {
     closedScore: gesturalScore(g.tiers, g.endMs, false),
     openScore: gesturalScore(g.tiers, g.endMs, true),

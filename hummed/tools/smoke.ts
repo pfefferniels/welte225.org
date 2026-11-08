@@ -112,6 +112,10 @@ try {
     if (shown !== expected) errors.push(`elaboration ${value} shows ${shown}, not ${expected}`);
   }
   console.log('elaboration: harmonies, humming alone, the piece');
+  // the voice rendered anew for the last elaboration takes over, and playing goes on
+  await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
+  await page.waitForTimeout(2000);
+  await report('voice for 0.65 took over');
   const cardOpen = (): Promise<boolean> =>
     page.evaluate("document.getElementById('info').matches(':popover-open')");
   await page.click('.info-button');

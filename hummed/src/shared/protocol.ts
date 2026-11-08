@@ -7,6 +7,16 @@ import type { Midi, Seconds, Ticks } from './units.ts';
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
 
 /**
+ * What a rendering is of: the saturation (`level`: how far the piano's performance is exaggerated;
+ * the voice goes further) and the elaboration, of which the voice takes how much further it goes
+ * and how loosely it keeps to the pitch.
+ */
+export interface Setting {
+  readonly level: number;
+  readonly elaboration: number;
+}
+
+/**
  * The page runs several workers. Each prepares the levels it is asked about (the same for all: the
  * chain is deterministic); the first is asked for the plan, the others only to stop what they were
  * doing, so that the plan comes as soon as it can; then every worker renders the chunks it is
@@ -15,12 +25,12 @@ export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
  */
 export type ToWorker =
   | { readonly type: 'setup'; readonly reduction: Reduction; readonly spectrogram: SpectrogramStyleName }
-  | { readonly type: 'plan'; readonly id: number; readonly level: number; readonly start: StartAt }
+  | { readonly type: 'plan'; readonly id: number; readonly setting: Setting; readonly start: StartAt }
   | { readonly type: 'stop'; readonly id: number }
   | {
       readonly type: 'chunk';
       readonly id: number;
-      readonly level: number;
+      readonly setting: Setting;
       readonly from: number;
       readonly to: number;
     };
@@ -42,8 +52,8 @@ export interface Timings {
 export interface Plan {
   readonly type: 'plan';
   readonly id: number;
-  /** The piano's exaggeration, and the voice's (a step further, except in timing). */
-  readonly level: number;
+  readonly setting: Setting;
+  /** The voice's exaggeration (further than the piano's, except in timing). */
   readonly voiceLevel: number;
   /** The rendering's length. */
   readonly duration: Seconds;

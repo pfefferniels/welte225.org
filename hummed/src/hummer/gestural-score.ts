@@ -31,7 +31,7 @@ function fill(tier: Tier<string> | Tier<number>, start: Ms, end: Ms, neutral: st
 interface TierSpec {
   readonly type: string;
   readonly unit: string;
-  readonly timeConstantMs: Ms;
+  readonly timeConstantMs: Ms | ((tiers: Tiers) => Ms);
   readonly neutral: string | number;
   /** Whether VocalTractLab marks its gaps as neutral (no gesture), rather than as a target. */
   readonly marksNeutral: boolean;
@@ -76,7 +76,7 @@ const SPECS: readonly (TierSpec | { readonly type: string; readonly empty: true 
   {
     type: 'f0-gestures',
     unit: 'st',
-    timeConstantMs: TIME_CONSTANT_MS.pitch,
+    timeConstantMs: (t) => t.f0TimeConstantMs,
     neutral: 12 * Math.log2(130),
     marksNeutral: false,
     tier: (t) => t.f0,
@@ -115,6 +115,7 @@ export function gesturalScore(tiers: Tiers, endMs: Ms, open: boolean): string {
       merged[1].start = merged[0].start;
       merged.shift();
     }
+    const tau = typeof spec.timeConstantMs === 'number' ? spec.timeConstantMs : spec.timeConstantMs(tiers);
     const isPressure = spec.type === 'lung-pressure-gestures';
     const isF0 = spec.type === 'f0-gestures';
     for (const g of merged) {
@@ -126,7 +127,7 @@ export function gesturalScore(tiers: Tiers, endMs: Ms, open: boolean): string {
       const neutral = g.neutral && spec.marksNeutral ? 1 : 0;
       out.push(
         `    <gesture value="${value}" slope="${slope.toFixed(6)}" duration_s="${((g.end - g.start) / 1000).toFixed(6)}" ` +
-          `time_constant_s="${(spec.timeConstantMs / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
+          `time_constant_s="${(tau / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
       );
     }
     out.push('  </gesture_sequence>\n');

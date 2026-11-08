@@ -19,6 +19,8 @@ export interface Tiers {
   velic: Tier<number>;
   glottal: Tier<string>;
   f0: Tier<number>;
+  /** How fast the pitch moves to each target (VocalTractLab's time constant). */
+  readonly f0TimeConstantMs: Ms;
   pressure: Tier<number>;
 }
 
