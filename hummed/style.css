@@ -147,7 +147,7 @@ body {
 
 .fader {
   display: grid;
-  grid-template-columns: 6.8em minmax(0, 1fr) 4.6em;
+  grid-template-columns: 8.4em minmax(0, 1fr) 4.6em;
   align-items: center;
   gap: 10px;
 }
@@ -245,11 +245,8 @@ input[type='range']:disabled {
   fill: currentColor;
 }
 
-.info-card {
-  position: fixed;
-  inset: auto;
-  top: calc(max(10px, env(safe-area-inset-top, 0px)) + 38px);
-  right: var(--gutter);
+/* the cards the info buttons open: popovers, which close on a click anywhere else or on Escape */
+.card {
   margin: 0;
   width: min(340px, calc(100vw - 2 * var(--gutter)));
   padding: 14px 16px 12px;
@@ -260,21 +257,76 @@ input[type='range']:disabled {
   font-size: 13px;
   line-height: 1.45;
 }
-.info-card h1 {
-  margin: 0 0 6px;
+.card h1,
+.card h2 {
+  margin: 0 0 8px;
   font-size: 15px;
   font-weight: 600;
+  line-height: 1.3;
 }
-.info-card p {
+.card p {
   margin: 0 0 8px;
 }
-.info-card a {
+.card p:last-child {
+  margin-bottom: 0;
+}
+.card a {
   color: var(--fg);
 }
-.info-card .credits {
-  margin: 0;
+.card .byline {
+  color: var(--muted);
+}
+.card .credits {
   color: var(--muted);
   font-size: 11px;
+}
+#info {
+  position: fixed;
+  inset: auto;
+  top: calc(max(10px, env(safe-area-inset-top, 0px)) + 38px);
+  right: var(--gutter);
+}
+/* a control's card opens above its panel (placed by the page as it opens) */
+.hint-card {
+  position: fixed;
+  inset: auto;
+  left: var(--gutter);
+  bottom: 160px;
+}
+
+/* the small info button beside a fader's name */
+.name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.hint {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.hint:hover,
+.hint:focus-visible {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+.hint:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.hint svg {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
 }
 
 @media (max-width: 640px) {

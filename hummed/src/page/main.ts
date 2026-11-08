@@ -2,6 +2,7 @@
 import { readReduction } from '../reduction/mei.ts';
 import type { FromWorker, ToWorker } from '../shared/protocol.ts';
 import { createAudioGraph } from './audio-graph.ts';
+import { placeControlCards, showMpmTitle } from './cards.ts';
 import { element, formatTime } from './dom.ts';
 import { PianoSampler } from './piano.ts';
 import { Player } from './player.ts';
@@ -178,6 +179,8 @@ async function start(): Promise<void> {
   player.request(1, { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
+placeControlCards();
+void showMpmTitle(element('info-title', HTMLElement)).catch(() => undefined);
 piano.load().catch(() => {
   setStatus('The piano samples did not load. Reload the page to try again.');
 });

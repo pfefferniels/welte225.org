@@ -11,8 +11,13 @@ visitors on to it.
 The page shows the hum's spectrogram filling the window, scrolling under a playhead. Over it, on
 the left, three faders: the piano, the humming, and the exaggeration; on the right, the
 transport. Moving the exaggeration renders the voice anew and takes it over at the same place in
-the score. A small info button opens a card saying what this is, with the credits and a link to
-the overview of the site's projects (`/overview/`).
+the score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
+from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text for readers
+without scripts and for link previews, and a test keeps the two equal). A small info button opens
+a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
+to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
+info buttons beside Humming and Exaggeration explain those two. The cards are native popovers:
+closed until asked for, and closed again by Escape or a click anywhere else.
 
 ## What is hummed: a reduction for a pianist's voice
 
