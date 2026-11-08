@@ -4,8 +4,16 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { describe, it } from 'node:test';
-import { renderVoice, type Voice } from '../src/hummer/index.ts';
-import { loadReduction, loadStyle, voicePerformance } from '../tools/node-support.ts';
+import {
+  Clock,
+  dynamicsRange,
+  readPerformance,
+  renderVoice,
+  repair,
+  type Voice,
+} from '../src/hummer/index.ts';
+import { melodyOf, takeBreaths } from '../src/hummer/melody.ts';
+import { loadReduction, loadScore, loadStyle, voicePerformance } from '../tools/node-support.ts';
 import { assertGolden } from './golden.ts';
 
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
@@ -40,6 +48,42 @@ describe('the voice', () => {
     assert.equal(count('air'), 2);
     assert.match(voice.openScore, /tt-alveolar-fricative/);
     assert.match(voice.openScore, /ll-dental-fricative/);
+  });
+
+  it('breathes more often than written, but only where the performance leaves room', () => {
+    const { performance } = voicePerformance();
+    const { notes, sustain } = readPerformance(performance);
+    repair(notes);
+    const written = melodyOf(loadReduction(), notes, new Clock(notes, sustain));
+    const melody = takeBreaths(written, sustain);
+    const taken = melody.filter((n) => n.breathTaken);
+    assert.ok(taken.length >= 5, `${taken.length} breaths taken`);
+    let last = -Infinity;
+    melody.forEach((n, k) => {
+      if (!n.breathBefore) return;
+      if (n.breathTaken) {
+        const prev = melody[k - 1];
+        const gap = n.onsetMs - prev.keyOffMs;
+        const lifted = sustain.some((p) => Math.abs(p.ms - n.onsetMs) <= 250 && p.value < 64);
+        assert.ok(gap >= 140 || (prev.keyOffMs - prev.onsetMs >= 1000 && lifted), n.id);
+        assert.ok(n.onsetMs - last >= 2500, n.id);
+      }
+      last = n.onsetMs;
+    });
+  });
+
+  it('lets a phrase sag a little at its end, no more than a semitone', () => {
+    const falls = voice.events.flatMap((e) =>
+      e.tag === 'inflection' && e.type === 'fall' ? [e.depthSt] : [],
+    );
+    assert.ok(falls.length >= 30);
+    assert.ok(falls.every((d) => d <= -0.3 && d >= -0.8));
+  });
+
+  it('reads loudness against the reconstruction’s own range of dynamics', () => {
+    const range = dynamicsRange(loadScore().mpm);
+    assert.ok(range.low < range.high);
+    assert.ok(range.low > 0 && range.high < 127);
   });
 
   it('opens the lips only as far as the open score allows', () => {

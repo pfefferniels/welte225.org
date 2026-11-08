@@ -5,7 +5,15 @@
 // spectrogram columns. The page runs several such workers side by side.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
-import { readPerformance, renderVoice, repair, type Calibration, type HumStyle } from '../hummer/index.ts';
+import {
+  dynamicsRange,
+  readPerformance,
+  renderVoice,
+  repair,
+  type Calibration,
+  type DynamicsRange,
+  type HumStyle,
+} from '../hummer/index.ts';
 import { interp } from '../shared/math.ts';
 import type { FromWorker, Plan, Setting, StartAt, Timings, ToWorker } from '../shared/protocol.ts';
 import { SPECTROGRAM, SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
@@ -48,6 +56,8 @@ interface Resources {
   /** The harmonies as a score (reduction/harmonies.mei, grace notes put back). */
   readonly harmonies: string;
   readonly mpm: string;
+  /** The MPM's own range of dynamics, against which the voice reads loudness. */
+  readonly range: DynamicsRange;
   readonly style: HumStyle;
   readonly calibration: Calibration;
   readonly engine: VtlEngine;
@@ -88,6 +98,7 @@ async function load(): Promise<Resources> {
     msm,
     harmonies: harmoniesScore(harmonies),
     mpm,
+    range: dynamicsRange(mpm),
     style: parseHumStyle(style),
     calibration: parseCalibration(calibration),
     engine: new VtlEngine(module, speaker),
@@ -114,6 +125,7 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
     style: r.style,
     calibration: r.calibration,
     approximateness: approximateness(elaboration),
+    range: r.range,
   });
   const t2 = performance.now();
   const maxStates = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;

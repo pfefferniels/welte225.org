@@ -1,7 +1,7 @@
 import type { Reduction } from '../reduction/types.ts';
 import type { Midi, Ms, Seconds, Ticks } from '../shared/units.ts';
 import type { Clock } from './clock.ts';
-import type { Note } from './performance.ts';
+import type { Note, PedalPoint } from './performance.ts';
 
 /** A sung note, timed and voiced by the piano note it follows. */
 export interface MelodyNote {
@@ -16,6 +16,8 @@ export interface MelodyNote {
   readonly velocity: Midi;
   readonly ornamented: boolean;
   readonly breathBefore: boolean;
+  /** A breath the voice takes where the performance allows one, not one written in the reduction. */
+  readonly breathTaken: boolean;
 }
 
 export class MelodyError extends Error {
@@ -48,9 +50,38 @@ export function melodyOf(reduction: Reduction, notes: readonly Note[], clock: Cl
       velocity: note.velocity,
       ornamented: note.ornamented,
       breathBefore: !prev || (prev.kind === 'rest' && prev.breath) || prev.kind === 'air',
+      breathTaken: false,
     });
   });
   return melody;
+}
+
+/**
+ * Where a pianist humming along breathes beyond the written breaths, as an amateur does, more often:
+ * only where the performance leaves room, a gap of `BREATH_GAP` or more before the next key, or
+ * the pedal lifted at the end of a note of `BREATH_AFTER` or more; and no sooner than `BREATH_EVERY`
+ * after the last breath.
+ */
+const BREATH_GAP: Ms = 140;
+const BREATH_AFTER: Seconds = 1;
+const BREATH_EVERY: Seconds = 2.5;
+export function takeBreaths(melody: readonly MelodyNote[], sustain: readonly PedalPoint[]): MelodyNote[] {
+  const lifted = (from: Ms, to: Ms): boolean =>
+    sustain.some((p) => p.ms >= from && p.ms <= to && p.value < 64);
+  let last = melody[0]?.onsetMs ?? 0;
+  return melody.map((n, k) => {
+    if (k === 0 || n.breathBefore) {
+      last = n.onsetMs;
+      return n;
+    }
+    const prev = melody[k - 1];
+    const gap = n.onsetMs - prev.keyOffMs;
+    const held = (prev.keyOffMs - prev.onsetMs) / 1000;
+    const room = gap >= BREATH_GAP || (held >= BREATH_AFTER && lifted(n.onsetMs - 250, n.onsetMs + 150));
+    if (!room || (n.onsetMs - last) / 1000 < BREATH_EVERY) return n;
+    last = n.onsetMs;
+    return { ...n, breathBefore: true, breathTaken: true };
+  });
 }
 
 /** A sung note as the voice holds it, in seconds. */
@@ -62,7 +93,10 @@ export interface VoiceNote {
   readonly breathBefore: boolean;
 }
 
-/** Legato from note to note, except before a breath: there the note before ends 120 ms early. */
+/**
+ * Legato from note to note, except before a breath: there the note before ends 120 ms early, and
+ * before a breath the voice takes on its own, a quarter of its length early, 0.15 to 0.35 s.
+ */
 export function voiceNotes(melody: readonly MelodyNote[]): VoiceNote[] {
   const voice = melody.map((n, k): VoiceNote => ({
     pitch: n.pitch,
@@ -74,7 +108,8 @@ export function voiceNotes(melody: readonly MelodyNote[]): VoiceNote[] {
   for (let k = 1; k < voice.length; k++) {
     const prev = voice[k - 1];
     const n = voice[k];
-    prev.off = n.breathBefore ? Math.min(prev.off, prev.keyOff, n.on - 0.12) : n.on;
+    const room = melody[k].breathTaken ? Math.min(0.35, Math.max(0.15, 0.25 * (prev.off - prev.on))) : 0.12;
+    prev.off = n.breathBefore ? Math.min(prev.off, prev.keyOff, n.on - room) : n.on;
   }
   return voice;
 }

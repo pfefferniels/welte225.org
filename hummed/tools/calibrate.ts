@@ -33,7 +33,7 @@ const quantile = (values: readonly number[], q: number): number => {
 const engine = await loadEngine();
 const reduction = loadReduction();
 const style = loadStyle();
-const { performance: voiceData, dynamics, approximateness } = voicePerformance();
+const { performance: voiceData, dynamics, approximateness, range } = voicePerformance();
 let calibration: Calibration = loadCalibration();
 
 // the sung notes as the voice holds them, and the dynamics they should follow
@@ -45,7 +45,15 @@ const curve = readDynamics(dynamics);
 const pad = PAD_MS / 1000;
 
 for (let round = 1; round <= ROUNDS; round++) {
-  const v = renderVoice({ performance: voiceData, dynamics, reduction, style, calibration, approximateness });
+  const v = renderVoice({
+    performance: voiceData,
+    dynamics,
+    reduction,
+    style,
+    calibration,
+    approximateness,
+    range,
+  });
   const max = Math.ceil(((v.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
   const states = { closed: engine.states(v.closedScore, max), open: engine.states(v.openScore, max) };
   const y = new Float32Array(states.closed.count * STATE_STEP);

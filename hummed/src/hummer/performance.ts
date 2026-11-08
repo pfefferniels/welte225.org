@@ -69,6 +69,21 @@ export function readDynamics(data: PerformanceData): DynamicsCurve {
   return { times: points.map(([t]) => t), values: points.map(([, v]) => v) };
 }
 
+/** The middle of an MPM's dynamics: its 10th and 90th percentile (volume and transition.to). */
+export interface DynamicsRange {
+  readonly low: number;
+  readonly high: number;
+}
+
+export function dynamicsRange(mpm: string): DynamicsRange {
+  const values = [...mpm.matchAll(/<dynamics\b[^>]*>/g)]
+    .flatMap((m) => [...m[0].matchAll(/\b(?:volume|transition\.to)="(-?[\d.]+)"/g)].map((v) => Number(v[1])))
+    .sort((a, b) => a - b);
+  if (values.length === 0) throw new PerformanceError('the MPM has no dynamics');
+  const at = (q: number): number => values[Math.round(q * (values.length - 1))];
+  return { low: at(0.1), high: at(0.9) };
+}
+
 /** How long a note ends up when espressivo lets it end before it starts. */
 const FALLBACK_LENGTH: Ms = 1793;
 

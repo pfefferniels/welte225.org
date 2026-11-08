@@ -298,6 +298,7 @@ function pitchLine(
   const wobble = (style.wobbleCents / 100) * Math.SQRT1_2 * (0.85 + 0.5 * a);
   const step = 125 * (1 + 0.6 * a);
   const scoopScale = 0.8 * (0.8 + 0.4 * a);
+  const fallScale = 0.75 + 0.5 * a;
 
   // when each note's target takes over, in order
   const takeover: Ms[] = [];
@@ -333,7 +334,7 @@ function pitchLine(
       hold(t, t1, p.st + keep * off + random.normal(0, 1) * wobble);
       t = t1;
     }
-    if (fall) hold(stop, next, p.st + keep * off + fall[1].depthSt);
+    if (fall) hold(stop, next, p.st + keep * off + fall[1].depthSt * fallScale);
   });
   return { f0, timeConstantMs };
 }

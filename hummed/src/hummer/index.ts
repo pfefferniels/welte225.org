@@ -6,12 +6,13 @@ import { PAD_MS, type Ms, type Seconds } from '../shared/units.ts';
 import { Clock } from './clock.ts';
 import { gesturalScore } from './gestural-score.ts';
 import { gestures } from './gestures.ts';
-import { melodyOf, voiceNotes } from './melody.ts';
-import { readDynamics, readPerformance, repair } from './performance.ts';
+import { melodyOf, takeBreaths, voiceNotes } from './melody.ts';
+import { readDynamics, readPerformance, repair, type DynamicsRange } from './performance.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { vocalMap, type VocalEvent } from './vocal-map.ts';
 
-export { repair, readPerformance } from './performance.ts';
+export { dynamicsRange, repair, readPerformance } from './performance.ts';
+export type { DynamicsRange } from './performance.ts';
 export type { Note } from './performance.ts';
 export type { Calibration, HumStyle } from './style.ts';
 export { Clock } from './clock.ts';
@@ -26,6 +27,8 @@ export interface VoiceInput {
   readonly calibration: Calibration;
   /** How loosely the voice keeps to the written pitch, 0 (close) to 1 (more or less). */
   readonly approximateness: number;
+  /** The MPM's own range of dynamics (`dynamicsRange`), against which the voice reads loudness. */
+  readonly range: DynamicsRange;
 }
 
 export interface Voice {
@@ -51,7 +54,7 @@ export function renderVoice(input: VoiceInput): Voice {
   repair(notes);
   const dynamics = readDynamics(input.dynamics);
   const clock = new Clock(notes, sustain);
-  const melody = melodyOf(input.reduction, notes, clock);
+  const melody = takeBreaths(melodyOf(input.reduction, notes, clock), sustain);
   const air = input.reduction.events.filter((e) => e.kind === 'air');
   const events = vocalMap({
     notes,
@@ -62,6 +65,7 @@ export function renderVoice(input: VoiceInput): Voice {
     dynamics,
     clock,
     style: input.style,
+    range: input.range,
   });
   const g = gestures({
     notes,

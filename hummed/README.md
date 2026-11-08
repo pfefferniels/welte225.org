@@ -59,7 +59,11 @@ What the MEI says, and how the voice reads it:
   Grünfeld's tempo there (a sixteenth at least), and no stretch runs over 8 s without a breath (the
   longest is 7.9 s). Because a rest is a score position, the tempo times it: a breath in a slower
   passage lasts longer. The dynamics set its depth: a deeper, audible intake before a louder
-  stretch.
+  stretch. Beyond these the voice breathes on its own, as an amateur does, more often
+  (`takeBreaths`, `src/hummer/melody.ts`), but only where the performance leaves room: where the
+  piano leaves a gap of 140 ms or more before the next key, or lifts the pedal at the end of a note
+  of a second or more, and no sooner than 2.5 s after the last breath. That adds 10 breaths, 39 in
+  all; the note before such a breath ends a quarter of its length early (0.15 to 0.35 s).
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
 - **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`: the glottis open, the velum
   closed, the tongue tip (an s) or the lower lip (an f) at the teeth. It is a breath out, not a held
@@ -117,14 +121,21 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the
    millisecond. A third rendering, with sub-note dynamics, gives the dynamics as a curve.
-2. **The voice's decisions** (`src/hummer/vocal-map.ts`): a breath at each breath rest, sized by the
-   dynamics; a scoop into each phrase and a fall at its end; between notes, what Grünfeld's
+2. **The voice's decisions** (`src/hummer/vocal-map.ts`): a breath at each breath rest and each
+   breath taken, sized by the dynamics; a scoop into each phrase and a slight sag at its end (0.3 to
+   0.8 semitones, scaled by 0.75 to 1.25 with the approximateness); between notes, what Grünfeld's
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
    within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,
    from 110 ms it stops; a note that came out of a spread chord slides up from the chord's first
    note. The mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
    open shapes, less before high notes, and closes as each phrase fades; the humming shape changes
-   at pedal presses and in long notes.
+   at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
+   read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
+   reconstruction) is mapped onto the roll's (34 to 44), for which their thresholds were set, so
+   the voice opens and breathes deeply in the piece's louder moments however soft its pianissimo.
+   The glottis and the lungs follow the dynamics as they are: with the reconstruction's soft
+   playing the voice stays breathy almost throughout (its folds half closed or more for under 2 s
+   of the piece).
 3. **Gestures** (`src/hummer/gestures.ts`): the pitch line; the effort, lung
    pressure following the dynamics within held notes (velocity^1.5, each note offset by its own
    velocity against the curve, corrected by the calibration) and the glottis from breathy to modal
@@ -149,7 +160,7 @@ approximateness. Within a note:
 - The note lands off its pitch by a random amount (sd 10 to 40 cents) and after 160 to 280 ms
   settles to a third of that, never quite on it.
 - About it the pitch wobbles, a new random target every 125 to 200 ms (the measured 29 cents,
-  scaled by 0.85 to 1.35), and a phrase's last note falls.
+  scaled by 0.85 to 1.35), and a phrase's last note sags a little.
 
 Each range runs from approximateness 0 to 1, and the time constant from 30 to 40 ms (VocalTractLab
 allows at most 40). At 0.65, 300 ms into a note, the pitch is 12 cents off its note in the median

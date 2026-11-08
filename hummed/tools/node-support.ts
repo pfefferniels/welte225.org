@@ -8,6 +8,7 @@ import { compileFunction } from 'node:vm';
 import { DOMParser } from '@xmldom/xmldom';
 import { exaggerateMpm, performMsmToData, type PerformanceData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../src/hummer/data.ts';
+import { dynamicsRange, type DynamicsRange } from '../src/hummer/performance.ts';
 import type { Calibration, HumStyle } from '../src/hummer/style.ts';
 import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
@@ -40,11 +41,15 @@ export const loadScore = (): { msm: string; mpm: string } => ({
   mpm: read('../mpm/performance.mpm'),
 });
 
-/** The voice's performance at an elaboration, as the worker renders it, and how loosely it sings. */
+/**
+ * The voice's performance at an elaboration, as the worker renders it, how loosely it sings, and
+ * the MPM's own range of dynamics.
+ */
 export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
   performance: PerformanceData;
   dynamics: PerformanceData;
   approximateness: number;
+  range: DynamicsRange;
 } {
   const { msm, mpm } = loadScore();
   const factors = voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration));
@@ -53,6 +58,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
     performance: performMsmToData({ msm, mpm: voiceMpm }),
     dynamics: performMsmToData({ msm, mpm: withSubNoteDynamics(voiceMpm) }),
     approximateness: approximateness(elaboration),
+    range: dynamicsRange(mpm),
   };
 }
 

@@ -5,7 +5,7 @@ import { clip, fixed, groupBy, interp, seededRandom } from '../shared/math.ts';
 import type { Ms, Seconds, Ticks } from '../shared/units.ts';
 import type { Clock } from './clock.ts';
 import type { MelodyNote, VoiceNote } from './melody.ts';
-import type { DynamicsCurve, Note, PedalPoint } from './performance.ts';
+import type { DynamicsCurve, DynamicsRange, Note, PedalPoint } from './performance.ts';
 import type { HumStyle } from './style.ts';
 
 /** The three humming shapes of the mouth, mixed in turn, and the open shapes they move toward. */
@@ -77,6 +77,14 @@ export type VocalEvent =
 
 export type VocalEventOf<T extends VocalEvent['tag']> = Extract<VocalEvent, { tag: T }>;
 
+/**
+ * The roll's own middle range of dynamics (10th to 90th percentile), for which the thresholds below
+ * (the mouth's opening, the depth of breaths and air) were set. The reconstruction's may lie
+ * elsewhere (its pianissimo is softer): the voice reads the dynamics against the MPM's own range,
+ * mapped onto this one, so that it opens and breathes as deeply in the piece's louder moments.
+ */
+const ROLL_RANGE: DynamicsRange = { low: 34, high: 44 };
+
 /** The dynamics smoothed over ±1.5 s, on a 50 ms grid: what sets the size of breaths and air. */
 function macroDynamics(dyn: DynamicsCurve): { times: Seconds[]; values: number[] } {
   const times: Seconds[] = [];
@@ -101,10 +109,12 @@ export interface VocalMapInput {
   readonly dynamics: DynamicsCurve;
   readonly clock: Clock;
   readonly style: HumStyle;
+  /** The MPM's own range of dynamics, against which loudness is read here. */
+  readonly range: DynamicsRange;
 }
 
 export function vocalMap(input: VocalMapInput): VocalEvent[] {
-  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style } = input;
+  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style, range } = input;
   const byDate = groupBy(notes, (n) => n.date);
   const presses: Ticks[] = [];
   for (let i = 1; i < sustain.length; i++)
@@ -115,7 +125,9 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
   };
   const random = seededRandom(7);
   const macro = macroDynamics(dynamics);
-  const level = (t: Seconds): number => interp(t, macro.times, macro.values);
+  const relative = (v: number): number =>
+    ROLL_RANGE.low + ((v - range.low) / (range.high - range.low)) * (ROLL_RANGE.high - ROLL_RANGE.low);
+  const level = (t: Seconds): number => relative(interp(t, macro.times, macro.values));
 
   // the highest note of each breath group (the longer of equals): where the mouth may open most
   const peakOf: number[] = [];
@@ -321,7 +333,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         tag: 'inflection',
         date: clock.toTicks(release),
         type: 'fall',
-        depthSt: -Math.round(random.uniform(1.5, 3.5) * 100) / 100,
+        depthSt: -Math.round(random.uniform(0.3, 0.8) * 100) / 100,
         durationMs: Math.round(offMs - release),
       });
       add({ tag: 'pressure', date: clock.toTicks(offMs), factor: 0, transitionMs: 40 });
