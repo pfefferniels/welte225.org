@@ -9,7 +9,6 @@ and the place where the data about that roll is published.
 | Path | Content |
 |---|---|
 | `/` | the landing page |
-| `/journey/` | the roll from an idea to a physical object, in steps along a slider: the page, the script and styles that draw it, and what they draw, written by `scripts/recordJourney.ts` in mpm-desk (`data.json`) |
 | `/edition.jsonld` | the roll edition of WM 225 in the Roll Edition Format, exported from Roll Desk |
 | `/rules` | the editorial principles the edition follows, named by its creation (`principles`, CRM P33 used specific technique) and by an inference that applies one (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
@@ -200,30 +199,6 @@ performance, has the identifier `https://welte225.org/mpm/<id>`, its
 eight characters names the segment as well, as long as no second
 segment shares it; the viewer settles the address on the identifier.
 Identifiers must not change between exports.
-
-## From an idea to a physical object
-
-`/journey/` follows the roll from an idea to a physical object. A
-slider leads through ten steps, and the view passes from one to the
-next frame by frame: the idea of the performance; the reconstruction's
-gestures, packed as MPM Desk's viewer packs them; each gesture folded
-into the signs of the MPM instructions it is made of, drawn as the
-viewer draws them, each where it acts in time and as long as it lasts,
-but a gesture's signs kept together in a band of their own about where
-the gesture's word was; the notes unfolding out of the bands into the
-performance the instructions render, as an ink stroke per note, the
-broader the louder; the text of
-the roll as R1, through R2, R3 and R4, each step marking what its
-version adds and takes out; and St2, the copy that carries it, with its
-perforations where the scan finds them and, as the last step, its tears
-and writing.
-
-What the page draws is worked out beforehand, from the files here, by
-`scripts/recordJourney.ts` in mpm-desk, which writes `journey/data.json`.
-After a change to `mpm/` or to `edition.jsonld`, run it in a checkout of
-mpm-desk beside this one and commit the file. The versions it passes through and the copy it ends on are named
-in that script, by id and by the sigla of the stemma of 16 September
-2026; a revised stemma has to be followed there by hand.
 
 ## DNS
 
