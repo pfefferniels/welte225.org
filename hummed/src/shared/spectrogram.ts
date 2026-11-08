@@ -1,7 +1,8 @@
 // How the voice is drawn: 360 log-spaced rows, 100 columns per second, black on white, in one of
-// two styles. The full spectrogram shows the hum's harmonics up to 4.5 kHz in decibels; the melodic
-// range (after Sonic Visualiser's "Melodic Range Spectrogram") shows 40 Hz to 1.5 kHz with a long
-// window and in amplitude rather than decibels, so the sung line and its first harmonics stand out.
+// two styles. The melodic range (after Sonic Visualiser's "Melodic Range Spectrogram"), which the
+// page shows, covers 40 Hz to 1.5 kHz with a long window and in amplitude rather than decibels, so
+// the sung line and its first harmonics stand out; the full spectrogram (?spectrogram=full) shows the
+// hum's harmonics up to 4.5 kHz in decibels.
 
 /** What the page and the worker share about every style. */
 export const SPECTROGRAM = {
@@ -35,14 +36,14 @@ export const SPECTROGRAM_STYLES = {
     fftSize: 8192,
     scale: { kind: 'db', topDb: 41.09, rangeDb: 60 },
   },
-  // the voice's strongest partials (the 99th percentile of each column's peak) at full black; the
-  // power lifts the weaker harmonics into view as a light ladder above the line
+  // the voice's strongest partials (the 99th percentile of each column's peak) at full black, in
+  // linear amplitude as Sonic Visualiser draws it: the line and its octave, little else
   melodic: {
     fmin: 40,
     fmax: 1500,
     window: 8192,
     fftSize: 8192,
-    scale: { kind: 'amplitude', full: 217, power: 0.6 },
+    scale: { kind: 'amplitude', full: 217, power: 1 },
   },
 } as const satisfies Record<string, SpectrogramStyle>;
 

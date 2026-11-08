@@ -21,8 +21,8 @@ closed until asked for, and closed again by Escape or a click anywhere else.
 
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
 in decibels), and the melodic range after Sonic Visualiser's "Melodic Range Spectrogram" (40 Hz to
-1.5 kHz, an 8192-sample window, in amplitude raised to the power 0.6, so the sung line and its
-first harmonics stand out and the rest falls away). `?spectrogram=melodic` shows the second.
+1.5 kHz, an 8192-sample window, in linear amplitude, so the sung line and its octave stand out
+and the rest falls away). The page shows the melodic range; `?spectrogram=full` shows the full one.
 
 ## What is hummed: a reduction for a pianist's voice
 

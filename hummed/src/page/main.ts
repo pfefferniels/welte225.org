@@ -22,9 +22,9 @@ const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
 const barText = element('bar', HTMLElement);
 
-// the spectrogram's style: the full one, or ?spectrogram=melodic for the melodic range
+// the spectrogram's style: the melodic range, or ?spectrogram=full for the full spectrogram
 const requestedStyle = new URLSearchParams(location.search).get('spectrogram');
-const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle : 'full';
+const spectrogramStyle = isSpectrogramStyleName(requestedStyle) ? requestedStyle : 'melodic';
 
 const graph = createAudioGraph();
 const piano = new PianoSampler(graph.context, graph.piano);
