@@ -95,8 +95,9 @@ describe('the spectrogram styles', () => {
     assert.ok(Math.abs(late.indexOf(Math.min(...late)) - row) < 2);
     assert.ok((late[row] ?? 255) < 128);
   });
-  // the fingerprints were taken from the plain radix-2 FFT over all bins, with Math.hypot for every
-  // row, which the faster columns replaced: they draw the same pixels
+  // The fingerprints were taken from the columns as they were first written: a radix-2 FFT of the
+  // whole frame, and of every row two magnitudes and a logarithm or a power. The transform of
+  // the lowest bins alone and the tabulated greys draw the same pixels.
   for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
     it(`${name}: draws the swell pixel for pixel as it did`, () => {
       assertGolden(`spectrogram.${name}`, fingerprint(style, SAMPLE_RATE));
@@ -108,6 +109,46 @@ describe('the spectrogram styles', () => {
       scale: { kind: 'amplitude', full: 217, power: 0.7 },
     };
     assertGolden('spectrogram.piano48k', fingerprint(style, 48000));
+  });
+  it('draws a column the same from a part of the sound that only just holds its window', () => {
+    const sound = swell(SAMPLE_RATE);
+    for (const style of Object.values(SPECTROGRAM_STYLES)) {
+      const columns = makeSpectrogram(style);
+      const whole = columns(sound, 0, 90, 110);
+      for (let c = 90; c < 110; c++) {
+        const from = c * SPECTROGRAM.hop - style.window / 2;
+        const part = sound.subarray(from, from + style.window);
+        assert.deepEqual(
+          columns(part, from, c, c + 1),
+          whole.subarray((c - 90) * SPECTROGRAM.rows, (c - 89) * SPECTROGRAM.rows),
+        );
+      }
+    }
+  });
+  it('leaves the rows above half the sample rate white', () => {
+    const rate = 8000;
+    const style = SPECTROGRAM_STYLES.full;
+    const sound = Float32Array.from(
+      { length: rate },
+      (_, i) => 0.1 * Math.sin((2 * Math.PI * 220 * i) / rate),
+    );
+    const column = makeSpectrogram(style, rate)(sound, 0, 50, 51);
+    const nyquist = Math.ceil(
+      ((Math.log(style.fmax) - Math.log(rate / 2)) / (Math.log(style.fmax) - Math.log(style.fmin))) *
+        (SPECTROGRAM.rows - 1),
+    );
+    assert.ok(nyquist > 5);
+    assert.ok(column.subarray(0, nyquist - 1).every((grey) => grey === 255));
+    assert.ok(Math.min(...column) < 128, 'the tone is drawn');
+  });
+  it('makes the columns of a style and rate once', () => {
+    const style = SPECTROGRAM_STYLES.melodic;
+    assert.equal(makeSpectrogram({ ...style }), makeSpectrogram(style, SAMPLE_RATE));
+    assert.notEqual(makeSpectrogram(style, 48000), makeSpectrogram(style));
+    assert.notEqual(
+      makeSpectrogram({ ...style, scale: { ...style.scale, power: 0.7 } }),
+      makeSpectrogram(style),
+    );
   });
   it('leaves silence white', () => {
     for (const style of Object.values(SPECTROGRAM_STYLES)) {
