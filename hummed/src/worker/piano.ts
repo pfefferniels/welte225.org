@@ -40,10 +40,13 @@ export function performPiano(
 ): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
   const factors = pianoFactors(level);
   const mpm = factors ? exaggerateMpm(score.mpm, { factors }).mpm : score.mpm;
-  const part = (msm: string): PianoPart => {
-    const performance = readPerformance(performMsmToData({ msm, mpm }));
+  const part = (msm: string, expandOrnaments: boolean): PianoPart => {
+    const performance = readPerformance(performMsmToData({ msm, mpm }, { expandOrnaments }));
     repair(performance.notes);
     return pianoPart(performance);
   };
-  return { piece: part(score.msm), harmonies: part(score.harmonies) };
+  // The piece's grace notes are MPM v3 ornaments on the piece's notes, which the harmonies do not
+  // have: performed with them, each would be skipped with a warning. Its arpeggios are v2, which
+  // the flag leaves alone, so the harmonies still roll where the piece rolls.
+  return { piece: part(score.msm, true), harmonies: part(score.harmonies, false) };
 }

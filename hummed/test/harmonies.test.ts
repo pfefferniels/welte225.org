@@ -19,7 +19,10 @@ const graces = (mei: string) =>
 describe('the harmonies', () => {
   const mei = readFileSync(join(ROOT, 'reduction/harmonies.mei'), 'utf8');
   const { msm, mpm } = loadScore();
-  const harmonies = readPerformance(performMsmToData({ msm: harmoniesScore(mei), mpm })).notes;
+  // as the page plays them: without the piece's grace figures, whose notes the harmonies lack
+  const harmonies = readPerformance(
+    performMsmToData({ msm: harmoniesScore(mei), mpm }, { expandOrnaments: false }),
+  ).notes;
   const piece = readPerformance(performMsmToData({ msm, mpm })).notes;
 
   it('plays every note, its appoggiaturas written out rather than as grace notes', () => {
