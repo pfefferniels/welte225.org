@@ -13,7 +13,7 @@ import type { Calibration, HumStyle } from '../src/hummer/style.ts';
 import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
-import type { CreateVtl } from '../src/vtl/module.ts';
+import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
 import {
   approximateness,
   fragmentation,
@@ -73,8 +73,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
 }
 
 /** vtl.js evaluated as the CommonJS module it is (the package is ESM, so it cannot be required). */
-export async function loadEngine(): Promise<VtlEngine> {
-  const file = join(ROOT, 'vtl.js');
+export async function loadVtl(file = join(ROOT, 'vtl.js')): Promise<VtlModule> {
   const module = { exports: {} as unknown };
   type CommonJs = (
     exports: unknown,
@@ -92,6 +91,11 @@ export async function loadEngine(): Promise<VtlEngine> {
   ]) as CommonJs;
   run(module.exports, createRequire(file), module, file, ROOT);
   const createVtl = module.exports as CreateVtl;
-  const vtl = await createVtl({ print: () => undefined, printErr: () => undefined });
-  return new VtlEngine(vtl, read('data/hummer.speaker.xml'));
+  return createVtl({ print: () => undefined, printErr: () => undefined });
+}
+
+export const loadSpeaker = (): string => read('data/hummer.speaker.xml');
+
+export async function loadEngine(): Promise<VtlEngine> {
+  return new VtlEngine(await loadVtl(), loadSpeaker());
 }

@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "test": "node --test 'test/**/*.test.ts'",
     "check": "npm run typecheck && npm run lint && npm run format:check && npm test",
+    "bench": "node tools/bench.ts",
     "calibrate": "node tools/calibrate.ts",
     "smoke": "node tools/smoke.ts",
     "pianoteq": "node tools/pianoteq.ts"
