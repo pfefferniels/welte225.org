@@ -30,10 +30,10 @@ describe('the voice in fragments', () => {
     assert.ok(salience.filter((s) => s < 0.5).length >= 5);
   });
 
-  it('falls silent only within sung stretches, for half a second or more, never at a phrase’s start', () => {
-    assert.ok(spans.length >= 10, `${spans.length} silences`);
+  it('falls silent only within sung stretches, long enough to die away, never at a phrase’s start', () => {
+    assert.ok(spans.length >= 5, `${spans.length} silences`);
     for (const [a, b] of spans) {
-      assert.ok(b - a >= 500, `${a}–${b}`);
+      assert.ok(b - a >= 1100, `${a}–${b}`);
       assert.ok(
         voice.some((v) => v.on * 1000 <= a && a < v.off * 1000),
         `${a} in a note`,
@@ -42,10 +42,10 @@ describe('the voice in fragments', () => {
     }
   });
 
-  it('is silent for a fifth of the sung time or so, a little more the more of the piano there is', () => {
+  it('is silent for a tenth of the sung time or so, a little more the more of the piano there is', () => {
     const sung = voice.reduce((s, v) => s + (v.off - v.on) * 1000, 0);
     const silent = spans.reduce((s, [a, b]) => s + b - a, 0);
-    assert.ok(silent / sung > 0.1 && silent / sung < 0.35, `${((100 * silent) / sung).toFixed(0)} %`);
+    assert.ok(silent / sung > 0.05 && silent / sung < 0.2, `${((100 * silent) / sung).toFixed(0)} %`);
     assert.ok(fragmentation(0) < fragmentation(0.65) && fragmentation(0.65) < fragmentation(1));
   });
 

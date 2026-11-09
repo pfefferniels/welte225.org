@@ -58,8 +58,12 @@ export const AIR_OUT: {
   lengthMs: 450,
   opening: 0.6,
 };
-/** Where the voice falls silent mid-phrase: how long it takes to die away, and to come back. */
-const QUIET = { outMs: 300, inMs: 60 } as const;
+/**
+ * Where the voice falls silent mid-phrase: it dies away over `outMs`, the pressure falling as an
+ * even decrescendo (exponentially, by `outDepth` time constants), and swells back into the next
+ * note over `inMs`, from `leadMs` before it is heard.
+ */
+const QUIET = { outMs: 800, outDepth: 4, inMs: 200, leadMs: 40 } as const;
 /** Lung pressure while breathing in, at depth 1 (dPa). */
 const BREATH_PRESSURE = 1400;
 
@@ -301,16 +305,26 @@ function effort(
     for (let t = s0 - 10; t < s0 + d + 10; t += 10) fine.push(t);
   }
 
-  // the voice falling silent: dying away within the note, and back as the next note is heard (its
-  // target early by the lungs' lag)
+  // the voice falling silent: dying away within the held note, and swelling back into the next
+  // as it is heard (its target early by the lungs' lag)
   for (const [t, q] of quiet) {
-    const back = t + q.durationMs - lagOf(TIME_CONSTANT_MS.pressure);
-    const xs = [t, t + QUIET.outMs, back - QUIET.inMs, back];
-    const ys = [1, 0, 0, 1];
-    for (let i = Math.max(0, Math.floor(t)); i < Math.min(n, Math.ceil(back) + 1); i++)
+    const back = t + q.durationMs - lagOf(TIME_CONSTANT_MS.pressure) - QUIET.leadMs;
+    const xs: Ms[] = [];
+    const ys: number[] = [];
+    const floor = Math.exp(-QUIET.outDepth);
+    for (let k = 0; k <= 10; k++) {
+      xs.push(t + (QUIET.outMs * k) / 10);
+      ys.push((Math.exp((-QUIET.outDepth * k) / 10) - floor) / (1 - floor));
+    }
+    for (let k = 0; k <= 10; k++) {
+      xs.push(back + (QUIET.inMs * k) / 10);
+      ys.push(Math.pow(Math.sin((Math.PI / 2) * (k / 10)), 2));
+    }
+    const end = back + QUIET.inMs;
+    for (let i = Math.max(0, Math.floor(t)); i < Math.min(n, Math.ceil(end) + 1); i++)
       dip[i] = Math.min(dip[i], interp(i, xs, ys));
-    for (let s = t; s < t + QUIET.outMs + 10; s += 10) fine.push(s);
-    for (let s = back - QUIET.inMs - 10; s < back + 10; s += 10) fine.push(s);
+    for (let s = t; s < t + QUIET.outMs + 20; s += 20) fine.push(s);
+    for (let s = back - 10; s < end + 20; s += 20) fine.push(s);
   }
 
   const pressure = new Float64Array(n);

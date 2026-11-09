@@ -85,13 +85,14 @@ export function activity(
 
 /**
  * Where the voice falls silent: the spans (ms of the performance) where the activity stays below
- * `threshold` for at least `minMs`, each beginning in a held note, never at a note's onset.
+ * `threshold` for at least `minMs` (long enough to die away and come back), each beginning in a held
+ * note, never at a note's onset.
  */
 export function quietSpans(
   a: Float32Array,
   voice: readonly VoiceNote[],
   threshold: number,
-  minMs: Ms = 500,
+  minMs: Ms = 1100,
 ): [Ms, Ms][] {
   // the stretches the voice sounds without a break: legato notes join, breaths part them
   const voiced: [Ms, Ms][] = [];

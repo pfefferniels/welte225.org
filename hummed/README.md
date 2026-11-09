@@ -170,11 +170,14 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    median of ±4 beats, from 0.08 to 0.2 in log); an accent (velocity above the curve); a detached
    or repeated note (0.7); a leap of a fourth or more (0.6). The weight holds for 0.25 s after the
    note begins and then fades (600 ms time constant) while the note is held; dynamics in motion
-   keep the voice up on their own. Where all of it stays under the fragmentation for half a second
-   or more within a sung stretch, the voice dies away over 0.3 s and comes back as the next note
-   is heard: silence, not breath. The fragmentation follows the elaboration, `0.15 + 0.1 e`: alone,
-   the voice falls silent for 14 % of the time it sings, at 0.65 for 22 %, mostly in the tails of
-   long, still notes. The calibration renders the voice whole (fragmentation 0).
+   keep the voice up on their own. Where all of it stays under the fragmentation for 1.1 s or more
+   within a sung stretch, the voice dies away evenly over 0.8 s (the pressure falling
+   exponentially, about 6 dB of sound every tenth of a second) and swells back into the next note
+   over 0.2 s: silence, not breath. The fragmentation follows the elaboration, `0.11 + 0.06 e`:
+   alone, the voice falls silent 5 times (7 % of the time it sings), at 0.65 11 times (13 %),
+   mostly in the tails of long, still notes. A first version, falling silent twice as often and
+   within 0.3 s, was too strong and too sudden. The calibration renders the voice whole
+   (fragmentation 0).
 
 3. **Gestures** (`src/hummer/gestures.ts`): the pitch line; the effort, lung
    pressure following the dynamics within held notes (velocity^1.5, each note offset by its own

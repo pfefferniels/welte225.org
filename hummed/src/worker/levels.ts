@@ -27,7 +27,7 @@ export const approximateness = (elaboration: number): number => 1 - unit(elabora
  * (src/hummer/salience.ts). A little alone, where the voice is all there is; a little more under
  * the piece, a pianist humming along.
  */
-export const fragmentation = (elaboration: number): number => 0.15 + 0.1 * unit(elaboration);
+export const fragmentation = (elaboration: number): number => 0.11 + 0.06 * unit(elaboration);
 
 /** Where the page starts (index.html): the piece (×1.07), the humming under it (×1.16). */
 export const DEFAULT_ELABORATION = 0.65;
