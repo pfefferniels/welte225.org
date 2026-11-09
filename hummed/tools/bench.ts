@@ -5,7 +5,9 @@
 // comes, how fast the voice comes against real time, and the fingerprints of the sound and of the
 // picture, to hold a faster build to the same output:
 //   npm run bench [-- --elaboration 0.65] [--vtl <another vtl.js>] [--spectrogram full] [--seconds 30]
+//     [--audio <file>: the sound as raw 32-bit floats, to compare two builds sample by sample]
 import { createHash } from 'node:crypto';
+import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { chunkOrder } from '../src/shared/chunks.ts';
@@ -29,6 +31,7 @@ const { values } = parseArgs({
     spectrogram: { type: 'string', default: 'melodic' },
     /** Render only the chunks that begin before this many seconds. */
     seconds: { type: 'string' },
+    audio: { type: 'string' },
     json: { type: 'boolean', default: false },
   },
 });
@@ -122,6 +125,8 @@ const sha = (bytes: ArrayBufferView): string =>
   createHash('sha256')
     .update(new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength))
     .digest('hex');
+if (values.audio !== undefined)
+  writeFileSync(resolve(values.audio), new Uint8Array(audio.buffer, audio.byteOffset, audio.byteLength));
 const seconds = (count * STATE_STEP) / SAMPLE_RATE;
 const rendered = (renderedStates * STATE_STEP) / SAMPLE_RATE;
 const render = t6 - t5;

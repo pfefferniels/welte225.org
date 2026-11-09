@@ -22,10 +22,34 @@ info button beside Elaboration explains it. A gear beside the info button opens 
 piano plays (below). The cards are native popovers: closed until asked for, and closed again by
 Escape or a click anywhere else.
 
+The strip is drawn at most once in an animation frame, and in every frame while the playhead moves
+(`src/page/redraws.ts`); never while the page is hidden. A frame is drawn only if it would look
+different (`frame.ts`): the strip has scrolled, columns have come within the stretch in view, or
+the piano is shown otherwise. The transport reads its position from the audio clock, which the page
+sees advance a buffer of the sound card at a time (9 to 20 ms from frame to frame where a frame
+takes 16.7); the playhead is drawn carried on by the frames' own times and only gently towards the
+clock (`glide.ts`), and exactly where the transport is when it rests. Drawing may take half of the
+main thread's time: with a graphics card that is every frame (half a millisecond each); where the
+browser rasterizes the canvas itself (headless Chromium: 5 ms a frame at 1280 × 720), frames are
+left out evenly, down to 20 a second. A worker's message is written into the spectrogram's tiles in
+one piece (`strip.ts`), and the readout only where it changes (`readout.ts`): the slider, while it
+plays, when its thumb would move by a pixel. (Drawn anew for every message and every tick of the
+transport, the same picture was drawn up to 39 times in a frame while the voice streamed in, and
+moved 20 times a second while it played.)
+
 The spectrogram comes in two styles (`src/shared/spectrogram.ts`): the full one (70 Hz to 4.5 kHz,
 in decibels), and the melodic range after Sonic Visualiser's "Melodic Range Spectrogram" (40 Hz to
 1.5 kHz, an 8192-sample window, in linear amplitude, so the sung line and its octave stand out
 and the rest falls away). The page shows the melodic range; `?spectrogram=full` shows the full one.
+
+A column costs little: the worker transforms only what the rows read (`src/worker/fft.ts`). The
+8192 samples under the window go in pairs through a complex FFT of half the size, which stops at
+blocks of 512 bins (the melodic range reads the lowest 280 of 4097), and each bin wanted is summed
+from the eight blocks directly. A magnitude is taken once for every bin, and the greys of the
+decibel scale and of the piano's come from a table that leaves the levels at which a grey changes
+to the formula (`src/worker/greys.ts`). The pixels are those of a plain FFT over all bins with the
+formulas applied to every row: over the whole piece in both styles and a recording of the piano at
+48 kHz, not one of 17.9 million differs. A column takes 0.06 ms where it took 0.42 ms.
 
 Under the humming the page draws the piano, the part the elaboration lets be heard: the harmonies
 below the middle, as faint as they are quiet, the piece from the middle on, nothing while the
@@ -253,14 +277,33 @@ allows at most 40). At 0.65, 300 ms into a note, the pitch is 12 cents off its n
 cents (68) and 59 ms, at 1 8 cents (21) and 11 ms.
 
 The page runs several such workers side by side (`src/page/pool.ts`; as many as there are cores
-to spare, at most four). Each prepares the level itself, and renders the chunks of the voice it is
-handed: the voice is cut where it is silent, 250 ms after the lungs have stopped pushing air, when
-it is some 100 dB down, so the chunks join without a seam. They are handed out in the order they
-will be heard, from where playback is to the end and then from the beginning, and streamed to the
-page in blocks with their spectrogram columns. Of the work, VocalTractLab's acoustics take three
-quarters and its geometry a fifth; the spectrogram adds a twentieth. Three workers render the
-voice 5.3 times as fast as it plays where one renders it 1.9 times as fast (in Chromium on four
-cores of a cloud server); the first sound comes as soon. The page (`src/page/`) plays the
+to spare, at most four); each loads VocalTractLab and the data as soon as it is there. The first
+prepares a setting with the help of the next two, over channels of their own
+(`src/shared/protocol.ts`): one performs the piano's two parts, which the plan needs and the voice
+does not; the other performs the voice's dynamics while the first performs its notes, and turns the
+lips-open gestural score into tract states while the first turns the lips-closed one
+(`src/worker/prepare.ts`). With one helper it plays the piano and takes the open score; a worker
+alone does it all. The first answers with the plan and goes straight on to the chunk that will be
+heard first; once that chunk's first half second is out it hands a copy of what it prepared (the
+tract states, some 27 MB) to each worker that has not got it, so that none prepares what another
+has, and it keeps the last three settings it prepared: going back to one needs no preparation.
+
+The voice is rendered in chunks (`src/worker/chunk.ts`): it is cut where it is silent, 250 ms after
+the lungs have stopped pushing air, when it is some 100 dB down, so the chunks join without a seam.
+They are handed out in the order they will be heard, from where playback is to the end and then
+from the beginning, each worker getting its next a little before it finishes the one it is on, and
+streamed to the page in blocks with their spectrogram columns, a chunk's first half second of sound
+before any column. The piano's recordings of a setting are fetched and decoded while its voice is
+prepared, and a change of setting while playing starts the new voice as far ahead of the playhead
+as the last changes took to be ready (0.4 to 1.2 s).
+
+Of the work, VocalTractLab's acoustics take six sevenths and its geometry a tenth; the spectrogram
+adds a fortieth. One worker renders the voice 4.4 times as fast as it plays (in Node, on one core
+of a cloud server: `npm run bench`), where it was 2.7 times; in Chromium on that server's four
+cores, three workers render it 11.7 times as fast (the whole piece in 15 s, where it took 26),
+and one 4.5 times (2.7). The page can play 0.95 s after it asks for its first setting (1.65 s),
+a setting changed while playing takes over after 1.1 s (1.8 s), and one gone back to after 0.6 s
+(1.2 s). The page (`src/page/`) plays the
 voice as it arrives, hands the roll and its harmonies, from the same performance, to the piano
 chosen (below), and sends all into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
@@ -315,24 +358,24 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 
 ## Code
 
-| Path                             | What it is                                                                                                                                                                                     |
-| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                |
-| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                        |
-| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                     |
-| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                    |
-| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                |
-| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                              |
-| `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, spectrogram, the render loop, the piano's picture                                                                                 |
-| `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, transport, spectrogram view, the piano's picture, the instructions |
-| `src/shared/`                    | what both sides use: units, maths, the messages between them, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                  |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration                                                              |
-| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                 |
-| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                               |
-| `tools/`                         | build, calibration, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                                                                     |
-| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                           |
-| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                          |
-| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                      |
+| Path                             | What it is                                                                                                                                                                                                                                                                  |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                                                                                             |
+| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                                                                                                     |
+| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                                                                                                  |
+| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                                                                                                 |
+| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                                                                                             |
+| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                           |
+| `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                 |
+| `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
+| `src/shared/`                    | what both sides use: units, maths, the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                                                                      |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration                                                                                                                                           |
+| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
+| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                            |
+| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                                                                                                                                     |
+| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                        |
+| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                       |
+| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                   |
 
 The score and the performance are the site's own (`/mpm/score.msm`, `/mpm/performance.mpm`), so
 the voice follows the reconstruction as it is published. The piece's grace notes are in the
@@ -348,6 +391,7 @@ Node 22.18 or later runs the TypeScript directly; nothing is compiled but the tw
 npm ci
 npm run check        # types (tsc, strict), lint (typescript-eslint, strict, type-aware), format, tests
 npm run build        # app.js and worker.js
+npm run bench        # the voice in Node as a worker renders it: where the time goes, fingerprints of sound and picture
 npm run calibrate    # after changing the reduction, the hum style or the reconstruction
 npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, instructions, pianos
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
@@ -365,7 +409,10 @@ Serve the repository root (`python3 -m http.server`) and open `/`: the page load
 `test/voice.test.ts` holds the voice to a fingerprint (`test/golden.json`), taken when the
 TypeScript was shown to produce gestural scores byte for byte identical to the JavaScript it
 replaced, and `test/engine.test.ts` holds six seconds of VocalTractLab's sound to another; after an
-intended change to what the voice does, `UPDATE_GOLDEN=1 npm test`. CI
+intended change to what the voice does, `UPDATE_GOLDEN=1 npm test`. `test/spectrogram.test.ts`
+holds the columns of a synthetic swell, in both styles and at 48 kHz on the piano's scale, to
+fingerprints taken from the first, plain implementation; `test/fft.test.ts` holds the transform to
+a naive DFT and `test/greys.test.ts` the table of greys to the formula. CI
 (`.github/workflows/hummed.yml`) runs the checks on every change to `hummed/` or `mpm/`, and fails
 if the committed bundles are not what the sources build to.
 
@@ -373,22 +420,63 @@ if the committed bundles are not what the sources build to.
 the dynamics ask, and writes per-note corrections (by `xml:id`) and the output gain to
 `data/calibration.json`; two rounds bring the notes within 0.01 dB of the dynamics.
 
+`npm run bench` renders a setting in Node with the worker's own modules (`--elaboration`, 0.65 if
+none is given; `--seconds 20` for the chunks that begin in the first 20 s only; `--vtl <file>` for
+another build of VocalTractLab) and prints the preparation's parts, the time to the first half
+second of sound, where the rendering's time goes, its speed against real time, and the SHA-256 of
+all the samples and of all the spectrogram's pixels: a faster build has to print the same two.
+`--audio <file>` writes the samples, to compare two builds one by one.
+
 `vtl/build.sh` rebuilds `vtl.js` (Emscripten 3.1.6): VocalTractLab 2.4.2 with
 `vtl/vocaltractlab.patch`, which raises the gestural model's limit from 60 s to 240 s (in one pass
 over the whole piece every parameter froze after a minute) and adds `vtlGesturalScoreToStates`,
-which returns a score's tract states in memory. The patch also makes the acoustic simulation about
-1.4 times as fast without changing its output by a bit. Every arithmetic operation that remains is
-the one VocalTractLab does, in the same order. The patch keeps from one sample to the next whatever
-has not changed:
+which returns a score's tract states in memory.
+
+The patch also makes VocalTractLab faster without changing its output by a bit: the acoustic
+simulation twice as fast as it came, the geometry twice, the gestural model eight times. Every
+arithmetic operation that remains is the one VocalTractLab does, on the same values; what the
+patch changes is marked "Speed (same results)" in the code. In the acoustics it keeps from one
+sample to the next whatever has not changed:
 
 - a tube section's resistances and inductances while its shape stays;
+- while the tract holds still (six sevenths of the samples), all that follows from the tube alone,
+  for each of a step's 110 samples: VocalTractLab interpolates between the step's two tubes for
+  every sample, and between two equal tubes the result still flickers in its last bit from sample
+  to sample, but it is the same at the same sample of every such step;
 - the factorization of the trachea's rows of the network's matrix;
-- the glottis's sine table;
-- the noise filters.
+- the glottis's sine table, the noise filters, the noise sources that are off.
 
-It also leaves out the products of the factorization that are zero, and compares numbers inline where
-WebAssembly would call `memcmp`. The sound's fingerprint in the tests was taken with the build
-before these changes. The whole piece at ×0, ×1 and ×2 was also compared sample by sample. `research/scripts/prep_static.py` wrote the
+Each time step's equations are solved column by column instead of row by row (every entry gets the
+same products subtracted in the same order), with the matrix's rows assembled just ahead of the
+factorization and the currents and pressures updated just behind the back substitution, so that
+the processor has work beside the two long chains of dependent divisions and square roots that the
+solution is; quotients that do not depend on each other are divided two at a time. The patch
+leaves out the products of the factorization that are zero, and compares numbers inline where
+WebAssembly would call `memcmp`.
+
+In the geometry (a tube from the tract's 19 parameters: 165 cuts through the surfaces of the
+tract) each triangle is cut once per line, not once for every tile of the surface's grid that
+names it; a triangle wholly on one side of the line is left after its three corners are tested;
+the marks of what has been tested are numbered per line, not cleared in every corner and edge for
+each line; and the 2048 cuts a cross-section can hold are not zeroed before each. In the gestural
+model the gestures of a score are read in one pass (asking for the n-th counted from the first
+every time), the curves are calculated once, not twice, those with the same timing together, plain
+decimals are read without `strtod`, and the score's memory is kept between calls.
+
+The sound's fingerprint in the tests was taken with the build before any of these changes. The
+whole piece at the elaborations 0, 0.65 and 1 was compared with that build's by the fingerprints
+of all its samples (`npm run bench`), as were the tract states and every tube.
+
+`VTL_FLAGS=-DTDS_REORDERED_SOLVER vtl/build.sh` builds a solver that is not the same to the bit:
+it eliminates the network's currents in rounds of currents that do not depend on each other (every
+other one along a run of tube sections), which takes the two chains apart; the acoustics are a
+fifth faster again (the whole piece 5.4 times as fast as it plays on one core, not 4.4). The
+solution is the same but for rounding: over the whole piece 11.5 % of the samples differ, most of
+them in the last bit of the 32-bit float, at most by 6·10⁻⁸ at 0.65 and 1.2·10⁻⁷ at 0 (141 and
+139 dB under the loudest sample; all the differences together 152 dB under the sound), and the
+spectrogram is the same to the pixel. The page's `vtl.js` is built without it.
+
+`research/scripts/prep_static.py` wrote the
 speaker, the hum style and the piano samples from the offline pipeline.
 
 ## Research
