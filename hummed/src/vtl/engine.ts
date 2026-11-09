@@ -17,17 +17,21 @@ export interface Constants {
   readonly step: number;
 }
 
-/** A gestural score as tract and glottis states, one per step. */
-export interface States {
+/** A gestural score's tract states, one per step. */
+export interface TractStates {
   readonly count: number;
   readonly tract: Float64Array;
+}
+
+/** A gestural score as tract and glottis states, one per step. */
+export interface States extends TractStates {
   readonly glottis: Float64Array;
 }
 
-/** The two scores of the voice. */
+/** The two scores of the voice. The glottis is the closed score's: the scores differ in the mouth alone. */
 export interface StatePair {
   readonly closed: States;
-  readonly open: States;
+  readonly open: TractStates;
 }
 
 interface Tube {

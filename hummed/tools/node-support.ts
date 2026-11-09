@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { compileFunction } from 'node:vm';
 import { DOMParser } from '@xmldom/xmldom';
-import { exaggerateMpm, performMsmToData, type PerformanceData } from 'espressivo';
+import type { PerformanceData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../src/hummer/data.ts';
 import { dynamicsRange, type DynamicsRange } from '../src/hummer/performance.ts';
 import type { Calibration, HumStyle } from '../src/hummer/style.ts';
@@ -14,17 +14,10 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
-import {
-  approximateness,
-  fragmentation,
-  DEFAULT_ELABORATION,
-  voiceFactors,
-  pianoLevel,
-  voiceLevel,
-  withSubNoteDynamics,
-} from '../src/worker/levels.ts';
+import { approximateness, fragmentation, DEFAULT_ELABORATION } from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
 import type { PianoScore } from '../src/worker/piano.ts';
+import { performVoice, type HumData } from '../src/worker/prepare.ts';
 
 /** The hummed/ directory. */
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -60,17 +53,21 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
   range: DynamicsRange;
   fragmentation: number;
 } {
-  const { msm, mpm } = loadScore();
-  const factors = voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration));
-  const voiceMpm = exaggerateMpm(mpm, { factors }).mpm;
+  const score = loadScore();
   return {
-    performance: performMsmToData({ msm, mpm: voiceMpm }),
-    dynamics: performMsmToData({ msm, mpm: withSubNoteDynamics(voiceMpm) }),
+    ...performVoice(score, elaboration),
     approximateness: approximateness(elaboration),
-    range: dynamicsRange(mpm),
+    range: dynamicsRange(score.mpm),
     fragmentation: fragmentation(elaboration),
   };
 }
+
+/** What the hummer reads beside the performance, as the worker loads it. */
+export const loadHumData = (): HumData => ({
+  range: dynamicsRange(loadScore().mpm),
+  style: loadStyle(),
+  calibration: loadCalibration(),
+});
 
 /** vtl.js evaluated as the CommonJS module it is (the package is ESM, so it cannot be required). */
 export async function loadVtl(file = join(ROOT, 'vtl.js')): Promise<VtlModule> {

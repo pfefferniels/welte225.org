@@ -1,49 +1,54 @@
 // A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on the piece,
 // and on its harmonies for the piano's lower half), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
-// chunk as the page hands them out, into sound, streamed to the page in blocks with their
-// spectrogram columns. The page runs several such workers side by side, and one more that only
-// draws the piano's sound as the page hands it over (picture.ts): that one loads nothing else.
-import { exaggerateMpm, performMsmToData } from 'espressivo';
+// chunk, into sound, streamed to the page in blocks with their spectrogram columns. The page runs
+// several such workers side by side (shared/protocol.ts says who does what): the first prepares a
+// setting, with the help of the next two, and answers with the plan; the others are handed what it
+// prepared. One more worker only draws the piano's sound as the page hands it over (picture.ts):
+// that one loads nothing else.
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
+import { dynamicsRange, readDynamics } from '../hummer/index.ts';
+import { chunkOrder } from '../shared/chunks.ts';
 import {
-  dynamicsRange,
-  renderVoice,
-  type Calibration,
-  type DynamicsRange,
-  type HumStyle,
-} from '../hummer/index.ts';
-import { interp } from '../shared/math.ts';
-import type {
-  FromWorker,
-  PictureColumns,
-  PictureRequest,
-  Plan,
-  Setting,
-  StartAt,
-  Timings,
-  ToWorker,
+  VOICE_WORKER,
+  type BetweenWorkers,
+  type DynamicsMessage,
+  type FromWorker,
+  type OpenMessage,
+  type PianoMessage,
+  type PictureColumns,
+  type PictureRequest,
+  type Setting,
+  type Timings,
+  type ToWorker,
 } from '../shared/protocol.ts';
-import { SPECTROGRAM, SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
-import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.ts';
+import { SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
+import { SAMPLE_RATE } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
-import { VtlEngine, type StatePair } from '../vtl/engine.ts';
+import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
+import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { voiceStates } from './voice-states.ts';
-import {
-  approximateness,
-  fragmentation,
-  pianoLevel,
-  voiceFactors,
-  voiceLevel,
-  withSubNoteDynamics,
-} from './levels.ts';
+import { pianoLevel } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
+import {
+  copyLevel,
+  hum,
+  levelFrom,
+  makeLevel,
+  performDynamics,
+  performNotes,
+  planOf,
+  voiceMpm,
+  type HumData,
+  type Level,
+} from './prepare.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
+import { maxStatesOf, scoreStates } from './voice-states.ts';
 
 interface WorkerScope {
+  readonly name: string;
   postMessage(message: FromWorker | PictureColumns, transfer?: Transferable[]): void;
   onmessage: ((event: MessageEvent<ToWorker | PictureRequest>) => void) | null;
 }
@@ -51,122 +56,114 @@ const scope = self as unknown as WorkerScope;
 const post = (message: FromWorker, transfer: Transferable[] = []): void => {
   scope.postMessage(message, transfer);
 };
+const now = (): number => performance.now();
+const nothing = (): void => undefined;
 
-/**
- * Sound before a chunk that is rendered to settle the voice but not sent: longer where the chunk
- * starts in the middle of the voice (a seek), short where it starts at a silence.
- */
-const SETTLE: Seconds = 0.3;
-const SETTLE_AT_SEAM: Seconds = 0.05;
-/** Tract states per audio block. */
-const BLOCK_STATES = 40;
-
-interface Resources {
+/** The scores and the data: what the performances and the hummer are made from. */
+interface Texts extends HumData {
   readonly msm: string;
-  /** The harmonies as a score (reduction/harmonies.mei, grace notes put back). */
-  readonly harmonies: string;
   readonly mpm: string;
-  /** The MPM's own range of dynamics, against which the voice reads loudness. */
-  readonly range: DynamicsRange;
-  readonly style: HumStyle;
-  readonly calibration: Calibration;
-  readonly engine: VtlEngine;
+  /** The harmonies as a score (reduction/harmonies.mei, grace notes put back), made when first played here. */
+  readonly harmonies: () => string;
 }
 
-/** One setting, from the MPM to tract states, kept while it is being rendered. */
-interface Level {
-  readonly setting: Setting;
-  readonly states: StatePair;
-  readonly weight: Float32Array;
-  readonly seams: ReadonlySet<number>;
-  readonly plan: Omit<Plan, 'id' | 'startSeconds' | 'startState'>;
+/** What a worker loads once: the texts, soon there, and VocalTractLab, which takes longer. */
+interface Resources {
+  readonly texts: Promise<Texts>;
+  readonly engine: Promise<VtlEngine>;
 }
 
-let resources: Promise<Resources> | null = null;
-let prepared: Level | null = null;
+/** What the page sends once: what is hummed, and how to draw it. */
+interface Setup {
+  readonly reduction: Reduction;
+  readonly style: SpectrogramStyle;
+  readonly columns: SpectrogramColumns;
+}
+
+/** What the helpers have sent for the request being prepared here; `alone` once there is none to wait for. */
+interface Help {
+  readonly id: number;
+  alone: boolean;
+  /** Whether a helper was asked for the dynamics too (there are two). */
+  readonly dynamicsAsked: boolean;
+  piano?: PianoMessage;
+  dynamics?: DynamicsMessage;
+  open?: OpenMessage;
+}
+
+/** The messages that ask for work that takes time: preparing, rendering, helping. */
+type Task = Extract<ToWorker | BetweenWorkers, { readonly type: 'plan' | 'chunk' | 'perform' | 'score' }>;
+
+let resources: Resources | null = null;
+/** The levels held here, the latest first: the worker that plans keeps a few, the others their one. */
+let levels: Level[] = [];
+let keep = 1;
+let planning = false;
 /** The newest request seen: work for an older one stops. */
 let current = 0;
+/** The work for the newest request, one task after another. */
+let line: Promise<void> = Promise.resolve();
 /** The newest picture asked for. */
 let picture = 0;
+/** The channels to the workers this one prepares settings with: its helpers', or the planner's. */
+let peers: readonly MessagePort[] = [];
+let help: Help | null = null;
+/** Has a preparation that waits (for its helpers, or to be stopped) look again. */
+let wake = nothing;
 
-async function load(): Promise<Resources> {
-  const get = async (url: string): Promise<Response> => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`${url}: ${response.status}`);
-    return response;
-  };
-  const [msm, harmonies, mpm, speaker, style, calibration] = await Promise.all([
+const get = async (url: string): Promise<Response> => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`${url}: ${response.status}`);
+  return response;
+};
+
+async function loadTexts(): Promise<Texts> {
+  const [msm, harmonies, mpm, style, calibration] = await Promise.all([
     get('../mpm/score.msm').then((r) => r.text()),
     get('reduction/harmonies.mei').then((r) => r.text()),
     get('../mpm/performance.mpm').then((r) => r.text()),
-    get('data/hummer.speaker.xml').then((r) => r.text()),
     get('data/hum-style.json').then((r) => r.json() as Promise<unknown>),
     get('data/calibration.json').then((r) => r.json() as Promise<unknown>),
   ]);
-  importScripts('vtl.js');
-  const createVtl = (self as unknown as { createVTL: CreateVtl }).createVTL;
-  const module = await createVtl({ print: () => undefined, printErr: () => undefined });
+  let score: string | null = null;
   return {
     msm,
-    harmonies: harmoniesScore(harmonies),
+    // converting the MEI takes a tenth of a second, and only the worker that plays the piano needs it
+    harmonies: () => (score ??= harmoniesScore(harmonies)),
     mpm,
     range: dynamicsRange(mpm),
     style: parseHumStyle(style),
     calibration: parseCalibration(calibration),
-    engine: new VtlEngine(module, speaker),
   };
 }
 
-function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
-  const t0 = performance.now();
-  const { elaboration } = setting;
-  const level = pianoLevel(elaboration);
-  const voiceAt = voiceLevel(elaboration);
-  const { piece, harmonies } = performPiano(r, level);
-  const voiceMpm = exaggerateMpm(r.mpm, { factors: voiceFactors(level, voiceAt) }).mpm;
-  const voiceData = performMsmToData({ msm: r.msm, mpm: voiceMpm });
-  const dynamics = performMsmToData({ msm: r.msm, mpm: withSubNoteDynamics(voiceMpm) });
-  const t1 = performance.now();
-  const voice = renderVoice({
-    performance: voiceData,
-    dynamics,
-    reduction: hummed,
-    style: r.style,
-    calibration: r.calibration,
-    approximateness: approximateness(elaboration),
-    range: r.range,
-    fragmentation: fragmentation(elaboration),
-  });
-  const t2 = performance.now();
-  const maxStates = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
-  const states = voiceStates(r.engine, voice, maxStates);
-  const t3 = performance.now();
-  const timings: Timings = { espressivo: t1 - t0, hummer: t2 - t1, gestures: t3 - t2 };
-  const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;
-  const seams = voice.seams
-    .map((ms) => Math.round(ms / msPerState))
-    .filter((i) => i > 0 && i < states.closed.count);
-  return {
-    setting,
-    states,
-    weight: voice.weight,
-    seams: new Set(seams),
-    plan: {
-      type: 'plan',
-      setting,
-      pianoLevel: level,
-      voiceLevel: voiceAt,
-      // states i..j sound from i to j−1
-      duration: ((states.closed.count - 1) * STATE_STEP) / SAMPLE_RATE,
-      bars: voice.bars,
-      clock: { ticks: voice.clock.ticks, ms: voice.clock.ms },
-      piece,
-      harmonies,
-      timings,
-      stateCount: states.closed.count,
-      seams,
-    },
-  };
+/**
+ * VocalTractLab with the speaker. Its script is fetched as the texts are, without holding this
+ * thread up (`importScripts` of its address would, until it has come), and its WebAssembly is
+ * compiled in the background: a setting's performance and humming are made meanwhile.
+ */
+async function loadEngine(): Promise<VtlEngine> {
+  const [script, speaker] = await Promise.all([
+    get('vtl.js').then((r) => r.blob()),
+    get('data/hummer.speaker.xml').then((r) => r.text()),
+  ]);
+  const url = URL.createObjectURL(script);
+  try {
+    importScripts(url);
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+  const createVtl = (self as unknown as { createVTL: CreateVtl }).createVTL;
+  const module = await createVtl({ print: () => undefined, printErr: () => undefined });
+  return new VtlEngine(module, speaker);
+}
+
+function load(): Resources {
+  resources ??= { texts: loadTexts(), engine: loadEngine() };
+  // a failure is reported with the request that meets it
+  resources.texts.catch(nothing);
+  resources.engine.catch(nothing);
+  return resources;
 }
 
 const yieldNow = (() => {
@@ -180,142 +177,293 @@ const yieldNow = (() => {
     });
 })();
 
-/** What the page sends once: what is hummed, and how to draw it. */
-interface Setup {
-  readonly reduction: Reduction;
-  readonly style: SpectrogramStyle;
-  readonly columns: SpectrogramColumns;
+/** Wait until `done` holds; it is looked at again with every message that comes. */
+function until(done: () => boolean): Promise<void> {
+  return new Promise((resolve) => {
+    wake = () => {
+      if (!done()) return;
+      wake = nothing;
+      resolve();
+    };
+    wake();
+  });
 }
-let setupDone: (setup: Setup) => void = () => undefined;
+
+let setupDone: (setup: Setup) => void = nothing;
 const setupReady = new Promise<Setup>((resolve) => {
   setupDone = resolve;
 });
 
-function levelOf(r: Resources, setup: Setup, setting: Setting): Level {
-  const kept = prepared;
-  if (kept?.setting.elaboration === setting.elaboration) return kept;
-  prepared = null;
-  const next = prepare(r, setup.reduction, setting);
-  prepared = next;
-  return next;
+const held = (setting: Setting): Level | undefined =>
+  levels.find((L) => L.setting.elaboration === setting.elaboration);
+
+/** Keep a level, the latest first, and let go of the oldest beyond what this worker holds. */
+function hold(L: Level): void {
+  const others = levels.filter((other) => other.setting.elaboration !== L.setting.elaboration);
+  levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
-/** The plan of a level: how long, where its bars and seams are, where the sound starts. */
-function plan(L: Level, id: number, start: StartAt): Plan {
-  const startSeconds =
-    'tick' in start
-      ? interp(start.tick, L.plan.clock.ticks, L.plan.clock.ms) / 1000 + PAD_MS / 1000
-      : start.seconds;
-  // the first state at or before the 10 ms slot of the start: the page counts sound per slot
-  const slot = SAMPLE_RATE / 100;
-  const startState = Math.max(
-    0,
-    Math.min(L.plan.stateCount - 1, Math.floor((Math.floor(startSeconds * 100) * slot) / STATE_STEP)),
+const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> =>
+  performPiano(
+    { msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm },
+    pianoLevel(setting.elaboration),
   );
-  return { ...L.plan, id, startSeconds, startState };
+
+/**
+ * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
+ * states and, of two helpers, the dynamics come from them while the voice's performance, the hummer
+ * and the closed score's states are made here; what no helper sends (there is none, or it failed)
+ * is made here too. Gives way to messages between the steps; null when a newer request has come.
+ */
+async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting): Promise<Level | null> {
+  const { id } = box;
+  const spent = { espressivo: 0, hummer: 0, gestures: 0 } satisfies Timings;
+  const timed = <T>(step: keyof Timings, work: () => T): T => {
+    const t = now();
+    const result = work();
+    spent[step] += now() - t;
+    return result;
+  };
+  const stopped = async (): Promise<boolean> => {
+    await yieldNow();
+    return id !== current;
+  };
+  const texts = await r.texts;
+  if (id !== current) return null;
+  const mpm = timed('espressivo', () => voiceMpm(texts, setting.elaboration));
+  const performance = timed('espressivo', () => performNotes(texts, mpm));
+  await until(() => id !== current || box.alone || !box.dynamicsAsked || box.dynamics !== undefined);
+  if (await stopped()) return null;
+  const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(texts, mpm));
+  const performed = { performance, dynamics };
+  const voice = timed('hummer', () => hum(performed, setup.reduction, texts, setting.elaboration));
+  const maxStates = maxStatesOf(voice);
+  if (!box.alone)
+    peers.at(0)?.postMessage({
+      type: 'score',
+      id,
+      score: voice.openScore,
+      maxStates,
+      moves: voice.moves,
+    } satisfies BetweenWorkers);
+  const engine = await r.engine;
+  if (await stopped()) return null;
+  const closed = timed('gestures', () => scoreStates(engine, voice.closedScore, maxStates, voice.moves));
+  await until(() => id !== current || box.alone || (box.piano !== undefined && box.open !== undefined));
+  if (id !== current) return null;
+  const open =
+    box.open ?? timed('gestures', () => scoreStates(engine, voice.openScore, maxStates, voice.moves));
+  const piano = box.piano ?? timed('espressivo', () => pianoAt(texts, setting));
+  const timings = {
+    espressivo: spent.espressivo + (box.piano?.ms ?? 0) + (box.dynamics?.ms ?? 0),
+    hummer: spent.hummer,
+    gestures: spent.gestures + (box.open?.ms ?? 0),
+  };
+  return makeLevel(setting, voice, { closed, open }, piano, timings);
 }
 
 /**
- * Render the states [from, to): settle the voice a little before `from`, and render on past `to`
- * for the last spectrogram columns, but send only the samples of [from, to) and the columns whose
- * centres fall in them. Stop when a newer request comes.
+ * Render a chunk of a level and post it block by block; stop when a newer request comes. Once the
+ * chunk's first sound is out (what the page needs before it plays from there), `afterFirstSound`.
  */
-async function renderChunk(
+async function render(
   r: Resources,
   setup: Setup,
   L: Level,
   id: number,
   from: number,
   to: number,
+  afterFirstSound = nothing,
 ): Promise<void> {
-  const { style, columns } = setup;
-  const { hop } = SPECTROGRAM;
-  const count = L.states.closed.count;
-  const settle = from === 0 ? 0 : L.seams.has(from) ? SETTLE_AT_SEAM : SETTLE;
-  const a = Math.max(0, from - Math.round((settle * SAMPLE_RATE) / STATE_STEP));
-  const b = Math.min(count, to + Math.ceil(style.window / 2 / STATE_STEP) + 1);
-  const offset = a * STATE_STEP;
-  const local = new Float32Array((b - a) * STATE_STEP);
-  const keep0 = from * STATE_STEP;
-  const keep1 = Math.min(to * STATE_STEP, (count - 1) * STATE_STEP);
-  const lastColumn = Math.ceil(keep1 / hop);
-  let column = Math.ceil(keep0 / hop);
-  const gain = r.calibration.gain;
-  const send = (start: number, samples: Float32Array, upto: number): void => {
-    const pixels = upto > column ? columns(local, offset, column, upto) : null;
-    if (samples.length === 0 && !pixels) return;
-    post(
-      {
-        type: 'audio',
-        id,
-        start,
-        samples,
-        spectrogram: pixels ? { column, count: upto - column, pixels } : null,
-      },
-      pixels ? [samples.buffer, pixels.buffer] : [samples.buffer],
-    );
-    if (pixels) column = upto;
-  };
-  for (const block of r.engine.synthesize(L.states, L.weight, a, b, { blockStates: BLOCK_STATES })) {
-    const at = (block.firstState - 1) * STATE_STEP;
-    const samples = block.samples;
-    for (let i = 0; i < samples.length; i++) samples[i] *= gain;
-    local.set(samples, at - offset);
-    const filled = at + samples.length;
-    const s0 = Math.max(at, keep0);
-    const s1 = Math.min(filled, keep1);
-    // the columns whose window the rendered sound now covers
-    const ready = Math.min(lastColumn, Math.floor((filled - style.window / 2) / hop) + 1);
-    send(s1 > s0 ? s0 : 0, s1 > s0 ? samples.slice(s0 - at, s1 - at) : new Float32Array(0), ready);
+  const [texts, engine] = await Promise.all([r.texts, r.engine]);
+  if (id !== current) return;
+  const options = { style: setup.style, columns: setup.columns, gain: texts.calibration.gain };
+  let sent = 0;
+  let first = true;
+  for (const part of renderChunk(engine, L, from, to, options)) {
+    if (part) {
+      sent += part.samples.length;
+      post(
+        { type: 'audio', id, ...part },
+        part.spectrogram ? [part.samples.buffer, part.spectrogram.pixels.buffer] : [part.samples.buffer],
+      );
+    }
+    if (first && sent >= FIRST_SOUND * SAMPLE_RATE) {
+      first = false;
+      afterFirstSound();
+    }
     await yieldNow();
     if (id !== current) return;
   }
-  send(0, new Float32Array(0), lastColumn); // at the end of the piece, with silence after it
+  if (first) afterFirstSound();
   post({ type: 'chunkDone', id, from, to });
+}
+
+/** The level a plan or a chunk is of: the one held, or prepared now. */
+async function levelFor(r: Resources, setup: Setup, box: Help, setting: Setting): Promise<Level | null> {
+  const L = held(setting) ?? (await prepare(r, setup, box, setting));
+  if (L) hold(L);
+  return L;
+}
+
+/** Do a task; `reply` is the channel a helper answers on. */
+async function work(message: Task, box: Help, reply: MessagePort | undefined): Promise<void> {
+  const { id } = message;
+  if (id !== current) return;
+  const r = load();
+  switch (message.type) {
+    case 'plan': {
+      const setup = await setupReady;
+      const L = await levelFor(r, setup, box, message.setting);
+      if (!L || id !== current) return;
+      const plan = planOf(L, id, message.start);
+      post(plan);
+      // the chunk that is heard first, at once; then a copy of the level for each worker without it
+      const [from, to] = chunkOrder(plan)[0];
+      await render(r, setup, L, id, from, to, () => {
+        for (let i = 0; i < message.share; i++) {
+          const { data, transfer } = copyLevel(L);
+          post({ type: 'level', id, level: data }, transfer);
+        }
+      });
+      return;
+    }
+    case 'chunk': {
+      const setup = await setupReady;
+      const L = await levelFor(r, setup, box, message.setting);
+      if (!L || id !== current) return;
+      await render(r, setup, L, id, message.from, message.to);
+      return;
+    }
+    case 'perform': {
+      const texts = await r.texts;
+      if (id !== current) return;
+      const t = now();
+      if (message.what === 'piano') {
+        const piano = pianoAt(texts, message.setting);
+        reply?.postMessage({ type: 'piano', id, ...piano, ms: now() - t } satisfies BetweenWorkers);
+      } else {
+        const mpm = voiceMpm(texts, message.setting.elaboration);
+        const curve = readDynamics(performDynamics(texts, mpm));
+        reply?.postMessage({ type: 'dynamics', id, curve, ms: now() - t } satisfies BetweenWorkers);
+      }
+      return;
+    }
+    case 'score': {
+      const engine = await r.engine;
+      if (id !== current) return;
+      const t = now();
+      const { count, tract } = scoreStates(engine, message.score, message.maxStates, message.moves);
+      reply?.postMessage({ type: 'open', id, count, tract, ms: now() - t } satisfies BetweenWorkers, [
+        tract.buffer,
+      ]);
+      return;
+    }
+  }
+}
+
+/**
+ * A task has come. A setting that is not held here will be prepared: with helpers, ask them to
+ * perform before anything else, so that they begin at once: the last the piano, and of two the
+ * first the dynamics. The tasks of one request are done in the order they come (a worker is handed
+ * its next chunk before it has finished the last); a newer request's start at once, and the older
+ * one's give up as they come round.
+ */
+function take(message: Task, newer: boolean, reply: MessagePort | undefined): void {
+  const helped = message.type === 'plan' && message.helped && peers.length > 0 && !held(message.setting);
+  const box: Help = { id: message.id, alone: !helped, dynamicsAsked: helped && peers.length > 1 };
+  if (helped) {
+    help = box;
+    const ask = (what: 'piano' | 'dynamics'): BetweenWorkers => ({
+      type: 'perform',
+      id: message.id,
+      setting: message.setting,
+      what,
+    });
+    peers.at(-1)?.postMessage(ask('piano'));
+    if (box.dynamicsAsked) peers.at(0)?.postMessage(ask('dynamics'));
+  }
+  const start = (): Promise<void> => work(message, box, reply);
+  line = (newer ? start() : line.then(start)).catch((error: unknown) => {
+    post({
+      type: 'error',
+      id: message.id,
+      message: error instanceof Error ? error.message : String(error),
+    });
+  });
+}
+
+/** A message with a request's id, from the page or (`from`) from a worker this one prepares with. */
+function receive(
+  message: Exclude<ToWorker, { readonly type: 'setup' | 'link' }> | BetweenWorkers,
+  from?: MessagePort,
+): void {
+  if (message.id < current) return;
+  const newer = message.id > current;
+  current = message.id;
+  switch (message.type) {
+    case 'stop':
+      break;
+    case 'alone':
+      if (help?.id === message.id) help.alone = true;
+      break;
+    case 'piano':
+      if (help?.id === message.id) help.piano = message;
+      break;
+    case 'dynamics':
+      if (help?.id === message.id) help.dynamics = message;
+      break;
+    case 'open':
+      if (help?.id === message.id) help.open = message;
+      break;
+    case 'level':
+      hold(levelFrom(message.level));
+      break;
+    default:
+      // the worker that is asked for plans is the one that keeps levels
+      if (message.type === 'plan') planning = true;
+      take(message, newer, from);
+  }
+  // a preparation that waits sees what has come: a helper's part, or a newer request
+  wake();
 }
 
 scope.onmessage = (event) => {
   const message = event.data;
-  if (message.type === 'picture') {
-    picture = message.id;
-    void drawPicture(
-      message,
-      (columns, transfer) => {
-        scope.postMessage(columns, transfer);
-      },
-      async () => {
-        await yieldNow();
-        return picture === message.id;
-      },
-    );
-    return;
-  }
-  if (message.type === 'setup') {
-    const style = SPECTROGRAM_STYLES[message.spectrogram];
-    setupDone({ reduction: message.reduction, style, columns: makeSpectrogram(style) });
-    // load VocalTractLab and the data now, so that the first chunk need only prepare its level
-    resources ??= load();
-    resources.catch(() => undefined); // a failure is reported with the request that meets it
-    return;
-  }
-  if (message.id < current) return;
-  current = message.id;
-  if (message.type === 'stop') return;
-  void (async () => {
-    try {
-      resources ??= load();
-      const [r, setup] = await Promise.all([resources, setupReady]);
-      if (message.id !== current) return;
-      const L = levelOf(r, setup, message.setting);
-      if (message.id !== current) return;
-      if (message.type === 'plan') post(plan(L, message.id, message.start));
-      else await renderChunk(r, setup, L, message.id, message.from, message.to);
-    } catch (error) {
-      post({
-        type: 'error',
-        id: message.id,
-        message: error instanceof Error ? error.message : String(error),
-      });
+  switch (message.type) {
+    case 'picture':
+      picture = message.id;
+      void drawPicture(
+        message,
+        (columns, transfer) => {
+          scope.postMessage(columns, transfer);
+        },
+        async () => {
+          await yieldNow();
+          return picture === message.id;
+        },
+      );
+      return;
+    case 'setup': {
+      const style = SPECTROGRAM_STYLES[message.spectrogram];
+      keep = message.keep;
+      setupDone({ reduction: message.reduction, style, columns: makeSpectrogram(style) });
+      load();
+      return;
     }
-  })();
+    case 'link':
+      for (const port of peers) port.close();
+      peers = message.ports;
+      for (const port of peers)
+        port.onmessage = (other: MessageEvent<BetweenWorkers>) => {
+          receive(other.data, port);
+        };
+      return;
+    default:
+      receive(message);
+  }
 };
+
+// a voice worker loads VocalTractLab and the data as soon as it is there, so that the first request
+// need only prepare its level; the worker that draws the piano's picture never does
+if (scope.name === VOICE_WORKER) load();
