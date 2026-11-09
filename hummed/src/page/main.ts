@@ -4,7 +4,8 @@ import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogra
 import { createAudioGraph } from './audio-graph.ts';
 import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
 import { DisplaySettings } from './display.ts';
-import { element, formatTime } from './dom.ts';
+import { element, formatTime, setFill, Written } from './dom.ts';
+import { Glide } from './glide.ts';
 import { InstructionsView } from './instructions-view.ts';
 import { heard, mix, voiceElaboration } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
@@ -12,7 +13,9 @@ import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
 import { Player } from './player.ts';
 import { VoicePool, workerCount } from './pool.ts';
+import { Readout } from './readout.ts';
 import { Recordings } from './recordings.ts';
+import { browserFrames, Redraws } from './redraws.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { PianoSettings } from './settings.ts';
 import { SpectrogramView } from './spectrogram-view.ts';
@@ -52,27 +55,18 @@ const setStatus = (text: string): void => {
   statusLine.textContent = text;
   statusLine.hidden = text === '';
 };
-const setFill = (input: HTMLInputElement, fraction: number): void => {
-  input.style.setProperty('--p', `${fraction * 100}%`);
+
+/* ---------- drawing: once a frame, and in every frame while the playhead moves ---------- */
+const readout = new Readout(nowText, barText, positionSlider);
+const glide = new Glide();
+const redraws = new Redraws(draw, () => player.moving, browserFrames());
+/** Something to draw: in the next frame, with whatever else changes until then. */
+const redraw = (): void => {
+  redraws.request();
 };
-
-function updateReadout(): void {
-  const cur = player.current;
-  if (!cur) return;
-  const t = player.position();
-  nowText.textContent = formatTime(t);
-  let bar = 'Upbeat';
-  for (const [bt, label] of cur.bars) if (bt <= t + 0.02) bar = `Bar ${label}`;
-  barText.textContent = bar;
-  if (!seeking) {
-    positionSlider.value = String(t);
-    setFill(positionSlider, t / cur.duration);
-  }
-  positionSlider.setAttribute('aria-valuetext', `${formatTime(t)}, ${bar.toLowerCase()}`);
-}
-
+// a canvas that was resized is empty: it is drawn before the browser shows it
 const view = new SpectrogramView(canvas, SPECTROGRAM_STYLES[spectrogramStyle], () => {
-  redraw();
+  draw(performance.now());
 });
 /* ---------- beside the humming: the piano in the spectrogram, the MPM's instructions ---------- */
 const display = new DisplaySettings(() => {
@@ -84,31 +78,44 @@ const display = new DisplaySettings(() => {
 const picture = new PianoPicture(
   spectrogramStyle,
   (rendering, part) => (settings.kind === 'sampled' ? sampled : recorded).sound(rendering, part),
-  () => requestAnimationFrame(redraw),
+  redraw,
 );
+/** How many columns of the piano's picture there are, for whoever watches the page from outside. */
+const pianoColumns = new Written<number>((columns) => {
+  canvas.dataset['piano'] = String(columns);
+});
 const instructions = new InstructionsView(element('instructions', HTMLElement), () => {
   // the visitor goes to read the call in MPM Desk
   if (player.playing) player.pause();
 });
 instructions.shown = display.instructions;
 
-function redraw(): void {
-  updateReadout();
+/**
+ * The page as it is in a frame at `time` (ms): the readout, the strip, the instructions. Returns
+ * whether the strip had to be drawn.
+ */
+function draw(time: number): boolean {
   const cur = player.current;
-  const t = player.position();
+  const moving = player.moving;
+  // where the playhead is drawn: while it moves, carried evenly from frame to frame
+  const glided = glide.at(player.position(), time, moving);
+  const t = cur ? Math.min(cur.duration, glided) : glided;
+  if (cur) readout.show(t, cur.duration, cur.bars, { moving, held: seeking });
   // the piano under the humming, as present as it is heard: the harmonies come in from nothing
   const gains = mix(elaboration());
   const part = instrumentPart();
   const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
-  const drawn = String(strip?.columns ?? 0);
-  if (canvas.dataset['piano'] !== drawn) canvas.dataset['piano'] = drawn;
-  view.draw(cur, t, strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece });
+  pianoColumns.set(strip?.columns ?? 0);
+  const under = strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece };
+  const drew = view.draw(cur, t, under, moving);
   instructions.show(cur, t);
+  return drew;
 }
 
 const player = new Player(graph, sampled, pool, {
   adopted(rendering: Rendering) {
     positionSlider.max = rendering.duration.toFixed(2);
+    readout.forget();
     totalText.textContent = formatTime(rendering.duration);
     playButton.disabled = false;
     positionSlider.disabled = false;
@@ -118,10 +125,10 @@ const player = new Player(graph, sampled, pool, {
     playIcon.toggleAttribute('hidden', playing);
     pauseIcon.toggleAttribute('hidden', !playing);
     playButton.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    // the playhead sets off, or has come to rest: where it rests is drawn exactly
+    redraw();
   },
-  changed() {
-    requestAnimationFrame(redraw);
-  },
+  changed: redraw,
 });
 /* ---------- the piano: in the page, or an instrument over MIDI ---------- */
 /** The part an instrument over MIDI plays: the one the elaboration lets be heard. */
@@ -136,7 +143,7 @@ const settings = new PianoSettings({
   chosen(output: PianoOutput) {
     player.setPiano(output);
     picture.forget();
-    requestAnimationFrame(redraw);
+    redraw();
   },
   status: setStatus,
 });
@@ -166,7 +173,7 @@ const applyElaboration = (): void => {
   setFill(elaborationSlider, e);
   // an instrument plays one part: the other, or none, from where playing is
   if (settings.setPart(instrumentPart())) player.restartPiano();
-  requestAnimationFrame(redraw);
+  redraw();
 };
 elaborationSlider.addEventListener('input', () => {
   applyElaboration();

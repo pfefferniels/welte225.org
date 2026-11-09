@@ -1,6 +1,7 @@
 // What the reconstruction says where the music is: a panel over the spectrogram that lists, by
 // dimension, the calls of /mpm/work.json holding at the playhead. Each is a link that opens MPM
-// Desk's viewer at that call.
+// Desk's viewer at that call. The page asks in every frame it draws; the list is worked out again
+// only once the playhead has passed the next place where a call begins or ends.
 import {
   activeAt,
   INSTRUCTION_KINDS,
@@ -16,12 +17,32 @@ import { mpmElements } from '../shared/mpm.ts';
 import type { Seconds } from '../shared/units.ts';
 import type { Rendering } from './rendering.ts';
 
+/**
+ * The stretch of time about `t` over which the same instructions hold: from the last beginning or
+ * end of one at or before `t`, up to the next after it.
+ */
+export function stretchAbout(
+  instructions: readonly Pick<TimedInstruction, 'start' | 'end'>[],
+  t: Seconds,
+): readonly [from: Seconds, to: Seconds] {
+  let from = -Infinity;
+  let to = Infinity;
+  for (const { start, end } of instructions)
+    for (const edge of [start, end]) {
+      if (edge <= t) from = Math.max(from, edge);
+      else to = Math.min(to, edge);
+    }
+  return [from, to];
+}
+
 export class InstructionsView {
   readonly #panel: HTMLElement;
   readonly #rows = new Map<InstructionKind, { readonly cell: HTMLElement; shown: string }>();
   #instructions: readonly Instruction[] = [];
   /** The instructions in the time of the rendering they were last shown for. */
   #timed: { readonly id: number; readonly list: readonly TimedInstruction[] } | null = null;
+  /** The stretch of that rendering's time over which the rows are right as they are. */
+  #right: readonly [from: Seconds, to: Seconds] | null = null;
 
   /** `opened` is told when a call is opened in MPM Desk. */
   constructor(panel: HTMLElement, opened: () => void) {
@@ -51,6 +72,7 @@ export class InstructionsView {
     const elements = doc ? mpmElements(doc) : null;
     this.#instructions = readInstructions(work, (id) => elements?.get(id));
     this.#timed = null;
+    this.#right = null;
   }
 
   get shown(): boolean {
@@ -64,11 +86,15 @@ export class InstructionsView {
   /** List what holds at a time of the rendering. */
   show(rendering: Rendering | null, t: Seconds): void {
     if (!this.shown) return;
-    if (rendering && this.#timed?.id !== rendering.id)
+    if (rendering && this.#timed?.id !== rendering.id) {
       this.#timed = {
         id: rendering.id,
         list: timeInstructions(this.#instructions, (tick) => rendering.toSeconds(tick)),
       };
+      this.#right = null;
+    }
+    if (rendering && this.#right && this.#right[0] <= t && t < this.#right[1]) return;
+    this.#right = rendering && this.#timed ? stretchAbout(this.#timed.list, t) : null;
     const active = rendering && this.#timed ? activeAt(this.#timed.list, t) : [];
     for (const [kind, row] of this.#rows) {
       const here = active.filter((instruction) => instruction.kind === kind);

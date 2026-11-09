@@ -65,6 +65,11 @@ export class Player {
     return this.#playing;
   }
 
+  /** Whether the playhead moves on by itself: playing, and not stopped to wait for the voice or the piano. */
+  get moving(): boolean {
+    return this.#playing && !this.#waiting;
+  }
+
   /** Sound the piano another way; playing goes on from where it is, after a short stop. */
   setPiano(piano: PianoOutput): void {
     const playing = this.#playing;

@@ -1,7 +1,9 @@
 // The strip: the spectrogram scrolling under a fixed playhead (the humming, over the piano where
-// that is shown), note names, bar lines.
+// that is shown), note names, bar lines. Asked to draw, it draws only what would look different
+// from what it shows (frame.ts).
 import { SPECTROGRAM as SPEC, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import type { Seconds } from '../shared/units.ts';
+import { differs, type Frame } from './frame.ts';
 import type { Rendering } from './rendering.ts';
 import { TILE, type Strip } from './strip.ts';
 
@@ -15,6 +17,14 @@ const NOTE_NAMES: readonly (readonly [string, number])[] = [
   ['C8', 4186.0],
 ];
 
+/** What the stylesheet says of the strip: its colours and the page's typeface. */
+interface Palette {
+  readonly ink: string;
+  readonly head: string;
+  readonly paper: string;
+  readonly font: string;
+}
+
 export class SpectrogramView {
   readonly #canvas: HTMLCanvasElement;
   readonly #g: CanvasRenderingContext2D;
@@ -22,8 +32,16 @@ export class SpectrogramView {
   #width = 0;
   #height = 0;
   #dpr = 1;
+  /** Read from the stylesheet when first drawn, and again when the colours may have changed. */
+  #palette: Palette | null = null;
+  /** What the canvas shows; null when it shows nothing that is still right. */
+  #drawn: Frame | null = null;
 
-  constructor(canvas: HTMLCanvasElement, style: SpectrogramStyle, onResize: () => void) {
+  /**
+   * `changed` is told when the canvas has to be drawn again at once: it was resized, and is empty,
+   * or the stylesheet's colours have changed.
+   */
+  constructor(canvas: HTMLCanvasElement, style: SpectrogramStyle, changed: () => void) {
     const g = canvas.getContext('2d');
     if (!g) throw new Error('no 2D canvas');
     this.#canvas = canvas;
@@ -36,8 +54,31 @@ export class SpectrogramView {
       this.#height = r.height;
       canvas.width = Math.round(this.#width * this.#dpr);
       canvas.height = Math.round(this.#height * this.#dpr);
-      onResize();
+      this.#drawn = null;
+      changed();
     }).observe(canvas);
+    // the stylesheet has one colour scheme; should it get another, the colours are read again
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      this.#palette = null;
+      this.#drawn = null;
+      changed();
+    });
+  }
+
+  /**
+   * The colours and the typeface. Asking the browser for them in every frame had it work out the
+   * page's styles in the middle of each drawing.
+   */
+  get #colours(): Palette {
+    if (this.#palette) return this.#palette;
+    const style = getComputedStyle(document.documentElement);
+    this.#palette = {
+      ink: style.getPropertyValue('--spec-label').trim(),
+      head: style.getPropertyValue('--spec-head').trim(),
+      paper: style.getPropertyValue('--spec-lo').trim(),
+      font: `500 10px ${getComputedStyle(document.body).fontFamily}`,
+    };
+    return this.#palette;
   }
 
   /** Pixels per second: about 16 seconds across, within limits. */
@@ -57,24 +98,41 @@ export class SpectrogramView {
     );
   }
 
-  /** The rendering at time `t`: its humming, over another sound's strip (the piano's) if one is given. */
+  /**
+   * The rendering at time `t`: its humming, over another sound's strip (the piano's) if one is
+   * given. Nothing is drawn where the canvas shows the same already; while the playhead is
+   * `moving`, nor where the strip has hardly scrolled. Returns whether it drew.
+   */
   draw(
     rendering: Rendering | null,
     t: Seconds,
     under: { readonly strip: Strip; readonly alpha: number } | null = null,
-  ): void {
+    moving = false,
+  ): boolean {
     const W = this.#width;
     const H = this.#height;
-    if (!W) return;
+    if (!W) return false;
     const g = this.#g;
     const s = this.pixelsPerSecond;
     const px = this.#playheadX;
     const t0 = t - px / s;
     const t1 = t + (W - px) / s;
-    const style = getComputedStyle(document.documentElement);
-    const ink = style.getPropertyValue('--spec-label').trim();
-    const head = style.getPropertyValue('--spec-head').trim();
-    const paper = style.getPropertyValue('--spec-lo').trim();
+    // the columns in view, and one more on either side, which the smoothing reaches
+    const c0 = Math.floor(t0 * SPEC.columnsPerSecond) - 1;
+    const c1 = Math.ceil(t1 * SPEC.columnsPerSecond) + 1;
+    const frame: Frame = {
+      scroll: t * s * this.#dpr,
+      content: [
+        rendering,
+        rendering?.strip.revision(c0, c1),
+        under?.strip,
+        under?.strip.revision(c0, c1),
+        under?.alpha,
+      ],
+    };
+    if (!differs(this.#drawn, frame, moving)) return false;
+    this.#drawn = frame;
+    const { ink, head, paper, font } = this.#colours;
     g.setTransform(this.#dpr, 0, 0, this.#dpr, 0, 0);
     g.globalAlpha = 1;
     g.fillStyle = paper;
@@ -106,7 +164,7 @@ export class SpectrogramView {
     if (under) strip(under.strip, under.alpha);
     if (rendering) strip(rendering.strip, 1);
 
-    g.font = `500 10px ${getComputedStyle(document.body).fontFamily}`;
+    g.font = font;
     g.textBaseline = 'middle';
     for (const [name, f] of NOTE_NAMES) {
       const y = this.#y(f);
@@ -151,6 +209,7 @@ export class SpectrogramView {
     g.lineTo(px, 7);
     g.closePath();
     g.fill();
+    return true;
   }
 
   get canvas(): HTMLCanvasElement {
