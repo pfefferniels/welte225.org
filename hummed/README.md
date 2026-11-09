@@ -63,7 +63,7 @@ What the MEI says, and how the voice reads it:
   stretch. Beyond these the voice breathes on its own, as an amateur does, more often
   (`takeBreaths`, `src/hummer/melody.ts`), but only where the performance leaves room: where the
   piano leaves a gap of 140 ms or more before the next key, or lifts the pedal at the end of a note
-  of a second or more, and no sooner than 2.5 s after the last breath. That adds 10 breaths, 39 in
+  of a second or more, and no sooner than 2.5 s after the last breath. That adds 9 breaths, 38 in
   all; the note before such a breath ends a quarter of its length early (0.15 to 0.35 s).
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
 - **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`: the glottis open, the velum
@@ -237,7 +237,7 @@ settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `mi
   with the MPM's positions between up and down (controller 64) and the soft pedal (67), each message timed for when its sound is to be heard. The instrument's delay, which
   the visitor gives (a Disklavier waits about half a second), is sent that much earlier, and the
   voice starts that much later. A key pressed again while it still sounds is let up just before,
-  and two presses of a key at one time (six in the piece, where the score doubles a note) are one.
+  and two presses of a key at one time (eighteen in the piece, where the score doubles a note) are one.
   On a pause the instrument is silenced. What was already sent for later is cancelled where the
   browser can; where it cannot, the keys that would still go down are let up again after the last
   of them. The page's room does not reach the instrument.
