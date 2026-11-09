@@ -78,13 +78,28 @@ dynamics ask; until then they sound uncorrected, which is close.
 
 ## Elaboration: the humming, the harmonies, the piece
 
-`reduction/harmonies.mei` is a harmonic reduction of the piece: its chords, one or two to a bar,
-with the repeat written out. espressivo converts it to a score (MSM) as it converted the piece's;
-the worker puts back the three grace notes the converter leaves out, each a thirty-second before
-the note it leads to (`src/worker/harmonies.ts`), and performs it with the same MPM as the roll,
-exaggerated as much. Tempo, rubato, dynamics, arpeggios and pedalling apply to the harmonies as to
-the piece; notes that no arpeggio moves start on the same millisecond as the piece's. What the MPM
-says of single notes of the piece (articulation by note) finds nothing to apply to.
+`reduction/harmonies.mei` is a harmonic reduction of the piece: its chords, with the repeat
+written out, each where the piece sounds it. Drafted to a steady pulse of half notes, it had moved
+many of them off their beats; they are back (the repeat as the first time):
+
+- on the second beat where the harmony changes there: the B♭ of bars 2 and 18, the C7 of 3, 19,
+  23 and 24, the C of 4 and 20, the A7 of 6, the D7 of 10, the A7 of 14, the G of 22, the chord
+  before sounding until then, tied over the bar line where it has to be;
+- the C minor of 10 and the G minor of 14 on the second eighth of those bars, no longer in the
+  second half of 9 and 13;
+- a chord that moves on within its harmony where the piece moves: mostly on the last eighth, in 6
+  an eighth after the third beat, in 16 on the fourth;
+- the appoggiaturas of 10, 14 and 22, once grace notes, written out: the top of the chord on the
+  second beat, resolving where Grünfeld resolves them.
+
+espressivo converts it to a score (MSM) as it converted the piece's; grace notes, which the
+converter leaves out, the worker would put back, each a thirty-second before the note it leads to
+(`src/worker/harmonies.ts`; none are written at present). It performs the score with the same MPM
+as the roll, exaggerated as much. Tempo, rubato, dynamics, arpeggios and pedalling apply to the
+harmonies as to the piece: the harmonies strike only where the piece strikes, so where the piece
+rolls a chord, theirs is rolled too, and notes that no arpeggio moves start on the same millisecond
+as the piece's. What the MPM says of single notes of the piece (articulation by note) finds nothing
+to apply to.
 
 The elaboration fader (`src/page/mix.ts`) sets three gains, from left to right:
 
