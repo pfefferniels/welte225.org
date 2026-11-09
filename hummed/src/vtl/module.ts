@@ -3,7 +3,7 @@
 type Pointer = number;
 
 export interface VtlModule {
-  readonly FS: { writeFile(path: string, data: string): void };
+  readonly FS: { writeFile(path: string, data: string | Uint8Array): void };
   ccall(
     name: string,
     returns: 'number',

@@ -120,7 +120,8 @@ export class VtlEngine {
   states(score: string, maxStates: number): States {
     const m = this.#m;
     const c = this.constants;
-    m.FS.writeFile('/score.ges', score);
+    // as bytes: handed a string, Emscripten's file system takes ten times as long over it
+    m.FS.writeFile('/score.ges', new TextEncoder().encode(score));
     const tract = m._malloc(8 * c.tractParams * maxStates);
     const glottis = m._malloc(8 * c.glottisParams * maxStates);
     const count = m._malloc(4);
