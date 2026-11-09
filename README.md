@@ -14,7 +14,7 @@ and the place where the data about that roll is published.
 | `/rules` | the editorial principles the edition follows, named by its creation (`principles`, CRM P33 used specific technique) and by an inference that applies one (`applies`, CRMinf J3 applied), one section and anchor per principle, `rules#<id>`, each with its IRI, classes and properties, and the same statements as JSON-LD in the page |
 | `/<id>` | identifiers of the edition's entities, whatever they are: a version, a copy, a symbol (whose id reads `symbol_<uuid>`), a feature, an edit, a motivation, a belief. `404.html` sends them on to Roll Desk, which opens at that entity |
 | `/mpm/` | the roll's performance reconstructed as Music Performance Markup, exported from MPM Desk |
-| `/mpm/<id>` | identifiers of the reconstruction's segments; `404.html` sends them on to MPM Desk, which opens at that segment |
+| `/mpm/<id>` | identifiers of the reconstruction's calls; `404.html` sends them on to MPM Desk's viewer, which opens at that call |
 | `/schmitz-225/` | the comparison of TACET's recording of Hans-W. Schmitz's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/licensee-225/` | the comparison of Peter Phillips's and Philippe Gourlin's Licensee copies with the edition's versions: scripts and derived data, cited by the edition's beliefs about version D3, the lost state B2 and Gourlin's copy |
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
@@ -184,7 +184,7 @@ technical changes, and those ids name nothing any more.
 
 `mpm/` holds the four files of an MPM Desk archive, unzipped: the
 transcription with its recordings (`transcription.mei`), the work file
-of transformer calls and claims (`work.json`), the MPM the chain wrote
+of transformer calls (`work.json`), the MPM the chain wrote
 (`performance.mpm`) and the score it is performed against
 (`score.msm`). The viewer at `mpmdesk.welte225.org` loads them from
 here and bundles none. To publish a change made in the editor, replace
@@ -194,12 +194,17 @@ the files. `/hummed/` hums along to them too: after a change, run
 mpm-desk rewrites the last three in a checkout of this repository, and
 mpm-desk's tests read that checkout.
 
-A segment of the reconstruction, one claim about a stretch of the
-performance, has the identifier `https://welte225.org/mpm/<id>`, its
-`id` in `work.json` being a UUID the editor mints. A prefix of at least
-eight characters names the segment as well, as long as no second
-segment shares it; the viewer settles the address on the identifier.
-Identifiers must not change between exports.
+A call of the reconstruction, one fitted curve, frame, pattern or press,
+has the identifier `https://welte225.org/mpm/<id>`, its `id` in
+`work.json` being a UUID the editor mints. A prefix of at least eight
+characters names the call as well, as long as no second call shares it.
+The viewer opens at the call with what it was fitted to marked, and
+keeps its own address naming the call selected, so what is on screen
+can be cited by copying it. Identifiers must not change between exports.
+
+Until November 2026 the identifiers named segments, claims grouping
+several calls. MPM Desk no longer has them, and an address naming one
+opens the viewer at its start.
 
 ## DNS
 
