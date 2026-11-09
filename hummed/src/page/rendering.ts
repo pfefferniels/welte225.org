@@ -1,23 +1,15 @@
 // One rendering of the voice as it streams in from the worker: its sound, which 10 ms slots of it
-// have arrived, its spectrogram tiles, and its place in the score.
+// have arrived, its spectrogram, and its place in the score.
 import { interp } from '../shared/math.ts';
 import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
 import type { AudioMessage, Plan, Setting, Timings } from '../shared/protocol.ts';
-import { SPECTROGRAM as SPEC } from '../shared/spectrogram.ts';
+import { INKS } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
+import { Strip } from './strip.ts';
 
 const SLOT = SAMPLE_RATE / 100;
 
 export type PianoPartName = 'piece' | 'harmonies';
-/** Spectrogram columns per tile canvas. */
-export const TILE = 2048;
-
-export interface Tile {
-  readonly canvas: HTMLCanvasElement;
-  readonly context: CanvasRenderingContext2D;
-  readonly column: ImageData;
-}
-
 export class Rendering {
   readonly id: number;
   readonly setting: Setting;
@@ -29,7 +21,8 @@ export class Rendering {
   readonly timings: Timings;
   readonly startSeconds: Seconds;
   readonly audio: Float32Array;
-  readonly tiles: Tile[] = [];
+  /** The voice's spectrogram, as far as it has arrived. */
+  readonly strip = new Strip(INKS.hum);
   readonly #clock: Plan['clock'];
   readonly #held = new Map<PianoPartName, readonly HeldNote[]>();
   /** Samples arrived per 10 ms slot. */
@@ -60,7 +53,7 @@ export class Rendering {
       this.#have[c] += Math.min(b, (c + 1) * SLOT) - Math.max(a, c * SLOT);
     this.#samples += message.samples.length;
     if (message.spectrogram)
-      this.#draw(message.spectrogram.column, message.spectrogram.count, message.spectrogram.pixels);
+      this.strip.draw(message.spectrogram.column, message.spectrogram.count, message.spectrogram.pixels);
   }
 
   /** Whether the sound from t0 to t1 has all arrived. */
@@ -101,34 +94,5 @@ export class Rendering {
 
   toSeconds(tick: Ticks): Seconds {
     return interp(tick, this.#clock.ticks, this.#clock.ms) / 1000 + PAD_MS / 1000;
-  }
-
-  #draw(first: number, count: number, pixels: Uint8Array): void {
-    for (let k = 0; k < count; k++) {
-      const c = first + k;
-      const tile = this.#tile(Math.floor(c / TILE));
-      const d = tile.column.data;
-      for (let r = 0; r < SPEC.rows; r++) {
-        const v = pixels[k * SPEC.rows + r];
-        d[r * 4] = d[r * 4 + 1] = d[r * 4 + 2] = v;
-        d[r * 4 + 3] = 255;
-      }
-      tile.context.putImageData(tile.column, c % TILE, 0);
-    }
-  }
-
-  #tile(index: number): Tile {
-    const existing = this.tiles[index] as Tile | undefined;
-    if (existing) return existing;
-    const canvas = document.createElement('canvas');
-    canvas.width = TILE;
-    canvas.height = SPEC.rows;
-    const context = canvas.getContext('2d');
-    if (!context) throw new Error('no 2D canvas');
-    context.fillStyle = '#fff';
-    context.fillRect(0, 0, TILE, SPEC.rows);
-    const tile = { canvas, context, column: context.createImageData(1, SPEC.rows) };
-    this.tiles[index] = tile;
-    return tile;
   }
 }

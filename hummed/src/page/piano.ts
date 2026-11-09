@@ -2,6 +2,7 @@
 // transposed to the note. Loaded only when the page needs it: where no Pianoteq rendering of a level
 // is there to play.
 import type { HeldNote } from '../shared/piano.ts';
+import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 
 const BASES = [33, 36, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81] as const;
 const LAYERS = [3, 5, 7, 9] as const;
@@ -11,6 +12,12 @@ const RELEASE = 0.12;
 
 const nearest = <T extends number>(options: readonly T[], target: number): T =>
   options.reduce((a, b) => (Math.abs(b - target) < Math.abs(a - target) ? b : a));
+
+/** A part's sound, whole: what its picture is drawn from. */
+export interface PianoSound {
+  readonly samples: Float32Array;
+  readonly sampleRate: number;
+}
 
 export class PianoSampler {
   readonly #context: AudioContext;
@@ -53,17 +60,25 @@ export class PianoSampler {
     );
   }
 
+  /** The notes played ahead of time, faster than they sound, for the picture of what will be heard. */
+  async render(notes: readonly HeldNote[], duration: Seconds): Promise<PianoSound> {
+    const offline = new OfflineAudioContext(1, Math.ceil(duration * SAMPLE_RATE), SAMPLE_RATE);
+    for (const note of notes) this.play(note, offline.destination, note.on, 0);
+    const buffer = await offline.startRendering();
+    return { samples: buffer.getChannelData(0).slice(), sampleRate: buffer.sampleRate };
+  }
+
   /**
-   * Play a note into `output` at context time `when`, from `from` seconds into it; null while its
-   * sample is missing.
+   * Play a note into `output` (in its audio context) at context time `when`, from `from` seconds
+   * into it; null while its sample is missing.
    */
   play(note: HeldNote, output: AudioNode, when: number, from: number): AudioBufferSourceNode | null {
     const base = nearest(BASES, note.pitch);
     const layer = nearest(LAYERS, Math.max(1, Math.min(16, Math.round((note.velocity / 127) * 15) + 1)));
     const buffer = this.#samples.get(`${base}:${layer}`);
     if (!buffer) return null;
-    const source = this.#context.createBufferSource();
-    const envelope = this.#context.createGain();
+    const source = output.context.createBufferSource();
+    const envelope = output.context.createGain();
     source.buffer = buffer;
     source.playbackRate.value = Math.pow(2, (note.pitch - base) / 12);
     const amp = (note.velocity / 127) * LEVEL;

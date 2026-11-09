@@ -8,7 +8,7 @@
 export const SPECTROGRAM = {
   rows: 360,
   columnsPerSecond: 100,
-  /** Samples between columns. */
+  /** Samples between columns, of the voice (44.1 kHz). */
   hop: 441,
 } as const;
 
@@ -51,3 +51,19 @@ export type SpectrogramStyleName = keyof typeof SPECTROGRAM_STYLES;
 
 export const isSpectrogramStyleName = (name: string | null): name is SpectrogramStyleName =>
   name !== null && Object.hasOwn(SPECTROGRAM_STYLES, name);
+
+/**
+ * The piano under the voice, in the same rows: how its level becomes a grey. In the melodic range
+ * the square root of the amplitude, so that a key is seen for as long as it is heard and not at
+ * its strike alone; full black where a loud chord's strongest partial is.
+ */
+export const PIANO_SCALES = {
+  full: { kind: 'db', topDb: 41.09, rangeDb: 60 },
+  melodic: { kind: 'amplitude', full: 217, power: 0.7 },
+} as const satisfies Record<SpectrogramStyleName, SpectrogramScale>;
+
+/** The inks: the humming in red over the piano in a blue grey, on white. */
+export const INKS = {
+  hum: [184, 28, 44],
+  piano: [52, 72, 96],
+} as const satisfies Record<string, readonly [number, number, number]>;

@@ -1,7 +1,7 @@
 // What the page and the worker say to each other.
 import type { Reduction } from '../reduction/types.ts';
 import type { PianoPart } from './piano.ts';
-import type { SpectrogramStyleName } from './spectrogram.ts';
+import type { SpectrogramScale, SpectrogramStyleName } from './spectrogram.ts';
 import type { Seconds, Ticks } from './units.ts';
 
 /** Where a rendering starts: a place in the score (kept across levels) or a time in this level. */
@@ -83,3 +83,27 @@ export type FromWorker =
   | AudioMessage
   | { readonly type: 'chunkDone'; readonly id: number; readonly from: number; readonly to: number }
   | { readonly type: 'error'; readonly id: number; readonly message: string };
+
+/**
+ * A worker of its own draws the piano under the voice: the page hands it a part's sound as it is
+ * heard (a recording, or the sampled grand played ahead), and gets its spectrogram back in columns,
+ * from the one asked for to the end and then from the beginning. A newer request stops an older.
+ */
+export interface PictureRequest {
+  readonly type: 'picture';
+  readonly id: number;
+  readonly samples: Float32Array;
+  readonly sampleRate: number;
+  readonly spectrogram: SpectrogramStyleName;
+  readonly scale: SpectrogramScale;
+  /** The column to begin with: where the playhead is. */
+  readonly from: number;
+}
+
+export interface PictureColumns {
+  readonly type: 'columns';
+  readonly id: number;
+  readonly column: number;
+  readonly count: number;
+  readonly pixels: Uint8Array;
+}

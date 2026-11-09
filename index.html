@@ -2,10 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <!-- the MPM's own title (its metadata comment); the page reads it from /mpm/performance.mpm -->
     <title>
-      Rekonstruktion der Welte Mignon-Klavierrolle 225, Alfred Grünfeld spielt Robert Schumann, Träumerei
+      Rekonstruktion der Welte Mignon-Klavierrolle 225, Alfred Grünfeld spielt
+      Robert Schumann, Träumerei
     </title>
     <meta
       name="description"
@@ -28,8 +32,16 @@
       id="spec"
       tabindex="0"
       role="img"
-      aria-label="Spectrogram of the hum, drawn as it is rendered. Drag sideways, or use the arrow keys, to move through the piece."
+      aria-label="Spectrogram of the hum, in red, drawn as it is rendered, over that of the piano. Drag sideways, or use the arrow keys, to move through the piece."
     ></canvas>
+
+    <!-- what the reconstruction says at the playhead, each call a link into MPM Desk (the settings show it) -->
+    <section
+      id="instructions"
+      class="panel instructions"
+      aria-label="The reconstruction's instructions where the music is"
+      hidden
+    ></section>
 
     <div class="controls">
       <section class="panel mix" aria-label="Elaboration">
@@ -48,14 +60,24 @@
               </svg>
             </button>
           </span>
-          <input id="elaboration" class="split" type="range" min="0" max="100" step="1" value="65" />
+          <input
+            id="elaboration"
+            class="split"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="65"
+          />
           <output id="o-elaboration" for="elaboration">piece</output>
         </div>
       </section>
 
       <section class="panel transport" aria-label="Transport">
         <button id="play" type="button" aria-label="Play" disabled>
-          <svg id="icon-play" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 2.5v13l11-6.5z" /></svg>
+          <svg id="icon-play" viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M4 2.5v13l11-6.5z" />
+          </svg>
           <svg id="icon-pause" viewBox="0 0 18 18" aria-hidden="true" hidden>
             <path d="M3.5 2.5h4v13h-4zM10.5 2.5h4v13h-4z" />
           </svg>
@@ -80,24 +102,83 @@
       </section>
     </div>
 
-    <button class="info-button settings-button" type="button" popovertarget="settings" aria-label="Settings">
+    <button
+      class="info-button settings-button"
+      type="button"
+      popovertarget="settings"
+      aria-label="Settings"
+    >
       <svg viewBox="0 0 20 20" aria-hidden="true">
         <path
           fill-rule="evenodd"
           d="M10 4.6a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm0 3.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4z"
         />
         <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(45 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(90 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(135 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(180 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(225 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(270 10 10)" />
-        <rect x="8.8" y="2.2" width="2.4" height="3.2" rx="0.6" transform="rotate(315 10 10)" />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(45 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(90 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(135 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(180 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(225 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(270 10 10)"
+        />
+        <rect
+          x="8.8"
+          y="2.2"
+          width="2.4"
+          height="3.2"
+          rx="0.6"
+          transform="rotate(315 10 10)"
+        />
       </svg>
     </button>
 
-    <button class="info-button" type="button" popovertarget="info" aria-label="About this page">
+    <button
+      class="info-button"
+      type="button"
+      popovertarget="info"
+      aria-label="About this page"
+    >
       <svg viewBox="0 0 20 20" aria-hidden="true">
         <circle cx="10" cy="5.5" r="1.3" />
         <path d="M8.4 8.5h2.6v6.3h1.5v1.4H7.6v-1.4h1.5V9.9h-.7z" />
@@ -106,7 +187,8 @@
 
     <section id="info" class="card" popover aria-labelledby="info-title">
       <h1 id="info-title">
-        Rekonstruktion der Welte Mignon-Klavierrolle 225, Alfred Grünfeld spielt Robert Schumann, Träumerei
+        Rekonstruktion der Welte Mignon-Klavierrolle 225, Alfred Grünfeld spielt
+        Robert Schumann, Träumerei
       </h1>
       <p class="byline">
         Niels Pfeffer, 2026 ·
@@ -115,22 +197,34 @@
       </p>
       <p class="links">
         <a href="/overview/">All projects and data</a> ·
-        <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed#readme">Source and licences</a>
+        <a
+          href="https://github.com/pfefferniels/welte225.org/tree/main/hummed#readme"
+          >Source and licences</a
+        >
       </p>
       <p class="credits">
-        Piano: <span id="piano-credit">Salamander Grand Piano by Alexander Holm (CC BY 3.0)</span>. Voice:
-        VocalTractLab 2.4 (GPL-3.0).
+        Piano:
+        <span id="piano-credit"
+          >Salamander Grand Piano by Alexander Holm (CC BY 3.0)</span
+        >. Voice: VocalTractLab 2.4 (GPL-3.0).
       </p>
     </section>
 
-    <section id="settings" class="card" popover aria-labelledby="settings-title">
+    <section
+      id="settings"
+      class="card"
+      popover
+      aria-labelledby="settings-title"
+    >
       <h2 id="settings-title">Piano</h2>
       <div class="choices" role="radiogroup" aria-labelledby="settings-title">
         <label id="choice-recorded" class="choice" hidden>
           <input type="radio" name="piano" value="recorded" />
           <span>
             <b id="recorded-name">Bösendorfer 280VC</b>
-            <small id="recorded-note">Played by Pianoteq, rendered ahead.</small>
+            <small id="recorded-note"
+              >Played by Pianoteq, rendered ahead.</small
+            >
           </span>
         </label>
         <label class="choice">
@@ -152,32 +246,77 @@
         <label for="midi-port">Instrument</label>
         <select id="midi-port"></select>
         <label for="midi-delay">Delay</label>
-        <span><input id="midi-delay" type="number" min="0" max="2000" step="10" value="0" /> ms</span>
+        <span
+          ><input
+            id="midi-delay"
+            type="number"
+            min="0"
+            max="2000"
+            step="10"
+            value="0"
+          />
+          ms</span
+        >
       </div>
       <p class="note">
-        Your instrument gets the roll's keys and its sustain and soft pedals as you listen: the piece, or the
-        harmonies, as the elaboration has it, without the page's room. Chrome, Edge and Firefox can send MIDI,
-        after asking you. If it sounds late, give its delay; a Disklavier usually waits half a second (500
-        ms).
+        Your instrument gets the roll's keys and its sustain and soft pedals as
+        you listen: the piece, or the harmonies, as the elaboration has it,
+        without the page's room. Chrome, Edge and Firefox can send MIDI, after
+        asking you. If it sounds late, give its delay; a Disklavier usually
+        waits half a second (500 ms).
       </p>
+
+      <h2 id="display-title">Display</h2>
+      <div class="choices" role="group" aria-labelledby="display-title">
+        <label class="choice">
+          <input id="show-instructions" type="checkbox" />
+          <span>
+            <b>The reconstruction's instructions</b>
+            <small>
+              What the MPM says where the music is: tempo, rubato, dynamics,
+              accents, articulation, arpeggios, pedal. Each opens in MPM Desk.
+            </small>
+          </span>
+        </label>
+        <label class="choice">
+          <input id="show-piano" type="checkbox" checked />
+          <span>
+            <b>The piano in the spectrogram</b>
+            <small
+              >Under the humming, which is red: the harmonies or the piece, as
+              the elaboration has it.</small
+            >
+          </span>
+        </label>
+      </div>
     </section>
 
-    <section id="elaboration-info" class="card hint-card" popover aria-labelledby="elaboration-info-title">
+    <section
+      id="elaboration-info"
+      class="card hint-card"
+      popover
+      aria-labelledby="elaboration-info-title"
+    >
       <h2 id="elaboration-info-title">Elaboration</h2>
       <p>
-        How much of the music is there, and how refined it is. At the start, only the humming: what a pianist
-        might hum while playing, a bass line that moves between melody, tenor and bass, within about an
-        octave, with a breath wherever it changes hands, its gestures raw, twice as large as Grünfeld's and
-        loosely on pitch. Then the harmonies come in under it, the piece reduced to its chords, and the
-        humming recedes. From the middle on, the piano plays the piece itself, and the humming goes on
-        quietly, as a pianist hums along. The further along, the subtler it all becomes, until at the end the
-        piano plays Grünfeld's performance as the reconstruction sets it down.
+        How much of the music is there, and how refined it is. At the start,
+        only the humming: what a pianist might hum while playing, a bass line
+        that moves between melody, tenor and bass, within about an octave, with
+        a breath wherever it changes hands, its gestures raw, twice as large as
+        Grünfeld's and loosely on pitch. Then the harmonies come in under it,
+        the piece reduced to its chords, and the humming recedes. From the
+        middle on, the piano plays the piece itself, and the humming goes on
+        quietly, as a pianist hums along. The further along, the subtler it all
+        becomes, until at the end the piano plays Grünfeld's performance as the
+        reconstruction sets it down.
       </p>
       <p>
-        Each sung note takes its timing and loudness from the piano note it follows. VocalTractLab, a model of
-        the human vocal tract, sings it as you listen, here in your browser: the lips, tongue and glottis
-        move, and the sound comes from the air passing through them. A new setting is rendered once the fader
-        rests and takes over at the same place in the piece.
+        Each sung note takes its timing and loudness from the piano note it
+        follows. VocalTractLab, a model of the human vocal tract, sings it as
+        you listen, here in your browser: the lips, tongue and glottis move, and
+        the sound comes from the air passing through them. A new setting is
+        rendered once the fader rests and takes over at the same place in the
+        piece.
       </p>
     </section>
   </body>

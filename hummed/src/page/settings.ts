@@ -3,30 +3,16 @@
 // listen, or an instrument of the visitor's own over MIDI, with its delay. The
 // browser is asked for MIDI only when the visitor chooses it.
 import type { RecordingsManifest } from '../shared/recordings.ts';
-import { element } from './dom.ts';
+import { element, recall as load, remember as store } from './dom.ts';
 import { midiAvailable, midiOutputs, MidiPiano } from './midi.ts';
 import type { BuiltInPiano, PianoOutput } from './outputs.ts';
 import type { PianoPartName } from './rendering.ts';
 
 export type PianoKind = 'recorded' | 'sampled' | 'midi';
 
-/** What is remembered between visits (conveniences: the page works without them). */
+/** What is remembered between visits. */
 const KIND_KEY = 'welte225.hummed.piano';
 const DELAY_KEY = 'welte225.hummed.midiDelay';
-const load = (key: string): string | null => {
-  try {
-    return localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-};
-const store = (key: string, value: string): void => {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // storage blocked: kept for this visit only
-  }
-};
 
 export interface PianoSettingsOptions {
   readonly context: AudioContext;

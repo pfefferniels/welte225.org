@@ -26,6 +26,24 @@ describe('the spectrogram styles', () => {
       assert.equal(column[0], 255, 'the top row is white');
     });
   }
+  it('draws sound of another rate in the same rows, a column every hundredth of a second', () => {
+    const rate = 48000;
+    const style = SPECTROGRAM_STYLES.melodic;
+    const sound = Float32Array.from({ length: rate }, (_, i) =>
+      i < rate / 2 ? 0 : 0.1 * Math.sin((2 * Math.PI * 220 * i) / rate),
+    );
+    const columns = makeSpectrogram(style, rate)(sound, 0, 0, 100);
+    const column = (c: number): Uint8Array =>
+      columns.subarray(c * SPECTROGRAM.rows, (c + 1) * SPECTROGRAM.rows);
+    const row = Math.round(
+      ((Math.log(style.fmax) - Math.log(220)) / (Math.log(style.fmax) - Math.log(style.fmin))) *
+        (SPECTROGRAM.rows - 1),
+    );
+    assert.equal(Math.min(...column(30)), 255, 'silent before the tone');
+    const late = column(80);
+    assert.ok(Math.abs(late.indexOf(Math.min(...late)) - row) < 2);
+    assert.ok((late[row] ?? 255) < 128);
+  });
   it('knows its names', () => {
     assert.ok(isSpectrogramStyleName('melodic'));
     assert.ok(!isSpectrogramStyleName('toString'));

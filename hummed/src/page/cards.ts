@@ -21,11 +21,17 @@ export function placeControlCards(): void {
   }
 }
 
-/** The page is titled as the reconstruction is: the MPM's own title, read from it. */
-export async function showMpmTitle(heading: HTMLElement): Promise<void> {
+/** The reconstruction's MPM (/mpm/performance.mpm); null where it cannot be had. */
+export async function fetchMpm(): Promise<Document | null> {
   const response = await fetch('../mpm/performance.mpm');
-  if (!response.ok) return;
-  const title = mpmTitle(new DOMParser().parseFromString(await response.text(), 'application/xml'));
+  if (!response.ok) return null;
+  return new DOMParser().parseFromString(await response.text(), 'application/xml');
+}
+
+/** The page is titled as the reconstruction is: the MPM's own title, read from it. */
+export async function showMpmTitle(heading: HTMLElement, mpm: Promise<Document | null>): Promise<void> {
+  const doc = await mpm;
+  const title = doc && mpmTitle(doc);
   if (!title) return;
   document.title = title;
   heading.textContent = title;

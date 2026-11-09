@@ -1,7 +1,8 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
 // front page, play, move the elaboration (the voice rendered anew), seek, open and close the info
-// card, choose each piano in the settings (an instrument over MIDI played by a stand-in that keeps
-// what it is sent), and fail on any page error. Needs Playwright with Chromium installed (not a
+// card, show the reconstruction's instructions and the piano in the spectrogram, choose each piano in
+// the settings (an instrument over MIDI played by a stand-in that keeps what it is sent), and fail on
+// any page error. Needs Playwright with Chromium installed (not a
 // dependency of this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -151,11 +152,36 @@ try {
   console.log(`info card: opens ${opened}, closes on Escape ${closed}`);
   if (!opened || !closed) errors.push('the info card does not open and close');
 
-  // the settings: the sampled grand, then an instrument over MIDI
+  // the settings: the reconstruction's instructions where the music is, each a link into MPM Desk
   await page.click('.settings-button');
+  await page.click('#show-instructions');
+  await page.waitForTimeout(500);
+  const links = await page.evaluate<string[]>(
+    "[...document.querySelectorAll('#instructions a')].map((a) => a.textContent + ' <' + a.href + '>')",
+  );
+  console.log(`instructions: ${links.length} hold, ${links[0] ?? 'none'}`);
+  if (links.length === 0) errors.push('no instructions are listed where the music is');
+  if (links.some((link) => !/<https:\/\/mpmdesk\.welte225\.org\/#[0-9a-f-]{36}>$/.test(link)))
+    errors.push('an instruction does not open in MPM Desk');
+  await page.click('#show-instructions');
+  if (!(await page.evaluate<boolean>("document.getElementById('instructions').hidden")))
+    errors.push('the instructions do not go away');
+  // the piano under the humming in the spectrogram: of the recording, then of the sampled grand
+  const pianoDrawn = async (what: string): Promise<void> => {
+    await page.waitForFunction("Number(document.getElementById('spec').dataset.piano) > 500", undefined, {
+      timeout: 30000,
+    });
+    console.log(
+      `spectrogram: ${what}, ${await page.evaluate<string>("document.getElementById('spec').dataset.piano")} columns`,
+    );
+  };
+  await pianoDrawn('the piano as it plays');
+
+  // the sampled grand, then an instrument over MIDI
   await page.click('input[name=piano][value=sampled]');
   await page.waitForTimeout(2500);
   await report('sampled grand');
+  await pianoDrawn('the sampled grand');
   if ((await chosen()) !== 'sampled') errors.push('the sampled grand was not chosen');
   await page.click('input[name=piano][value=midi]');
   await page.evaluate(

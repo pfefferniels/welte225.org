@@ -309,7 +309,15 @@ input[type='range']:disabled {
   right: var(--gutter);
 }
 
-/* the settings: a button beside the info's, and its card, which chooses the piano */
+#settings {
+  max-height: calc(100dvh - max(10px, env(safe-area-inset-top, 0px)) - 50px);
+  overflow-y: auto;
+}
+.card h2:not(:first-child) {
+  margin-top: 14px;
+}
+
+/* the settings: a button beside the info's, and its card, which chooses the piano and what is shown */
 .settings-button {
   right: calc(var(--gutter) + 38px);
 }
@@ -427,9 +435,71 @@ input[type='range']:disabled {
   fill: currentColor;
 }
 
+/* the reconstruction's instructions at the playhead: a panel at the top left, one row for each
+   dimension of the performance, which stays where it is while what it lists comes and goes */
+.instructions {
+  position: fixed;
+  top: calc(max(10px, env(safe-area-inset-top, 0px)) + 18px);
+  left: calc(var(--gutter) + 24px);
+  width: min(300px, calc(100vw - 2 * var(--gutter) - 24px));
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+.instructions[hidden] {
+  display: none;
+}
+.instructions dl {
+  margin: 0;
+  display: grid;
+  gap: 3px;
+}
+.instructions dl > div {
+  display: grid;
+  grid-template-columns: 6.2em minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  min-height: 20px;
+}
+.instructions dt {
+  color: var(--muted);
+}
+.instructions dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 4px;
+}
+.instructions dd:empty::before {
+  content: '–';
+  color: var(--rule);
+}
+.instructions a {
+  padding: 1px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 9px;
+  background: var(--bg);
+  color: var(--fg);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.instructions a:hover,
+.instructions a:focus-visible {
+  border-color: var(--accent);
+}
+.instructions a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
 @media (max-width: 640px) {
   .transport,
   .mix {
     flex-basis: 100%;
+  }
+  /* under the buttons at the top right, which it would reach */
+  .instructions {
+    top: calc(max(10px, env(safe-area-inset-top, 0px)) + 40px);
   }
 }

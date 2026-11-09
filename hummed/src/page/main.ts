@@ -2,11 +2,14 @@
 import { readReduction } from '../reduction/mei.ts';
 import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
 import { createAudioGraph } from './audio-graph.ts';
-import { placeControlCards, showMpmTitle } from './cards.ts';
+import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
+import { DisplaySettings } from './display.ts';
 import { element, formatTime } from './dom.ts';
+import { InstructionsView } from './instructions-view.ts';
 import { heard, mix, voiceElaboration } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
+import { PianoPicture } from './piano-picture.ts';
 import { Player } from './player.ts';
 import { VoicePool, workerCount } from './pool.ts';
 import { Recordings } from './recordings.ts';
@@ -71,9 +74,36 @@ function updateReadout(): void {
 const view = new SpectrogramView(canvas, SPECTROGRAM_STYLES[spectrogramStyle], () => {
   redraw();
 });
+/* ---------- beside the humming: the piano in the spectrogram, the MPM's instructions ---------- */
+const display = new DisplaySettings(() => {
+  instructions.shown = display.instructions;
+  redraw();
+});
+// the piano's part that is heard, drawn from its sound as the piano chosen plays it (an instrument
+// over MIDI has no sound here: the page's own stands for it)
+const picture = new PianoPicture(
+  spectrogramStyle,
+  (rendering, part) => (settings.kind === 'sampled' ? sampled : recorded).sound(rendering, part),
+  () => requestAnimationFrame(redraw),
+);
+const instructions = new InstructionsView(element('instructions', HTMLElement), () => {
+  // the visitor goes to read the call in MPM Desk
+  if (player.playing) player.pause();
+});
+instructions.shown = display.instructions;
+
 function redraw(): void {
   updateReadout();
-  view.draw(player.current, player.position());
+  const cur = player.current;
+  const t = player.position();
+  // the piano under the humming, as present as it is heard: the harmonies come in from nothing
+  const gains = mix(elaboration());
+  const part = instrumentPart();
+  const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
+  const drawn = String(strip?.columns ?? 0);
+  if (canvas.dataset['piano'] !== drawn) canvas.dataset['piano'] = drawn;
+  view.draw(cur, t, strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece });
+  instructions.show(cur, t);
 }
 
 const player = new Player(graph, sampled, pool, {
@@ -105,6 +135,8 @@ const settings = new PianoSettings({
   part: instrumentPart,
   chosen(output: PianoOutput) {
     player.setPiano(output);
+    picture.forget();
+    requestAnimationFrame(redraw);
   },
   status: setStatus,
 });
@@ -134,6 +166,7 @@ const applyElaboration = (): void => {
   setFill(elaborationSlider, e);
   // an instrument plays one part: the other, or none, from where playing is
   if (settings.setPart(instrumentPart())) player.restartPiano();
+  requestAnimationFrame(redraw);
 };
 elaborationSlider.addEventListener('input', () => {
   applyElaboration();
@@ -231,7 +264,11 @@ async function start(): Promise<void> {
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();
-void showMpmTitle(element('info-title', HTMLElement)).catch(() => undefined);
+const mpm = fetchMpm();
+void showMpmTitle(element('info-title', HTMLElement), mpm).catch(() => undefined);
+instructions.load(mpm).then(redraw, (error: unknown) => {
+  console.warn('The reconstruction’s calls could not be read; none are listed.', error);
+});
 start().catch((error: unknown) => {
   setStatus(`The voice could not start: ${error instanceof Error ? error.message : String(error)}`);
 });

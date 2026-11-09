@@ -7,3 +7,19 @@ export function element<T extends Element>(id: string, type: abstract new () => 
 
 export const formatTime = (t: number): string =>
   `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+
+/** What is remembered between visits (conveniences: the page works without them). */
+export const recall = (key: string): string | null => {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+};
+export const remember = (key: string, value: string): void => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // storage blocked: kept for this visit only
+  }
+};

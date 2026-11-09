@@ -1,7 +1,9 @@
-// The strip: the spectrogram scrolling under a fixed playhead, note names, bar lines.
+// The strip: the spectrogram scrolling under a fixed playhead (the humming, over the piano where
+// that is shown), note names, bar lines.
 import { SPECTROGRAM as SPEC, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import type { Seconds } from '../shared/units.ts';
-import { TILE, type Rendering } from './rendering.ts';
+import type { Rendering } from './rendering.ts';
+import { TILE, type Strip } from './strip.ts';
 
 const NOTE_NAMES: readonly (readonly [string, number])[] = [
   ['C2', 65.41],
@@ -55,7 +57,12 @@ export class SpectrogramView {
     );
   }
 
-  draw(rendering: Rendering | null, t: Seconds): void {
+  /** The rendering at time `t`: its humming, over another sound's strip (the piano's) if one is given. */
+  draw(
+    rendering: Rendering | null,
+    t: Seconds,
+    under: { readonly strip: Strip; readonly alpha: number } | null = null,
+  ): void {
     const W = this.#width;
     const H = this.#height;
     if (!W) return;
@@ -73,9 +80,10 @@ export class SpectrogramView {
     g.fillStyle = paper;
     g.fillRect(0, 0, W, H);
 
-    if (rendering) {
+    const strip = (strip: Strip, alpha: number): void => {
       g.imageSmoothingEnabled = true;
-      rendering.tiles.forEach((tile, i) => {
+      g.globalAlpha = alpha;
+      strip.tiles.forEach((tile, i) => {
         const ts = (i * TILE) / SPEC.columnsPerSecond;
         const te = ts + TILE / SPEC.columnsPerSecond;
         if (te < t0 || ts > t1) return;
@@ -93,7 +101,10 @@ export class SpectrogramView {
           H,
         );
       });
-    }
+      g.globalAlpha = 1;
+    };
+    if (under) strip(under.strip, under.alpha);
+    if (rendering) strip(rendering.strip, 1);
 
     g.font = `500 10px ${getComputedStyle(document.body).fontFamily}`;
     g.textBaseline = 'middle';

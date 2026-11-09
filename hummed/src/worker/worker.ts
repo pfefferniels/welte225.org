@@ -2,7 +2,8 @@
 // and on its harmonies for the piano's lower half), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk as the page hands them out, into sound, streamed to the page in blocks with their
-// spectrogram columns. The page runs several such workers side by side.
+// spectrogram columns. The page runs several such workers side by side, and one more that only
+// draws the piano's sound as the page hands it over (picture.ts): that one loads nothing else.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import {
@@ -13,7 +14,16 @@ import {
   type HumStyle,
 } from '../hummer/index.ts';
 import { interp } from '../shared/math.ts';
-import type { FromWorker, Plan, Setting, StartAt, Timings, ToWorker } from '../shared/protocol.ts';
+import type {
+  FromWorker,
+  PictureColumns,
+  PictureRequest,
+  Plan,
+  Setting,
+  StartAt,
+  Timings,
+  ToWorker,
+} from '../shared/protocol.ts';
 import { SPECTROGRAM, SPECTROGRAM_STYLES, type SpectrogramStyle } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
@@ -30,11 +40,12 @@ import {
   withSubNoteDynamics,
 } from './levels.ts';
 import { performPiano } from './piano.ts';
+import { drawPicture } from './picture.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
 interface WorkerScope {
-  postMessage(message: FromWorker, transfer?: Transferable[]): void;
-  onmessage: ((event: MessageEvent<ToWorker>) => void) | null;
+  postMessage(message: FromWorker | PictureColumns, transfer?: Transferable[]): void;
+  onmessage: ((event: MessageEvent<ToWorker | PictureRequest>) => void) | null;
 }
 const scope = self as unknown as WorkerScope;
 const post = (message: FromWorker, transfer: Transferable[] = []): void => {
@@ -75,6 +86,8 @@ let resources: Promise<Resources> | null = null;
 let prepared: Level | null = null;
 /** The newest request seen: work for an older one stops. */
 let current = 0;
+/** The newest picture asked for. */
+let picture = 0;
 
 async function load(): Promise<Resources> {
   const get = async (url: string): Promise<Response> => {
@@ -263,6 +276,20 @@ async function renderChunk(
 
 scope.onmessage = (event) => {
   const message = event.data;
+  if (message.type === 'picture') {
+    picture = message.id;
+    void drawPicture(
+      message,
+      (columns, transfer) => {
+        scope.postMessage(columns, transfer);
+      },
+      async () => {
+        await yieldNow();
+        return picture === message.id;
+      },
+    );
+    return;
+  }
   if (message.type === 'setup') {
     const style = SPECTROGRAM_STYLES[message.spectrogram];
     setupDone({ reduction: message.reduction, style, columns: makeSpectrogram(style) });

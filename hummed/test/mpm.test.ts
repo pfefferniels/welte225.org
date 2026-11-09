@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { DOMParser } from '@xmldom/xmldom';
-import { mpmTitle } from '../src/shared/mpm.ts';
+import { mpmElements, mpmTitle } from '../src/shared/mpm.ts';
 import { ROOT } from '../tools/node-support.ts';
 
 const parse = (xml: string) => new DOMParser().parseFromString(xml, 'application/xml');
@@ -28,5 +28,18 @@ describe('mpmTitle', () => {
       pattern.exec(page)?.[1]?.replace(/\s+/g, ' ').trim();
     assert.equal(text(/<title>([^<]*)<\/title>/), title);
     assert.equal(text(/<h1 id="info-title">([^<]*)<\/h1>/), title);
+  });
+});
+
+describe('mpmElements', () => {
+  it('reads the attributes of the elements that have an id', () => {
+    const elements = mpmElements(
+      parse(
+        '<mpm xmlns="http://www.cemfi.de/mpm/ns/1.0"><tempoMap><tempo date="0" bpm="59.2" xml:id="tempo_0"/><tempo date="720" bpm="76"/></tempoMap></mpm>',
+      ),
+    );
+    assert.deepEqual([...elements.keys()], ['tempo_0']);
+    assert.equal(elements.get('tempo_0')?.('bpm'), '59.2');
+    assert.ok(!elements.get('tempo_0')?.('transition.to'));
   });
 });

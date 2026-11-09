@@ -3,7 +3,7 @@
 // where, and what falls due; each sounds it its own way.
 import type { Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
-import type { PianoSampler } from './piano.ts';
+import type { PianoSampler, PianoSound } from './piano.ts';
 import type { Recordings } from './recordings.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 
@@ -68,6 +68,25 @@ export class BuiltInPiano implements PianoOutput {
       if (!this.#recordings?.failed(rendering.setting.elaboration)) return false;
     }
     return this.#sampler.ready();
+  }
+
+  /**
+   * A part's sound as this piano plays the rendering, whole, for its picture: the recording, or the
+   * sampler playing ahead. Null while it loads; asking starts that.
+   */
+  sound(rendering: Rendering, part: PianoPartName): Promise<PianoSound> | null {
+    const elaboration = rendering.setting.elaboration;
+    if (this.recorded(rendering)) {
+      const buffer = this.#recordings?.buffers(elaboration)?.[part];
+      if (buffer)
+        return Promise.resolve({
+          samples: buffer.getChannelData(0).slice(),
+          sampleRate: buffer.sampleRate,
+        });
+      if (!this.#recordings?.failed(elaboration)) return null;
+    }
+    if (!this.#sampler.ready()) return null;
+    return this.#sampler.render(rendering.held(part), rendering.duration);
   }
 
   #bus(part: PianoPartName): GainNode {

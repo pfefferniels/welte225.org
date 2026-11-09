@@ -22,7 +22,9 @@ function greyOf(scale: SpectrogramScale, m0: number, m1: number, f: number): num
 
 /**
  * Columns `first` up to `end`, each centred on its hop, of sound of which `audio` holds the part from
- * sample `offset` on (silence elsewhere).
+ * sample `offset` on (silence elsewhere). The sound is the voice's, at 44.1 kHz, unless another
+ * rate is given (the piano's, as the browser decoded it): the columns are a hundredth of a second
+ * apart at any rate.
  */
 export type SpectrogramColumns = (
   audio: Float32Array,
@@ -31,8 +33,9 @@ export type SpectrogramColumns = (
   end: number,
 ) => Uint8Array;
 
-export function makeSpectrogram(style: SpectrogramStyle): SpectrogramColumns {
-  const { rows, hop } = SPECTROGRAM;
+export function makeSpectrogram(style: SpectrogramStyle, sampleRate = SAMPLE_RATE): SpectrogramColumns {
+  const { rows } = SPECTROGRAM;
+  const hop = sampleRate / SPECTROGRAM.columnsPerSecond;
   const fft = makeFft(style.fftSize);
   const hann = Float64Array.from(
     { length: style.window },
@@ -41,14 +44,13 @@ export function makeSpectrogram(style: SpectrogramStyle): SpectrogramColumns {
   /** The FFT bin (fractional) under each row, the top row highest. */
   const rowBins = Float64Array.from(
     { length: rows },
-    (_, r) =>
-      ((style.fmax * Math.pow(style.fmin / style.fmax, r / (rows - 1))) / SAMPLE_RATE) * style.fftSize,
+    (_, r) => ((style.fmax * Math.pow(style.fmin / style.fmax, r / (rows - 1))) / sampleRate) * style.fftSize,
   );
   const frame = new Float64Array(style.window);
   return (audio, offset, first, end) => {
     const out = new Uint8Array((end - first) * rows);
     for (let c = first; c < end; c++) {
-      const centre = c * hop;
+      const centre = Math.round(c * hop);
       for (let i = 0; i < style.window; i++) {
         const k = centre - style.window / 2 + i - offset;
         frame[i] = (k >= 0 && k < audio.length ? audio[k] : 0) * hann[i];
