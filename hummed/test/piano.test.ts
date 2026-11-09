@@ -113,10 +113,15 @@ describe('the roll on an instrument', () => {
   it('strikes once a key the score doubles, and every other key', async () => {
     const { performPiano } = await import('../src/worker/piano.ts');
     const { loadPianoScore } = await import('../tools/node-support.ts');
-    const { piece } = performPiano(loadPianoScore(), 1);
+    const score = loadPianoScore();
+    const { piece } = performPiano(score, 1);
     const struck = midiEvents(piece).filter((e) => e.data[0] === 0x90).length;
     const distinct = new Set(piece.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`)).size;
     assert.equal(struck, distinct);
-    assert.ok(piece.keys.length - struck < 10);
+    // the notes the score doubles (a pitch again at its date), arpeggiated or not, are those struck once
+    const keys = [...score.msm.matchAll(/<note\b[^>]*>/g)].map(
+      ([n]) => `${/\bmidi\.pitch="([^"]*)"/.exec(n)?.[1]}@${/\bdate="([^"]*)"/.exec(n)?.[1]}`,
+    );
+    assert.equal(piece.keys.length - struck, keys.length - new Set(keys).size);
   });
 });

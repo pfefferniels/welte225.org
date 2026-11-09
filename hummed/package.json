@@ -20,7 +20,7 @@
     "pianoteq": "node tools/pianoteq.ts"
   },
   "dependencies": {
-    "espressivo": "0.11.0"
+    "espressivo": "0.11.1"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
