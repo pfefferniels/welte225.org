@@ -1,6 +1,7 @@
 // How the piano sounds: in the page (the Pianoteq recordings, or the sampled grand where a setting has
 // none) or on an instrument over MIDI (midi.ts). The player hands either the rendering it plays, from
 // where, and what falls due; each sounds it its own way.
+import type { Setting } from '../shared/protocol.ts';
 import type { Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoSampler, PianoSound } from './piano.ts';
@@ -10,6 +11,11 @@ import type { PianoPartName, Rendering } from './rendering.ts';
 export interface PianoOutput {
   /** How long before its time a sound has to be handed over (an instrument's own delay). */
   readonly lead: Seconds;
+  /**
+   * A setting has been asked for: start loading what its piano will need, while the voice is
+   * prepared (before there is a rendering to ask `ready` of).
+   */
+  preload?(setting: Setting): void;
   /** Whether the rendering's piano can start now; asking starts loading what it needs. */
   ready(rendering: Rendering): boolean;
   /** Start at time `t` of the rendering, which sounds at context time `when`. */
@@ -59,6 +65,11 @@ export class BuiltInPiano implements PianoOutput {
       );
     }
     return false;
+  }
+
+  /** The setting's recordings, where there are any: fetched and decoded while the voice is prepared. */
+  preload(setting: Setting): void {
+    if (this.#recordings?.setting(setting.elaboration)) this.#recordings.buffers(setting.elaboration);
   }
 
   ready(rendering: Rendering): boolean {
