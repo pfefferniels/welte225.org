@@ -143,10 +143,12 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
    within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,
    from 110 ms it stops, the lips closing before the note where they were open; a note that came
-   out of a spread chord slides up from the chord's first note. Consonants for this touch (a
-   portato beginning with an "n", a detached note with a "d") are written but switched off
-   (`ARTICULATION.consonants`): in the piece they sounded odd. What might sound right is being
-   tried on short synthetic phrases first. The mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
+   out of a spread chord slides up from the chord's first note. The touch is also said with the
+   tongue (`ARTICULATION.consonants`): a portato or a repeated note begins with an "n", the tip
+   at the ridge behind the teeth for 80 ms while the hum goes on through the nose; a detached
+   note with a "d", the same closure (at most 80 ms) with the velum shut, so that the voice falls
+   silent and is released on the note, the lungs pushing again for 50 ms behind the tongue. The
+   mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
    open shapes, less before high notes, and closes as each phrase fades; the humming shape changes
    at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
@@ -160,6 +162,14 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    velocity against the curve, corrected by the calibration) and the glottis from breathy to modal
    with loudness; two gestural scores, lips closed and lips open at their widest, and the opening
    that blends them, lagged as VocalTractLab lags a gesture (`src/hummer/gestural-score.ts`).
+   The consonants are not gestures of the score: VocalTractLab sets a consonant's whole vocal
+   tract to that of a prototype syllable, so jaw and lips would open for every "n" and "d", which
+   made them all sound like "mä". Instead the tongue tip alone is moved, in the tract states
+   VocalTractLab computes from the scores, to the speaker's alveolar closure in the /u/ context,
+   easing in over 25 ms and out over 30 ms (`src/hummer/articulators.ts`,
+   `src/worker/voice-states.ts`); jaw, lips and tongue body stay as the hum has them. Closures
+   further back ("g", "ng") were tried on synthetic phrases and did not sound like themselves;
+   they are not used.
 4. **Sound** (`src/vtl/engine.ts`): VocalTractLab in WebAssembly turns both scores into tract
    states, and the tract states into sound, 110 samples (2.5 ms) at a time. The tube geometry is
    computed every 10 ms and only where the tract has moved by more than 0.03, and interpolated in

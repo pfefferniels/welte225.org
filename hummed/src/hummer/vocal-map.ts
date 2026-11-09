@@ -21,14 +21,15 @@ const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
 /**
- * Consonants that would articulate a note as the piano's touch does: a detached note beginning with
- * a 'd', the tongue closed this long before it (the lungs pushing again a little before, behind the
+ * Consonants that articulate a note as the piano's touch does: a detached note begins with a 'd',
+ * the tongue closed this long before it (the lungs pushing again a little before, behind the
  * closure); a portato or a repeated note with an 'n', the tongue closed this long, the voice going on
- * through the nose. Switched off: in the piece they sounded odd. Without them a detached note
+ * through the nose. Only the tongue tip moves (articulators.ts): as VocalTractLab's consonant
+ * gestures, which move the whole mouth, they sounded like an 'Ä'. Switched off, a detached note
  * begins after a stop, the lips closing before it where they were open, and a portato with a dip of
  * breath alone.
  */
-export const ARTICULATION: { readonly consonants: boolean } = { consonants: false };
+export const ARTICULATION: { readonly consonants: boolean } = { consonants: true };
 const D_CLOSURE: Ms = 80;
 const D_PRESS: Ms = 50;
 const N_CLOSURE: Ms = 80;

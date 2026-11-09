@@ -20,6 +20,7 @@ import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { harmoniesScore } from './harmonies.ts';
+import { voiceStates } from './voice-states.ts';
 import { approximateness, pianoLevel, voiceFactors, voiceLevel, withSubNoteDynamics } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
@@ -117,10 +118,7 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
   });
   const t2 = performance.now();
   const maxStates = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
-  const states = {
-    closed: r.engine.states(voice.closedScore, maxStates),
-    open: r.engine.states(voice.openScore, maxStates),
-  };
+  const states = voiceStates(r.engine, voice, maxStates);
   const t3 = performance.now();
   const timings: Timings = { espressivo: t1 - t0, hummer: t2 - t1, gestures: t3 - t2 };
   const msPerState = (STATE_STEP / SAMPLE_RATE) * 1000;

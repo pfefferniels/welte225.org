@@ -11,6 +11,7 @@ import {
   loadStyle,
   voicePerformance,
 } from '../tools/node-support.ts';
+import { voiceStates } from '../src/worker/voice-states.ts';
 import { assertGolden } from './golden.ts';
 
 describe('VocalTractLab', async () => {
@@ -22,7 +23,7 @@ describe('VocalTractLab', async () => {
     calibration: loadCalibration(),
   });
   const max = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
-  const states = { closed: engine.states(voice.closedScore, max), open: engine.states(voice.openScore, max) };
+  const states = voiceStates(engine, voice, max);
 
   it('runs at the rates the page assumes', () => {
     assert.equal(engine.constants.sampleRate, SAMPLE_RATE);

@@ -72,10 +72,17 @@ describe('the voice', () => {
     });
   });
 
-  it('articulates without consonants for now: stops and dips of breath', () => {
-    assert.equal(voice.events.filter((e) => e.tag === 'consonant').length, 0);
-    assert.ok(voice.events.some((e) => e.tag === 'articulation' && e.type === 'pulse'));
+  it('articulates as the piano does: a detached note with a d, a portato or repeated one with an n', () => {
+    const consonants = voice.events.flatMap((e) => (e.tag === 'consonant' ? [e] : []));
+    const stops = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'stop').length;
+    const pulses = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'pulse').length;
+    assert.equal(consonants.filter((c) => c.sound === 'd').length, stops);
+    assert.equal(consonants.filter((c) => c.sound === 'n').length, pulses);
+    assert.ok(consonants.length >= 10);
+    // the tongue tip alone, moved in the tract states: no consonant gesture moves the whole mouth
+    assert.equal(voice.moves.length, consonants.length);
     assert.doesNotMatch(voice.closedScore, /tt-alveolar-closure/);
+    assert.ok(voice.moves.every((m) => Object.keys(m.to).every((p) => ['TTX', 'TTY', 'TS3'].includes(p))));
   });
 
   it('lets a phrase sag a little at its end, no more than a semitone', () => {

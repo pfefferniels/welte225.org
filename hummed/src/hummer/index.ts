@@ -3,6 +3,7 @@
 import type { PerformanceData } from 'espressivo';
 import type { Reduction } from '../reduction/types.ts';
 import { PAD_MS, type Ms, type Seconds } from '../shared/units.ts';
+import type { ArticulatorMove } from './articulators.ts';
 import { Clock } from './clock.ts';
 import { gesturalScore } from './gestural-score.ts';
 import { gestures } from './gestures.ts';
@@ -16,6 +17,7 @@ export type { DynamicsRange } from './performance.ts';
 export type { Note } from './performance.ts';
 export type { Calibration, HumStyle } from './style.ts';
 export { Clock } from './clock.ts';
+export { moveArticulators, type ArticulatorMove } from './articulators.ts';
 
 export interface VoiceInput {
   /** The performance the voice follows. */
@@ -34,6 +36,8 @@ export interface VoiceInput {
 export interface Voice {
   readonly closedScore: string;
   readonly openScore: string;
+  /** The consonants' articulators, to move in both scores' tract states (`moveArticulators`). */
+  readonly moves: readonly ArticulatorMove[];
   /** How far the lips are open, per ms of the rendering. */
   readonly weight: Float32Array;
   readonly endMs: Ms;
@@ -79,6 +83,7 @@ export function renderVoice(input: VoiceInput): Voice {
   return {
     closedScore: gesturalScore(g.tiers, g.endMs, false),
     openScore: gesturalScore(g.tiers, g.endMs, true),
+    moves: g.moves,
     weight: g.weight,
     endMs: g.endMs,
     clock,

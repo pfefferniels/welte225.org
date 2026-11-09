@@ -1,6 +1,7 @@
 // From the voice's decisions to gestural tiers: the pitch line, the mouth, the effort.
 import { clip, groupBy, interp, seededRandom } from '../shared/math.ts';
 import { PAD_MS, type Ms } from '../shared/units.ts';
+import { TONGUE_TIP_CLOSURE, type ArticulatorMove } from './articulators.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { runs, segment, splice, type Tier, type Tiers } from './tiers.ts';
 import type { Clock } from './clock.ts';
@@ -41,8 +42,6 @@ export const LATENCY_MS: Ms = 15;
 const EFFORT = { vRef: 45, pRef: 7000, exponent: 1.5, breathyAt: 33, modalAt: 48, stepMs: 30 } as const;
 /** Voiceless air: the lung pressure at depth 1 for each passage (dPa), and what it fades to. */
 export const AIR = { teeth: 4000, lips: 8000, fade: 0.25 } as const;
-/** How far the lips part for a 'd' (of their widest humming opening). */
-const D_OPENING = 0.45;
 /** Lung pressure while breathing in, at depth 1 (dPa). */
 const BREATH_PRESSURE = 1400;
 
@@ -58,6 +57,8 @@ export interface PitchEvent {
 
 export interface Gestures {
   readonly tiers: Tiers;
+  /** The consonants' articulators, to move in the tract states (see articulators.ts). */
+  readonly moves: readonly ArticulatorMove[];
   /** How far the lips are open, per ms, 0 to 1: blends the two scores' tubes. */
   readonly weight: Float32Array;
   readonly endMs: Ms;
@@ -448,23 +449,18 @@ export function gestures(input: GesturesInput): Gestures {
     tiers.lip.push(segment(s, s + e.durationMs, 'll-labial-closure'));
   }
 
-  // consonants: the tongue tip closes at the ridge behind the teeth and lets go as the note begins.
-  // For an 'n' the velum stays low and the voice goes on through the nose; for a 'd' the velum
-  // closes, so that the air pressed behind the tongue bursts out, and the lips part, if they were
-  // closed, from shortly before the closure until the vowel has begun, so that the 'd' is heard
+  // consonants: the tongue tip closes at the ridge behind the teeth and lets go as the note begins,
+  // moved in the tract states (articulators.ts), not as a gesture. For an 'n' the velum stays low
+  // and the voice goes on through the nose; for a 'd' the velum closes (its target early by its lag),
+  // so that the air pressed behind the tongue bursts out as it lets go. The lips stay as they are.
+  const moves: ArticulatorMove[] = [];
   for (const e of eventsOf(events, 'consonant')) {
     const on = T(e.date);
     const close = on - e.durationMs;
-    // the targets earlier by each gesture's lag, so that the tongue lets go as the note begins
-    const tongue = lagOf(TIME_CONSTANT_MS.tongueTip);
-    tiers.tongueTip.push(segment(close - tongue, on - tongue, 'tt-alveolar-closure'));
+    moves.push({ to: TONGUE_TIP_CLOSURE, from: close, until: on });
     if (e.sound !== 'd') continue;
     const velum = lagOf(TIME_CONSTANT_MS.velum);
     tiers.velic = splice(tiers.velic, close - 20 - velum, on + 15 - velum, 0);
-    const a = close - 40;
-    const b = on + 160;
-    for (let i = Math.max(0, Math.floor(a)); i < Math.min(weight.length, Math.ceil(b)); i++)
-      weight[i] = Math.max(weight[i], D_OPENING * Math.min(1, (i - a) / 60, (b - i) / 100));
   }
-  return { tiers, weight, endMs, silences: silences(tiers.pressure) };
+  return { tiers, moves, weight, endMs, silences: silences(tiers.pressure) };
 }

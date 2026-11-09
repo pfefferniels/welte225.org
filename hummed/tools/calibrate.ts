@@ -19,6 +19,7 @@ import {
 import { readDynamics, readPerformance, repair } from '../src/hummer/performance.ts';
 import { Clock } from '../src/hummer/clock.ts';
 import { melodyOf, voiceNotes } from '../src/hummer/melody.ts';
+import { voiceStates } from '../src/worker/voice-states.ts';
 
 const ROUNDS = Number(process.argv[2] ?? '2');
 /** The voice's loudness target (dB RMS over its voiced samples) that sets the gain. */
@@ -55,7 +56,7 @@ for (let round = 1; round <= ROUNDS; round++) {
     range,
   });
   const max = Math.ceil(((v.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
-  const states = { closed: engine.states(v.closedScore, max), open: engine.states(v.openScore, max) };
+  const states = voiceStates(engine, v, max);
   const y = new Float32Array(states.closed.count * STATE_STEP);
   const t0 = performance.now();
   for (const block of engine.synthesize(states, v.weight, 0, states.closed.count, { blockStates: 400 }))
