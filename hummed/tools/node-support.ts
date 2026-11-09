@@ -16,6 +16,7 @@ import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl } from '../src/vtl/module.ts';
 import {
   approximateness,
+  fragmentation,
   DEFAULT_ELABORATION,
   voiceFactors,
   pianoLevel,
@@ -57,6 +58,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
   dynamics: PerformanceData;
   approximateness: number;
   range: DynamicsRange;
+  fragmentation: number;
 } {
   const { msm, mpm } = loadScore();
   const factors = voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration));
@@ -66,6 +68,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
     dynamics: performMsmToData({ msm, mpm: withSubNoteDynamics(voiceMpm) }),
     approximateness: approximateness(elaboration),
     range: dynamicsRange(mpm),
+    fragmentation: fragmentation(elaboration),
   };
 }
 

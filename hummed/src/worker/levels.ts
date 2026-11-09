@@ -22,6 +22,13 @@ export const voiceLevel = (elaboration: number): number => 1.1 + 0.5 * Math.pow(
 /** How loosely the voice keeps to the written pitch, 0 to 1: loosest alone, closest under the piece. */
 export const approximateness = (elaboration: number): number => 1 - unit(elaboration);
 
+/**
+ * How fragmentary the voice is: it falls silent where what the MPM does stays below this
+ * (src/hummer/salience.ts). A little alone, where the voice is all there is; a little more under
+ * the piece, a pianist humming along.
+ */
+export const fragmentation = (elaboration: number): number => 0.15 + 0.1 * unit(elaboration);
+
 /** Where the page starts (index.html): the piece (×1.07), the humming under it (×1.16). */
 export const DEFAULT_ELABORATION = 0.65;
 

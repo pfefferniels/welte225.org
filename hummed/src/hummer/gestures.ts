@@ -47,11 +47,19 @@ export const AIR = { teeth: 4000, lips: 8000, fade: 0.25 } as const;
  * tongue tip or the lower lip at the teeth, the lips parted); 'nose', a sigh with the lips as they
  * are and the velum low; 'mouth', the same sigh with the lips parting a little.
  */
-export const AIR_OUT: { sound: 'hiss' | 'nose' | 'mouth'; pressure: number; opening: number } = {
+export const AIR_OUT: {
+  sound: 'hiss' | 'nose' | 'mouth';
+  pressure: number;
+  lengthMs: Ms;
+  opening: number;
+} = {
   sound: 'nose',
-  pressure: 12000,
+  pressure: 2500,
+  lengthMs: 450,
   opening: 0.6,
 };
+/** Where the voice falls silent mid-phrase: how long it takes to die away, and to come back. */
+const QUIET = { outMs: 300, inMs: 60 } as const;
 /** Lung pressure while breathing in, at depth 1 (dPa). */
 const BREATH_PRESSURE = 1400;
 
@@ -141,18 +149,21 @@ function vectorAt(keys: Keys<readonly number[]>, t: Ms): number[] {
 function sigh(tiers: Tiers, weight: Float32Array, s: Ms, end: Ms, depth: number): void {
   // open by the time the lungs push again (its target early by its lag), else the sigh starts voiced
   tiers.glottal = splice(tiers.glottal, s - lagOf(TIME_CONSTANT_MS.glottis), end, 'h');
+  // a short push, gone well before the air's written end: a little breath out, not a stream
   const p0 = AIR_OUT.pressure * depth;
   const a0 = s + 40;
-  const a1 = Math.min(a0 + 100, end - 40);
+  const a1 = Math.min(a0 + 60, end - 40);
+  const z = Math.min(a0 + AIR_OUT.lengthMs, end - 40);
   tiers.pressure = splice(tiers.pressure, a0, a0 + (a1 - a0) / 2, Math.round(0.5 * p0));
   tiers.pressure = splice(tiers.pressure, a0 + (a1 - a0) / 2, a1, Math.round(p0));
-  const steps = 10;
+  const steps = 8;
   for (let k = 0; k < steps; k++) {
-    const x0 = a1 + ((end - 40 - a1) * k) / steps;
-    const x1 = a1 + ((end - 40 - a1) * (k + 1)) / steps;
+    const x0 = a1 + ((z - a1) * k) / steps;
+    const x1 = a1 + ((z - a1) * (k + 1)) / steps;
     if (x1 > x0)
-      tiers.pressure = splice(tiers.pressure, x0, x1, Math.round(p0 * Math.pow(AIR.fade, (k + 1) / steps)));
+      tiers.pressure = splice(tiers.pressure, x0, x1, Math.round(p0 * Math.pow(0.1, (k + 1) / steps)));
   }
+  if (z < end) tiers.pressure = splice(tiers.pressure, z, end, 0);
   if (AIR_OUT.sound !== 'mouth') return;
   for (let i = Math.max(0, Math.floor(s)); i < Math.min(weight.length, Math.ceil(end + 120)); i++)
     weight[i] = Math.max(
@@ -230,6 +241,7 @@ function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
 function effort(
   pressureEvents: readonly [Ms, VocalEventOf<'pressure'>][],
   articulations: readonly [Ms, VocalEventOf<'articulation'>][],
+  quiet: readonly [Ms, VocalEventOf<'quiet'>][],
   pitches: readonly PitchEvent[],
   endMs: Ms,
   dynamics: DynamicsCurve,
@@ -287,6 +299,18 @@ function effort(
     for (let i = Math.max(0, Math.floor(s0)); i < Math.min(n, Math.ceil(s0 + d) + 1); i++)
       dip[i] = Math.min(dip[i], interp(i, xs, ys));
     for (let t = s0 - 10; t < s0 + d + 10; t += 10) fine.push(t);
+  }
+
+  // the voice falling silent: dying away within the note, and back as the next note is heard (its
+  // target early by the lungs' lag)
+  for (const [t, q] of quiet) {
+    const back = t + q.durationMs - lagOf(TIME_CONSTANT_MS.pressure);
+    const xs = [t, t + QUIET.outMs, back - QUIET.inMs, back];
+    const ys = [1, 0, 0, 1];
+    for (let i = Math.max(0, Math.floor(t)); i < Math.min(n, Math.ceil(back) + 1); i++)
+      dip[i] = Math.min(dip[i], interp(i, xs, ys));
+    for (let s = t; s < t + QUIET.outMs + 10; s += 10) fine.push(s);
+    for (let s = back - QUIET.inMs - 10; s < back + 10; s += 10) fine.push(s);
   }
 
   const pressure = new Float64Array(n);
@@ -428,7 +452,15 @@ export function gestures(input: GesturesInput): Gestures {
 
   const mouth = postures(timed('posture'), endMs);
   const velum = timed('velum');
-  const force = effort(timed('pressure'), timed('articulation'), pitches, endMs, dynamics, calibration);
+  const force = effort(
+    timed('pressure'),
+    timed('articulation'),
+    timed('quiet'),
+    pitches,
+    endMs,
+    dynamics,
+    calibration,
+  );
   const pitch = pitchLine(pitches, timed('inflection'), endMs, style, approximateness);
   const tiers: Tiers = {
     f0: pitch.f0,

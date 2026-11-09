@@ -6,6 +6,7 @@ import type { Ms, Seconds, Ticks } from '../shared/units.ts';
 import type { Clock } from './clock.ts';
 import type { MelodyNote, VoiceNote } from './melody.ts';
 import type { DynamicsCurve, DynamicsRange, Note, PedalPoint } from './performance.ts';
+import { activity, noteSalience, quietSpans } from './salience.ts';
 import type { HumStyle } from './style.ts';
 
 /** The three humming shapes of the mouth, mixed in turn, and the open shapes they move toward. */
@@ -89,6 +90,12 @@ export type VocalEvent =
       readonly transitionMs: Ms;
     }
   | {
+      /** The voice falls silent here, within a sung stretch: nothing in the MPM to convey. */
+      readonly tag: 'quiet';
+      readonly date: Ticks;
+      readonly durationMs: Ms;
+    }
+  | {
       readonly tag: 'air';
       readonly date: Ticks;
       readonly durationTicks: Ticks;
@@ -132,10 +139,15 @@ export interface VocalMapInput {
   readonly style: HumStyle;
   /** The MPM's own range of dynamics, against which loudness is read here. */
   readonly range: DynamicsRange;
+  /**
+   * How fragmentary the voice is: where what the MPM does (salience.ts) stays below this, the
+   * voice falls silent. 0: it sounds through every sung stretch.
+   */
+  readonly fragmentation: number;
 }
 
 export function vocalMap(input: VocalMapInput): VocalEvent[] {
-  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style, range } = input;
+  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style, range, fragmentation } = input;
   const byDate = groupBy(notes, (n) => n.date);
   const presses: Ticks[] = [];
   for (let i = 1; i < sustain.length; i++)
@@ -365,6 +377,14 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       add({ tag: 'pressure', date: clock.toTicks(offMs), factor: 0, transitionMs: 40 });
     }
   });
+
+  // fragments: the voice falls silent where the MPM has nothing to convey for a while
+  if (fragmentation > 0) {
+    const salience = noteSalience(src, dynamics, clock);
+    const endMs = Math.max(...vn.map((v) => v.off * 1000)) + 1000;
+    for (const [s0, s1] of quietSpans(activity(src, vn, salience, dynamics, endMs), vn, fragmentation))
+      add({ tag: 'quiet', date: clock.toTicks(s0), durationMs: Math.round(s1 - s0) });
+  }
 
   // voiceless air, as strong as the dynamics there
   for (const a of air) {

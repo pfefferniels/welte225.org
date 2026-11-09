@@ -31,6 +31,11 @@ export interface VoiceInput {
   readonly approximateness: number;
   /** The MPM's own range of dynamics (`dynamicsRange`), against which the voice reads loudness. */
   readonly range: DynamicsRange;
+  /**
+   * How fragmentary the voice is (`fragmentation` in the worker's levels): it falls silent where
+   * what the MPM does stays below this. 0 or absent: it sounds through every sung stretch.
+   */
+  readonly fragmentation?: number;
 }
 
 export interface Voice {
@@ -70,6 +75,7 @@ export function renderVoice(input: VoiceInput): Voice {
     clock,
     style: input.style,
     range: input.range,
+    fragmentation: input.fragmentation ?? 0,
   });
   const g = gestures({
     notes,

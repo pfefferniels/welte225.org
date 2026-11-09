@@ -69,10 +69,11 @@ What the MEI says, and how the voice reads it:
 - **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`. It is breathed out as a
   sigh through the nose (`AIR_OUT`, `src/hummer/gestures.ts`): the lips stay closed and the velum
   low, as in the hum; the glottis opens early by its lag, so that the sigh starts voiceless; the
-  lungs push over 100 ms and fade to a quarter. It lies some 20 dB under the hum around it. Written
-  as a hiss at the teeth or the lips (an s, an f), with the lips bursting open from the hum, it
-  sounded comical; so did long passages of air (3–4 s, in 6′ and over the fermata), which were
-  taken out.
+  lungs push for 60 ms and let go within 0.45 s, however long the air is written. Above 200 Hz,
+  where breath is heard, it lies 20 to 35 dB under the hum around it. Written as a hiss at the
+  teeth or the lips (an s, an f), with the lips bursting open from the hum, it sounded comical;
+  as a longer, stronger sigh it still sounded like a bus's hydraulics; long passages of air (3–4 s,
+  in 6′ and over the fermata) were taken out.
 - Ties join notes; a plain rest after another rest extends it; `<beam>` is looked through. A chord
   or a tuplet is refused: the voice sings one note at a time.
 
@@ -160,6 +161,21 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    The glottis and the lungs follow the dynamics as they are: with the reconstruction's soft
    playing the voice stays breathy almost throughout (its folds half closed or more for under 2 s
    of the piece).
+
+   The voice is fragmentary (`src/hummer/salience.ts`): it sounds where the MPM has something to
+   convey and falls silent where it has not, as a pianist humming along catches some notes and
+   lets others go. Each sung note is weighed, 0 to 1, by the strongest of: the start of a phrase
+   (always 1); a hairpin under way (6 dynamics units a second counts fully); a note above the
+   dynamics of the 3 s about it; a beat bent beyond the ordinary rubato (its length against the
+   median of ±4 beats, from 0.08 to 0.2 in log); an accent (velocity above the curve); a detached
+   or repeated note (0.7); a leap of a fourth or more (0.6). The weight holds for 0.25 s after the
+   note begins and then fades (600 ms time constant) while the note is held; dynamics in motion
+   keep the voice up on their own. Where all of it stays under the fragmentation for half a second
+   or more within a sung stretch, the voice dies away over 0.3 s and comes back as the next note
+   is heard: silence, not breath. The fragmentation follows the elaboration, `0.15 + 0.1 e`: alone,
+   the voice falls silent for 14 % of the time it sings, at 0.65 for 22 %, mostly in the tails of
+   long, still notes. The calibration renders the voice whole (fragmentation 0).
+
 3. **Gestures** (`src/hummer/gestures.ts`): the pitch line; the effort, lung
    pressure following the dynamics within held notes (velocity^1.5, each note offset by its own
    velocity against the curve, corrected by the calibration) and the glottis from breathy to modal

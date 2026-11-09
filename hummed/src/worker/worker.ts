@@ -21,7 +21,14 @@ import { VtlEngine, type StatePair } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { harmoniesScore } from './harmonies.ts';
 import { voiceStates } from './voice-states.ts';
-import { approximateness, pianoLevel, voiceFactors, voiceLevel, withSubNoteDynamics } from './levels.ts';
+import {
+  approximateness,
+  fragmentation,
+  pianoLevel,
+  voiceFactors,
+  voiceLevel,
+  withSubNoteDynamics,
+} from './levels.ts';
 import { performPiano } from './piano.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 
@@ -115,6 +122,7 @@ function prepare(r: Resources, hummed: Reduction, setting: Setting): Level {
     calibration: r.calibration,
     approximateness: approximateness(elaboration),
     range: r.range,
+    fragmentation: fragmentation(elaboration),
   });
   const t2 = performance.now();
   const maxStates = Math.ceil(((voice.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
