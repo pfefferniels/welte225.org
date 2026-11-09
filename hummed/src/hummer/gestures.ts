@@ -42,6 +42,16 @@ export const LATENCY_MS: Ms = 15;
 const EFFORT = { vRef: 45, pRef: 7000, exponent: 1.5, breathyAt: 33, modalAt: 48, stepMs: 30 } as const;
 /** Voiceless air: the lung pressure at depth 1 for each passage (dPa), and what it fades to. */
 export const AIR = { teeth: 4000, lips: 8000, fade: 0.25 } as const;
+/**
+ * How the air written into the line is breathed out: 'hiss' through the passage it names (the
+ * tongue tip or the lower lip at the teeth, the lips parted); 'nose', a sigh with the lips as they
+ * are and the velum low; 'mouth', the same sigh with the lips parting a little.
+ */
+export const AIR_OUT: { sound: 'hiss' | 'nose' | 'mouth'; pressure: number; opening: number } = {
+  sound: 'nose',
+  pressure: 12000,
+  opening: 0.6,
+};
 /** Lung pressure while breathing in, at depth 1 (dPa). */
 const BREATH_PRESSURE = 1400;
 
@@ -121,6 +131,34 @@ function vectorAt(keys: Keys<readonly number[]>, t: Ms): number[] {
     return v0.map((x, j) => x + (v1[j] - x) * f);
   }
   return [...keys[i][1]];
+}
+
+/**
+ * Air breathed out as a sigh: the glottis open, the lungs pushing gently once it is, then letting
+ * go; the velum as the hum has it, low, so that the air goes out through the nose; for 'mouth' the
+ * lips also part a little and close again.
+ */
+function sigh(tiers: Tiers, weight: Float32Array, s: Ms, end: Ms, depth: number): void {
+  // open by the time the lungs push again (its target early by its lag), else the sigh starts voiced
+  tiers.glottal = splice(tiers.glottal, s - lagOf(TIME_CONSTANT_MS.glottis), end, 'h');
+  const p0 = AIR_OUT.pressure * depth;
+  const a0 = s + 40;
+  const a1 = Math.min(a0 + 100, end - 40);
+  tiers.pressure = splice(tiers.pressure, a0, a0 + (a1 - a0) / 2, Math.round(0.5 * p0));
+  tiers.pressure = splice(tiers.pressure, a0 + (a1 - a0) / 2, a1, Math.round(p0));
+  const steps = 10;
+  for (let k = 0; k < steps; k++) {
+    const x0 = a1 + ((end - 40 - a1) * k) / steps;
+    const x1 = a1 + ((end - 40 - a1) * (k + 1)) / steps;
+    if (x1 > x0)
+      tiers.pressure = splice(tiers.pressure, x0, x1, Math.round(p0 * Math.pow(AIR.fade, (k + 1) / steps)));
+  }
+  if (AIR_OUT.sound !== 'mouth') return;
+  for (let i = Math.max(0, Math.floor(s)); i < Math.min(weight.length, Math.ceil(end + 120)); i++)
+    weight[i] = Math.max(
+      weight[i],
+      AIR_OUT.opening * clip(Math.min((i - s) / 150, (end + 120 - i) / 150), 0, 1),
+    );
 }
 
 /**
@@ -423,6 +461,10 @@ export function gestures(input: GesturesInput): Gestures {
   for (const e of eventsOf(events, 'air')) {
     const s = T(e.date);
     const end = T(e.date + e.durationTicks);
+    if (AIR_OUT.sound !== 'hiss') {
+      sigh(tiers, weight, s, end, e.depth);
+      continue;
+    }
     tiers.glottal = splice(tiers.glottal, s, end, 'voiceless-fricative');
     tiers.velic = splice(tiers.velic, s - 30, end, 0);
     const p0 = AIR[e.through] * e.depth;

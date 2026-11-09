@@ -66,10 +66,13 @@ What the MEI says, and how the voice reads it:
   of a second or more, and no sooner than 2.5 s after the last breath. That adds 10 breaths, 39 in
   all; the note before such a breath ends a quarter of its length early (0.15 to 0.35 s).
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
-- **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`: the glottis open, the velum
-  closed, the tongue tip (an s) or the lower lip (an f) at the teeth. It is a breath out, not a held
-  hiss: it comes in over 120 ms, starts some 20 dB under the hum around it, and fades by a further
-  15 dB or so. Long passages of it (3–4 s, in 6′ and over the fermata) sounded comical and were taken out.
+- **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`. It is breathed out as a
+  sigh through the nose (`AIR_OUT`, `src/hummer/gestures.ts`): the lips stay closed and the velum
+  low, as in the hum; the glottis opens early by its lag, so that the sigh starts voiceless; the
+  lungs push over 100 ms and fade to a quarter. It lies some 20 dB under the hum around it. Written
+  as a hiss at the teeth or the lips (an s, an f), with the lips bursting open from the hum, it
+  sounded comical; so did long passages of air (3–4 s, in 6′ and over the fermata), which were
+  taken out.
 - Ties join notes; a plain rest after another rest extends it; `<beam>` is looked through. A chord
   or a tuplet is refused: the voice sings one note at a time.
 

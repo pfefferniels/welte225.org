@@ -41,13 +41,13 @@ describe('the voice', () => {
     assertGolden('voiceAt1', fingerprint(voice));
   });
 
-  it('breathes, hums every sung note and breathes out through teeth and lips', () => {
+  it('breathes, hums every sung note and sighs out twice', () => {
     const count = (tag: string) => voice.events.filter((e) => e.tag === tag).length;
     assert.equal(count('pitch'), 114);
     assert.ok(count('breath') >= 25);
     assert.equal(count('air'), 2);
-    assert.match(voice.openScore, /tt-alveolar-fricative/);
-    assert.match(voice.openScore, /ll-dental-fricative/);
+    // as a sigh through the nose, not a hiss at the teeth or the lips
+    assert.doesNotMatch(voice.openScore, /alveolar-fricative|dental-fricative/);
   });
 
   it('breathes more often than written, but only where the performance leaves room', () => {
