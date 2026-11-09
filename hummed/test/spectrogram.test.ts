@@ -1,14 +1,65 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { describe, it } from 'node:test';
-import { SPECTROGRAM, SPECTROGRAM_STYLES, isSpectrogramStyleName } from '../src/shared/spectrogram.ts';
+import { seededRandom } from '../src/shared/math.ts';
+import {
+  SPECTROGRAM,
+  SPECTROGRAM_STYLES,
+  isSpectrogramStyleName,
+  type SpectrogramStyle,
+} from '../src/shared/spectrogram.ts';
 import { SAMPLE_RATE } from '../src/shared/units.ts';
 import { makeSpectrogram } from '../src/worker/spectrogram.ts';
+import { assertGolden } from './golden.ts';
 
 const tone = (hz: number, amplitude: number): Float32Array =>
   Float32Array.from(
     { length: SAMPLE_RATE },
     (_, i) => amplitude * Math.sin((2 * Math.PI * hz * i) / SAMPLE_RATE),
   );
+
+/**
+ * Three seconds that try the scales: silence, a voice of twelve harmonics gliding from 180 to
+ * 330 Hz and swelling until its strongest partials are full black, over a little noise, then the
+ * noise alone, far below what either style draws, and silence again.
+ */
+function swell(rate: number): Float32Array {
+  const random = seededRandom(225);
+  const sound = new Float32Array(3 * rate);
+  let phase = 0;
+  for (let i = 0; i < sound.length; i++) {
+    const t = i / rate;
+    if (t < 0.4 || t >= 2.8) continue;
+    const noise = random.uniform(-1, 1);
+    if (t >= 2.2) {
+      sound[i] = 1e-5 * noise;
+      continue;
+    }
+    const along = (t - 0.4) / 1.8;
+    phase += (2 * Math.PI * (180 + 150 * along)) / rate;
+    let voice = 0;
+    for (let h = 1; h <= 12; h++) voice += Math.sin(h * phase) / h;
+    sound[i] = 0.3 * Math.sin(Math.PI * along) ** 2 * voice + 1e-3 * noise;
+  }
+  return sound;
+}
+
+/**
+ * The fingerprint of the swell's 300 columns, asked for as a worker asks: the first from the whole
+ * sound, the rest from parts of it that begin later, so that windows reach before the part and
+ * past its end.
+ */
+function fingerprint(style: SpectrogramStyle, rate: number): string {
+  const sound = swell(rate);
+  const columns = makeSpectrogram(style, rate);
+  const hash = createHash('sha256');
+  hash.update(columns(sound, 0, 0, 120));
+  const offset = Math.round(1.1 * rate);
+  hash.update(columns(sound.subarray(offset, Math.round(2.05 * rate)), offset, 120, 200));
+  hash.update(columns(sound.subarray(2 * rate), 2 * rate, 200, 201));
+  hash.update(columns(sound.subarray(2 * rate), 2 * rate, 201, 300));
+  return hash.digest('hex');
+}
 
 describe('the spectrogram styles', () => {
   for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
@@ -43,6 +94,26 @@ describe('the spectrogram styles', () => {
     const late = column(80);
     assert.ok(Math.abs(late.indexOf(Math.min(...late)) - row) < 2);
     assert.ok((late[row] ?? 255) < 128);
+  });
+  // the fingerprints were taken from the plain radix-2 FFT over all bins, with Math.hypot for every
+  // row, which the faster columns replaced: they draw the same pixels
+  for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
+    it(`${name}: draws the swell pixel for pixel as it did`, () => {
+      assertGolden(`spectrogram.${name}`, fingerprint(style, SAMPLE_RATE));
+    });
+  }
+  it("draws the swell at 48 kHz on the piano's scale pixel for pixel as it did", () => {
+    const style: SpectrogramStyle = {
+      ...SPECTROGRAM_STYLES.melodic,
+      scale: { kind: 'amplitude', full: 217, power: 0.7 },
+    };
+    assertGolden('spectrogram.piano48k', fingerprint(style, 48000));
+  });
+  it('leaves silence white', () => {
+    for (const style of Object.values(SPECTROGRAM_STYLES)) {
+      const columns = makeSpectrogram(style)(new Float32Array(SAMPLE_RATE), 0, 0, 100);
+      assert.ok(columns.every((grey) => grey === 255));
+    }
   });
   it('knows its names', () => {
     assert.ok(isSpectrogramStyleName('melodic'));

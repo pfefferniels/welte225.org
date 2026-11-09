@@ -1,4 +1,7 @@
 {
   "voiceAt1": "823c66da8a10d0f0c1a3aba13ad0f4de9c2cd91cdee3d0cbab53f629c0c018d1",
-  "vtlAudio3to9s": "119d3bfad2cb2e4456c0c480d902dae49c75cda06a3211bb0ff8a26296b11428"
+  "vtlAudio3to9s": "119d3bfad2cb2e4456c0c480d902dae49c75cda06a3211bb0ff8a26296b11428",
+  "spectrogram.full": "90e6d7bfa68e20ce9de75aafa85612054504d8cf9122da5518aac98955971c03",
+  "spectrogram.melodic": "4bc9c13c84d23b7c7f3d9bce44367c1b4a560b179c4688a30ec496419d104e04",
+  "spectrogram.piano48k": "e314357c639e2579f43b7dfc6d81aac7ccf2d415f14ffec0c2cd8253c912311c"
 }
