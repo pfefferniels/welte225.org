@@ -10686,6 +10686,23 @@
           }
         ]
       }
+    },
+    {
+      "id": "ed72c0c8-814d-4f47-b3cc-ef83dba272f1",
+      "name": "InsertGraceNotes",
+      "options": {
+        "scope": "global"
+      },
+      "elements": [
+        "grace_pxnvdff",
+        "grace_d1wfu74i",
+        "grace_z9fh3rv",
+        "grace_pxnvdff-rend2",
+        "grace_d1wfu74i-rend2",
+        "grace_z9fh3rv-rend2",
+        "grace_y1eaaloe",
+        "grace_g16bi7md"
+      ]
     }
   ],
   "segments": [

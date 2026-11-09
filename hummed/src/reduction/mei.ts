@@ -1,9 +1,9 @@
-// The reductions are written in MEI. The hummed one (reduction/reduction.mei: one staff, one layer)
-// is read here into score positions; of the harmonies (reduction/harmonies.mei), which espressivo
-// converts, only the grace notes, which it leaves out. In the browser from a DOMParser document,
-// in Node and in the worker from @xmldom/xmldom's.
+// The hummed reduction is written in MEI (reduction/reduction.mei: one staff, one layer) and read
+// here into score positions; the harmonies (reduction/harmonies.mei) espressivo converts, grace
+// notes included. In the browser from a DOMParser document, in Node and in the worker from
+// @xmldom/xmldom's.
 import type { Midi, Ticks } from '../shared/units.ts';
-import type { AirPassage, Bar, Grace, Reduction, ReductionEvent } from './types.ts';
+import type { AirPassage, Bar, Reduction, ReductionEvent } from './types.ts';
 
 /** The part of the DOM this reader needs, so that both the browser's and xmldom's documents fit. */
 export interface XmlNode {
@@ -188,41 +188,4 @@ export function readReduction(root: XmlElement): Reduction {
     if (label === '0') pos = QUARTER;
   }
   return { events, bars };
-}
-
-/** The note a grace note leads to: the next note in its layer, or the first of the next chord. */
-function nextNote(layerChildren: readonly XmlElement[], from: number): XmlElement | undefined {
-  for (const el of layerChildren.slice(from + 1)) {
-    if (el.localName === 'note' && el.getAttribute('grace') === null) return el;
-    if (el.localName === 'chord') return first(descendants(el, 'note'));
-  }
-  return undefined;
-}
-
-/**
- * The grace notes of a score (in a `<graceGrp>`, or with @grace), each with the note it leads to.
- * An accidental earlier in the bar is not carried over: a grace note's own, or the key's, counts.
- */
-export function readGraces(root: XmlElement): Grace[] {
-  const score = first(descendants(root, 'score'));
-  if (!score) throw new ReductionError('no <score>');
-  const key = keySignature(score);
-  const graces: Grace[] = [];
-  for (const layer of descendants(score, 'layer')) {
-    const events = [...children(layer)].flatMap((el) => (TRANSPARENT.has(el.localName ?? '') ? [...children(el)] : [el]));
-    events.forEach((el, i) => {
-      const notes =
-        el.localName === 'graceGrp'
-          ? [...descendants(el, 'note')]
-          : el.localName === 'note' && el.getAttribute('grace') !== null
-            ? [el]
-            : [];
-      if (notes.length === 0) return;
-      const target = nextNote(events, i);
-      if (!target) throw new ReductionError(`a grace note (${attr(notes[0], 'xml:id')}) leads to no note`);
-      for (const note of notes)
-        graces.push({ id: attr(note, 'xml:id'), pitch: midiPitch(note, key), before: attr(target, 'xml:id') });
-    });
-  }
-  return graces;
 }

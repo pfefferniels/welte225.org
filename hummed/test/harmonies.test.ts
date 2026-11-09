@@ -5,14 +5,16 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { DOMParser } from '@xmldom/xmldom';
-import { performMsmToData } from 'espressivo';
+import { convertMeiToMsm, performMsmToData } from 'espressivo';
 import { readPerformance, type Note } from '../src/hummer/performance.ts';
-import { readGraces, type XmlElement } from '../src/reduction/mei.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
 import { loadScore, ROOT } from '../tools/node-support.ts';
 
-const root = (xml: string): XmlElement =>
-  new DOMParser().parseFromString(xml, 'application/xml').documentElement as unknown as XmlElement;
+/** The grace notes espressivo reports the conversion left out: id, pitch and the note led to. */
+const graces = (mei: string) =>
+  (convertMeiToMsm(mei).at(0)?.graces ?? []).flatMap((group) =>
+    group.notes.map((note) => ({ id: note.id, pitch: note.pitch, before: group.principal })),
+  );
 
 describe('the harmonies', () => {
   const mei = readFileSync(join(ROOT, 'reduction/harmonies.mei'), 'utf8');
@@ -22,7 +24,7 @@ describe('the harmonies', () => {
 
   it('plays every note, its appoggiaturas written out rather than as grace notes', () => {
     assert.equal(harmonies.length, 219);
-    assert.deepEqual(readGraces(root(mei)), []);
+    assert.deepEqual(graces(mei), []);
   });
 
   it('spans the piece, upbeat aside', () => {
@@ -60,7 +62,8 @@ describe('the harmonies', () => {
 });
 
 describe('grace notes in the harmonies', () => {
-  // None are written at present; espressivo leaves them out, and the worker puts them back.
+  // None are written at present; espressivo leaves them out and reports them, and the worker puts
+  // them back.
   const mei = `<?xml version="1.0" encoding="UTF-8"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0+basic"><music><body><mdiv><score>
 <scoreDef><staffGrp><staffDef n="1" lines="5" keysig="1f"><clef shape="G" line="2" /></staffDef></staffGrp></scoreDef>
@@ -71,7 +74,7 @@ describe('grace notes in the harmonies', () => {
 </layer></staff></measure></section></score></mdiv></body></music></mei>`;
 
   it('are found, each with the note it leads to', () => {
-    assert.deepEqual(readGraces(root(mei)), [{ id: 'g', pitch: 75, before: 'd' }]);
+    assert.deepEqual(graces(mei), [{ id: 'g', pitch: 75, before: 'd' }]);
   });
 
   it('are put back, a thirty-second before the note they lead to', () => {

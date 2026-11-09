@@ -97,8 +97,9 @@ many of them off their beats; they are back (the repeat as the first time):
   second beat, resolving where Grünfeld resolves them.
 
 espressivo converts it to a score (MSM) as it converted the piece's; grace notes, which the
-converter leaves out, the worker would put back, each a thirty-second before the note it leads to
-(`src/worker/harmonies.ts`; none are written at present). It performs the score with the same MPM
+converter leaves out and reports beside the score, the worker would put back, a thirty-second each,
+the last just before the note they lead to (`src/worker/harmonies.ts`; none are written at
+present). It performs the score with the same MPM
 as the roll, exaggerated as much. Tempo, rubato, dynamics, arpeggios and pedalling apply to the
 harmonies as to the piece: the harmonies strike only where the piece strikes, so where the piece
 rolls a chord, theirs is rolled too, and notes that no arpeggio moves start on the same millisecond
@@ -294,7 +295,7 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 | `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                         |
 | `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                 |
 | `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                              |
-| `src/reduction/`                 | reading the reduction's MEI, and the harmonies' grace notes                                                                                             |
+| `src/reduction/`                 | reading the reduction's MEI                                                                                                                             |
 | `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                         |
 | `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                       |
 | `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, spectrogram, the render loop                                                               |
@@ -309,7 +310,10 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 | `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                               |
 
 The score and the performance are the site's own (`/mpm/score.msm`, `/mpm/performance.mpm`), so
-the voice follows the reconstruction as it is published.
+the voice follows the reconstruction as it is published. The piece's grace notes are in the
+performance, not the score: MPM Desk writes each group as an MPM v3 ornament on the note it leads
+to, timed as the roll plays it, and espressivo plays the figure in that note's place — the bass's
+B♭–F of bars 3 and 19 with the F struck early and held, as Grünfeld does.
 
 ## Development
 
