@@ -1,3 +1,430 @@
 {
-  "settings": []
+  "instrument": "Bösendorfer 280VC",
+  "credit": "Bösendorfer 280VC, played by Pianoteq (Modartt)",
+  "renderer": "Pianoteq Trial version 9.3.0/20261102 -- https://www.modartt.com/pianoteq, preset “My Presets/WM225 dry”",
+  "rendered": "2026-11-09",
+  "step": 0.05,
+  "gainDb": 15.92,
+  "settings": [
+    {
+      "elaboration": 0,
+      "pianoLevel": 1.4,
+      "piece": {
+        "file": "e000-piece.mp3",
+        "keys": 476,
+        "fingerprint": "d4ad0d0313849aeb",
+        "seconds": 179.06,
+        "lagMs": 5.1,
+        "driftMs": 1.8
+      },
+      "harmonies": {
+        "file": "e000-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "3561ef7214bfd212",
+        "seconds": 179.06,
+        "lagMs": 4.7,
+        "driftMs": 1.3
+      }
+    },
+    {
+      "elaboration": 0.05,
+      "pianoLevel": 1.361,
+      "piece": {
+        "file": "e005-piece.mp3",
+        "keys": 476,
+        "fingerprint": "9ecee2757276068b",
+        "seconds": 177.76,
+        "lagMs": 4.6,
+        "driftMs": -0.4
+      },
+      "harmonies": {
+        "file": "e005-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "20ae99154035fd25",
+        "seconds": 177.76,
+        "lagMs": 4.8,
+        "driftMs": 0.2
+      }
+    },
+    {
+      "elaboration": 0.1,
+      "pianoLevel": 1.324,
+      "piece": {
+        "file": "e010-piece.mp3",
+        "keys": 476,
+        "fingerprint": "0c60560de37c8953",
+        "seconds": 176.54,
+        "lagMs": 5.4,
+        "driftMs": 1.2
+      },
+      "harmonies": {
+        "file": "e010-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "81b3a586f8d5c5f4",
+        "seconds": 176.54,
+        "lagMs": 4.6,
+        "driftMs": -1.7
+      }
+    },
+    {
+      "elaboration": 0.15,
+      "pianoLevel": 1.289,
+      "piece": {
+        "file": "e015-piece.mp3",
+        "keys": 476,
+        "fingerprint": "9fcce6ff07234627",
+        "seconds": 175.4,
+        "lagMs": 5.3,
+        "driftMs": 0.7
+      },
+      "harmonies": {
+        "file": "e015-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "a54d7ffce678d428",
+        "seconds": 175.4,
+        "lagMs": 5,
+        "driftMs": -2
+      }
+    },
+    {
+      "elaboration": 0.2,
+      "pianoLevel": 1.256,
+      "piece": {
+        "file": "e020-piece.mp3",
+        "keys": 476,
+        "fingerprint": "4343e98e993c6ee2",
+        "seconds": 174.34,
+        "lagMs": 5,
+        "driftMs": -0.5
+      },
+      "harmonies": {
+        "file": "e020-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "8cc7765d0f98e2db",
+        "seconds": 174.34,
+        "lagMs": 5,
+        "driftMs": 0
+      }
+    },
+    {
+      "elaboration": 0.25,
+      "pianoLevel": 1.225,
+      "piece": {
+        "file": "e025-piece.mp3",
+        "keys": 476,
+        "fingerprint": "6a21ff9c0f2d0bc2",
+        "seconds": 173.35,
+        "lagMs": 4.8,
+        "driftMs": 1.4
+      },
+      "harmonies": {
+        "file": "e025-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "db993f90781f0854",
+        "seconds": 173.35,
+        "lagMs": 4.9,
+        "driftMs": -1.7
+      }
+    },
+    {
+      "elaboration": 0.3,
+      "pianoLevel": 1.196,
+      "piece": {
+        "file": "e030-piece.mp3",
+        "keys": 476,
+        "fingerprint": "74dc3bf05d0b9e70",
+        "seconds": 172.43,
+        "lagMs": 4.9,
+        "driftMs": -0.2
+      },
+      "harmonies": {
+        "file": "e030-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "13d892baa232a3fa",
+        "seconds": 172.43,
+        "lagMs": 4.5,
+        "driftMs": -0.6
+      }
+    },
+    {
+      "elaboration": 0.35,
+      "pianoLevel": 1.169,
+      "piece": {
+        "file": "e035-piece.mp3",
+        "keys": 476,
+        "fingerprint": "f76c80fc10e6ef46",
+        "seconds": 171.58,
+        "lagMs": 4.7,
+        "driftMs": -0.5
+      },
+      "harmonies": {
+        "file": "e035-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "8e6234b9fc6e0219",
+        "seconds": 171.58,
+        "lagMs": 4.6,
+        "driftMs": -0.8
+      }
+    },
+    {
+      "elaboration": 0.4,
+      "pianoLevel": 1.144,
+      "piece": {
+        "file": "e040-piece.mp3",
+        "keys": 476,
+        "fingerprint": "2ddd7f1988d2bdaf",
+        "seconds": 170.8,
+        "lagMs": 3.9,
+        "driftMs": -143.1
+      },
+      "harmonies": {
+        "file": "e040-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "7005c97e83692eae",
+        "seconds": 170.8,
+        "lagMs": 4.5,
+        "driftMs": -0.6
+      }
+    },
+    {
+      "elaboration": 0.45,
+      "pianoLevel": 1.121,
+      "piece": {
+        "file": "e045-piece.mp3",
+        "keys": 476,
+        "fingerprint": "8d4b4d593eca6f91",
+        "seconds": 170.09,
+        "lagMs": 4.7,
+        "driftMs": 0.3
+      },
+      "harmonies": {
+        "file": "e045-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "fbbcddc8372adf9e",
+        "seconds": 170.09,
+        "lagMs": 5,
+        "driftMs": -1.1
+      }
+    },
+    {
+      "elaboration": 0.5,
+      "pianoLevel": 1.1,
+      "piece": {
+        "file": "e050-piece.mp3",
+        "keys": 476,
+        "fingerprint": "fe2f4cc4896729d0",
+        "seconds": 169.44,
+        "lagMs": 4.6,
+        "driftMs": -1.1
+      },
+      "harmonies": {
+        "file": "e050-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "181f8ea93e99d711",
+        "seconds": 169.44,
+        "lagMs": 4.3,
+        "driftMs": -0.8
+      }
+    },
+    {
+      "elaboration": 0.55,
+      "pianoLevel": 1.081,
+      "piece": {
+        "file": "e055-piece.mp3",
+        "keys": 476,
+        "fingerprint": "f761b64f062ac7b9",
+        "seconds": 168.87,
+        "lagMs": 3.6,
+        "driftMs": -0.8
+      },
+      "harmonies": {
+        "file": "e055-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "25690769038e49d1",
+        "seconds": 168.87,
+        "lagMs": 4.8,
+        "driftMs": -0.2
+      }
+    },
+    {
+      "elaboration": 0.6,
+      "pianoLevel": 1.064,
+      "piece": {
+        "file": "e060-piece.mp3",
+        "keys": 476,
+        "fingerprint": "676edc2af580ac56",
+        "seconds": 168.35,
+        "lagMs": 5,
+        "driftMs": -0.6
+      },
+      "harmonies": {
+        "file": "e060-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "854e582535143299",
+        "seconds": 168.35,
+        "lagMs": 5.1,
+        "driftMs": -1.2
+      }
+    },
+    {
+      "elaboration": 0.65,
+      "pianoLevel": 1.049,
+      "piece": {
+        "file": "e065-piece.mp3",
+        "keys": 476,
+        "fingerprint": "30c6a38e0cb36ca0",
+        "seconds": 167.9,
+        "lagMs": 4.9,
+        "driftMs": -0.6
+      },
+      "harmonies": {
+        "file": "e065-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "b9922f76cdf6beba",
+        "seconds": 167.9,
+        "lagMs": 4.7,
+        "driftMs": -0.1
+      }
+    },
+    {
+      "elaboration": 0.7,
+      "pianoLevel": 1.036,
+      "piece": {
+        "file": "e070-piece.mp3",
+        "keys": 476,
+        "fingerprint": "500772747a1b32aa",
+        "seconds": 167.51,
+        "lagMs": 4.9,
+        "driftMs": 0.5
+      },
+      "harmonies": {
+        "file": "e070-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "b3d869f7754bf189",
+        "seconds": 167.51,
+        "lagMs": 4.7,
+        "driftMs": -0.5
+      }
+    },
+    {
+      "elaboration": 0.75,
+      "pianoLevel": 1.025,
+      "piece": {
+        "file": "e075-piece.mp3",
+        "keys": 476,
+        "fingerprint": "76f92a0a97e59000",
+        "seconds": 167.18,
+        "lagMs": 5.1,
+        "driftMs": 1.2
+      },
+      "harmonies": {
+        "file": "e075-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "a0719a41b18ad8af",
+        "seconds": 167.18,
+        "lagMs": 5,
+        "driftMs": 0.3
+      }
+    },
+    {
+      "elaboration": 0.8,
+      "pianoLevel": 1.016,
+      "piece": {
+        "file": "e080-piece.mp3",
+        "keys": 476,
+        "fingerprint": "4260d418a0b0e95e",
+        "seconds": 166.91,
+        "lagMs": 5,
+        "driftMs": -0.2
+      },
+      "harmonies": {
+        "file": "e080-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "9cd368d90c5c737b",
+        "seconds": 166.91,
+        "lagMs": 4.6,
+        "driftMs": -0.4
+      }
+    },
+    {
+      "elaboration": 0.85,
+      "pianoLevel": 1.009,
+      "piece": {
+        "file": "e085-piece.mp3",
+        "keys": 476,
+        "fingerprint": "bae0df544cef2cd2",
+        "seconds": 166.7,
+        "lagMs": 5.2,
+        "driftMs": 0.6
+      },
+      "harmonies": {
+        "file": "e085-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "b29eabf9edbf4e83",
+        "seconds": 166.7,
+        "lagMs": 5,
+        "driftMs": -0.3
+      }
+    },
+    {
+      "elaboration": 0.9,
+      "pianoLevel": 1.004,
+      "piece": {
+        "file": "e090-piece.mp3",
+        "keys": 476,
+        "fingerprint": "0ad5e53e97f7d94e",
+        "seconds": 166.55,
+        "lagMs": 5.3,
+        "driftMs": 1.7
+      },
+      "harmonies": {
+        "file": "e090-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "e837b44b24dbcfcf",
+        "seconds": 166.55,
+        "lagMs": 5,
+        "driftMs": -1.7
+      }
+    },
+    {
+      "elaboration": 0.95,
+      "pianoLevel": 1.001,
+      "piece": {
+        "file": "e095-piece.mp3",
+        "keys": 476,
+        "fingerprint": "f674d874b196f93e",
+        "seconds": 166.46,
+        "lagMs": 5.3,
+        "driftMs": 0.6
+      },
+      "harmonies": {
+        "file": "e095-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "481f3fbee6bc6fd0",
+        "seconds": 166.46,
+        "lagMs": 5.2,
+        "driftMs": 0.1
+      }
+    },
+    {
+      "elaboration": 1,
+      "pianoLevel": 1,
+      "piece": {
+        "file": "e100-piece.mp3",
+        "keys": 476,
+        "fingerprint": "dd3c9c41cedb586d",
+        "seconds": 166.44,
+        "lagMs": 5.2,
+        "driftMs": -0.2
+      },
+      "harmonies": {
+        "file": "e100-harmonies.mp3",
+        "keys": 219,
+        "fingerprint": "1c519f4416f6ceae",
+        "seconds": 166.44,
+        "lagMs": 5,
+        "driftMs": -0.3
+      }
+    }
+  ]
 }
