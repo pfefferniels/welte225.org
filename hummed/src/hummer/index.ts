@@ -5,15 +5,21 @@ import type { Reduction } from '../reduction/types.ts';
 import { PAD_MS, type Ms, type Seconds } from '../shared/units.ts';
 import type { ArticulatorMove } from './articulators.ts';
 import { Clock } from './clock.ts';
-import { gesturalScore } from './gestural-score.ts';
+import { gesturalScores } from './gestural-score.ts';
 import { gestures } from './gestures.ts';
 import { melodyOf, takeBreaths, voiceNotes } from './melody.ts';
-import { readDynamics, readPerformance, repair, type DynamicsRange } from './performance.ts';
+import {
+  readDynamics,
+  readPerformance,
+  repair,
+  type DynamicsCurve,
+  type DynamicsRange,
+} from './performance.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { vocalMap, type VocalEvent } from './vocal-map.ts';
 
-export { dynamicsRange, repair, readPerformance } from './performance.ts';
-export type { DynamicsRange } from './performance.ts';
+export { dynamicsRange, readDynamics, repair, readPerformance } from './performance.ts';
+export type { DynamicsCurve, DynamicsRange } from './performance.ts';
 export type { Note } from './performance.ts';
 export type { Calibration, HumStyle } from './style.ts';
 export { Clock } from './clock.ts';
@@ -22,8 +28,11 @@ export { moveArticulators, type ArticulatorMove } from './articulators.ts';
 export interface VoiceInput {
   /** The performance the voice follows. */
   readonly performance: PerformanceData;
-  /** The same performance rendered with sub-note dynamics, for the dynamics curve. */
-  readonly dynamics: PerformanceData;
+  /**
+   * The same performance rendered with sub-note dynamics, for the dynamics curve, or that curve as
+   * `readDynamics` reads it (another worker may have performed it).
+   */
+  readonly dynamics: PerformanceData | DynamicsCurve;
   readonly reduction: Reduction;
   readonly style: HumStyle;
   readonly calibration: Calibration;
@@ -61,7 +70,7 @@ export interface Voice {
 export function renderVoice(input: VoiceInput): Voice {
   const { notes, sustain } = readPerformance(input.performance);
   repair(notes);
-  const dynamics = readDynamics(input.dynamics);
+  const dynamics = 'times' in input.dynamics ? input.dynamics : readDynamics(input.dynamics);
   const clock = new Clock(notes, sustain);
   const melody = takeBreaths(melodyOf(input.reduction, notes, clock), sustain);
   const air = input.reduction.events.filter((e) => e.kind === 'air');
@@ -86,9 +95,10 @@ export function renderVoice(input: VoiceInput): Voice {
     calibration: input.calibration,
     approximateness: input.approximateness,
   });
+  const scores = gesturalScores(g.tiers, g.endMs);
   return {
-    closedScore: gesturalScore(g.tiers, g.endMs, false),
-    openScore: gesturalScore(g.tiers, g.endMs, true),
+    closedScore: scores.closed,
+    openScore: scores.open,
     moves: g.moves,
     weight: g.weight,
     endMs: g.endMs,

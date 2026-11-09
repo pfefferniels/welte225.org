@@ -327,16 +327,27 @@ function effort(
     for (let s = back - 10; s < end + 20; s += 20) fine.push(s);
   }
 
-  const pressure = new Float64Array(n);
-  const adduction = new Float64Array(n);
+  const gridSet = new Set<Ms>();
+  for (let t = 0; t < endMs; t += EFFORT.stepMs) gridSet.add(t);
+  for (const t of fine) gridSet.add(clip(Math.round(t), 0, Math.floor(endMs) - 1));
+  const grid = [...gridSet].sort((a, b) => a - b);
+
+  // the pressure and the glottis at the ms of each grid time: only there are they read, and every
+  // ms of the piece would be thirty times the work
   const logHz = [Math.log2(175), Math.log2(260), Math.log2(400)];
-  for (let i = 0; i < n; i++) {
+  const registerDb = [-0.8, 0, -3.1];
+  // pressure in steps of 0.5 %, so that runs of equal values make few gestures
+  const quantum = Math.log(1.005);
+  const pq: number[] = [];
+  const gq: string[] = [];
+  for (const t of grid) {
+    const i = Math.min(n - 1, Math.floor(t));
     const v = Math.max(
       1,
       interp((i - PAD_MS + LATENCY_MS) / 1000, dynamics.times, dynamics.values) + offsetS[i],
     );
-    const register = interp(Math.log2(hz[i]), logHz, [-0.8, 0, -3.1]);
-    pressure[i] = Math.min(
+    const register = interp(Math.log2(hz[i]), logHz, registerDb);
+    const p = Math.min(
       15000,
       EFFORT.pRef *
         Math.pow(v / EFFORT.vRef, EFFORT.exponent) *
@@ -344,21 +355,10 @@ function effort(
         interp(i, fx, fy) *
         dip[i],
     );
-    adduction[i] = clip((v - EFFORT.breathyAt) / (EFFORT.modalAt - EFFORT.breathyAt), 0, 1);
+    const adduction = clip((v - EFFORT.breathyAt) / (EFFORT.modalAt - EFFORT.breathyAt), 0, 1);
+    pq.push(p < 1 ? 0 : Math.round(Math.exp(Math.round(Math.log(p) / quantum) * quantum) * 10) / 10);
+    gq.push('g' + String(Math.round(adduction * 20)).padStart(2, '0'));
   }
-
-  const gridSet = new Set<Ms>();
-  for (let t = 0; t < endMs; t += EFFORT.stepMs) gridSet.add(t);
-  for (const t of fine) gridSet.add(clip(Math.round(t), 0, Math.floor(endMs) - 1));
-  const grid = [...gridSet].sort((a, b) => a - b);
-  const sample = (x: Float64Array, t: Ms): number => x[Math.min(n - 1, Math.floor(t))];
-  // pressure in steps of 0.5 %, so that runs of equal values make few gestures
-  const quantum = Math.log(1.005);
-  const pq = grid.map((t) => {
-    const p = sample(pressure, t);
-    return p < 1 ? 0 : Math.round(Math.exp(Math.round(Math.log(p) / quantum) * quantum) * 10) / 10;
-  });
-  const gq = grid.map((t) => 'g' + String(Math.round(sample(adduction, t) * 20)).padStart(2, '0'));
   return { pressure: runs(grid, pq, endMs), glottal: runs(grid, gq, endMs) };
 }
 

@@ -36,6 +36,8 @@ interface TierSpec {
   /** Whether VocalTractLab marks its gaps as neutral (no gesture), rather than as a target. */
   readonly marksNeutral: boolean;
   readonly tier: (tiers: Tiers, open: boolean) => Tier<string> | Tier<number>;
+  /** Set where the tier is another with the lips open. */
+  readonly mouth?: true;
 }
 
 const SPECS: readonly (TierSpec | { readonly type: string; readonly empty: true })[] = [
@@ -46,6 +48,7 @@ const SPECS: readonly (TierSpec | { readonly type: string; readonly empty: true 
     neutral: 'c10_0',
     marksNeutral: false,
     tier: (t, open) => (open ? t.vowelOpen : t.vowelClosed),
+    mouth: true,
   },
   {
     type: 'lip-gestures',
@@ -103,42 +106,47 @@ const MIN_GESTURE: Ms = 3;
 const MAX_PRESSURE = 15000;
 const MAX_F0_SLOPE = 80;
 
-/** One of the voice's two scores: lips closed (`open` false) or lips open. */
-export function gesturalScore(tiers: Tiers, endMs: Ms, open: boolean): string {
-  const out = ['<gestural_score>\n'];
-  for (const spec of SPECS) {
-    if ('empty' in spec) {
-      out.push(`  <gesture_sequence type="${spec.type}" unit="">\n  </gesture_sequence>\n`);
-      continue;
-    }
-    out.push(`  <gesture_sequence type="${spec.type}" unit="${spec.unit}">\n`);
-    const merged: Filled[] = [];
-    for (const g of fill(spec.tier(tiers, open), 0, endMs, spec.neutral)) {
-      const last = merged.at(-1);
-      if (last && g.end - g.start < MIN_GESTURE) last.end = g.end;
-      else merged.push({ ...g });
-    }
-    if (merged.length > 1 && merged[0].end - merged[0].start < MIN_GESTURE) {
-      merged[1].start = merged[0].start;
-      merged.shift();
-    }
-    const tau = typeof spec.timeConstantMs === 'number' ? spec.timeConstantMs : spec.timeConstantMs(tiers);
-    const isPressure = spec.type === 'lung-pressure-gestures';
-    const isF0 = spec.type === 'f0-gestures';
-    for (const g of merged) {
-      const value =
-        typeof g.value === 'string'
-          ? g.value
-          : (isPressure ? Math.min(MAX_PRESSURE, Math.max(0, g.value)) : g.value).toFixed(6);
-      const slope = isF0 ? Math.max(-MAX_F0_SLOPE, Math.min(MAX_F0_SLOPE, g.slope)) : g.slope;
-      const neutral = g.neutral && spec.marksNeutral ? 1 : 0;
-      out.push(
-        `    <gesture value="${value}" slope="${slope.toFixed(6)}" duration_s="${((g.end - g.start) / 1000).toFixed(6)}" ` +
-          `time_constant_s="${(tau / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
-      );
-    }
-    out.push('  </gesture_sequence>\n');
+/** One tier of a score: lips closed (`open` false) or lips open. */
+function sequence(spec: (typeof SPECS)[number], tiers: Tiers, endMs: Ms, open: boolean): string {
+  if ('empty' in spec) return `  <gesture_sequence type="${spec.type}" unit="">\n  </gesture_sequence>\n`;
+  const out = [`  <gesture_sequence type="${spec.type}" unit="${spec.unit}">\n`];
+  const merged: Filled[] = [];
+  for (const g of fill(spec.tier(tiers, open), 0, endMs, spec.neutral)) {
+    const last = merged.at(-1);
+    if (last && g.end - g.start < MIN_GESTURE) last.end = g.end;
+    else merged.push({ ...g });
   }
-  out.push('</gestural_score>\n');
+  if (merged.length > 1 && merged[0].end - merged[0].start < MIN_GESTURE) {
+    merged[1].start = merged[0].start;
+    merged.shift();
+  }
+  const tau = typeof spec.timeConstantMs === 'number' ? spec.timeConstantMs : spec.timeConstantMs(tiers);
+  const isPressure = spec.type === 'lung-pressure-gestures';
+  const isF0 = spec.type === 'f0-gestures';
+  for (const g of merged) {
+    const value =
+      typeof g.value === 'string'
+        ? g.value
+        : (isPressure ? Math.min(MAX_PRESSURE, Math.max(0, g.value)) : g.value).toFixed(6);
+    const slope = isF0 ? Math.max(-MAX_F0_SLOPE, Math.min(MAX_F0_SLOPE, g.slope)) : g.slope;
+    const neutral = g.neutral && spec.marksNeutral ? 1 : 0;
+    out.push(
+      `    <gesture value="${value}" slope="${slope.toFixed(6)}" duration_s="${((g.end - g.start) / 1000).toFixed(6)}" ` +
+        `time_constant_s="${(tau / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
+    );
+  }
+  out.push('  </gesture_sequence>\n');
   return out.join('');
+}
+
+/**
+ * The voice's two scores, lips closed and lips open. They differ in the vowel tier alone: the other
+ * tiers, most of the text, are written once.
+ */
+export function gesturalScores(tiers: Tiers, endMs: Ms): { readonly closed: string; readonly open: string } {
+  const closed = SPECS.map((spec) => sequence(spec, tiers, endMs, false));
+  const open = SPECS.map((spec, i) => ('mouth' in spec ? sequence(spec, tiers, endMs, true) : closed[i]));
+  const score = (sequences: readonly string[]): string =>
+    `<gestural_score>\n${sequences.join('')}</gestural_score>\n`;
+  return { closed: score(closed), open: score(open) };
 }
