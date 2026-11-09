@@ -442,6 +442,12 @@ export function gestures(input: GesturesInput): Gestures {
       weight[i] = Math.max(weight[i], Math.min(1, (i - (s - 80)) / 80, (end + 80 - i) / 80));
   }
 
+  // the lips close between notes where the mouth was open and the voice stops
+  for (const e of eventsOf(events, 'lips')) {
+    const s = T(e.date);
+    tiers.lip.push(segment(s, s + e.durationMs, 'll-labial-closure'));
+  }
+
   // consonants: the tongue tip closes at the ridge behind the teeth and lets go as the note begins.
   // For an 'n' the velum stays low and the voice goes on through the nose; for a 'd' the velum
   // closes, so that the air pressed behind the tongue bursts out, and the lips part, if they were

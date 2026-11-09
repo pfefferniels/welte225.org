@@ -126,13 +126,12 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    breath taken, sized by the dynamics; a scoop into each phrase and a slight sag at its end (0.3 to
    0.8 semitones, scaled by 0.75 to 1.25 with the approximateness); between notes, what Grünfeld's
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
-   within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse
-   and the note begins with an "n" (the tongue tip closed for 80 ms, the voice going on through the
-   nose), from 110 ms it stops and the note begins with a "d" (the lungs push again 50 ms before
-   it, behind the tongue, closed for up to 80 ms with the velum shut, and the lips part so that the
-   release is heard); a note that came out of a spread chord slides up from the chord's first note.
-   So the reconstruction's articulation, its shortened and lengthened notes, is heard as the touch
-   of a voice: legato, portato with an "n", detached with a "d". The mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
+   within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,
+   from 110 ms it stops, the lips closing before the note where they were open; a note that came
+   out of a spread chord slides up from the chord's first note. Consonants for this touch (a
+   portato beginning with an "n", a detached note with a "d") are written but switched off
+   (`ARTICULATION.consonants`): in the piece they sounded odd. What might sound right is being
+   tried on short synthetic phrases first. The mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
    open shapes, less before high notes, and closes as each phrase fades; the humming shape changes
    at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
@@ -159,9 +158,8 @@ next note by one to two semitones. A target that holds still cannot be overshot.
 half done 4.67 time constants (140 ms at 30 ms) after the target changes, which had put every new
 pitch some 0.12 s behind the piano; each target now takes over that much earlier, so the pitch is
 half way when the note is heard (or in the middle of a slide), plus a little that grows with the
-approximateness. The consonants and the dips of breath at pulses and stops are moved earlier by
-their own lag in the same way (56 ms for the tongue and the lungs, 70 ms for the velum), so that
-they land on the note. Within a note:
+approximateness. The dips of breath at pulses and stops are moved earlier by their own lag in the
+same way (56 ms for the lungs), so that they land on the note. Within a note:
 
 - A note led by a breath starts below its pitch: the scoop, held low, then let go.
 - The note lands off its pitch by a random amount (sd 10 to 40 cents) and after 160 to 280 ms

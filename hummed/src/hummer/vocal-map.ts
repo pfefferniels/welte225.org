@@ -21,11 +21,14 @@ const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
 /**
- * The consonants that articulate a note as the piano's touch does: a detached note begins with a
- * 'd', the tongue closed this long before it (the lungs push again a little before, behind the
+ * Consonants that would articulate a note as the piano's touch does: a detached note beginning with
+ * a 'd', the tongue closed this long before it (the lungs pushing again a little before, behind the
  * closure); a portato or a repeated note with an 'n', the tongue closed this long, the voice going on
- * through the nose.
+ * through the nose. Switched off: in the piece they sounded odd. Without them a detached note
+ * begins after a stop, the lips closing before it where they were open, and a portato with a dip of
+ * breath alone.
  */
+export const ARTICULATION: { readonly consonants: boolean } = { consonants: false };
 const D_CLOSURE: Ms = 80;
 const D_PRESS: Ms = 50;
 const N_CLOSURE: Ms = 80;
@@ -68,6 +71,7 @@ export type VocalEvent =
       readonly depth: number;
       readonly durationMs: Ms;
     }
+  | { readonly tag: 'lips'; readonly date: Ticks; readonly durationMs: Ms }
   | {
       readonly tag: 'consonant';
       /** The note it begins, at whose onset the tongue lets go. */
@@ -279,14 +283,22 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       const gap = n.onsetMs - before.keyOffMs;
       const same = n.pitch === before.pitch;
       if (gap >= STOP_FROM) {
-        // detached: the lungs stop, then push again behind the tongue, which lets go with a 'd'
+        // detached: the lungs stop; with consonants they push again behind the tongue, which lets go
+        // with a 'd', else the lips close before the note where they were open
         add({
           tag: 'articulation',
           date: clock.toTicks(before.keyOffMs),
           type: 'stop',
-          durationMs: Math.round(Math.max(30, gap - D_PRESS)),
+          durationMs: Math.round(ARTICULATION.consonants ? Math.max(30, gap - D_PRESS) : gap),
         });
-        add({ tag: 'consonant', date, sound: 'd', durationMs: Math.round(Math.min(gap, D_CLOSURE)) });
+        if (ARTICULATION.consonants)
+          add({ tag: 'consonant', date, sound: 'd', durationMs: Math.round(Math.min(gap, D_CLOSURE)) });
+        else if (cur > 0.05)
+          add({
+            tag: 'lips',
+            date: clock.toTicks(onMs - Math.min(gap, 120)),
+            durationMs: Math.round(Math.min(gap, 120)),
+          });
       } else if (gap > LEGATO_WITHIN || same) {
         const dur = Math.max(70, gap);
         const x = Math.max(0, gap - LEGATO_WITHIN) / (STOP_FROM - LEGATO_WITHIN);
@@ -299,7 +311,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
           depth: fixed(depth, 2),
           durationMs: Math.round(dur),
         });
-        add({ tag: 'consonant', date, sound: 'n', durationMs: N_CLOSURE });
+        if (ARTICULATION.consonants) add({ tag: 'consonant', date, sound: 'n', durationMs: N_CLOSURE });
       } else if (gap < -SLUR_FROM && !portamento) glideMs = Math.round(clip(-gap * 0.5, 30, 120));
     }
     add({

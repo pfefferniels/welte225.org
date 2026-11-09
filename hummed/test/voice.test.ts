@@ -72,14 +72,10 @@ describe('the voice', () => {
     });
   });
 
-  it('articulates as the piano does: a detached note with a d, a portato or repeated one with an n', () => {
-    const consonants = voice.events.flatMap((e) => (e.tag === 'consonant' ? [e] : []));
-    const stops = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'stop').length;
-    const pulses = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'pulse').length;
-    assert.equal(consonants.filter((c) => c.sound === 'd').length, stops);
-    assert.equal(consonants.filter((c) => c.sound === 'n').length, pulses);
-    assert.ok(consonants.length >= 10);
-    assert.match(voice.closedScore, /tt-alveolar-closure/);
+  it('articulates without consonants for now: stops and dips of breath', () => {
+    assert.equal(voice.events.filter((e) => e.tag === 'consonant').length, 0);
+    assert.ok(voice.events.some((e) => e.tag === 'articulation' && e.type === 'pulse'));
+    assert.doesNotMatch(voice.closedScore, /tt-alveolar-closure/);
   });
 
   it('lets a phrase sag a little at its end, no more than a semitone', () => {
