@@ -204,6 +204,13 @@ try {
     "(() => { const e = document.getElementById('elaboration'); e.value = 20; e.dispatchEvent(new Event('input')); })()",
   );
   await page.waitForTimeout(3000);
+  // where the harmonies hold still (over the ritardando into bar 17 no key is struck for five
+  // seconds), their next key is waited for
+  await page
+    .waitForFunction(`window.sent.filter((m) => (m.data[0] & 0xf0) === 0x90).length > ${before}`, undefined, {
+      timeout: 9000,
+    })
+    .catch(() => undefined);
   const harmonies = ons(await sent()).slice(before).length;
   console.log(`MIDI: the harmonies, ${harmonies} keys`);
   if (harmonies === 0) errors.push('the instrument did not go on with the harmonies');
