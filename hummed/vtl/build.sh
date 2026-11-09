@@ -4,8 +4,11 @@
 # WebAssembly with Emscripten 3.1.6 (the Ubuntu package) into one file, the wasm inlined.
 # The patch raises the gestural model's limit from 60 s to 240 s, adds
 # vtlGesturalScoreToStates, which returns a score's tract states in memory, and makes the
-# time-domain simulation about 1.4 times as fast with the same results to the bit (what it
-# reuses and leaves out is marked "Speed (same results)" in the code).
+# time-domain simulation, the geometry and the gestural model faster with the same results to
+# the bit (what it reuses and leaves out is marked "Speed (same results)" in the code).
+# VTL_FLAGS adds compiler flags: -DTDS_REORDERED_SOLVER solves each time step's equations in
+# another order, a seventh faster again, with sound that differs in the last bit of a float
+# (see the README); the tests' fingerprint of the sound is of the build without it.
 #   vtl/build.sh [output file, default ../vtl.js]
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -19,7 +22,7 @@ B=$T/vocaltractlab_cython-0.0.17/VocalTractLabBackend-dev
 EXPORTS='["_vtlInitialize","_vtlClose","_vtlGetVersion","_vtlGetConstants","_vtlSynthesisReset","_vtlSynthesisAddTube","_vtlFastTractToTube","_vtlGesturalScoreToStates","_malloc","_free"]'
 mkdir -p "$T/obj" && cd "$T/obj"
 ls "$B"/src/VocalTractLabBackend/*.cpp "$B/src/VocalTractLabApi/VocalTractLabApi.cpp" | xargs -P 4 -I{} sh -c \
-  "em++ -O3 -msimd128 -flto -std=c++17 -D_USE_MATH_DEFINES -I$B/include -I$B/include/VocalTractLabApi -c {} -o \$(basename {} .cpp).o 2>/dev/null"
-em++ ./*.o -O3 -msimd128 -flto -sMODULARIZE=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web,worker,node -sFILESYSTEM=1 -sSINGLE_FILE=1 \
+  "em++ -O3 -msimd128 -flto -std=c++17 -D_USE_MATH_DEFINES ${VTL_FLAGS:-} -I$B/include -I$B/include/VocalTractLabApi -c {} -o \$(basename {} .cpp).o 2>/dev/null"
+em++ ./*.o -O3 -msimd128 -flto ${VTL_FLAGS:-} -sMODULARIZE=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web,worker,node -sFILESYSTEM=1 -sSINGLE_FILE=1 \
   -sEXPORTED_FUNCTIONS="$EXPORTS" '-sEXPORTED_RUNTIME_METHODS=["FS","ccall","getValue"]' -sEXPORT_NAME=createVTL -o "$OUT"
 ls -la "$OUT"

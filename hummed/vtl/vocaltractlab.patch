@@ -9,6 +9,180 @@
    static const int MAX_PARAM_TARGETS = 512;
  
    enum GestureType
+@@ -256,7 +256,8 @@
+ private:
+   void calcTractParamTargets();
+   void calcGlottisParamTargets();
+-  void calcParamCurve(vector<Target> &paramTargets, vector<double> &paramCurve);
++  int calcParamCurve(vector<Target> &paramTargets, vector<double> &paramCurve);
++  int calcParamCurveGroup(vector<Target> *paramTargets[], vector<double> *paramCurve[], int numCurves);
+ };
+ 
+ 
+--- a/include/VocalTractLabBackend/Surface.h
++++ b/include/VocalTractLabBackend/Surface.h
+@@ -66,13 +66,15 @@
+   struct Vertex
+   {
+     Point3D coord;
++    // Speed (same results): next to the coordinates, with which it is set. Whether the
++    // vertex was tested against the current intersection line (the original's wasTested) is
++    // in the surface's vertexTest.
++    int reserved;         // Vertex position in relation to a line: -1=left, +1=right, 0=on the line
+     int rib;
+     int ribPoint;
+     int numAssociates;
+     int associatedTriangle[NUM_ASSOCIATED_TRIANGLES];
+     int associatedCorner[NUM_ASSOCIATED_TRIANGLES];
+-    int reserved;         // Vertex position in relation to a line: -1=left, +1=right, 0=on the line
+-	  bool wasTested;       // Was the vertext position in relation to an intersection line tested ?
+   };
+ 
+   // ****************************************************************
+@@ -97,7 +99,8 @@
+   {
+     int vertex[2];          ///< Indices of the two vertices.
+     bool isIntersected;     ///< Was the edge intersected by the intersecting plane?
+-	  bool wasTested; 		    ///< Was the edge already tested for an intersection?
++    // Speed (same results): whether the edge was tested against the current intersection
++    // line (the original's wasTested) is in the surface's edgeTest.
+     Point2D intersection;   ///< Projection of the intersection point on the intersecting plane.
+   };
+ 
+@@ -127,6 +130,20 @@
+   Triangle *triangle; ///< Array of triangles.
+   Edge *edge;         ///< Array of edges.
+   int *sequence;      ///< Order, in which the triangles must be painted with the painters algorithm.
++  // Speed (same results): what the intersection tests keep per line is in arrays of their
++  // own, small enough to stay in the processor's cache, and is marked with the line's
++  // stamp instead of being cleared for every line.
++  // Per triangle: lineStamp when it was handed out for the current intersection line and
++  // made no cut, lineStamp + 1 when it made one (see visitTriangle()).
++  unsigned int *triangleMark;
++  // Per vertex: lineStamp + 2 + its side of the current line (-1, 0, 1) when it was tested.
++  unsigned int *vertexTest;
++  // Per edge: lineStamp when it was tested for the current line and is not intersected,
++  // lineStamp + 1 when it is intersected.
++  unsigned int *edgeTest;
++  // Per triangle: the indices of its three vertices and of its three edges (a copy of
++  // Triangle::vertex and Triangle::edge, made by init() and swapTriangleOrientation()).
++  int *triangleCorner;
+ 
+   // Information about the tiles ************************************
+ 
+@@ -216,8 +233,41 @@
+   // function must be called after prepareIntersections().
+   bool getTriangleList(int *indexList, int &numEntries, int MAX_ENTRIES);
+ 
++  // Speed (same results): the same list with every triangle named once (see Surface.cpp).
++  bool getTriangleListOnce(int *indexList, int &numEntries, int &numEntriesWithRepeats, int MAX_ENTRIES);
++
+   // Returns the intersection data for a single triangle.
+-  bool getTriangleIntersection(int index, Point2D &P0, Point2D &P1, Point2D &n);
++  // Speed (same results): when all three vertices lie on the same side of the line (beyond
++  // its EPSILON margin), none of the edges between them is intersected, as each edge would
++  // find with the same test of its two ends; this is seen here, inline, and what the
++  // original function does is left to the other triangles (cutTriangle()).
++  inline bool getTriangleIntersection(int index, Point2D &P0, Point2D &P1, Point2D &n)
++  {
++    if (edgesJoinTriangleVertices)
++    {
++      const int *corner = &triangleCorner[6*index];
++      const int s0 = getVertexSide(corner[0]);
++      const int s1 = getVertexSide(corner[1]);
++      const int s2 = getVertexSide(corner[2]);
++      if (((s0 > 0) && (s1 > 0) && (s2 > 0)) || ((s0 < 0) && (s1 < 0) && (s2 < 0))) { return false; }
++    }
++    return cutTriangle(index, P0, P1, n);
++  }
++
++  // Speed (same results): getTriangleList() names a triangle once for every tile of it that
++  // the line crosses; a caller for whom a repeated triangle changes nothing can skip it.
++  // Returns 0 at a triangle's first visit for the current line (the caller then tests it and
++  // says with setTriangleCut() whether it took a cut from it), 1 when it was visited and
++  // made no cut, 2 when it made one.
++  inline int visitTriangle(int index)
++  {
++    unsigned int mark = triangleMark[index];
++    if (mark == lineStamp) { return 1; }
++    if (mark == lineStamp + 1) { return 2; }
++    triangleMark[index] = lineStamp;
++    return 0;
++  }
++  inline void setTriangleCut(int index) { triangleMark[index] = lineStamp + 1; }
+ 
+   void appendToFile(std::ofstream &file);
+   void readFromFile(std::ifstream &file, bool initialize);
+@@ -231,9 +281,51 @@
+   Point2D leftLinePoint;    ///< The line origin moved to the left (with resprect to the line) by a tiny amount.
+   Point2D rightLinePoint;   ///< The line origin moved to the right (with resprect to the line) by a tiny amount.
+   Point2D lineVector;       ///< Normalized vector specifying the direction of the intersecting line.
++  // Speed (same results): identifies the current intersection line (a multiple of 4, never
++  // 0; see prepareIntersection()).
++  unsigned int lineStamp;
++  // Speed (same results): whether the three edges of every triangle join its three vertices
++  // (as init() makes them), so that a triangle with all vertices on one side of a line is
++  // known to have no intersected edge.
++  bool edgesJoinTriangleVertices;
+ 
+   void quickSort(int firstIndex, int lastIndex);
+-  bool getEdgeIntersection(int edgeIndex);
++  bool cutTriangle(int index, Point2D &P0, Point2D &P1, Point2D &n);
++  template <class TakeTile> inline bool walkTiles(TakeTile takeTile);
++  // Speed (same results): on which side of the current line the vertex lies (the test that
++  // testEdgeIntersection() makes for the ends of an edge), tested once per line.
++  inline int getVertexSide(int vertexIndex)
++  {
++    const unsigned int test = vertexTest[vertexIndex] - lineStamp;
++    if (test - 1u < 3u) { return (int)test - 2; }
++
++    Vertex &V = vertex[vertexIndex];
++    double wx, wy, d;
++    int side = 0;
++
++    wx = V.coord.x - leftLinePoint.x;
++    wy = V.coord.y - leftLinePoint.y;
++    d = wx*lineVector.y - wy*lineVector.x;
++    if (d < 0.0) { side = -1; }
++
++    wx = V.coord.x - rightLinePoint.x;
++    wy = V.coord.y - rightLinePoint.y;
++    d = wx*lineVector.y - wy*lineVector.x;
++    if (d > 0.0) { side = 1; }
++
++    V.reserved = side;
++    vertexTest[vertexIndex] = lineStamp + 2 + side;
++    return side;
++  }
++  // Speed (same results): the test of an edge not yet tested for the current line; the
++  // lookup of tested edges is inline.
++  bool testEdgeIntersection(int edgeIndex);
++  inline bool getEdgeIntersection(int edgeIndex)
++  {
++    const unsigned int test = edgeTest[edgeIndex] - lineStamp;
++    if (test < 2u) { return (test == 1u); }
++    return testEdgeIntersection(edgeIndex);
++  }
+ };
+ 
+ // ****************************************************************************
+--- a/include/VocalTractLabBackend/Synthesizer.h
++++ b/include/VocalTractLabBackend/Synthesizer.h
+@@ -108,6 +108,14 @@
+   IirFilter outputPressureFilter;
+   bool initialShapesSet;
+ 
++  // Speed (same results): a run of steps between identical tubes (see TdsModel::setTube()):
++  // its number in the TdsModel (0: none), its samples per step, and the static dimensions
++  // of the interpolated tube in it.
++  int staticRun = 0;
++  int staticRunSamples = 0;
++  bool staticRunDimensionsKnown = false;
++  double staticRunDimensions[4];
++
+   // **************************************************************************
+   // Private functions.
+   // **************************************************************************
 --- a/include/VocalTractLabBackend/TdsModel.h
 +++ b/include/VocalTractLabBackend/TdsModel.h
 @@ -117,6 +117,15 @@
@@ -27,7 +201,7 @@
    };
  
    // ************************************************************************
-@@ -223,6 +232,16 @@
+@@ -223,6 +232,115 @@
    NoiseSource lipsDipoleSource;   ///< Last noise source at the mouth opening
  
    TubeSection tubeSection[Tube::NUM_SECTIONS];
@@ -41,10 +215,109 @@
 +    double L, C, R0, alpha, wallC1, wallC2, Lw;
 +  };
 +  SectionGeometryCache sectionCache[Tube::NUM_SECTIONS];
++
++  // --------------------------------------------------------------------------
++  // Speed (same results), the time step but for the linear system: the members below.
++  //
++  // 1. A static tube. While a caller interpolates between two identical tubes, the tube of the
++  // k-th sample of every such step is the same to the bit, though not the same as that of the
++  // sample before (ratio1*a + ratio*a is not always a). The caller announces such a run of
++  // steps with beginStaticTube() and passes the sample's number in the step (the "slot") to
++  // setTube(); the state of the sections that only depends on the tube's geometry is recorded
++  // for each slot the first time and copied from the record afterwards, instead of being
++  // computed anew. What has to hold for this is checked where it is used, see setTube().
++  static const int MAX_STATIC_SLOTS = 256;
++  // The sections with a record for each slot: pharynx, mouth, and the nose sections that the
++  // velum's opening changes; the other sections but the glottis must stay as they are in a run.
++  static const int FIRST_STATIC_SLOT_SECTION = Tube::FIRST_PHARYNX_SECTION;
++  static const int NUM_STATIC_SLOT_SECTIONS = Tube::NUM_PHARYNX_MOUTH_SECTIONS + 4;
++  struct StaticSlotSection
++  {
++    double area, length, volume, Kw;                // as setTube() and prepareTimeStep() leave them
++    double L, C, R0, alpha, E, wallC1, wallC2, Lw;  // the components made of them
++  };
++  struct StaticSlotConstriction
++  {
++    int firstSection, lastSection, narrowestSection, obstacleSection;
++    Tube::Articulator articulator;
++    double obstaclePos, upstreamFactor, downstreamFactor;
++    double area, sqrtArea, gain, cutoffFreq;        // not for the glottis' constriction
++  };
++  struct StaticSlot
++  {
++    bool recorded;          ///< The record below is there.
++    bool chained;           ///< It was made right after the time step of the slot before.
++    bool hasConstrictions;  ///< The constrictions are recorded, too.
++    // The sections (bit i: section[i]) and positions (bit i: pos[i]) that are not the same
++    // as in the record of the slot before: only these are copied (if chained).
++    unsigned long long sectionChanged;
++    unsigned long long posChanged[2];
++    double teethPosition, tongueTipSideElevation;
++    int numConstrictions;
++    StaticSlotConstriction constriction[MAX_CONSTRICTIONS];
++    double pos[Tube::NUM_SECTIONS - Tube::FIRST_PHARYNX_SECTION];
++    StaticSlotSection section[NUM_STATIC_SLOT_SECTIONS];
++  };
++  std::vector<StaticSlot> staticSlots;
++  int staticRun = 0;              ///< Number of the current run of static steps (0: none).
++  int staticNumSlots = 0;         ///< Samples per step in this run.
++  int lastStaticSlot = -1;        ///< The slot whose geometry the tube sections hold, or -1.
++  int staticSlotBeforeSetTube = -1;
++  int staticRecordSlot = -1;      ///< Slot to record at the end of prepareTimeStep(), or -1.
++  int staticReplaySlot = -1;      ///< Slot that setTube() has copied for prepareTimeStep(), or -1.
++  bool staticUnclipped = false;   ///< setTube() took all areas as they came (no smoothing).
++  int noiseRecordSlot = -1;       ///< The same two for calcNoiseSources().
++  int noiseReplaySlot = -1;
++  // What must be the same in all slots of a run: checked when a slot is recorded.
++  bool staticReferenceValid = false;
++  double staticReferenceTimeStep = 0.0;
++  bool staticReferenceSoftWalls = false;
++  bool staticReferenceNoiseSources = false;
++  double staticReference[Tube::NUM_SECTIONS][6];    // area, length, volume, Mw, Bw, Kw (slot sections: Mw, Bw)
++  Tube::Articulator staticReferenceArticulator[Tube::NUM_SECTIONS];
++  // Per section, from the last prepareTimeStep(): the resistance before the losses by
++  // turbulence are added, and the coefficients of the wall's state in beta.
++  double sectionR0[Tube::NUM_SECTIONS];
++  double sectionWallC1[Tube::NUM_SECTIONS];
++  double sectionWallC2[Tube::NUM_SECTIONS];
++  double sectionLw[Tube::NUM_SECTIONS];
++  // The time step's length that sectionCache was made for (alpha and the wall's coefficients
++  // depend on it): the cache is given up when it changes.
++  double sectionCacheTimeStep = 0.0;
++
++  int beginStaticTube(int numSlots);
++  bool canReplayStaticSlot(int run, int slot);
++  void setTube(Tube *tube, bool filtering, int staticRun, int staticSlot);
++
++  // 2. The noise sources. The sources whose target amplitude calcNoiseSources() has set (all
++  // others are zero), and the sources that calcNoiseSample() would change or that would draw
++  // random numbers (bit i: monopole and dipole source of the pharynx and mouth sections in
++  // turn, then the lips' source); the other sources are off and stay as they are.
++  static const int NUM_NOISE_SOURCES = 2 * Tube::NUM_PHARYNX_MOUTH_SECTIONS + 1;
++  int numNoiseTargetsSet = 0;
++  int noiseTargetSet[2 * MAX_CONSTRICTIONS];
++  unsigned long long noiseSourceBusy[2] = { ~0ULL, ~0ULL };
++
++  // 3. The junctions of two sections with a single current between them, where turbulence
++  // may cost pressure: the section downstream and the current, listed when the network is
++  // initialized anew (the currents of the sections are set by initModel() alone).
++  int numTurbulenceJunctions = -1;
++  int turbulenceJunctionSection[Tube::NUM_SECTIONS];
++  int turbulenceJunctionCurrent[Tube::NUM_SECTIONS];
++
++private:
++  bool checkStaticReference();
++  void recordStaticSlot(int slot);
++  void invalidateStaticSlots();
++  void findConstrictions();
++  NoiseSource *getNoiseSource(int index);
++  void noteNoiseTarget(int index);
++public:
++  // --------------------------------------------------------------------------
    BranchCurrent branchCurrent[NUM_BRANCH_CURRENTS];
  
    // Help variables to effectively solve the system of eqs. with Gauss-Seidel
-@@ -233,6 +252,20 @@
+@@ -233,6 +351,20 @@
    int numFilledRowValuesSymmetricEnvelope[NUM_BRANCH_CURRENTS];
    int filledRowIndexSymmetricEnvelope[NUM_BRANCH_CURRENTS][MAX_CONCERNED_MATRIX_COLUMNS_SYMMETRIC_ENVELOPE];
    int numFilledColumnValuesSymmetricEnvelope[NUM_BRANCH_CURRENTS];
@@ -65,7 +338,7 @@
    int filledColumnIndexSymmetricEnvelope[NUM_BRANCH_CURRENTS][MAX_CONCERNED_MATRIX_ROWS_SYMMETRIC_ENVELOPE];
  
    bool doNetworkInitialization;
-@@ -293,6 +326,7 @@
+@@ -293,6 +425,7 @@
  
    void solveEquationsSor(const string &matrixFileName = "");
    void solveEquationsCholesky();
@@ -73,9 +346,114 @@
    int getSampleIndex() { return position; }
    void getSectionFlow(int sectionIndex, double &inflow, double &outflow);
    double getSectionPressure(int sectionIndex);
+@@ -328,6 +461,51 @@
+   double getCurrentOut(const int section);
+   double getCurrentIn(const TubeSection *ts);
+   double getCurrentOut(const TubeSection *ts);
++
++  // Speed (same results): the time step in one, and the parts it is made of (see
++  // choleskyTimeStep() in TdsModel.cpp).
++  bool calcMatrixRows(const int firstRow, const int lastRow);
++  double getNoiseFilterCoeff();
++  void updateCurrentsFrom(const int i, const double noiseFilterCoeff);
++  void updateSectionsFrom(const int i);
++  void choleskyTimeStep(const bool wholeTimeStep);
++  bool wholeTimeStepPossible;
++  // The rows with entries left of the one before the diagonal.
++  bool matrixRowIsEarly[NUM_BRANCH_CURRENTS];
++
++  // Speed (same results): what choleskyTimeStep() keeps.
++  // The entries of the lower triangle that calcMatrix() sets, row by row (matrixEntryIndex:
++  // their places in matrix as one array); the other entries of the envelopes stay zero.
++  int numMatrixEntries;
++  int matrixEntryRowStart[NUM_BRANCH_CURRENTS + 1];
++  int matrixEntryRow[6 * NUM_BRANCH_CURRENTS];
++  int matrixEntryIndex[6 * NUM_BRANCH_CURRENTS];
++  // The first column with an entry in one of the rows from r on.
++  int choleskyStartColumn[NUM_BRANCH_CURRENTS + 1];
++  // The entries of the factorization that are not finished: the negated matrix less the
++  // products subtracted so far (an entry outside calcMatrix()'s is -0 again once it is used).
++  double choleskyPending[NUM_BRANCH_CURRENTS][NUM_BRANCH_CURRENTS];
++  // The factorization: its diagonal, and column by column the entries below it, in the order
++  // of filledColumnIndexSymmetricEnvelope.
++  double choleskyDiagonal[NUM_BRANCH_CURRENTS];
++  double choleskyColumn[NUM_BRANCH_CURRENTS][MAX_CONCERNED_MATRIX_ROWS_SYMMETRIC_ENVELOPE];
++
++#ifdef TDS_REORDERED_SOLVER
++  // Speed (almost the same results, not to the bit): the system of equations solved in
++  // another order of the currents (see initReorderedSolver() in TdsModel.cpp).
++  static const int MAX_REORDERED_ROWS = 8;
++  bool reorderedPossible;
++  int reorderedCurrent[NUM_BRANCH_CURRENTS];      // the current at each place of the order
++  int reorderedNumRows[NUM_BRANCH_CURRENTS];      // per column, its rows with entries
++  int reorderedRows[NUM_BRANCH_CURRENTS][MAX_REORDERED_ROWS];
++  int reorderedEntryTarget[6 * NUM_BRANCH_CURRENTS];   // per entry of the matrix, its place in reorderedPending
++  double reorderedPending[NUM_BRANCH_CURRENTS][NUM_BRANCH_CURRENTS];
++  double reorderedFactor[NUM_BRANCH_CURRENTS][MAX_REORDERED_ROWS];
++  double reorderedInverse[NUM_BRANCH_CURRENTS];
++  double reorderedSolution[NUM_BRANCH_CURRENTS];
++  void initReorderedSolver();
++  void solveEquationsReordered();
++#endif
+ };
+ 
+ 
+--- a/include/VocalTractLabBackend/Tube.h
++++ b/include/VocalTractLabBackend/Tube.h
+@@ -149,6 +149,12 @@
+   void setPharynxMouthGeometry(const double *length_cm, const double *area_cm2,
+     const Articulator *articulator, const double incisorPos_cm, const double tongueTipSideElevation);
+   void setGlottisGeometry(const double *length_cm, const double *area_cm2);
++  // Speed (same results): setGlottisGeometry() for a tube whose positions are those of its
++  // lengths but for the glottis' (calcPositions() has been called since any other changed).
++  void setGlottisGeometryOnly(const double *length_cm, const double *area_cm2);
++  // Speed (same results): whether interpolate() gives the same for the two tubes, as either
++  // as the left and the right tube (all it reads of them is the same to the bit).
++  static bool sameForInterpolation(const Tube &a, const Tube &b);
+   void setGlottisArea(const double area_cm2);
+   void setVelumOpening(const double area_cm2);
+   void setAspirationStrength(const double aspirationStrength_dB);
+--- a/include/VocalTractLabBackend/XmlNode.h
++++ b/include/VocalTractLabBackend/XmlNode.h
+@@ -52,6 +52,12 @@
+ void xmlPrintErrors(vector<XmlError> &errors);
+ void xmlTest();
+ 
++// Speed (same results): the value of a plain decimal number ("-12.345000": digits with at
++// most one point and nothing else) as strtod() returns it, without strtod()'s long double
++// arithmetic (which is done in software in WebAssembly). Returns false for any other text,
++// which is left to strtod().
++bool xmlPlainDecimalToDouble(const char *st, double &value);
++
+ // ****************************************************************************
+ // Structure for an error detected during parsing.
+ // ****************************************************************************
 --- a/src/VocalTractLabApi/VocalTractLabApi.cpp
 +++ b/src/VocalTractLabApi/VocalTractLabApi.cpp
-@@ -3097,3 +3097,36 @@
+@@ -63,6 +63,11 @@
+ 
+ static bool vtlApiInitialized = false;
+ 
++// Speed (same results): the gestural score object of vtlGesturalScoreToStates() is kept
++// from call to call (making one allocates and clears its curves, tens of megabytes); every
++// call begins with it as a new one is.
++static GesturalScore* statesScore = NULL;
++
+ 
+ #if defined(WIN32) && defined(_USRDLL) 
+ 
+@@ -229,6 +234,10 @@
+   delete synthesizer;
+   delete tdsModel;
+ 
++  // The score object of vtlGesturalScoreToStates() refers to the vocal tract and glottis.
++  delete statesScore;
++  statesScore = NULL;
++
+   int i;
+   for (i = 0; i < NUM_GLOTTIS_MODELS; i++)
+   {
+@@ -3097,3 +3106,52 @@
  
    return 0;
  }
@@ -93,11 +471,28 @@
 +  double* glottisParams, int maxStates, int* numStates)
 +{
 +  if (!vtlApiInitialized) return 1;
-+  GesturalScore* gs = new GesturalScore(vocalTract, glottis[selectedGlottis]);
++  if ((statesScore != NULL) &&
++    ((statesScore->vocalTract != vocalTract) || (statesScore->glottis != glottis[selectedGlottis])))
++  {
++    delete statesScore;
++    statesScore = NULL;
++  }
++  if (statesScore == NULL)
++  {
++    statesScore = new GesturalScore(vocalTract, glottis[selectedGlottis]);
++  }
++  else
++  {
++    // What the constructor leaves, apart from the curves and targets, which calcCurves()
++    // makes anew, and the position, which this function does not move.
++    statesScore->initTestScore();
++  }
++  GesturalScore* gs = statesScore;
 +  bool inRange = true;
-+  if (gs->loadGesturesXml(string(gesFileName), inRange) == false) { delete gs; return 2; }
-+  if (inRange == false) { delete gs; return 3; }
-+  gs->calcCurves();
++  if (gs->loadGesturesXml(string(gesFileName), inRange) == false) { return 2; }
++  if (inRange == false) { return 3; }
++  // Speed (same results): no calcCurves() here; loadGesturesXml() has just done it (with
++  // resetSequence()), and it gives the same curves every time.
 +  int n = (int)(gs->getDuration_pt() / Synthesizer::NUM_CHUNCK_SAMPLES) + 2;
 +  if (n > maxStates) n = maxStates;
 +  int nG = (int)glottis[selectedGlottis]->controlParam.size();
@@ -109,43 +504,1191 @@
 +    for (int k = 0; k < nG; k++) glottisParams[i * nG + k] = g[k];
 +  }
 +  *numStates = n;
-+  delete gs;
 +  return 0;
 +}
 --- a/src/VocalTractLabBackend/GeometricGlottis.cpp
 +++ b/src/VocalTractLabBackend/GeometricGlottis.cpp
-@@ -325,6 +325,22 @@
+@@ -325,19 +325,39 @@
    endX[0] = controlParam[LOWER_END_X].x;
    endX[1] = controlParam[UPPER_END_X].x;
  
+-  for (i=0; i < 2; i++)
 +  // Speed (same results): sin(t*M_PI) at the points t below is the same in every time step;
 +  // it is computed once, by the same sin() at run time (the volatile keeps the compiler from
 +  // working it out itself, possibly to another last bit).
 +  static double sinOfT[NUM_SAMPLES + 1];
 +  static bool sinOfTReady = false;
 +  if (!sinOfTReady)
-+  {
+   {
+-    x = 0.0;
+-    prevX = 0.0;
+-    area[i] = chinkArea;
+-    
+-    for (k=1; k <= NUM_SAMPLES; k++)
 +    volatile int numSamples = NUM_SAMPLES;
 +    for (k = 1; k <= NUM_SAMPLES; k++)
-+    {
+     {
+-      t = (double)k / (double)NUM_SAMPLES;    // 0 <= t <= 1
+-      x = endX[i] * t + displacement[i] * sin(t*M_PI);
 +      t = (double)k / (double)numSamples;
 +      sinOfT[k] = sin(t*M_PI);
 +    }
 +    sinOfTReady = true;
 +  }
 +
-   for (i=0; i < 2; i++)
-   {
-     x = 0.0;
-@@ -334,7 +350,7 @@
-     for (k=1; k <= NUM_SAMPLES; k++)
-     {
-       t = (double)k / (double)NUM_SAMPLES;    // 0 <= t <= 1
--      x = endX[i] * t + displacement[i] * sin(t*M_PI);
++  // Speed (same results): the sums for the lower and the upper edge are made side by side
++  // instead of one after the other, each by the same operations in the same order; the two
++  // chains of additions do not have to wait for each other this way.
++  double prevXOfEdge[2] = { 0.0, 0.0 };
++  area[0] = chinkArea;
++  area[1] = chinkArea;
++
++  for (k=1; k <= NUM_SAMPLES; k++)
++  {
++    t = (double)k / (double)NUM_SAMPLES;    // 0 <= t <= 1
++    for (i=0; i < 2; i++)
++    {
++      prevX = prevXOfEdge[i];
 +      x = endX[i] * t + displacement[i] * sinOfT[k];
        if (x < 0.0) { x = 0.0; }
        area[i]+= DELTA_LENGTH*(prevX + x);
-       prevX = x;
+-      prevX = x;
++      prevXOfEdge[i] = x;
+     }
+   }
+ 
+--- a/src/VocalTractLabBackend/GesturalScore.cpp
++++ b/src/VocalTractLabBackend/GesturalScore.cpp
+@@ -26,6 +26,7 @@
+ 
+ #include <cstdio>
+ #include <cstdlib>
++#include <cstring>
+ 
+ // Reference frequency for the conversion between Hz and st.
+ const double GesturalScore::REFERENCE_FREQUENCY = 1.0;
+@@ -444,10 +445,11 @@
+ bool GestureSequence::readFromXml(XmlNode &node, bool &allValuesInRange)
+ {
+   int i;
+-  int numChilds = node.numChildElements("gesture");
++  int numChilds = (int)node.childElement.size();
+   XmlNode *gestureNode;
+   Gesture g;
+   string value;
++  const string gestureName = "gesture";
+ 
+   // Clear all existing gestures in this sequence.
+   clear();
+@@ -456,11 +458,17 @@
+ 
+   // ****************************************************************
+   // Run through all gestures in the sequence.
++  // Speed (same results): the "gesture" child elements are taken in
++  // one pass through the child elements, in their order, where the
++  // original looked up the i-th one with getChildElement("gesture", i),
++  // which counts through the child elements from the first one every
++  // time (comparing the names of half of all gestures for each gesture).
+   // ****************************************************************
+ 
+   for (i=0; i < numChilds; i++)
+   {
+-    gestureNode = node.getChildElement("gesture", i);
++    gestureNode = node.childElement[i];
++    if (gestureNode->name != gestureName) { continue; }
+     
+     // Extract the gesture properties.
+     
+@@ -473,7 +481,11 @@
+     else
+     {
+       g.sVal = "";
+-      g.dVal = atof(value.c_str());
++      // Speed (same results): plain decimal numbers without strtod().
++      if (xmlPlainDecimalToDouble(value.c_str(), g.dVal) == false)
++      {
++        g.dVal = atof(value.c_str());
++      }
+     
+       // Check the value range
+       if (g.dVal < minValue)
+@@ -663,9 +675,21 @@
+     tractParamTargets[i].resize(MAX_PARAM_TARGETS);
+   }
+ 
++  // Speed (same results): curves only for the control parameters that the glottis model
++  // has, which are the ones that are calculated and read (the original made one of
++  // MAX_CURVE_SAMPLES samples for each of the MAX_CONTROL_PARAMS possible parameters).
++  int numGlottisCurves = Glottis::MAX_CONTROL_PARAMS;
++  if ((glottis != NULL) && ((int)glottis->controlParam.size() <= Glottis::MAX_CONTROL_PARAMS))
++  {
++    numGlottisCurves = (int)glottis->controlParam.size();
++  }
++
+   for (i=0; i < Glottis::MAX_CONTROL_PARAMS; i++)
+   {
+-    glottisParamCurve[i].resize(MAX_CURVE_SAMPLES);
++    if (i < numGlottisCurves)
++    {
++      glottisParamCurve[i].resize(MAX_CURVE_SAMPLES);
++    }
+     glottisParamTargets[i].resize(MAX_PARAM_TARGETS);
+   }
+ 
+@@ -2635,20 +2659,39 @@
+   calcGlottisParamTargets();
+ 
+   // ****************************************************************
+-  // Clear all curves with neutral values.
+-  // ****************************************************************
++  // Convert the targets into time signals, and clear the curves with
++  // neutral values.
++  // Speed (same results): the original set all MAX_CURVE_SAMPLES
++  // samples of every curve to the neutral value first and then wrote
++  // the time signal over the score's samples; here only the samples
++  // after the time signal are set to the neutral value. And the time
++  // signals of parameters whose targets have the same durations and
++  // time constants (as those of the vocal tract parameters have, and
++  // those of the glottal shape) are calculated together, see
++  // calcParamCurveGroup().
++  // ****************************************************************
++
++  const int MAX_CURVES = VocalTract::NUM_PARAMS + Glottis::MAX_CONTROL_PARAMS;
++  vector<Target> *curveTargets[MAX_CURVES];
++  vector<double> *curve[MAX_CURVES];
++  double curveNeutral[MAX_CURVES];
++  int numCurveSamples[MAX_CURVES];
++  bool curveDone[MAX_CURVES];
++  int numCurves = 0;
++  int f0Curve = -1;
++  int numF0CurveSamples = 0;
++  double neutralF0_st = 0.0;
+ 
+   for (i=0; i < VocalTract::NUM_PARAMS; i++)
+   {
+-    neutral = vocalTract->param[i].neutral;
+-    for (k=0; k < MAX_CURVE_SAMPLES; k++)
+-    {
+-      tractParamCurve[i][k] = neutral;
+-    }
++    curveTargets[numCurves] = &tractParamTargets[i];
++    curve[numCurves] = &tractParamCurve[i];
++    curveNeutral[numCurves] = vocalTract->param[i].neutral;
++    numCurves++;
+   }
+ 
+   int numGlottisParams = (int)glottis->controlParam.size();
+-  for (i=0; i < numGlottisParams; i++)
++  for (i=0; (i < numGlottisParams) && (i < Glottis::MAX_CONTROL_PARAMS); i++)
+   {
+     neutral = glottis->controlParam[i].neutral;
+     // For F0, initialize the neutral value in st.
+@@ -2656,39 +2699,120 @@
+     if (i == Glottis::FREQUENCY)
+     {
+       neutral = getF0_st(neutral);
++      neutralF0_st = neutral;
++      f0Curve = numCurves;
+     }
+ 
+-    for (k=0; k < MAX_CURVE_SAMPLES; k++)
++    // (A curve that the constructor has not made, see there.)
++    if ((int)glottisParamCurve[i].size() < MAX_CURVE_SAMPLES)
+     {
+-      glottisParamCurve[i][k] = neutral;
++      glottisParamCurve[i].resize(MAX_CURVE_SAMPLES);
+     }
++
++    curveTargets[numCurves] = &glottisParamTargets[i];
++    curve[numCurves] = &glottisParamCurve[i];
++    curveNeutral[numCurves] = neutral;
++    numCurves++;
+   }
+ 
+-  // ****************************************************************
+-  // Convert the targets into time signals.
+-  // ****************************************************************
++  for (i=0; i < numCurves; i++)
++  {
++    curveDone[i] = false;
++  }
+ 
+-  for (i=0; i < VocalTract::NUM_PARAMS; i++)
++  for (i=0; i < numCurves; i++)
+   {
+-    calcParamCurve(tractParamTargets[i], tractParamCurve[i]);
++    if (curveDone[i] == false)
++    {
++      // The curves with the same target times as curve i, not calculated yet.
++      vector<Target> *groupTargets[MAX_CURVES];
++      vector<double> *groupCurve[MAX_CURVES];
++      int groupMember[MAX_CURVES];
++      int numGroupCurves = 0;
++      int numTargets = (int)curveTargets[i]->size();
++      int m;
++
++      for (k=i; k < numCurves; k++)
++      {
++        if ((curveDone[k] == false) && ((int)curveTargets[k]->size() == numTargets))
++        {
++          bool sameTimes = true;
++          if (k != i)
++          {
++            const Target *first = (numTargets > 0) ? &(*curveTargets[i])[0] : NULL;
++            const Target *other = (numTargets > 0) ? &(*curveTargets[k])[0] : NULL;
++            for (m=0; (m < numTargets) && (sameTimes); m++)
++            {
++              // The same to the bit.
++              if ((memcmp(&first[m].duration, &other[m].duration, sizeof(double)) != 0) ||
++                  (memcmp(&first[m].tau_s, &other[m].tau_s, sizeof(double)) != 0))
++              {
++                sameTimes = false;
++              }
++            }
++          }
++
++          if (sameTimes)
++          {
++            groupTargets[numGroupCurves] = curveTargets[k];
++            groupCurve[numGroupCurves] = curve[k];
++            groupMember[numGroupCurves] = k;
++            numGroupCurves++;
++          }
++        }
++      }
++
++      int numSamples = calcParamCurveGroup(groupTargets, groupCurve, numGroupCurves);
++      for (m=0; m < numGroupCurves; m++)
++      {
++        numCurveSamples[ groupMember[m] ] = numSamples;
++        curveDone[ groupMember[m] ] = true;
++      }
++    }
+   }
+ 
+-  numGlottisParams = (int)glottis->controlParam.size();
+-  for (i=0; i < numGlottisParams; i++)
++  for (i=0; i < numCurves; i++)
++  {
++    neutral = curveNeutral[i];
++    vector<double> &paramCurve = *curve[i];
++    for (k=numCurveSamples[i]; k < MAX_CURVE_SAMPLES; k++)
++    {
++      paramCurve[k] = neutral;
++    }
++  }
++
++  if (f0Curve != -1)
+   {
+-    calcParamCurve(glottisParamTargets[i], glottisParamCurve[i]);
++    numF0CurveSamples = numCurveSamples[f0Curve];
+   }
+ 
+   // ****************************************************************
+   // The targets and their slopes for F0 are expressed in semitones,
+   // but we want the final parameter curve to be in Hz. So, transform
+   // the values here.
++  // Speed (same results): the neutral value after the time signal is
++  // transformed once.
+   // ****************************************************************
+ 
+   int numSamples = (int)glottisParamCurve[Glottis::FREQUENCY].size();
+-  for (i=0; i < numSamples; i++)
++  if ((f0Curve != -1) && (numSamples == MAX_CURVE_SAMPLES))
++  {
++    for (i=0; i < numF0CurveSamples; i++)
++    {
++      glottisParamCurve[Glottis::FREQUENCY][i] = getF0_Hz( glottisParamCurve[Glottis::FREQUENCY][i] );
++    }
++    const double neutralF0_Hz = getF0_Hz(neutralF0_st);
++    for (i=numF0CurveSamples; i < numSamples; i++)
++    {
++      glottisParamCurve[Glottis::FREQUENCY][i] = neutralF0_Hz;
++    }
++  }
++  else
+   {
+-    glottisParamCurve[Glottis::FREQUENCY][i] = getF0_Hz( glottisParamCurve[Glottis::FREQUENCY][i] );
++    for (i=0; i < numSamples; i++)
++    {
++      glottisParamCurve[Glottis::FREQUENCY][i] = getF0_Hz( glottisParamCurve[Glottis::FREQUENCY][i] );
++    }
+   }
+ 
+ }
+@@ -4335,27 +4459,61 @@
+ // ****************************************************************************
+ /// Calculate the filter response analytically and then sample this curve to
+ /// obtain the paramCurve[] samples using a 5th-order system.
++/// Speed (same results): returns the number of samples that it has set, from
++/// the first one (see calcCurves()).
++// ****************************************************************************
++
++int GesturalScore::calcParamCurve(vector<Target> &paramTargets, vector<double> &paramCurve)
++{
++  vector<Target> *targets[1] = { &paramTargets };
++  vector<double> *curve[1] = { &paramCurve };
++  return calcParamCurveGroup(targets, curve, 1);
++}
++
++
++// ****************************************************************************
++/// Speed (same results): the original calcParamCurve() for numCurves parameters
++/// at once, whose targets have the same durations and time constants, target
++/// for target (the caller sees to that). Then the times at which the targets
++/// follow one another, the time t within a target, its powers and exp(a*t) are
++/// the same numbers for all these parameters at every sample; they are
++/// calculated once per sample here, where the original calculated them for
++/// every parameter anew. What differs from parameter to parameter (the
++/// coefficients c0 to c4, and the target's value and slope) goes through the
++/// same operations as in the original, in the same order.
++/// Returns the number of samples that it has set in each curve, from the first
++/// one.
+ // ****************************************************************************
+ 
+-void GesturalScore::calcParamCurve(vector<Target> &paramTargets, vector<double> &paramCurve)
++int GesturalScore::calcParamCurveGroup(vector<Target> *paramTargets[], vector<double> *paramCurve[], int numCurves)
+ {
+   const double EPSILON = 0.000000001;
+-  int i;
++  const int MAX_CURVES = VocalTract::NUM_PARAMS + Glottis::MAX_CONTROL_PARAMS;
++  int i, k;
+ 
+-  if (paramTargets.size() < 1)
++  if ((numCurves < 1) || (numCurves > MAX_CURVES))
+   {
+-    return;
++    return 0;
+   }
+ 
+-  int numTargets = (int)paramTargets.size();
++  if (paramTargets[0]->size() < 1)
++  {
++    return 0;
++  }
++
++  int numTargets = (int)paramTargets[0]->size();
+   int targetIndex = 0;
+-  Target *target = &paramTargets[targetIndex];
++  Target *target[MAX_CURVES];
++  double *curve[MAX_CURVES];
++  double targetValue[MAX_CURVES];
++  double targetSlope[MAX_CURVES];
+   double targetPos_s = 0.0;
+   double t_s;
+   double t, t2, t3, t4;
+   double a, a2, a3, a4;
+-  double c0, c1, c2, c3, c4;
++  double c0[MAX_CURVES], c1[MAX_CURVES], c2[MAX_CURVES], c3[MAX_CURVES], c4[MAX_CURVES];
+   double f0, f1, f2, f3, f4;
++  double exponential;
+ 
+   // The last sample to consider.
+   int finalPointIndex = (int)((getScoreDuration_s() + 0.010) * CURVE_SAMPLING_RATE);
+@@ -4364,21 +4522,33 @@
+     finalPointIndex = MAX_CURVE_SAMPLES - 1;
+   }
+   
+-  if (fabs(target->tau_s) < EPSILON)
++  for (k = 0; k < numCurves; k++)
+   {
+-    target->tau_s = EPSILON;
++    target[k] = &(*paramTargets[k])[targetIndex];
++    if (fabs(target[k]->tau_s) < EPSILON)
++    {
++      target[k]->tau_s = EPSILON;
++    }
++    curve[k] = &(*paramCurve[k])[0];
++    targetValue[k] = target[k]->value;
++    targetSlope[k] = target[k]->slope;
++
++    // Coefficients for the initial target are all zero -> we follow the target exactly.
++    c0[k] = 0.0;
++    c1[k] = 0.0;
++    c2[k] = 0.0;
++    c3[k] = 0.0;
++    c4[k] = 0.0;
+   }
+-  a = -1.0 / target->tau_s;
++
++  a = -1.0 / target[0]->tau_s;
+   a2 = a*a;
+   a3 = a2*a;
+   a4 = a3*a;
+ 
+-  // Coefficients for the initial target are all zero -> we follow the target exactly.
+-  c0 = 0.0;
+-  c1 = 0.0;
+-  c2 = 0.0;
+-  c3 = 0.0;
+-  c4 = 0.0;
++  // The duration of the current target and its end (the same for all the parameters).
++  double targetDuration = target[0]->duration;
++  double targetEnd_s = targetPos_s + targetDuration;
+ 
+   // ****************************************************************
+   
+@@ -4386,45 +4556,71 @@
+   {
+     t_s = (double)i / CURVE_SAMPLING_RATE;
+ 
+-    while ((t_s > targetPos_s + target->duration) && (targetIndex < numTargets - 1))
++    while ((t_s > targetEnd_s) && (targetIndex < numTargets - 1))
+     {
+       // Calculate y(t) and its derivatives at the end of the prev. target.
+       
+-      t = target->duration;
++      t = targetDuration;
+       t2 = t*t;
+       t3 = t2*t;
+       t4 = t3*t;
+-
+-      // It's important to consider the slope for f1!
+-      f0 = exp(a*t)*((c0)+(c1)*t + (c2)*t2 + (c3)*t3 + (c4)*t4) + (target->value + target->duration*target->slope);
+-      f1 = exp(a*t)*((c0*a + c1) + (c1*a + 2 * c2)*t + (c2*a + 3 * c3)*t2 + (c3*a + 4 * c4)*t3 + (c4*a)*t4) + target->slope;
+-      f2 = exp(a*t)*((c0*a2 + 2 * c1*a + 2 * c2) + (c1*a2 + 4 * c2*a + 6 * c3)*t + (c2*a2 + 6 * c3*a + 12 * c4)*t2 + (c3*a2 + 8 * c4*a)*t3 + (c4*a2)*t4);
+-      f3 = exp(a*t)*((c0*a3 + 3 * c1*a2 + 6 * c2*a + 6 * c3) + (c1*a3 + 6 * c2*a2 + 18 * c3*a + 24 * c4)*t + (c2*a3 + 9 * c3*a2 + 36 * c4*a)*t2 + (c3*a3 + 12 * c4*a2)*t3 + (c4*a3)*t4);
+-      f4 = exp(a*t)*((c0*a4 + 4 * c1*a3 + 12 * c2*a2 + 24 * c3*a + 24 * c4) + (c1*a4 + 8 * c2*a3 + 36 * c3*a2 + 96 * c4*a)*t + (c2*a4 + 12 * c3*a3 + 72 * c4*a2)*t2 + (c3*a4 + 16 * c4*a3)*t3 + (c4*a4)*t4);
++      exponential = exp(a*t);
+ 
+       // Go to the next target.
+       
+-      targetPos_s += target->duration;
++      targetPos_s += targetDuration;
+       targetIndex++;
+-      target = &paramTargets[targetIndex];
+-
+-      // Calc. the coefficients for the next target based on the derivatives
+-      // at the end of the previous target.
+ 
+-      if (fabs(target->tau_s) < EPSILON)
++      for (k = 0; k < numCurves; k++)
+       {
+-        target->tau_s = EPSILON;
++        target[k] = &(*paramTargets[k])[targetIndex];
++        if (fabs(target[k]->tau_s) < EPSILON)
++        {
++          target[k]->tau_s = EPSILON;
++        }
+       }
+-      a = -1.0 / target->tau_s;
+-      a2 = a*a;
+-      a3 = a2*a;
+-      a4 = a3*a;
+ 
+-      c0 = f0 - target->value;
+-      c1 = (f1 - c0*a - target->slope);   // Slope must be considered here!
+-      c2 = (f2 - c0*a2 - c1*a * 2) / 2;
+-      c3 = (f3 - c0*a3 - c1*a2 * 3 - c2*a * 6) / 6;
+-      c4 = (f4 - c0*a4 - c1*a3 * 4 - c2*a2 * 12 - c3*a * 24) / 24;
++      // The time constant of the next target.
++      const double b = -1.0 / target[0]->tau_s;
++      const double b2 = b*b;
++      const double b3 = b2*b;
++      const double b4 = b3*b;
++
++      for (k = 0; k < numCurves; k++)
++      {
++        const double C0 = c0[k];
++        const double C1 = c1[k];
++        const double C2 = c2[k];
++        const double C3 = c3[k];
++        const double C4 = c4[k];
++
++        // It's important to consider the slope for f1!
++        f0 = exponential*((C0)+(C1)*t + (C2)*t2 + (C3)*t3 + (C4)*t4) + (targetValue[k] + targetDuration*targetSlope[k]);
++        f1 = exponential*((C0*a + C1) + (C1*a + 2 * C2)*t + (C2*a + 3 * C3)*t2 + (C3*a + 4 * C4)*t3 + (C4*a)*t4) + targetSlope[k];
++        f2 = exponential*((C0*a2 + 2 * C1*a + 2 * C2) + (C1*a2 + 4 * C2*a + 6 * C3)*t + (C2*a2 + 6 * C3*a + 12 * C4)*t2 + (C3*a2 + 8 * C4*a)*t3 + (C4*a2)*t4);
++        f3 = exponential*((C0*a3 + 3 * C1*a2 + 6 * C2*a + 6 * C3) + (C1*a3 + 6 * C2*a2 + 18 * C3*a + 24 * C4)*t + (C2*a3 + 9 * C3*a2 + 36 * C4*a)*t2 + (C3*a3 + 12 * C4*a2)*t3 + (C4*a3)*t4);
++        f4 = exponential*((C0*a4 + 4 * C1*a3 + 12 * C2*a2 + 24 * C3*a + 24 * C4) + (C1*a4 + 8 * C2*a3 + 36 * C3*a2 + 96 * C4*a)*t + (C2*a4 + 12 * C3*a3 + 72 * C4*a2)*t2 + (C3*a4 + 16 * C4*a3)*t3 + (C4*a4)*t4);
++
++        // Calc. the coefficients for the next target based on the derivatives
++        // at the end of the previous target.
++
++        targetValue[k] = target[k]->value;
++        targetSlope[k] = target[k]->slope;
++
++        c0[k] = f0 - targetValue[k];
++        c1[k] = (f1 - c0[k]*b - targetSlope[k]);   // Slope must be considered here!
++        c2[k] = (f2 - c0[k]*b2 - c1[k]*b * 2) / 2;
++        c3[k] = (f3 - c0[k]*b3 - c1[k]*b2 * 3 - c2[k]*b * 6) / 6;
++        c4[k] = (f4 - c0[k]*b4 - c1[k]*b3 * 4 - c2[k]*b2 * 12 - c3[k]*b * 24) / 24;
++      }
++
++      a = b;
++      a2 = b2;
++      a3 = b3;
++      a4 = b4;
++
++      targetDuration = target[0]->duration;
++      targetEnd_s = targetPos_s + targetDuration;
+     }
+ 
+     // Calculate the actual curve value here.
+@@ -4433,9 +4629,15 @@
+     t2 = t*t;
+     t3 = t2*t;
+     t4 = t3*t;
++    exponential = exp(a*t);
+ 
+-    paramCurve[i] = exp(a*t)*((c0)+(c1)*t + (c2)*t2 + (c3)*t3 + (c4)*t4) + (target->value + t*target->slope);
++    for (k = 0; k < numCurves; k++)
++    {
++      curve[k][i] = exponential*((c0[k])+(c1[k])*t + (c2[k])*t2 + (c3[k])*t3 + (c4[k])*t4) + (targetValue[k] + t*targetSlope[k]);
++    }
+   }
++
++  return (finalPointIndex >= 0) ? (finalPointIndex + 1) : 0;
+ }
+ 
+ 
+--- a/src/VocalTractLabBackend/Surface.cpp
++++ b/src/VocalTractLabBackend/Surface.cpp
+@@ -46,6 +46,10 @@
+   triangle = NULL;
+   edge     = NULL;
+   sequence = NULL;
++  triangleMark = NULL;
++  vertexTest = NULL;
++  edgeTest = NULL;
++  triangleCorner = NULL;
+ 
+   creaseAngle_deg = STANDARD_CREASE_ANGLE_DEGREE;
+   init(0, 0);
+@@ -65,6 +69,10 @@
+   triangle = NULL;
+   edge     = NULL;
+   sequence = NULL;
++  triangleMark = NULL;
++  vertexTest = NULL;
++  edgeTest = NULL;
++  triangleCorner = NULL;
+ 
+   creaseAngle_deg = STANDARD_CREASE_ANGLE_DEGREE;
+   init(ribs, ribPoints);
+@@ -89,6 +97,10 @@
+   if (triangle != NULL) { delete [] triangle; }
+   if (edge != NULL)     { delete [] edge; }
+   if (sequence != NULL) { delete [] sequence; }
++  if (triangleMark != NULL) { delete [] triangleMark; }
++  if (vertexTest != NULL) { delete [] vertexTest; }
++  if (edgeTest != NULL) { delete [] edgeTest; }
++  if (triangleCorner != NULL) { delete [] triangleCorner; }
+ 
+   numRibs      = 0;
+   numRibPoints = 0;
+@@ -113,9 +125,14 @@
+ 
+   numRibs      = ribs;
+   numRibPoints = ribPoints;
++  lineStamp    = 4;     // Nothing is tested yet (all tests and marks are 0).
+ 
+   if ((ribs == 0) || (ribPoints == 0))
+   {
++    triangleMark = NULL;
++    vertexTest = NULL;
++    edgeTest = NULL;
++    triangleCorner = NULL;
+     numTriangles = 0;
+     numVertices  = 0;
+     numEdges     = 0;
+@@ -134,6 +151,10 @@
+   triangle = new Triangle[numTriangles];
+   edge     = new Edge[numEdges];
+   sequence = new int[numTriangles];
++  triangleMark = new unsigned int[numTriangles];
++  vertexTest = new unsigned int[numVertices];
++  edgeTest = new unsigned int[numEdges];
++  triangleCorner = new int[6*numTriangles];
+ 
+   // Jedem Punkt den Index seiner Rippe und des Rippenpunktes zuweisen.
+ 
+@@ -220,6 +241,7 @@
+   for (i=0; i < numVertices; i++)
+   {
+     vertex[i].reserved = 0;
++    vertexTest[i] = 0;
+     vertex[i].numAssociates = 0;
+ 
+     for (j=0; j < NUM_ASSOCIATED_TRIANGLES; j++)
+@@ -246,13 +268,34 @@
+   {
+   	triangle[i].distance = 0.0;
+     sequence[i] = i;
++    triangleMark[i] = 0;
+   }
+ 
+   for (i=0; i < numEdges; i++)
+   {
+     edge[i].isIntersected = false;
++    edgeTest[i] = 0;
+     edge[i].intersection.set(0.0, 0.0);
+   }
++
++  // Speed (same results): see triangleCorner and edgesJoinTriangleVertices.
++  edgesJoinTriangleVertices = true;
++  for (i=0; i < numTriangles; i++)
++  {
++    for (j=0; j < 3; j++)
++    {
++      triangleCorner[6*i + j] = triangle[i].vertex[j];
++      triangleCorner[6*i + 3 + j] = triangle[i].edge[j];
++      for (k=0; k < 2; k++)
++      {
++        int v = edge[ triangle[i].edge[j] ].vertex[k];
++        if ((v != triangle[i].vertex[0]) && (v != triangle[i].vertex[1]) && (v != triangle[i].vertex[2]))
++        {
++          edgesJoinTriangleVertices = false;
++        }
++      }
++    }
++  }
+ }
+ 
+ // ****************************************************************************
+@@ -272,6 +315,9 @@
+     k = triangle[i].vertex[0];
+     triangle[i].vertex[0] = triangle[i].vertex[2];
+     triangle[i].vertex[2] = k;
++    // Speed (same results): see triangleCorner.
++    triangleCorner[6*i + 0] = triangle[i].vertex[0];
++    triangleCorner[6*i + 2] = triangle[i].vertex[2];
+   }
+ 
+   // Die an einen Vertex grenzenden Dreiecke neu ermitteln.
+@@ -731,21 +777,23 @@
+ /// @param MAX_ENTRIES The maximal number of entries to be put in the list.
+ // ****************************************************************************
+   
+-bool Surface::getTriangleList(int *indexList, int &numEntries, int MAX_ENTRIES)
++// Speed (same results): the walk through the tiles along the line, which was the body of
++// getTriangleList() (described above, and now below), is one function for getTriangleList()
++// and getTriangleListOnce(); takeTile(tile) takes the triangles of a tile and returns false
++// when the list is full. The walk ends as soon as the line has left the rows (or columns)
++// of tiles for good, where the original walked on without finding a tile.
++
++template <class TakeTile>
++inline bool Surface::walkTiles(TakeTile takeTile)
+ {
+-  int i;
+   double x, y;
+   int tileX, tileY;         // Index of the current tile
+   double nextBorderX, nextBorderY;
+   double deltaX, deltaY;
+-  Tile *t = NULL;
+-  int *source;
+ 
+   Point2D Q = linePoint;
+   Point2D v = lineVector;
+ 
+-  numEntries = 0;
+-
+   // ****************************************************************
+   // A rather horizontal intersection line.
+   // ****************************************************************
+@@ -768,30 +816,24 @@
+     if (v.y > 0.0)
+     {
+       nextBorderY = bottomBorder + (double)(tileY+1)*tileHeight;
++      if (tileY >= numTilesY) { return true; }  // The rows only go up from here.
+ 
+       for (tileX=0; tileX < numTilesX; tileX++)
+       {
+         if ((tileY >= 0) && (tileY < numTilesY))
+         {
+-          t = &tile[tileX][tileY];
+-          if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-          source = &t->triangle[0];
+-          for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-          numEntries+= t->numTriangles;
++          if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+         }
+ 
+         if (y + deltaY > nextBorderY)
+         {
+           tileY++;
+           nextBorderY+= tileHeight;
++          if (tileY >= numTilesY) { break; }    // The rows only go up from here.
+ 
+           if ((tileY >= 0) && (tileY < numTilesY))
+           {
+-            t = &tile[tileX][tileY];
+-            if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-            source = &t->triangle[0];
+-            for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-            numEntries+= t->numTriangles;
++            if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+           }
+         }
+ 
+@@ -804,30 +846,24 @@
+ 
+     {
+       nextBorderY = bottomBorder + (double)tileY*tileHeight;
++      if (tileY < 0) { return true; }           // The rows only go down from here.
+ 
+       for (tileX=0; tileX < numTilesX; tileX++)
+       {
+         if ((tileY >= 0) && (tileY < numTilesY))
+         {
+-          t = &tile[tileX][tileY];
+-          if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-          source = &t->triangle[0];
+-          for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-          numEntries+= t->numTriangles;
++          if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+         }
+ 
+         if (y + deltaY < nextBorderY)
+         {
+           tileY--;
+           nextBorderY-= tileHeight;
+-          t = &tile[tileX][tileY];
++          if (tileY < 0) { break; }             // The rows only go down from here.
+ 
+           if ((tileY >= 0) && (tileY < numTilesY))
+           {
+-            if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-            source = &t->triangle[0];
+-            for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-            numEntries+= t->numTriangles;
++            if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+           }
+         }
+ 
+@@ -858,30 +894,24 @@
+     if (v.x > 0.0)
+     {
+       nextBorderX = leftBorder + (double)(tileX+1)*tileWidth;
++      if (tileX >= numTilesX) { return true; }  // The columns only go up from here.
+ 
+       for (tileY=0; tileY < numTilesY; tileY++)
+       {
+         if ((tileX >= 0) && (tileX < numTilesX))
+         {
+-          t = &tile[tileX][tileY];
+-          if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-          source = &t->triangle[0];
+-          for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-          numEntries+= t->numTriangles;
++          if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+         }
+ 
+         if (x + deltaX > nextBorderX)
+         {
+           tileX++;
+           nextBorderX+= tileWidth;
++          if (tileX >= numTilesX) { break; }    // The columns only go up from here.
+ 
+           if ((tileX >= 0) && (tileX < numTilesX))
+           {
+-            t = &tile[tileX][tileY];
+-            if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-            source = &t->triangle[0];
+-            for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-            numEntries+= t->numTriangles;
++            if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+           }
+         }
+ 
+@@ -894,30 +924,24 @@
+ 
+     {
+       nextBorderX = leftBorder + (double)tileX*tileWidth;
++      if (tileX < 0) { return true; }           // The columns only go down from here.
+ 
+       for (tileY=0; tileY < numTilesY; tileY++)
+       {
+         if ((tileX >= 0) && (tileX < numTilesX))
+         {
+-          t = &tile[tileX][tileY];
+-          if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-          source = &t->triangle[0];
+-          for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-          numEntries+= t->numTriangles;
++          if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+         }
+ 
+         if (x + deltaX < nextBorderX)
+         {
+           tileX--;
+           nextBorderX-= tileWidth;
++          if (tileX < 0) { break; }             // The columns only go down from here.
+ 
+           if ((tileX >= 0) && (tileX < numTilesX))
+           {
+-            t = &tile[tileX][tileY];
+-            if (numEntries + t->numTriangles > MAX_ENTRIES) { return false; }
+-            source = &t->triangle[0];
+-            for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
+-            numEntries+= t->numTriangles;
++            if (takeTile(&tile[tileX][tileY]) == false) { return false; }
+           }
+         }
+ 
+@@ -929,6 +953,65 @@
+   return true;
+ }
+ 
++bool Surface::getTriangleList(int *indexList, int &numEntries, int MAX_ENTRIES)
++{
++  int count = 0;
++
++  bool ok = walkTiles([&](const Tile *t)
++  {
++    int i;
++    const int *source;
++    if (count + t->numTriangles > MAX_ENTRIES) { return false; }
++    source = &t->triangle[0];
++    for (i=t->numTriangles-1; i >= 0; i--) { *indexList++ = *source++; }
++    count+= t->numTriangles;
++    return true;
++  });
++
++  numEntries = count;
++  return ok;
++}
++
++// ****************************************************************************
++/// @brief Speed (same results): getTriangleList() with every triangle named
++/// once, at its first place in that list.
++///
++/// \a numEntriesWithRepeats returns the number of entries in the list of
++/// getTriangleList(), which is also what is held against \a MAX_ENTRIES.
++/// The triangles are marked as visited (see visitTriangle()).
++// ****************************************************************************
++
++bool Surface::getTriangleListOnce(int *indexList, int &numEntries, int &numEntriesWithRepeats, int MAX_ENTRIES)
++{
++  int count = 0;
++  int countWithRepeats = 0;
++  const unsigned int stamp = lineStamp;
++  unsigned int *mark = triangleMark;
++
++  bool ok = walkTiles([&](const Tile *t)
++  {
++    int i;
++    const int *source;
++    if (countWithRepeats + t->numTriangles > MAX_ENTRIES) { return false; }
++    source = &t->triangle[0];
++    for (i=t->numTriangles-1; i >= 0; i--)
++    {
++      const int index = *source++;
++      if (mark[index] != stamp)
++      {
++        mark[index] = stamp;
++        indexList[count++] = index;
++      }
++    }
++    countWithRepeats+= t->numTriangles;
++    return true;
++  });
++
++  numEntries = count;
++  numEntriesWithRepeats = countWithRepeats;
++  return ok;
++}
++
+ // ****************************************************************************
+ /// @brief Prepares the intersection of the surface with the given intersecting
+ /// plane/line. This function must be called before
+@@ -944,8 +1027,17 @@
+   const double EPSILON = 0.000001;
+   int i;
+ 
+-  for (i=0; i < numVertices; i++) { vertex[i].wasTested = false; }
+-  for (i=0; i < numEdges; i++)    { edge[i].wasTested = false; }
++  // Speed (same results): a new stamp marks all vertices, edges and triangles as not tested
++  // for this line (the original cleared a flag in each of them). When the stamps run out,
++  // they start anew.
++  if (lineStamp >= 0xFFFFFFF0u)
++  {
++    for (i=0; i < numVertices; i++)  { vertexTest[i] = 0; }
++    for (i=0; i < numEdges; i++)     { edgeTest[i] = 0; }
++    for (i=0; i < numTriangles; i++) { triangleMark[i] = 0; }
++    lineStamp = 0;
++  }
++  lineStamp+= 4;
+ 
+   v.normalize();            // Normalisierung ist wichtig !
+   lineVector = v;           // Für getTriangleIntersection merken
+@@ -977,29 +1069,37 @@
+ /// @param n The triangle normal projected onto the intersecting plane.
+ // ****************************************************************************
+   
+-bool Surface::getTriangleIntersection(int index, Point2D &P0, Point2D &P1, Point2D &n)
++bool Surface::cutTriangle(int index, Point2D &P0, Point2D &P1, Point2D &n)
+ {
+   int e0, e1, e2;   // Die 3 Kanten des Dreiecks
++  const int *corner = &triangleCorner[6*index];
+ 
+-  e0 = triangle[index].edge[0];
+-  e1 = triangle[index].edge[1];
+-  e2 = triangle[index].edge[2];
++  e0 = corner[3];
++  e1 = corner[4];
++  e2 = corner[5];
+ 
+   int numIntersections = 0;
+   Point2D Q[3];
+ 
+-  if (getEdgeIntersection(e0)) { Q[numIntersections++] = edge[e0].intersection; }
+-  if (getEdgeIntersection(e1)) { Q[numIntersections++] = edge[e1].intersection; }
+-  if (getEdgeIntersection(e2)) { Q[numIntersections++] = edge[e2].intersection; }
++  // Speed (same results): the points are copied only when there are at least two.
++  const bool i0 = getEdgeIntersection(e0);
++  const bool i1 = getEdgeIntersection(e1);
++  const bool i2 = getEdgeIntersection(e2);
++  numIntersections = (int)i0 + (int)i1 + (int)i2;
+ 
+   if (numIntersections < 2) { return false; }
+ 
++  numIntersections = 0;
++  if (i0) { Q[numIntersections++] = edge[e0].intersection; }
++  if (i1) { Q[numIntersections++] = edge[e1].intersection; }
++  if (i2) { Q[numIntersections++] = edge[e2].intersection; }
++
+   // Den Normalenvektor der Fläche berechnen.
+ 
+   int v0, v1, v2;
+-  v0 = triangle[index].vertex[0];
+-  v1 = triangle[index].vertex[1];
+-  v2 = triangle[index].vertex[2];
++  v0 = corner[0];
++  v1 = corner[1];
++  v2 = corner[2];
+ 
+   Point3D normal = crossProduct(vertex[v1].coord - vertex[v0].coord, vertex[v2].coord - vertex[v0].coord);
+ 
+@@ -1054,16 +1154,13 @@
+ /// the intersecting plane. Do not call this function explicitely!
+ // ****************************************************************************
+ 
+-bool Surface::getEdgeIntersection(int edgeIndex)
++bool Surface::testEdgeIntersection(int edgeIndex)
+ {
+-  if (edge[edgeIndex].wasTested) { return edge[edgeIndex].isIntersected; }
+-
+   // The edge must be tested for an intersection.
+ 
+-  Point2D w;
+   double d;
+ 
+-  edge[edgeIndex].wasTested = true;
++  edgeTest[edgeIndex] = lineStamp;
+ 
+   int v0 = edge[edgeIndex].vertex[0];
+   int v1 = edge[edgeIndex].vertex[1];
+@@ -1075,46 +1172,18 @@
+   // auf der Schnittebene liegt (res = 0).
+   // ****************************************************************
+ 
+-  if (vertex[v0].wasTested == false)
+-  {
+-    vertex[v0].wasTested = true;
+-    vertex[v0].reserved = 0;
+-
+-    w.x = vertex[v0].coord.x - leftLinePoint.x;
+-    w.y = vertex[v0].coord.y - leftLinePoint.y;
+-    d = w.x*lineVector.y - w.y*lineVector.x;
+-    if (d < 0.0) { vertex[v0].reserved = -1; }
+-
+-    w.x = vertex[v0].coord.x - rightLinePoint.x;
+-    w.y = vertex[v0].coord.y - rightLinePoint.y;
+-    d = w.x*lineVector.y - w.y*lineVector.x;
+-    if (d > 0.0) { vertex[v0].reserved = 1; }
+-  }
++  const int side0 = getVertexSide(v0);
+ 
+   // Is the second vertex left or right from the intersection line ?
+ 
+-  if (vertex[v1].wasTested == false)
+-  {
+-    vertex[v1].wasTested = true;
+-    vertex[v1].reserved = 0;
+-
+-    w.x = vertex[v1].coord.x - leftLinePoint.x;
+-    w.y = vertex[v1].coord.y - leftLinePoint.y;
+-    d = w.x*lineVector.y - w.y*lineVector.x;
+-    if (d < 0.0) { vertex[v1].reserved = -1; }
+-
+-    w.x = vertex[v1].coord.x - rightLinePoint.x;
+-    w.y = vertex[v1].coord.y - rightLinePoint.y;
+-    d = w.x*lineVector.y - w.y*lineVector.x;
+-    if (d > 0.0) { vertex[v1].reserved = 1; }
+-  }
++  const int side1 = getVertexSide(v1);
+ 
+   // Test the edge for an intersection.
+ 
+   edge[edgeIndex].isIntersected = false;
+ 
+-  if (((vertex[v0].reserved >= 0) && (vertex[v1].reserved <= 0)) ||
+-      ((vertex[v0].reserved <= 0) && (vertex[v1].reserved >= 0)))
++  if (((side0 >= 0) && (side1 <= 0)) ||
++      ((side0 <= 0) && (side1 >= 0)))
+   {
+     // Den Schnittpunkt der Kante mit der Schnittebene genau bestimmen.
+     const double EPSILON = 0.000001;
+@@ -1138,6 +1207,7 @@
+       if ((d >= -EPSILON) && (d < 1.0+EPSILON))
+       {
+         edge[edgeIndex].isIntersected = true;
++        edgeTest[edgeIndex] = lineStamp + 1;
+         edge[edgeIndex].intersection.x = (lineVector.x*(u.y*R.z - u.z*R.y) + lineVector.y*(u.z*R.x - u.x*R.z)) / denominator;
+         edge[edgeIndex].intersection.y = (-u.x*R.y + u.y*R.x) / denominator;
+       }
+--- a/src/VocalTractLabBackend/Synthesizer.cpp
++++ b/src/VocalTractLabBackend/Synthesizer.cpp
+@@ -20,6 +20,7 @@
+ // ****************************************************************************
+ 
+ #include "VocalTractLabBackend/Synthesizer.h"
++#include <cstring>
+ 
+ 
+ // ****************************************************************************
+@@ -86,6 +87,7 @@
+   outputPressureFilter.resetBuffers();
+ 
+   initialShapesSet = false;
++  staticRun = 0;
+ 
+   int i;
+   for (i = 0; i < TDS_BUFFER_LENGTH; i++)
+@@ -159,6 +161,7 @@
+     }
+ 
+     initialShapesSet = true;
++    staticRun = 0;
+     return;
+   }
+ 
+@@ -184,6 +187,31 @@
+   double skinFlow_cm3_s;
+ 
+   // ****************************************************************
++  // Speed (same results): a step between two identical tubes. The tube interpolated for
++  // the k-th sample of such a step is the same (to the bit) in all steps of a run of them
++  // with as many samples each: interpolate() gives what follows from the two tubes, the
++  // ratio k / numSamples, and the static parts of the tube that it changes, which stay
++  // as they are while its static dimensions do (watched below). The TdsModel is told so,
++  // and where it has the state for such a sample on record (see TdsModel::setTube()), the
++  // tube is not interpolated, but for the last sample of a step, which leaves the tube as
++  // it is to be after the step.
++  // ****************************************************************
++
++  if ((numSamples <= TdsModel::MAX_STATIC_SLOTS) && (Tube::sameForInterpolation(prevTube, *newTube)))
++  {
++    if ((staticRun == 0) || (staticRun != tdsModel->staticRun) || (staticRunSamples != numSamples))
++    {
++      staticRun = tdsModel->beginStaticTube(numSamples);
++      staticRunSamples = numSamples;
++      staticRunDimensionsKnown = false;
++    }
++  }
++  else
++  {
++    staticRun = 0;
++  }
++
++  // ****************************************************************
+   // Run through all new samples.
+   // ****************************************************************
+ 
+@@ -193,13 +221,9 @@
+     ratio1 = 1.0 - ratio;
+ 
+     // ****************************************************************
+-    // Interpolate the tube.
+-    // ****************************************************************
+-
+-    tube.interpolate(&prevTube, newTube, ratio);
+-
+-    // ****************************************************************
+     // Interpolate the glottis geometry.
++    // (Before the tube is interpolated, which is all the same: neither reads what the
++    // other one sets.)
+     // ****************************************************************
+ 
+     for (k = 0; k < numGlottisParams; k++)
+@@ -210,23 +234,69 @@
+     glottis->calcGeometry();
+     glottis->getTubeData(length_cm, area_cm2);
+ 
+-    tube.setGlottisGeometry(length_cm, area_cm2);
+-    tube.setAspirationStrength(glottis->getAspirationStrength_dB());
++    if (tdsModel->getSampleIndex() == 0)
++    {
++      filtering = false;
++    }
++    else
++    {
++      filtering = true;
++    }
+ 
+     // ****************************************************************
+-    // Do the acoustic simulation.
++    // Interpolate the tube.
+     // ****************************************************************
+ 
+-    if (tdsModel->getSampleIndex() == 0)
++    int staticSlot = (staticRun != 0) ? i : -1;
++
++    if ((staticSlot >= 0) && (filtering) && (i < numSamples - 1) && 
++      (tdsModel->canReplayStaticSlot(staticRun, staticSlot)))
+     {
+-      filtering = false;
++      // Speed (same results): the TdsModel reads only the glottis sections, the positions
++      // of the trachea sections and the aspiration strength of this tube.
++      tube.setGlottisGeometryOnly(length_cm, area_cm2);
+     }
+     else
+     {
+-      filtering = true;
++      double before[4];
++      double after[4];
++      tube.getStaticTubeDimensions(before[0], before[1], before[2], before[3]);
++      tube.interpolate(&prevTube, newTube, ratio);
++      tube.getStaticTubeDimensions(after[0], after[1], after[2], after[3]);
++
++      if (memcmp(before, after, sizeof(before)) == 0)
++      {
++        // Speed (same results): interpolate() has left the lengths of the static parts as
++        // they were, and has calculated the positions for those of the pharynx and mouth.
++        tube.setGlottisGeometryOnly(length_cm, area_cm2);
++      }
++      else
++      {
++        tube.setGlottisGeometry(length_cm, area_cm2);
++      }
++
++      // A static tube must keep its static dimensions throughout a run.
++      if (staticRun != 0)
++      {
++        if (staticRunDimensionsKnown == false)
++        {
++          memcpy(staticRunDimensions, after, sizeof(after));
++          staticRunDimensionsKnown = true;
++        }
++        else if (memcmp(staticRunDimensions, after, sizeof(after)) != 0)
++        {
++          staticRun = 0;
++          staticSlot = -1;
++        }
++      }
+     }
++    tube.setAspirationStrength(glottis->getAspirationStrength_dB());
++
++    // ****************************************************************
++    // Do the acoustic simulation.
++    // ****************************************************************
+ 
+-    tdsModel->setTube(&tube, filtering);
++    tdsModel->setTube(&tube, filtering, staticRun, staticSlot);
+     tdsModel->setFlowSource(0.0, -1);
+     tdsModel->setPressureSource(glottis->controlParam[Glottis::PRESSURE].x, Tube::FIRST_TRACHEA_SECTION);
+ 
 --- a/src/VocalTractLabBackend/TdsModel.cpp
 +++ b/src/VocalTractLabBackend/TdsModel.cpp
 @@ -20,6 +20,8 @@
@@ -157,7 +1700,7 @@
  #include <fstream>
  #include <iomanip>
  #include <cstdlib>
-@@ -27,6 +29,21 @@
+@@ -27,6 +29,229 @@
  #include <iostream>
  #include <random>
  
@@ -176,10 +1719,218 @@
 +  return true;
 +}
 +
++#ifdef __wasm_simd128__
++#include <wasm_simd128.h>
++#endif
++
++#if defined(__GNUC__) || defined(__clang__)
++#define TDS_ALWAYS_INLINE inline __attribute__((always_inline))
++#define TDS_INLINED __attribute__((always_inline))
++#else
++#define TDS_ALWAYS_INLINE inline
++#define TDS_INLINED
++#endif
++
++#ifdef __wasm_simd128__
++// Speed (same results): two doubles from different places as the two lanes of a vector, for
++// operations on two independent values at a time (each lane's result is that of the operation
++// on its own). Not wasm_f64x2_make(*first, *second): Emscripten 3.1.6's compiler makes a
++// v128.load64_splat of that, which it may put after a later store to *first. The value after
++// *first is read as well and dropped. (Check a build for this with wasm-dis: it must have no
++// more v128.load64_splat than before.)
++static TDS_ALWAYS_INLINE v128_t loadPair(const double *first, const double *second)
++{
++  return wasm_f64x2_replace_lane(wasm_v128_load(first), 1, *second);
++}
++#endif
++
++// Speed (same results): the inner loops of choleskyTimeStep() for a column with M rows below
++// the diagonal. M is known where they are used (a switch over the numbers that occur), so the
++// loops have fixed lengths and no branches that the processor mispredicts.
++namespace
++{
++  typedef double CholeskyRow[TdsModel::NUM_BRANCH_CURRENTS];
++
++  // The entries of column k in its rows but the first, and their products subtracted from
++  // the entries to the right of the column in these rows.
++  template <int M> TDS_ALWAYS_INLINE void choleskyColumnRows(CholeskyRow *pending, const int *rows, double *l, int k, double d)
++  {
++    int a = 1;
++#ifdef __wasm_simd128__
++    // two quotients at a time (each is the same quotient as on its own)
++    const v128_t dd = wasm_f64x2_splat(d);
++    for (; a + 1 < M; a += 2)
++    {
++      double *Pa = pending[rows[a]];
++      double *Pb = pending[rows[a + 1]];
++      wasm_v128_store(&l[a], wasm_f64x2_div(loadPair(&Pa[k], &Pb[k]), dd));
++      Pa[k] = -0.0;
++      Pb[k] = -0.0;
++    }
++#endif
++    for (; a < M; a++)
++    {
++      double *Pa = pending[rows[a]];
++      l[a] = Pa[k] / d;
++      Pa[k] = -0.0;
++    }
++    for (a = 1; a < M; a++)
++    {
++      double *Pa = pending[rows[a]];
++      const double la = l[a];
++      for (int b = 0; b <= a; b++) { Pa[rows[b]] -= la * l[b]; }
++    }
++  }
++
++  // Forward substitution: the solved value of a column taken out of the rows below.
++  template <int M> TDS_ALWAYS_INLINE void choleskyForwardRows(double *solution, const int *rows, const double *l, double value)
++  {
++    for (int a = 0; a < M; a++) { solution[rows[a]] -= l[a] * value; }
++  }
++}
++
++#define TDS_FOR_ROW_COUNTS(X) X(2) X(3) X(4) X(5) X(6) X(7) X(8) X(9) X(10)
++
++// Speed (same results): the bodies of the two loops of updateVariables(), for one current and
++// for one section, and for two of each at a time: each lane of a vector is one current's or
++// one section's operations in their order (the divisions take most of the time here, and two
++// in a vector take as long as one).
++namespace
++{
++  TDS_ALWAYS_INLINE void updateCurrent(TdsModel::BranchCurrent *bc, const double flow, const double timeStep,
++    const double noiseFilterCoeff)
++  {
++    const double THETA = TdsModel::THETA;
++    const double THETA1 = TdsModel::THETA1;
++    const double oldCurrent = bc->magnitude;
++
++    bc->magnitude = flow;
++    bc->magnitudeRate = (bc->magnitude - oldCurrent)/(timeStep*THETA) - (THETA1/THETA)*bc->magnitudeRate;
++    bc->noiseMagnitude = (1.0-noiseFilterCoeff)*bc->magnitude + noiseFilterCoeff*bc->noiseMagnitude;
++  }
++
++  TDS_ALWAYS_INLINE void updateSection(TdsModel::TubeSection *ts, const double netFlow, const double timeStep)
++  {
++    const double THETA = TdsModel::THETA;
++    const double THETA1 = TdsModel::THETA1;
++    double oldPressure;
++    double oldCurrent;
++    double oldCurrentRate;
++
++    oldPressure = ts->pressure;
++    ts->pressure = ts->D + ts->E*netFlow;
++    ts->pressureRate = (ts->pressure - oldPressure)/(timeStep*THETA) - ts->pressureRate*(THETA1/THETA);
++
++    // The current "into the wall".
++
++    oldCurrent = ts->wallCurrent;
++    oldCurrentRate = ts->wallCurrentRate;
++    
++    ts->wallCurrent = ts->pressureRate*ts->alpha + ts->beta;
++    ts->wallCurrentRate  = (ts->wallCurrent - oldCurrent)/(timeStep*THETA) - oldCurrentRate*(THETA1/THETA);
++    ts->wallCurrentRate2 = (ts->wallCurrentRate - oldCurrentRate)/(timeStep*THETA) - ts->wallCurrentRate2*(THETA1/THETA);
++  }
++
++#ifdef __wasm_simd128__
++  // flow: the flows of the two currents, one after the other.
++  TDS_ALWAYS_INLINE void updateCurrentPair(TdsModel::BranchCurrent *bc0, TdsModel::BranchCurrent *bc1, const double *flow,
++    const double timeStep, const double noiseFilterCoeff)
++  {
++    const v128_t step2 = wasm_f64x2_splat(timeStep*TdsModel::THETA);
++    const v128_t thetaRatio2 = wasm_f64x2_splat(TdsModel::THETA1/TdsModel::THETA);
++    const v128_t filterCoeff2 = wasm_f64x2_splat(noiseFilterCoeff);
++    const v128_t filterCoeffRest2 = wasm_f64x2_splat(1.0-noiseFilterCoeff);
++
++    const v128_t old2 = loadPair(&bc0->magnitude, &bc1->magnitude);
++    const v128_t magnitude2 = wasm_v128_load(flow);
++    const v128_t rate2 = wasm_f64x2_sub(wasm_f64x2_div(wasm_f64x2_sub(magnitude2, old2), step2),
++      wasm_f64x2_mul(thetaRatio2, loadPair(&bc0->magnitudeRate, &bc1->magnitudeRate)));
++    const v128_t noise2 = wasm_f64x2_add(wasm_f64x2_mul(filterCoeffRest2, magnitude2),
++      wasm_f64x2_mul(filterCoeff2, loadPair(&bc0->noiseMagnitude, &bc1->noiseMagnitude)));
++
++    bc0->magnitude = wasm_f64x2_extract_lane(magnitude2, 0);
++    bc1->magnitude = wasm_f64x2_extract_lane(magnitude2, 1);
++    bc0->magnitudeRate = wasm_f64x2_extract_lane(rate2, 0);
++    bc1->magnitudeRate = wasm_f64x2_extract_lane(rate2, 1);
++    bc0->noiseMagnitude = wasm_f64x2_extract_lane(noise2, 0);
++    bc1->noiseMagnitude = wasm_f64x2_extract_lane(noise2, 1);
++  }
++
++  TDS_ALWAYS_INLINE void updateSectionPair(TdsModel::TubeSection *ts0, TdsModel::TubeSection *ts1, const double netFlow0,
++    const double netFlow1, const double timeStep)
++  {
++    const v128_t step2 = wasm_f64x2_splat(timeStep*TdsModel::THETA);
++    const v128_t thetaRatio2 = wasm_f64x2_splat(TdsModel::THETA1/TdsModel::THETA);
++
++    const v128_t oldPressure2 = loadPair(&ts0->pressure, &ts1->pressure);
++    const v128_t pressure2 = wasm_f64x2_add(loadPair(&ts0->D, &ts1->D),
++      wasm_f64x2_mul(loadPair(&ts0->E, &ts1->E), wasm_f64x2_make(netFlow0, netFlow1)));
++    const v128_t pressureRate2 = wasm_f64x2_sub(wasm_f64x2_div(wasm_f64x2_sub(pressure2, oldPressure2), step2),
++      wasm_f64x2_mul(loadPair(&ts0->pressureRate, &ts1->pressureRate), thetaRatio2));
++
++    const v128_t oldCurrent2 = loadPair(&ts0->wallCurrent, &ts1->wallCurrent);
++    const v128_t oldCurrentRate2 = loadPair(&ts0->wallCurrentRate, &ts1->wallCurrentRate);
++    const v128_t wallCurrent2 = wasm_f64x2_add(wasm_f64x2_mul(pressureRate2, loadPair(&ts0->alpha, &ts1->alpha)),
++      loadPair(&ts0->beta, &ts1->beta));
++    const v128_t wallCurrentRate2 = wasm_f64x2_sub(wasm_f64x2_div(wasm_f64x2_sub(wallCurrent2, oldCurrent2), step2),
++      wasm_f64x2_mul(oldCurrentRate2, thetaRatio2));
++    const v128_t wallCurrentRate22 = wasm_f64x2_sub(wasm_f64x2_div(wasm_f64x2_sub(wallCurrentRate2, oldCurrentRate2), step2),
++      wasm_f64x2_mul(loadPair(&ts0->wallCurrentRate2, &ts1->wallCurrentRate2), thetaRatio2));
++
++    ts0->pressure = wasm_f64x2_extract_lane(pressure2, 0);
++    ts1->pressure = wasm_f64x2_extract_lane(pressure2, 1);
++    ts0->pressureRate = wasm_f64x2_extract_lane(pressureRate2, 0);
++    ts1->pressureRate = wasm_f64x2_extract_lane(pressureRate2, 1);
++    ts0->wallCurrent = wasm_f64x2_extract_lane(wallCurrent2, 0);
++    ts1->wallCurrent = wasm_f64x2_extract_lane(wallCurrent2, 1);
++    ts0->wallCurrentRate = wasm_f64x2_extract_lane(wallCurrentRate2, 0);
++    ts1->wallCurrentRate = wasm_f64x2_extract_lane(wallCurrentRate2, 1);
++    ts0->wallCurrentRate2 = wasm_f64x2_extract_lane(wallCurrentRate22, 0);
++    ts1->wallCurrentRate2 = wasm_f64x2_extract_lane(wallCurrentRate22, 1);
++  }
++#endif
++}
++
++// Speed (same results): whether the smoothing of the areas in setTube() is sure to take the
++// new area as it is, found without the four square roots. The smoothing compares the 4th
++// roots r of the old and the new area: closing is slowed down if r(new) - r(old) < -0.001,
++// opening if r(new) - r(old) > 0.002. For lo = the smaller and hi = the larger of the two
++// areas, r(hi) - r(lo) <= (hi - lo) * r'(lo) = (hi - lo) * r(lo) / (4 * lo), as r' falls, and
++// r(lo) <= bound for lo <= bound^4. So the difference is at most 0.00099 (0.00198) if
++// bound * (hi - lo) <= 0.00396 * lo (0.00792 * lo). The margin of 1 % is far more than the
++// rounding errors of this test and of the roots and their difference in setTube() (below
++// 1e-14 for roots up to 10), so that the difference computed there is sure not to pass
++// its threshold.
++static inline bool smoothingLeavesArea(double oldArea, double newArea)
++{
++  const bool closing = (newArea < oldArea);
++  const double lo = closing ? newArea : oldArea;
++  const double hi = closing ? oldArea : newArea;
++  double bound;
++  if (!(lo > 0.0)) { return false; }
++  if (lo <= 1.0) { bound = 1.0; }
++  else if (lo <= 16.0) { bound = 2.0; }
++  else if (lo <= 10000.0) { bound = 10.0; }
++  else { return false; }
++  return bound * (hi - lo) <= (closing ? 0.00396 : 0.00792) * lo;
++}
++
++// Speed (same results): the index of the lowest bit set in a word that is not zero.
++static inline int lowestBit(unsigned long long word)
++{
++#if defined(__GNUC__) || defined(__clang__)
++  return __builtin_ctzll(word);
++#else
++  int index = 0;
++  while ((word & 1ULL) == 0) { word >>= 1; index++; }
++  return index;
++#endif
++}
++
  // For theta = 0.505, the TDS bandwidths are about the same as those
  // of the FDS for frequencies up to 5 kHz. Above 5 kHz, the TDS resonance
  // peaks become lower than in the FDS.
-@@ -312,6 +329,20 @@
+@@ -312,6 +537,37 @@
      }
    }
  
@@ -197,10 +1948,79 @@
 +    }
 +  }
 +
++  // The first column that the rows from r on reach (see choleskyStartColumn).
++  for (i = 0; i <= NUM_BRANCH_CURRENTS; i++)
++  {
++    choleskyStartColumn[i] = i;
++    for (j = i; j < NUM_BRANCH_CURRENTS; j++)
++    {
++      if (envelopeFirstColumn[j] < choleskyStartColumn[i]) { choleskyStartColumn[i] = envelopeFirstColumn[j]; }
++    }
++  }
++
++  for (i = 0; i < NUM_BRANCH_CURRENTS; i++)
++  {
++    choleskyDiagonal[i] = 0.0;
++    for (k = 0; k < MAX_CONCERNED_MATRIX_ROWS_SYMMETRIC_ENVELOPE; k++) { choleskyColumn[i][k] = 0.0; }
++    for (j = 0; j < NUM_BRANCH_CURRENTS; j++) { choleskyPending[i][j] = -0.0; }
++  }
++
    // ****************************************************************
    // Init the matrix and the help structures for the Gauss-Seidel 
    // method.
-@@ -393,6 +424,11 @@
+@@ -379,6 +635,51 @@
+     }
+   }
+ 
++  // The entries of the lower triangle that calcMatrix() sets (see matrixEntryIndex): the
++  // diagonal and the places marked above.
++  numMatrixEntries = 0;
++  for (i = 0; i < NUM_BRANCH_CURRENTS; i++)
++  {
++    matrixEntryRowStart[i] = numMatrixEntries;
++    for (j = 0; j <= i; j++)
++    {
++      if ((matrix[i][j] != 0.0) || (j == i))
++      {
++        matrixEntryRow[numMatrixEntries] = i;
++        matrixEntryIndex[numMatrixEntries] = i * NUM_BRANCH_CURRENTS + j;
++        numMatrixEntries++;
++      }
++    }
++  }
++  matrixEntryRowStart[NUM_BRANCH_CURRENTS] = numMatrixEntries;
++
++  // What choleskyTimeStep() needs to do a whole time step: rows that calcMatrix() can make,
++  // and for every section no current with a number below the section's.
++  wholeTimeStepPossible = true;
++  for (i = 0; i < NUM_BRANCH_CURRENTS; i++)
++  {
++    matrixRowIsEarly[i] = (envelopeFirstColumn[i] < i - 1);
++    bc = &branchCurrent[i];
++    if ((bc->sourceSection == -1) && (bc->targetSection == -1)) { wholeTimeStepPossible = false; }
++    if ((bc->targetSection == -1) && (bc->sourceSection != -1))
++    {
++      ts = &tubeSection[bc->sourceSection];
++      if ((ts->currentOut[0] == -1) || (ts->currentOut[1] == -1)) { wholeTimeStepPossible = false; }
++      if ((ts->currentOut[0] != i) && (ts->currentOut[1] != i)) { wholeTimeStepPossible = false; }
++    }
++  }
++  for (i = 0; i < Tube::NUM_SECTIONS; i++)
++  {
++    ts = &tubeSection[i];
++    if ((ts->currentIn != -1) && (ts->currentIn < i)) { wholeTimeStepPossible = false; }
++    if ((ts->currentOut[0] != -1) && (ts->currentOut[0] < i)) { wholeTimeStepPossible = false; }
++    if ((ts->currentOut[1] != -1) && (ts->currentOut[1] < i)) { wholeTimeStepPossible = false; }
++  }
++
++#ifdef TDS_REORDERED_SOLVER
++  initReorderedSolver();
++#endif
++
+ }
+ 
+ 
+@@ -393,6 +694,11 @@
    BranchCurrent *bc;
    int i, k;
  
@@ -212,7 +2032,7 @@
    // ****************************************************************
    // Reinitialize the random number generator with a constant seed
    // so that the noise in every synthesis is exactly the same.
-@@ -431,6 +467,8 @@
+@@ -431,6 +737,8 @@
      ts->monopoleSource.isFirstOrder = false;
      ts->monopoleSource.cutoffFreq = 1.0;
      ts->monopoleSource.sample = 0.0;
@@ -221,7 +2041,7 @@
      for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
      {
        ts->monopoleSource.inputBuffer[k] = 0.0;
-@@ -442,6 +480,8 @@
+@@ -442,6 +750,8 @@
      ts->dipoleSource.isFirstOrder = false;
      ts->dipoleSource.cutoffFreq = 1.0;
      ts->dipoleSource.sample = 0.0;
@@ -230,7 +2050,7 @@
      
      for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
      {
-@@ -457,6 +497,8 @@
+@@ -457,6 +767,8 @@
    lipsDipoleSource.isFirstOrder = false;
    lipsDipoleSource.cutoffFreq = 1.0;
    lipsDipoleSource.sample = 0.0;
@@ -239,15 +2059,219 @@
  
    for (k = 0; k < NUM_NOISE_BUFFER_SAMPLES; k++)
    {
-@@ -665,7 +707,16 @@
+@@ -575,6 +887,14 @@
+   {
+     resetConstriction(&constrictionBuffer[i]);
+   }
++
++  // Speed (same results): the records of a static tube hold no longer (the components of the
++  // sections are reset above), and all noise sources are looked at anew.
++  staticRun = (staticRun < 0x7fffffff) ? staticRun + 1 : 1;
++  staticNumSlots = 0;
++  invalidateStaticSlots();
++  numNoiseTargetsSet = 0;
++  noiseSourceBusy[0] = noiseSourceBusy[1] = ~0ULL;
+ }
+ 
+ 
+@@ -647,12 +967,187 @@
+ 
+ void TdsModel::setTube(Tube *tube, bool filtering)
+ {
++  setTube(tube, filtering, 0, -1);
++}
++
++
++// ****************************************************************************
++/// Speed (same results): starts a run of time steps for a static tube with
++/// numSlots samples per step, see setTube() below. Returns the run's number.
++// ****************************************************************************
++
++int TdsModel::beginStaticTube(int numSlots)
++{
++  staticRun = (staticRun < 0x7fffffff) ? staticRun + 1 : 1;
++  staticNumSlots = ((numSlots >= 1) && (numSlots <= MAX_STATIC_SLOTS)) ? numSlots : 0;
++  if ((int)staticSlots.size() < staticNumSlots) { staticSlots.resize(staticNumSlots); }
++  invalidateStaticSlots();
++  return staticRun;
++}
++
++
++// ****************************************************************************
++/// Speed (same results): forgets what is recorded for the slots of a static tube.
++// ****************************************************************************
++
++void TdsModel::invalidateStaticSlots()
++{
++  for (size_t i = 0; i < staticSlots.size(); i++)
++  {
++    staticSlots[i].recorded = false;
++    staticSlots[i].chained = false;
++    staticSlots[i].hasConstrictions = false;
++  }
++  staticReferenceValid = false;
++  lastStaticSlot = -1;
++  staticSlotBeforeSetTube = -1;
++  staticRecordSlot = -1;
++  staticReplaySlot = -1;
++  noiseRecordSlot = -1;
++  noiseReplaySlot = -1;
++}
++
++
++// ****************************************************************************
++/// Speed (same results): whether setTube() for this slot of this run would copy
++/// the recorded state instead of reading the tube (but for the glottis sections,
++/// the positions of the trachea sections and the aspiration strength, which it
++/// always reads from the tube). See setTube() for why that is the same.
++// ****************************************************************************
++
++bool TdsModel::canReplayStaticSlot(int run, int slot)
++{
++  if ((run == 0) || (run != staticRun) || (slot < 0) || (slot >= staticNumSlots))
++  {
++    return false;
++  }
++  const StaticSlot &s = staticSlots[slot];
++  const int slotBefore = (slot == 0) ? staticNumSlots - 1 : slot - 1;
++  return (s.recorded) && (s.chained) && (lastStaticSlot == slotBefore) &&
++    (staticReferenceValid) && (sameBits(&timeStep, &staticReferenceTimeStep, 1)) &&
++    (options.softWalls == staticReferenceSoftWalls) &&
++    (options.generateNoiseSources == staticReferenceNoiseSources);
++}
++
++
++// ****************************************************************************
++/// setTube() for a caller that knows the tube to be static (see TdsModel.h):
++/// with staticRun from beginStaticTube() and staticSlot = 0 ... numSlots-1, the
++/// caller asserts that the tube, but for its glottis sections, the positions of
++/// its trachea sections and its aspiration strength, is the same to the bit in
++/// all calls with this slot in this run. (staticSlot = -1: nothing is asserted.)
++///
++/// Speed (same results): what the time step makes of the tube alone is then the
++/// same as it was for this slot before, and is copied from the slot's record:
++/// - Each section's area, length, volume, wall and articulator are functions of
++///   the tube's section and, by the smoothing of the areas, of the section's
++///   area before. A slot is recorded only if no area was smoothed (so the
++///   record is the tube's own geometry, the same whenever it is made), and it is
++///   copied only if it was recorded right after the time step of the slot before
++///   ("chained") and this time step follows one of the slot before, too: then
++///   the areas before are the same as when it was recorded, and so is the result.
++/// - L, C, R, alpha, E and the wall's coefficients of a section are functions of
++///   these values, the time step's length and options.softWalls, which are
++///   checked to be those of the record.
++/// - The sections without a record per slot (trachea, the rest of the nose, the
++///   sinuses) are checked to be the same in every slot that is recorded, so
++///   they still hold what the time step of the slot before left in them.
++// ****************************************************************************
++
++void TdsModel::setTube(Tube *tube, bool filtering, int run, int slot)
++{
+   int i;
+   TubeSection *target = NULL;
+   Tube::Section *source = NULL;
+   double oldArea_cm2 = 0.0;
+   double newArea_cm2 = 0.0;
+ 
++  if ((filtering) && (canReplayStaticSlot(run, slot)))
++  {
++    const StaticSlot &s = staticSlots[slot];
++
++    // The trachea: only the positions depend on the glottis.
++    for (i = Tube::FIRST_TRACHEA_SECTION; i <= Tube::LAST_TRACHEA_SECTION; i++)
++    {
++      tubeSection[i].pos = tube->section[i]->pos_cm;
++    }
++
++    // The glottis sections, as below (they are not smoothed).
++    for (i = Tube::LOWER_GLOTTIS_SECTION; i <= Tube::UPPER_GLOTTIS_SECTION; i++)
++    {
++      source = tube->section[i];
++      target = &tubeSection[i];
++      target->pos = source->pos_cm;
++      target->area = source->area_cm2;
++      target->length = source->length_cm;
++      target->volume = source->volume_cm3;
++      target->Mw = source->wallMass_cgs;
++      target->Bw = source->wallResistance_cgs;
++      target->Kw = source->wallStiffness_cgs;
++      const double CRITICAL_AREA_CM2 = 1.0;
++      if (target->area < CRITICAL_AREA_CM2)
++      {
++        double a = target->area / CRITICAL_AREA_CM2;
++        if (a < 0.01)
++        {
++          a = 0.01;
++        }
++        target->Kw /= a;
++      }
++      target->articulator = source->articulator;
++    }
++
++    // The other sections from the record: what is not the same as in the record of the slot
++    // before, which is what the sections hold.
++    for (int word = 0; word < 2; word++)
++    {
++      unsigned long long changed = s.posChanged[word];
++      while (changed != 0)
++      {
++        i = 64 * word + lowestBit(changed);
++        changed &= changed - 1;
++        tubeSection[Tube::FIRST_PHARYNX_SECTION + i].pos = s.pos[i];
++      }
++    }
++    unsigned long long changed = s.sectionChanged;
++    while (changed != 0)
++    {
++      i = lowestBit(changed);
++      changed &= changed - 1;
++      const StaticSlotSection &r = s.section[i];
++      const int k = FIRST_STATIC_SLOT_SECTION + i;
++      target = &tubeSection[k];
++      target->area = r.area;
++      target->length = r.length;
++      target->volume = r.volume;
++      target->Kw = r.Kw;
++      target->L = r.L;
++      target->C = r.C;
++      target->alpha = r.alpha;
++      target->E = r.E;
++      sectionR0[k] = r.R0;
++      sectionWallC1[k] = r.wallC1;
++      sectionWallC2[k] = r.wallC2;
++      sectionLw[k] = r.Lw;
++    }
++
++    teethPosition = s.teethPosition;
++    aspirationStrength_dB = tube->aspirationStrength_dB;
++    tongueTipSideElevation = s.tongueTipSideElevation;
++
++    lastStaticSlot = slot;
++    staticReplaySlot = slot;
++    staticRecordSlot = -1;
++    return;
++  }
++
++  // The tube is read. It is recorded at the end of prepareTimeStep(), if it may be.
++  staticSlotBeforeSetTube = lastStaticSlot;
++  lastStaticSlot = -1;
++  staticReplaySlot = -1;
++  staticRecordSlot = ((filtering) && (run != 0) && (run == staticRun) && (slot >= 0) && (slot < staticNumSlots)) ? slot : -1;
++  staticUnclipped = true;
++
+   for (i = 0; i < Tube::NUM_SECTIONS; i++)
+   {
+     source = tube->section[i];
+@@ -665,7 +1160,17 @@
      // will get a kind of chirp or ringing right after oral closures 
      // (as in /udu/), because the front cavity is excited too strongly.
  
 -    if ((filtering) && (i >= Tube::FIRST_PHARYNX_SECTION) && (i <= Tube::LAST_MOUTH_SECTION))
 +    if ((filtering) && (i >= Tube::FIRST_PHARYNX_SECTION) && (i <= Tube::LAST_MOUTH_SECTION) &&
-+      sameBits(&target->area, &source->area_cm2, 1))
++      (sameBits(&target->area, &source->area_cm2, 1) || smoothingLeavesArea(target->area, source->area_cm2)))
 +    {
-+      // An unchanged area: the smoothing below would leave it as it is.
++      // An unchanged area, or one changed so little that the smoothing below is sure to
++      // take it as it is (see smoothingLeavesArea()): the smoothing would leave it.
 +      target->pos = source->pos_cm;
 +      target->area = source->area_cm2;
 +      target->length = source->length_cm;
@@ -257,10 +2281,103 @@
      {
        oldArea_cm2 = target->area;
        newArea_cm2 = source->area_cm2;
-@@ -935,6 +986,33 @@
+@@ -688,6 +1193,7 @@
+         {
+           newValue = oldValue + THRESHOLD;
+           newArea_cm2 = newValue*newValue*newValue*newValue;
++          staticUnclipped = false;
+         }
+       }
+ 
+@@ -715,6 +1221,7 @@
+         {
+           newValue = oldValue + THRESHOLD;
+           newArea_cm2 = newValue*newValue*newValue*newValue;
++          staticUnclipped = false;
+         }
+       }
+ 
+@@ -854,6 +1361,24 @@
+   // Calculation of resistors and other values.
+   prepareTimeStep();
+   
++#ifdef TDS_REORDERED_SOLVER
++  // Speed (almost the same results): the equations solved in another order.
++  if ((options.solverType == CHOLESKY_FACTORIZATION) && reorderedPossible)
++  {
++    calcMatrix();
++    solveEquationsReordered();
++    updateVariables();
++  }
++  else
++#endif
++  // Speed (same results): calcMatrix(), solveEquationsCholesky() and updateVariables() in one.
++  if ((options.solverType == CHOLESKY_FACTORIZATION) && envelopesContiguous && wholeTimeStepPossible)
++  {
++    choleskyTimeStep(true);
++  }
++  else
++  {
++
+   // Calculation of the matrix coefficients.
+   calcMatrix();
+ 
+@@ -871,6 +1396,8 @@
+   // Recalculate all currents, pressures and their derivatives.
+   updateVariables();
+ 
++  }
++
+   // ****************************************************************
+   // Get the radiated flow.
+   // ****************************************************************
+@@ -923,10 +1450,40 @@
+   double u;
+   double circ;
+ 
++  // Speed (same results): whether setTube() has copied the sections but the glottis from
++  // the record of a static tube's slot, or whether this time step is to be recorded.
++  const bool replay = (staticReplaySlot >= 0);
++  const int replaySlot = staticReplaySlot;
++  int recordSlot = staticRecordSlot;
++  staticReplaySlot = -1;
++  staticRecordSlot = -1;
++
+   // Calculate the values D and E and the components L, R, W, C for
+   // all tube sections.
+ 
+-  for (i=0; i < Tube::NUM_SECTIONS; i++)
++  // The components in sectionCache are those for one length of the time step.
++  if (sameBits(&sectionCacheTimeStep, &timeStep, 1) == false)
++  {
++    for (i=0; i < Tube::NUM_SECTIONS; i++) { sectionCache[i].valid = false; }
++    sectionCacheTimeStep = timeStep;
++  }
++
++  if (replay)
++  {
++    // Speed (same results): for all sections but the glottis, the area (not below the
++    // minimum), L, C and alpha are in place, and S is zero as ever; R (changed below) is set
++    // as in the other cases; beta (with the wall's state) is set further below, together
++    // with D (nothing reads it in between).
++    for (i=0; i < Tube::NUM_SECTIONS; i++)
++    {
++      tubeSection[i].R[0] = sectionR0[i];
++      tubeSection[i].R[1] = sectionR0[i];
++    }
++  }
++  const int firstSection = (replay) ? Tube::LOWER_GLOTTIS_SECTION : 0;
++  const int lastSection = (replay) ? Tube::UPPER_GLOTTIS_SECTION : Tube::NUM_SECTIONS - 1;
++
++  for (i=firstSection; i <= lastSection; i++)
+   {
+     ts = &tubeSection[i];
+     if (ts->area < MIN_AREA_CM2) 
+@@ -935,7 +1492,38 @@
      }
  
      ts->S = 0.0;      // No pressure source at the inlet of the section
+-    circ = 2.0*sqrt(ts->area*M_PI);
 +
 +    const bool walls = (options.softWalls) && (i != Tube::LOWER_GLOTTIS_SECTION) && (i != Tube::UPPER_GLOTTIS_SECTION);
 +    SectionGeometryCache *cache = &sectionCache[i];
@@ -285,13 +2402,18 @@
 +          ts->wallCurrentRate2*Lw*(THETA1/THETA)
 +          );
 +      }
++      sectionR0[i] = cache->R0;
++      sectionWallC1[i] = cache->wallC1;
++      sectionWallC2[i] = cache->wallC2;
++      sectionLw[i] = cache->Lw;
 +      continue;
 +    }
 +
-     circ = 2.0*sqrt(ts->area*M_PI);
++    // (Speed (same results): circ is computed below, where it is used.)
  
      // **************************************************************
-@@ -984,8 +1062,11 @@
+     // Recalculate the components of the dynamic tube sections.
+@@ -984,8 +1572,11 @@
  
      ts->alpha = 0.0;
      ts->beta = 0.0;
@@ -304,11 +2426,23 @@
    	{
        // What is the area of the wall ?
        if ((i >= Tube::FIRST_SINUS_SECTION) && (i <= Tube::LAST_SINUS_SECTION))
-@@ -1007,13 +1088,25 @@
+@@ -994,6 +1585,7 @@
+       }
+       else
+       {
++        circ = 2.0*sqrt(ts->area*M_PI);
+         surface = circ*ts->length;    // Surface of a cylinder barrel
+       }
+ 
+@@ -1006,32 +1598,49 @@
+       Lw = ts->Mw / surface;
        Cw = surface / ts->Kw;
  
-       ts->alpha = 1.0 / (Lw / (timeStep*timeStep*THETA*THETA) + Rw / (timeStep*THETA) + 1.0/Cw);
+-      ts->alpha = 1.0 / (Lw / (timeStep*timeStep*THETA*THETA) + Rw / (timeStep*THETA) + 1.0/Cw);
++      // Speed (same results): the sum of the first two terms of alpha's denominator is
++      // wallC1, by the same operations; it is computed once.
 +      wallC1 = (Lw/(timeStep*timeStep*THETA*THETA) + Rw/(timeStep*THETA));
++      ts->alpha = 1.0 / (wallC1 + 1.0/Cw);
 +      wallC2 = (Lw*(THETA1/THETA + 1.0)/(timeStep*THETA) + Rw*(THETA1/THETA));
        ts->beta = ts->alpha*(
 -        ts->wallCurrent*(Lw/(timeStep*timeStep*THETA*THETA) + Rw/(timeStep*THETA)) +
@@ -329,10 +2463,520 @@
 +    cache->wallC1 = wallC1;
 +    cache->wallC2 = wallC2;
 +    cache->Lw = Lw;
++    sectionR0[i] = ts->R[0];
++    sectionWallC1[i] = wallC1;
++    sectionWallC2[i] = wallC2;
++    sectionLw[i] = Lw;
    }
  
++  // Speed (same results): whether this time step may be recorded for its slot.
++  if ((recordSlot >= 0) && (checkStaticReference() == false))
++  {
++    recordSlot = -1;
++  }
  
-@@ -1543,7 +1636,14 @@
+-  // ****************************************************************
+-  // End of the tube section loop
+-  // ****************************************************************
+-
+-  doNetworkInitialization = false;  
+ 
+   // ****************************************************************
+-  // If a wide tube section follows a narrow tube section,
+-  // the complete loss of the kinetic pressure is assumed.
+-  // From a wide to a narrow section, the Bernoulli equation is
+-  // applied.
++  // End of the tube section loop
+   // ****************************************************************
+ 
+-  if (options.turbulenceLosses)
++  // Speed (same results): the list of the junctions for the losses by turbulence below.
++  if ((doNetworkInitialization) || (numTurbulenceJunctions < 0))
+   {
++    numTurbulenceJunctions = 0;
+     for (i = 0; i < Tube::NUM_SECTIONS; i++)
+     {
+       if (((i >= Tube::FIRST_PHARYNX_SECTION + 1) && (i <= Tube::LAST_MOUTH_SECTION)) ||
+@@ -1046,23 +1655,50 @@
+ 
+         if ((ts->currentOut[0] != -1) && (ts->currentOut[1] == -1))
+         {
+-          u = getCurrentOut(ts);
+-
+-          // Add Bernoulli resistance when the flow is from a wide into
+-          // a narrow section.
+-          if (((tubeSection[i].area < tubeSection[i - 1].area) && (u > 0)) ||
+-            ((tubeSection[i].area > tubeSection[i - 1].area) && (u < 0)))
+-          {
+-            ts = &tubeSection[i - 1];
+-            ts->R[1] -= u * 0.5 * AMBIENT_DENSITY_CGS / (ts->area * ts->area);
+-            ts = &tubeSection[i];
+-            ts->R[0] += u * 0.5 * AMBIENT_DENSITY_CGS / (ts->area * ts->area);
+-          }
++          turbulenceJunctionSection[numTurbulenceJunctions] = i;
++          turbulenceJunctionCurrent[numTurbulenceJunctions] = ts->currentOut[0];
++          numTurbulenceJunctions++;
+         }
+       }
+     }
+   }
+ 
++  doNetworkInitialization = false;  
++
++  // ****************************************************************
++  // If a wide tube section follows a narrow tube section,
++  // the complete loss of the kinetic pressure is assumed.
++  // From a wide to a narrow section, the Bernoulli equation is
++  // applied.
++  // ****************************************************************
++
++  if (options.turbulenceLosses)
++  {
++    // Speed (same results): the junctions are taken from a list (see TdsModel.h) instead of
++    // being looked for among all sections; the two areas are read once; and the current u
++    // is taken as it is (getCurrentOut() adds it to zero, which only makes -0 a +0, with
++    // which nothing is added here either).
++    for (int junction = 0; junction < numTurbulenceJunctions; junction++)
++    {
++      i = turbulenceJunctionSection[junction];
++      ts = &tubeSection[i - 1];
++      TubeSection *next = &tubeSection[i];
++
++      u = branchCurrent[turbulenceJunctionCurrent[junction]].magnitude;
++      const double area = ts->area;
++      const double nextArea = next->area;
++
++      // Add Bernoulli resistance when the flow is from a wide into
++      // a narrow section.
++      if (((nextArea < area) && (u > 0)) ||
++        ((nextArea > area) && (u < 0)))
++      {
++        ts->R[1] -= u * 0.5 * AMBIENT_DENSITY_CGS / (area * area);
++        next->R[0] += u * 0.5 * AMBIENT_DENSITY_CGS / (nextArea * nextArea);
++      }
++    }
++  }
++
+ 
+   // ****************************************************************
+   // Possibly decouple the sinus piriformis.
+@@ -1122,7 +1758,11 @@
+  
+   if (options.generateNoiseSources) 
+   { 
++    noiseReplaySlot = replaySlot;
++    noiseRecordSlot = recordSlot;
+     calcNoiseSources(); 
++    noiseReplaySlot = -1;
++    noiseRecordSlot = -1;
+   }
+ 
+   // ****************************************************************
+@@ -1147,9 +1787,53 @@
+   // ****************************************************************
+ 
+   double sourceAmp;
++  int numSections = Tube::NUM_SECTIONS;
++  int sectionWithSources[4];
+ 
+-  for (i=0; i < Tube::NUM_SECTIONS; i++)
++  if (replay)
+   {
++    // Speed (same results): for all sections but the glottis, E is in place, for the C and
++    // alpha in place; beta is made as in the loop over the sections above, and D as below,
++    // with the noise source as the only source. The sections with more sources than that,
++    // and the glottis sections, follow in the loop below.
++    const double stepTheta1 = timeStep*THETA1;
++    const bool softWalls = options.softWalls;
++
++    for (i=0; i < Tube::NUM_SECTIONS; i++)
++    {
++      if (i == Tube::LOWER_GLOTTIS_SECTION)
++      {
++        i = Tube::UPPER_GLOTTIS_SECTION;
++        continue;
++      }
++      ts = &tubeSection[i];
++      double beta = 0.0;
++      if (softWalls)
++      {
++        beta = ts->alpha*(
++          ts->wallCurrent*sectionWallC1[i] +
++          ts->wallCurrentRate*sectionWallC2[i] +
++          ts->wallCurrentRate2*sectionLw[i]*(THETA1/THETA)
++          );
++      }
++      ts->beta = beta;
++      ts->D = ts->pressure + stepTheta1*ts->pressureRate - 
++              ts->E*(beta - ts->monopoleSource.sample);
++    }
++
++    numSections = 0;
++    sectionWithSources[numSections++] = Tube::LOWER_GLOTTIS_SECTION;
++    sectionWithSources[numSections++] = Tube::UPPER_GLOTTIS_SECTION;
++    sectionWithSources[numSections++] = Tube::FIRST_NOSE_SECTION + 2;
++    if ((flowSourceSection >= 0) && (flowSourceSection < Tube::NUM_SECTIONS))
++    {
++      sectionWithSources[numSections++] = flowSourceSection;
++    }
++  }
++
++  for (int n=0; n < numSections; n++)
++  {
++    i = (replay) ? sectionWithSources[n] : n;
+     ts = &tubeSection[i];
+ 
+     sourceAmp = ts->monopoleSource.sample;
+@@ -1164,12 +1848,144 @@
+       sourceAmp += flowSourceAmp; 
+     }
+ 
+-    d = timeStep*THETA / (ts->C + ts->alpha);
+-    ts->E = d;
++    if ((replay) && (i != Tube::LOWER_GLOTTIS_SECTION) && (i != Tube::UPPER_GLOTTIS_SECTION))
++    {
++      d = ts->E;
++    }
++    else
++    {
++      d = timeStep*THETA / (ts->C + ts->alpha);
++      ts->E = d;
++    }
+     ts->D = ts->pressure + timeStep*THETA1*ts->pressureRate - 
+             d*(ts->beta - sourceAmp);
+   }
+ 
++  if (recordSlot >= 0)
++  {
++    recordStaticSlot(recordSlot);
++  }
++}
++
++
++// ****************************************************************************
++/// Speed (same results): whether the time step whose sections have just been
++/// prepared may be recorded for a slot of a static tube: no area was smoothed,
++/// and what has no record per slot is the same as in the other slots.
++// ****************************************************************************
++
++bool TdsModel::checkStaticReference()
++{
++  int i, k;
++
++  if (staticUnclipped == false)
++  {
++    return false;
++  }
++
++  bool same = (staticReferenceValid) && (sameBits(&timeStep, &staticReferenceTimeStep, 1)) &&
++    (options.softWalls == staticReferenceSoftWalls) &&
++    (options.generateNoiseSources == staticReferenceNoiseSources);
++
++  for (i = 0; (i < Tube::NUM_SECTIONS) && (same); i++)
++  {
++    if ((i == Tube::LOWER_GLOTTIS_SECTION) || (i == Tube::UPPER_GLOTTIS_SECTION)) { continue; }
++    const TubeSection *ts = &tubeSection[i];
++    const bool perSlot = (i >= FIRST_STATIC_SLOT_SECTION) && (i < FIRST_STATIC_SLOT_SECTION + NUM_STATIC_SLOT_SECTIONS);
++    const double key[6] = { ts->area, ts->length, ts->volume, ts->Mw, ts->Bw, ts->Kw };
++    if (perSlot)
++    {
++      same = sameBits(&key[3], &staticReference[i][3], 2);
++    }
++    else
++    {
++      same = sameBits(key, staticReference[i], 6);
++    }
++    if (ts->articulator != staticReferenceArticulator[i]) { same = false; }
++  }
++
++  if (same == false)
++  {
++    // The first slot recorded (or, should the caller not have kept its word, or the options
++    // have changed: a new beginning).
++    invalidateStaticSlots();
++    staticReferenceTimeStep = timeStep;
++    staticReferenceSoftWalls = options.softWalls;
++    staticReferenceNoiseSources = options.generateNoiseSources;
++    for (i = 0; i < Tube::NUM_SECTIONS; i++)
++    {
++      const TubeSection *ts = &tubeSection[i];
++      const double key[6] = { ts->area, ts->length, ts->volume, ts->Mw, ts->Bw, ts->Kw };
++      for (k = 0; k < 6; k++) { staticReference[i][k] = key[k]; }
++      staticReferenceArticulator[i] = ts->articulator;
++    }
++    staticReferenceValid = true;
++  }
++
++  return true;
++}
++
++
++// ****************************************************************************
++/// Speed (same results): records, at the end of prepareTimeStep(), what the
++/// time step has made of the tube alone for the given slot of a static tube.
++// ****************************************************************************
++
++void TdsModel::recordStaticSlot(int slot)
++{
++  int i;
++  StaticSlot &s = staticSlots[slot];
++
++  s.teethPosition = teethPosition;
++  s.tongueTipSideElevation = tongueTipSideElevation;
++  for (i = Tube::FIRST_PHARYNX_SECTION; i < Tube::NUM_SECTIONS; i++)
++  {
++    s.pos[i - Tube::FIRST_PHARYNX_SECTION] = tubeSection[i].pos;
++  }
++  for (i = 0; i < NUM_STATIC_SLOT_SECTIONS; i++)
++  {
++    StaticSlotSection &r = s.section[i];
++    const int k = FIRST_STATIC_SLOT_SECTION + i;
++    const TubeSection *ts = &tubeSection[k];
++    r.area = ts->area;
++    r.length = ts->length;
++    r.volume = ts->volume;
++    r.Kw = ts->Kw;
++    r.L = ts->L;
++    r.C = ts->C;
++    r.alpha = ts->alpha;
++    r.E = ts->E;
++    r.R0 = sectionR0[k];
++    r.wallC1 = sectionWallC1[k];
++    r.wallC2 = sectionWallC2[k];
++    r.Lw = sectionLw[k];
++  }
++
++  const int slotBefore = (slot == 0) ? staticNumSlots - 1 : slot - 1;
++  s.recorded = true;
++  s.chained = (staticSlotBeforeSetTube == slotBefore);
++  lastStaticSlot = slot;
++
++  // What differs from the record of the slot before (which the sections held before this
++  // time step, if chained; otherwise the record is not copied).
++  const int numPos = Tube::NUM_SECTIONS - Tube::FIRST_PHARYNX_SECTION;
++  s.sectionChanged = 0;
++  s.posChanged[0] = s.posChanged[1] = 0;
++  const StaticSlot *b = (s.chained) ? &staticSlots[slotBefore] : NULL;
++  for (i = 0; i < NUM_STATIC_SLOT_SECTIONS; i++)
++  {
++    if ((b == NULL) || (memcmp(&s.section[i], &b->section[i], sizeof(StaticSlotSection)) != 0))
++    {
++      s.sectionChanged |= (1ULL << i);
++    }
++  }
++  for (i = 0; i < numPos; i++)
++  {
++    if ((b == NULL) || (sameBits(&s.pos[i], &b->pos[i], 1) == false))
++    {
++      s.posChanged[i >> 6] |= (1ULL << (i & 63));
++    }
++  }
+ }
+ 
+ 
+@@ -1195,30 +2011,51 @@
+ 
+ 
+ // ****************************************************************************
+-/// Calculate the positions and amplitudes of the noise sources.
++/// Speed (same results): the noise source with the given index in the order in
++/// which calcNoiseSources() makes their samples: the monopole and the dipole
++/// source of each pharynx and mouth section in turn, then the lips' source.
+ // ****************************************************************************
+ 
+-void TdsModel::calcNoiseSources()
++inline TdsModel::NoiseSource *TdsModel::getNoiseSource(int index)
+ {
+-  const double MAX_CONSTRICTION_AREA = 1.0;   // 1.0 cm^2
+-  const double MAX_DELTA_AREA = 0.2;          // 0.2 cm^2
+-  const double MAX_TEETH_DISTANCE = 2.0;      // = 2 cm
++  if (index >= NUM_NOISE_SOURCES - 1)
++  {
++    return &lipsDipoleSource;
++  }
++  TubeSection *ts = &tubeSection[Tube::FIRST_PHARYNX_SECTION + (index >> 1)];
++  return (index & 1) ? &ts->dipoleSource : &ts->monopoleSource;
++}
+ 
+-  Constriction *cons = NULL;
+-  int i, k;
+-  TubeSection *ts = NULL;
+-  NoiseSource *s = NULL;
+ 
+-  // ****************************************************************
+-  // Reset the target amplitude of all noise sources.
+-  // ****************************************************************
++// ****************************************************************************
++/// Speed (same results): keeps in mind that the target amplitude of this noise
++/// source has been set in this time step: it is to be reset in the next one,
++/// and its sample is to be calculated.
++// ****************************************************************************
+ 
+-  for (i=0; i < Tube::NUM_SECTIONS; i++)
++inline void TdsModel::noteNoiseTarget(int index)
++{
++  if (numNoiseTargetsSet < 2 * MAX_CONSTRICTIONS)
+   {
+-    tubeSection[i].monopoleSource.targetAmp1kHz = 0.0;
+-    tubeSection[i].dipoleSource.targetAmp1kHz = 0.0;
++    noiseTargetSet[numNoiseTargetsSet] = index;
++    numNoiseTargetsSet++;
+   }
+-  lipsDipoleSource.targetAmp1kHz = 0.0;
++  noiseSourceBusy[index >> 6] |= (1ULL << (index & 63));
++}
++
++
++// ****************************************************************************
++/// Find the constrictions (the first part of calcNoiseSources()).
++// ****************************************************************************
++
++void TdsModel::findConstrictions()
++{
++  const double MAX_CONSTRICTION_AREA = 1.0;   // 1.0 cm^2
++  const double MAX_DELTA_AREA = 0.2;          // 0.2 cm^2
++  const double MAX_TEETH_DISTANCE = 2.0;      // = 2 cm
++
++  Constriction *cons = NULL;
++  int i;
+ 
+   // ****************************************************************
+   // The noise source right above the glottis is always there.
+@@ -1443,7 +2280,66 @@
+     // This sounds better compared to a source at the end of the constriction.
+     cons->obstaclePos = 0.5 * (tubeSection[cons->firstSection].pos + tubeSection[cons->lastSection].pos + tubeSection[cons->lastSection].length);
+   }
++}
++
++
++// ****************************************************************************
++/// Calculate the positions and amplitudes of the noise sources.
++// ****************************************************************************
++
++void TdsModel::calcNoiseSources()
++{
++  const double MAX_CONSTRICTION_AREA = 1.0;   // 1.0 cm^2
++
++  Constriction *cons = NULL;
++  int i, k;
++  TubeSection *ts = NULL;
++  NoiseSource *s = NULL;
++
++  // ****************************************************************
++  // Reset the target amplitude of all noise sources.
++  // Speed (same results): of those that are not zero, which are the ones set below in the
++  // time step before (nothing else sets them, and resetMotion() sets all to zero).
++  // ****************************************************************
++
++  for (i = 0; i < numNoiseTargetsSet; i++)
++  {
++    getNoiseSource(noiseTargetSet[i])->targetAmp1kHz = 0.0;
++  }
++  numNoiseTargetsSet = 0;
+ 
++  // ****************************************************************
++  // Find the constrictions.
++  // Speed (same results): for a slot of a static tube that setTube() has copied, they are
++  // taken from its record: they depend on the areas, positions, lengths and articulators of
++  // the pharynx and mouth sections, the teeth position and the tongue side elevation only,
++  // which are those of the record. The glottis' constriction is set as findConstrictions()
++  // does, and treated below like always.
++  // ****************************************************************
++
++  const StaticSlot *replaySlot = NULL;
++  if ((noiseReplaySlot >= 0) && (staticSlots[noiseReplaySlot].hasConstrictions))
++  {
++    replaySlot = &staticSlots[noiseReplaySlot];
++  }
++  StaticSlot *recordSlot = (noiseRecordSlot >= 0) ? &staticSlots[noiseRecordSlot] : NULL;
++
++  if (replaySlot != NULL)
++  {
++    numConstrictions = replaySlot->numConstrictions;
++
++    cons = &constriction[0];
++    resetConstriction(cons);
++    cons->firstSection = Tube::LOWER_GLOTTIS_SECTION;
++    cons->lastSection = Tube::UPPER_GLOTTIS_SECTION;
++    cons->narrowestSection = Tube::UPPER_GLOTTIS_SECTION;
++    cons->obstaclePos = 1.5;   // 1.5 cm above the glottis.
++    cons->articulator = Tube::VOCAL_FOLDS;
++  }
++  else
++  {
++    findConstrictions();
++  }
+     
+   // ****************************************************************
+   // Determine the parameters of the dipole noise source(s) for all
+@@ -1458,6 +2354,66 @@
+   {
+     cons = &constriction[k];
+ 
++    if ((replaySlot != NULL) && (k > 0))
++    {
++      // Speed (same results): a constriction of the pharynx or mouth of a static tube. Its
++      // sections, area, gain, cutoff frequency and obstacle are those of the record (they
++      // follow from the tube alone); the flow and what follows from it as below.
++      const StaticSlotConstriction &r = replaySlot->constriction[k];
++      cons->firstSection = r.firstSection;
++      cons->lastSection = r.lastSection;
++      cons->narrowestSection = r.narrowestSection;
++      cons->articulator = r.articulator;
++      cons->area = r.area;
++
++      ts = &tubeSection[cons->narrowestSection];
++      cons->flow = 0.0;
++      if (ts->currentOut[0] != -1)
++      {
++        cons->flow += branchCurrent[ts->currentOut[0]].noiseMagnitude;
++      }
++      if (ts->currentOut[1] != -1)
++      {
++        cons->flow += branchCurrent[ts->currentOut[1]].noiseMagnitude;
++      }
++      if (cons->flow < 0.0)
++      {
++        cons->flow = 0.0;
++      }
++      cons->velocity = cons->flow / cons->area;
++
++      cons->cutoffFreq = r.cutoffFreq;
++      cons->gain = r.gain;
++      cons->fullAmp = cons->gain*fabs(cons->velocity)*
++        cons->velocity*cons->velocity*r.sqrtArea;
++
++      cons->obstaclePos = r.obstaclePos;
++      cons->obstacleSection = r.obstacleSection;
++      if (cons->obstacleSection != -1)
++      {
++        NoiseSource *upstreamSource = &tubeSection[cons->obstacleSection].dipoleSource;
++        NoiseSource *downstreamSource = &lipsDipoleSource;
++        int downstreamIndex = NUM_NOISE_SOURCES - 1;
++        if (cons->obstacleSection < Tube::LAST_MOUTH_SECTION)
++        {
++          downstreamSource = &tubeSection[cons->obstacleSection + 1].dipoleSource;
++          downstreamIndex = 2 * (cons->obstacleSection + 1 - Tube::FIRST_PHARYNX_SECTION) + 1;
++        }
++
++        upstreamSource->targetAmp1kHz = r.upstreamFactor * cons->fullAmp;
++        upstreamSource->isFirstOrder = false;
++        upstreamSource->cutoffFreq = cons->cutoffFreq;
++
++        downstreamSource->targetAmp1kHz = r.downstreamFactor * cons->fullAmp;
++        downstreamSource->isFirstOrder = false;
++        downstreamSource->cutoffFreq = cons->cutoffFreq;
++
++        noteNoiseTarget(2 * (cons->obstacleSection - Tube::FIRST_PHARYNX_SECTION) + 1);
++        noteNoiseTarget(downstreamIndex);
++      }
++      continue;
++    }
++
+     // ************************************************************
+     // Determine and restrict the cross-sectional area and
+     // the diameter of the constriction.
+@@ -1543,7 +2499,14 @@
      if (cons->articulator == Tube::VOCAL_FOLDS)
      {
        // The gain can vary by 40 dB for different degrees of aspiration.
@@ -348,7 +2992,109 @@
  
        // According to Badin et al. (1994), the aspiration noise source
        // spectrum is essentially flat -> very high f_c.
-@@ -1807,12 +1907,16 @@
+@@ -1668,6 +2631,9 @@
+       }
+     }
+ 
++    double downstreamFactor = 0.0;
++    double upstreamFactor = 0.0;
++
+     if (cons->obstacleSection != -1)
+     {
+       // Set the parameters of the two noise sources.
+@@ -1679,17 +2645,21 @@
+       {
+         upstreamSource = &tubeSection[cons->obstacleSection].dipoleSource;
+         downstreamSource = &tubeSection[cons->obstacleSection + 1].dipoleSource;
++        noteNoiseTarget(2 * (cons->obstacleSection - Tube::FIRST_PHARYNX_SECTION) + 1);
++        noteNoiseTarget(2 * (cons->obstacleSection + 1 - Tube::FIRST_PHARYNX_SECTION) + 1);
+       }
+       else
+       {
+         upstreamSource = &tubeSection[cons->obstacleSection].dipoleSource;
+         downstreamSource = &lipsDipoleSource;
++        noteNoiseTarget(2 * (cons->obstacleSection - Tube::FIRST_PHARYNX_SECTION) + 1);
++        noteNoiseTarget(NUM_NOISE_SOURCES - 1);
+       }
+ 
+       // Factors between 0 and 1 for the contributions of the two sources.
+-      double downstreamFactor = (cons->obstaclePos - tubeSection[cons->obstacleSection].pos) /
++      downstreamFactor = (cons->obstaclePos - tubeSection[cons->obstacleSection].pos) /
+         tubeSection[cons->obstacleSection].length;
+-      double upstreamFactor = 1.0 - downstreamFactor;
++      upstreamFactor = 1.0 - downstreamFactor;
+ 
+       upstreamSource->targetAmp1kHz = upstreamFactor * cons->fullAmp;
+       upstreamSource->isFirstOrder = false;
+@@ -1699,6 +2669,30 @@
+       downstreamSource->isFirstOrder = false;
+       downstreamSource->cutoffFreq = cons->cutoffFreq;
+     }
++
++    // Speed (same results): keep what follows from the tube alone for this slot.
++    if (recordSlot != NULL)
++    {
++      StaticSlotConstriction &r = recordSlot->constriction[k];
++      r.firstSection = cons->firstSection;
++      r.lastSection = cons->lastSection;
++      r.narrowestSection = cons->narrowestSection;
++      r.obstacleSection = cons->obstacleSection;
++      r.articulator = cons->articulator;
++      r.obstaclePos = cons->obstaclePos;
++      r.upstreamFactor = upstreamFactor;
++      r.downstreamFactor = downstreamFactor;
++      r.area = cons->area;
++      r.sqrtArea = sqrt(cons->area);
++      r.gain = cons->gain;
++      r.cutoffFreq = cons->cutoffFreq;
++    }
++  }
++
++  if (recordSlot != NULL)
++  {
++    recordSlot->numConstrictions = numConstrictions;
++    recordSlot->hasConstrictions = true;
+   }
+ 
+ 
+@@ -1750,14 +2744,29 @@
+   const double MIN_DIPOLE_AMP = 0.001;          // deci-Pascal
+ 
+   // Run through all tube sections.
+-
+-  for (i = Tube::FIRST_PHARYNX_SECTION; i <= Tube::LAST_MOUTH_SECTION; i++)
+-  {
+-    ts = &tubeSection[i];
+-    calcNoiseSample(&ts->monopoleSource, MIN_MONOPOLE_AMP);
+-    calcNoiseSample(&ts->dipoleSource, MIN_DIPOLE_AMP);
++  // Speed (same results): through the sources (in the same order) that are not off or whose
++  // target amplitude has been set above. For a source that is off (its current amplitude and
++  // its sample are zero and its buffers are clear) and whose target amplitude is zero,
++  // calcNoiseSample() changes nothing and draws no random number.
++
++  for (k = 0; k < 2; k++)
++  {
++    unsigned long long busy = noiseSourceBusy[k];
++    while (busy != 0)
++    {
++      const int bit = lowestBit(busy);
++      busy &= busy - 1;
++      const int index = 64 * k + bit;
++      if (index >= NUM_NOISE_SOURCES) { break; }
++      s = getNoiseSource(index);
++      calcNoiseSample(s, (index & 1) ? MIN_DIPOLE_AMP : MIN_MONOPOLE_AMP);
++      const double zero = 0.0;
++      if ((s->buffersClear) && (sameBits(&s->currentAmp1kHz, &zero, 1)) && (sameBits(&s->sample, &zero, 1)))
++      {
++        noiseSourceBusy[k] &= ~(1ULL << bit);
++      }
++    }
+   }
+-  calcNoiseSample(&lipsDipoleSource, MIN_DIPOLE_AMP);
+ }
+ 
+ 
+@@ -1807,12 +2816,16 @@
    {
      s->currentAmp1kHz = 0.0;
  
@@ -370,7 +3116,7 @@
      }
  
      // Return with a sample value of zero.
-@@ -1824,18 +1928,27 @@
+@@ -1824,18 +2837,27 @@
    // The source is active.
    // ****************************************************************
    
@@ -409,7 +3155,7 @@
    }
  
    // ****************************************************************
-@@ -1871,13 +1984,14 @@
+@@ -1871,13 +2893,14 @@
    } 
    while ((inputSample < -1.0) || (inputSample > 1.0));
    
@@ -428,23 +3174,189 @@
    }
    s->outputBuffer[position & NOISE_BUFFER_MASK] = sum;
    s->sample = sum * filterGain;      // Resulting magnitude
-@@ -2234,7 +2348,14 @@
+@@ -1969,6 +2992,20 @@
+     solutionVector[i] = 0.0; 
+   }
+ 
++  calcMatrixRows(0, NUM_BRANCH_CURRENTS - 1);
++}
++
++
++// ****************************************************************************
++/// Speed (same results): the rows firstRow to lastRow of calcMatrix(), each with
++/// its entry of the right-hand side. A row depends on no other row, so that
++/// they can be made in any order. Returns false after an error.
++// ****************************************************************************
++
++TDS_INLINED bool TdsModel::calcMatrixRows(const int firstRow, const int lastRow)
++{
++  int i;
++
+   // ****************************************************************
+   // Fill one row of the matrix for each branch current.
+   // ****************************************************************
+@@ -1978,7 +3015,7 @@
+   TubeSection   *sourceTs = NULL;
+   TubeSection   *targetTs = NULL;
+ 
+-  for (i=0; i < NUM_BRANCH_CURRENTS; i++)
++  for (i = firstRow; i <= lastRow; i++)
+   {
+     bc = &branchCurrent[i];
+     if (bc->sourceSection != -1) 
+@@ -2007,7 +3044,7 @@
+     {
+       printf("Error in calcMatrix(): Both the source and target section of the "
+         "branch current are invalid!\n");
+-      return;
++      return false;
+     }
+ 
+     // **************************************************************
+@@ -2024,7 +3061,7 @@
+       {
+         printf("Error in calcMatrix(): There are no 2 parallel currents for "
+           "the radiation impedance.\n");
+-        return;
++        return false;
+       }
+ 
+       int resistanceCurrent  = sourceTs->currentOut[0];
+@@ -2073,7 +3110,7 @@
+       {
+         printf("Error in calcMatrix(): The branch current into the free field has "
+           "not a valid type.\n");
+-        return;
++        return false;
+       }
+ 
+       // Inflowing currents
+@@ -2212,6 +3249,7 @@
+     }
+   }   // All branch currents
+ 
++  return true;
+ }
+ 
+ 
+@@ -2222,29 +3260,16 @@
+ void TdsModel::updateVariables()
+ {
+   int i;
+-  TubeSection *ts = NULL;
+-  BranchCurrent *bc = NULL;
+-
+-  double oldPressure;
+-  double oldCurrent;
+-  double oldCurrentRate;
+-  double netFlow;
+ 
+   // ****************************************************************
    // The new currents and their derivatives
    // ****************************************************************
  
 -  double noiseFilterCoeff = exp(-2.0*M_PI*NOISE_CUTOFF_FREQ*timeStep);
++  const double noiseFilterCoeff = getNoiseFilterCoeff();
+ 
+   for (i=0; i < NUM_BRANCH_CURRENTS; i++)
+   {
+-    bc = &branchCurrent[i];
+-    oldCurrent = bc->magnitude;
+-    oldCurrentRate = bc->magnitudeRate;
+-
+-    bc->magnitude = flowVector[i];
+-    bc->magnitudeRate = (bc->magnitude - oldCurrent)/(timeStep*THETA) - (THETA1/THETA)*bc->magnitudeRate;
+-    bc->noiseMagnitude = (1.0-noiseFilterCoeff)*bc->magnitude + noiseFilterCoeff*bc->noiseMagnitude;
++    updateCurrentsFrom(i, noiseFilterCoeff);
+   }
+ 
+   // ****************************************************************
+@@ -2253,24 +3278,72 @@
+ 
+   for (i=0; i < Tube::NUM_SECTIONS; i++)
+   {
+-    ts = &tubeSection[i];
++    updateSectionsFrom(i);
++  }
+ 
+-    netFlow = getCurrentIn(ts) - getCurrentOut(ts);
++}
+ 
+-    oldPressure = ts->pressure;
+-    ts->pressure = ts->D + ts->E*netFlow;
+-    ts->pressureRate = (ts->pressure - oldPressure)/(timeStep*THETA) - ts->pressureRate*(THETA1/THETA);
+ 
+-    // The current "into the wall".
++// ****************************************************************************
++/// The coefficient of the low-pass filter of the currents for the noise sources.
++// ****************************************************************************
+ 
+-    oldCurrent = ts->wallCurrent;
+-    oldCurrentRate = ts->wallCurrentRate;
+-    
+-    ts->wallCurrent = ts->pressureRate*ts->alpha + ts->beta;
+-    ts->wallCurrentRate  = (ts->wallCurrent - oldCurrent)/(timeStep*THETA) - oldCurrentRate*(THETA1/THETA);
+-    ts->wallCurrentRate2 = (ts->wallCurrentRate - oldCurrentRate)/(timeStep*THETA) - ts->wallCurrentRate2*(THETA1/THETA);
++TDS_INLINED double TdsModel::getNoiseFilterCoeff()
++{
 +  // Speed (same results): computed anew only when the time step changes.
 +  if (!noiseFilterCoeffValid || !sameBits(&noiseFilterCoeffTimeStep, &timeStep, 1))
 +  {
 +    noiseFilterCoeffCached = exp(-2.0*M_PI*NOISE_CUTOFF_FREQ*timeStep);
 +    noiseFilterCoeffTimeStep = timeStep;
 +    noiseFilterCoeffValid = true;
-+  }
-+  const double noiseFilterCoeff = noiseFilterCoeffCached;
+   }
++  return noiseFilterCoeffCached;
++}
++
  
-   for (i=0; i < NUM_BRANCH_CURRENTS; i++)
-   {
-@@ -2409,6 +2530,12 @@
++// ****************************************************************************
++/// Speed (same results): the new current i and its derivatives from flowVector,
++/// as in updateVariables(), or the two currents i and i+1 at once where two at
++/// a time are made (then at the even i only).
++// ****************************************************************************
++
++TDS_INLINED void TdsModel::updateCurrentsFrom(const int i, const double noiseFilterCoeff)
++{
++#ifdef __wasm_simd128__
++  if (i & 1) { return; }
++  if (i + 1 < NUM_BRANCH_CURRENTS)
++  {
++    updateCurrentPair(&branchCurrent[i], &branchCurrent[i + 1], &flowVector[i], timeStep, noiseFilterCoeff);
++    return;
++  }
++#endif
++  updateCurrent(&branchCurrent[i], flowVector[i], timeStep, noiseFilterCoeff);
++}
++
++
++// ****************************************************************************
++/// Speed (same results): the new pressure and wall current of section i and
++/// their derivatives from the new currents into and out of the section, as in
++/// updateVariables(), or of the two sections i and i+1 at once where two at a
++/// time are made (then at the even i only).
++// ****************************************************************************
++
++TDS_INLINED void TdsModel::updateSectionsFrom(const int i)
++{
++  TubeSection *ts = &tubeSection[i];
++#ifdef __wasm_simd128__
++  if (i & 1) { return; }
++  if (i + 1 < Tube::NUM_SECTIONS)
++  {
++    TubeSection *ts1 = &tubeSection[i + 1];
++    const double netFlow0 = getCurrentIn(ts) - getCurrentOut(ts);
++    const double netFlow1 = getCurrentIn(ts1) - getCurrentOut(ts1);
++    updateSectionPair(ts, ts1, netFlow0, netFlow1, timeStep);
++    return;
++  }
++#endif
++  const double netFlow = getCurrentIn(ts) - getCurrentOut(ts);
++  updateSection(ts, netFlow, timeStep);
+ }
+ 
+ 
+@@ -2409,6 +3482,12 @@
  {
    int k, i, j, u, v;
  
@@ -457,96 +3369,980 @@
    // ****************************************************************
    // Negate the whole matrix and the right-hand side vector.
    // ****************************************************************
-@@ -2490,6 +2617,92 @@
-   }
- }
+@@ -2492,6 +3571,494 @@
  
-+
-+// ****************************************************************************
+ 
+ // ****************************************************************************
 +/// solveEquationsCholesky() for envelopes that are contiguous ranges, with the
-+/// same results to the bit: the same arithmetic operations in the same order,
-+/// with simpler bookkeeping of the indices, without the products with the zeros
-+/// left of a row's envelope (which change no result), and without factorizing
-+/// anew the leading rows that have not changed since the previous time step.
++/// same results to the bit (see choleskyTimeStep()).
 +// ****************************************************************************
 +
 +void TdsModel::solveEquationsCholeskyContiguous()
 +{
-+  int k, i, j, u;
++  choleskyTimeStep(false);
++}
++
++
++// ****************************************************************************
++/// solveEquationsCholesky() for envelopes that are contiguous ranges, with the
++/// same results to the bit: the same arithmetic operations on every value in the
++/// same order, with simpler bookkeeping of the indices, without the products with
++/// the zeros left of a row's envelope (which change no result), and without
++/// factorizing anew the leading rows that have not changed since the previous
++/// time step.
++///
++/// The time of the solution is that of its two chains of dependent operations:
++/// each diagonal entry of the factorization needs the one before (a square
++/// root, a division, a product and a difference per column), and each flow of
++/// the backward substitution the one after. All else is arranged to go on
++/// beside them:
++/// o A product is subtracted from an entry as soon as its factors are known
++///   (column by column; this subtracts the same products in the same order from
++///   each entry as the sum over a row does), and so in the forward substitution.
++/// o The forward substitution goes along with the factorization.
++/// o The loops have fixed lengths (no mispredicted branches).
++/// o With wholeTimeStep, this is calcMatrix(), solveEquationsCholesky() and
++///   updateVariables() in one: a row of the matrix and its right-hand side are
++///   calculated (calcMatrixRows()) shortly before the factorization comes to
++///   them, and the currents and the pressures are updated as soon as their flows
++///   are known (updateCurrentsFrom(), updateSectionsFrom()). Every row, current
++///   and section is calculated with the same operations from the same values as
++///   one after the other; only the turn they are taken in differs.
++// ****************************************************************************
++
++TDS_INLINED void TdsModel::choleskyTimeStep(const bool wholeTimeStep)
++{
++  const int N = NUM_BRANCH_CURRENTS;
++  int k, i, e, a, b;
++  const double *M = &matrix[0][0];
++  double *previous = &previousMatrix[0][0];
++  double *pending = &choleskyPending[0][0];
++
++  // The rows of the matrix there are so far: all, or for a whole time step those to compare
++  // with the previous time step.
++  int numRows = N;
++  if (wholeTimeStep)
++  {
++    numRows = previousMatrixRows;
++    if (numRows > 0) { calcMatrixRows(0, numRows - 1); }
++  }
 +
 +  // The leading rows whose entries equal those of the previous time step have the same
-+  // factorization as then, which is still in factorizationMatrix (the trachea's rows, while
-+  // the glottis and the tract above it change). The first row that differs is kept for the
-+  // next time step, so that previousMatrix holds this time step's rows up to it.
-+  int reused = 0;
-+  while ((reused < previousMatrixRows) && sameBits(&previousMatrix[reused][envelopeFirstColumn[reused]],
-+    &matrix[reused][envelopeFirstColumn[reused]], reused - envelopeFirstColumn[reused] + 1))
++  // factorization as then, which is still there (the trachea's rows, while the glottis and the
++  // tract above it change). Only the entries that calcMatrix() sets can differ. The first row
++  // that differs is kept for the next time step, so that previousMatrix holds this time
++  // step's rows up to it.
++  const int limit = matrixEntryRowStart[previousMatrixRows];
++  for (e = 0; e < limit; e++)
 +  {
-+    reused++;
++    if (!sameBits(&previous[matrixEntryIndex[e]], &M[matrixEntryIndex[e]], 1)) { break; }
 +  }
-+  if (reused < NUM_BRANCH_CURRENTS)
++  const int reused = (e < limit) ? matrixEntryRow[e] : previousMatrixRows;
++
++  // The column that the chain of the diagonal starts with: the one before the first row made
++  // anew. Columns further left have entries in rows made anew only if such a row reaches there.
++  const int firstColumn = (choleskyStartColumn[reused] < reused - 1) ? reused - 1 : choleskyStartColumn[reused];
++  if (wholeTimeStep)
 +  {
-+    for (j = envelopeFirstColumn[reused]; j <= reused; j++) { previousMatrix[reused][j] = matrix[reused][j]; }
++    // the rows up to the one after that column
++    const int needed = (firstColumn + 2 < N) ? firstColumn + 2 : N;
++    if (numRows < needed)
++    {
++      calcMatrixRows(numRows, needed - 1);
++      numRows = needed;
++    }
++  }
++
++  if (reused < N)
++  {
++    for (e = matrixEntryRowStart[reused]; e < matrixEntryRowStart[reused + 1]; e++)
++    {
++      previous[matrixEntryIndex[e]] = M[matrixEntryIndex[e]];
++    }
 +    previousMatrixRows = reused + 1;
 +  }
 +
-+  // Negate the matrix (the rows not reused) and the right-hand side vector.
-+  for (i = reused; i < NUM_BRANCH_CURRENTS; i++)
++  // Negate the matrix (the rows not reused; their other entries are -0 already) and the
++  // right-hand side vector.
++  for (e = matrixEntryRowStart[reused]; e < matrixEntryRowStart[numRows]; e++)
 +  {
-+    double *F = factorizationMatrix[i];
-+    const double *M = matrix[i];
-+    F[i] = -M[i];
-+    for (j = envelopeFirstColumn[i]; j < i; j++) { F[j] = -M[j]; }
++    pending[matrixEntryIndex[e]] = -M[matrixEntryIndex[e]];
 +  }
-+  for (i = 0; i < NUM_BRANCH_CURRENTS; i++) { solutionVector[i] = -solutionVector[i]; }
++  for (i = 0; i < numRows; i++) { solutionVector[i] = -solutionVector[i]; }
 +
-+  // Cholesky factorization, and the forward substitution of each row as soon as the row is
-+  // factorized (the same operations as one after the other, but the two chains of dependent
-+  // operations can overlap).
-+  for (k = 0; k < NUM_BRANCH_CURRENTS; k++)
++  // A further row of the matrix (none of them is reused), negated.
++  auto addRow = [&](const int row) TDS_INLINED
 +  {
-+    double *Fk = factorizationMatrix[k];
-+    const int first = envelopeFirstColumn[k];
++    calcMatrixRows(row, row);
++    for (int n = matrixEntryRowStart[row]; n < matrixEntryRowStart[row + 1]; n++)
++    {
++      pending[matrixEntryIndex[n]] = -M[matrixEntryIndex[n]];
++    }
++    solutionVector[row] = -solutionVector[row];
++  };
++
++  // The rows with entries far left of the diagonal are needed from their first column on;
++  // every other row k is needed for column k-1 and added along the way.
++  for (i = numRows; i < N; i++)
++  {
++    if (matrixRowIsEarly[i]) { addRow(i); }
++  }
++
++  // Columns left of the first row that is made anew, with entries in such rows.
++  for (k = choleskyStartColumn[reused]; k < firstColumn; k++)
++  {
++    const double d = choleskyDiagonal[k];
++    const int m = numFilledColumnValuesSymmetricEnvelope[k];
++    const int *rows = filledColumnIndexSymmetricEnvelope[k];
++    double *l = choleskyColumn[k];
++    for (a = 0; a < m; a++)
++    {
++      if (rows[a] < reused) { continue; }
++      double *Pa = choleskyPending[rows[a]];
++      const double la = Pa[k] / d;
++      Pa[k] = -0.0;
++      l[a] = la;
++      for (b = 0; b <= a; b++) { Pa[rows[b]] -= la * l[b]; }
++    }
++  }
++
++  // Cholesky factorization column by column, and the forward substitution along with it: of
++  // two columns per column factorized until it has caught up (the columns before the first
++  // one factorized are a chain of their own), then of each column as soon as it is factorized.
++  const int caughtUp = (2 * firstColumn < N) ? 2 * firstColumn : N;
++  double x = (k < N) ? choleskyPending[k][k] : 0.0;    // the diagonal entry less its products
++  for (; k < N; k++)
++  {
++    double d;
 +    if (k >= reused)
 +    {
-+      double diagonal = Fk[k];
-+      for (j = first; j < k; j++) { diagonal -= Fk[j] * Fk[j]; }
-+      if (diagonal < 0) printf("Error: Cholesky factorization: Matrix is not positive definite!\n");
-+      Fk[k] = sqrt(diagonal);
++      if (x < 0) printf("Error: Cholesky factorization: Matrix is not positive definite!\n");
++      d = sqrt(x);
++      choleskyDiagonal[k] = d;
 +    }
-+    const double diagonal = Fk[k];
-+
-+    for (u = 0; u < numFilledColumnValuesSymmetricEnvelope[k]; u++)
++    else
 +    {
-+      const int row = filledColumnIndexSymmetricEnvelope[k][u];
-+      if (row < reused) { continue; }
-+      double *Fi = factorizationMatrix[row];
-+      double value = Fi[k];
-+      // the entries left of row i's envelope are zero, and so are their products
-+      const int start = envelopeFirstColumn[row] > first ? envelopeFirstColumn[row] : first;
-+      for (j = start; j < k; j++) { value -= Fi[j] * Fk[j]; }
-+      Fi[k] = value / diagonal;
++      d = choleskyDiagonal[k];
 +    }
 +
-+    double value = solutionVector[k];
-+    for (j = first; j < k; j++) { value -= Fk[j] * solutionVector[j]; }
-+    solutionVector[k] = value / diagonal;
++    const int m = numFilledColumnValuesSymmetricEnvelope[k];
++    const int *rows = filledColumnIndexSymmetricEnvelope[k];
++    double *l = choleskyColumn[k];
++    if (k + 1 < N) { x = choleskyPending[k + 1][k + 1]; }
++
++    if ((m > 0) && (rows[0] == k + 1))
++    {
++      // The next row's entry and what it takes from the next diagonal entry stay in registers:
++      // the chain that the time depends on.
++      double *Pn = choleskyPending[k + 1];
++      const double l0 = Pn[k] / d;
++      Pn[k] = -0.0;
++      l[0] = l0;
++      x -= l0 * l0;
++      switch (m)
++      {
++#define X(M) case M: choleskyColumnRows<M>(choleskyPending, rows, l, k, d); break;
++        TDS_FOR_ROW_COUNTS(X)
++#undef X
++        default: break;
++      }
++    }
++    else
++    {
++      for (a = 0; a < m; a++)
++      {
++        double *Pa = choleskyPending[rows[a]];
++        const double la = Pa[k] / d;
++        Pa[k] = -0.0;
++        l[a] = la;
++        for (b = 0; b <= a; b++) { Pa[rows[b]] -= la * l[b]; }
++      }
++    }
++
++    if (k < caughtUp)
++    {
++      for (i = 2 * (k - firstColumn); i < 2 * (k - firstColumn) + 2; i++)
++      {
++        const double value = solutionVector[i] / choleskyDiagonal[i];
++        solutionVector[i] = value;
++        const int mi = numFilledColumnValuesSymmetricEnvelope[i];
++        const int *ri = filledColumnIndexSymmetricEnvelope[i];
++        const double *li = choleskyColumn[i];
++        for (a = 0; a < mi; a++) { solutionVector[ri[a]] -= li[a] * value; }
++      }
++    }
++    else
++    {
++      const double value = solutionVector[k] / d;
++      solutionVector[k] = value;
++      switch (m)
++      {
++        case 0: break;
++        case 1: choleskyForwardRows<1>(solutionVector, rows, l, value); break;
++#define X(M) case M: choleskyForwardRows<M>(solutionVector, rows, l, value); break;
++        TDS_FOR_ROW_COUNTS(X)
++#undef X
++        default: for (a = 0; a < m; a++) { solutionVector[rows[a]] -= l[a] * value; } break;
++      }
++    }
++
++    // the row for the column after the next one
++    if (wholeTimeStep)
++    {
++      const int row = k + 2;
++      if ((row >= numRows) && (row < N) && !matrixRowIsEarly[row]) { addRow(row); }
++    }
++  }
++  for (i = 2 * (N - firstColumn); i < N; i++)
++  {
++    const double value = solutionVector[i] / choleskyDiagonal[i];
++    solutionVector[i] = value;
++    const int mi = numFilledColumnValuesSymmetricEnvelope[i];
++    const int *ri = filledColumnIndexSymmetricEnvelope[i];
++    const double *li = choleskyColumn[i];
++    for (a = 0; a < mi; a++) { solutionVector[ri[a]] -= li[a] * value; }
 +  }
 +
-+  // backward substitution
-+  for (k = NUM_BRANCH_CURRENTS - 1; k >= 0; --k)
++  // Backward substitution (the flow of the next row stays in a register), and for a whole
++  // time step the new currents and pressures as their flows come out: with the flow of
++  // current k all flows into and out of section k are known (see wholeTimeStepPossible). They
++  // are taken a few flows later, when the flows are in memory for good (two that are still on
++  // their way there cannot be read in one piece without waiting).
++  const int updateLag = 4;
++  const double noiseFilterCoeff = wholeTimeStep ? getNoiseFilterCoeff() : 0.0;
++  double flow = 0.0;
++  for (k = N - 1; k >= 0; --k)
 +  {
++    const int m = numFilledColumnValuesSymmetricEnvelope[k];
++    const int *rows = filledColumnIndexSymmetricEnvelope[k];
++    const double *l = choleskyColumn[k];
 +    double value = solutionVector[k];
-+    for (u = 0; u < numFilledColumnValuesSymmetricEnvelope[k]; u++)
++    a = 0;
++    if ((m > 0) && (rows[0] == k + 1))
 +    {
-+      i = filledColumnIndexSymmetricEnvelope[k][u];
-+      value -= factorizationMatrix[i][k] * flowVector[i];
++      value -= l[0] * flow;
++      a = 1;
 +    }
++    for (; a < m; a++) { value -= l[a] * flowVector[rows[a]]; }
 +    solutionVector[k] = value;
-+    flowVector[k] = value / factorizationMatrix[k][k];
++    flow = value / choleskyDiagonal[k];
++    flowVector[k] = flow;
++
++    if (wholeTimeStep && (k + updateLag < N))
++    {
++      updateCurrentsFrom(k + updateLag, noiseFilterCoeff);
++      if (k + updateLag < Tube::NUM_SECTIONS) { updateSectionsFrom(k + updateLag); }
++    }
++  }
++  if (wholeTimeStep)
++  {
++    for (i = ((updateLag < N) ? updateLag : N) - 1; i >= 0; i--)
++    {
++      updateCurrentsFrom(i, noiseFilterCoeff);
++      if (i < Tube::NUM_SECTIONS) { updateSectionsFrom(i); }
++    }
 +  }
 +}
 +
++
++#ifdef TDS_REORDERED_SOLVER
++
++// ****************************************************************************
++/// Speed (almost the same results, not to the bit; only with
++/// TDS_REORDERED_SOLVER): the order in which solveEquationsReordered()
++/// eliminates the currents, and where the entries of the factorization are.
++///
++/// solveEquationsCholesky() eliminates the currents in the order of their
++/// numbers, so that every step waits for the one before, from the trachea to
++/// the nostrils and back. Here they are eliminated in rounds: in each round
++/// currents that have at most two neighbours left (or the fewest there are) and
++/// are no neighbours of each other, e.g. every other one along a row of tube
++/// sections. The currents of a round do not depend on each other, and a few
++/// rounds (8 for the network as it is) take the place of a chain as long as the
++/// network.
++// ****************************************************************************
++
++void TdsModel::initReorderedSolver()
++{
++  const int N = NUM_BRANCH_CURRENTS;
++  static bool adjacent[N][N];
++  static int neighbours[N][N];
++  int numNeighbours[N];
++  int place[N];
++  bool eliminated[N];
++  bool blocked[N];
++  int degree[N];
++  int i, j, e, u, v;
++  int count = 0;
++
++  reorderedPossible = true;
++
++  // The currents with a common entry of the matrix (see matrixEntryIndex).
++  for (i = 0; i < N; i++)
++  {
++    eliminated[i] = false;
++    for (j = 0; j < N; j++) { adjacent[i][j] = false; }
++  }
++  for (e = 0; e < numMatrixEntries; e++)
++  {
++    i = matrixEntryIndex[e] / N;
++    j = matrixEntryIndex[e] % N;
++    if (i != j) { adjacent[i][j] = adjacent[j][i] = true; }
++  }
++
++  while (count < N)
++  {
++    int limit = N;
++    for (i = 0; i < N; i++)
++    {
++      degree[i] = 0;
++      blocked[i] = false;
++      if (eliminated[i]) { continue; }
++      for (j = 0; j < N; j++) { if (adjacent[i][j]) { degree[i]++; } }
++      if (degree[i] < limit) { limit = degree[i]; }
++    }
++    if (limit < 2) { limit = 2; }
++
++    // The currents of this round ...
++    const int firstOfRound = count;
++    for (i = 0; i < N; i++)
++    {
++      if (eliminated[i] || blocked[i] || (degree[i] > limit)) { continue; }
++      reorderedCurrent[count] = i;
++      place[i] = count;
++      count++;
++      blocked[i] = true;
++      for (j = 0; j < N; j++) { if (adjacent[i][j]) { blocked[j] = true; } }
++    }
++
++    // ... and their elimination: their neighbours become neighbours of each other.
++    for (e = firstOfRound; e < count; e++)
++    {
++      i = reorderedCurrent[e];
++      numNeighbours[e] = 0;
++      for (j = 0; j < N; j++) { if (adjacent[i][j]) { neighbours[e][numNeighbours[e]++] = j; } }
++      for (u = 0; u < numNeighbours[e]; u++)
++      {
++        adjacent[i][neighbours[e][u]] = adjacent[neighbours[e][u]][i] = false;
++        for (v = 0; v < u; v++)
++        {
++          adjacent[neighbours[e][u]][neighbours[e][v]] = adjacent[neighbours[e][v]][neighbours[e][u]] = true;
++        }
++      }
++      eliminated[i] = true;
++    }
++  }
++
++  // Per column of the factorization (a place in the order) the rows with entries: the places
++  // of the neighbours at the time of the elimination, ascending.
++  for (e = 0; e < N; e++)
++  {
++    reorderedNumRows[e] = 0;
++    if (numNeighbours[e] > MAX_REORDERED_ROWS)
++    {
++      reorderedPossible = false;
++      continue;
++    }
++    for (u = 0; u < numNeighbours[e]; u++)
++    {
++      const int row = place[neighbours[e][u]];
++      for (v = reorderedNumRows[e]; (v > 0) && (reorderedRows[e][v - 1] > row); v--) { reorderedRows[e][v] = reorderedRows[e][v - 1]; }
++      reorderedRows[e][v] = row;
++      reorderedNumRows[e]++;
++    }
++    reorderedInverse[e] = 0.0;
++    reorderedSolution[e] = 0.0;
++    for (u = 0; u < MAX_REORDERED_ROWS; u++) { reorderedFactor[e][u] = 0.0; }
++    for (j = 0; j < N; j++) { reorderedPending[e][j] = 0.0; }
++  }
++
++  // Where the entries of the matrix go: into the lower triangle in the new order.
++  for (e = 0; e < numMatrixEntries; e++)
++  {
++    i = place[matrixEntryIndex[e] / N];
++    j = place[matrixEntryIndex[e] % N];
++    reorderedEntryTarget[e] = (i > j) ? (i * N + j) : (j * N + i);
++  }
++}
++
++
++// ****************************************************************************
++/// Speed (almost the same results, not to the bit; only with
++/// TDS_REORDERED_SOLVER): solves the system of equations like
++/// solveEquationsCholesky(), with the currents eliminated in the order of
++/// initReorderedSolver(), as a factorization L*D*L' (no square roots, one
++/// division per current). The solution differs from that of
++/// solveEquationsCholesky() by rounding errors.
++// ****************************************************************************
++
++void TdsModel::solveEquationsReordered()
++{
++  const int N = NUM_BRANCH_CURRENTS;
++  const double *M = &matrix[0][0];
++  double *pending = &reorderedPending[0][0];
++  double *s = reorderedSolution;
++  int p, e, a, b;
++
++  // The negated matrix and right-hand side vector (as in solveEquationsCholesky()), in the
++  // new order. The entries of the factorization that are no entries of the matrix are 0
++  // again since they were last used.
++  for (e = 0; e < numMatrixEntries; e++) { pending[reorderedEntryTarget[e]] = -M[matrixEntryIndex[e]]; }
++  for (p = 0; p < N; p++) { s[p] = -solutionVector[reorderedCurrent[p]]; }
++
++  // Factorization and forward substitution, column by column.
++  for (p = 0; p < N; p++)
++  {
++    const double pivot = reorderedPending[p][p];
++    if (!(pivot > 0)) printf("Error: Cholesky factorization: Matrix is not positive definite!\n");
++    const double inverse = 1.0 / pivot;
++    reorderedInverse[p] = inverse;
++    const double value = s[p];
++    const int m = reorderedNumRows[p];
++    const int *rows = reorderedRows[p];
++    double *l = reorderedFactor[p];
++
++    if (m == 2)
++    {
++      double *P0 = reorderedPending[rows[0]];
++      double *P1 = reorderedPending[rows[1]];
++      const double t0 = P0[p];
++      const double t1 = P1[p];
++      const double l0 = t0 * inverse;
++      const double l1 = t1 * inverse;
++      P0[p] = 0.0;
++      P1[p] = 0.0;
++      l[0] = l0;
++      l[1] = l1;
++      P0[rows[0]] -= l0 * t0;
++      P1[rows[0]] -= l1 * t0;
++      P1[rows[1]] -= l1 * t1;
++      s[rows[0]] -= l0 * value;
++      s[rows[1]] -= l1 * value;
++    }
++    else if (m == 1)
++    {
++      double *P0 = reorderedPending[rows[0]];
++      const double t0 = P0[p];
++      const double l0 = t0 * inverse;
++      P0[p] = 0.0;
++      l[0] = l0;
++      P0[rows[0]] -= l0 * t0;
++      s[rows[0]] -= l0 * value;
++    }
++    else
++    {
++      double t[MAX_REORDERED_ROWS];
++      for (a = 0; a < m; a++)
++      {
++        double *Pa = reorderedPending[rows[a]];
++        t[a] = Pa[p];
++        Pa[p] = 0.0;
++        l[a] = t[a] * inverse;
++        for (b = 0; b <= a; b++) { Pa[rows[b]] -= l[a] * t[b]; }
++        s[rows[a]] -= l[a] * value;
++      }
++    }
++  }
++
++  // Backward substitution.
++  for (p = N - 1; p >= 0; p--)
++  {
++    const int m = reorderedNumRows[p];
++    const int *rows = reorderedRows[p];
++    const double *l = reorderedFactor[p];
++    double value = s[p] * reorderedInverse[p];
++    for (a = 0; a < m; a++) { value -= l[a] * s[rows[a]]; }
++    s[p] = value;
++    flowVector[reorderedCurrent[p]] = value;
++  }
++}
++
++#endif
++
++
++// ****************************************************************************
+ /// Returns the volume velocity into the given tube section.
+ /// \param section The tube section
+ // ****************************************************************************
+--- a/src/VocalTractLabBackend/Tube.cpp
++++ b/src/VocalTractLabBackend/Tube.cpp
+@@ -23,6 +23,7 @@
+ #include <iostream>
+ #include <cstdio>
+ #include <cmath>
++#include <cstring>
+ 
+ 
+ // Data for the relaxed cheeck
+@@ -420,6 +421,90 @@
+ }
+ 
+ 
++// ****************************************************************************
++/// Speed (same results): setGlottisGeometry() without calculating anew the
++/// positions that do not depend on the glottis' lengths: those of the trachea
++/// and glottis sections are calculated as calcPositions() does; those of the
++/// other sections follow from lengths that the caller knows to be unchanged
++/// since calcPositions() was called last, so they would come out the same.
++// ****************************************************************************
++
++void Tube::setGlottisGeometryOnly(const double *length_cm, const double *area_cm2)
++{
++  int i;
++  Section *ts = NULL;
++  double pos_cm = 0.0;
++
++  for (i=0; i < NUM_GLOTTIS_SECTIONS; i++)
++  {
++    ts = &glottisSection[i];
++
++    ts->pos_cm     = pos_cm;
++    ts->length_cm  = length_cm[i];
++    ts->area_cm2   = area_cm2[i];
++    if (ts->area_cm2 < MIN_AREA_CM2) { ts->area_cm2 = MIN_AREA_CM2; }
++    ts->volume_cm3 = ts->area_cm2 * ts->length_cm;
++
++    ts->articulator = VOCAL_FOLDS;
++
++    pos_cm+= ts->length_cm;
++  }
++
++  // As in calcPositions().
++
++  const double REFERENCE_POS = 0.0;
++  double pos = REFERENCE_POS;
++
++  pos-= glottisSection[1].length_cm;
++  glottisSection[1].pos_cm = pos;
++
++  pos-= glottisSection[0].length_cm;
++  glottisSection[0].pos_cm = pos;
++
++  for (i = NUM_TRACHEA_SECTIONS-1; i >= 0; i--)
++  {
++    pos-= tracheaSection[i].length_cm;
++    tracheaSection[i].pos_cm = pos;
++  }
++}
++
++
++// ****************************************************************************
++/// Speed (same results): whether all that interpolate() reads of a left or
++/// right tube is the same to the bit in the two tubes.
++// ****************************************************************************
++
++bool Tube::sameForInterpolation(const Tube &a, const Tube &b)
++{
++  int i;
++  const double valueA[8] = { a.teethPosition_cm, a.tongueTipSideElevation, a.rawVelumOpening_cm2,
++    a.aspirationStrength_dB, a.subglottalCavityLength_cm, a.nasalCavityLength_cm,
++    a.piriformFossaLength_cm, a.piriformFossaVolume_cm3 };
++  const double valueB[8] = { b.teethPosition_cm, b.tongueTipSideElevation, b.rawVelumOpening_cm2,
++    b.aspirationStrength_dB, b.subglottalCavityLength_cm, b.nasalCavityLength_cm,
++    b.piriformFossaLength_cm, b.piriformFossaVolume_cm3 };
++
++  if (memcmp(valueA, valueB, sizeof(valueA)) != 0)
++  {
++    return false;
++  }
++
++  for (i=0; i < NUM_PHARYNX_MOUTH_SECTIONS; i++)
++  {
++    const Section *sa = &a.pharynxMouthSection[i];
++    const Section *sb = &b.pharynxMouthSection[i];
++    if ((memcmp(&sa->area_cm2, &sb->area_cm2, sizeof(double)) != 0) ||
++        (memcmp(&sa->length_cm, &sb->length_cm, sizeof(double)) != 0) ||
++        (sa->articulator != sb->articulator))
++    {
++      return false;
++    }
++  }
++
++  return true;
++}
++
++
+ // ****************************************************************************
+ /// Convenience function to set both sections of the glottis to the same given 
+ /// area.
+--- a/src/VocalTractLabBackend/VocalTract.cpp
++++ b/src/VocalTractLabBackend/VocalTract.cpp
+@@ -5923,15 +5923,20 @@
+ 
+   const int MAX_CUTS = 2048;
+   
++  // Speed (same results): plain numbers instead of Point2D, whose constructor would set all
++  // MAX_CUTS cuts to zero in every call.
+   struct Cut
+   {
+-    Point2D P0, P1, n;
++    double P0x, P0y, P1x, P1y, nx, ny;
+     int globalSurfaceIndex;
+     int localSurfaceIndex;
+   };
+   
+   Cut cut[MAX_CUTS];
+   int numCuts;
++  // Speed (same results): the number of cuts that the original would hold, which takes a
++  // cut from a triangle every time getTriangleList() names it (see below).
++  int numCutsWithRepeats;
+ 
+   // For the fast intersection method:
+ 
+@@ -5957,7 +5962,22 @@
+   // faces are formed after the tongue, so they are not valid yet.
+   // ****************************************************************
+ 
++  // Speed (same results): the list of a surface's triangles names a triangle once for
++  // every tile of it that the line crosses, and the original took the same cut from it
++  // every time. A repeated cut changes nothing below: the profiles take the lowest or
++  // highest line per sample and surface (or, for the lower cover in the upper profile, the
++  // first one, which is the same one here), and the teeth's and lips' extremes are the
++  // same. So every triangle is cut once, at its first place in the list. Only where the
++  // original stops taking cuts, at MAX_CUTS, the repeats matter: they are counted then
++  // (countRepeats), which is needed only when there are that many triangles in the lists.
++  bool countRepeats = false;
++  int numListEntriesWithRepeats;
++  int totalListEntries;
++
++  collectCuts:
+   numCuts = 0;
++  numCutsWithRepeats = 0;
++  totalListEntries = 0;
+   for (k=0; k < NUM_PROFILE_SURFACES; k++)
+   {
+     globalIndex = profileSurfaceIndex[k];
+@@ -5969,7 +5989,7 @@
+ 
+       // The fast intersection method.
+ 
+-      if (makeFasterIntersections) 
++      if ((makeFasterIntersections) && (countRepeats == false))
+       {
+         if (intersectionsPrepared[globalIndex] == false)
+         {
+@@ -5979,17 +5999,29 @@
+         }
+ 
+         s->prepareIntersection(P, v);
+-        s->getTriangleList(indexList, numListEntries, MAX_LIST_ENTRIES);
++        s->getTriangleListOnce(indexList, numListEntries, numListEntriesWithRepeats, MAX_LIST_ENTRIES);
++
++        // With no more than MAX_CUTS triangles in the lists so far, repeats included, the
++        // original has not reached MAX_CUTS cuts either.
++        totalListEntries+= numListEntriesWithRepeats;
++        if (totalListEntries > MAX_CUTS)
++        {
++          countRepeats = true;
++          goto collectCuts;
++        }
+ 
+         for (i=0; i < numListEntries; i++)
+         {
+-          if ((s->getTriangleIntersection(indexList[i], P0, P1, n)) && (numCuts < MAX_CUTS) &&
++          if ((s->getTriangleIntersection(indexList[i], P0, P1, n)) &&
+               (P0.y < MAX_PROFILE_VALUE) && (P1.y < MAX_PROFILE_VALUE) &&
+               (P1.y > MIN_PROFILE_VALUE) && (P1.y > MIN_PROFILE_VALUE))
+           {
+-            cut[numCuts].P0 = P0;
+-            cut[numCuts].P1 = P1;
+-            cut[numCuts].n = n;
++            cut[numCuts].P0x = P0.x;
++            cut[numCuts].P0y = P0.y;
++            cut[numCuts].P1x = P1.x;
++            cut[numCuts].P1y = P1.y;
++            cut[numCuts].nx = n.x;
++            cut[numCuts].ny = n.y;
+             cut[numCuts].globalSurfaceIndex = globalIndex;
+             cut[numCuts].localSurfaceIndex = k;
+             numCuts++;
+@@ -5997,6 +6029,51 @@
+         }
+       }
+       else
++      if (makeFasterIntersections) 
++      {
++        // The same with the repeats counted.
++
++        if (intersectionsPrepared[globalIndex] == false)
++        {
++          s->prepareIntersections();
++          intersectionsPrepared[globalIndex] = true;
++        }
++
++        s->prepareIntersection(P, v);
++        s->getTriangleList(indexList, numListEntries, MAX_LIST_ENTRIES);
++
++        for (i=0; i < numListEntries; i++)
++        {
++          const int visit = s->visitTriangle(indexList[i]);
++          if (visit == 0)
++          {
++            if ((s->getTriangleIntersection(indexList[i], P0, P1, n)) &&
++                (P0.y < MAX_PROFILE_VALUE) && (P1.y < MAX_PROFILE_VALUE) &&
++                (P1.y > MIN_PROFILE_VALUE) && (P1.y > MIN_PROFILE_VALUE))
++            {
++              s->setTriangleCut(indexList[i]);
++              if (numCutsWithRepeats < MAX_CUTS)
++              {
++                cut[numCuts].P0x = P0.x;
++                cut[numCuts].P0y = P0.y;
++                cut[numCuts].P1x = P1.x;
++                cut[numCuts].P1y = P1.y;
++                cut[numCuts].nx = n.x;
++                cut[numCuts].ny = n.y;
++                cut[numCuts].globalSurfaceIndex = globalIndex;
++                cut[numCuts].localSurfaceIndex = k;
++                numCuts++;
++                numCutsWithRepeats++;
++              }
++            }
++          }
++          else if ((visit == 2) && (numCutsWithRepeats < MAX_CUTS))
++          {
++            numCutsWithRepeats++;
++          }
++        }
++      }
++      else
+ 
+       // The "normal", slower intersection method.
+ 
+@@ -6009,12 +6086,16 @@
+               (P0.y < MAX_PROFILE_VALUE) && (P1.y < MAX_PROFILE_VALUE) &&
+               (P1.y > MIN_PROFILE_VALUE) && (P1.y > MIN_PROFILE_VALUE))
+           {
+-            cut[numCuts].P0 = P0;
+-            cut[numCuts].P1 = P1;
+-            cut[numCuts].n = n;
++            cut[numCuts].P0x = P0.x;
++            cut[numCuts].P0y = P0.y;
++            cut[numCuts].P1x = P1.x;
++            cut[numCuts].P1y = P1.y;
++            cut[numCuts].nx = n.x;
++            cut[numCuts].ny = n.y;
+             cut[numCuts].globalSurfaceIndex = globalIndex;
+             cut[numCuts].localSurfaceIndex = k;
+             numCuts++;
++            numCutsWithRepeats++;
+           }
+         }
+       }
+@@ -6039,8 +6120,8 @@
+ 
+   for (i=0; i < numCuts; i++)
+   {
+-    P0 = cut[i].P0;
+-    P1 = cut[i].P1;
++    P0.set(cut[i].P0x, cut[i].P0y);
++    P1.set(cut[i].P1x, cut[i].P1y);
+     globalIndex = cut[i].globalSurfaceIndex;
+ 
+     // Teeth data
+@@ -6102,9 +6183,9 @@
+ 
+   for (i=0; i < numCuts; i++)
+   {
+-    P0 = cut[i].P0;
+-    P1 = cut[i].P1;
+-    n = cut[i].n;
++    P0.set(cut[i].P0x, cut[i].P0y);
++    P1.set(cut[i].P1x, cut[i].P1y);
++    n.set(cut[i].nx, cut[i].ny);
+     localIndex = cut[i].localSurfaceIndex;
+     globalIndex = cut[i].globalSurfaceIndex;
+ 
+@@ -6456,7 +6537,10 @@
+       }
+ 
+       s->prepareIntersection(P, v);
+-      s->getTriangleList(indexList, numListEntries, MAX_LIST_ENTRIES);
++      // Speed (same results): every triangle once (see above; a repeated line changes
++      // nothing in the profile).
++      int numListEntriesWithRepeats;
++      s->getTriangleListOnce(indexList, numListEntries, numListEntriesWithRepeats, MAX_LIST_ENTRIES);
+ 
+       for (i=0; i < numListEntries; i++)
+       {
+--- a/src/VocalTractLabBackend/XmlNode.cpp
++++ b/src/VocalTractLabBackend/XmlNode.cpp
+@@ -24,6 +24,69 @@
+ #include <iostream>
+ #include <fstream>
+ #include <cstdlib>
++#include <cstdint>
++
++
++// ****************************************************************************
++// Speed (same results): see XmlNode.h. The digits make an integer of at most
++// 2^53, which a double holds exactly, as it holds the powers of ten up to
++// 10^22; their quotient, one division, is rounded to the nearest double of the
++// number written, which is the double that strtod() returns.
++// ****************************************************************************
++
++bool xmlPlainDecimalToDouble(const char *st, double &value)
++{
++  static const double POWER_OF_TEN[23] =
++  {
++    1e0, 1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10, 1e11,
++    1e12, 1e13, 1e14, 1e15, 1e16, 1e17, 1e18, 1e19, 1e20, 1e21, 1e22
++  };
++  const char *p = st;
++  bool negative = false;
++  bool inFraction = false;
++  uint64_t digits = 0;
++  int numDigits = 0;
++  int numFractionDigits = 0;
++
++  if (*p == '-')
++  {
++    negative = true;
++    p++;
++  }
++
++  for (; *p != '\0'; p++)
++  {
++    if ((*p >= '0') && (*p <= '9'))
++    {
++      if (numDigits >= 18) { return false; }
++      digits = digits*10 + (uint64_t)(*p - '0');
++      numDigits++;
++      if (inFraction) { numFractionDigits++; }
++    }
++    else
++    if ((*p == '.') && (inFraction == false))
++    {
++      inFraction = true;
++    }
++    else
++    {
++      return false;
++    }
++  }
++
++  if ((numDigits == 0) || (digits > 9007199254740992ULL) || (numFractionDigits > 22))
++  {
++    return false;
++  }
++
++  double d = (double)digits;
++  if (numFractionDigits > 0)
++  {
++    d = d / POWER_OF_TEN[numFractionDigits];
++  }
++  value = negative ? -d : d;
++  return true;
++}
+ 
  
  // ****************************************************************************
- /// Returns the volume velocity into the given tube section.
+@@ -123,12 +186,46 @@
+   if (file)
+   {
+     string text;
+-    string buffer;
+ 
+-    while (!file.eof())
++    // Speed (same results): the file in one piece and a line feed after it, which is what
++    // the original made of it line by line (every line with its line feed, and one more
++    // line feed after the last line, or after its missing line feed).
++    file.seekg(0, ios::end);
++    streamoff fileLength = file.tellg();
++    file.seekg(0, ios::beg);
++    if ((fileLength >= 0) && (file.good()))
+     {
+-      getline(file, buffer);
+-      text+= buffer + "\n";
++      text.resize((size_t)fileLength);
++      if (fileLength > 0)
++      {
++        file.read(&text[0], (streamsize)fileLength);
++      }
++      if (file.gcount() == (streamsize)fileLength)
++      {
++        text+= "\n";
++      }
++      else
++      {
++        fileLength = -1;
++      }
++    }
++    else
++    {
++      fileLength = -1;
++    }
++
++    if (fileLength < 0)
++    {
++      // The size is not to be had: line by line, as in the original.
++      string buffer;
++      text.clear();
++      file.clear();
++      file.seekg(0, ios::beg);
++      while (!file.eof())
++      {
++        getline(file, buffer);
++        text+= buffer + "\n";
++      }
+     }
+     file.close();
+ 
+@@ -594,8 +691,9 @@
+   }
+ 
+   string token;
+-  // Reserve some space for the expected characters for performance reasons
+-  token.reserve(256);   
++  // Speed (same results): no space is reserved (the original reserved 256 characters "for
++  // performance reasons", which takes memory from the heap for every token; the usual short
++  // token fits into the string object itself).
+ 
+   // ****************************************************************
+   // The token is the equality sign.
+@@ -647,11 +745,13 @@
+     // Got to the char after the leading quote.
+     pos++;
+     // Collect all characters up to the next qouble quote.
++    // Speed (same results): in one piece.
++    const int firstPos = pos;
+     while ((pos <= endPos) && (input[pos] != '"'))
+     {
+-      token+= input[pos];
+       pos++;
+     }
++    token.assign(input, firstPos, pos - firstPos);
+ 
+     if ((pos > endPos) && (errors != NULL))
+     {
+@@ -672,6 +772,8 @@
+   // ****************************************************************
+   {
+     // Collect chars until we find the next white space or reserved char
++    // Speed (same results): in one piece.
++    const int firstPos = pos;
+     while ((pos <= endPos) && 
+       (isWhiteSpaceChar(input[pos]) == false) && 
+       (input[pos] != '=') &&
+@@ -679,9 +781,9 @@
+       (input[pos] != '>') &&
+       (input[pos] != '/'))
+     {
+-      token+= input[pos];
+       pos++;
+     }
++    token.assign(input, firstPos, pos - firstPos);
+   }
+ 
+   return token;
+@@ -1051,6 +1153,11 @@
+ 
+   if (k != -1)
+   {
++      // Speed (same results): plain decimal numbers without strtod().
++      if (xmlPlainDecimalToDouble(attribute[k].value.c_str(), value))
++      {
++          return value;
++      }
+       try
+       {
+           value = std::stod(attribute[k].value.c_str());
