@@ -214,6 +214,23 @@ describe('the pool', () => {
     assert.deepEqual(events.at(-1), { type: 'done', id: 1 });
   });
 
+  it('leaves the last chunks to whichever worker is free first', () => {
+    const { pool, workers } = poolOf(2);
+    const [planner, second] = workers;
+    pool.request(1, setting, { seconds: 0 });
+    planner.says(planOf(1));
+    planner.says(levelOf(1));
+    workers.forEach((w) => w.got());
+    // two chunks are left for two workers: one may be handed ahead
+    planner.says(sound(1, 0, 1900));
+    assert.deepEqual(planner.got(), ['chunk 1 5000-8000']);
+    // the last is not: the first worker to finish takes it
+    second.says(sound(1, 2000, 4900));
+    assert.deepEqual(second.got(), []);
+    second.says(done(1, 2000, 5000));
+    assert.deepEqual(second.got(), ['chunk 1 8000-10000']);
+  });
+
   it('ignores what workers say of a request that is no longer the one', () => {
     const { pool, workers, events } = poolOf(2);
     const [planner, second] = workers;

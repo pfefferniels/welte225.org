@@ -35,8 +35,8 @@ export interface PoolWorker {
 /**
  * A worker is handed its next chunk when it has this much sound left to render of the one it is on
  * (some 0.7 s of work), so that it need not wait for this thread, which is often busy drawing, to
- * hear that it has finished. No sooner: until it is handed out, a chunk can go to whichever worker
- * is free first.
+ * hear that it has finished. No sooner, and not once there are fewer chunks left than workers:
+ * until it is handed out, a chunk can go to whichever worker is free first.
  */
 const HAND_AHEAD: Seconds = 2;
 /** How many workers help the first to prepare a setting: one with the tract states, one with the piano. */
@@ -175,7 +175,8 @@ export class VoicePool {
         const chunk = job.busy.get(worker);
         if (!chunk || job.next.has(worker) || message.samples.length === 0) return;
         const left = chunk[1] * STATE_STEP - (message.start + message.samples.length);
-        if (left <= HAND_AHEAD * SAMPLE_RATE) this.#hand(worker, job, job.next);
+        if (left <= HAND_AHEAD * SAMPLE_RATE && job.queue.length >= this.#workers.length)
+          this.#hand(worker, job, job.next);
         return;
       }
       case 'chunkDone': {
