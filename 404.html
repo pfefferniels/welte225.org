@@ -8,13 +8,13 @@
   <link rel="alternate" type="application/ld+json" href="/edition.jsonld" title="Roll edition of WM 225 as JSON-LD">
   <script>
     // An entity IRI opens its app at that entity: one of the edition's in Roll
-    // Desk, a segment of the performance reconstruction in MPM Desk. Anything
+    // Desk, a call of the performance reconstruction in MPM Desk. Anything
     // else is a page that does not exist.
     (function () {
       var path = location.pathname.replace(/^\//, '')
       var apps = [
         {
-          // A segment's id, or at least its first eight characters; the viewer resolves a prefix.
+          // A call's id, or at least its first eight characters; the viewer resolves a prefix.
           entity: /^mpm\/([0-9a-f]{8}[0-9a-f-]{0,28})$/i,
           open: function (path, match) { return 'https://mpmdesk.welte225.org/' + location.search + '#' + match[1] }
         },
