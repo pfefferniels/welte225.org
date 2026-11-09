@@ -7,7 +7,7 @@
 export const PIECE_FROM = 0.5;
 /** The piano's level: the piece's, and the harmonies' as they reach the middle. */
 const PIANO = Math.pow(10, -5 / 20);
-/** The humming: 0 dB alone at 0, falling evenly in decibels to this at the top. */
+/** The humming: 0 dB alone at 0, falling to this at the top, fast at first (as the square root). */
 const HUM_FLOOR_DB = -22;
 
 /** The gains of the humming and of the piano's two parts, of which one sounds at a time. */
@@ -19,11 +19,11 @@ export interface Mix {
 
 export function mix(elaboration: number): Mix {
   const e = Math.min(1, Math.max(0, elaboration));
-  const hum = Math.pow(10, (HUM_FLOOR_DB * e) / 20);
+  const hum = Math.pow(10, (HUM_FLOOR_DB * Math.sqrt(e)) / 20);
   if (e >= PIECE_FROM) return { hum, harmonies: 0, piece: PIANO };
-  // from nothing at 0 to the piano's level at the middle
-  const rise = e / PIECE_FROM;
-  return { hum, harmonies: PIANO * rise * rise, piece: 0 };
+  // from nothing at 0 to the piano's level at the middle, soon there: 7 dB under it a tenth of the
+  // way up, 3 dB a quarter of the way
+  return { hum, harmonies: PIANO * Math.sqrt(e / PIECE_FROM), piece: 0 };
 }
 
 /** The elaboration the voice is rendered for: in steps, so that moving the fader renders anew only at each. */

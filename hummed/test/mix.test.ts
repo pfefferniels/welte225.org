@@ -26,6 +26,14 @@ describe('elaboration', () => {
     assert.ok(mix(PIECE_FROM - 0.01).harmonies > mix(PIECE_FROM - 0.01).hum);
   });
 
+  it('brings the harmonies in soon and the humming down soon', () => {
+    const db = (x: number): number => 20 * Math.log10(x);
+    // a quarter of the way up: the harmonies within 3 dB of the piano, the humming 10 dB down
+    assert.ok(db(mix(0.25).harmonies) > db(mix(PIECE_FROM).piece) - 3.1);
+    assert.ok(db(mix(0.25).hum) < -10);
+    assert.ok(mix(0.25).harmonies > mix(0.25).hum);
+  });
+
   it('passes from the harmonies to the piece at the middle, as loud', () => {
     const justBelow = mix(PIECE_FROM - 1e-9).harmonies;
     assert.ok(Math.abs(justBelow - mix(PIECE_FROM).piece) < 1e-6);
@@ -48,9 +56,9 @@ describe('elaboration', () => {
       assert.ok(approximateness(b) < approximateness(a));
     }
     for (const e of positions) assert.ok(voiceLevel(e) >= pianoLevel(e));
-    // the humming alone ×1.6; the piece as the MPM sets it down, the voice a little beyond it
-    assert.ok(Math.abs(pianoLevel(0) - 1.6) < 1e-9);
-    assert.ok(Math.abs(voiceLevel(0) - 1.6) < 1e-9);
+    // the humming alone ×1.4; the piece as the MPM sets it down, the voice a little beyond it
+    assert.ok(Math.abs(pianoLevel(0) - 1.4) < 1e-9);
+    assert.ok(Math.abs(voiceLevel(0) - 1.4) < 1e-9);
     assert.equal(pianoLevel(1), 1);
     assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);

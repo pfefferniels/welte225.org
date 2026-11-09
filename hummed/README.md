@@ -108,14 +108,16 @@ to apply to.
 The elaboration fader (`src/page/mix.ts`) sets three gains, from left to right:
 
 - At 0, the humming alone, at full level.
-- Rising, the harmonies come in from silence under it and grow, as the square of the way up, to
-  the piano's level (−5 dB) at the middle.
+- Rising, the harmonies come in from silence under it and grow soon, as the square root of the way
+  up, to the piano's level (−5 dB) at the middle: 7 dB under it a tenth of the way up, 3 dB a
+  quarter of the way.
 - From the middle on, the piano plays the piece instead, at the same level.
 
-The humming falls evenly in decibels all the way, from 0 dB to −11 dB at the middle and −22 dB at
-the top, where it is a pianist humming along. The page plays both the piece and the harmonies all
+The humming falls soon too, as the square root of the way up, from 0 dB to −11 dB a quarter of the
+way, −15.6 dB at the middle and −22 dB at the top, where it is a pianist humming along. The page plays both the piece and the harmonies all
 the time, each into its own gain, so passing the middle crossfades between them, even in the
-middle of a chord. It starts at 0.65: the piece, with the humming at −14 dB.
+middle of a chord. It starts at 0.65: the piece, with the humming at −17.7 dB. (The harmonies came in as the square
+of the way up and the humming fell evenly in decibels; both changed too late.)
 
 The fader also sets how exaggerated the performance is, and so the voice itself
 (`src/worker/levels.ts`): elaboration in the sense of making things subtle. The barer the music,
@@ -123,9 +125,11 @@ the rawer its gestures; the more of it there is, the more refined, until at 1 th
 Grünfeld's performance as the MPM sets it down, with all its editorial decisions. espressivo
 exaggerates the MPM (`exaggerateMpm`) to:
 
-- the piano: `1 + 0.6 (1 − e)²`, ×1.6 at 0, ×1.15 at the middle, ×1.07 at 0.65, ×1 at 1;
-- the voice: `1.1 + 0.5 (1 − e)²`, ×1.6 alone, ×1.16 at 0.65, ×1.1 under the piece, a little beyond
+- the piano: `1 + 0.4 (1 − e)²`, ×1.4 at 0, ×1.1 at the middle, ×1.05 at 0.65, ×1 at 1;
+- the voice: `1.1 + 0.3 (1 − e)²`, ×1.4 alone, ×1.14 at 0.65, ×1.1 under the piece, a little beyond
   the piano except in timing.
+
+(×2 at 0 sounded extremely unnatural, ×1.6 still too much.)
 
 The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
 and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
@@ -152,8 +156,11 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    at the ridge behind the teeth for 80 ms while the hum goes on through the nose; a detached
    note with a "d", the same closure (at most 80 ms) with the velum shut, so that the voice falls
    silent and is released on the note, the lungs pushing again for 50 ms behind the tongue. The
-   mouth opens with the dynamics smoothed over ±1.5 s, at most 30 % of the way to the
-   open shapes, less before high notes, and closes as each phrase fades; the humming shape changes
+   mouth opens with the dynamics smoothed over ±1.5 s, only at the loudest moments (from 44 on
+   the roll's scale, fully at 48), at most 30 % of the way to the open shapes, less before high
+   notes, and closes as each phrase fades: at the page's start in 4 places (bars 9–10, 14 and
+   20, 8.5 s in all), with the humming alone in 7. From 37.5 it was open for a third of the
+   piece; the humming shape changes
    at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
    reconstruction) is mapped onto the roll's (34 to 44), for which their thresholds were set, so
@@ -174,7 +181,7 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    within a sung stretch, the voice dies away evenly over 0.8 s (the pressure falling
    exponentially, about 6 dB of sound every tenth of a second) and swells back into the next note
    over 0.2 s: silence, not breath. The fragmentation follows the elaboration, `0.11 + 0.06 e`:
-   alone, the voice falls silent 5 times (7 % of the time it sings), at 0.65 11 times (13 %),
+   alone, the voice falls silent 6 times (8 % of the time it sings), at 0.65 11 times (13 %),
    mostly in the tails of long, still notes. A first version, falling silent twice as often and
    within 0.3 s, was too strong and too sudden. The calibration renders the voice whole
    (fragmentation 0).

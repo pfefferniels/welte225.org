@@ -1,6 +1,6 @@
 // How exaggerated the performance is, and how loosely the voice sings: both follow the elaboration.
-// The barer the music (0, the humming alone), the rawer the gestures: the MPM ×1.6 (doubled sounded
-// unnatural); the more of it there is, the subtler, until at 1 the piano plays the reconstruction
+// The barer the music (0, the humming alone), the rawer the gestures: the MPM ×1.4 (doubled sounded
+// unnatural, ×1.6 still too much); the more of it there is, the subtler, until at 1 the piano plays the reconstruction
 // as the MPM sets it down.
 // The voice is the inner guide of the playing: a little more exaggerated than the piano, except
 // where notes move in time, which it shares with the piano so that the two stay together.
@@ -13,11 +13,11 @@ import {
 
 const unit = (x: number): number => Math.min(1, Math.max(0, x));
 
-/** The piano's exaggeration (and the voice's timing): ×1.6 at 0, falling fast, then gently, to ×1 at 1. */
-export const pianoLevel = (elaboration: number): number => 1 + 0.6 * Math.pow(1 - unit(elaboration), 2);
+/** The piano's exaggeration (and the voice's timing): ×1.4 at 0, falling fast, then gently, to ×1 at 1. */
+export const pianoLevel = (elaboration: number): number => 1 + 0.4 * Math.pow(1 - unit(elaboration), 2);
 
-/** The voice's, except in timing: ×1.6 alone, a little beyond the piano's elsewhere, ×1.1 under the piece. */
-export const voiceLevel = (elaboration: number): number => 1.1 + 0.5 * Math.pow(1 - unit(elaboration), 2);
+/** The voice's, except in timing: ×1.4 alone, a little beyond the piano's elsewhere, ×1.1 under the piece. */
+export const voiceLevel = (elaboration: number): number => 1.1 + 0.3 * Math.pow(1 - unit(elaboration), 2);
 
 /** How loosely the voice keeps to the written pitch, 0 to 1: loosest alone, closest under the piece. */
 export const approximateness = (elaboration: number): number => 1 - unit(elaboration);
@@ -29,7 +29,7 @@ export const approximateness = (elaboration: number): number => 1 - unit(elabora
  */
 export const fragmentation = (elaboration: number): number => 0.11 + 0.06 * unit(elaboration);
 
-/** Where the page starts (index.html): the piece (×1.07), the humming under it (×1.16). */
+/** Where the page starts (index.html): the piece (×1.05), the humming under it (×1.14). */
 export const DEFAULT_ELABORATION = 0.65;
 
 const TIMING: ReadonlySet<ExpressionDimension> = new Set<ExpressionDimension>([

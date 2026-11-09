@@ -18,6 +18,13 @@ export type OpenShape = (typeof OPEN_SHAPES)[number];
 /** How far the lips part at the most. */
 export const OPEN_MAX = 0.3;
 /** Between notes: legato within this gap, a stop from this gap on, a slide past this overlap (ms). */
+/**
+ * The mouth opens with the dynamics (read against the roll's range) only at the loudest moments,
+ * from `from`, fully (to OPEN_MAX) `span` above it; a long highest note of a breath group opens it
+ * a little more from `peakFrom`. A few places in the piece: from 37.5 the lips were open for a
+ * third of it.
+ */
+const MOUTH = { from: 44, span: 4, peakFrom: 44 } as const;
 const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
@@ -229,9 +236,9 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     // the mouth opens with the dynamics, a little more at a long peak, less before high notes
     const long = v.off - v.on >= 0.8;
     const L = level(v.on);
-    const x = clip((L - 37.5) / 9.5, 0, 1);
+    const x = clip((L - MOUTH.from) / MOUTH.span, 0, 1);
     let want = OPEN_MAX * x * x * (3 - 2 * x);
-    if (peakOf[k] === k && long && L >= 37) want += 0.08;
+    if (peakOf[k] === k && long && L >= MOUTH.peakFrom) want += 0.08;
     let pitchAhead = -Infinity;
     for (let j = k; j < src.length; j++)
       if (vn[j].on <= v.on + 2.5) pitchAhead = Math.max(pitchAhead, src[j].pitch);
