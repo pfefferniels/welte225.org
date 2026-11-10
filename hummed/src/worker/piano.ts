@@ -1,10 +1,10 @@
-// The piano at a level: the piece and its harmonies performed with the exaggerated MPM, as the roll
-// plays them. The worker sends them with each plan; `npm run pianoteq` renders them from the same.
+// The piano at an elaboration: the piece and its harmonies performed with the MPM as exaggerated and
+// as fast as that elaboration has it, as the roll plays them. The worker sends them with each plan; `npm run pianoteq` renders them from the same.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { readPerformance, repair, type PedalPoint, type Performance } from '../hummer/performance.ts';
 import type { PedalStep, PianoPart } from '../shared/piano.ts';
 import { PAD_MS } from '../shared/units.ts';
-import { pianoFactors } from './levels.ts';
+import { atTempo, pianoFactors, pianoLevel, tempoFactor } from './levels.ts';
 
 /** What the piano plays from: the piece's score, the harmonies' score (MSM) and the MPM. */
 export interface PianoScore {
@@ -33,13 +33,18 @@ export function pianoPart({ notes, sustain, soft }: Performance): PianoPart {
   };
 }
 
-/** The piano's two parts at a level of exaggeration. */
+/** The MPM as the piano performs it at an elaboration: exaggerated, then faster. */
+export function pianoMpm(mpm: string, elaboration: number): string {
+  const factors = pianoFactors(pianoLevel(elaboration));
+  return atTempo(factors ? exaggerateMpm(mpm, { factors }).mpm : mpm, tempoFactor(elaboration));
+}
+
+/** The piano's two parts at an elaboration. */
 export function performPiano(
   score: PianoScore,
-  level: number,
+  elaboration: number,
 ): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
-  const factors = pianoFactors(level);
-  const mpm = factors ? exaggerateMpm(score.mpm, { factors }).mpm : score.mpm;
+  const mpm = pianoMpm(score.mpm, elaboration);
   const part = (msm: string, expandOrnaments: boolean): PianoPart => {
     const performance = readPerformance(performMsmToData({ msm, mpm }, { expandOrnaments }));
     repair(performance.notes);

@@ -6,8 +6,13 @@ import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { seededRandom } from '../src/shared/math.ts';
 import { fingerprint, midiEvents } from '../src/shared/piano.ts';
-import { elaborationSteps, ManifestError, parseManifest, settingName } from '../src/shared/recordings.ts';
-import { pianoLevel } from '../src/worker/levels.ts';
+import {
+  elaborationSteps,
+  ManifestError,
+  parseManifest,
+  recordingOf,
+  settingName,
+} from '../src/shared/recordings.ts';
 import { performPiano } from '../src/worker/piano.ts';
 import { findLag, lagDrift, loudness, onsetStrength } from '../tools/audio.ts';
 import { loadPianoScore, ROOT } from '../tools/node-support.ts';
@@ -36,6 +41,33 @@ describe('the recordings’ manifest', () => {
   });
 });
 
+describe('a recording of a part', () => {
+  const part = {
+    keys: [
+      { on: 1, off: 1.5, pitch: 60, velocity: 40 },
+      { on: 2, off: 2.2, pitch: 64, velocity: 50 },
+    ],
+    sustain: [],
+    soft: [],
+  };
+  const recorded = {
+    file: 'x.mp3',
+    keys: 2,
+    fingerprint: fingerprint(midiEvents(part)),
+    seconds: 3,
+    lagMs: 0,
+    driftMs: 0,
+  };
+  it('is of the part as it was rendered', () => {
+    assert.ok(recordingOf(recorded, part));
+  });
+  it('is not of the same keys at another tempo', () => {
+    const faster = { ...part, keys: part.keys.map((k) => ({ ...k, on: k.on / 1.1, off: k.off / 1.1 })) };
+    assert.equal(faster.keys.length, recorded.keys);
+    assert.ok(!recordingOf(recorded, faster));
+  });
+});
+
 describe('the recordings in piano/pianoteq/', () => {
   const manifest = parseManifest(
     JSON.parse(readFileSync(join(ROOT, 'piano/pianoteq/manifest.json'), 'utf8')),
@@ -43,7 +75,7 @@ describe('the recordings in piano/pianoteq/', () => {
   it('are of the performance as it is now', { skip: manifest ? false : 'none rendered yet' }, () => {
     const score = loadPianoScore();
     for (const setting of manifest?.settings ?? []) {
-      const parts = performPiano(score, pianoLevel(setting.elaboration));
+      const parts = performPiano(score, setting.elaboration);
       for (const name of ['piece', 'harmonies'] as const) {
         const recorded = setting[name];
         const message = `${setting.elaboration} ${name} was rendered from another performance: npm run pianoteq`;

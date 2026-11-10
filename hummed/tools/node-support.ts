@@ -14,7 +14,7 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
-import { approximateness, DEFAULT_ELABORATION, THRESHOLD } from '../src/worker/levels.ts';
+import { approximateness, DEFAULT_ELABORATION, threshold } from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
 import type { PianoScore } from '../src/worker/piano.ts';
 import { performVoice, type HumData } from '../src/worker/prepare.ts';
@@ -58,7 +58,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
     ...performVoice(score, elaboration),
     approximateness: approximateness(elaboration),
     range: dynamicsRange(score.mpm),
-    threshold: THRESHOLD,
+    threshold: threshold(elaboration),
   };
 }
 

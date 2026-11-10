@@ -125,3 +125,37 @@ describe('the roll on an instrument', () => {
     assert.equal(piece.keys.length - struck, keys.length - new Set(keys).size);
   });
 });
+
+describe('the piano at an elaboration', async () => {
+  const { performPiano, pianoMpm } = await import('../src/worker/piano.ts');
+  const { performVoice } = await import('../src/worker/prepare.ts');
+  const { readPerformance } = await import('../src/hummer/performance.ts');
+  const { loadPianoScore } = await import('../tools/node-support.ts');
+  const { PAD_MS } = await import('../src/shared/units.ts');
+  const score = loadPianoScore();
+  const lastStrike = (p: PianoPart): number => Math.max(...p.keys.map((k) => k.on));
+  const steps = [0, 0.25, 0.5, 0.75, 1];
+  const played = steps.map((e) => performPiano(score, e));
+
+  it('plays the reconstruction as it is at the top', () => {
+    assert.equal(pianoMpm(score.mpm, 1), score.mpm);
+  });
+
+  it('is through the piece the sooner the barer the music, a sketch of it', () => {
+    const lengths = played.map(({ piece }) => lastStrike(piece));
+    for (const [i, length] of lengths.entries()) if (i > 0) assert.ok(length > lengths[i - 1]);
+    // the humming alone a good eighth sooner than the piece as Grünfeld plays it, and no more than a fifth
+    const sooner = 1 - lengths[0] / lengths[lengths.length - 1];
+    assert.ok(sooner > 0.12 && sooner < 0.2, `${(100 * sooner).toFixed(1)} % sooner`);
+  });
+
+  it('keeps the harmonies as long as the piece, and the voice on the piano’s strikes', () => {
+    for (const [i, { piece, harmonies }] of played.entries()) {
+      assert.ok(Math.abs(lastStrike(harmonies) - lastStrike(piece)) < 3);
+      const strikes = new Set(piece.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`));
+      const { notes } = readPerformance(performVoice(score, steps[i]).performance);
+      assert.equal(notes.length, piece.keys.length);
+      for (const n of notes) assert.ok(strikes.has(`${n.pitch}@${Math.round(n.onMs + PAD_MS)}`));
+    }
+  });
+});
