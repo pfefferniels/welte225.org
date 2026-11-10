@@ -1,12 +1,13 @@
-// The voice's decisions about a performance: breaths, scoops and sags, the mouth's posture, pulses,
-// stops and consonants between notes, slides, and the effort over each phrase.
+// The voice's decisions about a performance: breaths, scoops and sags, the mouth's posture and its
+// rare opening, pulses, stops and consonants between notes, slides, the effort over each phrase, and
+// where the voice is heard.
 import type { Air, AirPassage } from '../reduction/types.ts';
 import { clip, fixed, groupBy, interp, seededRandom } from '../shared/math.ts';
 import type { Ms, Seconds, Ticks } from '../shared/units.ts';
 import type { Clock } from './clock.ts';
 import type { MelodyNote, VoiceNote } from './melody.ts';
 import type { DynamicsCurve, DynamicsRange, Note, PedalPoint } from './performance.ts';
-import { activity, noteSalience, quietSpans } from './salience.ts';
+import { presenceAt, surfacings } from './presence.ts';
 import type { HumStyle } from './style.ts';
 
 /** The three humming shapes of the mouth, mixed in turn, and the open shapes they move toward. */
@@ -17,14 +18,25 @@ export type OpenShape = (typeof OPEN_SHAPES)[number];
 
 /** How far the lips part at the most. */
 export const OPEN_MAX = 0.3;
-/** Between notes: legato within this gap, a stop from this gap on, a slide past this overlap (ms). */
 /**
- * The mouth opens with the dynamics (read against the roll's range) only at the loudest moments,
- * from `from`, fully (to OPEN_MAX) `span` above it; a long highest note of a breath group opens it
- * a little more from `peakFrom`. A few places in the piece: from 37.5 the lips were open for a
- * third of it.
+ * The mouth opens with the dynamics (smoothed, read against the roll's range) at the piece's very
+ * loudest moments alone: where they pass `from`, as far (to OPEN_MAX) as their peak lies above it,
+ * fully `span` above. It opens slowly, over `inMs` at least, so as to be open at the peak, and
+ * closes as slowly once the dynamics have fallen back; both eased (gestures.ts), since a lip that
+ * parts at an even pace is heard to part. Openings less than `least` are left out, and one that
+ * could not close and open again in time joins the one before. (From 44, over 1 to 2 s and closing
+ * with each phrase, the lips parted in 4 to 7 places and were heard to; from 37.5 they were open
+ * for a third of the piece.)
  */
-const MOUTH = { from: 44, span: 4, peakFrom: 44 } as const;
+export const MOUTH = {
+  from: 46,
+  span: 3,
+  least: 0.08,
+  inMs: 3000,
+  inMost: 4500,
+  outMs: 3500,
+} as const;
+/** Between notes: legato within this gap, a stop from this gap on, a slide past this overlap (ms). */
 const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
@@ -56,6 +68,12 @@ export type VocalEvent =
       readonly date: Ticks;
       readonly hum: Hum;
       readonly toward: OpenShape;
+      readonly transitionMs: Ms;
+    }
+  | {
+      /** The lips part, or close again (`amount` 0), slowly: eased over `transitionMs`. */
+      readonly tag: 'mouth';
+      readonly date: Ticks;
       readonly amount: number;
       readonly transitionMs: Ms;
     }
@@ -97,10 +115,12 @@ export type VocalEvent =
       readonly transitionMs: Ms;
     }
   | {
-      /** The voice falls silent here, within a sung stretch: nothing in the MPM to convey. */
-      readonly tag: 'quiet';
+      /** The inner voice is heard here (presence.ts): it has come up over the threshold. */
+      readonly tag: 'surface';
       readonly date: Ticks;
       readonly durationMs: Ms;
+      /** How much of it is heard at the most, up to 1. */
+      readonly peak: number;
     }
   | {
       readonly tag: 'air';
@@ -147,14 +167,64 @@ export interface VocalMapInput {
   /** The MPM's own range of dynamics, against which loudness is read here. */
   readonly range: DynamicsRange;
   /**
-   * How fragmentary the voice is: where what the MPM does (salience.ts) stays below this, the
-   * voice falls silent. 0: it sounds through every sung stretch.
+   * How much of the voice is heard, per 10 ms of the performance (presence.ts); null: all of it.
    */
-  readonly fragmentation: number;
+  readonly presence: Float32Array | null;
+}
+
+/** One opening of the mouth: when the lips begin to part, how far, and when they begin to close. */
+interface Opening {
+  readonly from: Ms;
+  readonly inMs: Ms;
+  readonly amount: number;
+  readonly close: Ms;
+}
+
+/**
+ * Where the mouth opens: the stretches where the smoothed dynamics lie above `MOUTH.from` while the
+ * voice is heard, each opened towards its peak and closed after it.
+ */
+function openings(level: (t: Seconds) => number, end: Seconds, presence: Float32Array | null): Opening[] {
+  const out: Opening[] = [];
+  const step = 0.05;
+  let start = -1;
+  let peak = 0;
+  let top = -Infinity;
+  for (let i = 0; i * step <= end + step; i++) {
+    const t = i * step;
+    const L = t <= end ? level(t) : -Infinity;
+    if (L > MOUTH.from) {
+      if (start < 0) start = t;
+      if (L > top) {
+        top = L;
+        peak = t;
+      }
+      continue;
+    }
+    if (start < 0) continue;
+    const x = clip((top - MOUTH.from) / MOUTH.span, 0, 1);
+    const amount = fixed(OPEN_MAX * x * x * (3 - 2 * x), 2);
+    let heard = !presence;
+    if (presence)
+      for (let s = start; s <= t && !heard; s += 0.1) heard = presenceAt(presence, s * 1000) > 0.5;
+    const last = out.at(-1);
+    const inMs = Math.round(clip((peak - start) * 1000 + 1500, MOUTH.inMs, MOUTH.inMost));
+    const from = peak * 1000 - inMs;
+    const close = Math.max(peak * 1000 + 300, t * 1000 - 500);
+    if (amount >= MOUTH.least && heard) {
+      if (last && from < last.close + MOUTH.outMs)
+        // no time to close and open again: the mouth stays as it is and closes after this one
+        out[out.length - 1] = { ...last, close };
+      else out.push({ from: Math.max(0, from), inMs, amount, close });
+    }
+    start = -1;
+    top = -Infinity;
+  }
+  return out;
 }
 
 export function vocalMap(input: VocalMapInput): VocalEvent[] {
-  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style, range, fragmentation } = input;
+  const { notes, sustain, melody: src, voice: vn, air, dynamics, clock, style, range, presence } = input;
   const byDate = groupBy(notes, (n) => n.date);
   const presses: Ticks[] = [];
   for (let i = 1; i < sustain.length; i++)
@@ -193,7 +263,22 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     }
   }
 
-  let cur = 0;
+  // the mouth: a few slow openings, and how far it is open at any time, as the lips' stops need it
+  const mouth = openings(level, Math.max(...vn.map((v) => v.off)), presence);
+  for (const o of mouth) {
+    add({ tag: 'mouth', date: clock.toTicks(o.from), amount: o.amount, transitionMs: o.inMs });
+    add({ tag: 'mouth', date: clock.toTicks(o.close), amount: 0, transitionMs: MOUTH.outMs });
+  }
+  const openAt = (ms: Ms): number =>
+    mouth.reduce(
+      (a, o) =>
+        Math.max(
+          a,
+          o.amount * clip(Math.min((ms - o.from) / o.inMs, 1 - (ms - o.close) / MOUTH.outMs), 0, 1),
+        ),
+      0,
+    );
+
   let humIndex = 0;
   let hum: Hum = HUMS[0];
   let toward: OpenShape = OPEN_SHAPES[0];
@@ -201,8 +286,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     humIndex = (humIndex + 1) % HUMS.length;
     return HUMS[humIndex];
   };
-  const rampMs = (d: number): Ms => Math.round(clip(Math.abs(d) * 6000, 1000, 2000));
-  const moves = (want: number, c: number): boolean => want - c >= 0.08 || c - want >= 0.12;
 
   vn.forEach((v, k) => {
     const n = src[k];
@@ -233,50 +316,17 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       });
     }
 
-    // the mouth opens with the dynamics, a little more at a long peak, less before high notes
-    const long = v.off - v.on >= 0.8;
-    const L = level(v.on);
-    const x = clip((L - MOUTH.from) / MOUTH.span, 0, 1);
-    let want = OPEN_MAX * x * x * (3 - 2 * x);
-    if (peakOf[k] === k && long && L >= MOUTH.peakFrom) want += 0.08;
-    let pitchAhead = -Infinity;
-    for (let j = k; j < src.length; j++)
-      if (vn[j].on <= v.on + 2.5) pitchAhead = Math.max(pitchAhead, src[j].pitch);
-    want *= clip(1 - (pitchAhead - 74) * 0.1, 0.25, 1);
-    want = Math.round(Math.min(OPEN_MAX, want) * 100) / 100;
-    if (want < 0.06) want = 0;
-
+    // the humming shape: another with each phrase, at a pedal press and in a long note
     const lastDate = k > 0 ? src[k - 1].date : -1;
     const press = presses.some((p) => p > lastDate && p <= date);
     if (v.breathBefore || k === 0) {
       const peak = src[peakOf[k]].pitch;
       toward = OPEN_SHAPES[Math.floor(clip((peak - 60) / 22, 0, 0.999) * OPEN_SHAPES.length)];
       hum = nextHum();
-      add({ tag: 'posture', date, hum, toward, amount: 0, transitionMs: 200 });
-      cur = 0;
-      if (want > 0) {
-        add({
-          tag: 'posture',
-          date: clock.toTicks(onMs + 300),
-          hum,
-          toward,
-          amount: fixed(want, 2),
-          transitionMs: rampMs(want) + 400,
-        });
-        cur = want;
-      }
-    } else if (press || moves(want, cur)) {
-      if (press) hum = nextHum();
-      const amount = moves(want, cur) ? want : cur;
-      add({
-        tag: 'posture',
-        date,
-        hum,
-        toward,
-        amount: fixed(amount, 2),
-        transitionMs: amount !== cur ? rampMs(amount - cur) : 400,
-      });
-      cur = amount;
+      add({ tag: 'posture', date, hum, toward, transitionMs: 200 });
+    } else if (press) {
+      hum = nextHum();
+      add({ tag: 'posture', date, hum, toward, transitionMs: 400 });
     }
     if (k === 0) add({ tag: 'velum', date, value: 0.3 });
     if (v.off - v.on >= 1.0) {
@@ -286,7 +336,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         date: clock.toTicks(onMs + 0.55 * (offMs - onMs)),
         hum,
         toward,
-        amount: fixed(cur, 2),
         transitionMs: 600,
       });
     }
@@ -313,7 +362,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         });
         if (ARTICULATION.consonants)
           add({ tag: 'consonant', date, sound: 'd', durationMs: Math.round(Math.min(gap, D_CLOSURE)) });
-        else if (cur > 0.05)
+        else if (openAt(onMs) > 0.05)
           add({
             tag: 'lips',
             date: clock.toTicks(onMs - Math.min(gap, 120)),
@@ -354,7 +403,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       });
     const next = k + 1 < vn.length ? vn[k + 1] : undefined;
     if (!next || next.breathBefore) {
-      // the phrase lets go: the effort falls, the mouth closes, the pitch drops a little
+      // the phrase lets go: the effort falls, the pitch drops a little
       const release = Math.max(onMs + 0.5 * (offMs - onMs), offMs - style.releaseS * 1000);
       add({
         tag: 'pressure',
@@ -362,18 +411,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         factor: 0.45,
         transitionMs: Math.round(offMs - release),
       });
-      if (cur > 0) {
-        const close = Math.max(onMs, Math.min(release, offMs - 600));
-        add({
-          tag: 'posture',
-          date: clock.toTicks(close),
-          hum,
-          toward,
-          amount: 0,
-          transitionMs: Math.round(Math.max(300, offMs - close)),
-        });
-        cur = 0;
-      }
       add({
         tag: 'inflection',
         date: clock.toTicks(release),
@@ -385,13 +422,15 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     }
   });
 
-  // fragments: the voice falls silent where the MPM has nothing to convey for a while
-  if (fragmentation > 0) {
-    const salience = noteSalience(src, dynamics, clock);
-    const endMs = Math.max(...vn.map((v) => v.off * 1000)) + 1000;
-    for (const [s0, s1] of quietSpans(activity(src, vn, salience, dynamics, endMs), vn, fragmentation))
-      add({ tag: 'quiet', date: clock.toTicks(s0), durationMs: Math.round(s1 - s0) });
-  }
+  // where the inner voice is heard
+  if (presence)
+    for (const s of surfacings(presence))
+      add({
+        tag: 'surface',
+        date: clock.toTicks(s.from),
+        durationMs: Math.round(s.to - s.from),
+        peak: fixed(s.peak, 2),
+      });
 
   // voiceless air, as strong as the dynamics there
   for (const a of air) {

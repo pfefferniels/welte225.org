@@ -47,9 +47,9 @@ describe('VocalTractLab', async () => {
     }
   });
 
-  it('hums the first notes (0.5 to 3 s)', () => {
-    const from = Math.round((0.5 * SAMPLE_RATE) / STATE_STEP);
-    const to = Math.round((3 * SAMPLE_RATE) / STATE_STEP);
+  it('hums where the voice first comes up fully (3.5 to 6 s)', () => {
+    const from = Math.round((3.5 * SAMPLE_RATE) / STATE_STEP);
+    const to = Math.round((6 * SAMPLE_RATE) / STATE_STEP);
     const blocks = [...engine.synthesize(states, voice.weight, from, to, { blockStates: 40 })];
     const audio = Float32Array.from(blocks.flatMap((b) => Array.from(b.samples)));
     assert.equal(audio.length, (to - from - 1) * STATE_STEP);
@@ -60,7 +60,7 @@ describe('VocalTractLab', async () => {
   });
 
   // the sound to the bit: a new VocalTractLab build must leave it as it is (its speed-ups did)
-  it('sounds as it did, to the bit (3 to 9 s: notes, a breath)', () => {
+  it('sounds as it did, to the bit (3 to 9 s: the voice coming up and going, notes, a breath)', () => {
     const from = Math.round((3 * SAMPLE_RATE) / STATE_STEP);
     const to = Math.round((9 * SAMPLE_RATE) / STATE_STEP);
     const hash = createHash('sha256');

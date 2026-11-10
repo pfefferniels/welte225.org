@@ -23,11 +23,10 @@ export const voiceLevel = (elaboration: number): number => 1.1 + 0.3 * Math.pow(
 export const approximateness = (elaboration: number): number => 1 - unit(elaboration);
 
 /**
- * How fragmentary the voice is: it falls silent where what the MPM does stays below this
- * (src/hummer/salience.ts). A little alone, where the voice is all there is; a little more under
- * the piece, a pianist humming along.
+ * The threshold the inner voice has to cross to be heard (src/hummer/presence.ts): lower alone,
+ * where the voice is all there is, higher under the piece, a pianist humming along.
  */
-export const fragmentation = (elaboration: number): number => 0.11 + 0.06 * unit(elaboration);
+export const threshold = (elaboration: number): number => 0.22 + 0.16 * unit(elaboration);
 
 /** Where the page starts (index.html): the piece (×1.05), the humming under it (×1.14). */
 export const DEFAULT_ELABORATION = 0.65;

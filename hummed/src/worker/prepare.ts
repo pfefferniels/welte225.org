@@ -21,8 +21,8 @@ import type { StatePair } from '../vtl/engine.ts';
 import type { ChunkSource } from './chunk.ts';
 import {
   approximateness,
-  fragmentation,
   pianoLevel,
+  threshold,
   voiceFactors,
   voiceLevel,
   withSubNoteDynamics,
@@ -69,7 +69,7 @@ export interface HumData {
 }
 
 /**
- * The hummer at an elaboration: how loosely the voice sings, and how fragmentary it is. The
+ * The hummer at an elaboration: how loosely the voice sings, and how much of it is heard. The
  * dynamics come as performed or, from another worker, as the curve already read of that.
  */
 export function hum(
@@ -83,7 +83,7 @@ export function hum(
     reduction,
     ...data,
     approximateness: approximateness(elaboration),
-    fragmentation: fragmentation(elaboration),
+    threshold: threshold(elaboration),
   });
 }
 

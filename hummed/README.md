@@ -206,12 +206,14 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    at the ridge behind the teeth for 80 ms while the hum goes on through the nose; a detached
    note with a "d", the same closure (at most 80 ms) with the velum shut, so that the voice falls
    silent and is released on the note, the lungs pushing again for 50 ms behind the tongue. The
-   mouth opens with the dynamics smoothed over ±1.5 s, only at the loudest moments (from 44 on
-   the roll's scale, fully at 48), at most 30 % of the way to the open shapes, less before high
-   notes, and closes as each phrase fades: at the page's start in 4 places (bars 9–10, 14 and
-   20, 8.5 s in all), with the humming alone in 7. From 37.5 it was open for a third of the
-   piece; the humming shape changes
-   at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
+   mouth opens rarely and slowly: where the dynamics smoothed over ±1.5 s pass 46 on the roll's
+   scale (fully at 49), at most 30 % of the way to the open shapes, over 3 to 4.5 s so as to be
+   open at the peak, and it closes over 3.5 s once the dynamics have fallen back, both eased, so
+   that the lips have no speed where they begin to move and where they stop: at the page's start
+   in 2 places (bars 9–10 and 13–14), with the humming alone in 3 (bars 19–20 too). (From 44, over
+   1 to 2 s at an even pace and closing with each phrase, the lips parted in 4 to 7 places and
+   were heard to part; from 37.5 the mouth was open for a third of the piece.) The humming shape
+   changes with each phrase, at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
    reconstruction) is mapped onto the roll's (34 to 44), for which their thresholds were set, so
    the voice opens and breathes deeply in the piece's louder moments however soft its pianissimo.
@@ -219,28 +221,42 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    playing the voice stays breathy almost throughout (its folds half closed or more for under 2 s
    of the piece).
 
-   The voice is fragmentary (`src/hummer/salience.ts`): it sounds where the MPM has something to
-   convey and falls silent where it has not, as a pianist humming along catches some notes and
-   lets others go. Each sung note is weighed, 0 to 1, by the strongest of: the start of a phrase
-   (always 1); a hairpin under way (6 dynamics units a second counts fully); a note above the
-   dynamics of the 3 s about it; a beat bent beyond the ordinary rubato (its length against the
-   median of ±4 beats, from 0.08 to 0.2 in log); an accent (velocity above the curve); a detached
-   or repeated note (0.7); a leap of a fourth or more (0.6). The weight holds for 0.25 s after the
-   note begins and then fades (600 ms time constant) while the note is held; dynamics in motion
-   keep the voice up on their own. Where all of it stays under the fragmentation for 1.1 s or more
-   within a sung stretch, the voice dies away evenly over 0.8 s (the pressure falling
-   exponentially, about 6 dB of sound every tenth of a second) and swells back into the next note
-   over 0.2 s: silence, not breath. The fragmentation follows the elaboration, `0.11 + 0.06 e`:
-   alone, the voice falls silent 6 times (8 % of the time it sings), at 0.65 11 times (13 %),
-   mostly in the tails of long, still notes. A first version, falling silent twice as often and
-   within 0.3 s, was too strong and too sudden. The calibration renders the voice whole
-   (fragmentation 0).
+   The voice is mostly inward (`src/hummer/presence.ts`). A pianist humming along sings the
+   whole line inwardly and is short of breath: no tone and no phrase is held out. What is
+   heard is where the inner voice crosses a threshold, and there it does not set in: it comes up
+   out of silence and sinks back. The inner voice's intensity, at every moment of a sung note, is
+   the sum of the dynamics (0.45 from the piece's quiet to its loud, the 10th to the 90th
+   percentile of what is sung), their motion (a crescendo under way adds up to 0.35, at 6 units a
+   second; a decrescendo takes away up to 0.2) and the note's own impulse (0.45 of: any new note
+   0.25, a detached or repeated note 0.5, a leap of a fourth or more or a phrase's beginning 0.6,
+   an accent or a beat bent beyond the ordinary rubato up to 1), which holds for 0.2 s and then
+   fades (450 ms) while the note is held. How much of the voice is heard, its presence, is that
+   intensity over the threshold, softly (all of it 0.22 above), beginning 0.2 s ahead and through
+   two lags, so that it comes in over some 0.8 s and goes out over 1.1 s. And it tires: while it
+   sounds, the threshold rises (by up to 0.7, within 2 s) and falls back while it is silent
+   (1.2 s), so the voice gives way even where the piece stays loud, and comes again. The threshold
+   follows the elaboration, `0.22 + 0.16 e`: alone, the voice is heard 50 times, for a third of
+   what it sings and never longer than 2.6 s; at 0.65, 35 times for 22 %, 0.7 s in the median and
+   1.8 s at the most; under the piece as it is, 30 times for 17 %.
+
+   Coming up, the breath is there before the voice (`VOICING`, `src/hummer/gestures.ts`): the
+   lungs push fully from a presence of 0.35 on, and with it the folds begin to swing, their
+   amplitude growing evenly in decibels, 40 dB from nothing to the voice as it is (VocalTractLab's
+   relative amplitude: the glottis shapes `v01` to `v20` of the speaker, 2 dB apart, which its
+   gestural model moves between). At its steepest the sound grows by 6 dB in a tenth of a second
+   and dies away by 5; at a presence of a half it lies 20 dB under the voice as it is. Between,
+   the lungs rest: silence, and the breath taken before a phrase that stays inward is drawn at
+   0.4 of its pressure. (Before, the voice sounded through every phrase and fell silent only in
+   the tails of long, still notes, 6 to 11 times in the piece, dying away over 0.8 s and back
+   within 0.2 s; the phrases were held out at an even level, and the returns were heard as
+   onsets.) The calibration renders the voice whole (no threshold).
 
 3. **Gestures** (`src/hummer/gestures.ts`): the pitch line; the effort, lung
    pressure following the dynamics within held notes (velocity^1.5, each note offset by its own
    velocity against the curve, corrected by the calibration) and the glottis from breathy to modal
-   with loudness; two gestural scores, lips closed and lips open at their widest, and the opening
-   that blends them, lagged as VocalTractLab lags a gesture (`src/hummer/gestural-score.ts`).
+   with loudness, the folds swinging less where less of the voice is heard; two gestural scores,
+   lips closed and lips open at their widest (`src/hummer/gestural-score.ts`), and the opening
+   that blends them, eased from one amount to the next.
    The consonants are not gestures of the score: VocalTractLab sets a consonant's whole vocal
    tract to that of a prototype syllable, so jaw and lips would open for every "n" and "d", which
    made them all sound like "mä". Instead the tongue tip alone is moved, in the tract states
@@ -369,7 +385,7 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 | `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                 |
 | `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
 | `src/shared/`                    | what both sides use: units, maths, the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                                                                      |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum), the hum style measured from it, the calibration                                                                                                                                           |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum, and glottis shapes from breathy to modal, `g00` to `g20`, and from the breathy one down to no voice, `v01` to `v20`), the hum style measured from it, the calibration                      |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
 | `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                            |
 | `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                                                                                                                                     |
@@ -503,8 +519,8 @@ humming or singing perfectly when told exactly when which pitch should sound?
 
 The live page's hummer is a TypeScript port of `hummer.py` and `voicemodel.py`; the two differ in
 the random wobble and falls (a seeded generator of its own), in the mouth (two scores blended
-rather than rendered and cross-faded), and in what is sung (the reduction rather than the top
-line).
+rather than rendered and cross-faded, and opened rarely), in what is sung (the reduction rather
+than the top line), and in how much of it is heard (the inner voice over a threshold).
 
 ## Licences
 

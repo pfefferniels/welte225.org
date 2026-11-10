@@ -15,6 +15,7 @@ import {
   type DynamicsCurve,
   type DynamicsRange,
 } from './performance.ts';
+import { innerVoice, noteImpulse, presence } from './presence.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { vocalMap, type VocalEvent } from './vocal-map.ts';
 
@@ -41,10 +42,10 @@ export interface VoiceInput {
   /** The MPM's own range of dynamics (`dynamicsRange`), against which the voice reads loudness. */
   readonly range: DynamicsRange;
   /**
-   * How fragmentary the voice is (`fragmentation` in the worker's levels): it falls silent where
-   * what the MPM does stays below this. 0 or absent: it sounds through every sung stretch.
+   * The threshold the inner voice has to cross to be heard (`threshold` in the worker's levels,
+   * presence.ts). 0 or absent: all of it is heard, every sung stretch through.
    */
-  readonly fragmentation?: number;
+  readonly threshold?: number;
 }
 
 export interface Voice {
@@ -74,17 +75,32 @@ export function renderVoice(input: VoiceInput): Voice {
   const clock = new Clock(notes, sustain);
   const melody = takeBreaths(melodyOf(input.reduction, notes, clock), sustain);
   const air = input.reduction.events.filter((e) => e.kind === 'air');
+  const voice = voiceNotes(melody);
+  // how much of the inner voice is heard, where it has a threshold to cross
+  const heard =
+    (input.threshold ?? 0) > 0
+      ? presence(
+          innerVoice(
+            melody,
+            voice,
+            noteImpulse(melody, dynamics, clock),
+            dynamics,
+            Math.max(...voice.map((v) => v.off * 1000)) + 1000,
+          ),
+          input.threshold ?? 0,
+        )
+      : null;
   const events = vocalMap({
     notes,
     sustain,
     melody,
-    voice: voiceNotes(melody),
+    voice,
     air,
     dynamics,
     clock,
     style: input.style,
     range: input.range,
-    fragmentation: input.fragmentation ?? 0,
+    presence: heard,
   });
   const g = gestures({
     notes,
@@ -94,6 +110,7 @@ export function renderVoice(input: VoiceInput): Voice {
     style: input.style,
     calibration: input.calibration,
     approximateness: input.approximateness,
+    presence: heard,
   });
   const scores = gesturalScores(g.tiers, g.endMs);
   return {

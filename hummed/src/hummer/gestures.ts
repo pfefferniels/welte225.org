@@ -6,6 +6,7 @@ import type { Calibration, HumStyle } from './style.ts';
 import { runs, segment, splice, type Tier, type Tiers } from './tiers.ts';
 import type { Clock } from './clock.ts';
 import type { DynamicsCurve, Note } from './performance.ts';
+import { presenceAt } from './presence.ts';
 import {
   eventsOf,
   HUMS,
@@ -59,13 +60,20 @@ export const AIR_OUT: {
   opening: 0.6,
 };
 /**
- * Where the voice falls silent mid-phrase: it dies away over `outMs`, the pressure falling as an
- * even decrescendo (exponentially, by `outDepth` time constants), and swells back into the next
- * note over `inMs`, from `leadMs` before it is heard.
+ * How the voice comes up out of silence, by how much of it is heard (presence.ts, 0 to 1): first
+ * the breath, the lungs pushing fully from `air` on, the folds apart; with it the folds begin to
+ * swing, their amplitude growing evenly in decibels over `range` dB (VocalTractLab's relative
+ * amplitude, the glottis shapes v01 to v20 of the speaker, 2 dB apart), so that the voice swells in
+ * from nothing and dies away as evenly. The sound follows both: at a presence of a half it is some
+ * 20 dB under the voice as it is.
  */
-const QUIET = { outMs: 800, outDepth: 4, inMs: 200, leadMs: 40 } as const;
-/** Lung pressure while breathing in, at depth 1 (dPa). */
+export const VOICING = { air: 0.35, range: 40, stepDb: 2 } as const;
+/**
+ * Lung pressure while breathing in, at depth 1 (dPa). A breath before a phrase that stays inward is
+ * drawn more quietly: `inward` of that, rising to all of it as the phrase's beginning is heard.
+ */
 const BREATH_PRESSURE = 1400;
+const BREATH = { inward: 0.4, aheadMs: 600 } as const;
 
 export interface PitchEvent {
   /** The sung note's `xml:id` in the reduction. */
@@ -112,17 +120,7 @@ export function silences(pressure: Tier<number>): Ms[] {
 
 /** A sequence of keyed values at times, interpolated linearly, held after the last. */
 type Keys<V> = [Ms, V][];
-function valueAt(keys: Keys<number>, t: Ms): number {
-  let i = 0;
-  while (i + 1 < keys.length && keys[i + 1][0] <= t) i++;
-  if (i + 1 < keys.length) {
-    const [t0, v0] = keys[i];
-    const [t1, v1] = keys[i + 1];
-    return v0 + (v1 - v0) * ((t - t0) / Math.max(1e-9, t1 - t0));
-  }
-  return keys[i][1];
-}
-/** As `valueAt`, multiplying before dividing: the effort's phrase factor has always been read so. */
+/** Interpolated linearly, multiplying before dividing: the effort's phrase factor has always been read so. */
 function factorAt(keys: Keys<number>, t: Ms): number {
   let i = 0;
   while (i + 1 < keys.length && keys[i + 1][0] <= t) i++;
@@ -176,24 +174,42 @@ function sigh(tiers: Tiers, weight: Float32Array, s: Ms, end: Ms, depth: number)
     );
 }
 
+/** Eased from 0 to 1: no speed at either end, so that a transition has no corner to be heard. */
+const ease = (x: number): number => 0.5 - 0.5 * Math.cos(Math.PI * clip(x, 0, 1));
+
+/**
+ * How far the lips are open, per ms, 0 to 1 (of OPEN_MAX): each mouth event moves the opening from
+ * where it is to its amount, eased over its transition.
+ */
+function opening(events: readonly [Ms, VocalEventOf<'mouth'>][], endMs: Ms): Float32Array {
+  const weight = new Float32Array(Math.ceil(endMs));
+  let value = 0;
+  let from = 0;
+  const sorted = [...events].sort((a, b) => a[0] - b[0]);
+  sorted.forEach(([t, e], k) => {
+    const next = k + 1 < sorted.length ? sorted[k + 1][0] : endMs;
+    const start = value;
+    for (let i = Math.max(0, Math.ceil(from)); i < Math.min(weight.length, t); i++)
+      weight[i] = start / OPEN_MAX;
+    for (let i = Math.max(0, Math.ceil(t)); i < Math.min(weight.length, next); i++) {
+      value = start + (e.amount - start) * ease((i - t) / Math.max(1, e.transitionMs));
+      weight[i] = clip(value / OPEN_MAX, 0, 1);
+    }
+    from = next;
+  });
+  return weight;
+}
+
 /**
  * The mouth: base shapes (mixes of the three hums, in 10 % steps) and the phrase's open shape as
- * two vowel tiers, and the opening amount, lagged like VocalTractLab's gestures, as the weight.
+ * two vowel tiers.
  */
 function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
-  let amount: Keys<number> = [[0, 0]];
   let mix: Keys<readonly number[]> = [[0, [1, 0, 0]]];
   const toward: [Ms, OpenShape | null][] = [[0, null]];
   for (const [t, e] of [...events].sort((a, b) => a[0] - b[0])) {
     const target = HUMS.map((h) => (h === e.hum ? 1 : 0));
-    const a0 = valueAt(amount, t);
     const w0 = vectorAt(mix, t);
-    amount = amount
-      .filter((p) => p[0] < t)
-      .concat([
-        [t, a0],
-        [t + e.transitionMs, e.amount],
-      ]);
     mix = mix
       .filter((p) => p[0] < t)
       .concat([
@@ -207,7 +223,6 @@ function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
   const step = 60;
   const closed: string[] = [];
   const open: string[] = [];
-  const stair: number[] = [];
   const times: Ms[] = [];
   let ti = 0;
   for (let t = 0; t < endMs; t += step) {
@@ -217,35 +232,22 @@ function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
     while (ti + 1 < toward.length && toward[ti + 1][0] <= t) ti++;
     closed.push(`c${q[0]}_${q[1]}`);
     open.push(`${toward[ti][1] ?? OPEN_SHAPES[0]}_${q[0]}_${q[1]}`);
-    stair.push(Math.round(valueAt(amount, t) * 100) / 100);
     times.push(t);
   }
-
-  // five first-order lags, as VocalTractLab's target approximation moves a gesture
-  const n = Math.ceil(endMs);
-  const weight = new Float32Array(n);
-  const alpha = 1 / TIME_CONSTANT_MS.posture;
-  const y = [0, 0, 0, 0, 0];
-  for (let i = 0; i < n; i++) {
-    let x = stair[Math.min(Math.floor(i / step), stair.length - 1)];
-    for (let k = 0; k < 5; k++) {
-      y[k] += alpha * (x - y[k]);
-      x = y[k];
-    }
-    weight[i] = clip(x / OPEN_MAX, 0, 1);
-  }
-  return { vowelClosed: runs(times, closed, endMs), vowelOpen: runs(times, open, endMs), weight };
+  return { vowelClosed: runs(times, closed, endMs), vowelOpen: runs(times, open, endMs) };
 }
 
 /**
  * The effort: lung pressure from the dynamics (each note offset by how its velocity stands to the
  * curve), shaped by the phrase factors and dipped at pulses and stops; and the glottis, breathy
- * when soft, closing toward modal voice when loud. Sampled every 30 ms and around articulations.
+ * when soft, closing toward modal voice when loud. Where the voice is not wholly heard (`presence`),
+ * the lungs push less and the folds swing less (VOICING). Sampled every 30 ms and around
+ * articulations.
  */
 function effort(
   pressureEvents: readonly [Ms, VocalEventOf<'pressure'>][],
   articulations: readonly [Ms, VocalEventOf<'articulation'>][],
-  quiet: readonly [Ms, VocalEventOf<'quiet'>][],
+  presence: Float32Array | null,
   pitches: readonly PitchEvent[],
   endMs: Ms,
   dynamics: DynamicsCurve,
@@ -305,27 +307,13 @@ function effort(
     for (let t = s0 - 10; t < s0 + d + 10; t += 10) fine.push(t);
   }
 
-  // the voice falling silent: dying away within the held note, and swelling back into the next
-  // as it is heard (its target early by the lungs' lag)
-  for (const [t, q] of quiet) {
-    const back = t + q.durationMs - lagOf(TIME_CONSTANT_MS.pressure) - QUIET.leadMs;
-    const xs: Ms[] = [];
-    const ys: number[] = [];
-    const floor = Math.exp(-QUIET.outDepth);
-    for (let k = 0; k <= 10; k++) {
-      xs.push(t + (QUIET.outMs * k) / 10);
-      ys.push((Math.exp((-QUIET.outDepth * k) / 10) - floor) / (1 - floor));
-    }
-    for (let k = 0; k <= 10; k++) {
-      xs.push(back + (QUIET.inMs * k) / 10);
-      ys.push(Math.pow(Math.sin((Math.PI / 2) * (k / 10)), 2));
-    }
-    const end = back + QUIET.inMs;
-    for (let i = Math.max(0, Math.floor(t)); i < Math.min(n, Math.ceil(end) + 1); i++)
-      dip[i] = Math.min(dip[i], interp(i, xs, ys));
-    for (let s = t; s < t + QUIET.outMs + 20; s += 20) fine.push(s);
-    for (let s = back - 10; s < end + 20; s += 20) fine.push(s);
-  }
+  // how much of the voice is heard at a ms of the rendering, each gesture's target early by its lag
+  const heard = (t: Ms, lag: Ms): number =>
+    presence ? presenceAt(presence, t + lag - PAD_MS + LATENCY_MS) : 1;
+  const air = (x: number): number => {
+    const a = clip(x / VOICING.air, 0, 1);
+    return a * a * (3 - 2 * a);
+  };
 
   const gridSet = new Set<Ms>();
   for (let t = 0; t < endMs; t += EFFORT.stepMs) gridSet.add(t);
@@ -353,11 +341,16 @@ function effort(
         Math.pow(v / EFFORT.vRef, EFFORT.exponent) *
         Math.pow(10, (calS[i] - register) / 20) *
         interp(i, fx, fy) *
-        dip[i],
+        dip[i] *
+        air(heard(t, lagOf(TIME_CONSTANT_MS.pressure))),
     );
     const adduction = clip((v - EFFORT.breathyAt) / (EFFORT.modalAt - EFFORT.breathyAt), 0, 1);
     pq.push(p < 1 ? 0 : Math.round(Math.exp(Math.round(Math.log(p) / quantum) * quantum) * 10) / 10);
-    gq.push('g' + String(Math.round(adduction * 20)).padStart(2, '0'));
+    // the folds' swing: as the dynamics close them where all of the voice is heard, less below
+    const down = Math.round(
+      ((1 - heard(t, lagOf(TIME_CONSTANT_MS.glottis))) * VOICING.range) / VOICING.stepDb,
+    );
+    gq.push((down > 0 ? 'v' : 'g') + String(down > 0 ? down : Math.round(adduction * 20)).padStart(2, '0'));
   }
   return { pressure: runs(grid, pq, endMs), glottal: runs(grid, gq, endMs) };
 }
@@ -440,10 +433,12 @@ export interface GesturesInput {
   readonly calibration: Calibration;
   /** How loosely the voice keeps to the written pitch, 0 to 1 (see `pitchLine`). */
   readonly approximateness: number;
+  /** How much of the voice is heard, per 10 ms of the performance (presence.ts); null: all of it. */
+  readonly presence: Float32Array | null;
 }
 
 export function gestures(input: GesturesInput): Gestures {
-  const { notes, events, clock, dynamics, style, calibration, approximateness } = input;
+  const { notes, events, clock, dynamics, style, calibration, approximateness, presence } = input;
   const T = (date: number): Ms => clock.toMs(date) + PAD_MS - LATENCY_MS;
   const timed = <K extends VocalEvent['tag']>(tag: K): [Ms, VocalEventOf<K>][] =>
     eventsOf(events, tag).map((e) => [T(e.date), e]);
@@ -469,7 +464,7 @@ export function gestures(input: GesturesInput): Gestures {
   const force = effort(
     timed('pressure'),
     timed('articulation'),
-    timed('quiet'),
+    presence,
     pitches,
     endMs,
     dynamics,
@@ -487,18 +482,22 @@ export function gestures(input: GesturesInput): Gestures {
     pressure: force.pressure,
     glottal: force.glottal,
   };
-  const weight = mouth.weight;
+  const weight = opening(timed('mouth'), endMs);
 
   // breathing in: the glottis open, a little pressure toward the end
   for (const e of eventsOf(events, 'breath')) {
     const s = T(e.date);
     const end = T(e.date + e.duration);
+    let heard = presence ? 0 : 1;
+    if (presence)
+      for (let t = 0; t <= BREATH.aheadMs; t += 50)
+        heard = Math.max(heard, presenceAt(presence, end - PAD_MS + LATENCY_MS + t));
     tiers.glottal = splice(tiers.glottal, s, end, 'h');
     tiers.pressure = splice(
       tiers.pressure,
       s + 0.3 * (end - s),
       end - 40,
-      Math.round(BREATH_PRESSURE * e.depth),
+      Math.round(BREATH_PRESSURE * e.depth * (BREATH.inward + (1 - BREATH.inward) * heard)),
     );
   }
 
