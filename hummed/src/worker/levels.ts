@@ -23,10 +23,12 @@ export const voiceLevel = (elaboration: number): number => 1.1 + 0.3 * Math.pow(
 export const approximateness = (elaboration: number): number => 1 - unit(elaboration);
 
 /**
- * The threshold the inner voice has to cross to be heard (src/hummer/presence.ts): lower alone,
- * where the voice is all there is, higher under the piece, a pianist humming along.
+ * How much the maps that govern the voice have to move for it to be heard wholly
+ * (src/hummer/presence.ts), in what counts as 1 there: the dynamics at 3.6 units a second, the tempo
+ * changing by a quarter of itself a second. The same at every elaboration: the barer the music, the
+ * more exaggerated the MPM and the more its maps move, so the more of the voice is heard.
  */
-export const threshold = (elaboration: number): number => 0.22 + 0.16 * unit(elaboration);
+export const THRESHOLD = 0.6;
 
 /** Where the page starts (index.html): the piece (×1.05), the humming under it (×1.14). */
 export const DEFAULT_ELABORATION = 0.65;

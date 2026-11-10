@@ -60,14 +60,13 @@ export const AIR_OUT: {
   opening: 0.6,
 };
 /**
- * How the voice comes up out of silence, by how much of it is heard (presence.ts, 0 to 1): first
- * the breath, the lungs pushing fully from `air` on, the folds apart; with it the folds begin to
- * swing, their amplitude growing evenly in decibels over `range` dB (VocalTractLab's relative
- * amplitude, the glottis shapes v01 to v20 of the speaker, 2 dB apart), so that the voice swells in
- * from nothing and dies away as evenly. The sound follows both: at a presence of a half it is some
- * 20 dB under the voice as it is.
+ * How loud the voice is by how much of it is heard (presence.ts, 0 to 1): the lung pressure falls
+ * evenly in decibels, by `depth` time constants (30 dB) from the voice as it is down to nothing, and
+ * the sound with it. The glottis stays as the dynamics have it, so the voice keeps its own colour
+ * however quiet. (With the folds swinging less while the lungs went on pushing, the voice came up
+ * out of air: a flute, not a singer.)
  */
-export const VOICING = { air: 0.35, range: 40, stepDb: 2 } as const;
+export const FADE = { depth: 3.5 } as const;
 /**
  * Lung pressure while breathing in, at depth 1 (dPa). A breath before a phrase that stays inward is
  * drawn more quietly: `inward` of that, rising to all of it as the phrase's beginning is heard.
@@ -241,8 +240,7 @@ function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
  * The effort: lung pressure from the dynamics (each note offset by how its velocity stands to the
  * curve), shaped by the phrase factors and dipped at pulses and stops; and the glottis, breathy
  * when soft, closing toward modal voice when loud. Where the voice is not wholly heard (`presence`),
- * the lungs push less and the folds swing less (VOICING). Sampled every 30 ms and around
- * articulations.
+ * the lungs push less (FADE). Sampled every 30 ms and around articulations.
  */
 function effort(
   pressureEvents: readonly [Ms, VocalEventOf<'pressure'>][],
@@ -310,10 +308,8 @@ function effort(
   // how much of the voice is heard at a ms of the rendering, each gesture's target early by its lag
   const heard = (t: Ms, lag: Ms): number =>
     presence ? presenceAt(presence, t + lag - PAD_MS + LATENCY_MS) : 1;
-  const air = (x: number): number => {
-    const a = clip(x / VOICING.air, 0, 1);
-    return a * a * (3 - 2 * a);
-  };
+  const floor = Math.exp(-FADE.depth);
+  const loud = (x: number): number => (Math.exp(-FADE.depth * (1 - x)) - floor) / (1 - floor);
 
   const gridSet = new Set<Ms>();
   for (let t = 0; t < endMs; t += EFFORT.stepMs) gridSet.add(t);
@@ -342,15 +338,11 @@ function effort(
         Math.pow(10, (calS[i] - register) / 20) *
         interp(i, fx, fy) *
         dip[i] *
-        air(heard(t, lagOf(TIME_CONSTANT_MS.pressure))),
+        loud(heard(t, lagOf(TIME_CONSTANT_MS.pressure))),
     );
     const adduction = clip((v - EFFORT.breathyAt) / (EFFORT.modalAt - EFFORT.breathyAt), 0, 1);
     pq.push(p < 1 ? 0 : Math.round(Math.exp(Math.round(Math.log(p) / quantum) * quantum) * 10) / 10);
-    // the folds' swing: as the dynamics close them where all of the voice is heard, less below
-    const down = Math.round(
-      ((1 - heard(t, lagOf(TIME_CONSTANT_MS.glottis))) * VOICING.range) / VOICING.stepDb,
-    );
-    gq.push((down > 0 ? 'v' : 'g') + String(down > 0 ? down : Math.round(adduction * 20)).padStart(2, '0'));
+    gq.push('g' + String(Math.round(adduction * 20)).padStart(2, '0'));
   }
   return { pressure: runs(grid, pq, endMs), glottal: runs(grid, gq, endMs) };
 }

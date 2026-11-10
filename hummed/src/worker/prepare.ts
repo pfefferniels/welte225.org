@@ -22,7 +22,7 @@ import type { ChunkSource } from './chunk.ts';
 import {
   approximateness,
   pianoLevel,
-  threshold,
+  THRESHOLD,
   voiceFactors,
   voiceLevel,
   withSubNoteDynamics,
@@ -83,7 +83,7 @@ export function hum(
     reduction,
     ...data,
     approximateness: approximateness(elaboration),
-    threshold: threshold(elaboration),
+    threshold: THRESHOLD,
   });
 }
 

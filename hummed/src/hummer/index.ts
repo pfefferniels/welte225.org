@@ -15,7 +15,7 @@ import {
   type DynamicsCurve,
   type DynamicsRange,
 } from './performance.ts';
-import { innerVoice, noteImpulse, presence } from './presence.ts';
+import { movement, presence } from './presence.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { vocalMap, type VocalEvent } from './vocal-map.ts';
 
@@ -42,8 +42,8 @@ export interface VoiceInput {
   /** The MPM's own range of dynamics (`dynamicsRange`), against which the voice reads loudness. */
   readonly range: DynamicsRange;
   /**
-   * The threshold the inner voice has to cross to be heard (`threshold` in the worker's levels,
-   * presence.ts). 0 or absent: all of it is heard, every sung stretch through.
+   * How much the MPM's maps have to move for the voice to be heard wholly (`THRESHOLD` in the
+   * worker's levels, presence.ts). 0 or absent: all of it is heard, every sung stretch through.
    */
   readonly threshold?: number;
 }
@@ -76,17 +76,11 @@ export function renderVoice(input: VoiceInput): Voice {
   const melody = takeBreaths(melodyOf(input.reduction, notes, clock), sustain);
   const air = input.reduction.events.filter((e) => e.kind === 'air');
   const voice = voiceNotes(melody);
-  // how much of the inner voice is heard, where it has a threshold to cross
+  // how much of the voice is heard: where the maps move, if they have a threshold to cross
   const heard =
     (input.threshold ?? 0) > 0
       ? presence(
-          innerVoice(
-            melody,
-            voice,
-            noteImpulse(melody, dynamics, clock),
-            dynamics,
-            Math.max(...voice.map((v) => v.off * 1000)) + 1000,
-          ),
+          movement(melody, voice, dynamics, clock, Math.max(...voice.map((v) => v.off * 1000)) + 1000),
           input.threshold ?? 0,
         )
       : null;
