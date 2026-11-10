@@ -206,13 +206,21 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    at the ridge behind the teeth for 80 ms while the hum goes on through the nose; a detached
    note with a "d", the same closure (at most 80 ms) with the velum shut, so that the voice falls
    silent and is released on the note, the lungs pushing again for 50 ms behind the tongue. The
-   mouth opens rarely and slowly: where the dynamics smoothed over ±1.5 s pass 46 on the roll's
-   scale (fully at 49), at most 30 % of the way to the open shapes, over 3 to 4.5 s so as to be
-   open at the peak, and it closes over 3.5 s once the dynamics have fallen back, both eased, so
-   that the lips have no speed where they begin to move and where they stop: at the page's start
-   in 2 places (bars 9–10 and 13–14), with the humming alone in 3 (bars 19–20 too). (From 44, over
-   1 to 2 s at an even pace and closing with each phrase, the lips parted in 4 to 7 places and
-   were heard to part; from 37.5 the mouth was open for a third of the piece.) The humming shape
+   mouth opens rarely and slowly, and to an "a": where the dynamics smoothed over ±1.5 s pass 46
+   on the roll's scale (fully at 49), over 3 to 4.5 s so as to be open at the peak, and it closes
+   over 3.5 s once the dynamics have fallen back, both eased, so that the lips have no speed where
+   they begin to move and where they stop: at the page's start in 2 places (bars 9–10 and 13–14),
+   with the humming alone in 3 (bars 19–20 too). The tongue goes first: from 1.2 s before the
+   lips begin, behind them, to where the speaker's "a" has it (with the jaw and the hyoid; moved
+   in the tract states, `TONGUE_A` in `src/hummer/articulators.ts`), and it is there while the
+   lips are still all but closed; it leaves when they are all but closed again. Then the lips
+   part, barely (the shape `ah`: that "a" with the lips 0.35 cm apart, not 1), and the nose
+   closes as they do: the lips-open score has the velum shut. (The open shapes fitted to the
+   recorded hum went half of the way from the hum's forward tongue to an "a", with the nose
+   open: a nasal vowel between "ö" and "ä", with a resonance at 1.4 kHz, which bleated like a
+   goat; and the lips parted on the hum's tongue. Before that, from 44, over 1 to 2 s at an even
+   pace and closing with each phrase, the lips parted in 4 to 7 places and were heard to part;
+   from 37.5 the mouth was open for a third of the piece.) The humming shape
    changes with each phrase, at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
    reconstruction) is mapped onto the roll's (34 to 44), for which their thresholds were set, so
@@ -382,7 +390,7 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 | `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                 |
 | `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
 | `src/shared/`                    | what both sides use: units, maths, the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                                                                      |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 264 mouth shapes fitted to a recorded hum, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                 |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                             |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
 | `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                            |
 | `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                                                                                                                                     |
@@ -516,7 +524,8 @@ humming or singing perfectly when told exactly when which pitch should sound?
 
 The live page's hummer is a TypeScript port of `hummer.py` and `voicemodel.py`; the two differ in
 the random wobble and falls (a seeded generator of its own), in the mouth (two scores blended
-rather than rendered and cross-faded, and opened rarely), in what is sung (the reduction rather
+rather than rendered and cross-faded, opened rarely and to an "a", not to the shapes fitted to
+the recording), in what is sung (the reduction rather
 than the top line), and in how much of it is heard (where the maps move).
 
 ## Licences

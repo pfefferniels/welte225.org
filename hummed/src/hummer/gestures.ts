@@ -1,21 +1,13 @@
 // From the voice's decisions to gestural tiers: the pitch line, the mouth, the effort.
 import { clip, groupBy, interp, seededRandom } from '../shared/math.ts';
 import { PAD_MS, type Ms } from '../shared/units.ts';
-import { TONGUE_TIP_CLOSURE, type ArticulatorMove } from './articulators.ts';
+import { TONGUE_A, TONGUE_TIP_CLOSURE, type ArticulatorMove } from './articulators.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { runs, segment, splice, type Tier, type Tiers } from './tiers.ts';
 import type { Clock } from './clock.ts';
 import type { DynamicsCurve, Note } from './performance.ts';
 import { presenceAt } from './presence.ts';
-import {
-  eventsOf,
-  HUMS,
-  OPEN_MAX,
-  OPEN_SHAPES,
-  type OpenShape,
-  type VocalEvent,
-  type VocalEventOf,
-} from './vocal-map.ts';
+import { eventsOf, HUMS, OPEN_MAX, OPEN_SHAPE, type VocalEvent, type VocalEventOf } from './vocal-map.ts';
 
 /** How fast each kind of gesture reaches its target (VocalTractLab's time constants), ms. */
 export const TIME_CONSTANT_MS = {
@@ -200,12 +192,11 @@ function opening(events: readonly [Ms, VocalEventOf<'mouth'>][], endMs: Ms): Flo
 }
 
 /**
- * The mouth: base shapes (mixes of the three hums, in 10 % steps) and the phrase's open shape as
- * two vowel tiers.
+ * The mouth: base shapes (mixes of the three hums, in 10 % steps) as the lips-closed vowel tier; the
+ * lips-open one holds the one open shape.
  */
 function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
   let mix: Keys<readonly number[]> = [[0, [1, 0, 0]]];
-  const toward: [Ms, OpenShape | null][] = [[0, null]];
   for (const [t, e] of [...events].sort((a, b) => a[0] - b[0])) {
     const target = HUMS.map((h) => (h === e.hum ? 1 : 0));
     const w0 = vectorAt(mix, t);
@@ -215,25 +206,44 @@ function postures(events: readonly [Ms, VocalEventOf<'posture'>][], endMs: Ms) {
         [t, w0],
         [t + e.transitionMs, target],
       ]);
-    toward.push([t, e.toward]);
   }
-  toward[0] = [0, toward.length > 1 ? toward[1][1] : OPEN_SHAPES[0]];
 
   const step = 60;
   const closed: string[] = [];
-  const open: string[] = [];
   const times: Ms[] = [];
-  let ti = 0;
   for (let t = 0; t < endMs; t += step) {
     const q = vectorAt(mix, t).map((x) => Math.round(x * 10));
     const sum = q[0] + q[1] + q[2];
     q[q.indexOf(Math.max(...q))] += 10 - sum;
-    while (ti + 1 < toward.length && toward[ti + 1][0] <= t) ti++;
     closed.push(`c${q[0]}_${q[1]}`);
-    open.push(`${toward[ti][1] ?? OPEN_SHAPES[0]}_${q[0]}_${q[1]}`);
     times.push(t);
   }
-  return { vowelClosed: runs(times, closed, endMs), vowelOpen: runs(times, open, endMs) };
+  return { vowelClosed: runs(times, closed, endMs), vowelOpen: [segment(0, endMs, OPEN_SHAPE)] };
+}
+
+/**
+ * Before the lips part, the tongue goes to its "a" behind them, and it stays there until they have
+ * closed again: `leadMs` before an opening begins it sets out, and is there when the lips are a
+ * fifth of the way into their transition (hardly parted yet); it leaves when they are four fifths
+ * of the way closed, over `backMs`.
+ */
+const TONGUE = { leadMs: 1200, there: 0.2, backMs: 1500 } as const;
+function tongueMoves(mouth: readonly [Ms, VocalEventOf<'mouth'>][]): ArticulatorMove[] {
+  const moves: ArticulatorMove[] = [];
+  const sorted = [...mouth].sort((a, b) => a[0] - b[0]);
+  sorted.forEach(([t, e], k) => {
+    if (e.amount <= 0) return;
+    const close = sorted.slice(k + 1).find(([, c]) => c.amount <= 0);
+    const there = t + TONGUE.there * e.transitionMs;
+    moves.push({
+      to: TONGUE_A,
+      from: there,
+      until: close ? close[0] + (1 - TONGUE.there) * close[1].transitionMs : Infinity,
+      inMs: there - t + TONGUE.leadMs,
+      outMs: TONGUE.backMs,
+    });
+  });
+  return moves;
 }
 
 /**
@@ -532,7 +542,8 @@ export function gestures(input: GesturesInput): Gestures {
   // moved in the tract states (articulators.ts), not as a gesture. For an 'n' the velum stays low
   // and the voice goes on through the nose; for a 'd' the velum closes (its target early by its lag),
   // so that the air pressed behind the tongue bursts out as it lets go. The lips stay as they are.
-  const moves: ArticulatorMove[] = [];
+  // the tongue's way to the "a" first, so that a consonant's tongue tip still closes on top of it
+  const moves: ArticulatorMove[] = tongueMoves(timed('mouth'));
   for (const e of eventsOf(events, 'consonant')) {
     const on = T(e.date);
     const close = on - e.durationMs;

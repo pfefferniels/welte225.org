@@ -14,7 +14,8 @@ hums = ['hum1', 'hum2', 'hum3']; towards = ['open2', 'open4', 'open1']
 ld = V.TN.index('LD')
 # the mouth-shape lattice: closed mixes of the three hums in 10 % steps, and for each the open
 # shape it leans toward at its widest (OPEN_MAX of the way from parted lips): the page blends the
-# two tubes by the opening amount
+# two tubes by the opening amount. (The page has since given the open shapes up: they bleated. Its
+# speaker keeps the closed mixes and opens to `ah`, the speaker's own "a" with LD 0.35, added by hand.)
 shapes = {}
 for i in range(11):
     for j in range(11 - i):

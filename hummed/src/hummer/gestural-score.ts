@@ -73,7 +73,10 @@ const SPECS: readonly (TierSpec | { readonly type: string; readonly empty: true 
     timeConstantMs: TIME_CONSTANT_MS.velum,
     neutral: 0,
     marksNeutral: false,
-    tier: (t) => t.velic,
+    // with the lips open the velum is shut: as they part, the nose closes, and the vowel is an "a",
+    // not a nasal one
+    tier: (t, open) => (open ? [] : t.velic),
+    mouth: true,
   },
   {
     type: 'glottal-shape-gestures',
@@ -140,8 +143,8 @@ function sequence(spec: (typeof SPECS)[number], tiers: Tiers, endMs: Ms, open: b
 }
 
 /**
- * The voice's two scores, lips closed and lips open. They differ in the vowel tier alone: the other
- * tiers, most of the text, are written once.
+ * The voice's two scores, lips closed and lips open. They differ in the vowel tier and the velum
+ * alone: the other tiers, most of the text, are written once.
  */
 export function gesturalScores(tiers: Tiers, endMs: Ms): { readonly closed: string; readonly open: string } {
   const closed = SPECS.map((spec) => sequence(spec, tiers, endMs, false));

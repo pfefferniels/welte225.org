@@ -1533,69 +1533,6 @@
         <param name="TS2" value="0.0639"/>
         <param name="TS3" value="0.1479"/>
       </shape>
-      <shape name="open2_0_0">
-        <param name="HX" value="0.1978"/>
-        <param name="HY" value="-4.3711"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.4378"/>
-        <param name="LP" value="0.5338"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6314"/>
-        <param name="VO" value="0.0985"/>
-        <param name="TCX" value="1.1070"/>
-        <param name="TCY" value="-1.7065"/>
-        <param name="TTX" value="4.4062"/>
-        <param name="TTY" value="-1.1547"/>
-        <param name="TBX" value="2.8756"/>
-        <param name="TBY" value="-0.4384"/>
-        <param name="TRX" value="-1.6442"/>
-        <param name="TRY" value="-2.2938"/>
-        <param name="TS1" value="0.2223"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_0_0">
-        <param name="HX" value="0.2264"/>
-        <param name="HY" value="-4.7746"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.5290"/>
-        <param name="LP" value="0.3881"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5980"/>
-        <param name="VO" value="0.1138"/>
-        <param name="TCX" value="1.3204"/>
-        <param name="TCY" value="-1.3977"/>
-        <param name="TTX" value="4.3159"/>
-        <param name="TTY" value="-1.2630"/>
-        <param name="TBX" value="2.9309"/>
-        <param name="TBY" value="-0.3674"/>
-        <param name="TRX" value="-1.3424"/>
-        <param name="TRY" value="-2.1801"/>
-        <param name="TS1" value="0.2244"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1421"/>
-      </shape>
-      <shape name="open1_0_0">
-        <param name="HX" value="0.1960"/>
-        <param name="HY" value="-4.3304"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.7541"/>
-        <param name="LP" value="0.3485"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6362"/>
-        <param name="VO" value="0.1034"/>
-        <param name="TCX" value="1.2845"/>
-        <param name="TCY" value="-1.5796"/>
-        <param name="TTX" value="4.5038"/>
-        <param name="TTY" value="-1.4448"/>
-        <param name="TBX" value="2.8682"/>
-        <param name="TBY" value="-0.4449"/>
-        <param name="TRX" value="-1.6070"/>
-        <param name="TRY" value="-2.3081"/>
-        <param name="TS1" value="0.2218"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c0_1">
         <param name="HX" value="0.2228"/>
         <param name="HY" value="-4.4758"/>
@@ -1617,69 +1554,6 @@
         <param name="TS2" value="0.0660"/>
         <param name="TS3" value="0.1477"/>
       </shape>
-      <shape name="open2_0_1">
-        <param name="HX" value="0.1972"/>
-        <param name="HY" value="-4.4155"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.4543"/>
-        <param name="LP" value="0.5326"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6344"/>
-        <param name="VO" value="0.1103"/>
-        <param name="TCX" value="1.1115"/>
-        <param name="TCY" value="-1.7142"/>
-        <param name="TTX" value="4.4067"/>
-        <param name="TTY" value="-1.1540"/>
-        <param name="TBX" value="2.8717"/>
-        <param name="TBY" value="-0.4416"/>
-        <param name="TRX" value="-1.6599"/>
-        <param name="TRY" value="-2.3026"/>
-        <param name="TS1" value="0.2211"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_0_1">
-        <param name="HX" value="0.2259"/>
-        <param name="HY" value="-4.8254"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.5478"/>
-        <param name="LP" value="0.3865"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6012"/>
-        <param name="VO" value="0.1272"/>
-        <param name="TCX" value="1.3261"/>
-        <param name="TCY" value="-1.4055"/>
-        <param name="TTX" value="4.3161"/>
-        <param name="TTY" value="-1.2626"/>
-        <param name="TBX" value="2.9267"/>
-        <param name="TBY" value="-0.3708"/>
-        <param name="TRX" value="-1.3589"/>
-        <param name="TRY" value="-2.1895"/>
-        <param name="TS1" value="0.2231"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_0_1">
-        <param name="HX" value="0.1954"/>
-        <param name="HY" value="-4.3737"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.7686"/>
-        <param name="LP" value="0.3469"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6391"/>
-        <param name="VO" value="0.1150"/>
-        <param name="TCX" value="1.2892"/>
-        <param name="TCY" value="-1.5869"/>
-        <param name="TTX" value="4.5045"/>
-        <param name="TTY" value="-1.4447"/>
-        <param name="TBX" value="2.8644"/>
-        <param name="TBY" value="-0.4481"/>
-        <param name="TRX" value="-1.6223"/>
-        <param name="TRY" value="-2.3168"/>
-        <param name="TS1" value="0.2206"/>
-        <param name="TS2" value="0.0510"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
       <shape name="c0_2">
         <param name="HX" value="0.2218"/>
         <param name="HY" value="-4.5724"/>
@@ -1699,69 +1573,6 @@
         <param name="TRY" value="-1.6349"/>
         <param name="TS1" value="0.2349"/>
         <param name="TS2" value="0.0681"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open2_0_2">
-        <param name="HX" value="0.1967"/>
-        <param name="HY" value="-4.4597"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.4707"/>
-        <param name="LP" value="0.5315"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6373"/>
-        <param name="VO" value="0.1220"/>
-        <param name="TCX" value="1.1159"/>
-        <param name="TCY" value="-1.7218"/>
-        <param name="TTX" value="4.4072"/>
-        <param name="TTY" value="-1.1532"/>
-        <param name="TBX" value="2.8678"/>
-        <param name="TBY" value="-0.4449"/>
-        <param name="TRX" value="-1.6755"/>
-        <param name="TRY" value="-2.3114"/>
-        <param name="TS1" value="0.2200"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_0_2">
-        <param name="HX" value="0.2254"/>
-        <param name="HY" value="-4.8761"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.5665"/>
-        <param name="LP" value="0.3849"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6043"/>
-        <param name="VO" value="0.1405"/>
-        <param name="TCX" value="1.3318"/>
-        <param name="TCY" value="-1.4133"/>
-        <param name="TTX" value="4.3164"/>
-        <param name="TTY" value="-1.2621"/>
-        <param name="TBX" value="2.9226"/>
-        <param name="TBY" value="-0.3742"/>
-        <param name="TRX" value="-1.3753"/>
-        <param name="TRY" value="-2.1989"/>
-        <param name="TS1" value="0.2218"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1419"/>
-      </shape>
-      <shape name="open1_0_2">
-        <param name="HX" value="0.1949"/>
-        <param name="HY" value="-4.4167"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.7830"/>
-        <param name="LP" value="0.3453"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6419"/>
-        <param name="VO" value="0.1264"/>
-        <param name="TCX" value="1.2939"/>
-        <param name="TCY" value="-1.5940"/>
-        <param name="TTX" value="4.5052"/>
-        <param name="TTY" value="-1.4447"/>
-        <param name="TBX" value="2.8605"/>
-        <param name="TBY" value="-0.4513"/>
-        <param name="TRX" value="-1.6375"/>
-        <param name="TRY" value="-2.3254"/>
-        <param name="TS1" value="0.2195"/>
-        <param name="TS2" value="0.0520"/>
         <param name="TS3" value="0.1475"/>
       </shape>
       <shape name="c0_3">
@@ -1785,69 +1596,6 @@
         <param name="TS2" value="0.0703"/>
         <param name="TS3" value="0.1473"/>
       </shape>
-      <shape name="open2_0_3">
-        <param name="HX" value="0.1962"/>
-        <param name="HY" value="-4.5037"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.4870"/>
-        <param name="LP" value="0.5303"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6402"/>
-        <param name="VO" value="0.1337"/>
-        <param name="TCX" value="1.1203"/>
-        <param name="TCY" value="-1.7294"/>
-        <param name="TTX" value="4.4077"/>
-        <param name="TTY" value="-1.1525"/>
-        <param name="TBX" value="2.8639"/>
-        <param name="TBY" value="-0.4481"/>
-        <param name="TRX" value="-1.6910"/>
-        <param name="TRY" value="-2.3201"/>
-        <param name="TS1" value="0.2188"/>
-        <param name="TS2" value="0.0534"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_0_3">
-        <param name="HX" value="0.2248"/>
-        <param name="HY" value="-4.9266"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.5851"/>
-        <param name="LP" value="0.3834"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6075"/>
-        <param name="VO" value="0.1538"/>
-        <param name="TCX" value="1.3375"/>
-        <param name="TCY" value="-1.4210"/>
-        <param name="TTX" value="4.3167"/>
-        <param name="TTY" value="-1.2617"/>
-        <param name="TBX" value="2.9185"/>
-        <param name="TBY" value="-0.3776"/>
-        <param name="TRX" value="-1.3917"/>
-        <param name="TRY" value="-2.2083"/>
-        <param name="TS1" value="0.2205"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1418"/>
-      </shape>
-      <shape name="open1_0_3">
-        <param name="HX" value="0.1944"/>
-        <param name="HY" value="-4.4594"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.7973"/>
-        <param name="LP" value="0.3438"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6448"/>
-        <param name="VO" value="0.1378"/>
-        <param name="TCX" value="1.2985"/>
-        <param name="TCY" value="-1.6012"/>
-        <param name="TTX" value="4.5059"/>
-        <param name="TTY" value="-1.4446"/>
-        <param name="TBX" value="2.8567"/>
-        <param name="TBY" value="-0.4545"/>
-        <param name="TRX" value="-1.6526"/>
-        <param name="TRY" value="-2.3340"/>
-        <param name="TS1" value="0.2183"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
       <shape name="c0_4">
         <param name="HX" value="0.2197"/>
         <param name="HY" value="-4.7654"/>
@@ -1868,69 +1616,6 @@
         <param name="TS1" value="0.2300"/>
         <param name="TS2" value="0.0724"/>
         <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open2_0_4">
-        <param name="HX" value="0.1956"/>
-        <param name="HY" value="-4.5474"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.5032"/>
-        <param name="LP" value="0.5292"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6431"/>
-        <param name="VO" value="0.1454"/>
-        <param name="TCX" value="1.1247"/>
-        <param name="TCY" value="-1.7369"/>
-        <param name="TTX" value="4.4081"/>
-        <param name="TTY" value="-1.1518"/>
-        <param name="TBX" value="2.8601"/>
-        <param name="TBY" value="-0.4513"/>
-        <param name="TRX" value="-1.7065"/>
-        <param name="TRY" value="-2.3288"/>
-        <param name="TS1" value="0.2176"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_0_4">
-        <param name="HX" value="0.2243"/>
-        <param name="HY" value="-4.9769"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.6037"/>
-        <param name="LP" value="0.3818"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6106"/>
-        <param name="VO" value="0.1670"/>
-        <param name="TCX" value="1.3432"/>
-        <param name="TCY" value="-1.4287"/>
-        <param name="TTX" value="4.3170"/>
-        <param name="TTY" value="-1.2613"/>
-        <param name="TBX" value="2.9144"/>
-        <param name="TBY" value="-0.3810"/>
-        <param name="TRX" value="-1.4080"/>
-        <param name="TRY" value="-2.2176"/>
-        <param name="TS1" value="0.2191"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1417"/>
-      </shape>
-      <shape name="open1_0_4">
-        <param name="HX" value="0.1938"/>
-        <param name="HY" value="-4.5020"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.8116"/>
-        <param name="LP" value="0.3423"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6476"/>
-        <param name="VO" value="0.1492"/>
-        <param name="TCX" value="1.3031"/>
-        <param name="TCY" value="-1.6083"/>
-        <param name="TTX" value="4.5066"/>
-        <param name="TTY" value="-1.4445"/>
-        <param name="TBX" value="2.8529"/>
-        <param name="TBY" value="-0.4576"/>
-        <param name="TRX" value="-1.6677"/>
-        <param name="TRY" value="-2.3426"/>
-        <param name="TS1" value="0.2172"/>
-        <param name="TS2" value="0.0538"/>
-        <param name="TS3" value="0.1473"/>
       </shape>
       <shape name="c0_5">
         <param name="HX" value="0.2186"/>
@@ -1953,69 +1638,6 @@
         <param name="TS2" value="0.0745"/>
         <param name="TS3" value="0.1469"/>
       </shape>
-      <shape name="open2_0_5">
-        <param name="HX" value="0.1951"/>
-        <param name="HY" value="-4.5909"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-4.5193"/>
-        <param name="LP" value="0.5280"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6459"/>
-        <param name="VO" value="0.1569"/>
-        <param name="TCX" value="1.1290"/>
-        <param name="TCY" value="-1.7445"/>
-        <param name="TTX" value="4.4086"/>
-        <param name="TTY" value="-1.1511"/>
-        <param name="TBX" value="2.8563"/>
-        <param name="TBY" value="-0.4545"/>
-        <param name="TRX" value="-1.7218"/>
-        <param name="TRY" value="-2.3375"/>
-        <param name="TS1" value="0.2165"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open4_0_5">
-        <param name="HX" value="0.2238"/>
-        <param name="HY" value="-5.0269"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.6221"/>
-        <param name="LP" value="0.3802"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6137"/>
-        <param name="VO" value="0.1801"/>
-        <param name="TCX" value="1.3489"/>
-        <param name="TCY" value="-1.4364"/>
-        <param name="TTX" value="4.3173"/>
-        <param name="TTY" value="-1.2608"/>
-        <param name="TBX" value="2.9103"/>
-        <param name="TBY" value="-0.3843"/>
-        <param name="TRX" value="-1.4242"/>
-        <param name="TRY" value="-2.2269"/>
-        <param name="TS1" value="0.2179"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1416"/>
-      </shape>
-      <shape name="open1_0_5">
-        <param name="HX" value="0.1933"/>
-        <param name="HY" value="-4.5443"/>
-        <param name="JX" value="-0.0269"/>
-        <param name="JA" value="-3.8258"/>
-        <param name="LP" value="0.3407"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6505"/>
-        <param name="VO" value="0.1605"/>
-        <param name="TCX" value="1.3077"/>
-        <param name="TCY" value="-1.6153"/>
-        <param name="TTX" value="4.5073"/>
-        <param name="TTY" value="-1.4445"/>
-        <param name="TBX" value="2.8492"/>
-        <param name="TBY" value="-0.4608"/>
-        <param name="TRX" value="-1.6827"/>
-        <param name="TRY" value="-2.3511"/>
-        <param name="TS1" value="0.2161"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
       <shape name="c0_6">
         <param name="HX" value="0.2176"/>
         <param name="HY" value="-4.9585"/>
@@ -2036,69 +1658,6 @@
         <param name="TS1" value="0.2250"/>
         <param name="TS2" value="0.0766"/>
         <param name="TS3" value="0.1467"/>
-      </shape>
-      <shape name="open2_0_6">
-        <param name="HX" value="0.1946"/>
-        <param name="HY" value="-4.6342"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-4.5353"/>
-        <param name="LP" value="0.5269"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6488"/>
-        <param name="VO" value="0.1685"/>
-        <param name="TCX" value="1.1334"/>
-        <param name="TCY" value="-1.7519"/>
-        <param name="TTX" value="4.4091"/>
-        <param name="TTY" value="-1.1504"/>
-        <param name="TBX" value="2.8524"/>
-        <param name="TBY" value="-0.4577"/>
-        <param name="TRX" value="-1.7371"/>
-        <param name="TRY" value="-2.3461"/>
-        <param name="TS1" value="0.2153"/>
-        <param name="TS2" value="0.0562"/>
-        <param name="TS3" value="0.1470"/>
-      </shape>
-      <shape name="open4_0_6">
-        <param name="HX" value="0.2232"/>
-        <param name="HY" value="-5.0768"/>
-        <param name="JX" value="-0.0333"/>
-        <param name="JA" value="-4.6405"/>
-        <param name="LP" value="0.3787"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6168"/>
-        <param name="VO" value="0.1932"/>
-        <param name="TCX" value="1.3545"/>
-        <param name="TCY" value="-1.4440"/>
-        <param name="TTX" value="4.3176"/>
-        <param name="TTY" value="-1.2604"/>
-        <param name="TBX" value="2.9063"/>
-        <param name="TBY" value="-0.3877"/>
-        <param name="TRX" value="-1.4404"/>
-        <param name="TRY" value="-2.2361"/>
-        <param name="TS1" value="0.2166"/>
-        <param name="TS2" value="0.0611"/>
-        <param name="TS3" value="0.1414"/>
-      </shape>
-      <shape name="open1_0_6">
-        <param name="HX" value="0.1928"/>
-        <param name="HY" value="-4.5864"/>
-        <param name="JX" value="-0.0268"/>
-        <param name="JA" value="-3.8399"/>
-        <param name="LP" value="0.3392"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6533"/>
-        <param name="VO" value="0.1717"/>
-        <param name="TCX" value="1.3123"/>
-        <param name="TCY" value="-1.6223"/>
-        <param name="TTX" value="4.5080"/>
-        <param name="TTY" value="-1.4444"/>
-        <param name="TBX" value="2.8454"/>
-        <param name="TBY" value="-0.4639"/>
-        <param name="TRX" value="-1.6975"/>
-        <param name="TRY" value="-2.3595"/>
-        <param name="TS1" value="0.2149"/>
-        <param name="TS2" value="0.0556"/>
-        <param name="TS3" value="0.1471"/>
       </shape>
       <shape name="c0_7">
         <param name="HX" value="0.2165"/>
@@ -2121,69 +1680,6 @@
         <param name="TS2" value="0.0787"/>
         <param name="TS3" value="0.1465"/>
       </shape>
-      <shape name="open2_0_7">
-        <param name="HX" value="0.1940"/>
-        <param name="HY" value="-4.6772"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-4.5512"/>
-        <param name="LP" value="0.5258"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6516"/>
-        <param name="VO" value="0.1799"/>
-        <param name="TCX" value="1.1377"/>
-        <param name="TCY" value="-1.7593"/>
-        <param name="TTX" value="4.4095"/>
-        <param name="TTY" value="-1.1497"/>
-        <param name="TBX" value="2.8487"/>
-        <param name="TBY" value="-0.4608"/>
-        <param name="TRX" value="-1.7523"/>
-        <param name="TRY" value="-2.3547"/>
-        <param name="TS1" value="0.2142"/>
-        <param name="TS2" value="0.0571"/>
-        <param name="TS3" value="0.1469"/>
-      </shape>
-      <shape name="open4_0_7">
-        <param name="HX" value="0.2227"/>
-        <param name="HY" value="-5.1265"/>
-        <param name="JX" value="-0.0333"/>
-        <param name="JA" value="-4.6589"/>
-        <param name="LP" value="0.3771"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6199"/>
-        <param name="VO" value="0.2063"/>
-        <param name="TCX" value="1.3601"/>
-        <param name="TCY" value="-1.4516"/>
-        <param name="TTX" value="4.3178"/>
-        <param name="TTY" value="-1.2600"/>
-        <param name="TBX" value="2.9023"/>
-        <param name="TBY" value="-0.3910"/>
-        <param name="TRX" value="-1.4565"/>
-        <param name="TRY" value="-2.2454"/>
-        <param name="TS1" value="0.2153"/>
-        <param name="TS2" value="0.0621"/>
-        <param name="TS3" value="0.1413"/>
-      </shape>
-      <shape name="open1_0_7">
-        <param name="HX" value="0.1923"/>
-        <param name="HY" value="-4.6282"/>
-        <param name="JX" value="-0.0267"/>
-        <param name="JA" value="-3.8539"/>
-        <param name="LP" value="0.3377"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6561"/>
-        <param name="VO" value="0.1828"/>
-        <param name="TCX" value="1.3169"/>
-        <param name="TCY" value="-1.6293"/>
-        <param name="TTX" value="4.5087"/>
-        <param name="TTY" value="-1.4443"/>
-        <param name="TBX" value="2.8417"/>
-        <param name="TBY" value="-0.4670"/>
-        <param name="TRX" value="-1.7123"/>
-        <param name="TRY" value="-2.3679"/>
-        <param name="TS1" value="0.2138"/>
-        <param name="TS2" value="0.0565"/>
-        <param name="TS3" value="0.1470"/>
-      </shape>
       <shape name="c0_8">
         <param name="HX" value="0.2154"/>
         <param name="HY" value="-5.1516"/>
@@ -2204,69 +1700,6 @@
         <param name="TS1" value="0.2201"/>
         <param name="TS2" value="0.0809"/>
         <param name="TS3" value="0.1462"/>
-      </shape>
-      <shape name="open2_0_8">
-        <param name="HX" value="0.1935"/>
-        <param name="HY" value="-4.7201"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-4.5671"/>
-        <param name="LP" value="0.5247"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6545"/>
-        <param name="VO" value="0.1913"/>
-        <param name="TCX" value="1.1420"/>
-        <param name="TCY" value="-1.7667"/>
-        <param name="TTX" value="4.4100"/>
-        <param name="TTY" value="-1.1490"/>
-        <param name="TBX" value="2.8449"/>
-        <param name="TBY" value="-0.4640"/>
-        <param name="TRX" value="-1.7675"/>
-        <param name="TRY" value="-2.3632"/>
-        <param name="TS1" value="0.2131"/>
-        <param name="TS2" value="0.0581"/>
-        <param name="TS3" value="0.1468"/>
-      </shape>
-      <shape name="open4_0_8">
-        <param name="HX" value="0.2222"/>
-        <param name="HY" value="-5.1759"/>
-        <param name="JX" value="-0.0332"/>
-        <param name="JA" value="-4.6771"/>
-        <param name="LP" value="0.3756"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6229"/>
-        <param name="VO" value="0.2193"/>
-        <param name="TCX" value="1.3657"/>
-        <param name="TCY" value="-1.4592"/>
-        <param name="TTX" value="4.3181"/>
-        <param name="TTY" value="-1.2595"/>
-        <param name="TBX" value="2.8982"/>
-        <param name="TBY" value="-0.3943"/>
-        <param name="TRX" value="-1.4726"/>
-        <param name="TRY" value="-2.2545"/>
-        <param name="TS1" value="0.2140"/>
-        <param name="TS2" value="0.0632"/>
-        <param name="TS3" value="0.1412"/>
-      </shape>
-      <shape name="open1_0_8">
-        <param name="HX" value="0.1917"/>
-        <param name="HY" value="-4.6698"/>
-        <param name="JX" value="-0.0267"/>
-        <param name="JA" value="-3.8678"/>
-        <param name="LP" value="0.3362"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6588"/>
-        <param name="VO" value="0.1939"/>
-        <param name="TCX" value="1.3214"/>
-        <param name="TCY" value="-1.6363"/>
-        <param name="TTX" value="4.5093"/>
-        <param name="TTY" value="-1.4443"/>
-        <param name="TBX" value="2.8380"/>
-        <param name="TBY" value="-0.4701"/>
-        <param name="TRX" value="-1.7271"/>
-        <param name="TRY" value="-2.3763"/>
-        <param name="TS1" value="0.2127"/>
-        <param name="TS2" value="0.0574"/>
-        <param name="TS3" value="0.1470"/>
       </shape>
       <shape name="c0_9">
         <param name="HX" value="0.2144"/>
@@ -2289,69 +1722,6 @@
         <param name="TS2" value="0.0830"/>
         <param name="TS3" value="0.1460"/>
       </shape>
-      <shape name="open2_0_9">
-        <param name="HX" value="0.1930"/>
-        <param name="HY" value="-4.7627"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-4.5829"/>
-        <param name="LP" value="0.5235"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6573"/>
-        <param name="VO" value="0.2026"/>
-        <param name="TCX" value="1.1462"/>
-        <param name="TCY" value="-1.7741"/>
-        <param name="TTX" value="4.4105"/>
-        <param name="TTY" value="-1.1483"/>
-        <param name="TBX" value="2.8411"/>
-        <param name="TBY" value="-0.4671"/>
-        <param name="TRX" value="-1.7825"/>
-        <param name="TRY" value="-2.3717"/>
-        <param name="TS1" value="0.2119"/>
-        <param name="TS2" value="0.0590"/>
-        <param name="TS3" value="0.1467"/>
-      </shape>
-      <shape name="open4_0_9">
-        <param name="HX" value="0.2216"/>
-        <param name="HY" value="-5.2252"/>
-        <param name="JX" value="-0.0331"/>
-        <param name="JA" value="-4.6953"/>
-        <param name="LP" value="0.3740"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6260"/>
-        <param name="VO" value="0.2323"/>
-        <param name="TCX" value="1.3713"/>
-        <param name="TCY" value="-1.4667"/>
-        <param name="TTX" value="4.3184"/>
-        <param name="TTY" value="-1.2591"/>
-        <param name="TBX" value="2.8942"/>
-        <param name="TBY" value="-0.3976"/>
-        <param name="TRX" value="-1.4885"/>
-        <param name="TRY" value="-2.2637"/>
-        <param name="TS1" value="0.2127"/>
-        <param name="TS2" value="0.0642"/>
-        <param name="TS3" value="0.1411"/>
-      </shape>
-      <shape name="open1_0_9">
-        <param name="HX" value="0.1912"/>
-        <param name="HY" value="-4.7112"/>
-        <param name="JX" value="-0.0266"/>
-        <param name="JA" value="-3.8817"/>
-        <param name="LP" value="0.3347"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6616"/>
-        <param name="VO" value="0.2050"/>
-        <param name="TCX" value="1.3259"/>
-        <param name="TCY" value="-1.6432"/>
-        <param name="TTX" value="4.5100"/>
-        <param name="TTY" value="-1.4442"/>
-        <param name="TBX" value="2.8343"/>
-        <param name="TBY" value="-0.4732"/>
-        <param name="TRX" value="-1.7417"/>
-        <param name="TRY" value="-2.3846"/>
-        <param name="TS1" value="0.2116"/>
-        <param name="TS2" value="0.0582"/>
-        <param name="TS3" value="0.1469"/>
-      </shape>
       <shape name="c0_10">
         <param name="HX" value="0.2133"/>
         <param name="HY" value="-5.3446"/>
@@ -2372,69 +1742,6 @@
         <param name="TS1" value="0.2151"/>
         <param name="TS2" value="0.0851"/>
         <param name="TS3" value="0.1458"/>
-      </shape>
-      <shape name="open2_0_10">
-        <param name="HX" value="0.1925"/>
-        <param name="HY" value="-4.8051"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-4.5986"/>
-        <param name="LP" value="0.5224"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6601"/>
-        <param name="VO" value="0.2139"/>
-        <param name="TCX" value="1.1505"/>
-        <param name="TCY" value="-1.7814"/>
-        <param name="TTX" value="4.4109"/>
-        <param name="TTY" value="-1.1476"/>
-        <param name="TBX" value="2.8374"/>
-        <param name="TBY" value="-0.4702"/>
-        <param name="TRX" value="-1.7975"/>
-        <param name="TRY" value="-2.3801"/>
-        <param name="TS1" value="0.2108"/>
-        <param name="TS2" value="0.0599"/>
-        <param name="TS3" value="0.1466"/>
-      </shape>
-      <shape name="open4_0_10">
-        <param name="HX" value="0.2211"/>
-        <param name="HY" value="-5.2743"/>
-        <param name="JX" value="-0.0330"/>
-        <param name="JA" value="-4.7134"/>
-        <param name="LP" value="0.3725"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6290"/>
-        <param name="VO" value="0.2452"/>
-        <param name="TCX" value="1.3769"/>
-        <param name="TCY" value="-1.4743"/>
-        <param name="TTX" value="4.3187"/>
-        <param name="TTY" value="-1.2587"/>
-        <param name="TBX" value="2.8902"/>
-        <param name="TBY" value="-0.4009"/>
-        <param name="TRX" value="-1.5045"/>
-        <param name="TRY" value="-2.2728"/>
-        <param name="TS1" value="0.2114"/>
-        <param name="TS2" value="0.0652"/>
-        <param name="TS3" value="0.1410"/>
-      </shape>
-      <shape name="open1_0_10">
-        <param name="HX" value="0.1907"/>
-        <param name="HY" value="-4.7524"/>
-        <param name="JX" value="-0.0265"/>
-        <param name="JA" value="-3.8955"/>
-        <param name="LP" value="0.3332"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6643"/>
-        <param name="VO" value="0.2160"/>
-        <param name="TCX" value="1.3304"/>
-        <param name="TCY" value="-1.6500"/>
-        <param name="TTX" value="4.5107"/>
-        <param name="TTY" value="-1.4441"/>
-        <param name="TBX" value="2.8306"/>
-        <param name="TBY" value="-0.4762"/>
-        <param name="TRX" value="-1.7563"/>
-        <param name="TRY" value="-2.3929"/>
-        <param name="TS1" value="0.2105"/>
-        <param name="TS2" value="0.0591"/>
-        <param name="TS3" value="0.1468"/>
       </shape>
       <shape name="c1_0">
         <param name="HX" value="0.2236"/>
@@ -2457,69 +1764,6 @@
         <param name="TS2" value="0.0639"/>
         <param name="TS3" value="0.1480"/>
       </shape>
-      <shape name="open2_1_0">
-        <param name="HX" value="0.1977"/>
-        <param name="HY" value="-4.4323"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.4578"/>
-        <param name="LP" value="0.5361"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6311"/>
-        <param name="VO" value="0.0965"/>
-        <param name="TCX" value="1.1134"/>
-        <param name="TCY" value="-1.7173"/>
-        <param name="TTX" value="4.4086"/>
-        <param name="TTY" value="-1.1546"/>
-        <param name="TBX" value="2.8760"/>
-        <param name="TBY" value="-0.4386"/>
-        <param name="TRX" value="-1.6517"/>
-        <param name="TRY" value="-2.2932"/>
-        <param name="TS1" value="0.2223"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_1_0">
-        <param name="HX" value="0.2263"/>
-        <param name="HY" value="-4.8431"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.5513"/>
-        <param name="LP" value="0.3908"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5977"/>
-        <param name="VO" value="0.1116"/>
-        <param name="TCX" value="1.3273"/>
-        <param name="TCY" value="-1.4101"/>
-        <param name="TTX" value="4.3186"/>
-        <param name="TTY" value="-1.2628"/>
-        <param name="TBX" value="2.9312"/>
-        <param name="TBY" value="-0.3677"/>
-        <param name="TRX" value="-1.3512"/>
-        <param name="TRY" value="-2.1796"/>
-        <param name="TS1" value="0.2243"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_1_0">
-        <param name="HX" value="0.1959"/>
-        <param name="HY" value="-4.3902"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.7741"/>
-        <param name="LP" value="0.3508"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6359"/>
-        <param name="VO" value="0.1015"/>
-        <param name="TCX" value="1.2906"/>
-        <param name="TCY" value="-1.5902"/>
-        <param name="TTX" value="4.5061"/>
-        <param name="TTY" value="-1.4445"/>
-        <param name="TBX" value="2.8686"/>
-        <param name="TBY" value="-0.4451"/>
-        <param name="TRX" value="-1.6143"/>
-        <param name="TRY" value="-2.3075"/>
-        <param name="TS1" value="0.2217"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c1_1">
         <param name="HX" value="0.2226"/>
         <param name="HY" value="-4.6084"/>
@@ -2541,69 +1785,6 @@
         <param name="TS2" value="0.0660"/>
         <param name="TS3" value="0.1478"/>
       </shape>
-      <shape name="open2_1_1">
-        <param name="HX" value="0.1971"/>
-        <param name="HY" value="-4.4767"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.4742"/>
-        <param name="LP" value="0.5349"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6341"/>
-        <param name="VO" value="0.1084"/>
-        <param name="TCX" value="1.1179"/>
-        <param name="TCY" value="-1.7249"/>
-        <param name="TTX" value="4.4091"/>
-        <param name="TTY" value="-1.1539"/>
-        <param name="TBX" value="2.8721"/>
-        <param name="TBY" value="-0.4418"/>
-        <param name="TRX" value="-1.6673"/>
-        <param name="TRY" value="-2.3020"/>
-        <param name="TS1" value="0.2211"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_1_1">
-        <param name="HX" value="0.2258"/>
-        <param name="HY" value="-4.8939"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.5700"/>
-        <param name="LP" value="0.3892"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6009"/>
-        <param name="VO" value="0.1250"/>
-        <param name="TCX" value="1.3331"/>
-        <param name="TCY" value="-1.4179"/>
-        <param name="TTX" value="4.3189"/>
-        <param name="TTY" value="-1.2623"/>
-        <param name="TBX" value="2.9270"/>
-        <param name="TBY" value="-0.3711"/>
-        <param name="TRX" value="-1.3677"/>
-        <param name="TRY" value="-2.1891"/>
-        <param name="TS1" value="0.2230"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1421"/>
-      </shape>
-      <shape name="open1_1_1">
-        <param name="HX" value="0.1953"/>
-        <param name="HY" value="-4.4333"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.7886"/>
-        <param name="LP" value="0.3493"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6388"/>
-        <param name="VO" value="0.1131"/>
-        <param name="TCX" value="1.2953"/>
-        <param name="TCY" value="-1.5974"/>
-        <param name="TTX" value="4.5068"/>
-        <param name="TTY" value="-1.4444"/>
-        <param name="TBX" value="2.8647"/>
-        <param name="TBY" value="-0.4483"/>
-        <param name="TRX" value="-1.6296"/>
-        <param name="TRY" value="-2.3162"/>
-        <param name="TS1" value="0.2205"/>
-        <param name="TS2" value="0.0510"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c1_2">
         <param name="HX" value="0.2215"/>
         <param name="HY" value="-4.7049"/>
@@ -2623,69 +1804,6 @@
         <param name="TRY" value="-1.6348"/>
         <param name="TS1" value="0.2347"/>
         <param name="TS2" value="0.0681"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open2_1_2">
-        <param name="HX" value="0.1966"/>
-        <param name="HY" value="-4.5207"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.4905"/>
-        <param name="LP" value="0.5337"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6370"/>
-        <param name="VO" value="0.1201"/>
-        <param name="TCX" value="1.1223"/>
-        <param name="TCY" value="-1.7325"/>
-        <param name="TTX" value="4.4095"/>
-        <param name="TTY" value="-1.1531"/>
-        <param name="TBX" value="2.8682"/>
-        <param name="TBY" value="-0.4451"/>
-        <param name="TRX" value="-1.6830"/>
-        <param name="TRY" value="-2.3108"/>
-        <param name="TS1" value="0.2199"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_1_2">
-        <param name="HX" value="0.2252"/>
-        <param name="HY" value="-4.9445"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.5887"/>
-        <param name="LP" value="0.3876"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6040"/>
-        <param name="VO" value="0.1383"/>
-        <param name="TCX" value="1.3388"/>
-        <param name="TCY" value="-1.4256"/>
-        <param name="TTX" value="4.3192"/>
-        <param name="TTY" value="-1.2619"/>
-        <param name="TBX" value="2.9229"/>
-        <param name="TBY" value="-0.3745"/>
-        <param name="TRX" value="-1.3841"/>
-        <param name="TRY" value="-2.1985"/>
-        <param name="TS1" value="0.2217"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_1_2">
-        <param name="HX" value="0.1948"/>
-        <param name="HY" value="-4.4762"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8029"/>
-        <param name="LP" value="0.3477"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6416"/>
-        <param name="VO" value="0.1246"/>
-        <param name="TCX" value="1.3000"/>
-        <param name="TCY" value="-1.6046"/>
-        <param name="TTX" value="4.5075"/>
-        <param name="TTY" value="-1.4443"/>
-        <param name="TBX" value="2.8609"/>
-        <param name="TBY" value="-0.4515"/>
-        <param name="TRX" value="-1.6448"/>
-        <param name="TRY" value="-2.3248"/>
-        <param name="TS1" value="0.2194"/>
-        <param name="TS2" value="0.0520"/>
         <param name="TS3" value="0.1476"/>
       </shape>
       <shape name="c1_3">
@@ -2709,69 +1827,6 @@
         <param name="TS2" value="0.0702"/>
         <param name="TS3" value="0.1474"/>
       </shape>
-      <shape name="open2_1_3">
-        <param name="HX" value="0.1961"/>
-        <param name="HY" value="-4.5646"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.5068"/>
-        <param name="LP" value="0.5326"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6399"/>
-        <param name="VO" value="0.1318"/>
-        <param name="TCX" value="1.1267"/>
-        <param name="TCY" value="-1.7401"/>
-        <param name="TTX" value="4.4100"/>
-        <param name="TTY" value="-1.1524"/>
-        <param name="TBX" value="2.8643"/>
-        <param name="TBY" value="-0.4483"/>
-        <param name="TRX" value="-1.6985"/>
-        <param name="TRY" value="-2.3196"/>
-        <param name="TS1" value="0.2187"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_1_3">
-        <param name="HX" value="0.2247"/>
-        <param name="HY" value="-4.9948"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6073"/>
-        <param name="LP" value="0.3860"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6072"/>
-        <param name="VO" value="0.1516"/>
-        <param name="TCX" value="1.3445"/>
-        <param name="TCY" value="-1.4333"/>
-        <param name="TTX" value="4.3195"/>
-        <param name="TTY" value="-1.2615"/>
-        <param name="TBX" value="2.9188"/>
-        <param name="TBY" value="-0.3779"/>
-        <param name="TRX" value="-1.4005"/>
-        <param name="TRY" value="-2.2078"/>
-        <param name="TS1" value="0.2204"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1418"/>
-      </shape>
-      <shape name="open1_1_3">
-        <param name="HX" value="0.1943"/>
-        <param name="HY" value="-4.5189"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.8172"/>
-        <param name="LP" value="0.3461"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6445"/>
-        <param name="VO" value="0.1360"/>
-        <param name="TCX" value="1.3046"/>
-        <param name="TCY" value="-1.6117"/>
-        <param name="TTX" value="4.5082"/>
-        <param name="TTY" value="-1.4443"/>
-        <param name="TBX" value="2.8571"/>
-        <param name="TBY" value="-0.4547"/>
-        <param name="TRX" value="-1.6599"/>
-        <param name="TRY" value="-2.3334"/>
-        <param name="TS1" value="0.2182"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
       <shape name="c1_4">
         <param name="HX" value="0.2194"/>
         <param name="HY" value="-4.8980"/>
@@ -2792,69 +1847,6 @@
         <param name="TS1" value="0.2298"/>
         <param name="TS2" value="0.0724"/>
         <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open2_1_4">
-        <param name="HX" value="0.1955"/>
-        <param name="HY" value="-4.6082"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.5229"/>
-        <param name="LP" value="0.5314"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6428"/>
-        <param name="VO" value="0.1435"/>
-        <param name="TCX" value="1.1311"/>
-        <param name="TCY" value="-1.7476"/>
-        <param name="TTX" value="4.4105"/>
-        <param name="TTY" value="-1.1517"/>
-        <param name="TBX" value="2.8604"/>
-        <param name="TBY" value="-0.4515"/>
-        <param name="TRX" value="-1.7139"/>
-        <param name="TRY" value="-2.3283"/>
-        <param name="TS1" value="0.2176"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_1_4">
-        <param name="HX" value="0.2241"/>
-        <param name="HY" value="-5.0450"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.6258"/>
-        <param name="LP" value="0.3844"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6103"/>
-        <param name="VO" value="0.1648"/>
-        <param name="TCX" value="1.3501"/>
-        <param name="TCY" value="-1.4410"/>
-        <param name="TTX" value="4.3197"/>
-        <param name="TTY" value="-1.2610"/>
-        <param name="TBX" value="2.9147"/>
-        <param name="TBY" value="-0.3813"/>
-        <param name="TRX" value="-1.4168"/>
-        <param name="TRY" value="-2.2172"/>
-        <param name="TS1" value="0.2191"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1417"/>
-      </shape>
-      <shape name="open1_1_4">
-        <param name="HX" value="0.1937"/>
-        <param name="HY" value="-4.5613"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.8314"/>
-        <param name="LP" value="0.3446"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6473"/>
-        <param name="VO" value="0.1474"/>
-        <param name="TCX" value="1.3092"/>
-        <param name="TCY" value="-1.6188"/>
-        <param name="TTX" value="4.5088"/>
-        <param name="TTY" value="-1.4442"/>
-        <param name="TBX" value="2.8533"/>
-        <param name="TBY" value="-0.4578"/>
-        <param name="TRX" value="-1.6750"/>
-        <param name="TRY" value="-2.3420"/>
-        <param name="TS1" value="0.2171"/>
-        <param name="TS2" value="0.0538"/>
-        <param name="TS3" value="0.1474"/>
       </shape>
       <shape name="c1_5">
         <param name="HX" value="0.2183"/>
@@ -2877,69 +1869,6 @@
         <param name="TS2" value="0.0745"/>
         <param name="TS3" value="0.1470"/>
       </shape>
-      <shape name="open2_1_5">
-        <param name="HX" value="0.1950"/>
-        <param name="HY" value="-4.6516"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-4.5390"/>
-        <param name="LP" value="0.5303"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6457"/>
-        <param name="VO" value="0.1551"/>
-        <param name="TCX" value="1.1354"/>
-        <param name="TCY" value="-1.7551"/>
-        <param name="TTX" value="4.4109"/>
-        <param name="TTY" value="-1.1510"/>
-        <param name="TBX" value="2.8566"/>
-        <param name="TBY" value="-0.4547"/>
-        <param name="TRX" value="-1.7293"/>
-        <param name="TRY" value="-2.3369"/>
-        <param name="TS1" value="0.2164"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open4_1_5">
-        <param name="HX" value="0.2236"/>
-        <param name="HY" value="-5.0950"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.6443"/>
-        <param name="LP" value="0.3829"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6134"/>
-        <param name="VO" value="0.1780"/>
-        <param name="TCX" value="1.3558"/>
-        <param name="TCY" value="-1.4487"/>
-        <param name="TTX" value="4.3200"/>
-        <param name="TTY" value="-1.2606"/>
-        <param name="TBX" value="2.9107"/>
-        <param name="TBY" value="-0.3846"/>
-        <param name="TRX" value="-1.4330"/>
-        <param name="TRY" value="-2.2264"/>
-        <param name="TS1" value="0.2178"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1416"/>
-      </shape>
-      <shape name="open1_1_5">
-        <param name="HX" value="0.1932"/>
-        <param name="HY" value="-4.6035"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.8456"/>
-        <param name="LP" value="0.3431"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6502"/>
-        <param name="VO" value="0.1587"/>
-        <param name="TCX" value="1.3138"/>
-        <param name="TCY" value="-1.6258"/>
-        <param name="TTX" value="4.5095"/>
-        <param name="TTY" value="-1.4441"/>
-        <param name="TBX" value="2.8495"/>
-        <param name="TBY" value="-0.4610"/>
-        <param name="TRX" value="-1.6899"/>
-        <param name="TRY" value="-2.3505"/>
-        <param name="TS1" value="0.2160"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
       <shape name="c1_6">
         <param name="HX" value="0.2173"/>
         <param name="HY" value="-5.0910"/>
@@ -2960,69 +1889,6 @@
         <param name="TS1" value="0.2248"/>
         <param name="TS2" value="0.0766"/>
         <param name="TS3" value="0.1468"/>
-      </shape>
-      <shape name="open2_1_6">
-        <param name="HX" value="0.1944"/>
-        <param name="HY" value="-4.6947"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-4.5550"/>
-        <param name="LP" value="0.5291"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6485"/>
-        <param name="VO" value="0.1666"/>
-        <param name="TCX" value="1.1397"/>
-        <param name="TCY" value="-1.7625"/>
-        <param name="TTX" value="4.4114"/>
-        <param name="TTY" value="-1.1503"/>
-        <param name="TBX" value="2.8528"/>
-        <param name="TBY" value="-0.4579"/>
-        <param name="TRX" value="-1.7446"/>
-        <param name="TRY" value="-2.3456"/>
-        <param name="TS1" value="0.2153"/>
-        <param name="TS2" value="0.0562"/>
-        <param name="TS3" value="0.1470"/>
-      </shape>
-      <shape name="open4_1_6">
-        <param name="HX" value="0.2231"/>
-        <param name="HY" value="-5.1448"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.6627"/>
-        <param name="LP" value="0.3813"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6165"/>
-        <param name="VO" value="0.1911"/>
-        <param name="TCX" value="1.3614"/>
-        <param name="TCY" value="-1.4563"/>
-        <param name="TTX" value="4.3203"/>
-        <param name="TTY" value="-1.2602"/>
-        <param name="TBX" value="2.9066"/>
-        <param name="TBY" value="-0.3880"/>
-        <param name="TRX" value="-1.4492"/>
-        <param name="TRY" value="-2.2357"/>
-        <param name="TS1" value="0.2165"/>
-        <param name="TS2" value="0.0611"/>
-        <param name="TS3" value="0.1415"/>
-      </shape>
-      <shape name="open1_1_6">
-        <param name="HX" value="0.1927"/>
-        <param name="HY" value="-4.6454"/>
-        <param name="JX" value="-0.0269"/>
-        <param name="JA" value="-3.8596"/>
-        <param name="LP" value="0.3415"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6530"/>
-        <param name="VO" value="0.1699"/>
-        <param name="TCX" value="1.3184"/>
-        <param name="TCY" value="-1.6328"/>
-        <param name="TTX" value="4.5102"/>
-        <param name="TTY" value="-1.4441"/>
-        <param name="TBX" value="2.8458"/>
-        <param name="TBY" value="-0.4641"/>
-        <param name="TRX" value="-1.7048"/>
-        <param name="TRY" value="-2.3590"/>
-        <param name="TS1" value="0.2149"/>
-        <param name="TS2" value="0.0556"/>
-        <param name="TS3" value="0.1472"/>
       </shape>
       <shape name="c1_7">
         <param name="HX" value="0.2162"/>
@@ -3045,69 +1911,6 @@
         <param name="TS2" value="0.0787"/>
         <param name="TS3" value="0.1466"/>
       </shape>
-      <shape name="open2_1_7">
-        <param name="HX" value="0.1939"/>
-        <param name="HY" value="-4.7377"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-4.5709"/>
-        <param name="LP" value="0.5280"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6514"/>
-        <param name="VO" value="0.1781"/>
-        <param name="TCX" value="1.1440"/>
-        <param name="TCY" value="-1.7700"/>
-        <param name="TTX" value="4.4119"/>
-        <param name="TTY" value="-1.1496"/>
-        <param name="TBX" value="2.8490"/>
-        <param name="TBY" value="-0.4610"/>
-        <param name="TRX" value="-1.7598"/>
-        <param name="TRY" value="-2.3541"/>
-        <param name="TS1" value="0.2141"/>
-        <param name="TS2" value="0.0572"/>
-        <param name="TS3" value="0.1469"/>
-      </shape>
-      <shape name="open4_1_7">
-        <param name="HX" value="0.2226"/>
-        <param name="HY" value="-5.1943"/>
-        <param name="JX" value="-0.0333"/>
-        <param name="JA" value="-4.6810"/>
-        <param name="LP" value="0.3797"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6196"/>
-        <param name="VO" value="0.2042"/>
-        <param name="TCX" value="1.3670"/>
-        <param name="TCY" value="-1.4639"/>
-        <param name="TTX" value="4.3206"/>
-        <param name="TTY" value="-1.2597"/>
-        <param name="TBX" value="2.9026"/>
-        <param name="TBY" value="-0.3913"/>
-        <param name="TRX" value="-1.4653"/>
-        <param name="TRY" value="-2.2449"/>
-        <param name="TS1" value="0.2152"/>
-        <param name="TS2" value="0.0621"/>
-        <param name="TS3" value="0.1414"/>
-      </shape>
-      <shape name="open1_1_7">
-        <param name="HX" value="0.1922"/>
-        <param name="HY" value="-4.6872"/>
-        <param name="JX" value="-0.0268"/>
-        <param name="JA" value="-3.8736"/>
-        <param name="LP" value="0.3400"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6558"/>
-        <param name="VO" value="0.1811"/>
-        <param name="TCX" value="1.3229"/>
-        <param name="TCY" value="-1.6397"/>
-        <param name="TTX" value="4.5109"/>
-        <param name="TTY" value="-1.4440"/>
-        <param name="TBX" value="2.8420"/>
-        <param name="TBY" value="-0.4672"/>
-        <param name="TRX" value="-1.7196"/>
-        <param name="TRY" value="-2.3674"/>
-        <param name="TS1" value="0.2137"/>
-        <param name="TS2" value="0.0565"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
       <shape name="c1_8">
         <param name="HX" value="0.2152"/>
         <param name="HY" value="-5.2841"/>
@@ -3128,69 +1931,6 @@
         <param name="TS1" value="0.2199"/>
         <param name="TS2" value="0.0808"/>
         <param name="TS3" value="0.1464"/>
-      </shape>
-      <shape name="open2_1_8">
-        <param name="HX" value="0.1934"/>
-        <param name="HY" value="-4.7804"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-4.5867"/>
-        <param name="LP" value="0.5269"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6542"/>
-        <param name="VO" value="0.1895"/>
-        <param name="TCX" value="1.1483"/>
-        <param name="TCY" value="-1.7773"/>
-        <param name="TTX" value="4.4123"/>
-        <param name="TTY" value="-1.1489"/>
-        <param name="TBX" value="2.8452"/>
-        <param name="TBY" value="-0.4642"/>
-        <param name="TRX" value="-1.7749"/>
-        <param name="TRY" value="-2.3627"/>
-        <param name="TS1" value="0.2130"/>
-        <param name="TS2" value="0.0581"/>
-        <param name="TS3" value="0.1468"/>
-      </shape>
-      <shape name="open4_1_8">
-        <param name="HX" value="0.2220"/>
-        <param name="HY" value="-5.2437"/>
-        <param name="JX" value="-0.0332"/>
-        <param name="JA" value="-4.6992"/>
-        <param name="LP" value="0.3782"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6227"/>
-        <param name="VO" value="0.2172"/>
-        <param name="TCX" value="1.3726"/>
-        <param name="TCY" value="-1.4714"/>
-        <param name="TTX" value="4.3208"/>
-        <param name="TTY" value="-1.2593"/>
-        <param name="TBX" value="2.8985"/>
-        <param name="TBY" value="-0.3946"/>
-        <param name="TRX" value="-1.4813"/>
-        <param name="TRY" value="-2.2541"/>
-        <param name="TS1" value="0.2139"/>
-        <param name="TS2" value="0.0632"/>
-        <param name="TS3" value="0.1413"/>
-      </shape>
-      <shape name="open1_1_8">
-        <param name="HX" value="0.1916"/>
-        <param name="HY" value="-4.7287"/>
-        <param name="JX" value="-0.0267"/>
-        <param name="JA" value="-3.8875"/>
-        <param name="LP" value="0.3385"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6585"/>
-        <param name="VO" value="0.1922"/>
-        <param name="TCX" value="1.3274"/>
-        <param name="TCY" value="-1.6467"/>
-        <param name="TTX" value="4.5115"/>
-        <param name="TTY" value="-1.4440"/>
-        <param name="TBX" value="2.8383"/>
-        <param name="TBY" value="-0.4703"/>
-        <param name="TRX" value="-1.7343"/>
-        <param name="TRY" value="-2.3758"/>
-        <param name="TS1" value="0.2126"/>
-        <param name="TS2" value="0.0574"/>
-        <param name="TS3" value="0.1470"/>
       </shape>
       <shape name="c1_9">
         <param name="HX" value="0.2141"/>
@@ -3213,69 +1953,6 @@
         <param name="TS2" value="0.0830"/>
         <param name="TS3" value="0.1461"/>
       </shape>
-      <shape name="open2_1_9">
-        <param name="HX" value="0.1929"/>
-        <param name="HY" value="-4.8229"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-4.6025"/>
-        <param name="LP" value="0.5258"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6570"/>
-        <param name="VO" value="0.2008"/>
-        <param name="TCX" value="1.1525"/>
-        <param name="TCY" value="-1.7847"/>
-        <param name="TTX" value="4.4128"/>
-        <param name="TTY" value="-1.1482"/>
-        <param name="TBX" value="2.8415"/>
-        <param name="TBY" value="-0.4673"/>
-        <param name="TRX" value="-1.7899"/>
-        <param name="TRY" value="-2.3711"/>
-        <param name="TS1" value="0.2118"/>
-        <param name="TS2" value="0.0590"/>
-        <param name="TS3" value="0.1467"/>
-      </shape>
-      <shape name="open4_1_9">
-        <param name="HX" value="0.2215"/>
-        <param name="HY" value="-5.2929"/>
-        <param name="JX" value="-0.0331"/>
-        <param name="JA" value="-4.7174"/>
-        <param name="LP" value="0.3766"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6257"/>
-        <param name="VO" value="0.2302"/>
-        <param name="TCX" value="1.3782"/>
-        <param name="TCY" value="-1.4790"/>
-        <param name="TTX" value="4.3211"/>
-        <param name="TTY" value="-1.2589"/>
-        <param name="TBX" value="2.8945"/>
-        <param name="TBY" value="-0.3979"/>
-        <param name="TRX" value="-1.4973"/>
-        <param name="TRY" value="-2.2632"/>
-        <param name="TS1" value="0.2126"/>
-        <param name="TS2" value="0.0642"/>
-        <param name="TS3" value="0.1411"/>
-      </shape>
-      <shape name="open1_1_9">
-        <param name="HX" value="0.1911"/>
-        <param name="HY" value="-4.7699"/>
-        <param name="JX" value="-0.0266"/>
-        <param name="JA" value="-3.9014"/>
-        <param name="LP" value="0.3370"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6613"/>
-        <param name="VO" value="0.2032"/>
-        <param name="TCX" value="1.3319"/>
-        <param name="TCY" value="-1.6536"/>
-        <param name="TTX" value="4.5122"/>
-        <param name="TTY" value="-1.4439"/>
-        <param name="TBX" value="2.8346"/>
-        <param name="TBY" value="-0.4733"/>
-        <param name="TRX" value="-1.7490"/>
-        <param name="TRY" value="-2.3841"/>
-        <param name="TS1" value="0.2115"/>
-        <param name="TS2" value="0.0582"/>
-        <param name="TS3" value="0.1469"/>
-      </shape>
       <shape name="c2_0">
         <param name="HX" value="0.2233"/>
         <param name="HY" value="-4.6444"/>
@@ -3296,69 +1973,6 @@
         <param name="TS1" value="0.2395"/>
         <param name="TS2" value="0.0639"/>
         <param name="TS3" value="0.1481"/>
-      </shape>
-      <shape name="open2_2_0">
-        <param name="HX" value="0.1976"/>
-        <param name="HY" value="-4.4937"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.4777"/>
-        <param name="LP" value="0.5384"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6308"/>
-        <param name="VO" value="0.0946"/>
-        <param name="TCX" value="1.1199"/>
-        <param name="TCY" value="-1.7280"/>
-        <param name="TTX" value="4.4110"/>
-        <param name="TTY" value="-1.1545"/>
-        <param name="TBX" value="2.8764"/>
-        <param name="TBY" value="-0.4388"/>
-        <param name="TRX" value="-1.6591"/>
-        <param name="TRY" value="-2.2926"/>
-        <param name="TS1" value="0.2222"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_2_0">
-        <param name="HX" value="0.2262"/>
-        <param name="HY" value="-4.9118"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.5736"/>
-        <param name="LP" value="0.3934"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5974"/>
-        <param name="VO" value="0.1093"/>
-        <param name="TCX" value="1.3343"/>
-        <param name="TCY" value="-1.4225"/>
-        <param name="TTX" value="4.3214"/>
-        <param name="TTY" value="-1.2625"/>
-        <param name="TBX" value="2.9315"/>
-        <param name="TBY" value="-0.3680"/>
-        <param name="TRX" value="-1.3600"/>
-        <param name="TRY" value="-2.1791"/>
-        <param name="TS1" value="0.2242"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_2_0">
-        <param name="HX" value="0.1958"/>
-        <param name="HY" value="-4.4501"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.7941"/>
-        <param name="LP" value="0.3532"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6356"/>
-        <param name="VO" value="0.0996"/>
-        <param name="TCX" value="1.2967"/>
-        <param name="TCY" value="-1.6008"/>
-        <param name="TTX" value="4.5083"/>
-        <param name="TTY" value="-1.4441"/>
-        <param name="TBX" value="2.8690"/>
-        <param name="TBY" value="-0.4453"/>
-        <param name="TRX" value="-1.6216"/>
-        <param name="TRY" value="-2.3069"/>
-        <param name="TS1" value="0.2216"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1478"/>
       </shape>
       <shape name="c2_1">
         <param name="HX" value="0.2223"/>
@@ -3381,69 +1995,6 @@
         <param name="TS2" value="0.0660"/>
         <param name="TS3" value="0.1479"/>
       </shape>
-      <shape name="open2_2_1">
-        <param name="HX" value="0.1970"/>
-        <param name="HY" value="-4.5379"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.4941"/>
-        <param name="LP" value="0.5372"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6337"/>
-        <param name="VO" value="0.1064"/>
-        <param name="TCX" value="1.1243"/>
-        <param name="TCY" value="-1.7357"/>
-        <param name="TTX" value="4.4114"/>
-        <param name="TTY" value="-1.1538"/>
-        <param name="TBX" value="2.8724"/>
-        <param name="TBY" value="-0.4420"/>
-        <param name="TRX" value="-1.6748"/>
-        <param name="TRY" value="-2.3014"/>
-        <param name="TS1" value="0.2210"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_2_1">
-        <param name="HX" value="0.2256"/>
-        <param name="HY" value="-4.9625"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.5924"/>
-        <param name="LP" value="0.3918"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6006"/>
-        <param name="VO" value="0.1228"/>
-        <param name="TCX" value="1.3400"/>
-        <param name="TCY" value="-1.4302"/>
-        <param name="TTX" value="4.3217"/>
-        <param name="TTY" value="-1.2621"/>
-        <param name="TBX" value="2.9274"/>
-        <param name="TBY" value="-0.3714"/>
-        <param name="TRX" value="-1.3765"/>
-        <param name="TRY" value="-2.1886"/>
-        <param name="TS1" value="0.2229"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_2_1">
-        <param name="HX" value="0.1952"/>
-        <param name="HY" value="-4.4931"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.8086"/>
-        <param name="LP" value="0.3516"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6385"/>
-        <param name="VO" value="0.1112"/>
-        <param name="TCX" value="1.3014"/>
-        <param name="TCY" value="-1.6080"/>
-        <param name="TTX" value="4.5090"/>
-        <param name="TTY" value="-1.4441"/>
-        <param name="TBX" value="2.8651"/>
-        <param name="TBY" value="-0.4485"/>
-        <param name="TRX" value="-1.6369"/>
-        <param name="TRY" value="-2.3156"/>
-        <param name="TS1" value="0.2205"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c2_2">
         <param name="HX" value="0.2212"/>
         <param name="HY" value="-4.8374"/>
@@ -3465,69 +2016,6 @@
         <param name="TS2" value="0.0681"/>
         <param name="TS3" value="0.1477"/>
       </shape>
-      <shape name="open2_2_2">
-        <param name="HX" value="0.1965"/>
-        <param name="HY" value="-4.5819"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.5104"/>
-        <param name="LP" value="0.5360"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6367"/>
-        <param name="VO" value="0.1182"/>
-        <param name="TCX" value="1.1287"/>
-        <param name="TCY" value="-1.7432"/>
-        <param name="TTX" value="4.4119"/>
-        <param name="TTY" value="-1.1530"/>
-        <param name="TBX" value="2.8685"/>
-        <param name="TBY" value="-0.4453"/>
-        <param name="TRX" value="-1.6904"/>
-        <param name="TRY" value="-2.3102"/>
-        <param name="TS1" value="0.2198"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_2_2">
-        <param name="HX" value="0.2251"/>
-        <param name="HY" value="-5.0129"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.6110"/>
-        <param name="LP" value="0.3902"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6037"/>
-        <param name="VO" value="0.1361"/>
-        <param name="TCX" value="1.3457"/>
-        <param name="TCY" value="-1.4380"/>
-        <param name="TTX" value="4.3219"/>
-        <param name="TTY" value="-1.2616"/>
-        <param name="TBX" value="2.9232"/>
-        <param name="TBY" value="-0.3748"/>
-        <param name="TRX" value="-1.3929"/>
-        <param name="TRY" value="-2.1980"/>
-        <param name="TS1" value="0.2216"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_2_2">
-        <param name="HX" value="0.1947"/>
-        <param name="HY" value="-4.5359"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8229"/>
-        <param name="LP" value="0.3500"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6413"/>
-        <param name="VO" value="0.1227"/>
-        <param name="TCX" value="1.3061"/>
-        <param name="TCY" value="-1.6151"/>
-        <param name="TTX" value="4.5097"/>
-        <param name="TTY" value="-1.4440"/>
-        <param name="TBX" value="2.8613"/>
-        <param name="TBY" value="-0.4517"/>
-        <param name="TRX" value="-1.6521"/>
-        <param name="TRY" value="-2.3242"/>
-        <param name="TS1" value="0.2193"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
       <shape name="c2_3">
         <param name="HX" value="0.2202"/>
         <param name="HY" value="-4.9340"/>
@@ -3547,69 +2035,6 @@
         <param name="TRY" value="-1.6505"/>
         <param name="TS1" value="0.2321"/>
         <param name="TS2" value="0.0702"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open2_2_3">
-        <param name="HX" value="0.1959"/>
-        <param name="HY" value="-4.6256"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.5266"/>
-        <param name="LP" value="0.5348"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6396"/>
-        <param name="VO" value="0.1299"/>
-        <param name="TCX" value="1.1331"/>
-        <param name="TCY" value="-1.7508"/>
-        <param name="TTX" value="4.4124"/>
-        <param name="TTY" value="-1.1523"/>
-        <param name="TBX" value="2.8647"/>
-        <param name="TBY" value="-0.4485"/>
-        <param name="TRX" value="-1.7060"/>
-        <param name="TRY" value="-2.3190"/>
-        <param name="TS1" value="0.2186"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_2_3">
-        <param name="HX" value="0.2245"/>
-        <param name="HY" value="-5.0632"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6296"/>
-        <param name="LP" value="0.3886"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6069"/>
-        <param name="VO" value="0.1494"/>
-        <param name="TCX" value="1.3514"/>
-        <param name="TCY" value="-1.4457"/>
-        <param name="TTX" value="4.3222"/>
-        <param name="TTY" value="-1.2612"/>
-        <param name="TBX" value="2.9191"/>
-        <param name="TBY" value="-0.3782"/>
-        <param name="TRX" value="-1.4093"/>
-        <param name="TRY" value="-2.2074"/>
-        <param name="TS1" value="0.2203"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1419"/>
-      </shape>
-      <shape name="open1_2_3">
-        <param name="HX" value="0.1941"/>
-        <param name="HY" value="-4.5784"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8371"/>
-        <param name="LP" value="0.3485"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6442"/>
-        <param name="VO" value="0.1341"/>
-        <param name="TCX" value="1.3107"/>
-        <param name="TCY" value="-1.6222"/>
-        <param name="TTX" value="4.5104"/>
-        <param name="TTY" value="-1.4439"/>
-        <param name="TBX" value="2.8575"/>
-        <param name="TBY" value="-0.4548"/>
-        <param name="TRX" value="-1.6672"/>
-        <param name="TRY" value="-2.3329"/>
-        <param name="TS1" value="0.2182"/>
-        <param name="TS2" value="0.0529"/>
         <param name="TS3" value="0.1475"/>
       </shape>
       <shape name="c2_4">
@@ -3633,69 +2058,6 @@
         <param name="TS2" value="0.0723"/>
         <param name="TS3" value="0.1473"/>
       </shape>
-      <shape name="open2_2_4">
-        <param name="HX" value="0.1954"/>
-        <param name="HY" value="-4.6691"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.5428"/>
-        <param name="LP" value="0.5337"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6425"/>
-        <param name="VO" value="0.1416"/>
-        <param name="TCX" value="1.1374"/>
-        <param name="TCY" value="-1.7583"/>
-        <param name="TTX" value="4.4128"/>
-        <param name="TTY" value="-1.1516"/>
-        <param name="TBX" value="2.8608"/>
-        <param name="TBY" value="-0.4517"/>
-        <param name="TRX" value="-1.7214"/>
-        <param name="TRY" value="-2.3277"/>
-        <param name="TS1" value="0.2175"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_2_4">
-        <param name="HX" value="0.2240"/>
-        <param name="HY" value="-5.1133"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.6481"/>
-        <param name="LP" value="0.3871"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6100"/>
-        <param name="VO" value="0.1627"/>
-        <param name="TCX" value="1.3571"/>
-        <param name="TCY" value="-1.4533"/>
-        <param name="TTX" value="4.3225"/>
-        <param name="TTY" value="-1.2608"/>
-        <param name="TBX" value="2.9150"/>
-        <param name="TBY" value="-0.3816"/>
-        <param name="TRX" value="-1.4256"/>
-        <param name="TRY" value="-2.2167"/>
-        <param name="TS1" value="0.2190"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1418"/>
-      </shape>
-      <shape name="open1_2_4">
-        <param name="HX" value="0.1936"/>
-        <param name="HY" value="-4.6207"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.8513"/>
-        <param name="LP" value="0.3469"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6470"/>
-        <param name="VO" value="0.1455"/>
-        <param name="TCX" value="1.3153"/>
-        <param name="TCY" value="-1.6293"/>
-        <param name="TTX" value="4.5111"/>
-        <param name="TTY" value="-1.4439"/>
-        <param name="TBX" value="2.8537"/>
-        <param name="TBY" value="-0.4580"/>
-        <param name="TRX" value="-1.6822"/>
-        <param name="TRY" value="-2.3414"/>
-        <param name="TS1" value="0.2170"/>
-        <param name="TS2" value="0.0538"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
       <shape name="c2_5">
         <param name="HX" value="0.2181"/>
         <param name="HY" value="-5.1270"/>
@@ -3716,69 +2078,6 @@
         <param name="TS1" value="0.2271"/>
         <param name="TS2" value="0.0745"/>
         <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open2_2_5">
-        <param name="HX" value="0.1949"/>
-        <param name="HY" value="-4.7123"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.5588"/>
-        <param name="LP" value="0.5325"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6454"/>
-        <param name="VO" value="0.1532"/>
-        <param name="TCX" value="1.1418"/>
-        <param name="TCY" value="-1.7658"/>
-        <param name="TTX" value="4.4133"/>
-        <param name="TTY" value="-1.1509"/>
-        <param name="TBX" value="2.8570"/>
-        <param name="TBY" value="-0.4549"/>
-        <param name="TRX" value="-1.7367"/>
-        <param name="TRY" value="-2.3364"/>
-        <param name="TS1" value="0.2163"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_2_5">
-        <param name="HX" value="0.2235"/>
-        <param name="HY" value="-5.1631"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.6665"/>
-        <param name="LP" value="0.3855"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6131"/>
-        <param name="VO" value="0.1758"/>
-        <param name="TCX" value="1.3627"/>
-        <param name="TCY" value="-1.4610"/>
-        <param name="TTX" value="4.3227"/>
-        <param name="TTY" value="-1.2603"/>
-        <param name="TBX" value="2.9110"/>
-        <param name="TBY" value="-0.3849"/>
-        <param name="TRX" value="-1.4418"/>
-        <param name="TRY" value="-2.2260"/>
-        <param name="TS1" value="0.2177"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1417"/>
-      </shape>
-      <shape name="open1_2_5">
-        <param name="HX" value="0.1931"/>
-        <param name="HY" value="-4.6628"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.8654"/>
-        <param name="LP" value="0.3454"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6499"/>
-        <param name="VO" value="0.1568"/>
-        <param name="TCX" value="1.3199"/>
-        <param name="TCY" value="-1.6363"/>
-        <param name="TTX" value="4.5117"/>
-        <param name="TTY" value="-1.4438"/>
-        <param name="TBX" value="2.8499"/>
-        <param name="TBY" value="-0.4611"/>
-        <param name="TRX" value="-1.6972"/>
-        <param name="TRY" value="-2.3500"/>
-        <param name="TS1" value="0.2159"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1473"/>
       </shape>
       <shape name="c2_6">
         <param name="HX" value="0.2170"/>
@@ -3801,69 +2100,6 @@
         <param name="TS2" value="0.0766"/>
         <param name="TS3" value="0.1469"/>
       </shape>
-      <shape name="open2_2_6">
-        <param name="HX" value="0.1943"/>
-        <param name="HY" value="-4.7554"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-4.5748"/>
-        <param name="LP" value="0.5314"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6482"/>
-        <param name="VO" value="0.1648"/>
-        <param name="TCX" value="1.1461"/>
-        <param name="TCY" value="-1.7732"/>
-        <param name="TTX" value="4.4137"/>
-        <param name="TTY" value="-1.1502"/>
-        <param name="TBX" value="2.8531"/>
-        <param name="TBY" value="-0.4581"/>
-        <param name="TRX" value="-1.7520"/>
-        <param name="TRY" value="-2.3450"/>
-        <param name="TS1" value="0.2152"/>
-        <param name="TS2" value="0.0562"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open4_2_6">
-        <param name="HX" value="0.2229"/>
-        <param name="HY" value="-5.2128"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.6848"/>
-        <param name="LP" value="0.3839"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6162"/>
-        <param name="VO" value="0.1890"/>
-        <param name="TCX" value="1.3683"/>
-        <param name="TCY" value="-1.4686"/>
-        <param name="TTX" value="4.3230"/>
-        <param name="TTY" value="-1.2599"/>
-        <param name="TBX" value="2.9069"/>
-        <param name="TBY" value="-0.3883"/>
-        <param name="TRX" value="-1.4580"/>
-        <param name="TRY" value="-2.2352"/>
-        <param name="TS1" value="0.2164"/>
-        <param name="TS2" value="0.0611"/>
-        <param name="TS3" value="0.1416"/>
-      </shape>
-      <shape name="open1_2_6">
-        <param name="HX" value="0.1926"/>
-        <param name="HY" value="-4.7046"/>
-        <param name="JX" value="-0.0269"/>
-        <param name="JA" value="-3.8794"/>
-        <param name="LP" value="0.3439"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6527"/>
-        <param name="VO" value="0.1681"/>
-        <param name="TCX" value="1.3244"/>
-        <param name="TCY" value="-1.6433"/>
-        <param name="TTX" value="4.5124"/>
-        <param name="TTY" value="-1.4438"/>
-        <param name="TBX" value="2.8461"/>
-        <param name="TBY" value="-0.4643"/>
-        <param name="TRX" value="-1.7121"/>
-        <param name="TRY" value="-2.3584"/>
-        <param name="TS1" value="0.2148"/>
-        <param name="TS2" value="0.0556"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
       <shape name="c2_7">
         <param name="HX" value="0.2160"/>
         <param name="HY" value="-5.3201"/>
@@ -3884,69 +2120,6 @@
         <param name="TS1" value="0.2222"/>
         <param name="TS2" value="0.0787"/>
         <param name="TS3" value="0.1467"/>
-      </shape>
-      <shape name="open2_2_7">
-        <param name="HX" value="0.1938"/>
-        <param name="HY" value="-4.7982"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-4.5906"/>
-        <param name="LP" value="0.5302"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6511"/>
-        <param name="VO" value="0.1762"/>
-        <param name="TCX" value="1.1504"/>
-        <param name="TCY" value="-1.7806"/>
-        <param name="TTX" value="4.4142"/>
-        <param name="TTY" value="-1.1495"/>
-        <param name="TBX" value="2.8493"/>
-        <param name="TBY" value="-0.4612"/>
-        <param name="TRX" value="-1.7672"/>
-        <param name="TRY" value="-2.3536"/>
-        <param name="TS1" value="0.2140"/>
-        <param name="TS2" value="0.0572"/>
-        <param name="TS3" value="0.1470"/>
-      </shape>
-      <shape name="open4_2_7">
-        <param name="HX" value="0.2224"/>
-        <param name="HY" value="-5.2623"/>
-        <param name="JX" value="-0.0333"/>
-        <param name="JA" value="-4.7031"/>
-        <param name="LP" value="0.3823"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6193"/>
-        <param name="VO" value="0.2021"/>
-        <param name="TCX" value="1.3739"/>
-        <param name="TCY" value="-1.4761"/>
-        <param name="TTX" value="4.3233"/>
-        <param name="TTY" value="-1.2595"/>
-        <param name="TBX" value="2.9029"/>
-        <param name="TBY" value="-0.3916"/>
-        <param name="TRX" value="-1.4741"/>
-        <param name="TRY" value="-2.2445"/>
-        <param name="TS1" value="0.2151"/>
-        <param name="TS2" value="0.0621"/>
-        <param name="TS3" value="0.1414"/>
-      </shape>
-      <shape name="open1_2_7">
-        <param name="HX" value="0.1921"/>
-        <param name="HY" value="-4.7462"/>
-        <param name="JX" value="-0.0268"/>
-        <param name="JA" value="-3.8934"/>
-        <param name="LP" value="0.3423"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6555"/>
-        <param name="VO" value="0.1793"/>
-        <param name="TCX" value="1.3290"/>
-        <param name="TCY" value="-1.6502"/>
-        <param name="TTX" value="4.5131"/>
-        <param name="TTY" value="-1.4437"/>
-        <param name="TBX" value="2.8424"/>
-        <param name="TBY" value="-0.4674"/>
-        <param name="TRX" value="-1.7269"/>
-        <param name="TRY" value="-2.3669"/>
-        <param name="TS1" value="0.2136"/>
-        <param name="TS2" value="0.0565"/>
-        <param name="TS3" value="0.1471"/>
       </shape>
       <shape name="c2_8">
         <param name="HX" value="0.2149"/>
@@ -3969,69 +2142,6 @@
         <param name="TS2" value="0.0808"/>
         <param name="TS3" value="0.1465"/>
       </shape>
-      <shape name="open2_2_8">
-        <param name="HX" value="0.1933"/>
-        <param name="HY" value="-4.8408"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-4.6064"/>
-        <param name="LP" value="0.5291"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6539"/>
-        <param name="VO" value="0.1877"/>
-        <param name="TCX" value="1.1546"/>
-        <param name="TCY" value="-1.7879"/>
-        <param name="TTX" value="4.4147"/>
-        <param name="TTY" value="-1.1488"/>
-        <param name="TBX" value="2.8456"/>
-        <param name="TBY" value="-0.4644"/>
-        <param name="TRX" value="-1.7823"/>
-        <param name="TRY" value="-2.3621"/>
-        <param name="TS1" value="0.2129"/>
-        <param name="TS2" value="0.0581"/>
-        <param name="TS3" value="0.1469"/>
-      </shape>
-      <shape name="open4_2_8">
-        <param name="HX" value="0.2219"/>
-        <param name="HY" value="-5.3115"/>
-        <param name="JX" value="-0.0332"/>
-        <param name="JA" value="-4.7213"/>
-        <param name="LP" value="0.3808"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6224"/>
-        <param name="VO" value="0.2151"/>
-        <param name="TCX" value="1.3795"/>
-        <param name="TCY" value="-1.4837"/>
-        <param name="TTX" value="4.3236"/>
-        <param name="TTY" value="-1.2591"/>
-        <param name="TBX" value="2.8988"/>
-        <param name="TBY" value="-0.3949"/>
-        <param name="TRX" value="-1.4901"/>
-        <param name="TRY" value="-2.2537"/>
-        <param name="TS1" value="0.2138"/>
-        <param name="TS2" value="0.0632"/>
-        <param name="TS3" value="0.1413"/>
-      </shape>
-      <shape name="open1_2_8">
-        <param name="HX" value="0.1915"/>
-        <param name="HY" value="-4.7876"/>
-        <param name="JX" value="-0.0267"/>
-        <param name="JA" value="-3.9072"/>
-        <param name="LP" value="0.3408"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6583"/>
-        <param name="VO" value="0.1904"/>
-        <param name="TCX" value="1.3335"/>
-        <param name="TCY" value="-1.6571"/>
-        <param name="TTX" value="4.5137"/>
-        <param name="TTY" value="-1.4436"/>
-        <param name="TBX" value="2.8387"/>
-        <param name="TBY" value="-0.4705"/>
-        <param name="TRX" value="-1.7416"/>
-        <param name="TRY" value="-2.3752"/>
-        <param name="TS1" value="0.2125"/>
-        <param name="TS2" value="0.0574"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
       <shape name="c3_0">
         <param name="HX" value="0.2231"/>
         <param name="HY" value="-4.7769"/>
@@ -4052,69 +2162,6 @@
         <param name="TS1" value="0.2393"/>
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1482"/>
-      </shape>
-      <shape name="open2_3_0">
-        <param name="HX" value="0.1975"/>
-        <param name="HY" value="-4.5552"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.4977"/>
-        <param name="LP" value="0.5406"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6305"/>
-        <param name="VO" value="0.0926"/>
-        <param name="TCX" value="1.1263"/>
-        <param name="TCY" value="-1.7388"/>
-        <param name="TTX" value="4.4133"/>
-        <param name="TTY" value="-1.1544"/>
-        <param name="TBX" value="2.8767"/>
-        <param name="TBY" value="-0.4389"/>
-        <param name="TRX" value="-1.6666"/>
-        <param name="TRY" value="-2.2920"/>
-        <param name="TS1" value="0.2221"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open4_3_0">
-        <param name="HX" value="0.2260"/>
-        <param name="HY" value="-4.9805"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.5960"/>
-        <param name="LP" value="0.3961"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5971"/>
-        <param name="VO" value="0.1071"/>
-        <param name="TCX" value="1.3412"/>
-        <param name="TCY" value="-1.4349"/>
-        <param name="TTX" value="4.3241"/>
-        <param name="TTY" value="-1.2623"/>
-        <param name="TBX" value="2.9318"/>
-        <param name="TBY" value="-0.3683"/>
-        <param name="TRX" value="-1.3689"/>
-        <param name="TRY" value="-2.1786"/>
-        <param name="TS1" value="0.2241"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_3_0">
-        <param name="HX" value="0.1957"/>
-        <param name="HY" value="-4.5102"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.8142"/>
-        <param name="LP" value="0.3556"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6353"/>
-        <param name="VO" value="0.0977"/>
-        <param name="TCX" value="1.3029"/>
-        <param name="TCY" value="-1.6114"/>
-        <param name="TTX" value="4.5106"/>
-        <param name="TTY" value="-1.4438"/>
-        <param name="TBX" value="2.8694"/>
-        <param name="TBY" value="-0.4454"/>
-        <param name="TRX" value="-1.6289"/>
-        <param name="TRY" value="-2.3062"/>
-        <param name="TS1" value="0.2215"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1478"/>
       </shape>
       <shape name="c3_1">
         <param name="HX" value="0.2220"/>
@@ -4137,69 +2184,6 @@
         <param name="TS2" value="0.0660"/>
         <param name="TS3" value="0.1480"/>
       </shape>
-      <shape name="open2_3_1">
-        <param name="HX" value="0.1969"/>
-        <param name="HY" value="-4.5993"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.5141"/>
-        <param name="LP" value="0.5394"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6334"/>
-        <param name="VO" value="0.1045"/>
-        <param name="TCX" value="1.1307"/>
-        <param name="TCY" value="-1.7464"/>
-        <param name="TTX" value="4.4138"/>
-        <param name="TTY" value="-1.1537"/>
-        <param name="TBX" value="2.8728"/>
-        <param name="TBY" value="-0.4422"/>
-        <param name="TRX" value="-1.6823"/>
-        <param name="TRY" value="-2.3008"/>
-        <param name="TS1" value="0.2209"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_3_1">
-        <param name="HX" value="0.2255"/>
-        <param name="HY" value="-5.0311"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.6147"/>
-        <param name="LP" value="0.3945"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6003"/>
-        <param name="VO" value="0.1205"/>
-        <param name="TCX" value="1.3470"/>
-        <param name="TCY" value="-1.4426"/>
-        <param name="TTX" value="4.3244"/>
-        <param name="TTY" value="-1.2618"/>
-        <param name="TBX" value="2.9277"/>
-        <param name="TBY" value="-0.3717"/>
-        <param name="TRX" value="-1.3853"/>
-        <param name="TRY" value="-2.1881"/>
-        <param name="TS1" value="0.2228"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_3_1">
-        <param name="HX" value="0.1951"/>
-        <param name="HY" value="-4.5530"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.8286"/>
-        <param name="LP" value="0.3540"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6382"/>
-        <param name="VO" value="0.1093"/>
-        <param name="TCX" value="1.3076"/>
-        <param name="TCY" value="-1.6186"/>
-        <param name="TTX" value="4.5112"/>
-        <param name="TTY" value="-1.4438"/>
-        <param name="TBX" value="2.8655"/>
-        <param name="TBY" value="-0.4487"/>
-        <param name="TRX" value="-1.6442"/>
-        <param name="TRY" value="-2.3150"/>
-        <param name="TS1" value="0.2204"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
       <shape name="c3_2">
         <param name="HX" value="0.2210"/>
         <param name="HY" value="-4.9700"/>
@@ -4221,69 +2205,6 @@
         <param name="TS2" value="0.0681"/>
         <param name="TS3" value="0.1478"/>
       </shape>
-      <shape name="open2_3_2">
-        <param name="HX" value="0.1964"/>
-        <param name="HY" value="-4.6431"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.5303"/>
-        <param name="LP" value="0.5383"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6364"/>
-        <param name="VO" value="0.1163"/>
-        <param name="TCX" value="1.1351"/>
-        <param name="TCY" value="-1.7540"/>
-        <param name="TTX" value="4.4143"/>
-        <param name="TTY" value="-1.1530"/>
-        <param name="TBX" value="2.8689"/>
-        <param name="TBY" value="-0.4454"/>
-        <param name="TRX" value="-1.6979"/>
-        <param name="TRY" value="-2.3096"/>
-        <param name="TS1" value="0.2197"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_3_2">
-        <param name="HX" value="0.2249"/>
-        <param name="HY" value="-5.0815"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.6333"/>
-        <param name="LP" value="0.3929"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6034"/>
-        <param name="VO" value="0.1339"/>
-        <param name="TCX" value="1.3527"/>
-        <param name="TCY" value="-1.4504"/>
-        <param name="TTX" value="4.3247"/>
-        <param name="TTY" value="-1.2614"/>
-        <param name="TBX" value="2.9236"/>
-        <param name="TBY" value="-0.3751"/>
-        <param name="TRX" value="-1.4018"/>
-        <param name="TRY" value="-2.1975"/>
-        <param name="TS1" value="0.2215"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1421"/>
-      </shape>
-      <shape name="open1_3_2">
-        <param name="HX" value="0.1946"/>
-        <param name="HY" value="-4.5957"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.8429"/>
-        <param name="LP" value="0.3524"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6410"/>
-        <param name="VO" value="0.1208"/>
-        <param name="TCX" value="1.3122"/>
-        <param name="TCY" value="-1.6257"/>
-        <param name="TTX" value="4.5119"/>
-        <param name="TTY" value="-1.4437"/>
-        <param name="TBX" value="2.8616"/>
-        <param name="TBY" value="-0.4518"/>
-        <param name="TRX" value="-1.6594"/>
-        <param name="TRY" value="-2.3236"/>
-        <param name="TS1" value="0.2192"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c3_3">
         <param name="HX" value="0.2199"/>
         <param name="HY" value="-5.0665"/>
@@ -4303,69 +2224,6 @@
         <param name="TRY" value="-1.6504"/>
         <param name="TS1" value="0.2319"/>
         <param name="TS2" value="0.0702"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open2_3_3">
-        <param name="HX" value="0.1958"/>
-        <param name="HY" value="-4.6867"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.5465"/>
-        <param name="LP" value="0.5371"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6393"/>
-        <param name="VO" value="0.1280"/>
-        <param name="TCX" value="1.1395"/>
-        <param name="TCY" value="-1.7615"/>
-        <param name="TTX" value="4.4147"/>
-        <param name="TTY" value="-1.1522"/>
-        <param name="TBX" value="2.8650"/>
-        <param name="TBY" value="-0.4487"/>
-        <param name="TRX" value="-1.7134"/>
-        <param name="TRY" value="-2.3184"/>
-        <param name="TS1" value="0.2186"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_3_3">
-        <param name="HX" value="0.2244"/>
-        <param name="HY" value="-5.1316"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6519"/>
-        <param name="LP" value="0.3913"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6066"/>
-        <param name="VO" value="0.1472"/>
-        <param name="TCX" value="1.3583"/>
-        <param name="TCY" value="-1.4580"/>
-        <param name="TTX" value="4.3250"/>
-        <param name="TTY" value="-1.2610"/>
-        <param name="TBX" value="2.9195"/>
-        <param name="TBY" value="-0.3785"/>
-        <param name="TRX" value="-1.4181"/>
-        <param name="TRY" value="-2.2069"/>
-        <param name="TS1" value="0.2202"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_3_3">
-        <param name="HX" value="0.1940"/>
-        <param name="HY" value="-4.6381"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8571"/>
-        <param name="LP" value="0.3508"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6439"/>
-        <param name="VO" value="0.1323"/>
-        <param name="TCX" value="1.3168"/>
-        <param name="TCY" value="-1.6328"/>
-        <param name="TTX" value="4.5126"/>
-        <param name="TTY" value="-1.4436"/>
-        <param name="TBX" value="2.8578"/>
-        <param name="TBY" value="-0.4550"/>
-        <param name="TRX" value="-1.6745"/>
-        <param name="TRY" value="-2.3323"/>
-        <param name="TS1" value="0.2181"/>
-        <param name="TS2" value="0.0529"/>
         <param name="TS3" value="0.1476"/>
       </shape>
       <shape name="c3_4">
@@ -4389,69 +2247,6 @@
         <param name="TS2" value="0.0723"/>
         <param name="TS3" value="0.1474"/>
       </shape>
-      <shape name="open2_3_4">
-        <param name="HX" value="0.1953"/>
-        <param name="HY" value="-4.7301"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.5626"/>
-        <param name="LP" value="0.5359"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6422"/>
-        <param name="VO" value="0.1397"/>
-        <param name="TCX" value="1.1438"/>
-        <param name="TCY" value="-1.7690"/>
-        <param name="TTX" value="4.4152"/>
-        <param name="TTY" value="-1.1515"/>
-        <param name="TBX" value="2.8612"/>
-        <param name="TBY" value="-0.4519"/>
-        <param name="TRX" value="-1.7289"/>
-        <param name="TRY" value="-2.3271"/>
-        <param name="TS1" value="0.2174"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_3_4">
-        <param name="HX" value="0.2239"/>
-        <param name="HY" value="-5.1816"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.6703"/>
-        <param name="LP" value="0.3897"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6097"/>
-        <param name="VO" value="0.1605"/>
-        <param name="TCX" value="1.3640"/>
-        <param name="TCY" value="-1.4657"/>
-        <param name="TTX" value="4.3252"/>
-        <param name="TTY" value="-1.2605"/>
-        <param name="TBX" value="2.9154"/>
-        <param name="TBY" value="-0.3819"/>
-        <param name="TRX" value="-1.4344"/>
-        <param name="TRY" value="-2.2162"/>
-        <param name="TS1" value="0.2189"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1419"/>
-      </shape>
-      <shape name="open1_3_4">
-        <param name="HX" value="0.1935"/>
-        <param name="HY" value="-4.6803"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.8712"/>
-        <param name="LP" value="0.3493"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6467"/>
-        <param name="VO" value="0.1437"/>
-        <param name="TCX" value="1.3214"/>
-        <param name="TCY" value="-1.6398"/>
-        <param name="TTX" value="4.5133"/>
-        <param name="TTY" value="-1.4436"/>
-        <param name="TBX" value="2.8540"/>
-        <param name="TBY" value="-0.4582"/>
-        <param name="TRX" value="-1.6895"/>
-        <param name="TRY" value="-2.3409"/>
-        <param name="TS1" value="0.2169"/>
-        <param name="TS2" value="0.0538"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
       <shape name="c3_5">
         <param name="HX" value="0.2178"/>
         <param name="HY" value="-5.2596"/>
@@ -4472,69 +2267,6 @@
         <param name="TS1" value="0.2269"/>
         <param name="TS2" value="0.0744"/>
         <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open2_3_5">
-        <param name="HX" value="0.1948"/>
-        <param name="HY" value="-4.7732"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.5786"/>
-        <param name="LP" value="0.5348"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6451"/>
-        <param name="VO" value="0.1513"/>
-        <param name="TCX" value="1.1481"/>
-        <param name="TCY" value="-1.7764"/>
-        <param name="TTX" value="4.4156"/>
-        <param name="TTY" value="-1.1508"/>
-        <param name="TBX" value="2.8573"/>
-        <param name="TBY" value="-0.4551"/>
-        <param name="TRX" value="-1.7442"/>
-        <param name="TRY" value="-2.3358"/>
-        <param name="TS1" value="0.2162"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_3_5">
-        <param name="HX" value="0.2233"/>
-        <param name="HY" value="-5.2314"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.6887"/>
-        <param name="LP" value="0.3881"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6128"/>
-        <param name="VO" value="0.1737"/>
-        <param name="TCX" value="1.3696"/>
-        <param name="TCY" value="-1.4733"/>
-        <param name="TTX" value="4.3255"/>
-        <param name="TTY" value="-1.2601"/>
-        <param name="TBX" value="2.9113"/>
-        <param name="TBY" value="-0.3853"/>
-        <param name="TRX" value="-1.4506"/>
-        <param name="TRY" value="-2.2255"/>
-        <param name="TS1" value="0.2176"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1417"/>
-      </shape>
-      <shape name="open1_3_5">
-        <param name="HX" value="0.1930"/>
-        <param name="HY" value="-4.7222"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.8853"/>
-        <param name="LP" value="0.3477"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6496"/>
-        <param name="VO" value="0.1550"/>
-        <param name="TCX" value="1.3260"/>
-        <param name="TCY" value="-1.6468"/>
-        <param name="TTX" value="4.5139"/>
-        <param name="TTY" value="-1.4435"/>
-        <param name="TBX" value="2.8502"/>
-        <param name="TBY" value="-0.4613"/>
-        <param name="TRX" value="-1.7045"/>
-        <param name="TRY" value="-2.3494"/>
-        <param name="TS1" value="0.2158"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1474"/>
       </shape>
       <shape name="c3_6">
         <param name="HX" value="0.2167"/>
@@ -4557,69 +2289,6 @@
         <param name="TS2" value="0.0766"/>
         <param name="TS3" value="0.1470"/>
       </shape>
-      <shape name="open2_3_6">
-        <param name="HX" value="0.1942"/>
-        <param name="HY" value="-4.8161"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-4.5945"/>
-        <param name="LP" value="0.5336"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6479"/>
-        <param name="VO" value="0.1629"/>
-        <param name="TCX" value="1.1524"/>
-        <param name="TCY" value="-1.7838"/>
-        <param name="TTX" value="4.4161"/>
-        <param name="TTY" value="-1.1501"/>
-        <param name="TBX" value="2.8535"/>
-        <param name="TBY" value="-0.4583"/>
-        <param name="TRX" value="-1.7595"/>
-        <param name="TRY" value="-2.3445"/>
-        <param name="TS1" value="0.2151"/>
-        <param name="TS2" value="0.0563"/>
-        <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open4_3_6">
-        <param name="HX" value="0.2228"/>
-        <param name="HY" value="-5.2809"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.7070"/>
-        <param name="LP" value="0.3865"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6159"/>
-        <param name="VO" value="0.1868"/>
-        <param name="TCX" value="1.3752"/>
-        <param name="TCY" value="-1.4809"/>
-        <param name="TTX" value="4.3258"/>
-        <param name="TTY" value="-1.2597"/>
-        <param name="TBX" value="2.9072"/>
-        <param name="TBY" value="-0.3886"/>
-        <param name="TRX" value="-1.4668"/>
-        <param name="TRY" value="-2.2348"/>
-        <param name="TS1" value="0.2163"/>
-        <param name="TS2" value="0.0611"/>
-        <param name="TS3" value="0.1416"/>
-      </shape>
-      <shape name="open1_3_6">
-        <param name="HX" value="0.1925"/>
-        <param name="HY" value="-4.7639"/>
-        <param name="JX" value="-0.0269"/>
-        <param name="JA" value="-3.8993"/>
-        <param name="LP" value="0.3462"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6524"/>
-        <param name="VO" value="0.1663"/>
-        <param name="TCX" value="1.3305"/>
-        <param name="TCY" value="-1.6538"/>
-        <param name="TTX" value="4.5146"/>
-        <param name="TTY" value="-1.4434"/>
-        <param name="TBX" value="2.8465"/>
-        <param name="TBY" value="-0.4645"/>
-        <param name="TRX" value="-1.7194"/>
-        <param name="TRY" value="-2.3579"/>
-        <param name="TS1" value="0.2147"/>
-        <param name="TS2" value="0.0556"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
       <shape name="c3_7">
         <param name="HX" value="0.2157"/>
         <param name="HY" value="-5.4526"/>
@@ -4640,69 +2309,6 @@
         <param name="TS1" value="0.2219"/>
         <param name="TS2" value="0.0787"/>
         <param name="TS3" value="0.1468"/>
-      </shape>
-      <shape name="open2_3_7">
-        <param name="HX" value="0.1937"/>
-        <param name="HY" value="-4.8588"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-4.6104"/>
-        <param name="LP" value="0.5325"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6508"/>
-        <param name="VO" value="0.1744"/>
-        <param name="TCX" value="1.1567"/>
-        <param name="TCY" value="-1.7912"/>
-        <param name="TTX" value="4.4165"/>
-        <param name="TTY" value="-1.1494"/>
-        <param name="TBX" value="2.8497"/>
-        <param name="TBY" value="-0.4614"/>
-        <param name="TRX" value="-1.7747"/>
-        <param name="TRY" value="-2.3531"/>
-        <param name="TS1" value="0.2139"/>
-        <param name="TS2" value="0.0572"/>
-        <param name="TS3" value="0.1470"/>
-      </shape>
-      <shape name="open4_3_7">
-        <param name="HX" value="0.2223"/>
-        <param name="HY" value="-5.3303"/>
-        <param name="JX" value="-0.0333"/>
-        <param name="JA" value="-4.7253"/>
-        <param name="LP" value="0.3850"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6190"/>
-        <param name="VO" value="0.1999"/>
-        <param name="TCX" value="1.3808"/>
-        <param name="TCY" value="-1.4884"/>
-        <param name="TTX" value="4.3260"/>
-        <param name="TTY" value="-1.2592"/>
-        <param name="TBX" value="2.9032"/>
-        <param name="TBY" value="-0.3919"/>
-        <param name="TRX" value="-1.4829"/>
-        <param name="TRY" value="-2.2440"/>
-        <param name="TS1" value="0.2150"/>
-        <param name="TS2" value="0.0621"/>
-        <param name="TS3" value="0.1415"/>
-      </shape>
-      <shape name="open1_3_7">
-        <param name="HX" value="0.1919"/>
-        <param name="HY" value="-4.8054"/>
-        <param name="JX" value="-0.0268"/>
-        <param name="JA" value="-3.9132"/>
-        <param name="LP" value="0.3446"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6552"/>
-        <param name="VO" value="0.1775"/>
-        <param name="TCX" value="1.3350"/>
-        <param name="TCY" value="-1.6607"/>
-        <param name="TTX" value="4.5153"/>
-        <param name="TTY" value="-1.4434"/>
-        <param name="TBX" value="2.8427"/>
-        <param name="TBY" value="-0.4676"/>
-        <param name="TRX" value="-1.7341"/>
-        <param name="TRY" value="-2.3663"/>
-        <param name="TS1" value="0.2136"/>
-        <param name="TS2" value="0.0565"/>
-        <param name="TS3" value="0.1472"/>
       </shape>
       <shape name="c4_0">
         <param name="HX" value="0.2228"/>
@@ -4725,69 +2331,6 @@
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1484"/>
       </shape>
-      <shape name="open2_4_0">
-        <param name="HX" value="0.1974"/>
-        <param name="HY" value="-4.6168"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.5178"/>
-        <param name="LP" value="0.5429"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6302"/>
-        <param name="VO" value="0.0907"/>
-        <param name="TCX" value="1.1328"/>
-        <param name="TCY" value="-1.7496"/>
-        <param name="TTX" value="4.4157"/>
-        <param name="TTY" value="-1.1543"/>
-        <param name="TBX" value="2.8771"/>
-        <param name="TBY" value="-0.4391"/>
-        <param name="TRX" value="-1.6741"/>
-        <param name="TRY" value="-2.2913"/>
-        <param name="TS1" value="0.2220"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open4_4_0">
-        <param name="HX" value="0.2259"/>
-        <param name="HY" value="-5.0494"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.6184"/>
-        <param name="LP" value="0.3988"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5968"/>
-        <param name="VO" value="0.1049"/>
-        <param name="TCX" value="1.3482"/>
-        <param name="TCY" value="-1.4473"/>
-        <param name="TTX" value="4.3269"/>
-        <param name="TTY" value="-1.2620"/>
-        <param name="TBX" value="2.9322"/>
-        <param name="TBY" value="-0.3686"/>
-        <param name="TRX" value="-1.3777"/>
-        <param name="TRY" value="-2.1781"/>
-        <param name="TS1" value="0.2240"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1424"/>
-      </shape>
-      <shape name="open1_4_0">
-        <param name="HX" value="0.1956"/>
-        <param name="HY" value="-4.5703"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.8344"/>
-        <param name="LP" value="0.3580"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6349"/>
-        <param name="VO" value="0.0958"/>
-        <param name="TCX" value="1.3091"/>
-        <param name="TCY" value="-1.6221"/>
-        <param name="TTX" value="4.5128"/>
-        <param name="TTY" value="-1.4435"/>
-        <param name="TBX" value="2.8697"/>
-        <param name="TBY" value="-0.4456"/>
-        <param name="TRX" value="-1.6362"/>
-        <param name="TRY" value="-2.3056"/>
-        <param name="TS1" value="0.2215"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
       <shape name="c4_1">
         <param name="HX" value="0.2217"/>
         <param name="HY" value="-5.0060"/>
@@ -4808,69 +2351,6 @@
         <param name="TS1" value="0.2366"/>
         <param name="TS2" value="0.0660"/>
         <param name="TS3" value="0.1481"/>
-      </shape>
-      <shape name="open2_4_1">
-        <param name="HX" value="0.1968"/>
-        <param name="HY" value="-4.6608"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.5341"/>
-        <param name="LP" value="0.5417"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6331"/>
-        <param name="VO" value="0.1026"/>
-        <param name="TCX" value="1.1372"/>
-        <param name="TCY" value="-1.7572"/>
-        <param name="TTX" value="4.4162"/>
-        <param name="TTY" value="-1.1536"/>
-        <param name="TBX" value="2.8732"/>
-        <param name="TBY" value="-0.4424"/>
-        <param name="TRX" value="-1.6898"/>
-        <param name="TRY" value="-2.3002"/>
-        <param name="TS1" value="0.2208"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_4_1">
-        <param name="HX" value="0.2253"/>
-        <param name="HY" value="-5.0999"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.6371"/>
-        <param name="LP" value="0.3971"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6000"/>
-        <param name="VO" value="0.1183"/>
-        <param name="TCX" value="1.3539"/>
-        <param name="TCY" value="-1.4551"/>
-        <param name="TTX" value="4.3272"/>
-        <param name="TTY" value="-1.2616"/>
-        <param name="TBX" value="2.9280"/>
-        <param name="TBY" value="-0.3720"/>
-        <param name="TRX" value="-1.3942"/>
-        <param name="TRY" value="-2.1876"/>
-        <param name="TS1" value="0.2227"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_4_1">
-        <param name="HX" value="0.1950"/>
-        <param name="HY" value="-4.6131"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.8487"/>
-        <param name="LP" value="0.3564"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6378"/>
-        <param name="VO" value="0.1074"/>
-        <param name="TCX" value="1.3137"/>
-        <param name="TCY" value="-1.6292"/>
-        <param name="TTX" value="4.5135"/>
-        <param name="TTY" value="-1.4434"/>
-        <param name="TBX" value="2.8659"/>
-        <param name="TBY" value="-0.4488"/>
-        <param name="TRX" value="-1.6515"/>
-        <param name="TRY" value="-2.3144"/>
-        <param name="TS1" value="0.2203"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1478"/>
       </shape>
       <shape name="c4_2">
         <param name="HX" value="0.2207"/>
@@ -4893,69 +2373,6 @@
         <param name="TS2" value="0.0681"/>
         <param name="TS3" value="0.1479"/>
       </shape>
-      <shape name="open2_4_2">
-        <param name="HX" value="0.1963"/>
-        <param name="HY" value="-4.7045"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.5503"/>
-        <param name="LP" value="0.5405"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6361"/>
-        <param name="VO" value="0.1144"/>
-        <param name="TCX" value="1.1415"/>
-        <param name="TCY" value="-1.7648"/>
-        <param name="TTX" value="4.4166"/>
-        <param name="TTY" value="-1.1529"/>
-        <param name="TBX" value="2.8693"/>
-        <param name="TBY" value="-0.4456"/>
-        <param name="TRX" value="-1.7054"/>
-        <param name="TRY" value="-2.3091"/>
-        <param name="TS1" value="0.2196"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_4_2">
-        <param name="HX" value="0.2248"/>
-        <param name="HY" value="-5.1501"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.6557"/>
-        <param name="LP" value="0.3955"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6031"/>
-        <param name="VO" value="0.1317"/>
-        <param name="TCX" value="1.3596"/>
-        <param name="TCY" value="-1.4627"/>
-        <param name="TTX" value="4.3274"/>
-        <param name="TTY" value="-1.2612"/>
-        <param name="TBX" value="2.9239"/>
-        <param name="TBY" value="-0.3754"/>
-        <param name="TRX" value="-1.4106"/>
-        <param name="TRY" value="-2.1970"/>
-        <param name="TS1" value="0.2214"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_4_2">
-        <param name="HX" value="0.1945"/>
-        <param name="HY" value="-4.6556"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.8629"/>
-        <param name="LP" value="0.3548"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6407"/>
-        <param name="VO" value="0.1190"/>
-        <param name="TCX" value="1.3184"/>
-        <param name="TCY" value="-1.6363"/>
-        <param name="TTX" value="4.5142"/>
-        <param name="TTY" value="-1.4434"/>
-        <param name="TBX" value="2.8620"/>
-        <param name="TBY" value="-0.4520"/>
-        <param name="TRX" value="-1.6667"/>
-        <param name="TRY" value="-2.3230"/>
-        <param name="TS1" value="0.2191"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c4_3">
         <param name="HX" value="0.2196"/>
         <param name="HY" value="-5.1990"/>
@@ -4977,69 +2394,6 @@
         <param name="TS2" value="0.0702"/>
         <param name="TS3" value="0.1477"/>
       </shape>
-      <shape name="open2_4_3">
-        <param name="HX" value="0.1957"/>
-        <param name="HY" value="-4.7479"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.5664"/>
-        <param name="LP" value="0.5394"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6390"/>
-        <param name="VO" value="0.1261"/>
-        <param name="TCX" value="1.1459"/>
-        <param name="TCY" value="-1.7723"/>
-        <param name="TTX" value="4.4171"/>
-        <param name="TTY" value="-1.1521"/>
-        <param name="TBX" value="2.8654"/>
-        <param name="TBY" value="-0.4489"/>
-        <param name="TRX" value="-1.7209"/>
-        <param name="TRY" value="-2.3178"/>
-        <param name="TS1" value="0.2185"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_4_3">
-        <param name="HX" value="0.2243"/>
-        <param name="HY" value="-5.2002"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6742"/>
-        <param name="LP" value="0.3939"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6063"/>
-        <param name="VO" value="0.1450"/>
-        <param name="TCX" value="1.3653"/>
-        <param name="TCY" value="-1.4704"/>
-        <param name="TTX" value="4.3277"/>
-        <param name="TTY" value="-1.2607"/>
-        <param name="TBX" value="2.9198"/>
-        <param name="TBY" value="-0.3788"/>
-        <param name="TRX" value="-1.4269"/>
-        <param name="TRY" value="-2.2064"/>
-        <param name="TS1" value="0.2201"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_4_3">
-        <param name="HX" value="0.1939"/>
-        <param name="HY" value="-4.6979"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8771"/>
-        <param name="LP" value="0.3532"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6436"/>
-        <param name="VO" value="0.1304"/>
-        <param name="TCX" value="1.3230"/>
-        <param name="TCY" value="-1.6434"/>
-        <param name="TTX" value="4.5148"/>
-        <param name="TTY" value="-1.4433"/>
-        <param name="TBX" value="2.8582"/>
-        <param name="TBY" value="-0.4552"/>
-        <param name="TRX" value="-1.6818"/>
-        <param name="TRY" value="-2.3317"/>
-        <param name="TS1" value="0.2180"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
       <shape name="c4_4">
         <param name="HX" value="0.2186"/>
         <param name="HY" value="-5.2956"/>
@@ -5059,69 +2413,6 @@
         <param name="TRY" value="-1.6661"/>
         <param name="TS1" value="0.2292"/>
         <param name="TS2" value="0.0723"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open2_4_4">
-        <param name="HX" value="0.1952"/>
-        <param name="HY" value="-4.7912"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.5825"/>
-        <param name="LP" value="0.5382"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6419"/>
-        <param name="VO" value="0.1378"/>
-        <param name="TCX" value="1.1502"/>
-        <param name="TCY" value="-1.7797"/>
-        <param name="TTX" value="4.4175"/>
-        <param name="TTY" value="-1.1514"/>
-        <param name="TBX" value="2.8615"/>
-        <param name="TBY" value="-0.4521"/>
-        <param name="TRX" value="-1.7364"/>
-        <param name="TRY" value="-2.3266"/>
-        <param name="TS1" value="0.2173"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_4_4">
-        <param name="HX" value="0.2237"/>
-        <param name="HY" value="-5.2501"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6926"/>
-        <param name="LP" value="0.3923"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6094"/>
-        <param name="VO" value="0.1583"/>
-        <param name="TCX" value="1.3709"/>
-        <param name="TCY" value="-1.4780"/>
-        <param name="TTX" value="4.3280"/>
-        <param name="TTY" value="-1.2603"/>
-        <param name="TBX" value="2.9157"/>
-        <param name="TBY" value="-0.3822"/>
-        <param name="TRX" value="-1.4432"/>
-        <param name="TRY" value="-2.2158"/>
-        <param name="TS1" value="0.2188"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1419"/>
-      </shape>
-      <shape name="open1_4_4">
-        <param name="HX" value="0.1934"/>
-        <param name="HY" value="-4.7399"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.8912"/>
-        <param name="LP" value="0.3516"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6464"/>
-        <param name="VO" value="0.1418"/>
-        <param name="TCX" value="1.3275"/>
-        <param name="TCY" value="-1.6504"/>
-        <param name="TTX" value="4.5155"/>
-        <param name="TTY" value="-1.4432"/>
-        <param name="TBX" value="2.8544"/>
-        <param name="TBY" value="-0.4584"/>
-        <param name="TRX" value="-1.6968"/>
-        <param name="TRY" value="-2.3403"/>
-        <param name="TS1" value="0.2169"/>
-        <param name="TS2" value="0.0538"/>
         <param name="TS3" value="0.1475"/>
       </shape>
       <shape name="c4_5">
@@ -5145,69 +2436,6 @@
         <param name="TS2" value="0.0744"/>
         <param name="TS3" value="0.1473"/>
       </shape>
-      <shape name="open2_4_5">
-        <param name="HX" value="0.1947"/>
-        <param name="HY" value="-4.8342"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.5985"/>
-        <param name="LP" value="0.5370"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6448"/>
-        <param name="VO" value="0.1495"/>
-        <param name="TCX" value="1.1545"/>
-        <param name="TCY" value="-1.7871"/>
-        <param name="TTX" value="4.4180"/>
-        <param name="TTY" value="-1.1507"/>
-        <param name="TBX" value="2.8577"/>
-        <param name="TBY" value="-0.4553"/>
-        <param name="TRX" value="-1.7517"/>
-        <param name="TRY" value="-2.3353"/>
-        <param name="TS1" value="0.2162"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_4_5">
-        <param name="HX" value="0.2232"/>
-        <param name="HY" value="-5.2997"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.7110"/>
-        <param name="LP" value="0.3907"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6125"/>
-        <param name="VO" value="0.1715"/>
-        <param name="TCX" value="1.3765"/>
-        <param name="TCY" value="-1.4856"/>
-        <param name="TTX" value="4.3282"/>
-        <param name="TTY" value="-1.2599"/>
-        <param name="TBX" value="2.9116"/>
-        <param name="TBY" value="-0.3856"/>
-        <param name="TRX" value="-1.4594"/>
-        <param name="TRY" value="-2.2251"/>
-        <param name="TS1" value="0.2175"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1418"/>
-      </shape>
-      <shape name="open1_4_5">
-        <param name="HX" value="0.1929"/>
-        <param name="HY" value="-4.7817"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.9052"/>
-        <param name="LP" value="0.3501"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6493"/>
-        <param name="VO" value="0.1532"/>
-        <param name="TCX" value="1.3321"/>
-        <param name="TCY" value="-1.6573"/>
-        <param name="TTX" value="4.5162"/>
-        <param name="TTY" value="-1.4432"/>
-        <param name="TBX" value="2.8506"/>
-        <param name="TBY" value="-0.4615"/>
-        <param name="TRX" value="-1.7118"/>
-        <param name="TRY" value="-2.3488"/>
-        <param name="TS1" value="0.2157"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
       <shape name="c4_6">
         <param name="HX" value="0.2165"/>
         <param name="HY" value="-5.4886"/>
@@ -5228,69 +2456,6 @@
         <param name="TS1" value="0.2242"/>
         <param name="TS2" value="0.0766"/>
         <param name="TS3" value="0.1471"/>
-      </shape>
-      <shape name="open2_4_6">
-        <param name="HX" value="0.1941"/>
-        <param name="HY" value="-4.8770"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-4.6144"/>
-        <param name="LP" value="0.5359"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6476"/>
-        <param name="VO" value="0.1610"/>
-        <param name="TCX" value="1.1588"/>
-        <param name="TCY" value="-1.7945"/>
-        <param name="TTX" value="4.4184"/>
-        <param name="TTY" value="-1.1500"/>
-        <param name="TBX" value="2.8539"/>
-        <param name="TBY" value="-0.4585"/>
-        <param name="TRX" value="-1.7670"/>
-        <param name="TRY" value="-2.3439"/>
-        <param name="TS1" value="0.2150"/>
-        <param name="TS2" value="0.0563"/>
-        <param name="TS3" value="0.1472"/>
-      </shape>
-      <shape name="open4_4_6">
-        <param name="HX" value="0.2227"/>
-        <param name="HY" value="-5.3492"/>
-        <param name="JX" value="-0.0334"/>
-        <param name="JA" value="-4.7292"/>
-        <param name="LP" value="0.3892"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6156"/>
-        <param name="VO" value="0.1847"/>
-        <param name="TCX" value="1.3821"/>
-        <param name="TCY" value="-1.4932"/>
-        <param name="TTX" value="4.3285"/>
-        <param name="TTY" value="-1.2594"/>
-        <param name="TBX" value="2.9075"/>
-        <param name="TBY" value="-0.3889"/>
-        <param name="TRX" value="-1.4756"/>
-        <param name="TRY" value="-2.2343"/>
-        <param name="TS1" value="0.2162"/>
-        <param name="TS2" value="0.0611"/>
-        <param name="TS3" value="0.1417"/>
-      </shape>
-      <shape name="open1_4_6">
-        <param name="HX" value="0.1924"/>
-        <param name="HY" value="-4.8233"/>
-        <param name="JX" value="-0.0269"/>
-        <param name="JA" value="-3.9191"/>
-        <param name="LP" value="0.3485"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6521"/>
-        <param name="VO" value="0.1645"/>
-        <param name="TCX" value="1.3366"/>
-        <param name="TCY" value="-1.6643"/>
-        <param name="TTX" value="4.5168"/>
-        <param name="TTY" value="-1.4431"/>
-        <param name="TBX" value="2.8468"/>
-        <param name="TBY" value="-0.4646"/>
-        <param name="TRX" value="-1.7267"/>
-        <param name="TRY" value="-2.3573"/>
-        <param name="TS1" value="0.2146"/>
-        <param name="TS2" value="0.0556"/>
-        <param name="TS3" value="0.1473"/>
       </shape>
       <shape name="c5_0">
         <param name="HX" value="0.2225"/>
@@ -5313,69 +2478,6 @@
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1485"/>
       </shape>
-      <shape name="open2_5_0">
-        <param name="HX" value="0.1973"/>
-        <param name="HY" value="-4.6785"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.5379"/>
-        <param name="LP" value="0.5452"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6299"/>
-        <param name="VO" value="0.0887"/>
-        <param name="TCX" value="1.1392"/>
-        <param name="TCY" value="-1.7605"/>
-        <param name="TTX" value="4.4181"/>
-        <param name="TTY" value="-1.1542"/>
-        <param name="TBX" value="2.8775"/>
-        <param name="TBY" value="-0.4393"/>
-        <param name="TRX" value="-1.6817"/>
-        <param name="TRY" value="-2.2907"/>
-        <param name="TS1" value="0.2219"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
-      <shape name="open4_5_0">
-        <param name="HX" value="0.2257"/>
-        <param name="HY" value="-5.1183"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.6409"/>
-        <param name="LP" value="0.4014"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5965"/>
-        <param name="VO" value="0.1027"/>
-        <param name="TCX" value="1.3552"/>
-        <param name="TCY" value="-1.4598"/>
-        <param name="TTX" value="4.3297"/>
-        <param name="TTY" value="-1.2618"/>
-        <param name="TBX" value="2.9325"/>
-        <param name="TBY" value="-0.3689"/>
-        <param name="TRX" value="-1.3866"/>
-        <param name="TRY" value="-2.1776"/>
-        <param name="TS1" value="0.2239"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1425"/>
-      </shape>
-      <shape name="open1_5_0">
-        <param name="HX" value="0.1955"/>
-        <param name="HY" value="-4.6306"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.8545"/>
-        <param name="LP" value="0.3603"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6346"/>
-        <param name="VO" value="0.0939"/>
-        <param name="TCX" value="1.3153"/>
-        <param name="TCY" value="-1.6328"/>
-        <param name="TTX" value="4.5150"/>
-        <param name="TTY" value="-1.4432"/>
-        <param name="TBX" value="2.8701"/>
-        <param name="TBY" value="-0.4458"/>
-        <param name="TRX" value="-1.6436"/>
-        <param name="TRY" value="-2.3050"/>
-        <param name="TS1" value="0.2214"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
       <shape name="c5_1">
         <param name="HX" value="0.2215"/>
         <param name="HY" value="-5.1385"/>
@@ -5396,69 +2498,6 @@
         <param name="TS1" value="0.2364"/>
         <param name="TS2" value="0.0659"/>
         <param name="TS3" value="0.1483"/>
-      </shape>
-      <shape name="open2_5_1">
-        <param name="HX" value="0.1967"/>
-        <param name="HY" value="-4.7224"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.5541"/>
-        <param name="LP" value="0.5440"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6328"/>
-        <param name="VO" value="0.1006"/>
-        <param name="TCX" value="1.1436"/>
-        <param name="TCY" value="-1.7680"/>
-        <param name="TTX" value="4.4186"/>
-        <param name="TTY" value="-1.1535"/>
-        <param name="TBX" value="2.8736"/>
-        <param name="TBY" value="-0.4426"/>
-        <param name="TRX" value="-1.6973"/>
-        <param name="TRY" value="-2.2996"/>
-        <param name="TS1" value="0.2207"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open4_5_1">
-        <param name="HX" value="0.2252"/>
-        <param name="HY" value="-5.1687"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.6595"/>
-        <param name="LP" value="0.3998"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5997"/>
-        <param name="VO" value="0.1161"/>
-        <param name="TCX" value="1.3609"/>
-        <param name="TCY" value="-1.4675"/>
-        <param name="TTX" value="4.3299"/>
-        <param name="TTY" value="-1.2614"/>
-        <param name="TBX" value="2.9284"/>
-        <param name="TBY" value="-0.3723"/>
-        <param name="TRX" value="-1.4030"/>
-        <param name="TRY" value="-2.1871"/>
-        <param name="TS1" value="0.2226"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_5_1">
-        <param name="HX" value="0.1949"/>
-        <param name="HY" value="-4.6732"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.8688"/>
-        <param name="LP" value="0.3587"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6375"/>
-        <param name="VO" value="0.1055"/>
-        <param name="TCX" value="1.3199"/>
-        <param name="TCY" value="-1.6399"/>
-        <param name="TTX" value="4.5157"/>
-        <param name="TTY" value="-1.4431"/>
-        <param name="TBX" value="2.8663"/>
-        <param name="TBY" value="-0.4490"/>
-        <param name="TRX" value="-1.6588"/>
-        <param name="TRY" value="-2.3137"/>
-        <param name="TS1" value="0.2202"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1479"/>
       </shape>
       <shape name="c5_2">
         <param name="HX" value="0.2204"/>
@@ -5481,69 +2520,6 @@
         <param name="TS2" value="0.0681"/>
         <param name="TS3" value="0.1480"/>
       </shape>
-      <shape name="open2_5_2">
-        <param name="HX" value="0.1962"/>
-        <param name="HY" value="-4.7659"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.5703"/>
-        <param name="LP" value="0.5428"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6358"/>
-        <param name="VO" value="0.1125"/>
-        <param name="TCX" value="1.1480"/>
-        <param name="TCY" value="-1.7755"/>
-        <param name="TTX" value="4.4190"/>
-        <param name="TTY" value="-1.1528"/>
-        <param name="TBX" value="2.8697"/>
-        <param name="TBY" value="-0.4458"/>
-        <param name="TRX" value="-1.7129"/>
-        <param name="TRY" value="-2.3085"/>
-        <param name="TS1" value="0.2196"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_5_2">
-        <param name="HX" value="0.2246"/>
-        <param name="HY" value="-5.2189"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.6781"/>
-        <param name="LP" value="0.3982"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6029"/>
-        <param name="VO" value="0.1295"/>
-        <param name="TCX" value="1.3666"/>
-        <param name="TCY" value="-1.4752"/>
-        <param name="TTX" value="4.3302"/>
-        <param name="TTY" value="-1.2609"/>
-        <param name="TBX" value="2.9242"/>
-        <param name="TBY" value="-0.3757"/>
-        <param name="TRX" value="-1.4194"/>
-        <param name="TRY" value="-2.1965"/>
-        <param name="TS1" value="0.2213"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_5_2">
-        <param name="HX" value="0.1944"/>
-        <param name="HY" value="-4.7156"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.8830"/>
-        <param name="LP" value="0.3571"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6404"/>
-        <param name="VO" value="0.1171"/>
-        <param name="TCX" value="1.3245"/>
-        <param name="TCY" value="-1.6469"/>
-        <param name="TTX" value="4.5164"/>
-        <param name="TTY" value="-1.4430"/>
-        <param name="TBX" value="2.8624"/>
-        <param name="TBY" value="-0.4522"/>
-        <param name="TRX" value="-1.6740"/>
-        <param name="TRY" value="-2.3224"/>
-        <param name="TS1" value="0.2191"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
       <shape name="c5_3">
         <param name="HX" value="0.2194"/>
         <param name="HY" value="-5.3316"/>
@@ -5565,69 +2541,6 @@
         <param name="TS2" value="0.0702"/>
         <param name="TS3" value="0.1478"/>
       </shape>
-      <shape name="open2_5_3">
-        <param name="HX" value="0.1956"/>
-        <param name="HY" value="-4.8093"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.5864"/>
-        <param name="LP" value="0.5416"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6387"/>
-        <param name="VO" value="0.1242"/>
-        <param name="TCX" value="1.1523"/>
-        <param name="TCY" value="-1.7830"/>
-        <param name="TTX" value="4.4195"/>
-        <param name="TTY" value="-1.1520"/>
-        <param name="TBX" value="2.8658"/>
-        <param name="TBY" value="-0.4491"/>
-        <param name="TRX" value="-1.7284"/>
-        <param name="TRY" value="-2.3173"/>
-        <param name="TS1" value="0.2184"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_5_3">
-        <param name="HX" value="0.2241"/>
-        <param name="HY" value="-5.2688"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.6965"/>
-        <param name="LP" value="0.3966"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6060"/>
-        <param name="VO" value="0.1429"/>
-        <param name="TCX" value="1.3722"/>
-        <param name="TCY" value="-1.4828"/>
-        <param name="TTX" value="4.3305"/>
-        <param name="TTY" value="-1.2605"/>
-        <param name="TBX" value="2.9201"/>
-        <param name="TBY" value="-0.3791"/>
-        <param name="TRX" value="-1.4358"/>
-        <param name="TRY" value="-2.2059"/>
-        <param name="TS1" value="0.2200"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1421"/>
-      </shape>
-      <shape name="open1_5_3">
-        <param name="HX" value="0.1938"/>
-        <param name="HY" value="-4.7578"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.8971"/>
-        <param name="LP" value="0.3556"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6433"/>
-        <param name="VO" value="0.1286"/>
-        <param name="TCX" value="1.3291"/>
-        <param name="TCY" value="-1.6540"/>
-        <param name="TTX" value="4.5171"/>
-        <param name="TTY" value="-1.4430"/>
-        <param name="TBX" value="2.8586"/>
-        <param name="TBY" value="-0.4554"/>
-        <param name="TRX" value="-1.6891"/>
-        <param name="TRY" value="-2.3311"/>
-        <param name="TS1" value="0.2179"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c5_4">
         <param name="HX" value="0.2183"/>
         <param name="HY" value="-5.4281"/>
@@ -5647,69 +2560,6 @@
         <param name="TRY" value="-1.6660"/>
         <param name="TS1" value="0.2290"/>
         <param name="TS2" value="0.0723"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open2_5_4">
-        <param name="HX" value="0.1951"/>
-        <param name="HY" value="-4.8524"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.6024"/>
-        <param name="LP" value="0.5404"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6416"/>
-        <param name="VO" value="0.1359"/>
-        <param name="TCX" value="1.1566"/>
-        <param name="TCY" value="-1.7905"/>
-        <param name="TTX" value="4.4199"/>
-        <param name="TTY" value="-1.1513"/>
-        <param name="TBX" value="2.8619"/>
-        <param name="TBY" value="-0.4523"/>
-        <param name="TRX" value="-1.7439"/>
-        <param name="TRY" value="-2.3260"/>
-        <param name="TS1" value="0.2172"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1474"/>
-      </shape>
-      <shape name="open4_5_4">
-        <param name="HX" value="0.2236"/>
-        <param name="HY" value="-5.3186"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.7149"/>
-        <param name="LP" value="0.3950"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6091"/>
-        <param name="VO" value="0.1561"/>
-        <param name="TCX" value="1.3779"/>
-        <param name="TCY" value="-1.4904"/>
-        <param name="TTX" value="4.3307"/>
-        <param name="TTY" value="-1.2600"/>
-        <param name="TBX" value="2.9160"/>
-        <param name="TBY" value="-0.3825"/>
-        <param name="TRX" value="-1.4521"/>
-        <param name="TRY" value="-2.2153"/>
-        <param name="TS1" value="0.2187"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_5_4">
-        <param name="HX" value="0.1933"/>
-        <param name="HY" value="-4.7997"/>
-        <param name="JX" value="-0.0271"/>
-        <param name="JA" value="-3.9112"/>
-        <param name="LP" value="0.3540"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6461"/>
-        <param name="VO" value="0.1400"/>
-        <param name="TCX" value="1.3337"/>
-        <param name="TCY" value="-1.6609"/>
-        <param name="TTX" value="4.5177"/>
-        <param name="TTY" value="-1.4429"/>
-        <param name="TBX" value="2.8547"/>
-        <param name="TBY" value="-0.4586"/>
-        <param name="TRX" value="-1.7042"/>
-        <param name="TRY" value="-2.3397"/>
-        <param name="TS1" value="0.2168"/>
-        <param name="TS2" value="0.0538"/>
         <param name="TS3" value="0.1476"/>
       </shape>
       <shape name="c5_5">
@@ -5733,69 +2583,6 @@
         <param name="TS2" value="0.0744"/>
         <param name="TS3" value="0.1474"/>
       </shape>
-      <shape name="open2_5_5">
-        <param name="HX" value="0.1946"/>
-        <param name="HY" value="-4.8953"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-4.6184"/>
-        <param name="LP" value="0.5393"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6445"/>
-        <param name="VO" value="0.1476"/>
-        <param name="TCX" value="1.1609"/>
-        <param name="TCY" value="-1.7979"/>
-        <param name="TTX" value="4.4204"/>
-        <param name="TTY" value="-1.1506"/>
-        <param name="TBX" value="2.8580"/>
-        <param name="TBY" value="-0.4555"/>
-        <param name="TRX" value="-1.7592"/>
-        <param name="TRY" value="-2.3347"/>
-        <param name="TS1" value="0.2161"/>
-        <param name="TS2" value="0.0553"/>
-        <param name="TS3" value="0.1473"/>
-      </shape>
-      <shape name="open4_5_5">
-        <param name="HX" value="0.2230"/>
-        <param name="HY" value="-5.3682"/>
-        <param name="JX" value="-0.0335"/>
-        <param name="JA" value="-4.7332"/>
-        <param name="LP" value="0.3934"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6123"/>
-        <param name="VO" value="0.1694"/>
-        <param name="TCX" value="1.3835"/>
-        <param name="TCY" value="-1.4980"/>
-        <param name="TTX" value="4.3310"/>
-        <param name="TTY" value="-1.2596"/>
-        <param name="TBX" value="2.9119"/>
-        <param name="TBY" value="-0.3859"/>
-        <param name="TRX" value="-1.4683"/>
-        <param name="TRY" value="-2.2246"/>
-        <param name="TS1" value="0.2174"/>
-        <param name="TS2" value="0.0600"/>
-        <param name="TS3" value="0.1419"/>
-      </shape>
-      <shape name="open1_5_5">
-        <param name="HX" value="0.1928"/>
-        <param name="HY" value="-4.8414"/>
-        <param name="JX" value="-0.0270"/>
-        <param name="JA" value="-3.9252"/>
-        <param name="LP" value="0.3524"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6490"/>
-        <param name="VO" value="0.1514"/>
-        <param name="TCX" value="1.3382"/>
-        <param name="TCY" value="-1.6679"/>
-        <param name="TTX" value="4.5184"/>
-        <param name="TTY" value="-1.4429"/>
-        <param name="TBX" value="2.8510"/>
-        <param name="TBY" value="-0.4617"/>
-        <param name="TRX" value="-1.7191"/>
-        <param name="TRY" value="-2.3483"/>
-        <param name="TS1" value="0.2156"/>
-        <param name="TS2" value="0.0547"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
       <shape name="c6_0">
         <param name="HX" value="0.2223"/>
         <param name="HY" value="-5.1745"/>
@@ -5816,69 +2603,6 @@
         <param name="TS1" value="0.2387"/>
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1486"/>
-      </shape>
-      <shape name="open2_6_0">
-        <param name="HX" value="0.1972"/>
-        <param name="HY" value="-4.7404"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.5580"/>
-        <param name="LP" value="0.5475"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6296"/>
-        <param name="VO" value="0.0868"/>
-        <param name="TCX" value="1.1457"/>
-        <param name="TCY" value="-1.7713"/>
-        <param name="TTX" value="4.4205"/>
-        <param name="TTY" value="-1.1541"/>
-        <param name="TBX" value="2.8779"/>
-        <param name="TBY" value="-0.4395"/>
-        <param name="TRX" value="-1.6892"/>
-        <param name="TRY" value="-2.2901"/>
-        <param name="TS1" value="0.2218"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
-      <shape name="open4_6_0">
-        <param name="HX" value="0.2256"/>
-        <param name="HY" value="-5.1874"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.6634"/>
-        <param name="LP" value="0.4041"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5962"/>
-        <param name="VO" value="0.1004"/>
-        <param name="TCX" value="1.3622"/>
-        <param name="TCY" value="-1.4723"/>
-        <param name="TTX" value="4.3325"/>
-        <param name="TTY" value="-1.2616"/>
-        <param name="TBX" value="2.9328"/>
-        <param name="TBY" value="-0.3692"/>
-        <param name="TRX" value="-1.3954"/>
-        <param name="TRY" value="-2.1771"/>
-        <param name="TS1" value="0.2238"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1425"/>
-      </shape>
-      <shape name="open1_6_0">
-        <param name="HX" value="0.1954"/>
-        <param name="HY" value="-4.6910"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.8747"/>
-        <param name="LP" value="0.3627"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6343"/>
-        <param name="VO" value="0.0920"/>
-        <param name="TCX" value="1.3214"/>
-        <param name="TCY" value="-1.6434"/>
-        <param name="TTX" value="4.5173"/>
-        <param name="TTY" value="-1.4428"/>
-        <param name="TBX" value="2.8705"/>
-        <param name="TBY" value="-0.4460"/>
-        <param name="TRX" value="-1.6509"/>
-        <param name="TRY" value="-2.3044"/>
-        <param name="TS1" value="0.2213"/>
-        <param name="TS2" value="0.0501"/>
-        <param name="TS3" value="0.1480"/>
       </shape>
       <shape name="c6_1">
         <param name="HX" value="0.2212"/>
@@ -5901,69 +2625,6 @@
         <param name="TS2" value="0.0659"/>
         <param name="TS3" value="0.1484"/>
       </shape>
-      <shape name="open2_6_1">
-        <param name="HX" value="0.1966"/>
-        <param name="HY" value="-4.7841"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.5742"/>
-        <param name="LP" value="0.5463"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6325"/>
-        <param name="VO" value="0.0987"/>
-        <param name="TCX" value="1.1501"/>
-        <param name="TCY" value="-1.7789"/>
-        <param name="TTX" value="4.4210"/>
-        <param name="TTY" value="-1.1534"/>
-        <param name="TBX" value="2.8739"/>
-        <param name="TBY" value="-0.4428"/>
-        <param name="TRX" value="-1.7049"/>
-        <param name="TRY" value="-2.2990"/>
-        <param name="TS1" value="0.2207"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open4_6_1">
-        <param name="HX" value="0.2250"/>
-        <param name="HY" value="-5.2377"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.6820"/>
-        <param name="LP" value="0.4025"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5994"/>
-        <param name="VO" value="0.1139"/>
-        <param name="TCX" value="1.3679"/>
-        <param name="TCY" value="-1.4800"/>
-        <param name="TTX" value="4.3327"/>
-        <param name="TTY" value="-1.2611"/>
-        <param name="TBX" value="2.9287"/>
-        <param name="TBY" value="-0.3726"/>
-        <param name="TRX" value="-1.4119"/>
-        <param name="TRY" value="-2.1866"/>
-        <param name="TS1" value="0.2225"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1424"/>
-      </shape>
-      <shape name="open1_6_1">
-        <param name="HX" value="0.1948"/>
-        <param name="HY" value="-4.7335"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.8890"/>
-        <param name="LP" value="0.3611"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6372"/>
-        <param name="VO" value="0.1036"/>
-        <param name="TCX" value="1.3261"/>
-        <param name="TCY" value="-1.6505"/>
-        <param name="TTX" value="4.5180"/>
-        <param name="TTY" value="-1.4428"/>
-        <param name="TBX" value="2.8666"/>
-        <param name="TBY" value="-0.4492"/>
-        <param name="TRX" value="-1.6662"/>
-        <param name="TRY" value="-2.3131"/>
-        <param name="TS1" value="0.2201"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
       <shape name="c6_2">
         <param name="HX" value="0.2201"/>
         <param name="HY" value="-5.3676"/>
@@ -5984,69 +2645,6 @@
         <param name="TS1" value="0.2337"/>
         <param name="TS2" value="0.0680"/>
         <param name="TS3" value="0.1482"/>
-      </shape>
-      <shape name="open2_6_2">
-        <param name="HX" value="0.1961"/>
-        <param name="HY" value="-4.8275"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.5904"/>
-        <param name="LP" value="0.5451"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6354"/>
-        <param name="VO" value="0.1105"/>
-        <param name="TCX" value="1.1544"/>
-        <param name="TCY" value="-1.7864"/>
-        <param name="TTX" value="4.4214"/>
-        <param name="TTY" value="-1.1527"/>
-        <param name="TBX" value="2.8700"/>
-        <param name="TBY" value="-0.4460"/>
-        <param name="TRX" value="-1.7205"/>
-        <param name="TRY" value="-2.3079"/>
-        <param name="TS1" value="0.2195"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_6_2">
-        <param name="HX" value="0.2245"/>
-        <param name="HY" value="-5.2877"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.7005"/>
-        <param name="LP" value="0.4008"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6026"/>
-        <param name="VO" value="0.1273"/>
-        <param name="TCX" value="1.3736"/>
-        <param name="TCY" value="-1.4876"/>
-        <param name="TTX" value="4.3330"/>
-        <param name="TTY" value="-1.2607"/>
-        <param name="TBX" value="2.9245"/>
-        <param name="TBY" value="-0.3760"/>
-        <param name="TRX" value="-1.4283"/>
-        <param name="TRY" value="-2.1961"/>
-        <param name="TS1" value="0.2212"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_6_2">
-        <param name="HX" value="0.1943"/>
-        <param name="HY" value="-4.7758"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.9031"/>
-        <param name="LP" value="0.3595"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6401"/>
-        <param name="VO" value="0.1152"/>
-        <param name="TCX" value="1.3307"/>
-        <param name="TCY" value="-1.6576"/>
-        <param name="TTX" value="4.5186"/>
-        <param name="TTY" value="-1.4427"/>
-        <param name="TBX" value="2.8628"/>
-        <param name="TBY" value="-0.4524"/>
-        <param name="TRX" value="-1.6814"/>
-        <param name="TRY" value="-2.3218"/>
-        <param name="TS1" value="0.2190"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1478"/>
       </shape>
       <shape name="c6_3">
         <param name="HX" value="0.2191"/>
@@ -6069,69 +2667,6 @@
         <param name="TS2" value="0.0702"/>
         <param name="TS3" value="0.1480"/>
       </shape>
-      <shape name="open2_6_3">
-        <param name="HX" value="0.1955"/>
-        <param name="HY" value="-4.8708"/>
-        <param name="JX" value="-0.0278"/>
-        <param name="JA" value="-4.6064"/>
-        <param name="LP" value="0.5439"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6384"/>
-        <param name="VO" value="0.1223"/>
-        <param name="TCX" value="1.1588"/>
-        <param name="TCY" value="-1.7938"/>
-        <param name="TTX" value="4.4218"/>
-        <param name="TTY" value="-1.1519"/>
-        <param name="TBX" value="2.8661"/>
-        <param name="TBY" value="-0.4493"/>
-        <param name="TRX" value="-1.7360"/>
-        <param name="TRY" value="-2.3167"/>
-        <param name="TS1" value="0.2183"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_6_3">
-        <param name="HX" value="0.2240"/>
-        <param name="HY" value="-5.3376"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.7189"/>
-        <param name="LP" value="0.3992"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6057"/>
-        <param name="VO" value="0.1407"/>
-        <param name="TCX" value="1.3792"/>
-        <param name="TCY" value="-1.4952"/>
-        <param name="TTX" value="4.3332"/>
-        <param name="TTY" value="-1.2602"/>
-        <param name="TBX" value="2.9204"/>
-        <param name="TBY" value="-0.3794"/>
-        <param name="TRX" value="-1.4446"/>
-        <param name="TRY" value="-2.2055"/>
-        <param name="TS1" value="0.2199"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_6_3">
-        <param name="HX" value="0.1937"/>
-        <param name="HY" value="-4.8178"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.9172"/>
-        <param name="LP" value="0.3579"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6430"/>
-        <param name="VO" value="0.1267"/>
-        <param name="TCX" value="1.3352"/>
-        <param name="TCY" value="-1.6646"/>
-        <param name="TTX" value="4.5193"/>
-        <param name="TTY" value="-1.4427"/>
-        <param name="TBX" value="2.8589"/>
-        <param name="TBY" value="-0.4556"/>
-        <param name="TRX" value="-1.6965"/>
-        <param name="TRY" value="-2.3305"/>
-        <param name="TS1" value="0.2178"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
       <shape name="c6_4">
         <param name="HX" value="0.2180"/>
         <param name="HY" value="-5.5606"/>
@@ -6152,69 +2687,6 @@
         <param name="TS1" value="0.2288"/>
         <param name="TS2" value="0.0723"/>
         <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open2_6_4">
-        <param name="HX" value="0.1950"/>
-        <param name="HY" value="-4.9138"/>
-        <param name="JX" value="-0.0277"/>
-        <param name="JA" value="-4.6224"/>
-        <param name="LP" value="0.5427"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6413"/>
-        <param name="VO" value="0.1340"/>
-        <param name="TCX" value="1.1631"/>
-        <param name="TCY" value="-1.8012"/>
-        <param name="TTX" value="4.4223"/>
-        <param name="TTY" value="-1.1512"/>
-        <param name="TBX" value="2.8622"/>
-        <param name="TBY" value="-0.4525"/>
-        <param name="TRX" value="-1.7514"/>
-        <param name="TRY" value="-2.3254"/>
-        <param name="TS1" value="0.2171"/>
-        <param name="TS2" value="0.0544"/>
-        <param name="TS3" value="0.1475"/>
-      </shape>
-      <shape name="open4_6_4">
-        <param name="HX" value="0.2234"/>
-        <param name="HY" value="-5.3872"/>
-        <param name="JX" value="-0.0336"/>
-        <param name="JA" value="-4.7373"/>
-        <param name="LP" value="0.3976"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6088"/>
-        <param name="VO" value="0.1540"/>
-        <param name="TCX" value="1.3848"/>
-        <param name="TCY" value="-1.5028"/>
-        <param name="TTX" value="4.3335"/>
-        <param name="TTY" value="-1.2598"/>
-        <param name="TBX" value="2.9163"/>
-        <param name="TBY" value="-0.3828"/>
-        <param name="TRX" value="-1.4609"/>
-        <param name="TRY" value="-2.2148"/>
-        <param name="TS1" value="0.2186"/>
-        <param name="TS2" value="0.0589"/>
-        <param name="TS3" value="0.1420"/>
-      </shape>
-      <shape name="open1_6_4">
-        <param name="HX" value="0.1932"/>
-        <param name="HY" value="-4.8596"/>
-        <param name="JX" value="-0.0272"/>
-        <param name="JA" value="-3.9312"/>
-        <param name="LP" value="0.3563"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6458"/>
-        <param name="VO" value="0.1381"/>
-        <param name="TCX" value="1.3398"/>
-        <param name="TCY" value="-1.6715"/>
-        <param name="TTX" value="4.5199"/>
-        <param name="TTY" value="-1.4426"/>
-        <param name="TBX" value="2.8551"/>
-        <param name="TBY" value="-0.4587"/>
-        <param name="TRX" value="-1.7115"/>
-        <param name="TRY" value="-2.3391"/>
-        <param name="TS1" value="0.2167"/>
-        <param name="TS2" value="0.0538"/>
-        <param name="TS3" value="0.1476"/>
       </shape>
       <shape name="c7_0">
         <param name="HX" value="0.2220"/>
@@ -6237,69 +2709,6 @@
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1487"/>
       </shape>
-      <shape name="open2_7_0">
-        <param name="HX" value="0.1970"/>
-        <param name="HY" value="-4.8023"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.5781"/>
-        <param name="LP" value="0.5498"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6292"/>
-        <param name="VO" value="0.0848"/>
-        <param name="TCX" value="1.1522"/>
-        <param name="TCY" value="-1.7822"/>
-        <param name="TTX" value="4.4229"/>
-        <param name="TTY" value="-1.1540"/>
-        <param name="TBX" value="2.8783"/>
-        <param name="TBY" value="-0.4397"/>
-        <param name="TRX" value="-1.6968"/>
-        <param name="TRY" value="-2.2895"/>
-        <param name="TS1" value="0.2218"/>
-        <param name="TS2" value="0.0506"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
-      <shape name="open4_7_0">
-        <param name="HX" value="0.2254"/>
-        <param name="HY" value="-5.2566"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.6859"/>
-        <param name="LP" value="0.4068"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5959"/>
-        <param name="VO" value="0.0982"/>
-        <param name="TCX" value="1.3692"/>
-        <param name="TCY" value="-1.4848"/>
-        <param name="TTX" value="4.3352"/>
-        <param name="TTY" value="-1.2613"/>
-        <param name="TBX" value="2.9332"/>
-        <param name="TBY" value="-0.3695"/>
-        <param name="TRX" value="-1.4043"/>
-        <param name="TRY" value="-2.1766"/>
-        <param name="TS1" value="0.2237"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1426"/>
-      </shape>
-      <shape name="open1_7_0">
-        <param name="HX" value="0.1953"/>
-        <param name="HY" value="-4.7515"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-3.8950"/>
-        <param name="LP" value="0.3651"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6340"/>
-        <param name="VO" value="0.0901"/>
-        <param name="TCX" value="1.3277"/>
-        <param name="TCY" value="-1.6542"/>
-        <param name="TTX" value="4.5196"/>
-        <param name="TTY" value="-1.4425"/>
-        <param name="TBX" value="2.8709"/>
-        <param name="TBY" value="-0.4461"/>
-        <param name="TRX" value="-1.6583"/>
-        <param name="TRY" value="-2.3038"/>
-        <param name="TS1" value="0.2212"/>
-        <param name="TS2" value="0.0502"/>
-        <param name="TS3" value="0.1481"/>
-      </shape>
       <shape name="c7_1">
         <param name="HX" value="0.2209"/>
         <param name="HY" value="-5.4036"/>
@@ -6320,69 +2729,6 @@
         <param name="TS1" value="0.2360"/>
         <param name="TS2" value="0.0659"/>
         <param name="TS3" value="0.1485"/>
-      </shape>
-      <shape name="open2_7_1">
-        <param name="HX" value="0.1965"/>
-        <param name="HY" value="-4.8459"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.5943"/>
-        <param name="LP" value="0.5486"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6322"/>
-        <param name="VO" value="0.0967"/>
-        <param name="TCX" value="1.1566"/>
-        <param name="TCY" value="-1.7897"/>
-        <param name="TTX" value="4.4233"/>
-        <param name="TTY" value="-1.1533"/>
-        <param name="TBX" value="2.8743"/>
-        <param name="TBY" value="-0.4430"/>
-        <param name="TRX" value="-1.7124"/>
-        <param name="TRY" value="-2.2984"/>
-        <param name="TS1" value="0.2206"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
-      <shape name="open4_7_1">
-        <param name="HX" value="0.2249"/>
-        <param name="HY" value="-5.3067"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.7044"/>
-        <param name="LP" value="0.4051"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5991"/>
-        <param name="VO" value="0.1117"/>
-        <param name="TCX" value="1.3749"/>
-        <param name="TCY" value="-1.4924"/>
-        <param name="TTX" value="4.3355"/>
-        <param name="TTY" value="-1.2609"/>
-        <param name="TBX" value="2.9290"/>
-        <param name="TBY" value="-0.3729"/>
-        <param name="TRX" value="-1.4208"/>
-        <param name="TRY" value="-2.1861"/>
-        <param name="TS1" value="0.2224"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1425"/>
-      </shape>
-      <shape name="open1_7_1">
-        <param name="HX" value="0.1947"/>
-        <param name="HY" value="-4.7939"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.9092"/>
-        <param name="LP" value="0.3635"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6369"/>
-        <param name="VO" value="0.1017"/>
-        <param name="TCX" value="1.3323"/>
-        <param name="TCY" value="-1.6612"/>
-        <param name="TTX" value="4.5202"/>
-        <param name="TTY" value="-1.4425"/>
-        <param name="TBX" value="2.8670"/>
-        <param name="TBY" value="-0.4493"/>
-        <param name="TRX" value="-1.6736"/>
-        <param name="TRY" value="-2.3125"/>
-        <param name="TS1" value="0.2201"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1480"/>
       </shape>
       <shape name="c7_2">
         <param name="HX" value="0.2199"/>
@@ -6405,69 +2751,6 @@
         <param name="TS2" value="0.0680"/>
         <param name="TS3" value="0.1483"/>
       </shape>
-      <shape name="open2_7_2">
-        <param name="HX" value="0.1960"/>
-        <param name="HY" value="-4.8892"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.6104"/>
-        <param name="LP" value="0.5474"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6351"/>
-        <param name="VO" value="0.1086"/>
-        <param name="TCX" value="1.1609"/>
-        <param name="TCY" value="-1.7972"/>
-        <param name="TTX" value="4.4238"/>
-        <param name="TTY" value="-1.1526"/>
-        <param name="TBX" value="2.8704"/>
-        <param name="TBY" value="-0.4462"/>
-        <param name="TRX" value="-1.7280"/>
-        <param name="TRY" value="-2.3073"/>
-        <param name="TS1" value="0.2194"/>
-        <param name="TS2" value="0.0525"/>
-        <param name="TS3" value="0.1477"/>
-      </shape>
-      <shape name="open4_7_2">
-        <param name="HX" value="0.2244"/>
-        <param name="HY" value="-5.3567"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.7229"/>
-        <param name="LP" value="0.4035"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6023"/>
-        <param name="VO" value="0.1251"/>
-        <param name="TCX" value="1.3806"/>
-        <param name="TCY" value="-1.5000"/>
-        <param name="TTX" value="4.3357"/>
-        <param name="TTY" value="-1.2604"/>
-        <param name="TBX" value="2.9249"/>
-        <param name="TBY" value="-0.3763"/>
-        <param name="TRX" value="-1.4372"/>
-        <param name="TRY" value="-2.1956"/>
-        <param name="TS1" value="0.2211"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1423"/>
-      </shape>
-      <shape name="open1_7_2">
-        <param name="HX" value="0.1942"/>
-        <param name="HY" value="-4.8360"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.9233"/>
-        <param name="LP" value="0.3619"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6398"/>
-        <param name="VO" value="0.1133"/>
-        <param name="TCX" value="1.3369"/>
-        <param name="TCY" value="-1.6682"/>
-        <param name="TTX" value="4.5209"/>
-        <param name="TTY" value="-1.4424"/>
-        <param name="TBX" value="2.8631"/>
-        <param name="TBY" value="-0.4526"/>
-        <param name="TRX" value="-1.6888"/>
-        <param name="TRY" value="-2.3212"/>
-        <param name="TS1" value="0.2189"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
       <shape name="c7_3">
         <param name="HX" value="0.2188"/>
         <param name="HY" value="-5.5967"/>
@@ -6488,69 +2771,6 @@
         <param name="TS1" value="0.2310"/>
         <param name="TS2" value="0.0701"/>
         <param name="TS3" value="0.1481"/>
-      </shape>
-      <shape name="open2_7_3">
-        <param name="HX" value="0.1954"/>
-        <param name="HY" value="-4.9324"/>
-        <param name="JX" value="-0.0279"/>
-        <param name="JA" value="-4.6265"/>
-        <param name="LP" value="0.5462"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6381"/>
-        <param name="VO" value="0.1204"/>
-        <param name="TCX" value="1.1652"/>
-        <param name="TCY" value="-1.8046"/>
-        <param name="TTX" value="4.4242"/>
-        <param name="TTY" value="-1.1518"/>
-        <param name="TBX" value="2.8665"/>
-        <param name="TBY" value="-0.4495"/>
-        <param name="TRX" value="-1.7435"/>
-        <param name="TRY" value="-2.3161"/>
-        <param name="TS1" value="0.2182"/>
-        <param name="TS2" value="0.0535"/>
-        <param name="TS3" value="0.1476"/>
-      </shape>
-      <shape name="open4_7_3">
-        <param name="HX" value="0.2238"/>
-        <param name="HY" value="-5.4064"/>
-        <param name="JX" value="-0.0337"/>
-        <param name="JA" value="-4.7413"/>
-        <param name="LP" value="0.4019"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6054"/>
-        <param name="VO" value="0.1385"/>
-        <param name="TCX" value="1.3862"/>
-        <param name="TCY" value="-1.5076"/>
-        <param name="TTX" value="4.3360"/>
-        <param name="TTY" value="-1.2600"/>
-        <param name="TBX" value="2.9207"/>
-        <param name="TBY" value="-0.3797"/>
-        <param name="TRX" value="-1.4535"/>
-        <param name="TRY" value="-2.2050"/>
-        <param name="TS1" value="0.2198"/>
-        <param name="TS2" value="0.0579"/>
-        <param name="TS3" value="0.1422"/>
-      </shape>
-      <shape name="open1_7_3">
-        <param name="HX" value="0.1936"/>
-        <param name="HY" value="-4.8779"/>
-        <param name="JX" value="-0.0273"/>
-        <param name="JA" value="-3.9373"/>
-        <param name="LP" value="0.3603"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6427"/>
-        <param name="VO" value="0.1248"/>
-        <param name="TCX" value="1.3414"/>
-        <param name="TCY" value="-1.6752"/>
-        <param name="TTX" value="4.5215"/>
-        <param name="TTY" value="-1.4423"/>
-        <param name="TBX" value="2.8593"/>
-        <param name="TBY" value="-0.4557"/>
-        <param name="TRX" value="-1.7039"/>
-        <param name="TRY" value="-2.3299"/>
-        <param name="TS1" value="0.2178"/>
-        <param name="TS2" value="0.0529"/>
-        <param name="TS3" value="0.1478"/>
       </shape>
       <shape name="c8_0">
         <param name="HX" value="0.2217"/>
@@ -6573,69 +2793,6 @@
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1488"/>
       </shape>
-      <shape name="open2_8_0">
-        <param name="HX" value="0.1969"/>
-        <param name="HY" value="-4.8644"/>
-        <param name="JX" value="-0.0282"/>
-        <param name="JA" value="-4.5983"/>
-        <param name="LP" value="0.5521"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6289"/>
-        <param name="VO" value="0.0828"/>
-        <param name="TCX" value="1.1587"/>
-        <param name="TCY" value="-1.7931"/>
-        <param name="TTX" value="4.4253"/>
-        <param name="TTY" value="-1.1539"/>
-        <param name="TBX" value="2.8786"/>
-        <param name="TBY" value="-0.4399"/>
-        <param name="TRX" value="-1.7043"/>
-        <param name="TRY" value="-2.2889"/>
-        <param name="TS1" value="0.2217"/>
-        <param name="TS2" value="0.0507"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
-      <shape name="open4_8_0">
-        <param name="HX" value="0.2253"/>
-        <param name="HY" value="-5.3258"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.7084"/>
-        <param name="LP" value="0.4094"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5956"/>
-        <param name="VO" value="0.0960"/>
-        <param name="TCX" value="1.3762"/>
-        <param name="TCY" value="-1.4973"/>
-        <param name="TTX" value="4.3380"/>
-        <param name="TTY" value="-1.2611"/>
-        <param name="TBX" value="2.9335"/>
-        <param name="TBY" value="-0.3698"/>
-        <param name="TRX" value="-1.4132"/>
-        <param name="TRY" value="-2.1761"/>
-        <param name="TS1" value="0.2236"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1426"/>
-      </shape>
-      <shape name="open1_8_0">
-        <param name="HX" value="0.1951"/>
-        <param name="HY" value="-4.8122"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-3.9152"/>
-        <param name="LP" value="0.3675"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6337"/>
-        <param name="VO" value="0.0882"/>
-        <param name="TCX" value="1.3339"/>
-        <param name="TCY" value="-1.6649"/>
-        <param name="TTX" value="4.5218"/>
-        <param name="TTY" value="-1.4422"/>
-        <param name="TBX" value="2.8713"/>
-        <param name="TBY" value="-0.4463"/>
-        <param name="TRX" value="-1.6657"/>
-        <param name="TRY" value="-2.3031"/>
-        <param name="TS1" value="0.2211"/>
-        <param name="TS2" value="0.0502"/>
-        <param name="TS3" value="0.1481"/>
-      </shape>
       <shape name="c8_1">
         <param name="HX" value="0.2207"/>
         <param name="HY" value="-5.5361"/>
@@ -6656,69 +2813,6 @@
         <param name="TS1" value="0.2358"/>
         <param name="TS2" value="0.0659"/>
         <param name="TS3" value="0.1486"/>
-      </shape>
-      <shape name="open2_8_1">
-        <param name="HX" value="0.1964"/>
-        <param name="HY" value="-4.9078"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.6145"/>
-        <param name="LP" value="0.5509"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6319"/>
-        <param name="VO" value="0.0948"/>
-        <param name="TCX" value="1.1630"/>
-        <param name="TCY" value="-1.8006"/>
-        <param name="TTX" value="4.4257"/>
-        <param name="TTY" value="-1.1532"/>
-        <param name="TBX" value="2.8747"/>
-        <param name="TBY" value="-0.4431"/>
-        <param name="TRX" value="-1.7200"/>
-        <param name="TRY" value="-2.2978"/>
-        <param name="TS1" value="0.2205"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
-      <shape name="open4_8_1">
-        <param name="HX" value="0.2247"/>
-        <param name="HY" value="-5.3759"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.7269"/>
-        <param name="LP" value="0.4078"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5988"/>
-        <param name="VO" value="0.1095"/>
-        <param name="TCX" value="1.3819"/>
-        <param name="TCY" value="-1.5049"/>
-        <param name="TTX" value="4.3383"/>
-        <param name="TTY" value="-1.2606"/>
-        <param name="TBX" value="2.9293"/>
-        <param name="TBY" value="-0.3732"/>
-        <param name="TRX" value="-1.4297"/>
-        <param name="TRY" value="-2.1856"/>
-        <param name="TS1" value="0.2223"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1425"/>
-      </shape>
-      <shape name="open1_8_1">
-        <param name="HX" value="0.1946"/>
-        <param name="HY" value="-4.8544"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.9294"/>
-        <param name="LP" value="0.3659"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6366"/>
-        <param name="VO" value="0.0998"/>
-        <param name="TCX" value="1.3385"/>
-        <param name="TCY" value="-1.6719"/>
-        <param name="TTX" value="4.5225"/>
-        <param name="TTY" value="-1.4421"/>
-        <param name="TBX" value="2.8674"/>
-        <param name="TBY" value="-0.4495"/>
-        <param name="TRX" value="-1.6810"/>
-        <param name="TRY" value="-2.3119"/>
-        <param name="TS1" value="0.2200"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1480"/>
       </shape>
       <shape name="c8_2">
         <param name="HX" value="0.2196"/>
@@ -6741,69 +2835,6 @@
         <param name="TS2" value="0.0680"/>
         <param name="TS3" value="0.1484"/>
       </shape>
-      <shape name="open2_8_2">
-        <param name="HX" value="0.1958"/>
-        <param name="HY" value="-4.9511"/>
-        <param name="JX" value="-0.0280"/>
-        <param name="JA" value="-4.6306"/>
-        <param name="LP" value="0.5497"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6348"/>
-        <param name="VO" value="0.1067"/>
-        <param name="TCX" value="1.1674"/>
-        <param name="TCY" value="-1.8080"/>
-        <param name="TTX" value="4.4262"/>
-        <param name="TTY" value="-1.1525"/>
-        <param name="TBX" value="2.8708"/>
-        <param name="TBY" value="-0.4464"/>
-        <param name="TRX" value="-1.7356"/>
-        <param name="TRY" value="-2.3067"/>
-        <param name="TS1" value="0.2193"/>
-        <param name="TS2" value="0.0526"/>
-        <param name="TS3" value="0.1478"/>
-      </shape>
-      <shape name="open4_8_2">
-        <param name="HX" value="0.2242"/>
-        <param name="HY" value="-5.4257"/>
-        <param name="JX" value="-0.0338"/>
-        <param name="JA" value="-4.7454"/>
-        <param name="LP" value="0.4062"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.6020"/>
-        <param name="VO" value="0.1229"/>
-        <param name="TCX" value="1.3876"/>
-        <param name="TCY" value="-1.5125"/>
-        <param name="TTX" value="4.3385"/>
-        <param name="TTY" value="-1.2602"/>
-        <param name="TBX" value="2.9252"/>
-        <param name="TBY" value="-0.3766"/>
-        <param name="TRX" value="-1.4461"/>
-        <param name="TRY" value="-2.1951"/>
-        <param name="TS1" value="0.2210"/>
-        <param name="TS2" value="0.0568"/>
-        <param name="TS3" value="0.1424"/>
-      </shape>
-      <shape name="open1_8_2">
-        <param name="HX" value="0.1941"/>
-        <param name="HY" value="-4.8964"/>
-        <param name="JX" value="-0.0274"/>
-        <param name="JA" value="-3.9435"/>
-        <param name="LP" value="0.3643"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6395"/>
-        <param name="VO" value="0.1114"/>
-        <param name="TCX" value="1.3430"/>
-        <param name="TCY" value="-1.6789"/>
-        <param name="TTX" value="4.5231"/>
-        <param name="TTY" value="-1.4421"/>
-        <param name="TBX" value="2.8635"/>
-        <param name="TBY" value="-0.4527"/>
-        <param name="TRX" value="-1.6961"/>
-        <param name="TRY" value="-2.3206"/>
-        <param name="TS1" value="0.2188"/>
-        <param name="TS2" value="0.0520"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
       <shape name="c9_0">
         <param name="HX" value="0.2214"/>
         <param name="HY" value="-5.5721"/>
@@ -6824,69 +2855,6 @@
         <param name="TS1" value="0.2381"/>
         <param name="TS2" value="0.0638"/>
         <param name="TS3" value="0.1489"/>
-      </shape>
-      <shape name="open2_9_0">
-        <param name="HX" value="0.1968"/>
-        <param name="HY" value="-4.9266"/>
-        <param name="JX" value="-0.0282"/>
-        <param name="JA" value="-4.6186"/>
-        <param name="LP" value="0.5544"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6286"/>
-        <param name="VO" value="0.0809"/>
-        <param name="TCX" value="1.1652"/>
-        <param name="TCY" value="-1.8040"/>
-        <param name="TTX" value="4.4277"/>
-        <param name="TTY" value="-1.1538"/>
-        <param name="TBX" value="2.8790"/>
-        <param name="TBY" value="-0.4401"/>
-        <param name="TRX" value="-1.7119"/>
-        <param name="TRY" value="-2.2883"/>
-        <param name="TS1" value="0.2216"/>
-        <param name="TS2" value="0.0507"/>
-        <param name="TS3" value="0.1480"/>
-      </shape>
-      <shape name="open4_9_0">
-        <param name="HX" value="0.2251"/>
-        <param name="HY" value="-5.3952"/>
-        <param name="JX" value="-0.0340"/>
-        <param name="JA" value="-4.7310"/>
-        <param name="LP" value="0.4121"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5953"/>
-        <param name="VO" value="0.0937"/>
-        <param name="TCX" value="1.3833"/>
-        <param name="TCY" value="-1.5098"/>
-        <param name="TTX" value="4.3408"/>
-        <param name="TTY" value="-1.2608"/>
-        <param name="TBX" value="2.9338"/>
-        <param name="TBY" value="-0.3701"/>
-        <param name="TRX" value="-1.4221"/>
-        <param name="TRY" value="-2.1756"/>
-        <param name="TS1" value="0.2235"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1427"/>
-      </shape>
-      <shape name="open1_9_0">
-        <param name="HX" value="0.1950"/>
-        <param name="HY" value="-4.8729"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-3.9356"/>
-        <param name="LP" value="0.3699"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6334"/>
-        <param name="VO" value="0.0862"/>
-        <param name="TCX" value="1.3401"/>
-        <param name="TCY" value="-1.6756"/>
-        <param name="TTX" value="4.5241"/>
-        <param name="TTY" value="-1.4419"/>
-        <param name="TBX" value="2.8717"/>
-        <param name="TBY" value="-0.4465"/>
-        <param name="TRX" value="-1.6731"/>
-        <param name="TRY" value="-2.3025"/>
-        <param name="TS1" value="0.2211"/>
-        <param name="TS2" value="0.0502"/>
-        <param name="TS3" value="0.1482"/>
       </shape>
       <shape name="c9_1">
         <param name="HX" value="0.2204"/>
@@ -6909,68 +2877,26 @@
         <param name="TS2" value="0.0659"/>
         <param name="TS3" value="0.1487"/>
       </shape>
-      <shape name="open2_9_1">
-        <param name="HX" value="0.1963"/>
-        <param name="HY" value="-4.9699"/>
-        <param name="JX" value="-0.0281"/>
-        <param name="JA" value="-4.6347"/>
-        <param name="LP" value="0.5532"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6316"/>
-        <param name="VO" value="0.0928"/>
-        <param name="TCX" value="1.1695"/>
-        <param name="TCY" value="-1.8115"/>
-        <param name="TTX" value="4.4281"/>
-        <param name="TTY" value="-1.1531"/>
-        <param name="TBX" value="2.8751"/>
-        <param name="TBY" value="-0.4433"/>
-        <param name="TRX" value="-1.7276"/>
-        <param name="TRY" value="-2.2972"/>
-        <param name="TS1" value="0.2204"/>
-        <param name="TS2" value="0.0516"/>
-        <param name="TS3" value="0.1479"/>
-      </shape>
-      <shape name="open4_9_1">
-        <param name="HX" value="0.2246"/>
-        <param name="HY" value="-5.4451"/>
-        <param name="JX" value="-0.0339"/>
-        <param name="JA" value="-4.7495"/>
-        <param name="LP" value="0.4105"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5985"/>
-        <param name="VO" value="0.1072"/>
-        <param name="TCX" value="1.3889"/>
-        <param name="TCY" value="-1.5174"/>
-        <param name="TTX" value="4.3410"/>
-        <param name="TTY" value="-1.2604"/>
-        <param name="TBX" value="2.9297"/>
-        <param name="TBY" value="-0.3735"/>
-        <param name="TRX" value="-1.4386"/>
-        <param name="TRY" value="-2.1851"/>
-        <param name="TS1" value="0.2222"/>
-        <param name="TS2" value="0.0557"/>
-        <param name="TS3" value="0.1426"/>
-      </shape>
-      <shape name="open1_9_1">
-        <param name="HX" value="0.1945"/>
-        <param name="HY" value="-4.9150"/>
-        <param name="JX" value="-0.0275"/>
-        <param name="JA" value="-3.9497"/>
-        <param name="LP" value="0.3683"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6363"/>
-        <param name="VO" value="0.0979"/>
-        <param name="TCX" value="1.3447"/>
-        <param name="TCY" value="-1.6826"/>
-        <param name="TTX" value="4.5247"/>
-        <param name="TTY" value="-1.4418"/>
-        <param name="TBX" value="2.8678"/>
-        <param name="TBY" value="-0.4497"/>
-        <param name="TRX" value="-1.6884"/>
-        <param name="TRY" value="-2.3113"/>
-        <param name="TS1" value="0.2199"/>
-        <param name="TS2" value="0.0511"/>
-        <param name="TS3" value="0.1481"/>
+      <shape name="ah">
+        <param name="HX" value="0.1667"/>
+        <param name="HY" value="-3.9392"/>
+        <param name="JX" value="0.0000"/>
+        <param name="JA" value="-4.1498"/>
+        <param name="LP" value="0.0718"/>
+        <param name="LD" value="0.3500"/>
+        <param name="VS" value="0.8000"/>
+        <param name="VO" value="-0.1000"/>
+        <param name="TCX" value="0.1524"/>
+        <param name="TCY" value="-1.8333"/>
+        <param name="TTX" value="4.2474"/>
+        <param name="TTY" value="-1.6940"/>
+        <param name="TBX" value="2.5488"/>
+        <param name="TBY" value="-0.6750"/>
+        <param name="TRX" value="-2.8371"/>
+        <param name="TRY" value="-2.9034"/>
+        <param name="TS1" value="0.2064"/>
+        <param name="TS2" value="0.0384"/>
+        <param name="TS3" value="0.1488"/>
       </shape>
       <shape name="c10_0">
         <param name="HX" value="0.2212"/>
@@ -6992,69 +2918,6 @@
         <param name="TS1" value="0.2379"/>
         <param name="TS2" value="0.0637"/>
         <param name="TS3" value="0.1490"/>
-      </shape>
-      <shape name="open2_10_0">
-        <param name="HX" value="0.1967"/>
-        <param name="HY" value="-4.9889"/>
-        <param name="JX" value="-0.0282"/>
-        <param name="JA" value="-4.6388"/>
-        <param name="LP" value="0.5567"/>
-        <param name="LD" value="0.3494"/>
-        <param name="VS" value="0.6283"/>
-        <param name="VO" value="0.0789"/>
-        <param name="TCX" value="1.1717"/>
-        <param name="TCY" value="-1.8149"/>
-        <param name="TTX" value="4.4301"/>
-        <param name="TTY" value="-1.1537"/>
-        <param name="TBX" value="2.8794"/>
-        <param name="TBY" value="-0.4402"/>
-        <param name="TRX" value="-1.7195"/>
-        <param name="TRY" value="-2.2877"/>
-        <param name="TS1" value="0.2215"/>
-        <param name="TS2" value="0.0507"/>
-        <param name="TS3" value="0.1481"/>
-      </shape>
-      <shape name="open4_10_0">
-        <param name="HX" value="0.2250"/>
-        <param name="HY" value="-5.4646"/>
-        <param name="JX" value="-0.0340"/>
-        <param name="JA" value="-4.7536"/>
-        <param name="LP" value="0.4148"/>
-        <param name="LD" value="0.4649"/>
-        <param name="VS" value="0.5950"/>
-        <param name="VO" value="0.0915"/>
-        <param name="TCX" value="1.3903"/>
-        <param name="TCY" value="-1.5223"/>
-        <param name="TTX" value="4.3436"/>
-        <param name="TTY" value="-1.2606"/>
-        <param name="TBX" value="2.9342"/>
-        <param name="TBY" value="-0.3704"/>
-        <param name="TRX" value="-1.4311"/>
-        <param name="TRY" value="-2.1751"/>
-        <param name="TS1" value="0.2234"/>
-        <param name="TS2" value="0.0546"/>
-        <param name="TS3" value="0.1428"/>
-      </shape>
-      <shape name="open1_10_0">
-        <param name="HX" value="0.1949"/>
-        <param name="HY" value="-4.9338"/>
-        <param name="JX" value="-0.0276"/>
-        <param name="JA" value="-3.9559"/>
-        <param name="LP" value="0.3724"/>
-        <param name="LD" value="0.3330"/>
-        <param name="VS" value="0.6330"/>
-        <param name="VO" value="0.0843"/>
-        <param name="TCX" value="1.3463"/>
-        <param name="TCY" value="-1.6864"/>
-        <param name="TTX" value="4.5264"/>
-        <param name="TTY" value="-1.4415"/>
-        <param name="TBX" value="2.8721"/>
-        <param name="TBY" value="-0.4466"/>
-        <param name="TRX" value="-1.6805"/>
-        <param name="TRY" value="-2.3019"/>
-        <param name="TS1" value="0.2210"/>
-        <param name="TS2" value="0.0502"/>
-        <param name="TS3" value="0.1482"/>
       </shape>
     </shapes>
   </vocal_tract_model>

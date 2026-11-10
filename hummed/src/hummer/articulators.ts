@@ -33,11 +33,38 @@ export type ArticulatorTarget = Readonly<Partial<Record<TractParam, number>>>;
 /** The tongue tip closed at the ridge behind the teeth: the speaker's tt-alveolar-closure(u). */
 export const TONGUE_TIP_CLOSURE: ArticulatorTarget = { TTX: 4.57, TTY: -0.02, TS3: 0 };
 
-/** An articulator held at a target from `from` until `until` (ms of the rendering). */
+/**
+ * The tongue, the jaw and the hyoid as the speaker's "a" has them: where they go behind the closed
+ * lips before the mouth opens, so that the lips part on an "a" and not on the hum's forward tongue.
+ */
+export const TONGUE_A: ArticulatorTarget = {
+  HX: 0.1667,
+  HY: -3.9392,
+  JX: 0,
+  JA: -4.1498,
+  TCX: 0.1524,
+  TCY: -1.8333,
+  TTX: 4.2474,
+  TTY: -1.694,
+  TBX: 2.5488,
+  TBY: -0.675,
+  TRX: -2.8371,
+  TRY: -2.9034,
+  TS1: 0.2064,
+  TS2: 0.0384,
+  TS3: 0.1488,
+};
+
+/**
+ * An articulator held at a target from `from` until `until` (ms of the rendering). It comes in over
+ * `inMs` before `from` and goes out over `outMs` after `until` (25 and 30 ms if not given).
+ */
 export interface ArticulatorMove {
   readonly to: ArticulatorTarget;
   readonly from: Ms;
   readonly until: Ms;
+  readonly inMs?: Ms;
+  readonly outMs?: Ms;
 }
 
 /** How long a move takes to come in (before `from`) and to go out (after `until`). */
@@ -47,9 +74,10 @@ const OUT: Ms = 30;
 const ease = (x: number): number => 0.5 - 0.5 * Math.cos(Math.PI * Math.min(1, Math.max(0, x)));
 
 /**
- * The moves applied to tract states, in place: `tract` holds `count` states of `params` values each,
- * `msPerState` apart. Each move comes in over 25 ms, holds, and goes out over 30 ms from just before
- * `until`, so that the articulator lets go as the note begins.
+ * The moves applied to tract states, in place and in their order: `tract` holds `count` states of
+ * `params` values each, `msPerState` apart. Each move comes in (over 25 ms unless it says otherwise),
+ * holds, and goes out (over 30 ms) from just before `until`, so that a consonant's articulator lets
+ * go as the note begins.
  */
 export function moveArticulators(
   tract: Float64Array,
@@ -59,11 +87,13 @@ export function moveArticulators(
   moves: readonly ArticulatorMove[],
 ): void {
   for (const m of moves) {
-    const first = Math.max(0, Math.floor((m.from - IN) / msPerState));
-    const last = Math.min(count - 1, Math.ceil((m.until + OUT) / msPerState));
+    const coming = m.inMs ?? IN;
+    const going = m.outMs ?? OUT;
+    const first = Math.max(0, Math.floor((m.from - coming) / msPerState));
+    const last = Math.min(count - 1, Math.ceil((m.until + going) / msPerState));
     for (let i = first; i <= last; i++) {
       const t = i * msPerState;
-      const e = Math.min(ease((t - (m.from - IN)) / IN), ease((m.until + OUT - 5 - t) / OUT));
+      const e = Math.min(ease((t - (m.from - coming)) / coming), ease((m.until + going - 5 - t) / going));
       for (const [name, value] of Object.entries(m.to)) {
         const k = i * params + TRACT_PARAMS.indexOf(name as TractParam);
         tract[k] += e * (value - tract[k]);

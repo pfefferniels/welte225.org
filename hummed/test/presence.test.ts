@@ -5,7 +5,8 @@ import { Clock, readPerformance, renderVoice, repair } from '../src/hummer/index
 import { melodyOf, takeBreaths, voiceNotes } from '../src/hummer/melody.ts';
 import { readDynamics } from '../src/hummer/performance.ts';
 import { movement, presence, SURFACING, surfacings } from '../src/hummer/presence.ts';
-import { eventsOf, MOUTH } from '../src/hummer/vocal-map.ts';
+import { TONGUE_A } from '../src/hummer/articulators.ts';
+import { eventsOf, MOUTH, OPEN_SHAPE } from '../src/hummer/vocal-map.ts';
 import { THRESHOLD } from '../src/worker/levels.ts';
 import { loadReduction, loadStyle, voicePerformance } from '../tools/node-support.ts';
 
@@ -147,5 +148,30 @@ describe('the mouth', () => {
       assert.ok(bend < 2e-6, `${bend}`);
       assert.ok(w.some((x) => x > 0.5));
     }
+  });
+
+  it('opens to an "a": the tongue there before the lips part, the nose closing as they do', () => {
+    const voice = voiceAt(0.65);
+    const tier = (score: string, type: string): string =>
+      score.split(`type="${type}"`)[1]?.split('</gesture_sequence>')[0] ?? '';
+    const values = (text: string): Set<string> =>
+      new Set([...text.matchAll(/value="([^"]+)"/g)].map((m) => m[1]));
+    assert.deepEqual([...values(tier(voice.openScore, 'vowel-gestures'))], [OPEN_SHAPE]);
+    assert.ok(!values(tier(voice.closedScore, 'vowel-gestures')).has(OPEN_SHAPE));
+    // the open score's velum is shut throughout; the closed one's is the hum's, low
+    assert.deepEqual([...values(tier(voice.openScore, 'velic-gestures'))].map(Number), [0]);
+    assert.ok([...values(tier(voice.closedScore, 'velic-gestures'))].some((v) => Number(v) > 0));
+    const openings = eventsOf(voice.events, 'mouth').filter((e) => e.amount > 0);
+    const tongue = voice.moves.filter((m) => m.to === TONGUE_A);
+    assert.equal(tongue.length, openings.length);
+    for (const m of tongue) {
+      // there while the lips are still all but closed, and until they are all but closed again
+      const w = (ms: number): number => voice.weight[Math.round(ms)] ?? 0;
+      assert.ok(w(m.from) < 0.12, `${w(m.from)} of the way open as the tongue arrives`);
+      assert.ok(w(m.until) < 0.12, `${w(m.until)} of the way open as the tongue leaves`);
+      assert.ok((m.inMs ?? 0) >= 1500 && (m.outMs ?? 0) >= 1000);
+    }
+    // before the consonants' tongue tip, which closes on top of it
+    assert.ok(voice.moves.findIndex((m) => m.to !== TONGUE_A) >= tongue.length);
   });
 });

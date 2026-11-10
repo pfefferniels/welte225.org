@@ -10,11 +10,15 @@ import type { DynamicsCurve, DynamicsRange, Note, PedalPoint } from './performan
 import { presenceAt, surfacings } from './presence.ts';
 import type { HumStyle } from './style.ts';
 
-/** The three humming shapes of the mouth, mixed in turn, and the open shapes they move toward. */
+/** The three humming shapes of the mouth, mixed in turn. */
 export const HUMS = ['hum1', 'hum2', 'hum3'] as const;
-export const OPEN_SHAPES = ['open2', 'open4', 'open1'] as const;
 export type Hum = (typeof HUMS)[number];
-export type OpenShape = (typeof OPEN_SHAPES)[number];
+/**
+ * What the mouth opens to: the speaker's "a" with the lips barely parted. (The open shapes fitted to
+ * the recorded hum went only half of the way from the hum's forward tongue to an "a", with the nose
+ * open: a nasal vowel between "ö" and "ä", which bleated.)
+ */
+export const OPEN_SHAPE = 'ah';
 
 /** How far the lips part at the most. */
 export const OPEN_MAX = 0.3;
@@ -67,7 +71,6 @@ export type VocalEvent =
       readonly tag: 'posture';
       readonly date: Ticks;
       readonly hum: Hum;
-      readonly toward: OpenShape;
       readonly transitionMs: Ms;
     }
   | {
@@ -239,30 +242,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     ROLL_RANGE.low + ((v - range.low) / (range.high - range.low)) * (ROLL_RANGE.high - ROLL_RANGE.low);
   const level = (t: Seconds): number => relative(interp(t, macro.times, macro.values));
 
-  // the highest note of each breath group (the longer of equals): where the mouth may open most
-  const peakOf: number[] = [];
-  {
-    let head = 0;
-    const groups = new Map<number, number[]>();
-    vn.forEach((v, k) => {
-      if (v.breathBefore && k > 0) head = k;
-      const group = groups.get(head);
-      if (group) group.push(k);
-      else groups.set(head, [k]);
-    });
-    for (const ks of groups.values()) {
-      const top = ks.reduce(
-        (b, k) =>
-          src[k].pitch > src[b].pitch ||
-          (src[k].pitch === src[b].pitch && vn[k].off - vn[k].on > vn[b].off - vn[b].on)
-            ? k
-            : b,
-        ks[0],
-      );
-      for (const k of ks) peakOf[k] = top;
-    }
-  }
-
   // the mouth: a few slow openings, and how far it is open at any time, as the lips' stops need it
   const mouth = openings(level, Math.max(...vn.map((v) => v.off)), presence);
   for (const o of mouth) {
@@ -281,7 +260,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
 
   let humIndex = 0;
   let hum: Hum = HUMS[0];
-  let toward: OpenShape = OPEN_SHAPES[0];
   const nextHum = (): Hum => {
     humIndex = (humIndex + 1) % HUMS.length;
     return HUMS[humIndex];
@@ -320,13 +298,11 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     const lastDate = k > 0 ? src[k - 1].date : -1;
     const press = presses.some((p) => p > lastDate && p <= date);
     if (v.breathBefore || k === 0) {
-      const peak = src[peakOf[k]].pitch;
-      toward = OPEN_SHAPES[Math.floor(clip((peak - 60) / 22, 0, 0.999) * OPEN_SHAPES.length)];
       hum = nextHum();
-      add({ tag: 'posture', date, hum, toward, transitionMs: 200 });
+      add({ tag: 'posture', date, hum, transitionMs: 200 });
     } else if (press) {
       hum = nextHum();
-      add({ tag: 'posture', date, hum, toward, transitionMs: 400 });
+      add({ tag: 'posture', date, hum, transitionMs: 400 });
     }
     if (k === 0) add({ tag: 'velum', date, value: 0.3 });
     if (v.off - v.on >= 1.0) {
@@ -335,7 +311,6 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         tag: 'posture',
         date: clock.toTicks(onMs + 0.55 * (offMs - onMs)),
         hum,
-        toward,
         transitionMs: 600,
       });
     }

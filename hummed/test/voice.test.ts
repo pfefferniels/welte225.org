@@ -12,6 +12,7 @@ import {
   repair,
   type Voice,
 } from '../src/hummer/index.ts';
+import { TONGUE_A } from '../src/hummer/articulators.ts';
 import { melodyOf, takeBreaths } from '../src/hummer/melody.ts';
 import { loadReduction, loadScore, loadStyle, voicePerformance } from '../tools/node-support.ts';
 import { assertGolden } from './golden.ts';
@@ -80,9 +81,11 @@ describe('the voice', () => {
     assert.equal(consonants.filter((c) => c.sound === 'n').length, pulses);
     assert.ok(consonants.length >= 10);
     // the tongue tip alone, moved in the tract states: no consonant gesture moves the whole mouth
-    assert.equal(voice.moves.length, consonants.length);
+    // (beside them the tongue's way to the "a" where the mouth opens)
+    const tips = voice.moves.filter((m) => m.to !== TONGUE_A);
+    assert.equal(tips.length, consonants.length);
     assert.doesNotMatch(voice.closedScore, /tt-alveolar-closure/);
-    assert.ok(voice.moves.every((m) => Object.keys(m.to).every((p) => ['TTX', 'TTY', 'TS3'].includes(p))));
+    assert.ok(tips.every((m) => Object.keys(m.to).every((p) => ['TTX', 'TTY', 'TS3'].includes(p))));
   });
 
   it('lets a phrase sag a little at its end, no more than a semitone', () => {
