@@ -1,5 +1,5 @@
 // The piano rendered ahead by Pianoteq, for the page to play: for each setting of the elaboration the
-// voice is rendered for (every 0.05), the piano as exaggerated as that elaboration has it, both of its
+// voice is rendered for (every 0.05), the piano as exaggerated and as fast as that elaboration has it, both of its
 // parts (the piece and its harmonies) as MIDI, as the page would send them to an instrument; Pianoteq
 // renders each to sound, which is moved into place against the messages (to the millisecond, so that
 // it plays with the voice), given one gain for all settings, made mono and written as MP3 to
@@ -92,7 +92,7 @@ const score = loadPianoScore();
 /** Each setting's parts as the page plays them, and their messages. */
 const performed = elaborations.map((elaboration) => {
   const level = pianoLevel(elaboration);
-  const parts = performPiano(score, level);
+  const parts = performPiano(score, elaboration);
   const events = (part: PianoPart): readonly MidiEvent[] => midiEvents(part);
   return {
     elaboration,

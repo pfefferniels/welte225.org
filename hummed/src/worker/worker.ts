@@ -29,7 +29,6 @@ import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { pianoLevel } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
 import {
@@ -204,10 +203,7 @@ function hold(L: Level): void {
 }
 
 const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> =>
-  performPiano(
-    { msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm },
-    pianoLevel(setting.elaboration),
-  );
+  performPiano({ msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm }, setting.elaboration);
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract

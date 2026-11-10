@@ -2,8 +2,9 @@
 
 Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 225), played from the
 roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
-the browser by VocalTractLab, at any degree of elaboration: from the humming alone, its gestures
-raw and exaggerated, to the piece itself as the reconstruction sets it down, the humming under it.
+the browser by VocalTractLab, at any degree of elaboration: from the humming alone, a quick sketch,
+its gestures raw and exaggerated, to the piece itself as the reconstruction sets it down, the
+humming under it.
 
 <https://welte225.org/>: the site's front page. The page is the repository's root `index.html`;
 it loads everything else from here (`<base href="/hummed/">`), and `/hummed/` itself sends
@@ -113,7 +114,9 @@ What the MEI says, and how the voice reads it:
   (`takeBreaths`, `src/hummer/melody.ts`), but only where the performance leaves room: where the
   piano leaves a gap of 140 ms or more before the next key, or lifts the pedal at the end of a note
   of a second or more, and no sooner than 2.5 s after the last breath. That adds 9 breaths, 38 in
-  all; the note before such a breath ends a quarter of its length early (0.15 to 0.35 s).
+  all, where the piano plays the reconstruction as it is, and 7 (36) at the page's start and below:
+  the faster the music goes (below), the less room it leaves. The note before such a breath ends a
+  quarter of its length early (0.15 to 0.35 s).
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
 - **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`. It is breathed out as a
   sigh through the nose (`AIR_OUT`, `src/hummer/gestures.ts`): the lips stay closed and the velum
@@ -181,6 +184,16 @@ exaggerates the MPM (`exaggerateMpm`) to:
 
 (×2 at 0 sounded extremely unnatural, ×1.6 still too much.)
 
+The barer the music, the more of a sketch it is, too, and a sketch is gone through faster. Every
+tempo of the MPM, exaggerated, is multiplied (`tempoFactor`, `atTempo`): what it starts at and what
+it moves to, by `1 + 0.25 (1 − e)²`, ×1.25 at 0, ×1.06 at the middle, ×1.03 at 0.65, ×1 at 1, for
+the piano and the voice alike, so they keep the same onsets. What is counted in beats (the rubato, a
+ritardando's course) is as it was, only sooner over; what the MPM gives in milliseconds (how far a
+chord is spread, how far the hands are apart) stays as long as it is. The exaggeration alone had
+made the bare end the slowest: a tempo exaggerated slows down by more than it speeds up, and the
+piece took 12.6 s longer at 0 than at 1. Now its last key is struck after 2:40 at 1, 2:37 at 0.65,
+2:33 at the middle, 2:26 a quarter of the way up and 2:18 with the humming alone, 13.5 % sooner.
+
 The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
 and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
 gains change at once.
@@ -190,7 +203,7 @@ gains change at once.
 For one elaboration a worker (`src/worker/worker.ts`) does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
-   for the piano at its level, and for the voice at its own. The voice is the inner guide of the
+   for the piano at its level, and for the voice at its own, both at the elaboration's tempo. The voice is the inner guide of the
    playing: a little more exaggerated than the piano, except in the dimensions that move
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the
@@ -209,7 +222,7 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    mouth opens with the dynamics smoothed over ±1.5 s, only at the loudest moments (from 44 on
    the roll's scale, fully at 48), at most 30 % of the way to the open shapes, less before high
    notes, and closes as each phrase fades: at the page's start in 4 places (bars 9–10, 14 and
-   20, 8.5 s in all), with the humming alone in 7. From 37.5 it was open for a third of the
+   20, 8.2 s in all), with the humming alone in 6. From 37.5 it was open for a third of the
    piece; the humming shape changes
    at pedal presses and in long notes. These decisions (the mouth, the depth of breaths and air)
    read the dynamics against the MPM's own range: its 10th to 90th percentile (19 to 32 in the
@@ -231,8 +244,9 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    within a sung stretch, the voice dies away evenly over 0.8 s (the pressure falling
    exponentially, about 6 dB of sound every tenth of a second) and swells back into the next note
    over 0.2 s: silence, not breath. The fragmentation follows the elaboration, `0.11 + 0.06 e`:
-   alone, the voice falls silent 6 times (8 % of the time it sings), at 0.65 11 times (13 %),
-   mostly in the tails of long, still notes. A first version, falling silent twice as often and
+   alone, the voice falls silent twice (3 % of the time it sings), at 0.65 10 times (12 %), at
+   1 11 times (14 %), mostly in the tails of long, still notes, of which the faster settings have
+   fewer. A first version, falling silent twice as often and
    within 0.3 s, was too strong and too sudden. The calibration renders the voice whole
    (fragmentation 0).
 
@@ -322,10 +336,11 @@ settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `mi
 
 - **The Bösendorfer 280VC as Pianoteq rendered it ahead**, where there are recordings in
   `piano/pianoteq/`: both parts at each setting of the elaboration the voice is rendered for
-  (every 0.05, the piano as exaggerated as that setting has it), mono MP3s listed in
+  (every 0.05, the piano as exaggerated and as fast as that setting has it), mono MP3s listed in
   `manifest.json`. A setting is loaded when it is asked for, and the page keeps the one playing and
   the one coming. A setting that was not rendered, or whose recording is not of the performance as
-  it is (its keys counted against the manifest), is played by the sampled grand. Where there are
+  it is (its keys and the fingerprint of its messages against the manifest's: the keys alone do
+  not tell a performance at another tempo), is played by the sampled grand. Where there are
   recordings they play, unless the visitor chose the sampled grand on an earlier visit.
 - **The Salamander grand, sampled as you listen** (`src/page/piano.ts`): each key held while the
   sustain pedal is down, at least 0.3 s. The page loads it only when it plays.
@@ -354,7 +369,10 @@ delay out), as measured against the messages; other browsers were not measured.
 
 The manifest records each part's keys and the fingerprint of its messages, and
 `test/recordings.test.ts` compares them with the performance as it is: after a change to the
-reconstruction, the harmonies or the chain, CI fails until the recordings are rendered again.
+reconstruction, the harmonies or the chain, CI fails until the recordings are rendered again, and
+the page plays the sampled grand meanwhile. That is where the recordings are since the tempo
+follows the elaboration: all but the one at 1, which is as it was, are of the performance at
+Grünfeld's tempo, and wait to be rendered again.
 
 ## Code
 

@@ -21,8 +21,10 @@ import type { StatePair } from '../vtl/engine.ts';
 import type { ChunkSource } from './chunk.ts';
 import {
   approximateness,
+  atTempo,
   fragmentation,
   pianoLevel,
+  tempoFactor,
   voiceFactors,
   voiceLevel,
   withSubNoteDynamics,
@@ -40,11 +42,17 @@ export interface VoicePerformance {
   readonly dynamics: PerformanceData;
 }
 
-/** The MPM as the voice performs it: a little more exaggerated than the piano's, but in time with it. */
+/**
+ * The MPM as the voice performs it: a little more exaggerated than the piano's, but in time with
+ * it, and as fast.
+ */
 export const voiceMpm = (score: Score, elaboration: number): string =>
-  exaggerateMpm(score.mpm, {
-    factors: voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration)),
-  }).mpm;
+  atTempo(
+    exaggerateMpm(score.mpm, {
+      factors: voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration)),
+    }).mpm,
+    tempoFactor(elaboration),
+  );
 
 /** The voice's performance: the notes it follows. */
 export const performNotes = (score: Score, mpm: string): PerformanceData =>

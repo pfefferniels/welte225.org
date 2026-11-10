@@ -5,7 +5,14 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { heard, mix, PIECE_FROM, voiceElaboration } from '../src/page/mix.ts';
-import { approximateness, DEFAULT_ELABORATION, pianoLevel, voiceLevel } from '../src/worker/levels.ts';
+import {
+  approximateness,
+  atTempo,
+  DEFAULT_ELABORATION,
+  pianoLevel,
+  tempoFactor,
+  voiceLevel,
+} from '../src/worker/levels.ts';
 import { ROOT } from '../tools/node-support.ts';
 
 const positions = Array.from({ length: 101 }, (_, i) => i / 100);
@@ -63,6 +70,27 @@ describe('elaboration', () => {
     assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);
     assert.equal(approximateness(1), 0);
+  });
+
+  it('goes the faster the barer the music, and as the MPM has it at the top', () => {
+    for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const))
+      assert.ok(tempoFactor(b) < tempoFactor(a));
+    assert.ok(Math.abs(tempoFactor(0) - 1.25) < 1e-9);
+    assert.equal(tempoFactor(1), 1);
+  });
+
+  it('sets a tempo faster where it starts and where it arrives, and nothing else', () => {
+    const mpm =
+      '<tempoMap><tempo date="0" bpm="60" transition.to="48.5" meanTempoAt="0.5" beatLength="0.25" />' +
+      '<tempo date="720" bpm="andante" beatLength="0.25" /></tempoMap>' +
+      '<dynamics date="0" volume="60" transition.to="48.5" />';
+    assert.equal(
+      atTempo(mpm, 1.5),
+      '<tempoMap><tempo date="0" bpm="90" transition.to="72.75" meanTempoAt="0.5" beatLength="0.25" />' +
+        '<tempo date="720" bpm="andante" beatLength="0.25" /></tempoMap>' +
+        '<dynamics date="0" volume="60" transition.to="48.5" />',
+    );
+    assert.equal(atTempo(mpm, 1), mpm);
   });
 
   it('renders the voice anew only at steps of the fader', () => {

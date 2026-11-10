@@ -2,6 +2,7 @@
 // none) or on an instrument over MIDI (midi.ts). The player hands either the rendering it plays, from
 // where, and what falls due; each sounds it its own way.
 import type { Setting } from '../shared/protocol.ts';
+import { recordingOf } from '../shared/recordings.ts';
 import type { Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoSampler, PianoSound } from './piano.ts';
@@ -40,7 +41,8 @@ export class BuiltInPiano implements PianoOutput {
   #sources: AudioScheduledSourceNode[] = [];
   /** Whether the sampler plays the rendering started last (it schedules notes as they come). */
   #sampling = false;
-  readonly #warned = new Set<number>();
+  /** Whether a setting was recorded from the performance as it is (by its elaboration): looked at once. */
+  readonly #current = new Map<number, boolean>();
 
   constructor(graph: AudioGraph, sampler: PianoSampler) {
     this.#graph = graph;
@@ -49,6 +51,7 @@ export class BuiltInPiano implements PianoOutput {
 
   set recordings(recordings: Recordings | null) {
     this.#recordings = recordings;
+    this.#current.clear();
   }
 
   /** Whether the rendering is played from a recording (else by the sampler). */
@@ -56,20 +59,25 @@ export class BuiltInPiano implements PianoOutput {
     const recordings = this.#recordings;
     const entry = recordings?.setting(rendering.setting.elaboration);
     if (!recordings || !entry || recordings.failed(rendering.setting.elaboration)) return false;
-    const { piece, harmonies } = rendering.parts;
-    if (entry.piece.keys === piece.keys.length && entry.harmonies.keys === harmonies.keys.length) return true;
-    if (!this.#warned.has(rendering.setting.elaboration)) {
-      this.#warned.add(rendering.setting.elaboration);
-      console.warn(
-        `The Pianoteq recording of ×${rendering.setting.elaboration} is of another performance: run npm run pianoteq.`,
-      );
+    let current = this.#current.get(entry.elaboration);
+    if (current === undefined) {
+      const { piece, harmonies } = rendering.parts;
+      current = recordingOf(entry.piece, piece) && recordingOf(entry.harmonies, harmonies);
+      this.#current.set(entry.elaboration, current);
+      if (!current)
+        console.warn(
+          `The Pianoteq recording of ×${rendering.setting.elaboration} is of another performance: run npm run pianoteq.`,
+        );
     }
-    return false;
+    return current;
   }
 
   /** The setting's recordings, where there are any: fetched and decoded while the voice is prepared. */
   preload(setting: Setting): void {
-    if (this.#recordings?.setting(setting.elaboration)) this.#recordings.buffers(setting.elaboration);
+    const entry = this.#recordings?.setting(setting.elaboration);
+    // not one already found to be of another performance
+    if (entry && this.#current.get(entry.elaboration) !== false)
+      this.#recordings?.buffers(setting.elaboration);
   }
 
   ready(rendering: Rendering): boolean {

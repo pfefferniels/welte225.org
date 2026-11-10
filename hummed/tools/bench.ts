@@ -16,7 +16,7 @@ import { SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { VtlModule } from '../src/vtl/module.ts';
 import { chunkSpan, FIRST_SOUND, renderChunk } from '../src/worker/chunk.ts';
-import { DEFAULT_ELABORATION, pianoLevel } from '../src/worker/levels.ts';
+import { DEFAULT_ELABORATION } from '../src/worker/levels.ts';
 import { performPiano } from '../src/worker/piano.ts';
 import { hum, makeLevel, performVoice, planOf } from '../src/worker/prepare.ts';
 import type { SpectrogramColumns } from '../src/worker/spectrogram.ts';
@@ -79,7 +79,7 @@ const states = {
   open: scoreStates(engine, voice.openScore, maxStates, voice.moves),
 };
 const t3 = now();
-const piano = performPiano(score, pianoLevel(elaboration));
+const piano = performPiano(score, elaboration);
 const t4 = now();
 const level = makeLevel({ elaboration }, voice, states, piano, {
   espressivo: t1 - t0 + (t4 - t3),

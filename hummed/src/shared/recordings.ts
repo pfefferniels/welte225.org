@@ -2,6 +2,7 @@
 // voice is rendered for (every 0.05), which sets how exaggerated the piano plays, one recording of
 // each of the piano's parts, listed in piano/pianoteq/manifest.json with what was rendered, so that
 // the page and the tests can tell a recording of the performance as it is now.
+import { fingerprint, midiEvents, type PianoPart } from './piano.ts';
 
 /** One part of one setting, as it was rendered. */
 export interface RecordedPart {
@@ -39,6 +40,13 @@ export interface RecordingsManifest {
   readonly gainDb: number;
   readonly settings: readonly RecordedSetting[];
 }
+
+/**
+ * Whether a recording is of a part as it is performed now: as many keys, and the same messages to
+ * the millisecond. The keys alone do not tell: a performance at another tempo has them all.
+ */
+export const recordingOf = (recorded: RecordedPart, part: PianoPart): boolean =>
+  recorded.keys === part.keys.length && recorded.fingerprint === fingerprint(midiEvents(part));
 
 export class ManifestError extends Error {
   override name = 'ManifestError';
