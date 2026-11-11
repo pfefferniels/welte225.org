@@ -1,4 +1,4 @@
-## The 38 rolls, with the reader as patched
+## The 38 rolls, with the library as fixed
 
 | WM | chains St1 / St2 | chains apart | notes matched | scale | residual mm | drift mm | readings | on one copy | of them displaced | left | stemma | edits |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -8,7 +8,7 @@
 | 321 | 10813 / 10810 | 5 | 7045 | 1.00254 | 0.667 | 1.8 | 10798 | 33 | 22 | 11 | `*(St1,St2)` | 14 |
 | 364 | 3323 / 3303 | 30 | 1863 | 0.99983 | 2.333 | 6.3 | 3406 | 206 | 174 | 32 | `*(St1,St2)` | 110 |
 | 365 | 8198 / 8149 | 79 | 5603 | 0.99905 | 0.881 | 2.1 | 8263 | 217 | 118 | 99 | `*(St1,St2)` | 111 |
-| 371 | 2138 / 2872 | 4156 | – | – | – | – | 2915 | 2915 | 0 | 2915 | `St1+St2` | 0 |
+| 371 | 2138 / 2872 | 4156 | – | – | – | – | 2915 | 2915 | 0 | 2915 | `St1(St2)` | 2376 |
 | 570 | 3135 / 3141 | 6 | 1904 | 1.00548 | 0.812 | 3.2 | 3242 | 214 | 206 | 8 | `*(St1,St2)` | 104 |
 | 660 | 2768 / 2770 | 10 | 1552 | 0.96127 | 2.254 | 7.0 | 2788 | 41 | 30 | 11 | `*(St1,St2)` | 23 |
 | 662 | 18816 / 19077 | 397 | 4405 | 0.97619 | 2.935 | 43.6 | 29105 | 20348 | 11250 | 9098 | `*(St1,St2)` | 16656 |
@@ -30,7 +30,7 @@
 | 1473 | 11310 / 11250 | 66 | 4669 | 0.96277 | 2.744 | 51.1 | 14523 | 6522 | 4332 | 2190 | `*(St1,St2)` | 4300 |
 | 1474 | 11755 / 11755 | 8 | 8158 | 0.99549 | 0.85 | 1.5 | 11756 | 25 | 18 | 7 | `*(St1,St2)` | 15 |
 | 1478 | 13164 / 13154 | 46 | 8930 | 0.99871 | 1.108 | 2.8 | 13299 | 332 | 202 | 130 | `*(St1,St2)` | 190 |
-| 1480 | 5320 / 5223 | 111 | 3383 | 0.99396 | 0.624 | 1.7 | 5393 | 251 | 122 | 129 | `*(St1,St2)` | 158 |
+| 1480 | 5320 / 5223 | 111 | 3383 | 0.99396 | 0.624 | 1.7 | 5393 | 251 | 122 | 129 | `*(St1,St2)` | 157 |
 | 1654 | 2430 / 2434 | 10 | 1660 | 1.00113 | 0.329 | 0.4 | 2460 | 60 | 50 | 10 | `*(St1,St2)` | 26 |
 | 2086 | 2502 / 2502 | 2 | 1230 | 1.00171 | 0.506 | 1.1 | 2510 | 18 | 16 | 2 | `*(St1,St2)` | 9 |
 | 2254 | 6880 / 7510 | 630 | 4418 | 1.0007 | 0.558 | 1.0 | 7299 | 552 | 230 | 322 | `*(St1,St2)` | 297 |
@@ -43,9 +43,9 @@
 
 The 37 rolls whose copies aligned: 263857 readings, 43839 on one copy alone, 26894 of them (61 %) with a displaced counterpart, 16945 left.
 
-## Before and after the patch
+## Before and after the fixes
 
-| | linked-rolls 0.76.0 | patched |
+| | linked-rolls 0.76.0 | fixed |
 |---|---|---|
 | rolls whose second copy aligned | 32 of 38 | 37 of 38 |
 | rolls sharing more than 90 % of their readings | 20 of 38 | 25 of 38 |
@@ -56,10 +56,10 @@ The 37 rolls whose copies aligned: 263857 readings, 43839 on one copy alone, 268
 
 Track shift, linked-rolls 0.76.0: 409 of 455 analyses on the tracks of Stanford's raw MIDI; 1 unreadable.
 
-Track shift, patched: 446 of 455 analyses on the tracks of Stanford's raw MIDI; 1 unreadable.
+Track shift, fixed: 447 of 456 analyses on the tracks of Stanford's raw MIDI; 0 unreadable.
 Differing: cs175wr2428 (-2 for -5), hc909pp9868 (23 for -3), hp956bx4547 (-2 for -3), jg699wz4435 (-3 for -5), nq087cp3030 (-3 for -4), sk925fn6049 (-4 for -3), tj759sv4290 (-2 for 0), vj076nk8220 (-3 for -5), wn516xn5163 (-4 for -3).
 
-Rolls the patch reads differently (chains St1 / St2 and readings shared, before → after):
+Rolls the fixes read differently (chains St1 / St2 and readings shared, before → after):
 
 - WM 365: 7924 / 8149 → 8198 / 8149 chains, 156 → 8046 readings shared
 - WM 1213: 576 / 542 → 576 / 576 chains, 2 → 573 readings shared

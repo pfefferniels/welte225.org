@@ -23,7 +23,7 @@ whether that is believable.
 
 | | |
 |---|---|
-| linked-rolls | 0.76.0 at `55d09d5`, and the same with `linked-rolls-track-shift.patch` |
+| linked-rolls | 0.76.0 at `55d09d5`, and the same with the fixes on its branch `claude/keen-hamilton-t432x3` (below) |
 | roll-desk | `326f5d8`, production build, in Chromium |
 | mpm-desk | `ffc9cc0`, production build, in Chromium |
 | SUPRA | index and raw MIDI at `b2becba`, analyses (piano-roll-analyses) at `429ce87` |
@@ -47,14 +47,14 @@ across two systems.
 ## What holds
 
 - **Nothing threw.** Over 38 pairs and six further sets, every step ran
-  to its end, with the published library as with the patched one.
+  to its end, with the published library as with the fixed one.
 - **Every document is valid and comes back the same.** All 44 editions
   pass `validate`, and read back and written again they say what they
   said, key order aside.
-- **It is quick.** A pair takes 4.5 s in the median and 24 s at most
+- **It is quick.** A pair takes 4.4 s in the median and 25 s at most
   (WM 662, 19,000 chains a copy), of which the proposal takes 11 s at
   most.
-- **Every version plays.** 110 versions of the pairs and 20 of the
+- **Every version plays.** 111 versions of the pairs and 20 of the
   further sets were performed and written as MIDI, lost ones included.
 - **The desk does what the script does.** Roll Desk's editor, driven
   through its own dialogs, took three uploads for WM 570 (two analyses
@@ -95,14 +95,14 @@ In the desk this shows as "St1 and St2, 1085 readings apart" for two
 copies of one roll that differ in four, with no word that the second
 copy was never aligned.
 
-The patch keeps the rewind where it leaves the chains on the bar, give
+The fix keeps the rewind where it leaves the chains on the bar, give
 or take a stray, and otherwise takes the shift that keeps the most
 chains on the bar, the middle of the paper choosing where several do.
-With it 446 of 455 agree with the raw MIDI (`truth.tsv`), and 37 of the
+With it 447 of 456 agree with the raw MIDI (`truth.tsv`), and 37 of the
 38 pairs have both copies on the same tracks. Six of the seven rolls
 recover:
 
-| WM | readings shared, 0.76.0 | patched |
+| WM | readings shared, 0.76.0 | fixed |
 |---|---|---|
 | 365 | 156 | 8,046 of 8,263 |
 | 1213 | 2 | 573 of 577 |
@@ -120,8 +120,8 @@ WM 371, is beyond the reader: its analysis `hc909pp9868` holds chains on
 38 columns in the middle of the roll only and sets 1,767 holes aside as
 bad, the expression tracks among them.
 
-The patch is in `linked-rolls-track-shift.patch`, with three tests. It
-is not pushed anywhere.
+The fix is on linked-rolls' branch `claude/keen-hamilton-t432x3`, with
+three tests.
 
 ### 2. Two copies of one roll do not lie on one line
 
@@ -159,7 +159,8 @@ rather than the text.
 
 35 of 38 pairs come out as `*(St1,St2)`, a lost version with both copies
 derived from it; two as `St2(St1)` (WM 1213 and 1447, which differ in
-four and seven readings); WM 371 as one text. The cost of `*(St1,St2)`
+four and seven readings); WM 371, whose copies never aligned, as
+`St1(St2)`. The cost of `*(St1,St2)`
 is 4 whatever the copies hold: a reading arising once is free, so every
 reading one copy has alone arises at its own leaf, and only the lost
 state is paid for. The alternative costs one per reading the parent has
@@ -193,7 +194,10 @@ readings.
 
 Adopting this proposal also leaves a lost version `r2` with no edit and
 no witness, between `r1` and the two Stanford versions: what it was
-posited for went to the base text, and the node stayed.
+posited for went to the base text, and the node stayed. The same
+leftover turns up for WM 1462 read at one speed, where the proposal
+`*(Be1,St1)` is adopted as Be1's version at the root with an empty lost
+`r1.1` below it.
 
 ### 5. An e-roll is not always a pneumatic reading
 
@@ -226,6 +230,9 @@ columns are read on.
 
 ### 7. Smaller things
 
+All but the last two of these have been fixed since (below); they are
+left here as they were found.
+
 - **Roll Desk in development mode goes blank on the first upload**, with
   "Cannot assign to read only property 'siglum'". React's strict mode
   runs the reducer twice; the operation pushes the copy object it closed
@@ -233,23 +240,49 @@ columns are read on.
   and aligns a frozen object. The production build runs the reducer
   once and is not affected. `createVersion` copying what it is given
   would end it.
-- **Two copies that share nothing are called one text.** WM 371's
+- **Two copies that share nothing were called one text.** WM 371's
   unaligned copies have no reading in common, so they differ in none
-  "where both can tell", and the proposal merges them into one version
+  "where both can tell", and the proposal merged them into one version
   of 2,915 readings (`St1+St2`, cost 0).
-- **A copy that did not align is not mentioned** in the filiation
-  dialog, which goes on to collate it.
-- **One analysis cannot be read.** `bb988jx6754` closes its ROLLINFO
-  with `@END:` for `@@END:`, and the reader fails with "Cannot read
+- **A copy that did not align was not mentioned** in the filiation
+  dialog, which went on to collate it.
+- **One analysis could not be read.** `bb988jx6754` closes its ROLLINFO
+  with `@END:` for `@@END:`, and the reader failed with "Cannot read
   properties of undefined (reading 'HOLES')".
+- **In the stemma panel the circles of sibling versions touched** (WM
+  570): the discs of a row collided at their own radius, 63.99995 px
+  apart at a radius of 32.
 - **linked-rolls' tests of WM 225's filiation fail against the published
   edition.** With `../welte225.org` beside it at edition 1.0.14, three
   tests of `test/Filiation.test.ts` fail on `main`, before any change
   here: 624 edits where 690 are expected, 16 disagreements on the kind
   of change where 2 are expected, 75.2 % where more than 78 % is. They
   are skipped where the checkout is missing, so nothing reports it.
-- **In the stemma panel the circles of sibling versions overlap** once a
-  lost version has two children beside a third branch (WM 570).
+- **An empty lost version is left behind by adoption** (finding 4).
+
+## What has been fixed since
+
+On branches named `claude/keen-hamilton-t432x3`, none of them merged or
+released. Roll Desk takes linked-rolls from npm, so the library's fixes
+reach the desk with its next release; the desk's own work without it.
+
+| Found | Fix | Where |
+|---|---|---|
+| analyses read on the wrong tracks (1) | the shift that keeps the chains on the bar, the middle of the paper choosing among several | linked-rolls `ae3a644` |
+| the desk blank on the first upload in development (7) | the copy is taken afresh each time the operation runs | roll-desk `9df05a9`, and at the root in linked-rolls `582c8ec` |
+| copies sharing nothing called one text (7) | no reading in common, no shared text | linked-rolls `932e7fe` |
+| an analysis that cannot be read (7) | an unclosed ROLLINFO is read; a file that is no analysis is refused by name | linked-rolls `503342d` |
+| nothing said of a copy that did not align (1, 7) | the upload says with how many of its notes the copy lies on the reference copy; the filiation dialog names every copy lying there with less than two thirds of them | roll-desk `9df05a9` |
+| every e-roll read on the accelerating spool (5) | the dialog asks whether the e-roll comes from a roll reader or a scan, tries both against the reference copy and prefills the better; a scanned e-roll is no longer said to be Phillips's | roll-desk `9df05a9` |
+| the discs of a row touching (7) | a gap of 8 px | roll-desk `cab669f` |
+| rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
+
+Not touched, because none of them has an obvious fix: the alignment by
+one shift and one scale (2), which is where most of the false readings
+come from; the cost of a lost version on two copies (3); the grouping by
+reader (4), which follows from 2; the leftover lost version; the line
+rate of Smythe's CIS (6); and the three failing tests, where either the
+tests or the edition has moved.
 
 ## Other things the runs show
 
@@ -315,13 +348,12 @@ unless Ph1 and St2 are two rolls.
 | `emulations.mjs` | two emulations of one roll, note for note |
 | `summary.py` | the tables of `summary.md` from the results |
 | `rolls.json`, `further.json` | the lists: the 38 pairs, and the six sets with copies from elsewhere |
-| `out/results.jsonl` | the 38 pairs with the patched reader, one record a roll |
+| `out/results.jsonl` | the 38 pairs with the fixed library, one record a roll |
 | `out-0.76.0/results.jsonl` | the same with linked-rolls 0.76.0 |
-| `out-further/results.jsonl` | the six further sets, patched reader |
-| `truth.tsv`, `truth-0.76.0.tsv` | the shift of each of the 457 analyses, patched and published |
+| `out-further/results.jsonl` | the six further sets, fixed library |
+| `truth.tsv`, `truth-0.76.0.tsv` | the shift of each of the 457 analyses, fixed and published |
 | `drift.tsv` | the drift of each pair, in twelve stretches |
 | `summary.md` | every roll in one table, and the comparison before and after |
-| `linked-rolls-track-shift.patch` | the change to the Stanford reader, with its tests, against `55d09d5` |
 
 To run it again: checkouts of linked-rolls (built, `npm ci && npx tsc -p .`),
 `pianoroll/SUPRA` and `pianoroll/piano-roll-analyses` two levels up
@@ -355,7 +387,7 @@ from Keystone's `.CIS` with `cis2roll.py` of rollscan2image and
   and added in another on the same track cancels out, and a hole the
   parser merged or split on one scan counts as text.
 - **Stanford's raw MIDI is the measure for the tracks, and it is wrong
-  twice** that the pairs can show. The 446 of 455 is agreement with it,
+  twice** that the pairs can show. The 447 of 456 is agreement with it,
   not correctness; on the files outside the pairs nothing here says who
   is right.
 - **No stemma was checked against a roll.** That the proposals are
