@@ -209,7 +209,7 @@ half a millimetre until the last three metres and 2.9 mm off at the end.
 The closing notes, long ones, were read as three notes each, one to a
 copy, inserted by three versions and missing from the root.
 
-**Since.** With the window centred on the drift, four readings of 3,136
+**Since.** With the window centred on the drift, four readings of 3,142
 stand on one copy alone, and the proposal is `St1(St2+Ph1)`: St2 and Ph1
 carry one text, derived from St1's by ten insertions and four deletions.
 That is what the chains say.
