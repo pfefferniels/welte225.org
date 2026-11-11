@@ -153,7 +153,20 @@ for track, wherever those lie; WM 1339 has 2,880 against 50; WM 570 has
 
 So on a long roll most of what the stemma is scored on, and most of the
 edits proposed (5,892 "shifts" over the 38 rolls), is the alignment
-rather than the text.
+rather than the text. The shifts piled up where the copies lie furthest
+apart, at the two ends of a roll: 1,250 in the first fifth and 1,891 in
+the last, of 5,892.
+
+**Since.** The window of a pair is now centred on the drift of the two
+copies, read off stretch by stretch (linked-rolls `8bb319e`). On the 37
+pairs the readings on one copy alone fall from 43,839 to 12,825, where
+the copies differ by 5,352 chains track for track; the edits proposed
+from 30,056 to 7,506; the shifts from 5,892 to 1,030, between 58 and 142
+in every tenth of the roll. WM 1473 goes from 6,522 readings on one copy
+alone to 146, WM 1339 from 2,880 to 176, WM 662 from 20,348 to 2,100.
+The alignment itself is as it was: one shift and one scale, which for
+WM 662 leaves the copies 20 cm apart at the head of the roll, and the
+first two metres there are still not matched.
 
 ### 3. On two copies the proposal says the same thing nearly every time
 
@@ -190,7 +203,16 @@ may be the very roll St2 is.
 What separates Ph1 is its residual of 3.0 mm against 0.8 mm: time read
 off a pneumatic reader and put back onto the paper does not land where a
 scan does, 134 notes fall outside the window, and they are scored as
-readings.
+readings. Along the roll Ph1 lies 11 mm before St1 at the head, 3 mm
+after it in the middle and 19 mm before it at the end; St2 lies within
+half a millimetre until the last three metres and 2.9 mm off at the end.
+The closing notes, long ones, were read as three notes each, one to a
+copy, inserted by three versions and missing from the root.
+
+**Since.** With the window centred on the drift, four readings of 3,136
+stand on one copy alone, and the proposal is `St1(St2+Ph1)`: St2 and Ph1
+carry one text, derived from St1's by ten insertions and four deletions.
+That is what the chains say.
 
 ### 4a. A lost version that nothing derived from
 
@@ -295,12 +317,13 @@ reach the desk with its next release; the desk's own work without it.
 | the discs of a row touching (7) | a gap of 8 px | roll-desk `cab669f` |
 | a lost version that nothing derives from (4a) | a version that changes nothing stands in the one it derives from | linked-rolls `02d52bc` |
 | the stemma of two leaves cut off at the panel's edges, by the gap above | the stemma is fitted by what its discs and captions take | roll-desk `65864c2` |
+| readings of drifted stretches taken for readings of their own, and for shifts (2, 4) | the window of a pair is centred on its drift along the roll, and is no narrower than the pitch of a chain | linked-rolls `8bb319e` |
 | rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
 
-Not touched, because none of them has an obvious fix: the alignment by
-one shift and one scale (2), which is where most of the false readings
-come from; the cost of a lost version on two copies (3); the grouping by
-reader (4), which follows from 2; the line rate of Smythe's CIS (6); and the three failing tests, where either the
+Not touched: the alignment itself, which is still one shift and one
+scale, so the places an edition gives for a copy's features are as far
+off as before and only the collation looks past it; the cost of a lost
+version on two copies (3); the line rate of Smythe's CIS (6); and the three failing tests, where either the
 tests or the edition has moved.
 
 ## Other things the runs show
