@@ -1,0 +1,1522 @@
+[
+ {
+  "number": 28,
+  "title": "Piano concerto op. 54, A minor",
+  "composer": "Schumann, Robert (1810-1856)",
+  "performer": "Adam-Benard, Eugenie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "bj093nh2591",
+    "callnum": "Stanford Libraries CONDON ROLL 156",
+    "purl": "https://purl.stanford.edu/bj093nh2591",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bj093nh2591_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "15725",
+     "musical_holes": "46163",
+     "image_length": "529680px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "rt595wj4442",
+    "callnum": "Stanford Libraries CONDON ROLL 157",
+    "purl": "https://purl.stanford.edu/rt595wj4442",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/r/rt595wj4442_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "15579",
+     "musical_holes": "46913",
+     "image_length": "512280px",
+     "edge_tear_count": "108",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 57,
+  "title": "Faust prelude",
+  "composer": "Gounod, Charles (1818-1893)",
+  "performer": "Adam-Benard, Eugenie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "py987gg6088",
+    "callnum": "Stanford Libraries CONDON ROLL 1",
+    "purl": "https://purl.stanford.edu/py987gg6088",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/py987gg6088_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": null,
+     "musical_holes": null,
+     "image_length": null,
+     "edge_tear_count": null,
+     "bad_hole_count": null,
+     "manual_edits": null
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "hm373bm3807",
+    "callnum": "Stanford Libraries CONDON ROLL 7",
+    "purl": "https://purl.stanford.edu/hm373bm3807",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hm373bm3807_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": null,
+     "musical_holes": null,
+     "image_length": null,
+     "edge_tear_count": null,
+     "bad_hole_count": null,
+     "manual_edits": null
+    }
+   }
+  ]
+ },
+ {
+  "number": 225,
+  "title": "Träumerei",
+  "composer": "Schumann, Robert (1810-1856)",
+  "performer": "Grünfeld, Alfred",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "mf320jq4997",
+    "callnum": "Stanford Libraries CONDON ROLL 47",
+    "purl": "https://purl.stanford.edu/mf320jq4997",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/m/mf320jq4997_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": null,
+     "musical_holes": null,
+     "image_length": null,
+     "edge_tear_count": null,
+     "bad_hole_count": null,
+     "manual_edits": null
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "wv912mm2332",
+    "callnum": "Stanford Libraries CONDON ROLL 48",
+    "purl": "https://purl.stanford.edu/wv912mm2332",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/w/wv912mm2332_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "954",
+     "musical_holes": "10441",
+     "image_length": "129480px",
+     "edge_tear_count": "7",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 321,
+  "title": "Carneval part. 1",
+  "composer": "Schumann, Robert (1810-1856)",
+  "performer": "Reisenauer, Alfred (1863-1907)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "xw872bc8052",
+    "callnum": "Stanford Libraries CONDON ROLL 82",
+    "purl": "https://purl.stanford.edu/xw872bc8052",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/x/xw872bc8052_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "10813",
+     "musical_holes": "29788",
+     "image_length": "519720px",
+     "edge_tear_count": "10",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "zt739gs4926",
+    "callnum": "Stanford Libraries CONDON ROLL 94",
+    "purl": "https://purl.stanford.edu/zt739gs4926",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/z/zt739gs4926_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "10810",
+     "musical_holes": "30086",
+     "image_length": "519840px",
+     "edge_tear_count": "2",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 364,
+  "title": "Nocturne op. 37, no. 2, G major",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Carreño, Teresa (1853-1917)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "st828pc9818",
+    "callnum": "Stanford Libraries CONDON ROLL 101",
+    "purl": "https://purl.stanford.edu/st828pc9818",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/st828pc9818_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3322",
+     "musical_holes": "32956",
+     "image_length": "324360px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "2",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "rj799hj0968",
+    "callnum": "Stanford Libraries CONDON ROLL 103",
+    "purl": "https://purl.stanford.edu/rj799hj0968",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/r/rj799hj0968_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3302",
+     "musical_holes": "30715",
+     "image_length": "315600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 365,
+  "title": "6th Hungarian rhapsody",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Carreño, Teresa (1853-1917)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "yx536mq2915",
+    "callnum": "Stanford Libraries CONDON ROLL 105",
+    "purl": "https://purl.stanford.edu/yx536mq2915",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/yx536mq2915_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8195",
+     "musical_holes": "17994",
+     "image_length": "341400px",
+     "edge_tear_count": "4",
+     "bad_hole_count": "12",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "wc588rr6112",
+    "callnum": "Stanford Libraries CONDON ROLL 106",
+    "purl": "https://purl.stanford.edu/wc588rr6112",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/w/wc588rr6112_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8149",
+     "musical_holes": "17194",
+     "image_length": "339720px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 371,
+  "title": "Little waltz",
+  "composer": "Carreño, Teresa (1853-1917)",
+  "performer": "Carreño, Teresa (1853-1917)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "hc909pp9868",
+    "callnum": "Stanford Libraries CONDON ROLL 111",
+    "purl": "https://purl.stanford.edu/hc909pp9868",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hc909pp9868_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2873",
+     "musical_holes": "8789",
+     "image_length": "139440px",
+     "edge_tear_count": "3",
+     "bad_hole_count": "1767",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "qc650tp0469",
+    "callnum": "Stanford Libraries CONDON ROLL 113",
+    "purl": "https://purl.stanford.edu/qc650tp0469",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qc650tp0469_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2872",
+     "musical_holes": "8907",
+     "image_length": "150960px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 570,
+  "title": "Liebestraum : Nocturn No. 3",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Lamond, Frederic (1868-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "ng103jj1150",
+    "callnum": "Stanford Libraries CONDON ROLL 215",
+    "purl": "https://purl.stanford.edu/ng103jj1150",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/n/ng103jj1150_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3135",
+     "musical_holes": "10869",
+     "image_length": "198600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "kz379jn2491",
+    "callnum": "Stanford Libraries CONDON ROLL 221",
+    "purl": "https://purl.stanford.edu/kz379jn2491",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/k/kz379jn2491_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3141",
+     "musical_holes": "13888",
+     "image_length": "196560px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 660,
+  "title": "Melodie op. 3, F major",
+  "composer": "Rubinstein, Anton (1829-1894)",
+  "performer": "Hofmann, Josef (1876-1957)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "xr682fm1233",
+    "callnum": "Stanford Libraries CONDON ROLL 228",
+    "purl": "https://purl.stanford.edu/xr682fm1233",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/x/xr682fm1233_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2768",
+     "musical_holes": "13114",
+     "image_length": "167640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "16",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "td134mh2760",
+    "callnum": "Stanford Libraries CONDON ROLL 229",
+    "purl": "https://purl.stanford.edu/td134mh2760",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/t/td134mh2760_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2770",
+     "musical_holes": "12862",
+     "image_length": "174720px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 662,
+  "title": "Tannhauser overture",
+  "composer": "Wagner, Richard (1813-1883)",
+  "performer": "Hofmann, Josef (1876-1957)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "qf751dd5412",
+    "callnum": "Stanford Libraries CONDON ROLL 137",
+    "purl": "https://purl.stanford.edu/qf751dd5412",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qf751dd5412_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "18813",
+     "musical_holes": "41878",
+     "image_length": "542040px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "61",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "hh095vc8073",
+    "callnum": "Stanford Libraries CONDON ROLL 138",
+    "purl": "https://purl.stanford.edu/hh095vc8073",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hh095vc8073_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "19077",
+     "musical_holes": "45020",
+     "image_length": "545760px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 723,
+  "title": "Ave Maria",
+  "composer": "Schubert, Franz (1797-1828)",
+  "performer": "Burmeister, Richard (1860-1944)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "md331fy4209",
+    "callnum": "Stanford Libraries CONDON ROLL 153",
+    "purl": "https://purl.stanford.edu/md331fy4209",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/m/md331fy4209_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3258",
+     "musical_holes": "10290",
+     "image_length": "200880px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "sx417qf9868",
+    "callnum": "Stanford Libraries CONDON ROLL 154",
+    "purl": "https://purl.stanford.edu/sx417qf9868",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sx417qf9868_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3359",
+     "musical_holes": "11140",
+     "image_length": "203880px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 757,
+  "title": "2nd Hungarian rhapsody",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Mero, Yolanda (1887-1963)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "zk440mh1715",
+    "callnum": "Stanford Libraries CONDON ROLL 136",
+    "purl": "https://purl.stanford.edu/zk440mh1715",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/z/zk440mh1715_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8663",
+     "musical_holes": "21043",
+     "image_length": "395040px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "hg174cq6672",
+    "callnum": "Stanford Libraries CONDON ROLL 235",
+    "purl": "https://purl.stanford.edu/hg174cq6672",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hg174cq6672_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8663",
+     "musical_holes": "21009",
+     "image_length": "398520px",
+     "edge_tear_count": "36",
+     "bad_hole_count": "2",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 797,
+  "title": "Samson and Delilah",
+  "composer": "Saint-Saëns, Camille (1835-1921)",
+  "performer": "Saint-Saëns, Camille (1835-1921)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "pk349zj4179",
+    "callnum": "Stanford Libraries CONDON ROLL 242",
+    "purl": "https://purl.stanford.edu/pk349zj4179",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/pk349zj4179_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "4590",
+     "musical_holes": "14390",
+     "image_length": "202320px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "qz155gk0442",
+    "callnum": "Stanford Libraries CONDON ROLL 245",
+    "purl": "https://purl.stanford.edu/qz155gk0442",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qz155gk0442_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "4321",
+     "musical_holes": "12865",
+     "image_length": "202080px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1033,
+  "title": "XII. Ungar. Rapsodie : (nach persönlicher Erinnerung an Liszt = (played by as Liszt)",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Stavenhagen, Bernhard (1862-1914)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "hg282mg9396",
+    "callnum": "Stanford Libraries CONDON ROLL 294",
+    "purl": "https://purl.stanford.edu/hg282mg9396",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hg282mg9396_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8591",
+     "musical_holes": "13310",
+     "image_length": "325560px",
+     "edge_tear_count": "2",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "bx815rz0622",
+    "callnum": "Stanford Libraries CONDON ROLL 295",
+    "purl": "https://purl.stanford.edu/bx815rz0622",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bx815rz0622_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8845",
+     "musical_holes": "15839",
+     "image_length": "329640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1213,
+  "title": "Prélude op. 28, no. 20, c-Moll",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Pachmann, Vladimir de (1848-1933)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "fn111kx0654",
+    "callnum": "Stanford Libraries CONDON ROLL 344",
+    "purl": "https://purl.stanford.edu/fn111kx0654",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/fn111kx0654_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "576",
+     "musical_holes": "4828",
+     "image_length": "78240px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "vj076nk8220",
+    "callnum": "Stanford Libraries CONDON ROLL 345",
+    "purl": "https://purl.stanford.edu/vj076nk8220",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/v/vj076nk8220_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "577",
+     "musical_holes": "5394",
+     "image_length": "89760px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1246,
+  "title": "Moonlight sonata : C sharp minor",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "dx555xv9093",
+    "callnum": "Stanford Libraries CONDON ROLL 361",
+    "purl": "https://purl.stanford.edu/dx555xv9093",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/d/dx555xv9093_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3839",
+     "musical_holes": "40307",
+     "image_length": "435960px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "yb187qn0290",
+    "callnum": "Stanford Libraries CONDON ROLL 362",
+    "purl": "https://purl.stanford.edu/yb187qn0290",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/yb187qn0290_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3763",
+     "musical_holes": "39119",
+     "image_length": "449040px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "2",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1247,
+  "title": "Sonate cis-Moll : (Mondschein)",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "wp877mn0317",
+    "callnum": "Stanford Libraries CONDON ROLL 360",
+    "purl": "https://purl.stanford.edu/wp877mn0317",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/w/wp877mn0317_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "9041",
+     "musical_holes": "13001",
+     "image_length": "329040px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "xm993qd2681",
+    "callnum": "Stanford Libraries CONDON ROLL 363",
+    "purl": "https://purl.stanford.edu/xm993qd2681",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/x/xm993qd2681_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "9226",
+     "musical_holes": "16784",
+     "image_length": "335880px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1253,
+  "title": "Etude op. 25, no. 9, G flat",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "ft746ns5736",
+    "callnum": "Stanford Libraries CONDON ROLL 367",
+    "purl": "https://purl.stanford.edu/ft746ns5736",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/ft746ns5736_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "1740",
+     "musical_holes": "2254",
+     "image_length": "75840px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "hp956bx4547",
+    "callnum": "Stanford Libraries CONDON ROLL 368",
+    "purl": "https://purl.stanford.edu/hp956bx4547",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hp956bx4547_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "1442",
+     "musical_holes": "2657",
+     "image_length": "57120px",
+     "edge_tear_count": "904",
+     "bad_hole_count": "477",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1259,
+  "title": "10th Hungarian rhapsody",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "zv884mc0794",
+    "callnum": "Stanford Libraries CONDON ROLL 375",
+    "purl": "https://purl.stanford.edu/zv884mc0794",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/z/zv884mc0794_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6460",
+     "musical_holes": "10998",
+     "image_length": "240960px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "qg121rz6125",
+    "callnum": "Stanford Libraries CONDON ROLL 390",
+    "purl": "https://purl.stanford.edu/qg121rz6125",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qg121rz6125_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6145",
+     "musical_holes": "13748",
+     "image_length": "237360px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1262,
+  "title": "Nocturno op. 16, no. 4",
+  "composer": "Paderewski, Ignace Jan (1860-1941)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "sb487jm2092",
+    "callnum": "Stanford Libraries CONDON ROLL 386",
+    "purl": "https://purl.stanford.edu/sb487jm2092",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sb487jm2092_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2213",
+     "musical_holes": "11655",
+     "image_length": "199680px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "qt363fp0799",
+    "callnum": "Stanford Libraries CONDON ROLL 387",
+    "purl": "https://purl.stanford.edu/qt363fp0799",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qt363fp0799_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2211",
+     "musical_holes": "11636",
+     "image_length": "187560px",
+     "edge_tear_count": "1",
+     "bad_hole_count": "5",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1263,
+  "title": "Minuett G major",
+  "composer": "Paderewski, Ignace Jan (1860-1941)",
+  "performer": "Paderewski, Ignace Jan (1860-1941)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "dw479gk0103",
+    "callnum": "Stanford Libraries CONDON ROLL 382",
+    "purl": "https://purl.stanford.edu/dw479gk0103",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/d/dw479gk0103_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3753",
+     "musical_holes": "8828",
+     "image_length": "162600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "dc021nq1464",
+    "callnum": "Stanford Libraries CONDON ROLL 384",
+    "purl": "https://purl.stanford.edu/dc021nq1464",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/d/dc021nq1464_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3349",
+     "musical_holes": "7407",
+     "image_length": "173760px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "3",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1296,
+  "title": "Etude de concert E flat",
+  "composer": "Schlözer, Paul de (1841-1898)",
+  "performer": "Lhévinne, Josef (1874-1944)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "sz207mm8382",
+    "callnum": "Stanford Libraries CONDON ROLL 391",
+    "purl": "https://purl.stanford.edu/sz207mm8382",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sz207mm8382_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "4641",
+     "musical_holes": "5249",
+     "image_length": "130440px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "sq640bh1919",
+    "callnum": "Stanford Libraries CONDON ROLL 392",
+    "purl": "https://purl.stanford.edu/sq640bh1919",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sq640bh1919_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "4635",
+     "musical_holes": "5336",
+     "image_length": "114600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "3",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1339,
+  "title": "La traviata : fantasie",
+  "composer": "Verdi, Giuseppe (1813-1901)",
+  "performer": "Starke, Gustav (1862-1931)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "tw054jm0773",
+    "callnum": "Stanford Libraries CONDON ROLL 443",
+    "purl": "https://purl.stanford.edu/tw054jm0773",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/t/tw054jm0773_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "10524",
+     "musical_holes": "30844",
+     "image_length": "531600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "nx970yn7253",
+    "callnum": "Stanford Libraries CONDON ROLL 444",
+    "purl": "https://purl.stanford.edu/nx970yn7253",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/n/nx970yn7253_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "10476",
+     "musical_holes": "30778",
+     "image_length": "516720px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1352,
+  "title": "Die Meistersinger von Nürnberg",
+  "composer": "Wagner, Richard (1813-1883)",
+  "performer": "Mottl, Felix (1856-1911)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "mg285ps6787",
+    "callnum": "Stanford Libraries CONDON ROLL 418",
+    "purl": "https://purl.stanford.edu/mg285ps6787",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/m/mg285ps6787_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3638",
+     "musical_holes": "17036",
+     "image_length": "220680px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "rp146dk0477",
+    "callnum": "Stanford Libraries CONDON ROLL 421",
+    "purl": "https://purl.stanford.edu/rp146dk0477",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/r/rp146dk0477_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3588",
+     "musical_holes": "12017",
+     "image_length": "211200px",
+     "edge_tear_count": "5",
+     "bad_hole_count": "2",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1447,
+  "title": "2 préludes : op. 28, Nr. 1, C-Dur u. Nr. 21, B-Dur",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Schelling, Ernest (1876-1939)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "kg488qt3887",
+    "callnum": "Stanford Libraries CONDON ROLL 453",
+    "purl": "https://purl.stanford.edu/kg488qt3887",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/k/kg488qt3887_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2658",
+     "musical_holes": "12998",
+     "image_length": "179040px",
+     "edge_tear_count": "11",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "pz175wg5571",
+    "callnum": "Stanford Libraries CONDON ROLL 454",
+    "purl": "https://purl.stanford.edu/pz175wg5571",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/pz175wg5571_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2656",
+     "musical_holes": "14056",
+     "image_length": "170640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1473,
+  "title": "Sonata B minor",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Samaroff Stokowski, Olga (1882-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "bf074nj8801",
+    "callnum": "Stanford Libraries CONDON ROLL 494",
+    "purl": "https://purl.stanford.edu/bf074nj8801",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bf074nj8801_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "11310",
+     "musical_holes": "37249",
+     "image_length": "527640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "wz252pk3255",
+    "callnum": "Stanford Libraries CONDON ROLL 497",
+    "purl": "https://purl.stanford.edu/wz252pk3255",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/w/wz252pk3255_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "11252",
+     "musical_holes": "39321",
+     "image_length": "540720px",
+     "edge_tear_count": "2",
+     "bad_hole_count": "57",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1474,
+  "title": "Tannhäuser-Marsch",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Samaroff Stokowski, Olga (1882-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "fj448by1666",
+    "callnum": "Stanford Libraries CONDON ROLL 481",
+    "purl": "https://purl.stanford.edu/fj448by1666",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/fj448by1666_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "11757",
+     "musical_holes": "28133",
+     "image_length": "400800px",
+     "edge_tear_count": "5",
+     "bad_hole_count": "8",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "ns598kr8616",
+    "callnum": "Stanford Libraries CONDON ROLL 482",
+    "purl": "https://purl.stanford.edu/ns598kr8616",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/n/ns598kr8616_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "11755",
+     "musical_holes": "23453",
+     "image_length": "404040px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1478,
+  "title": "Concerto A minor",
+  "composer": "Grieg, Edvard (1843-1907)",
+  "performer": "Samaroff Stokowski, Olga (1882-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "ym773gh2267",
+    "callnum": "Stanford Libraries CONDON ROLL 484",
+    "purl": "https://purl.stanford.edu/ym773gh2267",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/ym773gh2267_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "13163",
+     "musical_holes": "31067",
+     "image_length": "459000px",
+     "edge_tear_count": "4",
+     "bad_hole_count": "4",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "yr522jf5585",
+    "callnum": "Stanford Libraries CONDON ROLL 485",
+    "purl": "https://purl.stanford.edu/yr522jf5585",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/yr522jf5585_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "13154",
+     "musical_holes": "31753",
+     "image_length": "456360px",
+     "edge_tear_count": "9",
+     "bad_hole_count": "2",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1480,
+  "title": "Peer Gynt suite",
+  "composer": "Grieg, Edvard (1843-1907)",
+  "performer": "Samaroff Stokowski, Olga (1882-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "vz717bq6543",
+    "callnum": "Stanford Libraries CONDON ROLL 483",
+    "purl": "https://purl.stanford.edu/vz717bq6543",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/v/vz717bq6543_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "5315",
+     "musical_holes": "8034",
+     "image_length": "209640px",
+     "edge_tear_count": "9",
+     "bad_hole_count": "11",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "bf644yy6536",
+    "callnum": "Stanford Libraries CONDON ROLL 489",
+    "purl": "https://purl.stanford.edu/bf644yy6536",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bf644yy6536_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "5224",
+     "musical_holes": "6885",
+     "image_length": "206760px",
+     "edge_tear_count": "50",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 1654,
+  "title": "Si oiseau j'étais",
+  "composer": "Henselt, Adolf von (1814-1889)",
+  "performer": "Cory, Annie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "fb623cd1247",
+    "callnum": "Stanford Libraries CONDON ROLL 462",
+    "purl": "https://purl.stanford.edu/fb623cd1247",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/fb623cd1247_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2430",
+     "musical_holes": "3428",
+     "image_length": "79440px",
+     "edge_tear_count": "4",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "sc787kg5664",
+    "callnum": "Stanford Libraries CONDON ROLL 463",
+    "purl": "https://purl.stanford.edu/sc787kg5664",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sc787kg5664_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2434",
+     "musical_holes": "3621",
+     "image_length": "101520px",
+     "edge_tear_count": "2",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2086,
+  "title": "Schlummerlied",
+  "composer": "Schumann, Robert (1810-1856)",
+  "performer": "Schorr, David",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "hy749gh2331",
+    "callnum": "Stanford Libraries CONDON ROLL 572",
+    "purl": "https://purl.stanford.edu/hy749gh2331",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/h/hy749gh2331_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2502",
+     "musical_holes": "11531",
+     "image_length": "197400px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "ps656vb4839",
+    "callnum": "Stanford Libraries CONDON ROLL 573",
+    "purl": "https://purl.stanford.edu/ps656vb4839",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/ps656vb4839_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2504",
+     "musical_holes": "10937",
+     "image_length": "188040px",
+     "edge_tear_count": "40",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2254,
+  "title": "Madam Butterfly : selection",
+  "composer": "Puccini, Giacomo (1858-1924)",
+  "performer": "Epstein, Richard (1869-1919)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "fk036vh7282",
+    "callnum": "Stanford Libraries CONDON ROLL 561",
+    "purl": "https://purl.stanford.edu/fk036vh7282",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/fk036vh7282_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6880",
+     "musical_holes": "20910",
+     "image_length": "297600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "pf050rx0162",
+    "callnum": "Stanford Libraries CONDON ROLL 564",
+    "purl": "https://purl.stanford.edu/pf050rx0162",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/pf050rx0162_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "7509",
+     "musical_holes": "20684",
+     "image_length": "285000px",
+     "edge_tear_count": "8",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2260,
+  "title": "Samson and Delilah",
+  "composer": "Saint-Saëns, Camille (1835-1921)",
+  "performer": "Epstein, Richard (1869-1919)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "cp259ms0085",
+    "callnum": "Stanford Libraries CONDON ROLL 559",
+    "purl": "https://purl.stanford.edu/cp259ms0085",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/c/cp259ms0085_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6354",
+     "musical_holes": "15082",
+     "image_length": "208560px",
+     "edge_tear_count": "31",
+     "bad_hole_count": "12",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "pc276zv7038",
+    "callnum": "Stanford Libraries CONDON ROLL 560",
+    "purl": "https://purl.stanford.edu/pc276zv7038",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/p/pc276zv7038_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6537",
+     "musical_holes": "15021",
+     "image_length": "225600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2538,
+  "title": "Elevation : op. 76, no. 2",
+  "composer": "Chaminade, Cécile (1857-1944)",
+  "performer": "Mero, Yolanda (1887-1963)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "cw378sb0125",
+    "callnum": "Stanford Libraries CONDON ROLL 602",
+    "purl": "https://purl.stanford.edu/cw378sb0125",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/c/cw378sb0125_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2230",
+     "musical_holes": "9623",
+     "image_length": "129240px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "tm408mz6807",
+    "callnum": "Stanford Libraries CONDON ROLL 616",
+    "purl": "https://purl.stanford.edu/tm408mz6807",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/t/tm408mz6807_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "2222",
+     "musical_holes": "10284",
+     "image_length": "122640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "6",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2844,
+  "title": "Rigoletto : Fantasie",
+  "composer": "Verdi, Giuseppe (1813-1901)",
+  "performer": "Gayraud, P",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "np204br1080",
+    "callnum": "Stanford Libraries CONDON ROLL 585",
+    "purl": "https://purl.stanford.edu/np204br1080",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/n/np204br1080_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "13671",
+     "musical_holes": "29203",
+     "image_length": "532320px",
+     "edge_tear_count": "16",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "sr577gv4813",
+    "callnum": "Stanford Libraries CONDON ROLL 687",
+    "purl": "https://purl.stanford.edu/sr577gv4813",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/s/sr577gv4813_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "13663",
+     "musical_holes": "30597",
+     "image_length": "580320px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "4",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 2995,
+  "title": "Casse noisette suite : op. 71, part 1",
+  "composer": "Tchaikovsky, Peter Ilich (1840-1893)",
+  "performer": "Albert, Eugen d' (1864-1932)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "fk960pq3086",
+    "callnum": "Stanford Libraries CONDON ROLL 707",
+    "purl": "https://purl.stanford.edu/fk960pq3086",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/f/fk960pq3086_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "12188",
+     "musical_holes": "25433",
+     "image_length": "490320px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "3",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "zc118hn1152",
+    "callnum": "Stanford Libraries CONDON ROLL 714",
+    "purl": "https://purl.stanford.edu/zc118hn1152",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/z/zc118hn1152_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "12184",
+     "musical_holes": "25151",
+     "image_length": "499920px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 3309,
+  "title": "Military march E-flat",
+  "composer": "Schubert, Franz (1797-1828)",
+  "performer": "Backhaus, Wilhelm (1884-1969)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "gq401ng9171",
+    "callnum": "Stanford Libraries CONDON ROLL 775",
+    "purl": "https://purl.stanford.edu/gq401ng9171",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/g/gq401ng9171_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8752",
+     "musical_holes": "13039",
+     "image_length": "224640px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "jq774vx6544",
+    "callnum": "Stanford Libraries CONDON ROLL 776",
+    "purl": "https://purl.stanford.edu/jq774vx6544",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/j/jq774vx6544_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "8421",
+     "musical_holes": "12356",
+     "image_length": "225600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ },
+ {
+  "number": 3310,
+  "title": "Romanze a. e-Moll Konzert",
+  "composer": "Chopin, Frédéric (1810-1849)",
+  "performer": "Backhaus, Wilhelm (1884-1969)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "qd784zj3903",
+    "callnum": "Stanford Libraries CONDON ROLL 587",
+    "purl": "https://purl.stanford.edu/qd784zj3903",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/q/qd784zj3903_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6283",
+     "musical_holes": "31306",
+     "image_length": "407760px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "0",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "zp866tm4852",
+    "callnum": "Stanford Libraries CONDON ROLL 773",
+    "purl": "https://purl.stanford.edu/zp866tm4852",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/z/zp866tm4852_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "6280",
+     "musical_holes": "30938",
+     "image_length": "409800px",
+     "edge_tear_count": "7",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   }
+  ]
+ }
+]

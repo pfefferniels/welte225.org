@@ -1,0 +1,164 @@
+[
+ {
+  "number": 570,
+  "title": "Liebestraum : Nocturn No. 3",
+  "composer": "Liszt, Franz (1811-1886)",
+  "performer": "Lamond, Frederic (1868-1948)",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "ng103jj1150",
+    "callnum": "Stanford Libraries CONDON ROLL 215",
+    "purl": "https://purl.stanford.edu/ng103jj1150",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/n/ng103jj1150_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3135",
+     "musical_holes": "10869",
+     "image_length": "198600px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "St2",
+    "id": "kz379jn2491",
+    "callnum": "Stanford Libraries CONDON ROLL 221",
+    "purl": "https://purl.stanford.edu/kz379jn2491",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/k/kz379jn2491_analysis.txt.bz2",
+    "system": "welte-t100",
+    "index": {
+     "musical_notes": "3141",
+     "musical_holes": "13888",
+     "image_length": "196560px",
+     "edge_tear_count": "0",
+     "bad_hole_count": "1",
+     "manual_edits": "no"
+    }
+   },
+   {
+    "siglum": "Ph1",
+    "id": "Peter Phillips, red Welte e-roll, free sample",
+    "source": "https://www.petersmidi.com/Liebestraum_3__Lamond_RW_e.mid",
+    "file": "further/Liebestraum_3__Lamond_RW_e.mid",
+    "system": "welte-t100",
+    "paper": "spool"
+   }
+  ]
+ },
+ {
+  "number": "1462-spool",
+  "title": "Sonate op. 111, c-Moll, part 1",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Bloomfield-Zeisler, Fannie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "bq744nq5945",
+    "callnum": "",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bq744nq5945_analysis.txt.bz2",
+    "system": "welte-t100"
+   },
+   {
+    "siglum": "Be1",
+    "id": "Hochschule der Künste Bern, e-roll of WR1462",
+    "source": "https://www.magic-piano.ch/de/zeitmaschine/notenrollensammlung/",
+    "file": "further/wr1462_eroll_hkb.mid",
+    "system": "welte-t100",
+    "paper": "spool"
+   }
+  ]
+ },
+ {
+  "number": "1462-constant",
+  "title": "Sonate op. 111, c-Moll, part 1",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Bloomfield-Zeisler, Fannie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "bq744nq5945",
+    "callnum": "",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/b/bq744nq5945_analysis.txt.bz2",
+    "system": "welte-t100"
+   },
+   {
+    "siglum": "Be1",
+    "id": "Hochschule der Künste Bern, e-roll of WR1462",
+    "source": "https://www.magic-piano.ch/de/zeitmaschine/notenrollensammlung/",
+    "file": "further/wr1462_eroll_hkb.mid",
+    "system": "welte-t100",
+    "paper": "constant"
+   }
+  ]
+ },
+ {
+  "number": "1463-spool",
+  "title": "Sonate op. 111, c-Moll, part 2",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Bloomfield-Zeisler, Fannie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "yt974cv2625",
+    "callnum": "",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/yt974cv2625_analysis.txt.bz2",
+    "system": "welte-t100"
+   },
+   {
+    "siglum": "Be1",
+    "id": "Hochschule der Künste Bern, e-roll of WR1463",
+    "source": "https://www.magic-piano.ch/de/zeitmaschine/notenrollensammlung/",
+    "file": "further/wr1463_eroll_hkb.mid",
+    "system": "welte-t100",
+    "paper": "spool"
+   }
+  ]
+ },
+ {
+  "number": "1463-constant",
+  "title": "Sonate op. 111, c-Moll, part 2",
+  "composer": "Beethoven, Ludwig van (1770-1827)",
+  "performer": "Bloomfield-Zeisler, Fannie",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "yt974cv2625",
+    "callnum": "",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/y/yt974cv2625_analysis.txt.bz2",
+    "system": "welte-t100"
+   },
+   {
+    "siglum": "Be1",
+    "id": "Hochschule der Künste Bern, e-roll of WR1463",
+    "source": "https://www.magic-piano.ch/de/zeitmaschine/notenrollensammlung/",
+    "file": "further/wr1463_eroll_hkb.mid",
+    "system": "welte-t100",
+    "paper": "constant"
+   }
+  ]
+ },
+ {
+  "number": "965",
+  "title": "Ballet des sylphes (Damnation de Faust)",
+  "composer": "Berlioz, Hector (1803-1869)",
+  "performer": "Landowska, Wanda",
+  "copies": [
+   {
+    "siglum": "St1",
+    "id": "dr971dy1221",
+    "callnum": "",
+    "file": "../../pianoroll/piano-roll-analyses/analysis/d/dr971dy1221_analysis.txt.bz2",
+    "system": "welte-t100"
+   },
+   {
+    "siglum": "Ke1",
+    "id": "Keystone Music Roll Co., CIS scan of Welte Licensee F965",
+    "source": "https://www.pianorollmusic.org/html/keystone/CISfiles_zipped/Welte-F965_DamnationDeFaust(1922).zip",
+    "file": "further/F965_analysis.txt",
+    "system": "welte-licensee"
+   }
+  ]
+ }
+]

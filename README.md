@@ -19,6 +19,7 @@ and the place where the data about that roll is published.
 | `/licensee-225/` | the comparison of Peter Phillips's and Philippe Gourlin's Licensee copies with the edition's versions: scripts and derived data, cited by the edition's beliefs about version D3, the lost state B2 and Gourlin's copy |
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table: scripts and derived data. The corpus behind it, a dated control and Stanford's red rolls, is kept in condon-dates |
+| `/supra-pairs/` | a test of the whole cycle, from reading copies to a proposed stemma and its performance, on the 38 rolls Stanford's SUPRA archive holds twice and on copies of its rolls found elsewhere: scripts, results and what failed (`supra-pairs/README.md`) |
 | `/hummed/` | *Träumerei, hummed*, the front page's files: the performance with a pianist's inner voice humming along, rendered live by VocalTractLab from `/mpm/` and a reduction written in MEI; its TypeScript sources, data and research (`hummed/README.md`). `/hummed/` itself sends visitors on to `/` |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
