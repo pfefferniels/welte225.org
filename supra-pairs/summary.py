@@ -33,15 +33,15 @@ def row(record, drift):
     derived = sum(version['edits'] for version in record['versions'] if version['derivesFrom'])
     return (f"| {record['number']} | {record['copies'][0]['features'].get('HoleChain', 0)} / {record['copies'][1]['features'].get('HoleChain', 0)} "
             f"| {apart} | {alignment.get('matched', '–')} | {alignment.get('scale', '–')} | {alignment.get('residual', '–')} | {drift.get(str(record['number']), '–')} "
-            f"| {proposal.get('readings', '–')} | {alone} | {2 * displaced['pairs']} | {displaced['left']} | `{proposal.get('notation', '–')}` | {derived} |")
+            f"| {proposal.get('readings', '–')} | {alone} | {2 * displaced['pairs']} | {displaced['left']} | `{proposal.get('notation', '–')}` | `{proposal.get('stemma', '–')}` | {derived} |")
 
 
 after, before, further = records('out'), records('out-0.76.0'), records('out-further')
 drift = {line['roll']: line['spread of medians (mm)'] for line in table('drift.tsv') if line.get('spread of medians (mm)')}
 
 print('## The 38 rolls, with the library as fixed\n')
-print('| WM | chains St1 / St2 | chains apart | notes matched | scale | residual mm | drift mm | readings | on one copy | of them displaced | left | stemma | edits |')
-print('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+print('| WM | chains St1 / St2 | chains apart | notes matched | scale | residual mm | drift mm | readings | on one copy | of them displaced | left | stemma searched | as proposed | edits |')
+print('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 for record in after:
     print(row(record, drift))
 

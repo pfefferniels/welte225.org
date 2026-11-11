@@ -157,10 +157,10 @@ rather than the text.
 
 ### 3. On two copies the proposal says the same thing nearly every time
 
-35 of 38 pairs come out as `*(St1,St2)`, a lost version with both copies
-derived from it; two as `St2(St1)` (WM 1213 and 1447, which differ in
-four and seven readings); WM 371, whose copies never aligned, as
-`St1(St2)`. The cost of `*(St1,St2)`
+For 35 of 38 pairs the search finds `*(St1,St2)`, a lost version with
+both copies derived from it; for two `St2(St1)` (WM 1213 and 1447, which
+differ in four and seven readings); for WM 371, whose copies never
+aligned, `St1(St2)`. The cost of `*(St1,St2)`
 is 4 whatever the copies hold: a reading arising once is free, so every
 reading one copy has alone arises at its own leaf, and only the lost
 state is paid for. The alternative costs one per reading the parent has
@@ -192,12 +192,31 @@ off a pneumatic reader and put back onto the paper does not land where a
 scan does, 134 notes fall outside the window, and they are scored as
 readings.
 
-Adopting this proposal also leaves a lost version `r2` with no edit and
-no witness, between `r1` and the two Stanford versions: what it was
-posited for went to the base text, and the node stayed. The same
-leftover turns up for WM 1462 read at one speed, where the proposal
-`*(Be1,St1)` is adopted as Be1's version at the root with an empty lost
-`r1.1` below it.
+### 4a. A lost version that nothing derived from
+
+Adopted, seven of the 44 editions held a version no copy carried and
+nothing derived from, which a stemma cannot have: the search posits a
+lost version only above two others. It came from the step after the
+search. Where the root has two branches, the readings only the less
+refined one carries are taken for the base text if the other branch has
+them moved or cleaned up. On a clean pair that took every reading a
+copy's version had of its own (WM 2086: all nine), and the version was
+proposed all the same, inserting and deleting nothing. Its copy then
+carries exactly what the root inserts, so the root read as carried by it
+and the emptied version as the lost one. For WM 570's three copies it
+was the lost version above the two scans that was emptied, and stayed
+between `r1` and them with no edit.
+
+A version that changes nothing is now the version it derives from. The
+six pairs concerned (321, 570, 1262, 1654, 2086, 3310) and WM 1462 at
+one speed come out as one copy with the other derived from it, and WM
+570's three copies as three versions below one lost one. The proposal
+gives that stemma (`stemma`) beside the one the search found
+(`notation`), which the cost and the runners-up still speak of; of the
+38 pairs it is `*(St1,St2)` for 29 and a derivation for nine. The cost
+that preferred a lost version to the copy losing those readings is not
+paid in the end: the derived copy deletes them. That is finding 3 seen
+from the other side, and not resolved by this.
 
 ### 5. An e-roll is not always a pneumatic reading
 
@@ -230,8 +249,8 @@ columns are read on.
 
 ### 7. Smaller things
 
-All but the last two of these have been fixed since (below); they are
-left here as they were found.
+All but the last of these have been fixed since (below); they are left
+here as they were found.
 
 - **Roll Desk in development mode goes blank on the first upload**, with
   "Cannot assign to read only property 'siglum'". React's strict mode
@@ -258,7 +277,6 @@ left here as they were found.
   here: 624 edits where 690 are expected, 16 disagreements on the kind
   of change where 2 are expected, 75.2 % where more than 78 % is. They
   are skipped where the checkout is missing, so nothing reports it.
-- **An empty lost version is left behind by adoption** (finding 4).
 
 ## What has been fixed since
 
@@ -275,13 +293,14 @@ reach the desk with its next release; the desk's own work without it.
 | nothing said of a copy that did not align (1, 7) | the upload says with how many of its notes the copy lies on the reference copy; the filiation dialog names every copy lying there with less than two thirds of them | roll-desk `9df05a9` |
 | every e-roll read on the accelerating spool (5) | the dialog asks whether the e-roll comes from a roll reader or a scan, tries both against the reference copy and prefills the better; a scanned e-roll is no longer said to be Phillips's | roll-desk `9df05a9` |
 | the discs of a row touching (7) | a gap of 8 px | roll-desk `cab669f` |
+| a lost version that nothing derives from (4a) | a version that changes nothing stands in the one it derives from | linked-rolls `02d52bc` |
+| the stemma of two leaves cut off at the panel's edges, by the gap above | the stemma is fitted by what its discs and captions take | roll-desk `65864c2` |
 | rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
 
 Not touched, because none of them has an obvious fix: the alignment by
 one shift and one scale (2), which is where most of the false readings
 come from; the cost of a lost version on two copies (3); the grouping by
-reader (4), which follows from 2; the leftover lost version; the line
-rate of Smythe's CIS (6); and the three failing tests, where either the
+reader (4), which follows from 2; the line rate of Smythe's CIS (6); and the three failing tests, where either the
 tests or the edition has moved.
 
 ## Other things the runs show

@@ -199,6 +199,8 @@ const cycle = roll => {
     if (proposal) {
         record.proposal = {
             notation: proposal.notation,
+            // The stemma of the versions as proposed, where a version left with nothing of its own stands in the one it derives from.
+            stemma: proposal.stemma,
             cost: round(proposal.cost),
             scored: proposal.scored,
             readings: proposal.collation.readings.length,
@@ -261,6 +263,12 @@ const cycle = roll => {
         }
         return entry
     })
+
+    // A version no copy carries at first hand that fewer than two versions derive from: a stemma has no use for one.
+    record.idleLostVersions = record.versions
+        .filter(version => !version.witnesses.some(witness => !witness.includes(' through '))
+            && record.versions.filter(other => other.derivesFrom.includes(version.siglum)).length < 2)
+        .map(version => version.siglum)
 
     record.constraints = step(record, 'constraintProblems', () => tally(lib.constraintProblems(edition).map(problem => problem.problem ?? problem.type ?? 'problem')))
     record.carriage = step(record, 'carriageProblems', () => tally(lib.carriageProblems(edition).map(problem => problem.problem ?? problem.type ?? 'problem')))
