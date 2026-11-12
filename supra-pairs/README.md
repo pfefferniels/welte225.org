@@ -544,6 +544,56 @@ can be older than the paper it survives on, so that is not impossible,
 but these six proposals rest on 4 to 26 readings each, which is
 finding 3 from another side.
 
+### What the edits of no shape come to
+
+The 3,158 edits of no shape put in or take out 3,915 readings: 2,902
+commands of the expression and 1,013 notes. `unshaped.mjs` holds each
+against the text of the other copy and performs both copies
+(`unshaped.json`).
+
+A red roll sets a valve with one command and lets it go with another,
+so what a command does depends on where the valve stands when it comes
+and where it stands on the other copy.
+
+| a command put in or taken out | readings | pairs | |
+|---|---|---|---|
+| sets a valve where the other copy's is not | 1,532 | 28 | for 19 mm in the median, until it is undone or the other copy follows; slow crescendo off 411, on 271, forzando on 267, mezzoforte off 200 |
+| sets it back to where the other copy's is | 625 | 22 | the end of such a stretch |
+| stands on the other copy too, up to 40 mm away | 395 | 23 | 28.6 mm apart in the median: a change of timing |
+| changes nothing, the valve being there already | 350 | 30 | forzando on 157 |
+
+Grouped as the proposal groups them, 461 edits let a valve go and set
+it again within 14 mm where the other copy keeps it set (crescendo 164,
+mezzoforte 139, soft pedal 74, sustain pedal 45, sforzando 39), and 54
+set one and let it go where the other copy never sets it (sustain
+pedal 27). Over all rolls together a crescendo valve stands otherwise
+on one copy than on the other for 2.5 to 3.5 % of the roll, a sforzando
+valve for 2.9 to 4.8 %, the mezzoforte for 3.7 to 4.7 %, either pedal
+for 0.4 %; in the median pair it is 2 % for the bass crescendo and
+under 1 % for everything else.
+
+| a note put in or taken out | readings | pairs | |
+|---|---|---|---|
+| stands on the other copy too, up to 40 mm away | 444 | 28 | 7.5 mm apart in the median, beyond what the collation takes for one place |
+| a note the other copy has not | 382 | 23 | 262 of them in WM 662 |
+| one of five or more within 20 mm | 110 | 2 | paper cut or torn across; 109 in WM 662 |
+| struck again where the other copy holds one perforation | 74 | 9 | 65 in WM 662 |
+| a single hole under 1.5 mm | 3 | 3 | |
+
+WM 662, whose first two metres the alignment does not hold, has 594 of
+the 1,013; they say nothing of its text.
+
+Performed on the library's emulation of the red Welte, the copies of
+the median pair strike the notes they share 0.4 steps of velocity apart.
+Of 154,656 shared notes in 37 pairs, 7.9 % are five or more steps
+apart and 3.7 % ten or more. The furthest apart is WM 225, by 19 steps
+on every note, and that is no version at all: its first copy, punched
+in 1909, has six rectangular holes in the leader, cut by hand to judge
+by their shape, that set mezzoforte, crescendo and sforzando on both
+sides before the first note (`strips.py` at 660 to 760 mm, tracks 1 to
+6 and 95 to 100). The second copy has none. The proposal reads them as
+ten edits of a version; they are a modification of one copy.
+
 ## What exists elsewhere, and what does not
 
 The search covered pianorollmusic.org entirely (23,601 files of 14
@@ -585,6 +635,7 @@ unless Ph1 and St2 are two rolls.
 | `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
 | `edits.mjs` | the proposed edits of every edition by kind, by what they touch and by what they do; writes `edits.tsv` |
 | `dates.py` | the edits of each pair beside the punch dates, papers and perforators of condon-dates; writes `dates.tsv` and `dates.json` |
+| `unshaped.mjs` | what each edit of no shape does against the other copy's text, how long each valve stands otherwise, and how far apart the two copies are struck when performed; writes `unshaped.json` |
 | `summary.py` | the tables of `summary.md` from the results |
 | `rolls.json`, `further.json` | the lists: the 38 pairs, and the six sets with copies from elsewhere |
 | `out/results.jsonl` | the 38 pairs with the fixed library, one record a roll |
@@ -609,6 +660,7 @@ node drift.mjs --out out > drift.tsv
 node bridges.mjs > bridges.tsv
 node edits.mjs > edits.tsv
 python3 dates.py > dates.json
+node unshaped.mjs > unshaped.json
 python3 strips.py out/wm1253/edition.jsonld 2500 2700 1-10 strips.png
 python3 summary.py > summary.md
 ```

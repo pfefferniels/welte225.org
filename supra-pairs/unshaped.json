@@ -1,0 +1,2369 @@
+{
+ "edits": 3158,
+ "patterns": [
+  {
+   "pattern": "one command put in",
+   "edits": 1761,
+   "pairs": 36,
+   "operates": {
+    "crescendo": 826,
+    "sforzando": 702,
+    "mezzoforte": 156,
+    "sustainPedal": 52,
+    "softPedal": 25
+   }
+  },
+  {
+   "pattern": "a note put in",
+   "edits": 722,
+   "pairs": 27
+  },
+  {
+   "pattern": "a valve let go and set again",
+   "edits": 461,
+   "pairs": 21,
+   "medianSpan": 13.8,
+   "operates": {
+    "crescendo": 164,
+    "mezzoforte": 139,
+    "softPedal": 74,
+    "sustainPedal": 45,
+    "sforzando": 39
+   }
+  },
+  {
+   "pattern": "notes exchanged",
+   "edits": 78,
+   "pairs": 25,
+   "medianSpan": 12.1
+  },
+  {
+   "pattern": "a valve set and let go",
+   "edits": 54,
+   "pairs": 11,
+   "medianSpan": 26.3,
+   "operates": {
+    "sustainPedal": 27,
+    "crescendo": 12,
+    "mezzoforte": 10,
+    "softPedal": 3,
+    "sforzando": 2
+   }
+  },
+  {
+   "pattern": "a note taken out",
+   "edits": 49,
+   "pairs": 6
+  },
+  {
+   "pattern": "several commands",
+   "edits": 33,
+   "pairs": 9,
+   "medianSpan": 26.8
+  }
+ ],
+ "readings": 3915,
+ "expression": [
+  {
+   "kind": "departs",
+   "readings": 1532,
+   "pairs": 28,
+   "medianLength": 19,
+   "commands": {
+    "SlowCrescendoOff": 411,
+    "SlowCrescendoOn": 271,
+    "ForzandoOn": 267,
+    "MezzoforteOff": 200,
+    "ForzandoOff": 188,
+    "SoftPedalOff": 87,
+    "SustainPedalOff": 58,
+    "MezzoforteOn": 29,
+    "SustainPedalOn": 12,
+    "SoftPedalOn": 9
+   }
+  },
+  {
+   "kind": "rejoins",
+   "readings": 625,
+   "pairs": 22,
+   "commands": {
+    "SlowCrescendoOn": 195,
+    "MezzoforteOn": 186,
+    "SoftPedalOn": 79,
+    "ForzandoOn": 57,
+    "SustainPedalOn": 45,
+    "ForzandoOff": 20,
+    "SlowCrescendoOff": 17,
+    "SustainPedalOff": 12,
+    "MezzoforteOff": 11,
+    "SoftPedalOff": 3
+   }
+  },
+  {
+   "kind": "twin",
+   "readings": 395,
+   "pairs": 23,
+   "medianApart": 28.6,
+   "within10": 38,
+   "commands": {
+    "SlowCrescendoOff": 116,
+    "SlowCrescendoOn": 111,
+    "ForzandoOn": 91,
+    "SustainPedalOff": 27,
+    "ForzandoOff": 24,
+    "SustainPedalOn": 23,
+    "MezzoforteOff": 2,
+    "MezzoforteOn": 1
+   }
+  },
+  {
+   "kind": "restates",
+   "readings": 350,
+   "pairs": 30,
+   "commands": {
+    "ForzandoOn": 157,
+    "SlowCrescendoOn": 51,
+    "SlowCrescendoOff": 46,
+    "ForzandoOff": 34,
+    "MezzoforteOff": 23,
+    "SustainPedalOn": 15,
+    "SustainPedalOff": 9,
+    "MezzoforteOn": 9,
+    "SoftPedalOff": 6
+   }
+  }
+ ],
+ "note": [
+  {
+   "kind": "twin",
+   "readings": 444,
+   "pairs": 28,
+   "medianApart": 7.5,
+   "within10": 252,
+   "most": {
+    "roll": 662,
+    "readings": 158
+   }
+  },
+  {
+   "kind": "own",
+   "readings": 382,
+   "pairs": 23,
+   "medianLength": 16.6,
+   "most": {
+    "roll": 662,
+    "readings": 262
+   }
+  },
+  {
+   "kind": "row",
+   "readings": 110,
+   "pairs": 2,
+   "most": {
+    "roll": 662,
+    "readings": 109
+   }
+  },
+  {
+   "kind": "restruck",
+   "readings": 74,
+   "pairs": 9,
+   "most": {
+    "roll": 662,
+    "readings": 65
+   }
+  },
+  {
+   "kind": "short",
+   "readings": 3,
+   "pairs": 3,
+   "most": {
+    "roll": 364,
+    "readings": 1
+   }
+  }
+ ],
+ "loudness": {
+  "pairs": 37,
+  "notes": 154656,
+  "apartBy5": 12174,
+  "apartBy10": 5668,
+  "medianMeanApart": 0.4,
+  "loudest": [
+   {
+    "roll": 225,
+    "notes": 461,
+    "meanApart": 18.9,
+    "apartBy5": 458,
+    "apartBy10": 451,
+    "secondLouderBy": -18.9
+   },
+   {
+    "roll": 57,
+    "notes": 1225,
+    "meanApart": 5.5,
+    "apartBy5": 609,
+    "apartBy10": 175,
+    "secondLouderBy": -4.7
+   },
+   {
+    "roll": 1253,
+    "notes": 1083,
+    "meanApart": 3.9,
+    "apartBy5": 263,
+    "apartBy10": 137,
+    "secondLouderBy": 1.3
+   },
+   {
+    "roll": 1263,
+    "notes": 2367,
+    "meanApart": 3.4,
+    "apartBy5": 551,
+    "apartBy10": 218,
+    "secondLouderBy": 0.3
+   },
+   {
+    "roll": 2260,
+    "notes": 4741,
+    "meanApart": 3.1,
+    "apartBy5": 1113,
+    "apartBy10": 459,
+    "secondLouderBy": 0.8
+   },
+   {
+    "roll": 1033,
+    "notes": 6330,
+    "meanApart": 3,
+    "apartBy5": 1147,
+    "apartBy10": 616,
+    "secondLouderBy": 1
+   }
+  ]
+ },
+ "valves": {
+  "crescendo bass": {
+   "pairs": 37,
+   "apart": 3.5,
+   "medianApart": 2,
+   "most": 21.7,
+   "mostIn": 57
+  },
+  "crescendo treble": {
+   "pairs": 37,
+   "apart": 2.5,
+   "medianApart": 0.6,
+   "most": 18.2,
+   "mostIn": 1253
+  },
+  "mezzoforte bass": {
+   "pairs": 35,
+   "apart": 4.7,
+   "medianApart": 0,
+   "most": 100,
+   "mostIn": 225
+  },
+  "mezzoforte treble": {
+   "pairs": 36,
+   "apart": 3.7,
+   "medianApart": 0,
+   "most": 100,
+   "mostIn": 225
+  },
+  "sforzando bass": {
+   "pairs": 37,
+   "apart": 4.8,
+   "medianApart": 0.8,
+   "most": 21.6,
+   "mostIn": 1480
+  },
+  "sforzando treble": {
+   "pairs": 37,
+   "apart": 2.9,
+   "medianApart": 0.2,
+   "most": 38.4,
+   "mostIn": 225
+  },
+  "softPedal": {
+   "pairs": 37,
+   "apart": 0.4,
+   "medianApart": 0,
+   "most": 5.5,
+   "mostIn": 1263
+  },
+  "sustainPedal": {
+   "pairs": 37,
+   "apart": 0.4,
+   "medianApart": 0,
+   "most": 4.6,
+   "mostIn": 662
+  }
+ },
+ "rolls": [
+  {
+   "roll": 28,
+   "loudness": {
+    "notes": 9895,
+    "meanApart": 1.6,
+    "apartBy5": 1278,
+    "apartBy10": 420,
+    "secondLouderBy": -1.3
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 41439
+    },
+    "crescendo treble": {
+     "apart": 573,
+     "length": 41439
+    },
+    "sustainPedal": {
+     "apart": 69,
+     "length": 41439
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 41439
+    },
+    "crescendo bass": {
+     "apart": 3303,
+     "length": 41439
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 41439
+    },
+    "sforzando bass": {
+     "apart": 6810,
+     "length": 41439
+    },
+    "sforzando treble": {
+     "apart": 377,
+     "length": 41439
+    }
+   },
+   "kinds": {
+    "expression departs": 87,
+    "expression restates": 25,
+    "expression rejoins": 23,
+    "expression twin": 20,
+    "note own": 17,
+    "note twin": 3
+   },
+   "departs": {
+    "SlowCrescendoOff": 40,
+    "SlowCrescendoOn": 18,
+    "ForzandoOff": 15,
+    "ForzandoOn": 13,
+    "SustainPedalOff": 1
+   }
+  },
+  {
+   "roll": 57,
+   "loudness": {
+    "notes": 1225,
+    "meanApart": 5.5,
+    "apartBy5": 609,
+    "apartBy10": 175,
+    "secondLouderBy": -4.7
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 11,
+     "length": 15436
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 15436
+    },
+    "crescendo treble": {
+     "apart": 2673,
+     "length": 15436
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 15436
+    },
+    "sforzando bass": {
+     "apart": 31,
+     "length": 15436
+    },
+    "crescendo bass": {
+     "apart": 3357,
+     "length": 15436
+    },
+    "sustainPedal": {
+     "apart": 217,
+     "length": 15436
+    },
+    "softPedal": {
+     "apart": 172,
+     "length": 15436
+    }
+   },
+   "kinds": {
+    "expression departs": 30,
+    "expression twin": 22,
+    "note twin": 18,
+    "expression rejoins": 14,
+    "note own": 3,
+    "note row": 1,
+    "note restruck": 1,
+    "expression restates": 1
+   },
+   "departs": {
+    "SlowCrescendoOff": 12,
+    "SlowCrescendoOn": 12,
+    "SustainPedalOff": 2,
+    "SoftPedalOff": 2,
+    "SoftPedalOn": 1,
+    "SustainPedalOn": 1
+   }
+  },
+  {
+   "roll": 225,
+   "loudness": {
+    "notes": 461,
+    "meanApart": 18.9,
+    "apartBy5": 458,
+    "apartBy10": 451,
+    "secondLouderBy": -18.9
+   },
+   "valves": {
+    "sforzando treble": {
+     "apart": 3164,
+     "length": 8237
+    },
+    "crescendo treble": {
+     "apart": 608,
+     "length": 8237
+    },
+    "sforzando bass": {
+     "apart": 131,
+     "length": 8237
+    },
+    "crescendo bass": {
+     "apart": 476,
+     "length": 8237
+    },
+    "mezzoforte treble": {
+     "apart": 8237,
+     "length": 8237
+    },
+    "mezzoforte bass": {
+     "apart": 8237,
+     "length": 8237
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 8237
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 8237
+    }
+   },
+   "kinds": {
+    "expression departs": 10,
+    "note twin": 3,
+    "expression twin": 1,
+    "expression rejoins": 1
+   },
+   "departs": {
+    "SlowCrescendoOn": 5,
+    "ForzandoOn": 2,
+    "MezzoforteOn": 2,
+    "SlowCrescendoOff": 1
+   }
+  },
+  {
+   "roll": 321,
+   "loudness": {
+    "notes": 7043,
+    "meanApart": 0,
+    "apartBy5": 3,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 41244
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 41244
+    },
+    "crescendo bass": {
+     "apart": 0,
+     "length": 41244
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 41244
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 41244
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 41244
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 41244
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 41244
+    }
+   },
+   "kinds": {
+    "note twin": 12,
+    "expression restates": 1,
+    "note own": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 364,
+   "loudness": {
+    "notes": 1797,
+    "meanApart": 0.1,
+    "apartBy5": 20,
+    "apartBy10": 4,
+    "secondLouderBy": -0.1
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 25073
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 25073
+    },
+    "sustainPedal": {
+     "apart": 20,
+     "length": 25073
+    },
+    "mezzoforte bass": {
+     "apart": 7,
+     "length": 25073
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 25073
+    },
+    "crescendo bass": {
+     "apart": 343,
+     "length": 25073
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 25073
+    },
+    "sforzando bass": {
+     "apart": 28,
+     "length": 25073
+    }
+   },
+   "kinds": {
+    "expression restates": 2,
+    "expression twin": 2,
+    "expression departs": 2,
+    "note short": 1
+   },
+   "departs": {
+    "SustainPedalOff": 1,
+    "SlowCrescendoOff": 1
+   }
+  },
+  {
+   "roll": 365,
+   "loudness": {
+    "notes": 5618,
+    "meanApart": 0.6,
+    "apartBy5": 240,
+    "apartBy10": 93,
+    "secondLouderBy": -0.2
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 26085
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 26085
+    },
+    "sforzando treble": {
+     "apart": 109,
+     "length": 26085
+    },
+    "crescendo treble": {
+     "apart": 118,
+     "length": 26085
+    },
+    "sforzando bass": {
+     "apart": 2265,
+     "length": 26085
+    },
+    "crescendo bass": {
+     "apart": 365,
+     "length": 26085
+    },
+    "sustainPedal": {
+     "apart": 5,
+     "length": 26085
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 26085
+    }
+   },
+   "kinds": {
+    "expression departs": 18,
+    "expression twin": 9,
+    "note twin": 9,
+    "expression rejoins": 6,
+    "note own": 4,
+    "expression restates": 2
+   },
+   "departs": {
+    "ForzandoOn": 8,
+    "SlowCrescendoOff": 6,
+    "ForzandoOff": 2,
+    "SlowCrescendoOn": 2
+   }
+  },
+  {
+   "roll": 371,
+   "loudness": {
+    "notes": 1748,
+    "meanApart": 0.2,
+    "apartBy5": 24,
+    "apartBy10": 12,
+    "secondLouderBy": 0.2
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 10554
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 10554
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 10554
+    },
+    "crescendo bass": {
+     "apart": 268,
+     "length": 10554
+    },
+    "sustainPedal": {
+     "apart": 10,
+     "length": 10554
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 10554
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 10554
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 10554
+    }
+   },
+   "kinds": {
+    "note twin": 16,
+    "expression departs": 2,
+    "note own": 1,
+    "expression restates": 1,
+    "note restruck": 1
+   },
+   "departs": {
+    "SlowCrescendoOn": 2
+   }
+  },
+  {
+   "roll": 570,
+   "loudness": {
+    "notes": 1904,
+    "meanApart": 0.1,
+    "apartBy5": 12,
+    "apartBy10": 7,
+    "secondLouderBy": 0.1
+   },
+   "valves": {
+    "crescendo bass": {
+     "apart": 66,
+     "length": 14683
+    },
+    "sforzando bass": {
+     "apart": 5,
+     "length": 14683
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 14683
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 14683
+    },
+    "crescendo treble": {
+     "apart": 25,
+     "length": 14683
+    },
+    "sforzando treble": {
+     "apart": 3,
+     "length": 14683
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 14683
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 14683
+    }
+   },
+   "kinds": {
+    "expression restates": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 660,
+   "loudness": {
+    "notes": 1543,
+    "meanApart": 0.1,
+    "apartBy5": 15,
+    "apartBy10": 4,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "sustainPedal": {
+     "apart": 0,
+     "length": 12243
+    },
+    "crescendo bass": {
+     "apart": 75,
+     "length": 12243
+    },
+    "sforzando bass": {
+     "apart": 228,
+     "length": 12243
+    },
+    "softPedal": {
+     "apart": 400,
+     "length": 12243
+    },
+    "crescendo treble": {
+     "apart": 7,
+     "length": 12243
+    },
+    "sforzando treble": {
+     "apart": 18,
+     "length": 12243
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 12243
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 12243
+    }
+   },
+   "kinds": {
+    "expression departs": 5,
+    "note twin": 5,
+    "expression restates": 1,
+    "note restruck": 1
+   },
+   "departs": {
+    "SoftPedalOn": 2,
+    "ForzandoOff": 2,
+    "SlowCrescendoOn": 1
+   }
+  },
+  {
+   "roll": 662,
+   "loudness": {
+    "notes": 13696,
+    "meanApart": 2.9,
+    "apartBy5": 2628,
+    "apartBy10": 1347,
+    "secondLouderBy": 0.8
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 386,
+     "length": 42744
+    },
+    "mezzoforte bass": {
+     "apart": 2474,
+     "length": 42744
+    },
+    "softPedal": {
+     "apart": 202,
+     "length": 42744
+    },
+    "sustainPedal": {
+     "apart": 1945,
+     "length": 42744
+    },
+    "crescendo bass": {
+     "apart": 5024,
+     "length": 42744
+    },
+    "sforzando bass": {
+     "apart": 8014,
+     "length": 42744
+    },
+    "crescendo treble": {
+     "apart": 3917,
+     "length": 42744
+    },
+    "sforzando treble": {
+     "apart": 6979,
+     "length": 42744
+    }
+   },
+   "kinds": {
+    "expression departs": 302,
+    "note own": 262,
+    "expression twin": 202,
+    "note twin": 158,
+    "note row": 109,
+    "expression restates": 83,
+    "expression rejoins": 78,
+    "note restruck": 65
+   },
+   "departs": {
+    "SlowCrescendoOn": 74,
+    "SlowCrescendoOff": 68,
+    "ForzandoOn": 66,
+    "ForzandoOff": 62,
+    "SustainPedalOff": 15,
+    "SustainPedalOn": 9,
+    "MezzoforteOn": 7,
+    "SoftPedalOn": 1
+   }
+  },
+  {
+   "roll": 723,
+   "loudness": {
+    "notes": 2223,
+    "meanApart": 1.9,
+    "apartBy5": 310,
+    "apartBy10": 153,
+    "secondLouderBy": 1.2
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 9102,
+     "length": 14921
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 14921
+    },
+    "mezzoforte bass": {
+     "apart": 5324,
+     "length": 14921
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 14921
+    },
+    "crescendo bass": {
+     "apart": 1309,
+     "length": 14921
+    },
+    "crescendo treble": {
+     "apart": 353,
+     "length": 14921
+    },
+    "sforzando bass": {
+     "apart": 807,
+     "length": 14921
+    },
+    "sforzando treble": {
+     "apart": 130,
+     "length": 14921
+    }
+   },
+   "kinds": {
+    "expression departs": 29,
+    "expression twin": 17,
+    "expression rejoins": 12,
+    "expression restates": 9,
+    "note twin": 4,
+    "note own": 1
+   },
+   "departs": {
+    "MezzoforteOff": 9,
+    "ForzandoOn": 7,
+    "SlowCrescendoOff": 5,
+    "ForzandoOff": 3,
+    "MezzoforteOn": 2,
+    "SlowCrescendoOn": 2,
+    "SustainPedalOff": 1
+   }
+  },
+  {
+   "roll": 757,
+   "loudness": null,
+   "valves": {},
+   "kinds": {},
+   "departs": {}
+  },
+  {
+   "roll": 797,
+   "loudness": {
+    "notes": 2558,
+    "meanApart": 0.9,
+    "apartBy5": 189,
+    "apartBy10": 40,
+    "secondLouderBy": -0.7
+   },
+   "valves": {
+    "crescendo treble": {
+     "apart": 123,
+     "length": 14708
+    },
+    "mezzoforte treble": {
+     "apart": 2207,
+     "length": 14708
+    },
+    "sustainPedal": {
+     "apart": 7,
+     "length": 14708
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 14708
+    },
+    "mezzoforte bass": {
+     "apart": 3147,
+     "length": 14708
+    },
+    "crescendo bass": {
+     "apart": 296,
+     "length": 14708
+    },
+    "sforzando bass": {
+     "apart": 1902,
+     "length": 14708
+    },
+    "sforzando treble": {
+     "apart": 28,
+     "length": 14708
+    }
+   },
+   "kinds": {
+    "expression departs": 43,
+    "note twin": 23,
+    "expression restates": 13,
+    "expression rejoins": 9,
+    "expression twin": 3,
+    "note restruck": 1
+   },
+   "departs": {
+    "ForzandoOn": 17,
+    "SlowCrescendoOff": 10,
+    "SlowCrescendoOn": 9,
+    "MezzoforteOff": 5,
+    "MezzoforteOn": 1,
+    "SoftPedalOff": 1
+   }
+  },
+  {
+   "roll": 1033,
+   "loudness": {
+    "notes": 6330,
+    "meanApart": 3,
+    "apartBy5": 1147,
+    "apartBy10": 616,
+    "secondLouderBy": 1
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 3730,
+     "length": 24479
+    },
+    "sforzando bass": {
+     "apart": 3838,
+     "length": 24479
+    },
+    "crescendo bass": {
+     "apart": 1053,
+     "length": 24479
+    },
+    "mezzoforte bass": {
+     "apart": 6583,
+     "length": 24479
+    },
+    "sustainPedal": {
+     "apart": 23,
+     "length": 24479
+    },
+    "crescendo treble": {
+     "apart": 2140,
+     "length": 24479
+    },
+    "sforzando treble": {
+     "apart": 3301,
+     "length": 24479
+    },
+    "softPedal": {
+     "apart": 68,
+     "length": 24479
+    }
+   },
+   "kinds": {
+    "expression departs": 102,
+    "expression restates": 47,
+    "expression rejoins": 36,
+    "expression twin": 19,
+    "note own": 9,
+    "note twin": 4
+   },
+   "departs": {
+    "SlowCrescendoOff": 37,
+    "SlowCrescendoOn": 24,
+    "ForzandoOn": 20,
+    "MezzoforteOff": 9,
+    "MezzoforteOn": 7,
+    "ForzandoOff": 2,
+    "SustainPedalOff": 2,
+    "SoftPedalOff": 1
+   }
+  },
+  {
+   "roll": 1213,
+   "loudness": {
+    "notes": 287,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 4321
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 4321
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 4321
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 4321
+    },
+    "crescendo bass": {
+     "apart": 2,
+     "length": 4321
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 4321
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 4321
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 4321
+    }
+   },
+   "kinds": {
+    "note own": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 1246,
+   "loudness": {
+    "notes": 2040,
+    "meanApart": 1,
+    "apartBy5": 163,
+    "apartBy10": 20,
+    "secondLouderBy": -0.7
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 0,
+     "length": 34609
+    },
+    "crescendo bass": {
+     "apart": 1143,
+     "length": 34609
+    },
+    "sustainPedal": {
+     "apart": 26,
+     "length": 34609
+    },
+    "sforzando bass": {
+     "apart": 2947,
+     "length": 34609
+    },
+    "crescendo treble": {
+     "apart": 198,
+     "length": 34609
+    },
+    "sforzando treble": {
+     "apart": 708,
+     "length": 34609
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 34609
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 34609
+    }
+   },
+   "kinds": {
+    "expression departs": 8,
+    "expression restates": 4,
+    "expression twin": 3,
+    "expression rejoins": 2,
+    "note restruck": 1
+   },
+   "departs": {
+    "ForzandoOn": 5,
+    "SustainPedalOn": 1,
+    "ForzandoOff": 1,
+    "SustainPedalOff": 1
+   }
+  },
+  {
+   "roll": 1247,
+   "loudness": {
+    "notes": 6461,
+    "meanApart": 0.7,
+    "apartBy5": 385,
+    "apartBy10": 117,
+    "secondLouderBy": 0.7
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 0,
+     "length": 25149
+    },
+    "sforzando bass": {
+     "apart": 1262,
+     "length": 25149
+    },
+    "sustainPedal": {
+     "apart": 3,
+     "length": 25149
+    },
+    "crescendo treble": {
+     "apart": 676,
+     "length": 25149
+    },
+    "crescendo bass": {
+     "apart": 500,
+     "length": 25149
+    },
+    "sforzando treble": {
+     "apart": 669,
+     "length": 25149
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 25149
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 25149
+    }
+   },
+   "kinds": {
+    "expression departs": 31,
+    "expression rejoins": 8,
+    "expression restates": 5,
+    "note twin": 4,
+    "note own": 3
+   },
+   "departs": {
+    "SlowCrescendoOn": 12,
+    "ForzandoOn": 11,
+    "SlowCrescendoOff": 8
+   }
+  },
+  {
+   "roll": 1253,
+   "loudness": {
+    "notes": 1083,
+    "meanApart": 3.9,
+    "apartBy5": 263,
+    "apartBy10": 137,
+    "secondLouderBy": 1.3
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 3431
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 3431
+    },
+    "mezzoforte bass": {
+     "apart": 1182,
+     "length": 3431
+    },
+    "crescendo bass": {
+     "apart": 344,
+     "length": 3431
+    },
+    "crescendo treble": {
+     "apart": 626,
+     "length": 3431
+    },
+    "sforzando treble": {
+     "apart": 394,
+     "length": 3431
+    },
+    "sforzando bass": {
+     "apart": 276,
+     "length": 3431
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 3431
+    }
+   },
+   "kinds": {
+    "expression departs": 59,
+    "note twin": 12,
+    "expression rejoins": 8,
+    "expression restates": 4,
+    "expression twin": 2,
+    "note short": 1
+   },
+   "departs": {
+    "ForzandoOff": 31,
+    "SlowCrescendoOff": 27,
+    "MezzoforteOn": 1
+   }
+  },
+  {
+   "roll": 1259,
+   "loudness": {
+    "notes": 4797,
+    "meanApart": 2.5,
+    "apartBy5": 816,
+    "apartBy10": 425,
+    "secondLouderBy": -0.7
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 142,
+     "length": 17410
+    },
+    "crescendo treble": {
+     "apart": 1199,
+     "length": 17410
+    },
+    "sustainPedal": {
+     "apart": 123,
+     "length": 17410
+    },
+    "softPedal": {
+     "apart": 290,
+     "length": 17410
+    },
+    "crescendo bass": {
+     "apart": 1121,
+     "length": 17410
+    },
+    "mezzoforte bass": {
+     "apart": 3578,
+     "length": 17410
+    },
+    "sforzando treble": {
+     "apart": 1545,
+     "length": 17410
+    },
+    "sforzando bass": {
+     "apart": 1070,
+     "length": 17410
+    }
+   },
+   "kinds": {
+    "expression departs": 84,
+    "expression restates": 47,
+    "expression rejoins": 43,
+    "expression twin": 15,
+    "note own": 14,
+    "note twin": 3,
+    "note short": 1
+   },
+   "departs": {
+    "SlowCrescendoOff": 35,
+    "ForzandoOn": 18,
+    "ForzandoOff": 14,
+    "MezzoforteOff": 7,
+    "SlowCrescendoOn": 3,
+    "SoftPedalOn": 3,
+    "SoftPedalOff": 2,
+    "SustainPedalOn": 1,
+    "SustainPedalOff": 1
+   }
+  },
+  {
+   "roll": 1262,
+   "loudness": {
+    "notes": 1256,
+    "meanApart": 0.1,
+    "apartBy5": 4,
+    "apartBy10": 2,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 0,
+     "length": 14168
+    },
+    "crescendo bass": {
+     "apart": 5,
+     "length": 14168
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 14168
+    },
+    "crescendo treble": {
+     "apart": 37,
+     "length": 14168
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 14168
+    },
+    "sforzando bass": {
+     "apart": 83,
+     "length": 14168
+    }
+   },
+   "kinds": {
+    "note twin": 6,
+    "expression departs": 1
+   },
+   "departs": {
+    "ForzandoOff": 1
+   }
+  },
+  {
+   "roll": 1263,
+   "loudness": {
+    "notes": 2367,
+    "meanApart": 3.4,
+    "apartBy5": 551,
+    "apartBy10": 218,
+    "secondLouderBy": 0.3
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 924,
+     "length": 11835
+    },
+    "softPedal": {
+     "apart": 651,
+     "length": 11835
+    },
+    "crescendo bass": {
+     "apart": 1314,
+     "length": 11835
+    },
+    "crescendo treble": {
+     "apart": 1905,
+     "length": 11835
+    },
+    "sforzando treble": {
+     "apart": 2402,
+     "length": 11835
+    },
+    "sustainPedal": {
+     "apart": 20,
+     "length": 11835
+    },
+    "sforzando bass": {
+     "apart": 1533,
+     "length": 11835
+    },
+    "mezzoforte bass": {
+     "apart": 321,
+     "length": 11835
+    }
+   },
+   "kinds": {
+    "expression departs": 131,
+    "expression rejoins": 87,
+    "expression restates": 22,
+    "expression twin": 16,
+    "note twin": 7,
+    "note own": 1
+   },
+   "departs": {
+    "SoftPedalOff": 46,
+    "MezzoforteOff": 19,
+    "ForzandoOff": 17,
+    "SlowCrescendoOff": 16,
+    "SlowCrescendoOn": 14,
+    "ForzandoOn": 12,
+    "MezzoforteOn": 6,
+    "SoftPedalOn": 1
+   }
+  },
+  {
+   "roll": 1296,
+   "loudness": {
+    "notes": 3817,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 7951
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 7951
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 7951
+    },
+    "crescendo bass": {
+     "apart": 0,
+     "length": 7951
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 7951
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 7951
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 7951
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 7951
+    }
+   },
+   "kinds": {
+    "note twin": 14,
+    "note own": 9,
+    "expression twin": 4
+   },
+   "departs": {}
+  },
+  {
+   "roll": 1339,
+   "loudness": {
+    "notes": 6575,
+    "meanApart": 0.4,
+    "apartBy5": 205,
+    "apartBy10": 66,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 0,
+     "length": 41577
+    },
+    "crescendo treble": {
+     "apart": 276,
+     "length": 41577
+    },
+    "sustainPedal": {
+     "apart": 183,
+     "length": 41577
+    },
+    "crescendo bass": {
+     "apart": 341,
+     "length": 41577
+    },
+    "sforzando bass": {
+     "apart": 553,
+     "length": 41577
+    },
+    "sforzando treble": {
+     "apart": 777,
+     "length": 41577
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 41577
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 41577
+    }
+   },
+   "kinds": {
+    "expression departs": 35,
+    "expression rejoins": 11,
+    "expression twin": 6,
+    "expression restates": 5,
+    "note twin": 3,
+    "note own": 1
+   },
+   "departs": {
+    "SlowCrescendoOff": 12,
+    "ForzandoOn": 9,
+    "ForzandoOff": 5,
+    "SlowCrescendoOn": 5,
+    "SustainPedalOff": 4
+   }
+  },
+  {
+   "roll": 1352,
+   "loudness": {
+    "notes": 2004,
+    "meanApart": 2.4,
+    "apartBy5": 354,
+    "apartBy10": 169,
+    "secondLouderBy": -1.9
+   },
+   "valves": {
+    "crescendo treble": {
+     "apart": 1002,
+     "length": 15536
+    },
+    "crescendo bass": {
+     "apart": 1442,
+     "length": 15536
+    },
+    "sustainPedal": {
+     "apart": 18,
+     "length": 15536
+    },
+    "sforzando treble": {
+     "apart": 653,
+     "length": 15536
+    },
+    "sforzando bass": {
+     "apart": 1277,
+     "length": 15536
+    },
+    "softPedal": {
+     "apart": 49,
+     "length": 15536
+    },
+    "mezzoforte bass": {
+     "apart": 196,
+     "length": 15536
+    },
+    "mezzoforte treble": {
+     "apart": 214,
+     "length": 15536
+    }
+   },
+   "kinds": {
+    "expression departs": 53,
+    "expression restates": 20,
+    "expression twin": 19,
+    "expression rejoins": 9,
+    "note own": 1
+   },
+   "departs": {
+    "SlowCrescendoOff": 20,
+    "ForzandoOn": 14,
+    "SlowCrescendoOn": 11,
+    "ForzandoOff": 5,
+    "MezzoforteOff": 2,
+    "SoftPedalOff": 1
+   }
+  },
+  {
+   "roll": 1447,
+   "loudness": {
+    "notes": 1528,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "sustainPedal": {
+     "apart": 0,
+     "length": 12542
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 12542
+    },
+    "crescendo bass": {
+     "apart": 2,
+     "length": 12542
+    },
+    "crescendo treble": {
+     "apart": 2,
+     "length": 12542
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 12542
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 12542
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 12542
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 12542
+    }
+   },
+   "kinds": {
+    "expression twin": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 1473,
+   "loudness": {
+    "notes": 6638,
+    "meanApart": 0.2,
+    "apartBy5": 101,
+    "apartBy10": 50,
+    "secondLouderBy": -0.1
+   },
+   "valves": {
+    "sforzando bass": {
+     "apart": 53,
+     "length": 41641
+    },
+    "crescendo bass": {
+     "apart": 904,
+     "length": 41641
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 41641
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 41641
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 41641
+    },
+    "crescendo treble": {
+     "apart": 147,
+     "length": 41641
+    },
+    "sforzando treble": {
+     "apart": 128,
+     "length": 41641
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 41641
+    }
+   },
+   "kinds": {
+    "expression departs": 22,
+    "note own": 14,
+    "note twin": 10,
+    "expression restates": 7,
+    "expression twin": 3,
+    "expression rejoins": 3
+   },
+   "departs": {
+    "SlowCrescendoOn": 14,
+    "ForzandoOff": 5,
+    "SlowCrescendoOff": 3
+   }
+  },
+  {
+   "roll": 1474,
+   "loudness": {
+    "notes": 8154,
+    "meanApart": 0.5,
+    "apartBy5": 178,
+    "apartBy10": 171,
+    "secondLouderBy": -0.5
+   },
+   "valves": {
+    "crescendo bass": {
+     "apart": 0,
+     "length": 31440
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 31440
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 31440
+    },
+    "sustainPedal": {
+     "apart": 20,
+     "length": 31440
+    },
+    "sforzando treble": {
+     "apart": 58,
+     "length": 31440
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 31440
+    },
+    "mezzoforte treble": {
+     "apart": 1459,
+     "length": 31440
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 31440
+    }
+   },
+   "kinds": {
+    "expression departs": 3,
+    "note own": 2,
+    "expression restates": 1
+   },
+   "departs": {
+    "ForzandoOn": 1,
+    "SustainPedalOff": 1,
+    "MezzoforteOff": 1
+   }
+  },
+  {
+   "roll": 1478,
+   "loudness": {
+    "notes": 8929,
+    "meanApart": 0.7,
+    "apartBy5": 389,
+    "apartBy10": 172,
+    "secondLouderBy": -0.3
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 2,
+     "length": 36668
+    },
+    "crescendo treble": {
+     "apart": 754,
+     "length": 36668
+    },
+    "crescendo bass": {
+     "apart": 690,
+     "length": 36668
+    },
+    "sustainPedal": {
+     "apart": 2,
+     "length": 36668
+    },
+    "sforzando treble": {
+     "apart": 559,
+     "length": 36668
+    },
+    "sforzando bass": {
+     "apart": 118,
+     "length": 36668
+    },
+    "mezzoforte bass": {
+     "apart": 2,
+     "length": 36668
+    },
+    "softPedal": {
+     "apart": 59,
+     "length": 36668
+    }
+   },
+   "kinds": {
+    "expression departs": 34,
+    "expression rejoins": 10,
+    "note twin": 3,
+    "note own": 3,
+    "expression restates": 2
+   },
+   "departs": {
+    "SlowCrescendoOff": 15,
+    "ForzandoOff": 12,
+    "ForzandoOn": 3,
+    "SlowCrescendoOn": 3,
+    "SoftPedalOff": 1
+   }
+  },
+  {
+   "roll": 1480,
+   "loudness": {
+    "notes": 3384,
+    "meanApart": 1.6,
+    "apartBy5": 393,
+    "apartBy10": 185,
+    "secondLouderBy": -1.3
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 228,
+     "length": 14572
+    },
+    "crescendo treble": {
+     "apart": 366,
+     "length": 14572
+    },
+    "crescendo bass": {
+     "apart": 576,
+     "length": 14572
+    },
+    "sustainPedal": {
+     "apart": 1,
+     "length": 14572
+    },
+    "sforzando bass": {
+     "apart": 3142,
+     "length": 14572
+    },
+    "sforzando treble": {
+     "apart": 624,
+     "length": 14572
+    },
+    "mezzoforte treble": {
+     "apart": 8,
+     "length": 14572
+    },
+    "mezzoforte bass": {
+     "apart": 2686,
+     "length": 14572
+    }
+   },
+   "kinds": {
+    "expression departs": 55,
+    "expression rejoins": 8,
+    "expression restates": 5,
+    "expression twin": 2
+   },
+   "departs": {
+    "ForzandoOn": 34,
+    "SlowCrescendoOff": 10,
+    "SlowCrescendoOn": 7,
+    "SoftPedalOff": 1,
+    "ForzandoOff": 1,
+    "MezzoforteOn": 1,
+    "MezzoforteOff": 1
+   }
+  },
+  {
+   "roll": 1654,
+   "loudness": {
+    "notes": 1661,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 5064
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 5064
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 5064
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 5064
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 5064
+    },
+    "crescendo bass": {
+     "apart": 0,
+     "length": 5064
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 5064
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 5064
+    }
+   },
+   "kinds": {
+    "note twin": 3,
+    "expression twin": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 2086,
+   "loudness": {
+    "notes": 1229,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "crescendo treble": {
+     "apart": 2,
+     "length": 13594
+    },
+    "crescendo bass": {
+     "apart": 3,
+     "length": 13594
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 13594
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 13594
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 13594
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 13594
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 13594
+    }
+   },
+   "kinds": {
+    "note twin": 3,
+    "expression restates": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 2254,
+   "loudness": {
+    "notes": 4394,
+    "meanApart": 0.2,
+    "apartBy5": 72,
+    "apartBy10": 40,
+    "secondLouderBy": 0.1
+   },
+   "valves": {
+    "crescendo bass": {
+     "apart": 767,
+     "length": 22171
+    },
+    "sforzando bass": {
+     "apart": 159,
+     "length": 22171
+    },
+    "mezzoforte bass": {
+     "apart": 1351,
+     "length": 22171
+    },
+    "crescendo treble": {
+     "apart": 540,
+     "length": 22171
+    },
+    "sforzando treble": {
+     "apart": 156,
+     "length": 22171
+    },
+    "mezzoforte treble": {
+     "apart": 1693,
+     "length": 22171
+    },
+    "sustainPedal": {
+     "apart": 182,
+     "length": 22171
+    },
+    "softPedal": {
+     "apart": 360,
+     "length": 22171
+    }
+   },
+   "kinds": {
+    "expression departs": 133,
+    "expression rejoins": 123,
+    "note twin": 27,
+    "expression restates": 6,
+    "expression twin": 5,
+    "note own": 2
+   },
+   "departs": {
+    "MezzoforteOff": 71,
+    "SoftPedalOff": 26,
+    "SustainPedalOff": 18,
+    "SlowCrescendoOn": 10,
+    "SlowCrescendoOff": 4,
+    "MezzoforteOn": 2,
+    "ForzandoOn": 2
+   }
+  },
+  {
+   "roll": 2260,
+   "loudness": {
+    "notes": 4741,
+    "meanApart": 3.1,
+    "apartBy5": 1113,
+    "apartBy10": 459,
+    "secondLouderBy": 0.8
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 345,
+     "length": 15352
+    },
+    "sustainPedal": {
+     "apart": 117,
+     "length": 15352
+    },
+    "crescendo bass": {
+     "apart": 1914,
+     "length": 15352
+    },
+    "crescendo treble": {
+     "apart": 1316,
+     "length": 15352
+    },
+    "sforzando treble": {
+     "apart": 644,
+     "length": 15352
+    },
+    "sforzando bass": {
+     "apart": 1426,
+     "length": 15352
+    },
+    "mezzoforte treble": {
+     "apart": 104,
+     "length": 15352
+    },
+    "mezzoforte bass": {
+     "apart": 82,
+     "length": 15352
+    }
+   },
+   "kinds": {
+    "expression departs": 141,
+    "expression rejoins": 49,
+    "note twin": 43,
+    "note own": 26,
+    "expression restates": 26,
+    "expression twin": 19,
+    "note restruck": 1
+   },
+   "departs": {
+    "SlowCrescendoOff": 55,
+    "SlowCrescendoOn": 35,
+    "ForzandoOn": 19,
+    "MezzoforteOff": 12,
+    "SustainPedalOff": 10,
+    "ForzandoOff": 6,
+    "SoftPedalOff": 4
+   }
+  },
+  {
+   "roll": 2538,
+   "loudness": {
+    "notes": 1363,
+    "meanApart": 0.2,
+    "apartBy5": 17,
+    "apartBy10": 7,
+    "secondLouderBy": 0.2
+   },
+   "valves": {
+    "crescendo bass": {
+     "apart": 23,
+     "length": 8465
+    },
+    "sustainPedal": {
+     "apart": 9,
+     "length": 8465
+    },
+    "sforzando bass": {
+     "apart": 71,
+     "length": 8465
+    },
+    "crescendo treble": {
+     "apart": 52,
+     "length": 8465
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 8465
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 8465
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 8465
+    },
+    "softPedal": {
+     "apart": 208,
+     "length": 8465
+    }
+   },
+   "kinds": {
+    "note twin": 31,
+    "expression departs": 5,
+    "expression twin": 4,
+    "expression rejoins": 1
+   },
+   "departs": {
+    "ForzandoOff": 2,
+    "SoftPedalOn": 1,
+    "SlowCrescendoOn": 1,
+    "SustainPedalOff": 1
+   }
+  },
+  {
+   "roll": 2844,
+   "loudness": {
+    "notes": 8567,
+    "meanApart": 0.2,
+    "apartBy5": 95,
+    "apartBy10": 35,
+    "secondLouderBy": -0.1
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 41762
+    },
+    "crescendo bass": {
+     "apart": 54,
+     "length": 41762
+    },
+    "sforzando bass": {
+     "apart": 492,
+     "length": 41762
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 41762
+    },
+    "sustainPedal": {
+     "apart": 8,
+     "length": 41762
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 41762
+    },
+    "crescendo treble": {
+     "apart": 30,
+     "length": 41762
+    },
+    "sforzando treble": {
+     "apart": 14,
+     "length": 41762
+    }
+   },
+   "kinds": {
+    "expression departs": 10,
+    "note twin": 6,
+    "expression restates": 3,
+    "note own": 3,
+    "note restruck": 1
+   },
+   "departs": {
+    "ForzandoOn": 6,
+    "ForzandoOff": 2,
+    "SlowCrescendoOn": 2
+   }
+  },
+  {
+   "roll": 2995,
+   "loudness": {
+    "notes": 7924,
+    "meanApart": 0,
+    "apartBy5": 0,
+    "apartBy10": 0,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 39014
+    },
+    "crescendo bass": {
+     "apart": 4,
+     "length": 39014
+    },
+    "crescendo treble": {
+     "apart": 0,
+     "length": 39014
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 39014
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 39014
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 39014
+    },
+    "softPedal": {
+     "apart": 0,
+     "length": 39014
+    },
+    "mezzoforte bass": {
+     "apart": 5,
+     "length": 39014
+    }
+   },
+   "kinds": {
+    "note twin": 8,
+    "note own": 2,
+    "note restruck": 2,
+    "expression restates": 1
+   },
+   "departs": {}
+  },
+  {
+   "roll": 3309,
+   "loudness": {
+    "notes": 5916,
+    "meanApart": 0.3,
+    "apartBy5": 140,
+    "apartBy10": 71,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "crescendo treble": {
+     "apart": 607,
+     "length": 15886
+    },
+    "crescendo bass": {
+     "apart": 741,
+     "length": 15886
+    },
+    "sforzando bass": {
+     "apart": 3,
+     "length": 15886
+    },
+    "sforzando treble": {
+     "apart": 0,
+     "length": 15886
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 15886
+    },
+    "mezzoforte treble": {
+     "apart": 925,
+     "length": 15886
+    },
+    "mezzoforte bass": {
+     "apart": 1050,
+     "length": 15886
+    },
+    "softPedal": {
+     "apart": 15,
+     "length": 15886
+    }
+   },
+   "kinds": {
+    "expression departs": 97,
+    "expression rejoins": 84,
+    "note twin": 6,
+    "note own": 2,
+    "expression restates": 1
+   },
+   "departs": {
+    "MezzoforteOff": 64,
+    "SlowCrescendoOff": 26,
+    "SlowCrescendoOn": 5,
+    "SoftPedalOff": 2
+   }
+  },
+  {
+   "roll": 3310,
+   "loudness": {
+    "notes": 3500,
+    "meanApart": 0,
+    "apartBy5": 2,
+    "apartBy10": 2,
+    "secondLouderBy": 0
+   },
+   "valves": {
+    "softPedal": {
+     "apart": 0,
+     "length": 31083
+    },
+    "crescendo bass": {
+     "apart": 0,
+     "length": 31083
+    },
+    "sustainPedal": {
+     "apart": 0,
+     "length": 31083
+    },
+    "crescendo treble": {
+     "apart": 21,
+     "length": 31083
+    },
+    "sforzando treble": {
+     "apart": 4,
+     "length": 31083
+    },
+    "sforzando bass": {
+     "apart": 0,
+     "length": 31083
+    },
+    "mezzoforte bass": {
+     "apart": 0,
+     "length": 31083
+    },
+    "mezzoforte treble": {
+     "apart": 0,
+     "length": 31083
+    }
+   },
+   "kinds": {
+    "expression restates": 4
+   },
+   "departs": {}
+  }
+ ]
+}
