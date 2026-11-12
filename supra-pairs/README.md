@@ -556,40 +556,41 @@ the edit is heard. Where undoing one edit leaves a valve standing
 otherwise to the end of the roll, the next edit on that valve is undone
 with it. An edit of the notes is told by what stands around the note.
 
-**The expression.** What an edit does to the dynamics is put as one
-question: does the curve move up and down more with the edit than
-without? Its travel is taken both ways over the stretch where the edit
-is heard and a second to either side: every rise and every fall added
-up, in markings, so that a curve going up and down twice as often
-between the same two levels travels twice as far. Where the travel
-grows the edit is a dynamic differentiation, by as much as it grows;
-where it shrinks, the curve is smoothed; where it changes by less than
-a tenth of a marking, the curve moves as before at another level.
+**The expression.** What an edit does to the dynamics is read off the
+curve over the stretch where the edit is heard and a second to either
+side, in two steps. First the frequency: how often the curve turns,
+from rising to falling and back. An edit after which it turns more
+often adds changes of dynamics; one after which it turns less often
+takes some away. Then, where it turns as often as before, the size:
+how far the curve travels, every rise and fall added up in markings.
+Both are dynamic differentiation.
 
-| an edit of the expression | edits | travel without and with, median | changed by, median | turns more often / less often | makes for louder | the library calls them |
-|---|---|---|---|---|---|---|
-| the curve moves more | 1,494 | 7.99 → 9.37 | 1.43 | 1,006 / 14 | 1,123 | accent added 766, put in or taken out 662, hole prolonged 40, hole shortened 17, redundant command dropped 9 |
-| the curve moves less | 480 | 11.59 → 10.23 | 0.69 | 170 / 24 | 279 | accent added 117, put in or taken out 278, hole prolonged 9, hole shortened 15, redundant command dropped 61 |
-| it moves as much, at another level | 167 | 7.92 → 7.89 | | 76 / 2 | 124 | accent added 62, put in or taken out 78, hole prolonged 20, hole shortened 4, redundant command dropped 3 |
-| the same change, 12.8 mm earlier or later | 842 | | | | | put in or taken out 161, moved 681 |
-| nothing is struck under it | 952 | | | | | accent added 55, put in or taken out 390, hole prolonged 106, hole shortened 237, redundant command dropped 164 |
-| a change of pedal, a tenth of a second | 56 | | | | | |
-| a pedal held or let go for a stretch | 19 | | | | | |
-| a pedal command with no note under it, or moved | 170 | | | | | |
+| an edit of the expression | edits | turns a second, without → with | travel in markings, without → with | makes for louder | the library calls them |
+|---|---|---|---|---|---|
+| more changes of dynamics | 1,252 | 1.54 → 2.09 | 7.48 → 8.28 | 906 | accent added 811, put in or taken out 435, hole shortened 1, redundant command dropped 5 |
+| fewer changes of dynamics | 40 | 2.41 → 2.09 | 13.25 → 13.18 | 30 | accent added 9, put in or taken out 21, hole prolonged 1, hole shortened 3, redundant command dropped 6 |
+| as many changes, larger | 474 | 2.39 | 11.58 → 12.83 | 362 | accent added 84, put in or taken out 328, hole prolonged 39, hole shortened 15, redundant command dropped 8 |
+| as many changes, smaller | 286 | 2.12 | 12.49 → 10.48 | 162 | accent added 29, put in or taken out 183, hole prolonged 9, hole shortened 13, redundant command dropped 52 |
+| as many of the same size, at another level | 89 | 2.08 | 7.19 → 7.2 | 66 | accent added 12, put in or taken out 51, hole prolonged 20, hole shortened 4, redundant command dropped 2 |
+| the same change, 12.8 mm earlier or later | 842 | | | | put in or taken out 161, moved 681 |
+| nothing is struck under it | 952 | | | | accent added 55, put in or taken out 390, hole prolonged 106, hole shortened 237, redundant command dropped 164 |
+| a change of pedal, a tenth of a second | 56 | | | | |
+| a pedal held or let go for a stretch | 19 | | | | |
+| a pedal command with no note under it, or moved | 170 | | | | |
 
-Of the 1,000 edits the library calls an accent added, 766 make the curve
-move more, 117 less, 62 as much, and 55 have no note under them. By
-size, the edits that make it move more add less than a quarter of a
-marking of travel in 98, a quarter to a half in 149, a half to one in
-252, one to two in 544 and two or more in 451.
+The figures are medians. Of the 1,252 edits that add changes, 1,207 add
+one rise and fall, and 1,006 make the curve travel further as well.
+Of the 1,000 edits the library calls an accent added, 811 add a
+change of dynamics, 84 make an existing one larger, 29 smaller, and 55
+have no note under them.
 
-Two other measures were tried and set aside. The spread of loudness
-among the notes around the edit says the opposite for most of these
-edits: a level pumped up again where it would sag moves the curve more
-and leaves the notes nearer to each other, so that by spread 1,229
-edits level and 674 differentiate. And pooling the notes of both halves
-into one spread makes an accent in a bass that lies under the treble a
-levelling.
+Other measures were tried and set aside. The travel of the curve alone
+mixes how often the dynamics change with how large the changes are.
+The spread of loudness among the notes around the edit says the
+opposite for most of these edits: a level pumped up again where it
+would sag adds a rise and fall and leaves the notes nearer to each
+other. `--told file` keeps every edit as told, so that the summing up
+can be changed without performing 5,000 versions again.
 
 **The notes.** The library names 433 as held longer (by 7 mm in the
 median), 128 as released sooner (by 3.9 mm) and 120 as moved along the

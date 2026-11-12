@@ -4,16 +4,16 @@
 // An edit of the expression is undone and the version performed again:
 // where the curve of its half of the keyboard (or of its pedal) then lies
 // a fifth of a marking or more from where it lay while notes are struck,
-// the edit is heard. What it is heard as is one question: does the
-// curve move up and down more with the edit than without? Its travel is
-// taken both ways over the stretch where the edit is heard and a second
-// to either side: every rise and every fall added up, in markings, so
-// that a curve going up and down twice as often between the same two
-// levels travels twice as far. Where the travel grows the edit is a
-// dynamic differentiation, by as much as it grows; where it shrinks the
-// curve is smoothed; where it stays, the curve is only set at another
-// level. The turns of the curve, from rising to falling and back, are
-// counted beside it. Where undoing
+// the edit is heard. What it is heard as is asked of the curve over the
+// stretch where the edit is heard and a second to either side, in two
+// steps. First how often it turns, from rising to falling and back: an
+// edit after which it turns more often adds changes of dynamics, one
+// after which it turns less often takes some away. Then, where it turns
+// as often as before, how far it travels, every rise and fall added up
+// in markings: further, and the changes are larger; less far, and they
+// are smaller; as far, and the curve is only set at another level. The
+// first is the frequency of the dynamics, the second their size; both
+// are dynamic differentiation. Where undoing
 // one edit leaves a valve standing otherwise to the end of the roll, the
 // next edit on that valve is undone with it, the two being one gesture.
 // A command that only stands elsewhere (the library's "shift", or the
@@ -33,7 +33,7 @@
 //   node effects.mjs [--out out] [--linked-rolls ../../linked-rolls] > effects.json
 //
 // WM 662 is not told: its first two metres do not align.
-import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { resolve, dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { Worker, isMainThread, parentPort, workerData } from 'node:worker_threads'
@@ -183,7 +183,7 @@ const tell = async roll => {
             return {
                 span: heard.length ? [Math.min(...heard.map(run => run.from)), Math.max(...heard.map(run => run.to))] : all, without: k => baseline[name][k][0] - difference[k],
                 open, heard: heard.length > 0,
-                travel: [round(bare[0]), round(withIt[0])], turns: [bare[1], withIt[1]],
+                travel: [round(bare[0]), round(withIt[0])], turns: [bare[1], withIt[1]], followed: k1 > k0 ? round(baseline[name][k1][1] - baseline[name][k0][1], 1) : 0,
                 seconds: round(heard.reduce((sum, run) => sum + run.seconds, 0), 1),
                 more: heard.reduce((sum, run) => sum + run.area, 0) > 0,
                 peak: heard.length ? round(Math.max(...heard.map(run => run.peak)) / MARKING) : 0,
@@ -296,7 +296,10 @@ const tell = async roll => {
             }
             const scale = !effect.heard ? 'unheard' : effect.share >= 0.5 || effect.open ? 'the roll' : effect.seconds <= 1.5 ? 'accent' : effect.seconds <= 10 ? 'phrase' : 'passage'
             const grows = round(effect.travel[1] - effect.travel[0])
-            const does = pedal || !effect.heard ? scale : Math.abs(grows) < TOGETHER ? 'level' : grows > 0 ? 'differentiation' : 'levelling'
+            const turned = effect.turns[1] - effect.turns[0]
+            const does = pedal || !effect.heard ? scale
+                : turned > 0 ? 'more changes' : turned < 0 ? 'fewer changes'
+                : Math.abs(grows) < TOGETHER ? 'level' : grows > 0 ? 'larger changes' : 'smaller changes'
             const places = group.flatMap(member => member.readings.map(reading => reading.from))
             const [from, to] = effect.span ? [Math.min(effect.span[0], ...places), Math.max(effect.span[1], ...places)] : [Math.min(...places), Math.max(...places)]
             const margin = Math.max(60, Math.min(300, (to - from) / 3))
@@ -304,7 +307,7 @@ const tell = async roll => {
             for (const member of group) {
                 told.push({ ...branch, shape: member.shape, what, does, more: effect.more, peak: effect.peak, seconds: effect.seconds, notes: effect.notes, strokes: effect.strokes,
                             melody: effect.melody, bassLine: effect.bassLine, half: half ?? null, together: group.length, drawn,
-                            ...(!pedal && effect.heard && { grows, travel: effect.travel, turns: effect.turns }) })
+                            ...(!pedal && effect.heard && { grows, turned, travel: effect.travel, turns: effect.turns, followed: effect.followed }) })
                 member.done = true
             }
         }
@@ -317,7 +320,9 @@ if (!isMainThread) {
 } else {
     const rolls = readdirSync(out).filter(name => existsSync(join(out, name, 'edition.jsonld'))).map(name => +name.slice(2))
         .filter(roll => !MISALIGNED.includes(roll)).sort((a, b) => a - b)
-    const waiting = [...rolls], told = []
+    // `--told file` keeps every edit as told, or reads it back where the file is there already: telling takes ten minutes, summing up none
+    const kept = args.told && existsSync(resolve(args.told)) ? JSON.parse(readFileSync(resolve(args.told), 'utf8')) : null
+    const waiting = kept ? [] : [...rolls], told = kept ?? []
     await Promise.all(Array.from({ length: Math.min(availableParallelism(), 8) }, async () => {
         while (waiting.length > 0) {
             const roll = waiting.shift()
@@ -328,8 +333,10 @@ if (!isMainThread) {
         }
     }))
 
+    if (args.told && !kept) writeFileSync(resolve(args.told), JSON.stringify(told))
+
     // ---- what it comes to: the classes of the expression, the classes of the notes, and the branches
-    const HEARD = ['accent', 'phrase', 'passage', 'the roll'], DYNAMIC = ['differentiation', 'levelling', 'level']
+    const HEARD = ['accent', 'phrase', 'passage', 'the roll'], DYNAMIC = ['more changes', 'fewer changes', 'larger changes', 'smaller changes', 'level']
     const classOf = edit => edit.what === 'note' ? [edit.does, edit.does === 'one copy has more' ? edit.role : null]
         : edit.what === 'dynamics' ? [edit.does, null]
         : HEARD.includes(edit.does) ? [edit.seconds <= 1.5 && !edit.more ? 'change' : 'held', edit.more ? 'more' : 'less'] : [edit.does, null]
@@ -359,7 +366,11 @@ if (!isMainThread) {
                 // by how much the travel of the curve changes, in markings: a tenth, a quarter, the middle, three quarters, nine tenths of the edits
                 ...(of.some(edit => edit.grows !== undefined) && { grows: [0.1, 0.25, 0.5, 0.75, 0.9].map(q => quantile(of.map(edit => Math.abs(edit.grows)), q)),
                     travel: [median(of.map(edit => edit.travel[0])), median(of.map(edit => edit.travel[1]))],
-                    moreTurns: of.filter(edit => edit.turns[1] > edit.turns[0]).length, fewerTurns: of.filter(edit => edit.turns[1] < edit.turns[0]).length,
+                    // how often the curve turns in a second, without the edit and with it, and over how many seconds it was followed
+                    rate: [0, 1].map(n => round(median(of.filter(edit => edit.followed > 0).map(edit => edit.turns[n] / edit.followed)))), followed: median(of.map(edit => edit.followed)),
+                    turns: [median(of.map(edit => edit.turns[0])), median(of.map(edit => edit.turns[1]))],
+                    byTurns: [1, 2, 3, 4].map(n => of.filter(edit => Math.abs(edit.turned) === n).length).concat(of.filter(edit => Math.abs(edit.turned) >= 5).length),
+                    travelsMore: of.filter(edit => edit.grows >= TOGETHER).length, travelsLess: of.filter(edit => edit.grows <= -TOGETHER).length,
                     louder: of.filter(edit => edit.more).length,
                     bySize: [0.25, 0.5, 1, 2].reduce((bins, edge, n, edges) => { bins[n] = of.filter(edit => Math.abs(edit.grows) < edge && (n === 0 || Math.abs(edit.grows) >= edges[n - 1])).length; return bins }, [0, 0, 0, 0]).concat(of.filter(edit => Math.abs(edit.grows) >= 2).length) }),
                 ...(of.some(edit => edit.apart !== undefined) && { apart: median(of.filter(edit => edit.apart !== undefined).map(edit => edit.apart)) }),
@@ -383,9 +394,10 @@ if (!isMainThread) {
     // an edit in the leader, before the first note, has no stretch of curve to show
     for (const [row, of] of Map.groupBy(told.filter(edit => edit.drawn && (!edit.drawn.points || edit.drawn.points.length > 1)), rowOf)) {
         const chosen = []
-        if (row === 'differentiation' || row === 'levelling') {
+        if (['more changes', 'fewer changes', 'larger changes', 'smaller changes'].includes(row)) {
             // five along the scale: a tenth, three tenths, the middle, seven tenths and nine tenths of the edits by how much they do
-            const sorted = [...of].sort((a, b) => Math.abs(a.grows) - Math.abs(b.grows))
+            const size = edit => row.endsWith('changes') && (row.startsWith('more') || row.startsWith('fewer')) ? Math.abs(edit.turned) + Math.abs(edit.grows) / 100 : Math.abs(edit.grows)
+            const sorted = [...of].sort((a, b) => size(a) - size(b))
             for (const q of [0.1, 0.3, 0.5, 0.7, 0.9]) {
                 const from = Math.floor(q * sorted.length)
                 const pick = sorted.slice(from).find(edit => !chosen.some(other => other.roll === edit.roll)) ?? sorted[from]
@@ -400,7 +412,7 @@ if (!isMainThread) {
         }
         examples[row] = chosen.map(edit => ({ roll: edit.roll, title: titles.get(edit.roll) ?? '', copy: edit.copy, half: edit.half ?? null, more: edit.more ?? null,
             peak: edit.peak ?? null, seconds: edit.seconds ?? null, notes: edit.notes ?? null, apart: edit.apart ?? null, by: edit.by ?? null, timing: edit.does === 'timing',
-            travel: edit.travel ?? null, turns: edit.turns ?? null, grows: edit.grows ?? null, shape: edit.shape, drawn: edit.drawn }))
+            travel: edit.travel ?? null, turns: edit.turns ?? null, grows: edit.grows ?? null, followed: edit.followed ?? null, shape: edit.shape, drawn: edit.drawn }))
     }
 
     // what a branch has of its own once timing, paper and what no note is struck under are set aside
