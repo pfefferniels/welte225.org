@@ -4,18 +4,16 @@
 // An edit of the expression is undone and the version performed again:
 // where the curve of its half of the keyboard (or of its pedal) then lies
 // a fifth of a marking or more from where it lay while notes are struck,
-// the edit is heard. What it is heard as is one question: do the notes
-// around it lie further apart in loudness with the edit than without?
-// The spread of their levels (the standard deviation, in markings, over
-// the notes of the edit's half of the keyboard struck in the stretch and
-// a second to either side of it) is taken both ways. Where it grows the
-// edit is a dynamic differentiation, by as much as it grows; where it
-// shrinks, a levelling; where it stays and the notes only move together,
-// a change of level. The red Welte has one level for each half at a
-// time, so the other half is a second question, kept apart: whether the
-// two hands stand further from each other with the edit, or nearer.
-// Pooling both halves into one spread answers neither: an accent in a
-// bass that lies under the treble would count as levelling. Where undoing
+// the edit is heard. What it is heard as is one question: does the
+// curve move up and down more with the edit than without? Its travel is
+// taken both ways over the stretch where the edit is heard and a second
+// to either side: every rise and every fall added up, in markings, so
+// that a curve going up and down twice as often between the same two
+// levels travels twice as far. Where the travel grows the edit is a
+// dynamic differentiation, by as much as it grows; where it shrinks the
+// curve is smoothed; where it stays, the curve is only set at another
+// level. The turns of the curve, from rising to falling and back, are
+// counted beside it. Where undoing
 // one edit leaves a valve standing otherwise to the end of the roll, the
 // next edit on that valve is undone with it, the two being one gesture.
 // A command that only stands elsewhere (the library's "shift", or the
@@ -51,10 +49,11 @@ const MISALIGNED = [662]
 const notesOnly = args.notes === 'only'
 
 const MARKING = 0.25, APART = 0.05, STEP = 2, JOIN = 15, REACH = 40, DIVISION = 54, SHORT = 1.5
-// mm to either side of where an edit is heard within which the notes are compared, about a second of roll,
-// and the change of their spread, in markings, under which they count as having moved together
-const AROUND = 60, TOGETHER = 0.02
-const spreadOf = values => { if (values.length < 2) return 0; const mean = values.reduce((a, b) => a + b, 0) / values.length; return Math.sqrt(values.reduce((sum, v) => sum + (v - mean) ** 2, 0) / values.length) }
+// mm to either side of where an edit is heard over which the curve is followed, about a second of roll,
+// and the change of its travel, in markings, under which it counts as moving as much as before
+const AROUND = 60, TOGETHER = 0.1
+// how far a curve has to go the other way, in the scale's own unit, for that to be a turn
+const TURN = 0.02
 const median = values => values.length ? [...values].sort((a, b) => a - b)[Math.floor(values.length / 2)] : null
 const round = (value, digits = 2) => value === null || value === undefined ? null : +value.toFixed(digits)
 
@@ -159,20 +158,32 @@ const tell = async roll => {
             }).filter(run => run.under.length > 0)
             const under = heard.flatMap(run => run.under)
             const all = runs.length ? [grid[runs[0].from], grid[runs.at(-1).to]] : null
-            // the notes around, of either half, at the level they are struck at with the edit and without
-            const around = heard.length === 0 || !half ? [] : struck.filter(note => note.from >= Math.min(...heard.map(run => run.from)) - AROUND && note.from <= Math.max(...heard.map(run => run.to)) + AROUND)
-            const at = note => Math.min(grid.length - 1, Math.max(0, Math.round((note.from - start) / STEP)))
-            const own = around.filter(note => note.half === half), others = around.filter(note => note.half !== half)
-            const levels = own.map(note => baseline[name][at(note)][0])
-            const otherwise = own.map(note => baseline[name][at(note)][0] - difference[at(note)])
-            const mean = values => values.reduce((a, b) => a + b, 0) / values.length
-            // how far the two hands stand from each other, without the edit and with it
-            const facing = others.length && own.length ? mean(others.map(note => baseline[note.half][at(note)][0])) : null
-            const hands = facing === null ? null : [round(Math.abs(mean(otherwise) - facing) / MARKING), round(Math.abs(mean(levels) - facing) / MARKING)]
+            // how far the curve travels over the stretch and a second to either side, and how often it turns
+            const [k0, k1] = heard.length === 0 ? [0, -1] : [Math.max(0, Math.floor((Math.min(...heard.map(run => run.from)) - AROUND - start) / STEP)), Math.min(grid.length - 1, Math.ceil((Math.max(...heard.map(run => run.to)) + AROUND - start) / STEP))]
+            const followed = curve => {
+                let travel = 0, turns = 0, heading = 0, high = curve(k0), low = high
+                for (let k = k0 + 1; k <= k1; k++) {
+                    const level = curve(k)
+                    travel += Math.abs(level - curve(k - 1))
+                    // a turn: the curve has come back from its furthest point by more than a trifle
+                    if (heading === 0) {
+                        high = Math.max(high, level); low = Math.min(low, level)
+                        if (level - low > TURN) { heading = 1; high = level } else if (high - level > TURN) { heading = -1; low = level }
+                    } else if (heading > 0) {
+                        if (level > high) high = level
+                        else if (high - level > TURN) { turns++; heading = -1; low = level }
+                    } else {
+                        if (level < low) low = level
+                        else if (level - low > TURN) { turns++; heading = 1; high = level }
+                    }
+                }
+                return [travel / MARKING, turns]
+            }
+            const [withIt, bare] = k1 > k0 ? [followed(k => baseline[name][k][0]), followed(k => baseline[name][k][0] - difference[k])] : [[0, 0], [0, 0]]
             return {
                 span: heard.length ? [Math.min(...heard.map(run => run.from)), Math.max(...heard.map(run => run.to))] : all, without: k => baseline[name][k][0] - difference[k],
                 open, heard: heard.length > 0,
-                spread: [round(spreadOf(otherwise) / MARKING), round(spreadOf(levels) / MARKING)], compared: own.length, hands,
+                travel: [round(bare[0]), round(withIt[0])], turns: [bare[1], withIt[1]],
                 seconds: round(heard.reduce((sum, run) => sum + run.seconds, 0), 1),
                 more: heard.reduce((sum, run) => sum + run.area, 0) > 0,
                 peak: heard.length ? round(Math.max(...heard.map(run => run.peak)) / MARKING) : 0,
@@ -284,7 +295,7 @@ const tell = async roll => {
                 effect = undone(new Set(group.map(member => member.edit.id)), curve, threshold, half)
             }
             const scale = !effect.heard ? 'unheard' : effect.share >= 0.5 || effect.open ? 'the roll' : effect.seconds <= 1.5 ? 'accent' : effect.seconds <= 10 ? 'phrase' : 'passage'
-            const grows = round(effect.spread[1] - effect.spread[0])
+            const grows = round(effect.travel[1] - effect.travel[0])
             const does = pedal || !effect.heard ? scale : Math.abs(grows) < TOGETHER ? 'level' : grows > 0 ? 'differentiation' : 'levelling'
             const places = group.flatMap(member => member.readings.map(reading => reading.from))
             const [from, to] = effect.span ? [Math.min(effect.span[0], ...places), Math.max(effect.span[1], ...places)] : [Math.min(...places), Math.max(...places)]
@@ -293,7 +304,7 @@ const tell = async roll => {
             for (const member of group) {
                 told.push({ ...branch, shape: member.shape, what, does, more: effect.more, peak: effect.peak, seconds: effect.seconds, notes: effect.notes, strokes: effect.strokes,
                             melody: effect.melody, bassLine: effect.bassLine, half: half ?? null, together: group.length, drawn,
-                            ...(!pedal && effect.heard && { grows, spread: effect.spread, compared: effect.compared, hands: effect.hands }) })
+                            ...(!pedal && effect.heard && { grows, travel: effect.travel, turns: effect.turns }) })
                 member.done = true
             }
         }
@@ -345,13 +356,12 @@ if (!isMainThread) {
                 what, does, which: which || null, edits: of.length, pairs: new Set(of.map(edit => edit.roll)).size, shapes, ...(unshaped && { unshaped }),
                 ...(heard.length && { peak: median(heard.map(edit => edit.peak)), seconds: median(heard.map(edit => edit.seconds)), notes: median(heard.map(edit => edit.notes)), strokes: median(heard.map(edit => edit.strokes)),
                     melody: heard.filter(edit => edit.melody).length, bassLine: heard.filter(edit => edit.bassLine).length, bass: heard.filter(edit => edit.half === 'bass').length, treble: heard.filter(edit => edit.half === 'treble').length }),
-                // by how much the spread of the notes around changes, in markings: a tenth, a quarter, the middle, three quarters, nine tenths of the edits
-                ...(of.some(edit => edit.grows !== undefined) && { grows: [0.1, 0.25, 0.5, 0.75, 0.9].map(q => quantile(of.map(edit => Math.abs(edit.grows)), q)), compared: median(of.map(edit => edit.compared)),
-                    // the two hands: further from each other with the edit, nearer, or as they were (within a twentieth of a marking); where only one hand plays, neither
-                    handsApart: of.filter(edit => edit.hands && edit.hands[1] - edit.hands[0] >= 0.05).length, handsNearer: of.filter(edit => edit.hands && edit.hands[0] - edit.hands[1] >= 0.05).length,
-                    handsSame: of.filter(edit => edit.hands && Math.abs(edit.hands[1] - edit.hands[0]) < 0.05).length, oneHand: of.filter(edit => !edit.hands).length,
+                // by how much the travel of the curve changes, in markings: a tenth, a quarter, the middle, three quarters, nine tenths of the edits
+                ...(of.some(edit => edit.grows !== undefined) && { grows: [0.1, 0.25, 0.5, 0.75, 0.9].map(q => quantile(of.map(edit => Math.abs(edit.grows)), q)),
+                    travel: [median(of.map(edit => edit.travel[0])), median(of.map(edit => edit.travel[1]))],
+                    moreTurns: of.filter(edit => edit.turns[1] > edit.turns[0]).length, fewerTurns: of.filter(edit => edit.turns[1] < edit.turns[0]).length,
                     louder: of.filter(edit => edit.more).length,
-                    bySize: [0.05, 0.1, 0.2, 0.4].reduce((bins, edge, n, edges) => { bins[n] = of.filter(edit => Math.abs(edit.grows) < edge && (n === 0 || Math.abs(edit.grows) >= edges[n - 1])).length; return bins }, [0, 0, 0, 0]).concat(of.filter(edit => Math.abs(edit.grows) >= 0.4).length) }),
+                    bySize: [0.25, 0.5, 1, 2].reduce((bins, edge, n, edges) => { bins[n] = of.filter(edit => Math.abs(edit.grows) < edge && (n === 0 || Math.abs(edit.grows) >= edges[n - 1])).length; return bins }, [0, 0, 0, 0]).concat(of.filter(edit => Math.abs(edit.grows) >= 2).length) }),
                 ...(of.some(edit => edit.apart !== undefined) && { apart: median(of.filter(edit => edit.apart !== undefined).map(edit => edit.apart)) }),
                 ...(of.some(edit => edit.by !== undefined) && { by: median(of.map(edit => edit.by)) }),
                 ...(of.some(edit => edit.length !== undefined) && { length: median(of.map(edit => edit.length)), repeated: of.filter(edit => edit.repeated).length, lowest: Math.min(...of.map(edit => edit.pitch)), highest: Math.max(...of.map(edit => edit.pitch)),
@@ -390,7 +400,7 @@ if (!isMainThread) {
         }
         examples[row] = chosen.map(edit => ({ roll: edit.roll, title: titles.get(edit.roll) ?? '', copy: edit.copy, half: edit.half ?? null, more: edit.more ?? null,
             peak: edit.peak ?? null, seconds: edit.seconds ?? null, notes: edit.notes ?? null, apart: edit.apart ?? null, by: edit.by ?? null, timing: edit.does === 'timing',
-            spread: edit.spread ?? null, grows: edit.grows ?? null, hands: edit.hands ?? null, shape: edit.shape, drawn: edit.drawn }))
+            travel: edit.travel ?? null, turns: edit.turns ?? null, grows: edit.grows ?? null, shape: edit.shape, drawn: edit.drawn }))
     }
 
     // what a branch has of its own once timing, paper and what no note is struck under are set aside

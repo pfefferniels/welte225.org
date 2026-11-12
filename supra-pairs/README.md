@@ -557,34 +557,39 @@ otherwise to the end of the roll, the next edit on that valve is undone
 with it. An edit of the notes is told by what stands around the note.
 
 **The expression.** What an edit does to the dynamics is put as one
-question: do the notes around it lie further apart in loudness with the
-edit than without? The red Welte has one level for each half of the
-keyboard at a time, so the notes compared are those of the half the
-edit acts on, in the stretch where it is heard and a second to either
-side, and their spread (the standard deviation of their levels, in
-markings) is taken both ways. Where it grows the edit is a dynamic
-differentiation, by as much as it grows; where it shrinks, a levelling;
-where it stays within 0.02 of a marking, the notes have moved together.
+question: does the curve move up and down more with the edit than
+without? Its travel is taken both ways over the stretch where the edit
+is heard and a second to either side: every rise and every fall added
+up, in markings, so that a curve going up and down twice as often
+between the same two levels travels twice as far. Where the travel
+grows the edit is a dynamic differentiation, by as much as it grows;
+where it shrinks, the curve is smoothed; where it changes by less than
+a tenth of a marking, the curve moves as before at another level.
 
-| an edit of the expression | edits | by, median | notes compared | makes for louder | the hands further apart / nearer | the library calls them |
+| an edit of the expression | edits | travel without and with, median | changed by, median | turns more often / less often | makes for louder | the library calls them |
 |---|---|---|---|---|---|---|
-| sets the notes around further apart | 674 | 0.08 | 22 | 487 | 214 / 335 | accent added 253, put in or taken out 358, hole prolonged 39, hole shortened 12, redundant command dropped 12 |
-| brings them closer together | 1,229 | 0.12 | 21 | 885 | 475 / 598 | accent added 588, put in or taken out 552, hole prolonged 15, hole shortened 19, redundant command dropped 55 |
-| moves them all together | 238 | | 28 | 154 | 78 / 96 | accent added 104, put in or taken out 108, hole prolonged 15, hole shortened 5, redundant command dropped 6 |
+| the curve moves more | 1,494 | 7.99 → 9.37 | 1.43 | 1,006 / 14 | 1,123 | accent added 766, put in or taken out 662, hole prolonged 40, hole shortened 17, redundant command dropped 9 |
+| the curve moves less | 480 | 11.59 → 10.23 | 0.69 | 170 / 24 | 279 | accent added 117, put in or taken out 278, hole prolonged 9, hole shortened 15, redundant command dropped 61 |
+| it moves as much, at another level | 167 | 7.92 → 7.89 | | 76 / 2 | 124 | accent added 62, put in or taken out 78, hole prolonged 20, hole shortened 4, redundant command dropped 3 |
 | the same change, 12.8 mm earlier or later | 842 | | | | | put in or taken out 161, moved 681 |
 | nothing is struck under it | 952 | | | | | accent added 55, put in or taken out 390, hole prolonged 106, hole shortened 237, redundant command dropped 164 |
 | a change of pedal, a tenth of a second | 56 | | | | | |
 | a pedal held or let go for a stretch | 19 | | | | | |
 | a pedal command with no note under it, or moved | 170 | | | | | |
 
-Closer together is nearly twice as common as further apart, and 72 %
-of those edits make for louder. On the curves it reads as a level kept
-up that would otherwise sag: the valve is set again where the version
-above lets the bellows run down, so that the notes after it are struck
-as loud as those before. 588 of the 1,000 edits the library calls an accent
-added are of that kind, 253 set notes apart. Pooling the notes of both
-halves into one spread was tried first and is misleading: an accent in
-a bass that lies under the treble then counts as levelling.
+Of the 1,000 edits the library calls an accent added, 766 make the curve
+move more, 117 less, 62 as much, and 55 have no note under them. By
+size, the edits that make it move more add less than a quarter of a
+marking of travel in 98, a quarter to a half in 149, a half to one in
+252, one to two in 544 and two or more in 451.
+
+Two other measures were tried and set aside. The spread of loudness
+among the notes around the edit says the opposite for most of these
+edits: a level pumped up again where it would sag moves the curve more
+and leaves the notes nearer to each other, so that by spread 1,229
+edits level and 674 differentiate. And pooling the notes of both halves
+into one spread makes an accent in a bass that lies under the treble a
+levelling.
 
 **The notes.** The library names 433 as held longer (by 7 mm in the
 median), 128 as released sooner (by 3.9 mm) and 120 as moved along the
