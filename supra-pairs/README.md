@@ -494,6 +494,56 @@ tests or the edition has moved.
   the editor's gesture; nothing in MPM Desk fits by itself, and nothing
   was fitted here.
 
+## The proposed edits, and when the copies were punched
+
+`edits.mjs` tallies the edits the proposals put into the 38 editions,
+`dates.py` holds them against the punch dates, papers and perforators
+that [condon-dates](https://github.com/pfefferniels/condon-dates) has
+for every copy (`edits.tsv`, `dates.tsv`, `dates.json`).
+
+There are 6,848 edits over 250,721 readings: 106 a pair in the median,
+14.9 for every 1,000 readings, and 51 % of them in five rolls (WM 662
+alone has 1,720). Three in four touch the expression (5,228; notes
+1,620).
+
+| kind | edits | on expression | on notes | pairs |
+|---|---|---|---|---|
+| put in or taken out, of no shape | 3,158 | 2,309 | 849 | 37 |
+| accent added | 1,159 | 1,159 | 0 | 26 |
+| moved along the roll | 1,060 | 861 | 199 | 30 |
+| prolonged | 649 | 206 | 443 | 33 |
+| shortened | 417 | 288 | 129 | 29 |
+| redundant command dropped | 405 | 405 | 0 | 27 |
+
+On 19 pairs both copies carry a date that has been read (four of them
+with one date read at low confidence). Pairs punched further apart
+tend to differ more, weakly: Spearman's ρ is 0.39 between the years
+apart and the share of readings on one copy alone (p = 0.10 by
+shuffling), 0.40 for the edits per 1,000 readings (p = 0.09). The kinds
+that go with the years are prolonged (ρ 0.61, p = 0.007), redundancy
+dropped (0.62, p = 0.006) and shortened (0.46, p = 0.05); accents
+(0.34), moves (0.27) and plain insertions (0.30) do not. Those are six
+tests on 19 pairs, uncorrected.
+
+The years cannot be told from the machine. Of the seven pairs punched
+nine or more years apart, six were cut on two different perforators
+(chain pitch 2.5 mm against 3.0 mm), and a perforation prolonged or
+shortened is what another punch makes of the same master. Over all 38
+pairs, the 15 cut on two perforators have 3.9 % of their readings on
+one copy alone in the median and 23.6 edits per 1,000 readings, the 23
+cut on one 1.6 % and 10.0; that difference in medians is one shuffled
+halves reach about one time in four (p = 0.23). The paper says less
+still: the 26 pairs on two kinds of paper have 2.9 % on one copy alone
+and 14.9 edits per 1,000 readings, the 12 on one kind 1.9 % and 15.7
+(p = 0.65).
+
+Six derivations have both copies dated. In two the copy put first was
+punched first (WM 321, 570); in four the copy punched earlier is
+derived from the one punched later (WM 1213, 1447, 2086, 3310). A text
+can be older than the paper it survives on, so that is not impossible,
+but these six proposals rest on 4 to 26 readings each, which is
+finding 3 from another side.
+
 ## What exists elsewhere, and what does not
 
 The search covered pianorollmusic.org entirely (23,601 files of 14
@@ -533,6 +583,8 @@ unless Ph1 and St2 are two rolls.
 | `emulations.mjs` | two emulations of one roll, note for note |
 | `bridges.mjs` | how many chains the copies of each pair differ by, with the parser's chains and with the holes chained over a fixed length of paper; writes `bridges.tsv` |
 | `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
+| `edits.mjs` | the proposed edits of every edition by kind, by what they touch and by what they do; writes `edits.tsv` |
+| `dates.py` | the edits of each pair beside the punch dates, papers and perforators of condon-dates; writes `dates.tsv` and `dates.json` |
 | `summary.py` | the tables of `summary.md` from the results |
 | `rolls.json`, `further.json` | the lists: the 38 pairs, and the six sets with copies from elsewhere |
 | `out/results.jsonl` | the 38 pairs with the fixed library, one record a roll |
@@ -544,7 +596,9 @@ unless Ph1 and St2 are two rolls.
 
 To run it again: checkouts of linked-rolls (built, `npm ci && npx tsc -p .`),
 `pianoroll/SUPRA` and `pianoroll/piano-roll-analyses` two levels up
-(`../../linked-rolls`, `../../pianoroll/…`), Node 22 or later, `bzip2`.
+(`../../linked-rolls`, `../../pianoroll/…`), Node 22 or later, `bzip2`;
+for `dates.py`, a checkout of condon-dates (`../../pfefferniels/condon-dates`,
+or `--condon-dates`).
 
 ```sh
 python3 pairs.py > rolls.json
@@ -553,6 +607,8 @@ node cycle.mjs --rolls further.json --out out-further
 node truth.mjs > truth.tsv
 node drift.mjs --out out > drift.tsv
 node bridges.mjs > bridges.tsv
+node edits.mjs > edits.tsv
+python3 dates.py > dates.json
 python3 strips.py out/wm1253/edition.jsonld 2500 2700 1-10 strips.png
 python3 summary.py > summary.md
 ```

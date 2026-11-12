@@ -1,0 +1,1742 @@
+{
+ "totals": {
+  "edits": 6848,
+  "readings": 250721,
+  "pairs": 38,
+  "expression": 5228,
+  "note": 1620,
+  "medianPerPair": 105.5,
+  "medianPer1000": 14.9,
+  "most": [
+   {
+    "wm": 662,
+    "edits": 1720
+   },
+   {
+    "wm": 57,
+    "edits": 482
+   },
+   {
+    "wm": 28,
+    "edits": 479
+   },
+   {
+    "wm": 1263,
+    "edits": 435
+   },
+   {
+    "wm": 1033,
+    "edits": 399
+   }
+  ],
+  "mostShare": 51
+ },
+ "kinds": [
+  {
+   "shape": "unshaped",
+   "expression": 2309,
+   "note": 849,
+   "pairs": 37
+  },
+  {
+   "shape": "additional-accent",
+   "expression": 1159,
+   "note": 0,
+   "pairs": 26
+  },
+  {
+   "shape": "shift",
+   "expression": 861,
+   "note": 199,
+   "pairs": 30
+  },
+  {
+   "shape": "prolong",
+   "expression": 206,
+   "note": 443,
+   "pairs": 33
+  },
+  {
+   "shape": "shorten",
+   "expression": 288,
+   "note": 129,
+   "pairs": 29
+  },
+  {
+   "shape": "remove-redundancy",
+   "expression": 405,
+   "note": 0,
+   "pairs": 27
+  }
+ ],
+ "pairs": [
+  {
+   "wm": 28,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-12-08",
+    "1914-04-27"
+   ],
+   "confidence": [
+    "high",
+    "medium"
+   ],
+   "years": 10.6,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 16051,
+   "alone": 837,
+   "edits": 479,
+   "shapes": {
+    "unshaped": 151,
+    "additional-accent": 87,
+    "shift": 149,
+    "prolong": 52,
+    "shorten": 32,
+    "remove-redundancy": 8
+   },
+   "stemma": "*(St1,St2)",
+   "share": 5.21,
+   "per1000": 29.8,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 57,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-05-16",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 2764,
+   "alone": 891,
+   "edits": 482,
+   "shapes": {
+    "unshaped": 69,
+    "additional-accent": 226,
+    "shift": 50,
+    "prolong": 94,
+    "shorten": 18,
+    "remove-redundancy": 25
+   },
+   "stemma": "*(St1,St2)",
+   "share": 32.24,
+   "per1000": 174.4,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 225,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1909-01-18",
+    "1914-01-14"
+   ],
+   "confidence": [
+    "high",
+    "high"
+   ],
+   "years": 5.0,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "wide",
+    "wide"
+   ],
+   "readings": 977,
+   "alone": 166,
+   "edits": 92,
+   "shapes": {
+    "unshaped": 12,
+    "additional-accent": 65,
+    "shift": 1,
+    "prolong": 3,
+    "shorten": 2,
+    "remove-redundancy": 9
+   },
+   "stemma": "*(St1,St2)",
+   "share": 16.99,
+   "per1000": 94.2,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 321,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-06-02",
+    "1922-09-04"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 0.3,
+   "paper": [
+    "green",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 10794,
+   "alone": 22,
+   "edits": 10,
+   "shapes": {
+    "unshaped": 6,
+    "additional-accent": 0,
+    "shift": 1,
+    "prolong": 3,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "St1(St2)",
+   "share": 0.2,
+   "per1000": 0.9,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 364,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-07-28",
+    null
+   ],
+   "confidence": [
+    "medium",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 3426,
+   "alone": 248,
+   "edits": 130,
+   "shapes": {
+    "unshaped": 7,
+    "additional-accent": 15,
+    "shift": 6,
+    "prolong": 89,
+    "shorten": 8,
+    "remove-redundancy": 5
+   },
+   "stemma": "*(St1,St2)",
+   "share": 7.24,
+   "per1000": 37.9,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 365,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-11-29",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 8275,
+   "alone": 220,
+   "edits": 119,
+   "shapes": {
+    "unshaped": 31,
+    "additional-accent": 18,
+    "shift": 22,
+    "prolong": 34,
+    "shorten": 10,
+    "remove-redundancy": 4
+   },
+   "stemma": "*(St1,St2)",
+   "share": 2.66,
+   "per1000": 14.4,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 371,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-11-20",
+    "1922-09-22"
+   ],
+   "confidence": [
+    "high",
+    "high"
+   ],
+   "years": 0.2,
+   "paper": [
+    "green",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 2891,
+   "alone": 43,
+   "edits": 21,
+   "shapes": {
+    "unshaped": 11,
+    "additional-accent": 4,
+    "shift": 6,
+    "prolong": 0,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "*(St1,St2)",
+   "share": 1.49,
+   "per1000": 7.3,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 570,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1913-09-04",
+    "1922-10-25"
+   ],
+   "confidence": [
+    "high",
+    "high"
+   ],
+   "years": 9.1,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 3143,
+   "alone": 16,
+   "edits": 9,
+   "shapes": {
+    "unshaped": 1,
+    "additional-accent": 3,
+    "shift": 1,
+    "prolong": 2,
+    "shorten": 1,
+    "remove-redundancy": 1
+   },
+   "stemma": "St1(St2)",
+   "share": 0.51,
+   "per1000": 2.9,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 660,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1908-12-07"
+   ],
+   "confidence": [
+    "none",
+    "high"
+   ],
+   "years": null,
+   "paper": [
+    "green",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 2811,
+   "alone": 89,
+   "edits": 43,
+   "shapes": {
+    "unshaped": 8,
+    "additional-accent": 0,
+    "shift": 21,
+    "prolong": 2,
+    "shorten": 11,
+    "remove-redundancy": 1
+   },
+   "stemma": "St1(St2)",
+   "share": 3.17,
+   "per1000": 15.3,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 662,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1924-04-02"
+   ],
+   "confidence": [
+    "none",
+    "low"
+   ],
+   "years": null,
+   "paper": [
+    "green",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 20067,
+   "alone": 2267,
+   "edits": 1720,
+   "shapes": {
+    "unshaped": 1157,
+    "additional-accent": 159,
+    "shift": 225,
+    "prolong": 27,
+    "shorten": 6,
+    "remove-redundancy": 146
+   },
+   "stemma": "*(St1,St2)",
+   "share": 11.3,
+   "per1000": 85.7,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 723,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    null
+   ],
+   "confidence": [
+    "none",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "green",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 3512,
+   "alone": 425,
+   "edits": 246,
+   "shapes": {
+    "unshaped": 62,
+    "additional-accent": 47,
+    "shift": 57,
+    "prolong": 58,
+    "shorten": 7,
+    "remove-redundancy": 15
+   },
+   "stemma": "*(St1,St2)",
+   "share": 12.1,
+   "per1000": 70.0,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 757,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-04-23",
+    "1924-04-23"
+   ],
+   "confidence": [
+    "high",
+    "high"
+   ],
+   "years": 0.0,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 8676,
+   "alone": 4,
+   "edits": 0,
+   "shapes": {
+    "unshaped": 0,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 0,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "St1+St2",
+   "share": 0.05,
+   "per1000": 0.0,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 797,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1928-06-19",
+    null
+   ],
+   "confidence": [
+    "medium",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 4447,
+   "alone": 174,
+   "edits": 105,
+   "shapes": {
+    "unshaped": 61,
+    "additional-accent": 7,
+    "shift": 9,
+    "prolong": 14,
+    "shorten": 8,
+    "remove-redundancy": 6
+   },
+   "stemma": "*(St1,St2)",
+   "share": 3.91,
+   "per1000": 23.6,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1033,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1913-12-06",
+    null
+   ],
+   "confidence": [
+    "medium",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 9027,
+   "alone": 625,
+   "edits": 399,
+   "shapes": {
+    "unshaped": 190,
+    "additional-accent": 62,
+    "shift": 58,
+    "prolong": 65,
+    "shorten": 10,
+    "remove-redundancy": 14
+   },
+   "stemma": "*(St1,St2)",
+   "share": 6.92,
+   "per1000": 44.2,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1213,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1912-04-18",
+    "1923-11-08"
+   ],
+   "confidence": [
+    "medium",
+    "high"
+   ],
+   "years": 11.6,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 577,
+   "alone": 4,
+   "edits": 3,
+   "shapes": {
+    "unshaped": 1,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 1,
+    "shorten": 0,
+    "remove-redundancy": 1
+   },
+   "stemma": "St2(St1)",
+   "share": 0.69,
+   "per1000": 5.2,
+   "perforatorsDiffer": true,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1246,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1913-04-09"
+   ],
+   "confidence": [
+    "none",
+    "low"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 3914,
+   "alone": 229,
+   "edits": 124,
+   "shapes": {
+    "unshaped": 17,
+    "additional-accent": 38,
+    "shift": 52,
+    "prolong": 9,
+    "shorten": 5,
+    "remove-redundancy": 3
+   },
+   "stemma": "*(St1,St2)",
+   "share": 5.85,
+   "per1000": 31.7,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1247,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1914-02-24"
+   ],
+   "confidence": [
+    "none",
+    "medium"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 9251,
+   "alone": 178,
+   "edits": 125,
+   "shapes": {
+    "unshaped": 47,
+    "additional-accent": 36,
+    "shift": 4,
+    "prolong": 7,
+    "shorten": 2,
+    "remove-redundancy": 29
+   },
+   "stemma": "*(St1,St2)",
+   "share": 1.92,
+   "per1000": 13.5,
+   "perforatorsDiffer": true,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1253,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-04-26",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 1887,
+   "alone": 247,
+   "edits": 155,
+   "shapes": {
+    "unshaped": 74,
+    "additional-accent": 22,
+    "shift": 39,
+    "prolong": 9,
+    "shorten": 10,
+    "remove-redundancy": 1
+   },
+   "stemma": "*(St1,St2)",
+   "share": 13.09,
+   "per1000": 82.1,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1259,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1925-08-29",
+    "1909"
+   ],
+   "confidence": [
+    "medium",
+    "low"
+   ],
+   "years": 16.2,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 6667,
+   "alone": 641,
+   "edits": 384,
+   "shapes": {
+    "unshaped": 148,
+    "additional-accent": 87,
+    "shift": 49,
+    "prolong": 28,
+    "shorten": 34,
+    "remove-redundancy": 38
+   },
+   "stemma": "*(St1,St2)",
+   "share": 9.61,
+   "per1000": 57.6,
+   "perforatorsDiffer": true,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1262,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1912-06-20",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "wide",
+    "wide"
+   ],
+   "readings": 2222,
+   "alone": 17,
+   "edits": 9,
+   "shapes": {
+    "unshaped": 3,
+    "additional-accent": 2,
+    "shift": 0,
+    "prolong": 1,
+    "shorten": 1,
+    "remove-redundancy": 2
+   },
+   "stemma": "St2(St1)",
+   "share": 0.77,
+   "per1000": 4.1,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1263,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-09",
+    "1909-03-06"
+   ],
+   "confidence": [
+    "low",
+    "medium"
+   ],
+   "years": 15.5,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 3896,
+   "alone": 738,
+   "edits": 435,
+   "shapes": {
+    "unshaped": 188,
+    "additional-accent": 105,
+    "shift": 80,
+    "prolong": 12,
+    "shorten": 30,
+    "remove-redundancy": 20
+   },
+   "stemma": "*(St1,St2)",
+   "share": 18.94,
+   "per1000": 111.7,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1296,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-01-07",
+    null
+   ],
+   "confidence": [
+    "medium",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "green"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 4645,
+   "alone": 27,
+   "edits": 27,
+   "shapes": {
+    "unshaped": 27,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 0,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "*(St1,St2)",
+   "share": 0.58,
+   "per1000": 5.8,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1339,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-10-21",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 10575,
+   "alone": 169,
+   "edits": 106,
+   "shapes": {
+    "unshaped": 48,
+    "additional-accent": 6,
+    "shift": 25,
+    "prolong": 15,
+    "shorten": 4,
+    "remove-redundancy": 8
+   },
+   "stemma": "*(St1,St2)",
+   "share": 1.6,
+   "per1000": 10.0,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1352,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-10-06",
+    "1907-03-04"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 17.6,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 3786,
+   "alone": 365,
+   "edits": 228,
+   "shapes": {
+    "unshaped": 93,
+    "additional-accent": 21,
+    "shift": 70,
+    "prolong": 12,
+    "shorten": 19,
+    "remove-redundancy": 13
+   },
+   "stemma": "*(St1,St2)",
+   "share": 9.64,
+   "per1000": 60.2,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1447,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1909-05-06",
+    "1914-04-24"
+   ],
+   "confidence": [
+    "high",
+    "high"
+   ],
+   "years": 5.0,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 2658,
+   "alone": 9,
+   "edits": 5,
+   "shapes": {
+    "unshaped": 1,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 2,
+    "shorten": 2,
+    "remove-redundancy": 0
+   },
+   "stemma": "St2(St1)",
+   "share": 0.34,
+   "per1000": 1.9,
+   "perforatorsDiffer": true,
+   "papersDiffer": false
+  },
+  {
+   "wm": 1473,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1923-08-04",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "green"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 11335,
+   "alone": 146,
+   "edits": 97,
+   "shapes": {
+    "unshaped": 54,
+    "additional-accent": 24,
+    "shift": 7,
+    "prolong": 11,
+    "shorten": 0,
+    "remove-redundancy": 1
+   },
+   "stemma": "*(St1,St2)",
+   "share": 1.29,
+   "per1000": 8.6,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1474,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1904-08-08",
+    "1923-10-24"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 19.2,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "wide",
+    "narrow"
+   ],
+   "readings": 11755,
+   "alone": 21,
+   "edits": 14,
+   "shapes": {
+    "unshaped": 6,
+    "additional-accent": 0,
+    "shift": 1,
+    "prolong": 4,
+    "shorten": 2,
+    "remove-redundancy": 1
+   },
+   "stemma": "*(St1,St2)",
+   "share": 0.18,
+   "per1000": 1.2,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1478,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1923-01-18",
+    "1920-04-30"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 2.7,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 13342,
+   "alone": 418,
+   "edits": 227,
+   "shapes": {
+    "unshaped": 40,
+    "additional-accent": 32,
+    "shift": 27,
+    "prolong": 3,
+    "shorten": 109,
+    "remove-redundancy": 16
+   },
+   "stemma": "*(St1,St2)",
+   "share": 3.13,
+   "per1000": 17.0,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1480,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1914-08-19",
+    "1914"
+   ],
+   "confidence": [
+    "high",
+    "low"
+   ],
+   "years": 0.1,
+   "paper": [
+    "red-cool",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "wide"
+   ],
+   "readings": 5368,
+   "alone": 209,
+   "edits": 137,
+   "shapes": {
+    "unshaped": 63,
+    "additional-accent": 21,
+    "shift": 33,
+    "prolong": 8,
+    "shorten": 3,
+    "remove-redundancy": 9
+   },
+   "stemma": "*(St1,St2)",
+   "share": 3.89,
+   "per1000": 25.5,
+   "perforatorsDiffer": true,
+   "papersDiffer": true
+  },
+  {
+   "wm": 1654,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1925-12-14"
+   ],
+   "confidence": [
+    "none",
+    "medium"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 2437,
+   "alone": 12,
+   "edits": 3,
+   "shapes": {
+    "unshaped": 2,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 0,
+    "shorten": 1,
+    "remove-redundancy": 0
+   },
+   "stemma": "St2(St1)",
+   "share": 0.49,
+   "per1000": 1.2,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 2086,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1922-02-24",
+    "1919-09-05"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 2.5,
+   "paper": [
+    "red-cool",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 2507,
+   "alone": 12,
+   "edits": 5,
+   "shapes": {
+    "unshaped": 2,
+    "additional-accent": 0,
+    "shift": 1,
+    "prolong": 2,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "St1(St2)",
+   "share": 0.48,
+   "per1000": 2.0,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 2254,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-08-21",
+    "1928-04-21"
+   ],
+   "confidence": [
+    "low",
+    "medium"
+   ],
+   "years": 3.7,
+   "paper": [
+    "red-cool",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 7277,
+   "alone": 506,
+   "edits": 275,
+   "shapes": {
+    "unshaped": 169,
+    "additional-accent": 19,
+    "shift": 8,
+    "prolong": 20,
+    "shorten": 57,
+    "remove-redundancy": 2
+   },
+   "stemma": "*(St1,St2)",
+   "share": 6.95,
+   "per1000": 37.8,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 2260,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    null,
+    "1924-01-26"
+   ],
+   "confidence": [
+    "none",
+    "high"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 6730,
+   "alone": 589,
+   "edits": 382,
+   "shapes": {
+    "unshaped": 230,
+    "additional-accent": 41,
+    "shift": 36,
+    "prolong": 42,
+    "shorten": 11,
+    "remove-redundancy": 22
+   },
+   "stemma": "*(St1,St2)",
+   "share": 8.75,
+   "per1000": 56.8,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 2538,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1920-11-05",
+    null
+   ],
+   "confidence": [
+    "medium",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-warm",
+    "red-warm"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 2245,
+   "alone": 41,
+   "edits": 40,
+   "shapes": {
+    "unshaped": 40,
+    "additional-accent": 0,
+    "shift": 0,
+    "prolong": 0,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "*(St1,St2)",
+   "share": 1.83,
+   "per1000": 17.8,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  },
+  {
+   "wm": 2844,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1923-04-13",
+    null
+   ],
+   "confidence": [
+    "high",
+    "none"
+   ],
+   "years": null,
+   "paper": [
+    "red-cool",
+    "green"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 13677,
+   "alone": 74,
+   "edits": 47,
+   "shapes": {
+    "unshaped": 19,
+    "additional-accent": 1,
+    "shift": 8,
+    "prolong": 4,
+    "shorten": 10,
+    "remove-redundancy": 5
+   },
+   "stemma": "*(St1,St2)",
+   "share": 0.54,
+   "per1000": 3.4,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 2995,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1920-10-19",
+    "1922-04-28"
+   ],
+   "confidence": [
+    "medium",
+    "medium"
+   ],
+   "years": 1.5,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 12186,
+   "alone": 55,
+   "edits": 28,
+   "shapes": {
+    "unshaped": 7,
+    "additional-accent": 0,
+    "shift": 12,
+    "prolong": 9,
+    "shorten": 0,
+    "remove-redundancy": 0
+   },
+   "stemma": "*(St1,St2)",
+   "share": 0.45,
+   "per1000": 2.3,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 3309,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-03-13",
+    "1922-11-22"
+   ],
+   "confidence": [
+    "high",
+    "medium"
+   ],
+   "years": 1.3,
+   "paper": [
+    "red-warm",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 8637,
+   "alone": 216,
+   "edits": 122,
+   "shapes": {
+    "unshaped": 109,
+    "additional-accent": 11,
+    "shift": 0,
+    "prolong": 1,
+    "shorten": 1,
+    "remove-redundancy": 0
+   },
+   "stemma": "*(St1,St2)",
+   "share": 2.5,
+   "per1000": 14.1,
+   "perforatorsDiffer": false,
+   "papersDiffer": true
+  },
+  {
+   "wm": 3310,
+   "sigla": [
+    "St1",
+    "St2"
+   ],
+   "dates": [
+    "1924-11-25",
+    "1925-03-08"
+   ],
+   "confidence": [
+    "high",
+    "medium"
+   ],
+   "years": 0.3,
+   "paper": [
+    "red-cool",
+    "red-cool"
+   ],
+   "perforator": [
+    "narrow",
+    "narrow"
+   ],
+   "readings": 6286,
+   "alone": 26,
+   "edits": 15,
+   "shapes": {
+    "unshaped": 4,
+    "additional-accent": 0,
+    "shift": 2,
+    "prolong": 6,
+    "shorten": 3,
+    "remove-redundancy": 0
+   },
+   "stemma": "St2(St1)",
+   "share": 0.41,
+   "per1000": 2.4,
+   "perforatorsDiffer": false,
+   "papersDiffer": false
+  }
+ ],
+ "dated": {
+  "pairs": 19,
+  "sure": 15,
+  "share": {
+   "rho": 0.39,
+   "p": 0.1,
+   "n": 19
+  },
+  "per1000": {
+   "rho": 0.4,
+   "p": 0.088,
+   "n": 19
+  },
+  "shapes": {
+   "unshaped": {
+    "rho": 0.3,
+    "p": 0.214,
+    "n": 19
+   },
+   "additional-accent": {
+    "rho": 0.34,
+    "p": 0.155,
+    "n": 19
+   },
+   "shift": {
+    "rho": 0.27,
+    "p": 0.261,
+    "n": 19
+   },
+   "prolong": {
+    "rho": 0.61,
+    "p": 0.007,
+    "n": 19
+   },
+   "shorten": {
+    "rho": 0.46,
+    "p": 0.048,
+    "n": 19
+   },
+   "remove-redundancy": {
+    "rho": 0.62,
+    "p": 0.006,
+    "n": 19
+   }
+  },
+  "farApart": {
+   "pairs": 7,
+   "onDifferentPerforators": 6
+  }
+ },
+ "perforator": {
+  "differ": {
+   "pairs": 15,
+   "share": 3.9,
+   "per1000": 23.6,
+   "shapes": {
+    "unshaped": 11.7,
+    "additional-accent": 3.9,
+    "shift": 6.1,
+    "prolong": 3.1,
+    "shorten": 1.2,
+    "remove-redundancy": 1.6
+   }
+  },
+  "same": {
+   "pairs": 23,
+   "share": 1.6,
+   "per1000": 10.0,
+   "shapes": {
+    "unshaped": 4.3,
+    "additional-accent": 1.3,
+    "shift": 1.0,
+    "prolong": 0.8,
+    "shorten": 0.4,
+    "remove-redundancy": 0.3
+   }
+  },
+  "p": 0.23
+ },
+ "paper": {
+  "differ": {
+   "pairs": 26,
+   "share": 2.9,
+   "per1000": 14.9
+  },
+  "same": {
+   "pairs": 12,
+   "share": 1.9,
+   "per1000": 15.7
+  },
+  "p": 0.65
+ },
+ "directions": [
+  {
+   "wm": 321,
+   "stemma": "St1(St2)",
+   "first": "St1",
+   "firstPunched": "1922-06-02",
+   "derived": "St2",
+   "derivedPunched": "1922-09-04",
+   "agrees": true
+  },
+  {
+   "wm": 570,
+   "stemma": "St1(St2)",
+   "first": "St1",
+   "firstPunched": "1913-09-04",
+   "derived": "St2",
+   "derivedPunched": "1922-10-25",
+   "agrees": true
+  },
+  {
+   "wm": 1213,
+   "stemma": "St2(St1)",
+   "first": "St2",
+   "firstPunched": "1923-11-08",
+   "derived": "St1",
+   "derivedPunched": "1912-04-18",
+   "agrees": false
+  },
+  {
+   "wm": 1447,
+   "stemma": "St2(St1)",
+   "first": "St2",
+   "firstPunched": "1914-04-24",
+   "derived": "St1",
+   "derivedPunched": "1909-05-06",
+   "agrees": false
+  },
+  {
+   "wm": 2086,
+   "stemma": "St1(St2)",
+   "first": "St1",
+   "firstPunched": "1922-02-24",
+   "derived": "St2",
+   "derivedPunched": "1919-09-05",
+   "agrees": false
+  },
+  {
+   "wm": 3310,
+   "stemma": "St2(St1)",
+   "first": "St2",
+   "firstPunched": "1925-03-08",
+   "derived": "St1",
+   "derivedPunched": "1924-11-25",
+   "agrees": false
+  }
+ ]
+}
