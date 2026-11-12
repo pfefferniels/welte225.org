@@ -544,6 +544,54 @@ can be older than the paper it survives on, so that is not impossible,
 but these six proposals rest on 4 to 26 readings each, which is
 finding 3 from another side.
 
+### What the edits do to the dynamics
+
+`dynamics.mjs` performs both copies of each pair on the library's
+emulation of the red Welte and holds the two dynamics curves against
+each other (`dynamics.json`). The emulation draws, for each half of the
+keyboard, the curve the roll is ruled for: 0 at pp, a half at mf, 1 at
+ff, so that a marking (pp, p, mf, f, ff) is a quarter of the scale. A
+place where the two copies' curves stand a fifth of a marking or more
+apart while notes are struck is a place where the edits are heard. WM
+662 is left out, since what parts there is the alignment's; WM 757 is
+one text.
+
+Of the 142,741 notes of 36 pairs, 15,938 (11.2 %) are struck at such
+a place; 5 pairs sound alike from end to end. There are 1,629 places.
+
+| the curves part for | places | pairs | lasting | by, in markings | notes under it | strokes |
+|---|---|---|---|---|---|---|
+| an accent, up to 1.5 s | 1,094 | 30 | 0.5 s | 0.94 | 3 | 1 |
+| a phrase, up to 10 s | 523 | 25 | 2.3 s | 1.3 | 14 | 5 |
+| a passage, longer | 10 | 5 | 14 s | 2.64 | 76 | 29 |
+| the whole roll (WM 225, both halves) | 2 | 1 | 164.4 s | 3.77 | 302 | 174 |
+
+The figures after the places are medians. An accent is one copy
+bringing out or holding back a stroke or two by about a marking:
+684 of the 1,094 fall on a single stroke. Of those in the treble half,
+363 of 415 take in the top of the texture, the melody; of those in the
+bass half, 624 of 679 take in the lowest note. 866 are in one half alone,
+the other hand going on as it was, so that what changes is the balance
+of the hands. A phrase is one copy swelling or sinking over a couple of
+seconds and 14 notes; 218 of 523 rise and fall within themselves, and
+290 are in one half alone. The places lie evenly along the rolls.
+
+Where both copies are dated (18 pairs, 15 of them differing), the later copy
+is the louder at 519 places and the softer at 199. It plays its quiet end
+less quietly on 5 pairs (WM 1259, 1263, 1352, 1480 and, slightly, 28)
+and more quietly on 1; its loud end is lower on 3 and higher on none. Where
+a later copy differs it tends to be the narrower, the soft passages
+coming up. That is few pairs; WM 1480's order rests on a year read at
+low confidence; and the pair that goes the other way, WM 225, does so
+by the knife (below).
+
+Of the 3,930 edits that touch the dynamics on these pairs, 3,299 stand
+within 300 mm before such a place or in it. That is nearness and not
+cause, and it is why the kinds are not held against the places one by
+one. What the emulation makes of a hole is the library's model of the
+instrument, with its consensus constants, and not a measurement of
+sound.
+
 ### What the edits of no shape come to
 
 The 3,158 edits of no shape put in or take out 3,915 readings: 2,902
@@ -635,6 +683,7 @@ unless Ph1 and St2 are two rolls.
 | `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
 | `edits.mjs` | the proposed edits of every edition by kind, by what they touch and by what they do; writes `edits.tsv` |
 | `dates.py` | the edits of each pair beside the punch dates, papers and perforators of condon-dates; writes `dates.tsv` and `dates.json` |
+| `dynamics.mjs` | both copies of each pair performed and their dynamics curves held against each other: where they part, how far, for how long, under which notes; writes `dynamics.json` |
 | `unshaped.mjs` | what each edit of no shape does against the other copy's text, how long each valve stands otherwise, and how far apart the two copies are struck when performed; writes `unshaped.json` |
 | `summary.py` | the tables of `summary.md` from the results |
 | `rolls.json`, `further.json` | the lists: the 38 pairs, and the six sets with copies from elsewhere |
@@ -661,6 +710,7 @@ node bridges.mjs > bridges.tsv
 node edits.mjs > edits.tsv
 python3 dates.py > dates.json
 node unshaped.mjs > unshaped.json
+node dynamics.mjs > dynamics.json
 python3 strips.py out/wm1253/edition.jsonld 2500 2700 1-10 strips.png
 python3 summary.py > summary.md
 ```
