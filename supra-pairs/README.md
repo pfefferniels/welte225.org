@@ -592,7 +592,7 @@ in 1909, has six rectangular holes in the leader, cut by hand to judge
 by their shape, that set mezzoforte, crescendo and sforzando on both
 sides before the first note (`strips.py` at 660 to 760 mm, tracks 1 to
 6 and 95 to 100). The second copy has none. The proposal reads them as
-ten edits of a version; they are a modification of one copy.
+six edits of a version; they are a modification of one copy.
 
 ## What exists elsewhere, and what does not
 
