@@ -552,38 +552,39 @@ align (WM 662 is left out) by what it does, 5,128 edits in all:
 the expression is undone and the version performed again; where the
 curve of its half of the keyboard then lies a fifth of a marking or
 more from where it lay while notes are struck, the edit is heard, and
-how long that lasts, which way it goes and which notes lie under it
-say what it is heard as. Where undoing one edit leaves a valve standing
+the edit is heard. Where undoing one edit leaves a valve standing
 otherwise to the end of the roll, the next edit on that valve is undone
 with it. An edit of the notes is told by what stands around the note.
 
-**The expression.** The library names 1,000 as an accent added
-(heard as a stroke or two brought out in 571, as a swell over a phrase
-in 288, not at all in 55), 715 as moved along the roll, 472 as the
-hole of a command prolonged or shortened (nothing is struck under
-365 of them) and 259 as a redundant command dropped (nothing under
-186). The other 1,734 it can only call put in or taken out:
+**The expression.** What an edit does to the dynamics is put as one
+question: do the notes around it lie further apart in loudness with the
+edit than without? The red Welte has one level for each half of the
+keyboard at a time, so the notes compared are those of the half the
+edit acts on, in the stretch where it is heard and a second to either
+side, and their spread (the standard deviation of their levels, in
+markings) is taken both ways. Where it grows the edit is a dynamic
+differentiation, by as much as it grows; where it shrinks, a levelling;
+where it stays within 0.02 of a marking, the notes have moved together.
 
-| put in or taken out, a command | edits | markings | seconds | notes | melody among them | bass line |
+| an edit of the expression | edits | by, median | notes compared | makes for louder | the hands further apart / nearer | the library calls them |
 |---|---|---|---|---|---|---|
-| an accent: a note or chord brought out | 276 | 1.28 | 0.8 | 5 | 66 % | 70 % |
-| a note or chord held back | 308 | 0.92 | 0.5 | 5 | 69 % | 52 % |
-| swells over a phrase | 264 | 1.62 | 2.4 | 14 | 77 % | 81 % |
-| sinks over a phrase | 139 | 1.06 | 2.2 | 15 | 78 % | 77 % |
-| louder or softer for a passage or more | 31 | | | | | |
-| the same change, 28.5 mm earlier or later | 161 | | | | | |
-| nothing is struck under it | 390 | | | | | |
-| a change of pedal, a tenth of a second | 55 | | | | | |
-| a pedal held or let go for a stretch | 18 | | | | | |
-| a pedal command with no note under it | 92 | | | | | |
+| sets the notes around further apart | 674 | 0.08 | 22 | 487 | 214 / 335 | accent added 253, put in or taken out 358, hole prolonged 39, hole shortened 12, redundant command dropped 12 |
+| brings them closer together | 1,229 | 0.12 | 21 | 885 | 475 / 598 | accent added 588, put in or taken out 552, hole prolonged 15, hole shortened 19, redundant command dropped 55 |
+| moves them all together | 238 | | 28 | 154 | 78 / 96 | accent added 104, put in or taken out 108, hole prolonged 15, hole shortened 5, redundant command dropped 6 |
+| the same change, 12.8 mm earlier or later | 842 | | | | | put in or taken out 161, moved 681 |
+| nothing is struck under it | 952 | | | | | accent added 55, put in or taken out 390, hole prolonged 106, hole shortened 237, redundant command dropped 164 |
+| a change of pedal, a tenth of a second | 56 | | | | | |
+| a pedal held or let go for a stretch | 19 | | | | | |
+| a pedal command with no note under it, or moved | 170 | | | | | |
 
-The figures are medians; a marking is a quarter of the roll's scale
-(pp, p, mf, f, ff). The first row is an accent in the plain sense, on
-one or two attacks, an attack being a note or a chord struck at one
-moment. The library does not call it one, because "accent added" is
-only the bar's own spelling of an accent, one valve set and let go
-within a single edit; these reach the same end by a single command, or
-by two that the proposal did not put together.
+Closer together is nearly twice as common as further apart, and 72 %
+of those edits make for louder. On the curves it reads as a level kept
+up that would otherwise sag: the valve is set again where the version
+above lets the bellows run down, so that the notes after it are struck
+as loud as those before. 588 of the 1,000 edits the library calls an accent
+added are of that kind, 253 set notes apart. Pooling the notes of both
+halves into one spread was tried first and is misleading: an accent in
+a bass that lies under the treble then counts as levelling.
 
 **The notes.** The library names 433 as held longer (by 7 mm in the
 median), 128 as released sooner (by 3.9 mm) and 120 as moved along the
