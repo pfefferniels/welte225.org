@@ -208,6 +208,24 @@
         <button id="save" type="button">Save the take</button>
         <button id="save-calls" type="button">Save the calls</button>
       </div>
+      <div id="performance" class="bar" hidden>
+        <button id="play-mpm" type="button">Hear the MPM</button>
+        <label
+          >its expression
+          <input
+            id="exaggeration"
+            type="range"
+            min="0"
+            max="3"
+            step="0.1"
+            value="1"
+          />
+          <output id="exaggeration-value" for="exaggeration"
+            >× 1.0</output
+          ></label
+        >
+        <button id="save-mpm" type="button">Save the MPM</button>
+      </div>
       <pre id="report"></pre>
 
       <p>
@@ -219,12 +237,14 @@
         between the notes; the taps say where the beat falls where no note
         sounds, and on which note of a spread chord. The rest is fitted to the
         roll. The calls saved are MPM Desk's own, for its chain to write the MPM
-        from.
+        from. What the tempo and the dynamics leave is read too: the notes
+        within a beat against the tempo as rubato, the chords against the
+        dynamics as accents. All of it is written as MPM, which espressivo
+        performs with its expression as it was read, taken away, or exaggerated.
       </p>
 
       <footer>
         A prototype · <a href="/">To the roll</a> ·
-        <a href="/mpm/">the reconstruction it is held against</a> ·
         <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed"
           >source</a
         >

@@ -19,6 +19,7 @@ import {
   type Correction,
   type Roll,
 } from '../src/take/roll.ts';
+import { performTake, takeMpm } from '../src/take/mpm.ts';
 import { decodeWav, encodeWav, resample } from '../src/take/wav.ts';
 import { loadEngine, loadSpeaker, ROOT } from '../tools/node-support.ts';
 
@@ -429,5 +430,98 @@ describe('a voice taken apart', () => {
     assert.ok(off.adduction / count < 0.3, `the folds off by ${(off.adduction / count).toFixed(2)}`);
     assert.ok(off.opening / count < 0.08, `the lips off by ${(off.opening / count).toFixed(3)}`);
     assert.ok(off.cents / count < 25, `the pitch off by ${(off.cents / count).toFixed(1)} cents`);
+  });
+});
+
+/** A roll of one voice in 4/4: a note at each date, sounding at the time given, all as loud. */
+function smallRoll(notes: readonly { date: number; time: number; velocity?: number }[]): {
+  roll: Roll;
+  msm: string;
+} {
+  const length = 360;
+  const msm =
+    '<msm title="" pulsesPerQuarter="720"><global><header /><dated /></global>' +
+    '<part name="" number="1" midi.channel="0" midi.port="0"><header /><dated>' +
+    '<timeSignatureMap><timeSignature date="0" numerator="4" denominator="4" /></timeSignatureMap><score>' +
+    notes
+      .map((n, i) => `<note xml:id="n${i}" date="${n.date}" midi.pitch="60" duration="${length}" />`)
+      .join('') +
+    '</score></dated></part></msm>';
+  const mei =
+    '<recording source="s">' +
+    notes
+      .map(
+        (n, i) =>
+          `<when absolute="${Math.round(n.time * 1000)}ms" data="#n${i}"><extData type="velocity">${n.velocity ?? 40}</extData>` +
+          '<extData type="duration">300ms</extData></when>',
+      )
+      .join('') +
+    '</recording>';
+  return { roll: readRoll(mei, msm, 's'), msm };
+}
+
+describe('what the tempo and the dynamics leave', () => {
+  // two bars at 60 beats a minute; within each beat the eighth comes late or early by a power
+  const intensity = 1.3;
+  const eighth = 0.5 ** intensity;
+  const dates = Array.from({ length: 17 }, (_, k) => k * 360);
+  const { roll, msm } = smallRoll(
+    dates.map((date, k) => ({
+      date,
+      time: Math.floor(k / 2) + (k % 2 ? eighth : 0),
+      // louder on the beats than between them, about a level that does not move
+      velocity: k % 2 ? 36 : 44,
+    })),
+  );
+  const section = sectionOf(roll, 1, 2);
+  const silent = movementsOf(emptyTracks(10), new Uint8Array(10), new Float32Array(10).fill(-30));
+  const reading = read(roll, { section, start: 0, taps: [], pulse: 720 }, silent);
+
+  it('is a rubato over each beat, by what its notes do against the tempo', () => {
+    assert.equal(reading.instructions.tempo.length, 1);
+    assert.ok(Math.abs(reading.instructions.tempo[0].bpm - 60) < 0.01);
+    assert.equal(reading.rubatos.length, 8);
+    for (const r of reading.rubatos)
+      assert.ok(Math.abs(r.intensity - intensity) < 0.01, `read as ${r.intensity}`);
+  });
+
+  it('is accents at the chords, by what they do against the dynamics', () => {
+    assert.equal(reading.accents.length, 1);
+    const [accents] = reading.accents;
+    assert.ok(Math.abs(accents.scale - 8) < 0.01);
+    // the first chord lies on the curve, which begins there; the others under it and on it in turn
+    assert.deepEqual(
+      accents.values.slice(0, 4).map((v) => Math.round(v.value)),
+      [0, -1, 0, -1],
+    );
+  });
+
+  it('is named to the desk as calls of its own', () => {
+    assert.equal(reading.calls.filter((c) => c.name === 'InsertRubato').length, 8);
+    assert.deepEqual(reading.calls.find((c) => c.name === 'InsertRubato')?.options, {
+      scope: 'global',
+      date: 0,
+      length: 720,
+    });
+    assert.equal(reading.calls.filter((c) => c.name === 'InsertMetricalAccentuation').length, 1);
+  });
+
+  it("comes back when the take's MPM is performed, and goes with its expression", () => {
+    const mpm = takeMpm(roll, section, reading, 'a test');
+    const asRead = performTake(msm, mpm, section, 1).notes;
+    assert.equal(asRead.length, 16);
+    asRead.forEach((note, k) => {
+      const time = Math.floor(k / 2) + (k % 2 ? eighth : 0);
+      assert.ok(Math.abs(note.on - time) < 0.005, `note ${k} at ${note.on} s, not ${time}`);
+      assert.ok(Math.abs(note.velocity - (k % 2 ? 36 : 44)) <= 1, `note ${k} at velocity ${note.velocity}`);
+    });
+    // with no expression at all the eighths fall half way and are as loud as the beats
+    const plain = performTake(msm, mpm, section, 0).notes;
+    assert.ok(Math.abs(plain[1].on - plain[0].on - (plain[2].on - plain[1].on)) < 0.005);
+    assert.ok(Math.abs(plain[1].velocity - plain[0].velocity) <= 1);
+    // exaggerated, later still and softer still
+    const more = performTake(msm, mpm, section, 2).notes;
+    assert.ok(more[1].on - more[0].on < asRead[1].on - asRead[0].on - 0.02);
+    assert.ok(more[0].velocity - more[1].velocity > asRead[0].velocity - asRead[1].velocity + 2);
   });
 });

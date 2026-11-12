@@ -3,6 +3,7 @@
 // for, with taps as a listener might tap them, so that what comes back can be held against what
 // went in.
 //   npm run take -- [--bars 1-4] [--take <take.json, beside its .wav>] [--calls <file>]
+//                   [--mpm <file>: the take as MPM]
 //                   [--save <name>: the take made, as <name>.wav and <name>.json, for the page to open]
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
@@ -21,6 +22,7 @@ import {
   type Section,
 } from '../src/take/index.ts';
 import type { TakeTiming } from '../src/take/reading.ts';
+import { performTake, takeMpm } from '../src/take/mpm.ts';
 import { decodeWav, encodeWav, resample } from '../src/take/wav.ts';
 import { voiceStates } from '../src/worker/voice-states.ts';
 import {
@@ -41,6 +43,7 @@ const { values } = parseArgs({
     take: { type: 'string' },
     calls: { type: 'string' },
     save: { type: 'string' },
+    mpm: { type: 'string' },
   },
 });
 
@@ -181,6 +184,28 @@ console.log(
 console.log(`  boundaries: ${reading.boundaries.map((b) => `${b.date} (${b.kind})`).join(', ')}`);
 for (const c of reading.calls.filter((c) => c.name !== 'InsertTemporalSpread'))
   console.log(`  ${c.name} ${JSON.stringify(c.options)}`);
+console.log(
+  `  rubato within the beats: ${reading.rubatos.map((x) => `${x.date}:${x.intensity.toFixed(2)}`).join(' ') || 'none'}`,
+);
+console.log(
+  `  accents against the dynamics: ${reading.accents.map((a) => `${a.from}–${a.to} ±${a.scale.toFixed(1)}`).join(', ') || 'none'}`,
+);
+
+// the take as MPM, performed: how far its notes lie from the roll's, as it stands and exaggerated
+const mpm = takeMpm(roll, timing.section, reading, 'A take: hummed and tapped along with the roll');
+const msm = readFileSync(join(ROOT, '../mpm/score.msm'), 'utf8');
+const sounded = roll.notes.filter((n) => n.date >= timing.section.from && n.date < timing.section.to);
+const origin = Math.min(...sounded.map((n) => n.onset));
+const span = Math.max(...sounded.map((n) => n.onset)) - origin;
+for (const factor of [1, 2, 0]) {
+  const { notes } = performTake(msm, mpm, timing.section, factor);
+  const last = Math.max(...notes.map((n) => n.on));
+  console.log(
+    `  the MPM performed × ${factor}: ${notes.length} notes, its last begins ${last.toFixed(2)} s in (the roll's ${span.toFixed(2)} s), ` +
+      `velocities ${Math.round(Math.min(...notes.map((n) => n.velocity)))} to ${Math.round(Math.max(...notes.map((n) => n.velocity)))}`,
+  );
+}
+if (values.mpm) writeFileSync(values.mpm, mpm);
 if (values.calls) {
   const work = { provenance: reading.calls, secondary: { tempo: { silentOnsets: reading.silentOnsets } } };
   writeFileSync(values.calls, JSON.stringify(work, null, 2));

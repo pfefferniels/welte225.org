@@ -410,8 +410,12 @@ most of his). Then:
   before a trough before a peak;
 - between two boundaries lies one movement, and it becomes an `InsertTempo` and an
   `InsertDynamicsInstructions` over the same stretch: tempo and dynamics begin and end together.
-  The tempo is fitted to the roll's chords and the silent onsets with espressivo's own clock
-  (`computeMillisecondsAt`), a spread chord counted where its beat was placed.
+  The tempo is the beats': it is fitted to the chords on the tapped pulse, the silent onsets and
+  the movement's own two ends, a spread chord counted where its beat was placed, with
+  espressivo's own clock (`computeMillisecondsAt`). A movement takes exactly as long as on the
+  roll; what is fitted is how the tempo goes within it (where it begins against where it ends,
+  and where between the two it is half way), so that one movement's misfit is not carried into
+  the next.
 - where no note sounds, the dynamics are the voice's to say: **phantom velocities** of the
   dynamics call, at every half beat of the pulse without a chord while the voice sounds, and
   wherever a movement begins or ends without one. Each is the roll's own dynamics there (a straight
@@ -430,28 +434,51 @@ The roll's velocities are read as the desk's chain has them when the dynamics ar
 gradient). The values between the notes are on that scale, or they would stand 8 to 15 steps
 above the chords they lie between. What is played is the roll as recorded.
 
+**What the curves leave** is read off them in turn (`reading.ts`):
+
+- **rubato**: within each beat of the tapped pulse, what its notes do against the tempo curve. A
+  note written a part x of the way through the beat sounds where the curve has x to the power of
+  an intensity, fitted to the beat's notes on the roll (under 1 later than written, over 1
+  sooner); an `InsertRubato` for every beat where it is 0.03 or more off 1.
+- **metrical accentuation**: within each movement, what its chords do against the dynamics curve,
+  each as a part of the largest (from half a velocity step); an `InsertMetricalAccentuation` over
+  the movement.
+
+**The take as MPM** (`mpm.ts`). The page does not wait for the desk: it writes the reading out as
+Music Performance Markup, the tempo and dynamics instructions (each run closed by the value it
+arrives at, without which its transition would have nowhere to end), the rubatos, the accents as a
+pattern for each movement, the spread chords as ornaments (the notes in the order they sound,
+from the first to the last about the beat, the way up to the loudest as the spread's gradient)
+and the roll's pedal. espressivo performs it against the score, and _Hear the MPM_ plays that on
+the sampled grand, with _its expression_ as it was read (× 1), with none (× 0) or exaggerated in
+every dimension (`exaggerateMpm`, up to × 3). As read, the made-up listener's bars 1 to 4 come
+back with their last note 0.04 s from the roll's and velocities within 2.4 steps of it in the
+mean. The MPM can be saved.
+
 The page draws the roll, the pitch, the three tracks with the effort (lightly smoothed, and as
 the turns are read from it), its turns and the places where it speaks between the notes; then what
-the calls come to: the **tempo**, the roll's own from beat to beat of its clock and over it each
+the reading comes to: the **tempo**, the roll's own from beat to beat of its clock and over it each
 movement's curve as its instruction runs (`getTempoAt`), with the beats tapped where no note
-sounds; the **dynamics**, the chords, the values between them, and through both the curve the
-desk fits (`fitDynamics`: its `approximateDynamics`, espressivo's `fitTransitionCurve` with the
-desk's tolerance of five velocity steps and its seed); and the **spread chords**, each from its
-first note to its last with the beat where it was placed (red by the last note, blue by the
-first, black between). Under these the taps against the beats and the take's boundaries above
-those of the published reconstruction's tempo and dynamics calls (`/mpm/work.json`); then the
-values between the notes and the movements as a list. The calls are saved as the work file holds
-them, `provenance` with the silent onsets in `secondary.tempo`.
+sounds; the **dynamics**, the chords, the values between them, through both the curve the desk
+fits (`fitDynamics`: its `approximateDynamics`, espressivo's `fitTransitionCurve` with the desk's
+tolerance of five velocity steps and its seed), and each chord's accent as a stem from the curve;
+then rows: the taps against the beats; the **spread chords**, each from its first note to its last
+with the beat where it was placed (red by the last note, blue by the first, black between); the
+**rubatos**, each beat with where its middle comes to lie (red later, blue sooner); and the take's
+boundaries. Under it the values between the notes and the movements as a list. The calls are
+saved as the work file holds them, `provenance` with the silent onsets in `secondary.tempo`.
 
-Bars 1 to 4 of a made-up listener, who swells through the long notes, were put in the place of
-the published calls and run through MPM Desk's chain: its dynamics desk draws the curve the page
-draws, and its tempo desk the page's six tempo curves.
+Of the published reconstruction (`/mpm/work.json`) the page takes only what is said about the
+source: which take of the roll is read, and the corrections of its velocities. Its instructions
+are neither shown nor compared with.
 
 What the prototype does not do yet: it has not been tuned on a real voice (of the one take
 recorded so far only the calls were looked at; the tests and `npm run take` use the model's own
 voice and the hummer's, which the same model sings); a tempo curve does not begin where the one
-before it ended; rubato, accentuation, articulation and the pedal are not written; a take is
-analysed in about twice its length on one core.
+before it ended; articulation is not written, and a chord's notes other than a spread's are all
+as loud; the calls for rubato and accentuation name their stretches and leave the fitting to the
+desk, and have not been run through its chain; a take is analysed in about twice its length on
+one core.
 
 ## The piano
 
@@ -541,7 +568,7 @@ npm run calibrate    # after changing the reduction, the hum style or the recons
 npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, instructions, pianos
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
 npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
-npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>
+npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>; --mpm <file> writes its MPM
 ```
 
 `npm run pianoteq` needs Pianoteq (the program itself, e.g. on a Mac `/Applications/Pianoteq

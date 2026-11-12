@@ -15,8 +15,6 @@ export interface View {
   readonly to: Seconds;
   readonly timing: TakeTiming | null;
   readonly result: TakeResult | null;
-  /** Where the published reconstruction's tempo and dynamics instructions begin and end. */
-  readonly desk: { readonly tempo: readonly Ticks[]; readonly dynamics: readonly Ticks[] };
   readonly playhead: Seconds | null;
 }
 
@@ -28,7 +26,7 @@ const VOICE = '#a3232f';
 const FOLDS = '#1f4e8c';
 const LIPS = '#2f7d4f';
 const LANES = { head: 20, roll: 150, pitch: 90, body: 170, tempo: 110, dynamics: 110, row: 24 } as const;
-const ROWS = ['taps', 'spreads', 'take', 'desk: tempo', 'desk: dynamics'] as const;
+const ROWS = ['taps', 'spreads', 'rubato', 'take'] as const;
 const LEFT = 104;
 const RIGHT = 12;
 export const VIEW_HEIGHT =
@@ -290,6 +288,14 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
     scaleLabel(dynamics.y(dynamics.hi) + 14, String(Math.round(dynamics.hi)));
     scaleLabel(dynamics.y(dynamics.lo), String(Math.round(dynamics.lo)));
     for (const f of r.fitted.dynamics) fittedCurve(f.points, dynamics.y);
+    // what each chord does against its movement's curve: its accent
+    for (const accents of r.accents)
+      for (const v of accents.values) {
+        const ch = sounded.find((x) => x.date === v.date);
+        if (!ch) continue;
+        const onCurve = dynamics.y(ch.velocity - v.value * accents.scale);
+        line(x(ch.first), onCurve, x(ch.first), dynamics.y(ch.velocity), MUTED, 1);
+      }
     c.fillStyle = MUTED;
     for (const ch of sounded) {
       c.beginPath();
@@ -323,22 +329,25 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
       const colour = s.placement === 'on-beat' ? FOLDS : s.placement === 'before-beat' ? VOICE : INK;
       line(x(s.beat), rowY(1) - 9, x(s.beat), rowY(1) + 9, colour, s.position === null ? 1 : 2.5);
     }
+    // each rubato over its beat, and where the middle of the beat comes to lie
+    for (const rubato of r.rubatos) {
+      const [x0, x1] = [xDate(rubato.date), xDate(rubato.date + rubato.length)];
+      line(x0, rowY(2), x1, rowY(2), MUTED, 1);
+      line(x0, rowY(2) - 4, x0, rowY(2) + 4, MUTED, 1);
+      line(x1, rowY(2) - 4, x1, rowY(2) + 4, MUTED, 1);
+      const middle = x0 + 0.5 ** rubato.intensity * (x1 - x0);
+      line(middle, rowY(2) - 8, middle, rowY(2) + 8, rubato.intensity > 1 ? FOLDS : VOICE, 2.5);
+    }
     for (const b of result.reading.boundaries) {
       const colour =
         b.kind === 'breath' ? INK : b.kind === 'peak' ? VOICE : b.kind === 'trough' ? FOLDS : MUTED;
-      line(xDate(b.date), rowY(2) - 9, xDate(b.date), rowY(2) + 9, colour, 2.5);
+      line(xDate(b.date), rowY(3) - 9, xDate(b.date), rowY(3) + 9, colour, 2.5);
     }
   }
   const rowY = (k: number): number => rows + k * LANES.row + LANES.row / 2;
   ROWS.forEach((name, k) => {
     label(name, rowY(k), INK);
   });
-  const within = (date: Ticks): boolean => date >= section.from && date <= section.to;
-  for (const date of view.desk.tempo.filter(within))
-    line(xDate(date), rowY(3) - 9, xDate(date), rowY(3) + 9, MUTED, 2.5);
-  for (const date of view.desk.dynamics.filter(within))
-    line(xDate(date), rowY(4) - 9, xDate(date), rowY(4) + 9, MUTED, 2.5);
-
   if (view.playhead !== null && inView(view.playhead))
     line(x(view.playhead), LANES.head, x(view.playhead), bottom, VOICE, 1.5);
 }

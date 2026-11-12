@@ -6,6 +6,7 @@ import type { CreateVtl } from '../vtl/module.ts';
 import { readBody, type Body } from './body.ts';
 import { invert, type Inversion } from './inversion.ts';
 import { movementsOf } from './movements.ts';
+import { performTake, takeMpm } from './mpm.ts';
 import type { TakeRequest, TakeResponse } from './protocol.ts';
 import { read, type ReadingOptions, type TakeTiming } from './reading.ts';
 import type { Roll } from './roll.ts';
@@ -36,7 +37,9 @@ async function load(): Promise<{ engine: VtlEngine; body: Body }> {
 }
 
 let loaded: ReturnType<typeof load> | null = null;
-let last: { inversion: Inversion; roll: Roll; timing: TakeTiming } | null = null;
+let last: { inversion: Inversion; roll: Roll; timing: TakeTiming; mpm: string } | null = null;
+let score: Promise<string> | null = null;
+const TITLE = 'A take: hummed and tapped along with the roll';
 
 const post = (message: TakeResponse, transfer: Transferable[] = []): void => {
   (self as unknown as { postMessage(m: TakeResponse, t: Transferable[]): void }).postMessage(
@@ -45,12 +48,22 @@ const post = (message: TakeResponse, transfer: Transferable[] = []): void => {
   );
 };
 
-const readingOf = (request: TakeRequest): ReadingOptions => ({
+const readingOf = (request: Extract<TakeRequest, { type: 'analyse' | 'reread' }>): ReadingOptions => ({
   ...(request.tapLead === undefined ? {} : { tapLead: request.tapLead }),
   ...(request.between === undefined ? {} : { between: request.between }),
 });
 
 async function handle(request: TakeRequest): Promise<void> {
+  if (request.type === 'perform') {
+    if (!last) throw new Error('no take to perform');
+    const msm = await (score ??= get('../mpm/score.msm').then((r) => r.text()));
+    post({
+      type: 'performed',
+      factor: request.factor,
+      ...performTake(msm, last.mpm, last.timing.section, request.factor),
+    });
+    return;
+  }
   if (request.type === 'reread') {
     if (!last) throw new Error('no take to read anew');
     const { inversion, roll, timing } = last;
@@ -60,7 +73,9 @@ async function handle(request: TakeRequest): Promise<void> {
       inversion.target.level,
       request.movements,
     );
-    post({ type: 'reread', movements, reading: read(roll, timing, movements, readingOf(request)) });
+    const reading = read(roll, timing, movements, readingOf(request));
+    last.mpm = takeMpm(roll, timing.section, reading, TITLE);
+    post({ type: 'reread', movements, reading, mpm: last.mpm });
     return;
   }
   const { engine, body } = await (loaded ??= load());
@@ -71,13 +86,15 @@ async function handle(request: TakeRequest): Promise<void> {
       post({ type: 'round', pass, passes: PASSES, misfit });
     },
   });
-  last = { inversion, roll: request.roll, timing: request.timing };
   const movements = movementsOf(
     inversion.tracks,
     inversion.voiced,
     inversion.target.level,
     request.movements,
   );
+  const reading = read(request.roll, request.timing, movements, readingOf(request));
+  const mpm = takeMpm(request.roll, request.timing.section, reading, TITLE);
+  last = { inversion, roll: request.roll, timing: request.timing, mpm };
   const { tracks } = inversion;
   post({
     type: 'done',
@@ -93,7 +110,8 @@ async function handle(request: TakeRequest): Promise<void> {
       copy: inversion.copy.slice(),
       misfits: inversion.misfits,
       movements,
-      reading: read(request.roll, request.timing, movements, readingOf(request)),
+      reading,
+      mpm,
     },
   });
 }

@@ -7,7 +7,7 @@ import { PianoSampler } from '../page/piano.ts';
 import { heldNotes, type HeldNote } from '../shared/piano.ts';
 import { SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
 import { Recorder } from './capture.ts';
-import { draw, VIEW_HEIGHT, type View } from './draw.ts';
+import { draw, VIEW_HEIGHT } from './draw.ts';
 import type { MovementOptions } from './movements.ts';
 import type { TakeRequest, TakeResponse, TakeResult } from './protocol.ts';
 import type { TakeTiming } from './reading.ts';
@@ -54,12 +54,17 @@ const ui = {
   status: element('status', HTMLElement),
   view: element('view', HTMLCanvasElement),
   after: element('after', HTMLElement),
+  performance: element('performance', HTMLElement),
   playTake: element('play-take', HTMLButtonElement),
   playCopy: element('play-copy', HTMLButtonElement),
   withRoll: element('with-roll', HTMLInputElement),
   smoothing: element('smoothing', HTMLInputElement),
   prominence: element('prominence', HTMLInputElement),
   between: element('between', HTMLInputElement),
+  exaggeration: element('exaggeration', HTMLInputElement),
+  exaggerationValue: element('exaggeration-value', HTMLOutputElement),
+  playMpm: element('play-mpm', HTMLButtonElement),
+  saveMpm: element('save-mpm', HTMLButtonElement),
   save: element('save', HTMLButtonElement),
   saveCalls: element('save-calls', HTMLButtonElement),
   open: element('open', HTMLInputElement),
@@ -73,7 +78,6 @@ let played: Roll | null = null;
  * against and what is drawn, since the dynamics are fitted on that scale.
  */
 let roll: Roll | null = null;
-let desk: View['desk'] = { tempo: [], dynamics: [] };
 let context: AudioContext | null = null;
 let sampler: PianoSampler | null = null;
 let recorder: Recorder | null = null;
@@ -83,7 +87,14 @@ let take: { timing: TakeTiming; samples: Float32Array; result: TakeResult | null
 /** How early or late this listener taps, as the last take that could tell found it. */
 let tapLead: number | undefined;
 /** What sounds: its sources, when the roll's `from` was scheduled, and the timer that ends it. */
-let sounding: { sources: AudioScheduledSourceNode[]; at: number; from: Seconds; end: number } | null = null;
+let sounding: {
+  sources: AudioScheduledSourceNode[];
+  at: number;
+  from: Seconds;
+  end: number;
+  /** Whether what sounds runs in the roll's time, so that the playhead can follow it. */
+  inRollTime: boolean;
+} | null = null;
 
 const say = (text: string): void => {
   ui.status.textContent = text;
@@ -108,14 +119,15 @@ function redraw(): void {
   if (!roll) return;
   const s = take?.timing.section ?? section();
   const playhead =
-    sounding && context ? context.currentTime - context.outputLatency - sounding.at + sounding.from : null;
+    sounding?.inRollTime && context
+      ? context.currentTime - context.outputLatency - sounding.at + sounding.from
+      : null;
   draw(ui.view, {
     roll,
     section: s,
     ...span(roll, s),
     timing: take?.timing ?? null,
     result: take?.result ?? null,
-    desk,
     playhead,
   });
 }
@@ -139,6 +151,7 @@ async function audio(): Promise<{ context: AudioContext; sampler: PianoSampler }
         resolve();
       }, 100);
     });
+    say('');
   }
   return { context, sampler: piano };
 }
@@ -172,26 +185,26 @@ function silence(): void {
 }
 
 /**
- * Play the roll over a span (if `withRoll`), and a voice with it, placed where the take's first
- * sample lies. `ended` is called when the span is over, not when the playing is stopped.
+ * Play piano notes over a span (those of the roll, in its time, or of the take's MPM as it was
+ * performed, from 0) and a voice with them, placed where the take's first sample lies. `ended` is
+ * called when the span is over, not when the playing is stopped.
  */
 async function play(
   from: Seconds,
   to: Seconds,
-  withRoll: boolean,
+  piano: readonly HeldNote[] | null,
   voice: { samples: Float32Array; start: Seconds } | null,
   ended: () => void,
+  inRollTime = true,
 ): Promise<void> {
-  if (!roll) return;
-  const { context: c, sampler: piano } = await audio();
+  const { context: c, sampler } = await audio();
   silence();
   const at = c.currentTime + AHEAD;
   const sources: AudioScheduledSourceNode[] = [];
-  if (withRoll)
-    for (const note of rollNotes(played ?? roll, from, to)) {
-      const source = piano.play(note, c.destination, at + note.on - from, 0);
-      if (source) sources.push(source);
-    }
+  for (const note of piano ?? []) {
+    const source = sampler.play(note, c.destination, at + note.on - from, 0);
+    if (source) sources.push(source);
+  }
   if (voice) {
     const buffer = c.createBuffer(1, voice.samples.length, SAMPLE_RATE);
     buffer.getChannelData(0).set(voice.samples);
@@ -209,7 +222,7 @@ async function play(
     },
     (to - from + AHEAD) * 1000,
   );
-  sounding = { sources, at, from, end };
+  sounding = { sources, at, from, end, inRollTime };
   ui.stop.disabled = false;
   animate();
 }
@@ -229,11 +242,14 @@ function analyser(): Worker {
         `the model sings the take: round ${message.pass} of ${message.passes}, ` +
           `${message.misfit.level.toFixed(1)} dB off in level`,
       );
-    else if (take) {
+    else if (message.type === 'performed') {
+      say('');
+      play(0, message.length + TAIL, message.notes, null, () => undefined, false).catch(fail);
+    } else if (take) {
       take.result = message.type === 'done' ? message.result : take.result && { ...take.result, ...message };
       if (take.result?.reading.tapLeadFrom === 'take') tapLead = take.result.reading.tapLead;
       if (take.result) report(take.result);
-      ui.after.hidden = false;
+      ui.after.hidden = ui.performance.hidden = false;
       say('');
       redraw();
     }
@@ -248,7 +264,7 @@ function analyser(): Worker {
 function analyse(samples: Float32Array, timing: TakeTiming, equalize: boolean): void {
   if (!roll) return;
   take = { timing, samples, result: null };
-  ui.after.hidden = true;
+  ui.after.hidden = ui.performance.hidden = true;
   ui.report.textContent = '';
   say('the model sings the take …');
   const request: TakeRequest = {
@@ -295,6 +311,14 @@ function report(result: TakeResult): void {
           : `${Math.abs(off).toFixed(1)} ${off > 0 ? 'above' : 'below'} a straight line between the chords`;
       return `  ${String(v.date).padStart(6)}  velocity ${String(v.velocity).padStart(3)}  ${said}`;
     }),
+    `Within the beats, against the tempo: ${r.rubatos.length} rubatos` +
+      (r.rubatos.length
+        ? ` (${r.rubatos.map((x) => `${x.date}: ${x.intensity.toFixed(2)}`).join(', ')}; under 1 later than written, over 1 sooner).`
+        : '.'),
+    `At the chords, against the dynamics: accents in ${r.accents.length} movements` +
+      (r.accents.length
+        ? `, up to ${Math.max(...r.accents.map((a) => a.scale)).toFixed(1)} velocity steps.`
+        : '.'),
     `Spread chords: ${r.spreads.filter((s) => s.placement === 'before-beat').length} tapped on the last note, ` +
       `${r.spreads.filter((s) => s.placement === 'on-beat').length} on the first, ` +
       `${r.spreads.filter((s) => s.placement === 'estimate').length} between or not tapped.`,
@@ -333,11 +357,11 @@ async function record(): Promise<void> {
   const mic = recorder;
   const { from, to } = span(r, s);
   take = null;
-  ui.after.hidden = true;
+  ui.after.hidden = ui.performance.hidden = true;
   ui.report.textContent = '';
   say('recording: hum, and tap any key on the beat. Escape stops.');
   (document.activeElement as HTMLElement | null)?.blur();
-  await play(from, to, true, null, () => {
+  await play(from, to, rollNotes(played ?? r, from, to), null, () => {
     finish(mic, s, from);
   });
   mic.start();
@@ -408,14 +432,6 @@ async function load(): Promise<void> {
   const work = JSON.parse(workJson) as Work;
   played = readRoll(mei, msm, work.provenance.find((p) => p.name === 'MakeChoice')?.options.prefer);
   roll = withCorrections(played, work.provenance);
-  const ends = (name: string): Ticks[] => [
-    ...new Set(
-      work.provenance
-        .filter((p) => p.name === name)
-        .flatMap((p) => [p.options.from, p.options.to].filter((d) => d !== undefined)),
-    ),
-  ];
-  desk = { tempo: ends('InsertTempo'), dynamics: ends('InsertDynamicsInstructions') };
   const bars = roll.bars.filter((b) => b.number > 0).length;
   ui.first.max = ui.last.max = String(bars);
   ui.listen.disabled = ui.record.disabled = false;
@@ -427,7 +443,7 @@ ui.view.style.height = `${VIEW_HEIGHT}px`;
 ui.listen.addEventListener('click', () => {
   if (!roll) return;
   const { from, to } = span(roll, section());
-  play(from, to, true, null, () => undefined).catch(fail);
+  play(from, to, rollNotes(played ?? roll, from, to), null, () => undefined).catch(fail);
 });
 ui.record.addEventListener('click', () => {
   record().catch(fail);
@@ -441,13 +457,30 @@ const hear = (copy: boolean): void => {
   if (!roll || !take?.result) return;
   const { from, to } = span(roll, take.timing.section);
   const samples = copy ? take.result.copy : take.samples;
-  play(from, to, ui.withRoll.checked, { samples, start: take.timing.start }, () => undefined).catch(fail);
+  const piano = ui.withRoll.checked ? rollNotes(played ?? roll, from, to) : null;
+  play(from, to, piano, { samples, start: take.timing.start }, () => undefined).catch(fail);
 };
 ui.playTake.addEventListener('click', () => {
   hear(false);
 });
 ui.playCopy.addEventListener('click', () => {
   hear(true);
+});
+const showExaggeration = (): void => {
+  ui.exaggerationValue.value = `× ${Number(ui.exaggeration.value).toFixed(1)}`;
+};
+ui.exaggeration.addEventListener('input', showExaggeration);
+showExaggeration();
+ui.playMpm.addEventListener('click', () => {
+  if (!take?.result) return;
+  say('performing the MPM …');
+  const request: TakeRequest = { type: 'perform', factor: Number(ui.exaggeration.value) };
+  analyser().postMessage(request);
+});
+ui.saveMpm.addEventListener('click', () => {
+  if (!take?.result) return;
+  const { firstBar, lastBar } = take.timing.section;
+  download(`take-${firstBar}-${lastBar}.mpm`, take.result.mpm, 'application/xml');
 });
 for (const input of [ui.smoothing, ui.prominence, ui.between])
   input.addEventListener('change', () => {
@@ -464,7 +497,7 @@ for (const input of [ui.first, ui.last])
   input.addEventListener('change', () => {
     if (Number(ui.last.value) < Number(ui.first.value)) ui.last.value = ui.first.value;
     take = null;
-    ui.after.hidden = true;
+    ui.after.hidden = ui.performance.hidden = true;
     ui.report.textContent = '';
     redraw();
   });
