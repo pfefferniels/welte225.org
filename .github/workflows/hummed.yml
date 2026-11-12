@@ -7,9 +7,9 @@ name: Check the hummed page
 on:
   push:
     branches: [main]
-    paths: ['hummed/**', 'mpm/**', '.github/workflows/hummed.yml']
+    paths: ['hummed/**', 'take/**', 'mpm/**', '.github/workflows/hummed.yml']
   pull_request:
-    paths: ['hummed/**', 'mpm/**', '.github/workflows/hummed.yml']
+    paths: ['hummed/**', 'take/**', 'mpm/**', '.github/workflows/hummed.yml']
   workflow_dispatch:
 
 permissions:
@@ -36,4 +36,4 @@ jobs:
       - name: The committed bundles are what the sources build to
         run: |
           npm run build
-          git diff --exit-code -- app.js app.js.map worker.js worker.js.map
+          git diff --exit-code -- app.js app.js.map worker.js worker.js.map take.js take.js.map take-worker.js take-worker.js.map

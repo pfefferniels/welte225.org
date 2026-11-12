@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A take: WM 225 hummed and tapped along with</title>
+    <meta
+      name="description"
+      content="A prototype: a few bars of Welte-Mignon roll 225 are played, a listener hums and taps along, and the voice is read back into the movements of a body by VocalTractLab and brought together with the roll as Music Performance Markup."
+    />
+    <meta name="author" content="Niels Pfeffer" />
+    <!-- the page's code lives in /hummed/, with the voice it shares (src/take/) -->
+    <base href="/hummed/" />
+    <style>
+      :root {
+        color-scheme: light;
+        --ground: #ffffff;
+        --ink: #16181d;
+        --muted: #5b6270;
+        --rule: #e5e7eb;
+        --soft: #f3f4f6;
+        --accent: #a3232f;
+        --link: #1f4e8c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+        margin: 0 0 0.4rem;
+      }
+      p {
+        margin: 0.6rem 0;
+        max-width: 72ch;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.9rem;
+        margin: 1rem 0 0.4rem;
+      }
+      .bar label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--muted);
+      }
+      input[type="number"] {
+        width: 4.2rem;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        color: inherit;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        background: var(--ground);
+      }
+      button {
+        cursor: pointer;
+        background: var(--soft);
+      }
+      button:disabled {
+        color: var(--muted);
+        cursor: default;
+      }
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      #record {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      #status {
+        min-height: 1.5rem;
+        color: var(--accent);
+      }
+      #view {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+      }
+      #report {
+        font-family: Menlo, Consolas, monospace;
+        font-size: 0.82rem;
+        line-height: 1.45;
+        white-space: pre-wrap;
+        background: var(--soft);
+        padding: 0.8rem 1rem;
+        border-radius: 4px;
+        margin: 0.8rem 0 0;
+      }
+      #report:empty {
+        display: none;
+      }
+      footer {
+        margin-top: 2.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+    </style>
+    <script src="take.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>A take</h1>
+      <p>
+        A few bars of the roll are played. Listen to them some times; then
+        record, and while they play, hum the voice you hear leading and tap the
+        beat on any key. The pitch does not matter: how the voice swells, where
+        it turns, where you breathe. Wear headphones, so that the microphone
+        hears only you.
+      </p>
+
+      <div class="bar">
+        <label>bars <input id="first" type="number" min="1" value="1" /></label>
+        <label>to <input id="last" type="number" min="1" value="4" /></label>
+        <label
+          >tapping
+          <select id="pulse">
+            <option value="360">eighths</option>
+            <option value="720" selected>quarters</option>
+            <option value="1440">halves</option>
+          </select></label
+        >
+        <button id="listen" type="button" disabled>Listen</button>
+        <button id="record" type="button" disabled>Record</button>
+        <button id="stop" type="button" disabled>Stop</button>
+        <label
+          >or open a take
+          <input id="open" type="file" multiple accept=".wav,.json"
+        /></label>
+      </div>
+      <p id="status" role="status">loading the roll …</p>
+
+      <canvas id="view"></canvas>
+
+      <div id="after" class="bar" hidden>
+        <button id="play-take" type="button">Hear the take</button>
+        <button id="play-copy" type="button">Hear the model's copy</button>
+        <label
+          ><input id="with-roll" type="checkbox" checked /> with the roll</label
+        >
+        <label
+          >the effort smoothed over
+          <input
+            id="smoothing"
+            type="number"
+            min="0.1"
+            max="3"
+            step="0.1"
+            value="0.6"
+          />
+          s</label
+        >
+        <label
+          >a turn from
+          <input
+            id="prominence"
+            type="number"
+            min="0.5"
+            max="12"
+            step="0.5"
+            value="2"
+          />
+          dB</label
+        >
+        <button id="save" type="button">Save the take</button>
+        <button id="save-calls" type="button">Save the calls</button>
+      </div>
+      <pre id="report"></pre>
+
+      <p>
+        The voice is read back into a body: VocalTractLab sings the take again
+        and again, its lungs, vocal folds and lips corrected each time by how
+        its sound differs from yours, until the copy lies on the take. What the
+        body did then, where its effort grew and turned and where it breathed,
+        says where one instruction ends and the next begins and what happens
+        between the notes; the taps say where the beat falls where no note
+        sounds, and on which note of a spread chord. The rest is fitted to the
+        roll. The calls saved are MPM Desk's own, for its chain to write the MPM
+        from.
+      </p>
+
+      <footer>
+        A prototype · <a href="/">To the roll</a> ·
+        <a href="/mpm/">the reconstruction it is held against</a> ·
+        <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed"
+          >source</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>

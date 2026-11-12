@@ -351,6 +351,81 @@ impossible times: an onset equal to the note's tick position or tens of seconds 
 an end before the onset. `repair` (`src/hummer/performance.ts`) puts such a note back at the head
 of its chord, and gives a note that ends too early a length, before the piano or the voice uses it.
 
+## A take: the humming read back
+
+`/take/` is a prototype of the other direction: not a voice made from the reconstruction, but a
+reconstruction made from a voice. A few bars of the roll are played, the recorded notes themselves
+(`/mpm/transcription.mei`), not the MPM; a listener hums along and taps the beat on any key. The
+voice is read back into a body, and what the body did is brought together with the roll as calls
+of MPM Desk. The premise: where an instruction begins and ends, and what happens between the
+notes, is heard and felt before it is seen, so it is asked of the body, and the roll stays what
+everything is fitted to.
+
+The page (`../take/index.html`, `src/take/page.ts`) plays the bars with the bar before them (at the
+beginning, 1.5 s of silence) and a second after, and records the microphone as it is (no echo
+cancelling, no levelling) in an audio worklet (`capture.ts`). Sound and taps lie on the audio
+context's clock: a block of the microphone by the frame it began at, a tap by the sound that was
+being heard when the key went down (`getOutputTimestamp`). Headphones are needed, wired ones: the
+microphone must hear the voice alone, and Bluetooth delays the roll by more than a spread lasts. A
+take is saved as its sound and its timing (`take-1-4.wav`, `.json`) and opened again from them; the
+calls are saved as JSON.
+
+**The voice taken apart** (`body.ts`, `acoustics.ts`, `inversion.ts`). The body is VocalTractLab's
+speaker moved by four things: the lungs push (pressure), the folds close more or less (from breathy
+to modal, the speaker's `g00` to `g20`), they are tensed to a pitch, and the lips part (from the
+hum's shape to the open `ah`, their tubes blended as the hummer blends them). The pitch is read off
+the recording (YIN). The other three are found by synthesis: the model sings the take, and its
+sound is held against the recording's frame by frame (5 ms), in level and in three bands, each
+movement corrected by what it alone changes in the model: the lungs by the level (22 dB for ten
+times the pressure), the folds by the band from 2.5 to 5 kHz against the one below 350 Hz (10 dB
+from breathy to modal), the lips by the band between (16 dB from the hum to the "a"). Four rounds
+bring the copy onto the take; the page plays it, with the roll or alone, so that the reading can
+be heard. What a microphone cannot tell is left open and said: how loud the voice was (the
+pressure is known against that of its loudest moments, set to 7000 dPa), and how the voice is
+coloured (a real voice's bands are read against their own median, so the folds and the lips move
+by what departs from it). Of a voice the model sang itself, the reading gives back the lungs
+within 0.7 dB, the lips within 0.01 of their way, the pitch within 9 cents, the folds within 0.06
+of theirs: they are the least certain, their band is faint and the lips colour it as they part.
+
+**Movements** (`movements.ts`). From the tracks: the phrases and the breaths between them (a
+silence of 180 ms or more; a shorter one is a stop within the phrase); the effort, the lung
+pressure in decibels, carried over the dips that only begin a note (under 0.3 s) and smoothed
+(0.6 s, on the page); its turns, the peaks and troughs that stand out by 2 dB on both sides, and
+between them the swells: grow, shrink or hold, each with where half of its change is made; the
+notes, by how the voice came to each (after a breath, by a slide, with a new push); where the lips
+part.
+
+**Against the roll** (`roll.ts`, `reading.ts`). The voice's notes against the roll's nearest give
+how far the voice lies behind (which also takes up what the microphone's delay leaves). Each tap
+goes to the beat of the tapped pulse it falls nearest. Where the beat's chord is struck at once
+(its notes within 30 ms), tap and chord give how early the listener taps and how widely; that
+lead is taken off every tap, and kept for a take that has too few such chords (Grünfeld spreads
+most of his). Then:
+
+- a tap on a beat where no note sounds is a **silent onset**, as the desk's tempo data holds them;
+- a tap on a spread chord says where the beat falls in it: by the first note (`on-beat`), by the
+  last (`before-beat`), or between (`estimate`), an `InsertTemporalSpread` each;
+- a breath and a turn of the effort are **boundaries**, each at the nearest place something can
+  begin (a chord, or half a beat of the pulse), no two closer than a beat: of two, a breath stays
+  before a trough before a peak;
+- between two boundaries lies one movement, and it becomes an `InsertTempo` and an
+  `InsertDynamicsInstructions` over the same stretch: tempo and dynamics begin and end together.
+  The tempo is fitted to the roll's chords and the silent onsets with espressivo's own clock
+  (`computeMillisecondsAt`), a spread chord counted where its beat was placed. The dynamics call
+  carries **phantom velocities** where no note sounds: the roll's own dynamics there (a straight
+  line between the chords on either side) and on top what the voice does between those two chords
+  beyond a straight line of its own, a decibel of effort counted as the roll's velocities spread
+  against the voice's. The curve through chords and phantoms is the desk's to fit.
+
+The page draws the roll, the pitch, the three tracks with the effort and its turns, the taps
+against the beats, and the take's boundaries above those of the published reconstruction's tempo
+and dynamics calls (`/mpm/work.json`), and lists the movements.
+
+What the prototype does not do yet: it has heard no real voice (the tests and `npm run take` use
+the model's own and the hummer's, which the same model sings); the calls have the form of the
+work file's but have not been run through MPM Desk's chain; rubato, accentuation, articulation
+and the pedal are not written; a take is analysed in about twice its length on one core.
+
 ## The piano
 
 The worker sends the piano with every plan as the roll plays it: each part's keys with their own
@@ -409,6 +484,8 @@ Grünfeld's tempo, and wait to be rendered again.
 | `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                           |
 | `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                 |
 | `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
+| `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                 |
+| `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                             |
 | `src/shared/`                    | what both sides use: units, maths, the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                                                                      |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                             |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
@@ -437,6 +514,7 @@ npm run calibrate    # after changing the reduction, the hum style or the recons
 npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, instructions, pianos
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
 npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
+npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>
 ```
 
 `npm run pianoteq` needs Pianoteq (the program itself, e.g. on a Mac `/Applications/Pianoteq

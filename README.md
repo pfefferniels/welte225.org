@@ -20,6 +20,7 @@ and the place where the data about that roll is published.
 | `/simonton-225/` | the comparison of the 1962/63 recording from Richard C. Simonton's copy with the edition's versions: scripts and derived data, cited by the edition's beliefs about that copy |
 | `/punch-225/` | the punch, the bridges and the perforator's advance on every copy that exists as a scan, measured against the dating figures of Hagmann's table: scripts and derived data. The corpus behind it, a dated control and Stanford's red rolls, is kept in condon-dates |
 | `/hummed/` | *Träumerei, hummed*, the front page's files: the performance with a pianist's inner voice humming along, rendered live by VocalTractLab from `/mpm/` and a reduction written in MEI; its TypeScript sources, data and research (`hummed/README.md`). `/hummed/` itself sends visitors on to `/` |
+| `/take/` | a prototype: a few bars of the roll hummed and tapped along with, the voice read back into the movements of a body by VocalTractLab and brought together with the roll as calls of MPM Desk (`hummed/README.md`, *A take*); its code lives in `/hummed/` |
 
 The identifiers are the edition's `@base`, `https://welte225.org/`, so
 every `@id` in `edition.jsonld` resolves to a path here. GitHub Pages

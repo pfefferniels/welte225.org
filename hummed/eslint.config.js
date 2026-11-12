@@ -4,7 +4,18 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['node_modules', 'app.js', 'worker.js', 'vtl.js', '*.map', 'research'] },
+  {
+    ignores: [
+      'node_modules',
+      'app.js',
+      'worker.js',
+      'take.js',
+      'take-worker.js',
+      'vtl.js',
+      '*.map',
+      'research',
+    ],
+  },
   js.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
