@@ -365,7 +365,7 @@ things.
   repetition that the second copy has too, with 2 to 3.3 mm of paper
   between them; 1.37 widths of a 2.4 mm punch is 3.3 mm, so they are
   joined. Laid against the first copy, 574 of the second's 594 webs
-  under 1.4 mm lie within a note there, and all 62 between 1.7 and
+  under 1.4 mm lie within a note there, and all 50 between 1.7 and
   3.7 mm part two. With the holes chained over 1.7 mm of paper, six notes are left
   on the first copy alone and two on the second.
 
