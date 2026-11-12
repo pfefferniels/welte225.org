@@ -101,9 +101,28 @@ const tell = async roll => {
         })
         const [start, end] = [struck[0].from - 20, struck.at(-1).from + 20]
         const base = notesOnly ? null : performanceOf(version)
+        const beside = notesOnly ? null : performanceOf(shown[1 - i])
         const grid = []; for (let place = start; place <= end; place += STEP) grid.push(place)
         const sampled = name => grid.map(place => base[name](place))
         const baseline = notesOnly ? null : { bass: sampled('bass'), treble: sampled('treble'), damper: sampled('damper'), hammerRail: sampled('hammerRail') }
+
+        const SHORT_NAMES = { SlowCrescendoOn: 'cresc. on', SlowCrescendoOff: 'cresc. off', ForzandoOn: 'forz. on', ForzandoOff: 'forz. off', MezzoforteOn: 'mf on', MezzoforteOff: 'mf off',
+                              SustainPedalOn: 'ped. on', SustainPedalOff: 'ped. off', SoftPedalOn: 'soft on', SoftPedalOff: 'soft off' }
+        /** A stretch of one curve as it is with the edit and as it would be otherwise, with the notes struck in it and the commands of the edit. */
+        const drawing = (name, other, from, to, readings, half) => {
+            const [k0, k1] = [Math.max(0, Math.floor((from - start) / STEP)), Math.min(grid.length - 1, Math.ceil((to - start) / STEP))]
+            const every = Math.max(1, Math.ceil((k1 - k0 + 1) / 90))
+            const points = []
+            for (let k = k0; k <= k1; k += every) points.push([round(baseline[name][k][1]), round(baseline[name][k][0], 3), round(other(k), 3)])
+            const clock = place => baseline[name][Math.min(grid.length - 1, Math.max(0, Math.round((place - start) / STEP)))]
+            const under = struck.filter(note => (!half || note.half === half) && note.from >= grid[k0] && note.from <= grid[k1])
+            const thin = Math.max(1, Math.ceil(under.length / 50))
+            return {
+                curve: name, points,
+                notes: under.filter((_, n) => n % thin === 0).map(note => [round(clock(note.from)[1]), round(clock(note.from)[0], 3), (half === 'bass' ? note.bottom : note.top) ? 1 : 0]),
+                commands: readings.map(reading => [round(clock(reading.from)[1]), SHORT_NAMES[reading.key.split(' ')[0]] ?? reading.key.split(' ')[0], reading.inserted ? 1 : 0]),
+            }
+        }
 
         /** What undoing these edits does to one curve: where it is heard, for how long, which way, under which notes. */
         const undone = (editIds, name, threshold, half) => {
@@ -122,10 +141,12 @@ const tell = async roll => {
             const heard = runs.map(run => {
                 const under = struck.filter(note => (!half || note.half === half) && note.from >= grid[run.from] && note.from <= grid[run.to])
                 const inside = difference.slice(run.from, run.to + 1)
-                return { under, seconds: baseline[name][run.to][1] - baseline[name][run.from][1], area: inside.reduce((sum, d) => sum + d, 0), peak: Math.max(...inside.map(Math.abs)), length: grid[run.to] - grid[run.from] }
+                return { under, from: grid[run.from], to: grid[run.to], seconds: baseline[name][run.to][1] - baseline[name][run.from][1], area: inside.reduce((sum, d) => sum + d, 0), peak: Math.max(...inside.map(Math.abs)), length: grid[run.to] - grid[run.from] }
             }).filter(run => run.under.length > 0)
             const under = heard.flatMap(run => run.under)
+            const all = runs.length ? [grid[runs[0].from], grid[runs.at(-1).to]] : null
             return {
+                span: heard.length ? [Math.min(...heard.map(run => run.from)), Math.max(...heard.map(run => run.to))] : all, without: k => baseline[name][k][0] - difference[k],
                 open, heard: heard.length > 0,
                 seconds: round(heard.reduce((sum, run) => sum + run.seconds, 0), 1),
                 more: heard.reduce((sum, run) => sum + run.area, 0) > 0,
@@ -149,10 +170,25 @@ const tell = async roll => {
             .sort((a, b) => Math.abs(a.from - reading.from) - Math.abs(b.from - reading.from))[0]
         const branch = { roll, branch: sigla.get(version.id) ?? version.id, copy: edition.copies[i].siglum }
 
+        /** The notes around an edit of the notes: this copy's, the other copy's own, what the edit puts in and what it takes out. */
+        const keys = (readings) => {
+            const [from, to] = [Math.min(...readings.map(r => r.from)) - 30, Math.max(...readings.map(r => r.to)) + 30]
+            const [low, high] = [Math.min(...readings.map(r => r.pitch)) - 9, Math.max(...readings.map(r => r.pitch)) + 9]
+            const within = note => note.to >= from && note.from <= to && note.pitch >= low && note.pitch <= high
+            const bar = note => [round(note.from - from, 1), round(note.to - from, 1), note.pitch]
+            const touched = new Set(readings.map(r => r.id))
+            return {
+                length: round(to - from, 0), low, high,
+                around: notesOf(own).filter(note => within(note) && !touched.has(note.id)).slice(0, 80).map(bar),
+                other: alone[1 - i].filter(note => note.type === 'note' && within(note) && !touched.has(note.id)).slice(0, 40).map(bar),
+                put: readings.filter(r => r.inserted).map(bar), taken: readings.filter(r => !r.inserted).map(bar),
+            }
+        }
+
         for (const entry of edits) {
             if (entry.done) continue
             const { readings, inserted, deleted, shape } = entry
-            const record = result => { told.push({ ...branch, shape, ...result }); entry.done = true }
+            const record = result => { told.push({ ...branch, shape, ...result, ...(result.what === 'note' && { drawn: keys(readings) }) }); entry.done = true }
 
             // ---- notes
             if (readings.every(reading => reading.type === 'note')) {
@@ -197,14 +233,16 @@ const tell = async roll => {
             const between = (a, b) => struck.filter(note => (!half || note.half === half) && note.from >= Math.min(a, b) && note.from <= Math.max(a, b))
 
             // ---- the same commands, standing elsewhere
+            const curveName = pedal ? (readings[0].operates === 'softPedal' ? 'hammerRail' : 'damper') : half ?? 'bass'
+            const elsewhere = (a, b) => drawing(curveName, k => beside[curveName](grid[k])[0], Math.min(a, b) - 150, Math.max(a, b) + 150, readings, half)
             if (shape === 'shift' && inserted.length > 0 && deleted.length > 0) {
                 const under = between(inserted[0].from, deleted[0].from)
-                record({ what, does: 'timing', apart: round(Math.abs(inserted[0].from - deleted[0].from), 1), notes: under.length, half: half ?? null })
+                record({ what, does: 'timing', apart: round(Math.abs(inserted[0].from - deleted[0].from), 1), notes: under.length, half: half ?? null, drawn: elsewhere(inserted[0].from, deleted[0].from) })
                 continue
             }
             if (shape === 'unshaped' && readings.every(reading => twinOf(reading))) {
                 const under = between(readings[0].from, twinOf(readings[0]).from)
-                record({ what, does: 'timing', apart: round(median(readings.map(reading => Math.abs(twinOf(reading).from - reading.from))), 1), notes: under.length, half: half ?? null })
+                record({ what, does: 'timing', apart: round(median(readings.map(reading => Math.abs(twinOf(reading).from - reading.from))), 1), notes: under.length, half: half ?? null, drawn: elsewhere(readings[0].from, twinOf(readings[0]).from) })
                 continue
             }
 
@@ -221,9 +259,13 @@ const tell = async roll => {
                 effect = undone(new Set(group.map(member => member.edit.id)), curve, threshold, half)
             }
             const scale = !effect.heard ? 'unheard' : effect.share >= 0.5 || effect.open ? 'the roll' : effect.seconds <= 1.5 ? 'accent' : effect.seconds <= 10 ? 'phrase' : 'passage'
+            const places = group.flatMap(member => member.readings.map(reading => reading.from))
+            const [from, to] = effect.span ? [Math.min(effect.span[0], ...places), Math.max(effect.span[1], ...places)] : [Math.min(...places), Math.max(...places)]
+            const margin = Math.max(60, Math.min(300, (to - from) / 3))
+            const drawn = drawing(curve, effect.without, from - margin, Math.min(to, from + 2500) + margin, group.flatMap(member => member.readings), half)
             for (const member of group) {
                 told.push({ ...branch, shape: member.shape, what, does: scale, more: effect.more, peak: effect.peak, seconds: effect.seconds, notes: effect.notes, strokes: effect.strokes,
-                            melody: effect.melody, bassLine: effect.bassLine, half: half ?? null, together: group.length })
+                            melody: effect.melody, bassLine: effect.bassLine, half: half ?? null, together: group.length, drawn })
                 member.done = true
             }
         }
@@ -284,6 +326,30 @@ if (!isMainThread) {
         }).sort((a, b) => b.edits - a.edits)
     }
 
+    // five examples of each kind as the overview lists them, near the middle of their kind and from as many rolls as can be
+    const titles = new Map(JSON.parse(readFileSync(join(here, 'rolls.json'), 'utf8')).map(roll => [roll.number, `${(roll.composer ?? '').split(',')[0]}, ${(roll.title ?? '').split(' : ')[0]}`]))
+    const rowOf = edit => {
+        if (edit.what === 'note') return edit.shape === 'shift' ? 'note moved' : edit.does === 'one copy has more' ? `note more ${edit.role}` : `note ${edit.does}`
+        if (edit.shape === 'additional-accent') return 'accent added'
+        if (edit.shape === 'shift') return 'moved'
+        if (edit.shape === 'prolong' || edit.shape === 'shorten') return 'hole'
+        if (edit.shape === 'remove-redundancy') return 'redundant'
+        if (edit.what !== 'dynamics') return HEARD.includes(edit.does) ? (edit.seconds <= 1.5 && !edit.more ? 'pedal change' : 'pedal held') : 'pedal quiet'
+        return HEARD.includes(edit.does) ? `${edit.does === 'the roll' ? 'passage' : edit.does}${edit.does === 'accent' || edit.does === 'phrase' ? (edit.more ? ' more' : ' less') : ''}` : edit.does
+    }
+    const examples = {}
+    // an edit in the leader, before the first note, has no stretch of curve to show
+    for (const [row, of] of Map.groupBy(told.filter(edit => edit.drawn && (!edit.drawn.points || edit.drawn.points.length > 1)), rowOf)) {
+        const measure = edit => edit.peak ?? edit.apart ?? edit.by ?? edit.length ?? 0
+        const middle = median(of.map(measure))
+        const ranked = [...of].sort((a, b) => Math.abs(measure(a) - middle) - Math.abs(measure(b) - middle))
+        const chosen = []
+        for (const edit of ranked) if (chosen.length < 5 && !chosen.some(other => other.roll === edit.roll)) chosen.push(edit)
+        for (const edit of ranked) if (chosen.length < 5 && !chosen.includes(edit) && !chosen.some(other => other.drawn === edit.drawn)) chosen.push(edit)
+        examples[row] = chosen.map(edit => ({ roll: edit.roll, title: titles.get(edit.roll) ?? '', copy: edit.copy, half: edit.half ?? null, more: edit.more ?? null,
+            peak: edit.peak ?? null, seconds: edit.seconds ?? null, notes: edit.notes ?? null, apart: edit.apart ?? null, by: edit.by ?? null, timing: edit.does === 'timing', drawn: edit.drawn }))
+    }
+
     // what a branch has of its own once timing, paper and what no note is struck under are set aside
     const weighty = edit => edit.what === 'note' ? ['one copy has more', 'another pitch'].includes(edit.does)
         : HEARD.includes(edit.does)
@@ -305,6 +371,6 @@ if (!isMainThread) {
         leftOut: MISALIGNED, pairs: rolls.length, edits: told.length,
         expression: { edits: told.filter(edit => edit.what !== 'note').length, classes: tallied(edit => edit.what !== 'note') },
         notes: { edits: told.filter(edit => edit.what === 'note').length, classes: tallied(edit => edit.what === 'note') },
-        branches,
-    }, null, 1))
+        branches, examples,
+    }))
 }

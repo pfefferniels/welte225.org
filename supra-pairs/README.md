@@ -748,7 +748,7 @@ unless Ph1 and St2 are two rolls.
 | `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
 | `edits.mjs` | the proposed edits of every edition by kind, by what they touch and by what they do; writes `edits.tsv` |
 | `dates.py` | the edits of each pair beside the punch dates, papers and perforators of condon-dates; writes `dates.tsv` and `dates.json` |
-| `effects.mjs` | every edit told by what it does: an edit of the expression undone and the version performed again, an edit of the notes by what stands around the note; and how much each branch has of its own; writes `effects.json` |
+| `effects.mjs` | every edit told by what it does: an edit of the expression undone and the version performed again, an edit of the notes by what stands around the note; how much each branch has of its own; and five examples of each kind with what a drawing of them needs; writes `effects.json` |
 | `dynamics.mjs` | both copies of each pair performed and their dynamics curves held against each other: where they part, how far, for how long, under which notes; writes `dynamics.json` |
 | `unshaped.mjs` | what each edit of no shape does against the other copy's text, how long each valve stands otherwise, and how far apart the two copies are struck when performed; writes `unshaped.json` |
 | `summary.py` | the tables of `summary.md` from the results |
