@@ -1,0 +1,1438 @@
+{
+ "leftOut": [
+  662
+ ],
+ "pairs": 37,
+ "edits": 5128,
+ "expression": {
+  "edits": 4180,
+  "classes": [
+   {
+    "what": "dynamics",
+    "does": "unheard",
+    "which": null,
+    "edits": 952,
+    "pairs": 34,
+    "shapes": {
+     "unshaped": 390,
+     "prolong": 106,
+     "remove-redundancy": 164,
+     "additional-accent": 55,
+     "shorten": 237
+    },
+    "unshaped": {
+     "edits": 390,
+     "pairs": 26
+    }
+   },
+   {
+    "what": "dynamics",
+    "does": "accent",
+    "which": "more",
+    "edits": 920,
+    "pairs": 29,
+    "shapes": {
+     "prolong": 47,
+     "additional-accent": 571,
+     "unshaped": 276,
+     "shorten": 14,
+     "remove-redundancy": 12
+    },
+    "unshaped": {
+     "edits": 276,
+     "pairs": 24,
+     "peak": 1.28,
+     "seconds": 0.8,
+     "notes": 5,
+     "strokes": 2,
+     "melody": 183,
+     "bassLine": 193,
+     "bass": 173,
+     "treble": 103
+    },
+    "peak": 1.01,
+    "seconds": 0.8,
+    "notes": 4,
+    "strokes": 1,
+    "melody": 630,
+    "bassLine": 690,
+    "bass": 633,
+    "treble": 287
+   },
+   {
+    "what": "dynamics",
+    "does": "timing",
+    "which": null,
+    "edits": 842,
+    "pairs": 31,
+    "shapes": {
+     "shift": 681,
+     "unshaped": 161
+    },
+    "unshaped": {
+     "edits": 161,
+     "pairs": 22,
+     "apart": 28.5
+    },
+    "apart": 12.8
+   },
+   {
+    "what": "dynamics",
+    "does": "phrase",
+    "which": "more",
+    "edits": 575,
+    "pairs": 26,
+    "shapes": {
+     "unshaped": 264,
+     "additional-accent": 288,
+     "remove-redundancy": 22,
+     "shorten": 1
+    },
+    "unshaped": {
+     "edits": 264,
+     "pairs": 23,
+     "peak": 1.62,
+     "seconds": 2.4,
+     "notes": 14,
+     "strokes": 5,
+     "melody": 202,
+     "bassLine": 213,
+     "bass": 147,
+     "treble": 117
+    },
+    "peak": 1.34,
+    "seconds": 2.2,
+    "notes": 11,
+    "strokes": 4,
+    "melody": 462,
+    "bassLine": 435,
+    "bass": 299,
+    "treble": 276
+   },
+   {
+    "what": "dynamics",
+    "does": "accent",
+    "which": "less",
+    "edits": 420,
+    "pairs": 25,
+    "shapes": {
+     "remove-redundancy": 22,
+     "additional-accent": 50,
+     "shorten": 19,
+     "unshaped": 308,
+     "prolong": 21
+    },
+    "unshaped": {
+     "edits": 308,
+     "pairs": 23,
+     "peak": 0.92,
+     "seconds": 0.5,
+     "notes": 5,
+     "strokes": 1,
+     "melody": 211,
+     "bassLine": 161,
+     "bass": 130,
+     "treble": 178
+    },
+    "peak": 0.97,
+    "seconds": 0.5,
+    "notes": 5,
+    "strokes": 1,
+    "melody": 283,
+    "bassLine": 241,
+    "bass": 207,
+    "treble": 213
+   },
+   {
+    "what": "dynamics",
+    "does": "phrase",
+    "which": "less",
+    "edits": 190,
+    "pairs": 21,
+    "shapes": {
+     "unshaped": 139,
+     "additional-accent": 31,
+     "prolong": 1,
+     "remove-redundancy": 17,
+     "shorten": 2
+    },
+    "unshaped": {
+     "edits": 139,
+     "pairs": 20,
+     "peak": 1.06,
+     "seconds": 2.2,
+     "notes": 15,
+     "strokes": 4,
+     "melody": 109,
+     "bassLine": 107,
+     "bass": 82,
+     "treble": 57
+    },
+    "peak": 1.25,
+    "seconds": 2.2,
+    "notes": 14,
+    "strokes": 4,
+    "melody": 153,
+    "bassLine": 150,
+    "bass": 110,
+    "treble": 80
+   },
+   {
+    "what": "sustain pedal",
+    "does": "unheard",
+    "which": null,
+    "edits": 76,
+    "pairs": 18,
+    "shapes": {
+     "unshaped": 33,
+     "prolong": 11,
+     "remove-redundancy": 22,
+     "shorten": 10
+    },
+    "unshaped": {
+     "edits": 33,
+     "pairs": 10
+    }
+   },
+   {
+    "what": "soft pedal",
+    "does": "unheard",
+    "which": null,
+    "edits": 58,
+    "pairs": 10,
+    "shapes": {
+     "unshaped": 57,
+     "prolong": 1
+    },
+    "unshaped": {
+     "edits": 57,
+     "pairs": 10
+    }
+   },
+   {
+    "what": "sustain pedal",
+    "does": "timing",
+    "which": null,
+    "edits": 34,
+    "pairs": 12,
+    "shapes": {
+     "shift": 32,
+     "unshaped": 2
+    },
+    "unshaped": {
+     "edits": 2,
+     "pairs": 1,
+     "apart": 27.6
+    },
+    "apart": 9.6
+   },
+   {
+    "what": "dynamics",
+    "does": "passage",
+    "which": "more",
+    "edits": 31,
+    "pairs": 8,
+    "shapes": {
+     "unshaped": 26,
+     "additional-accent": 5
+    },
+    "unshaped": {
+     "edits": 26,
+     "pairs": 5,
+     "peak": 2.94,
+     "seconds": 14.4,
+     "notes": 113,
+     "strokes": 28,
+     "melody": 26,
+     "bassLine": 26,
+     "bass": 9,
+     "treble": 17
+    },
+    "peak": 2.94,
+    "seconds": 14.1,
+    "notes": 113,
+    "strokes": 25,
+    "melody": 31,
+    "bassLine": 31,
+    "bass": 11,
+    "treble": 20
+   },
+   {
+    "what": "soft pedal",
+    "does": "change",
+    "which": "less",
+    "edits": 30,
+    "pairs": 5,
+    "shapes": {
+     "unshaped": 30
+    },
+    "unshaped": {
+     "edits": 30,
+     "pairs": 5,
+     "peak": 3.5,
+     "seconds": 0.1,
+     "notes": 3,
+     "strokes": 1,
+     "melody": 25,
+     "bassLine": 19,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 3.5,
+    "seconds": 0.1,
+    "notes": 3,
+    "strokes": 1,
+    "melody": 25,
+    "bassLine": 19,
+    "bass": 0,
+    "treble": 0
+   },
+   {
+    "what": "sustain pedal",
+    "does": "change",
+    "which": "less",
+    "edits": 26,
+    "pairs": 7,
+    "shapes": {
+     "prolong": 1,
+     "unshaped": 25
+    },
+    "unshaped": {
+     "edits": 25,
+     "pairs": 6,
+     "peak": 3.96,
+     "seconds": 0.1,
+     "notes": 3,
+     "strokes": 1,
+     "melody": 15,
+     "bassLine": 15,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 3.96,
+    "seconds": 0.1,
+    "notes": 3,
+    "strokes": 1,
+    "melody": 16,
+    "bassLine": 16,
+    "bass": 0,
+    "treble": 0
+   },
+   {
+    "what": "soft pedal",
+    "does": "held",
+    "which": "more",
+    "edits": 11,
+    "pairs": 5,
+    "shapes": {
+     "unshaped": 11
+    },
+    "unshaped": {
+     "edits": 11,
+     "pairs": 5,
+     "peak": 4,
+     "seconds": 4,
+     "notes": 23,
+     "strokes": 7,
+     "melody": 9,
+     "bassLine": 10,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 4,
+    "seconds": 4,
+    "notes": 23,
+    "strokes": 7,
+    "melody": 9,
+    "bassLine": 10,
+    "bass": 0,
+    "treble": 0
+   },
+   {
+    "what": "sustain pedal",
+    "does": "held",
+    "which": "more",
+    "edits": 5,
+    "pairs": 4,
+    "shapes": {
+     "unshaped": 4,
+     "prolong": 1
+    },
+    "unshaped": {
+     "edits": 4,
+     "pairs": 4,
+     "peak": 4,
+     "seconds": 1,
+     "notes": 15,
+     "strokes": 2,
+     "melody": 4,
+     "bassLine": 4,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 4,
+    "seconds": 0.6,
+    "notes": 6,
+    "strokes": 2,
+    "melody": 5,
+    "bassLine": 5,
+    "bass": 0,
+    "treble": 0
+   },
+   {
+    "what": "dynamics",
+    "does": "passage",
+    "which": "less",
+    "edits": 5,
+    "pairs": 3,
+    "shapes": {
+     "unshaped": 5
+    },
+    "unshaped": {
+     "edits": 5,
+     "pairs": 3,
+     "peak": 2.94,
+     "seconds": 12,
+     "notes": 3,
+     "strokes": 2,
+     "melody": 5,
+     "bassLine": 3,
+     "bass": 2,
+     "treble": 3
+    },
+    "peak": 2.94,
+    "seconds": 12,
+    "notes": 3,
+    "strokes": 2,
+    "melody": 5,
+    "bassLine": 3,
+    "bass": 2,
+    "treble": 3
+   },
+   {
+    "what": "soft pedal",
+    "does": "timing",
+    "which": null,
+    "edits": 2,
+    "pairs": 2,
+    "shapes": {
+     "shift": 2
+    },
+    "apart": 44.7
+   },
+   {
+    "what": "soft pedal",
+    "does": "held",
+    "which": "less",
+    "edits": 2,
+    "pairs": 2,
+    "shapes": {
+     "unshaped": 2
+    },
+    "unshaped": {
+     "edits": 2,
+     "pairs": 2,
+     "peak": 4,
+     "seconds": 6.3,
+     "notes": 79,
+     "strokes": 8,
+     "melody": 2,
+     "bassLine": 2,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 4,
+    "seconds": 6.3,
+    "notes": 79,
+    "strokes": 8,
+    "melody": 2,
+    "bassLine": 2,
+    "bass": 0,
+    "treble": 0
+   },
+   {
+    "what": "sustain pedal",
+    "does": "held",
+    "which": "less",
+    "edits": 1,
+    "pairs": 1,
+    "shapes": {
+     "unshaped": 1
+    },
+    "unshaped": {
+     "edits": 1,
+     "pairs": 1,
+     "peak": 4,
+     "seconds": 1.9,
+     "notes": 12,
+     "strokes": 4,
+     "melody": 1,
+     "bassLine": 1,
+     "bass": 0,
+     "treble": 0
+    },
+    "peak": 4,
+    "seconds": 1.9,
+    "notes": 12,
+    "strokes": 4,
+    "melody": 1,
+    "bassLine": 1,
+    "bass": 0,
+    "treble": 0
+   }
+  ]
+ },
+ "notes": {
+  "edits": 948,
+  "classes": [
+   {
+    "what": "note",
+    "does": "held longer",
+    "which": null,
+    "edits": 433,
+    "pairs": 24,
+    "shapes": {
+     "prolong": 433
+    },
+    "by": 7
+   },
+   {
+    "what": "note",
+    "does": "earlier or later",
+    "which": null,
+    "edits": 187,
+    "pairs": 19,
+    "shapes": {
+     "shift": 120,
+     "unshaped": 67
+    },
+    "unshaped": {
+     "edits": 67,
+     "pairs": 10,
+     "apart": 5.2
+    },
+    "apart": 7
+   },
+   {
+    "what": "note",
+    "does": "released sooner",
+    "which": null,
+    "edits": 128,
+    "pairs": 21,
+    "shapes": {
+     "shorten": 128
+    },
+    "by": 3.9
+   },
+   {
+    "what": "note",
+    "does": "struck again or held",
+    "which": null,
+    "edits": 81,
+    "pairs": 26,
+    "shapes": {
+     "unshaped": 81
+    },
+    "unshaped": {
+     "edits": 81,
+     "pairs": 26,
+     "apart": 0.9
+    },
+    "apart": 0.9
+   },
+   {
+    "what": "note",
+    "does": "one copy has more",
+    "which": "within",
+    "edits": 34,
+    "pairs": 12,
+    "shapes": {
+     "unshaped": 34
+    },
+    "unshaped": {
+     "edits": 34,
+     "pairs": 12
+    },
+    "length": 5.2,
+    "repeated": 14,
+    "lowest": 42,
+    "highest": 97,
+    "bass": 11,
+    "treble": 23,
+    "chord": 7
+   },
+   {
+    "what": "note",
+    "does": "one copy has more",
+    "which": "octave",
+    "edits": 30,
+    "pairs": 11,
+    "shapes": {
+     "unshaped": 30
+    },
+    "unshaped": {
+     "edits": 30,
+     "pairs": 11
+    },
+    "length": 4.2,
+    "repeated": 11,
+    "lowest": 24,
+    "highest": 102,
+    "bass": 14,
+    "treble": 16,
+    "chord": 6,
+    "above": 14,
+    "below": 16
+   },
+   {
+    "what": "note",
+    "does": "a tone or less away",
+    "which": null,
+    "edits": 28,
+    "pairs": 9,
+    "shapes": {
+     "unshaped": 28
+    },
+    "unshaped": {
+     "edits": 28,
+     "pairs": 9
+    },
+    "semitone": 22,
+    "intervals": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "what": "note",
+    "does": "one copy has more",
+    "which": "below",
+    "edits": 12,
+    "pairs": 6,
+    "shapes": {
+     "unshaped": 12
+    },
+    "unshaped": {
+     "edits": 12,
+     "pairs": 6
+    },
+    "length": 6.7,
+    "repeated": 7,
+    "lowest": 30,
+    "highest": 71,
+    "bass": 11,
+    "treble": 1,
+    "chord": 4
+   },
+   {
+    "what": "note",
+    "does": "one copy has more",
+    "which": "by itself",
+    "edits": 6,
+    "pairs": 2,
+    "shapes": {
+     "unshaped": 6
+    },
+    "unshaped": {
+     "edits": 6,
+     "pairs": 2
+    },
+    "length": 8.4,
+    "repeated": 3,
+    "lowest": 35,
+    "highest": 75,
+    "bass": 2,
+    "treble": 4,
+    "chord": 1
+   },
+   {
+    "what": "note",
+    "does": "one copy has more",
+    "which": "on top",
+    "edits": 5,
+    "pairs": 3,
+    "shapes": {
+     "unshaped": 5
+    },
+    "unshaped": {
+     "edits": 5,
+     "pairs": 3
+    },
+    "length": 17.3,
+    "repeated": 1,
+    "lowest": 61,
+    "highest": 73,
+    "bass": 3,
+    "treble": 2,
+    "chord": 2
+   },
+   {
+    "what": "note",
+    "does": "paper",
+    "which": null,
+    "edits": 4,
+    "pairs": 4,
+    "shapes": {
+     "unshaped": 4
+    },
+    "unshaped": {
+     "edits": 4,
+     "pairs": 4
+    }
+   }
+  ]
+ },
+ "branches": [
+  {
+   "roll": 28,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 407,
+     "weighty": 168,
+     "dynamics": 164,
+     "notes": 4
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 72,
+     "weighty": 59,
+     "dynamics": 50,
+     "notes": 9
+    }
+   ]
+  },
+  {
+   "roll": 57,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 465,
+     "weighty": 271,
+     "dynamics": 269,
+     "notes": 2
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 17,
+     "weighty": 7,
+     "dynamics": 6,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 225,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 7,
+     "weighty": 6,
+     "dynamics": 6,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 85,
+     "weighty": 69,
+     "dynamics": 69,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 321,
+   "stemma": "St1(St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St2",
+     "edits": 10,
+     "weighty": 2,
+     "dynamics": 1,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 364,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 124,
+     "weighty": 14,
+     "dynamics": 14,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 6,
+     "weighty": 2,
+     "dynamics": 2,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 365,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 106,
+     "weighty": 40,
+     "dynamics": 40,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 13,
+     "weighty": 10,
+     "dynamics": 10,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 371,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 17,
+     "weighty": 3,
+     "dynamics": 2,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 4,
+     "weighty": 2,
+     "dynamics": 2,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 570,
+   "stemma": "St1(St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St2",
+     "edits": 9,
+     "weighty": 5,
+     "dynamics": 5,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 660,
+   "stemma": "St1(St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St2",
+     "edits": 43,
+     "weighty": 7,
+     "dynamics": 7,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 723,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 22,
+     "weighty": 9,
+     "dynamics": 9,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 224,
+     "weighty": 61,
+     "dynamics": 60,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 757,
+   "stemma": "St1+St2",
+   "branches": []
+  },
+  {
+   "roll": 797,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 103,
+     "weighty": 50,
+     "dynamics": 50,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 2,
+     "weighty": 1,
+     "dynamics": 1,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1033,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 40,
+     "weighty": 19,
+     "dynamics": 15,
+     "notes": 4
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 359,
+     "weighty": 161,
+     "dynamics": 158,
+     "notes": 3
+    }
+   ]
+  },
+  {
+   "roll": 1213,
+   "stemma": "St2(St1)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 3,
+     "weighty": 1,
+     "dynamics": 0,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 1246,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 118,
+     "weighty": 48,
+     "dynamics": 48,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 6,
+     "weighty": 2,
+     "dynamics": 2,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1247,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 4,
+     "weighty": 3,
+     "dynamics": 2,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 121,
+     "weighty": 108,
+     "dynamics": 106,
+     "notes": 2
+    }
+   ]
+  },
+  {
+   "roll": 1253,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 27,
+     "weighty": 26,
+     "dynamics": 26,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 128,
+     "weighty": 71,
+     "dynamics": 71,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1259,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 341,
+     "weighty": 152,
+     "dynamics": 149,
+     "notes": 3
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 43,
+     "weighty": 37,
+     "dynamics": 28,
+     "notes": 9
+    }
+   ]
+  },
+  {
+   "roll": 1262,
+   "stemma": "St2(St1)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 9,
+     "weighty": 4,
+     "dynamics": 4,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1263,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 409,
+     "weighty": 197,
+     "dynamics": 196,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 26,
+     "weighty": 9,
+     "dynamics": 9,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1296,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 17,
+     "weighty": 5,
+     "dynamics": 0,
+     "notes": 5
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 10,
+     "weighty": 1,
+     "dynamics": 0,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 1339,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 99,
+     "weighty": 44,
+     "dynamics": 43,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 7,
+     "weighty": 5,
+     "dynamics": 5,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1352,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 195,
+     "weighty": 63,
+     "dynamics": 63,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 33,
+     "weighty": 27,
+     "dynamics": 26,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 1447,
+   "stemma": "St2(St1)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 5,
+     "weighty": 0,
+     "dynamics": 0,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1473,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 78,
+     "weighty": 48,
+     "dynamics": 41,
+     "notes": 7
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 19,
+     "weighty": 9,
+     "dynamics": 3,
+     "notes": 6
+    }
+   ]
+  },
+  {
+   "roll": 1474,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 2,
+     "weighty": 2,
+     "dynamics": 1,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 12,
+     "weighty": 3,
+     "dynamics": 2,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 1478,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 202,
+     "weighty": 45,
+     "dynamics": 44,
+     "notes": 1
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 25,
+     "weighty": 20,
+     "dynamics": 18,
+     "notes": 2
+    }
+   ]
+  },
+  {
+   "roll": 1480,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 130,
+     "weighty": 74,
+     "dynamics": 74,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 7,
+     "weighty": 6,
+     "dynamics": 6,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 1654,
+   "stemma": "St2(St1)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 3,
+     "weighty": 0,
+     "dynamics": 0,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 2086,
+   "stemma": "St1(St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St2",
+     "edits": 5,
+     "weighty": 0,
+     "dynamics": 0,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 2254,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 5,
+     "weighty": 5,
+     "dynamics": 3,
+     "notes": 2
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 270,
+     "weighty": 63,
+     "dynamics": 63,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 2260,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 63,
+     "weighty": 46,
+     "dynamics": 40,
+     "notes": 6
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 319,
+     "weighty": 152,
+     "dynamics": 143,
+     "notes": 9
+    }
+   ]
+  },
+  {
+   "roll": 2538,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 21,
+     "weighty": 3,
+     "dynamics": 3,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 19,
+     "weighty": 1,
+     "dynamics": 1,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 2844,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 42,
+     "weighty": 11,
+     "dynamics": 11,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 5,
+     "weighty": 3,
+     "dynamics": 2,
+     "notes": 1
+    }
+   ]
+  },
+  {
+   "roll": 2995,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 26,
+     "weighty": 1,
+     "dynamics": 1,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 2,
+     "weighty": 0,
+     "dynamics": 0,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 3309,
+   "stemma": "*(St1,St2)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 120,
+     "weighty": 40,
+     "dynamics": 40,
+     "notes": 0
+    },
+    {
+     "branch": "R1.1",
+     "copy": "St2",
+     "edits": 2,
+     "weighty": 1,
+     "dynamics": 1,
+     "notes": 0
+    }
+   ]
+  },
+  {
+   "roll": 3310,
+   "stemma": "St2(St1)",
+   "branches": [
+    {
+     "branch": "R2",
+     "copy": "St1",
+     "edits": 15,
+     "weighty": 1,
+     "dynamics": 1,
+     "notes": 0
+    }
+   ]
+  }
+ ]
+}

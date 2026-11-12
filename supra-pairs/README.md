@@ -544,6 +544,66 @@ can be older than the paper it survives on, so that is not impossible,
 but these six proposals rest on 4 to 26 readings each, which is
 finding 3 from another side.
 
+### What each edit does, for the expression and for the notes
+
+`effects.mjs` tells every edit of the 37 pairs that have two texts and
+align (WM 662 is left out) by what it does, 5,128 edits in all:
+4,180 on the expression and 948 on the notes (`effects.json`). An edit of
+the expression is undone and the version performed again; where the
+curve of its half of the keyboard then lies a fifth of a marking or
+more from where it lay while notes are struck, the edit is heard, and
+how long that lasts, which way it goes and which notes lie under it
+say what it is heard as. Where undoing one edit leaves a valve standing
+otherwise to the end of the roll, the next edit on that valve is undone
+with it. An edit of the notes is told by what stands around the note.
+
+**The expression.** The library names 1,000 as an accent added
+(heard as a stroke or two brought out in 571, as a swell over a phrase
+in 288, not at all in 55), 715 as moved along the roll, 472 as the
+hole of a command prolonged or shortened (nothing is struck under
+365 of them) and 259 as a redundant command dropped (nothing under
+186). The other 1,734 it can only call put in or taken out:
+
+| put in or taken out, a command | edits | markings | seconds | notes | melody among them | bass line |
+|---|---|---|---|---|---|---|
+| brings out a stroke or two | 276 | 1.28 | 0.8 | 5 | 66 % | 70 % |
+| holds back a stroke or two | 308 | 0.92 | 0.5 | 5 | 69 % | 52 % |
+| swells over a phrase | 264 | 1.62 | 2.4 | 14 | 77 % | 81 % |
+| sinks over a phrase | 139 | 1.06 | 2.2 | 15 | 78 % | 77 % |
+| louder or softer for a passage or more | 31 | | | | | |
+| the same change, 28.5 mm earlier or later | 161 | | | | | |
+| nothing is struck under it | 390 | | | | | |
+| a change of pedal, a tenth of a second | 55 | | | | | |
+| a pedal held or let go for a stretch | 18 | | | | | |
+| a pedal command with no note under it | 92 | | | | | |
+
+The figures are medians; a marking is a quarter of the roll's scale
+(pp, p, mf, f, ff).
+
+**The notes.** The library names 433 as held longer (by 7 mm in the
+median), 128 as released sooner (by 3.9 mm) and 120 as moved along the
+roll. The other 267 are a note put in or taken out:
+
+| put in or taken out, a note | edits | |
+|---|---|---|
+| the same note, earlier or later | 67 | the other copy has it too, further off than the library takes for a move |
+| struck again where the other copy holds | 81 | one long perforation on one copy, two strokes of the key on the other |
+| on the neighbouring key | 28 | the other copy has the stroke a tone or less away, 22 of them a semitone: a slip of the punch, or a wrong note put right |
+| one copy has a note more: it fills a chord | 34 | an inner note of a chord of 7; 5.2 mm long; 14 repeat a key struck just before |
+| it doubles a note at the octave | 30 | 14 the upper octave, 16 the lower; 4.2 mm long |
+| it lies under the chord | 12 | a new lowest note; 11 in the bass half |
+| it stands by itself | 6 | |
+| it lies on top | 5 | a new highest note; 17.3 mm long |
+| torn paper or a stray hole | 4 | |
+
+**The branches.** The same telling says how much a branch has of its
+own once timing, paper and what no note is struck under are set aside:
+an edit that is heard, or a note one copy has more. Of the 27 pairs
+proposed as two copies of a lost version, both branches have five or
+more such edits in 16, one branch alone in 7 and neither in 4; with ten
+it is 8, 14 and 5. So in about half of them one branch is thin, and
+the lost version is posited for a handful of readings (finding 3).
+
 ### What the edits do to the dynamics
 
 `dynamics.mjs` performs both copies of each pair on the library's
@@ -683,6 +743,7 @@ unless Ph1 and St2 are two rolls.
 | `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
 | `edits.mjs` | the proposed edits of every edition by kind, by what they touch and by what they do; writes `edits.tsv` |
 | `dates.py` | the edits of each pair beside the punch dates, papers and perforators of condon-dates; writes `dates.tsv` and `dates.json` |
+| `effects.mjs` | every edit told by what it does: an edit of the expression undone and the version performed again, an edit of the notes by what stands around the note; and how much each branch has of its own; writes `effects.json` |
 | `dynamics.mjs` | both copies of each pair performed and their dynamics curves held against each other: where they part, how far, for how long, under which notes; writes `dynamics.json` |
 | `unshaped.mjs` | what each edit of no shape does against the other copy's text, how long each valve stands otherwise, and how far apart the two copies are struck when performed; writes `unshaped.json` |
 | `summary.py` | the tables of `summary.md` from the results |
@@ -710,6 +771,7 @@ node bridges.mjs > bridges.tsv
 node edits.mjs > edits.tsv
 python3 dates.py > dates.json
 node unshaped.mjs > unshaped.json
+node effects.mjs > effects.json
 node dynamics.mjs > dynamics.json
 python3 strips.py out/wm1253/edition.jsonld 2500 2700 1-10 strips.png
 python3 summary.py > summary.md
