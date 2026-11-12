@@ -54,7 +54,7 @@ across two systems.
 - **It is quick.** A pair takes 4.4 s in the median and 25 s at most
   (WM 662, 19,000 chains a copy), of which the proposal takes 11 s at
   most.
-- **Every version plays.** 104 versions of the pairs and 17 of the
+- **Every version plays.** 102 versions of the pairs and 17 of the
   further sets were performed and written as MIDI, lost ones included.
 - **The desk does what the script does.** Roll Desk's editor, driven
   through its own dialogs, took three uploads for WM 570 (two analyses
@@ -374,20 +374,32 @@ two holes of a track is rarest between 1.7 and 2.3 mm, whatever the
 punch: below lie the webs within a chain, above the repetitions. On
 the narrow punches of 320 analyses the parser's bridge is 2.1 to
 2.7 mm, at the far edge of that gap; on the wide ones of the other
-137 it is 2.8 to 3.4 mm, among the repetitions. `readFromStanfordAton` now takes a
-`bridge` in millimetres (linked-rolls `501fb2b`). It is not the
-default, because a fixed bridge does not win everywhere: with 1.7 mm
-the 37 pairs differ by 4,696 chains track for track where the parser's
-chains differ by 4,882 (`bridges.mjs`, `bridges.tsv`), WM 1247 going
-from 227 to 128 and WM 1259 from 367 to 279, but WM 1473 from 66 to
-121 and WM 662 from 394 to 443.
+137 it is 2.8 to 3.4 mm, among the repetitions.
 
-Over the 37 pairs the readings on one copy alone go from 12,825 to
-11,979 and the edits from 7,506 to 7,207, nearly all of it WM 1253. The
-other rolls lose the odd speck. Two proposals on two copies turn over
-with that (WM 757 to `St2(St1)`, WM 1462 at one speed to `*(Be1,St1)`),
-which is finding 3 again, and WM 662, the roll the alignment does not
-hold, moves by 137 readings the wrong way.
+**Since, again.** The reader now takes only the holes from an analysis
+and chains them itself, over 1.7 mm of paper unless `bridge` says
+otherwise (linked-rolls `e00a26e`). What the parser joined is not read
+any more, nor its average hole width, so the mending above went with
+it. A hole set aside for its shape takes part wherever it lies; torn
+paper does not, and a speck makes no chain of its own. A first
+comparison had a fixed bridge lose on some pairs (WM 1473, WM 662):
+that was the reader leaving out a punch the parser had set aside in
+the middle of a note, which split the note in two.
+
+| the 37 pairs | on one copy alone | edits proposed | chains apart |
+|---|---|---|---|
+| the parser's notes, as read at first | 12,825 | 7,506 | 5,352 |
+| with the torn end's average mended | 11,979 | 7,207 | 4,882 |
+| the holes chained over 1.7 mm | 10,939 | 6,833 | 4,567 |
+
+Track for track the copies of 24 pairs differ by fewer chains than
+with the parser's notes, 11 by as many, two by more (WM 57 by three,
+WM 2844 by one; `bridges.mjs`, `bridges.tsv`). WM 1259 goes from 949
+readings on one copy alone to 641, WM 1247 from 453 to 178. WM 1253
+shares 1,640 readings of 1,893, with 11 notes left on one copy alone
+after the displaced are paired. WM 757, whose copies now differ in
+four readings, is proposed as one text, `St1+St2`. WM 662 has 30
+readings more on one copy alone, and WM 660 turns to `St1(St2)`.
 
 ## What has been fixed since
 
@@ -407,7 +419,7 @@ reach the desk with its next release; the desk's own work without it.
 | a lost version that nothing derives from (4a) | a version that changes nothing stands in the one it derives from | linked-rolls `02d52bc` |
 | the stemma of two leaves cut off at the panel's edges, by the gap above | the stemma is fitted by what its discs and captions take | roll-desk `65864c2` |
 | readings of drifted stretches taken for readings of their own, and for shifts (2, 4) | the window of a pair is centred on its drift along the roll, and is no narrower than the pitch of a chain | linked-rolls `8bb319e` |
-| a torn end joining the notes of the whole roll, tears and specks read as chains (8) | the holes are chained anew where the parser's average hole width is not that of its holes; tears and specks among the bad holes are left out | linked-rolls `4b39e8e` |
+| the parser's joining of holes into notes: a torn end joining the notes of a whole roll, wide punches joining fast repetitions, tears and specks read as chains (8) | the reader takes the holes and chains them itself over 1.7 mm of paper | linked-rolls `4b39e8e`, `e00a26e` |
 | rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
 
 Not touched: the alignment itself, which is still one shift and one

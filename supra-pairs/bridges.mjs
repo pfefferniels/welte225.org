@@ -1,6 +1,7 @@
 // How many chains the two copies of a roll differ by, track for track,
-// with the chains as the parser made them and with the holes chained
-// over a fixed length of paper instead (`bridge` of readFromStanfordAton).
+// with the notes as the parser joined them (the holes of the analysis
+// that carry an attack) and with the holes chained over one length of
+// paper or another (`bridge` of readFromStanfordAton, 1.7 mm by default).
 //
 //   node bridges.mjs [--rolls rolls.json] [--linked-rolls ../../linked-rolls] > bridges.tsv
 import { readFileSync } from 'node:fs'
@@ -17,9 +18,21 @@ const rolls = JSON.parse(readFileSync(resolve(here, args.rolls ?? 'rolls.json'),
 // millimetres of paper a chain may hold; nothing stands for the parser's own chains
 const bridges = [undefined, 1.2, 1.5, 1.7, 1.85, 2.0, 2.2, 2.5]
 const analysis = file => execFileSync('bzip2', ['-dc', resolve(here, file)], { maxBuffer: 1 << 30 }).toString('utf8')
-const chainsByTrack = (text, bridge) =>
-    lib.featuresOf(lib.readFromStanfordAton(text, bridge === undefined ? {} : { bridge }))
-        .reduce((counts, chain) => counts.set(chain.vertical.from, (counts.get(chain.vertical.from) ?? 0) + 1), new Map())
+const count = (counts, t) => counts.set(t, (counts.get(t) ?? 0) + 1)
+const chainsByTrack = (text, bridge) => {
+    const copy = lib.readFromStanfordAton(text, bridge === undefined ? {} : { bridge })
+    if (bridge !== undefined) return lib.featuresOf(copy).reduce((counts, chain) => count(counts, chain.vertical.from), new Map())
+
+    // the parser's own notes: every listed hole with an attack, on the track the reader puts it on
+    const { shift } = copy.measurements.trackCalibration
+    const bar = lib.barOf(copy)
+    const listed = text.slice(text.indexOf('@@BEGIN: HOLES'), text.indexOf('@@END: HOLES'))
+    return [...listed.matchAll(/@@BEGIN:\s*HOLE\s*\n([\s\S]*?)@@END:\s*HOLE/g)]
+        .filter(([, hole]) => /@NOTE_ATTACK:/.test(hole))
+        .map(([, hole]) => +hole.match(/@TRACKER_HOLE:\s*(-?\d+)/)[1] + shift)
+        .filter(t => bar.meaningsOf({ from: t, unit: 'track' }).length > 0)
+        .reduce(count, new Map())
+}
 
 console.log(['roll', ...bridges.map(bridge => bridge === undefined ? 'parser' : `${bridge} mm`)].join('\t'))
 const totals = bridges.map(() => 0)
