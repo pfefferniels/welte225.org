@@ -15,6 +15,8 @@ import {
   readRoll,
   sectionOf,
   timeAt,
+  withCorrections,
+  type Correction,
   type Roll,
   type Section,
 } from '../src/take/index.ts';
@@ -45,10 +47,11 @@ const { values } = parseArgs({
 export function loadRoll(): Roll {
   const read = (name: string): string => readFileSync(join(ROOT, '../mpm', name), 'utf8');
   const work = JSON.parse(read('work.json')) as {
-    provenance: { name: string; options: { prefer?: string } }[];
+    provenance: (Correction & { options: { prefer?: string } })[];
   };
   const prefer = work.provenance.find((p) => p.name === 'MakeChoice')?.options.prefer;
-  return readRoll(read('transcription.mei'), read('score.msm'), prefer);
+  // with the reconstruction's corrections of the velocities: the scale the dynamics are fitted on
+  return withCorrections(readRoll(read('transcription.mei'), read('score.msm'), prefer), work.provenance);
 }
 
 /** The hummer's voice over a section as a take, with taps a little early and a little scattered. */
@@ -172,10 +175,14 @@ for (const x of reading.spreads)
 console.log(
   `  effort and velocity at the chords: r = ${reading.velocity.r.toFixed(2)}, a dB of effort counted as ${reading.velocity.scale.toFixed(2)} velocity steps`,
 );
+console.log(
+  `  between the notes: ${reading.betweens.map((v) => `${v.date}:${v.velocity}${v.voiced ? `(${(v.velocity - v.line >= 0 ? '+' : '') + (v.velocity - v.line).toFixed(1)})` : '(line)'}`).join(' ')}`,
+);
 console.log(`  boundaries: ${reading.boundaries.map((b) => `${b.date} (${b.kind})`).join(', ')}`);
 for (const c of reading.calls.filter((c) => c.name !== 'InsertTemporalSpread'))
   console.log(`  ${c.name} ${JSON.stringify(c.options)}`);
 if (values.calls) {
-  writeFileSync(values.calls, JSON.stringify(reading.calls, null, 2));
+  const work = { provenance: reading.calls, secondary: { tempo: { silentOnsets: reading.silentOnsets } } };
+  writeFileSync(values.calls, JSON.stringify(work, null, 2));
   console.log(`\n${reading.calls.length} calls written to ${values.calls}`);
 }

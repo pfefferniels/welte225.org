@@ -411,20 +411,47 @@ most of his). Then:
 - between two boundaries lies one movement, and it becomes an `InsertTempo` and an
   `InsertDynamicsInstructions` over the same stretch: tempo and dynamics begin and end together.
   The tempo is fitted to the roll's chords and the silent onsets with espressivo's own clock
-  (`computeMillisecondsAt`), a spread chord counted where its beat was placed. The dynamics call
-  carries **phantom velocities** where no note sounds: the roll's own dynamics there (a straight
+  (`computeMillisecondsAt`), a spread chord counted where its beat was placed.
+- where no note sounds, the dynamics are the voice's to say: **phantom velocities** of the
+  dynamics call, at every half beat of the pulse without a chord while the voice sounds, and
+  wherever a movement begins or ends without one. Each is the roll's own dynamics there (a straight
   line between the chords on either side) and on top what the voice does between those two chords
-  beyond a straight line of its own, a decibel of effort counted as the roll's velocities spread
-  against the voice's. The curve through chords and phantoms is the desk's to fit.
+  beyond a straight line of its own: a swell through a held note, a sinking away. For this the
+  effort is smoothed only lightly (0.15 s), and a decibel of it counts as many of the roll's
+  velocity steps as the two spread against each other at the take's chords (between 0.3 and 3),
+  times what the page is told (_the voice between the notes ×_). The voice at a chord is the
+  voice where it sets in, up to 0.3 s after it. Where the voice is silent, a movement's end still
+  gets its value, the straight line alone. The curve through chords and phantoms is the desk's to
+  fit.
 
-The page draws the roll, the pitch, the three tracks with the effort and its turns, the taps
-against the beats, and the take's boundaries above those of the published reconstruction's tempo
-and dynamics calls (`/mpm/work.json`), and lists the movements.
+The roll's velocities are read as the desk's chain has them when the dynamics are fitted
+(`withCorrections`, `roll.ts`): mapped by the reconstruction's `Expand` and changed by its
+`Modify` calls, a spread chord counted as its loudest note (the way up to it is the spread's own
+gradient). The values between the notes are on that scale, or they would stand 8 to 15 steps
+above the chords they lie between. What is played is the roll as recorded.
 
-What the prototype does not do yet: it has heard no real voice (the tests and `npm run take` use
-the model's own and the hummer's, which the same model sings); the calls have the form of the
-work file's but have not been run through MPM Desk's chain; rubato, accentuation, articulation
-and the pedal are not written; a take is analysed in about twice its length on one core.
+The page draws the roll, the pitch, the three tracks with the effort (lightly smoothed, and as
+the turns are read from it), its turns and the places where it speaks between the notes; then what
+the calls come to: the **tempo**, the roll's own from beat to beat of its clock and over it each
+movement's curve as its instruction runs (`getTempoAt`), with the beats tapped where no note
+sounds; the **dynamics**, the chords, the values between them, and through both the curve the
+desk fits (`fitDynamics`: its `approximateDynamics`, espressivo's `fitTransitionCurve` with the
+desk's tolerance of five velocity steps and its seed); and the **spread chords**, each from its
+first note to its last with the beat where it was placed (red by the last note, blue by the
+first, black between). Under these the taps against the beats and the take's boundaries above
+those of the published reconstruction's tempo and dynamics calls (`/mpm/work.json`); then the
+values between the notes and the movements as a list. The calls are saved as the work file holds
+them, `provenance` with the silent onsets in `secondary.tempo`.
+
+Bars 1 to 4 of a made-up listener, who swells through the long notes, were put in the place of
+the published calls and run through MPM Desk's chain: its dynamics desk draws the curve the page
+draws, and its tempo desk the page's six tempo curves.
+
+What the prototype does not do yet: it has not been tuned on a real voice (of the one take
+recorded so far only the calls were looked at; the tests and `npm run take` use the model's own
+voice and the hummer's, which the same model sings); a tempo curve does not begin where the one
+before it ended; rubato, accentuation, articulation and the pedal are not written; a take is
+analysed in about twice its length on one core.
 
 ## The piano
 

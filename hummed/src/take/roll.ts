@@ -32,6 +32,11 @@ export interface Chord {
   /** The first and the last of its notes to sound. */
   readonly first: Seconds;
   readonly last: Seconds;
+  /**
+   * How loud the chord is, as the dynamics are fitted to it: the mean of its notes; of a spread
+   * chord the loudest, since the desk explains the way up to it as the spread's own gradient
+   * (its `InsertDynamicsGradient`) and leaves the dynamics the note the spread arrives at.
+   */
   readonly velocity: number;
 }
 
@@ -55,6 +60,8 @@ export class RollError extends Error {
 }
 
 export const TICKS_PER_QUARTER = 720;
+/** A chord whose notes sound further apart than this is spread. */
+export const SPREAD: Seconds = 0.03;
 
 const attribute = (tag: string, name: string): string | null =>
   new RegExp(`(?:^|\\s)${name.replace('.', '\\.')}="([^"]*)"`).exec(tag)?.[1] ?? null;
@@ -109,15 +116,7 @@ export function readRoll(mei: string, msm: string, source?: string): Roll {
   if (notes.length === 0) throw new RollError('no recorded note is aligned with the score');
   notes.sort((a, b) => a.onset - b.onset);
 
-  const chords = [...groupBy(notes, (n) => n.date)]
-    .map(([date, members]): Chord => ({
-      date,
-      notes: members,
-      first: members[0].onset,
-      last: members[members.length - 1].onset,
-      velocity: members.reduce((sum, n) => sum + n.velocity, 0) / members.length,
-    }))
-    .sort((a, b) => a.date - b.date);
+  const chords = chordsOf(notes);
 
   // bars: by the time signatures; a first bar shorter than the next is the upbeat, bar 0
   const signatures = [...msm.matchAll(/<timeSignature\b[^>]*\/>/g)]
@@ -139,6 +138,76 @@ export function readRoll(mei: string, msm: string, source?: string): Roll {
     date += length;
   }
   return { notes, chords, presses, bars, end };
+}
+
+/** The notes written at each date as chords, in the order of the score. */
+function chordsOf(notes: readonly RollNote[]): Chord[] {
+  return [...groupBy(notes, (n) => n.date)]
+    .map(([date, members]): Chord => ({
+      date,
+      notes: members,
+      first: members[0].onset,
+      last: members[members.length - 1].onset,
+      velocity:
+        members[members.length - 1].onset - members[0].onset >= SPREAD
+          ? Math.max(...members.map((n) => n.velocity))
+          : members.reduce((sum, n) => sum + n.velocity, 0) / members.length,
+    }))
+    .sort((a, b) => a.date - b.date);
+}
+
+/** A call of the reconstruction that corrects what was recorded (MPM Desk's `Expand` and `Modify`). */
+export interface Correction {
+  readonly name: string;
+  readonly options: {
+    readonly aspect?: string;
+    readonly scope?: unknown;
+    readonly from?: number;
+    readonly to?: number;
+    readonly noteIDs?: readonly string[];
+    readonly points?: readonly (readonly [number, number])[];
+    readonly change?: number;
+  };
+}
+
+/**
+ * The roll with the reconstruction's corrections of its velocities, as MPM Desk's chain makes
+ * them before anything is fitted: every `Expand` (the recorded velocities mapped onto another
+ * scale, by straight lines through its points and on beyond the outermost), then every `Modify`
+ * (so many steps added to the notes it names or to those of a stretch). The dynamics are fitted
+ * to these, so the values between the notes have to be on their scale. Only velocities of the
+ * whole piece (scope `global`) are corrected here: the published reconstruction has no others.
+ */
+export function withCorrections(roll: Roll, calls: readonly Correction[]): Roll {
+  const velocities = calls.filter((c) => c.options.aspect === 'velocity' && c.options.scope === 'global');
+  const selects = ({ noteIDs, from, to }: Correction['options'], note: RollNote): boolean =>
+    noteIDs
+      ? noteIDs.includes(note.id)
+      : from !== undefined && to !== undefined
+        ? note.date >= from && note.date <= to
+        : true;
+  let notes = roll.notes;
+  for (const { options } of velocities.filter((c) => c.name === 'Expand')) {
+    const points = options.points ?? [];
+    if (points.length < 2) continue;
+    const map = (value: number): number => {
+      let k = 1;
+      while (k < points.length - 1 && value > points[k][0]) k++;
+      const [x0, y0] = points[k - 1];
+      const [x1, y1] = points[k];
+      return y0 + ((value - x0) * (y1 - y0)) / (x1 - x0);
+    };
+    notes = notes.map((n) => (selects(options, n) ? { ...n, velocity: Math.max(0, map(n.velocity)) } : n));
+  }
+  for (const { options } of velocities.filter((c) => c.name === 'Modify')) {
+    // a `Modify` names its notes or its stretch; one that names neither is about no note
+    if (!options.noteIDs && (options.from === undefined || options.to === undefined)) continue;
+    const change = options.change ?? 0;
+    notes = notes.map((n) =>
+      selects(options, n) ? { ...n, velocity: Math.max(0, n.velocity + change) } : n,
+    );
+  }
+  return { ...roll, notes, chords: chordsOf(notes) };
 }
 
 /**

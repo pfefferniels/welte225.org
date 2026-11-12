@@ -7,7 +7,7 @@ import { readBody, type Body } from './body.ts';
 import { invert, type Inversion } from './inversion.ts';
 import { movementsOf } from './movements.ts';
 import type { TakeRequest, TakeResponse } from './protocol.ts';
-import { read, type TakeTiming } from './reading.ts';
+import { read, type ReadingOptions, type TakeTiming } from './reading.ts';
 import type { Roll } from './roll.ts';
 
 const PASSES = 4;
@@ -45,8 +45,10 @@ const post = (message: TakeResponse, transfer: Transferable[] = []): void => {
   );
 };
 
-const leadOf = (request: TakeRequest): { tapLead?: number } =>
-  request.tapLead === undefined ? {} : { tapLead: request.tapLead };
+const readingOf = (request: TakeRequest): ReadingOptions => ({
+  ...(request.tapLead === undefined ? {} : { tapLead: request.tapLead }),
+  ...(request.between === undefined ? {} : { between: request.between }),
+});
 
 async function handle(request: TakeRequest): Promise<void> {
   if (request.type === 'reread') {
@@ -58,7 +60,7 @@ async function handle(request: TakeRequest): Promise<void> {
       inversion.target.level,
       request.movements,
     );
-    post({ type: 'reread', movements, reading: read(roll, timing, movements, leadOf(request)) });
+    post({ type: 'reread', movements, reading: read(roll, timing, movements, readingOf(request)) });
     return;
   }
   const { engine, body } = await (loaded ??= load());
@@ -91,7 +93,7 @@ async function handle(request: TakeRequest): Promise<void> {
       copy: inversion.copy.slice(),
       misfits: inversion.misfits,
       movements,
-      reading: read(request.roll, request.timing, movements, leadOf(request)),
+      reading: read(request.roll, request.timing, movements, readingOf(request)),
     },
   });
 }

@@ -11,7 +11,15 @@ import { draw, VIEW_HEIGHT, type View } from './draw.ts';
 import type { MovementOptions } from './movements.ts';
 import type { TakeRequest, TakeResponse, TakeResult } from './protocol.ts';
 import type { TakeTiming } from './reading.ts';
-import { readRoll, sectionOf, timeAt, type Roll, type Section } from './roll.ts';
+import {
+  readRoll,
+  sectionOf,
+  timeAt,
+  withCorrections,
+  type Correction,
+  type Roll,
+  type Section,
+} from './roll.ts';
 import { decodeWav, encodeWav, resample } from './wav.ts';
 
 /** What is heard before the bars hummed: the bar before them, or this much silence at the piece's beginning. */
@@ -22,10 +30,9 @@ const TAIL: Seconds = 1;
 const AHEAD: Seconds = 0.25;
 
 interface Work {
-  readonly provenance: readonly {
-    readonly name: string;
+  readonly provenance: readonly (Correction & {
     readonly options: { readonly prefer?: string; readonly from?: number; readonly to?: number };
-  }[];
+  })[];
 }
 
 /** A take as it is saved beside its sound. */
@@ -52,12 +59,19 @@ const ui = {
   withRoll: element('with-roll', HTMLInputElement),
   smoothing: element('smoothing', HTMLInputElement),
   prominence: element('prominence', HTMLInputElement),
+  between: element('between', HTMLInputElement),
   save: element('save', HTMLButtonElement),
   saveCalls: element('save-calls', HTMLButtonElement),
   open: element('open', HTMLInputElement),
   report: element('report', HTMLElement),
 };
 
+/** The roll as it was recorded: what is played. */
+let played: Roll | null = null;
+/**
+ * The roll with the reconstruction's corrections of its velocities (roll.ts): what a take is read
+ * against and what is drawn, since the dynamics are fitted on that scale.
+ */
 let roll: Roll | null = null;
 let desk: View['desk'] = { tempo: [], dynamics: [] };
 let context: AudioContext | null = null;
@@ -174,7 +188,7 @@ async function play(
   const at = c.currentTime + AHEAD;
   const sources: AudioScheduledSourceNode[] = [];
   if (withRoll)
-    for (const note of rollNotes(roll, from, to)) {
+    for (const note of rollNotes(played ?? roll, from, to)) {
       const source = piano.play(note, c.destination, at + note.on - from, 0);
       if (source) sources.push(source);
     }
@@ -244,6 +258,7 @@ function analyse(samples: Float32Array, timing: TakeTiming, equalize: boolean): 
     roll,
     equalize,
     movements: movementOptions(),
+    between: Number(ui.between.value),
     ...(tapLead === undefined ? {} : { tapLead }),
   };
   analyser().postMessage(request);
@@ -265,7 +280,21 @@ function report(result: TakeResult): void {
         : r.tapLeadFrom === 'earlier'
           ? `; too few on chords struck at once here, so the lead of an earlier take is used (${ms(r.tapLead)}).`
           : '; too few on chords struck at once to say how early or late you tap: the spreads are placed by the taps as they are.'),
-    `Beats tapped where no note sounds: ${r.silentOnsets.length}.`,
+    `Between the notes, in time: ${r.silentOnsets.length} beats tapped where no note sounds` +
+      (r.silentOnsets.length
+        ? ` (${r.silentOnsets.map((o) => `${o.date} at ${o.onset.toFixed(2)} s`).join(', ')}).`
+        : '.'),
+    `Between the notes, in dynamics: ${r.betweens.length} values, ${r.betweens.filter((v) => v.voiced).length} of them the voice's ` +
+      `(a dB of its effort counted as ${r.velocity.scale.toFixed(2)} velocity steps):`,
+    ...r.betweens.map((v) => {
+      const off = v.velocity - v.line;
+      const said = !v.voiced
+        ? 'the voice is silent: a straight line between the chords'
+        : Math.abs(off) < 0.5
+          ? 'as a straight line between the chords'
+          : `${Math.abs(off).toFixed(1)} ${off > 0 ? 'above' : 'below'} a straight line between the chords`;
+      return `  ${String(v.date).padStart(6)}  velocity ${String(v.velocity).padStart(3)}  ${said}`;
+    }),
     `Spread chords: ${r.spreads.filter((s) => s.placement === 'before-beat').length} tapped on the last note, ` +
       `${r.spreads.filter((s) => s.placement === 'on-beat').length} on the first, ` +
       `${r.spreads.filter((s) => s.placement === 'estimate').length} between or not tapped.`,
@@ -287,7 +316,7 @@ function report(result: TakeResult): void {
         : 'no tempo (too few notes)';
       return (
         `  ${String(g.from).padStart(6)}–${String(g.to).padEnd(6)} ${g.kind.padEnd(6)} ${pace}` +
-        (phantoms ? `, ${phantoms} values between the notes` : '')
+        (phantoms ? `, ${phantoms} ${phantoms === 1 ? 'value' : 'values'} between the notes` : '')
       );
     }),
   ];
@@ -377,7 +406,8 @@ async function load(): Promise<void> {
     get('work.json'),
   ]);
   const work = JSON.parse(workJson) as Work;
-  roll = readRoll(mei, msm, work.provenance.find((p) => p.name === 'MakeChoice')?.options.prefer);
+  played = readRoll(mei, msm, work.provenance.find((p) => p.name === 'MakeChoice')?.options.prefer);
+  roll = withCorrections(played, work.provenance);
   const ends = (name: string): Ticks[] => [
     ...new Set(
       work.provenance
@@ -419,12 +449,13 @@ ui.playTake.addEventListener('click', () => {
 ui.playCopy.addEventListener('click', () => {
   hear(true);
 });
-for (const input of [ui.smoothing, ui.prominence])
+for (const input of [ui.smoothing, ui.prominence, ui.between])
   input.addEventListener('change', () => {
     if (!take?.result) return;
     const request: TakeRequest = {
       type: 'reread',
       movements: movementOptions(),
+      between: Number(ui.between.value),
       ...(tapLead === undefined ? {} : { tapLead }),
     };
     analyser().postMessage(request);

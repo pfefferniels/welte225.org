@@ -67,6 +67,11 @@ export interface Movements {
   readonly openings: readonly Opening[];
   /** The effort every frame: lung pressure in dB against its 90th percentile, smoothed; NaN in silence. */
   readonly effort: Float32Array;
+  /**
+   * The same effort smoothed only lightly: what the voice does within a note, which the turns are
+   * not looked for in but the values between the roll's notes are read from.
+   */
+  readonly fine: Float32Array;
 }
 
 export interface MovementOptions {
@@ -79,6 +84,8 @@ export interface MovementOptions {
   readonly dip?: Seconds;
   /** The effort is smoothed over this long before its turns are looked for. */
   readonly smoothing?: Seconds;
+  /** How long the effort that is read between the notes is smoothed over. */
+  readonly fineSmoothing?: Seconds;
   /** A turn counts if the effort moves at least this far (dB) on both sides of it. */
   readonly prominence?: number;
   /** The pitch has moved on when it is this far (semitones) from the note before. */
@@ -89,6 +96,7 @@ const DEFAULTS: Required<MovementOptions> = {
   breathGap: 0.18,
   dip: 0.3,
   smoothing: 0.6,
+  fineSmoothing: 0.15,
   prominence: 2,
   pitchStep: 1.2,
 };
@@ -217,6 +225,8 @@ export function movementsOf(
   const reference = pushed[Math.round(0.9 * Math.max(0, pushed.length - 1))] ?? 1;
   const raw = tracks.pressure.map((p) => 20 * Math.log10(Math.max(p, 1) / reference));
   const effort = new Float32Array(n).fill(NaN);
+  const fine = new Float32Array(n).fill(NaN);
+  const fineWidth = Math.max(1, Math.round((o.fineSmoothing * FRAME_RATE) / 2));
   const width = Math.max(1, Math.round((o.smoothing * FRAME_RATE) / 2));
   const dip = Math.max(1, Math.round(o.dip * FRAME_RATE));
   const swells: Swell[] = [];
@@ -230,8 +240,10 @@ export function movementsOf(
     // within the phrase a stop leaves the pressure at nothing: carried across
     const filled = raw.slice();
     for (let i = from + 1; i < to; i++) if (!voiced[i]) filled[i] = filled[i - 1];
-    const curve = smoothed(overDips(filled.slice(from, to), dip), 0, to - from, width);
+    const whole = overDips(filled.slice(from, to), dip);
+    const curve = smoothed(whole, 0, to - from, width);
     effort.set(curve, from);
+    fine.set(smoothed(whole, 0, to - from, fineWidth), from);
     const inner = turnsOf(curve, o.prominence);
     for (const t of inner) turns.push({ at: timeOf(from + t.at), kind: t.kind, db: curve[t.at] });
     const marks = [0, ...inner.map((t) => t.at), curve.length - 1];
@@ -308,5 +320,5 @@ export function movementsOf(
     i = j;
   }
 
-  return { phrases, breaths, swells, turns, notes, openings, effort };
+  return { phrases, breaths, swells, turns, notes, openings, effort, fine };
 }

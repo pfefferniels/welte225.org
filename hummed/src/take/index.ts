@@ -39,7 +39,17 @@ export function analyseTake(
 }
 
 export { readBody, FRAME_RATE, HOP, type Body, type Tracks } from './body.ts';
-export { readRoll, sectionOf, timeAt, dateAt, type Roll, type Section, type RollNote } from './roll.ts';
+export {
+  readRoll,
+  withCorrections,
+  sectionOf,
+  timeAt,
+  dateAt,
+  type Correction,
+  type Roll,
+  type Section,
+  type RollNote,
+} from './roll.ts';
 export type { Inversion, Misfit } from './inversion.ts';
 export type { Movements } from './movements.ts';
 export type { Reading, TakeTiming, Call, Boundary } from './reading.ts';

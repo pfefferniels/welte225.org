@@ -27,11 +27,19 @@ const SOFT = '#f3f4f6';
 const VOICE = '#a3232f';
 const FOLDS = '#1f4e8c';
 const LIPS = '#2f7d4f';
-const LANES = { head: 20, roll: 150, pitch: 90, body: 170, row: 24 } as const;
-const ROWS = ['taps', 'take', 'desk: tempo', 'desk: dynamics'] as const;
+const LANES = { head: 20, roll: 150, pitch: 90, body: 170, tempo: 110, dynamics: 110, row: 24 } as const;
+const ROWS = ['taps', 'spreads', 'take', 'desk: tempo', 'desk: dynamics'] as const;
 const LEFT = 104;
 const RIGHT = 12;
-export const VIEW_HEIGHT = LANES.head + LANES.roll + LANES.pitch + LANES.body + ROWS.length * LANES.row + 8;
+export const VIEW_HEIGHT =
+  LANES.head +
+  LANES.roll +
+  LANES.pitch +
+  LANES.body +
+  LANES.tempo +
+  LANES.dynamics +
+  ROWS.length * LANES.row +
+  8;
 
 export function draw(canvas: HTMLCanvasElement, view: View): void {
   const scale = window.devicePixelRatio || 1;
@@ -64,12 +72,15 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
     c.stroke();
   };
 
+  const body = LANES.head + LANES.roll + LANES.pitch;
   const top = {
     roll: LANES.head,
     pitch: LANES.head + LANES.roll,
-    body: LANES.head + LANES.roll + LANES.pitch,
+    body,
+    tempo: body + LANES.body,
+    dynamics: body + LANES.body + LANES.tempo,
   };
-  const rows = top.body + LANES.body + 4;
+  const rows = top.dynamics + LANES.dynamics + 4;
   const bottom = rows + ROWS.length * LANES.row;
 
   // what lies before and after the bars hummed
@@ -86,7 +97,7 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
     c.textAlign = 'center';
     c.fillText(String(bar.number), x(t), LANES.head / 2);
   }
-  for (const y of [top.pitch, top.body, rows]) line(LEFT, y, width - RIGHT, y, RULE);
+  for (const y of [top.pitch, top.body, top.tempo, top.dynamics, rows]) line(LEFT, y, width - RIGHT, y, RULE);
 
   // the roll
   label('the roll', top.roll + 12, INK);
@@ -114,7 +125,7 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
         x(b.from + timing.start),
         top.pitch,
         x(b.to + timing.start) - x(b.from + timing.start),
-        rows - top.pitch,
+        top.tempo - top.pitch,
       );
 
     // the pitch
@@ -180,7 +191,22 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
       'rgba(163, 35, 47, 0.3)',
       1,
     );
+    curve((i) => (Number.isFinite(m.fine[i]) ? yDb(m.fine[i]) : null), 'rgba(163, 35, 47, 0.55)', 1.2);
     curve((i) => (Number.isFinite(m.effort[i]) ? yDb(m.effort[i]) : null), VOICE, 2.5);
+    // where the voice gives the dynamics between the roll's notes
+    for (const v of result.reading.betweens) {
+      const t = timeAt(roll, v.date);
+      const frame = Math.round((t - timing.start + result.reading.lag) / timeOf(1));
+      const db = frame >= 0 && frame < m.fine.length ? m.fine[frame] : NaN;
+      if (!v.voiced || !Number.isFinite(db) || !inView(t)) continue;
+      c.strokeStyle = INK;
+      c.fillStyle = '#ffffff';
+      c.lineWidth = 1.5;
+      c.beginPath();
+      c.arc(x(t), yDb(db), 4, 0, 2 * Math.PI);
+      c.fill();
+      c.stroke();
+    }
     for (const turn of m.turns) {
       const tx = x(turn.at + timing.start);
       const ty = yDb(turn.db);
@@ -191,6 +217,93 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
       c.lineTo(tx - 5, ty + up * 12);
       c.lineTo(tx + 5, ty + up * 12);
       c.fill();
+    }
+
+    // the tempo: the roll's own, from beat to beat of its clock, and each movement's fitted to it
+    const r = result.reading;
+    const beat = timing.pulse;
+    const steps = r.clock.slice(0, -1).flatMap((p, i) => {
+      const next = r.clock[i + 1];
+      const bpm = next.time > p.time ? ((next.date - p.date) / beat / (next.time - p.time)) * 60 : NaN;
+      return Number.isFinite(bpm) ? [{ from: p.time, to: next.time, bpm }] : [];
+    });
+    const lane = (
+      laneTop: number,
+      height: number,
+      values: readonly number[],
+    ): { y: (v: number) => number; lo: number; hi: number } => {
+      const finite = values.filter((v) => Number.isFinite(v));
+      const lo = Math.min(...finite, Infinity);
+      const hi = Math.max(...finite, -Infinity);
+      const pad = Math.max(1, 0.12 * (hi - lo));
+      const [a, b] = [lo - pad, hi + pad];
+      return {
+        y: (v) => laneTop + height - 6 - Math.min(1, Math.max(0, (v - a) / (b - a))) * (height - 12),
+        lo,
+        hi,
+      };
+    };
+    const scaleLabel = (y: number, text: string): void => {
+      c.fillStyle = MUTED;
+      c.textAlign = 'right';
+      c.fillText(text, LEFT - 6, y);
+    };
+    const fittedCurve = (
+      points: readonly { time: Seconds; value: number }[],
+      y: (v: number) => number,
+    ): void => {
+      c.strokeStyle = VOICE;
+      c.lineWidth = 2.5;
+      c.beginPath();
+      points.forEach((p, i) => {
+        if (i === 0) c.moveTo(x(p.time), y(p.value));
+        else c.lineTo(x(p.time), y(p.value));
+      });
+      c.stroke();
+    };
+    label('tempo (bpm)', top.tempo + 12, INK);
+    const tempo = lane(top.tempo, LANES.tempo, [
+      ...steps.map((s) => s.bpm),
+      ...r.fitted.tempo.flatMap((f) => f.points.map((p) => p.value)),
+    ]);
+    scaleLabel(tempo.y(tempo.hi) + 14, String(Math.round(tempo.hi)));
+    scaleLabel(tempo.y(tempo.lo), String(Math.round(tempo.lo)));
+    for (const s of steps) line(x(s.from), tempo.y(s.bpm), x(s.to), tempo.y(s.bpm), MUTED, 1.5);
+    for (const o of r.silentOnsets) {
+      // a beat tapped where no note sounds
+      c.strokeStyle = INK;
+      c.lineWidth = 1.5;
+      c.beginPath();
+      c.arc(x(o.onset), top.tempo + LANES.tempo - 8, 3.5, 0, 2 * Math.PI);
+      c.stroke();
+    }
+    for (const f of r.fitted.tempo) fittedCurve(f.points, tempo.y);
+
+    // the dynamics: the roll's chords, the values the voice gives between them, and the curves
+    // the desk fits through both
+    label('dynamics (velocity)', top.dynamics + 12, INK);
+    const sounded = roll.chords.filter((ch) => ch.date >= section.from && ch.date < section.to);
+    const dynamics = lane(top.dynamics, LANES.dynamics, [
+      ...sounded.map((ch) => ch.velocity),
+      ...r.betweens.map((v) => v.velocity),
+    ]);
+    scaleLabel(dynamics.y(dynamics.hi) + 14, String(Math.round(dynamics.hi)));
+    scaleLabel(dynamics.y(dynamics.lo), String(Math.round(dynamics.lo)));
+    for (const f of r.fitted.dynamics) fittedCurve(f.points, dynamics.y);
+    c.fillStyle = MUTED;
+    for (const ch of sounded) {
+      c.beginPath();
+      c.arc(x(ch.first), dynamics.y(ch.velocity), 2.5, 0, 2 * Math.PI);
+      c.fill();
+    }
+    for (const v of r.betweens) {
+      c.strokeStyle = v.voiced ? INK : MUTED;
+      c.fillStyle = '#ffffff';
+      c.lineWidth = 1.5;
+      c.beginPath();
+      c.arc(xDate(v.date), dynamics.y(v.velocity), 4, 0, 2 * Math.PI);
+      c.fill();
+      c.stroke();
     }
 
     // the rows: taps, and where the take turns
@@ -204,10 +317,16 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
     }
     for (const tap of timing.taps)
       line(x(tap + timing.start), rowY(0) - 8, x(tap + timing.start), rowY(0) + 8, INK, 1.5);
+    // each spread chord from its first note to its last, and where its beat was placed
+    for (const s of r.spreads) {
+      line(x(s.first), rowY(1), x(s.last), rowY(1), MUTED, 4);
+      const colour = s.placement === 'on-beat' ? FOLDS : s.placement === 'before-beat' ? VOICE : INK;
+      line(x(s.beat), rowY(1) - 9, x(s.beat), rowY(1) + 9, colour, s.position === null ? 1 : 2.5);
+    }
     for (const b of result.reading.boundaries) {
       const colour =
         b.kind === 'breath' ? INK : b.kind === 'peak' ? VOICE : b.kind === 'trough' ? FOLDS : MUTED;
-      line(xDate(b.date), rowY(1) - 9, xDate(b.date), rowY(1) + 9, colour, 2.5);
+      line(xDate(b.date), rowY(2) - 9, xDate(b.date), rowY(2) + 9, colour, 2.5);
     }
   }
   const rowY = (k: number): number => rows + k * LANES.row + LANES.row / 2;
@@ -216,9 +335,9 @@ export function draw(canvas: HTMLCanvasElement, view: View): void {
   });
   const within = (date: Ticks): boolean => date >= section.from && date <= section.to;
   for (const date of view.desk.tempo.filter(within))
-    line(xDate(date), rowY(2) - 9, xDate(date), rowY(2) + 9, MUTED, 2.5);
-  for (const date of view.desk.dynamics.filter(within))
     line(xDate(date), rowY(3) - 9, xDate(date), rowY(3) + 9, MUTED, 2.5);
+  for (const date of view.desk.dynamics.filter(within))
+    line(xDate(date), rowY(4) - 9, xDate(date), rowY(4) + 9, MUTED, 2.5);
 
   if (view.playhead !== null && inView(view.playhead))
     line(x(view.playhead), LANES.head, x(view.playhead), bottom, VOICE, 1.5);

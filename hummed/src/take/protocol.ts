@@ -17,9 +17,16 @@ export type TakeRequest =
       readonly movements: MovementOptions;
       /** The tapper's lead as an earlier take found it (`ReadingOptions.tapLead`). */
       readonly tapLead?: number;
+      /** How much the voice counts between the notes (`ReadingOptions.between`). */
+      readonly between?: number;
     }
   /** The last take's movements read anew, with other options; its sound is not taken apart again. */
-  | { readonly type: 'reread'; readonly movements: MovementOptions; readonly tapLead?: number };
+  | {
+      readonly type: 'reread';
+      readonly movements: MovementOptions;
+      readonly tapLead?: number;
+      readonly between?: number;
+    };
 
 /** A take taken apart and read, as the page shows it. */
 export interface TakeResult {

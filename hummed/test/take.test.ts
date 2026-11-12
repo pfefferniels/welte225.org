@@ -9,8 +9,16 @@ import { analyse, voicedFrames } from '../src/take/acoustics.ts';
 import { emptyTracks, FRAME_RATE, frameOf, HOP, readBody, soundOf, type Tracks } from '../src/take/body.ts';
 import { invert } from '../src/take/inversion.ts';
 import { movementsOf, turnsOf, type Movements } from '../src/take/movements.ts';
-import { fitTempo, read, type TakeTiming } from '../src/take/reading.ts';
-import { dateAt, readRoll, sectionOf, timeAt, type Roll } from '../src/take/roll.ts';
+import { fitDynamics, fitTempo, read, type TakeTiming } from '../src/take/reading.ts';
+import {
+  dateAt,
+  readRoll,
+  sectionOf,
+  timeAt,
+  withCorrections,
+  type Correction,
+  type Roll,
+} from '../src/take/roll.ts';
 import { decodeWav, encodeWav, resample } from '../src/take/wav.ts';
 import { loadEngine, loadSpeaker, ROOT } from '../tools/node-support.ts';
 
@@ -191,6 +199,22 @@ describe('the roll', () => {
     assert.equal(sectionOf(roll, 2, 2).from, 3600);
   });
 
+  it("takes the reconstruction's corrections of the velocities, as the dynamics are fitted to them", () => {
+    const work = JSON.parse(readFileSync(join(ROOT, '../mpm/work.json'), 'utf8')) as {
+      provenance: Correction[];
+    };
+    const corrected = withCorrections(roll, work.provenance);
+    const at = (r: Roll, date: number): number => r.chords.find((c) => c.date === date)?.velocity ?? NaN;
+    // the published MPM's dynamics begin at these values (mpm/performance.mpm)
+    assert.equal(at(roll, 0), 41);
+    assert.ok(Math.abs(at(corrected, 0) - 28.2105) < 1e-3);
+    assert.ok(Math.abs(at(corrected, 2520) - 21.3684) < 1e-3);
+    // a spread chord counts as its loudest note: 35, 35 and 42 as recorded
+    assert.ok(Math.abs(at(corrected, 4320) - 29.5789) < 1e-3);
+    // the four notes at 1440, mapped and then taken down by six steps
+    assert.ok(Math.abs(at(corrected, 1440) - 14) < 1e-9);
+  });
+
   it('tells the time of a score position and back', () => {
     for (const date of [0, 1000, 5000, 40000])
       assert.ok(Math.abs(dateAt(roll, timeAt(roll, date)) - date) < 1e-6);
@@ -217,6 +241,33 @@ describe('a tempo fitted to a clock', () => {
     );
     assert.ok(tempo?.transitionTo !== undefined);
     assert.ok(tempo.bpm > 58 && tempo.transitionTo < 45, `${tempo.bpm} → ${tempo.transitionTo}`);
+  });
+});
+
+describe('the dynamics fitted through points, as the desk fits them', () => {
+  it('is a constant for one point and a straight ramp for two', () => {
+    assert.deepEqual(fitDynamics([{ date: 0, velocity: 30 }]), { date: 0, endDate: 0, volume: 30 });
+    const ramp = fitDynamics([
+      { date: 0, velocity: 30 },
+      { date: 720, velocity: 40 },
+    ]);
+    assert.deepEqual(ramp, {
+      date: 0,
+      endDate: 720,
+      volume: 30,
+      transitionTo: 40,
+      curvature: 0.5,
+      protraction: 0,
+    });
+  });
+
+  it('bends to points that lie off the ramp, the same way every time', () => {
+    // most of the way up within the first quarter of the stretch
+    const points = [0, 180, 360, 720, 1440].map((date, i) => ({ date, velocity: [20, 32, 37, 39, 40][i] }));
+    const bent = fitDynamics(points);
+    assert.ok(bent?.curvature !== undefined && bent.protraction !== undefined);
+    assert.ok(bent.curvature !== 0.5 || bent.protraction !== 0, 'not the straight ramp it set out from');
+    assert.deepEqual(fitDynamics(points), bent);
   });
 });
 
@@ -301,6 +352,29 @@ describe('a take read against the roll', () => {
       ['beatLength', 'bpm', 'from'],
     );
     assert.equal(new Set(reading.calls.map((c) => c.id)).size, reading.calls.length);
+  });
+
+  it("draws what the calls come to: a tempo and a dynamics curve for each movement, and each spread's beat", () => {
+    assert.equal(reading.fitted.tempo.length, 3);
+    assert.equal(reading.fitted.dynamics.length, 3);
+    for (const curve of [...reading.fitted.tempo, ...reading.fitted.dynamics]) {
+      assert.ok(curve.points.every((p) => Number.isFinite(p.time) && Number.isFinite(p.value)));
+      assert.ok(curve.points.every((p, i) => i === 0 || p.time >= curve.points[i - 1].time));
+    }
+    assert.ok(reading.clock.every((p, i) => i === 0 || p.date > reading.clock[i - 1].date));
+    for (const s of reading.spreads) assert.ok(s.beat >= s.first && s.beat <= s.last);
+  });
+
+  it('gives a movement a value where it ends, even where the voice is silent', () => {
+    // nothing but a boundary at a silent beat: the voice breathes through the first bar's third beat
+    const silent = movementsOf(emptyTracks(n), new Uint8Array(n), new Float32Array(n).fill(-30));
+    const marked: Movements = { ...silent, turns: [{ at: timeAt(roll, 2160) - start, kind: 'peak', db: 0 }] };
+    const told = read(roll, timing, marked);
+    assert.deepEqual(
+      told.betweens.map((v) => [v.date, v.voiced]),
+      [[2160, false]],
+    );
+    assert.equal(told.betweens[0].velocity, Math.round(told.betweens[0].line));
   });
 
   it('says what the voice does between the notes: the swell where no note sounds', () => {
