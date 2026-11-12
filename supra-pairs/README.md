@@ -54,7 +54,7 @@ across two systems.
 - **It is quick.** A pair takes 4.4 s in the median and 25 s at most
   (WM 662, 19,000 chains a copy), of which the proposal takes 11 s at
   most.
-- **Every version plays.** 102 versions of the pairs and 17 of the
+- **Every version plays.** 103 versions of the pairs and 17 of the
   further sets were performed and written as MIDI, lost ones included.
 - **The desk does what the script does.** Roll Desk's editor, driven
   through its own dialogs, took three uploads for WM 570 (two analyses
@@ -118,7 +118,8 @@ two tracks and one track off their first copies, so SUPRA's published
 MIDI of those two scans is itself on the wrong tracks. The seventh roll,
 WM 371, is beyond the reader: its analysis `hc909pp9868` holds chains on
 38 columns in the middle of the roll only and sets 1,767 holes aside as
-bad, the expression tracks among them.
+bad, the expression tracks among them. (It was not beyond the reader:
+see 9.)
 
 The fix is on linked-rolls' branch `claude/keen-hamilton-t432x3`, with
 three tests.
@@ -401,6 +402,45 @@ after the displaced are paired. WM 757, whose copies now differ in
 four readings, is proposed as one text, `St1+St2`. WM 662 has 30
 readings more on one copy alone, and WM 660 turns to `St1(St2)`.
 
+### 9. A roll whose outer tracks the parser set aside
+
+WM 371 (Carreño, Little waltz) was the one pair left unaligned, and was
+put down above as beyond the reader. It was not.
+
+The first copy (`hc909pp9868`) is on dark green paper, with lines
+drawn along the middle of the roll. The parser put the edges of the
+paper far inside it (a bass drift of 1,203 px, a treble drift of
+961 px on a roll 3,887 px wide), apparently on those lines, and set
+aside as lying beyond the edges every hole outside the middle 38
+tracks: 1,766 of the roll's 8,789, as `bass` or `treble`. They are all
+in the file, each with its place and size. The reader went wrong on
+them twice.
+
+- **The shift.** It was found from the holes the parser lists. Those
+  span the middle of the bar only, so any of 63 shifts keeps them on
+  it; the tail of the last note trails the last attack as a rewind
+  would; and the shift that puts that tail on the rewind track was
+  taken, 23 tracks where it is −3. The rewind is now also held
+  against the holes set aside, which that shift throws far off the bar.
+  They do not choose the shift themselves: on two other analyses
+  (`tb323rh4122`, `nz852nk6103`) the holes set aside at the margins are
+  torn paper beside the bar, and letting them choose moved both off
+  their tracks.
+- **The wander.** A hole set aside carries no track number, and was put
+  on the track its column falls on. The paper wanders sideways under
+  the scanner, here by 52 px, a track and a third, and the parser
+  states for every hole by how much. Without that, 2,159 of the 7,022
+  holes this analysis lists would land on the neighbouring track; the
+  holes set aside are now placed with it.
+
+With both (linked-rolls `badcfc7`) the copy reads as 2,877 chains for
+the other's 2,872. The pair aligns on 1,435 notes, shares 2,848
+readings of 2,891, and differs by seven chains track for track; before,
+it shared none. On the bass expression tracks between 5.0 and 5.2 m,
+`strips.py` shows the same holes on the same tracks of both scans. Of SUPRA's analyses 448 of 456 now lie on the tracks of
+Stanford's raw MIDI, this one more and none fewer, and all 38 pairs
+align. Nothing else moves but WM 1253, by six readings.
+
 ## What has been fixed since
 
 On branches named `claude/keen-hamilton-t432x3`, none of them merged or
@@ -420,6 +460,7 @@ reach the desk with its next release; the desk's own work without it.
 | the stemma of two leaves cut off at the panel's edges, by the gap above | the stemma is fitted by what its discs and captions take | roll-desk `65864c2` |
 | readings of drifted stretches taken for readings of their own, and for shifts (2, 4) | the window of a pair is centred on its drift along the roll, and is no narrower than the pitch of a chain | linked-rolls `8bb319e` |
 | the parser's joining of holes into notes: a torn end joining the notes of a whole roll, wide punches joining fast repetitions, tears and specks read as chains (8) | the reader takes the holes and chains them itself over 1.7 mm of paper | linked-rolls `4b39e8e`, `e00a26e` |
+| a roll whose outer tracks the parser set aside read 23 tracks off, and holes set aside put on a track without the paper's wander (9) | the rewind is held against the holes set aside as well; a hole set aside lies where its corrected column falls | linked-rolls `badcfc7` |
 | rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
 
 Not touched: the alignment itself, which is still one shift and one
