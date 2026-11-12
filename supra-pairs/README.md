@@ -337,14 +337,50 @@ taken from those holes; what is wider than a track or ends before it
 begins is no chain (linked-rolls `4b39e8e`). WM 1253's second copy now
 has 1,780 chains for the first's 1,740; the copies align on 1,049
 notes, share 1,569 readings of 1,943, and differ by 164 chains track
-for track where it was 620. What is left is mostly expression: the
-second copy has a forzando on the bass side on nearly every beat of
-long stretches where the first has none (tracks 5 and 6, 134 chains for
-76), its crescendo holes there lie up to a centimetre later, and 61
-notes stand on one copy alone, 16 of them in the half metre before the
-tears. Whether
-that is a second coding of the dynamics or the parser again, the scans
-would tell; they could not be fetched from here.
+for track where it was 620.
+
+What was left was put before the scans (`strips.py`, which cuts the same stretch out of each copy's scan by
+the edition's own alignment and calibration). They show three
+things.
+
+- **The copies are two cuts.** The first is on plain paper with oblong
+  slots 1.8 mm across; the second on paper printed with a line between
+  every two tracks, with round punches 2.4 mm across. And their bass
+  dynamics are coded differently: where the first has a crescendo hole
+  on every beat (track 4), the second has forzando off, then forzando
+  on with the crescendo, half a centimetre later (tracks 5, then 4 and
+  6). That is 134 chains for 76 on tracks 5 and 6, and it is in the
+  paper. In the stretch looked at (2.5 to 2.7 m) the treble is the
+  same on both; over the roll its counts differ too (track 96, 72
+  chains for 52; track 98, 32 for 57), which was not looked at.
+- **The second copy has lost its tail.** Its red paper is cut straight
+  across 4,976 mm into the reference copy and joined with tissue to
+  white paper, before the rewind perforation the first copy has at
+  5,115 mm. The last note ends at 4,781 mm, so no music is lost. The 904 "tears" and 477 "bad
+  holes" are the tissue and the white, and so are 16 one-hole "notes"
+  in a row across the roll at the cut, which the parser lists among
+  its holes and the reader therefore still takes.
+- **The parser's bridge is too wide for round punches.** Of the 43
+  notes that stood on the first copy alone, 37 are strokes of a fast
+  repetition that the second copy has too, with 2 to 3.3 mm of paper
+  between them; 1.37 widths of a 2.4 mm punch is 3.3 mm, so they are
+  joined. Laid against the first copy, 574 of the second's 594 webs
+  under 1.4 mm lie within a note there, and all 62 between 1.7 and
+  3.7 mm part two. With the holes chained over 1.7 mm of paper, six notes are left
+  on the first copy alone and two on the second.
+
+The last holds beyond this roll. Over all of SUPRA the paper between
+two holes of a track is rarest between 1.7 and 2.3 mm, whatever the
+punch: below lie the webs within a chain, above the repetitions. On
+the narrow punches of 320 analyses the parser's bridge is 2.1 to
+2.7 mm, at the far edge of that gap; on the wide ones of the other
+137 it is 2.8 to 3.4 mm, among the repetitions. `readFromStanfordAton` now takes a
+`bridge` in millimetres (linked-rolls `501fb2b`). It is not the
+default, because a fixed bridge does not win everywhere: with 1.7 mm
+the 37 pairs differ by 4,696 chains track for track where the parser's
+chains differ by 4,882 (`bridges.mjs`, `bridges.tsv`), WM 1247 going
+from 227 to 128 and WM 1259 from 367 to 279, but WM 1473 from 66 to
+121 and WM 662 from 394 to 443.
 
 Over the 37 pairs the readings on one copy alone go from 12,825 to
 11,979 and the edits from 7,506 to 7,207, nearly all of it WM 1253. The
@@ -442,6 +478,8 @@ unless Ph1 and St2 are two rolls.
 | `truth.mjs` | the track shift of every SUPRA analysis by Stanford's raw MIDI, beside the reader's |
 | `drift.mjs` | how the second copy lies against the first along the roll, after alignment |
 | `emulations.mjs` | two emulations of one roll, note for note |
+| `bridges.mjs` | how many chains the copies of each pair differ by, with the parser's chains and with the holes chained over a fixed length of paper; writes `bridges.tsv` |
+| `strips.py` | the same stretch of every copy of an edition, cut from its scan, one above the other |
 | `summary.py` | the tables of `summary.md` from the results |
 | `rolls.json`, `further.json` | the lists: the 38 pairs, and the six sets with copies from elsewhere |
 | `out/results.jsonl` | the 38 pairs with the fixed library, one record a roll |
@@ -461,6 +499,8 @@ node cycle.mjs --out out
 node cycle.mjs --rolls further.json --out out-further
 node truth.mjs > truth.tsv
 node drift.mjs --out out > drift.tsv
+node bridges.mjs > bridges.tsv
+python3 strips.py out/wm1253/edition.jsonld 2500 2700 1-10 strips.png
 python3 summary.py > summary.md
 ```
 
