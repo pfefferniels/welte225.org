@@ -54,7 +54,7 @@ across two systems.
 - **It is quick.** A pair takes 4.4 s in the median and 25 s at most
   (WM 662, 19,000 chains a copy), of which the proposal takes 11 s at
   most.
-- **Every version plays.** 111 versions of the pairs and 20 of the
+- **Every version plays.** 104 versions of the pairs and 17 of the
   further sets were performed and written as MIDI, lost ones included.
 - **The desk does what the script does.** Roll Desk's editor, driven
   through its own dialogs, took three uploads for WM 570 (two analyses
@@ -300,6 +300,59 @@ here as they were found.
   of change where 2 are expected, 75.2 % where more than 78 % is. They
   are skipped where the checkout is missing, so nothing reports it.
 
+### 8. A torn end joined the notes of a whole roll
+
+WM 1253 (Chopin, Étude op. 25 no. 9, Paderewski) stayed the odd one out
+after everything above: its copies aligned, on 765 notes of 1,092, with
+no drift between them, and still shared 873 readings of 2,194.
+
+The second copy (`hp956bx4547`) has a ragged end: 904 edge tears and
+477 holes set aside as bad, all in its last 30 cm. roll-image-parser
+joins the holes of a track into one note where the paper between them
+is no longer than 1.37 average hole widths (`groupHoles`), and it takes
+that average before the tears are set aside. The analysis states
+`@AVG_HOLE_WIDTH: 197.71px` where the holes it lists are 28 px wide, so
+the bridge was 271 px, 23 mm, where on the first copy it is 30 px,
+2.5 mm. Everything repeated within 23 mm became one long note, along
+the whole roll: 1,245 notes from 2,400 holes, where the first copy has
+1,740 from 2,254. Of the first copy's chains with no counterpart on the
+second, 530 began inside a longer chain there. The reader took the
+parser's chains as they stood.
+
+Two of SUPRA's 457 analyses state an average hole width that is not
+that of their holes: this one, and `nq087cp3030` (WM 1386, 78.28 px for
+28 px), which has no second copy here.
+
+Two smaller things came up with it, in what the reader takes over from
+the holes set aside. A tear among them, thousands of pixels wide, was
+put on the track its middle fell on and read as a note, which is where
+the second copy's notes on tracks the first never uses came from. And
+a speck too small for a hole carries an attack with an off time of
+`0px`, which made a chain running backwards to the head of the roll;
+SUPRA has 1,035 of those, in 123 of its analyses.
+
+**Since.** Where the stated average is more than a quarter over that of
+the holes listed, the reader chains the holes itself, over a bridge
+taken from those holes; what is wider than a track or ends before it
+begins is no chain (linked-rolls `4b39e8e`). WM 1253's second copy now
+has 1,780 chains for the first's 1,740; the copies align on 1,049
+notes, share 1,569 readings of 1,943, and differ by 164 chains track
+for track where it was 620. What is left is mostly expression: the
+second copy has a forzando on the bass side on nearly every beat of
+long stretches where the first has none (tracks 5 and 6, 134 chains for
+76), its crescendo holes there lie up to a centimetre later, and 61
+notes stand on one copy alone, 16 of them in the half metre before the
+tears. Whether
+that is a second coding of the dynamics or the parser again, the scans
+would tell; they could not be fetched from here.
+
+Over the 37 pairs the readings on one copy alone go from 12,825 to
+11,979 and the edits from 7,506 to 7,207, nearly all of it WM 1253. The
+other rolls lose the odd speck. Two proposals on two copies turn over
+with that (WM 757 to `St2(St1)`, WM 1462 at one speed to `*(Be1,St1)`),
+which is finding 3 again, and WM 662, the roll the alignment does not
+hold, moves by 137 readings the wrong way.
+
 ## What has been fixed since
 
 On branches named `claude/keen-hamilton-t432x3`, none of them merged or
@@ -318,6 +371,7 @@ reach the desk with its next release; the desk's own work without it.
 | a lost version that nothing derives from (4a) | a version that changes nothing stands in the one it derives from | linked-rolls `02d52bc` |
 | the stemma of two leaves cut off at the panel's edges, by the gap above | the stemma is fitted by what its discs and captions take | roll-desk `65864c2` |
 | readings of drifted stretches taken for readings of their own, and for shifts (2, 4) | the window of a pair is centred on its drift along the roll, and is no narrower than the pitch of a chain | linked-rolls `8bb319e` |
+| a torn end joining the notes of the whole roll, tears and specks read as chains (8) | the holes are chained anew where the parser's average hole width is not that of its holes; tears and specks among the bad holes are left out | linked-rolls `4b39e8e` |
 | rollscan2image naming `-g` and `-l` (6) | the README says `-r` for every Welte system, and why | rollscan2image, same branch |
 
 Not touched: the alignment itself, which is still one shift and one
