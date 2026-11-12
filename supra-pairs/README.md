@@ -566,8 +566,8 @@ hole of a command prolonged or shortened (nothing is struck under
 
 | put in or taken out, a command | edits | markings | seconds | notes | melody among them | bass line |
 |---|---|---|---|---|---|---|
-| brings out a stroke or two | 276 | 1.28 | 0.8 | 5 | 66 % | 70 % |
-| holds back a stroke or two | 308 | 0.92 | 0.5 | 5 | 69 % | 52 % |
+| an accent: a note or chord brought out | 276 | 1.28 | 0.8 | 5 | 66 % | 70 % |
+| a note or chord held back | 308 | 0.92 | 0.5 | 5 | 69 % | 52 % |
 | swells over a phrase | 264 | 1.62 | 2.4 | 14 | 77 % | 81 % |
 | sinks over a phrase | 139 | 1.06 | 2.2 | 15 | 78 % | 77 % |
 | louder or softer for a passage or more | 31 | | | | | |
@@ -578,7 +578,12 @@ hole of a command prolonged or shortened (nothing is struck under
 | a pedal command with no note under it | 92 | | | | | |
 
 The figures are medians; a marking is a quarter of the roll's scale
-(pp, p, mf, f, ff).
+(pp, p, mf, f, ff). The first row is an accent in the plain sense, on
+one or two attacks, an attack being a note or a chord struck at one
+moment. The library does not call it one, because "accent added" is
+only the bar's own spelling of an accent, one valve set and let go
+within a single edit; these reach the same end by a single command, or
+by two that the proposal did not put together.
 
 **The notes.** The library names 433 as held longer (by 7 mm in the
 median), 128 as released sooner (by 3.9 mm) and 120 as moved along the
