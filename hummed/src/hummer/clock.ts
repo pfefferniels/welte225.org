@@ -3,10 +3,13 @@ import type { Ms, Ticks } from '../shared/units.ts';
 import type { Note, PedalPoint } from './performance.ts';
 
 const round4 = (x: number): number => Math.round(x * 1e4) / 1e4;
+/** A beat, in ticks: how far a point of the clock reaches. */
+const BEAT: Ticks = 720;
 
 /**
- * Score time to performed time and back, through every unornamented onset and pedal change,
- * and through the end of the last chord, so that a note or air there keeps its length.
+ * Score time to performed time and back, through every unornamented onset (or, for a chord rolled
+ * whole, its first) and pedal change, and through the end of the last chord, so that a note or air
+ * there keeps its length.
  */
 export class Clock {
   /** Score positions, increasing. */
@@ -25,6 +28,27 @@ export class Clock {
     };
     for (const n of notes) if (!n.ornamented) add(n.date, n.onMs);
     for (const p of sustain) add(p.date, p.ms);
+    // a chord rolled whole has no such onset: where no other point lies within a beat of it, the
+    // first of its notes stands for it (the harmonic reductions take no pedal and roll nearly every
+    // chord, and the clock had hardly a point there; in the piece, the pedal's points suffice, and
+    // the rolls' first notes, before the beat, would only unsettle the tempo the voice reads)
+    const rolled = new Map<Ticks, Ms>();
+    for (const n of notes)
+      if (n.ornamented) rolled.set(n.date, Math.min(rolled.get(n.date) ?? Infinity, n.onMs));
+    const near = points.map(([tick]) => tick).sort((a, b) => a - b);
+    const lonely = (tick: Ticks): boolean => {
+      let lo = 0;
+      let hi = near.length;
+      while (lo < hi) {
+        const mid = (lo + hi) >> 1;
+        if (near[mid] < tick) lo = mid + 1;
+        else hi = mid;
+      }
+      const after = near.at(lo);
+      const before = lo > 0 ? near[lo - 1] : undefined;
+      return (after === undefined || after - tick >= BEAT) && (before === undefined || tick - before >= BEAT);
+    };
+    for (const [date, ms] of rolled) if (lonely(date)) add(date, ms);
 
     let last = -Infinity;
     let lastMs = 0;

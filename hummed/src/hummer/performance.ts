@@ -59,9 +59,8 @@ export function readPerformance(data: PerformanceData): Performance {
     data.parts[0]?.controlChanges
       .find((c) => c.controller === name)
       ?.points.map((p) => ({ date: p.date, ms: p.milliseconds, value: p.value })) ?? null;
-  const sustain = pedal('sustain');
-  if (!sustain) throw new PerformanceError('the performance has no sustain pedal');
-  return { notes, sustain, soft: pedal('soft') ?? [] };
+  // the harmonic reductions take no pedal (worker/reductions.ts)
+  return { notes, sustain: pedal('sustain') ?? [], soft: pedal('soft') ?? [] };
 }
 
 /**

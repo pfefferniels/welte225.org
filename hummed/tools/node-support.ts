@@ -14,8 +14,16 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
-import { approximateness, DEFAULT_ELABORATION, threshold, shapeAt } from '../src/worker/levels.ts';
+import { approximateness, DEFAULT_ELABORATION, threshold, shapeAt, stageAt } from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
+import {
+  harmoniesAt,
+  reductions,
+  sungReduction,
+  voiceScore,
+  type Reductions,
+  type Score,
+} from '../src/worker/reductions.ts';
 import type { PianoScore } from '../src/worker/piano.ts';
 import { performVoice, type HumData } from '../src/worker/prepare.ts';
 
@@ -37,9 +45,34 @@ export const loadScore = (): { msm: string; mpm: string } => ({
   mpm: read('../mpm/performance.mpm'),
 });
 
-/** What the piano plays from, as the worker reads it: the piece, its harmonies, the MPM. */
-export function loadPianoScore(): PianoScore {
-  return { ...loadScore(), harmonies: harmoniesScore(read('reduction/harmonies.mei')) };
+let made: Reductions | null = null;
+/** The harmonic reductions, their MPM and the line over them, as the worker makes them. */
+export const loadReductions = (): Reductions =>
+  (made ??= reductions(
+    harmoniesScore(read('reduction/halves.mei')),
+    harmoniesScore(read('reduction/harmonies.mei')),
+    loadScore().mpm,
+  ));
+
+/** What the piano plays from at an elaboration, as the worker reads it: the piece, the harmonies there, the MPMs. */
+export function loadPianoScore(elaboration = DEFAULT_ELABORATION): PianoScore {
+  return {
+    ...loadScore(),
+    harmonies: harmoniesAt(stageAt(elaboration), loadReductions),
+    harmoniesMpm: loadReductions().mpm,
+  };
+}
+
+/** What the voice follows at an elaboration (the piece, or the half notes), and what it sings. */
+export function voiceSource(elaboration = DEFAULT_ELABORATION): {
+  readonly score: Score;
+  readonly reduction: Reduction;
+} {
+  const stage = stageAt(elaboration);
+  return {
+    score: voiceScore(stage, loadScore(), loadReductions),
+    reduction: sungReduction(stage, loadReduction(), loadReductions),
+  };
 }
 
 /**
@@ -56,7 +89,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
 } {
   const score = loadScore();
   return {
-    ...performVoice(score, shapeAt(elaboration)),
+    ...performVoice(voiceSource(elaboration).score, shapeAt(elaboration)),
     approximateness: approximateness(elaboration),
     range: dynamicsRange(score.mpm),
     turns: turningPoints(score.mpm),

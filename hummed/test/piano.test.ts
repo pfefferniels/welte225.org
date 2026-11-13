@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { fingerprint, heldNotes, midiEvents, pedalAt, type PianoPart } from '../src/shared/piano.ts';
 import { midiFile, readMidiFile, TICK_SECONDS } from '../tools/smf.ts';
-import { shapeAt } from '../src/worker/levels.ts';
+import { PIECE_FROM, shapeAt } from '../src/worker/levels.ts';
 
 const part = (overrides: Partial<PianoPart> = {}): PianoPart => ({
   keys: [
@@ -133,30 +133,39 @@ describe('the piano at an elaboration', async () => {
   const { readPerformance } = await import('../src/hummer/performance.ts');
   const { loadPianoScore } = await import('../tools/node-support.ts');
   const { PAD_MS } = await import('../src/shared/units.ts');
+  const { voiceSource } = await import('../tools/node-support.ts');
   const score = loadPianoScore();
   const lastStrike = (p: PianoPart): number => Math.max(...p.keys.map((k) => k.on));
   const steps = [0, 0.25, 0.5, 0.75, 1];
-  const played = steps.map((e) => performPiano(score, shapeAt(e)));
+  const played = steps.map((e) => performPiano(loadPianoScore(e), shapeAt(e)));
 
   it('plays the reconstruction as it is at the top', () => {
     assert.equal(pianoMpm(score.mpm, shapeAt(1)), score.mpm);
   });
 
-  it('is through the piece the sooner the barer the music, a sketch of it', () => {
+  it('is through the piece sooner the barer the music, a sketch of it', () => {
     const lengths = played.map(({ piece }) => lastStrike(piece));
-    for (const [i, length] of lengths.entries()) if (i > 0) assert.ok(length > lengths[i - 1]);
-    // the humming alone a good third sooner than the piece as Grünfeld plays it, and no more than two fifths
+    // twice as fast at the bare end, not exaggerated: half as long as Grünfeld plays it
     const sooner = 1 - lengths[0] / lengths[lengths.length - 1];
-    assert.ok(sooner > 0.34 && sooner < 0.4, `${(100 * sooner).toFixed(1)} % sooner`);
+    assert.ok(sooner > 0.45 && sooner < 0.55, `${(100 * sooner).toFixed(1)} % sooner`);
+    assert.ok(lengths[1] > lengths[0] && lengths[2] > lengths[1]);
+    // under the piece the exaggeration slows it as much as the flightiness hurries it, within 5 %
+    for (const length of lengths.slice(2))
+      assert.ok(Math.abs(length / lengths[lengths.length - 1] - 1) < 0.05);
   });
 
-  it('keeps the harmonies as long as the piece, and the voice on the piano’s strikes', () => {
+  it('keeps the harmonies as long as the piece, and the voice on the strikes of what it follows', () => {
     for (const [i, { piece, harmonies }] of played.entries()) {
-      assert.ok(Math.abs(lastStrike(harmonies) - lastStrike(piece)) < 3);
-      const strikes = new Set(piece.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`));
-      const { notes } = readPerformance(performVoice(score, shapeAt(steps[i])).performance);
-      assert.equal(notes.length, piece.keys.length);
-      for (const n of notes) assert.ok(strikes.has(`${n.pitch}@${Math.round(n.onMs + PAD_MS)}`));
+      // the piece and the harmonies keep the same tempo, the harmonies without the rubato
+      assert.ok(Math.abs(lastStrike(harmonies) - lastStrike(piece)) < 6, `${steps[i]}`);
+      // the voice follows the piece, or the half notes, struck as the piano strikes them
+      const follows = steps[i] < PIECE_FROM ? harmonies : piece;
+      const strikes = new Set(follows.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`));
+      const { notes } = readPerformance(
+        performVoice(voiceSource(steps[i]).score, shapeAt(steps[i])).performance,
+      );
+      for (const n of notes)
+        assert.ok(strikes.has(`${n.pitch}@${Math.round(n.onMs + PAD_MS)}`), `${steps[i]} ${n.id}`);
     }
   });
 });

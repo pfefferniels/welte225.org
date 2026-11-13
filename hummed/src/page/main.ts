@@ -225,9 +225,11 @@ const applyElaboration = (): void => {
   elaborationOutput.value = what;
   elaborationSlider.setAttribute(
     'aria-valuetext',
-    { humming: 'the humming alone', harmonies: 'humming and harmonies', piece: 'the piece, humming along' }[
-      what
-    ],
+    {
+      halves: 'the harmonies in half notes, humming',
+      quarters: 'the harmonies in quarter notes, humming',
+      piece: 'the piece, humming along',
+    }[what],
   );
   setFill(elaborationSlider, e);
   // an instrument plays one part: the other, or none, from where playing is

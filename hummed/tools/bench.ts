@@ -22,7 +22,7 @@ import { hum, makeLevel, performVoice, planOf } from '../src/worker/prepare.ts';
 import type { SpectrogramColumns } from '../src/worker/spectrogram.ts';
 import { makeSpectrogram } from '../src/worker/spectrogram.ts';
 import { maxStatesOf, scoreStates } from '../src/worker/voice-states.ts';
-import { loadHumData, loadPianoScore, loadReduction, loadSpeaker, loadVtl } from './node-support.ts';
+import { loadHumData, loadPianoScore, loadSpeaker, loadVtl, voiceSource } from './node-support.ts';
 
 const { values } = parseArgs({
   options: {
@@ -63,13 +63,14 @@ Object.assign(timed, {
   },
 });
 const engine = new VtlEngine(timed, loadSpeaker());
-const score = loadPianoScore();
+const score = loadPianoScore(elaboration);
 const data = loadHumData();
-const reduction = loadReduction();
+// what the voice follows and sings there: the piece, or the half notes
+const { score: followed, reduction } = voiceSource(elaboration);
 
 // the preparation, step by step as a worker alone goes through it
 const t0 = now();
-const performed = performVoice(score, shapeAt(elaboration));
+const performed = performVoice(followed, shapeAt(elaboration));
 const t1 = now();
 const voice = hum(performed, reduction, data, shapeAt(elaboration));
 const t2 = now();

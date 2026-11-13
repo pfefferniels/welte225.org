@@ -1,17 +1,18 @@
 // The figure of what the elaboration does, drawn as TikZ in the dialect of the dissertation's
 // figures (its figures/tikz with keynotefigures.sty, as scripts/condon_figures.py writes them: x=1bp,
-// Zwo OT, every node named, German). A schematic: the fader across, and without a scale what it
-// sets, each curve as its function has it. The loudness of the humming and of the piano (mix.ts):
-// the humming recedes, the piano plays the harmonies for the first third, the piece from there on;
-// how exaggerated each is (levels.ts) is how thick it is drawn, the voice a little beyond the piano.
-// The flightiness, how much faster and less exactly it goes, falls to nothing on the axis, where ×1
-// stands. Labelled as little as will tell the curves apart. Not to be changed by hand: run this again.
+// Zwo OT, every node named, German), after the sketch it was planned on: the exaggeration from ×1 to
+// ×2 up, the fader across, under it what the piano plays (Halbe, Viertel, Stück, the first two the
+// harmonic reduction). The piano's exaggeration solid: none in the half notes, rising through the
+// quarters to ×2 where the piece comes in, falling to ×1 at the top. Dashed, what falls from the
+// bare end throughout: the voice's exaggeration, which stands for its loudness and for the global
+// speed and inexactness (the flightiness) too, each as its function has it (levels.ts, mix.ts).
+// Not to be changed by hand: run this again.
 //   npm run figure [-- --out figures/elaboration.tex]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { mix, PIECE_FROM } from '../src/page/mix.ts';
-import { flightiness, pianoLevel, voiceLevel, shapeAt } from '../src/worker/levels.ts';
+import { PIECE_FROM, QUARTERS_FROM } from '../src/page/mix.ts';
+import { pianoLevel, voiceLevel, shapeAt } from '../src/worker/levels.ts';
 import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
@@ -22,22 +23,15 @@ const { values } = parseArgs({ options: { out: { type: 'string', default: 'figur
 const WIDTH = 451.45;
 const num = (v: number): string => v.toFixed(2);
 const pt = (x: number, y: number): string => `(${num(x)},${num(y)})`;
-/** A number as the figures print it: a decimal comma, a dash for the minus, no trailing zeros. */
-const print = (v: number): string =>
-  String(Number(v.toFixed(2)))
-    .replace('.', ',')
-    .replace('-', '–');
-/** A number fit for a node's name. */
-const key = (v: number): string => String(Math.round(Math.abs(v) * 100));
 
 const STYLES = [
   String.raw`lab/.style={inner sep=0pt, outer sep=0pt, font=\kzwo{#1}}`,
   'lab/.default=7',
   'klein/.style={lab=6, text=kgray37}',
   'achse/.style={draw=black, line width=.4bp}',
-  'fluechtig/.style={draw=kgray57, line width=1bp, line join=round, line cap=round}',
-  'summen/.style={fill=kb51700}',
-  'klavier/.style={fill=black}',
+  'klavier/.style={draw=black, line width=1.2bp, line join=round, line cap=round}',
+  'stimme/.style={draw=kb51700, line width=1.2bp, dash pattern=on 4bp off 3bp, line cap=round}',
+  'pfeil/.style={draw=black, line width=.4bp, ->}',
 ];
 
 class Figure {
@@ -73,93 +67,74 @@ class Figure {
 
 /** Finely along the fader. */
 const FINE = Array.from({ length: 401 }, (_, i) => i / 400);
-const dB = (gain: number): number => 20 * Math.log10(gain);
-/** The loudness on the axis, in dB: silence, as far as the figure goes. */
-const FLOOR = -30;
-/** How thick a loudness is drawn as it is exaggerated: thin as written, ×1, and this much more by ×2. */
-const THIN = 0.6;
-const PER_FACTOR = 3.2;
-const thickness = (level: number): number => THIN + (level - 1) * PER_FACTOR;
-/** How high the flightiness starts, as a share of the plot's height: it has no scale of its own. */
-const FLIGHTY = 0.6;
 
 /* ---------- the plot ---------- */
 
 const fig = new Figure();
-const X0 = 6;
-const X1 = WIDTH - 6;
-const Y0 = 16;
-const TOP = Y0 + 120;
-const HEIGHT = TOP + 6;
+/** The plot: the exaggeration up from ×1 to ×2, the fader across. */
+const X0 = 78;
+const X1 = WIDTH - 14;
+const Y0 = 62;
+const TOP = Y0 + 96;
+const HEIGHT = TOP + 14;
 const x = (e: number): number => X0 + e * (X1 - X0);
-/** A loudness, from the floor on the axis to 0 dB at the top. */
-const loud = (db: number): number => Y0 + ((db - FLOOR) / -FLOOR) * (TOP - Y0);
-
-/**
- * A line whose thickness changes along it, as a filled outline: each point moved half the
- * thickness to either side, across the line.
- */
-function band(style: string, points: readonly (readonly [number, number, number])[]): void {
-  const side = (sign: number): string[] =>
-    points.map(([px, py, w], i) => {
-      const [ax, ay] = points[Math.max(0, i - 1)];
-      const [bx, by] = points[Math.min(points.length - 1, i + 1)];
-      const length = Math.hypot(bx - ax, by - ay) || 1;
-      return pt(px - (sign * (w / 2) * (by - ay)) / length, py + (sign * (w / 2) * (bx - ax)) / length);
-    });
-  fig.add(String.raw`\fill[${style}] ${[...side(1), ...side(-1).reverse()].join(' -- ')} -- cycle;`);
-}
-const label = (name: string, at: readonly [number, number], anchor: string, text: string): void => {
-  const [dx, dy] = [
-    anchor.includes('east') ? -2 : anchor.includes('west') ? 2 : 0,
-    anchor.includes('north') ? -3 : 3,
-  ];
-  fig.node(name, pt(at[0] + dx, at[1] + dy), text, `klein, anchor=${anchor}`);
+const y = (level: number): number => Y0 + (level - 1) * (TOP - Y0);
+const curve = (style: string, level: (e: number) => number): void => {
+  fig.add(String.raw`\draw[${style}] ${FINE.map((e) => pt(x(e), y(level(e)))).join(' -- ')};`);
 };
 
-// the fader across, from 0 to 1
-fig.add(String.raw`\draw[achse] ${pt(X0, Y0)} -- ${pt(X1, Y0)};`);
-for (const e of [0, 1]) {
-  fig.add(String.raw`\draw[achse] ${pt(x(e), Y0)} -- ${pt(x(e), Y0 - 2.5)};`);
-  fig.node(`e-${key(e)}`, pt(x(e), Y0 - 10), print(e), 'lab=6.5, anchor=base');
+// the axes, an arrow at the end of each, and the exaggeration's two marks
+fig.add(String.raw`\draw[pfeil] ${pt(X0, Y0)} -- ${pt(X1 + 8, Y0)};`);
+fig.add(String.raw`\draw[pfeil] ${pt(X0, Y0)} -- ${pt(X0, TOP + 10)};`);
+for (const [level, text] of [
+  [1, '1×'],
+  [2, '2×'],
+] as const) {
+  fig.add(String.raw`\draw[achse] ${pt(X0 - 3, y(level))} -- ${pt(X0, y(level))};`);
+  fig.node(`mark-${String(level)}`, pt(X0 - 5, y(level)), text, 'lab=7, anchor=east');
 }
-fig.node('elaboration', pt(x(0.5), Y0 - 10), 'Elaboration', 'lab=6.5, anchor=base');
+fig.node('uebertreibung', pt(X0 - 24, (Y0 + TOP) / 2), 'Übertreibung', 'lab=7.5, anchor=east');
 
-// the flightiness: how much faster than the MPM, and how much less exactly, down to ×1 on the axis
-const flighty = (e: number): number => Y0 + FLIGHTY * flightiness(e) * (TOP - Y0);
-fig.add(String.raw`\draw[fluechtig] ${FINE.map((e) => pt(x(e), flighty(e))).join(' -- ')};`);
-label('fluechtigkeit', [x(0.25), flighty(0.25)], 'south west', 'Flüchtigkeit');
+// the piano's exaggeration, solid; what falls from the bare end, dashed
+curve('klavier', (e) => pianoLevel(shapeAt(e)));
+curve('stimme', (e) => voiceLevel(shapeAt(e)));
 
-// the piano, as loud wherever it plays and parted where the fader is: the harmonies, then the piece
-const GAP = 1.5;
-const piano = loud(dB(mix(1).piece));
-const part = (keep: (e: number) => boolean): void => {
-  band(
-    'klavier',
-    FINE.filter((e) => e > 0 && keep(e)).map((e) => [x(e), piano, thickness(pianoLevel(shapeAt(e)))]),
-  );
+// under the fader, what the piano plays, and the first two bracketed: the harmonic reduction
+const PLAYS = Y0 - 13;
+const stages = [
+  ['halbe', 0, QUARTERS_FROM, 'Halbe'],
+  ['viertel', QUARTERS_FROM, PIECE_FROM, 'Viertel'],
+  ['stueck', PIECE_FROM, 1, 'Stück'],
+] as const;
+for (const [name, from, to, text] of stages) {
+  fig.add(String.raw`\draw[achse] ${pt(x(from), Y0)} -- ${pt(x(from), Y0 - 2.5)};`);
+  fig.node(name, pt(x((from + to) / 2), PLAYS), text, 'lab=7, anchor=base');
+}
+for (const [a, b] of [
+  [stages[0], stages[1]],
+  [stages[1], stages[2]],
+] as const)
+  fig.add(String.raw`\draw[pfeil] ([xshift=4bp]${a[0]}.east) -- ([xshift=-4bp]${b[0]}.west);`);
+fig.add(String.raw`\draw[pfeil] ([xshift=4bp]stueck.east) -- ${pt(X1 - 4, PLAYS + 2.5)};`);
+const BRACKET = PLAYS - 6;
+fig.add(
+  String.raw`\draw[achse] ${pt(x(0) + 2, BRACKET + 3)} -- ${pt(x(0) + 2, BRACKET)} -- ${pt(x(PIECE_FROM) - 2, BRACKET)} -- ${pt(x(PIECE_FROM) - 2, BRACKET + 3)};`,
+);
+fig.node('reduktion', pt(x(PIECE_FROM / 2), BRACKET - 9), 'harm. Reduktion', 'klein, anchor=base');
+
+// what the lines are
+const KEY = 14;
+const legend = (name: string, style: string, at: number, text: string): void => {
+  fig.add(String.raw`\draw[${style}] ${pt(X0, at + 2.5)} -- ${pt(X0 + 24, at + 2.5)};`);
+  fig.node(name, pt(X0 + 30, at), text, 'klein, anchor=base west');
 };
-part((e) => x(e) <= x(PIECE_FROM) - GAP);
-part((e) => x(e) >= x(PIECE_FROM) + GAP);
-label(
-  'harmonien',
-  [x(PIECE_FROM / 2), piano + thickness(pianoLevel(shapeAt(PIECE_FROM / 2))) / 2],
-  'south',
-  'Harmonien',
+legend('legende-klavier', 'klavier', KEY + 10, '= Übertreibung Klavier');
+legend(
+  'legende-stimme',
+  'stimme',
+  KEY,
+  '= Übertreibung Stimme, Lautstärke Stimme und globale Geschwindigkeit/Ungenauigkeit (= Flüchtigkeit)',
 );
-label(
-  'stueck',
-  [x((1 + PIECE_FROM) / 2), piano + thickness(pianoLevel(shapeAt((1 + PIECE_FROM) / 2))) / 2],
-  'south',
-  'Stück',
-);
-
-// the humming recedes, fast at first, and thins, though less than the piano
-band(
-  'summen',
-  FINE.map((e) => [x(e), loud(dB(mix(e).hum)), thickness(voiceLevel(shapeAt(e)))]),
-);
-label('summen', [x(1), loud(dB(mix(1).hum)) - thickness(voiceLevel(shapeAt(1))) / 2], 'north east', 'Summen');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });

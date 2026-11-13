@@ -55,7 +55,12 @@ export function melodyOf(reduction: Reduction, notes: readonly Note[], clock: Cl
     // the voice's own copy of the note, where it takes it up later than it is struck
     const note = onset === struck.onMs ? struck : { ...struck, onMs: onset };
     const whole = !e.pedal && Math.abs(note.date + note.duration - e.end) < 1;
-    const off = Math.max(onset + 40, whole ? note.endMs : clock.toMs(e.end));
+    // a note held on to the next ends where that one is struck: the clock, which passes over rolled
+    // chords, may not know when that is (the last chord, rolled, came 2.6 s after it reckoned)
+    const after = reduction.events.at(i + 1);
+    const next = after?.kind === 'note' && after.start === e.end ? byId.get(after.ref) : undefined;
+    const written = next ? next.onMs : clock.toMs(e.end);
+    const off = Math.max(onset + 40, whole ? note.endMs : written);
     melody.push({
       id: e.id,
       note,

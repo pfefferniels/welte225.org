@@ -128,8 +128,8 @@ try {
   await page.waitForTimeout(5000);
   await report('seeked to 1:30');
   for (const [value, expected] of [
-    [20, 'harmonies'],
-    [0, 'humming'],
+    [30, 'quarters'],
+    [0, 'halves'],
     [67, 'piece'],
   ] as const) {
     await page.evaluate(
@@ -139,7 +139,7 @@ try {
     const shown = await text('o-elaboration');
     if (shown !== expected) errors.push(`elaboration ${value} shows ${shown}, not ${expected}`);
   }
-  console.log('elaboration: harmonies, humming alone, the piece');
+  console.log('elaboration: quarters, halves, the piece');
   // the voice rendered anew for the last elaboration takes over, and playing goes on
   await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
   await page.waitForTimeout(2000);
@@ -256,7 +256,7 @@ try {
   else if (Math.min(...early) < 0) errors.push('keys were sent to the instrument late');
   const before = ons(await sent()).length;
   await page.evaluate(
-    "(() => { const e = document.getElementById('elaboration'); e.value = 20; e.dispatchEvent(new Event('input')); })()",
+    "(() => { const e = document.getElementById('elaboration'); e.value = 30; e.dispatchEvent(new Event('input')); })()",
   );
   await page.waitForTimeout(3000);
   // where the harmonies hold still (over the ritardando into bar 17 no key is struck for five

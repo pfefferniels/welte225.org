@@ -16,13 +16,13 @@ import {
 } from '../src/hummer/index.ts';
 import { TONGUE_A, VELUM_SHUT } from '../src/hummer/articulators.ts';
 import { BREATHING, findBreaths, type MelodyNote } from '../src/hummer/melody.ts';
-import { loadReduction, loadScore, loadStyle, voicePerformance } from '../tools/node-support.ts';
+import { loadReduction, loadScore, loadStyle, voicePerformance, voiceSource } from '../tools/node-support.ts';
 import { assertGolden } from './golden.ts';
 
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
 const base = (elaboration?: number) => ({
   ...voicePerformance(elaboration),
-  reduction: loadReduction(),
+  reduction: voiceSource(elaboration).reduction,
   style: loadStyle(),
 });
 const render = (): Voice => renderVoice({ ...base(), calibration: { gain: 1, notes: {} } });

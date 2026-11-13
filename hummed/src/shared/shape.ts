@@ -1,11 +1,12 @@
-// How exaggerated the performance is, how flighty (how fast, how exactly struck), and how loosely the
-// voice sings: all follow the elaboration, unless the visitor sets the first two apart (`Shape`).
-// The barer the music (0, the humming alone), the rawer the gestures: the MPM ×2 (at Grünfeld's tempo
-// doubled sounded unnatural, ×1.6 still too much; gone through twice as fast, it is what works); the
-// more of it there is, the subtler, until at 1 the piano plays the reconstruction as the MPM sets it
-// down. The barer, the more of a sketch it is, too: gone through faster, and less exactly.
-// The voice is the inner guide of the playing: a little more exaggerated than the piano, except
-// where notes move in time, which it shares with the piano so that the two stay together.
+// How the music is made along the fader. From left to right, the piano goes from the harmonic
+// reduction in half notes through the same in quarters to the piece; meanwhile everything that makes
+// a sketch of it falls, smoothly, from its height at the bare end: how fast and how inexactly it goes
+// (the flightiness: twice as fast, 100 ms off), how exaggerated the voice's gestures (×2) and how loud
+// the voice is (page/mix.ts). The piano's exaggeration does otherwise: none in the half notes, where
+// the MPM's tempo and dynamics apply as they are, rising to ×2 where the piece comes in, as raw as it
+// gets, and falling from there to the MPM as Grünfeld's performance sets it down, at the top.
+// (Gone through twice as fast, ×2 is what works: at Grünfeld's tempo doubled sounded unnatural.)
+// In timing the voice goes with the piano, so that the two strike together.
 import type { Setting } from './protocol.ts';
 
 const unit = (x: number): number => Math.min(1, Math.max(0, x));
@@ -35,23 +36,34 @@ export interface Shape {
  */
 export const flightiness = (elaboration: number): number => Math.pow(1 - unit(elaboration), 2);
 
-/** Where the piano passes from the harmonies to the piece (as a fraction of the fader). */
-export const PIECE_FROM = 1 / 3;
+/**
+ * What the piano plays along the fader: the harmonic reduction in half notes, running evenly; from
+ * here the same in quarter notes, the whole harmony struck on every quarter; from here the piece.
+ */
+export const QUARTERS_FROM = 0.25;
+export const PIECE_FROM = 0.45;
+export type Stage = 'halves' | 'quarters' | 'piece';
+export const stageAt = (elaboration: number): Stage =>
+  elaboration < QUARTERS_FROM ? 'halves' : elaboration < PIECE_FROM ? 'quarters' : 'piece';
 
 /**
- * How far the MPM is exaggerated for the piano at an elaboration, from 1 to 0, fast, then gently:
- * from the humming alone through the harmonies (to 0.44 just before the piece), and anew through
- * the piece, which comes in as raw as the humming was, refined to the MPM as it is at the top.
+ * How far the MPM is exaggerated for the piano at an elaboration, 0 to 1: not at all in the half
+ * notes (the MPM's tempo and dynamics as they are), rising through the quarters to the full where
+ * the piece comes in, then falling to the MPM as it is at the top; flat where it starts to rise,
+ * at the top and at the end, so that it has no corner anywhere.
  */
 export const exaggeration = (elaboration: number): number => {
   const e = unit(elaboration);
-  return e < PIECE_FROM ? Math.pow(1 - e, 2) : Math.pow(1 - (e - PIECE_FROM) / (1 - PIECE_FROM), 2);
+  if (e < QUARTERS_FROM || e === 1) return 0;
+  if (e < PIECE_FROM)
+    return Math.pow(Math.sin(((Math.PI / 2) * (e - QUARTERS_FROM)) / (PIECE_FROM - QUARTERS_FROM)), 2);
+  return Math.pow(Math.cos(((Math.PI / 2) * (e - PIECE_FROM)) / (1 - PIECE_FROM)), 2);
 };
 
 /**
- * How far the voice's own gestures are exaggerated, from 1 alone to 0 at the top: once, smoothly,
- * over the whole fader, where the piano's starts anew with the piece. In timing the voice goes with
- * the piano, or the two would not strike together.
+ * How far the voice's own gestures are exaggerated, from 1 at the bare end to 0 at the top: once,
+ * smoothly, as its loudness and the flightiness fall, where the piano's rises and falls. In timing
+ * the voice goes with the piano, or the two would not strike together.
  */
 export const voiceExaggeration = (elaboration: number): number => Math.pow(1 - unit(elaboration), 2);
 
@@ -79,15 +91,12 @@ export const shapeOf = (setting: Setting): Shape => ({
   }),
 });
 
-/** The piano's exaggeration (and the voice's timing): ×2 alone and where the piece comes in, ×1 at 1. */
+/** The piano's exaggeration (and the voice's timing): ×1 in the half notes, ×2 where the piece comes in, ×1 at 1. */
 export const pianoLevel = (shape: Pick<Shape, 'exaggeration'>): number => 1 + shape.exaggeration;
 
-/**
- * The voice's, except in timing: ×1.85 alone, ×1.43 where the piece comes in (no jump, where the
- * piano's goes back to ×2), ×1.1 at the top, a little beyond the piano's there.
- */
+/** The voice's, except in timing: ×2 at the bare end, falling smoothly to ×1.1 at the top. */
 export const voiceLevel = (shape: Pick<Shape, 'voiceExaggeration'>): number =>
-  1.1 + 0.75 * shape.voiceExaggeration;
+  1.1 + 0.9 * shape.voiceExaggeration;
 
 /**
  * How much faster than the MPM the music goes, the piano and the voice alike: ×2 at the bare end, ×1
@@ -114,5 +123,5 @@ export const IMPRECISION = { timingMs: 100, dynamics: 0.083 } as const;
 export const THRESHOLD = 0.6;
 export const threshold = (shape: Pick<Shape, 'flightiness'>): number => THRESHOLD * tempoFactor(shape);
 
-/** Where the page starts (index.html): the piece (×1.12), the humming under it (×1.19). */
+/** Where the page starts (index.html): the piece, the piano ×1.71, the humming ×1.21 under it. */
 export const DEFAULT_ELABORATION = 0.65;

@@ -49,6 +49,8 @@ export class Player {
   /** Playing, but stopped where the voice has not been rendered yet. */
   #waiting = false;
   #startAt = 0;
+  /** A new rendering is taking over: it starts after a short fade. */
+  #switching = false;
   #offset: Seconds = 0;
   #voiceUntil: Seconds = 0;
   #pianoFrom: Seconds = 0;
@@ -277,7 +279,10 @@ export class Player {
     if (
       this.#playing &&
       this.#waiting &&
-      cur?.rendered(this.#offset, this.#offset + 0.5) &&
+      !this.#switching &&
+      cur &&
+      this.#offset < cur.duration - 0.01 &&
+      cur.rendered(this.#offset, this.#offset + 0.5) &&
       this.#piano.ready(cur)
     ) {
       this.#startFrom(this.#offset);
@@ -287,7 +292,12 @@ export class Player {
     if (cur && this.#playing && !this.#waiting && this.position() >= cur.duration - 0.01) {
       this.#offset = cur.duration;
       this.#stopAll();
-      this.#setPlaying(false);
+      // at the end of this rendering with another on its way (a barer one is shorter, and ends
+      // sooner): wait for that one, which takes over at the same place, rather than stop
+      if (this.#pending) {
+        this.#waiting = true;
+        this.#view.status('Waiting for VocalTractLab…');
+      } else this.#setPlaying(false);
     }
     if (this.#playing) this.#view.changed();
   }
@@ -330,8 +340,15 @@ export class Player {
     if (was && was !== next) this.#renders.delete(was.id);
     const { context, master } = this.#graph;
     if (this.#playing) {
+      // the playhead in the new rendering from now on, held where it takes over until it starts
+      // there after the fade: reckoned in the old one's time against the new one's length, a barer
+      // (shorter) rendering seemed to be over, and playing stopped
+      this.#offset = t;
+      this.#waiting = true;
+      this.#switching = true;
       master.gain.setTargetAtTime(0, context.currentTime, 0.01);
       setTimeout(() => {
+        this.#switching = false;
         this.#startFrom(t);
         master.gain.setTargetAtTime(1, context.currentTime + 0.05, 0.02);
       }, 40);

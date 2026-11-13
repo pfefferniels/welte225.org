@@ -203,30 +203,26 @@ input[type='range']::-moz-range-thumb {
   background: var(--bg);
   border: 2px solid var(--accent);
 }
-/* the elaboration fader: a gap a third of the way along, where the piano passes from the harmonies
-   to the piece; measured from the thumb's centre, which travels 15px short of the track */
+/* the elaboration fader: a gap where the harmonies in half notes give way to those in quarter notes
+   (a quarter of the way along), and one where those give way to the piece (0.45, shared/shape.ts);
+   measured from the thumb's centre, which travels 15px short of the track */
 input.split {
-  --split: calc(7.5px + (100% - 15px) / 3);
+  --quarters: calc(7.5px + (100% - 15px) * 0.25);
+  --piece: calc(7.5px + (100% - 15px) * 0.45);
+  --gaps: linear-gradient(
+    to right,
+    transparent calc(var(--quarters) - 1.5px),
+    var(--bg) calc(var(--quarters) - 1.5px) calc(var(--quarters) + 1.5px),
+    transparent calc(var(--quarters) + 1.5px) calc(var(--piece) - 1.5px),
+    var(--bg) calc(var(--piece) - 1.5px) calc(var(--piece) + 1.5px),
+    transparent calc(var(--piece) + 1.5px)
+  );
 }
 input.split::-webkit-slider-runnable-track {
-  background:
-    linear-gradient(
-      to right,
-      transparent calc(var(--split) - 1.5px),
-      var(--bg) calc(var(--split) - 1.5px) calc(var(--split) + 1.5px),
-      transparent calc(var(--split) + 1.5px)
-    ),
-    linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
+  background: var(--gaps), linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
 }
 input.split::-moz-range-track {
-  background:
-    linear-gradient(
-      to right,
-      transparent calc(var(--split) - 1.5px),
-      var(--bg) calc(var(--split) - 1.5px) calc(var(--split) + 1.5px),
-      transparent calc(var(--split) + 1.5px)
-    ),
-    var(--rule);
+  background: var(--gaps), var(--rule);
 }
 input[type='range']:focus-visible {
   outline: 2px solid var(--accent);

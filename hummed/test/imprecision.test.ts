@@ -1,34 +1,36 @@
 // Flightiness strikes the notes less exactly: the same way every time, a chord together, legato
-// legato, the harmonies with the piece and the voice with the piano, and not at all at the top.
+// legato, the voice with the piano, and not at all at the top.
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { performMsmToData, type PerformanceData } from 'espressivo';
 import { readPerformance, repaired } from '../src/hummer/performance.ts';
 import { imprecise } from '../src/worker/imprecision.ts';
-import { IMPRECISION, shapeAt } from '../src/worker/levels.ts';
+import { IMPRECISION, shapeAt, type Shape } from '../src/worker/levels.ts';
 import { performPiano, pianoMpm } from '../src/worker/piano.ts';
 import { loadPianoScore } from '../tools/node-support.ts';
 
 const score = loadPianoScore();
-const performed = (e: number): PerformanceData =>
-  performMsmToData({ msm: score.msm, mpm: pianoMpm(score.mpm, shapeAt(e)) });
+/** As flighty and as exaggerated as anything gets: twice as fast, ×2, 100 ms off. */
+const RAW: Shape = { flightiness: 1, exaggeration: 1, voiceExaggeration: 1, approximateness: 1 };
+const performed = (shape: Shape): PerformanceData =>
+  performMsmToData({ msm: score.msm, mpm: pianoMpm(score.mpm, shape) });
 const notes = (data: PerformanceData) => data.parts.flatMap((p) => p.notes);
 
 describe('imprecision', () => {
-  // the bare end, exaggerated so far that espressivo leaves strays, put right before the shift
-  const raw = performed(0);
+  // exaggerated so far that espressivo leaves strays, put right before the shift
+  const raw = performed(RAW);
   const plain = repaired(raw);
-  const struck = imprecise(raw, shapeAt(0));
+  const struck = imprecise(raw, RAW);
   const pairs = notes(plain).map((n, i) => [n, notes(struck)[i]] as const);
   const shift = (i: number): number => pairs[i][1].milliseconds.date - pairs[i][0].milliseconds.date;
 
   it('leaves the performance as it is at the top', () => {
-    const top = performed(1);
+    const top = performed(shapeAt(1));
     assert.equal(imprecise(top, shapeAt(1)), top);
   });
 
   it('is the same every time', () => {
-    assert.deepEqual(imprecise(raw, shapeAt(0)), struck);
+    assert.deepEqual(imprecise(raw, RAW), struck);
   });
 
   it('moves a date by about as much as it should, the same wherever it is struck or let go', () => {
@@ -74,7 +76,7 @@ describe('imprecision', () => {
     const before = readPerformance(raw).notes;
     const after = readPerformance(struck).notes;
     const strays = before.flatMap((n, i) => (n.date > 0 && Math.abs(n.onMs - n.date) < 1e-6 ? [i] : []));
-    assert.ok(strays.length > 0, 'the bare end no longer leaves a stray to put right');
+    assert.ok(strays.length > 0, 'the MPM ×2 no longer leaves a stray to put right');
     for (const i of strays) {
       const others = after.filter((n, j) => j !== i && n.date === after[i].date).map((n) => n.onMs);
       assert.ok(
@@ -93,11 +95,13 @@ describe('imprecision', () => {
     assert.ok(sd > 0.6 * IMPRECISION.dynamics && sd < 1.4 * IMPRECISION.dynamics, String(sd));
   });
 
-  it('strikes the harmonies where the piece is struck at the dates they share', () => {
-    const { piece, harmonies } = performPiano(score, shapeAt(0));
-    const onsets = new Set(piece.keys.map((k) => k.on.toFixed(6)));
-    const shared = harmonies.keys.filter((k) => onsets.has(k.on.toFixed(6)));
-    // most chords of the harmonies fall on an onset of the piece, struck off by the same amount
-    assert.ok(shared.length > harmonies.keys.length / 2, `${shared.length} of ${harmonies.keys.length}`);
+  it('strikes the harmonies in half notes and in quarters alike where they share a chord', () => {
+    const halves = performPiano(loadPianoScore(0), shapeAt(0.2)).harmonies;
+    const quarters = performPiano(loadPianoScore(0.3), shapeAt(0.2)).harmonies;
+    const onsets = new Set(quarters.keys.map((k) => `${k.pitch}@${k.on.toFixed(6)}`));
+    // a chord is struck where the quarters strike it first, but where they strike a held note with
+    // it, which rolls with the rest
+    const shared = halves.keys.filter((k) => onsets.has(`${k.pitch}@${k.on.toFixed(6)}`));
+    assert.ok(shared.length > 0.9 * halves.keys.length, `${shared.length} of ${halves.keys.length}`);
   });
 });

@@ -1,10 +1,10 @@
-// The elaboration fader: the humming alone at 0, the harmonies under it at once, the piece from a
-// third of the way up with the humming quieter.
+// The elaboration fader: the harmonies in half notes from the bare end, then in quarters, then the
+// piece, the humming over them throughout, quieter as it goes.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { heard, mix, PIECE_FROM, voiceElaboration } from '../src/page/mix.ts';
+import { heard, mix, PIECE_FROM, QUARTERS_FROM, voiceElaboration } from '../src/page/mix.ts';
 import {
   approximateness,
   atTempo,
@@ -20,25 +20,25 @@ import { ROOT } from '../tools/node-support.ts';
 const positions = Array.from({ length: 101 }, (_, i) => i / 100);
 
 describe('elaboration', () => {
-  it('is the humming alone at 0', () => {
-    assert.deepEqual(mix(0), { hum: 1, harmonies: 0, piece: 0 });
-    assert.equal(heard(0), 'humming');
-  });
-
-  it('brings the harmonies in under the humming at once, as loud as the piano will be', () => {
-    const lower = positions.filter((e) => e > 0 && e < PIECE_FROM);
-    for (const e of lower) {
-      assert.equal(mix(e).harmonies, mix(1).piece);
-      assert.equal(heard(e), 'harmonies');
-    }
+  it('plays the harmonies from the bare end, in half notes, then in quarters, then the piece', () => {
+    assert.deepEqual(mix(0), { hum: 1, harmonies: mix(1).piece, piece: 0 });
+    assert.equal(heard(0), 'halves');
+    assert.equal(heard(QUARTERS_FROM - 0.01), 'halves');
+    assert.equal(heard(QUARTERS_FROM), 'quarters');
+    assert.equal(heard(PIECE_FROM - 0.01), 'quarters');
+    assert.equal(heard(PIECE_FROM), 'piece');
+    const lower = positions.filter((e) => e < PIECE_FROM);
+    for (const e of lower) assert.equal(mix(e).harmonies, mix(1).piece);
     for (const [a, b] of lower.slice(1).map((x, i) => [lower[i], x] as const))
       assert.ok(mix(b).hum < mix(a).hum);
   });
 
-  it('gives the harmonies a third of the fader', () => {
-    assert.ok(Math.abs(PIECE_FROM - 1 / 3) < 1e-9);
-    assert.equal(heard(0.33), 'harmonies');
-    assert.equal(heard(0.34), 'piece');
+  it('renders each setting on the fader’s side of a border', () => {
+    assert.equal(voiceElaboration(0.24), 0.2);
+    assert.equal(voiceElaboration(0.25), 0.25);
+    assert.equal(voiceElaboration(0.44), 0.4);
+    assert.equal(voiceElaboration(0.45), 0.45);
+    for (const e of positions) assert.equal(heard(voiceElaboration(e)), heard(e));
   });
 
   it('brings the humming down soon', () => {
@@ -46,9 +46,11 @@ describe('elaboration', () => {
     // a quarter of the way up the humming is 10 dB down, under the harmonies
     assert.ok(db(mix(0.25).hum) < -10);
     assert.ok(mix(0.25).harmonies > mix(0.25).hum);
+    // at the bare end the humming above the harmonies
+    assert.ok(mix(0).hum > mix(0).harmonies);
   });
 
-  it('passes from the harmonies to the piece a third of the way up, as loud', () => {
+  it('passes from the harmonies to the piece, as loud', () => {
     const justBelow = mix(PIECE_FROM - 1e-9).harmonies;
     assert.ok(Math.abs(justBelow - mix(PIECE_FROM).piece) < 1e-6);
     assert.equal(heard(PIECE_FROM), 'piece');
@@ -63,25 +65,27 @@ describe('elaboration', () => {
     for (const e of positions) assert.ok(mix(e).harmonies === 0 || mix(e).piece === 0);
   });
 
-  it('exaggerates the more, and lets the voice sing the more loosely, the barer the music', () => {
+  it('exaggerates the piano not in the half notes, the most where the piece comes in, smoothly', () => {
+    for (const e of positions.filter((x) => x < QUARTERS_FROM)) assert.equal(pianoLevel(shapeAt(e)), 1);
     for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
-      // the piano's falls through the humming and the harmonies, and again through the piece
-      if (b === PIECE_FROM || (a < PIECE_FROM && b > PIECE_FROM))
-        assert.ok(pianoLevel(shapeAt(b)) > pianoLevel(shapeAt(a)));
-      else assert.ok(pianoLevel(shapeAt(b)) < pianoLevel(shapeAt(a)));
-      // the voice's own, once, smoothly
+      if (a >= QUARTERS_FROM && b <= PIECE_FROM) assert.ok(pianoLevel(shapeAt(b)) > pianoLevel(shapeAt(a)));
+      if (a >= PIECE_FROM) assert.ok(pianoLevel(shapeAt(b)) < pianoLevel(shapeAt(a)));
+      // no jump: a step of the fader moves it by a little at most
+      assert.ok(Math.abs(pianoLevel(shapeAt(b)) - pianoLevel(shapeAt(a))) < 0.2);
+    }
+    assert.ok(Math.abs(pianoLevel(shapeAt(PIECE_FROM)) - 2) < 1e-9);
+    assert.equal(pianoLevel(shapeAt(1)), 1);
+  });
+
+  it('exaggerates the voice, and lets it sing loosely, the more the barer the music, smoothly', () => {
+    for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
       assert.ok(voiceLevel(shapeAt(b)) < voiceLevel(shapeAt(a)));
       assert.ok(approximateness(b) < approximateness(a));
     }
-    // the piece comes in as raw as the humming was; the voice goes on where it was
-    assert.ok(Math.abs(pianoLevel(shapeAt(PIECE_FROM)) - 2) < 1e-9);
-    assert.ok(Math.abs(pianoLevel(shapeAt(PIECE_FROM - 1e-9)) - (1 + Math.pow(2 / 3, 2))) < 1e-6);
-    assert.ok(Math.abs(voiceLevel(shapeAt(PIECE_FROM)) - voiceLevel(shapeAt(PIECE_FROM - 1e-9))) < 1e-6);
-    // the humming alone ×1.85 (×2 in timing); the piece as the MPM sets it down, the voice a little beyond it
-    assert.ok(Math.abs(pianoLevel(shapeAt(0)) - 2) < 1e-9);
-    assert.ok(Math.abs(voiceLevel(shapeAt(0)) - 1.85) < 1e-9);
-    assert.equal(pianoLevel(shapeAt(1)), 1);
+    assert.ok(Math.abs(voiceLevel(shapeAt(0)) - 2) < 1e-9);
     assert.ok(Math.abs(voiceLevel(shapeAt(1)) - 1.1) < 1e-9);
+    // a little beyond the piano under the piece as it is
+    assert.ok(voiceLevel(shapeAt(1)) > pianoLevel(shapeAt(1)));
     assert.equal(approximateness(0), 1);
     assert.equal(approximateness(1), 0);
   });

@@ -7,11 +7,15 @@ import { PAD_MS } from '../shared/units.ts';
 import { atTempo, pianoFactors, pianoLevel, tempoFactor, type Shape } from './levels.ts';
 import { imprecise } from './imprecision.ts';
 
-/** What the piano plays from: the piece's score, the harmonies' score (MSM) and the MPM. */
+/**
+ * What the piano plays from: the piece's score (MSM) and its MPM, and the harmonies' score (in half
+ * or in quarter notes) and theirs (reductions.ts).
+ */
 export interface PianoScore {
   readonly msm: string;
-  readonly harmonies: string;
   readonly mpm: string;
+  readonly harmonies: string;
+  readonly harmoniesMpm: string;
 }
 
 const PAD = PAD_MS / 1000;
@@ -45,16 +49,18 @@ export function performPiano(
   score: PianoScore,
   shape: Shape,
 ): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
-  const mpm = pianoMpm(score.mpm, shape);
-  const part = (msm: string, expandOrnaments: boolean): PianoPart => {
+  const part = (msm: string, mpm: string, expandOrnaments: boolean): PianoPart => {
     const performance = readPerformance(
       imprecise(performMsmToData({ msm, mpm }, { expandOrnaments }), shape),
     );
     repair(performance.notes);
     return pianoPart(performance);
   };
-  // The piece's grace notes are MPM v3 ornaments on the piece's notes, which the harmonies do not
-  // have: performed with them, each would be skipped with a warning. Its arpeggios are v2, which
-  // the flag leaves alone, so the harmonies still roll where the piece rolls.
-  return { piece: part(score.msm, true), harmonies: part(score.harmonies, false) };
+  // The piece's grace notes are MPM v3 ornaments on the piece's notes; the harmonies' MPM has none,
+  // and its arpeggios are v2, which the flag leaves alone: each chord rolled as the piece rolls it
+  // where it stands in the piece.
+  return {
+    piece: part(score.msm, pianoMpm(score.mpm, shape), true),
+    harmonies: part(score.harmonies, pianoMpm(score.harmoniesMpm, shape), false),
+  };
 }

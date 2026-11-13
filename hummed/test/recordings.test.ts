@@ -74,9 +74,8 @@ describe('the recordings in piano/pianoteq/', () => {
     JSON.parse(readFileSync(join(ROOT, 'piano/pianoteq/manifest.json'), 'utf8')),
   );
   it('are of the performance as it is now', { skip: manifest ? false : 'none rendered yet' }, () => {
-    const score = loadPianoScore();
     for (const setting of manifest?.settings ?? []) {
-      const parts = performPiano(score, shapeAt(setting.elaboration));
+      const parts = performPiano(loadPianoScore(setting.elaboration), shapeAt(setting.elaboration));
       for (const name of ['piece', 'harmonies'] as const) {
         const recorded = setting[name];
         const message = `${setting.elaboration} ${name} was rendered from another performance: npm run pianoteq`;

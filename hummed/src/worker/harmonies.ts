@@ -5,7 +5,8 @@
 import { convertMeiToMsm, Msm, type Element } from 'espressivo';
 import type { Ticks } from '../shared/units.ts';
 
-const GRACE: Ticks = 90;
+/** How long a grace note put back lasts: a thirty-second. */
+export const GRACE: Ticks = 90;
 const XML_NAMESPACE = 'http://www.w3.org/XML/1998/namespace';
 
 export class HarmoniesError extends Error {

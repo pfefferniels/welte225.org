@@ -100,11 +100,10 @@ const elaborations = values.elaborations
 const offStep = elaborations.filter((e) => !elaborationSteps(step).some((g) => Math.abs(g - e) < 1e-9));
 if (offStep.length > 0) fail(`elaborations not in steps of ${step}: ${offStep.join(', ')}`);
 
-const score = loadPianoScore();
-/** Each setting's parts as the page plays them, and their messages. */
+/** Each setting's parts as the page plays them (the harmonies in half or quarter notes), and their messages. */
 const performed = elaborations.map((elaboration) => {
   const level = pianoLevel(shapeAt(elaboration));
-  const parts = performPiano(score, shapeAt(elaboration));
+  const parts = performPiano(loadPianoScore(elaboration), shapeAt(elaboration));
   const events = (part: PianoPart): readonly MidiEvent[] => midiEvents(part);
   return {
     elaboration,

@@ -30,7 +30,7 @@ import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { shapeOf } from './levels.ts';
+import { shapeOf, stageAt } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
 import {
@@ -46,6 +46,14 @@ import {
   type Level,
 } from './prepare.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
+import {
+  harmoniesAt,
+  reductions,
+  sungReduction,
+  voiceScore,
+  type Reductions,
+  type Score,
+} from './reductions.ts';
 import { maxStatesOf, scoreStates } from './voice-states.ts';
 
 interface WorkerScope {
@@ -64,8 +72,11 @@ const nothing = (): void => undefined;
 interface Texts extends HumData {
   readonly msm: string;
   readonly mpm: string;
-  /** The harmonies as a score (reduction/harmonies.mei, grace notes put back), made when first played here. */
-  readonly harmonies: () => string;
+  /**
+   * The harmonic reductions in half and in quarter notes, their MPM and the line sung over them
+   * (reductions.ts), made when first needed here.
+   */
+  readonly reductions: () => Reductions;
 }
 
 /** What a worker loads once: the texts, soon there, and VocalTractLab, which takes longer. */
@@ -119,18 +130,19 @@ const get = async (url: string): Promise<Response> => {
 };
 
 async function loadTexts(): Promise<Texts> {
-  const [msm, harmonies, mpm, style, calibration] = await Promise.all([
+  const [msm, halves, harmonies, mpm, style, calibration] = await Promise.all([
     get('../mpm/score.msm').then((r) => r.text()),
+    get('reduction/halves.mei').then((r) => r.text()),
     get('reduction/harmonies.mei').then((r) => r.text()),
     get('../mpm/performance.mpm').then((r) => r.text()),
     get('data/hum-style.json').then((r) => r.json() as Promise<unknown>),
     get('data/calibration.json').then((r) => r.json() as Promise<unknown>),
   ]);
-  let score: string | null = null;
+  let made: Reductions | null = null;
   return {
     msm,
-    // converting the MEI takes a tenth of a second, and only the worker that plays the piano needs it
-    harmonies: () => (score ??= harmoniesScore(harmonies)),
+    // converting the MEI takes a tenth of a second or two, and only where the reductions are needed
+    reductions: () => (made ??= reductions(harmoniesScore(halves), harmoniesScore(harmonies), mpm)),
     mpm,
     range: dynamicsRange(mpm),
     turns: turningPoints(mpm),
@@ -205,7 +217,19 @@ function hold(L: Level): void {
 }
 
 const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> =>
-  performPiano({ msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm }, shapeOf(setting));
+  performPiano(
+    {
+      msm: texts.msm,
+      mpm: texts.mpm,
+      harmonies: harmoniesAt(stageAt(setting.elaboration), texts.reductions),
+      harmoniesMpm: texts.reductions().mpm,
+    },
+    shapeOf(setting),
+  );
+
+/** What the voice follows at a setting: the piece, or the reduction in half notes (reductions.ts). */
+const voiceScoreAt = (texts: Texts, setting: Setting): Score =>
+  voiceScore(stageAt(setting.elaboration), texts, texts.reductions);
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
@@ -229,13 +253,15 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   const texts = await r.texts;
   if (id !== current) return null;
   const shape = shapeOf(setting);
-  const mpm = timed('espressivo', () => voiceMpm(texts, shape));
-  const performance = timed('espressivo', () => performNotes(texts, mpm, shape));
+  const score = voiceScoreAt(texts, setting);
+  const mpm = timed('espressivo', () => voiceMpm(score, shape));
+  const performance = timed('espressivo', () => performNotes(score, mpm, shape));
   await until(() => id !== current || box.alone || !box.dynamicsAsked || box.dynamics !== undefined);
   if (await stopped()) return null;
-  const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(texts, mpm));
+  const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(score, mpm));
   const performed = { performance, dynamics };
-  const voice = timed('hummer', () => hum(performed, setup.reduction, texts, shape));
+  const sung = sungReduction(stageAt(setting.elaboration), setup.reduction, texts.reductions);
+  const voice = timed('hummer', () => hum(performed, sung, texts, shape));
   const maxStates = maxStatesOf(voice);
   if (!box.alone)
     peers.at(0)?.postMessage({
@@ -342,8 +368,9 @@ async function work(message: Task, box: Help, reply: MessagePort | undefined): P
         const piano = pianoAt(texts, message.setting);
         reply?.postMessage({ type: 'piano', id, ...piano, ms: now() - t } satisfies BetweenWorkers);
       } else {
-        const mpm = voiceMpm(texts, shapeOf(message.setting));
-        const curve = readDynamics(performDynamics(texts, mpm));
+        const score = voiceScoreAt(texts, message.setting);
+        const mpm = voiceMpm(score, shapeOf(message.setting));
+        const curve = readDynamics(performDynamics(score, mpm));
         reply?.postMessage({ type: 'dynamics', id, curve, ms: now() - t } satisfies BetweenWorkers);
       }
       return;
