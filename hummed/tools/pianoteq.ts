@@ -73,6 +73,18 @@ const fail = (message: string): never => {
   process.exit(1);
 };
 
+const USAGE = 'npm run pianoteq -- render --pianoteq <program> --preset <name>   (or: midi --out <dir>)';
+// before the settings are performed, which takes a while
+const command = positionals[0];
+if (command !== 'render' && command !== 'midi') fail(USAGE);
+if (command === 'render') {
+  if (!values.pianoteq) fail(`Where is Pianoteq? --pianoteq <program>, or PIANOTEQ\n${USAGE}`);
+  if (!existsSync(values.pianoteq)) fail(`There is no Pianoteq at ${values.pianoteq}.\n${USAGE}`);
+  if (!values.preset && !values.fxp) fail(`Which preset? --preset <name>, or --fxp <file>\n${USAGE}`);
+  if (spawnSync('ffmpeg', ['-version']).error)
+    fail('The recordings need ffmpeg (on a Mac: brew install ffmpeg).');
+}
+
 /** The steps the voice is rendered in (mix.ts: `voiceElaboration`): a rendering is only ever of one of them. */
 const VOICE_STEP = 0.05;
 const step = Number(values.step);
@@ -294,10 +306,8 @@ function readManifest(): RecordingsManifest | null {
   return existsSync(file) ? parseManifest(JSON.parse(readFileSync(file, 'utf8'))) : null;
 }
 
-const command = positionals[0];
 if (command === 'midi') {
   const dir = values.out ?? mkdtempSync(join(tmpdir(), 'wm225-midi-'));
   writeMidi(dir);
   console.log(`${performed.length * 2} MIDI files in ${dir}`);
-} else if (command === 'render') render();
-else fail('npm run pianoteq -- render --pianoteq <program> --preset <name>   (or: midi --out <dir>)');
+} else render();
