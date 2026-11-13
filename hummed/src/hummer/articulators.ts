@@ -34,6 +34,14 @@ export type ArticulatorTarget = Readonly<Partial<Record<TractParam, number>>>;
 export const TONGUE_TIP_CLOSURE: ArticulatorTarget = { TTX: 4.57, TTY: -0.02, TS3: 0 };
 
 /**
+ * The velum shut, as VocalTractLab's neutral has it: behind the closed lips of the hum, the voice
+ * stops at once, and starts again through the nose as the velum opens. Moved in the tract states,
+ * as the tongue tip is: the velum's gestures (15 ms) take some 85 ms to close it, the lungs' (12 ms)
+ * a dip of breath of 90 ms leaves the voice sounding, softer.
+ */
+export const VELUM_SHUT: ArticulatorTarget = { VO: -0.1 };
+
+/**
  * The tongue, the jaw and the hyoid as the speaker's "a" has them: where they go behind the closed
  * lips before the mouth opens, so that the lips part on an "a" and not on the hum's forward tongue.
  */

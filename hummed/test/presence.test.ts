@@ -4,7 +4,7 @@ import { describe, it } from 'node:test';
 import { Clock, readPerformance, renderVoice, repair, sungLine } from '../src/hummer/index.ts';
 import { readDynamics } from '../src/hummer/performance.ts';
 import { movement, presence, SURFACING, surfacings } from '../src/hummer/presence.ts';
-import { TONGUE_A } from '../src/hummer/articulators.ts';
+import { TONGUE_A, VELUM_SHUT } from '../src/hummer/articulators.ts';
 import { eventsOf, MOUTH, OPEN_SHAPE } from '../src/hummer/vocal-map.ts';
 import { THRESHOLD } from '../src/worker/levels.ts';
 import { loadReduction, loadStyle, voicePerformance } from '../tools/node-support.ts';
@@ -144,9 +144,13 @@ describe('the mouth', () => {
       const voice = voiceAt(elaboration);
       for (const e of eventsOf(voice.events, 'mouth')) assert.ok(e.transitionMs >= MOUTH.inMs, 'slow');
       const w = voice.weight;
+      // but for a moment where the voice breaks before a step too wide to slide, the lips closing
+      const breaks = voice.moves.filter((m) => m.to === VELUM_SHUT);
+      const breaking = (i: number): boolean => breaks.some((m) => i >= m.from - 30 && i <= m.until + 35);
       let speed = 0;
       let bend = 0;
       for (let i = 2; i < w.length; i++) {
+        if (breaking(i)) continue;
         speed = Math.max(speed, Math.abs(w[i] - w[i - 1]));
         bend = Math.max(bend, Math.abs(w[i] - 2 * w[i - 1] + w[i - 2]));
       }

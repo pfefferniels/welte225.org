@@ -26,27 +26,42 @@ export class MelodyError extends Error {
 }
 
 /**
- * The hummed line: each sung note starts with its piano note. It ends with the piano's own
- * release where it is the whole written note; otherwise (a pedal note, or one cut for a breath
- * or by the next choice) where it is written, performed. A breath comes before the first note,
- * after a rest and after air; `findBreaths` finds the others.
+ * The least a sung note lasts before the next starts. A chord rolled wide (at the bare end, where
+ * its spread is exaggerated twice over against beats gone through twice as fast) can strike the
+ * note the voice takes from it hardly after the note before, or even before it; the voice keeps its
+ * line in order and takes such a note up this long after the one before.
+ */
+export const SUNG_AT_LEAST: Ms = 90;
+
+/**
+ * The hummed line: each sung note starts with its piano note, unless that comes less than
+ * `SUNG_AT_LEAST` after the note before. It ends with the piano's own release where it is the
+ * whole written note; otherwise (a pedal note, or one cut for a breath or by the next choice) where
+ * it is written, performed. A breath comes before the first note, after a rest and after air;
+ * `findBreaths` finds the others.
  */
 export function melodyOf(reduction: Reduction, notes: readonly Note[], clock: Clock): MelodyNote[] {
   const byId = new Map(notes.map((n) => [n.id, n]));
   const melody: MelodyNote[] = [];
+  let last = -Infinity;
   reduction.events.forEach((e, i) => {
     if (e.kind !== 'note') return;
-    const note = byId.get(e.ref);
-    if (!note) throw new MelodyError(`the reduction's ${e.id} follows ${e.ref}, which the performance lacks`);
+    const struck = byId.get(e.ref);
+    if (!struck)
+      throw new MelodyError(`the reduction's ${e.id} follows ${e.ref}, which the performance lacks`);
     const prev = i > 0 ? reduction.events[i - 1] : undefined;
+    const onset = Math.max(struck.onMs, last + SUNG_AT_LEAST);
+    last = onset;
+    // the voice's own copy of the note, where it takes it up later than it is struck
+    const note = onset === struck.onMs ? struck : { ...struck, onMs: onset };
     const whole = !e.pedal && Math.abs(note.date + note.duration - e.end) < 1;
-    const off = Math.max(note.onMs + 40, whole ? note.endMs : clock.toMs(e.end));
+    const off = Math.max(onset + 40, whole ? note.endMs : clock.toMs(e.end));
     melody.push({
       id: e.id,
       note,
       pitch: e.pitch,
       date: note.date,
-      onsetMs: note.onMs,
+      onsetMs: onset,
       keyOffMs: off,
       velocity: note.velocity,
       ornamented: note.ornamented,
@@ -153,7 +168,8 @@ export interface VoiceNote {
 
 /**
  * Legato from note to note, except before a breath: after a rest the note before ends 120 ms early
- * at least, and before a breath in the line a quarter of its length early, 0.15 to 0.35 s.
+ * at least, and before a breath in the line a quarter of its length early, 0.15 to 0.35 s; never
+ * in less than half of the time it has before the next.
  */
 export function voiceNotes(melody: readonly MelodyNote[]): VoiceNote[] {
   const voice = melody.map((n, k): VoiceNote => ({
@@ -166,7 +182,10 @@ export function voiceNotes(melody: readonly MelodyNote[]): VoiceNote[] {
   for (let k = 1; k < voice.length; k++) {
     const prev = voice[k - 1];
     const n = voice[k];
-    const room = melody[k].breathTaken ? Math.min(0.35, Math.max(0.15, 0.25 * (prev.off - prev.on))) : 0.12;
+    const room = Math.min(
+      0.5 * (n.on - prev.on),
+      melody[k].breathTaken ? Math.min(0.35, Math.max(0.15, 0.25 * (prev.off - prev.on))) : 0.12,
+    );
     prev.off = n.breathBefore ? Math.min(prev.off, prev.keyOff, n.on - room) : n.on;
   }
   return voice;

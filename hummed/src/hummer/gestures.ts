@@ -1,7 +1,7 @@
 // From the voice's decisions to gestural tiers: the pitch line, the mouth, the effort.
 import { clip, groupBy, interp, seededRandom } from '../shared/math.ts';
 import { PAD_MS, type Ms } from '../shared/units.ts';
-import { TONGUE_A, TONGUE_TIP_CLOSURE, type ArticulatorMove } from './articulators.ts';
+import { TONGUE_A, TONGUE_TIP_CLOSURE, VELUM_SHUT, type ArticulatorMove } from './articulators.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { runs, segment, splice, type Tier, type Tiers } from './tiers.ts';
 import type { Clock } from './clock.ts';
@@ -18,6 +18,12 @@ export const TIME_CONSTANT_MS = {
   lip: 12,
   tongueTip: 12,
   velum: 15,
+  /**
+   * The pitch across a step too wide to slide (vocal-map.ts), in the silence before the note: from
+   * a tenth of the way to nine tenths in 67 ms, where at the voice's own 30 to 40 ms it takes 170 to
+   * 220, longer than an eighth at the bare end; reached in the 70 ms before the note.
+   */
+  leap: 12,
 } as const;
 
 /**
@@ -27,6 +33,8 @@ export const TIME_CONSTANT_MS = {
  * that much earlier.
  */
 const MIDPOINT = 4.67;
+/** From 0 to 1 and still at both ends, over x from 0 to 1. */
+const easeIn = (x: number): number => 0.5 - 0.5 * Math.cos(Math.PI * clip(x, 0, 1));
 const lagOf = (timeConstantMs: Ms): Ms => MIDPOINT * timeConstantMs;
 /** The voice sounds this much before the piano note it follows. */
 export const LATENCY_MS: Ms = 15;
@@ -73,6 +81,8 @@ export interface PitchEvent {
   /** The pitch in semitones above 1 Hz, as VocalTractLab counts. */
   readonly st: number;
   readonly glide: readonly [Ms, Ms] | null;
+  /** Where the voice falls silent before a step too wide to slide (vocal-map.ts), or null. */
+  readonly silentFrom: Ms | null;
   readonly note: Note;
 }
 
@@ -387,19 +397,32 @@ function pitchLine(
   const scoopScale = 0.8 * (0.8 + 0.4 * a);
   const fallScale = 0.75 + 0.5 * a;
 
-  // when each note's target takes over, in order
+  // when each note's target takes over, in order; across a step too wide to slide, fast and half way
+  // 35 ms before the note (or in the middle of a shorter silence), where the voice moves unheard (a
+  // scoop is still let go where the note would have taken over, so that it is heard)
   const takeover: Ms[] = [];
+  const letGo: Ms[] = [];
   for (const p of pitches) {
     const heard = p.glide ? (p.glide[0] + p.glide[1]) / 2 : p.on;
     const at = heard + LATENCY_MS + follow + random.normal(0, 1) * lateness - lead;
-    takeover.push(Math.max(at, (takeover.at(-1) ?? -Infinity) + 40));
+    const silent =
+      p.silentFrom === null
+        ? at
+        : Math.max((p.silentFrom + p.on) / 2, p.on - 35) - lagOf(TIME_CONSTANT_MS.leap);
+    takeover.push(Math.max(silent, (takeover.at(-1) ?? -Infinity) + 40));
+    letGo.push(Math.max(at, takeover[takeover.length - 1]));
   }
 
   const f0: Tier<number> = [];
+  // across a step too wide to slide, the note's first target is reached fast
+  let fast = false;
   const hold = (t0: Ms, t1: Ms, st: number): void => {
-    if (t1 > t0) f0.push(segment(t0, t1, st));
+    if (t1 <= t0) return;
+    f0.push(fast ? { ...segment(t0, t1, st), timeConstantMs: TIME_CONSTANT_MS.leap } : segment(t0, t1, st));
+    fast = false;
   };
   pitches.forEach((p, i) => {
+    fast = p.silentFrom !== null;
     const start = Math.max(0, takeover[i]);
     const next = i + 1 < pitches.length ? takeover[i + 1] : endMs;
     const nextOn = i + 1 < pitches.length ? pitches[i + 1].on : endMs;
@@ -407,7 +430,7 @@ function pitchLine(
     let t = start;
     const scoop = inflections.find(([at, e]) => e.type === 'scoop' && p.on - 300 <= at && at <= p.on + 50);
     if (scoop) {
-      const low = Math.min(next, t + 0.45 * scoop[1].durationMs);
+      const low = Math.min(next, letGo[i] + 0.45 * scoop[1].durationMs);
       hold(t, low, p.st + scoop[1].depthSt * scoopScale);
       t = low;
     }
@@ -458,7 +481,8 @@ export function gestures(input: GesturesInput): Gestures {
       const chord = chords.get(e.note.date) ?? [e.note];
       glide = [Math.min(...chord.map((c) => c.onMs)) + PAD_MS - LATENCY_MS, on];
     } else if (e.glideMs) glide = [on - e.glideMs / 2, on + e.glideMs / 2];
-    return { id: e.id, on, st, glide, note: e.note };
+    const silentFrom = e.breakMs === undefined ? null : on - e.breakMs;
+    return { id: e.id, on, st, glide, silentFrom, note: e.note };
   });
 
   const mouth = postures(timed('posture'), endMs);
@@ -551,6 +575,19 @@ export function gestures(input: GesturesInput): Gestures {
     if (e.sound !== 'd') continue;
     const velum = lagOf(TIME_CONSTANT_MS.velum);
     tiers.velic = splice(tiers.velic, close - 20 - velum, on + 15 - velum, 0);
+  }
+
+  // a break before a step too wide to slide (vocal-map.ts): the velum shut behind the closed lips
+  // until the note begins, so that the pitch goes over in silence; where the mouth is open, the lips
+  // close as well, the open tube given up for the closed one as fast (the lips' gestures, 12 ms, took
+  // some 80 ms to close them)
+  for (const e of eventsOf(events, 'articulation')) {
+    if (e.type !== 'stop' || !e.breaks) continue;
+    const s = T(e.date);
+    const until = s + e.durationMs;
+    moves.push({ to: VELUM_SHUT, from: s, until });
+    for (let t = Math.max(0, Math.floor(s - 25)); t < Math.min(weight.length, Math.ceil(until + 25)); t++)
+      weight[t] *= 1 - Math.min(easeIn((t - (s - 25)) / 25), easeIn((until + 25 - t) / 30));
   }
   return { tiers, moves, weight, endMs, silences: silences(tiers.pressure) };
 }

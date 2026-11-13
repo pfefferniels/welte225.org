@@ -14,7 +14,7 @@ import {
   sungLine,
   type Voice,
 } from '../src/hummer/index.ts';
-import { TONGUE_A } from '../src/hummer/articulators.ts';
+import { TONGUE_A, VELUM_SHUT } from '../src/hummer/articulators.ts';
 import { BREATHING, findBreaths, type MelodyNote } from '../src/hummer/melody.ts';
 import { loadReduction, loadScore, loadStyle, voicePerformance } from '../tools/node-support.ts';
 import { assertGolden } from './golden.ts';
@@ -103,17 +103,42 @@ describe('the voice', () => {
 
   it('articulates as the piano does: a detached note with a d, a portato or repeated one with an n', () => {
     const consonants = voice.events.flatMap((e) => (e.tag === 'consonant' ? [e] : []));
-    const stops = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'stop').length;
+    const stops = voice.events.filter(
+      (e) => e.tag === 'articulation' && e.type === 'stop' && !e.breaks,
+    ).length;
     const pulses = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'pulse').length;
     assert.equal(consonants.filter((c) => c.sound === 'd').length, stops);
     assert.equal(consonants.filter((c) => c.sound === 'n').length, pulses);
     assert.ok(consonants.length >= 10);
     // the tongue tip alone, moved in the tract states: no consonant gesture moves the whole mouth
     // (beside them the tongue's way to the "a" where the mouth opens)
-    const tips = voice.moves.filter((m) => m.to !== TONGUE_A);
+    const tips = voice.moves.filter((m) => m.to !== TONGUE_A && m.to !== VELUM_SHUT);
     assert.equal(tips.length, consonants.length);
     assert.doesNotMatch(voice.closedScore, /tt-alveolar-closure/);
     assert.ok(tips.every((m) => Object.keys(m.to).every((p) => ['TTX', 'TTY', 'TS3'].includes(p))));
+  });
+
+  it('slides no further than a fourth: a wider step it breaks, silent before the note', () => {
+    const pitches = voice.events.flatMap((e) => (e.tag === 'pitch' ? [e] : []));
+    const breaks = voice.events.filter((e) => e.tag === 'articulation' && e.type === 'stop' && e.breaks);
+    let wide = 0;
+    pitches.slice(1).forEach((p, i) => {
+      if (Math.abs(p.pitch - pitches[i].pitch) <= 5) {
+        assert.equal(p.breakMs, undefined, p.id);
+        return;
+      }
+      wide++;
+      assert.ok(p.breakMs !== undefined && p.breakMs > 0, p.id);
+      assert.ok(!p.portamento && p.glideMs === undefined, p.id);
+    });
+    // a detached step is silent already, behind its 'd'; any other the voice breaks
+    const detached = pitches.filter((p) =>
+      voice.events.some((e) => e.tag === 'consonant' && e.sound === 'd' && e.date === p.date && p.breakMs),
+    );
+    assert.ok(wide >= 9);
+    assert.equal(breaks.length, wide - detached.length);
+    // silent behind the velum, shut in the tract states as the tongue tip is
+    assert.equal(voice.moves.filter((m) => m.to === VELUM_SHUT).length, breaks.length);
   });
 
   it('lets a phrase sag a little at its end, no more than a semitone', () => {

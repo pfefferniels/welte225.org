@@ -68,10 +68,11 @@ describe('elaboration', () => {
       assert.ok(voiceLevel(b) < voiceLevel(a));
       assert.ok(approximateness(b) < approximateness(a));
     }
-    for (const e of positions) assert.ok(voiceLevel(e) >= pianoLevel(e));
-    // the humming alone ×1.4; the piece as the MPM sets it down, the voice a little beyond it
-    assert.ok(Math.abs(pianoLevel(0) - 1.4) < 1e-9);
-    assert.ok(Math.abs(voiceLevel(0) - 1.4) < 1e-9);
+    // the voice a little beyond the piano under the piece, a little short of it toward the bare end
+    for (const e of positions) assert.equal(voiceLevel(e) >= pianoLevel(e), e > 1 - Math.sqrt(0.4));
+    // the humming alone ×1.85 (×2 in timing); the piece as the MPM sets it down, the voice a little beyond it
+    assert.ok(Math.abs(pianoLevel(0) - 2) < 1e-9);
+    assert.ok(Math.abs(voiceLevel(0) - 1.85) < 1e-9);
     assert.equal(pianoLevel(1), 1);
     assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);
@@ -85,7 +86,7 @@ describe('elaboration', () => {
     }
     assert.equal(flightiness(0), 1);
     assert.equal(flightiness(1), 0);
-    assert.ok(Math.abs(tempoFactor(0) - 1.35) < 1e-9);
+    assert.ok(Math.abs(tempoFactor(0) - 2) < 1e-9);
     assert.equal(tempoFactor(1), 1);
   });
 

@@ -76,9 +76,9 @@ const FINE = Array.from({ length: 401 }, (_, i) => i / 400);
 const dB = (gain: number): number => 20 * Math.log10(gain);
 /** The loudness on the axis, in dB: silence, as far as the figure goes. */
 const FLOOR = -30;
-/** How thick a loudness is drawn as it is exaggerated: thin as written, ×1, and this much more by ×1.4. */
+/** How thick a loudness is drawn as it is exaggerated: thin as written, ×1, and this much more by ×2. */
 const THIN = 0.6;
-const PER_FACTOR = 8;
+const PER_FACTOR = 3.2;
 const thickness = (level: number): number => THIN + (level - 1) * PER_FACTOR;
 /** How high the flightiness starts, as a share of the plot's height: it has no scale of its own. */
 const FLIGHTY = 0.6;

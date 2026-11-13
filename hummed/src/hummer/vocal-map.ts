@@ -45,6 +45,16 @@ const LEGATO_WITHIN: Ms = 15;
 const STOP_FROM: Ms = 110;
 const SLUR_FROM: Ms = 30;
 /**
+ * The furthest the voice goes from one note to the next while it sounds, in semitones: a fourth.
+ * A wider step it breaks: silent for a moment before the note (where the line would go on, at most
+ * `BREAK.most`, and at most `BREAK.share` of the note before), it reaches the new pitch in the
+ * silence, fast (`TIME_CONSTANT_MS.leap`, gestures.ts), as it does in a rest, a breath or a detached
+ * step, where it would otherwise be half way only when the note is heard. (Sliding, the pitch swept
+ * an octave as the voice went on.)
+ */
+const SLIDE_MOST = 5;
+const BREAK = { most: 90, share: 0.5 } as const;
+/**
  * Consonants that articulate a note as the piano's touch does: a detached note begins with a 'd',
  * the tongue closed this long before it (the lungs pushing again a little before, behind the
  * closure); a portato or a repeated note with an 'n', the tongue closed this long, the voice going on
@@ -92,8 +102,17 @@ export type VocalEvent =
       readonly portamento: boolean;
       /** A short slide across an overlap with the note before. */
       readonly glideMs?: Ms;
+      /** A step wider than a fourth: the voice is silent this long before the note, and reaches its pitch there. */
+      readonly breakMs?: Ms;
     }
-  | { readonly tag: 'articulation'; readonly date: Ticks; readonly type: 'stop'; readonly durationMs: Ms }
+  | {
+      readonly tag: 'articulation';
+      readonly date: Ticks;
+      readonly type: 'stop';
+      readonly durationMs: Ms;
+      /** A break before a step too wide to slide, where the line would go on. */
+      readonly breaks?: true;
+    }
   | {
       readonly tag: 'articulation';
       readonly date: Ticks;
@@ -271,6 +290,22 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     const offMs = v.off * 1000;
     const date = n.date;
     const prev = k > 0 ? vn[k - 1] : undefined;
+    const leap = k > 0 && Math.abs(n.pitch - src[k - 1].pitch) > SLIDE_MOST;
+    let breakMs: Ms | undefined;
+    // a break where the line would go on, and where the voice breathes: its sound dies away after
+    // the note before, and would still be heard going over
+    const breakBefore = (): Ms => {
+      const silent = Math.round(Math.min(BREAK.most, BREAK.share * (onMs - src[k - 1].onsetMs)));
+      add({
+        tag: 'articulation',
+        date: clock.toTicks(onMs - silent),
+        type: 'stop',
+        durationMs: silent,
+        breaks: true,
+      });
+      return silent;
+    };
+    if (leap && prev && v.breathBefore) breakMs = Math.max(breakBefore(), Math.round(onMs - prev.off * 1000));
 
     if (v.breathBefore) {
       const gapStart = prev ? prev.off * 1000 : Math.max(0, onMs - 900);
@@ -318,7 +353,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
     let portamento = false;
     let glideMs: Ms | undefined;
     const chord = byDate.get(date) ?? [];
-    if (n.ornamented && chord.length > 1 && k > 0 && !v.breathBefore) {
+    if (n.ornamented && chord.length > 1 && k > 0 && !v.breathBefore && !leap) {
       const first = Math.min(...chord.map((c) => c.onMs));
       portamento = n.onsetMs - first > 25;
     }
@@ -343,6 +378,10 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
             date: clock.toTicks(onMs - Math.min(gap, 120)),
             durationMs: Math.round(Math.min(gap, 120)),
           });
+        if (leap) breakMs = Math.round(gap);
+      } else if (leap) {
+        // too wide to slide: the voice breaks before the note
+        breakMs = breakBefore();
       } else if (gap > LEGATO_WITHIN || same) {
         const dur = Math.max(70, gap);
         const x = Math.max(0, gap - LEGATO_WITHIN) / (STOP_FROM - LEGATO_WITHIN);
@@ -366,6 +405,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
       pitch: n.pitch,
       portamento,
       ...(glideMs === undefined ? {} : { glideMs }),
+      ...(breakMs === undefined ? {} : { breakMs }),
     });
 
     if (v.breathBefore || k === 0)

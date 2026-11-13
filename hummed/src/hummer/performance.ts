@@ -1,4 +1,4 @@
-import type { PerformanceData } from 'espressivo';
+import type { Milliseconds, PerformanceData } from 'espressivo';
 import { groupBy } from '../shared/math.ts';
 import type { Midi, Ms, Seconds, Ticks } from '../shared/units.ts';
 
@@ -37,9 +37,9 @@ export class PerformanceError extends Error {
   override name = 'PerformanceError';
 }
 
-/** The notes (every part) and the pedals of a performance. */
-export function readPerformance(data: PerformanceData): Performance {
-  const notes = data.parts.flatMap((part) =>
+/** The notes of every part, in order. */
+const readNotes = (data: PerformanceData): Note[] =>
+  data.parts.flatMap((part) =>
     part.notes.map((n): Note => ({
       id: n.id ?? '',
       pitch: n.pitch,
@@ -51,6 +51,10 @@ export function readPerformance(data: PerformanceData): Performance {
       endMs: n.milliseconds.end,
     })),
   );
+
+/** The notes (every part) and the pedals of a performance. */
+export function readPerformance(data: PerformanceData): Performance {
+  const notes = readNotes(data);
   const pedal = (name: string): readonly PedalPoint[] | null =>
     data.parts[0]?.controlChanges
       .find((c) => c.controller === name)
@@ -168,4 +172,27 @@ export function repair(notes: readonly Note[]): number {
     }
   }
   return fixed;
+}
+
+/**
+ * The performance with its strays put right (`repair`), for what moves its notes before the hummer
+ * reads them (imprecision.ts): an onset at its tick, moved off it, is no longer known for a stray,
+ * and was sung where it fell, seconds late, with a breath a bar long before it.
+ */
+export function repaired(data: PerformanceData): PerformanceData {
+  const notes = readNotes(data);
+  if (repair(notes) === 0) return data;
+  let i = 0;
+  return {
+    ...data,
+    parts: data.parts.map((part) => ({
+      ...part,
+      notes: part.notes.map((n) => {
+        const { onMs, endMs } = notes[i++];
+        if (onMs === n.milliseconds.date && endMs === n.milliseconds.end) return n;
+        // espressivo's units are branded numbers it gives no constructors for
+        return { ...n, milliseconds: { date: onMs as Milliseconds, end: endMs as Milliseconds } };
+      }),
+    })),
+  };
 }

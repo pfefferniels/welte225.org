@@ -130,9 +130,10 @@ What the MEI says, and how the voice reads it:
 
   The choice that gains most is found by dynamic programming. Where the piano plays the
   reconstruction as it is, that is 14 breaths, 28 with the rests; 13 (27) at the page's start and
-  12 (26) with the humming alone. Most lie where both maps turn or where a pedal note begins (3:2,
+  8 (22) with the humming alone, gone through twice as fast. Most lie where both maps turn or where a pedal note begins (3:2,
   8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at a weaker place (at the
-  page's start in 4′ and 20). The note before such a breath ends a quarter of its length early (0.15 to 0.35 s). The
+  page's start in 4′ and 20). The note before such a breath ends a quarter of its length early (0.15 to 0.35 s), and before a rest 0.12 s
+  early, never in less than half the time it has before the next. The
   weights were chosen by looking at where the breaths fall in this piece, not measured; a flat cost
   had the voice breathe every 2.5 s where it could, and a cost that fell to nothing at 8 s had it
   wait for the limit.
@@ -200,33 +201,53 @@ the rawer its gestures; the more of it there is, the more refined, until at 1 th
 Grünfeld's performance as the MPM sets it down, with all its editorial decisions. espressivo
 exaggerates the MPM (`exaggerateMpm`) to:
 
-- the piano: `1 + 0.4 (1 − e)²`, ×1.4 at 0, ×1.1 at the middle, ×1.05 at 0.65, ×1 at 1;
-- the voice: `1.1 + 0.3 (1 − e)²`, ×1.4 alone, ×1.14 at 0.65, ×1.1 under the piece, a little beyond
-  the piano except in timing.
+- the piano: `1 + (1 − e)²`, ×2 at 0, ×1.44 at a third, ×1.25 at the middle, ×1.12 at 0.65, ×1 at
+  1;
+- the voice: `1.1 + 0.75 (1 − e)²`, ×1.85 alone, ×1.43 at a third, ×1.19 at 0.65, ×1.1 under the
+  piece: a little beyond the piano from 0.37 on, a little short of it below; in timing, the
+  piano's.
 
-(×2 at 0 sounded extremely unnatural, ×1.6 still too much.)
+(At Grünfeld's tempo ×2 sounded extremely unnatural, ×1.6 still too much. Gone through twice as
+fast, the humming alone is best at ×2, ×2 and 100 ms: so it was chosen by ear, with the speed, the
+exaggeration and the imprecision on faders of their own. Before, the bare end had ×1.4, ×1.35 and
+25 ms, and the harmonies went far too slowly.)
 
 The barer the music, the more of a sketch it is, too: the more flighty (`flightiness`,
 `(1 − e)²`, 1 at 0, 0 at 1), gone through faster and struck less exactly. Every tempo of the MPM,
 exaggerated, is multiplied (`tempoFactor`, `atTempo`): what it starts at and what it moves to, by
-`1 + 0.35 (1 − e)²`, ×1.35 at 0, ×1.09 at the middle, ×1.04 at 0.65, ×1 at 1, for the piano and
-the voice alike, so they keep the same onsets. What is counted in beats (the rubato, a
+`1 + (1 − e)²`, ×2 at 0, ×1.44 at a third, ×1.25 at the middle, ×1.12 at 0.65, ×1 at 1, for the
+piano and the voice alike, so they keep the same onsets. What is counted in beats (the rubato, a
 ritardando's course) is as it was, only sooner over; what the MPM gives in milliseconds (how far a
-chord is spread, how far the hands are apart) stays as long as it is. The exaggeration alone had
-made the bare end the slowest: a tempo exaggerated slows down by more than it speeds up, and the
-piece took 12.6 s longer at 0 than at 1. Now its last key is struck after 2:39 at 1, 2:34 at 0.65,
-2:29 at the middle, 2:19 a quarter of the way up and 2:07 with the humming alone, 20 % sooner.
-(With ×1.25 at 0 it was 13.5 %: not flighty enough.)
+chord is spread, how far the hands are apart) stays as long as it is, and is exaggerated: at the
+bare end a chord is rolled over four times as much of its beat, and can strike the note the voice
+takes from it hardly after the note before, or even before it. The voice keeps its line in order
+(`SUNG_AT_LEAST`, `src/hummer/melody.ts`): it takes such a note up 90 ms after the one before, in
+nine places alone, in one at a third. The exaggeration alone had made the bare end the slowest: a
+tempo exaggerated slows down by more than it speeds up. Now the last key is struck after 2:39 at 1,
+2:25 at 0.65, 2:14 at the middle, 2:00 at a third, 1:54 a quarter of the way up and 1:39 with the
+humming alone, 38 % sooner. (With ×1.35 at 0 it was 20 %, with ×1.25 13.5 %.)
 
 And the performance, once espressivo has made it, is struck less exactly
 (`src/worker/imprecision.ts`, `IMPRECISION`): each date of the score comes early or late by up to
-25 ms (one standard deviation, times the flightiness), each note louder or softer by up to 12 % of
-its velocity. espressivo performs the MPM's own imprecision maps, but not reproducibly where notes
-share a date, and the piano, its harmonies and the voice must be off by the same amounts in every
-worker and every render; so the amounts come from a hash of the date (and, for the loudness, the
-pitch). A chord stays together, the harmonies keep to the piece, and the voice to the piano: its
-effort reads each note's velocity against the dynamics, so it is as inexact in loudness as the
-piano. At 0.65 that is 3 ms and 1.5 %; at 1, nothing.
+100 ms (one standard deviation, times the flightiness), each note louder or softer by up to 8.3 %
+of its velocity. espressivo performs the MPM's own imprecision maps, but not reproducibly where
+notes share a date, and the piano, its harmonies and the voice must be off by the same amounts in
+every worker and every render; so the amounts come from a hash of the date (and, for the loudness,
+the pitch). A date is off by the same wherever a key is struck or let go there: a chord stays
+together, the harmonies keep to the piece, and two notes legato stay legato, a key let go as late
+as the next is struck (keeping half its length at least). Moved as a whole, by the amount of the
+date it was struck at, a note came apart from the next by up to a third of a second, and the voice
+sang the line detached, with "d"s and "n"s. The voice keeps to the piano: its effort reads each
+note's velocity against the dynamics, so it is as inexact in loudness as the piano. At 0.65 that is
+12 ms and 1 %; at 1, nothing. The pedal is not moved.
+
+espressivo, strongly exaggerated, leaves a few notes of rolled chords with an onset at their tick
+(`repair`, `src/hummer/performance.ts`). Such a note is put right before the imprecision moves it
+(`repaired`): moved off its tick, it was no longer known for one, and at the bare end the voice sang
+the C of bar 10 three seconds late, with a breath a bar long before it. The hummer's clock (score
+time to performed time, `src/hummer/clock.ts`) goes through every onset and pedal change, and the
+onsets are moved where the pedal is not: it keeps only points that go on from the last it kept, in
+both, so that it never stands still.
 
 The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
 and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
@@ -249,7 +270,17 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
    within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,
    from 110 ms it stops, the lips closing before the note where they were open; a note that came
-   out of a spread chord slides up from the chord's first note. The touch is also said with the
+   out of a spread chord slides up from the chord's first note. The voice slides no further than a
+   fourth: a wider step it breaks (`SLIDE_MOST`), silent for a moment before the note (90 ms, at
+   most half of the note before), the velum shut behind the closed lips and, where the mouth is
+   open, the lips closing, both moved in the tract states as the tongue tip is (the velum's
+   gestures and the lips' took some 85 ms to close, and a dip of breath of 90 ms left the voice
+   sounding, only softer); in the silence the pitch goes over, fast (a time constant of 12 ms: a
+   tenth to nine tenths of the way in 67 ms), half way 35 ms before the note. A rest, a breath and
+   a detached step are silent already; there the pitch goes over as fast. (Sliding, the pitch swept
+   up to an octave and a half as the voice went on; across a rest, the voice came in half way.)
+   Measured in the rendering, the voice falls 50 to 70 dB in a break and lands on the new pitch.
+   The touch is also said with the
    tongue (`ARTICULATION.consonants`): a portato or a repeated note begins with an "n", the tip
    at the ridge behind the teeth for 80 ms while the hum goes on through the nose; a detached
    note with a "d", the same closure (at most 80 ms) with the velum shut, so that the voice falls
@@ -295,8 +326,8 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    moves as much sooner without moving more, so the threshold rises with the tempo
    (`threshold`: × the tempo's factor, 0.75 alone); otherwise it is the same at every
    elaboration, and the barer the music, the more exaggerated the MPM and the more its maps
-   move. Alone, the voice is heard (more than half of it) for 70 % of what it sings, at 0.65 for
-   63 %, under the piece as it is for 62 %; the breath before a phrase that begins unheard is
+   move. Alone, the voice is heard (more than half of it) for 71 % of what it sings, at 0.65 for
+   60 %, under the piece as it is for 57 %; the breath before a phrase that begins unheard is
    drawn at 0.4 of its pressure.
 
    (Before, the voice sounded through every phrase at an even level and fell silent only in the

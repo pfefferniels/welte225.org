@@ -6,6 +6,8 @@ export interface Segment<V extends string | number> {
   end: Ms;
   readonly value: V;
   readonly slope: number;
+  /** How fast it is approached, where not as fast as the rest of its tier. */
+  readonly timeConstantMs?: Ms;
 }
 
 export type Tier<V extends string | number> = Segment<V>[];

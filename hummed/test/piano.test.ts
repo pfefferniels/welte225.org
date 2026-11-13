@@ -144,9 +144,9 @@ describe('the piano at an elaboration', async () => {
   it('is through the piece the sooner the barer the music, a sketch of it', () => {
     const lengths = played.map(({ piece }) => lastStrike(piece));
     for (const [i, length] of lengths.entries()) if (i > 0) assert.ok(length > lengths[i - 1]);
-    // the humming alone a good eighth sooner than the piece as Grünfeld plays it, and no more than a fifth
+    // the humming alone a good third sooner than the piece as Grünfeld plays it, and no more than two fifths
     const sooner = 1 - lengths[0] / lengths[lengths.length - 1];
-    assert.ok(sooner > 0.12 && sooner < 0.2, `${(100 * sooner).toFixed(1)} % sooner`);
+    assert.ok(sooner > 0.34 && sooner < 0.4, `${(100 * sooner).toFixed(1)} % sooner`);
   });
 
   it('keeps the harmonies as long as the piece, and the voice on the piano’s strikes', () => {

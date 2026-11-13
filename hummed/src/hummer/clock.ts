@@ -38,17 +38,18 @@ export class Clock {
     }
     if (Number.isFinite(last)) points.push([last, round4(lastMs)]);
 
+    // only points that go on from the last one kept, in both: struck inexactly (imprecision.ts),
+    // a note can come after a pedal change at a later tick, which is not moved
     points.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
     const ticks: Ticks[] = [];
     const ms: Ms[] = [];
-    points.forEach(([tick, t], i) => {
-      const prev = points[i - 1];
-      if (i === 0 || (tick > prev[0] && t > prev[1])) {
+    for (const [tick, t] of points) {
+      const last = ticks.length - 1;
+      if (last < 0 || (tick > ticks[last] && t > ms[last])) {
         ticks.push(tick);
         ms.push(t);
       }
-    });
-    for (let i = 1; i < ms.length; i++) ms[i] = Math.max(ms[i], ms[i - 1]);
+    }
     this.ticks = ticks;
     this.ms = ms;
   }

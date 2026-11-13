@@ -9,6 +9,7 @@ interface Filled {
   readonly value: string | number;
   readonly slope: number;
   readonly neutral: boolean;
+  readonly timeConstantMs?: Ms;
 }
 
 /** The tier over [start, end], gaps filled with the neutral value. */
@@ -21,7 +22,14 @@ function fill(tier: Tier<string> | Tier<number>, start: Ms, end: Ms, neutral: st
     if (b <= t) continue;
     a = Math.max(a, t);
     if (a > t + 0.5) out.push({ start: t, end: a, value: neutral, slope: 0, neutral: true });
-    out.push({ start: a, end: b, value: g.value, slope: g.slope, neutral: false });
+    out.push({
+      start: a,
+      end: b,
+      value: g.value,
+      slope: g.slope,
+      neutral: false,
+      ...(g.timeConstantMs === undefined ? {} : { timeConstantMs: g.timeConstantMs }),
+    });
     t = b;
   }
   if (t < end) out.push({ start: t, end, value: neutral, slope: 0, neutral: true });
@@ -135,7 +143,7 @@ function sequence(spec: (typeof SPECS)[number], tiers: Tiers, endMs: Ms, open: b
     const neutral = g.neutral && spec.marksNeutral ? 1 : 0;
     out.push(
       `    <gesture value="${value}" slope="${slope.toFixed(6)}" duration_s="${((g.end - g.start) / 1000).toFixed(6)}" ` +
-        `time_constant_s="${(tau / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
+        `time_constant_s="${((g.timeConstantMs ?? tau) / 1000).toFixed(6)}" neutral="${neutral}" />\n`,
     );
   }
   out.push('  </gesture_sequence>\n');
