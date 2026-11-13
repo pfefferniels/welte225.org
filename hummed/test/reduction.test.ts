@@ -80,11 +80,11 @@ describe('the reduction as published', () => {
   const r = loadReduction();
   const notes = r.events.filter((e) => e.kind === 'note');
   it('is hummable: an octave and a half in the bass', () => {
-    assert.equal(notes.length, 114);
+    assert.equal(notes.length, 116);
     assert.ok(notes.every((n) => n.pitch >= 40 && n.pitch <= 57));
   });
   it('breathes and runs to the end of the piece without gaps', () => {
-    assert.equal(r.events.filter((e) => e.kind === 'rest' && e.breath).length, 29);
+    assert.equal(r.events.filter((e) => e.kind === 'rest' && e.breath).length, 24);
     for (let i = 1; i < r.events.length; i++) assert.equal(r.events[i].start, r.events[i - 1].end);
     assert.equal(r.events.at(-1)?.end, 92880);
     assert.equal(r.bars.length, 32);

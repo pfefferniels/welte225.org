@@ -44,7 +44,7 @@ describe('the voice', () => {
 
   it('breathes, hums every sung note and sighs out twice', () => {
     const count = (tag: string) => voice.events.filter((e) => e.tag === tag).length;
-    assert.equal(count('pitch'), 114);
+    assert.equal(count('pitch'), 116);
     assert.ok(count('breath') >= 25);
     assert.equal(count('air'), 2);
     // as a sigh through the nose, not a hiss at the teeth or the lips
