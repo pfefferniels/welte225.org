@@ -1,10 +1,10 @@
 // The figure of what the elaboration does, drawn as TikZ in the dialect of the dissertation's
 // figures (its figures/tikz with keynotefigures.sty, as scripts/condon_figures.py writes them: x=1bp,
-// Zwo OT, every node named, German, a decimal comma). One plot, the fader across, on two scales: on
-// the left the factors on the MPM, the exaggeration of the piano and of the voice and the tempo
-// (levels.ts); on the right the mix in dB (mix.ts), the humming and what the piano plays, the
-// harmonies and then the piece. Labelled as little as will tell the curves apart. Not to be
-// changed by hand: run this again.
+// Zwo OT, every node named, German). A schematic: the fader across, and without a scale what it
+// sets, each curve as its function has it. Above, what it does to the MPM, the exaggeration of
+// the piano and (a little beyond it, but for the timing) of the voice and the tempo (levels.ts);
+// below, the mix (mix.ts), the humming and what the piano plays, the harmonies and then the piece.
+// Labelled as little as will tell the curves apart. Not to be changed by hand: run this again.
 //   npm run figure [-- --out figures/elaboration.tex]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -77,71 +77,47 @@ const RENDERED = Array.from({ length: 21 }, (_, i) => i / 20);
 /** Finely, for what follows the fader as it moves: the mix. */
 const FINE = Array.from({ length: 401 }, (_, i) => i / 400);
 const dB = (gain: number): number => 20 * Math.log10(gain);
-/** The mix's floor: what is quieter is not drawn. Low enough that the humming ends well above the voice. */
-const FLOOR = -40;
+/** The mix's floor in dB: what is quieter is not drawn. */
+const FLOOR = -30;
 
 /* ---------- the plot ---------- */
 
 const fig = new Figure();
-const X0 = 30;
-const X1 = WIDTH - 26;
-const Y0 = 26;
-const TOP = Y0 + 170;
-const HEIGHT = TOP + 6;
+const X0 = 6;
+const X1 = WIDTH - 6;
+const Y0 = 16;
 const x = (e: number): number => X0 + e * (X1 - X0);
 
-/** One of the two scales, each over the plot's height: its range of values, and its side. */
-interface Scale {
-  readonly id: string;
+/** A band of the plot, and the range of values it shows, drawn without a scale. */
+interface Band {
   readonly from: number;
   readonly to: number;
-  readonly side: 'left' | 'right';
+  readonly bottom: number;
+  readonly top: number;
 }
-/** The factors on the MPM, on the left. */
-const MPM: Scale = { id: 'faktor', from: 1, to: 1.4, side: 'left' };
-/** The mix in dB, on the right. */
-const MIX: Scale = { id: 'db', from: FLOOR, to: 0, side: 'right' };
-const y = (s: Scale, v: number): number => Y0 + ((v - s.from) / (s.to - s.from)) * (TOP - Y0);
+/** Below, the mix in dB, on the fader's line. */
+const MIX: Band = { from: FLOOR, to: 0, bottom: Y0, top: Y0 + 72 };
+/** Above, the factors on the MPM, from ×1 (as written) up. */
+const MPM: Band = { from: 1, to: 1.4, bottom: MIX.top + 16, top: MIX.top + 16 + 72 };
+const HEIGHT = MPM.top + 4;
+const y = (b: Band, v: number): number => b.bottom + ((v - b.from) / (b.to - b.from)) * (b.top - b.bottom);
 
-const curve = (style: string, s: Scale, points: readonly (readonly [number, number])[]): void => {
-  fig.add(String.raw`\draw[${style}] ${points.map(([e, v]) => pt(x(e), y(s, v))).join(' -- ')};`);
+const curve = (style: string, b: Band, points: readonly (readonly [number, number])[]): void => {
+  fig.add(String.raw`\draw[${style}] ${points.map(([e, v]) => pt(x(e), y(b, v))).join(' -- ')};`);
 };
 /** A curve's name, beside it at a setting of the fader. */
-const beside = (name: string, s: Scale, e: number, v: number, anchor: string, text: string): void => {
+const beside = (name: string, b: Band, e: number, v: number, anchor: string, text: string): void => {
   const [dx, dy] = [anchor.includes('east') ? -2 : 2, anchor.includes('north') ? -3 : 3];
-  fig.node(name, pt(x(e) + dx, y(s, v) + dy), text, `klein, anchor=${anchor}`);
+  fig.node(name, pt(x(e) + dx, y(b, v) + dy), text, `klein, anchor=${anchor}`);
 };
 
-// the fader across, its 21 rendered settings ticked
+// the fader across, from 0 to 1
 fig.add(String.raw`\draw[achse] ${pt(X0, Y0)} -- ${pt(X1, Y0)};`);
-for (const e of RENDERED) {
-  const labelled = e === 0 || e === 0.5 || e === 1;
-  fig.add(String.raw`\draw[achse] ${pt(x(e), Y0)} -- ${pt(x(e), Y0 - (labelled ? 2.5 : 1.5))};`);
-  if (labelled) fig.node(`e-${key(e)}`, pt(x(e), Y0 - 10), print(e), 'lab=6.5, anchor=base');
+for (const e of [0, 1]) {
+  fig.add(String.raw`\draw[achse] ${pt(x(e), Y0)} -- ${pt(x(e), Y0 - 2.5)};`);
+  fig.node(`e-${key(e)}`, pt(x(e), Y0 - 10), print(e), 'lab=6.5, anchor=base');
 }
-fig.node('elaboration', pt(X1, Y0 - 20), 'Elaboration', 'lab=6.5, anchor=base east');
-
-// the two scales, one on each side
-const scale = (s: Scale, ticks: readonly number[], label: (v: number) => string | null): void => {
-  const at = s.side === 'left' ? X0 : X1;
-  const out = s.side === 'left' ? -1 : 1;
-  fig.add(String.raw`\draw[achse] ${pt(at, Y0)} -- ${pt(at, TOP)};`);
-  for (const v of ticks) {
-    const text = label(v);
-    fig.add(
-      String.raw`\draw[achse] ${pt(at, y(s, v))} -- ${pt(at + out * (text === null ? 1.5 : 2.5), y(s, v))};`,
-    );
-    if (text !== null)
-      fig.node(
-        `${s.id}-${key(v)}`,
-        pt(at + out * 5, y(s, v)),
-        text,
-        `lab=6.5, anchor=${s.side === 'left' ? 'east' : 'west'}`,
-      );
-  }
-};
-scale(MPM, [1, 1.1, 1.2, 1.3, 1.4], (v) => (v === 1.1 || v === 1.3 ? null : `×${print(v)}`));
-scale(MIX, [-40, -30, -20, -10, 0], (v) => (v === 0 ? '0 dB' : v === -30 || v === -10 ? null : print(v)));
+fig.node('elaboration', pt(x(0.5), Y0 - 10), 'Elaboration', 'lab=6.5, anchor=base');
 
 // the piano: the harmonies come in under the humming, from the middle on the piece instead, at the
 // same level; parted where the fader is parted
@@ -187,7 +163,7 @@ curve(
   RENDERED.map((e) => [e, pianoLevel(e)]),
 );
 beside('stimme', MPM, 1, voiceLevel(1), 'south east', 'Übertreibung Stimme');
-beside('klavier', MPM, 0.45, pianoLevel(0.45), 'south west', 'Übertreibung Klavier');
+beside('klavier', MPM, 1, pianoLevel(1), 'north east', 'Übertreibung Klavier');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });
