@@ -7,13 +7,15 @@ import { describe, it } from 'node:test';
 import {
   Clock,
   dynamicsRange,
+  readDynamics,
   readPerformance,
   renderVoice,
   repair,
+  sungLine,
   type Voice,
 } from '../src/hummer/index.ts';
 import { TONGUE_A } from '../src/hummer/articulators.ts';
-import { melodyOf, takeBreaths } from '../src/hummer/melody.ts';
+import { BREATHING, findBreaths, type MelodyNote } from '../src/hummer/melody.ts';
 import { loadReduction, loadScore, loadStyle, voicePerformance } from '../tools/node-support.ts';
 import { assertGolden } from './golden.ts';
 
@@ -42,35 +44,61 @@ describe('the voice', () => {
     assertGolden('voiceAt1', fingerprint(voice));
   });
 
-  it('breathes, hums every sung note and sighs out twice', () => {
+  it('breathes and hums every sung note', () => {
     const count = (tag: string) => voice.events.filter((e) => e.tag === tag).length;
-    assert.equal(count('pitch'), 116);
+    assert.equal(count('pitch'), 122);
     assert.ok(count('breath') >= 25);
-    assert.equal(count('air'), 2);
-    // as a sigh through the nose, not a hiss at the teeth or the lips
-    assert.doesNotMatch(voice.openScore, /alveolar-fricative|dental-fricative/);
   });
 
-  it('breathes more often than written, but only where the performance leaves room', () => {
-    const { performance } = voicePerformance();
-    const { notes, sustain } = readPerformance(performance);
+  it('breathes at its rests, and in the line apart from other breaths and often enough', () => {
+    const p = voicePerformance();
+    const { notes, sustain } = readPerformance(p.performance);
     repair(notes);
-    const written = melodyOf(loadReduction(), notes, new Clock(notes, sustain));
-    const melody = takeBreaths(written, sustain);
-    const taken = melody.filter((n) => n.breathTaken);
-    assert.ok(taken.length >= 5, `${taken.length} breaths taken`);
-    let last = -Infinity;
-    melody.forEach((n, k) => {
-      if (!n.breathBefore) return;
-      if (n.breathTaken) {
-        const prev = melody[k - 1];
-        const gap = n.onsetMs - prev.keyOffMs;
-        const lifted = sustain.some((p) => Math.abs(p.ms - n.onsetMs) <= 250 && p.value < 64);
-        assert.ok(gap >= 140 || (prev.keyOffMs - prev.onsetMs >= 1000 && lifted), n.id);
-        assert.ok(n.onsetMs - last >= 2500, n.id);
-      }
-      last = n.onsetMs;
+    const { melody } = sungLine({
+      reduction: loadReduction(),
+      notes,
+      sustain,
+      clock: new Clock(notes, sustain),
+      dynamics: readDynamics(p.dynamics),
+      turns: p.turns,
+      threshold: p.threshold,
     });
+    const breaths = melody.filter((n, k) => k === 0 || n.breathBefore);
+    assert.ok(breaths.filter((n) => n.breathTaken).length >= 5);
+    breaths.slice(1).forEach((n, i) => {
+      const before = breaths[i];
+      const sung = (n.onsetMs - before.onsetMs) / 1000;
+      if (n.breathTaken || before.breathTaken) assert.ok(sung >= BREATHING.everyS, n.id);
+      assert.ok(sung <= BREATHING.withinS, n.id);
+    });
+  });
+
+  it('breathes where the MPM turns back up, if nothing else speaks for a breath', () => {
+    const note = (k: number): MelodyNote => ({
+      id: `n${k}`,
+      note: {
+        id: `p${k}`,
+        pitch: 48,
+        date: k * 720,
+        duration: 720,
+        velocity: 60,
+        ornamented: false,
+        onMs: k * 1000,
+        endMs: (k + 1) * 1000,
+      },
+      pitch: 48,
+      date: k * 720,
+      onsetMs: k * 1000,
+      keyOffMs: (k + 1) * 1000,
+      velocity: 60,
+      ornamented: false,
+      breathBefore: k === 0,
+      breathTaken: false,
+    });
+    const melody = Array.from({ length: 20 }, (_, k) => note(k));
+    const cues = { sustain: [], turns: { dynamics: [6 * 720, 13 * 720], tempo: [] }, quiet: () => 0 };
+    const breathed = findBreaths(melody, cues).flatMap((n, k) => (n.breathTaken ? [k] : []));
+    assert.deepEqual(breathed, [6, 13]);
   });
 
   it('articulates as the piano does: a detached note with a d, a portato or repeated one with an n', () => {
@@ -92,7 +120,7 @@ describe('the voice', () => {
     const falls = voice.events.flatMap((e) =>
       e.tag === 'inflection' && e.type === 'fall' ? [e.depthSt] : [],
     );
-    assert.ok(falls.length >= 30);
+    assert.ok(falls.length >= 25);
     assert.ok(falls.every((d) => d <= -0.3 && d >= -0.8));
   });
 

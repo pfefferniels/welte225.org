@@ -4,7 +4,7 @@
 // voice's pitch line, its exaggeration or the reconstruction:   npm run calibrate [-- rounds]
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { renderVoice } from '../src/hummer/index.ts';
+import { renderVoice, sungLine } from '../src/hummer/index.ts';
 import type { Calibration } from '../src/hummer/style.ts';
 import { clip, interp } from '../src/shared/math.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
@@ -18,7 +18,6 @@ import {
 } from './node-support.ts';
 import { readDynamics, readPerformance, repair } from '../src/hummer/performance.ts';
 import { Clock } from '../src/hummer/clock.ts';
-import { melodyOf, voiceNotes } from '../src/hummer/melody.ts';
 import { voiceStates } from '../src/worker/voice-states.ts';
 
 const ROUNDS = Number(process.argv[2] ?? '2');
@@ -34,15 +33,21 @@ const quantile = (values: readonly number[], q: number): number => {
 const engine = await loadEngine();
 const reduction = loadReduction();
 const style = loadStyle();
-const { performance: voiceData, dynamics, approximateness, range } = voicePerformance();
+const { performance: voiceData, dynamics, approximateness, range, turns } = voicePerformance();
 let calibration: Calibration = loadCalibration();
 
 // the sung notes as the voice holds them, and the dynamics they should follow
 const { notes, sustain } = readPerformance(voiceData);
 repair(notes);
-const melody = melodyOf(reduction, notes, new Clock(notes, sustain));
-const voice = voiceNotes(melody);
 const curve = readDynamics(dynamics);
+const { melody, voice } = sungLine({
+  reduction,
+  notes,
+  sustain,
+  clock: new Clock(notes, sustain),
+  dynamics: curve,
+  turns,
+});
 const pad = PAD_MS / 1000;
 
 for (let round = 1; round <= ROUNDS; round++) {
@@ -54,6 +59,7 @@ for (let round = 1; round <= ROUNDS; round++) {
     calibration,
     approximateness,
     range,
+    turns,
   });
   const max = Math.ceil(((v.endMs / 1000) * SAMPLE_RATE) / STATE_STEP) + 10;
   const states = voiceStates(engine, v, max);

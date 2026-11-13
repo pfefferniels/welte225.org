@@ -42,21 +42,15 @@ describe('readReduction', () => {
     });
   });
 
-  it('keeps breaths apart and joins plain rests to the rest before', () => {
+  it('joins a rest to the rest before', () => {
     const r = parse([
       '',
-      '<rest dur="4" type="breath"/><rest dur="4"/><rest dur="4" type="breath"/><note dur="4" xml:id="a" pname="f" oct="2" type="pedal" corresp="#p"/>',
+      '<rest dur="4"/><rest dur="2"/><note dur="4" xml:id="a" pname="f" oct="2" type="pedal" corresp="#p"/>',
     ]);
     assert.deepEqual(
-      r.events.map((e) => [
-        e.kind,
-        e.start,
-        e.end,
-        e.kind === 'rest' ? e.breath : e.kind === 'note' ? e.pedal : e.through,
-      ]),
+      r.events.map((e) => [e.kind, e.start, e.end, e.kind === 'note' && e.pedal]),
       [
-        ['rest', 720, 2160, true],
-        ['rest', 2160, 2880, true],
+        ['rest', 720, 2880, false],
         ['note', 2880, 3600, true],
       ],
     );
@@ -80,11 +74,11 @@ describe('the reduction as published', () => {
   const r = loadReduction();
   const notes = r.events.filter((e) => e.kind === 'note');
   it('is hummable: an octave and a half in the bass', () => {
-    assert.equal(notes.length, 116);
+    assert.equal(notes.length, 122);
     assert.ok(notes.every((n) => n.pitch >= 40 && n.pitch <= 57));
   });
-  it('breathes and runs to the end of the piece without gaps', () => {
-    assert.equal(r.events.filter((e) => e.kind === 'rest' && e.breath).length, 24);
+  it('rests 14 times and runs to the end of the piece without gaps', () => {
+    assert.equal(r.events.filter((e) => e.kind === 'rest').length, 14);
     for (let i = 1; i < r.events.length; i++) assert.equal(r.events[i].start, r.events[i - 1].end);
     assert.equal(r.events.at(-1)?.end, 92880);
     assert.equal(r.bars.length, 32);

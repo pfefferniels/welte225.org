@@ -17,12 +17,11 @@ export interface SungNote {
   readonly pedal: boolean;
 }
 
+/** The voice is silent, and breathes in before what follows. */
 export interface Rest {
   readonly kind: 'rest';
   readonly start: Ticks;
   readonly end: Ticks;
-  /** A rest marked as a breath: the voice breathes in before what follows. */
-  readonly breath: boolean;
 }
 
 export interface Air {

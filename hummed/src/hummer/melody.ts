@@ -1,7 +1,8 @@
 import type { Reduction } from '../reduction/types.ts';
+import { clip } from '../shared/math.ts';
 import type { Midi, Ms, Seconds, Ticks } from '../shared/units.ts';
 import type { Clock } from './clock.ts';
-import type { Note, PedalPoint } from './performance.ts';
+import type { Note, PedalPoint, Turns } from './performance.ts';
 
 /** A sung note, timed and voiced by the piano note it follows. */
 export interface MelodyNote {
@@ -16,7 +17,7 @@ export interface MelodyNote {
   readonly velocity: Midi;
   readonly ornamented: boolean;
   readonly breathBefore: boolean;
-  /** A breath the voice takes where the performance allows one, not one written in the reduction. */
+  /** A breath the voice takes in its line, where `findBreaths` finds one, not at a rest. */
   readonly breathTaken: boolean;
 }
 
@@ -28,7 +29,7 @@ export class MelodyError extends Error {
  * The hummed line: each sung note starts with its piano note. It ends with the piano's own
  * release where it is the whole written note; otherwise (a pedal note, or one cut for a breath
  * or by the next choice) where it is written, performed. A breath comes before the first note,
- * after a breath rest and after air.
+ * after a rest and after air; `findBreaths` finds the others.
  */
 export function melodyOf(reduction: Reduction, notes: readonly Note[], clock: Clock): MelodyNote[] {
   const byId = new Map(notes.map((n) => [n.id, n]));
@@ -49,39 +50,96 @@ export function melodyOf(reduction: Reduction, notes: readonly Note[], clock: Cl
       keyOffMs: off,
       velocity: note.velocity,
       ornamented: note.ornamented,
-      breathBefore: !prev || (prev.kind === 'rest' && prev.breath) || prev.kind === 'air',
+      breathBefore: !prev || prev.kind === 'rest' || prev.kind === 'air',
       breathTaken: false,
     });
   });
   return melody;
 }
 
+/** What makes a moment of the line a place to breathe. */
+export interface BreathCues {
+  readonly sustain: readonly PedalPoint[];
+  /** Where the MPM turns back up (`turningPoints`). */
+  readonly turns: Turns;
+  /** How far the voice is inward anyway at a moment of the performance, 0 (heard) to 1. */
+  readonly quiet: (ms: Ms) => number;
+}
+
 /**
- * Where a pianist humming along breathes beyond the written breaths, as an amateur does, more often:
- * only where the performance leaves room, a gap of `BREATH_GAP` or more before the next key, or
- * the pedal lifted at the end of a note of `BREATH_AFTER` or more; and no sooner than `BREATH_EVERY`
- * after the last breath.
+ * How a pianist humming along breathes in the line, as an amateur does: no sooner than `everyS`
+ * after the last breath and, where it can, no later than `withinS`. A breath costs `cost`, and up
+ * to `soon` more the sooner it comes after the last (nothing more at `withinS`). What speaks for
+ * one weighs against that: the dynamics or the tempo turning back up within `turnTicks` before the
+ * note, the voice inward anyway, the performance leaving room (a gap of `gapMs` before the key, or
+ * the pedal lifted at the end of a note held `heldS` or more).
  */
-const BREATH_GAP: Ms = 140;
-const BREATH_AFTER: Seconds = 1;
-const BREATH_EVERY: Seconds = 2.5;
-export function takeBreaths(melody: readonly MelodyNote[], sustain: readonly PedalPoint[]): MelodyNote[] {
-  const lifted = (from: Ms, to: Ms): boolean =>
-    sustain.some((p) => p.ms >= from && p.ms <= to && p.value < 64);
-  let last = melody[0]?.onsetMs ?? 0;
-  return melody.map((n, k) => {
-    if (k === 0 || n.breathBefore) {
-      last = n.onsetMs;
-      return n;
+export const BREATHING = {
+  everyS: 2.5,
+  withinS: 8,
+  cost: 0.5,
+  soon: 0.8,
+  /** What each second of a stretch beyond `withinS` costs. */
+  overrun: 10,
+  turnTicks: 720,
+  gapMs: 140,
+  heldS: 1,
+  weights: { dynamics: 0.6, tempo: 0.4, quiet: 0.6, room: 0.4 },
+} as const;
+
+/** How much speaks for a breath before note `k`, in `BREATHING.weights`. */
+export function breathReasons(melody: readonly MelodyNote[], k: number, cues: BreathCues): number {
+  const { weights, turnTicks, gapMs, heldS } = BREATHING;
+  const prev = melody[k - 1];
+  const n = melody[k];
+  const turned = (dates: readonly Ticks[]): boolean =>
+    dates.some((d) => d > prev.date && d <= n.date && n.date - d <= turnTicks);
+  const lifted = cues.sustain.some((p) => p.ms >= n.onsetMs - 250 && p.ms <= n.onsetMs + 150 && p.value < 64);
+  const room =
+    n.onsetMs - prev.keyOffMs >= gapMs || ((prev.keyOffMs - prev.onsetMs) / 1000 >= heldS && lifted);
+  return (
+    (turned(cues.turns.dynamics) ? weights.dynamics : 0) +
+    (turned(cues.turns.tempo) ? weights.tempo : 0) +
+    weights.quiet * cues.quiet(n.onsetMs - 100) +
+    (room ? weights.room : 0)
+  );
+}
+
+/**
+ * The breaths in the line, beyond those it has (before the first note, after rests and air): the
+ * choice that gains most, by dynamic programming over where the last breath before each note was.
+ */
+export function findBreaths(melody: readonly MelodyNote[], cues: BreathCues): MelodyNote[] {
+  if (melody.length === 0) return [];
+  const { everyS, withinS, cost, soon, overrun } = BREATHING;
+  const at = melody.map((m) => m.onsetMs / 1000);
+  const end = Math.max(...melody.map((m) => m.keyOffMs)) / 1000;
+  const given = melody.map((m, k) => k === 0 || m.breathBefore);
+  const reasons = melody.map((_, k) => (given[k] ? 0 : breathReasons(melody, k, cues)));
+  const beyond = (s: Seconds): number => Math.max(0, s - withinS) * overrun;
+  const price = (s: Seconds): number => cost + soon * clip((withinS - s) / (withinS - everyS), 0, 1);
+  const best = melody.map(() => -Infinity);
+  const from = melody.map(() => -1);
+  best[0] = 0;
+  let lastGiven = 0;
+  for (let k = 1; k < melody.length; k++) {
+    for (let j = lastGiven; j < k; j++) {
+      const sung = at[k] - at[j];
+      if (!(given[j] && given[k]) && sung < everyS) continue;
+      const value = best[j] + (given[k] ? 0 : reasons[k] - price(sung)) - beyond(sung);
+      if (value > best[k]) {
+        best[k] = value;
+        from[k] = j;
+      }
     }
-    const prev = melody[k - 1];
-    const gap = n.onsetMs - prev.keyOffMs;
-    const held = (prev.keyOffMs - prev.onsetMs) / 1000;
-    const room = gap >= BREATH_GAP || (held >= BREATH_AFTER && lifted(n.onsetMs - 250, n.onsetMs + 150));
-    if (!room || (n.onsetMs - last) / 1000 < BREATH_EVERY) return n;
-    last = n.onsetMs;
-    return { ...n, breathBefore: true, breathTaken: true };
-  });
+    if (given[k]) lastGiven = k;
+  }
+  const candidates = best.map((b, j) => (j >= lastGiven ? b - beyond(end - at[j]) : -Infinity));
+  const breaths = new Set<number>();
+  for (let k = candidates.indexOf(Math.max(...candidates)); k >= 0; k = from[k]) breaths.add(k);
+  return melody.map((m, k) =>
+    breaths.has(k) && !given[k] ? { ...m, breathBefore: true, breathTaken: true } : m,
+  );
 }
 
 /** A sung note as the voice holds it, in seconds. */
@@ -94,8 +152,8 @@ export interface VoiceNote {
 }
 
 /**
- * Legato from note to note, except before a breath: there the note before ends 120 ms early, and
- * before a breath the voice takes on its own, a quarter of its length early, 0.15 to 0.35 s.
+ * Legato from note to note, except before a breath: after a rest the note before ends 120 ms early
+ * at least, and before a breath in the line a quarter of its length early, 0.15 to 0.35 s.
  */
 export function voiceNotes(melody: readonly MelodyNote[]): VoiceNote[] {
   const voice = melody.map((n, k): VoiceNote => ({

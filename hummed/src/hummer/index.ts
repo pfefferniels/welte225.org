@@ -7,20 +7,23 @@ import type { ArticulatorMove } from './articulators.ts';
 import { Clock } from './clock.ts';
 import { gesturalScores } from './gestural-score.ts';
 import { gestures } from './gestures.ts';
-import { melodyOf, takeBreaths, voiceNotes } from './melody.ts';
+import { findBreaths, melodyOf, voiceNotes, type MelodyNote, type VoiceNote } from './melody.ts';
 import {
   readDynamics,
   readPerformance,
   repair,
   type DynamicsCurve,
   type DynamicsRange,
+  type Note,
+  type PedalPoint,
+  type Turns,
 } from './performance.ts';
-import { movement, presence } from './presence.ts';
+import { movement, presence, presenceAt } from './presence.ts';
 import type { Calibration, HumStyle } from './style.ts';
 import { vocalMap, type VocalEvent } from './vocal-map.ts';
 
-export { dynamicsRange, readDynamics, repair, readPerformance } from './performance.ts';
-export type { DynamicsCurve, DynamicsRange } from './performance.ts';
+export { dynamicsRange, readDynamics, repair, readPerformance, turningPoints } from './performance.ts';
+export type { DynamicsCurve, DynamicsRange, Turns } from './performance.ts';
 export type { Note } from './performance.ts';
 export type { Calibration, HumStyle } from './style.ts';
 export { Clock } from './clock.ts';
@@ -41,6 +44,8 @@ export interface VoiceInput {
   readonly approximateness: number;
   /** The MPM's own range of dynamics (`dynamicsRange`), against which the voice reads loudness. */
   readonly range: DynamicsRange;
+  /** Where the MPM's dynamics and tempo turn back up (`turningPoints`): places to breathe. */
+  readonly turns: Turns;
   /**
    * How much the MPM's maps have to move for the voice to be heard wholly (`THRESHOLD` in the
    * worker's levels, presence.ts). 0 or absent: all of it is heard, every sung stretch through.
@@ -68,22 +73,70 @@ export interface Voice {
   readonly seams: readonly Ms[];
 }
 
+/** The line as the voice sings it, and how much of it is heard. */
+export interface Line {
+  readonly melody: readonly MelodyNote[];
+  readonly voice: readonly VoiceNote[];
+  /** Per 10 ms of the performance (`presence`); null where all of the voice is heard. */
+  readonly heard: Float32Array | null;
+}
+
+export interface LineInput {
+  readonly reduction: Reduction;
+  readonly notes: readonly Note[];
+  readonly sustain: readonly PedalPoint[];
+  readonly clock: Clock;
+  readonly dynamics: DynamicsCurve;
+  readonly turns: Turns;
+  readonly threshold?: number;
+}
+
+/**
+ * The reduction's notes with a breath at every rest and where the line gives most reason to
+ * (`findBreaths`): among them where the voice is inward anyway, as it is heard before those breaths.
+ */
+export function sungLine({
+  reduction,
+  notes,
+  sustain,
+  clock,
+  dynamics,
+  turns,
+  threshold = 0,
+}: LineInput): Line {
+  const hearing = (melody: readonly MelodyNote[], voice: readonly VoiceNote[]): Float32Array | null =>
+    threshold > 0
+      ? presence(
+          movement(melody, voice, dynamics, clock, Math.max(...voice.map((v) => v.off * 1000)) + 1000),
+          threshold,
+        )
+      : null;
+  const written = melodyOf(reduction, notes, clock);
+  const before = hearing(written, voiceNotes(written));
+  const melody = findBreaths(written, {
+    sustain,
+    turns,
+    quiet: (ms) => (before ? 1 - presenceAt(before, ms) : 0),
+  });
+  const voice = voiceNotes(melody);
+  return { melody, voice, heard: hearing(melody, voice) };
+}
+
 export function renderVoice(input: VoiceInput): Voice {
   const { notes, sustain } = readPerformance(input.performance);
   repair(notes);
   const dynamics = 'times' in input.dynamics ? input.dynamics : readDynamics(input.dynamics);
   const clock = new Clock(notes, sustain);
-  const melody = takeBreaths(melodyOf(input.reduction, notes, clock), sustain);
+  const { melody, voice, heard } = sungLine({
+    reduction: input.reduction,
+    notes,
+    sustain,
+    clock,
+    dynamics,
+    turns: input.turns,
+    threshold: input.threshold ?? 0,
+  });
   const air = input.reduction.events.filter((e) => e.kind === 'air');
-  const voice = voiceNotes(melody);
-  // how much of the voice is heard: where the maps move, if they have a threshold to cross
-  const heard =
-    (input.threshold ?? 0) > 0
-      ? presence(
-          movement(melody, voice, dynamics, clock, Math.max(...voice.map((v) => v.off * 1000)) + 1000),
-          input.threshold ?? 0,
-        )
-      : null;
   const events = vocalMap({
     notes,
     sustain,

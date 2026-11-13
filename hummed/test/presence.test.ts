@@ -1,8 +1,7 @@
 // Where the voice is heard: where the MPM's maps move, and quiet where none of them does.
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { Clock, readPerformance, renderVoice, repair } from '../src/hummer/index.ts';
-import { melodyOf, takeBreaths, voiceNotes } from '../src/hummer/melody.ts';
+import { Clock, readPerformance, renderVoice, repair, sungLine } from '../src/hummer/index.ts';
 import { readDynamics } from '../src/hummer/performance.ts';
 import { movement, presence, SURFACING, surfacings } from '../src/hummer/presence.ts';
 import { TONGUE_A } from '../src/hummer/articulators.ts';
@@ -15,9 +14,17 @@ const at = (elaboration?: number) => {
   const { notes, sustain } = readPerformance(p.performance);
   repair(notes);
   const clock = new Clock(notes, sustain);
-  const melody = takeBreaths(melodyOf(loadReduction(), notes, clock), sustain);
-  const voice = voiceNotes(melody);
   const dynamics = readDynamics(p.dynamics);
+  const line = {
+    reduction: loadReduction(),
+    notes,
+    sustain,
+    clock,
+    dynamics,
+    turns: p.turns,
+    threshold: p.threshold,
+  };
+  const { melody, voice } = sungLine(line);
   const endMs = Math.max(...voice.map((v) => v.off * 1000)) + 1000;
   const moving = movement(melody, voice, dynamics, clock, endMs);
   const heard = presence(moving, p.threshold);

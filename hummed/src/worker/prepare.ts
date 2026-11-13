@@ -9,6 +9,7 @@ import {
   type Calibration,
   type DynamicsRange,
   type HumStyle,
+  type Turns,
   type Voice,
   type VoiceInput,
 } from '../hummer/index.ts';
@@ -73,6 +74,8 @@ export function performVoice(score: Score, elaboration: number): VoicePerformanc
 export interface HumData {
   /** The MPM's own range of dynamics, against which the voice reads loudness. */
   readonly range: DynamicsRange;
+  /** Where the MPM's dynamics and tempo turn back up: places to breathe. */
+  readonly turns: Turns;
   readonly style: HumStyle;
   readonly calibration: Calibration;
 }

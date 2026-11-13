@@ -89,6 +89,49 @@ export function dynamicsRange(mpm: string): DynamicsRange {
   return { low: at(0.1), high: at(0.9) };
 }
 
+/** Where the MPM's dynamics and its tempo turn back up after falling (score dates). */
+export interface Turns {
+  readonly dynamics: readonly Ticks[];
+  readonly tempo: readonly Ticks[];
+}
+
+/** One instruction of a map: from its value to `transition.to` (or staying where it is). */
+interface Step {
+  readonly date: Ticks;
+  readonly from: number;
+  readonly to: number;
+}
+
+function steps(mpm: string, tag: string, value: string): Step[] {
+  const number = (element: string, name: string): number | undefined => {
+    const match = new RegExp(`\\b${name}="(-?[\\d.]+)"`).exec(element);
+    return match ? Number(match[1]) : undefined;
+  };
+  return [...mpm.matchAll(new RegExp(`<${tag}\\b[^>]*>`, 'g'))].flatMap(([element]) => {
+    const date = number(element, 'date');
+    const from = number(element, value);
+    if (date === undefined || from === undefined) return [];
+    return [{ date, from, to: number(element, 'transition\\.to') ?? from }];
+  });
+}
+
+/** The instructions that rise, or start higher, after one that fell: a map's valleys. */
+const valleys = (map: readonly Step[]): Ticks[] =>
+  map.slice(1).flatMap((step, i) => {
+    const before = map[i];
+    const fell = before.to < before.from;
+    return fell && (step.from > before.to || step.to > step.from) ? [step.date] : [];
+  });
+
+/**
+ * Where the MPM turns back up: where a diminuendo or a ritardando gives way to a phrase that grows
+ * or moves on again. Exaggerating the MPM moves no instruction, so the reconstruction's own will do.
+ */
+export const turningPoints = (mpm: string): Turns => ({
+  dynamics: valleys(steps(mpm, 'dynamics', 'volume')),
+  tempo: valleys(steps(mpm, 'tempo', 'bpm')),
+});
+
 /** How long a note ends up when espressivo lets it end before it starts. */
 const FALLBACK_LENGTH: Ms = 1793;
 

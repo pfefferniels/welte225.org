@@ -131,7 +131,7 @@ const airPassage = (type: string): AirPassage => {
 
 /**
  * Read the reduction. The upbeat (the bar labelled 0) is a quarter long whatever its notes;
- * a tie continues a note or an air stream; a rest that is no breath extends a rest before it.
+ * a tie continues a note or an air stream; a rest extends a rest before it.
  */
 export function readReduction(root: XmlElement): Reduction {
   const score = first(descendants(root, 'score'));
@@ -163,8 +163,7 @@ export function readReduction(root: XmlElement): Reduction {
       const continues = tie === 'm' || tie === 't';
 
       if (name === 'rest' || name === 'mRest' || name === 'space') {
-        const breath = type === 'breath';
-        if (breath || !extendLast('rest', end)) events.push({ kind: 'rest', start: pos, end, breath });
+        if (!extendLast('rest', end)) events.push({ kind: 'rest', start: pos, end });
       } else if (type.startsWith('air')) {
         if (!(continues && extendLast('air', end)))
           events.push({ kind: 'air', start: pos, end, through: airPassage(type) });

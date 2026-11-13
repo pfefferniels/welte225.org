@@ -63,7 +63,7 @@ function hummedTake(
   roll: Roll,
   section: Section,
 ): { samples: Float32Array; timing: TakeTiming } {
-  const { performance: voiceData, dynamics, approximateness, range } = voicePerformance(1);
+  const { performance: voiceData, dynamics, approximateness, range, turns } = voicePerformance(1);
   const voice = renderVoice({
     performance: voiceData,
     dynamics,
@@ -72,6 +72,7 @@ function hummedTake(
     calibration: loadCalibration(),
     approximateness,
     range,
+    turns,
   });
   const pad = PAD_MS / 1000;
   const from: Seconds = Math.max(0, timeAt(roll, section.from) - 0.5 + pad);

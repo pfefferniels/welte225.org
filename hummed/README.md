@@ -79,7 +79,7 @@ choices are remembered between visits; the instructions are off until asked for.
 
 A pianist humming along is no singer: about an octave, low, and a breath wherever the line changes
 hands. `reduction/reduction.mei` is what is hummed, written as its own MEI: one bass staff,
-116 notes from E2 to A3 (mostly F2 to G3), each pointing with `@corresp` to the note of
+122 notes from E2 to A3 (mostly F2 to G3), each pointing with `@corresp` to the note of
 `/mpm/transcription.mei` it comes from (the repeat's notes as `…-rend2`). That is how the
 performance reaches it: a sung note takes its onset and dynamics from that piano note and, where
 it is the whole written note, the piano's release too. The page reads the MEI itself; edit it and
@@ -89,41 +89,57 @@ reload.
 
 The draft (`reduction/draft.py`) is a list of choices read from the score and from Grünfeld's
 playing: which voice to follow from where, an octave shift where the range needs it, sung pedal
-notes where the harmony holds still, rests to breathe, and air in two places. A and its repeat
-have since been edited by hand (in MuseScore).
+notes where the harmony holds still, rests to breathe, and air in two places. It has since been
+edited by hand (in MuseScore), with fewer rests and no air.
 
 - **A (1–8):** the opening motif an octave down; the melody's F5 two octaves down, then the
   tenor's answer from C3 (2–3); the bass walk Grünfeld leans on, from D3 (4); F2 held under the
-  restarting melody (5); A3, taken up with the melody's leap to A5 (6); the tenor's rise D3 F3 G3
-  A3 (7); the bass (8).
+  restarting melody (5); the melody's A5 G5 F5 E5, two octaves down (6); the tenor's rise D3 F3
+  G3 A3 (7); the bass (8).
 - **A repeated (1′–8′):** the melody itself, two octaves down, to its G4 at the end of 3′
   (1′–3′); the tenor's A2 G2, then the bass walk from D3 (4′); F2; in 6′, under the climb to A5,
-  the voice is silent; then as in 7–8.
-- **B (9–16):** F2, then the melody at mf; the tenor C3 D3 F♯3 G3 … (10–12); a short breath out
-  through the teeth at the quiet turn in 12; B♭2 over Grünfeld's low B♭1 (13); A2 under the climax
-  (14); D3 C♯3 D3 (15); the ritardando A2 B♭2 C3 (16).
-- **A and the close (17–24):** as before, with F2 pedal notes; silent through the fermata (22); the
-  last F2, then a breath out through lips and teeth as the chord fades.
+  C♯3, the third of the A7 that the piano leaves out (it follows the bass's A3); then as in 7–8.
+- **B (9–16):** F2, then the melody at mf; the tenor C3 D3 F♯3 G3 … (10–12), its D3 held through
+  the quiet turn in 12; B♭2 over Grünfeld's low B♭1 (13); G2, A2 under the climax, C♯3 (14); D3
+  C♯3 D3 B♭2 (15); the ritardando A2 B♭2 C3 (16).
+- **A and the close (17–24):** as before, with F2 pedal notes, the one in 17 held into 18 and
+  followed by the bass's B♭2 (its grace note before the beat, sung on the beat with the F3 it leads
+  to); the tenor's A2 G2 (20); the melody's A5 two octaves down, then D3, under the fermata (22);
+  the last F2 held to the end.
 
 What the MEI says, and how the voice reads it:
 
-- **Breaths** are rests with `@type="breath"` (and a `<breath>` for the eye): 24 of them. Where the
-  voice changes without a written rest, the draft cut the note before by about 0.45 s at
-  Grünfeld's tempo there (a sixteenth at least), and no stretch ran over 8 s without a breath (the
-  longest was 7.9 s). The edits by hand sing through some of these breaths, so that written
-  breaths are now up to 14 s apart (2′–5′); with the breaths the voice takes on its own (below),
-  the longest stretch is still the one in 20–21. Because a rest is a score position, the tempo
-  times it: a breath in a slower passage lasts longer. The dynamics set its depth: a deeper,
-  audible intake before a louder stretch. Beyond these the voice breathes on its own, as an
-  amateur does, more often
-  (`takeBreaths`, `src/hummer/melody.ts`), but only where the performance leaves room: where the
-  piano leaves a gap of 140 ms or more before the next key, or lifts the pedal at the end of a note
-  of a second or more, and no sooner than 2.5 s after the last breath. That adds 12 breaths, 36 in
-  all, where the piano plays the reconstruction as it is, and 10 (34) at the page's start and below:
-  the faster the music goes (below), the less room it leaves. The note before such a breath ends a
-  quarter of its length early (0.15 to 0.35 s).
+- **Rests** are where the voice stops, and it breathes in each of them: 14 (a rest after a rest
+  is one). Because a rest is a score position, the tempo times it: a breath in a slower passage
+  lasts longer. The dynamics set a breath's depth: a deeper, audible intake before a louder
+  stretch. The MEI marks no breaths.
+- **Breaths in the line** are found as the voice is rendered (`findBreaths`,
+  `src/hummer/melody.ts`), from how the performance goes at that elaboration. The voice breathes
+  no sooner than 2.5 s after the last breath and, where it can, no later than 8 s. A breath costs
+  0.5, and up to 0.8 more the sooner it comes after the last; what speaks for one there weighs
+  against that:
+  - the MPM turning back up within a quarter before the note (`turningPoints`,
+    `src/hummer/performance.ts`): a dynamics instruction that rises, or starts higher, after one
+    that fell (0.6), or a tempo instruction that does so (0.4). Only these valleys count, since a
+    breath at the top of a swell would cut the line at its height. The tempo turns about every
+    half bar, the dynamics less often, so a turn of the dynamics counts for more;
+  - the voice inward there anyway (up to 0.6, as far as its presence is low before these
+    breaths are taken);
+  - room in the performance (0.4): a gap of 140 ms or more before the next key, or the pedal
+    lifted at the end of a note of a second or more.
+
+  The choice that gains most is found by dynamic programming. Where the piano plays the
+  reconstruction as it is, that is 14 breaths, 28 with the rests; 13 (27) at the page's start and
+  12 (26) with the humming alone. Most lie where both maps turn or where a pedal note begins (3:2,
+  8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at a weaker place (at the
+  page's start in 4′ and 20). The note before such a breath ends a quarter of its length early (0.15 to 0.35 s). The
+  weights were chosen by looking at where the breaths fall in this piece, not measured; a flat cost
+  had the voice breathe every 2.5 s where it could, and a cost that fell to nothing at 8 s had it
+  wait for the limit.
+
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
-- **Air** is written as x noteheads, `@type` `air-teeth` or `air-lips`. It is breathed out as a
+- **Air**, which the reduction no longer has, is written as x noteheads, `@type` `air-teeth` or
+  `air-lips`. It is breathed out as a
   sigh through the nose (`AIR_OUT`, `src/hummer/gestures.ts`): the lips stay closed and the velum
   low, as in the hum; the glottis opens early by its lag, so that the sigh starts voiceless; the
   lungs push for 60 ms and let go within 0.45 s, however long the air is written. Above 200 Hz,
@@ -131,7 +147,7 @@ What the MEI says, and how the voice reads it:
   teeth or the lips (an s, an f), with the lips bursting open from the hum, it sounded comical;
   as a longer, stronger sigh it still sounded like a bus's hydraulics; long passages of air (3–4 s,
   in 6′ and over the fermata) were taken out.
-- Ties join notes; a plain rest after another rest extends it; `<beam>` is looked through. A chord
+- Ties join notes; a rest after another rest extends it; `<beam>` is looked through. A chord
   or a tuplet is refused: the voice sings one note at a time.
 
 After changing the reduction, run `npm run calibrate` (below) so the new notes are as loud as the
@@ -227,8 +243,8 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the
    millisecond. A third rendering, with sub-note dynamics, gives the dynamics as a curve.
-2. **The voice's decisions** (`src/hummer/vocal-map.ts`): a breath at each breath rest and each
-   breath taken, sized by the dynamics; a scoop into each phrase and a slight sag at its end (0.3 to
+2. **The voice's decisions** (`src/hummer/vocal-map.ts`): a breath at each rest and wherever one
+   is found in the line, sized by the dynamics; a scoop into each phrase and a slight sag at its end (0.3 to
    0.8 semitones, scaled by 0.75 to 1.25 with the approximateness); between notes, what Grünfeld's
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
    within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,

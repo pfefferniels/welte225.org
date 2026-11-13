@@ -8,7 +8,7 @@ import { compileFunction } from 'node:vm';
 import { DOMParser } from '@xmldom/xmldom';
 import type { PerformanceData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../src/hummer/data.ts';
-import { dynamicsRange, type DynamicsRange } from '../src/hummer/performance.ts';
+import { dynamicsRange, turningPoints, type DynamicsRange, type Turns } from '../src/hummer/performance.ts';
 import type { Calibration, HumStyle } from '../src/hummer/style.ts';
 import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
@@ -44,13 +44,14 @@ export function loadPianoScore(): PianoScore {
 
 /**
  * The voice's performance at an elaboration, as the worker renders it, how loosely it sings, and
- * the MPM's own range of dynamics.
+ * the MPM's own range of dynamics and turning points.
  */
 export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
   performance: PerformanceData;
   dynamics: PerformanceData;
   approximateness: number;
   range: DynamicsRange;
+  turns: Turns;
   threshold: number;
 } {
   const score = loadScore();
@@ -58,16 +59,21 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
     ...performVoice(score, elaboration),
     approximateness: approximateness(elaboration),
     range: dynamicsRange(score.mpm),
+    turns: turningPoints(score.mpm),
     threshold: threshold(elaboration),
   };
 }
 
 /** What the hummer reads beside the performance, as the worker loads it. */
-export const loadHumData = (): HumData => ({
-  range: dynamicsRange(loadScore().mpm),
-  style: loadStyle(),
-  calibration: loadCalibration(),
-});
+export function loadHumData(): HumData {
+  const { mpm } = loadScore();
+  return {
+    range: dynamicsRange(mpm),
+    turns: turningPoints(mpm),
+    style: loadStyle(),
+    calibration: loadCalibration(),
+  };
+}
 
 /** vtl.js evaluated as the CommonJS module it is (the package is ESM, so it cannot be required). */
 export async function loadVtl(file = join(ROOT, 'vtl.js')): Promise<VtlModule> {
