@@ -1,20 +1,17 @@
 // The figure of what the elaboration does, drawn as TikZ in the dialect of the dissertation's
 // figures (its figures/tikz with keynotefigures.sty, as scripts/condon_figures.py writes them: x=1bp,
-// Zwo OT, every node named). One plot, the fader across, everything it sets as a factor: above ×1
-// what it does to the MPM, the exaggeration of the piano and of the voice and the tempo
-// (levels.ts); below ×1 the gains of the mix (mix.ts), the humming and what the piano plays, the
-// harmonies and then the piece. Under the fader, how long the piece lasts, from espressivo's
-// performances. Not to be changed by hand: run this again.
+// Zwo OT, every node named, German, a decimal comma). One plot, the fader across, on two scales: on
+// the left the factors on the MPM, the exaggeration of the piano and of the voice and the tempo
+// (levels.ts); on the right the mix in dB (mix.ts), the humming and what the piano plays, the
+// harmonies and then the piece. Labelled as little as will tell the curves apart. Not to be
+// changed by hand: run this again.
 //   npm run figure [-- --out figures/elaboration.tex]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { exaggerateMpm, performMsmToData } from 'espressivo';
-import { readPerformance, repair } from '../src/hummer/performance.ts';
 import { mix, PIECE_FROM } from '../src/page/mix.ts';
-import { pianoFactors, pianoLevel, tempoFactor, voiceLevel } from '../src/worker/levels.ts';
-import { pianoMpm } from '../src/worker/piano.ts';
-import { loadPianoScore, ROOT } from './node-support.ts';
+import { pianoLevel, tempoFactor, voiceLevel } from '../src/worker/levels.ts';
+import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
 
@@ -24,10 +21,13 @@ const { values } = parseArgs({ options: { out: { type: 'string', default: 'figur
 const WIDTH = 451.45;
 const num = (v: number): string => v.toFixed(2);
 const pt = (x: number, y: number): string => `(${num(x)},${num(y)})`;
-/** A number as the figures print it, with a dash for the minus. */
-const print = (v: number, digits = 0): string => v.toFixed(digits).replace('-', '–');
-/** A setting of the fader as short as it goes: 0, 0.25, 0.5. */
-const setting = (e: number): string => String(Number(e.toFixed(2)));
+/** A number as the figures print it: a decimal comma, a dash for the minus, no trailing zeros. */
+const print = (v: number): string =>
+  String(Number(v.toFixed(2)))
+    .replace('.', ',')
+    .replace('-', '–');
+/** A number fit for a node's name. */
+const key = (v: number): string => String(Math.round(Math.abs(v) * 100));
 
 const STYLES = [
   String.raw`lab/.style={inner sep=0pt, outer sep=0pt, font=\kzwo{#1}}`,
@@ -36,10 +36,9 @@ const STYLES = [
   'achse/.style={draw=black, line width=.4bp}',
   'kurve/.style={draw=black, line width=1bp, line join=round, line cap=round}',
   'strichel/.style={draw=kgray23, line width=.6bp, line cap=round, line join=round, dash pattern=on 3bp off 2bp}',
-  'bezug/.style={draw=kgray84, line width=.5bp}',
   'tempo/.style={kurve, draw=kgray57}',
   'summen/.style={kurve, draw=kb51700}',
-  'klavier/.style={fill=kgray84}',
+  'klavier/.style={fill=kgray84, fill opacity=.45}',
 ];
 
 class Figure {
@@ -78,148 +77,117 @@ const RENDERED = Array.from({ length: 21 }, (_, i) => i / 20);
 /** Finely, for what follows the fader as it moves: the mix. */
 const FINE = Array.from({ length: 401 }, (_, i) => i / 400);
 const dB = (gain: number): number => 20 * Math.log10(gain);
-
-const score = loadPianoScore();
-/** How long the piece lasts as the piano plays it with this MPM, in seconds. */
-const lasts = (mpm: string): number => {
-  const { notes } = readPerformance(performMsmToData({ msm: score.msm, mpm }, { expandOrnaments: true }));
-  repair(notes);
-  return Math.max(...notes.map((n) => n.endMs)) / 1000;
-};
-/** At 0 without the tempo factor: the exaggeration alone, which slows the piece. */
-const exaggeratedOnly = (): number => {
-  const factors = pianoFactors(pianoLevel(0));
-  return lasts(factors ? exaggerateMpm(score.mpm, { factors }).mpm : score.mpm);
-};
+/** The mix's floor: what is quieter is not drawn. Low enough that the humming ends well above the voice. */
+const FLOOR = -40;
 
 /* ---------- the plot ---------- */
 
 const fig = new Figure();
-const X0 = 40;
-const X1 = 316;
-const Y0 = 32;
-const PER_UNIT = 140;
-const TOP = 1.4;
-const Y1 = Y0 + TOP * PER_UNIT;
-const HEIGHT = Y1 + 8;
+const X0 = 30;
+const X1 = WIDTH - 26;
+const Y0 = 26;
+const TOP = Y0 + 170;
+const HEIGHT = TOP + 6;
 const x = (e: number): number => X0 + e * (X1 - X0);
-const y = (v: number): number => Y0 + v * PER_UNIT;
-/** Where the labels at the right-hand end stand. */
-const END = X1 + 6;
 
-const curve = (style: string, points: readonly (readonly [number, number])[]): void => {
-  fig.add(String.raw`\draw[${style}] ${points.map(([e, v]) => pt(x(e), y(v))).join(' -- ')};`);
+/** One of the two scales, each over the plot's height: its range of values, and its side. */
+interface Scale {
+  readonly id: string;
+  readonly from: number;
+  readonly to: number;
+  readonly side: 'left' | 'right';
+}
+/** The factors on the MPM, on the left. */
+const MPM: Scale = { id: 'faktor', from: 1, to: 1.4, side: 'left' };
+/** The mix in dB, on the right. */
+const MIX: Scale = { id: 'db', from: FLOOR, to: 0, side: 'right' };
+const y = (s: Scale, v: number): number => Y0 + ((v - s.from) / (s.to - s.from)) * (TOP - Y0);
+
+const curve = (style: string, s: Scale, points: readonly (readonly [number, number])[]): void => {
+  fig.add(String.raw`\draw[${style}] ${points.map(([e, v]) => pt(x(e), y(s, v))).join(' -- ')};`);
 };
-const label = (name: string, e: number, v: number, text: string, style: string): void => {
-  fig.node(name, pt(x(e), y(v)), text, style);
+/** A curve's name, beside it at a setting of the fader. */
+const beside = (name: string, s: Scale, e: number, v: number, anchor: string, text: string): void => {
+  const [dx, dy] = [anchor.includes('east') ? -2 : 2, anchor.includes('north') ? -3 : 3];
+  fig.node(name, pt(x(e) + dx, y(s, v) + dy), text, `klein, anchor=${anchor}`);
 };
 
-// the axes: the fader across, its 21 rendered settings ticked; factors up, from 0 to ×1.4
+// the fader across, its 21 rendered settings ticked
 fig.add(String.raw`\draw[achse] ${pt(X0, Y0)} -- ${pt(X1, Y0)};`);
-fig.add(String.raw`\draw[achse] ${pt(X0, Y0)} -- ${pt(X0, Y1)};`);
 for (const e of RENDERED) {
-  const labelled = e * 4 === Math.round(e * 4);
+  const labelled = e === 0 || e === 0.5 || e === 1;
   fig.add(String.raw`\draw[achse] ${pt(x(e), Y0)} -- ${pt(x(e), Y0 - (labelled ? 2.5 : 1.5))};`);
-  if (labelled) fig.node(`e-${print(e * 100)}`, pt(x(e), Y0 - 10), setting(e), 'lab=6.5, anchor=base');
+  if (labelled) fig.node(`e-${key(e)}`, pt(x(e), Y0 - 10), print(e), 'lab=6.5, anchor=base');
 }
-fig.node('e-name', pt(END, Y0 - 10), 'elaboration', 'lab=6.5, anchor=base west');
-for (const v of [0, 0.25, 0.5, 0.75, 1, 1.2, 1.4]) {
-  const labelled = v !== 0.25 && v !== 0.75;
-  fig.add(String.raw`\draw[achse] ${pt(X0, y(v))} -- ${pt(X0 - (labelled ? 2.5 : 1.5), y(v))};`);
-  if (labelled)
-    fig.node(
-      `factor-${print(v * 100)}`,
-      pt(X0 - 5, y(v)),
-      v === 0 ? '0' : `×${print(v, v === 1 ? 0 : 1)}`,
-      'lab=6.5, anchor=east',
+fig.node('elaboration', pt(X1, Y0 - 20), 'Elaboration', 'lab=6.5, anchor=base east');
+
+// the two scales, one on each side
+const scale = (s: Scale, ticks: readonly number[], label: (v: number) => string | null): void => {
+  const at = s.side === 'left' ? X0 : X1;
+  const out = s.side === 'left' ? -1 : 1;
+  fig.add(String.raw`\draw[achse] ${pt(at, Y0)} -- ${pt(at, TOP)};`);
+  for (const v of ticks) {
+    const text = label(v);
+    fig.add(
+      String.raw`\draw[achse] ${pt(at, y(s, v))} -- ${pt(at + out * (text === null ? 1.5 : 2.5), y(s, v))};`,
     );
-}
-// ×1: as written, and the humming alone
-fig.add(String.raw`\draw[bezug] ${pt(X0, y(1))} -- ${pt(X1, y(1))};`);
-fig.node('on-the-mpm', pt(8, y((1 + TOP) / 2)), 'on the MPM', 'klein, anchor=center, rotate=90');
-fig.node('in-the-mix', pt(8, y(0.5)), 'in the mix', 'klein, anchor=center, rotate=90');
+    if (text !== null)
+      fig.node(
+        `${s.id}-${key(v)}`,
+        pt(at + out * 5, y(s, v)),
+        text,
+        `lab=6.5, anchor=${s.side === 'left' ? 'east' : 'west'}`,
+      );
+  }
+};
+scale(MPM, [1, 1.1, 1.2, 1.3, 1.4], (v) => (v === 1.1 || v === 1.3 ? null : `×${print(v)}`));
+scale(MIX, [-40, -30, -20, -10, 0], (v) => (v === 0 ? '0 dB' : v === -30 || v === -10 ? null : print(v)));
 
-// (2) the piano: the harmonies come in under the humming, from the middle on the piece instead, at
-// the same level; parted where the fader is parted
-const harmonies = FINE.filter((e) => e < PIECE_FROM);
+// the piano: the harmonies come in under the humming, from the middle on the piece instead, at the
+// same level; parted where the fader is parted
+const harmonies = FINE.filter((e) => e < PIECE_FROM && dB(mix(e).harmonies) > FLOOR);
+const firstHeard = harmonies[0] ?? PIECE_FROM;
 fig.add(
-  String.raw`\fill[klavier] ${pt(x(0), y(0))} -- ` +
-    harmonies.map((e) => pt(x(e), y(mix(e).harmonies))).join(' -- ') +
-    ` -- ${pt(x(PIECE_FROM), y(mix(0.49999).harmonies))} -- ${pt(x(PIECE_FROM), y(0))} -- cycle;`,
+  String.raw`\fill[klavier] ${pt(x(firstHeard), Y0)} -- ` +
+    harmonies.map((e) => pt(x(e), y(MIX, dB(mix(e).harmonies)))).join(' -- ') +
+    ` -- ${pt(x(PIECE_FROM), y(MIX, dB(mix(PIECE_FROM - 1e-9).harmonies)))} -- ${pt(x(PIECE_FROM), Y0)} -- cycle;`,
 );
-fig.add(String.raw`\fill[klavier] ${pt(x(PIECE_FROM), y(0))} rectangle ${pt(x(1), y(mix(1).piece))};`);
+const piece = y(MIX, dB(mix(1).piece));
+fig.add(String.raw`\fill[klavier] ${pt(x(PIECE_FROM), Y0)} rectangle ${pt(x(1), piece)};`);
 fig.add(
-  String.raw`\draw[draw=white, line width=1bp] ${pt(x(PIECE_FROM), y(0))} -- ${pt(x(PIECE_FROM), y(mix(1).piece))};`,
+  String.raw`\draw[draw=white, line width=1bp] ${pt(x(PIECE_FROM), Y0)} -- ${pt(x(PIECE_FROM), piece)};`,
 );
-label('harmonies', 0.27, 0.035, 'the harmonies', 'klein, anchor=base west');
-label('piece', 0.53, 0.035, 'the piece', 'klein, anchor=base west');
-label(
-  'piano-gain',
-  1,
-  mix(1).piece,
-  `the piano, ×${print(mix(1).piece, 2)}, ${print(dB(mix(1).piece))} dB`,
-  'klein, anchor=west, xshift=6bp',
-);
+fig.node('harmonien', pt(x(PIECE_FROM) - 4, Y0 + 4), 'Harmonien', 'klein, anchor=base east');
+fig.node('stueck', pt(x(PIECE_FROM) + 4, Y0 + 4), 'Stück', 'klein, anchor=base west');
 
-// (3) the voice: the humming recedes, fast at first
+// the humming recedes, fast at first
 curve(
   'summen',
-  FINE.map((e) => [e, mix(e).hum]),
+  MIX,
+  FINE.map((e) => [e, dB(mix(e).hum)]),
 );
-label('hum-alone', 0, 1, 'the humming alone, 0 dB', 'klein, anchor=south west, xshift=4bp, yshift=2bp');
-label(
-  'hum',
-  1,
-  mix(1).hum,
-  `the humming, ×${print(mix(1).hum, 2)}, ${print(dB(mix(1).hum))} dB`,
-  'klein, anchor=west, xshift=6bp',
-);
+beside('summen', MIX, 1, dB(mix(1).hum), 'north east', 'Summen');
 
-// (4) the tempo, and (1) the exaggeration: the voice's beyond the piano's, but in time with it
+// the tempo, and the exaggeration: the voice's beyond the piano's
 curve(
   'tempo',
+  MPM,
   RENDERED.map((e) => [e, tempoFactor(e)]),
 );
-// standing under the line where it ends, so that the line falls nowhere through it
-label('tempo', 0.3, tempoFactor(0.3), 'the tempo', 'klein, anchor=north east, yshift=-3bp');
+// under the line where it ends, so that the line falls nowhere through it
+beside('tempo', MPM, 0.3, tempoFactor(0.3), 'north east', 'Tempo');
 curve(
   'strichel',
+  MPM,
   RENDERED.map((e) => [e, voiceLevel(e)]),
 );
 curve(
   'kurve',
+  MPM,
   RENDERED.map((e) => [e, pianoLevel(e)]),
 );
-label(
-  'voice',
-  1,
-  voiceLevel(1),
-  'the voice’s exaggeration, not its timing',
-  'klein, anchor=west, xshift=6bp',
-);
-label('piano', 1, pianoLevel(1), 'the piano’s exaggeration, and the tempo', 'klein, anchor=west, xshift=6bp');
-
-// how long the piece lasts, under the fader
-for (const e of [0, 0.5, 1]) {
-  fig.node(
-    `lasts-${print(e * 100)}`,
-    pt(x(e), Y0 - 20),
-    `${print(lasts(pianoMpm(score.mpm, e)))} s`,
-    'lab=6.5, anchor=base',
-  );
-}
-fig.node(
-  'lasts-without',
-  '([xshift=4bp]lasts-0.base east)',
-  `(${print(exaggeratedOnly())} s without the tempo factor)`,
-  'klein, anchor=base west',
-);
-fig.node(
-  'lasts',
-  '([xshift=6bp]lasts-100.base east)',
-  'how long the piece lasts',
-  'lab=6.5, anchor=base west',
-);
+beside('stimme', MPM, 1, voiceLevel(1), 'south east', 'Übertreibung Stimme');
+beside('klavier', MPM, 0.45, pianoLevel(0.45), 'south west', 'Übertreibung Klavier');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });
@@ -227,8 +195,8 @@ writeFileSync(
   out,
   fig.text(
     [
-      'Drawn by tools/elaboration-figure.ts (npm run figure) from levels.ts, mix.ts and espressivo’s',
-      'performances of ../mpm. Not to be changed by hand: draw it again.',
+      'Drawn by tools/elaboration-figure.ts (npm run figure) from levels.ts and mix.ts.',
+      'Not to be changed by hand: draw it again.',
       'In the dialect of the dissertation’s figures/tikz: needs keynotefigures.sty.',
     ],
     HEIGHT,
