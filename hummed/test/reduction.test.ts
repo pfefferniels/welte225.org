@@ -77,8 +77,8 @@ describe('the reduction as published', () => {
     assert.equal(notes.length, 122);
     assert.ok(notes.every((n) => n.pitch >= 40 && n.pitch <= 57));
   });
-  it('rests 14 times and runs to the end of the piece without gaps', () => {
-    assert.equal(r.events.filter((e) => e.kind === 'rest').length, 14);
+  it('rests 8 times and runs to the end of the piece without gaps', () => {
+    assert.equal(r.events.filter((e) => e.kind === 'rest').length, 8);
     for (let i = 1; i < r.events.length; i++) assert.equal(r.events[i].start, r.events[i - 1].end);
     assert.equal(r.events.at(-1)?.end, 92880);
     assert.equal(r.bars.length, 32);

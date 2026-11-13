@@ -93,16 +93,16 @@ playing: which voice to follow from where, an octave shift where the range needs
 notes where the harmony holds still, rests to breathe, and air in two places. It has since been
 edited by hand (in MuseScore), with fewer rests and no air.
 
-- **A (1–8):** the opening motif an octave down; the melody's F5 two octaves down, then the
-  tenor's answer from C3 (2–3); the bass walk Grünfeld leans on, from D3 (4); F2 held under the
-  restarting melody (5); the melody's A5 G5 F5 E5, two octaves down (6); the tenor's rise D3 F3
-  G3 A3 (7); the bass (8).
+- **A (1–8):** the opening motif, its F an octave down and E F A two octaves down; the melody's
+  C5 F5 F5 two octaves down, then the tenor's answer from C3 (2–3); the tenor's A2 G2, then the
+  end of the bass walk Grünfeld leans on (4); F2 held under the restarting melody (5); the
+  melody's A5 G5 F5 E5, two octaves down (6); the tenor's rise D3 F3 G3 A3 (7); the bass (8).
 - **A repeated (1′–8′):** the melody itself, two octaves down, to its G4 at the end of 3′
   (1′–3′); the tenor's A2 G2, then the bass walk from D3 (4′); F2; in 6′, under the climb to A5,
   C♯3, the third of the A7 that the piano leaves out (it follows the bass's A3); then as in 7–8.
-- **B (9–16):** F2, then the melody at mf; the tenor C3 D3 F♯3 G3 … (10–12), its D3 held through
-  the quiet turn in 12; B♭2 over Grünfeld's low B♭1 (13); G2, A2 under the climax, C♯3 (14); D3
-  C♯3 D3 B♭2 (15); the ritardando A2 B♭2 C3 (16).
+- **B (9–16):** F2, then the melody at mf, two octaves down; the tenor C3 D3 F♯3 G3 … (10–12),
+  its D3 held through the quiet turn in 12; B♭2 over Grünfeld's low B♭1 (13); G2, A2 under the
+  climax, C♯3 (14); D3 C♯3 D3 B♭2 (15); the ritardando A2 B♭2 C3 (16).
 - **A and the close (17–24):** as before, with F2 pedal notes, the one in 17 held into 18 and
   followed by the bass's B♭2 (its grace note before the beat, sung on the beat with the F3 it leads
   to); the tenor's A2 G2 (20); the melody's A5 two octaves down, then D3, under the fermata (22);
@@ -110,7 +110,7 @@ edited by hand (in MuseScore), with fewer rests and no air.
 
 What the MEI says, and how the voice reads it:
 
-- **Rests** are where the voice stops, and it breathes in each of them: 14 (a rest after a rest
+- **Rests** are where the voice stops, and it breathes in each of them: 8 (a rest after a rest
   is one). Because a rest is a score position, the tempo times it: a breath in a slower passage
   lasts longer. The dynamics set a breath's depth: a deeper, audible intake before a louder
   stretch. The MEI marks no breaths.
@@ -130,14 +130,15 @@ What the MEI says, and how the voice reads it:
     lifted at the end of a note of a second or more.
 
   The choice that gains most is found by dynamic programming. Where the piano plays the
-  reconstruction as it is, that is 14 breaths, 28 with the rests; 13 (27) at the page's start and
-  8 (22) with the humming alone, gone through twice as fast. Most lie where both maps turn or where a pedal note begins (3:2,
-  8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at a weaker place (at the
-  page's start in 4′ and 20). The note before such a breath ends a quarter of its length early (0.15 to 0.35 s), and before a rest 0.12 s
-  early, never in less than half the time it has before the next. The
-  weights were chosen by looking at where the breaths fall in this piece, not measured; a flat cost
-  had the voice breathe every 2.5 s where it could, and a cost that fell to nothing at 8 s had it
-  wait for the limit.
+  reconstruction as it is, that is 18 breaths, 26 with the rests; 17 (25) at the page's start and
+  10 (18) with the humming alone, gone through twice as fast. Most lie where both maps turn or where a
+  pedal note begins (3:2, 8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at
+  a weaker place (at the page's start in 5′ and 20). Where the last edits by hand took rests out, it
+  still breathes at two of those places (1′, 23) and near a third (4). The note before such a
+  breath ends a quarter of its length early (0.15 to 0.35 s), and before a rest 0.12 s early, never
+  in less than half the time it has before the next. The weights were chosen by looking at where
+  the breaths fall in this piece, not measured; a flat cost had the voice breathe every 2.5 s where
+  it could, and a cost that fell to nothing at 8 s had it wait for the limit.
 
 - **Pedal notes** (`@type="pedal"`) are held to their written end, not to the piano key's release.
 - **Air**, which the reduction no longer has, is written as x noteheads, `@type` `air-teeth` or
@@ -225,7 +226,7 @@ chord is spread, how far the hands are apart) stays as long as it is, and is exa
 bare end a chord is rolled over four times as much of its beat, and can strike the note the voice
 takes from it hardly after the note before, or even before it. The voice keeps its line in order
 (`SUNG_AT_LEAST`, `src/hummer/melody.ts`): it takes such a note up 90 ms after the one before, in
-nine places alone, in one at a third. The exaggeration alone had made the bare end the slowest: a
+eight places alone, in one at a third. The exaggeration alone had made the bare end the slowest: a
 tempo exaggerated slows down by more than it speeds up. Now the last key is struck after 2:39 at 1,
 2:30 at 0.65, 2:22 at the middle, 2:17 at a third (2:00 just before, with the harmonies, where the
 exaggeration has not started anew), 1:54 a quarter of the way up and 1:39 with the humming alone,
@@ -346,8 +347,8 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    moves as much sooner without moving more, so the threshold rises with the tempo
    (`threshold`: × the tempo's factor, 0.75 alone); otherwise it is the same at every
    elaboration, and the barer the music, the more exaggerated the MPM and the more its maps
-   move. Alone, the voice is heard (more than half of it) for 71 % of what it sings, at 0.65 for
-   62 %, under the piece as it is for 57 %; the breath before a phrase that begins unheard is
+   move. Alone, the voice is heard (more than half of it) for 72 % of what it sings, at 0.65 for
+   63 %, under the piece as it is for 58 %; the breath before a phrase that begins unheard is
    drawn at 0.4 of its pressure.
 
    (Before, the voice sounded through every phrase at an even level and fell silent only in the

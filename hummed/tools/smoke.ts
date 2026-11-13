@@ -192,6 +192,12 @@ try {
   await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
   await page.waitForTimeout(2000);
   await report('voice for 0.65 took over again');
+  // back to where there is music enough for what follows: the details took their time
+  await page.evaluate(
+    "(() => { const r = document.getElementById('pos'); r.value = 30; r.dispatchEvent(new Event('input')); })()",
+  );
+  await page.waitForTimeout(2000);
+  await report('seeked to 0:30');
   const cardOpen = (): Promise<boolean> =>
     page.evaluate("document.getElementById('info').matches(':popover-open')");
   await page.click('[popovertarget=info]');
