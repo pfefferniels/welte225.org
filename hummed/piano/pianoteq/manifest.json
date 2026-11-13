@@ -2,9 +2,9 @@
   "instrument": "Bösendorfer 280VC",
   "credit": "Bösendorfer 280VC, played by Pianoteq (Modartt)",
   "renderer": "Pianoteq Trial version 9.3.0/20261102 -- https://www.modartt.com/pianoteq, preset “My Presets/WM225 dry”",
-  "rendered": "2026-11-09",
+  "rendered": "2026-11-13",
   "step": 0.05,
-  "gainDb": 16.22,
+  "gainDb": 17.84,
   "settings": [
     {
       "elaboration": 0,
@@ -12,18 +12,18 @@
       "piece": {
         "file": "e000-piece.mp3",
         "keys": 484,
-        "fingerprint": "55dd29a3c2fcf101",
-        "seconds": 179.06,
-        "lagMs": 5.1,
-        "driftMs": 0.2
+        "fingerprint": "ac8f2726be0d9a2a",
+        "seconds": 133.85,
+        "lagMs": 5.7,
+        "driftMs": 1.6
       },
       "harmonies": {
         "file": "e000-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "3561ef7214bfd212",
-        "seconds": 179.06,
-        "lagMs": 4.7,
-        "driftMs": 1.3
+        "fingerprint": "3cff801fe6055db5",
+        "seconds": 133.87,
+        "lagMs": 3.9,
+        "driftMs": -1.9
       }
     },
     {
@@ -32,18 +32,18 @@
       "piece": {
         "file": "e005-piece.mp3",
         "keys": 484,
-        "fingerprint": "86798bfcae894a4a",
-        "seconds": 177.76,
-        "lagMs": 4.6,
-        "driftMs": -0.4
+        "fingerprint": "26cf89eb97892d53",
+        "seconds": 136.21,
+        "lagMs": 5.1,
+        "driftMs": 2.6
       },
       "harmonies": {
         "file": "e005-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "20ae99154035fd25",
-        "seconds": 177.76,
-        "lagMs": 4.8,
-        "driftMs": 0.2
+        "fingerprint": "818e305f97fe8a7b",
+        "seconds": 136.23,
+        "lagMs": 4.9,
+        "driftMs": -3.9
       }
     },
     {
@@ -52,18 +52,18 @@
       "piece": {
         "file": "e010-piece.mp3",
         "keys": 484,
-        "fingerprint": "c680a3e3a28c4d71",
-        "seconds": 176.54,
-        "lagMs": 4.9,
-        "driftMs": -1.2
+        "fingerprint": "bc39c5f00ab899a2",
+        "seconds": 138.58,
+        "lagMs": 5.2,
+        "driftMs": 1
       },
       "harmonies": {
         "file": "e010-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "81b3a586f8d5c5f4",
-        "seconds": 176.54,
-        "lagMs": 4.6,
-        "driftMs": -1.7
+        "fingerprint": "012984661e72bb28",
+        "seconds": 138.6,
+        "lagMs": 4.3,
+        "driftMs": -0.5
       }
     },
     {
@@ -72,18 +72,18 @@
       "piece": {
         "file": "e015-piece.mp3",
         "keys": 484,
-        "fingerprint": "2b056d48d080fbbe",
-        "seconds": 175.4,
-        "lagMs": 5,
-        "driftMs": -0.8
+        "fingerprint": "48d6b8ef01f33397",
+        "seconds": 140.95,
+        "lagMs": 4.9,
+        "driftMs": -0.1
       },
       "harmonies": {
         "file": "e015-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "a54d7ffce678d428",
-        "seconds": 175.4,
+        "fingerprint": "669514ae9d4429fe",
+        "seconds": 140.96,
         "lagMs": 5,
-        "driftMs": -2
+        "driftMs": -1.9
       }
     },
     {
@@ -92,18 +92,18 @@
       "piece": {
         "file": "e020-piece.mp3",
         "keys": 484,
-        "fingerprint": "de0013bb2905403d",
-        "seconds": 174.34,
-        "lagMs": 5.1,
-        "driftMs": -0.2
+        "fingerprint": "a25ad64316801051",
+        "seconds": 143.29,
+        "lagMs": 4.9,
+        "driftMs": 1.1
       },
       "harmonies": {
         "file": "e020-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "8cc7765d0f98e2db",
-        "seconds": 174.34,
-        "lagMs": 5,
-        "driftMs": 0
+        "fingerprint": "599bef00e5f53662",
+        "seconds": 143.3,
+        "lagMs": 4.2,
+        "driftMs": -1.2
       }
     },
     {
@@ -112,18 +112,18 @@
       "piece": {
         "file": "e025-piece.mp3",
         "keys": 484,
-        "fingerprint": "137be65b335b86f9",
-        "seconds": 173.35,
-        "lagMs": 4.4,
-        "driftMs": 1.3
+        "fingerprint": "94e6b8eeb6d205ea",
+        "seconds": 145.6,
+        "lagMs": 4.9,
+        "driftMs": -1
       },
       "harmonies": {
         "file": "e025-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "db993f90781f0854",
-        "seconds": 173.35,
+        "fingerprint": "87fb7f4bd5e5f64b",
+        "seconds": 145.61,
         "lagMs": 5,
-        "driftMs": -1.8
+        "driftMs": 0.2
       }
     },
     {
@@ -132,18 +132,18 @@
       "piece": {
         "file": "e030-piece.mp3",
         "keys": 484,
-        "fingerprint": "694b7f054b488051",
-        "seconds": 172.43,
-        "lagMs": 4.9,
-        "driftMs": -0.6
+        "fingerprint": "d8f304c2f54f133e",
+        "seconds": 147.87,
+        "lagMs": 5.1,
+        "driftMs": -0.2
       },
       "harmonies": {
         "file": "e030-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "13d892baa232a3fa",
-        "seconds": 172.43,
-        "lagMs": 4.5,
-        "driftMs": -0.6
+        "fingerprint": "299733f6d97ef14a",
+        "seconds": 147.88,
+        "lagMs": 5,
+        "driftMs": -1.5
       }
     },
     {
@@ -152,18 +152,18 @@
       "piece": {
         "file": "e035-piece.mp3",
         "keys": 484,
-        "fingerprint": "6099b409df69f571",
-        "seconds": 171.58,
-        "lagMs": 4.7,
-        "driftMs": -0.8
+        "fingerprint": "ee5ed6fd54a35ed3",
+        "seconds": 150.08,
+        "lagMs": 4.9,
+        "driftMs": 3.7
       },
       "harmonies": {
         "file": "e035-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "8e6234b9fc6e0219",
-        "seconds": 171.58,
-        "lagMs": 4.6,
-        "driftMs": -0.8
+        "fingerprint": "38c7eab707f289cb",
+        "seconds": 150.09,
+        "lagMs": 4.8,
+        "driftMs": 0
       }
     },
     {
@@ -172,18 +172,18 @@
       "piece": {
         "file": "e040-piece.mp3",
         "keys": 484,
-        "fingerprint": "2e451d18bccff9fe",
-        "seconds": 170.8,
-        "lagMs": 2.8,
-        "driftMs": -0.6
+        "fingerprint": "2103ad329d47efdc",
+        "seconds": 152.21,
+        "lagMs": 5,
+        "driftMs": -0.7
       },
       "harmonies": {
         "file": "e040-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "7005c97e83692eae",
-        "seconds": 170.8,
-        "lagMs": 4.5,
-        "driftMs": -0.6
+        "fingerprint": "4c42db9720c19d19",
+        "seconds": 152.22,
+        "lagMs": 5.7,
+        "driftMs": 0.5
       }
     },
     {
@@ -192,18 +192,18 @@
       "piece": {
         "file": "e045-piece.mp3",
         "keys": 484,
-        "fingerprint": "d6e4edc106fc80a9",
-        "seconds": 170.09,
-        "lagMs": 4.5,
-        "driftMs": -1.1
+        "fingerprint": "c1d83430060eea38",
+        "seconds": 154.26,
+        "lagMs": 5.3,
+        "driftMs": -0.4
       },
       "harmonies": {
         "file": "e045-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "fbbcddc8372adf9e",
-        "seconds": 170.09,
-        "lagMs": 5,
-        "driftMs": -1.1
+        "fingerprint": "e59994a4af448dd0",
+        "seconds": 154.26,
+        "lagMs": 5.1,
+        "driftMs": -0.3
       }
     },
     {
@@ -212,18 +212,18 @@
       "piece": {
         "file": "e050-piece.mp3",
         "keys": 484,
-        "fingerprint": "3d690dc861080792",
-        "seconds": 169.44,
-        "lagMs": 4.6,
-        "driftMs": -0.7
+        "fingerprint": "9e298307fdd96d73",
+        "seconds": 156.19,
+        "lagMs": 4.9,
+        "driftMs": -0.1
       },
       "harmonies": {
         "file": "e050-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "181f8ea93e99d711",
-        "seconds": 169.44,
-        "lagMs": 4.3,
-        "driftMs": -0.8
+        "fingerprint": "4e37e7358def63f9",
+        "seconds": 156.2,
+        "lagMs": 4.7,
+        "driftMs": -1
       }
     },
     {
@@ -232,18 +232,18 @@
       "piece": {
         "file": "e055-piece.mp3",
         "keys": 484,
-        "fingerprint": "ed1d19ca1f53e8d4",
-        "seconds": 168.87,
-        "lagMs": 4.7,
-        "driftMs": -1.2
+        "fingerprint": "77d23b78b5c2652c",
+        "seconds": 158,
+        "lagMs": 5.4,
+        "driftMs": -0.9
       },
       "harmonies": {
         "file": "e055-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "25690769038e49d1",
-        "seconds": 168.87,
-        "lagMs": 4.8,
-        "driftMs": -0.2
+        "fingerprint": "c76f40b7ab80eaf5",
+        "seconds": 158.01,
+        "lagMs": 4.6,
+        "driftMs": -0.9
       }
     },
     {
@@ -252,18 +252,18 @@
       "piece": {
         "file": "e060-piece.mp3",
         "keys": 484,
-        "fingerprint": "9d5d28db79df3521",
-        "seconds": 168.35,
-        "lagMs": 5,
-        "driftMs": -0.7
+        "fingerprint": "bb302100672de3e0",
+        "seconds": 159.67,
+        "lagMs": 4.9,
+        "driftMs": -0.6
       },
       "harmonies": {
         "file": "e060-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "854e582535143299",
-        "seconds": 168.35,
+        "fingerprint": "e18dc0df612ae251",
+        "seconds": 159.67,
         "lagMs": 5.1,
-        "driftMs": -1.2
+        "driftMs": -1.1
       }
     },
     {
@@ -272,18 +272,18 @@
       "piece": {
         "file": "e065-piece.mp3",
         "keys": 484,
-        "fingerprint": "90a294bfa559fea5",
-        "seconds": 167.9,
-        "lagMs": 4.9,
-        "driftMs": -1
+        "fingerprint": "e96acc4c0ef061de",
+        "seconds": 161.19,
+        "lagMs": 5.2,
+        "driftMs": -0.3
       },
       "harmonies": {
         "file": "e065-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "b9922f76cdf6beba",
-        "seconds": 167.9,
-        "lagMs": 4.7,
-        "driftMs": -0.1
+        "fingerprint": "12377f3ea09c656c",
+        "seconds": 161.19,
+        "lagMs": 5,
+        "driftMs": 0
       }
     },
     {
@@ -292,18 +292,18 @@
       "piece": {
         "file": "e070-piece.mp3",
         "keys": 484,
-        "fingerprint": "36eee9edf9c4014b",
-        "seconds": 167.51,
-        "lagMs": 5.1,
-        "driftMs": 29.2
+        "fingerprint": "1049538287bc9d06",
+        "seconds": 162.53,
+        "lagMs": 5,
+        "driftMs": -0.8
       },
       "harmonies": {
         "file": "e070-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "b3d869f7754bf189",
-        "seconds": 167.51,
-        "lagMs": 4.7,
-        "driftMs": -0.5
+        "fingerprint": "fbf621af66900205",
+        "seconds": 162.53,
+        "lagMs": 4.8,
+        "driftMs": -1
       }
     },
     {
@@ -312,18 +312,18 @@
       "piece": {
         "file": "e075-piece.mp3",
         "keys": 484,
-        "fingerprint": "b050d13d032d59f7",
-        "seconds": 167.18,
-        "lagMs": 5,
-        "driftMs": -0.1
+        "fingerprint": "a00a00b43e5d94b8",
+        "seconds": 163.7,
+        "lagMs": 5.1,
+        "driftMs": -0.9
       },
       "harmonies": {
         "file": "e075-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "a0719a41b18ad8af",
-        "seconds": 167.18,
-        "lagMs": 5,
-        "driftMs": 0.3
+        "fingerprint": "f5b7a5b94af81001",
+        "seconds": 163.7,
+        "lagMs": 4.9,
+        "driftMs": -0.8
       }
     },
     {
@@ -332,17 +332,17 @@
       "piece": {
         "file": "e080-piece.mp3",
         "keys": 484,
-        "fingerprint": "e8a8df063e298014",
-        "seconds": 166.91,
-        "lagMs": 4.9,
-        "driftMs": -1.4
+        "fingerprint": "f78ce15d0467d763",
+        "seconds": 164.67,
+        "lagMs": 5.1,
+        "driftMs": -0.7
       },
       "harmonies": {
         "file": "e080-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "9cd368d90c5c737b",
-        "seconds": 166.91,
-        "lagMs": 4.6,
+        "fingerprint": "902917b2d27b9734",
+        "seconds": 164.67,
+        "lagMs": 2.6,
         "driftMs": -0.4
       }
     },
@@ -352,18 +352,18 @@
       "piece": {
         "file": "e085-piece.mp3",
         "keys": 484,
-        "fingerprint": "45915c974411a95b",
-        "seconds": 166.7,
-        "lagMs": 5,
-        "driftMs": 0
+        "fingerprint": "808b31882cbdc54e",
+        "seconds": 165.44,
+        "lagMs": 5.6,
+        "driftMs": 1.8
       },
       "harmonies": {
         "file": "e085-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "b29eabf9edbf4e83",
-        "seconds": 166.7,
-        "lagMs": 5.1,
-        "driftMs": -0.2
+        "fingerprint": "0dfd7b552b17b717",
+        "seconds": 165.44,
+        "lagMs": 5,
+        "driftMs": -0.6
       }
     },
     {
@@ -372,18 +372,18 @@
       "piece": {
         "file": "e090-piece.mp3",
         "keys": 484,
-        "fingerprint": "0c4cfc96d85c795a",
-        "seconds": 166.55,
-        "lagMs": 5.2,
-        "driftMs": -0.3
+        "fingerprint": "d144cfed5e7cf4ef",
+        "seconds": 165.99,
+        "lagMs": 5.4,
+        "driftMs": 0.5
       },
       "harmonies": {
         "file": "e090-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "e837b44b24dbcfcf",
-        "seconds": 166.55,
-        "lagMs": 5,
-        "driftMs": -1.6
+        "fingerprint": "655793261022c07e",
+        "seconds": 165.99,
+        "lagMs": 4.7,
+        "driftMs": -0.7
       }
     },
     {
@@ -392,18 +392,18 @@
       "piece": {
         "file": "e095-piece.mp3",
         "keys": 484,
-        "fingerprint": "856b52bf6b8ee0e5",
-        "seconds": 166.46,
-        "lagMs": 5.3,
-        "driftMs": 0.8
+        "fingerprint": "ad80574ae03cd71e",
+        "seconds": 166.32,
+        "lagMs": 6,
+        "driftMs": 1.8
       },
       "harmonies": {
         "file": "e095-harmonies.mp3",
         "keys": 219,
-        "fingerprint": "481f3fbee6bc6fd0",
-        "seconds": 166.46,
-        "lagMs": 5.2,
-        "driftMs": 0.1
+        "fingerprint": "173a0d365bec93be",
+        "seconds": 166.32,
+        "lagMs": 5,
+        "driftMs": -0.7
       }
     },
     {
