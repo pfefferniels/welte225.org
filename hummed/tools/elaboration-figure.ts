@@ -11,7 +11,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { mix, PIECE_FROM } from '../src/page/mix.ts';
-import { flightiness, pianoLevel, voiceLevel } from '../src/worker/levels.ts';
+import { flightiness, pianoLevel, voiceLevel, shapeAt } from '../src/worker/levels.ts';
 import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
@@ -136,20 +136,20 @@ const piano = loud(dB(mix(1).piece));
 const part = (keep: (e: number) => boolean): void => {
   band(
     'klavier',
-    FINE.filter((e) => e > 0 && keep(e)).map((e) => [x(e), piano, thickness(pianoLevel(e))]),
+    FINE.filter((e) => e > 0 && keep(e)).map((e) => [x(e), piano, thickness(pianoLevel(shapeAt(e)))]),
   );
 };
 part((e) => x(e) <= x(PIECE_FROM) - GAP);
 part((e) => x(e) >= x(PIECE_FROM) + GAP);
 label(
   'harmonien',
-  [x(PIECE_FROM / 2), piano + thickness(pianoLevel(PIECE_FROM / 2)) / 2],
+  [x(PIECE_FROM / 2), piano + thickness(pianoLevel(shapeAt(PIECE_FROM / 2))) / 2],
   'south',
   'Harmonien',
 );
 label(
   'stueck',
-  [x((1 + PIECE_FROM) / 2), piano + thickness(pianoLevel((1 + PIECE_FROM) / 2)) / 2],
+  [x((1 + PIECE_FROM) / 2), piano + thickness(pianoLevel(shapeAt((1 + PIECE_FROM) / 2))) / 2],
   'south',
   'Stück',
 );
@@ -157,9 +157,9 @@ label(
 // the humming recedes, fast at first, and thins, though less than the piano
 band(
   'summen',
-  FINE.map((e) => [x(e), loud(dB(mix(e).hum)), thickness(voiceLevel(e))]),
+  FINE.map((e) => [x(e), loud(dB(mix(e).hum)), thickness(voiceLevel(shapeAt(e)))]),
 );
-label('summen', [x(1), loud(dB(mix(1).hum)) - thickness(voiceLevel(1)) / 2], 'north east', 'Summen');
+label('summen', [x(1), loud(dB(mix(1).hum)) - thickness(voiceLevel(shapeAt(1))) / 2], 'north east', 'Summen');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });

@@ -5,30 +5,30 @@ import { describe, it } from 'node:test';
 import { performMsmToData, type PerformanceData } from 'espressivo';
 import { readPerformance, repaired } from '../src/hummer/performance.ts';
 import { imprecise } from '../src/worker/imprecision.ts';
-import { IMPRECISION } from '../src/worker/levels.ts';
+import { IMPRECISION, shapeAt } from '../src/worker/levels.ts';
 import { performPiano, pianoMpm } from '../src/worker/piano.ts';
 import { loadPianoScore } from '../tools/node-support.ts';
 
 const score = loadPianoScore();
 const performed = (e: number): PerformanceData =>
-  performMsmToData({ msm: score.msm, mpm: pianoMpm(score.mpm, e) });
+  performMsmToData({ msm: score.msm, mpm: pianoMpm(score.mpm, shapeAt(e)) });
 const notes = (data: PerformanceData) => data.parts.flatMap((p) => p.notes);
 
 describe('imprecision', () => {
   // the bare end, exaggerated so far that espressivo leaves strays, put right before the shift
   const raw = performed(0);
   const plain = repaired(raw);
-  const struck = imprecise(raw, 0);
+  const struck = imprecise(raw, shapeAt(0));
   const pairs = notes(plain).map((n, i) => [n, notes(struck)[i]] as const);
   const shift = (i: number): number => pairs[i][1].milliseconds.date - pairs[i][0].milliseconds.date;
 
   it('leaves the performance as it is at the top', () => {
     const top = performed(1);
-    assert.equal(imprecise(top, 1), top);
+    assert.equal(imprecise(top, shapeAt(1)), top);
   });
 
   it('is the same every time', () => {
-    assert.deepEqual(imprecise(raw, 0), struck);
+    assert.deepEqual(imprecise(raw, shapeAt(0)), struck);
   });
 
   it('moves a date by about as much as it should, the same wherever it is struck or let go', () => {
@@ -94,7 +94,7 @@ describe('imprecision', () => {
   });
 
   it('strikes the harmonies where the piece is struck at the dates they share', () => {
-    const { piece, harmonies } = performPiano(score, 0);
+    const { piece, harmonies } = performPiano(score, shapeAt(0));
     const onsets = new Set(piece.keys.map((k) => k.on.toFixed(6)));
     const shared = harmonies.keys.filter((k) => onsets.has(k.on.toFixed(6)));
     // most chords of the harmonies fall on an onset of the piece, struck off by the same amount

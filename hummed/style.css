@@ -439,6 +439,96 @@ input[type='range']:disabled {
   fill: currentColor;
 }
 
+/* the details under the elaboration fader: what it sets, each on its own. A chevron beside its name
+   opens them; it carries a dot while any is set apart from the fader. The sliders keep the fader's
+   columns, so that, following it, their thumbs stand under its own. */
+.details-toggle {
+  position: relative;
+}
+.details-toggle svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.15s;
+}
+.details-toggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+.details-toggle.apart::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.details {
+  display: grid;
+  gap: 2px;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule);
+}
+.details[hidden] {
+  display: none;
+}
+.details .fader label,
+.details .fader .name {
+  font-size: 12px;
+  color: var(--muted);
+}
+.details .fader output {
+  font-size: 11px;
+  line-height: 1.2;
+}
+.details .fader output span {
+  display: block;
+}
+/* a detail set apart from the fader reads as the fader's own does */
+.details .apart label,
+.details .apart output {
+  color: var(--fg);
+}
+.details .apart .chips button[aria-pressed='true'] {
+  font-weight: 600;
+}
+/* what is heard: the humming, and the piano's harmonies or its piece (one at a time, or neither) */
+.chips {
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.chips button {
+  font: inherit;
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.chips button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--fg);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.chips button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .details-toggle svg {
+    transition: none;
+  }
+}
+
 /* the reconstruction's instructions at the playhead: a panel at the top left, one row for each
    dimension of the performance, which stays where it is while what it lists comes and goes */
 .instructions {

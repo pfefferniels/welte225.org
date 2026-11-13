@@ -8,7 +8,7 @@ import { chunkOrder } from '../src/shared/chunks.ts';
 import { SPECTROGRAM, SPECTROGRAM_STYLES } from '../src/shared/spectrogram.ts';
 import { SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
 import { chunkSpan, FIRST_SOUND, renderChunk, type ChunkPart } from '../src/worker/chunk.ts';
-import { DEFAULT_ELABORATION } from '../src/worker/levels.ts';
+import { DEFAULT_ELABORATION, shapeAt } from '../src/worker/levels.ts';
 import {
   copyLevel,
   hum,
@@ -34,8 +34,9 @@ describe('a setting prepared', async () => {
   const score = loadScore();
   const data = loadHumData();
   const reduction = loadReduction();
-  const performed = performVoice(score, DEFAULT_ELABORATION);
-  const voice = hum(performed, reduction, data, DEFAULT_ELABORATION);
+  const shape = shapeAt(DEFAULT_ELABORATION);
+  const performed = performVoice(score, shape);
+  const voice = hum(performed, reduction, data, shape);
   const maxStates = maxStatesOf(voice);
   const states = voiceStates(engine, voice, maxStates);
   const part = { keys: [], sustain: [], soft: [] };
@@ -55,14 +56,14 @@ describe('a setting prepared', async () => {
     [...renderChunk(engine, source, from, to, options)].filter((p) => p !== null);
 
   it('hums the same from the dynamics another worker performed', () => {
-    const mpm = voiceMpm(score, DEFAULT_ELABORATION);
+    const mpm = voiceMpm(score, shape);
     // as it arrives from the other worker: read there, copied on the way
     const curve = structuredClone(readDynamics(performDynamics(score, mpm)));
     const other = hum(
-      { performance: performNotes(score, mpm, DEFAULT_ELABORATION), dynamics: curve },
+      { performance: performNotes(score, mpm, shape), dynamics: curve },
       reduction,
       data,
-      DEFAULT_ELABORATION,
+      shape,
     );
     assert.equal(other.closedScore, voice.closedScore);
     assert.equal(other.openScore, voice.openScore);

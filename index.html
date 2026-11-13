@@ -59,6 +59,18 @@
                 <path d="M8.4 8.5h2.6v6.3h1.5v1.4H7.6v-1.4h1.5V9.9h-.7z" />
               </svg>
             </button>
+            <button
+              id="details-toggle"
+              class="hint details-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="details"
+              aria-label="Show what elaboration sets, each on its own"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5.5 8 10 12.5 14.5 8" />
+              </svg>
+            </button>
           </span>
           <input
             id="elaboration"
@@ -70,6 +82,46 @@
             value="65"
           />
           <output id="o-elaboration" for="elaboration">piece</output>
+        </div>
+        <div id="details" class="details" hidden>
+          <div class="fader" id="row-flighty">
+            <label for="d-flighty">Flightiness</label>
+            <input
+              id="d-flighty"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="65"
+            />
+            <output id="o-flighty" for="d-flighty"></output>
+          </div>
+          <div class="fader" id="row-exaggerated">
+            <label for="d-exaggerated">Exaggeration</label>
+            <input
+              id="d-exaggerated"
+              class="split"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="65"
+            />
+            <output id="o-exaggerated" for="d-exaggerated"></output>
+          </div>
+          <div class="fader" id="row-heard">
+            <span class="chips" role="group" aria-label="What is heard">
+              <button id="d-voice" type="button" aria-pressed="true">
+                Humming
+              </button>
+              <button id="d-harmonies" type="button" aria-pressed="false">
+                Harmonies
+              </button>
+              <button id="d-piece" type="button" aria-pressed="true">
+                Piece
+              </button>
+            </span>
+          </div>
         </div>
       </section>
 
@@ -304,15 +356,23 @@
         that moves between melody, tenor and bass, within about an octave, with
         a breath wherever it changes hands, its gestures raw, twice as large as
         Grünfeld's and loosely on pitch, and all of it a sketch, gone through
-        twice as fast as he plays it and less exactly. The voice is heard where the
-        playing moves, where the dynamics or the tempo change or a note is
+        twice as fast as he plays it and less exactly. The voice is heard where
+        the playing moves, where the dynamics or the tempo change or a note is
         accented, and sinks back into quiet where it holds still. As soon as the
         fader leaves the start, the piano plays the harmonies under it, the
         piece reduced to its chords, and the humming recedes. From a third of
         the way on, the piano plays the piece itself, and the humming goes on
-        quietly, as a pianist hums along. The further along, the subtler, the
-        less hurried and the more exact it all becomes, until at the end the
-        piano plays Grünfeld's performance as the reconstruction sets it down.
+        quietly, as a pianist hums along. The further along, the less hurried
+        and the more exact it all becomes, until at the end the piano plays
+        Grünfeld's performance as the reconstruction sets it down. The gestures
+        grow subtler twice over: through the humming and the harmonies, and
+        again through the piece, which comes in as raw as the humming was.
+      </p>
+      <p>
+        The arrow beside the name opens what the fader sets, each on its own:
+        how flighty the music is (how much faster, how much less exactly), how
+        exaggerated, and what is heard. They follow the fader; moved, one is set
+        apart from it, until the fader moves again.
       </p>
       <p>
         Each sung note takes its timing and loudness from the piano note it

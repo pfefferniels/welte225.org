@@ -1,7 +1,7 @@
 // The transport: the voice played from the stream in short buffers, the piano handed to its output
 // (outputs.ts: in the page, or on an instrument over MIDI) as it falls due, and a new rendering
 // taking over at the same place in the score once it has sound there.
-import type { Setting, StartAt } from '../shared/protocol.ts';
+import { sameSetting, type Setting, type StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import type { PianoOutput } from './outputs.ts';
@@ -126,7 +126,7 @@ export class Player {
   change(setting: Setting): void {
     const cur = this.#current;
     const base = this.#wanted ?? cur?.setting;
-    if (!base || Math.abs(setting.elaboration - base.elaboration) < 1e-9) return;
+    if (!base || sameSetting(setting, base)) return;
     const wanted = Math.min(MAX_SWITCH_LEAD, Math.max(MIN_SWITCH_LEAD, this.#took + SWITCH_MARGIN));
     const lead = this.#playing && cur ? Math.max(0, Math.min(wanted, cur.aheadOf(this.position()) - 0.3)) : 0;
     const t = cur ? Math.min(cur.duration, this.position() + lead) : 0;

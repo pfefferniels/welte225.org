@@ -35,7 +35,7 @@ import {
   type RecordingsManifest,
 } from '../src/shared/recordings.ts';
 import { SAMPLE_RATE } from '../src/shared/units.ts';
-import { pianoLevel } from '../src/worker/levels.ts';
+import { pianoLevel, shapeAt } from '../src/worker/levels.ts';
 import { performPiano } from '../src/worker/piano.ts';
 import { expectedOnsets, findLag, lagDrift, loudness, onsetStrength, peak } from './audio.ts';
 import { loadPianoScore, ROOT } from './node-support.ts';
@@ -103,8 +103,8 @@ if (offStep.length > 0) fail(`elaborations not in steps of ${step}: ${offStep.jo
 const score = loadPianoScore();
 /** Each setting's parts as the page plays them, and their messages. */
 const performed = elaborations.map((elaboration) => {
-  const level = pianoLevel(elaboration);
-  const parts = performPiano(score, elaboration);
+  const level = pianoLevel(shapeAt(elaboration));
+  const parts = performPiano(score, shapeAt(elaboration));
   const events = (part: PianoPart): readonly MidiEvent[] => midiEvents(part);
   return {
     elaboration,

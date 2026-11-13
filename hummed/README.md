@@ -19,7 +19,8 @@ from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
 to the overview of the site's projects (`/overview/`) and to the source, and the credits; small
-info button beside Elaboration explains it. A gear beside the info button opens the settings: which
+info button beside Elaboration explains it, and a chevron beside that opens what the fader sets,
+each on its own (_The details_, below). A gear beside the info button opens the settings: which
 piano plays (below). The cards are native popovers: closed until asked for, and closed again by
 Escape or a click anywhere else.
 
@@ -201,11 +202,13 @@ the rawer its gestures; the more of it there is, the more refined, until at 1 th
 Grünfeld's performance as the MPM sets it down, with all its editorial decisions. espressivo
 exaggerates the MPM (`exaggerateMpm`) to:
 
-- the piano: `1 + (1 − e)²`, ×2 at 0, ×1.44 at a third, ×1.25 at the middle, ×1.12 at 0.65, ×1 at
-  1;
-- the voice: `1.1 + 0.75 (1 − e)²`, ×1.85 alone, ×1.43 at a third, ×1.19 at 0.65, ×1.1 under the
-  piece: a little beyond the piano from 0.37 on, a little short of it below; in timing, the
-  piano's.
+- the piano: `1 + x`, where `x` falls twice (`exaggeration`): through the humming and the
+  harmonies as `(1 − e)²`, ×2 at 0 and ×1.44 just before a third; and anew through the piece,
+  which comes in as raw as the humming was, `(1 − u)²` of the way `u` from a third to the top: ×2
+  at a third, ×1.56 at the middle, ×1.28 at 0.65, ×1 at 1;
+- the voice: `1.1 + 0.75 (1 − e)²` (`voiceExaggeration`), once and smoothly, without the piano's
+  jump: ×1.85 alone, ×1.43 at a third, ×1.19 at 0.65, ×1.1 under the piece as it is, a little
+  beyond the piano there; in timing, the piano's, so that the two strike together.
 
 (At Grünfeld's tempo ×2 sounded extremely unnatural, ×1.6 still too much. Gone through twice as
 fast, the humming alone is best at ×2, ×2 and 100 ms: so it was chosen by ear, with the speed, the
@@ -224,8 +227,9 @@ takes from it hardly after the note before, or even before it. The voice keeps i
 (`SUNG_AT_LEAST`, `src/hummer/melody.ts`): it takes such a note up 90 ms after the one before, in
 nine places alone, in one at a third. The exaggeration alone had made the bare end the slowest: a
 tempo exaggerated slows down by more than it speeds up. Now the last key is struck after 2:39 at 1,
-2:25 at 0.65, 2:14 at the middle, 2:00 at a third, 1:54 a quarter of the way up and 1:39 with the
-humming alone, 38 % sooner. (With ×1.35 at 0 it was 20 %, with ×1.25 13.5 %.)
+2:30 at 0.65, 2:22 at the middle, 2:17 at a third (2:00 just before, with the harmonies, where the
+exaggeration has not started anew), 1:54 a quarter of the way up and 1:39 with the humming alone,
+38 % sooner. (With ×1.35 at 0 it was 20 %, with ×1.25 13.5 %.)
 
 And the performance, once espressivo has made it, is struck less exactly
 (`src/worker/imprecision.ts`, `IMPRECISION`): each date of the score comes early or late by up to
@@ -252,6 +256,22 @@ both, so that it never stands still.
 The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
 and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
 gains change at once.
+
+### The details
+
+Under the fader, a chevron beside its name opens what it sets, each on its own (`src/page/details.ts`,
+collapsed at first): the flightiness (how much faster, how many ms off), the exaggeration (the
+piano's and the voice's) and what is heard (the humming, and the piano's harmonies or its piece,
+one at a time, or neither). They follow the fader: their two sliders lie on its own scale, with
+the same columns, so that they stand where it stands and move as it moves, and their readouts say
+what that gives. One that is moved is set apart from the fader, until the fader moves again and
+takes them all with it; the chevron carries a dot meanwhile, and the row set apart reads as the
+fader does. A slider set apart is rendered as its own setting (`Setting`, `flighty` and
+`exaggerated`: where it stands on the fader's scale, in the fader's steps; `shapeOf`,
+`src/shared/shape.ts`), which no Pianoteq recording is of: the sampled grand plays it. One set at
+the fader's own step is no setting apart. What is heard is no setting: the voice and both parts of
+the piano are always rendered, and the switches change the mix alone (`mixOf`). An instrument over
+MIDI plays the part that is heard.
 
 ## How the voice hums
 
@@ -327,7 +347,7 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    (`threshold`: × the tempo's factor, 0.75 alone); otherwise it is the same at every
    elaboration, and the barer the music, the more exaggerated the MPM and the more its maps
    move. Alone, the voice is heard (more than half of it) for 71 % of what it sings, at 0.65 for
-   60 %, under the piece as it is for 57 %; the breath before a phrase that begins unheard is
+   62 %, under the piece as it is for 57 %; the breath before a phrase that begins unheard is
    drawn at 0.4 of its pressure.
 
    (Before, the voice sounded through every phrase at an even level and fell silent only in the
@@ -594,27 +614,27 @@ Grünfeld's tempo, and wait to be rendered again.
 
 ## Code
 
-| Path                             | What it is                                                                                                                                                                                                                                                                  |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                                                                                             |
-| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                                                                                                     |
-| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                                                                                                  |
-| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                                                                                                 |
-| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                                                                                             |
-| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                           |
-| `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                 |
-| `src/page/`                      | the page: audio graph and room, the elaboration mix, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
-| `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                 |
-| `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                             |
-| `src/shared/`                    | what both sides use: units, maths, the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                                                                      |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                             |
-| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
-| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                            |
-| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                      |
-| `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                     |
-| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                        |
-| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                       |
-| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                   |
+| Path                             | What it is                                                                                                                                                                                                                                                                                  |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                                                                                                             |
+| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                                                                                                                     |
+| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                                                                                                                  |
+| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                                                                                                                 |
+| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                                                                                                             |
+| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                                           |
+| `src/worker/`                    | the worker: levels, the harmonies' score, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                                 |
+| `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions |
+| `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                 |
+| `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                             |
+| `src/shared/`                    | what both sides use: units, maths, the shape a setting gives (flightiness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                              |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                             |
+| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                                              |
+| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                                            |
+| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                                      |
+| `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                                     |
+| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                                        |
+| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                                       |
+| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                                   |
 
 The score and the performance are the site's own (`/mpm/score.msm`, `/mpm/performance.mpm`), so
 the voice follows the reconstruction as it is published. The piece's grace notes are in the

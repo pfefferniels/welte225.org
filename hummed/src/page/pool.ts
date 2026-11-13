@@ -5,6 +5,7 @@
 import type { Reduction } from '../reduction/types.ts';
 import { chunkOrder, type Chunk } from '../shared/chunks.ts';
 import {
+  settingKey,
   VOICE_WORKER,
   type AudioMessage,
   type FromWorker,
@@ -81,8 +82,8 @@ interface Job {
 export class VoicePool {
   readonly #workers: PoolWorker[];
   readonly #listener: (event: VoiceEvent) => void;
-  /** The setting of the level each worker was last handed. */
-  readonly #levels = new Map<PoolWorker, number>();
+  /** The setting of the level each worker was last handed (`settingKey`). */
+  readonly #levels = new Map<PoolWorker, string>();
   #job: Job | null = null;
 
   constructor(
@@ -115,7 +116,7 @@ export class VoicePool {
     const planner = this.#workers.at(0);
     if (!planner) return;
     const others = this.#workers.slice(1);
-    const waiting = new Set(others.filter((worker) => this.#levels.get(worker) !== setting.elaboration));
+    const waiting = new Set(others.filter((worker) => this.#levels.get(worker) !== settingKey(setting)));
     this.#job = {
       id,
       setting,
@@ -196,7 +197,7 @@ export class VoicePool {
         const next = [...job.waiting].at(0);
         if (!next) return;
         job.waiting.delete(next);
-        this.#levels.set(next, job.setting.elaboration);
+        this.#levels.set(next, settingKey(job.setting));
         const { closed, glottis, open, weight } = message.level;
         next.postMessage(message, [closed.buffer, glottis.buffer, open.buffer, weight.buffer]);
         this.#assign(next, job);

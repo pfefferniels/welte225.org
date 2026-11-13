@@ -10,6 +10,7 @@ import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { dynamicsRange, readDynamics, turningPoints } from '../hummer/index.ts';
 import { chunkOrder } from '../shared/chunks.ts';
 import {
+  sameSetting,
   VOICE_WORKER,
   type BetweenWorkers,
   type DynamicsMessage,
@@ -29,6 +30,7 @@ import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { harmoniesScore } from './harmonies.ts';
+import { shapeOf } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
 import {
@@ -194,17 +196,16 @@ const setupReady = new Promise<Setup>((resolve) => {
   setupDone = resolve;
 });
 
-const held = (setting: Setting): Level | undefined =>
-  levels.find((L) => L.setting.elaboration === setting.elaboration);
+const held = (setting: Setting): Level | undefined => levels.find((L) => sameSetting(L.setting, setting));
 
 /** Keep a level, the latest first, and let go of the oldest beyond what this worker holds. */
 function hold(L: Level): void {
-  const others = levels.filter((other) => other.setting.elaboration !== L.setting.elaboration);
+  const others = levels.filter((other) => !sameSetting(other.setting, L.setting));
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
 const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> =>
-  performPiano({ msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm }, setting.elaboration);
+  performPiano({ msm: texts.msm, harmonies: texts.harmonies(), mpm: texts.mpm }, shapeOf(setting));
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
@@ -227,13 +228,14 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   };
   const texts = await r.texts;
   if (id !== current) return null;
-  const mpm = timed('espressivo', () => voiceMpm(texts, setting.elaboration));
-  const performance = timed('espressivo', () => performNotes(texts, mpm, setting.elaboration));
+  const shape = shapeOf(setting);
+  const mpm = timed('espressivo', () => voiceMpm(texts, shape));
+  const performance = timed('espressivo', () => performNotes(texts, mpm, shape));
   await until(() => id !== current || box.alone || !box.dynamicsAsked || box.dynamics !== undefined);
   if (await stopped()) return null;
   const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(texts, mpm));
   const performed = { performance, dynamics };
-  const voice = timed('hummer', () => hum(performed, setup.reduction, texts, setting.elaboration));
+  const voice = timed('hummer', () => hum(performed, setup.reduction, texts, shape));
   const maxStates = maxStatesOf(voice);
   if (!box.alone)
     peers.at(0)?.postMessage({
@@ -340,7 +342,7 @@ async function work(message: Task, box: Help, reply: MessagePort | undefined): P
         const piano = pianoAt(texts, message.setting);
         reply?.postMessage({ type: 'piano', id, ...piano, ms: now() - t } satisfies BetweenWorkers);
       } else {
-        const mpm = voiceMpm(texts, message.setting.elaboration);
+        const mpm = voiceMpm(texts, shapeOf(message.setting));
         const curve = readDynamics(performDynamics(texts, mpm));
         reply?.postMessage({ type: 'dynamics', id, curve, ms: now() - t } satisfies BetweenWorkers);
       }

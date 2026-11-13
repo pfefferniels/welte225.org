@@ -1,7 +1,7 @@
 // How the piano sounds: in the page (the Pianoteq recordings, or the sampled grand where a setting has
 // none) or on an instrument over MIDI (midi.ts). The player hands either the rendering it plays, from
 // where, and what falls due; each sounds it its own way.
-import type { Setting } from '../shared/protocol.ts';
+import { plain, type Setting } from '../shared/protocol.ts';
 import { recordingOf } from '../shared/recordings.ts';
 import type { Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
@@ -54,10 +54,13 @@ export class BuiltInPiano implements PianoOutput {
     this.#current.clear();
   }
 
-  /** Whether the rendering is played from a recording (else by the sampler). */
+  /**
+   * Whether the rendering is played from a recording (else by the sampler): one of the elaboration
+   * alone, nothing set apart from it in the details.
+   */
   recorded(rendering: Rendering): boolean {
     const recordings = this.#recordings;
-    const entry = recordings?.setting(rendering.setting.elaboration);
+    const entry = plain(rendering.setting) ? recordings?.setting(rendering.setting.elaboration) : null;
     if (!recordings || !entry || recordings.failed(rendering.setting.elaboration)) return false;
     let current = this.#current.get(entry.elaboration);
     if (current === undefined) {
@@ -74,7 +77,7 @@ export class BuiltInPiano implements PianoOutput {
 
   /** The setting's recordings, where there are any: fetched and decoded while the voice is prepared. */
   preload(setting: Setting): void {
-    const entry = this.#recordings?.setting(setting.elaboration);
+    const entry = plain(setting) ? this.#recordings?.setting(setting.elaboration) : null;
     // not one already found to be of another performance
     if (entry && this.#current.get(entry.elaboration) !== false)
       this.#recordings?.buffers(setting.elaboration);

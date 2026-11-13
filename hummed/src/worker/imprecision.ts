@@ -9,7 +9,7 @@
 import type { Midi7Bit, Milliseconds, PerformanceData } from 'espressivo';
 import { repaired } from '../hummer/performance.ts';
 import { seededRandom } from '../shared/math.ts';
-import { flightiness, IMPRECISION } from './levels.ts';
+import { IMPRECISION, type Shape } from './levels.ts';
 
 /** A standard normal number for a key: the same every time. */
 const normal = (...key: number[]): number =>
@@ -21,9 +21,9 @@ const LOUDNESS = 2;
 /** The least of its length a note keeps when its key is let go early and struck late. */
 const LEAST_LENGTH = 0.5;
 
-/** The performance at an elaboration, struck as inexactly as it is flighty; as it is at 1. */
-export function imprecise(data: PerformanceData, elaboration: number): PerformanceData {
-  const f = flightiness(elaboration);
+/** The performance struck as inexactly as it is flighty; as it is where it is not. */
+export function imprecise(data: PerformanceData, shape: Pick<Shape, 'flightiness'>): PerformanceData {
+  const f = shape.flightiness;
   if (f === 0) return data;
   const timing = IMPRECISION.timingMs * f;
   const dynamics = IMPRECISION.dynamics * f;

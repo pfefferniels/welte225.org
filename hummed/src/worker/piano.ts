@@ -4,7 +4,7 @@ import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { readPerformance, repair, type PedalPoint, type Performance } from '../hummer/performance.ts';
 import type { PedalStep, PianoPart } from '../shared/piano.ts';
 import { PAD_MS } from '../shared/units.ts';
-import { atTempo, pianoFactors, pianoLevel, tempoFactor } from './levels.ts';
+import { atTempo, pianoFactors, pianoLevel, tempoFactor, type Shape } from './levels.ts';
 import { imprecise } from './imprecision.ts';
 
 /** What the piano plays from: the piece's score, the harmonies' score (MSM) and the MPM. */
@@ -34,21 +34,21 @@ export function pianoPart({ notes, sustain, soft }: Performance): PianoPart {
   };
 }
 
-/** The MPM as the piano performs it at an elaboration: exaggerated, then faster. */
-export function pianoMpm(mpm: string, elaboration: number): string {
-  const factors = pianoFactors(pianoLevel(elaboration));
-  return atTempo(factors ? exaggerateMpm(mpm, { factors }).mpm : mpm, tempoFactor(elaboration));
+/** The MPM as the piano performs it in a shape: exaggerated, then faster. */
+export function pianoMpm(mpm: string, shape: Shape): string {
+  const factors = pianoFactors(pianoLevel(shape));
+  return atTempo(factors ? exaggerateMpm(mpm, { factors }).mpm : mpm, tempoFactor(shape));
 }
 
-/** The piano's two parts at an elaboration. */
+/** The piano's two parts in a shape. */
 export function performPiano(
   score: PianoScore,
-  elaboration: number,
+  shape: Shape,
 ): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
-  const mpm = pianoMpm(score.mpm, elaboration);
+  const mpm = pianoMpm(score.mpm, shape);
   const part = (msm: string, expandOrnaments: boolean): PianoPart => {
     const performance = readPerformance(
-      imprecise(performMsmToData({ msm, mpm }, { expandOrnaments }), elaboration),
+      imprecise(performMsmToData({ msm, mpm }, { expandOrnaments }), shape),
     );
     repair(performance.notes);
     return pianoPart(performance);

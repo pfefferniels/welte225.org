@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { fingerprint, heldNotes, midiEvents, pedalAt, type PianoPart } from '../src/shared/piano.ts';
 import { midiFile, readMidiFile, TICK_SECONDS } from '../tools/smf.ts';
+import { shapeAt } from '../src/worker/levels.ts';
 
 const part = (overrides: Partial<PianoPart> = {}): PianoPart => ({
   keys: [
@@ -114,7 +115,7 @@ describe('the roll on an instrument', () => {
     const { performPiano } = await import('../src/worker/piano.ts');
     const { loadPianoScore } = await import('../tools/node-support.ts');
     const score = loadPianoScore();
-    const { piece } = performPiano(score, 1);
+    const { piece } = performPiano(score, shapeAt(1));
     const struck = midiEvents(piece).filter((e) => e.data[0] === 0x90).length;
     const distinct = new Set(piece.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`)).size;
     assert.equal(struck, distinct);
@@ -135,10 +136,10 @@ describe('the piano at an elaboration', async () => {
   const score = loadPianoScore();
   const lastStrike = (p: PianoPart): number => Math.max(...p.keys.map((k) => k.on));
   const steps = [0, 0.25, 0.5, 0.75, 1];
-  const played = steps.map((e) => performPiano(score, e));
+  const played = steps.map((e) => performPiano(score, shapeAt(e)));
 
   it('plays the reconstruction as it is at the top', () => {
-    assert.equal(pianoMpm(score.mpm, 1), score.mpm);
+    assert.equal(pianoMpm(score.mpm, shapeAt(1)), score.mpm);
   });
 
   it('is through the piece the sooner the barer the music, a sketch of it', () => {
@@ -153,7 +154,7 @@ describe('the piano at an elaboration', async () => {
     for (const [i, { piece, harmonies }] of played.entries()) {
       assert.ok(Math.abs(lastStrike(harmonies) - lastStrike(piece)) < 3);
       const strikes = new Set(piece.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`));
-      const { notes } = readPerformance(performVoice(score, steps[i]).performance);
+      const { notes } = readPerformance(performVoice(score, shapeAt(steps[i])).performance);
       assert.equal(notes.length, piece.keys.length);
       for (const n of notes) assert.ok(strikes.has(`${n.pitch}@${Math.round(n.onMs + PAD_MS)}`));
     }

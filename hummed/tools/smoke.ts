@@ -1,6 +1,7 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
-// front page, play, move the elaboration (the voice rendered anew), seek, open and close the info
-// card, show the reconstruction's instructions and the piano in the spectrogram, choose each piano in
+// front page, play, move the elaboration (the voice rendered anew), seek, open the details under it
+// (one set apart rendered as its own setting, what is heard switched, the fader taking them back),
+// open and close the info card, show the reconstruction's instructions and the piano in the spectrogram, choose each piano in
 // the settings (an instrument over MIDI played by a stand-in that keeps what it is sent), and fail on
 // any page error. Needs Playwright with Chromium installed (not a
 // dependency of this project):   npm run smoke
@@ -143,6 +144,54 @@ try {
   await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
   await page.waitForTimeout(2000);
   await report('voice for 0.65 took over');
+
+  // the details: they follow the fader; one set apart is rendered as its own setting, and the fader
+  // takes it back
+  const attr = (id: string, name: string): Promise<string | null> =>
+    page.evaluate(`document.getElementById(${JSON.stringify(id)}).getAttribute(${JSON.stringify(name)})`);
+  const value = (id: string): Promise<string> =>
+    page.evaluate(`document.getElementById(${JSON.stringify(id)}).value`);
+  const apart = (): Promise<boolean> =>
+    page.evaluate("document.getElementById('details-toggle').classList.contains('apart')");
+  await page.click('#details-toggle');
+  const open = await page.evaluate<boolean>("!document.getElementById('details').hidden");
+  const following = (await value('d-flighty')) === '67' && (await value('d-exaggerated')) === '67';
+  if (!open || !following || (await apart())) errors.push('the details do not open where the fader is');
+  const totalBefore = await text('total');
+  await page.evaluate(
+    "(() => { const e = document.getElementById('d-exaggerated'); e.value = 0; e.dispatchEvent(new Event('input')); })()",
+  );
+  await page.waitForFunction(
+    `document.getElementById('total').textContent !== ${JSON.stringify(totalBefore)}`,
+    undefined,
+    { timeout: 60000 },
+  );
+  await page.waitForTimeout(2000);
+  await report('the exaggeration set apart took over');
+  await page.click('#d-voice');
+  await page.click('#d-harmonies');
+  const heard = [
+    await attr('d-voice', 'aria-pressed'),
+    await attr('d-harmonies', 'aria-pressed'),
+    await attr('d-piece', 'aria-pressed'),
+  ];
+  console.log(
+    `details: open ${open}, following ${following}, set apart ${await apart()}, heard ${heard.join(' ')}`,
+  );
+  if (heard.join() !== 'false,true,false' || !(await apart()))
+    errors.push('the details do not set what is heard apart');
+  await page.evaluate(
+    "(() => { const e = document.getElementById('elaboration'); e.value = 65; e.dispatchEvent(new Event('input')); })()",
+  );
+  const back =
+    !(await apart()) &&
+    (await value('d-exaggerated')) === '65' &&
+    (await attr('d-piece', 'aria-pressed')) === 'true';
+  console.log(`details: the fader takes them back ${back}`);
+  if (!back) errors.push('the fader does not take the details back');
+  await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
+  await page.waitForTimeout(2000);
+  await report('voice for 0.65 took over again');
   const cardOpen = (): Promise<boolean> =>
     page.evaluate("document.getElementById('info').matches(':popover-open')");
   await page.click('[popovertarget=info]');

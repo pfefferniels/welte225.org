@@ -13,6 +13,7 @@ import {
   pianoLevel,
   tempoFactor,
   voiceLevel,
+  shapeAt,
 } from '../src/worker/levels.ts';
 import { ROOT } from '../tools/node-support.ts';
 
@@ -64,17 +65,23 @@ describe('elaboration', () => {
 
   it('exaggerates the more, and lets the voice sing the more loosely, the barer the music', () => {
     for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
-      assert.ok(pianoLevel(b) < pianoLevel(a));
-      assert.ok(voiceLevel(b) < voiceLevel(a));
+      // the piano's falls through the humming and the harmonies, and again through the piece
+      if (b === PIECE_FROM || (a < PIECE_FROM && b > PIECE_FROM))
+        assert.ok(pianoLevel(shapeAt(b)) > pianoLevel(shapeAt(a)));
+      else assert.ok(pianoLevel(shapeAt(b)) < pianoLevel(shapeAt(a)));
+      // the voice's own, once, smoothly
+      assert.ok(voiceLevel(shapeAt(b)) < voiceLevel(shapeAt(a)));
       assert.ok(approximateness(b) < approximateness(a));
     }
-    // the voice a little beyond the piano under the piece, a little short of it toward the bare end
-    for (const e of positions) assert.equal(voiceLevel(e) >= pianoLevel(e), e > 1 - Math.sqrt(0.4));
+    // the piece comes in as raw as the humming was; the voice goes on where it was
+    assert.ok(Math.abs(pianoLevel(shapeAt(PIECE_FROM)) - 2) < 1e-9);
+    assert.ok(Math.abs(pianoLevel(shapeAt(PIECE_FROM - 1e-9)) - (1 + Math.pow(2 / 3, 2))) < 1e-6);
+    assert.ok(Math.abs(voiceLevel(shapeAt(PIECE_FROM)) - voiceLevel(shapeAt(PIECE_FROM - 1e-9))) < 1e-6);
     // the humming alone ×1.85 (×2 in timing); the piece as the MPM sets it down, the voice a little beyond it
-    assert.ok(Math.abs(pianoLevel(0) - 2) < 1e-9);
-    assert.ok(Math.abs(voiceLevel(0) - 1.85) < 1e-9);
-    assert.equal(pianoLevel(1), 1);
-    assert.ok(Math.abs(voiceLevel(1) - 1.1) < 1e-9);
+    assert.ok(Math.abs(pianoLevel(shapeAt(0)) - 2) < 1e-9);
+    assert.ok(Math.abs(voiceLevel(shapeAt(0)) - 1.85) < 1e-9);
+    assert.equal(pianoLevel(shapeAt(1)), 1);
+    assert.ok(Math.abs(voiceLevel(shapeAt(1)) - 1.1) < 1e-9);
     assert.equal(approximateness(0), 1);
     assert.equal(approximateness(1), 0);
   });
@@ -82,12 +89,12 @@ describe('elaboration', () => {
   it('goes the faster the barer the music, and as the MPM has it at the top', () => {
     for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
       assert.ok(flightiness(b) < flightiness(a));
-      assert.ok(tempoFactor(b) < tempoFactor(a));
+      assert.ok(tempoFactor(shapeAt(b)) < tempoFactor(shapeAt(a)));
     }
     assert.equal(flightiness(0), 1);
     assert.equal(flightiness(1), 0);
-    assert.ok(Math.abs(tempoFactor(0) - 2) < 1e-9);
-    assert.equal(tempoFactor(1), 1);
+    assert.ok(Math.abs(tempoFactor(shapeAt(0)) - 2) < 1e-9);
+    assert.equal(tempoFactor(shapeAt(1)), 1);
   });
 
   it('sets a tempo faster where it starts and where it arrives, and nothing else', () => {

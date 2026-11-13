@@ -22,14 +22,15 @@ import type { StatePair } from '../vtl/engine.ts';
 import type { ChunkSource } from './chunk.ts';
 import { imprecise } from './imprecision.ts';
 import {
-  approximateness,
   atTempo,
   pianoLevel,
+  shapeOf,
   tempoFactor,
   threshold,
   voiceFactors,
   voiceLevel,
   withSubNoteDynamics,
+  type Shape,
 } from './levels.ts';
 
 /** The piece and the reconstruction's MPM, as texts. */
@@ -48,26 +49,24 @@ export interface VoicePerformance {
  * The MPM as the voice performs it: a little more exaggerated than the piano's, but in time with
  * it, and as fast.
  */
-export const voiceMpm = (score: Score, elaboration: number): string =>
+export const voiceMpm = (score: Score, shape: Shape): string =>
   atTempo(
-    exaggerateMpm(score.mpm, {
-      factors: voiceFactors(pianoLevel(elaboration), voiceLevel(elaboration)),
-    }).mpm,
-    tempoFactor(elaboration),
+    exaggerateMpm(score.mpm, { factors: voiceFactors(pianoLevel(shape), voiceLevel(shape)) }).mpm,
+    tempoFactor(shape),
   );
 
 /** The voice's performance: the notes it follows, struck as inexactly as the piano's. */
-export const performNotes = (score: Score, mpm: string, elaboration: number): PerformanceData =>
-  imprecise(performMsmToData({ msm: score.msm, mpm }), elaboration);
+export const performNotes = (score: Score, mpm: string, shape: Shape): PerformanceData =>
+  imprecise(performMsmToData({ msm: score.msm, mpm }), shape);
 
 /** The same performance with sub-note dynamics: independent of the other, so another worker may make it. */
 export const performDynamics = (score: Score, mpm: string): PerformanceData =>
   performMsmToData({ msm: score.msm, mpm: withSubNoteDynamics(mpm) });
 
 /** espressivo performs the MPM for the voice. */
-export function performVoice(score: Score, elaboration: number): VoicePerformance {
-  const mpm = voiceMpm(score, elaboration);
-  return { performance: performNotes(score, mpm, elaboration), dynamics: performDynamics(score, mpm) };
+export function performVoice(score: Score, shape: Shape): VoicePerformance {
+  const mpm = voiceMpm(score, shape);
+  return { performance: performNotes(score, mpm, shape), dynamics: performDynamics(score, mpm) };
 }
 
 /** What the hummer reads beside the performance and the reduction. */
@@ -81,21 +80,21 @@ export interface HumData {
 }
 
 /**
- * The hummer at an elaboration: how loosely the voice sings, and how much of it is heard. The
- * dynamics come as performed or, from another worker, as the curve already read of that.
+ * The hummer in a shape: how loosely the voice sings, and how much of it is heard. The dynamics come
+ * as performed or, from another worker, as the curve already read of that.
  */
 export function hum(
   performed: Pick<VoiceInput, 'performance' | 'dynamics'>,
   reduction: Reduction,
   data: HumData,
-  elaboration: number,
+  shape: Shape,
 ): Voice {
   return renderVoice({
     ...performed,
     reduction,
     ...data,
-    approximateness: approximateness(elaboration),
-    threshold: threshold(elaboration),
+    approximateness: shape.approximateness,
+    threshold: threshold(shape),
   });
 }
 
@@ -123,8 +122,8 @@ export function makeLevel(
     plan: {
       type: 'plan',
       setting,
-      pianoLevel: pianoLevel(setting.elaboration),
-      voiceLevel: voiceLevel(setting.elaboration),
+      pianoLevel: pianoLevel(shapeOf(setting)),
+      voiceLevel: voiceLevel(shapeOf(setting)),
       // states i..j sound from i to j−1
       duration: ((count - 1) * STATE_STEP) / SAMPLE_RATE,
       bars: voice.bars,

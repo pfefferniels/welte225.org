@@ -16,6 +16,7 @@ import {
 import { performPiano } from '../src/worker/piano.ts';
 import { findLag, lagDrift, loudness, onsetStrength } from '../tools/audio.ts';
 import { loadPianoScore, ROOT } from '../tools/node-support.ts';
+import { shapeAt } from '../src/worker/levels.ts';
 
 describe('the recordings’ manifest', () => {
   it('says nothing is rendered while it lists no settings', () => {
@@ -75,7 +76,7 @@ describe('the recordings in piano/pianoteq/', () => {
   it('are of the performance as it is now', { skip: manifest ? false : 'none rendered yet' }, () => {
     const score = loadPianoScore();
     for (const setting of manifest?.settings ?? []) {
-      const parts = performPiano(score, setting.elaboration);
+      const parts = performPiano(score, shapeAt(setting.elaboration));
       for (const name of ['piece', 'harmonies'] as const) {
         const recorded = setting[name];
         const message = `${setting.elaboration} ${name} was rendered from another performance: npm run pianoteq`;

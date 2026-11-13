@@ -7,7 +7,16 @@ import { DisplaySettings } from './display.ts';
 import { element, formatTime, setFill, Written } from './dom.ts';
 import { Glide } from './glide.ts';
 import { InstructionsView } from './instructions-view.ts';
-import { heard, mix, voiceElaboration } from './mix.ts';
+import {
+  apart,
+  exaggerationText,
+  flightinessText,
+  FOLLOWING,
+  partsOf,
+  settingOf,
+  type Details,
+} from './details.ts';
+import { heard, mix, mixOf } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -27,6 +36,15 @@ const pauseIcon = element('icon-pause', SVGSVGElement);
 const positionSlider = element('pos', HTMLInputElement);
 const elaborationSlider = element('elaboration', HTMLInputElement);
 const elaborationOutput = element('o-elaboration', HTMLOutputElement);
+const detailsToggle = element('details-toggle', HTMLButtonElement);
+const detailsBox = element('details', HTMLElement);
+const flightySlider = element('d-flighty', HTMLInputElement);
+const flightyOutput = element('o-flighty', HTMLOutputElement);
+const exaggeratedSlider = element('d-exaggerated', HTMLInputElement);
+const exaggeratedOutput = element('o-exaggerated', HTMLOutputElement);
+const voiceChip = element('d-voice', HTMLButtonElement);
+const harmoniesChip = element('d-harmonies', HTMLButtonElement);
+const pieceChip = element('d-piece', HTMLButtonElement);
 const statusLine = element('status', HTMLElement);
 const nowText = element('now', HTMLElement);
 const totalText = element('total', HTMLElement);
@@ -102,7 +120,7 @@ function draw(time: number): boolean {
   const t = cur ? Math.min(cur.duration, glided) : glided;
   if (cur) readout.show(t, cur.duration, cur.bars, { moving, held: seeking });
   // the piano under the humming, as present as it is heard
-  const gains = mix(elaboration());
+  const gains = mixOf(elaboration(), partsOf(elaboration(), details));
   const part = instrumentPart();
   const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
   pianoColumns.set(strip?.columns ?? 0);
@@ -131,10 +149,10 @@ const player = new Player(graph, sampled, pool, {
   changed: redraw,
 });
 /* ---------- the piano: in the page, or an instrument over MIDI ---------- */
-/** The part an instrument over MIDI plays: the one the elaboration lets be heard. */
+/** The part an instrument over MIDI plays: the one that is heard, if any. */
 const instrumentPart = (): PianoPartName | null => {
-  const what = heard(elaboration());
-  return what === 'humming' ? null : what;
+  const { piano } = partsOf(elaboration(), details);
+  return piano === 'none' ? null : piano;
 };
 const settings = new PianoSettings({
   context: graph.context,
@@ -153,15 +171,56 @@ const setGain = (gain: GainNode, value: number): void => {
   gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
 };
 const elaboration = (): number => Number(elaborationSlider.value) / 100;
+/** What is set apart from the fader in the details under it: nothing, until one is moved. */
+let details: Details = FOLLOWING;
+/** The details: each slider where the fader is, or where it was set apart; what is heard. */
+const showDetails = (e: number): void => {
+  const flighty = details.flighty ?? e;
+  const exaggerated = details.exaggerated ?? e;
+  flightySlider.value = String(Math.round(flighty * 100));
+  exaggeratedSlider.value = String(Math.round(exaggerated * 100));
+  setFill(flightySlider, flighty);
+  setFill(exaggeratedSlider, exaggerated);
+  const [tempo, ms] = flightinessText(flighty).split(' · ');
+  flightyOutput.replaceChildren(
+    Object.assign(document.createElement('span'), { textContent: tempo }),
+    Object.assign(document.createElement('span'), { textContent: ms }),
+  );
+  flightySlider.setAttribute('aria-valuetext', `${tempo} as fast, ${ms} off`);
+  const [piano, voice] = exaggerationText(exaggerated);
+  exaggeratedOutput.replaceChildren(
+    Object.assign(document.createElement('span'), { textContent: piano, title: 'the piano' }),
+    Object.assign(document.createElement('span'), { textContent: voice, title: 'the humming' }),
+  );
+  exaggeratedSlider.setAttribute('aria-valuetext', `the piano ${piano}, the humming ${voice}`);
+  const parts = partsOf(e, details);
+  voiceChip.setAttribute('aria-pressed', String(parts.voice));
+  harmoniesChip.setAttribute('aria-pressed', String(parts.piano === 'harmonies'));
+  pieceChip.setAttribute('aria-pressed', String(parts.piano === 'piece'));
+  element('row-flighty', HTMLElement).classList.toggle('apart', details.flighty !== null);
+  element('row-exaggerated', HTMLElement).classList.toggle('apart', details.exaggerated !== null);
+  element('row-heard', HTMLElement).classList.toggle(
+    'apart',
+    details.voice !== null || details.piano !== null,
+  );
+  detailsToggle.classList.toggle('apart', apart(details));
+};
 // the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
-// voice itself is rendered anew for the elaboration once the fader rests
+// voice itself is rendered anew for the elaboration, and for the details, once they rest
 let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
+const renderSoon = (): void => {
+  clearTimeout(elaborationTimer);
+  elaborationTimer = setTimeout(() => {
+    player.change(settingOf(elaboration(), details));
+  }, 300);
+};
 const applyElaboration = (): void => {
   const e = elaboration();
-  const gains = mix(e);
+  const gains = mixOf(e, partsOf(e, details));
   setGain(graph.hum, gains.hum);
   setGain(graph.harmonies, gains.harmonies);
   setGain(graph.piano, gains.piece);
+  showDetails(e);
   const what = heard(e);
   elaborationOutput.value = what;
   elaborationSlider.setAttribute(
@@ -176,11 +235,44 @@ const applyElaboration = (): void => {
   redraw();
 };
 elaborationSlider.addEventListener('input', () => {
+  // the fader takes every detail with it
+  details = FOLLOWING;
   applyElaboration();
-  clearTimeout(elaborationTimer);
-  elaborationTimer = setTimeout(() => {
-    player.change({ elaboration: voiceElaboration(elaboration()) });
-  }, 300);
+  renderSoon();
+});
+detailsToggle.addEventListener('click', () => {
+  const open = detailsBox.hidden;
+  detailsBox.hidden = !open;
+  detailsToggle.setAttribute('aria-expanded', String(open));
+  detailsToggle.setAttribute(
+    'aria-label',
+    open ? 'Hide the details' : 'Show what elaboration sets, each on its own',
+  );
+});
+flightySlider.addEventListener('input', () => {
+  details = { ...details, flighty: Number(flightySlider.value) / 100 };
+  applyElaboration();
+  renderSoon();
+});
+exaggeratedSlider.addEventListener('input', () => {
+  details = { ...details, exaggerated: Number(exaggeratedSlider.value) / 100 };
+  applyElaboration();
+  renderSoon();
+});
+// what is heard changes the mix alone: the voice and both parts of the piano are always rendered
+voiceChip.addEventListener('click', () => {
+  details = { ...details, voice: !partsOf(elaboration(), details).voice };
+  applyElaboration();
+});
+const choosePiano = (part: 'harmonies' | 'piece'): void => {
+  details = { ...details, piano: partsOf(elaboration(), details).piano === part ? 'none' : part };
+  applyElaboration();
+};
+harmoniesChip.addEventListener('click', () => {
+  choosePiano('harmonies');
+});
+pieceChip.addEventListener('click', () => {
+  choosePiano('piece');
 });
 applyElaboration();
 
@@ -267,7 +359,7 @@ async function start(): Promise<void> {
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
   await loadRecordings();
-  player.request({ elaboration: voiceElaboration(elaboration()) }, { seconds: 0 });
+  player.request(settingOf(elaboration(), details), { seconds: 0 });
   setStatus('Starting VocalTractLab…');
 }
 placeControlCards();

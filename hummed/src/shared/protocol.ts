@@ -10,12 +10,25 @@ import type { Seconds, Ticks } from './units.ts';
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
 
 /**
- * What a rendering is of: the elaboration, which sets how exaggerated the piano's performance is,
- * how much more the voice's, and how loosely the voice keeps to the pitch.
+ * What a rendering is of: the elaboration, which sets how flighty the performance is (how fast, how
+ * exactly struck), how exaggerated the piano's and the voice's, and how loosely the voice keeps to
+ * the pitch (shared/shape.ts, `Shape`); and where the visitor set the flightiness and the
+ * exaggeration apart from it, each as a place on the fader's own scale.
  */
 export interface Setting {
   readonly elaboration: number;
+  readonly flighty?: number;
+  readonly exaggerated?: number;
 }
+
+/** What tells settings apart: the same key, the same rendering. */
+export const settingKey = (s: Setting): string =>
+  `${s.elaboration}|${s.flighty ?? ''}|${s.exaggerated ?? ''}`;
+
+export const sameSetting = (a: Setting, b: Setting): boolean => settingKey(a) === settingKey(b);
+
+/** A setting as the elaboration alone has it, nothing set apart: one the recordings are of. */
+export const plain = (s: Setting): boolean => s.flighty === undefined && s.exaggerated === undefined;
 
 /**
  * The name the page gives the workers that render the voice: one so named loads VocalTractLab and
