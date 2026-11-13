@@ -27,7 +27,7 @@ export const TIME_CONSTANT_MS = {
  * that much earlier.
  */
 const MIDPOINT = 4.67;
-const lagOf = (timeConstantMs: Ms): Ms => MIDPOINT * timeConstantMs;
+export const lagOf = (timeConstantMs: Ms): Ms => MIDPOINT * timeConstantMs;
 /** The voice sounds this much before the piano note it follows. */
 export const LATENCY_MS: Ms = 15;
 
@@ -357,6 +357,44 @@ function effort(
   return { pressure: runs(grid, pq, endMs), glottal: runs(grid, gq, endMs) };
 }
 
+/** How loosely the pitch line keeps to the pitch (see `pitchLine`); semitones where not ms. */
+export interface PitchLooseness {
+  /** How fast the pitch reaches its target. */
+  readonly timeConstantMs: Ms;
+  /** The voice follows the piano: half way to a new pitch this long after the note (and LATENCY_MS). */
+  readonly follow: Ms;
+  /** How far that moment strays, one standard deviation. */
+  readonly lateness: Ms;
+  /** How far off its pitch a note lands, one standard deviation. */
+  readonly landSd: number;
+  /** How long it holds there before it settles nearer. */
+  readonly settleMs: Ms;
+  /** How much of the miss it keeps once settled. */
+  readonly keep: number;
+  /** The wobble about the settled pitch, one standard deviation, and how long each turn of it lasts. */
+  readonly wobble: number;
+  readonly step: Ms;
+  readonly scoopScale: number;
+  readonly fallScale: number;
+}
+
+/** The pitch line's looseness at `approximateness`, from 0 (close, the wobble as measured) to 1. */
+export function pitchLooseness(approximateness: number, style: HumStyle): PitchLooseness {
+  const a = clip(approximateness, 0, 1);
+  return {
+    timeConstantMs: TIME_CONSTANT_MS.pitch + 10 * a,
+    follow: 10 + 40 * a,
+    lateness: 25 * a,
+    landSd: 0.1 + 0.3 * a,
+    settleMs: 160 + 120 * a,
+    keep: 0.35,
+    wobble: (style.wobbleCents / 100) * Math.SQRT1_2 * (0.85 + 0.5 * a),
+    step: 125 * (1 + 0.6 * a),
+    scoopScale: 0.8 * (0.8 + 0.4 * a),
+    fallScale: 0.75 + 0.5 * a,
+  };
+}
+
 /**
  * The pitch line: for each sung note a target that holds still (a moving one would overshoot: the
  * pitch would go on at its speed past the next), taking over early enough that the pitch is half
@@ -372,20 +410,10 @@ function pitchLine(
   style: HumStyle,
   approximateness: number,
 ): { readonly f0: Tier<number>; readonly timeConstantMs: Ms } {
-  const a = clip(approximateness, 0, 1);
   const random = seededRandom(1);
-  const timeConstantMs = TIME_CONSTANT_MS.pitch + 10 * a;
+  const { timeConstantMs, follow, lateness, landSd, settleMs, keep, wobble, step, scoopScale, fallScale } =
+    pitchLooseness(approximateness, style);
   const lead = lagOf(timeConstantMs);
-  // the voice follows the piano: half way to a new pitch this long after the note (and LATENCY_MS)
-  const follow = 10 + 40 * a;
-  const lateness = 25 * a;
-  const landSd = 0.1 + 0.3 * a;
-  const settleMs = 160 + 120 * a;
-  const keep = 0.35;
-  const wobble = (style.wobbleCents / 100) * Math.SQRT1_2 * (0.85 + 0.5 * a);
-  const step = 125 * (1 + 0.6 * a);
-  const scoopScale = 0.8 * (0.8 + 0.4 * a);
-  const fallScale = 0.75 + 0.5 * a;
 
   // when each note's target takes over, in order
   const takeover: Ms[] = [];

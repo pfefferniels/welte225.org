@@ -544,7 +544,8 @@ Grünfeld's tempo, and wait to be rendered again.
 | `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                             |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                              |
 | `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, and the harmonies (`harmonies.mei`)                                                                                                                                                            |
-| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, and what they share for running in Node                                                                                                                                                     |
+| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                      |
+| `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                     |
 | `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                        |
 | `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                       |
 | `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                   |
@@ -569,6 +570,7 @@ npm run smoke        # the page in Chromium (needs Playwright installed): plays,
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
 npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
 npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>; --mpm <file> writes its MPM
+npm run figure       # figures/elaboration.tex: what the fader does to the exaggeration, the piano, the voice and the tempo
 ```
 
 `npm run pianoteq` needs Pianoteq (the program itself, e.g. on a Mac `/Applications/Pianoteq
