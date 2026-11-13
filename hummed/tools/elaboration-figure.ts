@@ -1,16 +1,17 @@
 // The figure of what the elaboration does, drawn as TikZ in the dialect of the dissertation's
 // figures (its figures/tikz with keynotefigures.sty, as scripts/condon_figures.py writes them: x=1bp,
 // Zwo OT, every node named, German). A schematic: the fader across, and without a scale what it
-// sets, each curve as its function has it. Above, what it does to the MPM, the exaggeration of
-// the piano and (a little beyond it, but for the timing) of the voice and the tempo (levels.ts);
-// below, the mix (mix.ts), the humming and what the piano plays, the harmonies and then the piece.
-// Labelled as little as will tell the curves apart. Not to be changed by hand: run this again.
+// sets, each curve as its function has it. The loudness of the humming and of the piano (mix.ts):
+// the humming recedes, the piano plays the harmonies for the first third, the piece from there on;
+// how exaggerated each is (levels.ts) is how thick it is drawn, the voice a little beyond the piano.
+// The flightiness, how much faster and less exactly it goes, falls to nothing on the axis, where ×1
+// stands. Labelled as little as will tell the curves apart. Not to be changed by hand: run this again.
 //   npm run figure [-- --out figures/elaboration.tex]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { mix, PIECE_FROM } from '../src/page/mix.ts';
-import { pianoLevel, tempoFactor, voiceLevel } from '../src/worker/levels.ts';
+import { flightiness, pianoLevel, voiceLevel } from '../src/worker/levels.ts';
 import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
@@ -34,11 +35,9 @@ const STYLES = [
   'lab/.default=7',
   'klein/.style={lab=6, text=kgray37}',
   'achse/.style={draw=black, line width=.4bp}',
-  'kurve/.style={draw=black, line width=1bp, line join=round, line cap=round}',
-  'strichel/.style={draw=kgray23, line width=.6bp, line cap=round, line join=round, dash pattern=on 3bp off 2bp}',
-  'tempo/.style={kurve, draw=kgray57}',
-  'summen/.style={kurve, draw=kb51700}',
-  'klavier/.style={fill=kgray84, fill opacity=.45}',
+  'fluechtig/.style={draw=kgray57, line width=1bp, line join=round, line cap=round}',
+  'summen/.style={fill=kb51700}',
+  'klavier/.style={fill=black}',
 ];
 
 class Figure {
@@ -72,13 +71,17 @@ class Figure {
 
 /* ---------- what is drawn ---------- */
 
-/** The settings the piano and the voice are rendered at (`voiceElaboration`, mix.ts): every 0.05. */
-const RENDERED = Array.from({ length: 21 }, (_, i) => i / 20);
-/** Finely, for what follows the fader as it moves: the mix. */
+/** Finely along the fader. */
 const FINE = Array.from({ length: 401 }, (_, i) => i / 400);
 const dB = (gain: number): number => 20 * Math.log10(gain);
-/** The mix's floor in dB: what is quieter is not drawn. */
+/** The loudness on the axis, in dB: silence, as far as the figure goes. */
 const FLOOR = -30;
+/** How thick a loudness is drawn as it is exaggerated: thin as written, ×1, and this much more by ×1.4. */
+const THIN = 0.6;
+const PER_FACTOR = 8;
+const thickness = (level: number): number => THIN + (level - 1) * PER_FACTOR;
+/** How high the flightiness starts, as a share of the plot's height: it has no scale of its own. */
+const FLIGHTY = 0.6;
 
 /* ---------- the plot ---------- */
 
@@ -86,29 +89,32 @@ const fig = new Figure();
 const X0 = 6;
 const X1 = WIDTH - 6;
 const Y0 = 16;
+const TOP = Y0 + 120;
+const HEIGHT = TOP + 6;
 const x = (e: number): number => X0 + e * (X1 - X0);
+/** A loudness, from the floor on the axis to 0 dB at the top. */
+const loud = (db: number): number => Y0 + ((db - FLOOR) / -FLOOR) * (TOP - Y0);
 
-/** A band of the plot, and the range of values it shows, drawn without a scale. */
-interface Band {
-  readonly from: number;
-  readonly to: number;
-  readonly bottom: number;
-  readonly top: number;
+/**
+ * A line whose thickness changes along it, as a filled outline: each point moved half the
+ * thickness to either side, across the line.
+ */
+function band(style: string, points: readonly (readonly [number, number, number])[]): void {
+  const side = (sign: number): string[] =>
+    points.map(([px, py, w], i) => {
+      const [ax, ay] = points[Math.max(0, i - 1)];
+      const [bx, by] = points[Math.min(points.length - 1, i + 1)];
+      const length = Math.hypot(bx - ax, by - ay) || 1;
+      return pt(px - (sign * (w / 2) * (by - ay)) / length, py + (sign * (w / 2) * (bx - ax)) / length);
+    });
+  fig.add(String.raw`\fill[${style}] ${[...side(1), ...side(-1).reverse()].join(' -- ')} -- cycle;`);
 }
-/** Below, the mix in dB, on the fader's line. */
-const MIX: Band = { from: FLOOR, to: 0, bottom: Y0, top: Y0 + 72 };
-/** Above, the factors on the MPM, from ×1 (as written) up. */
-const MPM: Band = { from: 1, to: 1.4, bottom: MIX.top + 16, top: MIX.top + 16 + 72 };
-const HEIGHT = MPM.top + 4;
-const y = (b: Band, v: number): number => b.bottom + ((v - b.from) / (b.to - b.from)) * (b.top - b.bottom);
-
-const curve = (style: string, b: Band, points: readonly (readonly [number, number])[]): void => {
-  fig.add(String.raw`\draw[${style}] ${points.map(([e, v]) => pt(x(e), y(b, v))).join(' -- ')};`);
-};
-/** A curve's name, beside it at a setting of the fader. */
-const beside = (name: string, b: Band, e: number, v: number, anchor: string, text: string): void => {
-  const [dx, dy] = [anchor.includes('east') ? -2 : 2, anchor.includes('north') ? -3 : 3];
-  fig.node(name, pt(x(e) + dx, y(b, v) + dy), text, `klein, anchor=${anchor}`);
+const label = (name: string, at: readonly [number, number], anchor: string, text: string): void => {
+  const [dx, dy] = [
+    anchor.includes('east') ? -2 : anchor.includes('west') ? 2 : 0,
+    anchor.includes('north') ? -3 : 3,
+  ];
+  fig.node(name, pt(at[0] + dx, at[1] + dy), text, `klein, anchor=${anchor}`);
 };
 
 // the fader across, from 0 to 1
@@ -119,51 +125,41 @@ for (const e of [0, 1]) {
 }
 fig.node('elaboration', pt(x(0.5), Y0 - 10), 'Elaboration', 'lab=6.5, anchor=base');
 
-// the piano: the harmonies come in under the humming, from the middle on the piece instead, at the
-// same level; parted where the fader is parted
-const harmonies = FINE.filter((e) => e < PIECE_FROM && dB(mix(e).harmonies) > FLOOR);
-const firstHeard = harmonies[0] ?? PIECE_FROM;
-fig.add(
-  String.raw`\fill[klavier] ${pt(x(firstHeard), Y0)} -- ` +
-    harmonies.map((e) => pt(x(e), y(MIX, dB(mix(e).harmonies)))).join(' -- ') +
-    ` -- ${pt(x(PIECE_FROM), y(MIX, dB(mix(PIECE_FROM - 1e-9).harmonies)))} -- ${pt(x(PIECE_FROM), Y0)} -- cycle;`,
-);
-const piece = y(MIX, dB(mix(1).piece));
-fig.add(String.raw`\fill[klavier] ${pt(x(PIECE_FROM), Y0)} rectangle ${pt(x(1), piece)};`);
-fig.add(
-  String.raw`\draw[draw=white, line width=1bp] ${pt(x(PIECE_FROM), Y0)} -- ${pt(x(PIECE_FROM), piece)};`,
-);
-fig.node('harmonien', pt(x(PIECE_FROM) - 4, Y0 + 4), 'Harmonien', 'klein, anchor=base east');
-fig.node('stueck', pt(x(PIECE_FROM) + 4, Y0 + 4), 'Stück', 'klein, anchor=base west');
+// the flightiness: how much faster than the MPM, and how much less exactly, down to ×1 on the axis
+const flighty = (e: number): number => Y0 + FLIGHTY * flightiness(e) * (TOP - Y0);
+fig.add(String.raw`\draw[fluechtig] ${FINE.map((e) => pt(x(e), flighty(e))).join(' -- ')};`);
+label('fluechtigkeit', [x(0.25), flighty(0.25)], 'south west', 'Flüchtigkeit');
 
-// the humming recedes, fast at first
-curve(
+// the piano, as loud wherever it plays and parted where the fader is: the harmonies, then the piece
+const GAP = 1.5;
+const piano = loud(dB(mix(1).piece));
+const part = (keep: (e: number) => boolean): void => {
+  band(
+    'klavier',
+    FINE.filter((e) => e > 0 && keep(e)).map((e) => [x(e), piano, thickness(pianoLevel(e))]),
+  );
+};
+part((e) => x(e) <= x(PIECE_FROM) - GAP);
+part((e) => x(e) >= x(PIECE_FROM) + GAP);
+label(
+  'harmonien',
+  [x(PIECE_FROM / 2), piano + thickness(pianoLevel(PIECE_FROM / 2)) / 2],
+  'south',
+  'Harmonien',
+);
+label(
+  'stueck',
+  [x((1 + PIECE_FROM) / 2), piano + thickness(pianoLevel((1 + PIECE_FROM) / 2)) / 2],
+  'south',
+  'Stück',
+);
+
+// the humming recedes, fast at first, and thins, though less than the piano
+band(
   'summen',
-  MIX,
-  FINE.map((e) => [e, dB(mix(e).hum)]),
+  FINE.map((e) => [x(e), loud(dB(mix(e).hum)), thickness(voiceLevel(e))]),
 );
-beside('summen', MIX, 1, dB(mix(1).hum), 'north east', 'Summen');
-
-// the tempo, and the exaggeration: the voice's beyond the piano's
-curve(
-  'tempo',
-  MPM,
-  RENDERED.map((e) => [e, tempoFactor(e)]),
-);
-// under the line where it ends, so that the line falls nowhere through it
-beside('tempo', MPM, 0.3, tempoFactor(0.3), 'north east', 'Tempo');
-curve(
-  'strichel',
-  MPM,
-  RENDERED.map((e) => [e, voiceLevel(e)]),
-);
-curve(
-  'kurve',
-  MPM,
-  RENDERED.map((e) => [e, pianoLevel(e)]),
-);
-beside('stimme', MPM, 1, voiceLevel(1), 'south east', 'Übertreibung Stimme');
-beside('klavier', MPM, 1, pianoLevel(1), 'north east', 'Übertreibung Klavier');
+label('summen', [x(1), loud(dB(mix(1).hum)) - thickness(voiceLevel(1)) / 2], 'north east', 'Summen');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });
