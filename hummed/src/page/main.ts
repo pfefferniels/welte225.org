@@ -101,7 +101,7 @@ function draw(time: number): boolean {
   const glided = glide.at(player.position(), time, moving);
   const t = cur ? Math.min(cur.duration, glided) : glided;
   if (cur) readout.show(t, cur.duration, cur.bars, { moving, held: seeking });
-  // the piano under the humming, as present as it is heard: the harmonies come in from nothing
+  // the piano under the humming, as present as it is heard
   const gains = mix(elaboration());
   const part = instrumentPart();
   const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;

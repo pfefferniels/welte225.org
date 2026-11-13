@@ -59,7 +59,7 @@ describe('a setting prepared', async () => {
     // as it arrives from the other worker: read there, copied on the way
     const curve = structuredClone(readDynamics(performDynamics(score, mpm)));
     const other = hum(
-      { performance: performNotes(score, mpm), dynamics: curve },
+      { performance: performNotes(score, mpm, DEFAULT_ELABORATION), dynamics: curve },
       reduction,
       data,
       DEFAULT_ELABORATION,

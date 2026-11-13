@@ -53,8 +53,7 @@ formulas applied to every row: over the whole piece in both styles and a recordi
 48 kHz, not one of 17.9 million differs. A column takes 0.06 ms where it took 0.42 ms.
 
 Under the humming the page draws the piano, the part the elaboration lets be heard: the harmonies
-below the middle, as faint as they are quiet, the piece from the middle on, nothing while the
-humming is alone. It is the spectrogram of the sound that plays: the Pianoteq recording of the
+in the lowest third, the piece from there on, nothing while the humming is alone. It is the spectrogram of the sound that plays: the Pianoteq recording of the
 setting, or the sampled grand, which plays the part ahead of time for it (an `OfflineAudioContext`;
 an instrument over MIDI has no sound in the page, so the page's own piano stands for it). A worker
 of its own draws it (`src/page/piano-picture.ts`, `src/worker/picture.ts`), from the playhead on,
@@ -161,16 +160,17 @@ to apply to.
 The elaboration fader (`src/page/mix.ts`) sets three gains, from left to right:
 
 - At 0, the humming alone, at full level.
-- Rising, the harmonies come in from silence under it and grow soon, as the square root of the way
-  up, to the piano's level (−5 dB) at the middle: 7 dB under it a tenth of the way up, 3 dB a
-  quarter of the way.
-- From the middle on, the piano plays the piece instead, at the same level.
+- As soon as the fader leaves 0, the piano plays the harmonies under it, at once at its level
+  (−5 dB): it does not fade in, for more of the music is more of it, not a louder piano.
+- From a third of the way on, the piano plays the piece instead, at the same level.
 
-The humming falls soon too, as the square root of the way up, from 0 dB to −11 dB a quarter of the
-way, −15.6 dB at the middle and −22 dB at the top, where it is a pianist humming along. The page plays both the piece and the harmonies all
-the time, each into its own gain, so passing the middle crossfades between them, even in the
-middle of a chord. It starts at 0.65: the piece, with the humming at −17.7 dB. (The harmonies came in as the square
-of the way up and the humming fell evenly in decibels; both changed too late.)
+The humming falls soon, as the square root of the way up, from 0 dB to −11 dB a quarter of the
+way, −12.7 dB at a third, −15.6 dB at the middle and −22 dB at the top, where it is a pianist
+humming along. The page plays both the piece and the harmonies all the time, each into its own
+gain, so passing a third crossfades between them, even in the middle of a chord. It starts at 0.65:
+the piece, with the humming at −17.7 dB. (The harmonies first came in as the square of the way up,
+then as its square root, and had the lower half of the fader; the humming first fell evenly in
+decibels, too late.)
 
 The fader also sets how exaggerated the performance is, and so the voice itself
 (`src/worker/levels.ts`): elaboration in the sense of making things subtle. The barer the music,
@@ -184,15 +184,27 @@ exaggerates the MPM (`exaggerateMpm`) to:
 
 (×2 at 0 sounded extremely unnatural, ×1.6 still too much.)
 
-The barer the music, the more of a sketch it is, too, and a sketch is gone through faster. Every
-tempo of the MPM, exaggerated, is multiplied (`tempoFactor`, `atTempo`): what it starts at and what
-it moves to, by `1 + 0.25 (1 − e)²`, ×1.25 at 0, ×1.06 at the middle, ×1.03 at 0.65, ×1 at 1, for
-the piano and the voice alike, so they keep the same onsets. What is counted in beats (the rubato, a
+The barer the music, the more of a sketch it is, too: the more flighty (`flightiness`,
+`(1 − e)²`, 1 at 0, 0 at 1), gone through faster and struck less exactly. Every tempo of the MPM,
+exaggerated, is multiplied (`tempoFactor`, `atTempo`): what it starts at and what it moves to, by
+`1 + 0.35 (1 − e)²`, ×1.35 at 0, ×1.09 at the middle, ×1.04 at 0.65, ×1 at 1, for the piano and
+the voice alike, so they keep the same onsets. What is counted in beats (the rubato, a
 ritardando's course) is as it was, only sooner over; what the MPM gives in milliseconds (how far a
 chord is spread, how far the hands are apart) stays as long as it is. The exaggeration alone had
 made the bare end the slowest: a tempo exaggerated slows down by more than it speeds up, and the
-piece took 12.6 s longer at 0 than at 1. Now its last key is struck after 2:40 at 1, 2:37 at 0.65,
-2:33 at the middle, 2:26 a quarter of the way up and 2:18 with the humming alone, 13.5 % sooner.
+piece took 12.6 s longer at 0 than at 1. Now its last key is struck after 2:39 at 1, 2:34 at 0.65,
+2:29 at the middle, 2:19 a quarter of the way up and 2:07 with the humming alone, 20 % sooner.
+(With ×1.25 at 0 it was 13.5 %: not flighty enough.)
+
+And the performance, once espressivo has made it, is struck less exactly
+(`src/worker/imprecision.ts`, `IMPRECISION`): each date of the score comes early or late by up to
+25 ms (one standard deviation, times the flightiness), each note louder or softer by up to 12 % of
+its velocity. espressivo performs the MPM's own imprecision maps, but not reproducibly where notes
+share a date, and the piano, its harmonies and the voice must be off by the same amounts in every
+worker and every render; so the amounts come from a hash of the date (and, for the loudness, the
+pitch). A chord stays together, the harmonies keep to the piece, and the voice to the piano: its
+effort reads each note's velocity against the dynamics, so it is as inexact in loudness as the
+piano. At 0.65 that is 3 ms and 1.5 %; at 1, nothing.
 
 The voice also keeps more loosely to the pitch the barer the music: its approximateness, 1 at 0
 and 0 at 1 (below). Moving the fader renders the voice anew once it rests, in steps of 0.05; the
@@ -203,7 +215,8 @@ gains change at once.
 For one elaboration a worker (`src/worker/worker.ts`) does this:
 
 1. **The performance.** espressivo (`exaggerateMpm`, `performMsmToData`) performs the MPM twice:
-   for the piano at its level, and for the voice at its own, both at the elaboration's tempo. The voice is the inner guide of the
+   for the piano at its level, and for the voice at its own, both at the elaboration's tempo and
+   struck as inexactly as it is flighty. The voice is the inner guide of the
    playing: a little more exaggerated than the piano, except in the dimensions that move
    notes in time (tempo, tempo shape, rubato, asynchrony, arpeggio spread and spacing, timing
    imprecision), which it shares with the piano, so the two keep the same onsets to the

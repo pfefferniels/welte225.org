@@ -19,6 +19,7 @@ import { PAD_MS, SAMPLE_RATE, STATE_STEP } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
 import type { StatePair } from '../vtl/engine.ts';
 import type { ChunkSource } from './chunk.ts';
+import { imprecise } from './imprecision.ts';
 import {
   approximateness,
   atTempo,
@@ -54,9 +55,9 @@ export const voiceMpm = (score: Score, elaboration: number): string =>
     tempoFactor(elaboration),
   );
 
-/** The voice's performance: the notes it follows. */
-export const performNotes = (score: Score, mpm: string): PerformanceData =>
-  performMsmToData({ msm: score.msm, mpm });
+/** The voice's performance: the notes it follows, struck as inexactly as the piano's. */
+export const performNotes = (score: Score, mpm: string, elaboration: number): PerformanceData =>
+  imprecise(performMsmToData({ msm: score.msm, mpm }), elaboration);
 
 /** The same performance with sub-note dynamics: independent of the other, so another worker may make it. */
 export const performDynamics = (score: Score, mpm: string): PerformanceData =>
@@ -65,7 +66,7 @@ export const performDynamics = (score: Score, mpm: string): PerformanceData =>
 /** espressivo performs the MPM for the voice. */
 export function performVoice(score: Score, elaboration: number): VoicePerformance {
   const mpm = voiceMpm(score, elaboration);
-  return { performance: performNotes(score, mpm), dynamics: performDynamics(score, mpm) };
+  return { performance: performNotes(score, mpm, elaboration), dynamics: performDynamics(score, mpm) };
 }
 
 /** What the hummer reads beside the performance and the reduction. */

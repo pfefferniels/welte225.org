@@ -1,5 +1,5 @@
 // A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on the piece,
-// and on its harmonies for the piano's lower half), the hummer turns that performance into two
+// and on its harmonies for the piano's lowest third), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk, into sound, streamed to the page in blocks with their spectrogram columns. The page runs
 // several such workers side by side (shared/protocol.ts says who does what): the first prepares a
@@ -227,7 +227,7 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   const texts = await r.texts;
   if (id !== current) return null;
   const mpm = timed('espressivo', () => voiceMpm(texts, setting.elaboration));
-  const performance = timed('espressivo', () => performNotes(texts, mpm));
+  const performance = timed('espressivo', () => performNotes(texts, mpm, setting.elaboration));
   await until(() => id !== current || box.alone || !box.dynamicsAsked || box.dynamics !== undefined);
   if (await stopped()) return null;
   const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(texts, mpm));

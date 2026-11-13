@@ -1,10 +1,11 @@
 // The piano at an elaboration: the piece and its harmonies performed with the MPM as exaggerated and
-// as fast as that elaboration has it, as the roll plays them. The worker sends them with each plan; `npm run pianoteq` renders them from the same.
+// as fast as that elaboration has it, struck as inexactly (imprecision.ts), as the roll plays them. The worker sends them with each plan; `npm run pianoteq` renders them from the same.
 import { exaggerateMpm, performMsmToData } from 'espressivo';
 import { readPerformance, repair, type PedalPoint, type Performance } from '../hummer/performance.ts';
 import type { PedalStep, PianoPart } from '../shared/piano.ts';
 import { PAD_MS } from '../shared/units.ts';
 import { atTempo, pianoFactors, pianoLevel, tempoFactor } from './levels.ts';
+import { imprecise } from './imprecision.ts';
 
 /** What the piano plays from: the piece's score, the harmonies' score (MSM) and the MPM. */
 export interface PianoScore {
@@ -46,7 +47,9 @@ export function performPiano(
 ): { readonly piece: PianoPart; readonly harmonies: PianoPart } {
   const mpm = pianoMpm(score.mpm, elaboration);
   const part = (msm: string, expandOrnaments: boolean): PianoPart => {
-    const performance = readPerformance(performMsmToData({ msm, mpm }, { expandOrnaments }));
+    const performance = readPerformance(
+      imprecise(performMsmToData({ msm, mpm }, { expandOrnaments }), elaboration),
+    );
     repair(performance.notes);
     return pianoPart(performance);
   };

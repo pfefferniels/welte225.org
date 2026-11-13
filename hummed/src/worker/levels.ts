@@ -1,8 +1,9 @@
-// How exaggerated the performance is, how fast it goes, and how loosely the voice sings: all follow
-// the elaboration.
+// How exaggerated the performance is, how flighty (how fast, how exactly struck), and how loosely the
+// voice sings: all follow the elaboration.
 // The barer the music (0, the humming alone), the rawer the gestures: the MPM ×1.4 (doubled sounded
 // unnatural, ×1.6 still too much); the more of it there is, the subtler, until at 1 the piano plays the reconstruction
-// as the MPM sets it down. The barer, the more of a sketch it is, too: gone through faster.
+// as the MPM sets it down. The barer, the more of a sketch it is, too: gone through faster, and less
+// exactly.
 // The voice is the inner guide of the playing: a little more exaggerated than the piano, except
 // where notes move in time, which it shares with the piano so that the two stay together.
 import {
@@ -21,12 +22,25 @@ export const pianoLevel = (elaboration: number): number => 1 + 0.4 * Math.pow(1 
 export const voiceLevel = (elaboration: number): number => 1.1 + 0.3 * Math.pow(1 - unit(elaboration), 2);
 
 /**
- * How much faster than the MPM the music goes, the piano and the voice alike: a sketch is gone
- * through quickly. ×1.25 at 0, falling as the exaggeration does, to ×1 at 1. Exaggerated, the
- * tempo's slow stretches grow more than its fast ones shrink (at 0 the piece took 12.6 s longer
- * than at 1): the factor outweighs that, so that the piece is the shorter the barer it is.
+ * How flighty the music is, 1 alone and 0 at the top, falling as the exaggeration does: a sketch is
+ * gone through quickly (`tempoFactor`) and struck less exactly (`IMPRECISION`, imprecision.ts).
  */
-export const tempoFactor = (elaboration: number): number => 1 + 0.25 * Math.pow(1 - unit(elaboration), 2);
+export const flightiness = (elaboration: number): number => Math.pow(1 - unit(elaboration), 2);
+
+/**
+ * How much faster than the MPM the music goes, the piano and the voice alike: ×1.35 at 0, ×1 at 1.
+ * Exaggerated, the tempo's slow stretches grow more than its fast ones shrink (at 0 the piece took
+ * 12.6 s longer than at 1): the factor outweighs that, so that the piece is the shorter the barer it
+ * is.
+ */
+export const tempoFactor = (elaboration: number): number => 1 + 0.35 * flightiness(elaboration);
+
+/**
+ * How inexactly the notes are struck when the music is wholly flighty, the piano and the voice
+ * alike, one standard deviation of each: how far each date of the score comes early or late (ms),
+ * and how much louder or softer each note is (a fraction of its velocity).
+ */
+export const IMPRECISION = { timingMs: 25, dynamics: 0.12 } as const;
 
 /** How loosely the voice keeps to the written pitch, 0 to 1: loosest alone, closest under the piece. */
 export const approximateness = (elaboration: number): number => 1 - unit(elaboration);

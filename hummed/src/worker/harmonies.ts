@@ -1,4 +1,4 @@
-// The harmonies (reduction/harmonies.mei), which the piano plays in the lower half of its fader.
+// The harmonies (reduction/harmonies.mei), which the piano plays in the lowest third of its fader.
 // espressivo converts the MEI to a score (MSM) as it converted the piece's, and leaves the grace
 // notes out of it, reporting them beside it instead; they are put back here, a thirty-second each,
 // the last one just before the note they lead to.

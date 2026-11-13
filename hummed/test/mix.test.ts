@@ -1,5 +1,5 @@
-// The elaboration fader: the humming alone at 0, the harmonies coming in under it, the piece from
-// the middle up with the humming quieter.
+// The elaboration fader: the humming alone at 0, the harmonies under it at once, the piece from a
+// third of the way up with the humming quieter.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -9,6 +9,7 @@ import {
   approximateness,
   atTempo,
   DEFAULT_ELABORATION,
+  flightiness,
   pianoLevel,
   tempoFactor,
   voiceLevel,
@@ -23,25 +24,30 @@ describe('elaboration', () => {
     assert.equal(heard(0), 'humming');
   });
 
-  it('brings the harmonies in under the humming, which recedes', () => {
-    const lower = positions.filter((e) => e < PIECE_FROM);
-    for (const [a, b] of lower.slice(1).map((x, i) => [lower[i], x] as const)) {
-      assert.ok(mix(b).harmonies > mix(a).harmonies);
-      assert.ok(mix(b).hum < mix(a).hum);
-      assert.equal(heard(b), 'harmonies');
+  it('brings the harmonies in under the humming at once, as loud as the piano will be', () => {
+    const lower = positions.filter((e) => e > 0 && e < PIECE_FROM);
+    for (const e of lower) {
+      assert.equal(mix(e).harmonies, mix(1).piece);
+      assert.equal(heard(e), 'harmonies');
     }
-    assert.ok(mix(PIECE_FROM - 0.01).harmonies > mix(PIECE_FROM - 0.01).hum);
+    for (const [a, b] of lower.slice(1).map((x, i) => [lower[i], x] as const))
+      assert.ok(mix(b).hum < mix(a).hum);
   });
 
-  it('brings the harmonies in soon and the humming down soon', () => {
+  it('gives the harmonies a third of the fader', () => {
+    assert.ok(Math.abs(PIECE_FROM - 1 / 3) < 1e-9);
+    assert.equal(heard(0.33), 'harmonies');
+    assert.equal(heard(0.34), 'piece');
+  });
+
+  it('brings the humming down soon', () => {
     const db = (x: number): number => 20 * Math.log10(x);
-    // a quarter of the way up: the harmonies within 3 dB of the piano, the humming 10 dB down
-    assert.ok(db(mix(0.25).harmonies) > db(mix(PIECE_FROM).piece) - 3.1);
+    // a quarter of the way up the humming is 10 dB down, under the harmonies
     assert.ok(db(mix(0.25).hum) < -10);
     assert.ok(mix(0.25).harmonies > mix(0.25).hum);
   });
 
-  it('passes from the harmonies to the piece at the middle, as loud', () => {
+  it('passes from the harmonies to the piece a third of the way up, as loud', () => {
     const justBelow = mix(PIECE_FROM - 1e-9).harmonies;
     assert.ok(Math.abs(justBelow - mix(PIECE_FROM).piece) < 1e-6);
     assert.equal(heard(PIECE_FROM), 'piece');
@@ -73,9 +79,13 @@ describe('elaboration', () => {
   });
 
   it('goes the faster the barer the music, and as the MPM has it at the top', () => {
-    for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const))
+    for (const [a, b] of positions.slice(1).map((x, i) => [positions[i], x] as const)) {
+      assert.ok(flightiness(b) < flightiness(a));
       assert.ok(tempoFactor(b) < tempoFactor(a));
-    assert.ok(Math.abs(tempoFactor(0) - 1.25) < 1e-9);
+    }
+    assert.equal(flightiness(0), 1);
+    assert.equal(flightiness(1), 0);
+    assert.ok(Math.abs(tempoFactor(0) - 1.35) < 1e-9);
     assert.equal(tempoFactor(1), 1);
   });
 

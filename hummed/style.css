@@ -203,14 +203,18 @@ input[type='range']::-moz-range-thumb {
   background: var(--bg);
   border: 2px solid var(--accent);
 }
-/* the elaboration fader: a gap at its middle, where the piano passes from the harmonies to the piece */
+/* the elaboration fader: a gap a third of the way along, where the piano passes from the harmonies
+   to the piece; measured from the thumb's centre, which travels 15px short of the track */
+input.split {
+  --split: calc(7.5px + (100% - 15px) / 3);
+}
 input.split::-webkit-slider-runnable-track {
   background:
     linear-gradient(
       to right,
-      transparent calc(50% - 1.5px),
-      var(--bg) calc(50% - 1.5px) calc(50% + 1.5px),
-      transparent calc(50% + 1.5px)
+      transparent calc(var(--split) - 1.5px),
+      var(--bg) calc(var(--split) - 1.5px) calc(var(--split) + 1.5px),
+      transparent calc(var(--split) + 1.5px)
     ),
     linear-gradient(to right, var(--accent) var(--p), var(--rule) var(--p));
 }
@@ -218,9 +222,9 @@ input.split::-moz-range-track {
   background:
     linear-gradient(
       to right,
-      transparent calc(50% - 1.5px),
-      var(--bg) calc(50% - 1.5px) calc(50% + 1.5px),
-      transparent calc(50% + 1.5px)
+      transparent calc(var(--split) - 1.5px),
+      var(--bg) calc(var(--split) - 1.5px) calc(var(--split) + 1.5px),
+      transparent calc(var(--split) + 1.5px)
     ),
     var(--rule);
 }
