@@ -153,7 +153,7 @@ export interface Reading {
    * chords have several).
    */
   readonly velocity: { readonly scale: number; readonly r: number };
-  /** The dynamics the voice gives where no note sounds; each is a phantom velocity of the calls it lies in. */
+  /** The dynamics the voice gives where no note sounds; each is a guide of the calls it lies in. */
   readonly betweens: readonly Between[];
   /**
    * The roll's clock within the bars: when each chord's beat falls (a spread chord's where it was
@@ -606,7 +606,7 @@ export function read(
     }
   }
   for (const g of gestures) {
-    const phantoms = betweens
+    const guides = betweens
       .filter((v) => v.date >= g.from && v.date <= g.to)
       .map((v): [Ticks, number] => [v.date, v.velocity]);
     // the curve the desk fits through the movement's chords and the values between them
@@ -615,7 +615,7 @@ export function read(
         ...roll.chords
           .filter((c) => c.date >= g.from && c.date <= g.to)
           .map((c) => ({ date: c.date, velocity: c.velocity })),
-        ...phantoms.map(([date, velocity]) => ({ date, velocity })),
+        ...guides.map(([date, velocity]) => ({ date, velocity })),
       ].sort((a, b) => a.date - b.date),
     );
     if (fit) dynamics.push(fit);
@@ -644,7 +644,7 @@ export function read(
       options: {
         from: g.from,
         to: g.to,
-        phantomVelocities: { dataType: 'Map', value: phantoms },
+        guides: { dataType: 'Map', value: guides },
         scope: 'global',
       },
       range: { from: g.from, to: g.to },

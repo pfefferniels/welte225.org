@@ -547,17 +547,17 @@ most of his). Then:
   roll; what is fitted is how the tempo goes within it (where it begins against where it ends,
   and where between the two it is half way), so that one movement's misfit is not carried into
   the next.
-- where no note sounds, the dynamics are the voice's to say: **phantom velocities** of the
-  dynamics call, at every half beat of the pulse without a chord while the voice sounds, and
-  wherever a movement begins or ends without one. Each is the roll's own dynamics there (a straight
-  line between the chords on either side) and on top what the voice does between those two chords
-  beyond a straight line of its own: a swell through a held note, a sinking away. For this the
-  effort is smoothed only lightly (0.15 s), and a decibel of it counts as many of the roll's
-  velocity steps as the two spread against each other at the take's chords (between 0.3 and 3),
-  times what the page is told (_the voice between the notes ×_). The voice at a chord is the
-  voice where it sets in, up to 0.3 s after it. Where the voice is silent, a movement's end still
-  gets its value, the straight line alone. The curve through chords and phantoms is the desk's to
-  fit.
+- where no note sounds, the dynamics are the voice's to say: **guides** of the dynamics call
+  (values its curve passes through), at every half beat of the pulse without a chord while the
+  voice sounds, and wherever a movement begins or ends without one. Each is the roll's own
+  dynamics there (a straight line between the chords on either side) and on top what the voice
+  does between those two chords beyond a straight line of its own: a swell through a held note, a
+  sinking away. For this the effort is smoothed only lightly (0.15 s), and a decibel of it counts
+  as many of the roll's velocity steps as the two spread against each other at the take's chords
+  (between 0.3 and 3), times what the page is told (_the voice between the notes ×_). The voice
+  at a chord is the voice where it sets in, up to 0.3 s after it. Where the voice is silent, a
+  movement's end still gets its value, the straight line alone. The curve through chords and
+  guides is the desk's to fit.
 
 The roll's velocities are read as the desk's chain has them when the dynamics are fitted
 (`withCorrections`, `roll.ts`): mapped by the reconstruction's `Expand` and changed by its
