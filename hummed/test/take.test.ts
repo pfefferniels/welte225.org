@@ -357,7 +357,7 @@ describe('a take read against the roll', () => {
   it('writes each movement as a tempo and a dynamics call over the same stretch', () => {
     const of = (name: string): string[] =>
       reading.calls.filter((c) => c.name === name).map((c) => `${c.range.from}-${c.range.to}`);
-    assert.deepEqual(of('InsertTempo'), of('InsertDynamicsInstructions'));
+    assert.deepEqual(of('InsertTempo'), of('InsertDynamics'));
     assert.equal(of('InsertTempo').length, 3);
     const tempo = reading.calls.find((c) => c.name === 'InsertTempo');
     assert.deepEqual(
@@ -394,7 +394,7 @@ describe('a take read against the roll', () => {
 
   it('says what the voice does between the notes: the swell where no note sounds', () => {
     const guides = reading.calls
-      .filter((c) => c.name === 'InsertDynamicsInstructions')
+      .filter((c) => c.name === 'InsertDynamics')
       .flatMap((c) => (c.options['guides'] as { value: [number, number][] }).value);
     // the first bar's third beat has no note (2160), and the voice is at its fullest about there
     const at = guides.find(([date]) => date === 2160);

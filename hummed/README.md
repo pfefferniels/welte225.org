@@ -540,7 +540,7 @@ most of his). Then:
   begin (a chord, or half a beat of the pulse), no two closer than a beat: of two, a breath stays
   before a trough before a peak;
 - between two boundaries lies one movement, and it becomes an `InsertTempo` and an
-  `InsertDynamicsInstructions` over the same stretch: tempo and dynamics begin and end together.
+  `InsertDynamics` over the same stretch: tempo and dynamics begin and end together.
   The tempo is the beats': it is fitted to the chords on the tapped pulse, the silent onsets and
   the movement's own two ends, a spread chord counted where its beat was placed, with
   espressivo's own clock (`computeMillisecondsAt`). A movement takes exactly as long as on the

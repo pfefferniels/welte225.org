@@ -108,7 +108,7 @@ const PEDALS: Readonly<Record<string, string>> = { sustain: 'Sustain', soft: 'So
  */
 const ONE_AT_A_TIME: ReadonlySet<string> = new Set([
   'InsertTempo',
-  'InsertDynamicsInstructions',
+  'InsertDynamics',
   'InsertRubato',
   'InsertMetricalAccentuation',
 ]);
@@ -129,7 +129,7 @@ function describe(
       const intensity = attribute(first, 'intensity');
       return { kind: 'rubato', label: intensity === null ? 'Rubato' : `Rubato ${short(intensity, 2)}` };
     }
-    case 'InsertDynamicsInstructions': {
+    case 'InsertDynamics': {
       // the curve it fitted: from its first instruction's volume to where its last one arrives
       const last = elements.at(-1);
       const text = transition(

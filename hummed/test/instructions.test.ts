@@ -53,7 +53,7 @@ const work = {
     },
     {
       id: 'curve',
-      name: 'InsertDynamicsInstructions',
+      name: 'InsertDynamics',
       options: {},
       elements: ['dynamics_0', 'dynamics_720'],
       range: { from: 0, to: 720 },
@@ -262,10 +262,7 @@ describe('the published reconstruction’s instructions', () => {
         (call.elements ?? []).length > 0 &&
         (call.elements ?? []).every((id) => writer.get(`${call.name} ${id}`) !== i),
     );
-    assert.deepEqual(
-      new Set(refitted.map((call) => call.name)),
-      new Set(['InsertTempo', 'InsertDynamicsInstructions']),
-    );
+    assert.deepEqual(new Set(refitted.map((call) => call.name)), new Set(['InsertTempo', 'InsertDynamics']));
     const left = new Set(refitted.map((call) => call.id));
     assert.deepEqual(
       new Set(list.map((i) => i.id)),
@@ -279,12 +276,7 @@ describe('the published reconstruction’s instructions', () => {
       const end = Math.max(...timed.map((i) => i.end));
       for (let t = 0; t < end; t += 0.05) {
         const here = activeAt(timed, t).map((i) => names.get(i.id));
-        for (const name of [
-          'InsertTempo',
-          'InsertDynamicsInstructions',
-          'InsertRubato',
-          'InsertMetricalAccentuation',
-        ])
+        for (const name of ['InsertTempo', 'InsertDynamics', 'InsertRubato', 'InsertMetricalAccentuation'])
           assert.ok(here.filter((n) => n === name).length <= 1, `one ${name} at ${t.toFixed(2)} s`);
       }
     }
