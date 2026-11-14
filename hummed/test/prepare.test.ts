@@ -47,6 +47,7 @@ describe('a setting prepared', async () => {
     {
       piece: part,
       harmonies: part,
+      rolls: [],
     },
     { espressivo: 0, hummer: 0, gestures: 0 },
   );

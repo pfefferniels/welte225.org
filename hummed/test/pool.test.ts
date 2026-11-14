@@ -83,6 +83,7 @@ const planOf = (id: number, at: Setting = setting): Plan => ({
   clock: { ticks: [], ms: [] },
   piece: part,
   harmonies: part,
+  rolls: [],
   timings: { espressivo: 0, hummer: 0, gestures: 0 },
   startSeconds: 0,
   startState: 0,

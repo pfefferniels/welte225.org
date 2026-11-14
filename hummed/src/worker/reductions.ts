@@ -9,6 +9,7 @@
 // reduction (reduction.mei) sings where that chord stands in the piece.
 import { Msm, type Element } from 'espressivo';
 import type { Reduction, SungNote } from '../reduction/types.ts';
+import type { Roll } from '../shared/protocol.ts';
 import type { Stage } from '../shared/shape.ts';
 import type { Ticks } from '../shared/units.ts';
 import { GRACE } from './harmonies.ts';
@@ -159,13 +160,17 @@ export function strikesInPiece(
  * The MPM as the reductions are performed with: its tempo and dynamics as they are, no rubato,
  * accents, articulation or pedalling; and of its arpeggios, at each strike the one the piece has
  * where the chord struck stands (`strikesInPiece`; in ascending pitch where the piece names its
- * notes).
+ * notes). With it, where each is rolled: at which strike, as which of the piece's arpeggios.
  */
-export function reductionMpm(mpm: string, strikes: ReadonlyMap<Ticks, Ticks>): string {
+export function reductionMpm(
+  mpm: string,
+  strikes: ReadonlyMap<Ticks, Ticks>,
+): { readonly mpm: string; readonly rolls: readonly Roll[] } {
   let out = mpm;
   for (const name of LEFT_OUT)
     out = out.replace(new RegExp(`<${name}\\b[^>]*/>|<${name}\\b[^>]*>[\\s\\S]*?</${name}>`, 'g'), '');
-  return out.replace(
+  const rolls: Roll[] = [];
+  out = out.replace(
     /(<ornamentationMap\b[^>]*>)([\s\S]*?)(<\/ornamentationMap>)/,
     (_, open: string, body: string, close: string) => {
       const arpeggios = new Map<Ticks, string>();
@@ -181,6 +186,8 @@ export function reductionMpm(mpm: string, strikes: ReadonlyMap<Ticks, Ticks>): s
         .flatMap(([date, place]) => {
           const tag = arpeggios.get(place);
           if (!tag) return [];
+          const ornament = /\sxml:id="([^"]*)"/.exec(tag)?.[1];
+          if (ornament) rolls.push({ date, ornament });
           return [
             tag
               .replace(/\sdate="[^"]*"/, ` date="${date}"`)
@@ -191,6 +198,7 @@ export function reductionMpm(mpm: string, strikes: ReadonlyMap<Ticks, Ticks>): s
       return open + kept + moved.join('') + close;
     },
   );
+  return { mpm: out, rolls };
 }
 
 /** The melodic reduction's note at a place in the piece; in a rest, the next before `until`, else the last. */
@@ -247,8 +255,8 @@ export function harmonicLine(
  * nothing, espressivo gives to the next chord it strikes).
  */
 export interface Reductions {
-  readonly halves: Score;
-  readonly quarters: Score;
+  readonly halves: Reduced;
+  readonly quarters: Reduced;
   /** What the voice sings over them, from the melodic reduction. */
   readonly line: (melodic: Reduction) => Reduction;
 }
@@ -259,8 +267,8 @@ export function reductions(halves: string, harmonies: string, mpm: string): Redu
   const quarters = quartersScore(halves);
   let line: { readonly of: Reduction; readonly is: Reduction } | null = null;
   return {
-    halves: { msm: halves, mpm: reductionMpm(mpm, places) },
-    quarters: { msm: quarters, mpm: reductionMpm(mpm, strikesInPiece(chords, chordsOf(quarters), places)) },
+    halves: { msm: halves, ...reductionMpm(mpm, places) },
+    quarters: { msm: quarters, ...reductionMpm(mpm, strikesInPiece(chords, chordsOf(quarters), places)) },
     line: (melodic) => {
       if (line?.of !== melodic) line = { of: melodic, is: harmonicLine(chords, places, melodic) };
       return line.is;
@@ -274,8 +282,13 @@ export interface Score {
   readonly mpm: string;
 }
 
+/** A harmonic reduction: its score and its MPM, and where it rolls a chord as the piece rolls it. */
+export interface Reduced extends Score {
+  readonly rolls: readonly Roll[];
+}
+
 /** The harmonies the piano has beside the piece at a stage, and their MPM: in half notes there, else in quarters. */
-export const harmoniesAt = (stage: Stage, r: () => Reductions): Score =>
+export const harmoniesAt = (stage: Stage, r: () => Reductions): Reduced =>
   stage === 'halves' ? r().halves : r().quarters;
 
 /**

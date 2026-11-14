@@ -1,7 +1,8 @@
 // What the reconstruction says at a moment of the piece: the calls of /mpm/work.json that hold
 // there, each one fitted curve, frame, pattern or press, named by what it wrote into the MPM, and
 // addressed as MPM Desk addresses it (https://welte225.org/mpm/<id>, which opens its viewer at
-// that call).
+// that call); and, apart from them, its corrections of the source.
+import type { Roll } from './protocol.ts';
 import type { Seconds, Ticks } from './units.ts';
 
 /** The dimensions of the performance the calls speak of, in the order the page lists them. */
@@ -15,7 +16,13 @@ export const INSTRUCTION_KINDS = [
   ['pedal', 'Pedal'],
 ] as const;
 
-export type InstructionKind = (typeof INSTRUCTION_KINDS)[number][0];
+/**
+ * What is said of the source rather than of the performance: the corrections of the roll as it was
+ * read (a note's velocity), listed apart from the instructions.
+ */
+export const CORRECTIONS = ['correction', 'Corrections'] as const;
+
+export type InstructionKind = (typeof INSTRUCTION_KINDS)[number][0] | (typeof CORRECTIONS)[0];
 
 /**
  * What the instructions are of: the piece, or the harmonic reductions, which take of the MPM its
@@ -23,9 +30,17 @@ export type InstructionKind = (typeof INSTRUCTION_KINDS)[number][0];
  * articulation or pedalling (worker/reductions.ts).
  */
 export type Performed = 'piece' | 'reductions';
-const OF_THE_REDUCTIONS: ReadonlySet<InstructionKind> = new Set(['tempo', 'dynamics', 'spread']);
+const OF_THE_REDUCTIONS: ReadonlySet<InstructionKind> = new Set([
+  'tempo',
+  'dynamics',
+  'spread',
+  'correction',
+]);
 
-/** Whether the calls of a dimension apply to what is performed. */
+/**
+ * Whether the calls of a dimension apply to what is performed. The corrections are of the source
+ * both are made from, the dynamics the reductions take fitted to it.
+ */
 export const appliesTo = (kind: InstructionKind, performed: Performed): boolean =>
   performed === 'piece' || OF_THE_REDUCTIONS.has(kind);
 
@@ -39,6 +54,8 @@ export interface Instruction {
   /** Where in the score it holds: from, and up to (the same place for a single moment). */
   readonly from: Ticks;
   readonly to: Ticks;
+  /** The xml:ids of what it wrote into the MPM. */
+  readonly written: readonly string[];
   /**
    * Where the next call of its kind takes over, for a call of which one holds at a time: it is
    * listed no further, however short the while it holds.
@@ -122,13 +139,11 @@ function describe(
       return { kind: 'dynamics', label: text || 'Dynamics' };
     }
     case 'Modify': {
+      // a correction of the source: what the roll was read as, a note's velocity, before the fitting
       const change = number(options['change']);
       const aspect = string(options['aspect']) ?? 'value';
       const what = aspect.charAt(0).toUpperCase() + aspect.slice(1);
-      return {
-        kind: aspect === 'velocity' ? 'dynamics' : 'articulation',
-        label: change === null ? what : `${what} ${signed(change)}`,
-      };
+      return { kind: 'correction', label: change === null ? what : `${what} ${signed(change)}` };
     }
     case 'InsertMetricalAccentuation': {
       const scale = attribute(first, 'scale');
@@ -206,7 +221,7 @@ export function readInstructions(
     const described = describe(name, options, written.map(element));
     if (!described) return;
     list.push({
-      instruction: { id, ...described, from, to: Math.max(from, number(range['to']) ?? from) },
+      instruction: { id, ...described, from, to: Math.max(from, number(range['to']) ?? from), written },
       name,
       index,
       written,
@@ -236,6 +251,25 @@ export function readInstructions(
     if (next === instruction.from) return [];
     return [{ ...instruction, to: Math.min(instruction.to, next), until: next }];
   });
+}
+
+/**
+ * The instructions over the harmonic reductions: the piece's arpeggios each where the reductions
+ * roll a chord as it, at every strike (the quarters roll a chord again on each), and nowhere else;
+ * the rest as they are.
+ */
+export function overReductions(instructions: readonly Instruction[], rolls: readonly Roll[]): Instruction[] {
+  const arpeggios = new Map<string, Instruction>();
+  for (const instruction of instructions)
+    if (instruction.kind === 'spread') for (const id of instruction.written) arpeggios.set(id, instruction);
+  // a roll that only shapes the chord's loudness (a dynamics gradient) is no arpeggio's
+  const rolled = rolls.flatMap(({ date, ornament }) => {
+    const instruction = arpeggios.get(ornament);
+    return instruction ? [{ ...instruction, from: date, to: date }] : [];
+  });
+  return [...instructions.filter((instruction) => instruction.kind !== 'spread'), ...rolled].sort(
+    (a, b) => a.from - b.from,
+  );
 }
 
 /** How long an instruction is shown at least: one of a single moment (an arpeggio) the longest. */

@@ -27,6 +27,7 @@ const plan: Plan = {
   clock: { ticks: [0, 720], ms: [0, 1000] },
   piece,
   harmonies,
+  rolls: [],
   timings: { espressivo: 0, hummer: 0, gestures: 0 },
   startSeconds: 0,
   startState: 0,

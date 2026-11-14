@@ -1,14 +1,17 @@
 // What the reconstruction says where the music is: a panel over the spectrogram that lists, by
 // dimension, the calls of /mpm/work.json holding at the playhead. Each is a link that opens MPM
 // Desk's viewer at that call. Over the harmonic reductions it lists only the dimensions they take
-// (tempo, dynamics, arpeggio). The page asks in every frame it draws; the list is worked out again
-// only once the playhead has passed the next place where a call begins or ends.
+// (tempo, dynamics, arpeggio), each arpeggio where they roll a chord as it. Under a rule, apart,
+// the corrections of the source. The page asks in every frame it draws; the list is worked out
+// again only once the playhead has passed the next place where a call begins or ends.
 import {
   activeAt,
   appliesTo,
+  CORRECTIONS,
   INSTRUCTION_KINDS,
   instructionIri,
   mpmDeskUrl,
+  overReductions,
   readInstructions,
   timeInstructions,
   type Instruction,
@@ -47,25 +50,34 @@ export class InstructionsView {
   #instructions: readonly Instruction[] = [];
   /** What the rows are of: the piece, or the reductions, which list fewer. */
   #performed: Performed = 'piece';
-  /** The instructions in the time of the rendering they were last shown for. */
-  #timed: { readonly id: number; readonly list: readonly TimedInstruction[] } | null = null;
+  /** The instructions in the time of the rendering they were last shown for, of what was performed. */
+  #timed: {
+    readonly id: number;
+    readonly performed: Performed;
+    readonly list: readonly TimedInstruction[];
+  } | null = null;
   /** The stretch of that rendering's time over which the rows are right as they are. */
   #right: readonly [from: Seconds, to: Seconds] | null = null;
 
   /** `opened` is told when a call is opened in MPM Desk. */
   constructor(panel: HTMLElement, opened: () => void) {
     this.#panel = panel;
-    const list = document.createElement('dl');
-    for (const [kind, name] of INSTRUCTION_KINDS) {
-      const row = document.createElement('div');
-      const term = document.createElement('dt');
-      const cell = document.createElement('dd');
-      term.textContent = name;
-      row.append(term, cell);
-      list.append(row);
-      this.#rows.set(kind, { row, cell, shown: '?' });
-    }
-    panel.replaceChildren(list);
+    const rows = (kinds: readonly (readonly [InstructionKind, string])[]): HTMLDListElement => {
+      const list = document.createElement('dl');
+      for (const [kind, name] of kinds) {
+        const row = document.createElement('div');
+        const term = document.createElement('dt');
+        const cell = document.createElement('dd');
+        term.textContent = name;
+        row.append(term, cell);
+        list.append(row);
+        this.#rows.set(kind, { row, cell, shown: '?' });
+      }
+      return list;
+    };
+    const corrections = rows([CORRECTIONS]);
+    corrections.className = 'corrections';
+    panel.replaceChildren(rows(INSTRUCTION_KINDS), corrections);
     panel.addEventListener('click', (event) => {
       if (event.target instanceof HTMLAnchorElement) opened();
     });
@@ -94,10 +106,13 @@ export class InstructionsView {
   /** List what holds at a time of the rendering, of what is performed: the piece or the reductions. */
   show(rendering: Rendering | null, t: Seconds, performed: Performed = 'piece'): void {
     if (!this.shown) return;
-    if (rendering && this.#timed?.id !== rendering.id) {
+    if (rendering && (this.#timed?.id !== rendering.id || this.#timed.performed !== performed)) {
+      const listed =
+        performed === 'reductions' ? overReductions(this.#instructions, rendering.rolls) : this.#instructions;
       this.#timed = {
         id: rendering.id,
-        list: timeInstructions(this.#instructions, (tick) => rendering.toSeconds(tick)),
+        performed,
+        list: timeInstructions(listed, (tick) => rendering.toSeconds(tick)),
       };
       this.#right = null;
     }
@@ -112,7 +127,11 @@ export class InstructionsView {
       appliesTo(instruction.kind, performed),
     );
     for (const [kind, row] of this.#rows) {
-      const here = active.filter((instruction) => instruction.kind === kind);
+      // a call once, where it holds twice at once (a chord the quarters roll again, held a while)
+      const here = active.filter(
+        (instruction, i) =>
+          instruction.kind === kind && active.findIndex((other) => other.id === instruction.id) === i,
+      );
       const key = here.map((instruction) => instruction.id).join(' ');
       if (key === row.shown) continue;
       row.shown = key;

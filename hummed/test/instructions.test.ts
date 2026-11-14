@@ -6,13 +6,15 @@ import { DOMParser } from '@xmldom/xmldom';
 import {
   activeAt,
   appliesTo,
+  CORRECTIONS,
   INSTRUCTION_KINDS,
   mpmDeskUrl,
+  overReductions,
   readInstructions,
   timeInstructions,
 } from '../src/shared/instructions.ts';
 import { mpmElements } from '../src/shared/mpm.ts';
-import { ROOT } from '../tools/node-support.ts';
+import { loadReductions, ROOT } from '../tools/node-support.ts';
 
 const work = {
   provenance: [
@@ -90,7 +92,7 @@ describe('the reconstruction’s instructions', () => {
       [
         ['tempo', '48 → 61 bpm'],
         ['dynamics', '28 → 21'],
-        ['dynamics', 'Velocity −6'],
+        ['correction', 'Velocity −6'],
         ['spread', 'Spread before the beat'],
         ['pedal', 'Sustain down to 0.9'],
         ['pedal', 'Sustain up'],
@@ -133,6 +135,33 @@ describe('the reconstruction’s instructions', () => {
     assert.deepEqual(
       kinds.filter((kind) => appliesTo(kind, 'piece')),
       kinds,
+    );
+  });
+  it('list the corrections of the source apart, over the piece and the reductions alike', () => {
+    assert.ok(!INSTRUCTION_KINDS.map(([kind]) => kind as string).includes(CORRECTIONS[0]));
+    assert.ok(appliesTo('correction', 'piece') && appliesTo('correction', 'reductions'));
+  });
+  it('over the reductions, have each arpeggio where they roll a chord as it, at every strike', () => {
+    const over = overReductions(list, [
+      { date: 1440, ornament: 'ornament_720' },
+      { date: 2160, ornament: 'ornament_720' },
+      { date: 2880, ornament: 'a gradient' },
+    ]);
+    assert.deepEqual(
+      over.filter((i) => i.kind === 'spread').map((i) => [i.id, i.from, i.to]),
+      [
+        ['spread', 1440, 1440],
+        ['spread', 2160, 2160],
+      ],
+    );
+    assert.deepEqual(
+      over.filter((i) => i.kind !== 'spread').map((i) => i.id),
+      list.filter((i) => i.kind !== 'spread').map((i) => i.id),
+    );
+    // none where the piece rolls it, where the reductions strike nothing rolled
+    assert.deepEqual(
+      overReductions(list, []).map((i) => i.id),
+      ['curve', 'down', 'tempo', 'softer', 'up'],
     );
   });
 });
@@ -261,7 +290,10 @@ describe('the published reconstruction’s instructions', () => {
     }
   });
   it('are of every dimension the page lists, each with something to say', () => {
-    assert.deepEqual(new Set(list.map((i) => i.kind)), new Set(INSTRUCTION_KINDS.map(([kind]) => kind)));
+    assert.deepEqual(
+      new Set(list.map((i) => i.kind)),
+      new Set([...INSTRUCTION_KINDS.map(([kind]) => kind), CORRECTIONS[0]]),
+    );
     for (const instruction of list) {
       assert.ok(
         instruction.label.length > 0 && !/NaN|undefined|null/.test(instruction.label),
@@ -269,6 +301,30 @@ describe('the published reconstruction’s instructions', () => {
       );
       assert.ok(instruction.to >= instruction.from);
     }
+  });
+  it('over the reductions, have an arpeggio wherever they roll a chord as one', () => {
+    const writers = (id: string): string[] =>
+      published.provenance.filter((call) => call.elements?.includes(id)).map((call) => call.name);
+    for (const reduced of [loadReductions().halves, loadReductions().quarters]) {
+      const over = overReductions(list, reduced.rolls).filter((i) => i.kind === 'spread');
+      const arpeggios = reduced.rolls.filter((roll) =>
+        writers(roll.ornament).includes('InsertTemporalSpread'),
+      );
+      assert.ok(arpeggios.length > 0.9 * reduced.rolls.length);
+      assert.deepEqual(
+        over.map((i) => i.from),
+        arpeggios.map((roll) => roll.date),
+      );
+      // the others shape the chord's loudness alone: a gradient, of no call with a range
+      for (const roll of reduced.rolls.filter((roll) => !arpeggios.includes(roll)))
+        assert.deepEqual(writers(roll.ornament), ['InsertDynamicsGradient', 'StylizeOrnamentation']);
+    }
+  });
+  it('are corrections where they are of a note’s velocity, not dynamics', () => {
+    const modified = published.provenance.filter((call) => call.name === 'Modify').map((call) => call.id);
+    assert.ok(modified.length > 0);
+    for (const instruction of list)
+      assert.equal(instruction.kind === 'correction', modified.includes(instruction.id), instruction.id);
   });
   it('find in the MPM what the calls wrote', () => {
     for (const call of published.provenance)

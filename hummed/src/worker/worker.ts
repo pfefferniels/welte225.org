@@ -44,6 +44,7 @@ import {
   voiceMpm,
   type HumData,
   type Level,
+  type Piano,
 } from './prepare.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
 import {
@@ -216,12 +217,14 @@ function hold(L: Level): void {
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
-const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> => {
+/** The piano's two parts at a setting, and where its harmonies roll a chord. */
+const pianoAt = (texts: Texts, setting: Setting): Piano => {
   const harmonies = harmoniesAt(stageAt(setting.elaboration), texts.reductions);
-  return performPiano(
+  const parts = performPiano(
     { msm: texts.msm, mpm: texts.mpm, harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm },
     shapeOf(setting),
   );
+  return { ...parts, rolls: harmonies.rolls };
 };
 
 /** What the voice follows at a setting: the piece, or the reduction in half notes (reductions.ts). */

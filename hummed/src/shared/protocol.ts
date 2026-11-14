@@ -124,12 +124,22 @@ export interface ScoreMessage {
   readonly moves: readonly ArticulatorMove[];
 }
 
-/** The helper to the planner: the piano's two parts, and how long they took (ms). */
+/**
+ * A chord the harmonic reductions roll: where they strike it, and the piece's ornament it is rolled
+ * as, its xml:id in the MPM (an arpeggio; a few only shape the chord's loudness, a dynamics gradient).
+ */
+export interface Roll {
+  readonly date: Ticks;
+  readonly ornament: string;
+}
+
+/** The helper to the planner: the piano's two parts, where the harmonies are rolled, and how long they took (ms). */
 export interface PianoMessage {
   readonly type: 'piano';
   readonly id: number;
   readonly piece: PianoPart;
   readonly harmonies: PianoPart;
+  readonly rolls: readonly Roll[];
   readonly ms: number;
 }
 
@@ -184,6 +194,8 @@ export interface Plan {
   /** The piano's two parts: the piece, and its harmonies (reduction/harmonies.mei) in the same performance. */
   readonly piece: PianoPart;
   readonly harmonies: PianoPart;
+  /** Where the harmonies roll a chord, at every strike, and as which of the piece's ornaments. */
+  readonly rolls: readonly Roll[];
   readonly timings: Timings;
   /** Where the sound starts coming, and its tract state (at the start of a 10 ms slot). */
   readonly startSeconds: Seconds;

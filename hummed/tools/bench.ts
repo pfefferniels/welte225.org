@@ -82,11 +82,18 @@ const states = {
 const t3 = now();
 const piano = performPiano(score, shapeAt(elaboration));
 const t4 = now();
-const level = makeLevel({ elaboration }, voice, states, piano, {
-  espressivo: t1 - t0 + (t4 - t3),
-  hummer: t2 - t1,
-  gestures: t3 - t2,
-});
+// where the harmonies roll a chord comes with the reductions, made before the timing
+const level = makeLevel(
+  { elaboration },
+  voice,
+  states,
+  { ...piano, rolls: [] },
+  {
+    espressivo: t1 - t0 + (t4 - t3),
+    hummer: t2 - t1,
+    gestures: t3 - t2,
+  },
+);
 
 // the chunks as the page orders them from the beginning, each rendered as the worker renders it
 const plan = planOf(level, 1, { seconds: 0 });

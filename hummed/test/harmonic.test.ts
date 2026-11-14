@@ -59,6 +59,22 @@ describe('the harmonic reductions', () => {
     assert.ok(new Set(bar5.map((s) => Math.round(s))).size > 1, bar5.join(' '));
   });
 
+  it('say where they roll a chord, and as which of the piece’s ornaments', () => {
+    for (const { mpm, rolls } of [r.halves, r.quarters]) {
+      const moved = [...mpm.matchAll(/<ornament\b[^>]*\sxml:id="([^"]*)-at-(\d+)"/g)].map(
+        ([, ornament, date]) => `${ornament} ${date}`,
+      );
+      assert.ok(rolls.length > 0);
+      assert.deepEqual(
+        rolls.map(({ ornament, date }) => `${ornament} ${date}`),
+        moved,
+      );
+    }
+    // the quarters roll a chord again on every quarter it is struck
+    assert.ok(r.quarters.rolls.length > 1.5 * r.halves.rolls.length);
+    for (const { date } of r.quarters.rolls) assert.equal(date % QUARTER, 0, String(date));
+  });
+
   it('give the voice one held note for each chord of the half notes, from the melodic reduction', () => {
     const line = r.line(loadReduction());
     const notes = line.events.filter((e) => e.kind === 'note');

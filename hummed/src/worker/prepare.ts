@@ -15,7 +15,7 @@ import {
 } from '../hummer/index.ts';
 import { interp } from '../shared/math.ts';
 import type { PianoPart } from '../shared/piano.ts';
-import type { LevelData, Plan, PlanBody, Setting, StartAt, Timings } from '../shared/protocol.ts';
+import type { LevelData, Plan, PlanBody, Roll, Setting, StartAt, Timings } from '../shared/protocol.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
 import type { StatePair } from '../vtl/engine.ts';
@@ -98,6 +98,13 @@ export function hum(
   });
 }
 
+/** The piano at a setting: its two parts, and where the harmonies roll a chord (reductions.ts). */
+export interface Piano {
+  readonly piece: PianoPart;
+  readonly harmonies: PianoPart;
+  readonly rolls: readonly Roll[];
+}
+
 /** One setting, from the MPM to tract states, as a worker keeps it. */
 export interface Level extends ChunkSource {
   readonly setting: Setting;
@@ -108,7 +115,7 @@ export function makeLevel(
   setting: Setting,
   voice: Voice,
   states: StatePair,
-  piano: { readonly piece: PianoPart; readonly harmonies: PianoPart },
+  piano: Piano,
   timings: Timings,
 ): Level {
   const count = states.closed.count;
@@ -130,6 +137,7 @@ export function makeLevel(
       clock: { ticks: voice.clock.ticks, ms: voice.clock.ms },
       piece: piano.piece,
       harmonies: piano.harmonies,
+      rolls: piano.rolls,
       timings,
       stateCount: count,
       seams,

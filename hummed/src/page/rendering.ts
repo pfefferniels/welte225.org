@@ -2,7 +2,7 @@
 // have arrived, its spectrogram, and its place in the score.
 import { interp } from '../shared/math.ts';
 import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
-import type { AudioMessage, Plan, Setting, Timings } from '../shared/protocol.ts';
+import type { AudioMessage, Plan, Roll, Setting, Timings } from '../shared/protocol.ts';
 import { INKS } from '../shared/spectrogram.ts';
 import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
 import { Strip } from './strip.ts';
@@ -18,6 +18,8 @@ export class Rendering {
   readonly bars: readonly (readonly [Seconds, string])[];
   /** The piano's two parts as the roll plays them. */
   readonly parts: { readonly piece: PianoPart; readonly harmonies: PianoPart };
+  /** Where the harmonies roll a chord, and as which of the piece's ornaments. */
+  readonly rolls: readonly Roll[];
   readonly timings: Timings;
   readonly startSeconds: Seconds;
   readonly audio: Float32Array;
@@ -38,6 +40,7 @@ export class Rendering {
     this.duration = plan.duration;
     this.bars = plan.bars;
     this.parts = { piece: plan.piece, harmonies: plan.harmonies };
+    this.rolls = plan.rolls;
     this.timings = plan.timings;
     this.startSeconds = plan.startSeconds;
     this.#clock = plan.clock;

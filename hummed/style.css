@@ -564,6 +564,12 @@ input[type='range']:disabled {
   flex-wrap: wrap;
   gap: 3px 4px;
 }
+/* apart from the instructions: the corrections of the source */
+.instructions dl.corrections {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule);
+}
 .instructions dd:empty::before {
   content: '–';
   color: var(--rule);

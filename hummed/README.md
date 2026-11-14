@@ -78,13 +78,22 @@ included (gone through fast, a tempo of a beat was listed with the next). A call
 later, whose elements a later call of its name wrote anew, is not listed: the MPM has what the
 later one wrote (three tempos and fifteen dynamics curves). The calls
 without a range (the choice of the take, the velocity mapping, the stylization of the ornaments,
-the merged patterns, the grace notes, the metadata) are of no moment in particular and are not
-listed.
+the dynamics gradients, the merged patterns, the grace notes, the metadata) are of no moment in
+particular and are not listed.
+
+Under a rule, apart from the instructions, the panel lists the corrections of the source: the
+calls that changed what the roll was read as before anything was fitted to it (`Modify`, a note's
+velocity, "Velocity −6"), each a moment, held as long as an arpeggio.
 
 The panel lists what is heard (`performedOf`, `src/page/mix.ts`): over the harmonic reductions,
-which take of the MPM its tempo, dynamics and arpeggios alone (below), only those three rows;
-the piece's where the piano plays it or the voice follows it. Both choices are remembered between
-visits; the instructions are off until asked for.
+which take of the MPM its tempo, dynamics and arpeggios alone (below), only those three rows and
+the corrections; the piece's where the piano plays it or the voice follows it. Over the
+reductions an arpeggio is listed where they roll a chord as it (`overReductions`), not where the
+piece does: at every strike that takes it, the quarters rolling a chord again on each. The worker
+sends where (`rolls` in the plan, from `reductionMpm`: each strike's date and the xml:id of the
+piece's ornament it is rolled as); a few of those ornaments are no arpeggio but a dynamics
+gradient, which shapes the chord's loudness alone and is listed nowhere. Both choices are
+remembered between visits; the instructions are off until asked for.
 
 ## What is hummed: a reduction for a pianist's voice
 
