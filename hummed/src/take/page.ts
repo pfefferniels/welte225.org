@@ -329,8 +329,7 @@ function report(result: TakeResult): void {
       const dynamics = r.calls.find(
         (c) => c.name === 'InsertDynamicsInstructions' && c.range.from === g.from,
       );
-      const phantoms =
-        (dynamics?.options['phantomVelocities'] as { value: unknown[] } | undefined)?.value.length ?? 0;
+      const guides = (dynamics?.options['guides'] as { value: unknown[] } | undefined)?.value.length ?? 0;
       const tempo = r.calls.find((c) => c.name === 'InsertTempo' && c.range.from === g.from)?.options;
       const bpm = (v: unknown): string => (typeof v === 'number' ? v.toFixed(1) : '?');
       const pace = tempo
@@ -340,7 +339,7 @@ function report(result: TakeResult): void {
         : 'no tempo (too few notes)';
       return (
         `  ${String(g.from).padStart(6)}–${String(g.to).padEnd(6)} ${g.kind.padEnd(6)} ${pace}` +
-        (phantoms ? `, ${phantoms} ${phantoms === 1 ? 'value' : 'values'} between the notes` : '')
+        (guides ? `, ${guides} ${guides === 1 ? 'value' : 'values'} between the notes` : '')
       );
     }),
   ];

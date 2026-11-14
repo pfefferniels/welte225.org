@@ -393,11 +393,11 @@ describe('a take read against the roll', () => {
   });
 
   it('says what the voice does between the notes: the swell where no note sounds', () => {
-    const phantoms = reading.calls
+    const guides = reading.calls
       .filter((c) => c.name === 'InsertDynamicsInstructions')
-      .flatMap((c) => (c.options['phantomVelocities'] as { value: [number, number][] }).value);
+      .flatMap((c) => (c.options['guides'] as { value: [number, number][] }).value);
     // the first bar's third beat has no note (2160), and the voice is at its fullest about there
-    const at = phantoms.find(([date]) => date === 2160);
+    const at = guides.find(([date]) => date === 2160);
     assert.ok(at, 'a value at the silent beat');
     const [before, after] = [
       roll.chords.findLast((c) => c.date < 2160),
