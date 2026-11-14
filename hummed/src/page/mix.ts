@@ -2,6 +2,7 @@
 // piano plays from the first: the harmonic reduction in half notes, then the same in quarter notes,
 // then the piece itself (shared/shape.ts). The humming goes on over it throughout, loudest at the
 // bare end, receding as the fader rises, quieter still under the piece, as a pianist hums along.
+import type { Performed } from '../shared/instructions.ts';
 import { PIECE_FROM, QUARTERS_FROM, stageAt, type Stage } from '../shared/shape.ts';
 
 /** Where the half notes give way to the quarters, and the quarters to the piece. */
@@ -46,6 +47,16 @@ export function mixOf(elaboration: number, parts: Parts): Mix {
 }
 
 export const mix = (elaboration: number): Mix => mixOf(elaboration, partsAt(elaboration));
+
+/**
+ * Whose instructions are heard: the piece's where the piano plays it or the voice follows it (as
+ * it does at the stage it was rendered for), else the harmonic reductions'. With nothing heard, the
+ * voice's.
+ */
+export function performedOf(parts: Parts, rendered: Stage): Performed {
+  if (parts.piano === 'piece' || (parts.voice && rendered === 'piece')) return 'piece';
+  return parts.piano === 'harmonies' || rendered !== 'piece' ? 'reductions' : 'piece';
+}
 
 /**
  * The elaboration the voice is rendered for: in steps, so that moving the fader renders anew only at

@@ -17,6 +17,18 @@ export const INSTRUCTION_KINDS = [
 
 export type InstructionKind = (typeof INSTRUCTION_KINDS)[number][0];
 
+/**
+ * What the instructions are of: the piece, or the harmonic reductions, which take of the MPM its
+ * tempo and dynamics and, chord by chord, its arpeggios, and none of its rubato, accents,
+ * articulation or pedalling (worker/reductions.ts).
+ */
+export type Performed = 'piece' | 'reductions';
+const OF_THE_REDUCTIONS: ReadonlySet<InstructionKind> = new Set(['tempo', 'dynamics', 'spread']);
+
+/** Whether the calls of a dimension apply to what is performed. */
+export const appliesTo = (kind: InstructionKind, performed: Performed): boolean =>
+  performed === 'piece' || OF_THE_REDUCTIONS.has(kind);
+
 /** One call of the reconstruction that holds over a stretch of the score. */
 export interface Instruction {
   /** The call's id: `https://welte225.org/mpm/<id>` names it. */
@@ -27,6 +39,11 @@ export interface Instruction {
   /** Where in the score it holds: from, and up to (the same place for a single moment). */
   readonly from: Ticks;
   readonly to: Ticks;
+  /**
+   * Where the next call of its kind takes over, for a call of which one holds at a time: it is
+   * listed no further, however short the while it holds.
+   */
+  readonly until?: Ticks;
 }
 
 /** An instruction in a rendering's time. */
@@ -66,6 +83,18 @@ const transition = (from: number | null, to: number | null, digits = 0): string 
       : `${short(from, digits)} → ${short(to, digits)}`;
 
 const PEDALS: Readonly<Record<string, string>> = { sustain: 'Sustain', soft: 'Soft' };
+
+/**
+ * The calls of which one holds at a time: each writes into a map of the MPM in which an instruction
+ * holds until the next begins (the tempo, the dynamics curves, the rubatos, the accentuation
+ * patterns), so a call holds until the next of its name begins, wherever the work file says it ends.
+ */
+const ONE_AT_A_TIME: ReadonlySet<string> = new Set([
+  'InsertTempo',
+  'InsertDynamicsInstructions',
+  'InsertRubato',
+  'InsertMetricalAccentuation',
+]);
 
 /** What a call is of, and what it says; null for calls that are not about a place in the score. */
 function describe(
@@ -140,51 +169,82 @@ function describe(
  * wrote; without it the calls are named by their options alone.
  *
  * A call holds over its range. A pedal's press holds for as long as the pedal stays down: up to
- * the call that lets it up again, which holds while the pedal moves.
+ * the call that lets it up again, which holds while the pedal moves. Of the tempo, the dynamics
+ * curves, the rubatos and the accentuation patterns one holds at a time: a call up to where the
+ * next of its name begins (one that begins where a later call begins holds nowhere). A call fitted
+ * again later, whose elements a later call of its name wrote anew, holds nowhere: the MPM has what
+ * the later one wrote.
  */
 export function readInstructions(
   work: unknown,
   element: (id: string) => MpmAttributes | undefined = () => undefined,
 ): Instruction[] {
   const calls = isObject(work) && Array.isArray(work['provenance']) ? work['provenance'] : [];
-  const list: (Instruction & { readonly pedal: string | null; readonly direction: string | null })[] = [];
-  for (const call of calls as readonly unknown[]) {
-    if (!isObject(call)) continue;
+  /** A call as read: the instruction, and what the reading goes by. */
+  interface Read {
+    readonly instruction: Instruction;
+    /** What the call is, and where it stands among the calls: the later, the more recent. */
+    readonly name: string;
+    readonly index: number;
+    /** The xml:ids of what it wrote into the MPM. */
+    readonly written: readonly string[];
+    readonly pedal: string | null;
+    readonly direction: string | null;
+  }
+  const list: Read[] = [];
+  (calls as readonly unknown[]).forEach((call, index) => {
+    if (!isObject(call)) return;
     const id = string(call['id']);
     const name = string(call['name']);
     const range = call['range'];
-    if (!id || !name || !isObject(range)) continue;
+    if (!id || !name || !isObject(range)) return;
     const from = number(range['from']);
-    if (from === null) continue;
+    if (from === null) return;
     const options = isObject(call['options']) ? call['options'] : {};
     const ids = Array.isArray(call['elements']) ? (call['elements'] as readonly unknown[]) : [];
-    const described = describe(
-      name,
-      options,
-      ids.map((x) => (typeof x === 'string' ? element(x) : undefined)),
-    );
-    if (!described) continue;
+    const written = ids.filter((x): x is string => typeof x === 'string');
+    const described = describe(name, options, written.map(element));
+    if (!described) return;
     list.push({
-      id,
-      ...described,
-      from,
-      to: Math.max(from, number(range['to']) ?? from),
+      instruction: { id, ...described, from, to: Math.max(from, number(range['to']) ?? from) },
+      name,
+      index,
+      written,
       pedal: name === 'InsertPedal' ? string(options['pedal']) : null,
       direction: name === 'InsertPedal' ? string(options['direction']) : null,
     });
-  }
-  list.sort((a, b) => a.from - b.from);
-  return list.map(({ pedal, direction, ...instruction }) => {
-    if (pedal === null || direction !== 'down') return instruction;
-    const up = list.find((other) => other.pedal === pedal && other.direction === 'up');
-    return up && up.from > instruction.to ? { ...instruction, to: up.from } : instruction;
+  });
+  // an element of the MPM is what the last call of a name to write it wrote
+  const writer = new Map<string, number>();
+  for (const call of list) for (const id of call.written) writer.set(`${call.name} ${id}`, call.index);
+  const holding = list
+    .filter(
+      (call) =>
+        call.written.length === 0 ||
+        call.written.some((id) => writer.get(`${call.name} ${id}`) === call.index),
+    )
+    .sort((a, b) => a.instruction.from - b.instruction.from || a.index - b.index);
+  return holding.flatMap(({ instruction, name, pedal, direction }, i) => {
+    if (pedal !== null && direction === 'down') {
+      const up = holding.find((other) => other.pedal === pedal && other.direction === 'up');
+      const lifted = up?.instruction.from;
+      return [lifted !== undefined && lifted > instruction.to ? { ...instruction, to: lifted } : instruction];
+    }
+    if (!ONE_AT_A_TIME.has(name)) return [instruction];
+    const next = holding.slice(i + 1).find((other) => other.name === name)?.instruction.from;
+    if (next === undefined) return [instruction];
+    if (next === instruction.from) return [];
+    return [{ ...instruction, to: Math.min(instruction.to, next), until: next }];
   });
 }
 
 /** How long an instruction is shown at least: one of a single moment (an arpeggio) the longest. */
 const HOLD: Seconds = 1.2;
 
-/** The instructions in a rendering's time, each shown for a while at least. */
+/**
+ * The instructions in a rendering's time, each shown for a while at least, but not past where the
+ * next of its kind takes over.
+ */
 export function timeInstructions(
   instructions: readonly Instruction[],
   toSeconds: (tick: Ticks) => Seconds,
@@ -192,7 +252,9 @@ export function timeInstructions(
 ): TimedInstruction[] {
   return instructions.map((instruction) => {
     const start = toSeconds(instruction.from);
-    return { ...instruction, start, end: Math.max(toSeconds(instruction.to), start + hold) };
+    const end = Math.max(toSeconds(instruction.to), start + hold);
+    const until = instruction.until === undefined ? end : toSeconds(instruction.until);
+    return { ...instruction, start, end: Math.min(end, until) };
   });
 }
 

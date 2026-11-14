@@ -71,10 +71,20 @@ with its scale) and is a link that opens MPM Desk's viewer at that call
 (`https://mpmdesk.welte225.org/#<id>`, where `https://welte225.org/mpm/<id>` sends on to), pausing
 the page. A call holds over the range the work file gives it, and is listed for 1.2 s at least,
 so that an arpeggio, which is one moment of the score, can be read and clicked. A pedal's press
-holds for as long as the pedal stays down, up to the call that lifts it. The calls without a
-range (the choice of the take, the velocity mapping, the stylization of the ornaments, the merged
-patterns, the grace notes, the metadata) are of no moment in particular and are not listed. Both
-choices are remembered between visits; the instructions are off until asked for.
+holds for as long as the pedal stays down, up to the call that lifts it. Of the tempo, the
+dynamics curves, the rubatos and the accentuation patterns one holds at a time, as in the MPM's
+maps: a call holds up to where the next of its name begins, and is listed no further, its 1.2 s
+included (gone through fast, a tempo of a beat was listed with the next). A call fitted again
+later, whose elements a later call of its name wrote anew, is not listed: the MPM has what the
+later one wrote (three tempos and fifteen dynamics curves). The calls
+without a range (the choice of the take, the velocity mapping, the stylization of the ornaments,
+the merged patterns, the grace notes, the metadata) are of no moment in particular and are not
+listed.
+
+The panel lists what is heard (`performedOf`, `src/page/mix.ts`): over the harmonic reductions,
+which take of the MPM its tempo, dynamics and arpeggios alone (below), only those three rows;
+the piece's where the piano plays it or the voice follows it. Both choices are remembered between
+visits; the instructions are off until asked for.
 
 ## What is hummed: a reduction for a pianist's voice
 

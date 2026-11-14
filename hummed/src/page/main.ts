@@ -16,7 +16,7 @@ import {
   settingOf,
   type Details,
 } from './details.ts';
-import { heard, mix, mixOf } from './mix.ts';
+import { heard, mix, mixOf, performedOf } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -120,13 +120,15 @@ function draw(time: number): boolean {
   const t = cur ? Math.min(cur.duration, glided) : glided;
   if (cur) readout.show(t, cur.duration, cur.bars, { moving, held: seeking });
   // the piano under the humming, as present as it is heard
-  const gains = mixOf(elaboration(), partsOf(elaboration(), details));
+  const parts = partsOf(elaboration(), details);
+  const gains = mixOf(elaboration(), parts);
   const part = instrumentPart();
   const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
   pianoColumns.set(strip?.columns ?? 0);
   const under = strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece };
   const drew = view.draw(cur, t, under, moving);
-  instructions.show(cur, t);
+  // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
+  instructions.show(cur, t, performedOf(parts, heard(cur?.setting.elaboration ?? elaboration())));
   return drew;
 }
 

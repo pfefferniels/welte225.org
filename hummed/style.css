@@ -551,6 +551,10 @@ input[type='range']:disabled {
   align-items: baseline;
   min-height: 20px;
 }
+/* over the harmonic reductions, the dimensions they do not take */
+.instructions dl > div[hidden] {
+  display: none;
+}
 .instructions dt {
   color: var(--muted);
 }

@@ -5,6 +5,7 @@ import { describe, it } from 'node:test';
 import { DOMParser } from '@xmldom/xmldom';
 import {
   activeAt,
+  appliesTo,
   INSTRUCTION_KINDS,
   mpmDeskUrl,
   readInstructions,
@@ -123,6 +124,87 @@ describe('the reconstruction’s instructions', () => {
   it('open in MPM Desk at the call', () => {
     assert.equal(mpmDeskUrl('2aac2b1a-7be2'), 'https://mpmdesk.welte225.org/#2aac2b1a-7be2');
   });
+  it('over the harmonic reductions, are of their tempo, dynamics and arpeggios alone', () => {
+    const kinds = INSTRUCTION_KINDS.map(([kind]) => kind);
+    assert.deepEqual(
+      kinds.filter((kind) => appliesTo(kind, 'reductions')),
+      ['tempo', 'dynamics', 'spread'],
+    );
+    assert.deepEqual(
+      kinds.filter((kind) => appliesTo(kind, 'piece')),
+      kinds,
+    );
+  });
+});
+
+describe('the instructions of which one holds at a time', () => {
+  const tempo = (id: string, from: number, to: number, bpm: number) => ({
+    id,
+    name: 'InsertTempo',
+    options: { bpm },
+    elements: [`tempo_${from}`],
+    range: { from, to },
+  });
+  const rubato = (id: string, from: number) => ({
+    id,
+    name: 'InsertRubato',
+    options: {},
+    elements: [`rubato_${from}`],
+    range: { from, to: from + 720 },
+  });
+  const list = readInstructions({
+    provenance: [
+      tempo('first', 0, 1440, 60),
+      // fitted again: the MPM's tempo at 1440 is what the later call wrote
+      tempo('fitted', 1440, 2880, 50),
+      // reaching past where the next begins
+      tempo('long', 2880, 5040, 70),
+      tempo('next', 4320, 5760, 66),
+      tempo('refitted', 1440, 2880, 55),
+      rubato('beat 1', 0),
+      rubato('beat 2', 720),
+      {
+        id: 'twice',
+        name: 'InsertTempo',
+        options: { bpm: 1 },
+        elements: ['x'],
+        range: { from: 5760, to: 6480 },
+      },
+      {
+        id: 'again',
+        name: 'InsertTempo',
+        options: { bpm: 2 },
+        elements: ['y'],
+        range: { from: 5760, to: 6480 },
+      },
+    ],
+  });
+  const of = (id: string) => list.find((instruction) => instruction.id === id);
+
+  it('leave out a call fitted again later, which the MPM no longer has', () => {
+    assert.equal(of('fitted'), undefined);
+    assert.equal(of('refitted')?.label, '55 bpm');
+  });
+  it('hold up to where the next begins', () => {
+    assert.deepEqual([of('long')?.from, of('long')?.to], [2880, 4320]);
+    assert.deepEqual([of('next')?.from, of('next')?.to], [4320, 5760]);
+  });
+  it('leave out a call where a later one begins at the same place', () => {
+    assert.equal(of('twice'), undefined);
+    assert.ok(of('again'));
+  });
+  it('are listed one at a time, however briefly they hold', () => {
+    // a quarter in a fifth of a second: each call would be listed for longer than it holds
+    const timed = timeInstructions(list, (tick) => tick / 3600, 1.2);
+    for (let t = 0; t < 2; t += 0.01) {
+      const here = activeAt(timed, t);
+      assert.ok(here.filter((i) => i.kind === 'tempo').length <= 1, `one tempo at ${t}`);
+      assert.ok(here.filter((i) => i.kind === 'rubato').length <= 1, `one rubato at ${t}`);
+    }
+    // the last of its kind is listed for a while as before
+    const last = timed.find((i) => i.id === 'beat 2');
+    assert.ok(last && last.end - last.start >= 1.2);
+  });
 });
 
 describe('the published reconstruction’s instructions', () => {
@@ -137,10 +219,46 @@ describe('the published reconstruction’s instructions', () => {
   );
   const list = readInstructions(published, (id) => elements.get(id));
 
-  it('are all of its calls that have a range', () => {
+  it('are all of its calls that have a range, but those fitted again later', () => {
     const ranged = published.provenance.filter((call) => call.range !== undefined);
     assert.ok(ranged.length > 400);
-    assert.deepEqual(new Set(list.map((i) => i.id)), new Set(ranged.map((call) => call.id)));
+    // the last of a name to write an element is the one the MPM has it from
+    const writer = new Map<string, number>();
+    published.provenance.forEach((call, i) => {
+      for (const id of call.elements ?? []) writer.set(`${call.name} ${id}`, i);
+    });
+    const refitted = published.provenance.filter(
+      (call, i) =>
+        call.range !== undefined &&
+        (call.elements ?? []).length > 0 &&
+        (call.elements ?? []).every((id) => writer.get(`${call.name} ${id}`) !== i),
+    );
+    assert.deepEqual(
+      new Set(refitted.map((call) => call.name)),
+      new Set(['InsertTempo', 'InsertDynamicsInstructions']),
+    );
+    const left = new Set(refitted.map((call) => call.id));
+    assert.deepEqual(
+      new Set(list.map((i) => i.id)),
+      new Set(ranged.filter((call) => !left.has(call.id)).map((call) => call.id)),
+    );
+  });
+  it('list one tempo, dynamics curve, rubato and accentuation pattern at a time, played fast or slow', () => {
+    const names = new Map(published.provenance.map((call) => [call.id, call.name]));
+    for (const ticksPerSecond of [360, 720, 2880]) {
+      const timed = timeInstructions(list, (tick) => tick / ticksPerSecond);
+      const end = Math.max(...timed.map((i) => i.end));
+      for (let t = 0; t < end; t += 0.05) {
+        const here = activeAt(timed, t).map((i) => names.get(i.id));
+        for (const name of [
+          'InsertTempo',
+          'InsertDynamicsInstructions',
+          'InsertRubato',
+          'InsertMetricalAccentuation',
+        ])
+          assert.ok(here.filter((n) => n === name).length <= 1, `one ${name} at ${t.toFixed(2)} s`);
+      }
+    }
   });
   it('are of every dimension the page lists, each with something to say', () => {
     assert.deepEqual(new Set(list.map((i) => i.kind)), new Set(INSTRUCTION_KINDS.map(([kind]) => kind)));

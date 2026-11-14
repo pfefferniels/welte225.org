@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { heard, mix, PIECE_FROM, QUARTERS_FROM, voiceElaboration } from '../src/page/mix.ts';
+import { heard, mix, performedOf, PIECE_FROM, QUARTERS_FROM, voiceElaboration } from '../src/page/mix.ts';
 import {
   approximateness,
   atTempo,
@@ -127,5 +127,27 @@ describe('elaboration', () => {
     const value = /id="elaboration"[^>]*value="(\d+)"/.exec(page)?.[1];
     assert.equal(Number(value) / 100, DEFAULT_ELABORATION);
     assert.equal(voiceElaboration(DEFAULT_ELABORATION), DEFAULT_ELABORATION);
+  });
+});
+
+describe('whose instructions are heard', () => {
+  it('are the reductions’ under the fader up to the piece, the piece’s from there', () => {
+    for (const e of positions)
+      assert.equal(
+        performedOf({ voice: true, piano: e < PIECE_FROM ? 'harmonies' : 'piece' }, heard(e)),
+        e < PIECE_FROM ? 'reductions' : 'piece',
+      );
+  });
+  it('are the piece’s where the piano plays it, or the voice follows it', () => {
+    assert.equal(performedOf({ voice: true, piano: 'piece' }, 'halves'), 'piece');
+    assert.equal(performedOf({ voice: false, piano: 'piece' }, 'quarters'), 'piece');
+    assert.equal(performedOf({ voice: true, piano: 'harmonies' }, 'piece'), 'piece');
+    assert.equal(performedOf({ voice: true, piano: 'none' }, 'piece'), 'piece');
+  });
+  it('are the reductions’ where neither is heard of the piece', () => {
+    assert.equal(performedOf({ voice: false, piano: 'harmonies' }, 'piece'), 'reductions');
+    assert.equal(performedOf({ voice: true, piano: 'none' }, 'quarters'), 'reductions');
+    assert.equal(performedOf({ voice: false, piano: 'none' }, 'halves'), 'reductions');
+    assert.equal(performedOf({ voice: false, piano: 'none' }, 'piece'), 'piece');
   });
 });

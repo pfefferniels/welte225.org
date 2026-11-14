@@ -1,9 +1,11 @@
 // What the reconstruction says where the music is: a panel over the spectrogram that lists, by
 // dimension, the calls of /mpm/work.json holding at the playhead. Each is a link that opens MPM
-// Desk's viewer at that call. The page asks in every frame it draws; the list is worked out again
+// Desk's viewer at that call. Over the harmonic reductions it lists only the dimensions they take
+// (tempo, dynamics, arpeggio). The page asks in every frame it draws; the list is worked out again
 // only once the playhead has passed the next place where a call begins or ends.
 import {
   activeAt,
+  appliesTo,
   INSTRUCTION_KINDS,
   instructionIri,
   mpmDeskUrl,
@@ -11,6 +13,7 @@ import {
   timeInstructions,
   type Instruction,
   type InstructionKind,
+  type Performed,
   type TimedInstruction,
 } from '../shared/instructions.ts';
 import { mpmElements } from '../shared/mpm.ts';
@@ -37,8 +40,13 @@ export function stretchAbout(
 
 export class InstructionsView {
   readonly #panel: HTMLElement;
-  readonly #rows = new Map<InstructionKind, { readonly cell: HTMLElement; shown: string }>();
+  readonly #rows = new Map<
+    InstructionKind,
+    { readonly row: HTMLElement; readonly cell: HTMLElement; shown: string }
+  >();
   #instructions: readonly Instruction[] = [];
+  /** What the rows are of: the piece, or the reductions, which list fewer. */
+  #performed: Performed = 'piece';
   /** The instructions in the time of the rendering they were last shown for. */
   #timed: { readonly id: number; readonly list: readonly TimedInstruction[] } | null = null;
   /** The stretch of that rendering's time over which the rows are right as they are. */
@@ -55,7 +63,7 @@ export class InstructionsView {
       term.textContent = name;
       row.append(term, cell);
       list.append(row);
-      this.#rows.set(kind, { cell, shown: '?' });
+      this.#rows.set(kind, { row, cell, shown: '?' });
     }
     panel.replaceChildren(list);
     panel.addEventListener('click', (event) => {
@@ -83,8 +91,8 @@ export class InstructionsView {
     this.#panel.hidden = !shown;
   }
 
-  /** List what holds at a time of the rendering. */
-  show(rendering: Rendering | null, t: Seconds): void {
+  /** List what holds at a time of the rendering, of what is performed: the piece or the reductions. */
+  show(rendering: Rendering | null, t: Seconds, performed: Performed = 'piece'): void {
     if (!this.shown) return;
     if (rendering && this.#timed?.id !== rendering.id) {
       this.#timed = {
@@ -93,9 +101,16 @@ export class InstructionsView {
       };
       this.#right = null;
     }
+    if (performed !== this.#performed) {
+      this.#performed = performed;
+      for (const [kind, { row }] of this.#rows) row.hidden = !appliesTo(kind, performed);
+      this.#right = null;
+    }
     if (rendering && this.#right && this.#right[0] <= t && t < this.#right[1]) return;
     this.#right = rendering && this.#timed ? stretchAbout(this.#timed.list, t) : null;
-    const active = rendering && this.#timed ? activeAt(this.#timed.list, t) : [];
+    const active = (rendering && this.#timed ? activeAt(this.#timed.list, t) : []).filter((instruction) =>
+      appliesTo(instruction.kind, performed),
+    );
     for (const [kind, row] of this.#rows) {
       const here = active.filter((instruction) => instruction.kind === kind);
       const key = here.map((instruction) => instruction.id).join(' ');
