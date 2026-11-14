@@ -216,16 +216,13 @@ function hold(L: Level): void {
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
-const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> =>
-  performPiano(
-    {
-      msm: texts.msm,
-      mpm: texts.mpm,
-      harmonies: harmoniesAt(stageAt(setting.elaboration), texts.reductions),
-      harmoniesMpm: texts.reductions().mpm,
-    },
+const pianoAt = (texts: Texts, setting: Setting): ReturnType<typeof performPiano> => {
+  const harmonies = harmoniesAt(stageAt(setting.elaboration), texts.reductions);
+  return performPiano(
+    { msm: texts.msm, mpm: texts.mpm, harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm },
     shapeOf(setting),
   );
+};
 
 /** What the voice follows at a setting: the piece, or the reduction in half notes (reductions.ts). */
 const voiceScoreAt = (texts: Texts, setting: Setting): Score =>

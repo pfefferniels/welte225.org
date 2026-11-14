@@ -56,11 +56,8 @@ export const loadReductions = (): Reductions =>
 
 /** What the piano plays from at an elaboration, as the worker reads it: the piece, the harmonies there, the MPMs. */
 export function loadPianoScore(elaboration = DEFAULT_ELABORATION): PianoScore {
-  return {
-    ...loadScore(),
-    harmonies: harmoniesAt(stageAt(elaboration), loadReductions),
-    harmoniesMpm: loadReductions().mpm,
-  };
+  const harmonies = harmoniesAt(stageAt(elaboration), loadReductions);
+  return { ...loadScore(), harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm };
 }
 
 /** What the voice follows at an elaboration (the piece, or the half notes), and what it sings. */

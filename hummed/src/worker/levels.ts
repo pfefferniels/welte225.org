@@ -31,9 +31,9 @@ export function voiceFactors(timing: number, level: number): ExaggerationFactors
 
 /**
  * The same MPM with every tempo ×`factor`: what it starts at and what it moves to, in beats a
- * minute. Whatever is counted in beats (rubato, a ritardando's course) is as it was, only sooner
- * over; what the MPM gives in milliseconds (how far a chord is spread, how far the hands are
- * apart) stays as long as it is.
+ * minute. Whatever is counted in ticks (rubato, a ritardando's course, how far a chord is rolled)
+ * is as it was, only sooner over; what the MPM gives in milliseconds (its grace notes) stays as
+ * long as it is.
  */
 export const atTempo = (mpm: string, factor: number): string =>
   factor === 1

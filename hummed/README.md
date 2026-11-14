@@ -174,7 +174,12 @@ has every chord where the piece sounds it (below), and each chord of the half no
 by its notes (`placesInPiece`: the most alike near its place, an appoggiatura written out there,
 never before the chord before), the arpeggio there moved to it (in ascending pitch where the piece
 names its notes). The quarters strike a chord first where the half notes do, by the same note ids,
-and roll it there; the rest of its strikes are not rolled.
+and roll it again at every strike (`strikesInPiece`). The MPM gives its arpeggios in ticks (the
+grace notes alone in milliseconds), so a roll lasts as long as its stretch of the score takes at
+the tempo where it is struck: the same chord rolled on four quarters of bar 5 takes 203, 252, 278
+and 160 ms at the MPM's tempo, slowing into the third beat and moving on. Each reduction has an MPM of
+its own, with arpeggios only where it strikes: one dated where a score strikes nothing espressivo
+gives to the next chord it does strike.
 
 What the voice sings over them is chosen from the melodic reduction (`harmonicLine`): for each chord
 of the half notes, the note `reduction/reduction.mei` sings where that chord stands in the piece
@@ -234,11 +239,11 @@ The more of a sketch, the more flighty (`flightiness`, `(1 − e)²`, 1 at 0, 0 
 faster and struck less exactly. Every tempo of the MPM, exaggerated, is multiplied (`tempoFactor`,
 `atTempo`): what it starts at and what it moves to, by `1 + (1 − e)²`, ×2 at 0, ×1.56 at a
 quarter, ×1.3 where the piece comes in, ×1.12 at 0.65, ×1 at 1, for the piano and the voice alike,
-so they keep the same onsets. What is counted in beats (the rubato, a ritardando's course) is as it
-was, only sooner over; what the MPM gives in milliseconds (how far a chord is spread, how far the
-hands are apart) stays as long as it is, and is exaggerated: where the piece comes in a chord is
-rolled over nearly three times as much of its beat, and can strike the note the voice takes from it
-hardly after the note before. The voice keeps its line in order (`SUNG_AT_LEAST`,
+so they keep the same onsets. What is counted in ticks (the rubato, a ritardando's course, how far
+a chord is rolled) is as it was, only sooner over; what the MPM gives in milliseconds (its grace
+notes) stays as long as it is. A roll is exaggerated with the rest: where the piece comes in a chord
+is rolled over twice as much of its beat, and can strike the note the voice takes from it hardly
+after the note before. The voice keeps its line in order (`SUNG_AT_LEAST`,
 `src/hummer/melody.ts`): it takes such a note up 90 ms after the one before, in one place (bar 5′)
 up to 0.5. The harmonies, at the MPM's tempo and dynamics alone, last 1:20 at the bare end, 1:28 at
 0.1, 1:43 a quarter of the way and 2:04 at 0.35; the piece, exaggerated most where it comes in,

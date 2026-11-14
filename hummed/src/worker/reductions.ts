@@ -134,11 +134,34 @@ export function quartersScore(halvesMsm: string): string {
 const LEFT_OUT = ['rubatoMap', 'articulationMap', 'metricalAccentuationMap', 'movementMap'] as const;
 
 /**
- * The MPM as the reductions are performed with: its tempo and dynamics as they are, no rubato,
- * accents, articulation or pedalling; and of its arpeggios, at each chord of the half notes the
- * one the piece has where that chord stands (in ascending pitch where the piece names its notes).
+ * Where each chord the reductions strike is rolled from: for every strike, in half notes or in
+ * quarters, the place in the piece of the chord of the half notes it belongs to. A chord struck
+ * again on the quarter is rolled again, as the piece rolls it there; the MPM gives its arpeggios in
+ * ticks, so a roll lasts as long as its stretch of the score takes where it is struck, and over a
+ * ritardando the same roll comes slower.
  */
-export function reductionMpm(mpm: string, places: ReadonlyMap<Ticks, Ticks>): string {
+export function strikesInPiece(
+  halves: readonly Chord[],
+  quarters: readonly Chord[],
+  places: ReadonlyMap<Ticks, Ticks>,
+): Map<Ticks, Ticks> {
+  const strikes = new Map(places);
+  let i = -1;
+  for (const { date } of quarters) {
+    while (i + 1 < halves.length && halves[i + 1].date <= date) i++;
+    const chord = halves.at(i);
+    if (chord && !strikes.has(date)) strikes.set(date, places.get(chord.date) ?? chord.date);
+  }
+  return strikes;
+}
+
+/**
+ * The MPM as the reductions are performed with: its tempo and dynamics as they are, no rubato,
+ * accents, articulation or pedalling; and of its arpeggios, at each strike the one the piece has
+ * where the chord struck stands (`strikesInPiece`; in ascending pitch where the piece names its
+ * notes).
+ */
+export function reductionMpm(mpm: string, strikes: ReadonlyMap<Ticks, Ticks>): string {
   let out = mpm;
   for (const name of LEFT_OUT)
     out = out.replace(new RegExp(`<${name}\\b[^>]*/>|<${name}\\b[^>]*>[\\s\\S]*?</${name}>`, 'g'), '');
@@ -153,7 +176,7 @@ export function reductionMpm(mpm: string, places: ReadonlyMap<Ticks, Ticks>): st
         if (!arpeggios.has(date)) arpeggios.set(date, tag);
       }
       const kept = body.replace(/<ornament\b[^>]*\/>|<ornament\b[^>]*>[\s\S]*?<\/ornament>/g, '');
-      const moved = [...places.entries()]
+      const moved = [...strikes.entries()]
         .sort((a, b) => a[0] - b[0])
         .flatMap(([date, place]) => {
           const tag = arpeggios.get(place);
@@ -218,11 +241,14 @@ export function harmonicLine(
   return { events, bars: melodic.bars };
 }
 
-/** The reductions, made once from the half notes, the harmonies where they stand and the MPM. */
+/**
+ * The reductions, made once from the half notes, the harmonies where they stand and the MPM: each
+ * with an MPM of its own, rolled where it strikes alone (an arpeggio dated where a score strikes
+ * nothing, espressivo gives to the next chord it strikes).
+ */
 export interface Reductions {
-  readonly halves: string;
-  readonly quarters: string;
-  readonly mpm: string;
+  readonly halves: Score;
+  readonly quarters: Score;
   /** What the voice sings over them, from the melodic reduction. */
   readonly line: (melodic: Reduction) => Reduction;
 }
@@ -230,11 +256,11 @@ export interface Reductions {
 export function reductions(halves: string, harmonies: string, mpm: string): Reductions {
   const chords = chordsOf(halves);
   const places = placesInPiece(chords, chordsOf(harmonies));
+  const quarters = quartersScore(halves);
   let line: { readonly of: Reduction; readonly is: Reduction } | null = null;
   return {
-    halves,
-    quarters: quartersScore(halves),
-    mpm: reductionMpm(mpm, places),
+    halves: { msm: halves, mpm: reductionMpm(mpm, places) },
+    quarters: { msm: quarters, mpm: reductionMpm(mpm, strikesInPiece(chords, chordsOf(quarters), places)) },
     line: (melodic) => {
       if (line?.of !== melodic) line = { of: melodic, is: harmonicLine(chords, places, melodic) };
       return line.is;
@@ -248,8 +274,8 @@ export interface Score {
   readonly mpm: string;
 }
 
-/** The harmonies the piano has beside the piece at a stage: in half notes there, else in quarters. */
-export const harmoniesAt = (stage: Stage, r: () => Reductions): string =>
+/** The harmonies the piano has beside the piece at a stage, and their MPM: in half notes there, else in quarters. */
+export const harmoniesAt = (stage: Stage, r: () => Reductions): Score =>
   stage === 'halves' ? r().halves : r().quarters;
 
 /**
@@ -258,7 +284,7 @@ export const harmoniesAt = (stage: Stage, r: () => Reductions): string =>
  * with the rest); the line's notes are the half notes', which the quarters strike first by the same ids.
  */
 export const voiceScore = (stage: Stage, piece: Score, r: () => Reductions): Score =>
-  stage === 'piece' ? piece : { msm: harmoniesAt(stage, r), mpm: r().mpm };
+  stage === 'piece' ? piece : harmoniesAt(stage, r);
 
 /** What the voice sings at a stage: the melodic reduction over the piece, else the line over the reductions. */
 export const sungReduction = (stage: Stage, melodic: Reduction, r: () => Reductions): Reduction =>
