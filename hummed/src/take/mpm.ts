@@ -11,6 +11,8 @@ import { dateAt, TICKS_PER_QUARTER, type Roll, type Section } from './roll.ts';
 
 const STYLE = 'take';
 const number = (x: number): string => String(Number(x.toFixed(4)));
+/** A span as MPM v3 writes a time value: the number with its unit. */
+const milliseconds = (span: Seconds): string => `${number(span * 1000)}ms`;
 const attributes = (values: Readonly<Record<string, string | number | undefined>>): string =>
   Object.entries(values)
     .filter((entry): entry is [string, string | number] => entry[1] !== undefined)
@@ -59,10 +61,9 @@ export function takeMpm(roll: Roll, section: Section, reading: Reading, title: s
           'transition.to': gradient(velocities[velocities.length - 1]),
         }) +
         element('temporalSpread', {
-          'frame.start': (spread.first - spread.beat) * 1000,
-          frameLength: (spread.last - spread.first) * 1000,
+          'frame.offset': milliseconds(spread.first - spread.beat),
+          frameLength: milliseconds(spread.last - spread.first),
           intensity: spreadIntensity(chord.notes.map((n) => n.onset)),
-          'time.unit': 'milliseconds',
         }) +
         '</ornamentDef>',
     );
