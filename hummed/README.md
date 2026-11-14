@@ -617,7 +617,7 @@ The worker sends the piano with every plan as the roll plays it: each part's key
 releases, its sustain pedal and its soft pedal (`src/worker/piano.ts`, `src/shared/piano.ts`). The
 settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `midi.ts`):
 
-- **The Bösendorfer 280VC as Pianoteq rendered it ahead**, where there are recordings in
+- **The C. Bechstein grand of 1899 as Pianoteq rendered it ahead**, where there are recordings in
   `piano/pianoteq/`: both parts at each setting of the elaboration the voice is rendered for
   (every 0.05, the piano as exaggerated and as fast as that setting has it), mono MP3s listed in
   `manifest.json`. A setting is loaded when it is asked for, and the page keeps the one playing and
@@ -641,7 +641,9 @@ settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `mi
 `npm run pianoteq` makes the recordings (`tools/pianoteq.ts`). For each setting it writes both parts
 as MIDI files, the messages an instrument would be sent (`tools/smf.ts`, a tick of half a
 millisecond), and has Pianoteq render them (`--headless --midi … --wav …`, with the preset given,
-its reverb off: the page has its own room). It finds where the sound lies against the messages by
+its reverb and delay off: the page has its own room). The preset is Modartt's “C. Bechstein”
+(Kremsegg Castle collection) with A at 438 Hz, a little under today's 440, where pitch around 1904
+probably lay. It finds where the sound lies against the messages by
 the strikes of the keys (`tools/audio.ts`: the rise in the energy of the sound's first difference,
 millisecond by millisecond, against the keys' times weighted by their velocities, refined to a
 tenth of a millisecond; a stand-in renderer's 37.3 ms came out at 36.9 to 37.4) and moves it into
@@ -822,5 +824,5 @@ than the top line), and in how much of it is heard (where the maps move).
 - The piano samples are from the Salamander Grand Piano by Alexander Holm, CC BY 3.0, trimmed and
   made mono.
 - The recordings in `piano/pianoteq/` are the performance as Pianoteq (Modartt) played it, with
-  its Bösendorfer 280VC. Pianoteq's licence lets the sound it makes be distributed within a musical
+  its model of the C. Bechstein grand of 1899 in the collection of Kremsegg Castle. Pianoteq's licence lets the sound it makes be distributed within a musical
   context, and not in forms that would let it be used as a sample-based instrument.

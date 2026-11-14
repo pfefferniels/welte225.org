@@ -9,7 +9,7 @@
 //                              [--fxp <file> instead of --preset] [--instrument <name>] [--credit <text>]
 //   npm run pianoteq -- midi [--out <dir>] [--step 0.05] [--elaborations …]   (only the MIDI files)
 //
-// Needs Pianoteq (the preset with its reverb off: the page has its own room) and ffmpeg.
+// Needs Pianoteq (the preset with its reverb and delay off: the page has its own room) and ffmpeg.
 // The program is Pianoteq's executable, e.g. on a Mac
 // "/Applications/Pianoteq 9/Pianoteq 9.app/Contents/MacOS/Pianoteq 9"; or set PIANOTEQ.
 import { spawnSync } from 'node:child_process';
@@ -63,7 +63,7 @@ const { values, positionals } = parseArgs({
     step: { type: 'string', default: '0.05' },
     elaborations: { type: 'string' },
     out: { type: 'string' },
-    instrument: { type: 'string', default: 'Bösendorfer 280VC' },
+    instrument: { type: 'string', default: 'C. Bechstein (1899)' },
     credit: { type: 'string' },
   },
 });

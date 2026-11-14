@@ -1,4 +1,4 @@
-// The settings card: which piano plays. The Bösendorfer as Pianoteq rendered it ahead (where there
+// The settings card: which piano plays. The piano Pianoteq rendered ahead (where there
 // are recordings, one for each setting of the elaboration), the Salamander grand sampled as you
 // listen, or an instrument of the visitor's own over MIDI, with its delay. The
 // browser is asked for MIDI only when the visitor chooses it.
