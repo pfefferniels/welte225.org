@@ -326,9 +326,7 @@ function report(result: TakeResult): void {
     '',
     `${r.gestures.length} movements, each a tempo and a dynamics instruction:`,
     ...r.gestures.map((g) => {
-      const dynamics = r.calls.find(
-        (c) => c.name === 'InsertDynamicsInstructions' && c.range.from === g.from,
-      );
+      const dynamics = r.calls.find((c) => c.name === 'InsertDynamics' && c.range.from === g.from);
       const guides = (dynamics?.options['guides'] as { value: unknown[] } | undefined)?.value.length ?? 0;
       const tempo = r.calls.find((c) => c.name === 'InsertTempo' && c.range.from === g.from)?.options;
       const bpm = (v: unknown): string => (typeof v === 'number' ? v.toFixed(1) : '?');

@@ -120,11 +120,7 @@ export interface Gesture {
 export interface Call {
   readonly id: string;
   readonly name:
-    | 'InsertTempo'
-    | 'InsertDynamicsInstructions'
-    | 'InsertTemporalSpread'
-    | 'InsertRubato'
-    | 'InsertMetricalAccentuation';
+    'InsertTempo' | 'InsertDynamics' | 'InsertTemporalSpread' | 'InsertRubato' | 'InsertMetricalAccentuation';
   readonly options: Readonly<Record<string, unknown>>;
   readonly range: { readonly from: Ticks; readonly to: Ticks | null };
 }
@@ -322,7 +318,7 @@ function seeded(text: string): () => number {
 
 /**
  * The dynamics instruction through a movement's points (its chords and the values between them),
- * as MPM Desk's `InsertDynamicsInstructions` fits it: the first and the last point are its ends;
+ * as MPM Desk's `InsertDynamics` fits it: the first and the last point are its ends;
  * one point is a constant, two a straight ramp; more bend it, by espressivo's search, as far as
  * five velocity steps in all are left unexplained, with the desk's own seed.
  */
@@ -640,7 +636,7 @@ export function read(
     }
     calls.push({
       id: id(),
-      name: 'InsertDynamicsInstructions',
+      name: 'InsertDynamics',
       options: {
         from: g.from,
         to: g.to,
