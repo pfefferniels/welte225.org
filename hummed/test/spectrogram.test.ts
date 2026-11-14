@@ -6,7 +6,9 @@ import {
   SPECTROGRAM,
   SPECTROGRAM_STYLES,
   isSpectrogramStyleName,
+  type SpectrogramScale,
   type SpectrogramStyle,
+  type SpectrogramStyleName,
 } from '../src/shared/spectrogram.ts';
 import { SAMPLE_RATE } from '../src/shared/units.ts';
 import { makeSpectrogram } from '../src/worker/spectrogram.ts';
@@ -64,7 +66,7 @@ function fingerprint(style: SpectrogramStyle, rate: number): string {
 describe('the spectrogram styles', () => {
   for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
     it(`${name}: draws a 220 Hz tone in its row, dark on white`, () => {
-      const column = makeSpectrogram(style)(tone(220, 0.1), 0, 50, 51);
+      const column = makeSpectrogram(style)(tone(220, 0.04), 0, 50, 51);
       const darkest = column.indexOf(Math.min(...column));
       const rowOf = (hz: number): number =>
         ((Math.log(style.fmax) - Math.log(hz)) / (Math.log(style.fmax) - Math.log(style.fmin))) *
@@ -81,7 +83,7 @@ describe('the spectrogram styles', () => {
     const rate = 48000;
     const style = SPECTROGRAM_STYLES.melodic;
     const sound = Float32Array.from({ length: rate }, (_, i) =>
-      i < rate / 2 ? 0 : 0.1 * Math.sin((2 * Math.PI * 220 * i) / rate),
+      i < rate / 2 ? 0 : 0.04 * Math.sin((2 * Math.PI * 220 * i) / rate),
     );
     const columns = makeSpectrogram(style, rate)(sound, 0, 0, 100);
     const column = (c: number): Uint8Array =>
@@ -96,11 +98,16 @@ describe('the spectrogram styles', () => {
     assert.ok((late[row] ?? 255) < 128);
   });
   // The fingerprints were taken from the columns as they were first written: a radix-2 FFT of the
-  // whole frame, and of every row two magnitudes and a logarithm or a power. The transform of
-  // the lowest bins alone and the tabulated greys draw the same pixels.
+  // whole frame, and of every row two magnitudes and a logarithm or a power, at these scales. The
+  // transform of the lowest bins alone and the tabulated greys draw the same pixels.
+  const FINGERPRINTED: Record<SpectrogramStyleName, SpectrogramScale> = {
+    full: { kind: 'db', topDb: 41.09, rangeDb: 60 },
+    melodic: { kind: 'amplitude', full: 217, power: 1 },
+  };
   for (const [name, style] of Object.entries(SPECTROGRAM_STYLES)) {
     it(`${name}: draws the swell pixel for pixel as it did`, () => {
-      assertGolden(`spectrogram.${name}`, fingerprint(style, SAMPLE_RATE));
+      const scale = FINGERPRINTED[name as SpectrogramStyleName];
+      assertGolden(`spectrogram.${name}`, fingerprint({ ...style, scale }, SAMPLE_RATE));
     });
   }
   it("draws the swell at 48 kHz on the piano's scale pixel for pixel as it did", () => {

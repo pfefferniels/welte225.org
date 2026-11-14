@@ -4,7 +4,7 @@
   "renderer": "Pianoteq Trial version 9.3.0/20261102 -- https://www.modartt.com/pianoteq, preset “My Presets/WM225 Bechstein dry”",
   "rendered": "2026-11-14",
   "step": 0.05,
-  "gainDb": 8.92,
+  "gainDb": 7.57,
   "settings": [
     {
       "elaboration": 0,
@@ -54,8 +54,8 @@
         "keys": 484,
         "fingerprint": "3af3f5afa7a89283",
         "seconds": 94.1,
-        "lagMs": 3.6,
-        "driftMs": 1.8
+        "lagMs": 3.5,
+        "driftMs": 2.5
       },
       "harmonies": {
         "file": "e010-harmonies.mp3",
@@ -95,7 +95,7 @@
         "fingerprint": "4c16cc0439a0bf7e",
         "seconds": 103.35,
         "lagMs": 4,
-        "driftMs": -0.8
+        "driftMs": -0.9
       },
       "harmonies": {
         "file": "e020-harmonies.mp3",
@@ -103,7 +103,7 @@
         "fingerprint": "421cb23f6e7ad1bf",
         "seconds": 103.42,
         "lagMs": 3.9,
-        "driftMs": -0.3
+        "driftMs": -0.4
       }
     },
     {
@@ -141,7 +141,7 @@
         "file": "e030-harmonies.mp3",
         "keys": 541,
         "fingerprint": "c03afacbd54f322f",
-        "seconds": 116.51,
+        "seconds": 116.62,
         "lagMs": 4.4,
         "driftMs": -0.1
       }
@@ -174,8 +174,8 @@
         "keys": 484,
         "fingerprint": "0079a30d2c55e0fd",
         "seconds": 146.14,
-        "lagMs": 1.7,
-        "driftMs": -0.7
+        "lagMs": 1.6,
+        "driftMs": -1.4
       },
       "harmonies": {
         "file": "e040-harmonies.mp3",
@@ -203,7 +203,7 @@
         "fingerprint": "32e50c244009620c",
         "seconds": 158.63,
         "lagMs": 3.9,
-        "driftMs": 2
+        "driftMs": 1.9
       }
     },
     {
@@ -223,7 +223,7 @@
         "fingerprint": "ac9fff9e54974328",
         "seconds": 163.89,
         "lagMs": 3.3,
-        "driftMs": -0.9
+        "driftMs": -1
       }
     },
     {
@@ -274,8 +274,8 @@
         "keys": 484,
         "fingerprint": "9f0d85a944c0cedb",
         "seconds": 169.66,
-        "lagMs": 0.7,
-        "driftMs": 2.1
+        "lagMs": 0.6,
+        "driftMs": 1.5
       },
       "harmonies": {
         "file": "e065-harmonies.mp3",
@@ -295,7 +295,7 @@
         "fingerprint": "b141532660a00ae0",
         "seconds": 170.06,
         "lagMs": 3.8,
-        "driftMs": -0.4
+        "driftMs": -0.5
       },
       "harmonies": {
         "file": "e070-harmonies.mp3",
@@ -303,7 +303,7 @@
         "fingerprint": "8df8e5f88ace0ebe",
         "seconds": 170.07,
         "lagMs": 3.3,
-        "driftMs": -0.4
+        "driftMs": -0.5
       }
     },
     {
@@ -323,7 +323,7 @@
         "fingerprint": "433dd6cbf7d73065",
         "seconds": 169.72,
         "lagMs": 3.9,
-        "driftMs": 1.8
+        "driftMs": 1.9
       }
     },
     {

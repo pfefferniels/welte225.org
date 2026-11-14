@@ -34,7 +34,7 @@ export const SPECTROGRAM_STYLES = {
     fmax: 4500,
     window: 4096,
     fftSize: 8192,
-    scale: { kind: 'db', topDb: 41.09, rangeDb: 60 },
+    scale: { kind: 'db', topDb: 33.09, rangeDb: 60 },
   },
   // the voice's strongest partials (the 99th percentile of each column's peak) at full black, in
   // linear amplitude as Sonic Visualiser draws it: the line and its octave, little else
@@ -43,7 +43,7 @@ export const SPECTROGRAM_STYLES = {
     fmax: 1500,
     window: 8192,
     fftSize: 8192,
-    scale: { kind: 'amplitude', full: 217, power: 1 },
+    scale: { kind: 'amplitude', full: 86.39, power: 1 },
   },
 } as const satisfies Record<string, SpectrogramStyle>;
 
@@ -58,8 +58,8 @@ export const isSpectrogramStyleName = (name: string | null): name is Spectrogram
  * its strike alone; full black where a loud chord's strongest partial is.
  */
 export const PIANO_SCALES = {
-  full: { kind: 'db', topDb: 41.09, rangeDb: 60 },
-  melodic: { kind: 'amplitude', full: 217, power: 0.7 },
+  full: { kind: 'db', topDb: 33.09, rangeDb: 60 },
+  melodic: { kind: 'amplitude', full: 86.39, power: 0.7 },
 } as const satisfies Record<SpectrogramStyleName, SpectrogramScale>;
 
 /** The inks: the humming in red over the piano in a blue grey, on white. */

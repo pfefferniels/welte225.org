@@ -7,7 +7,7 @@ import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 const BASES = [33, 36, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81] as const;
 const LAYERS = [3, 5, 7, 9] as const;
 /** The samples' level against the voice's. */
-const LEVEL = 3.6754;
+export const SAMPLER_LEVEL = 1.4632;
 const RELEASE = 0.12;
 
 const nearest = <T extends number>(options: readonly T[], target: number): T =>
@@ -81,7 +81,7 @@ export class PianoSampler {
     const envelope = output.context.createGain();
     source.buffer = buffer;
     source.playbackRate.value = Math.pow(2, (note.pitch - base) / 12);
-    const amp = (note.velocity / 127) * LEVEL;
+    const amp = (note.velocity / 127) * SAMPLER_LEVEL;
     const left = Math.max(0, note.duration - from);
     envelope.gain.setValueAtTime(amp, when);
     envelope.gain.setValueAtTime(amp, when + left);

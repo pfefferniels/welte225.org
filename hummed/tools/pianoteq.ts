@@ -34,6 +34,7 @@ import {
   type RecordedSetting,
   type RecordingsManifest,
 } from '../src/shared/recordings.ts';
+import { SAMPLER_LEVEL } from '../src/page/piano.ts';
 import { SAMPLE_RATE } from '../src/shared/units.ts';
 import { pianoLevel, shapeAt } from '../src/worker/levels.ts';
 import { performPiano } from '../src/worker/piano.ts';
@@ -43,11 +44,12 @@ import { midiFile } from './smf.ts';
 
 /**
  * The sampled grand's loudness playing the piece at ×1 (`loudness`, dB), as the page plays it,
- * before the room: measured in Chromium (an OfflineAudioContext, piano.ts's samples and envelopes)
- * on 8 November 2026. The recordings are given the same, so that the mix holds for both.
+ * before the room: −20.4 dB measured in Chromium (an OfflineAudioContext, piano.ts's samples and
+ * envelopes) on 8 November 2026 with its level at 3.6754, and the sound is proportional to the
+ * level. The recordings are given the same, so that the mix holds for both.
  */
-export const SAMPLER_LOUDNESS_DB = -20.4;
-/** The loudest a recording may peak (dB): the gain's ceiling. The sampled grand reaches 0 dB. */
+export const SAMPLER_LOUDNESS_DB = -20.4 + 20 * Math.log10(SAMPLER_LEVEL / 3.6754);
+/** The loudest a recording may peak (dB): the gain's ceiling. */
 const CEILING_DB = -0.5;
 /** A lag found less clearly than this (its score against the next best) is reported as uncertain. */
 const CLEAR = 1.5;

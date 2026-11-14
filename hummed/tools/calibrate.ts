@@ -22,7 +22,7 @@ import { voiceStates } from '../src/worker/voice-states.ts';
 
 const ROUNDS = Number(process.argv[2] ?? '2');
 /** The voice's loudness target (dB RMS over its voiced samples) that sets the gain. */
-const TARGET_DB = -23;
+const TARGET_DB = -31;
 const LIMIT_DB = 12;
 
 const quantile = (values: readonly number[], q: number): number => {

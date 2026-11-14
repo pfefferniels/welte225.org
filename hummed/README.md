@@ -648,8 +648,8 @@ the strikes of the keys (`tools/audio.ts`: the rise in the energy of the sound's
 millisecond by millisecond, against the keys' times weighted by their velocities, refined to a
 tenth of a millisecond; a stand-in renderer's 37.3 ms came out at 36.9 to 37.4) and moves it into
 place, and reports a lag that changes from the beginning to the end. All settings get one gain: the
-piece at ×1 (the elaboration 1) as loud as the sampled grand plays it (−20.4 dB, measured in
-Chromium), and no recording above −0.5 dBFS. Chromium decodes the MP3s without moving them (it takes the encoder's
+piece at ×1 (the elaboration 1) as loud as the sampled grand plays it (−28.4 dB, from a
+measurement in Chromium), and no recording above −0.5 dBFS. Chromium decodes the MP3s without moving them (it takes the encoder's
 delay out), as measured against the messages; other browsers were not measured.
 
 The manifest records each part's keys and the fingerprint of its messages, and
