@@ -18,7 +18,7 @@ export const INSTRUCTION_KINDS = [
 
 /**
  * What is said of the source rather than of the performance: the corrections of the roll as it was
- * read (a note's velocity), listed apart from the instructions.
+ * read (a note's velocity, a pedal's line), listed apart from the instructions.
  */
 export const CORRECTIONS = ['correction', 'Corrections'] as const;
 
@@ -100,6 +100,8 @@ const transition = (from: number | null, to: number | null, digits = 0): string 
       : `${short(from, digits)} → ${short(to, digits)}`;
 
 const PEDALS: Readonly<Record<string, string>> = { sustain: 'Sustain', soft: 'Soft' };
+/** Which pedal a call's press is of, by the press's xml:id (`sustain-36000`). */
+const pedalOf = (options: Json): string => (string(options['pedal']) ?? '').split('-')[0] ?? '';
 
 /**
  * The calls of which one holds at a time: each writes into a map of the MPM in which an instruction
@@ -145,6 +147,13 @@ function describe(
       const what = aspect.charAt(0).toUpperCase() + aspect.slice(1);
       return { kind: 'correction', label: change === null ? what : `${what} ${signed(change)}` };
     }
+    case 'CorrectPedal': {
+      // a correction of the source: a press's line redrawn, or a press added the roll lacks, or one
+      // removed it has wrongly
+      const pedal = PEDALS[string(options['type']) ?? pedalOf(options)] ?? 'Pedal';
+      const what = 'remove' in options ? 'removed' : 'onsetMs' in options ? 'added' : 'redrawn';
+      return { kind: 'correction', label: `${pedal} ${what}` };
+    }
     case 'InsertMetricalAccentuation': {
       const scale = attribute(first, 'scale');
       const pattern = given(first?.('name.ref'));
@@ -166,11 +175,18 @@ function describe(
       return { kind: 'spread', label: where ? `Spread ${where}` : 'Spread' };
     }
     case 'InsertPedal': {
-      const pedal = PEDALS[(string(options['pedal']) ?? '').split('-')[0] ?? ''] ?? 'Pedal';
+      const pedal = PEDALS[pedalOf(options)] ?? 'Pedal';
       const direction = string(options['direction']);
+      if (direction === null) {
+        // the press traced along its line, which the corrections draw: down as deep as it goes
+        const positions = elements.flatMap((e) => [attribute(e, 'position'), attribute(e, 'transition.to')]);
+        const depth = Math.max(...positions.filter((x): x is number => x !== null));
+        const how = depth > 0 && depth < 1 ? ` to ${short(depth, 2)}` : '';
+        return { kind: 'pedal', label: `${pedal} down${how}` };
+      }
       const depth = number(options['depth']);
       const how = direction === 'down' && depth !== null && depth < 1 ? ` to ${short(depth, 2)}` : '';
-      return { kind: 'pedal', label: `${pedal} ${direction ?? 'moves'}${how}` };
+      return { kind: 'pedal', label: `${pedal} ${direction}${how}` };
     }
     default:
       // choices, mappings and stylizations of the whole: they hold everywhere, or nowhere in particular
@@ -183,12 +199,12 @@ function describe(
  * order of where they begin. `element` finds an element of the MPM by its xml:id, for what a call
  * wrote; without it the calls are named by their options alone.
  *
- * A call holds over its range. A pedal's press holds for as long as the pedal stays down: up to
- * the call that lets it up again, which holds while the pedal moves. Of the tempo, the dynamics
- * curves, the rubatos and the accentuation patterns one holds at a time: a call up to where the
- * next of its name begins (one that begins where a later call begins holds nowhere). A call fitted
- * again later, whose elements a later call of its name wrote anew, holds nowhere: the MPM has what
- * the later one wrote.
+ * A call holds over its range. A pedal's press holds for as long as the pedal stays down: a trace
+ * of its line over the whole press, a ramp down up to the ramp that lets it up again, which holds
+ * while the pedal moves. Of the tempo, the dynamics curves, the rubatos and the accentuation
+ * patterns one holds at a time: a call up to where the next of its name begins (one that begins
+ * where a later call begins holds nowhere). A call fitted again later, whose elements a later call
+ * of its name wrote anew, holds nowhere: the MPM has what the later one wrote.
  */
 export function readInstructions(
   work: unknown,

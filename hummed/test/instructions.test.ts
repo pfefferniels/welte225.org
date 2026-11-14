@@ -166,6 +166,61 @@ describe('the reconstruction’s instructions', () => {
   });
 });
 
+describe('a press traced along its line', () => {
+  const line = new DOMParser().parseFromString(
+    `<mpm xmlns="http://www.cemfi.de/mpm/ns/1.0"><movementMap>
+       <movement date="100" position="0" transition.to="0.85" controller="sustain" xml:id="sustain-0_down"/>
+       <movement date="300" position="0.85" controller="sustain" xml:id="sustain-0_held"/>
+       <movement date="2000" position="0.85" transition.to="0" controller="sustain" xml:id="sustain-0_up"/>
+       <movement date="2300" position="0" controller="sustain" xml:id="sustain-0_rest"/>
+     </movementMap></mpm>`,
+    'application/xml',
+  );
+  const elements = mpmElements(line);
+  const press = { from: 100, to: 2300 };
+  const list = readInstructions(
+    {
+      provenance: [
+        {
+          id: 'redrawn',
+          name: 'CorrectPedal',
+          options: { pedal: 'sustain-0', travel: [] },
+          range: press,
+        },
+        {
+          id: 'added',
+          name: 'CorrectPedal',
+          options: { pedal: 'pedal-1', type: 'soft', onsetMs: 0, travel: [] },
+          range: press,
+        },
+        {
+          id: 'traced',
+          name: 'InsertPedal',
+          options: { pedal: 'sustain-0' },
+          elements: ['sustain-0_down', 'sustain-0_held', 'sustain-0_up', 'sustain-0_rest'],
+          range: press,
+        },
+      ],
+    },
+    (id) => elements.get(id),
+  );
+  const of = (id: string) => list.find((instruction) => instruction.id === id);
+
+  it('holds over the whole press, as deep as the line goes', () => {
+    assert.deepEqual([of('traced')?.kind, of('traced')?.label], ['pedal', 'Sustain down to 0.85']);
+    assert.deepEqual([of('traced')?.from, of('traced')?.to], [100, 2300]);
+  });
+  it('is drawn by a correction of the source, a press redrawn or added', () => {
+    assert.deepEqual(
+      [of('redrawn'), of('added')].map((i) => [i?.kind, i?.label]),
+      [
+        ['correction', 'Sustain redrawn'],
+        ['correction', 'Soft added'],
+      ],
+    );
+  });
+});
+
 describe('the instructions of which one holds at a time', () => {
   const tempo = (id: string, from: number, to: number, bpm: number) => ({
     id,
@@ -312,11 +367,13 @@ describe('the published reconstruction’s instructions', () => {
         assert.deepEqual(writers(roll.ornament), ['InsertDynamicsGradient', 'StylizeOrnamentation']);
     }
   });
-  it('are corrections where they are of a note’s velocity, not dynamics', () => {
-    const modified = published.provenance.filter((call) => call.name === 'Modify').map((call) => call.id);
-    assert.ok(modified.length > 0);
+  it('are corrections where they are of the source, a note’s velocity or a pedal’s line', () => {
+    const corrections = published.provenance
+      .filter((call) => call.name === 'Modify' || call.name === 'CorrectPedal')
+      .map((call) => call.id);
+    assert.ok(corrections.length > 0);
     for (const instruction of list)
-      assert.equal(instruction.kind === 'correction', modified.includes(instruction.id), instruction.id);
+      assert.equal(instruction.kind === 'correction', corrections.includes(instruction.id), instruction.id);
   });
   it('find in the MPM what the calls wrote', () => {
     for (const call of published.provenance)

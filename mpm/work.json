@@ -473,41 +473,85 @@
       }
     },
     {
-      "id": "3baf870c-595a-43e1-a45b-ab70b32cc497",
-      "name": "InsertPedal",
+      "id": "9cd5c606-fa40-4127-89dc-af2477e28798",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-36000",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 55,
+            "position": 0.14
+          },
+          {
+            "ms": 111,
+            "position": 0.5
+          },
+          {
+            "ms": 168,
+            "position": 0.86
+          },
+          {
+            "ms": 226,
+            "position": 1
+          },
+          {
+            "ms": 2183,
+            "position": 1
+          },
+          {
+            "ms": 2291,
+            "position": 0.87
+          },
+          {
+            "ms": 2402,
+            "position": 0.5
+          },
+          {
+            "ms": 2513,
+            "position": 0.14
+          },
+          {
+            "ms": 2626,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-36000_start",
-        "sustain-36000_moveDown"
-      ],
       "range": {
-        "from": 35350.414378047135,
-        "to": 35550.414378047135
+        "from": 35350.14598653492,
+        "to": 37248.769690748115
       }
     },
     {
-      "id": "9cd5c606-fa40-4127-89dc-af2477e28798",
+      "id": "41318aa7-77a1-5a9f-89e8-793261890d4e",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-36000"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -111
+      }
+    },
+    {
+      "id": "3baf870c-595a-43e1-a45b-ab70b32cc497",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-36000",
-        "start": -150,
-        "duration": 300,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-36000"
       },
       "elements": [
-        "sustain-36000_moveUp",
-        "sustain-36000_end"
+        "sustain-36000_down",
+        "sustain-36000_held",
+        "sustain-36000_up",
+        "sustain-36000_rest"
       ],
       "range": {
-        "from": 36948.58597533692,
-        "to": 37248.58597533692
+        "from": 35350.14598653492,
+        "to": 37248.769690748115
       }
     },
     {
@@ -647,41 +691,85 @@
       }
     },
     {
-      "id": "af82b19a-57f1-425a-956d-b1a3c6f2eade",
-      "name": "InsertPedal",
+      "id": "16ffd50d-341d-43f6-adc3-bbdc339e797e",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-43200",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.9,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 85,
+            "position": 0.13
+          },
+          {
+            "ms": 173,
+            "position": 0.45
+          },
+          {
+            "ms": 261,
+            "position": 0.77
+          },
+          {
+            "ms": 351,
+            "position": 0.9
+          },
+          {
+            "ms": 911,
+            "position": 0.9
+          },
+          {
+            "ms": 1012,
+            "position": 0.77
+          },
+          {
+            "ms": 1115,
+            "position": 0.45
+          },
+          {
+            "ms": 1219,
+            "position": 0.13
+          },
+          {
+            "ms": 1325,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-43200_start",
-        "sustain-43200_moveDown"
-      ],
       "range": {
-        "from": 42773.481002044166,
-        "to": 42973.481002044166
+        "from": 42773.44263267474,
+        "to": 43465.928621026804
       }
     },
     {
-      "id": "16ffd50d-341d-43f6-adc3-bbdc339e797e",
+      "id": "7f5e1fbc-83ae-5f06-b7e2-badcaaa68bf8",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-43200"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -173
+      }
+    },
+    {
+      "id": "af82b19a-57f1-425a-956d-b1a3c6f2eade",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-43200",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.9,
-        "direction": "up"
+        "pedal": "sustain-43200"
       },
       "elements": [
-        "sustain-43200_moveUp",
-        "sustain-43200_end"
+        "sustain-43200_down",
+        "sustain-43200_held",
+        "sustain-43200_up",
+        "sustain-43200_rest"
       ],
       "range": {
-        "from": 43266.049327672925,
-        "to": 43466.049327672925
+        "from": 42773.44263267474,
+        "to": 43465.928621026804
       }
     },
     {
@@ -999,60 +1087,167 @@
       }
     },
     {
-      "id": "1d38e03c-7eba-4f42-878e-7ed03c8aa4b4",
-      "name": "InsertPedal",
+      "id": "2d511742-9712-46e3-ac3d-bc15a5334123",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-43920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 119,
+            "position": 0.14
+          },
+          {
+            "ms": 240,
+            "position": 0.5
+          },
+          {
+            "ms": 351,
+            "position": 0.86
+          },
+          {
+            "ms": 457,
+            "position": 1
+          },
+          {
+            "ms": 1147,
+            "position": 1
+          },
+          {
+            "ms": 1248,
+            "position": 0.86
+          },
+          {
+            "ms": 1347,
+            "position": 0.5
+          },
+          {
+            "ms": 1445,
+            "position": 0.14
+          },
+          {
+            "ms": 1542,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-43920_start",
-        "sustain-43920_moveDown"
-      ],
       "range": {
-        "from": 43807.66873209247,
-        "to": 44007.66873209247
+        "from": 43807.461713163,
+        "to": 44540.071606104044
       }
     },
     {
-      "id": "2d511742-9712-46e3-ac3d-bc15a5334123",
+      "id": "d9db7d91-838c-5e56-8c63-174636655715",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-43920"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -240
+      }
+    },
+    {
+      "id": "1d38e03c-7eba-4f42-878e-7ed03c8aa4b4",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-43920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-43920"
       },
       "elements": [
-        "sustain-43920_moveUp",
-        "sustain-43920_end"
+        "sustain-43920_down",
+        "sustain-43920_held",
+        "sustain-43920_up",
+        "sustain-43920_rest"
       ],
       "range": {
-        "from": 44340.3285884802,
-        "to": 44540.3285884802
+        "from": 43807.461713163,
+        "to": 44540.071606104044
+      }
+    },
+    {
+      "id": "22b9b689-042d-4715-8f51-a7fe368a1038",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-45000",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 96,
+            "position": 0.14
+          },
+          {
+            "ms": 190,
+            "position": 0.5
+          },
+          {
+            "ms": 283,
+            "position": 0.86
+          },
+          {
+            "ms": 375,
+            "position": 1
+          },
+          {
+            "ms": 915,
+            "position": 1
+          },
+          {
+            "ms": 953,
+            "position": 0.86
+          },
+          {
+            "ms": 990,
+            "position": 0.5
+          },
+          {
+            "ms": 1027,
+            "position": 0.14
+          },
+          {
+            "ms": 1064,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 44569.14727723431,
+        "to": 45168.30212643936
+      }
+    },
+    {
+      "id": "8e7cc075-a583-5f0c-ae55-553bfc80b688",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-45000"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -190
       }
     },
     {
       "id": "b3c4769b-b20b-4eae-87ca-ab264f2f2a95",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-45000",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-45000"
       },
       "elements": [
-        "sustain-45000_start",
-        "sustain-45000_moveDown"
+        "sustain-45000_down",
+        "sustain-45000_held",
+        "sustain-45000_up",
+        "sustain-45000_rest"
       ],
       "range": {
-        "from": 44569.34535325462,
-        "to": 44769.34535325462
+        "from": 44569.14727723431,
+        "to": 45168.30212643936
       }
     },
     {
@@ -1145,41 +1340,85 @@
       }
     },
     {
-      "id": "a273dff3-bc01-426d-85ed-4a32eb90356e",
-      "name": "InsertPedal",
+      "id": "c93095f9-9058-457f-987a-7afb6bd28d5b",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-45720",
-        "start": -130,
-        "duration": 300,
-        "depth": 0.55,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 113,
+            "position": 0.07
+          },
+          {
+            "ms": 231,
+            "position": 0.28
+          },
+          {
+            "ms": 351,
+            "position": 0.47
+          },
+          {
+            "ms": 475,
+            "position": 0.55
+          },
+          {
+            "ms": 1583,
+            "position": 0.55
+          },
+          {
+            "ms": 1834,
+            "position": 0.48
+          },
+          {
+            "ms": 2093,
+            "position": 0.28
+          },
+          {
+            "ms": 2361,
+            "position": 0.07
+          },
+          {
+            "ms": 2636,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-45720_start",
-        "sustain-45720_moveDown"
-      ],
       "range": {
-        "from": 45381.75559226535,
-        "to": 45681.75559226535
+        "from": 45381.44558482885,
+        "to": 46787.702813340824
       }
     },
     {
-      "id": "c93095f9-9058-457f-987a-7afb6bd28d5b",
+      "id": "d4ac651a-a835-570b-a896-273e741bf19e",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-45720"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -199
+      }
+    },
+    {
+      "id": "a273dff3-bc01-426d-85ed-4a32eb90356e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-45720",
-        "start": -400,
-        "duration": 500,
-        "depth": 0.55,
-        "direction": "up"
+        "pedal": "sustain-45720"
       },
       "elements": [
-        "sustain-45720_moveUp",
-        "sustain-45720_end"
+        "sustain-45720_down",
+        "sustain-45720_held",
+        "sustain-45720_up",
+        "sustain-45720_rest"
       ],
       "range": {
-        "from": 46287.66390249279,
-        "to": 46787.66390249279
+        "from": 45381.44558482885,
+        "to": 46787.702813340824
       }
     },
     {
@@ -1511,25 +1750,6 @@
       }
     },
     {
-      "id": "69b83aef-3e9c-4ac6-bbda-6159fcfd2de5",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-64800",
-        "start": -645,
-        "duration": 745,
-        "depth": 0.9,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-64800_moveUp",
-        "sustain-64800_end"
-      ],
-      "range": {
-        "from": 65854.26465847537,
-        "to": 66599.26465847537
-      }
-    },
-    {
       "id": "920476c1-6e5c-481e-8137-fd900bc0c1fa",
       "name": "Modify",
       "options": {
@@ -1580,41 +1800,85 @@
       }
     },
     {
-      "id": "f86b3ab6-6b0b-475f-98a1-27f06bf8de07",
-      "name": "InsertPedal",
+      "id": "18fe685a-3165-44f8-9abd-1187b373ba36",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-67320",
-        "start": -260,
-        "duration": 360,
-        "depth": 0.7,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 146,
+            "position": 0.09
+          },
+          {
+            "ms": 285,
+            "position": 0.35
+          },
+          {
+            "ms": 450,
+            "position": 0.61
+          },
+          {
+            "ms": 593,
+            "position": 0.7
+          },
+          {
+            "ms": 1328,
+            "position": 0.7
+          },
+          {
+            "ms": 1423,
+            "position": 0.6
+          },
+          {
+            "ms": 1519,
+            "position": 0.35
+          },
+          {
+            "ms": 1616,
+            "position": 0.1
+          },
+          {
+            "ms": 1715,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-67320_start",
-        "sustain-67320_moveDown"
-      ],
       "range": {
-        "from": 67057.3757065904,
-        "to": 67417.3757065904
+        "from": 67057.45641071766,
+        "to": 68035.15801849759
       }
     },
     {
-      "id": "18fe685a-3165-44f8-9abd-1187b373ba36",
+      "id": "e2f4244f-a0ae-5187-bc5f-bee9bbc5826c",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-67320"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -402
+      }
+    },
+    {
+      "id": "f86b3ab6-6b0b-475f-98a1-27f06bf8de07",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-67320",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.7,
-        "direction": "up"
+        "pedal": "sustain-67320"
       },
       "elements": [
-        "sustain-67320_moveUp",
-        "sustain-67320_end"
+        "sustain-67320_down",
+        "sustain-67320_held",
+        "sustain-67320_up",
+        "sustain-67320_rest"
       ],
       "range": {
-        "from": 67835.03105584432,
-        "to": 68035.03105584432
+        "from": 67057.45641071766,
+        "to": 68035.15801849759
       }
     },
     {
@@ -1833,41 +2097,85 @@
       }
     },
     {
-      "id": "d0380b16-5cdc-44bd-821b-a8bd046538ab",
-      "name": "InsertPedal",
+      "id": "afddaebe-a77e-48e1-ab64-bd3d79ecbd67",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-69480",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 128,
+            "position": 0.14
+          },
+          {
+            "ms": 257,
+            "position": 0.5
+          },
+          {
+            "ms": 388,
+            "position": 0.86
+          },
+          {
+            "ms": 520,
+            "position": 1
+          },
+          {
+            "ms": 1623,
+            "position": 1
+          },
+          {
+            "ms": 1770,
+            "position": 0.86
+          },
+          {
+            "ms": 1919,
+            "position": 0.5
+          },
+          {
+            "ms": 2023,
+            "position": 0.23
+          },
+          {
+            "ms": 2024,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-69480_start",
-        "sustain-69480_moveDown"
-      ],
       "range": {
-        "from": 69041.37785215415,
-        "to": 69241.37785215415
+        "from": 69041.24226895416,
+        "to": 69840
       }
     },
     {
-      "id": "afddaebe-a77e-48e1-ab64-bd3d79ecbd67",
+      "id": "9014d473-8ba1-5dd3-aa68-a87e9f581221",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-69480"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -257
+      }
+    },
+    {
+      "id": "d0380b16-5cdc-44bd-821b-a8bd046538ab",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-69480",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-69480"
       },
       "elements": [
-        "sustain-69480_moveUp",
-        "sustain-69480_end"
+        "sustain-69480_down",
+        "sustain-69480_held",
+        "sustain-69480_up",
+        "sustain-69480_rest"
       ],
       "range": {
-        "from": 69637.23506114367,
-        "to": 69837.23506114367
+        "from": 69041.24226895416,
+        "to": 69840
       }
     },
     {
@@ -1923,41 +2231,85 @@
       }
     },
     {
-      "id": "0fccf50a-bba6-410b-bdf8-c3e6cd296a12",
-      "name": "InsertPedal",
+      "id": "56acb354-8f9a-4c63-bc17-c7aeebbae752",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-70560",
-        "start": -100,
-        "duration": 345,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 171,
+            "position": 0.13
+          },
+          {
+            "ms": 339,
+            "position": 0.5
+          },
+          {
+            "ms": 502,
+            "position": 0.87
+          },
+          {
+            "ms": 662,
+            "position": 1
+          },
+          {
+            "ms": 2469,
+            "position": 1
+          },
+          {
+            "ms": 2594,
+            "position": 0.87
+          },
+          {
+            "ms": 2717,
+            "position": 0.5
+          },
+          {
+            "ms": 2837,
+            "position": 0.13
+          },
+          {
+            "ms": 2954,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-70560_start",
-        "sustain-70560_moveDown"
-      ],
       "range": {
-        "from": 69879.51079411163,
-        "to": 70224.51079411163
+        "from": 69879.66555855307,
+        "to": 71735.68486203993
       }
     },
     {
-      "id": "56acb354-8f9a-4c63-bc17-c7aeebbae752",
+      "id": "6dededfa-17a3-5157-b3e9-8cae924de2ef",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-70560"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -198
+      }
+    },
+    {
+      "id": "0fccf50a-bba6-410b-bdf8-c3e6cd296a12",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-70560",
-        "start": -270,
-        "duration": 370,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-70560"
       },
       "elements": [
-        "sustain-70560_moveUp",
-        "sustain-70560_end"
+        "sustain-70560_down",
+        "sustain-70560_held",
+        "sustain-70560_up",
+        "sustain-70560_rest"
       ],
       "range": {
-        "from": 71365.81957062673,
-        "to": 71735.81957062673
+        "from": 69879.66555855307,
+        "to": 71735.68486203993
       }
     },
     {
@@ -2103,41 +2455,85 @@
       }
     },
     {
-      "id": "50aa766a-10ba-4008-a598-c6f429c47a4f",
-      "name": "InsertPedal",
+      "id": "22bf6ccc-5d4e-4e95-829e-d2e22903251c",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-77400",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 91,
+            "position": 0.11
+          },
+          {
+            "ms": 183,
+            "position": 0.4
+          },
+          {
+            "ms": 276,
+            "position": 0.69
+          },
+          {
+            "ms": 370,
+            "position": 0.8
+          },
+          {
+            "ms": 1009,
+            "position": 0.8
+          },
+          {
+            "ms": 1110,
+            "position": 0.69
+          },
+          {
+            "ms": 1212,
+            "position": 0.4
+          },
+          {
+            "ms": 1315,
+            "position": 0.11
+          },
+          {
+            "ms": 1407,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-77400_start",
-        "sustain-77400_moveDown"
-      ],
       "range": {
-        "from": 77069.57971957464,
-        "to": 77269.57971957464
+        "from": 77069.73027321248,
+        "to": 77797.36111880119
       }
     },
     {
-      "id": "22bf6ccc-5d4e-4e95-829e-d2e22903251c",
+      "id": "a1d4b883-fff7-5d0b-a4ee-f42a2bbfa6fb",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-77400"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -183
+      }
+    },
+    {
+      "id": "50aa766a-10ba-4008-a598-c6f429c47a4f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-77400",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "up"
+        "pedal": "sustain-77400"
       },
       "elements": [
-        "sustain-77400_moveUp",
-        "sustain-77400_end"
+        "sustain-77400_down",
+        "sustain-77400_held",
+        "sustain-77400_up",
+        "sustain-77400_rest"
       ],
       "range": {
-        "from": 77597.12985344772,
-        "to": 77797.12985344772
+        "from": 77069.73027321248,
+        "to": 77797.36111880119
       }
     },
     {
@@ -2259,41 +2655,85 @@
       }
     },
     {
-      "id": "d271effe-2062-4e18-9995-80e6c67a648e",
-      "name": "InsertPedal",
+      "id": "feea06f6-1e6b-47e1-a9ce-56d8c5c3dead",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-78840",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 92,
+            "position": 0.14
+          },
+          {
+            "ms": 184,
+            "position": 0.5
+          },
+          {
+            "ms": 276,
+            "position": 0.86
+          },
+          {
+            "ms": 369,
+            "position": 1
+          },
+          {
+            "ms": 945,
+            "position": 1
+          },
+          {
+            "ms": 1040,
+            "position": 0.86
+          },
+          {
+            "ms": 1136,
+            "position": 0.5
+          },
+          {
+            "ms": 1232,
+            "position": 0.14
+          },
+          {
+            "ms": 1329,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-78840_start",
-        "sustain-78840_moveDown"
-      ],
       "range": {
-        "from": 78451.20723424589,
-        "to": 78651.20723424589
+        "from": 78451.04008395031,
+        "to": 79157.40074968523
       }
     },
     {
-      "id": "feea06f6-1e6b-47e1-a9ce-56d8c5c3dead",
+      "id": "fb0f35d9-8b92-512e-aa31-f0973e55e2c2",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-78840"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -184
+      }
+    },
+    {
+      "id": "d271effe-2062-4e18-9995-80e6c67a648e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-78840",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-78840"
       },
       "elements": [
-        "sustain-78840_moveUp",
-        "sustain-78840_end"
+        "sustain-78840_down",
+        "sustain-78840_held",
+        "sustain-78840_up",
+        "sustain-78840_rest"
       ],
       "range": {
-        "from": 78957.25691661258,
-        "to": 79157.25691661258
+        "from": 78451.04008395031,
+        "to": 79157.40074968523
       }
     },
     {
@@ -2486,41 +2926,85 @@
       }
     },
     {
-      "id": "53d55a35-70b7-42f4-95ab-c5d27a177cbc",
-      "name": "InsertPedal",
+      "id": "8703afb1-3a8b-406b-bcd7-b555b3e2628a",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-82080",
-        "start": -100,
-        "duration": 300,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 113,
+            "position": 0.13
+          },
+          {
+            "ms": 226,
+            "position": 0.5
+          },
+          {
+            "ms": 339,
+            "position": 0.87
+          },
+          {
+            "ms": 451,
+            "position": 1
+          },
+          {
+            "ms": 2079,
+            "position": 1
+          },
+          {
+            "ms": 2221,
+            "position": 0.87
+          },
+          {
+            "ms": 2364,
+            "position": 0.5
+          },
+          {
+            "ms": 2505,
+            "position": 0.13
+          },
+          {
+            "ms": 2646,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-82080_start",
-        "sustain-82080_moveDown"
-      ],
       "range": {
-        "from": 81395.24057423076,
-        "to": 81695.24057423076
+        "from": 81395.0884166205,
+        "to": 83208.11215878469
       }
     },
     {
-      "id": "8703afb1-3a8b-406b-bcd7-b555b3e2628a",
+      "id": "c8125eec-536d-5cae-9fa4-18f9c3ff97a5",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-82080"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -151
+      }
+    },
+    {
+      "id": "53d55a35-70b7-42f4-95ab-c5d27a177cbc",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-82080",
-        "start": -310,
-        "duration": 400,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-82080"
       },
       "elements": [
-        "sustain-82080_moveUp",
-        "sustain-82080_end"
+        "sustain-82080_down",
+        "sustain-82080_held",
+        "sustain-82080_up",
+        "sustain-82080_rest"
       ],
       "range": {
-        "from": 82807.87837436503,
-        "to": 83207.87837436503
+        "from": 81395.0884166205,
+        "to": 83208.11215878469
       }
     },
     {
@@ -2617,41 +3101,85 @@
       }
     },
     {
-      "id": "d810cec1-e9c1-4a8b-adc9-3d61f205e83a",
-      "name": "InsertPedal",
+      "id": "8b4cf61b-179e-43e3-8a2e-385625614350",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-87480",
-        "start": -100,
-        "duration": 330,
-        "depth": 0.85,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 177,
+            "position": 0.11
+          },
+          {
+            "ms": 356,
+            "position": 0.43
+          },
+          {
+            "ms": 535,
+            "position": 0.74
+          },
+          {
+            "ms": 715,
+            "position": 0.85
+          },
+          {
+            "ms": 738,
+            "position": 0.85
+          },
+          {
+            "ms": 908,
+            "position": 0.73
+          },
+          {
+            "ms": 1079,
+            "position": 0.43
+          },
+          {
+            "ms": 1251,
+            "position": 0.11
+          },
+          {
+            "ms": 1424,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-87480_start",
-        "sustain-87480_moveDown"
-      ],
       "range": {
-        "from": 87134.53973446992,
-        "to": 87464.53973446992
+        "from": 87134.66055190064,
+        "to": 87784.91125789544
       }
     },
     {
-      "id": "8b4cf61b-179e-43e3-8a2e-385625614350",
+      "id": "5ca8a660-b3dd-56a2-bdbb-6e6142416853",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-87480"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -215
+      }
+    },
+    {
+      "id": "d810cec1-e9c1-4a8b-adc9-3d61f205e83a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-87480",
-        "start": -210,
-        "duration": 310,
-        "depth": 0.85,
-        "direction": "up"
+        "pedal": "sustain-87480"
       },
       "elements": [
-        "sustain-87480_moveUp",
-        "sustain-87480_end"
+        "sustain-87480_down",
+        "sustain-87480_held",
+        "sustain-87480_up",
+        "sustain-87480_rest"
       ],
       "range": {
-        "from": 87475.07642767915,
-        "to": 87785.07642767915
+        "from": 87134.66055190064,
+        "to": 87784.91125789544
       }
     },
     {
@@ -2950,78 +3478,166 @@
     },
     {
       "id": "5da26b60-e16b-4e69-8249-63012e42754d",
-      "name": "InsertPedal",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-21240",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 88,
+            "position": 0.14
+          },
+          {
+            "ms": 176,
+            "position": 0.5
+          },
+          {
+            "ms": 265,
+            "position": 0.86
+          },
+          {
+            "ms": 355,
+            "position": 1
+          },
+          {
+            "ms": 873,
+            "position": 1
+          },
+          {
+            "ms": 967,
+            "position": 0.86
+          },
+          {
+            "ms": 1062,
+            "position": 0.5
+          },
+          {
+            "ms": 1158,
+            "position": 0.14
+          },
+          {
+            "ms": 1254,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-21240_moveUp",
-        "sustain-21240_end"
-      ],
       "range": {
-        "from": 21377.958664109057,
-        "to": 21577.958664109057
+        "from": 20896.626156066854,
+        "to": 21578.041707168555
+      }
+    },
+    {
+      "id": "52b91431-fa26-5712-b9c0-acad31b748b0",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-21240"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -176
       }
     },
     {
       "id": "f75ae12d-5243-4f37-bf25-ac2cb6aa537a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-21240",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-21240"
       },
       "elements": [
-        "sustain-21240_start",
-        "sustain-21240_moveDown"
+        "sustain-21240_down",
+        "sustain-21240_held",
+        "sustain-21240_up",
+        "sustain-21240_rest"
       ],
       "range": {
-        "from": 20896.530262544653,
-        "to": 21096.530262544653
+        "from": 20896.626156066854,
+        "to": 21578.041707168555
+      }
+    },
+    {
+      "id": "a24dd0f9-263f-47e8-bc48-3a70a1d2c0a0",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-21960",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 100,
+            "position": 0.14
+          },
+          {
+            "ms": 201,
+            "position": 0.5
+          },
+          {
+            "ms": 303,
+            "position": 0.86
+          },
+          {
+            "ms": 405,
+            "position": 1
+          },
+          {
+            "ms": 680,
+            "position": 1
+          },
+          {
+            "ms": 785,
+            "position": 0.86
+          },
+          {
+            "ms": 891,
+            "position": 0.5
+          },
+          {
+            "ms": 998,
+            "position": 0.14
+          },
+          {
+            "ms": 1119,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 21809.154357070376,
+        "to": 22341.74965366472
+      }
+    },
+    {
+      "id": "b6a6fb49-4517-5ca4-986c-ec81ce07a245",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-21960"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -201
       }
     },
     {
       "id": "2d9e75f0-599a-4929-ac0d-a5f91a36fc21",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-21960",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-21960"
       },
       "elements": [
-        "sustain-21960_start",
-        "sustain-21960_moveDown"
+        "sustain-21960_down",
+        "sustain-21960_held",
+        "sustain-21960_up",
+        "sustain-21960_rest"
       ],
       "range": {
-        "from": 21809.090242092938,
-        "to": 22009.090242092938
-      }
-    },
-    {
-      "id": "a24dd0f9-263f-47e8-bc48-3a70a1d2c0a0",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-21960",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-21960_moveUp",
-        "sustain-21960_end"
-      ],
-      "range": {
-        "from": 22141.559932541804,
-        "to": 22341.559932541804
+        "from": 21809.154357070376,
+        "to": 22341.74965366472
       }
     },
     {
@@ -3228,41 +3844,85 @@
       }
     },
     {
-      "id": "b374d476-071d-43bf-8bc1-2ff1d8de7d20",
-      "name": "InsertPedal",
+      "id": "a6d4d739-a6f0-43e5-a0b4-9739e12f9852",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-6840",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.7,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 89,
+            "position": 0.1
+          },
+          {
+            "ms": 179,
+            "position": 0.35
+          },
+          {
+            "ms": 270,
+            "position": 0.6
+          },
+          {
+            "ms": 363,
+            "position": 0.7
+          },
+          {
+            "ms": 702,
+            "position": 0.7
+          },
+          {
+            "ms": 920,
+            "position": 0.61
+          },
+          {
+            "ms": 1142,
+            "position": 0.35
+          },
+          {
+            "ms": 1307,
+            "position": 0.09
+          },
+          {
+            "ms": 1476,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-6840_start",
-        "sustain-6840_moveDown"
-      ],
       "range": {
-        "from": 6608.951778299071,
-        "to": 6808.951778299071
+        "from": 6608.75761168471,
+        "to": 7426.472180558706
       }
     },
     {
-      "id": "a6d4d739-a6f0-43e5-a0b4-9739e12f9852",
+      "id": "306b438c-d805-5de2-81b9-933559a503ec",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-6840"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -179
+      }
+    },
+    {
+      "id": "b374d476-071d-43bf-8bc1-2ff1d8de7d20",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-6840",
-        "start": -220,
-        "duration": 440,
-        "depth": 0.7,
-        "direction": "up"
+        "pedal": "sustain-6840"
       },
       "elements": [
-        "sustain-6840_moveUp",
-        "sustain-6840_end"
+        "sustain-6840_down",
+        "sustain-6840_held",
+        "sustain-6840_up",
+        "sustain-6840_rest"
       ],
       "range": {
-        "from": 6986.730820829155,
-        "to": 7426.730820829155
+        "from": 6608.75761168471,
+        "to": 7426.472180558706
       }
     },
     {
@@ -3433,41 +4093,85 @@
       }
     },
     {
-      "id": "a4d488ee-a086-4b12-8681-54feaacccab8",
-      "name": "InsertPedal",
+      "id": "0212420d-ca6a-4cb3-9ad6-ae350127dd4b",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-8280",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 85,
+            "position": 0.14
+          },
+          {
+            "ms": 171,
+            "position": 0.5
+          },
+          {
+            "ms": 258,
+            "position": 0.86
+          },
+          {
+            "ms": 345,
+            "position": 1
+          },
+          {
+            "ms": 1014,
+            "position": 1
+          },
+          {
+            "ms": 1197,
+            "position": 0.87
+          },
+          {
+            "ms": 1337,
+            "position": 0.5
+          },
+          {
+            "ms": 1481,
+            "position": 0.13
+          },
+          {
+            "ms": 1630,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-8280_start",
-        "sustain-8280_moveDown"
-      ],
       "range": {
-        "from": 7977.274622192671,
-        "to": 8177.274622192671
+        "from": 7977.2631795607695,
+        "to": 8948.218831134693
       }
     },
     {
-      "id": "0212420d-ca6a-4cb3-9ad6-ae350127dd4b",
+      "id": "32dbb124-d206-5c7d-a9f9-8283381ece0a",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-8280"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -171
+      }
+    },
+    {
+      "id": "a4d488ee-a086-4b12-8681-54feaacccab8",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-8280",
-        "start": -100,
-        "duration": 400,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-8280"
       },
       "elements": [
-        "sustain-8280_moveUp",
-        "sustain-8280_end"
+        "sustain-8280_down",
+        "sustain-8280_held",
+        "sustain-8280_up",
+        "sustain-8280_rest"
       ],
       "range": {
-        "from": 8547.939041080577,
-        "to": 8947.939041080577
+        "from": 7977.2631795607695,
+        "to": 8948.218831134693
       }
     },
     {
@@ -3652,41 +4356,85 @@
       ]
     },
     {
-      "id": "a847020a-a92a-4c8c-97e6-000c84877590",
-      "name": "InsertPedal",
+      "id": "cb150add-e13c-42f0-95ed-e1dd0c7676fb",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-84960",
-        "start": -100,
-        "duration": 585,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 339,
+            "position": 0.13
+          },
+          {
+            "ms": 691,
+            "position": 0.5
+          },
+          {
+            "ms": 1054,
+            "position": 0.87
+          },
+          {
+            "ms": 1430,
+            "position": 1
+          },
+          {
+            "ms": 2585,
+            "position": 1
+          },
+          {
+            "ms": 2941,
+            "position": 0.87
+          },
+          {
+            "ms": 3307,
+            "position": 0.5
+          },
+          {
+            "ms": 3683,
+            "position": 0.13
+          },
+          {
+            "ms": 4069,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-84960_start",
-        "sustain-84960_moveDown"
-      ],
       "range": {
-        "from": 84735.39046404137,
-        "to": 85320.39046404137
+        "from": 84735.26113376814,
+        "to": 86231.76430707637
       }
     },
     {
-      "id": "cb150add-e13c-42f0-95ed-e1dd0c7676fb",
+      "id": "e70684d5-7bbe-57a8-a51a-8ed1446cf264",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-84960"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -231
+      }
+    },
+    {
+      "id": "a847020a-a92a-4c8c-97e6-000c84877590",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-84960",
-        "start": -390,
-        "duration": 490,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-84960"
       },
       "elements": [
-        "sustain-84960_moveUp",
-        "sustain-84960_end"
+        "sustain-84960_down",
+        "sustain-84960_held",
+        "sustain-84960_up",
+        "sustain-84960_rest"
       ],
       "range": {
-        "from": 85741.77854671732,
-        "to": 86231.77854671732
+        "from": 84735.26113376814,
+        "to": 86231.76430707637
       }
     },
     {
@@ -3928,41 +4676,85 @@
       }
     },
     {
-      "id": "e1cfef4d-6f6e-4e6b-8208-7d2cfa795418",
-      "name": "InsertPedal",
+      "id": "44ae014c-b415-4d15-8be2-fd4e8f6d7c19",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-9720",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 82,
+            "position": 0.14
+          },
+          {
+            "ms": 164,
+            "position": 0.5
+          },
+          {
+            "ms": 247,
+            "position": 0.86
+          },
+          {
+            "ms": 331,
+            "position": 1
+          },
+          {
+            "ms": 795,
+            "position": 1
+          },
+          {
+            "ms": 969,
+            "position": 0.87
+          },
+          {
+            "ms": 1146,
+            "position": 0.5
+          },
+          {
+            "ms": 1324,
+            "position": 0.13
+          },
+          {
+            "ms": 1505,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-9720_start",
-        "sustain-9720_moveDown"
-      ],
       "range": {
-        "from": 9432.290455124807,
-        "to": 9632.290455124807
+        "from": 9432.293305031795,
+        "to": 10304.360352964532
       }
     },
     {
-      "id": "44ae014c-b415-4d15-8be2-fd4e8f6d7c19",
+      "id": "d641548f-05eb-5808-a71c-2eda3d5f2998",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-9720"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -164
+      }
+    },
+    {
+      "id": "e1cfef4d-6f6e-4e6b-8208-7d2cfa795418",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-9720",
-        "start": -100,
-        "duration": 400,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-9720"
       },
       "elements": [
-        "sustain-9720_moveUp",
-        "sustain-9720_end"
+        "sustain-9720_down",
+        "sustain-9720_held",
+        "sustain-9720_up",
+        "sustain-9720_rest"
       ],
       "range": {
-        "from": 9904.414443049394,
-        "to": 10304.414443049394
+        "from": 9432.293305031795,
+        "to": 10304.360352964532
       }
     },
     {
@@ -4341,78 +5133,166 @@
     },
     {
       "id": "3e709c9e-2ec8-4740-9e77-39fb9b5a96d1",
-      "name": "InsertPedal",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-18720",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 69,
+            "position": 0.14
+          },
+          {
+            "ms": 138,
+            "position": 0.5
+          },
+          {
+            "ms": 209,
+            "position": 0.86
+          },
+          {
+            "ms": 282,
+            "position": 1
+          },
+          {
+            "ms": 701,
+            "position": 1
+          },
+          {
+            "ms": 783,
+            "position": 0.86
+          },
+          {
+            "ms": 867,
+            "position": 0.5
+          },
+          {
+            "ms": 952,
+            "position": 0.14
+          },
+          {
+            "ms": 1039,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-18720_moveUp",
-        "sustain-18720_end"
-      ],
       "range": {
-        "from": 18783.4836476529,
-        "to": 18983.4836476529
+        "from": 18312.77961316743,
+        "to": 18983.43604533056
+      }
+    },
+    {
+      "id": "6f363317-aed5-57a1-b134-1819492c6928",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-18720"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -138
       }
     },
     {
       "id": "4512ca88-19bf-4b09-9a1d-08882098a54d",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-18720",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-18720"
       },
       "elements": [
-        "sustain-18720_start",
-        "sustain-18720_moveDown"
+        "sustain-18720_down",
+        "sustain-18720_held",
+        "sustain-18720_up",
+        "sustain-18720_rest"
       ],
       "range": {
-        "from": 18312.644546983614,
-        "to": 18512.644546983614
+        "from": 18312.77961316743,
+        "to": 18983.43604533056
       }
     },
     {
       "id": "f1cae68c-b05f-46fc-9caa-2b4d2b735d0b",
-      "name": "InsertPedal",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-18000",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 76,
+            "position": 0.14
+          },
+          {
+            "ms": 152,
+            "position": 0.5
+          },
+          {
+            "ms": 227,
+            "position": 0.86
+          },
+          {
+            "ms": 302,
+            "position": 1
+          },
+          {
+            "ms": 519,
+            "position": 1
+          },
+          {
+            "ms": 592,
+            "position": 0.86
+          },
+          {
+            "ms": 664,
+            "position": 0.5
+          },
+          {
+            "ms": 736,
+            "position": 0.14
+          },
+          {
+            "ms": 807,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-18000_moveUp",
-        "sustain-18000_end"
-      ],
       "range": {
-        "from": 17863.06668278541,
-        "to": 18063.06668278541
+        "from": 17515.110223325046,
+        "to": 18063.22732844918
+      }
+    },
+    {
+      "id": "fc188eed-aaa8-56ac-9a9d-8e0006298826",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-18000"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -152
       }
     },
     {
       "id": "632e597a-ec0d-4aa5-915c-698b3d9bf40b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-18000",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-18000"
       },
       "elements": [
-        "sustain-18000_start",
-        "sustain-18000_moveDown"
+        "sustain-18000_down",
+        "sustain-18000_held",
+        "sustain-18000_up",
+        "sustain-18000_rest"
       ],
       "range": {
-        "from": 17515.25490401203,
-        "to": 17715.25490401203
+        "from": 17515.110223325046,
+        "to": 18063.22732844918
       }
     },
     {
@@ -4546,41 +5426,85 @@
       }
     },
     {
-      "id": "cb08d3e2-7aa2-4aa2-a527-cbea127a796b",
-      "name": "InsertPedal",
+      "id": "659b05dc-446b-4a3a-b272-47d5ad428009",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-24480",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 86,
+            "position": 0.14
+          },
+          {
+            "ms": 170,
+            "position": 0.5
+          },
+          {
+            "ms": 253,
+            "position": 0.86
+          },
+          {
+            "ms": 336,
+            "position": 1
+          },
+          {
+            "ms": 2216,
+            "position": 1
+          },
+          {
+            "ms": 2317,
+            "position": 0.87
+          },
+          {
+            "ms": 2416,
+            "position": 0.5
+          },
+          {
+            "ms": 2515,
+            "position": 0.13
+          },
+          {
+            "ms": 2612,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-24480_start",
-        "sustain-24480_moveDown"
-      ],
       "range": {
-        "from": 23860.107360387217,
-        "to": 24060.107360387217
+        "from": 23859.93220772474,
+        "to": 25662.248990529453
       }
     },
     {
-      "id": "659b05dc-446b-4a3a-b272-47d5ad428009",
+      "id": "c7326933-9929-52b9-9030-189304c5b8e7",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-24480"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -170
+      }
+    },
+    {
+      "id": "cb08d3e2-7aa2-4aa2-a527-cbea127a796b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-24480",
-        "start": -150,
-        "duration": 310,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-24480"
       },
       "elements": [
-        "sustain-24480_moveUp",
-        "sustain-24480_end"
+        "sustain-24480_down",
+        "sustain-24480_held",
+        "sustain-24480_up",
+        "sustain-24480_rest"
       ],
       "range": {
-        "from": 25352.239218237886,
-        "to": 25662.239218237886
+        "from": 23859.93220772474,
+        "to": 25662.248990529453
       }
     },
     {
@@ -4630,25 +5554,6 @@
       "range": {
         "from": 25560,
         "to": 27000
-      }
-    },
-    {
-      "id": "953aa525-322f-4a4d-8430-48d989587711",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-27360",
-        "start": -240,
-        "duration": 340,
-        "depth": 1,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-27360_moveUp",
-        "sustain-27360_end"
-      ],
-      "range": {
-        "from": 28459.915975188145,
-        "to": 28799.915975188145
       }
     },
     {
@@ -4758,41 +5663,85 @@
       }
     },
     {
-      "id": "69d60ebc-1771-43df-8347-b95c24aa110e",
-      "name": "InsertPedal",
+      "id": "b0b98343-d635-4d07-b434-32fa2e6fd8f4",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-29880",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 77,
+            "position": 0.14
+          },
+          {
+            "ms": 154,
+            "position": 0.5
+          },
+          {
+            "ms": 233,
+            "position": 0.86
+          },
+          {
+            "ms": 312,
+            "position": 1
+          },
+          {
+            "ms": 864,
+            "position": 1
+          },
+          {
+            "ms": 952,
+            "position": 0.86
+          },
+          {
+            "ms": 1040,
+            "position": 0.5
+          },
+          {
+            "ms": 1130,
+            "position": 0.14
+          },
+          {
+            "ms": 1220,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-29880_start",
-        "sustain-29880_moveDown"
-      ],
       "range": {
-        "from": 29550.363430887533,
-        "to": 29750.363430887533
+        "from": 29550.343175064278,
+        "to": 30281.700959448342
       }
     },
     {
-      "id": "b0b98343-d635-4d07-b434-32fa2e6fd8f4",
+      "id": "e0273cc2-5d1c-5d42-919d-85c3a2358cf5",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-29880"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -154
+      }
+    },
+    {
+      "id": "69d60ebc-1771-43df-8347-b95c24aa110e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-29880",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-29880"
       },
       "elements": [
-        "sustain-29880_moveUp",
-        "sustain-29880_end"
+        "sustain-29880_down",
+        "sustain-29880_held",
+        "sustain-29880_up",
+        "sustain-29880_rest"
       ],
       "range": {
-        "from": 30081.79408079666,
-        "to": 30281.79408079666
+        "from": 29550.343175064278,
+        "to": 30281.700959448342
       }
     },
     {
@@ -4963,41 +5912,85 @@
       }
     },
     {
-      "id": "b4ca3b87-5cc4-4a02-8f65-616c4d0e50cb",
-      "name": "InsertPedal",
+      "id": "225b7b55-1eb2-4849-8bb7-671b09b37b71",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-38880",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 89,
+            "position": 0.14
+          },
+          {
+            "ms": 178,
+            "position": 0.5
+          },
+          {
+            "ms": 268,
+            "position": 0.86
+          },
+          {
+            "ms": 357,
+            "position": 1
+          },
+          {
+            "ms": 2373,
+            "position": 1
+          },
+          {
+            "ms": 2496,
+            "position": 0.86
+          },
+          {
+            "ms": 2615,
+            "position": 0.5
+          },
+          {
+            "ms": 2729,
+            "position": 0.14
+          },
+          {
+            "ms": 2840,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-38880_start",
-        "sustain-38880_moveDown"
-      ],
       "range": {
-        "from": 38766.656205790125,
-        "to": 38966.656205790125
+        "from": 38766.54814733316,
+        "to": 40108.27517862957
       }
     },
     {
-      "id": "225b7b55-1eb2-4849-8bb7-671b09b37b71",
+      "id": "21fd9acf-b7c4-555d-ba3f-7956fdec2d77",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-38880"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -178
+      }
+    },
+    {
+      "id": "b4ca3b87-5cc4-4a02-8f65-616c4d0e50cb",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-38880",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-38880"
       },
       "elements": [
-        "sustain-38880_moveUp",
-        "sustain-38880_end"
+        "sustain-38880_down",
+        "sustain-38880_held",
+        "sustain-38880_up",
+        "sustain-38880_rest"
       ],
       "range": {
-        "from": 39908.22162341733,
-        "to": 40108.22162341733
+        "from": 38766.54814733316,
+        "to": 40108.27517862957
       }
     },
     {
@@ -5194,41 +6187,85 @@
       }
     },
     {
-      "id": "2072a83e-4728-489e-a9dc-a242c373a607",
-      "name": "InsertPedal",
+      "id": "e064cfe4-605e-4b1f-8102-4cd98c3e63fd",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-12960",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 67,
+            "position": 0.14
+          },
+          {
+            "ms": 134,
+            "position": 0.5
+          },
+          {
+            "ms": 202,
+            "position": 0.86
+          },
+          {
+            "ms": 271,
+            "position": 1
+          },
+          {
+            "ms": 2390,
+            "position": 1
+          },
+          {
+            "ms": 2476,
+            "position": 0.87
+          },
+          {
+            "ms": 2558,
+            "position": 0.5
+          },
+          {
+            "ms": 2636,
+            "position": 0.13
+          },
+          {
+            "ms": 2711,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-12960_start",
-        "sustain-12960_moveDown"
-      ],
       "range": {
-        "from": 12386.127683586185,
-        "to": 12586.127683586185
+        "from": 12385.985111656304,
+        "to": 14320.551212418239
       }
     },
     {
-      "id": "e064cfe4-605e-4b1f-8102-4cd98c3e63fd",
+      "id": "0082c1b2-2d73-5158-a9ea-f41d914ae27b",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-12960"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -134
+      }
+    },
+    {
+      "id": "2072a83e-4728-489e-a9dc-a242c373a607",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-12960",
-        "start": -150,
-        "duration": 300,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-12960"
       },
       "elements": [
-        "sustain-12960_moveUp",
-        "sustain-12960_end"
+        "sustain-12960_down",
+        "sustain-12960_held",
+        "sustain-12960_up",
+        "sustain-12960_rest"
       ],
       "range": {
-        "from": 14020.291592027437,
-        "to": 14320.291592027437
+        "from": 12385.985111656304,
+        "to": 14320.551212418239
       }
     },
     {
@@ -5432,41 +6469,85 @@
       }
     },
     {
-      "id": "8e5082c5-b15d-4002-98c3-e73d2cb51658",
-      "name": "InsertPedal",
+      "id": "0fd7ce35-f00f-4f0c-a3d5-04712f655411",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-47520",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 61,
+            "position": 0.14
+          },
+          {
+            "ms": 122,
+            "position": 0.5
+          },
+          {
+            "ms": 183,
+            "position": 0.86
+          },
+          {
+            "ms": 245,
+            "position": 1
+          },
+          {
+            "ms": 2388,
+            "position": 1
+          },
+          {
+            "ms": 2536,
+            "position": 0.87
+          },
+          {
+            "ms": 2684,
+            "position": 0.5
+          },
+          {
+            "ms": 2831,
+            "position": 0.13
+          },
+          {
+            "ms": 2977,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-47520_start",
-        "sustain-47520_moveDown"
-      ],
       "range": {
-        "from": 46821.8152349824,
-        "to": 47021.8152349824
+        "from": 46822.08056544836,
+        "to": 49011.98896715969
       }
     },
     {
-      "id": "0fd7ce35-f00f-4f0c-a3d5-04712f655411",
+      "id": "c4fd0a12-815d-58bd-9f30-f0832c303997",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-47520"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -122
+      }
+    },
+    {
+      "id": "8e5082c5-b15d-4002-98c3-e73d2cb51658",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-47520",
-        "start": -200,
-        "duration": 400,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-47520"
       },
       "elements": [
-        "sustain-47520_moveUp",
-        "sustain-47520_end"
+        "sustain-47520_down",
+        "sustain-47520_held",
+        "sustain-47520_up",
+        "sustain-47520_rest"
       ],
       "range": {
-        "from": 48611.72363684693,
-        "to": 49011.72363684693
+        "from": 46822.08056544836,
+        "to": 49011.98896715969
       }
     },
     {
@@ -5736,41 +6817,85 @@
       }
     },
     {
-      "id": "d13f1c47-a21e-4bd5-904c-048dfa072fce",
-      "name": "InsertPedal",
+      "id": "cdedcebd-1d7e-4c3e-a458-eaad126f50fb",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-52920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 71,
+            "position": 0.14
+          },
+          {
+            "ms": 143,
+            "position": 0.5
+          },
+          {
+            "ms": 215,
+            "position": 0.86
+          },
+          {
+            "ms": 288,
+            "position": 1
+          },
+          {
+            "ms": 663,
+            "position": 1
+          },
+          {
+            "ms": 739,
+            "position": 0.86
+          },
+          {
+            "ms": 816,
+            "position": 0.5
+          },
+          {
+            "ms": 894,
+            "position": 0.14
+          },
+          {
+            "ms": 972,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-52920_start",
-        "sustain-52920_moveDown"
-      ],
       "range": {
-        "from": 52881.02430404186,
-        "to": 53081.02430404186
+        "from": 52881.07868827479,
+        "to": 53531.54396494309
       }
     },
     {
-      "id": "cdedcebd-1d7e-4c3e-a458-eaad126f50fb",
+      "id": "d7af5aca-9e74-5f76-9d18-17f853e72599",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-52920"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -143
+      }
+    },
+    {
+      "id": "d13f1c47-a21e-4bd5-904c-048dfa072fce",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-52920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-52920"
       },
       "elements": [
-        "sustain-52920_moveUp",
-        "sustain-52920_end"
+        "sustain-52920_down",
+        "sustain-52920_held",
+        "sustain-52920_up",
+        "sustain-52920_rest"
       ],
       "range": {
-        "from": 53331.49704964856,
-        "to": 53531.49704964856
+        "from": 52881.07868827479,
+        "to": 53531.54396494309
       }
     },
     {
@@ -5965,41 +7090,85 @@
       }
     },
     {
-      "id": "16c92417-c3b0-4dc9-b299-5b75ce70dae2",
-      "name": "InsertPedal",
+      "id": "0113b613-6b08-404f-baae-11b543ba4b8a",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-55800",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 67,
+            "position": 0.14
+          },
+          {
+            "ms": 134,
+            "position": 0.5
+          },
+          {
+            "ms": 202,
+            "position": 0.86
+          },
+          {
+            "ms": 270,
+            "position": 1
+          },
+          {
+            "ms": 880,
+            "position": 1
+          },
+          {
+            "ms": 953,
+            "position": 0.86
+          },
+          {
+            "ms": 1027,
+            "position": 0.5
+          },
+          {
+            "ms": 1101,
+            "position": 0.14
+          },
+          {
+            "ms": 1176,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-55800_start",
-        "sustain-55800_moveDown"
-      ],
       "range": {
-        "from": 55522.76881674309,
-        "to": 55722.76881674309
+        "from": 55523.054425044036,
+        "to": 56353.92803911678
       }
     },
     {
-      "id": "0113b613-6b08-404f-baae-11b543ba4b8a",
+      "id": "788026c0-6b1c-5db3-b58b-1bd3dafd5161",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-55800"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -134
+      }
+    },
+    {
+      "id": "16c92417-c3b0-4dc9-b299-5b75ce70dae2",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-55800",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-55800"
       },
       "elements": [
-        "sustain-55800_moveUp",
-        "sustain-55800_end"
+        "sustain-55800_down",
+        "sustain-55800_held",
+        "sustain-55800_up",
+        "sustain-55800_rest"
       ],
       "range": {
-        "from": 56153.71569833417,
-        "to": 56353.71569833417
+        "from": 55523.054425044036,
+        "to": 56353.92803911678
       }
     },
     {
@@ -6535,41 +7704,85 @@
       }
     },
     {
-      "id": "f7dbf753-8ecb-4b23-9255-45f137100962",
-      "name": "InsertPedal",
+      "id": "46c2e88c-39ae-49af-9c15-ea3f52f00ecb",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-72360",
-        "start": -195,
-        "duration": 295,
-        "depth": 0.7,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 105,
+            "position": 0.09
+          },
+          {
+            "ms": 214,
+            "position": 0.35
+          },
+          {
+            "ms": 326,
+            "position": 0.6
+          },
+          {
+            "ms": 442,
+            "position": 0.7
+          },
+          {
+            "ms": 1037,
+            "position": 0.7
+          },
+          {
+            "ms": 1233,
+            "position": 0.61
+          },
+          {
+            "ms": 1439,
+            "position": 0.35
+          },
+          {
+            "ms": 1654,
+            "position": 0.09
+          },
+          {
+            "ms": 1878,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-72360_start",
-        "sustain-72360_moveDown"
-      ],
       "range": {
-        "from": 72079.70805516094,
-        "to": 72374.70805516094
+        "from": 72079.92531049729,
+        "to": 73141.63115183232
       }
     },
     {
-      "id": "46c2e88c-39ae-49af-9c15-ea3f52f00ecb",
+      "id": "268f1f54-048c-53e7-9a64-eb68a9a196f0",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-72360"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -286
+      }
+    },
+    {
+      "id": "f7dbf753-8ecb-4b23-9255-45f137100962",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-72360",
-        "start": -320,
-        "duration": 420,
-        "depth": 0.7,
-        "direction": "up"
+        "pedal": "sustain-72360"
       },
       "elements": [
-        "sustain-72360_moveUp",
-        "sustain-72360_end"
+        "sustain-72360_down",
+        "sustain-72360_held",
+        "sustain-72360_up",
+        "sustain-72360_rest"
       ],
       "range": {
-        "from": 72721.7648091725,
-        "to": 73141.7648091725
+        "from": 72079.92531049729,
+        "to": 73141.63115183232
       }
     },
     {
@@ -6839,41 +8052,85 @@
       }
     },
     {
-      "id": "8c0270b9-c187-406d-bee5-722ea9d7acda",
-      "name": "InsertPedal",
+      "id": "ab8b27e4-ca31-4e7b-815d-13f65b871428",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-88920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 129,
+            "position": 0.14
+          },
+          {
+            "ms": 259,
+            "position": 0.5
+          },
+          {
+            "ms": 390,
+            "position": 0.86
+          },
+          {
+            "ms": 522,
+            "position": 1
+          },
+          {
+            "ms": 760,
+            "position": 1
+          },
+          {
+            "ms": 831,
+            "position": 0.86
+          },
+          {
+            "ms": 903,
+            "position": 0.5
+          },
+          {
+            "ms": 975,
+            "position": 0.14
+          },
+          {
+            "ms": 1048,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-88920_start",
-        "sustain-88920_moveDown"
-      ],
       "range": {
-        "from": 88808.29224796689,
-        "to": 89008.29224796689
+        "from": 88808.10460847532,
+        "to": 89202.06293434286
       }
     },
     {
-      "id": "ab8b27e4-ca31-4e7b-815d-13f65b871428",
+      "id": "f9aa017c-97e0-57c0-9ed8-ff23de75771e",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-88920"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -259
+      }
+    },
+    {
+      "id": "8c0270b9-c187-406d-bee5-722ea9d7acda",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-88920",
-        "start": -125,
-        "duration": 105,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-88920"
       },
       "elements": [
-        "sustain-88920_moveUp",
-        "sustain-88920_end"
+        "sustain-88920_down",
+        "sustain-88920_held",
+        "sustain-88920_up",
+        "sustain-88920_rest"
       ],
       "range": {
-        "from": 89096.8840523114,
-        "to": 89201.8840523114
+        "from": 88808.10460847532,
+        "to": 89202.06293434286
       }
     },
     {
@@ -6970,79 +8227,167 @@
       }
     },
     {
-      "id": "02e6f684-5238-410a-8b51-2f3d85aa59a1",
-      "name": "InsertPedal",
+      "id": "5d1f8175-0a3f-4062-9505-eeb96e55c792",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-89640",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 142,
+            "position": 0.14
+          },
+          {
+            "ms": 286,
+            "position": 0.5
+          },
+          {
+            "ms": 432,
+            "position": 0.86
+          },
+          {
+            "ms": 579,
+            "position": 1
+          },
+          {
+            "ms": 614,
+            "position": 1
+          },
+          {
+            "ms": 764,
+            "position": 0.86
+          },
+          {
+            "ms": 916,
+            "position": 0.5
+          },
+          {
+            "ms": 1070,
+            "position": 0.14
+          },
+          {
+            "ms": 1226,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-89640_start",
-        "sustain-89640_moveDown"
-      ],
       "range": {
-        "from": 89290.46231868725,
-        "to": 89490.46231868725
+        "from": 89290.3943914932,
+        "to": 89702.41484662288
       }
     },
     {
-      "id": "5d1f8175-0a3f-4062-9505-eeb96e55c792",
+      "id": "ca553a20-dfd6-5588-8aa8-495265a95976",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-89640"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -286
+      }
+    },
+    {
+      "id": "02e6f684-5238-410a-8b51-2f3d85aa59a1",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-89640",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-89640"
       },
       "elements": [
-        "sustain-89640_moveUp",
-        "sustain-89640_end"
+        "sustain-89640_down",
+        "sustain-89640_held",
+        "sustain-89640_up",
+        "sustain-89640_rest"
       ],
       "range": {
-        "from": 89502.42442217727,
-        "to": 89702.42442217727
+        "from": 89290.3943914932,
+        "to": 89702.41484662288
+      }
+    },
+    {
+      "id": "d2e8dddc-f249-46b2-a581-8fb2ad22f005",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-90360",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 252,
+            "position": 0.13
+          },
+          {
+            "ms": 512,
+            "position": 0.5
+          },
+          {
+            "ms": 778,
+            "position": 0.86
+          },
+          {
+            "ms": 1053,
+            "position": 1
+          },
+          {
+            "ms": 1716,
+            "position": 1
+          },
+          {
+            "ms": 2006,
+            "position": 0.86
+          },
+          {
+            "ms": 2305,
+            "position": 0.5
+          },
+          {
+            "ms": 2616,
+            "position": 0.14
+          },
+          {
+            "ms": 2939,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 90031.39579011005,
+        "to": 90749.61719608627
+      }
+    },
+    {
+      "id": "00d2e28c-faa2-54c1-982d-01f045db88a5",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-90360"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -356
       }
     },
     {
       "id": "c8b58cde-925a-4baa-8e91-07cf7230bbfa",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-90360",
-        "start": -100,
-        "duration": 285,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-90360"
       },
       "elements": [
-        "sustain-90360_start",
-        "sustain-90360_moveDown"
+        "sustain-90360_down",
+        "sustain-90360_held",
+        "sustain-90360_up",
+        "sustain-90360_rest"
       ],
       "range": {
-        "from": 90031.27655747678,
-        "to": 90316.27655747678
-      }
-    },
-    {
-      "id": "d2e8dddc-f249-46b2-a581-8fb2ad22f005",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-90360",
-        "start": -170,
-        "duration": 270,
-        "depth": 1,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-90360_moveUp",
-        "sustain-90360_end"
-      ],
-      "range": {
-        "from": 90479.5583717897,
-        "to": 90749.5583717897
+        "from": 90031.39579011005,
+        "to": 90749.61719608627
       }
     },
     {
@@ -7154,41 +8499,85 @@
       }
     },
     {
-      "id": "0d04499f-9c3d-4e44-8749-18f5f2a1a8d9",
-      "name": "InsertPedal",
+      "id": "1287e51f-9ada-4a75-9405-df5084525847",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-1440",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 59,
+            "position": 0.14
+          },
+          {
+            "ms": 117,
+            "position": 0.5
+          },
+          {
+            "ms": 176,
+            "position": 0.86
+          },
+          {
+            "ms": 237,
+            "position": 1
+          },
+          {
+            "ms": 2727,
+            "position": 1
+          },
+          {
+            "ms": 2865,
+            "position": 0.87
+          },
+          {
+            "ms": 2990,
+            "position": 0.5
+          },
+          {
+            "ms": 3100,
+            "position": 0.13
+          },
+          {
+            "ms": 3209,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-1440_start",
-        "sustain-1440_moveDown"
-      ],
       "range": {
-        "from": 700.3613247327233,
-        "to": 900.3613247327233
+        "from": 700.2038792337673,
+        "to": 2982.932255763767
       }
     },
     {
-      "id": "1287e51f-9ada-4a75-9405-df5084525847",
+      "id": "8751edec-421d-5925-af36-5f52d73f8839",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-1440"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -117
+      }
+    },
+    {
+      "id": "0d04499f-9c3d-4e44-8749-18f5f2a1a8d9",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-1440",
-        "start": -100,
-        "duration": 420,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-1440"
       },
       "elements": [
-        "sustain-1440_moveUp",
-        "sustain-1440_end"
+        "sustain-1440_down",
+        "sustain-1440_held",
+        "sustain-1440_up",
+        "sustain-1440_rest"
       ],
       "range": {
-        "from": 2563.0588447623772,
-        "to": 2983.0588447623772
+        "from": 700.2038792337673,
+        "to": 2982.932255763767
       }
     },
     {
@@ -7385,41 +8774,85 @@
       }
     },
     {
-      "id": "ee707653-aeb2-4056-9eb9-b443c24b509f",
-      "name": "InsertPedal",
+      "id": "dec47e2f-e3cb-4725-a329-ff340594be0c",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-4320",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 115,
+            "position": 0.14
+          },
+          {
+            "ms": 235,
+            "position": 0.5
+          },
+          {
+            "ms": 360,
+            "position": 0.86
+          },
+          {
+            "ms": 492,
+            "position": 1
+          },
+          {
+            "ms": 2924,
+            "position": 1
+          },
+          {
+            "ms": 3016,
+            "position": 0.86
+          },
+          {
+            "ms": 3134,
+            "position": 0.5
+          },
+          {
+            "ms": 3201,
+            "position": 0.14
+          },
+          {
+            "ms": 3270,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-4320_start",
-        "sustain-4320_moveDown"
-      ],
       "range": {
-        "from": 4019.21622501398,
-        "to": 4219.21622501398
+        "from": 4019.239853951103,
+        "to": 5881.671809273639
       }
     },
     {
-      "id": "dec47e2f-e3cb-4725-a329-ff340594be0c",
+      "id": "887f0a43-4473-5077-a383-9cbe97b358b8",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-4320"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -235
+      }
+    },
+    {
+      "id": "ee707653-aeb2-4056-9eb9-b443c24b509f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-4320",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-4320"
       },
       "elements": [
-        "sustain-4320_moveUp",
-        "sustain-4320_end"
+        "sustain-4320_down",
+        "sustain-4320_held",
+        "sustain-4320_up",
+        "sustain-4320_rest"
       ],
       "range": {
-        "from": 5682.02841937072,
-        "to": 5882.02841937072
+        "from": 4019.239853951103,
+        "to": 5881.671809273639
       }
     },
     {
@@ -7515,41 +8948,85 @@
       }
     },
     {
-      "id": "ddefba0d-a901-42d9-bfc0-6e62dc469585",
-      "name": "InsertPedal",
+      "id": "bfc888f9-9647-4b41-a6d2-c240b6e5d064",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-16920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 96,
+            "position": 0.14
+          },
+          {
+            "ms": 193,
+            "position": 0.5
+          },
+          {
+            "ms": 292,
+            "position": 0.86
+          },
+          {
+            "ms": 392,
+            "position": 1
+          },
+          {
+            "ms": 1604,
+            "position": 1
+          },
+          {
+            "ms": 1687,
+            "position": 0.86
+          },
+          {
+            "ms": 1770,
+            "position": 0.5
+          },
+          {
+            "ms": 1852,
+            "position": 0.14
+          },
+          {
+            "ms": 1934,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-16920_start",
-        "sustain-16920_moveDown"
-      ],
       "range": {
-        "from": 16025.535957062311,
-        "to": 16225.535957062311
+        "from": 16025.420345849658,
+        "to": 17053.711398540716
       }
     },
     {
-      "id": "bfc888f9-9647-4b41-a6d2-c240b6e5d064",
+      "id": "509c02e0-3233-55d3-8859-d65dc381180a",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-16920"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -193
+      }
+    },
+    {
+      "id": "ddefba0d-a901-42d9-bfc0-6e62dc469585",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-16920",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-16920"
       },
       "elements": [
-        "sustain-16920_moveUp",
-        "sustain-16920_end"
+        "sustain-16920_down",
+        "sustain-16920_held",
+        "sustain-16920_up",
+        "sustain-16920_rest"
       ],
       "range": {
-        "from": 16853.646879803215,
-        "to": 17053.646879803215
+        "from": 16025.420345849658,
+        "to": 17053.711398540716
       }
     },
     {
@@ -7682,22 +9159,85 @@
       }
     },
     {
+      "id": "953aa525-322f-4a4d-8430-48d989587711",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-27360",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 101,
+            "position": 0.14
+          },
+          {
+            "ms": 203,
+            "position": 0.5
+          },
+          {
+            "ms": 307,
+            "position": 0.87
+          },
+          {
+            "ms": 411,
+            "position": 1
+          },
+          {
+            "ms": 2521,
+            "position": 1
+          },
+          {
+            "ms": 2701,
+            "position": 0.87
+          },
+          {
+            "ms": 2884,
+            "position": 0.5
+          },
+          {
+            "ms": 3070,
+            "position": 0.13
+          },
+          {
+            "ms": 3259,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 27093.59679253501,
+        "to": 28799.860182771787
+      }
+    },
+    {
+      "id": "670a89f3-7d1d-5c8d-8cec-e61e3befb92e",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-27360"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -162
+      }
+    },
+    {
       "id": "32680bb9-b83e-44a2-afa5-87feab1561d2",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-27360",
-        "start": -100,
-        "duration": 250,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-27360"
       },
       "elements": [
-        "sustain-27360_start",
-        "sustain-27360_moveDown"
+        "sustain-27360_down",
+        "sustain-27360_held",
+        "sustain-27360_up",
+        "sustain-27360_rest"
       ],
       "range": {
-        "from": 27093.53027481353,
-        "to": 27343.53027481353
+        "from": 27093.59679253501,
+        "to": 28799.860182771787
       }
     },
     {
@@ -7929,41 +9469,85 @@
       }
     },
     {
-      "id": "daa011f7-3431-4384-9ab4-33b476e1863a",
-      "name": "InsertPedal",
+      "id": "ddcb3037-35d2-41e8-b27f-470cdce411a4",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-40680",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.6,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 94,
+            "position": 0.08
+          },
+          {
+            "ms": 184,
+            "position": 0.3
+          },
+          {
+            "ms": 271,
+            "position": 0.52
+          },
+          {
+            "ms": 356,
+            "position": 0.6
+          },
+          {
+            "ms": 501,
+            "position": 0.6
+          },
+          {
+            "ms": 673,
+            "position": 0.52
+          },
+          {
+            "ms": 833,
+            "position": 0.3
+          },
+          {
+            "ms": 983,
+            "position": 0.08
+          },
+          {
+            "ms": 1122,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-40680_start",
-        "sustain-40680_moveDown"
-      ],
       "range": {
-        "from": 40292.89236293739,
-        "to": 40492.89236293739
+        "from": 40293.00362134302,
+        "to": 41037.55432903312
       }
     },
     {
-      "id": "ddcb3037-35d2-41e8-b27f-470cdce411a4",
+      "id": "39720604-ebe7-5909-846b-5c6d2b7fc86f",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-40680"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -184
+      }
+    },
+    {
+      "id": "daa011f7-3431-4384-9ab4-33b476e1863a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-40680",
-        "start": -355,
-        "duration": 455,
-        "depth": 0.6,
-        "direction": "up"
+        "pedal": "sustain-40680"
       },
       "elements": [
-        "sustain-40680_moveUp",
-        "sustain-40680_end"
+        "sustain-40680_down",
+        "sustain-40680_held",
+        "sustain-40680_up",
+        "sustain-40680_rest"
       ],
       "range": {
-        "from": 40582.857735741585,
-        "to": 41037.857735741585
+        "from": 40293.00362134302,
+        "to": 41037.55432903312
       }
     },
     {
@@ -8251,41 +9835,85 @@
       }
     },
     {
-      "id": "db5bad2a-a928-4bf6-9e3a-55c970af579d",
-      "name": "InsertPedal",
+      "id": "71ed279b-822b-4e7b-b73b-3958c24510e3",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-54360",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 79,
+            "position": 0.14
+          },
+          {
+            "ms": 156,
+            "position": 0.5
+          },
+          {
+            "ms": 231,
+            "position": 0.87
+          },
+          {
+            "ms": 303,
+            "position": 1
+          },
+          {
+            "ms": 898,
+            "position": 1
+          },
+          {
+            "ms": 964,
+            "position": 0.86
+          },
+          {
+            "ms": 1033,
+            "position": 0.5
+          },
+          {
+            "ms": 1102,
+            "position": 0.14
+          },
+          {
+            "ms": 1173,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-54360_start",
-        "sustain-54360_moveDown"
-      ],
       "range": {
-        "from": 53970.91123436531,
-        "to": 54170.91123436531
+        "from": 53971.20932230142,
+        "to": 54842.32834463726
       }
     },
     {
-      "id": "71ed279b-822b-4e7b-b73b-3958c24510e3",
+      "id": "78972229-69cb-5240-b55b-6e0404aa8951",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-54360"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -156
+      }
+    },
+    {
+      "id": "db5bad2a-a928-4bf6-9e3a-55c970af579d",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-54360",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-54360"
       },
       "elements": [
-        "sustain-54360_moveUp",
-        "sustain-54360_end"
+        "sustain-54360_down",
+        "sustain-54360_held",
+        "sustain-54360_up",
+        "sustain-54360_rest"
       ],
       "range": {
-        "from": 54642.16853130443,
-        "to": 54842.16853130443
+        "from": 53971.20932230142,
+        "to": 54842.32834463726
       }
     },
     {
@@ -8533,41 +10161,73 @@
       }
     },
     {
-      "id": "1af12644-9664-42d1-b3d7-b1f044c65906",
-      "name": "InsertPedal",
+      "id": "ea08e3b5-69dc-43b9-ae2a-40c6f1dda521",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-73440",
-        "start": 0,
-        "duration": 120,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 69,
+            "position": 0.14
+          },
+          {
+            "ms": 138,
+            "position": 0.5
+          },
+          {
+            "ms": 209,
+            "position": 0.86
+          },
+          {
+            "ms": 280,
+            "position": 1
+          },
+          {
+            "ms": 2523,
+            "position": 1
+          },
+          {
+            "ms": 2594,
+            "position": 0.86
+          },
+          {
+            "ms": 2663,
+            "position": 0.5
+          },
+          {
+            "ms": 2731,
+            "position": 0.14
+          },
+          {
+            "ms": 2797,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-73440_start",
-        "sustain-73440_moveDown"
-      ],
       "range": {
         "from": 73224.56625900016,
-        "to": 73344.56625900016
+        "to": 74834.41919870085
       }
     },
     {
-      "id": "ea08e3b5-69dc-43b9-ae2a-40c6f1dda521",
+      "id": "1af12644-9664-42d1-b3d7-b1f044c65906",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-73440",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-73440"
       },
       "elements": [
-        "sustain-73440_moveUp",
-        "sustain-73440_end"
+        "sustain-73440_down",
+        "sustain-73440_held",
+        "sustain-73440_up",
+        "sustain-73440_rest"
       ],
       "range": {
-        "from": 74634.48120346377,
-        "to": 74834.48120346377
+        "from": 73224.56625900016,
+        "to": 74834.41919870085
       }
     },
     {
@@ -8918,41 +10578,85 @@
       }
     },
     {
-      "id": "c8d815ee-81cd-45fe-8227-6e37ef64971b",
-      "name": "InsertPedal",
+      "id": "df232294-8126-476a-80a4-b7ae7272ee34",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-32760",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 73,
+            "position": 0.14
+          },
+          {
+            "ms": 145,
+            "position": 0.5
+          },
+          {
+            "ms": 215,
+            "position": 0.86
+          },
+          {
+            "ms": 285,
+            "position": 1
+          },
+          {
+            "ms": 610,
+            "position": 1
+          },
+          {
+            "ms": 684,
+            "position": 0.86
+          },
+          {
+            "ms": 761,
+            "position": 0.5
+          },
+          {
+            "ms": 840,
+            "position": 0.14
+          },
+          {
+            "ms": 921,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-32760_start",
-        "sustain-32760_moveDown"
-      ],
       "range": {
-        "from": 32552.35570997493,
-        "to": 32752.35570997493
+        "from": 32552.44713455128,
+        "to": 33182.921859818736
       }
     },
     {
-      "id": "df232294-8126-476a-80a4-b7ae7272ee34",
+      "id": "4ff9510a-16c3-512a-9cd2-9549512179b6",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-32760"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -145
+      }
+    },
+    {
+      "id": "c8d815ee-81cd-45fe-8227-6e37ef64971b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-32760",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-32760"
       },
       "elements": [
-        "sustain-32760_moveUp",
-        "sustain-32760_end"
+        "sustain-32760_down",
+        "sustain-32760_held",
+        "sustain-32760_up",
+        "sustain-32760_rest"
       ],
       "range": {
-        "from": 32982.888930515845,
-        "to": 33182.888930515845
+        "from": 32552.44713455128,
+        "to": 33182.921859818736
       }
     },
     {
@@ -8993,41 +10697,85 @@
       }
     },
     {
-      "id": "c39b339d-22c3-48a8-994a-9cc00e40293f",
-      "name": "InsertPedal",
+      "id": "61ad6d3d-bae8-40c0-bc41-8f542e14e3c5",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-31320",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 77,
+            "position": 0.14
+          },
+          {
+            "ms": 153,
+            "position": 0.5
+          },
+          {
+            "ms": 229,
+            "position": 0.86
+          },
+          {
+            "ms": 304,
+            "position": 1
+          },
+          {
+            "ms": 696,
+            "position": 1
+          },
+          {
+            "ms": 768,
+            "position": 0.86
+          },
+          {
+            "ms": 840,
+            "position": 0.5
+          },
+          {
+            "ms": 912,
+            "position": 0.14
+          },
+          {
+            "ms": 983,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-31320_start",
-        "sustain-31320_moveDown"
-      ],
       "range": {
-        "from": 30945.81875168703,
-        "to": 31145.81875168703
+        "from": 30945.75352265731,
+        "to": 31611.77401584257
       }
     },
     {
-      "id": "61ad6d3d-bae8-40c0-bc41-8f542e14e3c5",
+      "id": "372d6aae-f64e-5419-bd01-1e47093a1a01",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-31320"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -153
+      }
+    },
+    {
+      "id": "c39b339d-22c3-48a8-994a-9cc00e40293f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-31320",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-31320"
       },
       "elements": [
-        "sustain-31320_moveUp",
-        "sustain-31320_end"
+        "sustain-31320_down",
+        "sustain-31320_held",
+        "sustain-31320_up",
+        "sustain-31320_rest"
       ],
       "range": {
-        "from": 31411.58795155788,
-        "to": 31611.58795155788
+        "from": 30945.75352265731,
+        "to": 31611.77401584257
       }
     },
     {
@@ -9183,41 +10931,85 @@
       }
     },
     {
-      "id": "18f3d6cc-1e6b-49e9-9b19-6fb75394a8eb",
-      "name": "InsertPedal",
+      "id": "3d3e412e-4951-44de-956e-d570cd6f7b4c",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-75960",
-        "start": -155,
-        "duration": 255,
-        "depth": 0.7,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 110,
+            "position": 0.1
+          },
+          {
+            "ms": 220,
+            "position": 0.35
+          },
+          {
+            "ms": 331,
+            "position": 0.61
+          },
+          {
+            "ms": 441,
+            "position": 0.7
+          },
+          {
+            "ms": 918,
+            "position": 0.7
+          },
+          {
+            "ms": 1004,
+            "position": 0.6
+          },
+          {
+            "ms": 1090,
+            "position": 0.35
+          },
+          {
+            "ms": 1176,
+            "position": 0.1
+          },
+          {
+            "ms": 1260,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-75960_start",
-        "sustain-75960_moveDown"
-      ],
       "range": {
-        "from": 75592.86354209957,
-        "to": 75847.86354209957
+        "from": 75593.01115952723,
+        "to": 76323.3602242632
       }
     },
     {
-      "id": "3d3e412e-4951-44de-956e-d570cd6f7b4c",
+      "id": "5efa2deb-f6d3-5e99-9fa7-6142fd469a9d",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-75960"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -268
+      }
+    },
+    {
+      "id": "18f3d6cc-1e6b-49e9-9b19-6fb75394a8eb",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-75960",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.7,
-        "direction": "up"
+        "pedal": "sustain-75960"
       },
       "elements": [
-        "sustain-75960_moveUp",
-        "sustain-75960_end"
+        "sustain-75960_down",
+        "sustain-75960_held",
+        "sustain-75960_up",
+        "sustain-75960_rest"
       ],
       "range": {
-        "from": 76123.46665135598,
-        "to": 76323.46665135598
+        "from": 75593.01115952723,
+        "to": 76323.3602242632
       }
     },
     {
@@ -9237,22 +11029,85 @@
       }
     },
     {
+      "id": "69b83aef-3e9c-4ac6-bbda-6159fcfd2de5",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-64800",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 226,
+            "position": 0.12
+          },
+          {
+            "ms": 451,
+            "position": 0.45
+          },
+          {
+            "ms": 683,
+            "position": 0.78
+          },
+          {
+            "ms": 920,
+            "position": 0.9
+          },
+          {
+            "ms": 2189,
+            "position": 0.9
+          },
+          {
+            "ms": 2471,
+            "position": 0.78
+          },
+          {
+            "ms": 2768,
+            "position": 0.45
+          },
+          {
+            "ms": 3099,
+            "position": 0.12
+          },
+          {
+            "ms": 3445,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 64424.24844189557,
+        "to": 66600
+      }
+    },
+    {
+      "id": "4849e76f-696a-50f0-8b51-4f10b780778d",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-64800"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -141
+      }
+    },
+    {
       "id": "3d6f59f7-0f1c-422e-b9c4-47fb87298004",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-64800",
-        "start": -100,
-        "duration": 645,
-        "depth": 0.9,
-        "direction": "down"
+        "pedal": "sustain-64800"
       },
       "elements": [
-        "sustain-64800_start",
-        "sustain-64800_moveDown"
+        "sustain-64800_down",
+        "sustain-64800_held",
+        "sustain-64800_up",
+        "sustain-64800_rest"
       ],
       "range": {
-        "from": 64424.0525326686,
-        "to": 65069.0525326686
+        "from": 64424.24844189557,
+        "to": 66600
       }
     },
     {
@@ -9285,25 +11140,6 @@
       "range": {
         "from": 59760,
         "to": 60480
-      }
-    },
-    {
-      "id": "4b52c3f5-3f60-4f0c-8f4e-22b396cfe30d",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-59040",
-        "start": -855,
-        "duration": 955,
-        "depth": 1,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-59040_moveUp",
-        "sustain-59040_end"
-      ],
-      "range": {
-        "from": 60424.74859688065,
-        "to": 61379.74859688065
       }
     },
     {
@@ -9502,41 +11338,85 @@
       }
     },
     {
-      "id": "d9f4ada4-9e95-4daa-a50d-695adc692e77",
-      "name": "InsertPedal",
+      "id": "b3d99143-ca75-4b89-bffc-653782acbb62",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "sustain-38160",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 81,
+            "position": 0.14
+          },
+          {
+            "ms": 162,
+            "position": 0.5
+          },
+          {
+            "ms": 244,
+            "position": 0.86
+          },
+          {
+            "ms": 326,
+            "position": 1
+          },
+          {
+            "ms": 1255,
+            "position": 1
+          },
+          {
+            "ms": 1342,
+            "position": 0.86
+          },
+          {
+            "ms": 1429,
+            "position": 0.5
+          },
+          {
+            "ms": 1517,
+            "position": 0.14
+          },
+          {
+            "ms": 1605,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-38160_start",
-        "sustain-38160_moveDown"
-      ],
       "range": {
-        "from": 37760.59026579148,
-        "to": 37960.59026579148
+        "from": 37760.81359486946,
+        "to": 38709.9482735751
       }
     },
     {
-      "id": "b3d99143-ca75-4b89-bffc-653782acbb62",
+      "id": "f91fb85a-c18f-516c-be03-a3e65fe22d9d",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-38160"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -162
+      }
+    },
+    {
+      "id": "d9f4ada4-9e95-4daa-a50d-695adc692e77",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-38160",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "sustain-38160"
       },
       "elements": [
-        "sustain-38160_moveUp",
-        "sustain-38160_end"
+        "sustain-38160_down",
+        "sustain-38160_held",
+        "sustain-38160_up",
+        "sustain-38160_rest"
       ],
       "range": {
-        "from": 38509.7507498426,
-        "to": 38709.7507498426
+        "from": 37760.81359486946,
+        "to": 38709.9482735751
       }
     },
     {
@@ -9953,269 +11833,533 @@
       }
     },
     {
-      "id": "fdee86c3-5d22-4271-b2fc-df408b0cfb38",
-      "name": "InsertPedal",
+      "id": "32ca2d12-ba44-475c-850d-5b2dc3074970",
+      "name": "CorrectPedal",
       "options": {
         "pedal": "soft-0",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 140,
+            "position": 1
+          },
+          {
+            "ms": 76109,
+            "position": 1
+          },
+          {
+            "ms": 81664,
+            "position": 0.43
+          },
+          {
+            "ms": 85855,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "soft-0_start",
-        "soft-0_moveDown"
-      ],
       "range": {
-        "from": -100,
-        "to": 100
+        "from": 0,
+        "to": 52046.45631071704
       }
     },
     {
-      "id": "32ca2d12-ba44-475c-850d-5b2dc3074970",
+      "id": "fdee86c3-5d22-4271-b2fc-df408b0cfb38",
       "name": "InsertPedal",
       "options": {
-        "pedal": "soft-0",
-        "start": 200,
-        "duration": 7000,
-        "depth": 1,
-        "direction": "up"
+        "pedal": "soft-0"
       },
       "elements": [
-        "soft-0_moveUp",
-        "soft-0_end"
+        "soft-0_rest",
+        "soft-0_down",
+        "soft-0_up",
+        "soft-0_rest_2"
       ],
       "range": {
-        "from": 46367.0900393224,
-        "to": 53367.0900393224
+        "from": 0,
+        "to": 52046.45631071704
+      }
+    },
+    {
+      "id": "4b52c3f5-3f60-4f0c-8f4e-22b396cfe30d",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-59040",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 79,
+            "position": 0.14
+          },
+          {
+            "ms": 157,
+            "position": 0.5
+          },
+          {
+            "ms": 235,
+            "position": 0.86
+          },
+          {
+            "ms": 313,
+            "position": 1
+          },
+          {
+            "ms": 3084,
+            "position": 1
+          },
+          {
+            "ms": 3412,
+            "position": 0.87
+          },
+          {
+            "ms": 3766,
+            "position": 0.5
+          },
+          {
+            "ms": 4083,
+            "position": 0.13
+          },
+          {
+            "ms": 4411,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 58331.44565431314,
+        "to": 61379.85187478971
+      }
+    },
+    {
+      "id": "002f7d0c-c2c7-5921-ab07-81f02e4addb0",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-59040"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -157
       }
     },
     {
       "id": "f6e3020c-0a67-44ce-bfd1-3d2bbe486475",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-59040",
-        "start": -100,
-        "duration": 200,
-        "depth": 1,
-        "direction": "down"
+        "pedal": "sustain-59040"
       },
       "elements": [
-        "sustain-59040_start",
-        "sustain-59040_moveDown"
+        "sustain-59040_down",
+        "sustain-59040_held",
+        "sustain-59040_up",
+        "sustain-59040_rest"
       ],
       "range": {
-        "from": 58331.62992079884,
-        "to": 58531.62992079884
+        "from": 58331.44565431314,
+        "to": 61379.85187478971
+      }
+    },
+    {
+      "id": "340504b8-7896-4f2e-9106-dd49025805cb",
+      "name": "CorrectPedal",
+      "options": {
+        "pedal": "sustain-84600",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 99,
+            "position": 0.11
+          },
+          {
+            "ms": 200,
+            "position": 0.4
+          },
+          {
+            "ms": 302,
+            "position": 0.69
+          },
+          {
+            "ms": 405,
+            "position": 0.8
+          },
+          {
+            "ms": 628,
+            "position": 0.8
+          },
+          {
+            "ms": 735,
+            "position": 0.69
+          },
+          {
+            "ms": 844,
+            "position": 0.4
+          },
+          {
+            "ms": 955,
+            "position": 0.11
+          },
+          {
+            "ms": 1067,
+            "position": 0
+          }
+        ]
+      },
+      "range": {
+        "from": 84187.02173962846,
+        "to": 84692.82082695513
+      }
+    },
+    {
+      "id": "5a334a60-d812-503d-81bd-6174c133289f",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-84600"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -200
       }
     },
     {
       "id": "d453a10f-d5b4-4f3f-9e92-c3554b6d9dbd",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-84600",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "down"
+        "pedal": "sustain-84600"
       },
       "elements": [
-        "sustain-84600_start",
-        "sustain-84600_moveDown"
+        "sustain-84600_down",
+        "sustain-84600_held",
+        "sustain-84600_up",
+        "sustain-84600_rest"
       ],
       "range": {
-        "from": 84187.1878678572,
-        "to": 84387.1878678572
+        "from": 84187.02173962846,
+        "to": 84692.82082695513
       }
     },
     {
-      "id": "340504b8-7896-4f2e-9106-dd49025805cb",
-      "name": "InsertPedal",
+      "id": "648d79b9-1a51-4ed2-b106-63b2e6300b4f",
+      "name": "CorrectPedal",
       "options": {
-        "pedal": "sustain-84600",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "up"
+        "pedal": "sustain-86760",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 106,
+            "position": 0.07
+          },
+          {
+            "ms": 212,
+            "position": 0.25
+          },
+          {
+            "ms": 318,
+            "position": 0.43
+          },
+          {
+            "ms": 424,
+            "position": 0.5
+          },
+          {
+            "ms": 513,
+            "position": 0.5
+          },
+          {
+            "ms": 619,
+            "position": 0.43
+          },
+          {
+            "ms": 726,
+            "position": 0.25
+          },
+          {
+            "ms": 833,
+            "position": 0.07
+          },
+          {
+            "ms": 940,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-84600_moveUp",
-        "sustain-84600_end"
-      ],
       "range": {
-        "from": 84492.69563169751,
-        "to": 84692.69563169751
+        "from": 86631.4645037136,
+        "to": 87073.57428736247
+      }
+    },
+    {
+      "id": "2a541867-ca5a-5c14-95d3-5bfb770a6b10",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-86760"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -212
       }
     },
     {
       "id": "3df67abd-9f3f-44e5-b80a-4c43e4773751",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-86760",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.5,
-        "direction": "down"
+        "pedal": "sustain-86760"
       },
       "elements": [
-        "sustain-86760_start",
-        "sustain-86760_moveDown"
+        "sustain-86760_down",
+        "sustain-86760_held",
+        "sustain-86760_up",
+        "sustain-86760_rest"
       ],
       "range": {
-        "from": 86631.61575628327,
-        "to": 86831.61575628327
+        "from": 86631.4645037136,
+        "to": 87073.57428736247
       }
     },
     {
-      "id": "648d79b9-1a51-4ed2-b106-63b2e6300b4f",
-      "name": "InsertPedal",
+      "id": "934c0fbd-6ad7-47d1-941c-b473a3ce3f5f",
+      "name": "CorrectPedal",
       "options": {
-        "pedal": "sustain-86760",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.5,
-        "direction": "up"
+        "pedal": "sustain-41400",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 71,
+            "position": 0.11
+          },
+          {
+            "ms": 144,
+            "position": 0.4
+          },
+          {
+            "ms": 218,
+            "position": 0.69
+          },
+          {
+            "ms": 296,
+            "position": 0.8
+          },
+          {
+            "ms": 983,
+            "position": 0.8
+          },
+          {
+            "ms": 1072,
+            "position": 0.69
+          },
+          {
+            "ms": 1163,
+            "position": 0.4
+          },
+          {
+            "ms": 1255,
+            "position": 0.11
+          },
+          {
+            "ms": 1348,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-86760_moveUp",
-        "sustain-86760_end"
-      ],
       "range": {
-        "from": 86873.45199822437,
-        "to": 87073.45199822437
+        "from": 41209.4948151976,
+        "to": 42023.72856132561
+      }
+    },
+    {
+      "id": "3cded34b-768a-5a70-a053-7d7e02a76be7",
+      "name": "Modify",
+      "options": {
+        "pedalIDs": [
+          "sustain-41400"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -144
       }
     },
     {
       "id": "31ea31ca-69d5-4bee-8d00-8899c2eaef74",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-41400",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "down"
+        "pedal": "sustain-41400"
       },
       "elements": [
-        "sustain-41400_start",
-        "sustain-41400_moveDown"
+        "sustain-41400_down",
+        "sustain-41400_held",
+        "sustain-41400_up",
+        "sustain-41400_rest"
       ],
       "range": {
-        "from": 41209.742288517664,
-        "to": 41409.742288517664
+        "from": 41209.4948151976,
+        "to": 42023.72856132561
       }
     },
     {
-      "id": "934c0fbd-6ad7-47d1-941c-b473a3ce3f5f",
-      "name": "InsertPedal",
+      "id": "00dd89ee-12f6-442d-8717-2872df07a6b0",
+      "name": "CorrectPedal",
       "options": {
-        "pedal": "sustain-41400",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.8,
-        "direction": "up"
+        "pedal": "sustain-91080",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 79,
+            "position": 0.07
+          },
+          {
+            "ms": 160,
+            "position": 0.3
+          },
+          {
+            "ms": 241,
+            "position": 0.53
+          },
+          {
+            "ms": 323,
+            "position": 0.6
+          },
+          {
+            "ms": 899,
+            "position": 0.6
+          },
+          {
+            "ms": 1177,
+            "position": 0.52
+          },
+          {
+            "ms": 1465,
+            "position": 0.3
+          },
+          {
+            "ms": 1765,
+            "position": 0.08
+          },
+          {
+            "ms": 2077,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-41400_moveUp",
-        "sustain-41400_end"
-      ],
       "range": {
-        "from": 41823.994359845885,
-        "to": 42023.994359845885
+        "from": 90752.6906277613,
+        "to": 91126.82700922234
       }
     },
     {
-      "id": "22b9b689-042d-4715-8f51-a7fe368a1038",
-      "name": "InsertPedal",
+      "id": "55a335dd-fa5f-531e-ae49-d0768c0442f0",
+      "name": "Modify",
       "options": {
-        "pedal": "sustain-45000",
-        "start": -155,
-        "duration": 90,
-        "depth": 1,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-45000_moveUp",
-        "sustain-45000_end"
-      ],
-      "range": {
-        "from": 45078.33802776485,
-        "to": 45168.33802776485
+        "pedalIDs": [
+          "sustain-91080"
+        ],
+        "scope": "global",
+        "aspect": "onset",
+        "change": -298
       }
     },
     {
       "id": "8d1efda4-c50b-47b2-ad3e-ff048dfb2366",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-91080",
-        "start": -60,
-        "duration": 65,
-        "depth": 0.6,
-        "direction": "down"
+        "pedal": "sustain-91080"
       },
       "elements": [
-        "sustain-91080_start",
-        "sustain-91080_moveDown"
+        "sustain-91080_down",
+        "sustain-91080_held",
+        "sustain-91080_up",
+        "sustain-91080_rest"
       ],
       "range": {
-        "from": 90752.5902733298,
-        "to": 90817.5902733298
+        "from": 90752.6906277613,
+        "to": 91126.82700922234
       }
     },
     {
-      "id": "00dd89ee-12f6-442d-8717-2872df07a6b0",
-      "name": "InsertPedal",
+      "id": "b12353c9-0b32-4abb-81a1-075a01695069",
+      "name": "CorrectPedal",
       "options": {
-        "pedal": "sustain-91080",
-        "start": -100,
-        "duration": 200,
-        "depth": 0.6,
-        "direction": "up"
+        "pedal": "sustain-91440",
+        "travel": [
+          {
+            "ms": 0,
+            "position": 0
+          },
+          {
+            "ms": 162,
+            "position": 0.09
+          },
+          {
+            "ms": 327,
+            "position": 0.33
+          },
+          {
+            "ms": 497,
+            "position": 0.56
+          },
+          {
+            "ms": 670,
+            "position": 0.65
+          },
+          {
+            "ms": 1972,
+            "position": 0.65
+          },
+          {
+            "ms": 2099,
+            "position": 0.57
+          },
+          {
+            "ms": 2228,
+            "position": 0.33
+          },
+          {
+            "ms": 2350,
+            "position": 0.1
+          },
+          {
+            "ms": 2378,
+            "position": 0
+          }
+        ]
       },
-      "elements": [
-        "sustain-91080_moveUp",
-        "sustain-91080_end"
-      ],
       "range": {
-        "from": 90926.75024141555,
-        "to": 91126.75024141555
+        "from": 91133.7158750996,
+        "to": 91464.033504
       }
     },
     {
       "id": "0848ad2b-a45f-4f57-98ca-3934d2daaf80",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-91440",
-        "start": 0,
-        "duration": 100,
-        "depth": 0.65,
-        "direction": "down"
+        "pedal": "sustain-91440"
       },
       "elements": [
-        "sustain-91440_start",
-        "sustain-91440_moveDown"
+        "sustain-91440_down",
+        "sustain-91440_held",
+        "sustain-91440_up",
+        "sustain-91440_rest"
       ],
       "range": {
         "from": 91133.7158750996,
-        "to": 91233.7158750996
-      }
-    },
-    {
-      "id": "b12353c9-0b32-4abb-81a1-075a01695069",
-      "name": "InsertPedal",
-      "options": {
-        "pedal": "sustain-91440",
-        "start": -15,
-        "duration": 60,
-        "depth": 0.65,
-        "direction": "up"
-      },
-      "elements": [
-        "sustain-91440_moveUp",
-        "sustain-91440_end"
-      ],
-      "range": {
-        "from": 91403.90369617002,
-        "to": 91463.90369617002
+        "to": 91464.033504
       }
     },
     {

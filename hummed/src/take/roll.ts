@@ -176,7 +176,9 @@ export interface Correction {
  * scale, by straight lines through its points and on beyond the outermost), then every `Modify`
  * (so many steps added to the notes it names or to those of a stretch). The dynamics are fitted
  * to these, so the values between the notes have to be on their scale. Only velocities of the
- * whole piece (scope `global`) are corrected here: the published reconstruction has no others.
+ * whole piece (scope `global`) are corrected here: the published reconstruction has no others of
+ * notes, and its pedals' corrections (`CorrectPedal`, a `Modify` of a press) are not the take's, which
+ * pedals as the roll has it.
  */
 export function withCorrections(roll: Roll, calls: readonly Correction[]): Roll {
   const velocities = calls.filter((c) => c.options.aspect === 'velocity' && c.options.scope === 'global');
