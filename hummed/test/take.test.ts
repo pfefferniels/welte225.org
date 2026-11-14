@@ -328,6 +328,20 @@ describe('a take read against the roll', () => {
     assert.ok(tapped.every((s) => s.placement === 'before-beat'));
   });
 
+  it('writes the spread chords in MPM v3 notation, and they roll when performed', () => {
+    const mpm = takeMpm(roll, section, reading, 'a test');
+    const spreads = mpm.match(/<temporalSpread [^>]*\/>/g) ?? [];
+    assert.ok(spreads.length > 0);
+    for (const spread of spreads) {
+      assert.match(spread, /frame\.offset="-?[\d.]+ms" frameLength="[\d.]+ms"/);
+      assert.doesNotMatch(spread, /time\.unit|frame\.start/);
+    }
+    const msm = readFileSync(join(ROOT, '../mpm/score.msm'), 'utf8');
+    const onsets = (text: string): number =>
+      new Set(performTake(msm, text, section, 1).notes.map((n) => n.on.toFixed(3))).size;
+    assert.ok(onsets(mpm) > onsets(mpm.replace(/<temporalSpread [^>]*\/>/g, '')));
+  });
+
   it('begins a movement where the voice turns and where it breathes', () => {
     assert.deepEqual(
       reading.boundaries.map((b) => b.kind),
