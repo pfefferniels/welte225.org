@@ -12,7 +12,7 @@
     },
     {
       "id": "0d980541-336c-4a4f-baed-785094eaeb7d",
-      "name": "Expand",
+      "name": "Modify",
       "options": {
         "scope": "global",
         "aspect": "velocity",

@@ -216,6 +216,51 @@ describe('the roll', () => {
     assert.ok(Math.abs(at(corrected, 1440) - 14) < 1e-9);
   });
 
+  it('maps along an expansion before it shifts, whatever order the calls come in', () => {
+    const points: [number, number][] = [
+      [35, 20],
+      [54, 46],
+    ];
+    const first = roll.notes[0];
+    const shift: Correction = {
+      name: 'Modify',
+      options: { scope: 'global', aspect: 'velocity', change: -6, noteIDs: [first.id] },
+    };
+    const expansion: Correction = {
+      name: 'Modify',
+      options: { scope: 'global', aspect: 'velocity', points },
+    };
+    const velocityOf = (calls: Correction[]): number => withCorrections(roll, calls).notes[0].velocity;
+    const mapped = 20 + ((first.velocity - 35) * 26) / 19;
+
+    assert.ok(Math.abs(velocityOf([expansion, shift]) - (mapped - 6)) < 1e-9);
+    assert.ok(Math.abs(velocityOf([shift, expansion]) - (mapped - 6)) < 1e-9);
+    // an expansion saved before November 2026 goes by the name it had then
+    const older: Correction = { ...expansion, name: 'Expand' };
+    assert.equal(velocityOf([older, shift]), velocityOf([expansion, shift]));
+  });
+
+  it('shifts every note where a shift names none, and none where it names presses', () => {
+    const all: Correction = {
+      name: 'Modify',
+      options: { scope: 'global', aspect: 'velocity', change: -2 },
+    };
+    const presses: Correction = {
+      name: 'Modify',
+      options: { scope: 'global', aspect: 'velocity', change: -2, pedalIDs: ['p'] },
+    };
+    const recorded = roll.notes.map((n) => n.velocity);
+
+    assert.deepEqual(
+      withCorrections(roll, [all]).notes.map((n) => n.velocity),
+      recorded.map((v) => v - 2),
+    );
+    assert.deepEqual(
+      withCorrections(roll, [presses]).notes.map((n) => n.velocity),
+      recorded,
+    );
+  });
+
   it('tells the time of a score position and back', () => {
     for (const date of [0, 1000, 5000, 40000])
       assert.ok(Math.abs(dateAt(roll, timeAt(roll, date)) - date) < 1e-6);
