@@ -156,7 +156,7 @@ function chordsOf(notes: readonly RollNote[]): Chord[] {
     .sort((a, b) => a.date - b.date);
 }
 
-/** A call of the reconstruction that corrects what was recorded (MPM Desk's `Expand` and `Modify`). */
+/** A call of the reconstruction that corrects what was recorded (MPM Desk's `Modify`). */
 export interface Correction {
   readonly name: string;
   readonly options: {
@@ -165,6 +165,7 @@ export interface Correction {
     readonly from?: number;
     readonly to?: number;
     readonly noteIDs?: readonly string[];
+    readonly pedalIDs?: readonly string[];
     readonly points?: readonly (readonly [number, number])[];
     readonly change?: number;
   };
@@ -172,16 +173,26 @@ export interface Correction {
 
 /**
  * The roll with the reconstruction's corrections of its velocities, as MPM Desk's chain makes
- * them before anything is fitted: every `Expand` (the recorded velocities mapped onto another
- * scale, by straight lines through its points and on beyond the outermost), then every `Modify`
- * (so many steps added to the notes it names or to those of a stretch). The dynamics are fitted
- * to these, so the values between the notes have to be on their scale. Only velocities of the
- * whole piece (scope `global`) are corrected here: the published reconstruction has no others of
- * notes, and its pedals' corrections (`CorrectPedal`, a `Modify` of a press) are not the take's, which
- * pedals as the roll has it.
+ * them before anything is fitted. A `Modify` corrects in one of two ways: an expansion states
+ * `points` (the recorded velocities mapped onto another scale, by straight lines through its
+ * points and on beyond the outermost), a shift states a `change` (so many steps added). Every
+ * expansion runs before every shift, whatever order the calls come in, and either reaches the
+ * notes it names, those of a stretch, or, naming neither, every note. Until November 2026 an
+ * expansion was a call of its own name, `Expand`, and one saved so is read as what it is. The
+ * dynamics are fitted to these, so the values between the notes have to be on their scale. Only
+ * velocities of the whole piece (scope `global`) are corrected here: the published
+ * reconstruction has no others of notes, and its pedals' corrections (`CorrectPedal`, a `Modify`
+ * of a press) are not the take's, which pedals as the roll has it.
  */
 export function withCorrections(roll: Roll, calls: readonly Correction[]): Roll {
-  const velocities = calls.filter((c) => c.options.aspect === 'velocity' && c.options.scope === 'global');
+  const velocities = calls.filter(
+    (c) =>
+      (c.name === 'Modify' || c.name === 'Expand') &&
+      c.options.aspect === 'velocity' &&
+      c.options.scope === 'global' &&
+      // a press has no velocity: a call that names presses is about no note
+      !c.options.pedalIDs,
+  );
   const selects = ({ noteIDs, from, to }: Correction['options'], note: RollNote): boolean =>
     noteIDs
       ? noteIDs.includes(note.id)
@@ -189,7 +200,7 @@ export function withCorrections(roll: Roll, calls: readonly Correction[]): Roll 
         ? note.date >= from && note.date <= to
         : true;
   let notes = roll.notes;
-  for (const { options } of velocities.filter((c) => c.name === 'Expand')) {
+  for (const { options } of velocities.filter((c) => c.options.points !== undefined)) {
     const points = options.points ?? [];
     if (points.length < 2) continue;
     const map = (value: number): number => {
@@ -201,9 +212,7 @@ export function withCorrections(roll: Roll, calls: readonly Correction[]): Roll 
     };
     notes = notes.map((n) => (selects(options, n) ? { ...n, velocity: Math.max(0, map(n.velocity)) } : n));
   }
-  for (const { options } of velocities.filter((c) => c.name === 'Modify')) {
-    // a `Modify` names its notes or its stretch; one that names neither is about no note
-    if (!options.noteIDs && (options.from === undefined || options.to === undefined)) continue;
+  for (const { options } of velocities.filter((c) => c.options.points === undefined)) {
     const change = options.change ?? 0;
     notes = notes.map((n) =>
       selects(options, n) ? { ...n, velocity: Math.max(0, n.velocity + change) } : n,

@@ -560,10 +560,10 @@ most of his). Then:
   guides is the desk's to fit.
 
 The roll's velocities are read as the desk's chain has them when the dynamics are fitted
-(`withCorrections`, `roll.ts`): mapped by the reconstruction's `Expand` and changed by its
-`Modify` calls, a spread chord counted as its loudest note (the way up to it is the spread's own
-gradient). The values between the notes are on that scale, or they would stand 8 to 15 steps
-above the chords they lie between. What is played is the roll as recorded.
+(`withCorrections`, `roll.ts`): mapped by the reconstruction's expansion and changed by its
+shifts, both of them `Modify` calls, a spread chord counted as its loudest note (the way up to it
+is the spread's own gradient). The values between the notes are on that scale, or they would
+stand 8 to 15 steps above the chords they lie between. What is played is the roll as recorded.
 
 **What the curves leave** is read off them in turn (`reading.ts`):
 
