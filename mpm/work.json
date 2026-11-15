@@ -473,75 +473,31 @@
       }
     },
     {
-      "id": "9cd5c606-fa40-4127-89dc-af2477e28798",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-36000",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 55,
-            "position": 0.14
-          },
-          {
-            "ms": 111,
-            "position": 0.5
-          },
-          {
-            "ms": 168,
-            "position": 0.86
-          },
-          {
-            "ms": 226,
-            "position": 1
-          },
-          {
-            "ms": 2183,
-            "position": 1
-          },
-          {
-            "ms": 2291,
-            "position": 0.87
-          },
-          {
-            "ms": 2402,
-            "position": 0.5
-          },
-          {
-            "ms": 2513,
-            "position": 0.14
-          },
-          {
-            "ms": 2626,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 35350.14598653492,
-        "to": 37248.769690748115
-      }
-    },
-    {
-      "id": "41318aa7-77a1-5a9f-89e8-793261890d4e",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-36000"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -111
-      }
-    },
-    {
       "id": "3baf870c-595a-43e1-a45b-ab70b32cc497",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-36000"
+        "pedal": "sustain-36000",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              35350.4125,
+              0
+            ],
+            [
+              35550.4125,
+              1
+            ],
+            [
+              36948.5723,
+              1
+            ],
+            [
+              37248.5723,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-36000_down",
@@ -550,8 +506,8 @@
         "sustain-36000_rest"
       ],
       "range": {
-        "from": 35350.14598653492,
-        "to": 37248.769690748115
+        "from": 35350.4125,
+        "to": 37248.5723
       }
     },
     {
@@ -691,75 +647,31 @@
       }
     },
     {
-      "id": "16ffd50d-341d-43f6-adc3-bbdc339e797e",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-43200",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 85,
-            "position": 0.13
-          },
-          {
-            "ms": 173,
-            "position": 0.45
-          },
-          {
-            "ms": 261,
-            "position": 0.77
-          },
-          {
-            "ms": 351,
-            "position": 0.9
-          },
-          {
-            "ms": 911,
-            "position": 0.9
-          },
-          {
-            "ms": 1012,
-            "position": 0.77
-          },
-          {
-            "ms": 1115,
-            "position": 0.45
-          },
-          {
-            "ms": 1219,
-            "position": 0.13
-          },
-          {
-            "ms": 1325,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 42773.44263267474,
-        "to": 43465.928621026804
-      }
-    },
-    {
-      "id": "7f5e1fbc-83ae-5f06-b7e2-badcaaa68bf8",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-43200"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -173
-      }
-    },
-    {
       "id": "af82b19a-57f1-425a-956d-b1a3c6f2eade",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-43200"
+        "pedal": "sustain-43200",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              42773.4836,
+              0
+            ],
+            [
+              42973.4836,
+              0.9
+            ],
+            [
+              43266.0547,
+              0.9
+            ],
+            [
+              43466.0547,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-43200_down",
@@ -768,8 +680,8 @@
         "sustain-43200_rest"
       ],
       "range": {
-        "from": 42773.44263267474,
-        "to": 43465.928621026804
+        "from": 42773.4836,
+        "to": 43466.0547
       }
     },
     {
@@ -1087,75 +999,31 @@
       }
     },
     {
-      "id": "2d511742-9712-46e3-ac3d-bc15a5334123",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-43920",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 119,
-            "position": 0.14
-          },
-          {
-            "ms": 240,
-            "position": 0.5
-          },
-          {
-            "ms": 351,
-            "position": 0.86
-          },
-          {
-            "ms": 457,
-            "position": 1
-          },
-          {
-            "ms": 1147,
-            "position": 1
-          },
-          {
-            "ms": 1248,
-            "position": 0.86
-          },
-          {
-            "ms": 1347,
-            "position": 0.5
-          },
-          {
-            "ms": 1445,
-            "position": 0.14
-          },
-          {
-            "ms": 1542,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 43807.461713163,
-        "to": 44540.071606104044
-      }
-    },
-    {
-      "id": "d9db7d91-838c-5e56-8c63-174636655715",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-43920"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -240
-      }
-    },
-    {
       "id": "1d38e03c-7eba-4f42-878e-7ed03c8aa4b4",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-43920"
+        "pedal": "sustain-43920",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              43807.6746,
+              0
+            ],
+            [
+              44007.6746,
+              1
+            ],
+            [
+              44340.3275,
+              1
+            ],
+            [
+              44540.3275,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-43920_down",
@@ -1164,80 +1032,36 @@
         "sustain-43920_rest"
       ],
       "range": {
-        "from": 43807.461713163,
-        "to": 44540.071606104044
-      }
-    },
-    {
-      "id": "22b9b689-042d-4715-8f51-a7fe368a1038",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-45000",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 96,
-            "position": 0.14
-          },
-          {
-            "ms": 190,
-            "position": 0.5
-          },
-          {
-            "ms": 283,
-            "position": 0.86
-          },
-          {
-            "ms": 375,
-            "position": 1
-          },
-          {
-            "ms": 915,
-            "position": 1
-          },
-          {
-            "ms": 953,
-            "position": 0.86
-          },
-          {
-            "ms": 990,
-            "position": 0.5
-          },
-          {
-            "ms": 1027,
-            "position": 0.14
-          },
-          {
-            "ms": 1064,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 44569.14727723431,
-        "to": 45168.30212643936
-      }
-    },
-    {
-      "id": "8e7cc075-a583-5f0c-ae55-553bfc80b688",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-45000"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -190
+        "from": 43807.6746,
+        "to": 44540.3275
       }
     },
     {
       "id": "b3c4769b-b20b-4eae-87ca-ab264f2f2a95",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-45000"
+        "pedal": "sustain-45000",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              44569.3432,
+              0
+            ],
+            [
+              44769.3432,
+              1
+            ],
+            [
+              45078.3334,
+              1
+            ],
+            [
+              45168.3334,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-45000_down",
@@ -1246,8 +1070,8 @@
         "sustain-45000_rest"
       ],
       "range": {
-        "from": 44569.14727723431,
-        "to": 45168.30212643936
+        "from": 44569.3432,
+        "to": 45168.3334
       }
     },
     {
@@ -1340,75 +1164,31 @@
       }
     },
     {
-      "id": "c93095f9-9058-457f-987a-7afb6bd28d5b",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-45720",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 113,
-            "position": 0.07
-          },
-          {
-            "ms": 231,
-            "position": 0.28
-          },
-          {
-            "ms": 351,
-            "position": 0.47
-          },
-          {
-            "ms": 475,
-            "position": 0.55
-          },
-          {
-            "ms": 1583,
-            "position": 0.55
-          },
-          {
-            "ms": 1834,
-            "position": 0.48
-          },
-          {
-            "ms": 2093,
-            "position": 0.28
-          },
-          {
-            "ms": 2361,
-            "position": 0.07
-          },
-          {
-            "ms": 2636,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 45381.44558482885,
-        "to": 46787.702813340824
-      }
-    },
-    {
-      "id": "d4ac651a-a835-570b-a896-273e741bf19e",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-45720"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -199
-      }
-    },
-    {
       "id": "a273dff3-bc01-426d-85ed-4a32eb90356e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-45720"
+        "pedal": "sustain-45720",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              45381.7575,
+              0
+            ],
+            [
+              45681.7575,
+              0.55
+            ],
+            [
+              46287.6796,
+              0.55
+            ],
+            [
+              46787.6796,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-45720_down",
@@ -1417,8 +1197,8 @@
         "sustain-45720_rest"
       ],
       "range": {
-        "from": 45381.44558482885,
-        "to": 46787.702813340824
+        "from": 45381.7575,
+        "to": 46787.6796
       }
     },
     {
@@ -1800,75 +1580,31 @@
       }
     },
     {
-      "id": "18fe685a-3165-44f8-9abd-1187b373ba36",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-67320",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 146,
-            "position": 0.09
-          },
-          {
-            "ms": 285,
-            "position": 0.35
-          },
-          {
-            "ms": 450,
-            "position": 0.61
-          },
-          {
-            "ms": 593,
-            "position": 0.7
-          },
-          {
-            "ms": 1328,
-            "position": 0.7
-          },
-          {
-            "ms": 1423,
-            "position": 0.6
-          },
-          {
-            "ms": 1519,
-            "position": 0.35
-          },
-          {
-            "ms": 1616,
-            "position": 0.1
-          },
-          {
-            "ms": 1715,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 67057.45641071766,
-        "to": 68035.15801849759
-      }
-    },
-    {
-      "id": "e2f4244f-a0ae-5187-bc5f-bee9bbc5826c",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-67320"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -402
-      }
-    },
-    {
       "id": "f86b3ab6-6b0b-475f-98a1-27f06bf8de07",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-67320"
+        "pedal": "sustain-67320",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              67057.37,
+              0
+            ],
+            [
+              67417.37,
+              0.7
+            ],
+            [
+              67835.0381,
+              0.7
+            ],
+            [
+              68035.0381,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-67320_down",
@@ -1877,8 +1613,8 @@
         "sustain-67320_rest"
       ],
       "range": {
-        "from": 67057.45641071766,
-        "to": 68035.15801849759
+        "from": 67057.37,
+        "to": 68035.0381
       }
     },
     {
@@ -2097,75 +1833,31 @@
       }
     },
     {
-      "id": "afddaebe-a77e-48e1-ab64-bd3d79ecbd67",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-69480",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 128,
-            "position": 0.14
-          },
-          {
-            "ms": 257,
-            "position": 0.5
-          },
-          {
-            "ms": 388,
-            "position": 0.86
-          },
-          {
-            "ms": 520,
-            "position": 1
-          },
-          {
-            "ms": 1623,
-            "position": 1
-          },
-          {
-            "ms": 1770,
-            "position": 0.86
-          },
-          {
-            "ms": 1919,
-            "position": 0.5
-          },
-          {
-            "ms": 2023,
-            "position": 0.23
-          },
-          {
-            "ms": 2024,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 69041.24226895416,
-        "to": 69840
-      }
-    },
-    {
-      "id": "9014d473-8ba1-5dd3-aa68-a87e9f581221",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-69480"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -257
-      }
-    },
-    {
       "id": "d0380b16-5cdc-44bd-821b-a8bd046538ab",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-69480"
+        "pedal": "sustain-69480",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              69041.3974,
+              0
+            ],
+            [
+              69241.3974,
+              1
+            ],
+            [
+              69637.2558,
+              1
+            ],
+            [
+              69837.2558,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-69480_down",
@@ -2174,8 +1866,8 @@
         "sustain-69480_rest"
       ],
       "range": {
-        "from": 69041.24226895416,
-        "to": 69840
+        "from": 69041.3974,
+        "to": 69837.2558
       }
     },
     {
@@ -2231,75 +1923,31 @@
       }
     },
     {
-      "id": "56acb354-8f9a-4c63-bc17-c7aeebbae752",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-70560",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 171,
-            "position": 0.13
-          },
-          {
-            "ms": 339,
-            "position": 0.5
-          },
-          {
-            "ms": 502,
-            "position": 0.87
-          },
-          {
-            "ms": 662,
-            "position": 1
-          },
-          {
-            "ms": 2469,
-            "position": 1
-          },
-          {
-            "ms": 2594,
-            "position": 0.87
-          },
-          {
-            "ms": 2717,
-            "position": 0.5
-          },
-          {
-            "ms": 2837,
-            "position": 0.13
-          },
-          {
-            "ms": 2954,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 69879.66555855307,
-        "to": 71735.68486203993
-      }
-    },
-    {
-      "id": "6dededfa-17a3-5157-b3e9-8cae924de2ef",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-70560"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -198
-      }
-    },
-    {
       "id": "0fccf50a-bba6-410b-bdf8-c3e6cd296a12",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-70560"
+        "pedal": "sustain-70560",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              69879.5105,
+              0
+            ],
+            [
+              70224.5105,
+              1
+            ],
+            [
+              71365.804,
+              1
+            ],
+            [
+              71735.804,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-70560_down",
@@ -2308,8 +1956,8 @@
         "sustain-70560_rest"
       ],
       "range": {
-        "from": 69879.66555855307,
-        "to": 71735.68486203993
+        "from": 69879.5105,
+        "to": 71735.804
       }
     },
     {
@@ -2455,75 +2103,31 @@
       }
     },
     {
-      "id": "22bf6ccc-5d4e-4e95-829e-d2e22903251c",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-77400",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 91,
-            "position": 0.11
-          },
-          {
-            "ms": 183,
-            "position": 0.4
-          },
-          {
-            "ms": 276,
-            "position": 0.69
-          },
-          {
-            "ms": 370,
-            "position": 0.8
-          },
-          {
-            "ms": 1009,
-            "position": 0.8
-          },
-          {
-            "ms": 1110,
-            "position": 0.69
-          },
-          {
-            "ms": 1212,
-            "position": 0.4
-          },
-          {
-            "ms": 1315,
-            "position": 0.11
-          },
-          {
-            "ms": 1407,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 77069.73027321248,
-        "to": 77797.36111880119
-      }
-    },
-    {
-      "id": "a1d4b883-fff7-5d0b-a4ee-f42a2bbfa6fb",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-77400"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -183
-      }
-    },
-    {
       "id": "50aa766a-10ba-4008-a598-c6f429c47a4f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-77400"
+        "pedal": "sustain-77400",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              77069.5708,
+              0
+            ],
+            [
+              77269.5708,
+              0.8
+            ],
+            [
+              77597.1189,
+              0.8
+            ],
+            [
+              77797.1189,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-77400_down",
@@ -2532,8 +2136,8 @@
         "sustain-77400_rest"
       ],
       "range": {
-        "from": 77069.73027321248,
-        "to": 77797.36111880119
+        "from": 77069.5708,
+        "to": 77797.1189
       }
     },
     {
@@ -2655,75 +2259,31 @@
       }
     },
     {
-      "id": "feea06f6-1e6b-47e1-a9ce-56d8c5c3dead",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-78840",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 92,
-            "position": 0.14
-          },
-          {
-            "ms": 184,
-            "position": 0.5
-          },
-          {
-            "ms": 276,
-            "position": 0.86
-          },
-          {
-            "ms": 369,
-            "position": 1
-          },
-          {
-            "ms": 945,
-            "position": 1
-          },
-          {
-            "ms": 1040,
-            "position": 0.86
-          },
-          {
-            "ms": 1136,
-            "position": 0.5
-          },
-          {
-            "ms": 1232,
-            "position": 0.14
-          },
-          {
-            "ms": 1329,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 78451.04008395031,
-        "to": 79157.40074968523
-      }
-    },
-    {
-      "id": "fb0f35d9-8b92-512e-aa31-f0973e55e2c2",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-78840"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -184
-      }
-    },
-    {
       "id": "d271effe-2062-4e18-9995-80e6c67a648e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-78840"
+        "pedal": "sustain-78840",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              78451.2067,
+              0
+            ],
+            [
+              78651.2067,
+              1
+            ],
+            [
+              78957.2561,
+              1
+            ],
+            [
+              79157.2561,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-78840_down",
@@ -2732,8 +2292,8 @@
         "sustain-78840_rest"
       ],
       "range": {
-        "from": 78451.04008395031,
-        "to": 79157.40074968523
+        "from": 78451.2067,
+        "to": 79157.2561
       }
     },
     {
@@ -2926,75 +2486,31 @@
       }
     },
     {
-      "id": "8703afb1-3a8b-406b-bcd7-b555b3e2628a",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-82080",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 113,
-            "position": 0.13
-          },
-          {
-            "ms": 226,
-            "position": 0.5
-          },
-          {
-            "ms": 339,
-            "position": 0.87
-          },
-          {
-            "ms": 451,
-            "position": 1
-          },
-          {
-            "ms": 2079,
-            "position": 1
-          },
-          {
-            "ms": 2221,
-            "position": 0.87
-          },
-          {
-            "ms": 2364,
-            "position": 0.5
-          },
-          {
-            "ms": 2505,
-            "position": 0.13
-          },
-          {
-            "ms": 2646,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 81395.0884166205,
-        "to": 83208.11215878469
-      }
-    },
-    {
-      "id": "c8125eec-536d-5cae-9fa4-18f9c3ff97a5",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-82080"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -151
-      }
-    },
-    {
       "id": "53d55a35-70b7-42f4-95ab-c5d27a177cbc",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-82080"
+        "pedal": "sustain-82080",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              81395.2407,
+              0
+            ],
+            [
+              81695.2407,
+              1
+            ],
+            [
+              82807.8848,
+              1
+            ],
+            [
+              83207.8848,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-82080_down",
@@ -3003,8 +2519,8 @@
         "sustain-82080_rest"
       ],
       "range": {
-        "from": 81395.0884166205,
-        "to": 83208.11215878469
+        "from": 81395.2407,
+        "to": 83207.8848
       }
     },
     {
@@ -3101,75 +2617,31 @@
       }
     },
     {
-      "id": "8b4cf61b-179e-43e3-8a2e-385625614350",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-87480",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 177,
-            "position": 0.11
-          },
-          {
-            "ms": 356,
-            "position": 0.43
-          },
-          {
-            "ms": 535,
-            "position": 0.74
-          },
-          {
-            "ms": 715,
-            "position": 0.85
-          },
-          {
-            "ms": 738,
-            "position": 0.85
-          },
-          {
-            "ms": 908,
-            "position": 0.73
-          },
-          {
-            "ms": 1079,
-            "position": 0.43
-          },
-          {
-            "ms": 1251,
-            "position": 0.11
-          },
-          {
-            "ms": 1424,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 87134.66055190064,
-        "to": 87784.91125789544
-      }
-    },
-    {
-      "id": "5ca8a660-b3dd-56a2-bdbb-6e6142416853",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-87480"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -215
-      }
-    },
-    {
       "id": "d810cec1-e9c1-4a8b-adc9-3d61f205e83a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-87480"
+        "pedal": "sustain-87480",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              87134.5402,
+              0
+            ],
+            [
+              87464.5402,
+              0.85
+            ],
+            [
+              87475.077,
+              0.85
+            ],
+            [
+              87785.077,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-87480_down",
@@ -3178,8 +2650,8 @@
         "sustain-87480_rest"
       ],
       "range": {
-        "from": 87134.66055190064,
-        "to": 87784.91125789544
+        "from": 87134.5402,
+        "to": 87785.077
       }
     },
     {
@@ -3477,75 +2949,31 @@
       }
     },
     {
-      "id": "5da26b60-e16b-4e69-8249-63012e42754d",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-21240",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 88,
-            "position": 0.14
-          },
-          {
-            "ms": 176,
-            "position": 0.5
-          },
-          {
-            "ms": 265,
-            "position": 0.86
-          },
-          {
-            "ms": 355,
-            "position": 1
-          },
-          {
-            "ms": 873,
-            "position": 1
-          },
-          {
-            "ms": 967,
-            "position": 0.86
-          },
-          {
-            "ms": 1062,
-            "position": 0.5
-          },
-          {
-            "ms": 1158,
-            "position": 0.14
-          },
-          {
-            "ms": 1254,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 20896.626156066854,
-        "to": 21578.041707168555
-      }
-    },
-    {
-      "id": "52b91431-fa26-5712-b9c0-acad31b748b0",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-21240"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -176
-      }
-    },
-    {
       "id": "f75ae12d-5243-4f37-bf25-ac2cb6aa537a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-21240"
+        "pedal": "sustain-21240",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              20896.5305,
+              0
+            ],
+            [
+              21096.5305,
+              1
+            ],
+            [
+              21377.9613,
+              1
+            ],
+            [
+              21577.9613,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-21240_down",
@@ -3554,80 +2982,36 @@
         "sustain-21240_rest"
       ],
       "range": {
-        "from": 20896.626156066854,
-        "to": 21578.041707168555
-      }
-    },
-    {
-      "id": "a24dd0f9-263f-47e8-bc48-3a70a1d2c0a0",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-21960",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 100,
-            "position": 0.14
-          },
-          {
-            "ms": 201,
-            "position": 0.5
-          },
-          {
-            "ms": 303,
-            "position": 0.86
-          },
-          {
-            "ms": 405,
-            "position": 1
-          },
-          {
-            "ms": 680,
-            "position": 1
-          },
-          {
-            "ms": 785,
-            "position": 0.86
-          },
-          {
-            "ms": 891,
-            "position": 0.5
-          },
-          {
-            "ms": 998,
-            "position": 0.14
-          },
-          {
-            "ms": 1119,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 21809.154357070376,
-        "to": 22341.74965366472
-      }
-    },
-    {
-      "id": "b6a6fb49-4517-5ca4-986c-ec81ce07a245",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-21960"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -201
+        "from": 20896.5305,
+        "to": 21577.9613
       }
     },
     {
       "id": "2d9e75f0-599a-4929-ac0d-a5f91a36fc21",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-21960"
+        "pedal": "sustain-21960",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              21809.0947,
+              0
+            ],
+            [
+              22009.0947,
+              1
+            ],
+            [
+              22141.5649,
+              1
+            ],
+            [
+              22341.5649,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-21960_down",
@@ -3636,8 +3020,8 @@
         "sustain-21960_rest"
       ],
       "range": {
-        "from": 21809.154357070376,
-        "to": 22341.74965366472
+        "from": 21809.0947,
+        "to": 22341.5649
       }
     },
     {
@@ -3844,75 +3228,31 @@
       }
     },
     {
-      "id": "a6d4d739-a6f0-43e5-a0b4-9739e12f9852",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-6840",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 89,
-            "position": 0.1
-          },
-          {
-            "ms": 179,
-            "position": 0.35
-          },
-          {
-            "ms": 270,
-            "position": 0.6
-          },
-          {
-            "ms": 363,
-            "position": 0.7
-          },
-          {
-            "ms": 702,
-            "position": 0.7
-          },
-          {
-            "ms": 920,
-            "position": 0.61
-          },
-          {
-            "ms": 1142,
-            "position": 0.35
-          },
-          {
-            "ms": 1307,
-            "position": 0.09
-          },
-          {
-            "ms": 1476,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 6608.75761168471,
-        "to": 7426.472180558706
-      }
-    },
-    {
-      "id": "306b438c-d805-5de2-81b9-933559a503ec",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-6840"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -179
-      }
-    },
-    {
       "id": "b374d476-071d-43bf-8bc1-2ff1d8de7d20",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-6840"
+        "pedal": "sustain-6840",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              6608.9608,
+              0
+            ],
+            [
+              6808.9608,
+              0.7
+            ],
+            [
+              6986.7308,
+              0.7
+            ],
+            [
+              7426.7308,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-6840_down",
@@ -3921,8 +3261,8 @@
         "sustain-6840_rest"
       ],
       "range": {
-        "from": 6608.75761168471,
-        "to": 7426.472180558706
+        "from": 6608.9608,
+        "to": 7426.7308
       }
     },
     {
@@ -4093,75 +3433,31 @@
       }
     },
     {
-      "id": "0212420d-ca6a-4cb3-9ad6-ae350127dd4b",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-8280",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 85,
-            "position": 0.14
-          },
-          {
-            "ms": 171,
-            "position": 0.5
-          },
-          {
-            "ms": 258,
-            "position": 0.86
-          },
-          {
-            "ms": 345,
-            "position": 1
-          },
-          {
-            "ms": 1014,
-            "position": 1
-          },
-          {
-            "ms": 1197,
-            "position": 0.87
-          },
-          {
-            "ms": 1337,
-            "position": 0.5
-          },
-          {
-            "ms": 1481,
-            "position": 0.13
-          },
-          {
-            "ms": 1630,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 7977.2631795607695,
-        "to": 8948.218831134693
-      }
-    },
-    {
-      "id": "32dbb124-d206-5c7d-a9f9-8283381ece0a",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-8280"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -171
-      }
-    },
-    {
       "id": "a4d488ee-a086-4b12-8681-54feaacccab8",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-8280"
+        "pedal": "sustain-8280",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              7977.2766,
+              0
+            ],
+            [
+              8177.2766,
+              1
+            ],
+            [
+              8547.9391,
+              1
+            ],
+            [
+              8947.9391,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-8280_down",
@@ -4170,8 +3466,8 @@
         "sustain-8280_rest"
       ],
       "range": {
-        "from": 7977.2631795607695,
-        "to": 8948.218831134693
+        "from": 7977.2766,
+        "to": 8947.9391
       }
     },
     {
@@ -4356,75 +3652,31 @@
       ]
     },
     {
-      "id": "cb150add-e13c-42f0-95ed-e1dd0c7676fb",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-84960",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 339,
-            "position": 0.13
-          },
-          {
-            "ms": 691,
-            "position": 0.5
-          },
-          {
-            "ms": 1054,
-            "position": 0.87
-          },
-          {
-            "ms": 1430,
-            "position": 1
-          },
-          {
-            "ms": 2585,
-            "position": 1
-          },
-          {
-            "ms": 2941,
-            "position": 0.87
-          },
-          {
-            "ms": 3307,
-            "position": 0.5
-          },
-          {
-            "ms": 3683,
-            "position": 0.13
-          },
-          {
-            "ms": 4069,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 84735.26113376814,
-        "to": 86231.76430707637
-      }
-    },
-    {
-      "id": "e70684d5-7bbe-57a8-a51a-8ed1446cf264",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-84960"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -231
-      }
-    },
-    {
       "id": "a847020a-a92a-4c8c-97e6-000c84877590",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-84960"
+        "pedal": "sustain-84960",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              84735.3434,
+              0
+            ],
+            [
+              85320.3434,
+              1
+            ],
+            [
+              85741.7164,
+              1
+            ],
+            [
+              86231.7164,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-84960_down",
@@ -4433,8 +3685,8 @@
         "sustain-84960_rest"
       ],
       "range": {
-        "from": 84735.26113376814,
-        "to": 86231.76430707637
+        "from": 84735.3434,
+        "to": 86231.7164
       }
     },
     {
@@ -4676,75 +3928,31 @@
       }
     },
     {
-      "id": "44ae014c-b415-4d15-8be2-fd4e8f6d7c19",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-9720",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 82,
-            "position": 0.14
-          },
-          {
-            "ms": 164,
-            "position": 0.5
-          },
-          {
-            "ms": 247,
-            "position": 0.86
-          },
-          {
-            "ms": 331,
-            "position": 1
-          },
-          {
-            "ms": 795,
-            "position": 1
-          },
-          {
-            "ms": 969,
-            "position": 0.87
-          },
-          {
-            "ms": 1146,
-            "position": 0.5
-          },
-          {
-            "ms": 1324,
-            "position": 0.13
-          },
-          {
-            "ms": 1505,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 9432.293305031795,
-        "to": 10304.360352964532
-      }
-    },
-    {
-      "id": "d641548f-05eb-5808-a71c-2eda3d5f2998",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-9720"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -164
-      }
-    },
-    {
       "id": "e1cfef4d-6f6e-4e6b-8208-7d2cfa795418",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-9720"
+        "pedal": "sustain-9720",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              9432.3009,
+              0
+            ],
+            [
+              9632.3009,
+              1
+            ],
+            [
+              9904.4283,
+              1
+            ],
+            [
+              10304.4283,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-9720_down",
@@ -4753,8 +3961,8 @@
         "sustain-9720_rest"
       ],
       "range": {
-        "from": 9432.293305031795,
-        "to": 10304.360352964532
+        "from": 9432.3009,
+        "to": 10304.4283
       }
     },
     {
@@ -5132,75 +4340,31 @@
       }
     },
     {
-      "id": "3e709c9e-2ec8-4740-9e77-39fb9b5a96d1",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-18720",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 69,
-            "position": 0.14
-          },
-          {
-            "ms": 138,
-            "position": 0.5
-          },
-          {
-            "ms": 209,
-            "position": 0.86
-          },
-          {
-            "ms": 282,
-            "position": 1
-          },
-          {
-            "ms": 701,
-            "position": 1
-          },
-          {
-            "ms": 783,
-            "position": 0.86
-          },
-          {
-            "ms": 867,
-            "position": 0.5
-          },
-          {
-            "ms": 952,
-            "position": 0.14
-          },
-          {
-            "ms": 1039,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 18312.77961316743,
-        "to": 18983.43604533056
-      }
-    },
-    {
-      "id": "6f363317-aed5-57a1-b134-1819492c6928",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-18720"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -138
-      }
-    },
-    {
       "id": "4512ca88-19bf-4b09-9a1d-08882098a54d",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-18720"
+        "pedal": "sustain-18720",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              18312.6443,
+              0
+            ],
+            [
+              18512.6443,
+              1
+            ],
+            [
+              18783.4787,
+              1
+            ],
+            [
+              18983.4787,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-18720_down",
@@ -5209,80 +4373,36 @@
         "sustain-18720_rest"
       ],
       "range": {
-        "from": 18312.77961316743,
-        "to": 18983.43604533056
-      }
-    },
-    {
-      "id": "f1cae68c-b05f-46fc-9caa-2b4d2b735d0b",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-18000",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 76,
-            "position": 0.14
-          },
-          {
-            "ms": 152,
-            "position": 0.5
-          },
-          {
-            "ms": 227,
-            "position": 0.86
-          },
-          {
-            "ms": 302,
-            "position": 1
-          },
-          {
-            "ms": 519,
-            "position": 1
-          },
-          {
-            "ms": 592,
-            "position": 0.86
-          },
-          {
-            "ms": 664,
-            "position": 0.5
-          },
-          {
-            "ms": 736,
-            "position": 0.14
-          },
-          {
-            "ms": 807,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 17515.110223325046,
-        "to": 18063.22732844918
-      }
-    },
-    {
-      "id": "fc188eed-aaa8-56ac-9a9d-8e0006298826",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-18000"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -152
+        "from": 18312.6443,
+        "to": 18983.4787
       }
     },
     {
       "id": "632e597a-ec0d-4aa5-915c-698b3d9bf40b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-18000"
+        "pedal": "sustain-18000",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              17515.2536,
+              0
+            ],
+            [
+              17715.2536,
+              1
+            ],
+            [
+              17863.0624,
+              1
+            ],
+            [
+              18063.0624,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-18000_down",
@@ -5291,8 +4411,8 @@
         "sustain-18000_rest"
       ],
       "range": {
-        "from": 17515.110223325046,
-        "to": 18063.22732844918
+        "from": 17515.2536,
+        "to": 18063.0624
       }
     },
     {
@@ -5426,75 +4546,31 @@
       }
     },
     {
-      "id": "659b05dc-446b-4a3a-b272-47d5ad428009",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-24480",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 86,
-            "position": 0.14
-          },
-          {
-            "ms": 170,
-            "position": 0.5
-          },
-          {
-            "ms": 253,
-            "position": 0.86
-          },
-          {
-            "ms": 336,
-            "position": 1
-          },
-          {
-            "ms": 2216,
-            "position": 1
-          },
-          {
-            "ms": 2317,
-            "position": 0.87
-          },
-          {
-            "ms": 2416,
-            "position": 0.5
-          },
-          {
-            "ms": 2515,
-            "position": 0.13
-          },
-          {
-            "ms": 2612,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 23859.93220772474,
-        "to": 25662.248990529453
-      }
-    },
-    {
-      "id": "c7326933-9929-52b9-9030-189304c5b8e7",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-24480"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -170
-      }
-    },
-    {
       "id": "cb08d3e2-7aa2-4aa2-a527-cbea127a796b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-24480"
+        "pedal": "sustain-24480",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              23860.1058,
+              0
+            ],
+            [
+              24060.1058,
+              1
+            ],
+            [
+              25352.2125,
+              1
+            ],
+            [
+              25662.2125,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-24480_down",
@@ -5503,8 +4579,8 @@
         "sustain-24480_rest"
       ],
       "range": {
-        "from": 23859.93220772474,
-        "to": 25662.248990529453
+        "from": 23860.1058,
+        "to": 25662.2125
       }
     },
     {
@@ -5663,75 +4739,31 @@
       }
     },
     {
-      "id": "b0b98343-d635-4d07-b434-32fa2e6fd8f4",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-29880",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 77,
-            "position": 0.14
-          },
-          {
-            "ms": 154,
-            "position": 0.5
-          },
-          {
-            "ms": 233,
-            "position": 0.86
-          },
-          {
-            "ms": 312,
-            "position": 1
-          },
-          {
-            "ms": 864,
-            "position": 1
-          },
-          {
-            "ms": 952,
-            "position": 0.86
-          },
-          {
-            "ms": 1040,
-            "position": 0.5
-          },
-          {
-            "ms": 1130,
-            "position": 0.14
-          },
-          {
-            "ms": 1220,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 29550.343175064278,
-        "to": 30281.700959448342
-      }
-    },
-    {
-      "id": "e0273cc2-5d1c-5d42-919d-85c3a2358cf5",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-29880"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -154
-      }
-    },
-    {
       "id": "69d60ebc-1771-43df-8347-b95c24aa110e",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-29880"
+        "pedal": "sustain-29880",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              29550.3679,
+              0
+            ],
+            [
+              29750.3679,
+              1
+            ],
+            [
+              30081.7998,
+              1
+            ],
+            [
+              30281.7998,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-29880_down",
@@ -5740,8 +4772,8 @@
         "sustain-29880_rest"
       ],
       "range": {
-        "from": 29550.343175064278,
-        "to": 30281.700959448342
+        "from": 29550.3679,
+        "to": 30281.7998
       }
     },
     {
@@ -5912,75 +4944,31 @@
       }
     },
     {
-      "id": "225b7b55-1eb2-4849-8bb7-671b09b37b71",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-38880",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 89,
-            "position": 0.14
-          },
-          {
-            "ms": 178,
-            "position": 0.5
-          },
-          {
-            "ms": 268,
-            "position": 0.86
-          },
-          {
-            "ms": 357,
-            "position": 1
-          },
-          {
-            "ms": 2373,
-            "position": 1
-          },
-          {
-            "ms": 2496,
-            "position": 0.86
-          },
-          {
-            "ms": 2615,
-            "position": 0.5
-          },
-          {
-            "ms": 2729,
-            "position": 0.14
-          },
-          {
-            "ms": 2840,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 38766.54814733316,
-        "to": 40108.27517862957
-      }
-    },
-    {
-      "id": "21fd9acf-b7c4-555d-ba3f-7956fdec2d77",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-38880"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -178
-      }
-    },
-    {
       "id": "b4ca3b87-5cc4-4a02-8f65-616c4d0e50cb",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-38880"
+        "pedal": "sustain-38880",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              38766.6504,
+              0
+            ],
+            [
+              38966.6504,
+              1
+            ],
+            [
+              39908.2025,
+              1
+            ],
+            [
+              40108.2025,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-38880_down",
@@ -5989,8 +4977,8 @@
         "sustain-38880_rest"
       ],
       "range": {
-        "from": 38766.54814733316,
-        "to": 40108.27517862957
+        "from": 38766.6504,
+        "to": 40108.2025
       }
     },
     {
@@ -6187,75 +5175,31 @@
       }
     },
     {
-      "id": "e064cfe4-605e-4b1f-8102-4cd98c3e63fd",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-12960",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 67,
-            "position": 0.14
-          },
-          {
-            "ms": 134,
-            "position": 0.5
-          },
-          {
-            "ms": 202,
-            "position": 0.86
-          },
-          {
-            "ms": 271,
-            "position": 1
-          },
-          {
-            "ms": 2390,
-            "position": 1
-          },
-          {
-            "ms": 2476,
-            "position": 0.87
-          },
-          {
-            "ms": 2558,
-            "position": 0.5
-          },
-          {
-            "ms": 2636,
-            "position": 0.13
-          },
-          {
-            "ms": 2711,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 12385.985111656304,
-        "to": 14320.551212418239
-      }
-    },
-    {
-      "id": "0082c1b2-2d73-5158-a9ea-f41d914ae27b",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-12960"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -134
-      }
-    },
-    {
       "id": "2072a83e-4728-489e-a9dc-a242c373a607",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-12960"
+        "pedal": "sustain-12960",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              12386.1274,
+              0
+            ],
+            [
+              12586.1274,
+              1
+            ],
+            [
+              14020.2782,
+              1
+            ],
+            [
+              14320.2782,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-12960_down",
@@ -6264,8 +5208,8 @@
         "sustain-12960_rest"
       ],
       "range": {
-        "from": 12385.985111656304,
-        "to": 14320.551212418239
+        "from": 12386.1274,
+        "to": 14320.2782
       }
     },
     {
@@ -6469,75 +5413,31 @@
       }
     },
     {
-      "id": "0fd7ce35-f00f-4f0c-a3d5-04712f655411",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-47520",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 61,
-            "position": 0.14
-          },
-          {
-            "ms": 122,
-            "position": 0.5
-          },
-          {
-            "ms": 183,
-            "position": 0.86
-          },
-          {
-            "ms": 245,
-            "position": 1
-          },
-          {
-            "ms": 2388,
-            "position": 1
-          },
-          {
-            "ms": 2536,
-            "position": 0.87
-          },
-          {
-            "ms": 2684,
-            "position": 0.5
-          },
-          {
-            "ms": 2831,
-            "position": 0.13
-          },
-          {
-            "ms": 2977,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 46822.08056544836,
-        "to": 49011.98896715969
-      }
-    },
-    {
-      "id": "c4fd0a12-815d-58bd-9f30-f0832c303997",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-47520"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -122
-      }
-    },
-    {
       "id": "8e5082c5-b15d-4002-98c3-e73d2cb51658",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-47520"
+        "pedal": "sustain-47520",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              46821.8153,
+              0
+            ],
+            [
+              47021.8153,
+              1
+            ],
+            [
+              48611.7162,
+              1
+            ],
+            [
+              49011.7162,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-47520_down",
@@ -6546,8 +5446,8 @@
         "sustain-47520_rest"
       ],
       "range": {
-        "from": 46822.08056544836,
-        "to": 49011.98896715969
+        "from": 46821.8153,
+        "to": 49011.7162
       }
     },
     {
@@ -6817,75 +5717,31 @@
       }
     },
     {
-      "id": "cdedcebd-1d7e-4c3e-a458-eaad126f50fb",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-52920",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 71,
-            "position": 0.14
-          },
-          {
-            "ms": 143,
-            "position": 0.5
-          },
-          {
-            "ms": 215,
-            "position": 0.86
-          },
-          {
-            "ms": 288,
-            "position": 1
-          },
-          {
-            "ms": 663,
-            "position": 1
-          },
-          {
-            "ms": 739,
-            "position": 0.86
-          },
-          {
-            "ms": 816,
-            "position": 0.5
-          },
-          {
-            "ms": 894,
-            "position": 0.14
-          },
-          {
-            "ms": 972,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 52881.07868827479,
-        "to": 53531.54396494309
-      }
-    },
-    {
-      "id": "d7af5aca-9e74-5f76-9d18-17f853e72599",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-52920"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -143
-      }
-    },
-    {
       "id": "d13f1c47-a21e-4bd5-904c-048dfa072fce",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-52920"
+        "pedal": "sustain-52920",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              52881.0077,
+              0
+            ],
+            [
+              53081.0077,
+              1
+            ],
+            [
+              53331.4786,
+              1
+            ],
+            [
+              53531.4786,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-52920_down",
@@ -6894,8 +5750,8 @@
         "sustain-52920_rest"
       ],
       "range": {
-        "from": 52881.07868827479,
-        "to": 53531.54396494309
+        "from": 52881.0077,
+        "to": 53531.4786
       }
     },
     {
@@ -7090,75 +5946,31 @@
       }
     },
     {
-      "id": "0113b613-6b08-404f-baae-11b543ba4b8a",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-55800",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 67,
-            "position": 0.14
-          },
-          {
-            "ms": 134,
-            "position": 0.5
-          },
-          {
-            "ms": 202,
-            "position": 0.86
-          },
-          {
-            "ms": 270,
-            "position": 1
-          },
-          {
-            "ms": 880,
-            "position": 1
-          },
-          {
-            "ms": 953,
-            "position": 0.86
-          },
-          {
-            "ms": 1027,
-            "position": 0.5
-          },
-          {
-            "ms": 1101,
-            "position": 0.14
-          },
-          {
-            "ms": 1176,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 55523.054425044036,
-        "to": 56353.92803911678
-      }
-    },
-    {
-      "id": "788026c0-6b1c-5db3-b58b-1bd3dafd5161",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-55800"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -134
-      }
-    },
-    {
       "id": "16c92417-c3b0-4dc9-b299-5b75ce70dae2",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-55800"
+        "pedal": "sustain-55800",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              55522.7695,
+              0
+            ],
+            [
+              55722.7695,
+              1
+            ],
+            [
+              56153.7208,
+              1
+            ],
+            [
+              56353.7208,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-55800_down",
@@ -7167,8 +5979,8 @@
         "sustain-55800_rest"
       ],
       "range": {
-        "from": 55523.054425044036,
-        "to": 56353.92803911678
+        "from": 55522.7695,
+        "to": 56353.7208
       }
     },
     {
@@ -7704,75 +6516,31 @@
       }
     },
     {
-      "id": "46c2e88c-39ae-49af-9c15-ea3f52f00ecb",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-72360",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 105,
-            "position": 0.09
-          },
-          {
-            "ms": 214,
-            "position": 0.35
-          },
-          {
-            "ms": 326,
-            "position": 0.6
-          },
-          {
-            "ms": 442,
-            "position": 0.7
-          },
-          {
-            "ms": 1037,
-            "position": 0.7
-          },
-          {
-            "ms": 1233,
-            "position": 0.61
-          },
-          {
-            "ms": 1439,
-            "position": 0.35
-          },
-          {
-            "ms": 1654,
-            "position": 0.09
-          },
-          {
-            "ms": 1878,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 72079.92531049729,
-        "to": 73141.63115183232
-      }
-    },
-    {
-      "id": "268f1f54-048c-53e7-9a64-eb68a9a196f0",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-72360"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -286
-      }
-    },
-    {
       "id": "f7dbf753-8ecb-4b23-9255-45f137100962",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-72360"
+        "pedal": "sustain-72360",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              72079.7058,
+              0
+            ],
+            [
+              72374.7058,
+              0.7
+            ],
+            [
+              72721.7543,
+              0.7
+            ],
+            [
+              73141.7543,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-72360_down",
@@ -7781,8 +6549,8 @@
         "sustain-72360_rest"
       ],
       "range": {
-        "from": 72079.92531049729,
-        "to": 73141.63115183232
+        "from": 72079.7058,
+        "to": 73141.7543
       }
     },
     {
@@ -8052,75 +6820,31 @@
       }
     },
     {
-      "id": "ab8b27e4-ca31-4e7b-815d-13f65b871428",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-88920",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 129,
-            "position": 0.14
-          },
-          {
-            "ms": 259,
-            "position": 0.5
-          },
-          {
-            "ms": 390,
-            "position": 0.86
-          },
-          {
-            "ms": 522,
-            "position": 1
-          },
-          {
-            "ms": 760,
-            "position": 1
-          },
-          {
-            "ms": 831,
-            "position": 0.86
-          },
-          {
-            "ms": 903,
-            "position": 0.5
-          },
-          {
-            "ms": 975,
-            "position": 0.14
-          },
-          {
-            "ms": 1048,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 88808.10460847532,
-        "to": 89202.06293434286
-      }
-    },
-    {
-      "id": "f9aa017c-97e0-57c0-9ed8-ff23de75771e",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-88920"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -259
-      }
-    },
-    {
       "id": "8c0270b9-c187-406d-bee5-722ea9d7acda",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-88920"
+        "pedal": "sustain-88920",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              88808.2923,
+              0
+            ],
+            [
+              89008.2923,
+              1
+            ],
+            [
+              89096.8838,
+              1
+            ],
+            [
+              89201.8838,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-88920_down",
@@ -8129,8 +6853,8 @@
         "sustain-88920_rest"
       ],
       "range": {
-        "from": 88808.10460847532,
-        "to": 89202.06293434286
+        "from": 88808.2923,
+        "to": 89201.8838
       }
     },
     {
@@ -8227,75 +6951,31 @@
       }
     },
     {
-      "id": "5d1f8175-0a3f-4062-9505-eeb96e55c792",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-89640",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 142,
-            "position": 0.14
-          },
-          {
-            "ms": 286,
-            "position": 0.5
-          },
-          {
-            "ms": 432,
-            "position": 0.86
-          },
-          {
-            "ms": 579,
-            "position": 1
-          },
-          {
-            "ms": 614,
-            "position": 1
-          },
-          {
-            "ms": 764,
-            "position": 0.86
-          },
-          {
-            "ms": 916,
-            "position": 0.5
-          },
-          {
-            "ms": 1070,
-            "position": 0.14
-          },
-          {
-            "ms": 1226,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 89290.3943914932,
-        "to": 89702.41484662288
-      }
-    },
-    {
-      "id": "ca553a20-dfd6-5588-8aa8-495265a95976",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-89640"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -286
-      }
-    },
-    {
       "id": "02e6f684-5238-410a-8b51-2f3d85aa59a1",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-89640"
+        "pedal": "sustain-89640",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              89290.4619,
+              0
+            ],
+            [
+              89490.4619,
+              1
+            ],
+            [
+              89502.4239,
+              1
+            ],
+            [
+              89702.4239,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-89640_down",
@@ -8304,80 +6984,36 @@
         "sustain-89640_rest"
       ],
       "range": {
-        "from": 89290.3943914932,
-        "to": 89702.41484662288
-      }
-    },
-    {
-      "id": "d2e8dddc-f249-46b2-a581-8fb2ad22f005",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-90360",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 252,
-            "position": 0.13
-          },
-          {
-            "ms": 512,
-            "position": 0.5
-          },
-          {
-            "ms": 778,
-            "position": 0.86
-          },
-          {
-            "ms": 1053,
-            "position": 1
-          },
-          {
-            "ms": 1716,
-            "position": 1
-          },
-          {
-            "ms": 2006,
-            "position": 0.86
-          },
-          {
-            "ms": 2305,
-            "position": 0.5
-          },
-          {
-            "ms": 2616,
-            "position": 0.14
-          },
-          {
-            "ms": 2939,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 90031.39579011005,
-        "to": 90749.61719608627
-      }
-    },
-    {
-      "id": "00d2e28c-faa2-54c1-982d-01f045db88a5",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-90360"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -356
+        "from": 89290.4619,
+        "to": 89702.4239
       }
     },
     {
       "id": "c8b58cde-925a-4baa-8e91-07cf7230bbfa",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-90360"
+        "pedal": "sustain-90360",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              90031.2757,
+              0
+            ],
+            [
+              90316.2757,
+              1
+            ],
+            [
+              90479.5575,
+              1
+            ],
+            [
+              90749.5575,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-90360_down",
@@ -8386,8 +7022,8 @@
         "sustain-90360_rest"
       ],
       "range": {
-        "from": 90031.39579011005,
-        "to": 90749.61719608627
+        "from": 90031.2757,
+        "to": 90749.5575
       }
     },
     {
@@ -8499,75 +7135,31 @@
       }
     },
     {
-      "id": "1287e51f-9ada-4a75-9405-df5084525847",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-1440",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 59,
-            "position": 0.14
-          },
-          {
-            "ms": 117,
-            "position": 0.5
-          },
-          {
-            "ms": 176,
-            "position": 0.86
-          },
-          {
-            "ms": 237,
-            "position": 1
-          },
-          {
-            "ms": 2727,
-            "position": 1
-          },
-          {
-            "ms": 2865,
-            "position": 0.87
-          },
-          {
-            "ms": 2990,
-            "position": 0.5
-          },
-          {
-            "ms": 3100,
-            "position": 0.13
-          },
-          {
-            "ms": 3209,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 700.2038792337673,
-        "to": 2982.932255763767
-      }
-    },
-    {
-      "id": "8751edec-421d-5925-af36-5f52d73f8839",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-1440"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -117
-      }
-    },
-    {
       "id": "0d04499f-9c3d-4e44-8749-18f5f2a1a8d9",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-1440"
+        "pedal": "sustain-1440",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              700.3606,
+              0
+            ],
+            [
+              900.3606,
+              1
+            ],
+            [
+              2563.0416,
+              1
+            ],
+            [
+              2983.0416,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-1440_down",
@@ -8576,8 +7168,8 @@
         "sustain-1440_rest"
       ],
       "range": {
-        "from": 700.2038792337673,
-        "to": 2982.932255763767
+        "from": 700.3606,
+        "to": 2983.0416
       }
     },
     {
@@ -8774,75 +7366,31 @@
       }
     },
     {
-      "id": "dec47e2f-e3cb-4725-a329-ff340594be0c",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-4320",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 115,
-            "position": 0.14
-          },
-          {
-            "ms": 235,
-            "position": 0.5
-          },
-          {
-            "ms": 360,
-            "position": 0.86
-          },
-          {
-            "ms": 492,
-            "position": 1
-          },
-          {
-            "ms": 2924,
-            "position": 1
-          },
-          {
-            "ms": 3016,
-            "position": 0.86
-          },
-          {
-            "ms": 3134,
-            "position": 0.5
-          },
-          {
-            "ms": 3201,
-            "position": 0.14
-          },
-          {
-            "ms": 3270,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 4019.239853951103,
-        "to": 5881.671809273639
-      }
-    },
-    {
-      "id": "887f0a43-4473-5077-a383-9cbe97b358b8",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-4320"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -235
-      }
-    },
-    {
       "id": "ee707653-aeb2-4056-9eb9-b443c24b509f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-4320"
+        "pedal": "sustain-4320",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              4019.2178,
+              0
+            ],
+            [
+              4219.2178,
+              1
+            ],
+            [
+              5682.0285,
+              1
+            ],
+            [
+              5882.0285,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-4320_down",
@@ -8851,8 +7399,8 @@
         "sustain-4320_rest"
       ],
       "range": {
-        "from": 4019.239853951103,
-        "to": 5881.671809273639
+        "from": 4019.2178,
+        "to": 5882.0285
       }
     },
     {
@@ -8948,75 +7496,31 @@
       }
     },
     {
-      "id": "bfc888f9-9647-4b41-a6d2-c240b6e5d064",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-16920",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 96,
-            "position": 0.14
-          },
-          {
-            "ms": 193,
-            "position": 0.5
-          },
-          {
-            "ms": 292,
-            "position": 0.86
-          },
-          {
-            "ms": 392,
-            "position": 1
-          },
-          {
-            "ms": 1604,
-            "position": 1
-          },
-          {
-            "ms": 1687,
-            "position": 0.86
-          },
-          {
-            "ms": 1770,
-            "position": 0.5
-          },
-          {
-            "ms": 1852,
-            "position": 0.14
-          },
-          {
-            "ms": 1934,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 16025.420345849658,
-        "to": 17053.711398540716
-      }
-    },
-    {
-      "id": "509c02e0-3233-55d3-8859-d65dc381180a",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-16920"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -193
-      }
-    },
-    {
       "id": "ddefba0d-a901-42d9-bfc0-6e62dc469585",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-16920"
+        "pedal": "sustain-16920",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              16025.5421,
+              0
+            ],
+            [
+              16225.5421,
+              1
+            ],
+            [
+              16853.6525,
+              1
+            ],
+            [
+              17053.6525,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-16920_down",
@@ -9025,8 +7529,8 @@
         "sustain-16920_rest"
       ],
       "range": {
-        "from": 16025.420345849658,
-        "to": 17053.711398540716
+        "from": 16025.5421,
+        "to": 17053.6525
       }
     },
     {
@@ -9159,75 +7663,31 @@
       }
     },
     {
-      "id": "953aa525-322f-4a4d-8430-48d989587711",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-27360",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 101,
-            "position": 0.14
-          },
-          {
-            "ms": 203,
-            "position": 0.5
-          },
-          {
-            "ms": 307,
-            "position": 0.87
-          },
-          {
-            "ms": 411,
-            "position": 1
-          },
-          {
-            "ms": 2521,
-            "position": 1
-          },
-          {
-            "ms": 2701,
-            "position": 0.87
-          },
-          {
-            "ms": 2884,
-            "position": 0.5
-          },
-          {
-            "ms": 3070,
-            "position": 0.13
-          },
-          {
-            "ms": 3259,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 27093.59679253501,
-        "to": 28799.860182771787
-      }
-    },
-    {
-      "id": "670a89f3-7d1d-5c8d-8cec-e61e3befb92e",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-27360"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -162
-      }
-    },
-    {
       "id": "32680bb9-b83e-44a2-afa5-87feab1561d2",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-27360"
+        "pedal": "sustain-27360",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              27093.5153,
+              0
+            ],
+            [
+              27343.5153,
+              1
+            ],
+            [
+              28459.8947,
+              1
+            ],
+            [
+              28799.8947,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-27360_down",
@@ -9236,8 +7696,8 @@
         "sustain-27360_rest"
       ],
       "range": {
-        "from": 27093.59679253501,
-        "to": 28799.860182771787
+        "from": 27093.5153,
+        "to": 28799.8947
       }
     },
     {
@@ -9469,75 +7929,31 @@
       }
     },
     {
-      "id": "ddcb3037-35d2-41e8-b27f-470cdce411a4",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-40680",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 94,
-            "position": 0.08
-          },
-          {
-            "ms": 184,
-            "position": 0.3
-          },
-          {
-            "ms": 271,
-            "position": 0.52
-          },
-          {
-            "ms": 356,
-            "position": 0.6
-          },
-          {
-            "ms": 501,
-            "position": 0.6
-          },
-          {
-            "ms": 673,
-            "position": 0.52
-          },
-          {
-            "ms": 833,
-            "position": 0.3
-          },
-          {
-            "ms": 983,
-            "position": 0.08
-          },
-          {
-            "ms": 1122,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 40293.00362134302,
-        "to": 41037.55432903312
-      }
-    },
-    {
-      "id": "39720604-ebe7-5909-846b-5c6d2b7fc86f",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-40680"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -184
-      }
-    },
-    {
       "id": "daa011f7-3431-4384-9ab4-33b476e1863a",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-40680"
+        "pedal": "sustain-40680",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              40292.8443,
+              0
+            ],
+            [
+              40492.8443,
+              0.6
+            ],
+            [
+              40582.7708,
+              0.6
+            ],
+            [
+              41037.7708,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-40680_down",
@@ -9546,8 +7962,8 @@
         "sustain-40680_rest"
       ],
       "range": {
-        "from": 40293.00362134302,
-        "to": 41037.55432903312
+        "from": 40292.8443,
+        "to": 41037.7708
       }
     },
     {
@@ -9835,75 +8251,31 @@
       }
     },
     {
-      "id": "71ed279b-822b-4e7b-b73b-3958c24510e3",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-54360",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 79,
-            "position": 0.14
-          },
-          {
-            "ms": 156,
-            "position": 0.5
-          },
-          {
-            "ms": 231,
-            "position": 0.87
-          },
-          {
-            "ms": 303,
-            "position": 1
-          },
-          {
-            "ms": 898,
-            "position": 1
-          },
-          {
-            "ms": 964,
-            "position": 0.86
-          },
-          {
-            "ms": 1033,
-            "position": 0.5
-          },
-          {
-            "ms": 1102,
-            "position": 0.14
-          },
-          {
-            "ms": 1173,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 53971.20932230142,
-        "to": 54842.32834463726
-      }
-    },
-    {
-      "id": "78972229-69cb-5240-b55b-6e0404aa8951",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-54360"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -156
-      }
-    },
-    {
       "id": "db5bad2a-a928-4bf6-9e3a-55c970af579d",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-54360"
+        "pedal": "sustain-54360",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              53970.9127,
+              0
+            ],
+            [
+              54170.9127,
+              1
+            ],
+            [
+              54642.1611,
+              1
+            ],
+            [
+              54842.1611,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-54360_down",
@@ -9912,8 +8284,8 @@
         "sustain-54360_rest"
       ],
       "range": {
-        "from": 53971.20932230142,
-        "to": 54842.32834463726
+        "from": 53970.9127,
+        "to": 54842.1611
       }
     },
     {
@@ -10161,63 +8533,31 @@
       }
     },
     {
-      "id": "ea08e3b5-69dc-43b9-ae2a-40c6f1dda521",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-73440",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 69,
-            "position": 0.14
-          },
-          {
-            "ms": 138,
-            "position": 0.5
-          },
-          {
-            "ms": 209,
-            "position": 0.86
-          },
-          {
-            "ms": 280,
-            "position": 1
-          },
-          {
-            "ms": 2523,
-            "position": 1
-          },
-          {
-            "ms": 2594,
-            "position": 0.86
-          },
-          {
-            "ms": 2663,
-            "position": 0.5
-          },
-          {
-            "ms": 2731,
-            "position": 0.14
-          },
-          {
-            "ms": 2797,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 73224.56625900016,
-        "to": 74834.41919870085
-      }
-    },
-    {
       "id": "1af12644-9664-42d1-b3d7-b1f044c65906",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-73440"
+        "pedal": "sustain-73440",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              73224.555,
+              0
+            ],
+            [
+              73344.555,
+              1
+            ],
+            [
+              74634.4991,
+              1
+            ],
+            [
+              74834.4991,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-73440_down",
@@ -10226,8 +8566,8 @@
         "sustain-73440_rest"
       ],
       "range": {
-        "from": 73224.56625900016,
-        "to": 74834.41919870085
+        "from": 73224.555,
+        "to": 74834.4991
       }
     },
     {
@@ -10578,75 +8918,31 @@
       }
     },
     {
-      "id": "df232294-8126-476a-80a4-b7ae7272ee34",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-32760",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 73,
-            "position": 0.14
-          },
-          {
-            "ms": 145,
-            "position": 0.5
-          },
-          {
-            "ms": 215,
-            "position": 0.86
-          },
-          {
-            "ms": 285,
-            "position": 1
-          },
-          {
-            "ms": 610,
-            "position": 1
-          },
-          {
-            "ms": 684,
-            "position": 0.86
-          },
-          {
-            "ms": 761,
-            "position": 0.5
-          },
-          {
-            "ms": 840,
-            "position": 0.14
-          },
-          {
-            "ms": 921,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 32552.44713455128,
-        "to": 33182.921859818736
-      }
-    },
-    {
-      "id": "4ff9510a-16c3-512a-9cd2-9549512179b6",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-32760"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -145
-      }
-    },
-    {
       "id": "c8d815ee-81cd-45fe-8227-6e37ef64971b",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-32760"
+        "pedal": "sustain-32760",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              32552.3654,
+              0
+            ],
+            [
+              32752.3654,
+              1
+            ],
+            [
+              32982.8856,
+              1
+            ],
+            [
+              33182.8856,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-32760_down",
@@ -10655,8 +8951,8 @@
         "sustain-32760_rest"
       ],
       "range": {
-        "from": 32552.44713455128,
-        "to": 33182.921859818736
+        "from": 32552.3654,
+        "to": 33182.8856
       }
     },
     {
@@ -10697,75 +8993,31 @@
       }
     },
     {
-      "id": "61ad6d3d-bae8-40c0-bc41-8f542e14e3c5",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-31320",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 77,
-            "position": 0.14
-          },
-          {
-            "ms": 153,
-            "position": 0.5
-          },
-          {
-            "ms": 229,
-            "position": 0.86
-          },
-          {
-            "ms": 304,
-            "position": 1
-          },
-          {
-            "ms": 696,
-            "position": 1
-          },
-          {
-            "ms": 768,
-            "position": 0.86
-          },
-          {
-            "ms": 840,
-            "position": 0.5
-          },
-          {
-            "ms": 912,
-            "position": 0.14
-          },
-          {
-            "ms": 983,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 30945.75352265731,
-        "to": 31611.77401584257
-      }
-    },
-    {
-      "id": "372d6aae-f64e-5419-bd01-1e47093a1a01",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-31320"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -153
-      }
-    },
-    {
       "id": "c39b339d-22c3-48a8-994a-9cc00e40293f",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-31320"
+        "pedal": "sustain-31320",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              30945.8254,
+              0
+            ],
+            [
+              31145.8254,
+              1
+            ],
+            [
+              31411.5967,
+              1
+            ],
+            [
+              31611.5967,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-31320_down",
@@ -10774,8 +9026,8 @@
         "sustain-31320_rest"
       ],
       "range": {
-        "from": 30945.75352265731,
-        "to": 31611.77401584257
+        "from": 30945.8254,
+        "to": 31611.5967
       }
     },
     {
@@ -10931,75 +9183,31 @@
       }
     },
     {
-      "id": "3d3e412e-4951-44de-956e-d570cd6f7b4c",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-75960",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 110,
-            "position": 0.1
-          },
-          {
-            "ms": 220,
-            "position": 0.35
-          },
-          {
-            "ms": 331,
-            "position": 0.61
-          },
-          {
-            "ms": 441,
-            "position": 0.7
-          },
-          {
-            "ms": 918,
-            "position": 0.7
-          },
-          {
-            "ms": 1004,
-            "position": 0.6
-          },
-          {
-            "ms": 1090,
-            "position": 0.35
-          },
-          {
-            "ms": 1176,
-            "position": 0.1
-          },
-          {
-            "ms": 1260,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 75593.01115952723,
-        "to": 76323.3602242632
-      }
-    },
-    {
-      "id": "5efa2deb-f6d3-5e99-9fa7-6142fd469a9d",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-75960"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -268
-      }
-    },
-    {
       "id": "18f3d6cc-1e6b-49e9-9b19-6fb75394a8eb",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-75960"
+        "pedal": "sustain-75960",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              75592.8643,
+              0
+            ],
+            [
+              75847.8643,
+              0.7
+            ],
+            [
+              76123.4665,
+              0.7
+            ],
+            [
+              76323.4665,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-75960_down",
@@ -11008,8 +9216,8 @@
         "sustain-75960_rest"
       ],
       "range": {
-        "from": 75593.01115952723,
-        "to": 76323.3602242632
+        "from": 75592.8643,
+        "to": 76323.4665
       }
     },
     {
@@ -11029,75 +9237,31 @@
       }
     },
     {
-      "id": "69b83aef-3e9c-4ac6-bbda-6159fcfd2de5",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-64800",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 226,
-            "position": 0.12
-          },
-          {
-            "ms": 451,
-            "position": 0.45
-          },
-          {
-            "ms": 683,
-            "position": 0.78
-          },
-          {
-            "ms": 920,
-            "position": 0.9
-          },
-          {
-            "ms": 2189,
-            "position": 0.9
-          },
-          {
-            "ms": 2471,
-            "position": 0.78
-          },
-          {
-            "ms": 2768,
-            "position": 0.45
-          },
-          {
-            "ms": 3099,
-            "position": 0.12
-          },
-          {
-            "ms": 3445,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 64424.24844189557,
-        "to": 66600
-      }
-    },
-    {
-      "id": "4849e76f-696a-50f0-8b51-4f10b780778d",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-64800"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -141
-      }
-    },
-    {
       "id": "3d6f59f7-0f1c-422e-b9c4-47fb87298004",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-64800"
+        "pedal": "sustain-64800",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              64424.0525,
+              0
+            ],
+            [
+              65069.0525,
+              0.9
+            ],
+            [
+              65854.2723,
+              0.9
+            ],
+            [
+              66599.2723,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-64800_down",
@@ -11106,8 +9270,8 @@
         "sustain-64800_rest"
       ],
       "range": {
-        "from": 64424.24844189557,
-        "to": 66600
+        "from": 64424.0525,
+        "to": 66599.2723
       }
     },
     {
@@ -11338,75 +9502,31 @@
       }
     },
     {
-      "id": "b3d99143-ca75-4b89-bffc-653782acbb62",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-38160",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 81,
-            "position": 0.14
-          },
-          {
-            "ms": 162,
-            "position": 0.5
-          },
-          {
-            "ms": 244,
-            "position": 0.86
-          },
-          {
-            "ms": 326,
-            "position": 1
-          },
-          {
-            "ms": 1255,
-            "position": 1
-          },
-          {
-            "ms": 1342,
-            "position": 0.86
-          },
-          {
-            "ms": 1429,
-            "position": 0.5
-          },
-          {
-            "ms": 1517,
-            "position": 0.14
-          },
-          {
-            "ms": 1605,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 37760.81359486946,
-        "to": 38709.9482735751
-      }
-    },
-    {
-      "id": "f91fb85a-c18f-516c-be03-a3e65fe22d9d",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-38160"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -162
-      }
-    },
-    {
       "id": "d9f4ada4-9e95-4daa-a50d-695adc692e77",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-38160"
+        "pedal": "sustain-38160",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              37760.5809,
+              0
+            ],
+            [
+              37960.5809,
+              1
+            ],
+            [
+              38509.7442,
+              1
+            ],
+            [
+              38709.7442,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-38160_down",
@@ -11415,8 +9535,8 @@
         "sustain-38160_rest"
       ],
       "range": {
-        "from": 37760.81359486946,
-        "to": 38709.9482735751
+        "from": 37760.5809,
+        "to": 38709.7442
       }
     },
     {
@@ -11833,125 +9953,69 @@
       }
     },
     {
-      "id": "32ca2d12-ba44-475c-850d-5b2dc3074970",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "soft-0",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 140,
-            "position": 1
-          },
-          {
-            "ms": 76109,
-            "position": 1
-          },
-          {
-            "ms": 81664,
-            "position": 0.43
-          },
-          {
-            "ms": 85855,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 0,
-        "to": 52046.45631071704
-      }
-    },
-    {
       "id": "fdee86c3-5d22-4271-b2fc-df408b0cfb38",
       "name": "InsertPedal",
       "options": {
-        "pedal": "soft-0"
+        "pedal": "soft-0",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              -100,
+              0
+            ],
+            [
+              100,
+              1
+            ],
+            [
+              46367.1025,
+              1
+            ],
+            [
+              53367.1025,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
-        "soft-0_rest",
         "soft-0_down",
+        "soft-0_held",
         "soft-0_up",
-        "soft-0_rest_2"
+        "soft-0_rest"
       ],
       "range": {
-        "from": 0,
-        "to": 52046.45631071704
-      }
-    },
-    {
-      "id": "4b52c3f5-3f60-4f0c-8f4e-22b396cfe30d",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-59040",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 79,
-            "position": 0.14
-          },
-          {
-            "ms": 157,
-            "position": 0.5
-          },
-          {
-            "ms": 235,
-            "position": 0.86
-          },
-          {
-            "ms": 313,
-            "position": 1
-          },
-          {
-            "ms": 3084,
-            "position": 1
-          },
-          {
-            "ms": 3412,
-            "position": 0.87
-          },
-          {
-            "ms": 3766,
-            "position": 0.5
-          },
-          {
-            "ms": 4083,
-            "position": 0.13
-          },
-          {
-            "ms": 4411,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 58331.44565431314,
-        "to": 61379.85187478971
-      }
-    },
-    {
-      "id": "002f7d0c-c2c7-5921-ab07-81f02e4addb0",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-59040"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -157
+        "from": -100,
+        "to": 53367.1025
       }
     },
     {
       "id": "f6e3020c-0a67-44ce-bfd1-3d2bbe486475",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-59040"
+        "pedal": "sustain-59040",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              58331.6299,
+              0
+            ],
+            [
+              58531.6299,
+              1
+            ],
+            [
+              60424.7461,
+              1
+            ],
+            [
+              61379.7461,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-59040_down",
@@ -11960,80 +10024,36 @@
         "sustain-59040_rest"
       ],
       "range": {
-        "from": 58331.44565431314,
-        "to": 61379.85187478971
-      }
-    },
-    {
-      "id": "340504b8-7896-4f2e-9106-dd49025805cb",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-84600",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 99,
-            "position": 0.11
-          },
-          {
-            "ms": 200,
-            "position": 0.4
-          },
-          {
-            "ms": 302,
-            "position": 0.69
-          },
-          {
-            "ms": 405,
-            "position": 0.8
-          },
-          {
-            "ms": 628,
-            "position": 0.8
-          },
-          {
-            "ms": 735,
-            "position": 0.69
-          },
-          {
-            "ms": 844,
-            "position": 0.4
-          },
-          {
-            "ms": 955,
-            "position": 0.11
-          },
-          {
-            "ms": 1067,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 84187.02173962846,
-        "to": 84692.82082695513
-      }
-    },
-    {
-      "id": "5a334a60-d812-503d-81bd-6174c133289f",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-84600"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -200
+        "from": 58331.6299,
+        "to": 61379.7461
       }
     },
     {
       "id": "d453a10f-d5b4-4f3f-9e92-c3554b6d9dbd",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-84600"
+        "pedal": "sustain-84600",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              84187.1588,
+              0
+            ],
+            [
+              84387.1588,
+              0.8
+            ],
+            [
+              84492.6559,
+              0.8
+            ],
+            [
+              84692.6559,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-84600_down",
@@ -12042,80 +10062,36 @@
         "sustain-84600_rest"
       ],
       "range": {
-        "from": 84187.02173962846,
-        "to": 84692.82082695513
-      }
-    },
-    {
-      "id": "648d79b9-1a51-4ed2-b106-63b2e6300b4f",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-86760",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 106,
-            "position": 0.07
-          },
-          {
-            "ms": 212,
-            "position": 0.25
-          },
-          {
-            "ms": 318,
-            "position": 0.43
-          },
-          {
-            "ms": 424,
-            "position": 0.5
-          },
-          {
-            "ms": 513,
-            "position": 0.5
-          },
-          {
-            "ms": 619,
-            "position": 0.43
-          },
-          {
-            "ms": 726,
-            "position": 0.25
-          },
-          {
-            "ms": 833,
-            "position": 0.07
-          },
-          {
-            "ms": 940,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 86631.4645037136,
-        "to": 87073.57428736247
-      }
-    },
-    {
-      "id": "2a541867-ca5a-5c14-95d3-5bfb770a6b10",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-86760"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -212
+        "from": 84187.1588,
+        "to": 84692.6559
       }
     },
     {
       "id": "3df67abd-9f3f-44e5-b80a-4c43e4773751",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-86760"
+        "pedal": "sustain-86760",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              86631.616,
+              0
+            ],
+            [
+              86831.616,
+              0.5
+            ],
+            [
+              86873.4524,
+              0.5
+            ],
+            [
+              87073.4524,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-86760_down",
@@ -12124,80 +10100,36 @@
         "sustain-86760_rest"
       ],
       "range": {
-        "from": 86631.4645037136,
-        "to": 87073.57428736247
-      }
-    },
-    {
-      "id": "934c0fbd-6ad7-47d1-941c-b473a3ce3f5f",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-41400",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 71,
-            "position": 0.11
-          },
-          {
-            "ms": 144,
-            "position": 0.4
-          },
-          {
-            "ms": 218,
-            "position": 0.69
-          },
-          {
-            "ms": 296,
-            "position": 0.8
-          },
-          {
-            "ms": 983,
-            "position": 0.8
-          },
-          {
-            "ms": 1072,
-            "position": 0.69
-          },
-          {
-            "ms": 1163,
-            "position": 0.4
-          },
-          {
-            "ms": 1255,
-            "position": 0.11
-          },
-          {
-            "ms": 1348,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 41209.4948151976,
-        "to": 42023.72856132561
-      }
-    },
-    {
-      "id": "3cded34b-768a-5a70-a053-7d7e02a76be7",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-41400"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -144
+        "from": 86631.616,
+        "to": 87073.4524
       }
     },
     {
       "id": "31ea31ca-69d5-4bee-8d00-8899c2eaef74",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-41400"
+        "pedal": "sustain-41400",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              41209.742,
+              0
+            ],
+            [
+              41409.742,
+              0.8
+            ],
+            [
+              41823.9935,
+              0.8
+            ],
+            [
+              42023.9935,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-41400_down",
@@ -12206,80 +10138,36 @@
         "sustain-41400_rest"
       ],
       "range": {
-        "from": 41209.4948151976,
-        "to": 42023.72856132561
-      }
-    },
-    {
-      "id": "00dd89ee-12f6-442d-8717-2872df07a6b0",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-91080",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 79,
-            "position": 0.07
-          },
-          {
-            "ms": 160,
-            "position": 0.3
-          },
-          {
-            "ms": 241,
-            "position": 0.53
-          },
-          {
-            "ms": 323,
-            "position": 0.6
-          },
-          {
-            "ms": 899,
-            "position": 0.6
-          },
-          {
-            "ms": 1177,
-            "position": 0.52
-          },
-          {
-            "ms": 1465,
-            "position": 0.3
-          },
-          {
-            "ms": 1765,
-            "position": 0.08
-          },
-          {
-            "ms": 2077,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 90752.6906277613,
-        "to": 91126.82700922234
-      }
-    },
-    {
-      "id": "55a335dd-fa5f-531e-ae49-d0768c0442f0",
-      "name": "Modify",
-      "options": {
-        "pedalIDs": [
-          "sustain-91080"
-        ],
-        "scope": "global",
-        "aspect": "onset",
-        "change": -298
+        "from": 41209.742,
+        "to": 42023.9935
       }
     },
     {
       "id": "8d1efda4-c50b-47b2-ad3e-ff048dfb2366",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-91080"
+        "pedal": "sustain-91080",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              90752.5895,
+              0
+            ],
+            [
+              90817.5895,
+              0.6
+            ],
+            [
+              90926.7498,
+              0.6
+            ],
+            [
+              91126.7498,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-91080_down",
@@ -12288,68 +10176,36 @@
         "sustain-91080_rest"
       ],
       "range": {
-        "from": 90752.6906277613,
-        "to": 91126.82700922234
-      }
-    },
-    {
-      "id": "b12353c9-0b32-4abb-81a1-075a01695069",
-      "name": "CorrectPedal",
-      "options": {
-        "pedal": "sustain-91440",
-        "travel": [
-          {
-            "ms": 0,
-            "position": 0
-          },
-          {
-            "ms": 162,
-            "position": 0.09
-          },
-          {
-            "ms": 327,
-            "position": 0.33
-          },
-          {
-            "ms": 497,
-            "position": 0.56
-          },
-          {
-            "ms": 670,
-            "position": 0.65
-          },
-          {
-            "ms": 1972,
-            "position": 0.65
-          },
-          {
-            "ms": 2099,
-            "position": 0.57
-          },
-          {
-            "ms": 2228,
-            "position": 0.33
-          },
-          {
-            "ms": 2350,
-            "position": 0.1
-          },
-          {
-            "ms": 2378,
-            "position": 0
-          }
-        ]
-      },
-      "range": {
-        "from": 91133.7158750996,
-        "to": 91464.033504
+        "from": 90752.5895,
+        "to": 91126.7498
       }
     },
     {
       "id": "0848ad2b-a45f-4f57-98ca-3934d2daaf80",
       "name": "InsertPedal",
       "options": {
-        "pedal": "sustain-91440"
+        "pedal": "sustain-91440",
+        "guides": {
+          "dataType": "Map",
+          "value": [
+            [
+              91133.7156,
+              0
+            ],
+            [
+              91233.7156,
+              0.65
+            ],
+            [
+              91403.9043,
+              0.65
+            ],
+            [
+              91463.9043,
+              0
+            ]
+          ]
+        }
       },
       "elements": [
         "sustain-91440_down",
@@ -12358,8 +10214,8 @@
         "sustain-91440_rest"
       ],
       "range": {
-        "from": 91133.7158750996,
-        "to": 91464.033504
+        "from": 91133.7156,
+        "to": 91463.9043
       }
     },
     {
