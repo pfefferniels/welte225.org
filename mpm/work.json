@@ -10245,9 +10245,10 @@
     },
     {
       "id": "ed72c0c8-814d-4f47-b3cc-ef83dba272f1",
-      "name": "InsertGraceNotes",
+      "name": "InsertTemporalSpread",
       "options": {
-        "scope": "global"
+        "scope": "global",
+        "graces": "all"
       },
       "elements": [
         "grace_pxnvdff",
