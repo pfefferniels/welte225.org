@@ -58,7 +58,35 @@
          </captureMode>
       </physDesc>
    </manifestation>
+         <manifestation xml:id="print">
+            <titleStmt>
+               <title>Kinderscenen, op. 15</title>
+               <composer>Robert Schumann</composer>
+            </titleStmt>
+            <pubStmt>
+               <publisher>Breitkopf &amp; Härtel</publisher>
+               <pubPlace>Leipzig</pubPlace>
+               <date isodate="1839">1839</date>
+            </pubStmt>
+            <contents>
+               <label>7</label>
+               <contentItem>Träumerei</contentItem>
+            </contents>
+            <notesStmt>
+               <annot>The first edition, presumed to be the print the pianist played from. The score is encoded after it, with its repeat written out (see revisionDesc). Where the playing departs from the print, as in the ties struck again, the score is written as played, and the print's reading is not yet recorded beside it.</annot>
+            </notesStmt>
+         </manifestation>
 </manifestationList>
+      <revisionDesc>
+         <change>
+            <respStmt>
+               <persName auth.uri="https://orcid.org/0000-0002-6210-7255">Niels Pfeffer</persName>
+            </respStmt>
+            <changeDesc>
+               <p>The repeat the print writes with repeat signs is written out. Measures 2 to 9 (section s1; bars 1 to 8 counting from the first full bar) stand a second time after the first, as section s1-rend2, and every element copied there has the xml:id of its original with -rend2 appended. A recording points at the notes of the second time by those identifiers. No expansion is left, so the score reads straight through as it is played.</p>
+            </changeDesc>
+         </change>
+      </revisionDesc>
 </meiHead>
 <music>
 <body>
