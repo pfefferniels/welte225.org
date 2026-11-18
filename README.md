@@ -195,6 +195,16 @@ the files. `/hummed/` hums along to them too: after a change, run
 mpm-desk rewrites the last three in a checkout of this repository, and
 mpm-desk's tests read that checkout.
 
+The transcription's header describes the takes of the roll and the
+print the score is encoded after (the first edition, Breitkopf & Härtel
+1839), and records as a change that the repeat is written out. A take,
+the emulation of one version of the roll that a recording holds, is a
+manifestation named `take-` and the version's id, since an `xml:id`
+must not begin with a digit and a UUID may. Its recording names it as
+`#take-<id>`, and the work file's `MakeChoice` prefers a take by that
+same string. MPM Desk still names a take it imports by the bare id, so a
+take imported anew is renamed before it is published.
+
 A call of the reconstruction, one fitted curve, frame, pattern or press,
 has the identifier `https://welte225.org/mpm/<id>`, its `id` in
 `work.json` being a UUID the editor mints. A prefix of at least eight

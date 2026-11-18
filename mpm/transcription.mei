@@ -12,7 +12,7 @@
          </pubStmt>
       </fileDesc>
       <manifestationList>
-         <manifestation xml:id="c9050e75-97a8-4862-9533-0f4b1439802b">
+         <manifestation xml:id="take-c9050e75-97a8-4862-9533-0f4b1439802b">
             <physDesc>
                <captureMode>
                   <p>linked-rolls (based on midi2exp)Parameters:<list>
@@ -35,7 +35,7 @@
             </captureMode>
          </physDesc>
       </manifestation>
-      <manifestation xml:id="0e5f443d-0dd9-4810-9dbe-7f5007df490f">
+      <manifestation xml:id="take-0e5f443d-0dd9-4810-9dbe-7f5007df490f">
          <physDesc>
             <captureMode>
                <p>linked-rolls (based on midi2exp)Parameters:<list>
@@ -1754,7 +1754,7 @@
    </mdiv>
 </body>
 <performance>
-   <recording source="c9050e75-97a8-4862-9533-0f4b1439802b">
+   <recording source="#take-c9050e75-97a8-4862-9533-0f4b1439802b">
       <when absolute="28618ms" abstype="smil" corresp="symbol_acfc087a-e169-4fac-be23-b2d2ea72cefa" data="#npk4lw6" type="match">
          <extData type="velocity">41</extData>
          <extData type="duration">979ms</extData>
@@ -4799,7 +4799,7 @@
          <extData type="durationTicks">5033</extData>
       </when>
    </recording>
-   <recording source="0e5f443d-0dd9-4810-9dbe-7f5007df490f">
+   <recording source="#take-0e5f443d-0dd9-4810-9dbe-7f5007df490f">
       <when absolute="26794ms" abstype="smil" corresp="symbol_c11999fe-36f4-48b9-9104-bcac8b087595 symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8" type="soft">
          <extData type="duration">77539ms</extData>
          <extData type="onsetTicks">26794</extData>
