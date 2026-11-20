@@ -83,7 +83,7 @@
                <persName auth.uri="https://orcid.org/0000-0002-6210-7255">Niels Pfeffer</persName>
             </respStmt>
             <changeDesc>
-               <p>The repeat the print writes with repeat signs is written out. Measures 2 to 9 (section s1; bars 1 to 8 counting from the first full bar) stand a second time after the first, as section s1-rend2, and every element copied there has the xml:id of its original with -rend2 appended. A recording points at the notes of the second time by those identifiers. No expansion is left, so the score reads straight through as it is played.</p>
+               <p>Repeat of measures 2–9 (section s1) written out as section s1-rend2; copied elements keep their original xml:id with suffix -rend2. Expansion removed.</p>
             </changeDesc>
          </change>
       </revisionDesc>
