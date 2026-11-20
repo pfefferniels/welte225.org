@@ -180,6 +180,17 @@ states whether it is musical or technical, by the two motivations the
 vocabulary publishes, and reasons are given for musical changes only. The
 cleanups, `redundant-soft-pedal-release` and `closing-release` are
 technical changes, and those ids name nothing any more.
+On 20 November 2026 reasons of the same kind were merged, and a reason
+no longer names the note or chord it applies to, since the place of the
+edit gives that. `less-accent-on-f`, `accent-withdrawn` and two reasons
+named by UUIDs (`caa296fc`, `ffa13660`) became `accent-reduced`;
+`crescendo-onset-moved` and four reasons named by UUIDs (`80f176bd`,
+`07e34faf`, `f4eb34a4`, `96621e39`) became `accent-strengthened`;
+`grosse-melodische-entwicklung-hin-zum-g` and `b64a5621` went into
+`folgen-der-melodischen-kontur`, `5636914a` into `426a0404`,
+`swell-behind-upbeat` into `anacrusis-accent`, `held-note-shortened`
+and `repetition-tied` into `sauberes-legato`, and `pedal-held-through`
+into `verlaengertes-pedal`. The merged ids name nothing any more.
 
 ## Publishing the reconstruction
 
