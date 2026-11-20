@@ -4498,7 +4498,7 @@
                     "delete": [
                         "symbol_d4951659-2632-4944-9f26-b433c587e607"
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "8ccc54a8-b5b6-481b-b3ae-caaa566941fc"
                 },
@@ -7119,7 +7119,7 @@
                     "delete": [
                         "symbol_439d043c-d24c-4bad-8a45-4ecdabe79dea"
                     ],
-                    "motivation": "cleanup-c",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "953eaf21-c795-4797-a18d-e42b4951a19e"
                 },
@@ -7127,7 +7127,7 @@
                     "delete": [
                         "symbol_3c9e07f9-cf46-4464-bf55-8e7e2345cdc7"
                     ],
-                    "motivation": "cleanup-c",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "85de21d2-16a5-4750-9dff-56b8ea54db4c"
                 },
@@ -7135,7 +7135,7 @@
                     "delete": [
                         "symbol_e78861eb-3a3d-4adc-9503-cbfe80fd78f8"
                     ],
-                    "motivation": "cleanup-c",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "025d8100-0d10-4c97-8b1d-e7d0f8e87cad"
                 },
@@ -7143,7 +7143,7 @@
                     "delete": [
                         "symbol_9204e24b-3abd-447c-b7b2-51b5b27bfe18"
                     ],
-                    "motivation": "cleanup-c",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "f5c4a2ee-8409-40ce-91f8-0994ab4ef721"
                 },
@@ -28074,7 +28074,7 @@
                             "@id": "symbol_2edece7b-1389-42cc-a44d-4069100f98a7"
                         }
                     ],
-                    "motivation": "b64a5621-2785-4db2-9586-67b5701f681f",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "52cc8e8f-3100-41ee-9fe3-65116b8a0cf3"
                 },
@@ -28178,7 +28178,7 @@
                             "@id": "symbol_924274fc-32ea-40be-88b0-ea2f0e5e7928"
                         }
                     ],
-                    "motivation": "https://w3id.org/reo/type/motivation/musical",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "4d0471ea-54e1-411f-bc07-30702f14a210"
                 },
@@ -28392,7 +28392,7 @@
                     "delete": [
                         "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                     ],
-                    "motivation": "redundant-soft-pedal-release",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "a3b18463-e993-412e-99e9-904782d66213"
                 },
@@ -36698,7 +36698,7 @@
                             "@id": "symbol_3086065e-1eb7-446e-8b81-02cf1a8598b3"
                         }
                     ],
-                    "motivation": "durchgaengiges-una-corda",
+                    "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "50e0d3ff-3fac-4eba-b671-b6af927a5198"
                 },
@@ -111372,11 +111372,6 @@
             "@id": "426a0404-1911-49d7-a070-c53ca269bc83"
         },
         {
-            "note": "Bereinigung",
-            "@type": "motivation",
-            "@id": "cleanup-c"
-        },
-        {
             "note": "Das Crescendo vor dem Auftakt rückt hinter ihn, der Auftakt erhält ein Forzando",
             "@type": "motivation",
             "@id": "swell-behind-upbeat"
@@ -111445,11 +111440,6 @@
             "note": "Das zweite c vorgezogen, das erste dafür verkürzt",
             "@type": "motivation",
             "@id": "note-retimed"
-        },
-        {
-            "note": "Das zweite, wirkungslose Ab des Una Corda-Pedals entfällt",
-            "@type": "motivation",
-            "@id": "redundant-soft-pedal-release"
         },
         {
             "note": "Abweichender Notentext: ein zusätzliches f′′, ein verlegtes g",
