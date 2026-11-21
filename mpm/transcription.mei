@@ -6,6 +6,7 @@
       <fileDesc>
          <titleStmt>
             <title/>
+            <editor xml:id="editor" type="transcription">Niels Pfeffer</editor>
          </titleStmt>
          <pubStmt>
             <date isodate="2025-08-09T19:42:32"/>
@@ -73,7 +74,7 @@
                <contentItem>Träumerei</contentItem>
             </contents>
             <notesStmt>
-               <annot>The first edition, presumed to be the print the pianist played from. The score is encoded after it, with its repeat written out (see revisionDesc). Where the playing departs from the print, as in the ties struck again, the score is written as played, and the print's reading is not yet recorded beside it.</annot>
+               <annot>The first edition, presumed to be the print the pianist played from. The score is encoded after it, with its repeat written out (see revisionDesc). The ties Grünfeld strikes again are as the print has them, each in the source's reading beside an empty reading of what was played (see revisionDesc). Where else the playing departs from the print, the score may be written as played, and the print's reading is not yet recorded beside it.</annot>
             </notesStmt>
          </manifestation>
 </manifestationList>
@@ -84,6 +85,14 @@
             </respStmt>
             <changeDesc>
                <p>Repeat of measures 2–9 (section s1) written out as section s1-rend2; copied elements keep their original xml:id with suffix -rend2. Expansion removed.</p>
+            </changeDesc>
+         </change>
+         <change>
+            <respStmt>
+               <persName auth.uri="https://orcid.org/0000-0002-6210-7255">Niels Pfeffer</persName>
+            </respStmt>
+            <changeDesc>
+               <p>Ties of the print that Grünfeld strikes again restored after the Karlsruhe copy of the first edition (https://digital.blb-karlsruhe.de/id/6842317): measures 7–8 (A4, inner voice) and 8 (C4, left hand), each also in s1-rend2, and 25 (C3, left hand). Each stands in the source's reading of an app, beside an empty reading of the performance.</p>
             </changeDesc>
          </change>
       </revisionDesc>
@@ -403,6 +412,7 @@
                   <slur xml:id="s1wft22e" startid="#n104mme9" endid="#nc05e7t"/>
                   <tie xml:id="t4ithos" startid="#n1t814ew" endid="#n14pg584"/>
                   <tie xml:id="t16x95dg" startid="#n14pg584" endid="#n12pyrtb"/>
+                  <app type="transcription" xml:id="reading-tie-nug82qr"><rdg source="original"><tie xml:id="tie-nug82qr" startid="#nug82qr" endid="#n1lt30h1"/></rdg><rdg source="performance" cause="struck-again" resp="#editor"/></app>
                </measure>
                <measure xml:id="m1adm5ab" n="8">
                   <staff xml:id="m8s1" n="1">
@@ -460,6 +470,7 @@
                   </staff>
                   <slur xml:id="s7rsai1" startid="#n13ad33c" endid="#ntt204r"/>
                   <slur xml:id="sh8pzh6" startid="#cga8km8" endid="#s10jzta3"/>
+                  <app type="transcription" xml:id="reading-tie-n1n9s7yx"><rdg source="original"><tie xml:id="tie-n1n9s7yx" startid="#n1n9s7yx" endid="#n1uy01i7"/></rdg><rdg source="performance" cause="struck-again" resp="#editor"/></app>
                </measure>
                <measure xml:id="m13r6o0h" n="9" type="mscore-repeat-2">
                   <staff xml:id="m9s1" n="1">
@@ -794,6 +805,7 @@
                   <slur xml:id="s1wft22e-rend2" corresp="#s1wft22e-rend2" startid="#n104mme9-rend2" endid="#nc05e7t-rend2"/>
                   <tie xml:id="t4ithos-rend2" corresp="#t4ithos-rend2" startid="#n1t814ew-rend2" endid="#n14pg584-rend2"/>
                   <tie xml:id="t16x95dg-rend2" corresp="#t16x95dg-rend2" startid="#n14pg584-rend2" endid="#n12pyrtb-rend2"/>
+                  <app type="transcription" xml:id="reading-tie-nug82qr-rend2"><rdg source="original"><tie xml:id="tie-nug82qr-rend2" startid="#nug82qr-rend2" endid="#n1lt30h1-rend2"/></rdg><rdg source="performance" cause="struck-again" resp="#editor"/></app>
                </measure>
                <measure xml:id="m1adm5ab-rend2" n="8">
                   <staff xml:id="m8s1-rend2" n="1">
@@ -851,6 +863,7 @@
                   </staff>
                   <slur xml:id="s7rsai1-rend2" corresp="#s7rsai1-rend2" startid="#n13ad33c-rend2" endid="#ntt204r-rend2"/>
                   <slur xml:id="sh8pzh6-rend2" corresp="#sh8pzh6-rend2" startid="#cga8km8-rend2" endid="#s10jzta3-rend2"/>
+                  <app type="transcription" xml:id="reading-tie-n1n9s7yx-rend2"><rdg source="original"><tie xml:id="tie-n1n9s7yx-rend2" startid="#n1n9s7yx-rend2" endid="#n1uy01i7-rend2"/></rdg><rdg source="performance" cause="struck-again" resp="#editor"/></app>
                </measure>
                <measure xml:id="m13r6o0h-rend2" n="9" type="mscore-repeat-2">
                   <staff xml:id="m9s1-rend2" n="1">
@@ -1747,6 +1760,7 @@
                   <tie xml:id="tjrvzv6" startid="#niduwx5" endid="#n95eyqg" curvedir="below"/>
                   <fermata xml:id="f2mldlt" startid="#n1ennzqw"/>
                   <fermata xml:id="fpa4lju" startid="#n8biwve"/>
+                  <app type="transcription" xml:id="reading-tie-n3r0xtp"><rdg source="original"><tie xml:id="tie-n3r0xtp" startid="#n3r0xtp" endid="#n8biwve"/></rdg><rdg source="performance" cause="struck-again" resp="#editor"/></app>
                </measure>
             </section>
          </section>
