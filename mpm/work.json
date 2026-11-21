@@ -4,6 +4,46 @@
   "mpm": "performance.mpm",
   "provenance": [
     {
+      "id": "2538c18a-a18f-43e4-9777-b3974cc257e0",
+      "name": "AlignSource",
+      "options": {
+        "source": "#take-c9050e75-97a8-4862-9533-0f4b1439802b",
+        "midi": "",
+        "model": "v4",
+        "minConfidence": 0,
+        "resolutions": {
+          "dataType": "Map",
+          "value": []
+        },
+        "edits": {
+          "dataType": "Map",
+          "value": []
+        },
+        "resp": "Niels Pfeffer",
+        "certainty": "medium"
+      }
+    },
+    {
+      "id": "f94a3eb4-d6f6-4f17-9f8e-b4167454c79d",
+      "name": "AlignSource",
+      "options": {
+        "source": "#take-0e5f443d-0dd9-4810-9dbe-7f5007df490f",
+        "midi": "",
+        "model": "v4",
+        "minConfidence": 0,
+        "resolutions": {
+          "dataType": "Map",
+          "value": []
+        },
+        "edits": {
+          "dataType": "Map",
+          "value": []
+        },
+        "resp": "Niels Pfeffer",
+        "certainty": "medium"
+      }
+    },
+    {
       "id": "cce2b0f1-099b-478c-8ca7-24b3c17eb879",
       "name": "MakeChoice",
       "options": {
