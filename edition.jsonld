@@ -33087,7 +33087,7 @@
                             "@id": "symbol_52de11ae-e232-40c2-9608-be4713f6ab39"
                         }
                     ],
-                    "motivation": "reperatur-einer-ansonsten-redundanten",
+                    "motivation": "reparatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "ce4bcf9b-0e89-4de3-8696-f73e8f0131a7"
                 },
@@ -33105,7 +33105,7 @@
                             "@id": "symbol_6aa0a89d-b665-43ab-aecb-34a532deb23f"
                         }
                     ],
-                    "motivation": "reperatur-einer-ansonsten-redundanten",
+                    "motivation": "reparatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "60833520-75d7-4a71-9543-0927920bf74b"
                 },
@@ -33313,7 +33313,7 @@
                     "delete": [
                         "symbol_457386e9-90aa-41f9-9c99-f75566691d92"
                     ],
-                    "motivation": "reperatur-einer-ansonsten-redundanten",
+                    "motivation": "reparatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "1a7ce253-e302-4d5f-87e5-384d7e419929"
                 },
@@ -36042,7 +36042,7 @@
                             "@id": "symbol_eecdec7c-42cc-40cd-8926-35967f225f69"
                         }
                     ],
-                    "motivation": "reperatur-einer-ansonsten-redundanten",
+                    "motivation": "reparatur-einer-ansonsten-redundanten",
                     "@type": "edit",
                     "@id": "c1ff3c8f-2943-4601-8a0d-f833d91bd953"
                 },
@@ -111409,7 +111409,7 @@
         {
             "note": "Reparatur",
             "@type": "motivation",
-            "@id": "reperatur-einer-ansonsten-redundanten"
+            "@id": "reparatur-einer-ansonsten-redundanten"
         },
         {
             "note": "Durchgängiges Una Corda",

@@ -172,7 +172,8 @@ R2 (`1a7b95d`), and is named nowhere any more: the two notes that reported
 that attribution now say what the readings are. Ne1 was called Ph1 until
 20 September 2026: the copy was taken for Peter Phillips's own, and he
 reports that he read it from Nigel Nettheim's. The word ids of
-motivations are identifiers and keep the words they were minted with.
+motivations are identifiers and keep the words they were minted with,
+save for a misspelling.
 The cleanups were once motivated as `cleanup-b`, `cleanup-b2`, `cleanup-c`
 and `cleanup-d3`, after the letters then current. Since the edition moved
 to linked-rolls 0.76, every change of a version that derives from another
@@ -191,6 +192,9 @@ named by UUIDs (`caa296fc`, `ffa13660`) became `accent-reduced`;
 `swell-behind-upbeat` into `anacrusis-accent`, `held-note-shortened`
 and `repetition-tied` into `sauberes-legato`, and `pedal-held-through`
 into `verlaengertes-pedal`. The merged ids name nothing any more.
+On 21 November 2026 `reperatur-einer-ansonsten-redundanten` was
+corrected to `reparatur-einer-ansonsten-redundanten`, and the old id
+names nothing any more.
 
 ## Publishing the reconstruction
 
