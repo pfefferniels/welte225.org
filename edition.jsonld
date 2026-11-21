@@ -36817,8 +36817,8 @@
                                         "335c0289-1b35-489f-812c-2818e7aab932",
                                         "560debaf-2be3-4832-a747-591a99a66e8b",
                                         "89030f39-99c9-4bcf-ac16-e75b06ddb0df",
-                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief",
-                                        "https://w3id.org/welte-premises/premises#paper-ruled-belief"
+                                        "https://w3id.org/condon-welte/premises#advance-1mm-belief",
+                                        "https://w3id.org/condon-welte/premises#paper-ruled-belief"
                                     ],
                                     "used": [
                                         "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
@@ -48543,7 +48543,7 @@
                         },
                         "@id": "2455e75d-a824-4ca7-aeb5-c041bbf18052"
                     },
-                    "@id": "https://w3id.org/welte-premises/papers#ruled"
+                    "@id": "https://w3id.org/condon-welte/papers#ruled"
                 },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
@@ -49146,7 +49146,7 @@
                                     "premises": [
                                         "67b761d3-7fb8-4d4b-a85b-6db2f0939f55",
                                         "6eed2137-38a8-4048-80dc-bb2f519e923e",
-                                        "https://w3id.org/welte-premises/premises#advance-half-mm-belief"
+                                        "https://w3id.org/condon-welte/premises#advance-half-mm-belief"
                                     ],
                                     "used": [
                                         "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
@@ -62613,7 +62613,7 @@
                         },
                         "@id": "0eb497a0-0a99-4aa4-96a9-cfc347920d39"
                     },
-                    "@id": "https://w3id.org/welte-premises/papers#red-warm"
+                    "@id": "https://w3id.org/condon-welte/papers#red-warm"
                 },
                 "system": {
                     "@id": "https://w3id.org/reo/type/system/welte-t100"
@@ -62826,7 +62826,7 @@
                                     "premises": [
                                         "4112129e-b96b-4399-b2ea-a65f1fae1f5c",
                                         "435efaf8-6294-4d55-b29d-f4351f83b127",
-                                        "https://w3id.org/welte-premises/premises#advance-1mm-belief"
+                                        "https://w3id.org/condon-welte/premises#advance-1mm-belief"
                                     ],
                                     "used": [
                                         "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
@@ -72302,7 +72302,7 @@
                                         {
                                             "premises": [
                                                 "b8dffe69-90ad-4d55-9196-2453ebcfc0d0",
-                                                "https://w3id.org/welte-premises/premises#advance-1mm-belief"
+                                                "https://w3id.org/condon-welte/premises#advance-1mm-belief"
                                             ],
                                             "used": [
                                                 "https://github.com/pfefferniels/condon-dates/blob/639609f01f8619116c17ef6d95071462424ce8a5/docs/premises.jsonld"
