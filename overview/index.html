@@ -100,12 +100,28 @@
         </span>
       </dd>
 
+      <dt>MLign</dt>
+      <dd>Learned note-level alignment of a score (MEI or MusicXML) with a MIDI performance: every note is matched or marked as missing or extra, each decision with a confidence. MPM Desk runs it in the browser to align a performance with its score.
+        <span class="links">
+          <a href="https://github.com/pfefferniels/MLign">github repo</a>
+        </span>
+      </dd>
+
       <dt>As played by</dt>
       <dd>MEI customization for embedding performance alignments within the MEI itself. A fork of Verovio renders such MEI with the score laid out along the time of the performance.
         <span class="links">
           <a href="https://pfefferniels.github.io/as-played-by/">open</a>
           <a href="https://github.com/pfefferniels/as-played-by">github repo</a>
           <a href="https://github.com/pfefferniels/verovio/tree/aligned-mei">verovio fork</a>
+        </span>
+      </dd>
+
+      <dt>condon-dates</dt>
+      <dd>When the red Welte rolls of the Condon collection at Stanford were punched, who signed them, the paper they were cut on and the perforators that cut them, and the premises these give for dating a roll. The edition of WM 225 cites these premises in dating copies of the roll.
+        <span class="links">
+          <a href="https://pfefferniels.github.io/condon-dates/">open</a>
+          <a href="https://pfefferniels.github.io/condon-dates/premises.html">premises</a>
+          <a href="https://github.com/pfefferniels/condon-dates">github repo</a>
         </span>
       </dd>
 
@@ -156,7 +172,9 @@
     </dl>
 
     <h2>Identifiers</h2>
-    <p>Every entity of the edition has an IRI under this domain. Each of them opens the edition at that entity in Roll Desk: the edition itself is <code>https://welte225.org/</code>, a copy is <code>https://welte225.org/copy/&lt;id&gt;</code>, a symbol read from the roll is <code>https://welte225.org/symbol_&lt;id&gt;</code>, and a hole on a copy is <code>https://welte225.org/&lt;id&gt;</code>. A call of the performance reconstruction, one fitted curve, frame, pattern or press, is <code>https://welte225.org/mpm/&lt;id&gt;</code> and opens MPM Desk's viewer at that call, with what it was fitted to marked, the first eight characters of the id being enough.</p>
+    <p>The edition itself is <code>https://welte225.org/</code>, the front page, which links the edition's JSON-LD. Every entity of the edition is named by its id alone and opens Roll Desk at that entity: a version, a copy, a feature, an edit, a motivation or a belief is <code>https://welte225.org/&lt;id&gt;</code>, and a symbol read from the roll is <code>https://welte225.org/symbol_&lt;id&gt;</code>. The first eight characters of a UUID are enough, or more where another id begins the same way. Links of the form <code>https://welte225.org/copy/&lt;id&gt;</code>, given out until September 2026, still work. A principle the edition follows is <code>https://welte225.org/rules#&lt;id&gt;</code>.</p>
+    <p>A call of the performance reconstruction, one fitted curve, frame, pattern or press, is <code>https://welte225.org/mpm/&lt;id&gt;</code> and opens MPM Desk's viewer at that call, with what it was fitted to marked, the first eight characters of the id being enough.</p>
+    <p>The premises and classes of paper by which the edition dates copies of the roll, and the hand of the controller who signed one, come from condon-dates and have IRIs under <code>https://w3id.org/condon-welte/</code>.</p>
 
     <footer>
       Niels Pfeffer · 
