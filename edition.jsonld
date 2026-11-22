@@ -299,27 +299,6 @@
                             "@id": "symbol_9618ebdc-40ae-4469-8fcf-473ee6d2965b"
                         }
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "used": [
-                                        "symbol_058f3b2f-6f66-4754-9e71-b4c858187e1f",
-                                        "symbol_9d2ed841-8f5e-4c58-bfbb-258d930302f4"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "bccf373d-fdd8-44fc-9aba-1bc4ef4e8211"
-                        },
-                        "@id": "ff55399b-416f-480a-b582-d011c423bef6"
-                    },
                     "motivation": "accent-strengthened",
                     "@type": "edit",
                     "@id": "2494e2e5-d884-40c9-b25b-a83a7f705809"
@@ -366,27 +345,6 @@
                     "delete": [
                         "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "used": [
-                                        "symbol_ff2b533b-cc1f-4783-a224-31c24eee0900",
-                                        "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "ace369d9-b134-4316-aa36-70a9b7c5c505"
-                        },
-                        "@id": "b4bc89a0-8c95-49a5-91a7-b15d1b528016"
-                    },
                     "motivation": "extend-area-without-una-corda",
                     "@type": "edit",
                     "@id": "a01d90cc-2b28-4c82-8f0e-9b058726d726"
@@ -6744,23 +6702,6 @@
                     "delete": [
                         "symbol_ca71370f-1594-4ef0-877f-dfc04eccfe3d"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#refinement"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "532d7a1d-54dc-4553-a1ab-00a270e3ea88"
-                        },
-                        "@id": "e9c384b6-2e19-4483-abe3-0f2c6bcf3a57"
-                    },
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "e89f5a9e-4e88-4f28-8a7b-f1129a971202"
@@ -6769,23 +6710,6 @@
                     "delete": [
                         "symbol_eeebe4c9-ae1e-4f35-9a99-fb961f24c845"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#refinement"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "9da68897-49c4-4a04-9046-3d36bb0dc81b"
-                        },
-                        "@id": "1053b9bc-153d-43e0-a0ad-d5d185b97ca9"
-                    },
                     "motivation": "https://w3id.org/reo/type/motivation/technical",
                     "@type": "edit",
                     "@id": "d8817943-2792-45c2-ac48-314f4c1975be"
@@ -28186,26 +28110,6 @@
                     "delete": [
                         "symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "used": [
-                                        "symbol_321fbdb3-85db-4c44-8f72-0019d9c619b3"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "0f5c625c-ffb7-4a9a-83ca-a53879864e49"
-                        },
-                        "@id": "27a60e44-0214-4cbf-8b07-64e5166de741"
-                    },
                     "motivation": "verlaengertes-pedal",
                     "@type": "edit",
                     "@id": "05a3a8bd-46d3-4e9f-a045-637c8d810035"
@@ -28283,24 +28187,6 @@
                         "symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8",
                         "symbol_dfcdb248-71a9-472e-81f9-de2e09afa35c"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [],
-                                    "applies": [
-                                        "rules#refinement",
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "cd059f3f-2bec-4b84-bab0-bc5ec0a6da5e"
-                        },
-                        "@id": "28c23410-7759-4f9e-89b6-ffc9333d90fb"
-                    },
                     "motivation": "una-corda-lifted-gradually",
                     "@type": "edit",
                     "@id": "1a2e85c9-2a3b-4905-bcef-8d6a5ace1af9"
@@ -34801,26 +34687,6 @@
                             "@id": "symbol_64120fe5-5d09-4a3f-b9e1-b5508a640b2e"
                         }
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [
-                                        "38273a55-76b7-4667-9262-f1b9c4772512"
-                                    ],
-                                    "used": [
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "7a7d1654-e2e6-47f2-a1ca-41687349057c"
-                        },
-                        "@id": "db223dc8-80e6-4390-b793-4e2c664c0382"
-                    },
                     "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "de7cad42-2f6b-4901-b3c5-19643a72cd97"
@@ -35165,30 +35031,6 @@
                             "@id": "symbol_70c7d224-c56b-4cd7-b604-d5cfd7961596"
                         }
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [
-                                        "38273a55-76b7-4667-9262-f1b9c4772512"
-                                    ],
-                                    "used": [
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt",
-                                        "symbol_aedcbbdf-580a-43f7-8e3d-73475aa3ce6a"
-                                    ],
-                                    "applies": [
-                                        "rules#explain-redundancy"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "429bf0cb-86b4-4dd6-974f-2df5e11ef3d5"
-                        },
-                        "@id": "7667e927-95d2-42b6-9dec-03ba9c75bef6"
-                    },
                     "motivation": "folgen-der-melodischen-kontur",
                     "@type": "edit",
                     "@id": "3264624a-fc41-4420-9462-178606fa9a6f"
@@ -35444,26 +35286,6 @@
                     "delete": [
                         "symbol_e3020571-39d5-40c5-882c-c4feb5f5231f"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [
-                                        "38273a55-76b7-4667-9262-f1b9c4772512"
-                                    ],
-                                    "used": [
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "ee7c42ab-01e6-452a-a98d-df5704d3c982"
-                        },
-                        "@id": "2797d99d-54fc-40e2-a76a-3dd5464828f9"
-                    },
                     "motivation": "taken-from-mother-roll",
                     "@type": "edit",
                     "@id": "9d851d74-0a08-44a6-bba5-32a9d953d8b2"
@@ -35663,20 +35485,6 @@
                     "delete": [
                         "symbol_f92337d1-9462-4563-9418-a2d3a94e5dc8"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "dbbd3dae-c1ba-4363-83e8-0bceebd0ec78"
-                        },
-                        "@id": "324b6633-9a86-4245-b3f9-27062c8729f1"
-                    },
                     "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "ce95be9d-aa16-4d11-bf4a-73a9d8031221"
@@ -35685,20 +35493,6 @@
                     "delete": [
                         "symbol_dfcdb248-71a9-472e-81f9-de2e09afa35c"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "31058210-1451-42e6-a5b9-1706edb32712"
-                        },
-                        "@id": "e1c08c99-60bb-49c1-8e71-b5c0c99ddf36"
-                    },
                     "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "12b3faa5-d93b-42ed-baed-8aedd9ba0928"
@@ -35707,20 +35501,6 @@
                     "delete": [
                         "symbol_e8e759d9-c9d6-4b62-ad83-d47cab069815"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "bd981833-2184-4df9-b105-290e6a13057e"
-                        },
-                        "@id": "92d925f9-2806-476b-9c98-dacae1ce23a0"
-                    },
                     "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "52641ef3-76b9-4079-9c59-47f430f2b93c"
@@ -35729,20 +35509,6 @@
                     "delete": [
                         "symbol_05dbd89d-9db1-42fb-a745-59913ee4ed9b"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "d6b258b5-c86a-4012-85b0-7d1e3745691d"
-                        },
-                        "@id": "68eab8c0-16aa-43c6-97d7-6e6dd2ee1088"
-                    },
                     "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "ff91a62d-0422-4aae-85fb-0ba7559a59c7"
@@ -35751,20 +35517,6 @@
                     "delete": [
                         "symbol_6ea7bc39-be16-4c15-b892-8d2e192f9d50"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "note": "Ne1 zeigt kein Ab des Una Corda-Pedals, obwohl Spur 7 in der Löschreihe und nach dem letzten Ton anspricht, und Go1 in T. 8′ bis 15 keine Wirkung des Pedals auf die Anschlagstärken.",
-                                    "@type": "simpleArgumentation"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "98a806f0-fbdf-4765-98e1-7cc57bcb0f00"
-                        },
-                        "@id": "32b9fe03-8fb3-41a0-abe3-39aed5128c36"
-                    },
                     "motivation": "durchgaengiges-una-corda",
                     "@type": "edit",
                     "@id": "702f6986-8f2b-460c-ab41-bb4e4c186b14"
@@ -35815,26 +35567,6 @@
                     "delete": [
                         "symbol_c1f8c127-0c62-435d-af71-00ddd9fe4b3c"
                     ],
-                    "@annotation": {
-                        "belief": {
-                            "certainty": "likely",
-                            "reasons": [
-                                {
-                                    "premises": [
-                                        "38273a55-76b7-4667-9262-f1b9c4772512"
-                                    ],
-                                    "used": [
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.py",
-                                        "https://github.com/pfefferniels/welte225.org/blob/520dcf5/licensee-225/eroll/retentions.txt"
-                                    ],
-                                    "@type": "inference"
-                                }
-                            ],
-                            "@type": "belief",
-                            "@id": "f2770c33-fd97-41fd-ae03-55c15baa0402"
-                        },
-                        "@id": "0f9b2f9e-0df7-46e8-8343-72d3066c5a0a"
-                    },
                     "motivation": "taken-from-mother-roll",
                     "@type": "edit",
                     "@id": "31799464-d1ec-4390-ad87-2dd3d564ca0a"
