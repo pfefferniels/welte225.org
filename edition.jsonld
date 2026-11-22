@@ -48580,7 +48580,9 @@
                     "purpose": "control",
                     "actor": {
                         "name": "Fritz",
-                        "sameAs": [],
+                        "sameAs": [
+                            "https://w3id.org/condon-welte/hands/fritz"
+                        ],
                         "@annotation": {
                             "belief": {
                                 "certainty": "true",
@@ -48739,7 +48741,7 @@
                 {
                     "purpose": "technical-improvement",
                     "actor": {
-                        "name": "Condon, Dennis",
+                        "name": "Condon, Denis",
                         "sameAs": [],
                         "@annotation": {
                             "belief": {
@@ -62676,7 +62678,7 @@
                 {
                     "purpose": "glossing",
                     "actor": {
-                        "name": "Dennis Condon",
+                        "name": "Condon, Denis",
                         "sameAs": [],
                         "@annotation": {
                             "belief": {
