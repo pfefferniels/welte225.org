@@ -48346,6 +48346,10 @@
                                 "to": 79,
                                 "unit": "track"
                             },
+                            "rotation": {
+                                "value": 90,
+                                "unit": "deg"
+                            },
                             "transcription": {
                                 "text": "225. Fritz. 18 Jan 09.",
                                 "@type": "text",
@@ -62394,6 +62398,10 @@
                                 "from": 99,
                                 "to": 97,
                                 "unit": "track"
+                            },
+                            "rotation": {
+                                "value": -90,
+                                "unit": "deg"
                             },
                             "transcription": {
                                 "text": "225. 14. 114.",
