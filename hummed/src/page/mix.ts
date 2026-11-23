@@ -1,15 +1,21 @@
-// One fader, elaboration, sets what is heard: how much of the music is there, and how refined. The
-// piano plays from the first: the harmonic reduction in half notes, then the same in quarter notes,
-// then the piece itself (shared/shape.ts). The humming goes on over it throughout, loudest at the
-// bare end, receding as the fader rises, quieter still under the piece, as a pianist hums along.
+// One fader, elaboration, sets what is heard: how much of the music is there, and how refined. At the
+// bare end the humming is alone; the piano moves in under it at once: the harmonic reduction in half
+// notes, then the same in quarter notes, then the piece itself (shared/shape.ts). The humming goes
+// on over it throughout, loudest at the bare end, receding as the fader rises, quieter still under
+// the piece, as a pianist hums along.
 import type { Performed } from '../shared/instructions.ts';
 import { PIECE_FROM, QUARTERS_FROM, stageAt, type Stage } from '../shared/shape.ts';
 
 /** Where the half notes give way to the quarters, and the quarters to the piece. */
 export { PIECE_FROM, QUARTERS_FROM };
 
-/** The piano's level, the same for both parts: it comes in whole, and does not fade in. */
+/** The piano's level, the same for both parts, once it has come in. */
 const PIANO = Math.pow(10, -5 / 20);
+/**
+ * Where the piano has come in wholly: at the bare end the humming is alone, and the harmonies move
+ * in under it over the first tenth of the fader.
+ */
+export const PIANO_IN = 0.1;
 /** The humming: 0 dB at the bare end, falling to this at the top, fast at first (as the square root). */
 const HUM_FLOOR_DB = -22;
 
@@ -31,18 +37,35 @@ export interface Parts {
 
 const unit = (x: number): number => Math.min(1, Math.max(0, x));
 
-/** What the elaboration lets be heard: the humming, and the harmonies up to the piece, the piece from there. */
+/**
+ * How far the piano has come in at an elaboration, 0 to 1: not at all at the bare end, wholly from
+ * `PIANO_IN`, `sin²` of the way between, so that it neither starts nor arrives with a corner.
+ */
+export const pianoIn = (elaboration: number): number => {
+  const e = unit(elaboration);
+  return e >= PIANO_IN ? 1 : Math.pow(Math.sin(((Math.PI / 2) * e) / PIANO_IN), 2);
+};
+
+/**
+ * What the elaboration lets be heard: the humming, alone at the bare end, and the harmonies up to the
+ * piece, the piece from there.
+ */
 export function partsAt(elaboration: number): Parts {
-  return { voice: true, piano: unit(elaboration) < PIECE_FROM ? 'harmonies' : 'piece' };
+  const e = unit(elaboration);
+  return { voice: true, piano: pianoIn(e) === 0 ? 'none' : e < PIECE_FROM ? 'harmonies' : 'piece' };
 }
 
-/** The gains for what is heard, the humming as loud as the elaboration has it. */
+/**
+ * The gains for what is heard, the humming as loud as the elaboration has it. The part the fader
+ * plays comes in with it; another, chosen in the details, is heard whole.
+ */
 export function mixOf(elaboration: number, parts: Parts): Mix {
   const hum = parts.voice ? Math.pow(10, (HUM_FLOOR_DB * Math.sqrt(unit(elaboration))) / 20) : 0;
+  const piano = PIANO * (parts.piano === partsAt(elaboration).piano ? pianoIn(elaboration) : 1);
   return {
     hum,
-    harmonies: parts.piano === 'harmonies' ? PIANO : 0,
-    piece: parts.piano === 'piece' ? PIANO : 0,
+    harmonies: parts.piano === 'harmonies' ? piano : 0,
+    piece: parts.piano === 'piece' ? piano : 0,
   };
 }
 
@@ -73,5 +96,6 @@ export const voiceElaboration = (elaboration: number): number => {
   );
 };
 
-/** What the fader shows: what the piano plays. */
-export const heard = (elaboration: number): Stage => stageAt(unit(elaboration));
+/** What the fader shows: what the piano plays, or the humming, alone at the bare end. */
+export const heard = (elaboration: number): Stage | 'humming' =>
+  partsAt(elaboration).piano === 'none' ? 'humming' : stageAt(unit(elaboration));

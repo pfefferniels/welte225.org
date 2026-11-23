@@ -47,7 +47,7 @@ describe('the voice', () => {
   it('breathes and hums every sung note', () => {
     const count = (tag: string) => voice.events.filter((e) => e.tag === tag).length;
     assert.equal(count('pitch'), 122);
-    assert.ok(count('breath') >= 25);
+    assert.ok(count('breath') >= 22);
   });
 
   it('breathes at its rests, and in the line apart from other breaths and often enough', () => {

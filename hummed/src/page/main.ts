@@ -16,6 +16,7 @@ import {
   settingOf,
   type Details,
 } from './details.ts';
+import { stageAt } from '../shared/shape.ts';
 import { heard, mix, mixOf, performedOf } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
@@ -128,7 +129,7 @@ function draw(time: number): boolean {
   const under = strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece };
   const drew = view.draw(cur, t, under, moving);
   // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
-  instructions.show(cur, t, performedOf(parts, heard(cur?.setting.elaboration ?? elaboration())));
+  instructions.show(cur, t, performedOf(parts, stageAt(cur?.setting.elaboration ?? elaboration())));
   return drew;
 }
 
@@ -228,6 +229,7 @@ const applyElaboration = (): void => {
   elaborationSlider.setAttribute(
     'aria-valuetext',
     {
+      humming: 'humming alone',
       halves: 'the harmonies in half notes, humming',
       quarters: 'the harmonies in quarter notes, humming',
       piece: 'the piece, humming along',

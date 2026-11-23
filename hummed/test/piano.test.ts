@@ -145,13 +145,11 @@ describe('the piano at an elaboration', async () => {
 
   it('is through the piece sooner the barer the music, a sketch of it', () => {
     const lengths = played.map(({ piece }) => lastStrike(piece));
-    // twice as fast at the bare end, not exaggerated: half as long as Grünfeld plays it
+    // three times as fast at the bare end, not exaggerated: a third as long as Grünfeld plays it
     const sooner = 1 - lengths[0] / lengths[lengths.length - 1];
-    assert.ok(sooner > 0.45 && sooner < 0.55, `${(100 * sooner).toFixed(1)} % sooner`);
-    assert.ok(lengths[1] > lengths[0] && lengths[2] > lengths[1]);
-    // under the piece the exaggeration slows it as much as the flightiness hurries it, within 5 %
-    for (const length of lengths.slice(2))
-      assert.ok(Math.abs(length / lengths[lengths.length - 1] - 1) < 0.05);
+    assert.ok(sooner > 0.62 && sooner < 0.71, `${(100 * sooner).toFixed(1)} % sooner`);
+    // and longer at every step, the hurry outweighing the exaggeration under the piece too
+    for (const [a, b] of lengths.slice(1).map((x, i) => [lengths[i], x] as const)) assert.ok(b > a);
   });
 
   it('keeps the harmonies as long as the piece, and the voice on the strikes of what it follows', () => {
