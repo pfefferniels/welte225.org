@@ -1,7 +1,7 @@
 // How the music is made along the fader. From left to right, the piano goes from the harmonic
 // reduction in half notes through the same in quarters to the piece; meanwhile everything that makes
 // a sketch of it falls, smoothly, from its height at the bare end: how fast and how inexactly it goes
-// (the flightiness: three times as fast, 100 ms off, the hurry holding on longer than the
+// (the flightiness: two and a half times as fast, 100 ms off, the hurry holding on longer than the
 // inexactness), how exaggerated the voice's gestures (×2) and how loud the voice is (page/mix.ts),
 // which hums alone at the bare end. The piano's exaggeration does otherwise: none in the half notes,
 // where the MPM's tempo and dynamics apply as they are, rising to ×2 where the piece comes in, as raw
@@ -99,14 +99,14 @@ export const pianoLevel = (shape: Pick<Shape, 'exaggeration'>): number => 1 + sh
 export const voiceLevel = (shape: Pick<Shape, 'voiceExaggeration'>): number =>
   1.1 + 0.9 * shape.voiceExaggeration;
 
-/** How much faster than the MPM the music goes at the bare end, beyond the MPM's own tempo: ×3. */
-export const HURRY = 2;
+/** How much faster than the MPM the music goes at the bare end, beyond the MPM's own tempo: ×2.5. */
+export const HURRY = 1.5;
 
 /**
- * How much faster than the MPM the music goes, the piano and the voice alike: ×3 at the bare end, ×1
- * at 1. The hurry holds on longer than the inexactness: where the flightiness `f` falls along the
- * fader as (1 − e)², the hurry falls as f (2 − √f), that is (1 − e)² (1 + e), flat at the top: ×2.41
- * a quarter of the way, ×1.88 where the piece comes in, ×1.40 at 0.65. Exaggerated, the tempo's slow
+ * How much faster than the MPM the music goes, the piano and the voice alike: ×2.5 at the bare end,
+ * ×1 at 1. The hurry holds on longer than the inexactness: where the flightiness `f` falls along the
+ * fader as (1 − e)², the hurry falls as f (2 − √f), that is (1 − e)² (1 + e), flat at the top: ×2.05
+ * a quarter of the way, ×1.66 where the piece comes in, ×1.30 at 0.65. Exaggerated, the tempo's slow
  * stretches grow more than its fast ones shrink: the factor outweighs that, so that the piece is the
  * shorter the barer it is.
  */
@@ -131,5 +131,5 @@ export const IMPRECISION = { timingMs: 100, dynamics: 0.083 } as const;
 export const THRESHOLD = 0.6;
 export const threshold = (shape: Pick<Shape, 'flightiness'>): number => THRESHOLD * tempoFactor(shape);
 
-/** Where the page starts (index.html): the piece, the piano ×1.71, the humming ×1.21 under it, ×1.40 as fast. */
+/** Where the page starts (index.html): the piece, the piano ×1.71, the humming ×1.21 under it, ×1.30 as fast. */
 export const DEFAULT_ELABORATION = 0.65;

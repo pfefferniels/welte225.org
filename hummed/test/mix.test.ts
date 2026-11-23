@@ -121,17 +121,17 @@ describe('elaboration', () => {
     }
     assert.equal(flightiness(0), 1);
     assert.equal(flightiness(1), 0);
-    assert.ok(Math.abs(tempoFactor(shapeAt(0)) - 3) < 1e-9);
+    assert.ok(Math.abs(tempoFactor(shapeAt(0)) - 2.5) < 1e-9);
     assert.equal(tempoFactor(shapeAt(1)), 1);
   });
 
   it('holds the hurry on longer than the inexactness', () => {
-    const hurry = (e: number): number => (tempoFactor(shapeAt(e)) - 1) / 2;
+    const hurry = (e: number): number => (tempoFactor(shapeAt(e)) - 1) / 1.5;
     for (const e of positions.slice(1, -1)) assert.ok(hurry(e) > flightiness(e));
-    // through the harmonies: ×2.41 a quarter of the way, ×1.88 where the piece comes in
-    assert.equal(tempoFactor(shapeAt(QUARTERS_FROM)).toFixed(2), '2.41');
-    assert.equal(tempoFactor(shapeAt(PIECE_FROM)).toFixed(2), '1.88');
-    assert.equal(tempoFactor(shapeAt(DEFAULT_ELABORATION)).toFixed(2), '1.40');
+    // through the harmonies: ×2.05 a quarter of the way, ×1.66 where the piece comes in
+    assert.equal(tempoFactor(shapeAt(QUARTERS_FROM)).toFixed(2), '2.05');
+    assert.equal(tempoFactor(shapeAt(PIECE_FROM)).toFixed(2), '1.66');
+    assert.equal(tempoFactor(shapeAt(DEFAULT_ELABORATION)).toFixed(2), '1.30');
   });
 
   it('sets a tempo faster where it starts and where it arrives, and nothing else', () => {

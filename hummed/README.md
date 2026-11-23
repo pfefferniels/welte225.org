@@ -150,10 +150,10 @@ What the MEI says, and how the voice reads it:
     lifted at the end of a note of a second or more.
 
   The choice that gains most is found by dynamic programming. Where the piano plays the
-  reconstruction as it is, that is 18 breaths, 26 with the rests; 16 (24) at the page's start and
-  8 over the half notes at the bare end, gone through three times as fast (no rests there). Most lie where both maps turn or where a
+  reconstruction as it is, that is 18 breaths, 26 with the rests; 17 (25) at the page's start and
+  8 over the half notes at the bare end, gone through two and a half times as fast (no rests there). Most lie where both maps turn or where a
   pedal note begins (3:2, 8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at
-  a weaker place, where neither map turns (at the page's start in 19 and 24). Where the last edits by hand took rests out, it
+  a weaker place, where neither map turns (at the page's start in 8′, 18 and 24). Where the last edits by hand took rests out, it
   still breathes at two of those places (1′, 23) and near a third (4). The note before such a
   breath ends a quarter of its length early (0.15 to 0.35 s), and before a rest 0.12 s early, never
   in less than half the time it has before the next. The weights were chosen by looking at where
@@ -260,23 +260,24 @@ sounded extremely unnatural, ×1.6 still too much; gone through twice as fast, �
 100 ms were chosen by ear for the humming at the bare end, with the speed, the exaggeration and the
 imprecision on faders of their own. A while the piano's exaggeration fell with the voice's, and then
 started anew with the piece; the bell came last. Then the hurry, by ear, was too slight and gave
-out too soon: three times as fast, holding on longer than the inexactness.)
+out too soon: it holds on longer than the inexactness now, and at the bare end three times as fast
+was too much, two and a half what was kept.)
 
 The more of a sketch, the more flighty (`flightiness`, `(1 − e)²`, 1 at 0, 0 at 1): gone through
 faster and struck less exactly. Every tempo of the MPM, exaggerated, is multiplied (`tempoFactor`,
-`atTempo`): what it starts at and what it moves to, by `1 + 2 (1 − e)² (1 + e)` (of the
-flightiness `f`, `1 + 2 f (2 − √f)`), so that the hurry holds on longer than the inexactness and
-is flat at the top: ×3 at 0, ×2.78 at 0.1, ×2.41 at a quarter, ×1.88 where the piece comes in,
-×1.40 at 0.65, ×1.14 at 0.8, ×1 at 1, for the piano and the voice alike, so they keep the same
+`atTempo`): what it starts at and what it moves to, by `1 + 1.5 (1 − e)² (1 + e)` (of the
+flightiness `f`, `1 + 1.5 f (2 − √f)`), so that the hurry holds on longer than the inexactness
+and is flat at the top: ×2.5 at 0, ×2.34 at 0.1, ×2.05 at a quarter, ×1.66 where the piece comes
+in, ×1.30 at 0.65, ×1.11 at 0.8, ×1 at 1, for the piano and the voice alike, so they keep the same
 onsets. What is counted in ticks (the rubato, a ritardando's course, how far
 a chord is rolled) is as it was, only sooner over; what the MPM gives in milliseconds (its grace
 notes) stays as long as it is. A roll is exaggerated with the rest: where the piece comes in a chord
 is rolled over twice as much of its beat, and can strike the note the voice takes from it hardly
 after the note before. The voice keeps its line in order (`SUNG_AT_LEAST`,
 `src/hummer/melody.ts`): it takes such a note up 90 ms after the one before, in one place (bar 5′)
-up to 0.5. The harmonies, at the MPM's tempo and dynamics alone, last 0:53 at the bare end, 0:57 at
-0.1, 1:07 a quarter of the way and 1:22 at 0.35; the piece, exaggerated most where it comes in,
-1:43 there, 2:10 at 0.65, 2:22 at 0.75 and 2:39 at the top: the hurry outweighs the exaggeration,
+up to 0.5. The harmonies, at the MPM's tempo and dynamics alone, last 1:04 at the bare end, 1:08 at
+0.1, 1:18 a quarter of the way and 1:35 at 0.35; the piece, exaggerated most where it comes in,
+1:57 there, 2:20 at 0.65, 2:28 at 0.75 and 2:39 at the top: the hurry outweighs the exaggeration,
 which slows it (a tempo exaggerated slows down by more than it speeds up), and the piece is the
 longer at every step up. (Twice as fast at the bare end, the two about balanced under the piece.)
 
@@ -399,8 +400,8 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    as it is down to nothing, the glottis as the dynamics have it: at half of the voice the sound
    lies some 17 dB under it. Movement is read by the second, and a sketch gone through faster
    moves as much sooner without moving more, so the threshold rises with the tempo
-   (`threshold`: × the tempo's factor, 1.8 at the bare end); otherwise it is the same at every
-   elaboration, and the more exaggerated the MPM, the more its maps move. Over the half notes at the bare end, the voice is heard (more than half of it) for 73 %
+   (`threshold`: × the tempo's factor, 1.5 at the bare end); otherwise it is the same at every
+   elaboration, and the more exaggerated the MPM, the more its maps move. Over the half notes at the bare end, the voice is heard (more than half of it) for 70 %
    of what it sings, over the quarters a quarter of the way for 66 %, at 0.65 for 65 %, under the
    piece as it is for 57 %; the breath before a phrase that begins unheard is
    drawn at 0.4 of its pressure.
@@ -668,7 +669,7 @@ The manifest records each part's keys and the fingerprint of its messages, and
 `test/recordings.test.ts` compares them with the performance as it is: after a change to the
 reconstruction, the harmonies or the chain, CI fails until the recordings are rendered again, and
 the page plays the sampled grand meanwhile. That is where the recordings are since the hurry
-became three times as fast and holds on longer: all but the one at 1, which is as it was, are of a
+became two and a half times as fast and holds on longer: all but the one at 1, which is as it was, are of a
 slower performance, and wait to be rendered again.
 
 ## Code

@@ -80,7 +80,7 @@ describe('the details', () => {
   });
 
   it('say what they set: how fast and how inexact, how exaggerated the piano and the voice', () => {
-    assert.equal(flightinessText(0), '×3.00 · 100 ms');
+    assert.equal(flightinessText(0), '×2.50 · 100 ms');
     assert.equal(flightinessText(1), '×1.00 · 0 ms');
     assert.deepEqual(exaggerationText(0), ['×1.00', '×2.00']);
     assert.deepEqual(exaggerationText(PIECE_FROM), ['×2.00', '×1.37']);
