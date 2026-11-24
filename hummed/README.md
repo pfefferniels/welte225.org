@@ -672,9 +672,8 @@ delay out), as measured against the messages; other browsers were not measured.
 The manifest records each part's keys and the fingerprint of its messages, and
 `test/recordings.test.ts` compares them with the performance as it is: after a change to the
 reconstruction, the harmonies or the chain, CI fails until the recordings are rendered again, and
-the page plays the sampled grand meanwhile. That is where the recordings are since the fader became
-a table of points: all but the one at 1, which is as it was, are of another performance, and wait to
-be rendered again, at the 18 settings the voice is now rendered for (`RENDERED`).
+the page plays the sampled grand meanwhile. Earlier settings that the voice is no longer rendered
+for leave the manifest with the next rendering.
 
 ## Code
 
