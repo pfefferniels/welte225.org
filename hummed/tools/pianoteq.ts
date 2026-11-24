@@ -92,8 +92,10 @@ if (command === 'render') {
  * of one of them. Their step, where the fader is not in a step, goes into the manifest.
  */
 const step = 0.05;
+const among = (list: readonly number[], elaboration: number): boolean =>
+  list.some((e) => Math.abs(e - elaboration) < 1e-9);
 const elaborations = values.elaborations ? values.elaborations.split(',').map(Number) : [...RENDERED];
-const offStep = elaborations.filter((e) => !RENDERED.some((g) => Math.abs(g - e) < 1e-9));
+const offStep = elaborations.filter((e) => !among(RENDERED, e));
 if (offStep.length > 0)
   fail(`elaborations the voice is not rendered for: ${offStep.join(', ')} (it is: ${RENDERED.join(', ')})`);
 
@@ -277,7 +279,7 @@ function render(): void {
   }));
   const kept =
     existing?.step === step
-      ? existing.settings.filter((s) => !elaborations.some((e) => Math.abs(e - s.elaboration) < 1e-9))
+      ? existing.settings.filter((s) => among(RENDERED, s.elaboration) && !among(elaborations, s.elaboration))
       : [];
   if (existing && kept.length > 0 && Math.abs(existing.gainDb - gainDb) > 0.05)
     console.warn(`The settings rendered before have a gain of ${existing.gainDb} dB, these ${gainDb} dB.`);
