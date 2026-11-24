@@ -1,13 +1,14 @@
 // The piano rendered ahead by Pianoteq, for the page to play: for each setting of the elaboration the
-// voice is rendered for (every 0.05), the piano as exaggerated and as fast as that elaboration has it, both of its
+// voice is rendered for (mix.ts: `RENDERED`, every 0.05 but within a step, which is one setting), the
+// piano as exaggerated and as fast as that elaboration has it, both of its
 // parts (the piece and its harmonies) as MIDI, as the page would send them to an instrument; Pianoteq
 // renders each to sound, which is moved into place against the messages (to the millisecond, so that
 // it plays with the voice), given one gain for all settings, made mono and written as MP3 to
 // piano/pianoteq/, with manifest.json saying what was rendered.
 //
-//   npm run pianoteq -- render --pianoteq <program> --preset <name> [--step 0.05] [--elaborations 1,0.65]
+//   npm run pianoteq -- render --pianoteq <program> --preset <name> [--elaborations 1,0.65]
 //                              [--fxp <file> instead of --preset] [--instrument <name>] [--credit <text>]
-//   npm run pianoteq -- midi [--out <dir>] [--step 0.05] [--elaborations …]   (only the MIDI files)
+//   npm run pianoteq -- midi [--out <dir>] [--elaborations …]   (only the MIDI files)
 //
 // Needs Pianoteq (the preset with its reverb and delay off: the page has its own room) and ffmpeg.
 // The program is Pianoteq's executable, e.g. on a Mac
@@ -26,8 +27,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { fingerprint, midiEvents, type MidiEvent, type PianoPart } from '../src/shared/piano.ts';
+import { RENDERED } from '../src/page/mix.ts';
 import {
-  elaborationSteps,
   parseManifest,
   settingName,
   type RecordedPart,
@@ -62,7 +63,6 @@ const { values, positionals } = parseArgs({
     pianoteq: { type: 'string', default: process.env['PIANOTEQ'] ?? '' },
     preset: { type: 'string' },
     fxp: { type: 'string' },
-    step: { type: 'string', default: '0.05' },
     elaborations: { type: 'string' },
     out: { type: 'string' },
     instrument: { type: 'string', default: 'C. Bechstein (1899)' },
@@ -87,20 +87,15 @@ if (command === 'render') {
     fail('The recordings need ffmpeg (on a Mac: brew install ffmpeg).');
 }
 
-/** The steps the voice is rendered in (mix.ts: `voiceElaboration`): a rendering is only ever of one of them. */
-const VOICE_STEP = 0.05;
-const step = Number(values.step);
-if (
-  !(step > 0) ||
-  Math.abs(Math.round(step / VOICE_STEP) * VOICE_STEP - step) > 1e-9 ||
-  Math.round(1 / step) * step !== 1
-)
-  fail(`--step ${values.step}: steps of the voice's 0.05 that reach 1, e.g. 0.05, 0.1, 0.25`);
-const elaborations = values.elaborations
-  ? values.elaborations.split(',').map(Number)
-  : elaborationSteps(step);
-const offStep = elaborations.filter((e) => !elaborationSteps(step).some((g) => Math.abs(g - e) < 1e-9));
-if (offStep.length > 0) fail(`elaborations not in steps of ${step}: ${offStep.join(', ')}`);
+/**
+ * The elaborations the voice is rendered for (mix.ts: `voiceElaboration`): a rendering is only ever
+ * of one of them. Their step, where the fader is not in a step, goes into the manifest.
+ */
+const step = 0.05;
+const elaborations = values.elaborations ? values.elaborations.split(',').map(Number) : [...RENDERED];
+const offStep = elaborations.filter((e) => !RENDERED.some((g) => Math.abs(g - e) < 1e-9));
+if (offStep.length > 0)
+  fail(`elaborations the voice is not rendered for: ${offStep.join(', ')} (it is: ${RENDERED.join(', ')})`);
 
 /** Each setting's parts as the page plays them (the harmonies in half or quarter notes), and their messages. */
 const performed = elaborations.map((elaboration) => {

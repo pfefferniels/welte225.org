@@ -16,8 +16,8 @@ import {
   settingOf,
   type Details,
 } from './details.ts';
-import { stageAt } from '../shared/shape.ts';
-import { heard, mix, mixOf, performedOf } from './mix.ts';
+import { stepAt, voiceFollows } from '../shared/shape.ts';
+import { BORDERS, heard, mix, mixOf, performedOf } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -129,7 +129,7 @@ function draw(time: number): boolean {
   const under = strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece };
   const drew = view.draw(cur, t, under, moving);
   // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
-  instructions.show(cur, t, performedOf(parts, stageAt(cur?.setting.elaboration ?? elaboration())));
+  instructions.show(cur, t, performedOf(parts, voiceFollows(cur?.setting.elaboration ?? elaboration())));
   return drew;
 }
 
@@ -246,6 +246,21 @@ elaborationSlider.addEventListener('input', () => {
   applyElaboration();
   renderSoon();
 });
+// let go within a step, the fader goes to the step's point: that stretch is one setting
+elaborationSlider.addEventListener('change', () => {
+  const step = stepAt(elaboration());
+  if (step === null || Math.abs(step - elaboration()) < 0.001) return;
+  elaborationSlider.value = String(Math.round(step * 100));
+  elaborationSlider.dispatchEvent(new Event('input'));
+});
+// the faders on its scale have a gap where what the piano plays changes (measured from the thumb's
+// centre, which travels 15px short of the track)
+const gaps = BORDERS.map((b) => {
+  const at = `calc(7.5px + (100% - 15px) * ${b})`;
+  return `transparent calc(${at} - 1.5px), var(--bg) calc(${at} - 1.5px) calc(${at} + 1.5px), transparent calc(${at} + 1.5px)`;
+});
+for (const fader of document.querySelectorAll<HTMLElement>('input.split'))
+  fader.style.setProperty('--gaps', `linear-gradient(to right, ${gaps.join(', ')})`);
 detailsToggle.addEventListener('click', () => {
   const open = detailsBox.hidden;
   detailsBox.hidden = !open;

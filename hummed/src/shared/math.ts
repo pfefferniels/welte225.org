@@ -50,3 +50,41 @@ export function groupBy<T, K>(items: Iterable<T>, key: (item: T) => K): Map<K, T
   }
   return groups;
 }
+
+/**
+ * A monotone cubic through the points (Fritsch and Carlson, as PCHIP): smooth, through every point,
+ * and never beyond two neighbouring points between them; flat beyond the first and the last.
+ */
+export function monotoneCubic(xs: readonly number[], ys: readonly number[], x: number): number {
+  const n = xs.length;
+  if (n === 1 || x <= xs[0]) return ys[0];
+  if (x >= xs[n - 1]) return ys[n - 1];
+  const h: number[] = [];
+  const d: number[] = [];
+  for (let i = 0; i < n - 1; i++) {
+    h.push(Math.max(1e-9, xs[i + 1] - xs[i]));
+    d.push((ys[i + 1] - ys[i]) / h[i]);
+  }
+  const m = new Array<number>(n).fill(0);
+  m[0] = d[0];
+  m[n - 1] = d[n - 2];
+  for (let i = 1; i < n - 1; i++) {
+    if (d[i - 1] * d[i] <= 0) continue;
+    const w1 = 2 * h[i] + h[i - 1];
+    const w2 = h[i] + 2 * h[i - 1];
+    m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]);
+  }
+  if (d[0] * m[0] <= 0) m[0] = 0;
+  if (d[n - 2] * m[n - 1] <= 0) m[n - 1] = 0;
+  let k = 0;
+  while (k < n - 2 && x >= xs[k + 1]) k++;
+  const t = (x - xs[k]) / h[k];
+  const t2 = t * t;
+  const t3 = t2 * t;
+  return (
+    (2 * t3 - 3 * t2 + 1) * ys[k] +
+    (t3 - 2 * t2 + t) * h[k] * m[k] +
+    (-2 * t3 + 3 * t2) * ys[k + 1] +
+    (t3 - t2) * h[k] * m[k + 1]
+  );
+}

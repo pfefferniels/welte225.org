@@ -1,5 +1,5 @@
-// A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on the piece,
-// and on its harmonies for the piano's lowest third), the hummer turns that performance into two
+// A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on what the voice
+// follows there, and for the piano on the piece and on its harmonies), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk, into sound, streamed to the page in blocks with their spectrogram columns. The page runs
 // several such workers side by side (shared/protocol.ts says who does what): the first prepares a
@@ -30,7 +30,7 @@ import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { harmoniesScore } from './harmonies.ts';
-import { shapeOf, stageAt } from './levels.ts';
+import { harmoniesStage, shapeOf, voiceFollows } from './levels.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
 import {
@@ -217,9 +217,9 @@ function hold(L: Level): void {
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
-/** The piano's two parts at a setting, and where its harmonies roll a chord. */
+/** The piano's two parts at a setting (the harmonies those it plays there), and where its harmonies roll a chord. */
 const pianoAt = (texts: Texts, setting: Setting): Piano => {
-  const harmonies = harmoniesAt(stageAt(setting.elaboration), texts.reductions);
+  const harmonies = harmoniesAt(harmoniesStage(setting.elaboration), texts.reductions);
   const parts = performPiano(
     { msm: texts.msm, mpm: texts.mpm, harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm },
     shapeOf(setting),
@@ -227,9 +227,9 @@ const pianoAt = (texts: Texts, setting: Setting): Piano => {
   return { ...parts, rolls: harmonies.rolls };
 };
 
-/** What the voice follows at a setting: the piece, or the reduction in half notes (reductions.ts). */
+/** What the voice follows at a setting: the piece, or a harmonic reduction (reductions.ts). */
 const voiceScoreAt = (texts: Texts, setting: Setting): Score =>
-  voiceScore(stageAt(setting.elaboration), texts, texts.reductions);
+  voiceScore(voiceFollows(setting.elaboration), texts, texts.reductions);
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
@@ -260,7 +260,7 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   if (await stopped()) return null;
   const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(score, mpm));
   const performed = { performance, dynamics };
-  const sung = sungReduction(stageAt(setting.elaboration), setup.reduction, texts.reductions);
+  const sung = sungReduction(voiceFollows(setting.elaboration), setup.reduction, texts.reductions);
   const voice = timed('hummer', () => hum(performed, sung, texts, shape));
   const maxStates = maxStatesOf(voice);
   if (!box.alone)

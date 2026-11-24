@@ -4,15 +4,7 @@
 // that is moved is set apart from it, until the fader moves again. The two sliders lie on the
 // fader's own scale, so that, following it, they stand where it stands.
 import type { Setting } from '../shared/protocol.ts';
-import {
-  exaggeration,
-  flightiness,
-  IMPRECISION,
-  pianoLevel,
-  tempoFactor,
-  voiceExaggeration,
-  voiceLevel,
-} from '../shared/shape.ts';
+import { pianoLevel, shapeAt, tempoFactor, voiceLevel } from '../shared/shape.ts';
 import { partsAt, voiceElaboration, type Parts, type PianoChoice } from './mix.ts';
 
 /** What is set apart from the fader; null where a detail follows it. */
@@ -61,10 +53,10 @@ export function settingOf(elaboration: number, d: Details): Setting {
 
 /** What a detail slider at a place on the fader's scale does: how fast and how inexact, how exaggerated. */
 export const flightinessText = (at: number): string => {
-  const f = flightiness(at);
-  return `×${tempoFactor({ flightiness: f }).toFixed(2)} · ${Math.round(IMPRECISION.timingMs * f)} ms`;
+  const shape = shapeAt(at);
+  return `×${tempoFactor(shape).toFixed(2)} · ${Math.round(shape.inexactMs)} ms`;
 };
-export const exaggerationText = (at: number): readonly [piano: string, voice: string] => [
-  `×${pianoLevel({ exaggeration: exaggeration(at) }).toFixed(2)}`,
-  `×${voiceLevel({ voiceExaggeration: voiceExaggeration(at) }).toFixed(2)}`,
-];
+export const exaggerationText = (at: number): readonly [piano: string, voice: string] => {
+  const shape = shapeAt(at);
+  return [`×${pianoLevel(shape).toFixed(2)}`, `×${voiceLevel(shape).toFixed(2)}`];
+};
