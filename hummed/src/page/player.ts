@@ -3,7 +3,7 @@
 // taking over at the same place in the score once it has sound there.
 import { sameSetting, type Setting, type StartAt } from '../shared/protocol.ts';
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
-import type { AudioGraph } from './audio-graph.ts';
+import { CROSSFADE, fade, type AudioGraph } from './audio-graph.ts';
 import type { PianoOutput } from './outputs.ts';
 import type { VoiceEvent, VoicePool } from './pool.ts';
 import { Rendering } from './rendering.ts';
@@ -49,16 +49,17 @@ export class Player {
   /** Playing, but stopped where the voice has not been rendered yet. */
   #waiting = false;
   #startAt = 0;
-  /** A new rendering is taking over: it starts after a short fade. */
-  #switching = false;
   #offset: Seconds = 0;
   #voiceUntil: Seconds = 0;
   #pianoFrom: Seconds = 0;
   /** When the pending setting was asked for (0 once timed), and how long the last ones took to be ready. */
   #askedAt = 0;
   #took: Seconds = MAX_SWITCH_LEAD;
-  /** The voice's buffers handed to the audio graph. */
+  /** The voice's buffers handed to the audio graph, through a fade of their own. */
   #active: AudioScheduledSourceNode[] = [];
+  #lane: GainNode | null = null;
+  /** The voice of a setting fading out under the next. */
+  readonly #fading = new Set<{ readonly lane: GainNode; readonly sources: AudioScheduledSourceNode[] }>();
 
   constructor(graph: AudioGraph, piano: PianoOutput, pool: VoicePool, view: PlayerView) {
     this.#graph = graph;
@@ -184,7 +185,10 @@ export class Player {
     t = Math.max(0, Math.min(cur.duration, t));
     if (!cur.rendered(t, t + 0.3)) this.request(this.#wanted ?? cur.setting, { seconds: t });
     this.#offset = t;
-    if (this.#playing) this.#startFrom(t);
+    if (this.#playing) {
+      this.#stopAll();
+      this.#startFrom(t);
+    }
     this.#view.changed();
   }
 
@@ -201,34 +205,61 @@ export class Player {
     this.#view.playingChanged(playing);
   }
 
-  #stopAll(): void {
-    for (const source of this.#active) {
+  static #stopSources(sources: readonly AudioScheduledSourceNode[]): void {
+    for (const source of sources) {
       try {
         source.stop();
       } catch {
         // not started yet, or already stopped
       }
     }
+  }
+
+  /** Stop the voice that plays now; what fades out under it runs on. */
+  #stopVoice(): void {
+    Player.#stopSources(this.#active);
     this.#active = [];
+    const lane = this.#lane;
+    if (lane)
+      setTimeout(() => {
+        lane.disconnect();
+      }, 200);
+    this.#lane = null;
+  }
+
+  /** Stop everything: the voice, what fades out, the piano. */
+  #stopAll(): void {
+    this.#stopVoice();
+    for (const { lane, sources } of this.#fading) {
+      Player.#stopSources(sources);
+      lane.disconnect();
+    }
+    this.#fading.clear();
     this.#piano.stop();
   }
 
-  #startFrom(t: Seconds): void {
+  /** Start the current rendering at `t`, fading in over `fadeIn` (a setting taking over). */
+  #startFrom(t: Seconds, fadeIn: Seconds = 0): void {
     const cur = this.#current;
     if (!cur) return;
-    this.#stopAll();
+    this.#stopVoice();
     this.#offset = t;
     if (!this.#piano.ready(cur)) {
       // its sound is still loading: wait, as for the voice
+      this.#stopAll();
       this.#waiting = true;
       this.#view.status('Loading the piano…');
       return;
     }
-    this.#startAt = this.#graph.context.currentTime + START_MARGIN + this.#piano.lead;
+    const { context, hum } = this.#graph;
+    this.#startAt = context.currentTime + START_MARGIN + this.#piano.lead;
+    this.#lane = context.createGain();
+    this.#lane.connect(hum);
+    if (fadeIn > 0) fade(this.#lane.gain, 'in', this.#startAt, fadeIn);
     this.#voiceUntil = t;
     this.#pianoFrom = t;
     this.#waiting = false;
-    this.#piano.start(cur, t, this.#startAt);
+    this.#piano.start(cur, t, this.#startAt, fadeIn);
     this.#schedule();
   }
 
@@ -236,12 +267,11 @@ export class Player {
     return this.#startAt + (t - this.#offset);
   }
 
-  #schedule(): void {
-    const cur = this.#current;
-    if (!this.#playing || !cur || this.#waiting) return;
-    const { context, hum } = this.#graph;
-    const t = this.position();
-    const horizon = t + LOOKAHEAD;
+  /** Hand the voice of the rendering to the audio graph, as far as it has sound, up to `horizon`. */
+  #voiceTo(cur: Rendering, horizon: Seconds): void {
+    const { context } = this.#graph;
+    const lane = this.#lane;
+    if (!lane) return;
     while (this.#voiceUntil < horizon && this.#voiceUntil < cur.duration) {
       const t1 = Math.min(cur.duration, this.#voiceUntil + SEGMENT);
       if (!cur.rendered(this.#voiceUntil, t1)) break;
@@ -251,11 +281,19 @@ export class Player {
       buffer.getChannelData(0).set(cur.audio.subarray(a, b));
       const source = context.createBufferSource();
       source.buffer = buffer;
-      source.connect(hum);
-      source.start(this.#contextTime(this.#voiceUntil));
+      source.connect(lane);
+      source.start(Math.max(context.currentTime, this.#contextTime(this.#voiceUntil)));
       this.#active.push(source);
       this.#voiceUntil = t1;
     }
+  }
+
+  #schedule(): void {
+    const cur = this.#current;
+    if (!this.#playing || !cur || this.#waiting) return;
+    const t = this.position();
+    const horizon = t + LOOKAHEAD;
+    this.#voiceTo(cur, horizon);
     // the piano as far as the voice has sound, and an instrument's delay further where it has
     const ahead = Math.min(cur.duration, horizon + this.#piano.lead);
     const until = cur.rendered(this.#voiceUntil, ahead)
@@ -279,7 +317,6 @@ export class Player {
     if (
       this.#playing &&
       this.#waiting &&
-      !this.#switching &&
       cur &&
       this.#offset < cur.duration - 0.01 &&
       cur.rendered(this.#offset, this.#offset + 0.5) &&
@@ -338,20 +375,45 @@ export class Player {
     this.#current = next;
     this.#pending = null;
     if (was && was !== next) this.#renders.delete(was.id);
-    const { context, master } = this.#graph;
-    if (this.#playing) {
-      // the playhead in the new rendering from now on, held where it takes over until it starts
-      // there after the fade: reckoned in the old one's time against the new one's length, a barer
-      // (shorter) rendering seemed to be over, and playing stopped
+    if (this.#playing && !this.#waiting && was && was !== next) {
+      // the old setting runs on through the crossfade, as far as it has sound, and fades out,
+      // while the new one fades in from the same place in the score
+      const { context } = this.#graph;
+      const when = context.currentTime + START_MARGIN + this.#piano.lead;
+      const upto = Math.min(was.duration, this.position() + START_MARGIN + CROSSFADE + 0.1);
+      this.#voiceTo(was, upto);
+      if (this.#piano.fadeOut)
+        this.#piano.fadeOut(
+          was,
+          this.#pianoFrom,
+          Math.max(this.#pianoFrom, Math.min(upto, this.#voiceUntil)),
+          (x) => this.#contextTime(x),
+          when,
+          CROSSFADE,
+        );
+      else this.#piano.stop();
+      const lane = this.#lane;
+      if (lane) {
+        fade(lane.gain, 'out', when, CROSSFADE);
+        const going = { lane, sources: this.#active };
+        this.#fading.add(going);
+        setTimeout(
+          () => {
+            Player.#stopSources(going.sources);
+            lane.disconnect();
+            this.#fading.delete(going);
+          },
+          (when - context.currentTime + CROSSFADE + 0.1) * 1000,
+        );
+      }
+      this.#active = [];
+      this.#lane = null;
+      this.#startFrom(t, CROSSFADE);
+    } else if (this.#playing) {
+      // waiting for sound (or nothing playing to fade from): it starts here once it has some
+      this.#stopAll();
       this.#offset = t;
       this.#waiting = true;
-      this.#switching = true;
-      master.gain.setTargetAtTime(0, context.currentTime, 0.01);
-      setTimeout(() => {
-        this.#switching = false;
-        this.#startFrom(t);
-        master.gain.setTargetAtTime(1, context.currentTime + 0.05, 0.02);
-      }, 40);
     } else this.#offset = t;
     this.#view.status('');
     this.#view.adopted(next);

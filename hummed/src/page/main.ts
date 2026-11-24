@@ -1,7 +1,8 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
 import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
-import { createAudioGraph } from './audio-graph.ts';
+import { createAudioGraph, CROSSFADE } from './audio-graph.ts';
+import { sameSetting } from '../shared/protocol.ts';
 import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
 import { DisplaySettings } from './display.ts';
 import { element, formatTime, setFill, Written } from './dom.ts';
@@ -17,7 +18,7 @@ import {
   type Details,
 } from './details.ts';
 import { stepAt, voiceFollows } from '../shared/shape.ts';
-import { BORDERS, heard, mix, mixOf, performedOf } from './mix.ts';
+import { BORDERS, heard, mix, mixOf, performedOf, type Mix } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -135,6 +136,11 @@ function draw(time: number): boolean {
 
 const player = new Player(graph, sampled, pool, {
   adopted(rendering: Rendering) {
+    // the levels of the setting coming in glide there as it fades in
+    if (levelsComing) {
+      setGains(levelsComing, CROSSFADE / 3);
+      levelsComing = null;
+    }
     positionSlider.max = rendering.duration.toFixed(2);
     readout.forget();
     totalText.textContent = formatTime(rendering.duration);
@@ -170,9 +176,16 @@ const settings = new PianoSettings({
 });
 
 /* ---------- the fader: elaboration sets the mix, the performance and the voice ---------- */
-const setGain = (gain: GainNode, value: number): void => {
-  gain.gain.setTargetAtTime(value, graph.context.currentTime, 0.02);
+const setGains = (gains: Mix, glide = 0.02): void => {
+  graph.hum.gain.setTargetAtTime(gains.hum, graph.context.currentTime, glide);
+  graph.harmonies.gain.setTargetAtTime(gains.harmonies, graph.context.currentTime, glide);
+  graph.piano.gain.setTargetAtTime(gains.piece, graph.context.currentTime, glide);
 };
+/**
+ * The levels of a setting still to come: while it renders, the one playing keeps its own, and they
+ * glide to these as it crossfades in.
+ */
+let levelsComing: Mix | null = null;
 const elaboration = (): number => Number(elaborationSlider.value) / 100;
 /** What is set apart from the fader in the details under it: nothing, until one is moved. */
 let details: Details = FOLLOWING;
@@ -220,9 +233,12 @@ const renderSoon = (): void => {
 const applyElaboration = (): void => {
   const e = elaboration();
   const gains = mixOf(e, partsOf(e, details));
-  setGain(graph.hum, gains.hum);
-  setGain(graph.harmonies, gains.harmonies);
-  setGain(graph.piano, gains.piece);
+  const cur = player.current;
+  if (player.playing && cur && !sameSetting(settingOf(e, details), cur.setting)) levelsComing = gains;
+  else {
+    levelsComing = null;
+    setGains(gains);
+  }
   showDetails(e);
   const what = heard(e);
   elaborationOutput.value = what;

@@ -132,3 +132,17 @@ export function createAudioGraph(): AudioGraph {
   predelay.connect(room);
   return { context, master, piano, harmonies, hum };
 }
+
+/** How long one setting fades into the next while playing: equal power, the old one running on meanwhile. */
+export const CROSSFADE = 1.5;
+
+/** Fade a gain in or out over `seconds` from context time `at`, keeping the sum of two such powers even. */
+export function fade(gain: AudioParam, direction: 'in' | 'out', at: number, seconds: number): void {
+  const curve = new Float32Array(32);
+  for (let i = 0; i < curve.length; i++) {
+    const x = (i / (curve.length - 1)) * (Math.PI / 2);
+    curve[i] = direction === 'in' ? Math.sin(x) : Math.cos(x);
+  }
+  gain.cancelScheduledValues(at);
+  gain.setValueCurveAtTime(curve, at, seconds);
+}

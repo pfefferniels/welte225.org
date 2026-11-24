@@ -4,7 +4,7 @@
 import { plain, type Setting } from '../shared/protocol.ts';
 import { recordingOf } from '../shared/recordings.ts';
 import type { Seconds } from '../shared/units.ts';
-import type { AudioGraph } from './audio-graph.ts';
+import { fade, type AudioGraph } from './audio-graph.ts';
 import type { PianoSampler, PianoSound } from './piano.ts';
 import type { Recordings } from './recordings.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
@@ -19,12 +19,31 @@ export interface PianoOutput {
   preload?(setting: Setting): void;
   /** Whether the rendering's piano can start now; asking starts loading what it needs. */
   ready(rendering: Rendering): boolean;
-  /** Start at time `t` of the rendering, which sounds at context time `when`. */
-  start(rendering: Rendering, t: Seconds, when: number): void;
+  /** Start at time `t` of the rendering, which sounds at context time `when`; fading in over `fadeIn`. */
+  start(rendering: Rendering, t: Seconds, when: number, fadeIn?: Seconds): void;
   /** Hand over what begins in [from, until) of the rendering; `at` is the context time of a time in it. */
   schedule(rendering: Rendering, from: Seconds, until: Seconds, at: (t: Seconds) => number): void;
+  /**
+   * Let what plays now run on through a crossfade, as far as `until` of the rendering, and fade out
+   * over `seconds` from context time `when` (an output that cannot fade has none: it stops).
+   */
+  fadeOut?(
+    rendering: Rendering,
+    from: Seconds,
+    until: Seconds,
+    at: (t: Seconds) => number,
+    when: number,
+    seconds: Seconds,
+  ): void;
   /** Silence everything handed over. */
   stop(): void;
+}
+
+/** What one start of the page's piano plays: each part through a fade of its own into its bus. */
+interface Group {
+  readonly piece: GainNode;
+  readonly harmonies: GainNode;
+  sources: AudioScheduledSourceNode[];
 }
 
 const PARTS: readonly PianoPartName[] = ['piece', 'harmonies'];
@@ -38,7 +57,9 @@ export class BuiltInPiano implements PianoOutput {
   readonly #graph: AudioGraph;
   readonly #sampler: PianoSampler;
   #recordings: Recordings | null = null;
-  #sources: AudioScheduledSourceNode[] = [];
+  /** What plays now, and what fades out under it. */
+  #group: Group | null = null;
+  readonly #fading = new Set<Group>();
   /** Whether the sampler plays the rendering started last (it schedules notes as they come). */
   #sampling = false;
   /** Whether a setting was recorded from the performance as it is (by its elaboration): looked at once. */
@@ -111,12 +132,46 @@ export class BuiltInPiano implements PianoOutput {
     return this.#sampler.render(rendering.held(part), rendering.duration);
   }
 
-  #bus(part: PianoPartName): GainNode {
-    return part === 'piece' ? this.#graph.piano : this.#graph.harmonies;
+  #newGroup(when: number, fadeIn: Seconds): Group {
+    const { context } = this.#graph;
+    const group: Group = { piece: context.createGain(), harmonies: context.createGain(), sources: [] };
+    group.piece.connect(this.#graph.piano);
+    group.harmonies.connect(this.#graph.harmonies);
+    if (fadeIn > 0) for (const g of [group.piece, group.harmonies]) fade(g.gain, 'in', when, fadeIn);
+    return group;
   }
 
-  start(rendering: Rendering, t: Seconds, when: number): void {
-    this.stop();
+  #stopGroup(group: Group): void {
+    for (const source of group.sources) {
+      try {
+        source.stop();
+      } catch {
+        // not started yet, or already stopped
+      }
+    }
+    group.sources = [];
+    setTimeout(() => {
+      group.piece.disconnect();
+      group.harmonies.disconnect();
+    }, 200);
+  }
+
+  #bus(part: PianoPartName): GainNode {
+    this.#group ??= this.#newGroup(this.#graph.context.currentTime, 0);
+    return part === 'piece' ? this.#group.piece : this.#group.harmonies;
+  }
+
+  #push(source: AudioScheduledSourceNode): void {
+    const group = this.#group;
+    if (!group) return;
+    group.sources.push(source);
+    if (group.sources.length > 400) group.sources = group.sources.slice(-300);
+  }
+
+  start(rendering: Rendering, t: Seconds, when: number, fadeIn: Seconds = 0): void {
+    // what fades out under it runs on; what played before is stopped
+    if (this.#group) this.#stopGroup(this.#group);
+    this.#group = this.#newGroup(when, fadeIn);
     const buffers = this.recorded(rendering)
       ? this.#recordings?.buffers(rendering.setting.elaboration)
       : null;
@@ -130,7 +185,7 @@ export class BuiltInPiano implements PianoOutput {
         source.buffer = buffer;
         source.connect(this.#bus(part));
         source.start(when, t);
-        this.#sources.push(source);
+        this.#push(source);
       }
       return;
     }
@@ -145,22 +200,41 @@ export class BuiltInPiano implements PianoOutput {
     for (const part of PARTS)
       for (const note of rendering.held(part))
         if (note.on >= from && note.on < until) this.#play(note, part, at(note.on), 0);
-    if (this.#sources.length > 400) this.#sources = this.#sources.slice(-300);
+  }
+
+  fadeOut(
+    rendering: Rendering,
+    from: Seconds,
+    until: Seconds,
+    at: (t: Seconds) => number,
+    when: number,
+    seconds: Seconds,
+  ): void {
+    const group = this.#group;
+    if (!group) return;
+    // the sampler's notes through the fade (a recording plays on by itself)
+    this.schedule(rendering, from, until, at);
+    for (const g of [group.piece, group.harmonies]) fade(g.gain, 'out', when, seconds);
+    this.#group = null;
+    this.#fading.add(group);
+    setTimeout(
+      () => {
+        this.#stopGroup(group);
+        this.#fading.delete(group);
+      },
+      (when - this.#graph.context.currentTime + seconds + 0.1) * 1000,
+    );
   }
 
   #play(note: Parameters<PianoSampler['play']>[0], part: PianoPartName, when: number, from: Seconds): void {
     const source = this.#sampler.play(note, this.#bus(part), when, from);
-    if (source) this.#sources.push(source);
+    if (source) this.#push(source);
   }
 
   stop(): void {
-    for (const source of this.#sources) {
-      try {
-        source.stop();
-      } catch {
-        // not started yet, or already stopped
-      }
-    }
-    this.#sources = [];
+    if (this.#group) this.#stopGroup(this.#group);
+    this.#group = null;
+    for (const group of this.#fading) this.#stopGroup(group);
+    this.#fading.clear();
   }
 }

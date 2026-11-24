@@ -309,7 +309,11 @@ The voice keeps as loosely to the pitch as the table has it: its approximateness
 0.37 over the half notes, loosest over the quarters (0.65), 0.35 where the piece comes in, 0 at the
 top. Moving the fader renders the voice anew once it rests: within a step at the step's point, else
 in steps of 0.05 on the fader's side of a border (`voiceElaboration`), so that what is rendered is
-what is heard: 18 settings in all (`RENDERED`). The gains change at once.
+what is heard: 18 settings in all (`RENDERED`). While playing, the new setting crossfades in over
+1.5 s at the same place in the score (`CROSSFADE`, equal power): the old one runs on meanwhile,
+its voice and the page's piano each through a fade of their own (an instrument over MIDI, which
+cannot fade, switches). The gains change at once where the setting stays the same, and otherwise
+glide to the new setting's as it fades in.
 
 ### The details
 
