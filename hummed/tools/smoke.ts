@@ -130,7 +130,7 @@ try {
   for (const [value, expected] of [
     [30, 'quarters'],
     [0, 'humming'],
-    [5, 'halves'],
+    [20, 'halves'],
     [67, 'piece'],
   ] as const) {
     await page.evaluate(

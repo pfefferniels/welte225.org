@@ -1,18 +1,15 @@
 // The figure of what the elaboration does, drawn as TikZ in the dialect of the dissertation's
 // figures (its figures/tikz with keynotefigures.sty, as scripts/condon_figures.py writes them: x=1bp,
-// Zwo OT, every node named, German), after the sketch it was planned on: the exaggeration from ×1 to
-// ×2 up, the fader across, under it what the piano plays (Halbe, Viertel, Stück, the first two the
-// harmonic reduction). The piano's exaggeration solid: none in the half notes, rising through the
-// quarters to ×2 where the piece comes in, falling to ×1 at the top. Dashed, what falls from the
-// bare end throughout: the voice's exaggeration, which stands for its loudness and for the global
-// speed and inexactness (the flightiness) too, each as its function has it (levels.ts, mix.ts).
+// Zwo OT, every node named, German): the exaggeration from ×1 to ×2 up, the fader across, under it
+// what the piano plays (Summen where the voice is alone, Halbe, Viertel, Stück, the two harmonic
+// reductions bracketed). The piano's exaggeration solid, the voice's own dashed, each as the table of
+// points has it (shape.ts): curves between points, flat across a step.
 // Not to be changed by hand: run this again.
 //   npm run figure [-- --out figures/elaboration.tex]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { PIECE_FROM, QUARTERS_FROM } from '../src/page/mix.ts';
-import { pianoLevel, voiceLevel, shapeAt } from '../src/worker/levels.ts';
+import { pianoLevel, pianoPlays, shapeAt, voiceLevel } from '../src/worker/levels.ts';
 import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
@@ -95,32 +92,40 @@ for (const [level, text] of [
 }
 fig.node('uebertreibung', pt(X0 - 24, (Y0 + TOP) / 2), 'Übertreibung', 'lab=7.5, anchor=east');
 
-// the piano's exaggeration, solid; what falls from the bare end, dashed
+// the piano's exaggeration, solid; the voice's, dashed
 curve('klavier', (e) => pianoLevel(shapeAt(e)));
 curve('stimme', (e) => voiceLevel(shapeAt(e)));
 
-// under the fader, what the piano plays, and the first two bracketed: the harmonic reduction
+// under the fader, what the piano plays (none: the humming alone), each harmonic reduction and the
+// piece, the reductions bracketed; their stretches from the table of points (shape.ts)
 const PLAYS = Y0 - 13;
-const stages = [
-  ['halbe', 0, QUARTERS_FROM, 'Halbe'],
-  ['viertel', QUARTERS_FROM, PIECE_FROM, 'Viertel'],
-  ['stueck', PIECE_FROM, 1, 'Stück'],
-] as const;
-for (const [name, from, to, text] of stages) {
+const NAMES = {
+  none: ['summen', 'Summen'],
+  halves: ['halbe', 'Halbe'],
+  quarters: ['viertel', 'Viertel'],
+  piece: ['stueck', 'Stück'],
+} as const;
+const stages: (readonly [name: string, from: number, to: number, text: string])[] = [];
+for (const e of FINE) {
+  const plays = pianoPlays(e);
+  const last = stages.at(-1);
+  if (last?.[0] === NAMES[plays][0]) stages[stages.length - 1] = [last[0], last[1], e, last[3]];
+  else stages.push([NAMES[plays][0], e, e, NAMES[plays][1]]);
+}
+stages.forEach(([name, from, , text], i) => {
+  const to = stages[i + 1]?.[1] ?? 1;
   fig.add(String.raw`\draw[achse] ${pt(x(from), Y0)} -- ${pt(x(from), Y0 - 2.5)};`);
   fig.node(name, pt(x((from + to) / 2), PLAYS), text, 'lab=7, anchor=base');
-}
-for (const [a, b] of [
-  [stages[0], stages[1]],
-  [stages[1], stages[2]],
-] as const)
-  fig.add(String.raw`\draw[pfeil] ([xshift=4bp]${a[0]}.east) -- ([xshift=-4bp]${b[0]}.west);`);
+});
 fig.add(String.raw`\draw[pfeil] ([xshift=4bp]stueck.east) -- ${pt(X1 - 4, PLAYS + 2.5)};`);
+const reduced = stages.filter(([name]) => name === 'halbe' || name === 'viertel');
+const from = reduced[0]?.[1] ?? 0;
+const to = stages.find(([name]) => name === 'stueck')?.[1] ?? 1;
 const BRACKET = PLAYS - 6;
 fig.add(
-  String.raw`\draw[achse] ${pt(x(0) + 2, BRACKET + 3)} -- ${pt(x(0) + 2, BRACKET)} -- ${pt(x(PIECE_FROM) - 2, BRACKET)} -- ${pt(x(PIECE_FROM) - 2, BRACKET + 3)};`,
+  String.raw`\draw[achse] ${pt(x(from) + 2, BRACKET + 3)} -- ${pt(x(from) + 2, BRACKET)} -- ${pt(x(to) - 2, BRACKET)} -- ${pt(x(to) - 2, BRACKET + 3)};`,
 );
-fig.node('reduktion', pt(x(PIECE_FROM / 2), BRACKET - 9), 'harm. Reduktion', 'klein, anchor=base');
+fig.node('reduktion', pt(x((from + to) / 2), BRACKET - 9), 'harm. Reduktion', 'klein, anchor=base');
 
 // what the lines are
 const KEY = 14;
@@ -129,12 +134,7 @@ const legend = (name: string, style: string, at: number, text: string): void => 
   fig.node(name, pt(X0 + 30, at), text, 'klein, anchor=base west');
 };
 legend('legende-klavier', 'klavier', KEY + 10, '= Übertreibung Klavier');
-legend(
-  'legende-stimme',
-  'stimme',
-  KEY,
-  '= Übertreibung Stimme, Lautstärke Stimme und globale Geschwindigkeit/Ungenauigkeit (= Flüchtigkeit)',
-);
+legend('legende-stimme', 'stimme', KEY, '= Übertreibung Stimme (ohne Timing, das dem Klavier folgt)');
 
 const out = join(ROOT, values.out);
 mkdirSync(dirname(out), { recursive: true });

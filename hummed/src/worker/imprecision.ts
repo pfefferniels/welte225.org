@@ -1,5 +1,5 @@
-// Flightiness (levels.ts) strikes the notes less exactly, too: each date of the score a little early
-// or late, each note a little louder or softer, the more the barer the music. espressivo performs the
+// The inexactness of a shape (levels.ts) strikes the notes less exactly: each date of the score a
+// little early or late, each note a little louder or softer, as far as the elaboration has it. espressivo performs the
 // MPM's own imprecision maps, but not reproducibly where notes share a date (its PARITY.md, §4), and
 // the piano, its harmonies and the voice have to be off by the same amounts, in every worker and at
 // every render, or the voice would leave the piano. So it is done here, to the performance, from the
@@ -21,9 +21,9 @@ const LOUDNESS = 2;
 /** The least of its length a note keeps when its key is let go early and struck late. */
 const LEAST_LENGTH = 0.5;
 
-/** The performance struck as inexactly as it is flighty; as it is where it is not. */
-export function imprecise(data: PerformanceData, shape: Pick<Shape, 'flightiness'>): PerformanceData {
-  const f = shape.flightiness;
+/** The performance struck as inexactly as the shape has it; as it is where it is exact. */
+export function imprecise(data: PerformanceData, shape: Pick<Shape, 'inexactMs'>): PerformanceData {
+  const f = shape.inexactMs / IMPRECISION.timingMs;
   if (f === 0) return data;
   const timing = IMPRECISION.timingMs * f;
   const dynamics = IMPRECISION.dynamics * f;

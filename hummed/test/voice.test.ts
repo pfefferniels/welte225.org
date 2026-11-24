@@ -175,7 +175,7 @@ describe('the voice', () => {
     assert.ok(targets.every((g) => g.slope === 0));
   });
 
-  it('keeps more loosely to the pitch the barer the music around it', () => {
+  it('keeps as loosely to the pitch as the elaboration has it: loosest over the quarters, closest at the top', () => {
     // how far the targets lie from the nearest written pitch (equal temperament, A4 = 440 Hz)
     const looseness = (v: Voice): { off: number; tauMs: number } => {
       const targets = pitchTargets(v);
@@ -183,9 +183,9 @@ describe('the voice', () => {
       const offs = targets.map((g) => Math.abs(g.st - grid - Math.round(g.st - grid))).sort((x, y) => x - y);
       return { off: offs[offs.length >> 1] ?? 0, tauMs: targets[0]?.tauMs ?? 0 };
     };
-    const alone = looseness(renderVoice({ ...base(0), calibration: { gain: 1, notes: {} } }));
+    const loose = looseness(renderVoice({ ...base(0.25), calibration: { gain: 1, notes: {} } }));
     const underPiece = looseness(renderVoice({ ...base(1), calibration: { gain: 1, notes: {} } }));
-    assert.ok(alone.off > 1.5 * underPiece.off, `${alone.off} against ${underPiece.off}`);
-    assert.ok(alone.tauMs > underPiece.tauMs && alone.tauMs <= 40);
+    assert.ok(loose.off > 1.5 * underPiece.off, `${loose.off} against ${underPiece.off}`);
+    assert.ok(loose.tauMs > underPiece.tauMs && loose.tauMs <= 40);
   });
 });

@@ -11,7 +11,14 @@ import { loadPianoScore } from '../tools/node-support.ts';
 
 const score = loadPianoScore();
 /** As flighty and as exaggerated as anything gets: twice as fast, ×2, 100 ms off. */
-const RAW: Shape = { flightiness: 1, exaggeration: 1, voiceExaggeration: 1, approximateness: 1 };
+const RAW: Shape = {
+  tempo: 2,
+  inexactMs: 100,
+  pianoExaggeration: 2,
+  voiceExaggeration: 2,
+  approximateness: 1,
+  presence: 0.6,
+};
 const performed = (shape: Shape): PerformanceData =>
   performMsmToData({ msm: score.msm, mpm: pianoMpm(score.mpm, shape) });
 const notes = (data: PerformanceData) => data.parts.flatMap((p) => p.notes);

@@ -10,7 +10,7 @@ import {
   partsOf,
   settingOf,
 } from '../src/page/details.ts';
-import { mix, mixOf, partsAt, PIECE_FROM, voiceElaboration } from '../src/page/mix.ts';
+import { mix, mixOf, partsAt, voiceElaboration } from '../src/page/mix.ts';
 import { plain, sameSetting } from '../src/shared/protocol.ts';
 import { shapeAt, shapeOf } from '../src/shared/shape.ts';
 import { pianoMpm } from '../src/worker/piano.ts';
@@ -42,16 +42,18 @@ describe('the details', () => {
     assert.deepEqual(setting, { elaboration: 0.65, exaggerated: 0 });
     assert.ok(!plain(setting));
     assert.ok(!sameSetting(setting, settingOf(0.65, FOLLOWING)));
-    // exaggerated as at the bare end, the piano not at all and the voice ×2; as fast and as exact as at 0.65
+    // exaggerated as at the bare end; as fast, as exact and as loose as at 0.65
     const shape = shapeOf(setting);
-    assert.equal(shape.exaggeration, 0);
-    assert.equal(shape.voiceExaggeration, 1);
-    assert.equal(shape.flightiness, shapeAt(0.65).flightiness);
+    assert.equal(shape.pianoExaggeration, shapeAt(0).pianoExaggeration);
+    assert.equal(shape.voiceExaggeration, shapeAt(0).voiceExaggeration);
+    assert.equal(shape.tempo, shapeAt(0.65).tempo);
+    assert.equal(shape.inexactMs, shapeAt(0.65).inexactMs);
     assert.equal(shape.approximateness, shapeAt(0.65).approximateness);
-    // the flightiness alone
+    // the flightiness alone: as fast and as inexact as at the bare end, exaggerated as at the top
     const flighty = shapeOf(settingOf(1, { ...FOLLOWING, flighty: 0 }));
-    assert.equal(flighty.flightiness, 1);
-    assert.equal(flighty.exaggeration, 0);
+    assert.equal(flighty.tempo, shapeAt(0).tempo);
+    assert.equal(flighty.inexactMs, shapeAt(0).inexactMs);
+    assert.equal(flighty.pianoExaggeration, 1);
   });
 
   it('reach the performance: the MPM as it is at the top, faster where the flightiness is set apart', () => {
@@ -66,7 +68,7 @@ describe('the details', () => {
     assert.equal(quiet.hum, 0);
     assert.equal(quiet.piece, mix(e).piece);
     const harmonies = mixOf(e, partsOf(e, { ...FOLLOWING, piano: 'harmonies' }));
-    assert.equal(harmonies.harmonies, mix(e).piece);
+    assert.ok(Math.abs(harmonies.harmonies - mix(e).piece) < 1e-9);
     assert.equal(harmonies.piece, 0);
     assert.equal(harmonies.hum, mix(e).hum);
     const none = mixOf(e, partsOf(e, { ...FOLLOWING, piano: 'none' }));
@@ -76,14 +78,15 @@ describe('the details', () => {
       sameSetting(settingOf(e, { ...FOLLOWING, voice: false, piano: 'none' }), settingOf(e, FOLLOWING)),
     );
     // the piano alone at the bare end
-    assert.equal(mixOf(0, partsOf(0, { ...FOLLOWING, piano: 'piece' })).piece, mix(1).piece);
+    assert.ok(Math.abs(mixOf(0, partsOf(0, { ...FOLLOWING, piano: 'piece' })).piece - mix(1).piece) < 1e-9);
   });
 
   it('say what they set: how fast and how inexact, how exaggerated the piano and the voice', () => {
-    assert.equal(flightinessText(0), '×2.50 · 100 ms');
+    assert.equal(flightinessText(0), '×1.40 · 30 ms');
+    assert.equal(flightinessText(0.2), '×2.41 · 40 ms');
     assert.equal(flightinessText(1), '×1.00 · 0 ms');
-    assert.deepEqual(exaggerationText(0), ['×1.00', '×2.00']);
-    assert.deepEqual(exaggerationText(PIECE_FROM), ['×2.00', '×1.37']);
+    assert.deepEqual(exaggerationText(0), ['×1.17', '×1.10']);
+    assert.deepEqual(exaggerationText(0.4), ['×1.62', '×1.21']);
     assert.deepEqual(exaggerationText(1), ['×1.00', '×1.10']);
   });
 });

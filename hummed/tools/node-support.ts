@@ -14,7 +14,13 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
-import { approximateness, DEFAULT_ELABORATION, threshold, shapeAt, stageAt } from '../src/worker/levels.ts';
+import {
+  DEFAULT_ELABORATION,
+  harmoniesStage,
+  shapeAt,
+  threshold,
+  voiceFollows,
+} from '../src/worker/levels.ts';
 import { harmoniesScore } from '../src/worker/harmonies.ts';
 import {
   harmoniesAt,
@@ -56,16 +62,16 @@ export const loadReductions = (): Reductions =>
 
 /** What the piano plays from at an elaboration, as the worker reads it: the piece, the harmonies there, the MPMs. */
 export function loadPianoScore(elaboration = DEFAULT_ELABORATION): PianoScore {
-  const harmonies = harmoniesAt(stageAt(elaboration), loadReductions);
+  const harmonies = harmoniesAt(harmoniesStage(elaboration), loadReductions);
   return { ...loadScore(), harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm };
 }
 
-/** What the voice follows at an elaboration (the piece, or the half notes), and what it sings. */
+/** What the voice follows at an elaboration (the piece, or a harmonic reduction), and what it sings. */
 export function voiceSource(elaboration = DEFAULT_ELABORATION): {
   readonly score: Score;
   readonly reduction: Reduction;
 } {
-  const stage = stageAt(elaboration);
+  const stage = voiceFollows(elaboration);
   return {
     score: voiceScore(stage, loadScore(), loadReductions),
     reduction: sungReduction(stage, loadReduction(), loadReductions),
@@ -87,7 +93,7 @@ export function voicePerformance(elaboration = DEFAULT_ELABORATION): {
   const score = loadScore();
   return {
     ...performVoice(voiceSource(elaboration).score, shapeAt(elaboration)),
-    approximateness: approximateness(elaboration),
+    approximateness: shapeAt(elaboration).approximateness,
     range: dynamicsRange(score.mpm),
     turns: turningPoints(score.mpm),
     threshold: threshold(shapeAt(elaboration)),
