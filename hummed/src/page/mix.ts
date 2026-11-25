@@ -8,7 +8,7 @@ import { BORDERS, pianoDb, pianoPlays, stepAt, voiceDb, voiceFollows, type Stage
 /** Where what the piano plays changes along the fader. */
 export { BORDERS };
 
-/** The piano's level where a part the fader does not play there is switched on in the details. */
+/** The piano's level where it plays nothing and a part is switched on in the details. */
 const PIANO = Math.pow(10, -5 / 20);
 const gain = (db: number): number => (db <= -60 ? 0 : Math.pow(10, db / 20));
 
@@ -40,13 +40,14 @@ export function partsAt(elaboration: number): Parts {
 }
 
 /**
- * The gains for what is heard, the humming and the piano as loud as the elaboration has them. A part
- * the fader does not play there, switched on in the details, is heard at the piano's usual level.
+ * The gains for what is heard, the humming and the piano as loud as the elaboration has them; a
+ * part the fader does not play there, switched on in the details, as loud as the piano is there (at
+ * −5 dB where the piano plays nothing).
  */
 export function mixOf(elaboration: number, parts: Parts): Mix {
   const e = unit(elaboration);
   const hum = parts.voice ? gain(voiceDb(e)) : 0;
-  const piano = parts.piano === partsAt(e).piano ? gain(pianoDb(e)) : PIANO;
+  const piano = partsAt(e).piano === 'none' ? PIANO : gain(pianoDb(e));
   return {
     hum,
     harmonies: parts.piano === 'harmonies' ? piano : 0,

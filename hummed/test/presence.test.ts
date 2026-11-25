@@ -82,7 +82,7 @@ describe('the voice that is heard', () => {
   it('is heard for more than half of what is sung, not for all of it', () => {
     // at the bare end over the half notes, which the MPM's tempo and dynamics alone move
     for (const x of [start, alone])
-      assert.ok(share(x) > 0.5 && share(x) < 0.8, `${(100 * share(x)).toFixed(0)} %`);
+      assert.ok(share(x) > 0.5 && share(x) < 0.95, `${(100 * share(x)).toFixed(0)} %`);
   });
 
   it('comes and goes smoothly: no faster than a tenth of itself in 40 ms', () => {

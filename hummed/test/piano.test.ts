@@ -146,10 +146,10 @@ describe('the piano at an elaboration', async () => {
   it('goes through the piece as fast as the elaboration has it, the exaggeration slowing it a little', () => {
     const top = lastStrike(played[played.length - 1].piece);
     for (const [i, { piece }] of played.entries()) {
-      // Grünfeld's length over the tempo, and longer by what the exaggeration slows (up to 13 %
-      // where the piece comes in, exaggerated most)
+      // Grünfeld's length over the tempo, and longer by what the exaggeration slows (up to a fifth
+      // over the quarters, exaggerated most)
       const ratio = (lastStrike(piece) * tempoFactor(shapeAt(steps[i]))) / top;
-      assert.ok(ratio > 1 - 1e-9 && ratio < 1.15, `${steps[i]}: ${ratio.toFixed(3)}`);
+      assert.ok(ratio > 1 - 1e-9 && ratio < 1.25, `${steps[i]}: ${ratio.toFixed(3)}`);
     }
   });
 

@@ -6,13 +6,12 @@
 // between two); what the piano plays and what the voice follows hold from their point to the next. A
 // point that is a step holds all its values up to the next: that stretch of the fader is one setting.
 //
-// So the fader goes: the voice alone, humming the piece's line a little faster than Grünfeld; then,
-// as two steps, the harmonic reduction in half notes, gone through in a hurry, the humming loud over
-// the piano's quiet chords, and the same in quarter notes; from 0.4 the piece, exaggerated, and from
-// there more and more as Grünfeld plays it, until at the top the piano plays his performance as the
-// reconstruction sets it down, the humming under it. In timing the voice goes with the piano (its
-// tempo, its rubato and rolls exaggerated as the piano's, as inexactly struck), so that the two
-// strike together.
+// So the fader goes: the harmonic reduction in half notes, gone through in a hurry (×2.4), the
+// humming loud and loose over the piano's chords; the same in quarter notes; from 0.4 the piece,
+// exaggerated, and from there more and more as Grünfeld plays it, the humming receding until at the
+// top it is gone and the piano plays his performance as the reconstruction sets it down. In timing
+// the voice goes with the piano (its tempo, its rubato and rolls exaggerated as the piano's, as
+// inexactly struck), so that the two strike together.
 import { monotoneCubic } from './math.ts';
 import type { Setting } from './protocol.ts';
 
@@ -24,28 +23,29 @@ export type Plays = 'none' | Stage;
 
 /** The points along the fader, as the tuner writes them (Copy settings). */
 export const ELABORATION = {
-  points: [0, 0.15, 0.25, 0.4, 0.8, 1],
-  steps: [false, true, true, false, false, false],
+  points: [0, 0.2, 0.4, 0.8, 1],
+  steps: [false, false, false, false, false],
   piano: {
-    plays: ['none', 'halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Plays[],
+    plays: ['halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Plays[],
     /** dB; −60 is off. */
-    db: [-60, -11, -5, -5, -5, -5],
+    db: [-3, -2, -1, 0, 0],
     /** How far the MPM is exaggerated for the piano, and for the voice in timing: ×1 as Grünfeld. */
-    exaggeration: [1.17, 1.29, 1.57, 1.62, 1.3, 1],
+    exaggeration: [1.4, 1.98, 1.6, 1.1, 1],
     /** How much faster than Grünfeld, the piano and the voice alike. */
-    tempo: [1.4, 2.41, 1.856, 1.1, 1.05, 1],
+    tempo: [2.4, 1.6, 1.23, 1.05, 1],
     /** How inexactly struck: ms off, one standard deviation (and 8.3 % in loudness at 100 ms). */
-    ms: [30, 40, 40, 12.2, 4, 0],
+    ms: [50, 10, 4, 2, 0],
   },
   voice: {
-    follows: ['piece', 'halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Stage[],
-    db: [0, -4.9, -13, -13, -16, -22],
+    follows: ['halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Stage[],
+    /** dB; −60 is off. */
+    db: [-6, -12, -24, -52, -60],
     /** How far its own gestures are exaggerated: the dynamics, the articulation and the rest. */
-    exaggeration: [1.1, 1.2, 1.44, 1.21, 1.136, 1.1],
+    exaggeration: [1.5, 1.3, 1.2, 1.1, 1.1],
     /** How loosely it keeps to the written pitch, 0 to 1. */
-    looseness: [0, 0.37, 0.65, 0.35, 0.2, 0],
+    looseness: [1, 0.72, 0.42, 0.1, 0],
     /** How much the maps must move for it to be heard wholly, before the tempo (`threshold`). */
-    presence: [0.54, 0.55, 0.6, 0.6, 0.6, 0.6],
+    presence: [0.36, 0.44, 0.4, 0.26, 0.18],
   },
 } as const;
 

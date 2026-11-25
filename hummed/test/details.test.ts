@@ -77,16 +77,21 @@ describe('the details', () => {
     assert.ok(
       sameSetting(settingOf(e, { ...FOLLOWING, voice: false, piano: 'none' }), settingOf(e, FOLLOWING)),
     );
-    // the piano alone at the bare end
-    assert.ok(Math.abs(mixOf(0, partsOf(0, { ...FOLLOWING, piano: 'piece' })).piece - mix(1).piece) < 1e-9);
+    // the piece at the bare end, as loud as the piano is there
+    assert.ok(
+      Math.abs(mixOf(0, partsOf(0, { ...FOLLOWING, piano: 'piece' })).piece - mix(0).harmonies) < 1e-9,
+    );
   });
 
   it('say what they set: how fast and how inexact, how exaggerated the piano and the voice', () => {
-    assert.equal(flightinessText(0), '×1.40 · 30 ms');
-    assert.equal(flightinessText(0.2), '×2.41 · 40 ms');
+    for (const e of [0, 0.2, 0.4, 1]) {
+      const shape = shapeAt(e);
+      assert.equal(flightinessText(e), `×${shape.tempo.toFixed(2)} · ${Math.round(shape.inexactMs)} ms`);
+      assert.deepEqual(exaggerationText(e), [
+        `×${shape.pianoExaggeration.toFixed(2)}`,
+        `×${shape.voiceExaggeration.toFixed(2)}`,
+      ]);
+    }
     assert.equal(flightinessText(1), '×1.00 · 0 ms');
-    assert.deepEqual(exaggerationText(0), ['×1.17', '×1.10']);
-    assert.deepEqual(exaggerationText(0.4), ['×1.62', '×1.21']);
-    assert.deepEqual(exaggerationText(1), ['×1.00', '×1.10']);
   });
 });

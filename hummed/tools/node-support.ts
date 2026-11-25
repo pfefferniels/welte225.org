@@ -9,7 +9,7 @@ import { DOMParser } from '@xmldom/xmldom';
 import type { PerformanceData } from 'espressivo';
 import { parseCalibration, parseHumStyle } from '../src/hummer/data.ts';
 import { dynamicsRange, turningPoints, type DynamicsRange, type Turns } from '../src/hummer/performance.ts';
-import type { Calibration, HumStyle } from '../src/hummer/style.ts';
+import { voiceStyle, type Calibration, type HumStyle } from '../src/hummer/style.ts';
 import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
@@ -42,7 +42,8 @@ export function loadReduction(path = 'reduction/reduction.mei'): Reduction {
   return readReduction(doc.documentElement as unknown as XmlElement);
 }
 
-export const loadStyle = (): HumStyle => parseHumStyle(JSON.parse(read('data/hum-style.json')));
+/** The hum style the voice sings with: the recording's (data/hum-style.json), as set by ear. */
+export const loadStyle = (): HumStyle => voiceStyle(parseHumStyle(JSON.parse(read('data/hum-style.json'))));
 export const loadCalibration = (): Calibration => parseCalibration(JSON.parse(read('data/calibration.json')));
 
 /** The reconstruction the site publishes (../mpm/). */

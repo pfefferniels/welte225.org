@@ -7,6 +7,7 @@
 // prepared. One more worker only draws the piano's sound as the page hands it over (picture.ts):
 // that one loads nothing else.
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
+import { voiceStyle } from '../hummer/style.ts';
 import { dynamicsRange, readDynamics, turningPoints } from '../hummer/index.ts';
 import { chunkOrder } from '../shared/chunks.ts';
 import {
@@ -147,7 +148,7 @@ async function loadTexts(): Promise<Texts> {
     mpm,
     range: dynamicsRange(mpm),
     turns: turningPoints(mpm),
-    style: parseHumStyle(style),
+    style: voiceStyle(parseHumStyle(style)),
     calibration: parseCalibration(calibration),
   };
 }

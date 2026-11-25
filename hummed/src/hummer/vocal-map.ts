@@ -53,11 +53,6 @@ const SLUR_FROM: Ms = 30;
  * an octave as the voice went on.)
  */
 const SLIDE_MOST = 5;
-/**
- * How much of a scoop measured from the recording of the pianist humming (data/hum-style.json) the
- * voice takes: set by ear in the tuner, where the whole of it sounded overdone.
- */
-export const SCOOP = 0.4;
 const BREAK = { most: 90, share: 0.5 } as const;
 /**
  * Consonants that articulate a note as the piano's touch does: a detached note begins with a 'd',
@@ -329,7 +324,7 @@ export function vocalMap(input: VocalMapInput): VocalEvent[] {
         tag: 'inflection',
         date,
         type: 'scoop',
-        depthSt: Math.round(scoop * SCOOP * 0.8 * 100) / 100,
+        depthSt: Math.round(scoop * 0.8 * 100) / 100,
         durationMs: 220,
       });
     }

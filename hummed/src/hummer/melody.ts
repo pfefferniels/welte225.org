@@ -95,7 +95,7 @@ export interface BreathCues {
  * the pedal lifted at the end of a note held `heldS` or more).
  */
 export const BREATHING = {
-  everyS: 2.5,
+  everyS: 3,
   withinS: 8,
   cost: 0.5,
   soon: 0.8,

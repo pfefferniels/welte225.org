@@ -129,8 +129,8 @@ try {
   await report('seeked to 1:00');
   for (const [value, expected] of [
     [30, 'quarters'],
-    [0, 'humming'],
-    [20, 'halves'],
+    [0, 'halves'],
+    [10, 'halves'],
     [67, 'piece'],
   ] as const) {
     await page.evaluate(
@@ -140,7 +140,7 @@ try {
     const shown = await text('o-elaboration');
     if (shown !== expected) errors.push(`elaboration ${value} shows ${shown}, not ${expected}`);
   }
-  console.log('elaboration: quarters, the humming alone, halves, the piece');
+  console.log('elaboration: quarters, halves, halves, the piece');
   // the voice rendered anew for the last elaboration takes over, and playing goes on
   await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
   await page.waitForTimeout(2000);
