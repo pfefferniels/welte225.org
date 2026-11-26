@@ -5,9 +5,12 @@ import { seededRandom } from '../shared/math.ts';
 
 export interface AudioGraph {
   readonly context: AudioContext;
-  /** Faded out and in around a switch between renderings. */
+  /** Everything, before the limiter. */
   readonly master: GainNode;
-  /** The piano playing the piece, and playing its harmonies: one fader sets both (see mix.ts). */
+  /**
+   * What every setting that sounds plays into: the piano's piece, its harmonies, the voice. Each
+   * setting's own mix (mix.ts) and weight come before them (lane.ts).
+   */
   readonly piano: GainNode;
   readonly harmonies: GainNode;
   readonly hum: GainNode;
@@ -133,16 +136,9 @@ export function createAudioGraph(): AudioGraph {
   return { context, master, piano, harmonies, hum };
 }
 
-/** How long one setting fades into the next while playing: equal power, the old one running on meanwhile. */
+/**
+ * The longest a setting the workers rendered as you listen fades in over while playing, equal in
+ * power, the old one running on meanwhile; as long as the two keep together (alignment.ts). One
+ * that was ready crossfades in over 0.4 s at most, as the fader moves.
+ */
 export const CROSSFADE = 1.5;
-
-/** Fade a gain in or out over `seconds` from context time `at`, keeping the sum of two such powers even. */
-export function fade(gain: AudioParam, direction: 'in' | 'out', at: number, seconds: number): void {
-  const curve = new Float32Array(32);
-  for (let i = 0; i < curve.length; i++) {
-    const x = (i / (curve.length - 1)) * (Math.PI / 2);
-    curve[i] = direction === 'in' ? Math.sin(x) : Math.cos(x);
-  }
-  gain.cancelScheduledValues(at);
-  gain.setValueCurveAtTime(curve, at, seconds);
-}

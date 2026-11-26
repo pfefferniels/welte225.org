@@ -1,6 +1,8 @@
 // The piano on an instrument over MIDI (Web MIDI): a Disklavier, Pianoteq, any instrument that
 // listens. It plays the part of the piano the elaboration chooses, its keys, sustain pedal and soft
-// pedal, sent ahead by the instrument's own delay so that it sounds with the voice.
+// pedal, sent ahead by the instrument's own delay so that it sounds with the voice. It cannot fade:
+// where the page crossfades from one setting into another, it switches from the one to the other at
+// the crossfade's midpoint, letting up the keys still down.
 import {
   midiEvents,
   pedalAt,
@@ -11,7 +13,7 @@ import {
   type PianoPart,
 } from '../shared/piano.ts';
 import type { Seconds } from '../shared/units.ts';
-import type { PianoOutput } from './outputs.ts';
+import type { PianoOutput, PianoPlay } from './outputs.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 
 const NOTE_ON = 0x90;
@@ -39,6 +41,7 @@ function firstFrom(events: readonly MidiEvent[], t: Seconds): number {
 }
 
 export class MidiPiano implements PianoOutput {
+  readonly fades = false;
   readonly port: MIDIOutput;
   readonly #context: AudioContext;
   #delay: Seconds;
@@ -77,6 +80,27 @@ export class MidiPiano implements PianoOutput {
     return true;
   }
 
+  /** One rendering, from its time `t` heard at context time `when`, until it is stopped (at a time). */
+  play(rendering: Rendering, t: Seconds, when: number): PianoPlay {
+    this.start(rendering, t, when);
+    let until = Infinity;
+    return {
+      schedule: (from, to, at) => {
+        // nothing at or after the moment it was told to stop (`at` runs with the rendering's time)
+        const end = Math.min(to, from + (until - at(from)));
+        if (end > from) this.schedule(rendering, from, end, at);
+      },
+      stop: (at) => {
+        if (at === undefined) {
+          this.stop();
+          return;
+        }
+        until = at;
+        this.release(at);
+      },
+    };
+  }
+
   start(rendering: Rendering, t: Seconds, when: number): void {
     if (!this.#part) return;
     const part = rendering.parts[this.#part];
@@ -95,6 +119,12 @@ export class MidiPiano implements PianoOutput {
       if (kind === NOTE_ON) this.#sounding.add(data[1]);
       else if (kind === NOTE_OFF) this.#sounding.delete(data[1]);
     }
+  }
+
+  /** Let up every key that is down at context time `at`: another setting takes over there. */
+  release(at: number): void {
+    for (const pitch of this.#sounding) this.#send([NOTE_OFF, pitch, 64], at);
+    this.#sounding.clear();
   }
 
   /**

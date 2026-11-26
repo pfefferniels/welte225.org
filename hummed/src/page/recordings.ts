@@ -1,7 +1,9 @@
-// The Pianoteq recordings on the page: a setting's two parts are fetched and decoded when it is asked
-// for, and the page keeps no more than the setting playing and the one it is changing to (a decoded
-// part of three minutes is some 30 MB).
+// The Pianoteq recordings on the page: a setting's parts are fetched ahead with its voice, and each
+// part is decoded when it is wanted: the part heard, for the settings around the fader (library.ts),
+// and both for a setting that sounds, so that the details can switch to the other. A decoded part of
+// three minutes is some 30 MB; what is kept decoded is what the library keeps.
 import { parseManifest, type RecordedSetting, type RecordingsManifest } from '../shared/recordings.ts';
+import type { PianoPartName } from './rendering.ts';
 
 const BASE = 'piano/pianoteq/';
 
@@ -11,14 +13,23 @@ export interface SettingBuffers {
 }
 
 const keyOf = (elaboration: number): number => Math.round(elaboration * 100);
+const PARTS: readonly PianoPartName[] = ['piece', 'harmonies'];
+
+interface Part {
+  /** The MP3, once fetched; kept, since decoding takes it. */
+  bytes: ArrayBuffer | null;
+  fetching: Promise<ArrayBuffer> | null;
+  buffer: AudioBuffer | null;
+  decoding: boolean;
+}
 
 export class Recordings {
   readonly manifest: RecordingsManifest;
   readonly #context: AudioContext;
-  readonly #loaded = new Map<number, SettingBuffers>();
-  readonly #loading = new Set<number>();
+  readonly #parts = new Map<string, Part>();
   readonly #failed = new Set<number>();
-  #playing: number | null = null;
+  /** Told when a part has been decoded. */
+  changed: () => void = () => undefined;
 
   constructor(context: AudioContext, manifest: RecordingsManifest) {
     this.#context = context;
@@ -42,44 +53,97 @@ export class Recordings {
     return this.#failed.has(keyOf(elaboration));
   }
 
-  /** The setting's sound, null while it loads (the first ask starts it) or where it failed. */
-  buffers(elaboration: number): SettingBuffers | null {
-    const key = keyOf(elaboration);
-    const loaded = this.#loaded.get(key);
-    if (loaded) return loaded;
+  #part(elaboration: number, part: PianoPartName): Part {
+    const key = `${keyOf(elaboration)}:${part}`;
+    let entry = this.#parts.get(key);
+    if (!entry) {
+      entry = { bytes: null, fetching: null, buffer: null, decoding: false };
+      this.#parts.set(key, entry);
+    }
+    return entry;
+  }
+
+  /** Fetch a setting's files ahead, without decoding them. */
+  fetchAhead(elaboration: number): void {
     const entry = this.setting(elaboration);
-    if (!entry || this.#failed.has(key) || this.#loading.has(key)) return null;
-    for (const k of this.#loaded.keys()) if (k !== this.#playing) this.#loaded.delete(k);
-    this.#loading.add(key);
-    this.#fetch(entry).then(
-      (buffers) => {
-        this.#loading.delete(key);
-        this.#loaded.set(key, buffers);
+    if (!entry || this.failed(elaboration)) return;
+    for (const part of PARTS) void this.#bytes(elaboration, part, entry).catch(() => undefined);
+  }
+
+  #bytes(elaboration: number, part: PianoPartName, entry: RecordedSetting): Promise<ArrayBuffer> {
+    const held = this.#part(elaboration, part);
+    if (held.bytes) return Promise.resolve(held.bytes);
+    held.fetching ??= (async () => {
+      const file = entry[part].file;
+      const response = await fetch(BASE + file);
+      if (!response.ok) throw new Error(`${file}: ${response.status}`);
+      return response.arrayBuffer();
+    })().then(
+      (bytes) => {
+        held.bytes = bytes;
+        held.fetching = null;
+        return bytes;
       },
       (error: unknown) => {
-        this.#loading.delete(key);
-        this.#failed.add(key);
-        console.warn(
-          `The Pianoteq recording of ${elaboration} did not load; the sampled grand plays it.`,
-          error,
-        );
+        held.fetching = null;
+        this.#fail(elaboration, error);
+        throw error;
       },
     );
+    return held.fetching;
+  }
+
+  #fail(elaboration: number, error: unknown): void {
+    if (this.#failed.has(keyOf(elaboration))) return;
+    this.#failed.add(keyOf(elaboration));
+    console.warn(`The Pianoteq recording of ${elaboration} did not load; the sampled grand plays it.`, error);
+    this.changed();
+  }
+
+  /** A part's sound, null while it loads (the first ask starts it) or where it failed. */
+  part(elaboration: number, part: PianoPartName): AudioBuffer | null {
+    const entry = this.setting(elaboration);
+    if (!entry || this.failed(elaboration)) return null;
+    const held = this.#part(elaboration, part);
+    if (held.buffer) return held.buffer;
+    if (held.decoding) return null;
+    held.decoding = true;
+    this.#bytes(elaboration, part, entry)
+      .then((bytes) => this.#context.decodeAudioData(bytes.slice(0)))
+      .then(
+        (buffer) => {
+          held.decoding = false;
+          held.buffer = buffer;
+          this.changed();
+        },
+        (error: unknown) => {
+          held.decoding = false;
+          this.#fail(elaboration, error);
+        },
+      );
     return null;
   }
 
-  /** The setting now playing, kept while others come and go. */
-  playing(elaboration: number): void {
-    this.#playing = keyOf(elaboration);
+  /** Both parts, where both are decoded; asking starts what is not. */
+  buffers(elaboration: number): SettingBuffers | null {
+    const piece = this.part(elaboration, 'piece');
+    const harmonies = this.part(elaboration, 'harmonies');
+    return piece && harmonies ? { piece, harmonies } : null;
   }
 
-  async #fetch(entry: RecordedSetting): Promise<SettingBuffers> {
-    const get = async (file: string): Promise<AudioBuffer> => {
-      const response = await fetch(BASE + file);
-      if (!response.ok) throw new Error(`${file}: ${response.status}`);
-      return this.#context.decodeAudioData(await response.arrayBuffer());
-    };
-    const [piece, harmonies] = await Promise.all([get(entry.piece.file), get(entry.harmonies.file)]);
-    return { piece, harmonies };
+  /** What a setting's decoded parts take, in bytes. */
+  bytes(elaboration: number): number {
+    let bytes = 0;
+    for (const part of PARTS) {
+      const buffer = this.#parts.get(`${keyOf(elaboration)}:${part}`)?.buffer;
+      if (buffer) bytes += buffer.length * buffer.numberOfChannels * 4;
+    }
+    return bytes;
+  }
+
+  /** Let go of the decoded parts of every setting but these (their files are kept). */
+  keep(elaborations: Iterable<number>): void {
+    const keys = new Set([...elaborations].map(keyOf));
+    for (const [key, held] of this.#parts) if (!keys.has(Number(key.split(':')[0]))) held.buffer = null;
   }
 }

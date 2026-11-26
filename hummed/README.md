@@ -1,8 +1,9 @@
 # Träumerei, hummed
 
 Alfred Grünfeld's 1905 Welte-Mignon recording of Schumann's _Träumerei_ (WM 225), played from the
-roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered live in
-the browser by VocalTractLab, at any degree of elaboration: from a quick sketch, the humming alone,
+roll's reconstruction (`/mpm/`), with the inner voice of a pianist humming along: rendered by
+VocalTractLab, ahead for every setting of the fader and in the browser for any other, at any degree
+of elaboration: from a quick sketch, the humming alone,
 then the harmonies in half notes and in quarter notes, gone through in a hurry, the humming loud over
 them, to the piece itself as the reconstruction sets it down, the humming under it.
 
@@ -13,8 +14,8 @@ visitors on to it.
 The page shows the hum's spectrogram filling the window, in red, scrolling under a playhead, and
 under it the piano's in a blue grey (below). Over it, on
 the left, one fader, elaboration, which sets what is heard and how refined it is (below); on the
-right, the transport. Moving it renders the voice anew and takes it over at the same place in the
-score. The page is titled as the reconstruction is: the comment in the MPM's metadata, read
+right, the transport. Moving it takes the setting under it over at once, crossfading into it at the
+same place in the score, the sound and the picture alike (_The crossfade_, below). The page is titled as the reconstruction is: the comment in the MPM's metadata, read
 from `/mpm/performance.mpm` (`src/shared/mpm.ts`; the HTML carries the same text for readers
 without scripts and for link previews, and a test keeps the two equal). A small info button opens
 a card with that title, the author, the year and the DOI (a placeholder until one is minted), links
@@ -25,9 +26,9 @@ piano plays (below). The cards are native popovers: closed until asked for, and 
 Escape or a click anywhere else.
 
 The strip is drawn at most once in an animation frame, and in every frame while the playhead moves
-(`src/page/redraws.ts`); never while the page is hidden. A frame is drawn only if it would look
-different (`frame.ts`): the strip has scrolled, columns have come within the stretch in view, or
-the piano is shown otherwise. The transport reads its position from the audio clock, which the page
+or settings blend (`src/page/redraws.ts`); never while the page is hidden. A frame is drawn only if
+it would look different (`frame.ts`): the strip has scrolled, columns have come within the stretch
+in view, the piano is shown otherwise, or the settings that sound weigh otherwise. The transport reads its position from the audio clock, which the page
 sees advance a buffer of the sound card at a time (9 to 20 ms from frame to frame where a frame
 takes 16.7); the playhead is drawn carried on by the frames' own times and only gently towards the
 clock (`glide.ts`), and exactly where the transport is when it rests. Drawing may take half of the
@@ -58,10 +59,20 @@ it is heard: the reduction or the version of the piece the fader has there, from
 the bare end to the piece at the top. It is the spectrogram of the sound that plays: the Pianoteq recording of the
 setting, or the sampled grand, which plays the part ahead of time for it (an `OfflineAudioContext`;
 an instrument over MIDI has no sound in the page, so the page's own piano stands for it). A worker
-of its own draws it (`src/page/piano-picture.ts`, `src/worker/picture.ts`), from the playhead on,
-in the same rows as the voice, in the melodic range as the amplitude to the power of 0.7, so that
-a key is seen while it sounds and not at its strike alone. The humming is drawn over it, so where
-both sound the humming is what is seen. The settings switch the piano's picture off.
+of its own draws it (`src/page/piano-picture.ts`, `src/worker/picture.ts`), from a little before the
+playhead on, in the same rows as the voice, in the melodic range as the amplitude to the power of
+0.7, so that a key is seen while it sounds and not at its strike alone. The humming is drawn over
+it, so where both sound the humming is what is seen. The settings switch the piano's picture off.
+The same worker draws the voice of a setting rendered ahead from its decoded sound, in the voice's
+own rows and scale: the very columns a voice worker draws from the sound it renders, chunk by chunk
+(a chunk is cut where the voice is silent, and rendered on past its end for the columns that reach
+beyond it; `test/pictures.test.ts` holds the two to the pixel). Coded as MP3, the humming at 0 draws
+in the melodic range within 8 greys of 255 of its rendering (0.06 on average); in decibels, the full
+style shows the coding's noise in the quietest stretches. A picture is kept for every setting that
+sounds, and drawn ahead for the three settings nearest the fader that are ready, from where the
+playhead is in each, so that one crossfaded into has its picture already; those in view are drawn
+first, a voice before a piano. (The sampled grand plays a part ahead in seconds, in a headless
+browser in tens of them; one setting's at a time is asked for ahead.)
 
 The settings also show the reconstruction's instructions (`src/shared/instructions.ts`,
 `src/page/instructions-view.ts`): a panel at the top left that lists, for the moment at the
@@ -327,13 +338,66 @@ stands still. A note held on to the next ends where that one is struck, not wher
 
 The voice keeps as loosely to the pitch as the table has it: its approximateness (below), 0.7 at
 the bare end, 0.71 to 0.74 up to 0.57, 0.85 at 0.71 and loosest at the top (1), where it is all but
-gone. Moving the fader renders the voice anew once it rests: within a step at the step's point, else
+gone. The voice is rendered for the fader's positions only: within a step at the step's point, else
 in steps of 0.05 on the fader's side of a border (`voiceElaboration`), so that what is rendered is
-what is heard: 21 settings in all (`RENDERED`). While playing, the new setting crossfades in over
-1.5 s at the same place in the score (`CROSSFADE`, equal power): the old one runs on meanwhile,
-its voice and the page's piano each through a fade of their own (an instrument over MIDI, which
-cannot fade, switches). The gains change at once where the setting stays the same, and otherwise
-glide to the new setting's as it fades in.
+what is heard: 21 settings in all (`RENDERED`), each rendered ahead (_The voice rendered ahead_,
+below).
+
+### The crossfade
+
+A setting that is ready takes over the moment the fader comes to it, while it moves, without
+waiting for it to rest: one rendered ahead and decoded, or one the workers have rendered whole as
+the visitor listened (`src/page/library.ts`). Whatever sounds fades out, from where it is, while the
+new one fades in, equal in power: a setting still coming in when the fader moves on is taken down
+from where it had got to, so that two, three or more sound at once while the fader is dragged, their
+powers summing to one throughout (`src/page/blend.ts`). Each sounds in a lane of its own
+(`src/page/lane.ts`): its voice, and its piano's two parts, each through the setting's own mix (as
+loud as the fader had them when it was asked for), and all three through one gain, its weight, which
+the page knows as the audio thread plays it (a series of linear ramps a few milliseconds apart) and
+draws it by. So the gains of the humming and the piano blend as the settings do.
+
+The one coming in is placed so that at the crossfade's midpoint it is at the same tick of the score
+as the one going out, to the sample (`src/page/alignment.ts`): each rendering's clock maps its
+time to score time, and its sound starts (`AudioBufferSourceNode.start(when, offset)`, the whole
+voice as one buffer) at the context time where that places it, the piano's recordings and notes
+with it. Played at different tempi, the two drift apart on either side of the midpoint, by as much
+as the tempi differ there. The crossfade is made as long as keeps them within 10 ms of each other
+wherever each is at a quarter of its level or more (the middle two thirds of an equal-power
+crossfade: about where two notes struck together begin to be heard as two, and a sound 12 dB under
+another hardly doubles it), 0.4 s at most, from there down by a sixth at a time, 10 ms at least: the
+misalignment is piecewise linear between the bends of the two clocks, so its most is found exactly.
+Between neighbouring settings at nearly the same tempo it is 0.4 s; from the piece at Grünfeld's
+tempo into the half notes, 2.4 times as fast, 37 ms. A setting that is not ready is rendered once
+the fader rests, from as far ahead as the last ones took to be ready, and crossfades in the same
+way once it has sound there, over as much as 1.5 s (`CROSSFADE`). An instrument over MIDI cannot
+fade: it is handed its messages only a quarter of a second ahead, a crossfade begins after what it
+has been handed, and it switches from the one setting to the other at the midpoint, the keys still
+down let up there.
+
+Measured in Chromium with every setting's voice replaced by a click every 30 ticks through its own
+clock, each lane's voice tapped as it leaves the lane (an `AudioWorklet` keeping every sample with
+its frame): each click of the one coming in lands within 0.02 ms of where the clocks put it against
+the one going out, and at the midpoint the two are within 0.02 ms of each other; the same code in an
+`OfflineAudioContext` at 44.1 and 48 kHz, crossfades retargeted 50 to 300 ms after they began,
+within 0.06 ms.
+
+While settings blend, the strip draws each in its own time, its voice and its piano as strongly as
+it is heard (its weight times the ink of its mix), along an axis that is theirs blended by their
+powers: each setting's score positions where the blend puts them, the bar lines too, so that the
+picture goes over from the layout of the one going out to that of the one coming in, aligned at the
+playhead. Moved while paused, the fader blends the picture alone, over a quarter of a second.
+
+The library decodes the voice at the rate it was rendered at (an `OfflineAudioContext` at 44.1 kHz,
+whatever the sound card's), finds it in the decoded sound (`alignVoice`), and keeps it as one buffer.
+It fetches every setting's files ahead (a phone, only those around the fader), and decodes the
+setting the fader is at and its neighbours, three on the side it travels to and two behind, the
+next stop of a wandering fader after the nearest two, as far as a budget allows: 640 MB on a
+computer, 320 MB where the browser says it has 4 GB, 192 MB on a phone. A second of a setting costs
+172 kB of voice, 188 kB of the piano part heard (a Pianoteq recording at 48 kHz) and 288 kB of its
+two pictures: the longest setting 147 MB, the shortest 45. So a computer keeps the setting playing
+and three long ones around it, or thirteen short ones; a phone one long one, or four short. Beyond
+the neighbours, the settings heard last are kept while they fit, and the one heard longest ago goes
+first; what sounds is never let go of. The voice at 0.9, 0.95 and 1 is the same, and decoded once.
 
 ### Wandering
 
@@ -342,8 +406,9 @@ The button with the double arrow beside the fader's name lets the fader walk by 
 on while the music plays, each setting heard for two and a half bars (`WANDER_BARS`). It stops at each
 point of the table where the voice is rendered for it (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
 and 0.9), and counts the two and a half bars in the music from where the setting takes over, so that
-each is heard as long however fast it goes; each comes in as the fader does, crossfading at the
-same place in the score. Moving the fader, or setting a detail apart, stops it.
+each is heard as long however fast it goes; each comes in at once as the fader does, crossfading at
+the same place in the score, the library having decoded the next stop ahead. Moving the fader, or
+setting a detail apart, stops it.
 
 ### The details
 
@@ -358,7 +423,8 @@ what that gives. One that is moved is set apart from the fader, until the fader 
 takes them all with it; the chevron carries a dot meanwhile, and the row set apart reads as the
 fader does. A slider set apart is rendered as its own setting (`Setting`, `flighty` and
 `exaggerated`: where it stands on the fader's scale, in the fader's steps; `shapeOf`,
-`src/shared/shape.ts`), which no Pianoteq recording is of: the sampled grand plays it. One set at
+`src/shared/shape.ts`), which neither the voice rendered ahead nor a Pianoteq recording is of: the
+workers render it as you listen, and the sampled grand plays it. One set at
 the fader's own step is no setting apart. What is heard is no setting: the voice and both parts of
 the piano are always rendered, and the switches change the mix alone (`mixOf`): the part the fader
 plays is as loud as the table has it, and one it does not play, switched on, at the piano's level,
@@ -512,8 +578,9 @@ They are handed out in the order they will be heard, from where playback is to t
 from the beginning, each worker getting its next a little before it finishes the one it is on, and
 streamed to the page in blocks with their spectrogram columns, a chunk's first half second of sound
 before any column. The piano's recordings of a setting are fetched and decoded while its voice is
-prepared, and a change of setting while playing starts the new voice as far ahead of the playhead
-as the last changes took to be ready (0.4 to 1.2 s). From the moment a new setting takes over, the playhead is reckoned in it (the barer
+prepared, and a change to a setting that is not ready starts the new voice as far ahead of the
+playhead as the last changes took to be ready (0.4 to 1.2 s). Once the whole of a setting has come,
+the page keeps it with those rendered ahead, to go back to at once. From the moment a new setting takes over, the playhead is reckoned in it (the barer
 settings are shorter: reckoned in the old one's time, the new one seemed to be over, and playing
 stopped), and a rendering that ends while another is on its way waits for that one.
 
@@ -521,10 +588,11 @@ Of the work, VocalTractLab's acoustics take six sevenths and its geometry a tent
 adds a fortieth. One worker renders the voice 4.4 times as fast as it plays (in Node, on one core
 of a cloud server: `npm run bench`), where it was 2.7 times; in Chromium on that server's four
 cores, three workers render it 11.7 times as fast (the whole piece in 15 s, where it took 26),
-and one 4.5 times (2.7). The page can play 0.95 s after it asks for its first setting (1.65 s),
-a setting changed while playing takes over after 1.1 s (1.8 s), and one gone back to after 0.6 s
-(1.2 s). The page (`src/page/`) plays the
-voice as it arrives, hands the roll and its harmonies, from the same performance, to the piano
+and one 4.5 times (2.7). Rendering as you listen, the page can play 0.95 s after it asks for its
+first setting (1.65 s), a setting changed while playing takes over after 1.1 s (1.8 s), and one gone
+back to after 0.6 s (1.2 s); with the voice rendered ahead, it can play 1.1 s after it opens, and a
+setting decoded takes over 15 to 30 ms after the fader comes to it (one not yet decoded, some 0.2 s).
+The page (`src/page/`) plays the voice as it arrives, hands the roll and its harmonies, from the same performance, to the piano
 chosen (below), and sends all into one small room: early reflections and a
 stereo tail whose highs die sooner than its lows (1.6 s in the bass, 0.6 s in the treble), the
 voice a little further in than the piano and after a 20 ms pre-delay.
@@ -673,8 +741,10 @@ settings offer three ways to sound it (`src/page/settings.ts`, `outputs.ts`, `mi
   `piano/pianoteq/`: both parts at each setting of the elaboration the voice is rendered for
   (`RENDERED`: every 0.05, but a step at its point; the piano as exaggerated and as fast as that
   setting has it), mono MP3s listed in
-  `manifest.json`. A setting is loaded when it is asked for, and the page keeps the one playing and
-  the one coming. A setting that was not rendered, or whose recording is not of the performance as
+  `manifest.json`. A setting's recordings are fetched with its voice; each part is decoded when it
+  is wanted (the part heard, for a setting decoded around the fader; both for one that sounds, so
+  that the details can switch to the other) and kept as long as the library keeps the setting
+  (_The crossfade_, above). A setting that was not rendered, or whose recording is not of the performance as
   it is (its keys and the fingerprint of its messages against the manifest's: the keys alone do
   not tell a performance at another tempo), is played by the sampled grand. Where there are
   recordings they play, unless the visitor chose the sampled grand on an earlier visit.
@@ -758,28 +828,28 @@ Chromium, each sample for sample where a chunk rendered afresh lies.
 
 ## Code
 
-| Path                             | What it is                                                                                                                                                                                                                                                                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                                                                                                                                                 |
-| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                                                                                                                                                         |
-| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                                                                                                                                                      |
-| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                                                                                                                                                     |
-| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                                                                                                                                                 |
-| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                                                                               |
-| `src/worker/`                    | the worker: levels, the harmonies' score, the harmonic reductions and the line over them, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                     |
-| `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions                                     |
-| `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                                                     |
-| `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                                                                 |
-| `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifests, the reconstruction's calls as instructions                  |
-| `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                                 |
-| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                                                                                  |
-| `voice/`                         | the voice rendered ahead for every setting: MP3s, their plans and the manifest                                                                                                                                                                                                                                                  |
-| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, the harmonic reduction in half notes (`halves.mei`), the harmonies where the piece sounds them (`harmonies.mei`), and a reduction in quarter notes made by hand from those (`quarters.mei`, the repeat of A written out; so far only in the tuner) |
-| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, the voice rendered ahead, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                                                |
-| `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                                                                         |
-| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                                                                            |
-| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                                                                           |
-| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                                                                       |
+| Path                             | What it is                                                                                                                                                                                                                                                                                                                                                               |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `../index.html`, `style.css`     | the page (the site's front page) and its styles                                                                                                                                                                                                                                                                                                                          |
+| `app.js`, `worker.js` (+ `.map`) | the page's and the worker's bundles, built from `src/` and committed, since GitHub Pages serves the repository as it is                                                                                                                                                                                                                                                  |
+| `vtl.js`                         | VocalTractLab compiled to WebAssembly (`vtl/build.sh`), committed likewise                                                                                                                                                                                                                                                                                               |
+| `src/reduction/`                 | reading the reduction's MEI                                                                                                                                                                                                                                                                                                                                              |
+| `src/hummer/`                    | from a performance and the reduction to the two gestural scores                                                                                                                                                                                                                                                                                                          |
+| `src/vtl/`                       | VocalTractLab's module, typed, and the streaming engine around it                                                                                                                                                                                                                                                                                                        |
+| `src/worker/`                    | the worker: levels, the harmonies' score, the harmonic reductions and the line over them, the piano's parts, a setting's preparation, a chunk's rendering, spectrogram, the piano's picture                                                                                                                                                                              |
+| `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the library of ready settings, the workers' pool, transport and its lanes, the crossfade's alignment and weights, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the pictures, the instructions |
+| `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                                                                                              |
+| `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                                                                                                          |
+| `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifests, the reconstruction's calls as instructions                                                           |
+| `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                                                                          |
+| `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                                                                                                                           |
+| `voice/`                         | the voice rendered ahead for every setting: MP3s, their plans and the manifest                                                                                                                                                                                                                                                                                           |
+| `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, the harmonic reduction in half notes (`halves.mei`), the harmonies where the piece sounds them (`harmonies.mei`), and a reduction in quarter notes made by hand from those (`quarters.mei`, the repeat of A written out; so far only in the tuner)                                          |
+| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, the voice rendered ahead, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                                                                                         |
+| `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                                                                                                                  |
+| `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                                                                                                                     |
+| `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                                                                                                                    |
+| `research/`                      | how it came to be: the report, the offline pipeline, the first renderings                                                                                                                                                                                                                                                                                                |
 
 The score and the performance are the site's own (`/mpm/score.msm`, `/mpm/performance.mpm`), so
 the voice follows the reconstruction as it is published. The piece's grace notes are in the
@@ -797,7 +867,7 @@ npm run check        # types (tsc, strict), lint (typescript-eslint, strict, typ
 npm run build        # app.js and worker.js
 npm run bench        # the voice in Node as a worker renders it: where the time goes, fingerprints of sound and picture
 npm run calibrate    # after changing the reduction, the hum style or the reconstruction
-npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, instructions, pianos
+npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches (at once where ready), seeks, info, instructions, pianos
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
 npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
 npm run voices       # the voice rendered ahead for every setting (above)

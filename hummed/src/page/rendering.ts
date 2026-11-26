@@ -1,5 +1,7 @@
-// One rendering of the voice as it streams in from the worker: its sound, which 10 ms slots of it
-// have arrived, its spectrogram, and its place in the score.
+// One rendering of the voice: as it streams in from the workers, its sound, which 10 ms slots of it
+// have arrived, its spectrogram, and its place in the score; or whole, as it was rendered ahead
+// (voice/), its sound decoded and its spectrogram drawn from it.
+import type { Clock } from './alignment.ts';
 import { interp } from '../shared/math.ts';
 import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
 import type { AudioMessage, Plan, Roll, Setting, Timings } from '../shared/protocol.ts';
@@ -8,6 +10,13 @@ import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.t
 import { Strip } from './strip.ts';
 
 const SLOT = SAMPLE_RATE / 100;
+
+let lastId = 0;
+/**
+ * A new rendering's id: the workers' requests and the renderings made from the voice rendered ahead
+ * share them, and a request's is always newer than the last (a worker stops the work for an older).
+ */
+export const renderingId = (): number => ++lastId;
 
 export type PianoPartName = 'piece' | 'harmonies';
 export class Rendering {
@@ -23,6 +32,11 @@ export class Rendering {
   readonly timings: Timings;
   readonly startSeconds: Seconds;
   readonly audio: Float32Array;
+  /**
+   * The whole sound as one buffer, where it was rendered ahead: played from where it is wanted by
+   * one source. A rendering that streams in is played in short buffers as it comes.
+   */
+  readonly whole: AudioBuffer | null;
   /** The voice's spectrogram, as far as it has arrived. */
   readonly strip = new Strip(INKS.hum);
   readonly #clock: Plan['clock'];
@@ -33,7 +47,8 @@ export class Rendering {
   #samples = 0;
   done = false;
 
-  constructor(plan: Plan) {
+  /** A rendering that streams in; or one whose sound is all there, in `whole` (then `audio` is its samples). */
+  constructor(plan: Plan, whole: AudioBuffer | null = null) {
     this.id = plan.id;
     this.setting = plan.setting;
     this.voiceLevel = plan.voiceLevel;
@@ -44,8 +59,20 @@ export class Rendering {
     this.timings = plan.timings;
     this.startSeconds = plan.startSeconds;
     this.#clock = plan.clock;
-    this.audio = new Float32Array(Math.ceil(plan.duration * SAMPLE_RATE));
+    this.whole = whole;
+    this.audio = whole ? whole.getChannelData(0) : new Float32Array(Math.ceil(plan.duration * SAMPLE_RATE));
     this.#have = new Uint16Array(Math.ceil(plan.duration * 100) + 1);
+    if (whole) {
+      for (let c = 0; c < this.#have.length; c++)
+        this.#have[c] = Math.max(0, Math.min(SLOT, this.audio.length - c * SLOT));
+      this.#samples = this.audio.length;
+      this.done = true;
+    }
+  }
+
+  /** Score time against performed time, as the alignment of two renderings reads it. */
+  get clock(): Clock {
+    return this.#clock;
   }
 
   receive(message: AudioMessage): void {
@@ -61,6 +88,7 @@ export class Rendering {
 
   /** Whether the sound from t0 to t1 has all arrived. */
   rendered(t0: Seconds, t1: Seconds): boolean {
+    if (this.whole) return true;
     const a = Math.max(0, Math.floor(t0 * 100));
     const b = Math.min(this.#have.length - 1, Math.ceil(t1 * 100));
     for (let c = a; c < b; c++)

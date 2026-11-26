@@ -23,7 +23,10 @@ interface Page {
   waitForTimeout(ms: number): Promise<void>;
   readonly keyboard: { press(key: string): Promise<void> };
   on(event: 'pageerror', listener: (error: Error) => void): void;
-  on(event: 'console', listener: (message: { type(): string; text(): string }) => void): void;
+  on(
+    event: 'console',
+    listener: (message: { type(): string; text(): string; location(): { url: string } }) => void,
+  ): void;
 }
 interface Browser {
   newPage(): Promise<Page>;
@@ -86,9 +89,14 @@ try {
   await page.addInitScript(STAND_IN_MIDI);
   page.on('pageerror', (e) => errors.push(e.message));
   page.on('console', (m) => {
-    // espressivo notes that the MSM's parts have no MPM parts of their own: this MPM's are global
-    if (m.type() === 'error' && !m.text().startsWith('No MPM part found')) errors.push(m.text());
+    // espressivo notes that the MSM's parts have no MPM parts of their own: this MPM's are global;
+    // where the voice has not been rendered ahead, its manifest is not there
+    if (m.type() !== 'error' || m.text().startsWith('No MPM part found')) return;
+    if (m.location().url.endsWith('voice/manifest.json')) return;
+    errors.push(m.text());
   });
+  const dataset = (key: string): Promise<string | undefined> =>
+    page.evaluate(`document.getElementById('spec').dataset[${JSON.stringify(key)}]`);
   const text = async (id: string): Promise<string> => (await page.textContent(`#${id}`)) ?? '';
   const report = async (what: string): Promise<void> => {
     console.log(
@@ -108,6 +116,11 @@ try {
   await page.click('#play');
   await page.waitForTimeout(6000);
   await report('played 6 s');
+  // the first setting is ready once it is whole: rendered ahead and decoded, or rendered by the workers
+  const isReady = (setting: string): string =>
+    `(document.getElementById('spec').dataset.ready ?? '').split(' ').includes(${JSON.stringify(`${setting}||`)})`;
+  await page.waitForFunction(isReady('0.65'), undefined, { timeout: 120000 });
+  await report('0.65 whole');
   // a barer setting is more exaggerated, slower in places: the piece's length changes when it takes over
   const total = await text('total');
   await page.evaluate(
@@ -122,6 +135,29 @@ try {
   );
   await page.waitForTimeout(3000);
   await report('elaboration 0.3 took over');
+  // back to a setting that is ready: it takes over at once, crossfading at the same tick of the score
+  const crossfadeBefore = await dataset('crossfade');
+  const asked = Date.now();
+  await page.evaluate(
+    "(() => { const e = document.getElementById('elaboration'); e.value = 65; e.dispatchEvent(new Event('input')); })()",
+  );
+  await page.waitForFunction("document.getElementById('spec').dataset.setting === '0.65'", undefined, {
+    timeout: 5000,
+  });
+  const took = Date.now() - asked;
+  const crossfade = JSON.parse((await dataset('crossfade')) ?? 'null') as {
+    readonly length: number;
+    readonly apart: number;
+  } | null;
+  console.log(
+    `back to 0.65 at once: in ${took} ms, crossfading over ${((crossfade?.length ?? 0) * 1000).toFixed(0)} ms, ` +
+      `${((crossfade?.apart ?? 0) * 1000).toFixed(1)} ms apart at most where both are heard`,
+  );
+  if (took > 500) errors.push(`a setting that is ready took ${took} ms to take over`);
+  if (!crossfade || (await dataset('crossfade')) === crossfadeBefore || crossfade.length > 0.4)
+    errors.push('a setting that is ready did not crossfade in briefly');
+  await page.waitForTimeout(2000);
+  await report('0.65 again');
   await page.evaluate(
     "(() => { const r = document.getElementById('pos'); r.value = 60; r.dispatchEvent(new Event('input')); })()",
   );

@@ -1,8 +1,10 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
 import { inkAlpha, isSpectrogramStyleName, PIANO_SCALES, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
-import { createAudioGraph, CROSSFADE } from './audio-graph.ts';
-import { plain, sameSetting } from '../shared/protocol.ts';
+import { plain, type Setting } from '../shared/protocol.ts';
+import type { VoiceManifest } from '../shared/voice-recordings.ts';
+import { counterpart } from './alignment.ts';
+import { createAudioGraph } from './audio-graph.ts';
 import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
 import { DisplaySettings } from './display.ts';
 import { element, formatTime, setFill, Written } from './dom.ts';
@@ -18,7 +20,18 @@ import {
   type Details,
 } from './details.ts';
 import { stepAt, voiceFollows } from '../shared/shape.ts';
-import { BORDERS, heard, LOUDEST, mixOf, performedOf, type Mix } from './mix.ts';
+import { budget, bytesPerSecond, Library, wanted } from './library.ts';
+import {
+  BORDERS,
+  heard,
+  LOUDEST,
+  mixOf,
+  partsAt,
+  performedOf,
+  RENDERED,
+  voiceElaboration,
+  type Mix,
+} from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -29,7 +42,7 @@ import { Recordings } from './recordings.ts';
 import { browserFrames, Redraws } from './redraws.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { PianoSettings } from './settings.ts';
-import { SpectrogramView } from './spectrogram-view.ts';
+import { SpectrogramView, type Layer } from './spectrogram-view.ts';
 import { barsAt, nextStop, WANDER_BARS, WANDER_START, WANDER_STOPS, type Wandering } from './wander.ts';
 
 const canvas = element('spec', HTMLCanvasElement);
@@ -62,8 +75,8 @@ const sampler = new PianoSampler(graph.context, () => {
   setStatus('The piano samples did not load. Reload the page to try again.');
 });
 /** The sampled grand alone, and the Pianoteq recordings (the sampled grand where a level has none). */
-const sampled = new BuiltInPiano(graph, sampler);
-const recorded = new BuiltInPiano(graph, sampler);
+const sampled = new BuiltInPiano(sampler);
+const recorded = new BuiltInPiano(sampler);
 /** The Pianoteq recordings, once their manifest is read; null where there are none. */
 let recordings: Recordings | null = null;
 // the voice is rendered by several workers side by side, as many as there are cores to spare
@@ -80,7 +93,8 @@ const setStatus = (text: string): void => {
 /* ---------- drawing: once a frame, and in every frame while the playhead moves ---------- */
 const readout = new Readout(nowText, barText, positionSlider);
 const glide = new Glide();
-const redraws = new Redraws(draw, () => player.moving, browserFrames());
+// in every frame while the playhead moves, and while settings blend (paused, too)
+const redraws = new Redraws(draw, () => player.moving || player.blending, browserFrames());
 /** Something to draw: in the next frame, with whatever else changes until then. */
 const redraw = (): void => {
   redraws.request();
@@ -95,7 +109,8 @@ const display = new DisplaySettings(() => {
   redraw();
 });
 // the piano's part that is heard, drawn from its sound as the piano chosen plays it (an instrument
-// over MIDI has no sound here: the page's own stands for it)
+// over MIDI has no sound here: the page's own stands for it); and the voice rendered ahead, drawn
+// from its sound
 const picture = new PianoPicture(
   spectrogramStyle,
   (rendering, part) => (settings.kind === 'sampled' ? sampled : recorded).sound(rendering, part),
@@ -111,6 +126,15 @@ const instructions = new InstructionsView(element('instructions', HTMLElement), 
 });
 instructions.shown = display.instructions;
 
+/** The part of the piano a setting plays where the fader stands at it, the details following. */
+const partHeard = (rendering: Rendering): PianoPartName | null => {
+  const { piano } = partsAt(rendering.setting.elaboration);
+  return piano === 'none' ? null : piano;
+};
+/** The part of the piano heard in a mix (one at a time), if any. */
+const partIn = (mix: Mix): PianoPartName | null =>
+  mix.piece > 0 ? 'piece' : mix.harmonies > 0 ? 'harmonies' : null;
+
 /**
  * The page as it is in a frame at `time` (ms): the readout, the strip, the instructions. Returns
  * whether the strip had to be drawn.
@@ -122,48 +146,123 @@ function draw(time: number): boolean {
   const glided = glide.at(player.position(), time, moving);
   const t = cur ? Math.min(cur.duration, glided) : glided;
   if (cur) readout.show(t, cur.duration, cur.bars, { moving, held: seeking });
-  // the piano under the humming, as present as it is heard
-  const parts = partsOf(elaboration(), details);
-  const gains = mixOf(elaboration(), parts);
-  const part = instrumentPart();
-  const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
-  pianoColumns.set(strip?.columns ?? 0);
-  // each as loud as it is heard: the humming at −52 dB all but gone, as it sounds
-  const pianoAlpha = inkAlpha(
-    PIANO_SCALES[spectrogramStyle],
-    Math.max(gains.harmonies, gains.piece) / LOUDEST.piano,
-  );
-  const humAlpha = inkAlpha(SPECTROGRAM_STYLES[spectrogramStyle].scale, gains.hum / LOUDEST.hum);
-  const under = strip && { strip, alpha: pianoAlpha };
-  const drew = view.draw(cur, t, under, moving, humAlpha);
+  // each setting that sounds, as present as it is heard there (the humming at −52 dB all but gone,
+  // as it sounds), and while settings blend, each as much as it weighs
+  let columns = 0;
+  const layers = player.sounding(t).map(({ rendering, t: at, weight, mix }): Layer => {
+    // the part each setting plays as it is heard: its mix, which the fader set while it was asked for
+    const part = partIn(mix);
+    const strip = part && display.piano ? picture.strip(rendering, part, at) : null;
+    if (rendering === cur) columns = strip?.columns ?? 0;
+    picture.voice(rendering, at);
+    const loudest = Math.max(mix.harmonies, mix.piece) / LOUDEST.piano;
+    const pianoAlpha = inkAlpha(PIANO_SCALES[spectrogramStyle], loudest);
+    const humAlpha = inkAlpha(SPECTROGRAM_STYLES[spectrogramStyle].scale, mix.hum / LOUDEST.hum);
+    return {
+      rendering,
+      t: at,
+      share: weight * weight,
+      voice: { strip: rendering.strip, alpha: weight * humAlpha },
+      piano: strip && { strip, alpha: weight * pianoAlpha },
+    };
+  });
+  pianoColumns.set(columns);
+  const drew = view.draw(layers, moving);
   // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
+  const parts = partsOf(elaboration(), details);
   instructions.show(cur, t, performedOf(parts, voiceFollows(cur?.setting.elaboration ?? elaboration())));
   return drew;
 }
 
-const player = new Player(graph, sampled, pool, {
-  adopted(rendering: Rendering) {
-    // the levels of the setting coming in glide there as it fades in
-    if (levelsComing) {
-      setGains(levelsComing, CROSSFADE / 3);
-      levelsComing = null;
-    }
-    positionSlider.max = rendering.duration.toFixed(2);
-    readout.forget();
-    totalText.textContent = formatTime(rendering.duration);
-    playButton.disabled = false;
-    positionSlider.disabled = false;
+/* ---------- the settings ready to go to at once: rendered ahead, or rendered whole here ---------- */
+const phone =
+  window.matchMedia('(pointer: coarse)').matches && !window.matchMedia('(any-pointer: fine)').matches;
+const memory = (navigator as Navigator & { readonly deviceMemory?: number }).deviceMemory;
+const makeLibrary = (manifest: VoiceManifest | null): Library =>
+  new Library(manifest, {
+    besides: (rendering) => picture.bytes(rendering) + recorded.bytes(rendering),
+    inUse: (rendering) => player.inUse(rendering),
+    changed: () => {
+      showLibrary();
+      redraw();
+    },
+    dropped: (rendering) => {
+      picture.drop(rendering);
+    },
+    limit: budget(memory, phone),
+    perSecond: bytesPerSecond(recordings ? graph.context.sampleRate : 0),
+    fetchAll: !phone,
+  });
+/** The library, once the voice's manifest is read (one that holds what the workers render until then). */
+let library = makeLibrary(null);
+/** What the library holds, for whoever watches the page from outside. */
+const showLibrary = (): void => {
+  canvas.dataset['ready'] = library.decoded.join(' ');
+  canvas.dataset['megabytes'] = String(library.megabytes);
+};
+
+const player = new Player(
+  graph,
+  sampled,
+  pool,
+  {
+    ready: (setting) => library.ready(setting),
+    coming: (setting) => library.coming(setting),
+    keep: (rendering) => {
+      library.keep(rendering);
+    },
+    used: (rendering) => {
+      library.used(rendering);
+    },
   },
-  status: setStatus,
-  playingChanged(playing: boolean) {
-    playIcon.toggleAttribute('hidden', playing);
-    pauseIcon.toggleAttribute('hidden', !playing);
-    playButton.setAttribute('aria-label', playing ? 'Pause' : 'Play');
-    // the playhead sets off, or has come to rest: where it rests is drawn exactly
-    redraw();
+  {
+    adopted(rendering: Rendering) {
+      const last = player.lastCrossfade;
+      if (last) canvas.dataset['crossfade'] = JSON.stringify(last);
+      canvas.dataset['setting'] = String(rendering.setting.elaboration);
+      positionSlider.max = rendering.duration.toFixed(2);
+      readout.forget();
+      totalText.textContent = formatTime(rendering.duration);
+      playButton.disabled = false;
+      positionSlider.disabled = false;
+    },
+    status: setStatus,
+    playingChanged(playing: boolean) {
+      playIcon.toggleAttribute('hidden', playing);
+      pauseIcon.toggleAttribute('hidden', !playing);
+      playButton.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+      // the playhead sets off, or has come to rest: where it rests is drawn exactly
+      redraw();
+    },
+    changed: redraw,
   },
-  changed: redraw,
-});
+);
+
+/**
+ * The pictures of the settings around the fader, drawn ahead where they are ready, from where the
+ * playhead is in each: a crossfade into one shows its picture at once. And what no setting kept
+ * needs any more is let go of.
+ */
+const AHEAD_PICTURES = 3;
+setInterval(() => {
+  const cur = player.current;
+  if (!cur) return;
+  const position = player.position();
+  for (const setting of wantedSettings().slice(0, AHEAD_PICTURES)) {
+    const rendering = library.ready(setting);
+    if (!rendering || rendering === cur) continue;
+    const t = counterpart(cur.clock, rendering.clock, position);
+    picture.voice(rendering, t, 'ahead');
+    const part = partHeard(rendering);
+    if (part && display.piano) picture.strip(rendering, part, t, 'ahead');
+    // the piano of a setting rendered ahead, decoded with it
+    if (settings.kind === 'recorded' && part) recorded.ready(rendering, [part]);
+  }
+  picture.keepOnly((rendering) => player.inUse(rendering) || library.holds(rendering));
+  recordings?.keep([...library.elaborations(), ...player.renderings().map((r) => r.setting.elaboration)]);
+  showLibrary();
+}, 500);
+
 /* ---------- the piano: in the page, or an instrument over MIDI ---------- */
 /** The part an instrument over MIDI plays: the one that is heard, if any. */
 const instrumentPart = (): PianoPartName | null => {
@@ -183,16 +282,6 @@ const settings = new PianoSettings({
 });
 
 /* ---------- the fader: elaboration sets the mix, the performance and the voice ---------- */
-const setGains = (gains: Mix, glide = 0.02): void => {
-  graph.hum.gain.setTargetAtTime(gains.hum, graph.context.currentTime, glide);
-  graph.harmonies.gain.setTargetAtTime(gains.harmonies, graph.context.currentTime, glide);
-  graph.piano.gain.setTargetAtTime(gains.piece, graph.context.currentTime, glide);
-};
-/**
- * The levels of a setting still to come: while it renders, the one playing keeps its own, and they
- * glide to these as it crossfades in.
- */
-let levelsComing: Mix | null = null;
 const elaboration = (): number => Number(elaborationSlider.value) / 100;
 /** What is set apart from the fader in the details under it: nothing, until one is moved. */
 let details: Details = FOLLOWING;
@@ -228,24 +317,36 @@ const showDetails = (e: number): void => {
   );
   detailsToggle.classList.toggle('apart', apart(details));
 };
-// the piano's two parts are both always playing: the gains, gliding, crossfade between them; the
-// voice itself is rendered anew for the elaboration, and for the details, once they rest
+// A setting that is ready takes over at once, crossfading from whatever sounds; one that is not is
+// rendered once the fader rests. Each setting plays both of the piano's parts, its mix setting which
+// is heard; as settings blend, so do their mixes.
 let elaborationTimer: ReturnType<typeof setTimeout> | undefined;
 const renderSoon = (): void => {
   clearTimeout(elaborationTimer);
+  const setting = settingOf(elaboration(), details);
+  if (player.canSwitch(setting)) {
+    player.change(setting);
+    return;
+  }
   elaborationTimer = setTimeout(() => {
     player.change(settingOf(elaboration(), details));
   }, 300);
 };
+/** Where the fader was last, and which way it went: the library decodes more on that side. */
+let lastElaboration: number | null = null;
+let travel: 1 | -1 | 0 = 0;
+/** The order in which settings are wanted: the fader's, its neighbours, where wandering goes next. */
+function wantedSettings(): Setting[] {
+  const next = wandering ? [WANDER_STOPS[nextStop(wandering).stop]] : [];
+  return wanted(RENDERED, voiceElaboration(elaboration()), travel, next).map((e) => ({ elaboration: e }));
+}
 const applyElaboration = (): void => {
   const e = elaboration();
-  const gains = mixOf(e, partsOf(e, details));
-  const cur = player.current;
-  if (player.playing && cur && !sameSetting(settingOf(e, details), cur.setting)) levelsComing = gains;
-  else {
-    levelsComing = null;
-    setGains(gains);
-  }
+  if (lastElaboration !== null && e !== lastElaboration) travel = e > lastElaboration ? 1 : -1;
+  lastElaboration = e;
+  // the setting's mix: the one playing glides to it where it is the same, one coming in comes in at it
+  player.setMix(settingOf(e, details), mixOf(e, partsOf(e, details)));
+  library.steer(wantedSettings());
   showDetails(e);
   const what = heard(e);
   elaborationOutput.value = what;
@@ -386,6 +487,7 @@ async function loadRecordings(): Promise<void> {
   }
   recorded.recordings = recordings;
   if (recordings) {
+    recordings.changed = redraw;
     element('piano-credit', HTMLElement).textContent =
       `${recordings.manifest.credit}; Salamander Grand Piano by Alexander Holm (CC BY 3.0)`;
     settings.offerRecorded(recorded, recordings.manifest);
@@ -460,8 +562,17 @@ async function start(): Promise<void> {
   const doc = new DOMParser().parseFromString(await response.text(), 'application/xml');
   pool.setup(readReduction(doc.documentElement), spectrogramStyle);
   await loadRecordings();
-  player.request(settingOf(elaboration(), details), { seconds: 0 });
-  setStatus('Starting VocalTractLab…');
+  // the voice rendered ahead, where there is any of the table the page has
+  try {
+    library = makeLibrary(await Library.manifest());
+  } catch (error) {
+    console.warn('The voice rendered ahead could not be read; it is rendered as you listen.', error);
+  }
+  library.steer(wantedSettings());
+  const first = settingOf(elaboration(), details);
+  const ready = player.canSwitch(first);
+  player.begin(first);
+  if (!player.current) setStatus(ready ? 'Loading…' : 'Starting VocalTractLab…');
 }
 placeControlCards();
 const mpm = fetchMpm();
