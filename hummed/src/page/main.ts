@@ -2,7 +2,7 @@
 import { readReduction } from '../reduction/mei.ts';
 import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
 import { createAudioGraph, CROSSFADE } from './audio-graph.ts';
-import { sameSetting } from '../shared/protocol.ts';
+import { plain, sameSetting } from '../shared/protocol.ts';
 import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
 import { DisplaySettings } from './display.ts';
 import { element, formatTime, setFill, Written } from './dom.ts';
@@ -30,6 +30,7 @@ import { browserFrames, Redraws } from './redraws.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { PianoSettings } from './settings.ts';
 import { SpectrogramView } from './spectrogram-view.ts';
+import { barsAt, nextStop, WANDER_BARS, WANDER_STOPS, type Wandering } from './wander.ts';
 
 const canvas = element('spec', HTMLCanvasElement);
 const playButton = element('play', HTMLButtonElement);
@@ -262,10 +263,60 @@ const applyElaboration = (): void => {
   redraw();
 };
 elaborationSlider.addEventListener('input', () => {
-  // the fader takes every detail with it
+  // the fader takes every detail with it; moved by hand, it wanders no more
+  stopWandering();
   details = FOLLOWING;
   applyElaboration();
   renderSoon();
+});
+
+/* ---------- wandering: the fader walks through its settings by itself (wander.ts) ---------- */
+const wanderButton = element('wander', HTMLButtonElement);
+/** Where the wandering is, and in which bar the setting it stops at took over; null when it does not wander. */
+let wandering: (Wandering & { since: number | null }) | null = null;
+let wanderTimer: ReturnType<typeof setInterval> | undefined;
+/** The fader to a stop, as if moved there, taking every detail with it. */
+const wanderTo = (stop: number): void => {
+  elaborationSlider.value = String(Math.round(WANDER_STOPS[stop] * 100));
+  details = FOLLOWING;
+  applyElaboration();
+  renderSoon();
+};
+/**
+ * Look where the music is: once the stop's setting has taken over, a bar and a half from there, on
+ * to the next. Not while paused, nor while the setting is still coming.
+ */
+const wanderOn = (): void => {
+  const cur = player.current;
+  if (!wandering || !cur || !player.playing) return;
+  if (!plain(cur.setting) || Math.abs(cur.setting.elaboration - WANDER_STOPS[wandering.stop]) > 1e-9) return;
+  const at = barsAt(cur.bars, player.position());
+  // counted from where it took over, or anew where the playhead went back before that
+  if (wandering.since === null || at < wandering.since) {
+    wandering.since = at;
+    return;
+  }
+  if (at - wandering.since < WANDER_BARS) return;
+  wandering = { ...nextStop(wandering), since: null };
+  wanderTo(wandering.stop);
+};
+function stopWandering(): void {
+  if (!wandering) return;
+  wandering = null;
+  clearInterval(wanderTimer);
+  wanderButton.setAttribute('aria-pressed', 'false');
+}
+wanderButton.addEventListener('click', () => {
+  if (wandering) {
+    stopWandering();
+    return;
+  }
+  // from the far left, towards the far right
+  wandering = { stop: 0, direction: 1, since: null };
+  wanderButton.setAttribute('aria-pressed', 'true');
+  wanderTo(0);
+  wanderTimer = setInterval(wanderOn, 100);
+  if (!player.playing && !playButton.disabled) player.toggle();
 });
 // let go within a step, the fader goes to the step's point: that stretch is one setting
 elaborationSlider.addEventListener('change', () => {
@@ -292,11 +343,13 @@ detailsToggle.addEventListener('click', () => {
   );
 });
 flightySlider.addEventListener('input', () => {
+  stopWandering();
   details = { ...details, flighty: Number(flightySlider.value) / 100 };
   applyElaboration();
   renderSoon();
 });
 exaggeratedSlider.addEventListener('input', () => {
+  stopWandering();
   details = { ...details, exaggerated: Number(exaggeratedSlider.value) / 100 };
   applyElaboration();
   renderSoon();

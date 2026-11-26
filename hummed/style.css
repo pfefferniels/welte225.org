@@ -139,7 +139,7 @@ body {
 }
 
 .mix {
-  flex: 0 1 330px;
+  flex: 0 1 380px;
   min-width: 0;
   display: grid;
   gap: 4px;
@@ -147,7 +147,7 @@ body {
 
 .fader {
   display: grid;
-  grid-template-columns: 8.4em minmax(0, 1fr) 4.6em;
+  grid-template-columns: 10em minmax(0, 1fr) 5.4em;
   align-items: center;
   gap: 10px;
 }
@@ -158,7 +158,10 @@ body {
   color: var(--muted);
   text-align: right;
   font-size: 12px;
+  line-height: 1.2;
   font-variant-numeric: tabular-nums;
+  /* what the piano plays, in two lines at most: "piece on sixteenths", "accompaniment" */
+  hyphens: auto;
 }
 
 input[type='range'] {
@@ -441,6 +444,19 @@ input[type='range']:disabled {
 }
 .details-toggle[aria-expanded='true'] svg {
   transform: rotate(180deg);
+}
+/* wandering: the fader walks through its settings by itself; pressed, the button is filled */
+.wander svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.wander[aria-pressed='true'] {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .details-toggle.apart::after {
   content: '';

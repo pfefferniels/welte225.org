@@ -335,6 +335,16 @@ its voice and the page's piano each through a fade of their own (an instrument o
 cannot fade, switches). The gains change at once where the setting stays the same, and otherwise
 glide to the new setting's as it fades in.
 
+### Wandering
+
+The button with the double arrow beside the fader's name lets the fader walk by itself
+(`src/page/wander.ts`): from the far left, a setting at a time, to the far right, then back, and so
+on while the music plays, each setting heard for a bar and a half (`WANDER_BARS`). It stops at each
+point of the table where the voice is rendered for it (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
+and 0.9), and counts the bar and a half in the music from where the setting takes over, so that
+each is heard as long however fast it goes; each comes in as the fader does, crossfading at the
+same place in the score. Moving the fader, or setting a detail apart, stops it.
+
 ### The details
 
 Under the fader, a chevron beside its name opens what it sets, each on its own (`src/page/details.ts`,
