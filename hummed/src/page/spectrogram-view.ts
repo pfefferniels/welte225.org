@@ -99,15 +99,17 @@ export class SpectrogramView {
   }
 
   /**
-   * The rendering at time `t`: its humming, over another sound's strip (the piano's) if one is
-   * given. Nothing is drawn where the canvas shows the same already; while the playhead is
-   * `moving`, nor where the strip has hardly scrolled. Returns whether it drew.
+   * The rendering at time `t`: its humming (as opaque as `humAlpha`: as loud as it is heard), over
+   * another sound's strip (the piano's) if one is given. Nothing is drawn where the canvas shows the
+   * same already; while the playhead is `moving`, nor where the strip has hardly scrolled. Returns
+   * whether it drew.
    */
   draw(
     rendering: Rendering | null,
     t: Seconds,
     under: { readonly strip: Strip; readonly alpha: number } | null = null,
     moving = false,
+    humAlpha = 1,
   ): boolean {
     const W = this.#width;
     const H = this.#height;
@@ -128,6 +130,7 @@ export class SpectrogramView {
         under?.strip,
         under?.strip.revision(c0, c1),
         under?.alpha,
+        humAlpha,
       ],
     };
     if (!differs(this.#drawn, frame, moving)) return false;
@@ -162,7 +165,7 @@ export class SpectrogramView {
       g.globalAlpha = 1;
     };
     if (under) strip(under.strip, under.alpha);
-    if (rendering) strip(rendering.strip, 1);
+    if (rendering && humAlpha > 0) strip(rendering.strip, humAlpha);
 
     g.font = font;
     g.textBaseline = 'middle';

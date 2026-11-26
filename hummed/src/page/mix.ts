@@ -5,6 +5,7 @@
 import type { Performed } from '../shared/instructions.ts';
 import {
   BORDERS,
+  ELABORATION,
   isPiece,
   pianoDb,
   pianoPlays,
@@ -66,6 +67,15 @@ export function mixOf(elaboration: number, parts: Parts): Mix {
 }
 
 export const mix = (elaboration: number): Mix => mixOf(elaboration, partsAt(elaboration));
+
+/**
+ * The loudest the fader has the humming and the piano (the table's numbers never go beyond its
+ * points): what the spectrogram draws at its full ink, the rest by how much quieter it is heard.
+ */
+export const LOUDEST = {
+  hum: gain(Math.max(...ELABORATION.voice.db)),
+  piano: gain(Math.max(...ELABORATION.piano.db)),
+} as const;
 
 /**
  * Whose instructions are heard: the piece's where the piano plays it or the voice follows it (as

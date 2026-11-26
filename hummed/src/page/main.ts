@@ -1,6 +1,6 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
-import { isSpectrogramStyleName, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
+import { inkAlpha, isSpectrogramStyleName, PIANO_SCALES, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
 import { createAudioGraph, CROSSFADE } from './audio-graph.ts';
 import { plain, sameSetting } from '../shared/protocol.ts';
 import { fetchMpm, placeControlCards, showMpmTitle } from './cards.ts';
@@ -18,7 +18,7 @@ import {
   type Details,
 } from './details.ts';
 import { stepAt, voiceFollows } from '../shared/shape.ts';
-import { BORDERS, heard, mix, mixOf, performedOf, type Mix } from './mix.ts';
+import { BORDERS, heard, LOUDEST, mixOf, performedOf, type Mix } from './mix.ts';
 import { BuiltInPiano, type PianoOutput } from './outputs.ts';
 import { PianoSampler } from './piano.ts';
 import { PianoPicture } from './piano-picture.ts';
@@ -128,8 +128,14 @@ function draw(time: number): boolean {
   const part = instrumentPart();
   const strip = cur && part && display.piano ? picture.strip(cur, part, t) : null;
   pianoColumns.set(strip?.columns ?? 0);
-  const under = strip && { strip, alpha: Math.max(gains.harmonies, gains.piece) / mix(1).piece };
-  const drew = view.draw(cur, t, under, moving);
+  // each as loud as it is heard: the humming at −52 dB all but gone, as it sounds
+  const pianoAlpha = inkAlpha(
+    PIANO_SCALES[spectrogramStyle],
+    Math.max(gains.harmonies, gains.piece) / LOUDEST.piano,
+  );
+  const humAlpha = inkAlpha(SPECTROGRAM_STYLES[spectrogramStyle].scale, gains.hum / LOUDEST.hum);
+  const under = strip && { strip, alpha: pianoAlpha };
+  const drew = view.draw(cur, t, under, moving, humAlpha);
   // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
   instructions.show(cur, t, performedOf(parts, voiceFollows(cur?.setting.elaboration ?? elaboration())));
   return drew;

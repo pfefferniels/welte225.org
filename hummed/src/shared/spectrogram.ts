@@ -62,6 +62,19 @@ export const PIANO_SCALES = {
   melodic: { kind: 'amplitude', full: 86.39, power: 0.7 },
 } as const satisfies Record<SpectrogramStyleName, SpectrogramScale>;
 
+/**
+ * How opaque a strip drawn from a sound at its own level is drawn where the sound is heard at
+ * `gain` (an amplitude ratio): as its scale would draw the sound turned down. In amplitude, the level
+ * of every column is the gain raised to the scale's power, and the ink as opaque as the level; in
+ * decibels, every level comes down by the gain's decibels over the range, which an opacity can only
+ * follow as a whole. Nothing where the sound is not heard.
+ */
+export function inkAlpha(scale: SpectrogramScale, gain: number): number {
+  if (!(gain > 0)) return 0;
+  if (scale.kind === 'amplitude') return Math.min(1, Math.pow(gain, scale.power));
+  return Math.min(1, Math.max(0, 1 + (20 * Math.log10(gain)) / scale.rangeDb));
+}
+
 /** The inks: the humming in red over the piano in a blue grey, on white. */
 export const INKS = {
   hum: [184, 28, 44],
