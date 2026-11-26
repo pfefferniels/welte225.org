@@ -222,8 +222,19 @@ the emulation of one version of the roll that a recording holds, is a
 manifestation named `take-` and the version's id, since an `xml:id`
 must not begin with a digit and a UUID may. Its recording names it as
 `#take-<id>`, and the work file's `MakeChoice` prefers a take by that
-same string. MPM Desk still names a take it imports by the bare id, so a
-take imported anew is renamed before it is published.
+same string. MPM Desk names a take it imports so, taking the id from the
+version's IRI, which Roll Desk writes into the MIDI file it exports.
+
+Every note a take plays names, in the `@corresp` of its `<when>`, the IRI
+of the symbol of the edition that sounds it (`https://welte225.org/symbol_<uuid>`),
+which Roll Desk writes before the note in the MIDI file; a pedal's
+`<when>` names the symbols of its steps, and a note of the score the
+symbol of the reading the chain took. In the viewer, Base Text opens the
+symbol of each reading. Until 23 November 2026 these were the bare ids,
+which read against the transcription's own address would name calls of
+the reconstruction; they were rewritten as IRIs, and nothing else changed.
+One step of the sustain pedal at 180 s names a symbol the edition no
+longer holds (`symbol_b9d3b596`).
 
 A call of the reconstruction, one fitted curve, frame, pattern or press,
 has the identifier `https://welte225.org/mpm/<id>`, its `id` in
