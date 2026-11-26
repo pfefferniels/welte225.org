@@ -502,11 +502,6 @@
                   <measure xml:id="mnp3sdi" n="12">
                      <staff xml:id="m19s1" n="1">
                         <layer xml:id="m19s1l1" n="1">
-                           <graceGrp grace="acc">
-                              <note xml:id="n1dxnc7z" dur="4" pname="e" oct="5">
-                                 <accid accid="f" />
-                              </note>
-                           </graceGrp>
                            <note xml:id="ngd8ef1" dur="2" pname="d" oct="5" />
                            <note xml:id="n3yqehh" dur="2" pname="c" oct="5" />
                         </layer>
@@ -633,11 +628,6 @@
                   <measure xml:id="m1f79sjp" n="16">
                      <staff xml:id="m23s1" n="1">
                         <layer xml:id="m23s1l1" n="1">
-                           <graceGrp grace="acc">
-                              <note xml:id="n1bwwaa4" dur="4" pname="b" oct="5">
-                                 <accid accid.ges="f" />
-                              </note>
-                           </graceGrp>
                            <note xml:id="n14haee1" dur="2" pname="a" oct="5" />
                            <note xml:id="n1rgtpc" dur="2" pname="g" oct="5" />
                         </layer>
@@ -859,9 +849,6 @@
                   <measure xml:id="m154fr3u" n="24">
                      <staff xml:id="m31s1" n="1">
                         <layer xml:id="m31s1l1" n="1">
-                           <graceGrp grace="acc">
-                              <note xml:id="n1vtja1p" dur="4" pname="a" oct="5" />
-                           </graceGrp>
                            <note xml:id="n4qnv65" dur="1" pname="g" oct="5" />
                         </layer>
                         <layer xml:id="m31s1l2" n="2">
