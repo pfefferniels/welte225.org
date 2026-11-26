@@ -130,8 +130,10 @@ try {
   for (const [value, expected] of [
     [30, 'quarters'],
     [0, 'halves'],
-    [10, 'halves'],
-    [67, 'piece'],
+    [20, 'accompaniment'],
+    [75, 'piece on sixteenths'],
+    [90, 'piece'],
+    [67, 'piece on eighths'],
   ] as const) {
     await page.evaluate(
       `(() => { const e = document.getElementById('elaboration'); e.value = ${value}; e.dispatchEvent(new Event('input')); })()`,
@@ -140,7 +142,9 @@ try {
     const shown = await text('o-elaboration');
     if (shown !== expected) errors.push(`elaboration ${value} shows ${shown}, not ${expected}`);
   }
-  console.log('elaboration: quarters, halves, halves, the piece');
+  console.log(
+    'elaboration: quarters, halves, the accompaniment, the piece on sixteenths, the piece, on eighths',
+  );
   // the voice rendered anew for the last elaboration takes over, and playing goes on
   await page.waitForFunction("document.getElementById('status').hidden", undefined, { timeout: 60000 });
   await page.waitForTimeout(2000);
@@ -223,9 +227,11 @@ try {
   if (!(await page.evaluate<boolean>("document.getElementById('instructions').hidden")))
     errors.push('the instructions do not go away');
   // the piano under the humming in the spectrogram: of the recording, then of the sampled grand
+  // (the sound is rendered whole before it is drawn: the piece struck again on every eighth, played
+  // ahead by the sampled grand, takes a headless browser half a minute and more)
   const pianoDrawn = async (what: string): Promise<void> => {
     await page.waitForFunction("Number(document.getElementById('spec').dataset.piano) > 500", undefined, {
-      timeout: 30000,
+      timeout: 90000,
     });
     console.log(
       `spectrogram: ${what}, ${await page.evaluate<string>("document.getElementById('spec').dataset.piano")} columns`,

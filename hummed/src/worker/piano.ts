@@ -8,8 +8,8 @@ import { atTempo, pianoFactors, pianoLevel, tempoFactor, type Shape } from './le
 import { imprecise } from './imprecision.ts';
 
 /**
- * What the piano plays from: the piece's score (MSM) and its MPM, and the harmonies' score (in half
- * or in quarter notes) and theirs (reductions.ts).
+ * What the piano plays from: the piece's score (MSM) and its MPM, as it is or struck again on a grid
+ * (repeats.ts), and the harmonies' score (one of the reductions) and theirs (reductions.ts).
  */
 export interface PianoScore {
   readonly msm: string;
@@ -30,7 +30,9 @@ export function pianoPart({ notes, sustain, soft }: Performance): PianoPart {
         on: n.onMs / 1000 + PAD,
         off: n.endMs / 1000 + PAD,
         pitch: n.pitch,
-        velocity: n.velocity,
+        // a key is struck at 1 at the least: a roll's gradient, exaggerated, can take a quiet note
+        // below nothing (the piece struck again rolls chords where the piece has none)
+        velocity: Math.max(1, n.velocity),
       }))
       .sort((a, b) => a.on - b.on),
     sustain: steps(sustain),

@@ -352,7 +352,10 @@ describe('the published reconstruction’s instructions', () => {
   it('over the reductions, have an arpeggio wherever they roll a chord as one', () => {
     const writers = (id: string): string[] =>
       published.provenance.filter((call) => call.elements?.includes(id)).map((call) => call.name);
-    for (const reduced of [loadReductions().halves, loadReductions().quarters]) {
+    for (const reduced of [
+      loadReductions().reduced('halves'),
+      loadReductions().reduced('halves on quarters'),
+    ]) {
       const over = overReductions(list, reduced.rolls).filter((i) => i.kind === 'spread');
       const arpeggios = reduced.rolls.filter((roll) =>
         writers(roll.ornament).includes('InsertTemporalSpread'),

@@ -54,8 +54,8 @@ formulas applied to every row: over the whole piece in both styles and a recordi
 48 kHz, not one of 17.9 million differs. A column takes 0.06 ms where it took 0.42 ms.
 
 Under the humming the page draws the piano, the part the elaboration lets be heard, as present as
-it is heard: nothing where the humming is alone, the harmonies in half notes from 0.15, in quarters
-from 0.25, the piece from 0.4 on. It is the spectrogram of the sound that plays: the Pianoteq recording of the
+it is heard: the reduction or the version of the piece the fader has there, from the half notes at
+the bare end to the piece at the top. It is the spectrogram of the sound that plays: the Pianoteq recording of the
 setting, or the sampled grand, which plays the part ahead of time for it (an `OfflineAudioContext`;
 an instrument over MIDI has no sound in the page, so the page's own piano stands for it). A worker
 of its own draws it (`src/page/piano-picture.ts`, `src/worker/picture.ts`), from the playhead on,
@@ -136,7 +136,7 @@ What the MEI says, and how the voice reads it:
   stretch. The MEI marks no breaths.
 - **Breaths in the line** are found as the voice is rendered (`findBreaths`,
   `src/hummer/melody.ts`), from how the performance goes at that elaboration. The voice breathes
-  no sooner than 3 s after the last breath (set by ear in the tuner) and, where it can, no later than 8 s. A breath costs
+  no sooner than 2.5 s after the last breath (set by ear in the tuner) and, where it can, no later than 10 s. A breath costs
   0.5, and up to 0.8 more the sooner it comes after the last; what speaks for one there weighs
   against that:
   - the MPM turning back up within a quarter before the note (`turningPoints`,
@@ -149,11 +149,9 @@ What the MEI says, and how the voice reads it:
   - room in the performance (0.4): a gap of 140 ms or more before the next key, or the pedal
     lifted at the end of a note of a second or more.
 
-  The choice that gains most is found by dynamic programming. Where the piano plays the
-  reconstruction as it is, that is 17 breaths, 25 with the rests; 16 (24) at the page's start, 11
-  over the half notes and 19 over the quarters (no rests there). Most lie where both maps turn or where a
-  pedal note begins (3:2, 8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 8 s would otherwise pass, at
-  a weaker place, where neither map turns (at the page's start in 8′, 18 and 24). Where the last edits by hand took rests out, it
+  The choice that gains most is found by dynamic programming. Most breaths lie where both maps
+  turn or where a pedal note begins (3:2, 8:3, 12:4, 15:4.5, 17:1, 18:2); a few, where 10 s would
+  otherwise pass, at a weaker place, where neither map turns. Where the last edits by hand took rests out, it
   still breathes at two of those places (1′, 23) and near a third (4). The note before such a
   breath ends a quarter of its length early (0.15 to 0.35 s), and before a rest 0.12 s early, never
   in less than half the time it has before the next. The weights were chosen by looking at where
@@ -187,26 +185,34 @@ Between two points a number follows a monotone cubic through them (`monotoneCubi
 `src/shared/math.ts`: smooth, and never beyond two neighbouring points between them); what the piano
 plays and what the voice follows hold from their point to the next. A point that is a **step** holds
 all its values up to the next point: that stretch of the fader is one setting, and the fader goes
-back to the step's point when it is let go within it. Along the fader:
+back to the step's point when it is let go within it. Along the fader, in seven equal stretches:
 
 - **Halbe**, from 0: the harmonic reduction in half notes (`reduction/halves.mei`), running evenly,
-  a chord on every half note or held over two, as it was first drafted, gone through in a hurry
-  (×2.4), the humming loud and loose over it;
-- **Viertel**, from 0.2: the same in quarter notes, derived from it (`quartersScore`): on every
-  quarter, the whole harmony that sounds there struck again, less hurried (×1.6), exaggerated most;
-- **Stück**, from 0.4: the piece, and from there more and more as Grünfeld plays it, the humming
-  receding until it is gone at the top.
+  a chord on every half note or held over two, as it was first drafted, without its appoggiaturas,
+  gone through in a hurry (×2.4), the humming loud and loose over it;
+- **Begleitung**, from 0.14: the accompaniment, every chord where the piece has it
+  (`reduction/harmonies.mei`), ×1.5, the voice singing the melody itself (below);
+- **Viertel**, from 0.29: the reduction in quarter notes (`reduction/quarters.mei`, made by hand from
+  the accompaniment), exaggerated most (×1.7), the voice humming over the piece; from 0.43 the same
+  at Grünfeld's tempo, the voice humming over the quarters;
+- **Stück/8**, from 0.57: the piece with every note of every voice struck again on every eighth while
+  it sounds, slower than Grünfeld (×0.8);
+- **Stück/16**, from 0.71: the piece with its melody alone struck again on every sixteenth, slower
+  still (×0.7), the humming all but gone;
+- **Stück**, from 0.86: the piece as Grünfeld plays it, at his tempo, a little exaggerated (×1.098).
 
-No point is a step at present.
+No point is a step at present. The half notes are also there struck again on every quarter
+(`halves on quarters`), and the quarters on every eighth (`quarters on eighths`), for the tuner;
+the table does not use them now.
 
-The first two are the harmonic reduction. The MPM's tempo and dynamics apply to them as they are; its
+The reductions are the harmonic reduction. The MPM's tempo and dynamics apply to them as they are; its
 rubato, accents, articulation and pedalling do not (`reductionMpm`, `src/worker/reductions.ts`).
 Each chord is rolled as Grünfeld rolls it where it stands in the piece: `reduction/harmonies.mei`
-has every chord where the piece sounds it (below), and each chord of the half notes is found there
-by its notes (`placesInPiece`: the most alike near its place, an appoggiatura written out there,
+has every chord where the piece sounds it (below), and each chord of the half notes, and of the
+quarters, is found there by its notes (`placesInPiece`: the most alike near its place, an appoggiatura written out there,
 never before the chord before), the arpeggio there moved to it (in ascending pitch where the piece
-names its notes). The quarters strike a chord first where the half notes do, by the same note ids,
-and roll it again at every strike (`strikesInPiece`). The MPM gives its arpeggios in ticks (the
+names its notes). A reduction struck again strikes a chord first where it is written, by the same
+note ids, and rolls it again at every strike (`strikesInPiece`). The MPM gives its arpeggios in ticks (the
 grace notes alone in milliseconds), so a roll lasts as long as its stretch of the score takes at
 the tempo where it is struck: the same chord rolled on four quarters of bar 5 takes 203, 252, 278
 and 160 ms at the MPM's tempo, slowing into the third beat and moving on. Each reduction has an MPM of
@@ -214,12 +220,26 @@ its own, with arpeggios only where it strikes: one dated where a score strikes n
 gives to the next chord it does strike.
 
 What the voice sings over them is chosen from the melodic reduction (`harmonicLine`): for each chord
-of the half notes, the note `reduction/reduction.mei` sings where that chord stands in the piece
-(in a rest, the next to come before the next chord, else the last), held until the next chord, and
-held on where it is the same; each follows the lowest note of its chord, which a roll strikes
-first. Over the quarters it sings the same, held, not again on every quarter, and follows the
-quarters' strikes, so that it is rolled as the piano rolls them (a quarter strikes held notes with
-the chord, which roll with it). Over the piece it sings the melodic reduction, as below.
+of a reduction as written, the note `reduction/reduction.mei` sings where that chord stands in the
+piece (in a rest, the next to come before the next chord, else the last), held until the next chord,
+and held on where it is the same; each follows the lowest note of its chord, which a roll strikes
+first. Over a reduction struck again it sings the same, held, not again on every strike, and follows
+its strikes, so that it is rolled as the piano rolls them (a strike takes held notes with the chord,
+which roll with it). Over the piece it hums the melodic reduction, as below. Or it sings the melody
+itself (`melodyLine`, `src/worker/repeats.ts`): the piece's top voice, the transcription's upper
+layer of the right hand (its ids in `data/melody.json`, `npm run melody`), the highest note where it
+strikes a chord, each held to the next, two octaves down, following the piece's performance.
+
+The piece struck again (`gridRepeat`, `src/worker/repeats.ts`): a note strikes at its own date,
+then at every multiple of the grid's unit while it sounds; a grace note, or a note no longer than
+the unit, as it is. On the eighth every voice is struck again, on the sixteenth the melody alone.
+It is played with the piece's whole MPM, rubato, pedal and all (`repeatedMpm`). Where two notes or
+more are struck again together and the MPM rolls nothing there, the chord is rolled between the
+chord rolled before and the one rolled after: as far from each as it stands from it, its spread
+(offset, length, intensity) and the velocities across it morph from the one into the other (halfway
+from the roll at 720 to the one at 1440, the strike at 1080 spreads over 146 ticks, halfway between
+179 and 113); after the last chord rolled, its roll. A key is struck at velocity 1 at the least: a
+morphed gradient, exaggerated, can take a quiet note below nothing.
 
 `reduction/harmonies.mei` is the harmonic reduction with every chord where the piece sounds it.
 Drafted to a steady pulse of half notes (now `halves.mei`), it had moved many of them off their
@@ -235,27 +255,27 @@ beats; they are back (the repeat as the first time):
 - the appoggiaturas of 10, 14 and 22, once grace notes, written out: the top of the chord on the
   second beat, resolving where Grünfeld resolves them.
 
-It is no longer played: it tells where each chord stands. espressivo converts the MEI to scores
+It is played as the accompaniment, and it tells where each chord stands. espressivo converts the MEI to scores
 (MSM) as it converted the piece's; grace notes, which the converter leaves out and reports beside
 the score, are put back, a thirty-second each, the last just before the note they lead to
-(`src/worker/harmonies.ts`; the half notes have one, before the C minor of 10).
+(`src/worker/harmonies.ts`; the half notes have none: their appoggiaturas are not played).
 
 The fader (`src/page/mix.ts`) sets the gains as the table has them: the piano −3 dB at the bare
-end, −2 dB over the quarters, −1 dB where the piece comes in and 0 dB from 0.8; the humming −6 dB at
-the bare end, −12 dB over the quarters, −24 dB where the piece comes in, −52 dB at 0.8 and gone at
-the top. The page plays both of the piano's parts all the time, each into its own gain, so passing
-0.4 crossfades between them, even in the middle of a chord. The fader has a gap wherever what the
+end, 0 dB over the accompaniment, −1 dB over the quarters, 0 dB at 0.43, −1 dB where the piece comes
+in struck again and 0 dB from 0.71; the humming −6 dB at the bare end, −4 dB singing the melody,
+−8 dB over the piece at 0.29, −20 dB over the quarters, −24 dB at 0.57 and −52 dB from 0.71. The page plays both of the piano's parts all the time, each into its own gain, so passing
+from a reduction to the piece crossfades between them, even in the middle of a chord. The fader has a gap wherever what the
 piano plays changes (`BORDERS`, drawn by `main.ts`).
 
 The table also sets how exaggerated the performance is (espressivo's `exaggerateMpm`), the piano's
 and the voice's apart:
 
-- the piano (`pianoLevel`): ×1.4 at the bare end, ×1.98 over the quarters, as raw as it gets, ×1.6
-  where the piece comes in, ×1.24 at 0.65, ×1.1 at 0.8 and ×1 at the top, the MPM as Grünfeld's
-  performance sets it down;
+- the piano (`pianoLevel`): ×1.4 at the bare end, ×1.5 over the accompaniment, ×1.7 over the
+  quarters, as raw as it gets, ×1.4 at 0.43, ×1.3 over the piece struck again on the eighth, ×1.1 on
+  the sixteenth and ×1.098 at the piece itself;
 - the voice (`voiceLevel`), its own gestures, the dynamics, the articulation and the rest: ×1.5 at
-  the bare end, ×1.3 over the quarters, ×1.2 where the piece comes in, ×1.1 from 0.8; in timing it is
-  the piano's, so that the two strike together.
+  the bare end, ×1.1 singing the melody, ×1.3 at 0.29, ×1.15 over the quarters, ×1.2 at 0.57, ×1.1
+  from 0.71; in timing it is the piano's, so that the two strike together.
 
 (At Grünfeld's tempo ×2 sounded extremely unnatural, ×1.6 still too much; gone through twice as
 fast, ×2, twice as fast and 100 ms were chosen by ear for the humming at the bare end, with the speed,
@@ -263,25 +283,28 @@ the exaggeration and the imprecision on faders of their own. The fader then went
 piano's exaggeration a bell from none in the half notes to ×2 where the piece came in, everything else
 falling from the bare end, the hurry from ×2.5. In the tuner, point by point, the voice was for a
 while alone at the bare end, humming the piece's line, and the two harmonic reductions were one
-setting each; then the half notes came back to the bare end, and the steps went.)
+setting each; then the half notes came back to the bare end, and the steps went. Then the
+accompaniment, the quarters made by hand and the piece struck again came in, the melody sung, and the
+seven settings were spread evenly over the fader.)
 
 Every tempo of the MPM, exaggerated, is multiplied (`tempoFactor`, `atTempo`): what it starts at and
-what it moves to, ×2.4 at the bare end, ×1.96 at 0.1, ×1.6 over the quarters, ×1.23 where the piece
-comes in, ×1.1 at 0.65, ×1.05 at 0.8 and ×1 at the top, for the piano and the voice alike, so they
+what it moves to, ×2.4 at the bare end, ×1.5 over the accompaniment, ×1.1 at 0.29, ×1 at 0.43, ×0.8
+over the piece struck again on the eighth, ×0.7 on the sixteenth and ×1 at the top, for the piano
+and the voice alike, so they
 keep the same onsets. What is counted in ticks (the rubato, a ritardando's course, how far a chord is
 rolled) is as it was, only sooner over; what the MPM gives in milliseconds (its grace notes) stays as
 long as it is. A roll is exaggerated with the rest, and can strike the note the voice takes from it
 hardly after the note before. The voice keeps its line in order (`SUNG_AT_LEAST`,
-`src/hummer/melody.ts`): it takes such a note up 90 ms after the one before. The harmonies last 1:12
-at the bare end, 1:34 at 0.1, 2:01 over the quarters and 2:17 at 0.3; the piece 2:25 where it comes
-in, 2:32 at 0.65, 2:34 at 0.8 and 2:39 at the top: the exaggeration slows it (a tempo exaggerated
-slows down by more than it speeds up), by up to a fifth over the quarters, where it is greatest.
+`src/hummer/melody.ts`): it takes such a note up 90 ms after the one before. At the points, the
+half notes last 1:12, the accompaniment 1:57, the quarters 2:46 and 2:52, the piece struck again
+3:33 on the eighth and 3:55 on the sixteenth, the piece 2:43 at the top: the exaggeration slows it (a
+tempo exaggerated slows down by more than it speeds up).
 
 And the performance, once espressivo has made it, is struck less exactly
 (`src/worker/imprecision.ts`, `IMPRECISION`): each date of the score comes early or late, each note
 louder or softer, by the table's inexactness (one standard deviation: 50 ms at the bare end, 10 ms
-over the quarters, 4 ms where the piece comes in, 2 ms at 0.8, none at the top; in loudness 8.3 % of
-its velocity at 100 ms). espressivo performs the MPM's own imprecision maps, but not reproducibly
+over the accompaniment, 4 ms over the quarters, none from 0.43; in loudness 8.3 % of its velocity at
+100 ms). espressivo performs the MPM's own imprecision maps, but not reproducibly
 where notes share a date, and the piano, its harmonies and the voice must be off by the same amounts
 in every worker and every render; so the amounts come from a hash of the date (and, for the loudness,
 the pitch). A date is off by the same wherever a key is struck or let go there: a chord stays
@@ -302,9 +325,9 @@ pedal is not: it keeps only points that go on from the last it kept, in both, so
 stands still. A note held on to the next ends where that one is struck, not where the clock reckons
 (the last chord, rolled, came 2.6 s after it).
 
-The voice keeps as loosely to the pitch as the table has it: its approximateness (below), loosest
-at the bare end (1), 0.72 over the quarters, 0.42 where the piece comes in, 0.1 at 0.8 and 0 at the
-top. Moving the fader renders the voice anew once it rests: within a step at the step's point, else
+The voice keeps as loosely to the pitch as the table has it: its approximateness (below), 0.7 at
+the bare end, 0.71 to 0.74 up to 0.57, 0.85 at 0.71 and loosest at the top (1), where it is all but
+gone. Moving the fader renders the voice anew once it rests: within a step at the step's point, else
 in steps of 0.05 on the fader's side of a border (`voiceElaboration`), so that what is rendered is
 what is heard: 21 settings in all (`RENDERED`). While playing, the new setting crossfades in over
 1.5 s at the same place in the score (`CROSSFADE`, equal power): the old one runs on meanwhile,
@@ -318,7 +341,8 @@ Under the fader, a chevron beside its name opens what it sets, each on its own (
 collapsed at first): the flightiness (how much faster, how many ms off), the exaggeration (the
 piano's and the voice's, both from where its slider stands) and what is heard (the humming, and
 the piano's harmonies or its piece, one at a time, or neither; the harmonies are those the piano
-plays, under the piece the quarters, and before the piano comes in the half notes). They follow the fader: their two sliders lie on its own scale, with
+plays, beside the piece the last it played before (the quarters); the piece is as the piano plays it
+there, struck again or not). They follow the fader: their two sliders lie on its own scale, with
 the same columns, so that they stand where it stands and move as it moves, and their readouts say
 what that gives. One that is moved is set apart from the fader, until the fader moves again and
 takes them all with it; the chevron carries a dot meanwhile, and the row set apart reads as the
@@ -343,8 +367,8 @@ For one elaboration a worker (`src/worker/worker.ts`) does this:
    millisecond. A third rendering, with sub-note dynamics, gives the dynamics as a curve.
 2. **The voice's decisions** (`src/hummer/vocal-map.ts`): a breath at each rest and wherever one
    is found in the line, sized by the dynamics; a scoop into each phrase (0.35 of what the
-   recording measured, which sounded overdone: `BY_EAR`, `src/hummer/style.ts`, which also widens the
-   pitch's wobble to 53.5 cents and lets a note fade 0.455 s before a breath) and a slight sag at its end (0.3 to
+   recording measured, which sounded overdone: `BY_EAR`, `src/hummer/style.ts`, which also sets the
+   pitch's wobble to 20 cents and lets a note fade 0.455 s before a breath) and a slight sag at its end (0.3 to
    0.8 semitones, scaled by 0.75 to 1.25 with the approximateness); between notes, what Grünfeld's
    fingers do: where the keys overlap by more than 30 ms the voice slides over half the overlap,
    within 15 ms it sings legato, a gap of 15–110 ms (or a repeated pitch) becomes a breath pulse,

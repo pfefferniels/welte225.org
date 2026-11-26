@@ -14,22 +14,9 @@ import { readReduction, type XmlElement } from '../src/reduction/mei.ts';
 import type { Reduction } from '../src/reduction/types.ts';
 import { VtlEngine } from '../src/vtl/engine.ts';
 import type { CreateVtl, VtlModule } from '../src/vtl/module.ts';
-import {
-  DEFAULT_ELABORATION,
-  harmoniesStage,
-  shapeAt,
-  threshold,
-  voiceFollows,
-} from '../src/worker/levels.ts';
-import { harmoniesScore } from '../src/worker/harmonies.ts';
-import {
-  harmoniesAt,
-  reductions,
-  sungReduction,
-  voiceScore,
-  type Reductions,
-  type Score,
-} from '../src/worker/reductions.ts';
+import { DEFAULT_ELABORATION, shapeAt, threshold } from '../src/worker/levels.ts';
+import { materials, type Materials } from '../src/worker/materials.ts';
+import type { Reductions, Score } from '../src/worker/reductions.ts';
 import type { PianoScore } from '../src/worker/piano.ts';
 import { performVoice, type HumData } from '../src/worker/prepare.ts';
 
@@ -52,30 +39,32 @@ export const loadScore = (): { msm: string; mpm: string } => ({
   mpm: read('../mpm/performance.mpm'),
 });
 
-let made: Reductions | null = null;
-/** The harmonic reductions, their MPM and the line over them, as the worker makes them. */
-export const loadReductions = (): Reductions =>
-  (made ??= reductions(
-    harmoniesScore(read('reduction/halves.mei')),
-    harmoniesScore(read('reduction/harmonies.mei')),
-    loadScore().mpm,
-  ));
+let made: Materials | null = null;
+/** What the piano plays and the voice follows, as the worker makes them (materials.ts). */
+export const loadMaterials = (): Materials =>
+  (made ??= materials({
+    ...loadScore(),
+    halves: read('reduction/halves.mei'),
+    quarters: read('reduction/quarters.mei'),
+    accompaniment: read('reduction/harmonies.mei'),
+    melody: JSON.parse(read('data/melody.json')) as string[],
+  }));
 
-/** What the piano plays from at an elaboration, as the worker reads it: the piece, the harmonies there, the MPMs. */
-export function loadPianoScore(elaboration = DEFAULT_ELABORATION): PianoScore {
-  const harmonies = harmoniesAt(harmoniesStage(elaboration), loadReductions);
-  return { ...loadScore(), harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm };
-}
+/** The harmonic reductions, their MPM and the lines over them, as the worker makes them. */
+export const loadReductions = (): Reductions => loadMaterials().reductions();
+
+/** What the piano plays from at an elaboration, as the worker reads it: the piece as it plays it there, the harmonies there, the MPMs. */
+export const loadPianoScore = (elaboration = DEFAULT_ELABORATION): PianoScore =>
+  loadMaterials().pianoScore(elaboration).score;
 
 /** What the voice follows at an elaboration (the piece, or a harmonic reduction), and what it sings. */
 export function voiceSource(elaboration = DEFAULT_ELABORATION): {
   readonly score: Score;
   readonly reduction: Reduction;
 } {
-  const stage = voiceFollows(elaboration);
   return {
-    score: voiceScore(stage, loadScore(), loadReductions),
-    reduction: sungReduction(stage, loadReduction(), loadReductions),
+    score: loadMaterials().voiceScore(elaboration),
+    reduction: loadMaterials().sung(elaboration, loadReduction()),
   };
 }
 

@@ -23,7 +23,7 @@ export interface Calibration {
  * measured scoop it takes (the whole sounded overdone), how far its pitch wobbles, and how long a
  * note fades before a breath.
  */
-export const BY_EAR = { scoop: 0.35, wobbleCents: 53.5, releaseS: 0.455 } as const;
+export const BY_EAR = { scoop: 0.35, wobbleCents: 20, releaseS: 0.455 } as const;
 
 /** The hum style the voice sings with: the recording's, as set by ear. */
 export const voiceStyle = (measured: HumStyle): HumStyle => ({

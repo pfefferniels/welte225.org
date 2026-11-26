@@ -1,9 +1,19 @@
-// One fader, elaboration, sets what is heard: how much of the music is there, and how refined. At the
-// bare end the humming is alone; then the piano plays the harmonic reduction in half notes, then the
-// same in quarter notes (each a step: one setting), then the piece itself, the humming over it
-// throughout, quieter and quieter as a pianist hums along (shared/shape.ts has the table).
+// One fader, elaboration, sets what is heard: how much of the music is there, and how refined. The
+// piano plays the harmonic reductions, then the piece struck again on a grid, then the piece itself,
+// the humming with it throughout, quieter and quieter as a pianist hums along (shared/shape.ts has
+// the table).
 import type { Performed } from '../shared/instructions.ts';
-import { BORDERS, pianoDb, pianoPlays, stepAt, voiceDb, voiceFollows, type Stage } from '../shared/shape.ts';
+import {
+  BORDERS,
+  isPiece,
+  pianoDb,
+  pianoPlays,
+  stepAt,
+  voiceDb,
+  voiceFollows,
+  type Follows,
+  type Plays,
+} from '../shared/shape.ts';
 
 /** Where what the piano plays changes along the fader. */
 export { BORDERS };
@@ -19,7 +29,7 @@ export interface Mix {
   readonly piece: number;
 }
 
-/** What the piano plays: nothing, the harmonies (in half or in quarter notes, as the setting has them), or the piece. */
+/** What the piano plays: nothing, the harmonies (a reduction, as the setting has it), or the piece (as the setting plays it). */
 export type PianoChoice = 'none' | 'harmonies' | 'piece';
 
 /** What is heard: the humming or not, and which of the piano's parts, if any. */
@@ -31,8 +41,8 @@ export interface Parts {
 const unit = (x: number): number => Math.min(1, Math.max(0, x));
 
 /** The piano's part for what it plays. */
-const partOf = (plays: ReturnType<typeof pianoPlays>): PianoChoice =>
-  plays === 'none' ? 'none' : plays === 'piece' ? 'piece' : 'harmonies';
+const partOf = (plays: Plays): PianoChoice =>
+  plays === 'none' ? 'none' : isPiece(plays) ? 'piece' : 'harmonies';
 
 /** What the elaboration lets be heard: the humming, and the piano's part there (none at the bare end). */
 export function partsAt(elaboration: number): Parts {
@@ -59,12 +69,13 @@ export const mix = (elaboration: number): Mix => mixOf(elaboration, partsAt(elab
 
 /**
  * Whose instructions are heard: the piece's where the piano plays it or the voice follows it (as
- * it does at the setting it was rendered for), else the harmonic reductions'. With nothing heard, the
- * voice's.
+ * it does at the setting it was rendered for: humming over it, or singing its melody), else the
+ * harmonic reductions'. With nothing heard, the voice's.
  */
-export function performedOf(parts: Parts, followed: Stage): Performed {
-  if (parts.piano === 'piece' || (parts.voice && followed === 'piece')) return 'piece';
-  return parts.piano === 'harmonies' || followed !== 'piece' ? 'reductions' : 'piece';
+export function performedOf(parts: Parts, followed: Follows): Performed {
+  const piece = followed === 'piece' || followed === 'melody';
+  if (parts.piano === 'piece' || (parts.voice && piece)) return 'piece';
+  return parts.piano === 'harmonies' || !piece ? 'reductions' : 'piece';
 }
 
 /**
@@ -96,7 +107,7 @@ export const RENDERED: readonly number[] = [
 ].sort((a, b) => a - b);
 
 /** What the fader shows: what the piano plays, or the humming, alone at the bare end. */
-export const heard = (elaboration: number): Stage | 'humming' => {
+export const heard = (elaboration: number): Exclude<Plays, 'none'> | 'humming' => {
   const plays = pianoPlays(unit(elaboration));
   return plays === 'none' ? 'humming' : plays;
 };

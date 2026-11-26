@@ -247,8 +247,13 @@ const applyElaboration = (): void => {
     {
       humming: 'humming alone',
       halves: 'the harmonies in half notes, humming',
+      'halves on quarters': 'the harmonies in half notes struck on every quarter, humming',
       quarters: 'the harmonies in quarter notes, humming',
+      'quarters on eighths': 'the harmonies in quarter notes struck on every eighth, humming',
+      accompaniment: 'the accompaniment, the melody sung over it',
       piece: 'the piece, humming along',
+      'piece on eighths': 'the piece struck again on every eighth, humming along',
+      'piece on sixteenths': 'the piece, its melody struck again on every sixteenth, humming along',
     }[what],
   );
   setFill(elaborationSlider, e);

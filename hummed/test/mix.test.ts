@@ -11,9 +11,11 @@ import {
   DEFAULT_ELABORATION,
   ELABORATION,
   harmoniesStage,
+  isPiece,
   pianoDb,
   pianoLevel,
   pianoPlays,
+  pieceVersion,
   shapeAt,
   stepAt,
   tempoFactor,
@@ -38,14 +40,16 @@ describe('elaboration', () => {
       assert.equal(voiceFollows(p), voice.follows[i]);
       assert.equal(
         partsAt(p).piano,
-        piano.plays[i] === 'none' ? 'none' : piano.plays[i] === 'piece' ? 'piece' : 'harmonies',
+        piano.plays[i] === 'none' ? 'none' : isPiece(piano.plays[i]) ? 'piece' : 'harmonies',
       );
     });
-    // the harmonies the piano has to hand: those it plays, under the piece the quarters
+    // the harmonies the piano has to hand: those it plays, beside the piece the last it played
+    // before; the piece as it plays it, else as it is
     for (const e of positions) {
       const plays = pianoPlays(e);
-      if (plays === 'halves' || plays === 'quarters') assert.equal(harmoniesStage(e), plays);
-      if (plays === 'piece') assert.equal(harmoniesStage(e), 'quarters');
+      if (plays !== 'none' && !isPiece(plays)) assert.equal(harmoniesStage(e), plays);
+      if (isPiece(plays)) assert.equal(harmoniesStage(e), 'quarters');
+      assert.equal(pieceVersion(e), isPiece(plays) ? plays : 'piece');
     }
     // a gap wherever what the piano plays changes
     assert.deepEqual(
@@ -96,12 +100,12 @@ describe('elaboration', () => {
     }
   });
 
-  it('plays Grünfeld’s performance as it is at the top, the humming under it or gone', () => {
+  it('plays Grünfeld’s performance at the top, at his tempo, exactly struck, the humming all but gone', () => {
     const top = shapeAt(1);
+    assert.equal(pianoPlays(1), 'piece');
     assert.equal(tempoFactor(top), 1);
     assert.equal(top.inexactMs, 0);
-    assert.equal(pianoLevel(top), 1);
-    assert.equal(top.approximateness, 0);
+    close(pianoLevel(top), piano.exaggeration.at(-1) ?? 0);
     assert.ok(mix(1).hum < mix(0).hum);
     assert.ok(mix(1).hum < mix(1).piece / 5);
   });
@@ -153,11 +157,14 @@ describe('whose instructions are heard', () => {
     for (const e of positions)
       assert.equal(
         performedOf(partsAt(e), voiceFollows(e)),
-        pianoPlays(e) === 'piece' || voiceFollows(e) === 'piece' ? 'piece' : 'reductions',
+        isPiece(pianoPlays(e)) || voiceFollows(e) === 'piece' || voiceFollows(e) === 'melody'
+          ? 'piece'
+          : 'reductions',
         String(e),
       );
   });
   it('are the piece’s where the piano plays it, or the voice follows it', () => {
+    assert.equal(performedOf({ voice: true, piano: 'none' }, 'melody'), 'piece');
     assert.equal(performedOf({ voice: true, piano: 'piece' }, 'halves'), 'piece');
     assert.equal(performedOf({ voice: false, piano: 'piece' }, 'quarters'), 'piece');
     assert.equal(performedOf({ voice: true, piano: 'harmonies' }, 'piece'), 'piece');

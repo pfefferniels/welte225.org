@@ -1,5 +1,5 @@
 // A voice worker: for an elaboration, espressivo performs the exaggerated MPM (on what the voice
-// follows there, and for the piano on the piece and on its harmonies), the hummer turns that performance into two
+// follows there, and for the piano on the piece, as it plays it there, and on its harmonies), the hummer turns that performance into two
 // gestural scores, VocalTractLab (WebAssembly) turns them into tract states and then, chunk by
 // chunk, into sound, streamed to the page in blocks with their spectrogram columns. The page runs
 // several such workers side by side (shared/protocol.ts says who does what): the first prepares a
@@ -30,8 +30,8 @@ import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
-import { harmoniesScore } from './harmonies.ts';
-import { harmoniesStage, shapeOf, voiceFollows } from './levels.ts';
+import { shapeOf } from './levels.ts';
+import { materials, type Materials } from './materials.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture } from './picture.ts';
 import {
@@ -48,14 +48,7 @@ import {
   type Piano,
 } from './prepare.ts';
 import { makeSpectrogram, type SpectrogramColumns } from './spectrogram.ts';
-import {
-  harmoniesAt,
-  reductions,
-  sungReduction,
-  voiceScore,
-  type Reductions,
-  type Score,
-} from './reductions.ts';
+import type { Score } from './reductions.ts';
 import { maxStatesOf, scoreStates } from './voice-states.ts';
 
 interface WorkerScope {
@@ -72,13 +65,11 @@ const nothing = (): void => undefined;
 
 /** The scores and the data: what the performances and the hummer are made from. */
 interface Texts extends HumData {
-  readonly msm: string;
-  readonly mpm: string;
   /**
-   * The harmonic reductions in half and in quarter notes, their MPM and the line sung over them
-   * (reductions.ts), made when first needed here.
+   * What the piano plays and the voice follows (materials.ts): the reductions, the piece and its
+   * versions struck again, the melody, each made when first needed here.
    */
-  readonly reductions: () => Reductions;
+  readonly materials: Materials;
 }
 
 /** What a worker loads once: the texts, soon there, and VocalTractLab, which takes longer. */
@@ -132,20 +123,19 @@ const get = async (url: string): Promise<Response> => {
 };
 
 async function loadTexts(): Promise<Texts> {
-  const [msm, halves, harmonies, mpm, style, calibration] = await Promise.all([
+  const [msm, halves, quarters, accompaniment, mpm, melody, style, calibration] = await Promise.all([
     get('../mpm/score.msm').then((r) => r.text()),
     get('reduction/halves.mei').then((r) => r.text()),
+    get('reduction/quarters.mei').then((r) => r.text()),
     get('reduction/harmonies.mei').then((r) => r.text()),
     get('../mpm/performance.mpm').then((r) => r.text()),
+    get('data/melody.json').then((r) => r.json() as Promise<string[]>),
     get('data/hum-style.json').then((r) => r.json() as Promise<unknown>),
     get('data/calibration.json').then((r) => r.json() as Promise<unknown>),
   ]);
-  let made: Reductions | null = null;
   return {
-    msm,
-    // converting the MEI takes a tenth of a second or two, and only where the reductions are needed
-    reductions: () => (made ??= reductions(harmoniesScore(halves), harmoniesScore(harmonies), mpm)),
-    mpm,
+    // converting the MEI takes a tenth of a second or two, and only where a reduction is needed
+    materials: materials({ msm, mpm, halves, quarters, accompaniment, melody }),
     range: dynamicsRange(mpm),
     turns: turningPoints(mpm),
     style: voiceStyle(parseHumStyle(style)),
@@ -218,19 +208,18 @@ function hold(L: Level): void {
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
-/** The piano's two parts at a setting (the harmonies those it plays there), and where its harmonies roll a chord. */
+/**
+ * The piano's two parts at a setting (the piece as it plays it there, the harmonies those it plays
+ * there or last before), and where its harmonies roll a chord.
+ */
 const pianoAt = (texts: Texts, setting: Setting): Piano => {
-  const harmonies = harmoniesAt(harmoniesStage(setting.elaboration), texts.reductions);
-  const parts = performPiano(
-    { msm: texts.msm, mpm: texts.mpm, harmonies: harmonies.msm, harmoniesMpm: harmonies.mpm },
-    shapeOf(setting),
-  );
-  return { ...parts, rolls: harmonies.rolls };
+  const { score, rolls } = texts.materials.pianoScore(setting.elaboration);
+  return { ...performPiano(score, shapeOf(setting)), rolls };
 };
 
 /** What the voice follows at a setting: the piece, or a harmonic reduction (reductions.ts). */
 const voiceScoreAt = (texts: Texts, setting: Setting): Score =>
-  voiceScore(voiceFollows(setting.elaboration), texts, texts.reductions);
+  texts.materials.voiceScore(setting.elaboration);
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
@@ -261,7 +250,7 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   if (await stopped()) return null;
   const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(score, mpm));
   const performed = { performance, dynamics };
-  const sung = sungReduction(voiceFollows(setting.elaboration), setup.reduction, texts.reductions);
+  const sung = texts.materials.sung(setting.elaboration, setup.reduction);
   const voice = timed('hummer', () => hum(performed, sung, texts, shape));
   const maxStates = maxStatesOf(voice);
   if (!box.alone)

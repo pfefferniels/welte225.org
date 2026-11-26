@@ -95,8 +95,8 @@ export interface BreathCues {
  * the pedal lifted at the end of a note held `heldS` or more).
  */
 export const BREATHING = {
-  everyS: 3,
-  withinS: 8,
+  everyS: 2.5,
+  withinS: 10,
   cost: 0.5,
   soon: 0.8,
   /** What each second of a stretch beyond `withinS` costs. */

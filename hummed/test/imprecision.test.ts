@@ -7,7 +7,7 @@ import { readPerformance, repaired } from '../src/hummer/performance.ts';
 import { imprecise } from '../src/worker/imprecision.ts';
 import { IMPRECISION, shapeAt, type Shape } from '../src/worker/levels.ts';
 import { performPiano, pianoMpm } from '../src/worker/piano.ts';
-import { loadPianoScore } from '../tools/node-support.ts';
+import { loadPianoScore, loadReductions } from '../tools/node-support.ts';
 
 const score = loadPianoScore();
 /** As flighty and as exaggerated as anything gets: twice as fast, ×2, 100 ms off. */
@@ -102,9 +102,14 @@ describe('imprecision', () => {
     assert.ok(sd > 0.6 * IMPRECISION.dynamics && sd < 1.4 * IMPRECISION.dynamics, String(sd));
   });
 
-  it('strikes the harmonies in half notes and in quarters alike where they share a chord', () => {
-    const halves = performPiano(loadPianoScore(0), shapeAt(0.2)).harmonies;
-    const quarters = performPiano(loadPianoScore(0.3), shapeAt(0.2)).harmonies;
+  it('strikes the harmonies in half notes and on every quarter alike where they share a chord', () => {
+    const at = (name: 'halves' | 'halves on quarters') => {
+      const { msm, mpm } = loadReductions().reduced(name);
+      return performPiano({ ...loadPianoScore(0), harmonies: msm, harmoniesMpm: mpm }, shapeAt(0.2))
+        .harmonies;
+    };
+    const halves = at('halves');
+    const quarters = at('halves on quarters');
     const onsets = new Set(quarters.keys.map((k) => `${k.pitch}@${k.on.toFixed(6)}`));
     // a chord is struck where the quarters strike it first, but where they strike a held note with
     // it, which rolls with the rest

@@ -131,16 +131,16 @@ describe('the piano at an elaboration', async () => {
   const { performPiano, pianoMpm } = await import('../src/worker/piano.ts');
   const { performVoice } = await import('../src/worker/prepare.ts');
   const { readPerformance } = await import('../src/hummer/performance.ts');
-  const { loadPianoScore } = await import('../tools/node-support.ts');
+  const { loadPianoScore, loadScore } = await import('../tools/node-support.ts');
   const { PAD_MS } = await import('../src/shared/units.ts');
   const { voiceSource } = await import('../tools/node-support.ts');
-  const score = loadPianoScore();
   const lastStrike = (p: PianoPart): number => Math.max(...p.keys.map((k) => k.on));
   const steps = [0, 0.25, 0.5, 0.75, 1];
   const played = steps.map((e) => performPiano(loadPianoScore(e), shapeAt(e)));
 
-  it('plays the reconstruction as it is at the top', () => {
-    assert.equal(pianoMpm(score.mpm, shapeAt(1)), score.mpm);
+  it('plays the reconstruction as it is at the top but for the exaggeration', () => {
+    const { mpm } = loadScore();
+    assert.equal(pianoMpm(mpm, { ...shapeAt(1), pianoExaggeration: 1 }), mpm);
   });
 
   it('goes through the piece as fast as the elaboration has it, the exaggeration slowing it a little', () => {
@@ -157,8 +157,13 @@ describe('the piano at an elaboration', async () => {
     for (const [i, { piece, harmonies }] of played.entries()) {
       // the piece and the harmonies keep the same tempo, the harmonies without the rubato
       assert.ok(Math.abs(lastStrike(harmonies) - lastStrike(piece)) < 6, `${steps[i]}`);
-      // the voice follows the piece, or the half notes, struck as the piano strikes them
-      const follows = voiceFollows(steps[i]) === 'piece' ? piece : harmonies;
+      // the voice follows the piece (as written, where the piano strikes it again), or a reduction,
+      // struck as the piano strikes them
+      const followed = voiceFollows(steps[i]);
+      const follows =
+        followed === 'piece' || followed === 'melody'
+          ? performPiano({ ...loadPianoScore(steps[i]), ...loadScore() }, shapeAt(steps[i])).piece
+          : harmonies;
       const strikes = new Set(follows.keys.map((k) => `${k.pitch}@${Math.round(k.on * 1000)}`));
       const { notes } = readPerformance(
         performVoice(voiceSource(steps[i]).score, shapeAt(steps[i])).performance,

@@ -9,7 +9,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { pianoLevel, pianoPlays, shapeAt, voiceLevel } from '../src/worker/levels.ts';
+import { pianoLevel, pianoPlays, shapeAt, voiceLevel, type Plays } from '../src/worker/levels.ts';
 import { ROOT } from './node-support.ts';
 
 const { values } = parseArgs({ options: { out: { type: 'string', default: 'figures/elaboration.tex' } } });
@@ -96,15 +96,21 @@ fig.node('uebertreibung', pt(X0 - 24, (Y0 + TOP) / 2), 'Übertreibung', 'lab=7.5
 curve('klavier', (e) => pianoLevel(shapeAt(e)));
 curve('stimme', (e) => voiceLevel(shapeAt(e)));
 
-// under the fader, what the piano plays (none: the humming alone), each harmonic reduction and the
-// piece, the reductions bracketed; their stretches from the table of points (shape.ts)
+// under the fader, what the piano plays (none: the humming alone), each harmonic reduction and each
+// version of the piece (struck again on every eighth; its melody on every sixteenth), the reductions
+// bracketed; their stretches from the table of points (shape.ts)
 const PLAYS = Y0 - 13;
 const NAMES = {
   none: ['summen', 'Summen'],
   halves: ['halbe', 'Halbe'],
+  'halves on quarters': ['halbeviertel', 'Halbe/4'],
   quarters: ['viertel', 'Viertel'],
+  'quarters on eighths': ['viertelachtel', 'Viertel/8'],
+  accompaniment: ['begleitung', 'Begl.'],
   piece: ['stueck', 'Stück'],
-} as const;
+  'piece on eighths': ['achtel', 'Stück/8'],
+  'piece on sixteenths': ['sechzehntel', 'Stück/16'],
+} as const satisfies Record<Plays, readonly [string, string]>;
 const stages: (readonly [name: string, from: number, to: number, text: string])[] = [];
 for (const e of FINE) {
   const plays = pianoPlays(e);
@@ -118,9 +124,10 @@ stages.forEach(([name, from, , text], i) => {
   fig.node(name, pt(x((from + to) / 2), PLAYS), text, 'lab=7, anchor=base');
 });
 fig.add(String.raw`\draw[pfeil] ([xshift=4bp]stueck.east) -- ${pt(X1 - 4, PLAYS + 2.5)};`);
-const reduced = stages.filter(([name]) => name === 'halbe' || name === 'viertel');
-const from = reduced[0]?.[1] ?? 0;
-const to = stages.find(([name]) => name === 'stueck')?.[1] ?? 1;
+const REDUCED = new Set<string>(['halbe', 'halbeviertel', 'viertel', 'viertelachtel', 'begleitung']);
+const reduced = stages.filter(([name]) => REDUCED.has(name));
+const from = reduced.at(0)?.[1] ?? 0;
+const to = stages.find(([name]) => name !== 'summen' && !REDUCED.has(name))?.[1] ?? 1;
 const BRACKET = PLAYS - 6;
 fig.add(
   String.raw`\draw[achse] ${pt(x(from) + 2, BRACKET + 3)} -- ${pt(x(from) + 2, BRACKET)} -- ${pt(x(to) - 2, BRACKET)} -- ${pt(x(to) - 2, BRACKET + 3)};`,

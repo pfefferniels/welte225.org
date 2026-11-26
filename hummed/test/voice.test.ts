@@ -17,6 +17,7 @@ import {
 import { TONGUE_A, VELUM_SHUT } from '../src/hummer/articulators.ts';
 import { BREATHING, findBreaths, type MelodyNote } from '../src/hummer/melody.ts';
 import { loadReduction, loadScore, loadStyle, voicePerformance, voiceSource } from '../tools/node-support.ts';
+import { ELABORATION } from '../src/shared/shape.ts';
 import { assertGolden } from './golden.ts';
 
 // no calibration: the fingerprint is the hummer's, not the latest calibration run's
@@ -96,10 +97,11 @@ describe('the voice', () => {
       breathBefore: k === 0,
       breathTaken: false,
     });
-    const melody = Array.from({ length: 20 }, (_, k) => note(k));
-    const cues = { sustain: [], turns: { dynamics: [6 * 720, 13 * 720], tempo: [] }, quiet: () => 0 };
+    // 21 s, which two breaths must part (no stretch beyond `withinS`), where the MPM turns back up
+    const melody = Array.from({ length: 21 }, (_, k) => note(k));
+    const cues = { sustain: [], turns: { dynamics: [7 * 720, 14 * 720], tempo: [] }, quiet: () => 0 };
     const breathed = findBreaths(melody, cues).flatMap((n, k) => (n.breathTaken ? [k] : []));
-    assert.deepEqual(breathed, [6, 13]);
+    assert.deepEqual(breathed, [7, 14]);
   });
 
   it('articulates as the piano does: a detached note with a d, a portato or repeated one with an n', () => {
@@ -175,7 +177,7 @@ describe('the voice', () => {
     assert.ok(targets.every((g) => g.slope === 0));
   });
 
-  it('keeps as loosely to the pitch as the elaboration has it: loosest at the bare end, closest at the top', () => {
+  it('keeps as loosely to the pitch as the elaboration has it: closer where the table has it closer', () => {
     // how far the targets lie from the nearest written pitch (equal temperament, A4 = 440 Hz)
     const looseness = (v: Voice): { off: number; tauMs: number } => {
       const targets = pitchTargets(v);
@@ -183,10 +185,16 @@ describe('the voice', () => {
       const offs = targets.map((g) => Math.abs(g.st - grid - Math.round(g.st - grid))).sort((x, y) => x - y);
       return { off: offs[offs.length >> 1] ?? 0, tauMs: targets[0]?.tauMs ?? 0 };
     };
-    const loose = looseness(renderVoice({ ...base(0), calibration: { gain: 1, notes: {} } }));
-    const underPiece = looseness(renderVoice({ ...base(1), calibration: { gain: 1, notes: {} } }));
-    // the wobble, set by ear, is the same everywhere, which narrows the difference (1.5 before it was widened)
-    assert.ok(loose.off > 1.2 * underPiece.off, `${loose.off} against ${underPiece.off}`);
-    assert.ok(loose.tauMs > underPiece.tauMs && loose.tauMs <= 40);
+    // the loosest point of the table and the closest, both humming over the piece
+    const { points, voice: table } = ELABORATION;
+    const over = points.flatMap((_, i) => (table.follows[i] === 'piece' ? [i] : []));
+    const byLooseness = over.sort((a, b) => table.looseness[a] - table.looseness[b]);
+    const closest = points[byLooseness[0]];
+    const loosest = points[byLooseness[byLooseness.length - 1]];
+    const loose = looseness(renderVoice({ ...base(loosest), calibration: { gain: 1, notes: {} } }));
+    const close = looseness(renderVoice({ ...base(closest), calibration: { gain: 1, notes: {} } }));
+    // the wobble, set by ear, is the same everywhere, which narrows the difference
+    assert.ok(loose.off > close.off, `${loose.off} against ${close.off}`);
+    assert.ok(loose.tauMs > close.tauMs && loose.tauMs <= 40);
   });
 });

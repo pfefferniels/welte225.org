@@ -6,46 +6,70 @@
 // between two); what the piano plays and what the voice follows hold from their point to the next. A
 // point that is a step holds all its values up to the next: that stretch of the fader is one setting.
 //
-// So the fader goes: the harmonic reduction in half notes, gone through in a hurry (×2.4), the
-// humming loud and loose over the piano's chords; the same in quarter notes; from 0.4 the piece,
-// exaggerated, and from there more and more as Grünfeld plays it, the humming receding until at the
-// top it is gone and the piano plays his performance as the reconstruction sets it down. In timing
-// the voice goes with the piano (its tempo, its rubato and rolls exaggerated as the piano's, as
-// inexactly struck), so that the two strike together.
+// So the fader goes, in seven equal stretches: the harmonic reduction in half notes, gone through in
+// a hurry (×2.4), the humming loud and loose over it; the accompaniment (the chords where the piece
+// has them), the voice singing the melody itself; the reduction in quarter notes, the voice first
+// humming over the piece, then over the quarters; the piece with every note struck again on every
+// eighth, then with the melody struck again on every sixteenth, both slower than Grünfeld; at last
+// the piece as he plays it, the humming all but gone. In timing the voice goes with the piano (its
+// tempo, its rubato and rolls exaggerated as the piano's, as inexactly struck), so that the two
+// strike together.
 import { monotoneCubic } from './math.ts';
 import type { Setting } from './protocol.ts';
 
 const unit = (x: number): number => Math.min(1, Math.max(0, x));
 
-/** What the piano plays, or the voice follows: the harmonic reduction in half or in quarter notes, or the piece. */
-export type Stage = 'halves' | 'quarters' | 'piece';
-export type Plays = 'none' | Stage;
+/**
+ * The harmonic reductions (reductions.ts): in half notes (reduction/halves.mei), and the same struck
+ * again on every quarter; in quarter notes (reduction/quarters.mei), and the same struck again on
+ * every eighth; the accompaniment, the chords where the piece has them (reduction/harmonies.mei).
+ */
+export type Reduced = 'halves' | 'halves on quarters' | 'quarters' | 'quarters on eighths' | 'accompaniment';
+/** The piece, and the same struck again on a grid (repeats.ts): every note on every eighth, the melody on every sixteenth. */
+export type PieceVersion = 'piece' | 'piece on eighths' | 'piece on sixteenths';
+/** What the piano plays. */
+export type Plays = 'none' | Reduced | PieceVersion;
+/**
+ * What the voice follows: a reduction, over which it hums one held note for each chord; the piece,
+ * over which it hums the melodic reduction; or the melody, the piece's top voice, which it sings.
+ */
+export type Follows = Reduced | 'piece' | 'melody';
 
-/** The points along the fader, as the tuner writes them (Copy settings). */
+export const isPiece = (plays: Plays): plays is PieceVersion => plays.startsWith('piece');
+
+/** The points along the fader, as the tuner writes them. */
 export const ELABORATION = {
-  points: [0, 0.2, 0.4, 0.8, 1],
-  steps: [false, false, false, false, false],
+  points: [0, 0.14, 0.29, 0.43, 0.57, 0.71, 0.86],
+  steps: [false, false, false, false, false, false, false],
   piano: {
-    plays: ['halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Plays[],
+    plays: [
+      'halves',
+      'accompaniment',
+      'quarters',
+      'quarters',
+      'piece on eighths',
+      'piece on sixteenths',
+      'piece',
+    ] as readonly Plays[],
     /** dB; −60 is off. */
-    db: [-3, -2, -1, 0, 0],
+    db: [-3, 0, -1, 0, -1, 0, 0],
     /** How far the MPM is exaggerated for the piano, and for the voice in timing: ×1 as Grünfeld. */
-    exaggeration: [1.4, 1.98, 1.6, 1.1, 1],
+    exaggeration: [1.4, 1.5, 1.7, 1.4, 1.3, 1.1, 1.098],
     /** How much faster than Grünfeld, the piano and the voice alike. */
-    tempo: [2.4, 1.6, 1.23, 1.05, 1],
+    tempo: [2.4, 1.5, 1.1, 1, 0.8, 0.7, 1],
     /** How inexactly struck: ms off, one standard deviation (and 8.3 % in loudness at 100 ms). */
-    ms: [50, 10, 4, 2, 0],
+    ms: [50, 10, 4, 0, 0, 0, 0],
   },
   voice: {
-    follows: ['halves', 'quarters', 'piece', 'piece', 'piece'] as readonly Stage[],
+    follows: ['halves', 'melody', 'piece', 'quarters', 'piece', 'piece', 'piece'] as readonly Follows[],
     /** dB; −60 is off. */
-    db: [-6, -12, -24, -52, -60],
+    db: [-6, -4, -8, -20, -24, -52, -52.153],
     /** How far its own gestures are exaggerated: the dynamics, the articulation and the rest. */
-    exaggeration: [1.5, 1.3, 1.2, 1.1, 1.1],
+    exaggeration: [1.5, 1.1, 1.3, 1.15, 1.2, 1.1, 1.1],
     /** How loosely it keeps to the written pitch, 0 to 1. */
-    looseness: [1, 0.72, 0.42, 0.1, 0],
+    looseness: [0.7, 0.71, 0.71, 0.72, 0.74, 0.85, 1],
     /** How much the maps must move for it to be heard wholly, before the tempo (`threshold`). */
-    presence: [0.36, 0.44, 0.4, 0.26, 0.18],
+    presence: [0.2, 0.3, 0.4, 0.3, 0.2, 0.1, 0.05],
   },
 } as const;
 
@@ -87,20 +111,37 @@ function choiceAt<T>(values: readonly T[], elaboration: number): T {
 /** What the piano plays at an elaboration. */
 export const pianoPlays = (elaboration: number): Plays => choiceAt(ELABORATION.piano.plays, elaboration);
 /** What the voice follows: whose notes it takes, and what it sings (reductions.ts). */
-export const voiceFollows = (elaboration: number): Stage => choiceAt(ELABORATION.voice.follows, elaboration);
+export const voiceFollows = (elaboration: number): Follows =>
+  choiceAt(ELABORATION.voice.follows, elaboration);
 /** The piano's level and the humming's, in dB. */
 export const pianoDb = (elaboration: number): number => numberAt(ELABORATION.piano.db, elaboration);
 export const voiceDb = (elaboration: number): number => numberAt(ELABORATION.voice.db, elaboration);
 
+const reduced = (plays: Plays): plays is Reduced => plays !== 'none' && !isPiece(plays);
+
 /**
- * Which harmonic reduction the piano's harmonies are at an elaboration: the one it plays; under the
- * piece the quarters, and where the piano is silent those it plays first.
+ * Which reduction the piano's harmonies are at an elaboration: the one it plays; elsewhere the last
+ * it plays before along the fader (under the piece the quarters), and before any the first.
  */
-export function harmoniesStage(elaboration: number): 'halves' | 'quarters' {
+export function harmoniesStage(elaboration: number): Reduced {
   const plays = pianoPlays(elaboration);
-  if (plays === 'halves' || plays === 'quarters') return plays;
-  if (plays === 'piece') return 'quarters';
-  return ELABORATION.piano.plays.find((p) => p === 'halves' || p === 'quarters') ?? 'halves';
+  if (reduced(plays)) return plays;
+  const all = ELABORATION.piano.plays;
+  const k = ELABORATION.points.findLastIndex((p) => p <= unit(elaboration) + 1e-9);
+  return (
+    all
+      .slice(0, k + 1)
+      .filter(reduced)
+      .at(-1) ??
+    all.find(reduced) ??
+    'halves'
+  );
+}
+
+/** Which version of the piece the piano's piece part is at an elaboration: the one it plays, else the piece. */
+export function pieceVersion(elaboration: number): PieceVersion {
+  const plays = pianoPlays(elaboration);
+  return isPiece(plays) ? plays : 'piece';
 }
 
 /** Where what the piano plays changes along the fader: where the fader has a gap. */
@@ -182,5 +223,5 @@ export const IMPRECISION = { timingMs: 100, dynamics: 0.083 } as const;
 export const THRESHOLD = 0.6;
 export const threshold = (shape: Pick<Shape, 'presence' | 'tempo'>): number => shape.presence * shape.tempo;
 
-/** Where the page starts (index.html): the piece, a little exaggerated and a little faster, the humming under it. */
+/** Where the page starts (index.html): the piece struck again on every eighth, a little slower, the humming under it. */
 export const DEFAULT_ELABORATION = 0.65;

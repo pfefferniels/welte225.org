@@ -1,21 +1,25 @@
 // The harmonic reductions the barer end of the fader plays, and what the voice sings over them.
 //
-// In half notes (reduction/halves.mei) the reduction runs evenly, chord after chord on the half
-// note, as it was drafted; in quarter notes it is derived from that, the whole harmony sounding on
-// every quarter struck again. The MPM's tempo and dynamics apply to them as they are; its rubato,
-// accents, articulation and pedalling do not, and of its arpeggios each chord is rolled as the piece
-// rolls it where it stands in the piece (reduction/harmonies.mei has every chord there). The voice
-// sings one held note for each chord of the half notes, also over the quarters: what the melodic
-// reduction (reduction.mei) sings where that chord stands in the piece.
+// Three are written: in half notes (reduction/halves.mei), running evenly, chord after chord on the
+// half note, as it was drafted; in quarter notes (reduction/quarters.mei), made by hand from the
+// accompaniment; and the accompaniment itself, every chord where the piece has it
+// (reduction/harmonies.mei). The half notes are struck again on every quarter, the quarters on every
+// eighth. The MPM's tempo and dynamics apply to them as they are; its rubato, accents, articulation
+// and pedalling do not, and of its arpeggios each chord is rolled as the piece rolls it where it
+// stands in the piece (found among the accompaniment's chords). Over each the voice sings one held
+// note for each chord as written: what the melodic reduction (reduction.mei) sings where that chord
+// stands in the piece.
 import { Msm, type Element } from 'espressivo';
 import type { Reduction, SungNote } from '../reduction/types.ts';
 import type { Roll } from '../shared/protocol.ts';
-import type { Stage } from '../shared/shape.ts';
+import type { Follows, Reduced as ReducedName } from '../shared/shape.ts';
 import type { Ticks } from '../shared/units.ts';
 import { GRACE } from './harmonies.ts';
+import { gridRepeat } from './repeats.ts';
 
 const XML_NAMESPACE = 'http://www.w3.org/XML/1998/namespace';
 const QUARTER: Ticks = 720;
+const EIGHTH: Ticks = 360;
 /** How far from its place in the half notes a chord is looked for in the piece. */
 const REACH: Ticks = 2 * 2880;
 
@@ -249,29 +253,72 @@ export function harmonicLine(
   return { events, bars: melodic.bars };
 }
 
-/**
- * The reductions, made once from the half notes, the harmonies where they stand and the MPM: each
- * with an MPM of its own, rolled where it strikes alone (an arpeggio dated where a score strikes
- * nothing, espressivo gives to the next chord it strikes).
- */
-export interface Reductions {
-  readonly halves: Reduced;
-  readonly quarters: Reduced;
-  /** What the voice sings over them, from the melodic reduction. */
-  readonly line: (melodic: Reduction) => Reduction;
+/** A harmonic reduction: its score and its MPM, and where it rolls a chord as the piece rolls it. */
+export interface Reduced extends Score {
+  readonly rolls: readonly Roll[];
 }
 
-export function reductions(halves: string, harmonies: string, mpm: string): Reductions {
-  const chords = chordsOf(halves);
-  const places = placesInPiece(chords, chordsOf(harmonies));
-  const quarters = quartersScore(halves);
-  let line: { readonly of: Reduction; readonly is: Reduction } | null = null;
+/** The scores the reductions are made from (MSM): the half notes, the quarters, the accompaniment. */
+export interface ReductionScores {
+  readonly halves: string;
+  readonly quarters: string;
+  readonly accompaniment: string;
+}
+
+/**
+ * The reductions, each made when first asked for: with an MPM of its own, rolled where it strikes
+ * alone (an arpeggio dated where a score strikes nothing, espressivo gives to the next chord it
+ * strikes); and what the voice sings over each, from the melodic reduction.
+ */
+export interface Reductions {
+  readonly reduced: (name: ReducedName) => Reduced;
+  readonly line: (name: ReducedName, melodic: Reduction) => Reduction;
+}
+
+/** Which of the three written a reduction is, or strikes again. */
+const writtenName = (name: ReducedName): 'halves' | 'quarters' | 'accompaniment' =>
+  name.startsWith('halves') ? 'halves' : name.startsWith('quarters') ? 'quarters' : 'accompaniment';
+
+/** A reduction as written, and where its chords stand in the piece (found among the accompaniment's). */
+interface Written {
+  readonly msm: string;
+  readonly chords: readonly Chord[];
+  readonly places: ReadonlyMap<Ticks, Ticks>;
+}
+
+export function reductions(scores: ReductionScores, mpm: string): Reductions {
+  const memo = <K, V>(make: (key: K) => V): ((key: K) => V) => {
+    const made = new Map<K, V>();
+    return (key) => {
+      if (!made.has(key)) made.set(key, make(key));
+      return made.get(key) as V;
+    };
+  };
+  let placed: readonly Chord[] | null = null;
+  const accompaniment = (): readonly Chord[] => (placed ??= chordsOf(scores.accompaniment));
+  /** Each reduction is written as one of three; the others strike one of these again. */
+  const written = memo((name: 'halves' | 'quarters' | 'accompaniment'): Written => {
+    const msm = scores[name];
+    const chords = chordsOf(msm);
+    return { msm, chords, places: placesInPiece(chords, accompaniment()) };
+  });
+  const writtenOf = (name: ReducedName): Written => written(writtenName(name));
+  const reduced = memo((name: ReducedName): Reduced => {
+    const w = writtenOf(name);
+    if (!name.includes(' on ')) return { msm: w.msm, ...reductionMpm(mpm, w.places) };
+    const again = name === 'halves on quarters' ? quartersScore(w.msm) : gridRepeat(w.msm, EIGHTH);
+    return { msm: again, ...reductionMpm(mpm, strikesInPiece(w.chords, chordsOf(again), w.places)) };
+  });
+  // the line over a reduction is the line over the one it is written as, for the melodic reduction last asked with
+  let lines: { readonly of: Reduction; readonly made: Map<string, Reduction> } | null = null;
   return {
-    halves: { msm: halves, ...reductionMpm(mpm, places) },
-    quarters: { msm: quarters, ...reductionMpm(mpm, strikesInPiece(chords, chordsOf(quarters), places)) },
-    line: (melodic) => {
-      if (line?.of !== melodic) line = { of: melodic, is: harmonicLine(chords, places, melodic) };
-      return line.is;
+    reduced,
+    line: (name, melodic) => {
+      if (lines?.of !== melodic) lines = { of: melodic, made: new Map() };
+      const { chords, places } = writtenOf(name);
+      const line = lines.made.get(writtenName(name)) ?? harmonicLine(chords, places, melodic);
+      lines.made.set(writtenName(name), line);
+      return line;
     },
   };
 }
@@ -282,23 +329,30 @@ export interface Score {
   readonly mpm: string;
 }
 
-/** A harmonic reduction: its score and its MPM, and where it rolls a chord as the piece rolls it. */
-export interface Reduced extends Score {
-  readonly rolls: readonly Roll[];
-}
+/** The harmonies the piano has beside the piece: a reduction, and its MPM. */
+export const harmoniesAt = (name: ReducedName, r: () => Reductions): Reduced => r().reduced(name);
 
-/** The harmonies the piano has beside the piece at a stage, and their MPM: in half notes there, else in quarters. */
-export const harmoniesAt = (stage: Stage, r: () => Reductions): Reduced =>
-  stage === 'halves' ? r().halves : r().quarters;
+/** Whether the voice follows the piece: humming the melodic reduction over it, or singing its melody. */
+const ofThePiece = (follows: Follows): follows is 'piece' | 'melody' =>
+  follows === 'piece' || follows === 'melody';
 
 /**
- * What the voice follows at a stage: the piece, or the reduction the piano plays with the reductions'
- * MPM, so that it is rolled as the piano rolls it (the quarters strike held notes again, which roll
- * with the rest); the line's notes are the half notes', which the quarters strike first by the same ids.
+ * What the voice follows: the piece, or a reduction the piano plays with the reductions' MPM, so
+ * that it is rolled as the piano rolls it (a reduction struck again strikes held notes again, which
+ * roll with the rest); the line's notes are the reduction's as written, which one struck again
+ * strikes first by the same ids.
  */
-export const voiceScore = (stage: Stage, piece: Score, r: () => Reductions): Score =>
-  stage === 'piece' ? piece : harmoniesAt(stage, r);
+export const voiceScore = (follows: Follows, piece: Score, r: () => Reductions): Score =>
+  ofThePiece(follows) ? piece : r().reduced(follows);
 
-/** What the voice sings at a stage: the melodic reduction over the piece, else the line over the reductions. */
-export const sungReduction = (stage: Stage, melodic: Reduction, r: () => Reductions): Reduction =>
-  stage === 'piece' ? melodic : r().line(melodic);
+/**
+ * What the voice sings: over the piece the melodic reduction; the melody, the piece's top voice
+ * (`melody`, by octaves where it is sung); over a reduction the line over it.
+ */
+export const sungReduction = (
+  follows: Follows,
+  melodic: Reduction,
+  r: () => Reductions,
+  melody: () => Reduction,
+): Reduction =>
+  follows === 'piece' ? melodic : follows === 'melody' ? melody() : r().line(follows, melodic);

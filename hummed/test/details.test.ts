@@ -11,7 +11,7 @@ import {
   settingOf,
 } from '../src/page/details.ts';
 import { mix, mixOf, partsAt, voiceElaboration } from '../src/page/mix.ts';
-import { plain, sameSetting } from '../src/shared/protocol.ts';
+import { plain, sameSetting, type Setting } from '../src/shared/protocol.ts';
 import { shapeAt, shapeOf } from '../src/shared/shape.ts';
 import { pianoMpm } from '../src/worker/piano.ts';
 import { loadScore } from '../tools/node-support.ts';
@@ -53,13 +53,14 @@ describe('the details', () => {
     const flighty = shapeOf(settingOf(1, { ...FOLLOWING, flighty: 0 }));
     assert.equal(flighty.tempo, shapeAt(0).tempo);
     assert.equal(flighty.inexactMs, shapeAt(0).inexactMs);
-    assert.equal(flighty.pianoExaggeration, 1);
+    assert.equal(flighty.pianoExaggeration, shapeAt(1).pianoExaggeration);
   });
 
-  it('reach the performance: the MPM as it is at the top, faster where the flightiness is set apart', () => {
+  it('reach the performance: the MPM as it is at the top but for the exaggeration, faster where the flightiness is set apart', () => {
     const { mpm } = loadScore();
-    assert.equal(pianoMpm(mpm, shapeOf(settingOf(1, FOLLOWING))), mpm);
-    assert.notEqual(pianoMpm(mpm, shapeOf(settingOf(1, { ...FOLLOWING, flighty: 0.5 }))), mpm);
+    const unexaggerated = (setting: Setting) => ({ ...shapeOf(setting), pianoExaggeration: 1 });
+    assert.equal(pianoMpm(mpm, unexaggerated(settingOf(1, FOLLOWING))), mpm);
+    assert.notEqual(pianoMpm(mpm, unexaggerated(settingOf(1, { ...FOLLOWING, flighty: 0.5 }))), mpm);
   });
 
   it('change what is heard alone: the humming, and one of the piano’s parts or none', () => {

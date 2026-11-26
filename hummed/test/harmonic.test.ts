@@ -9,8 +9,8 @@ import { loadReduction, loadReductions } from '../tools/node-support.ts';
 
 const QUARTER = 720;
 const r = loadReductions();
-const halves = chordsOf(r.halves.msm);
-const quarters = chordsOf(r.quarters.msm);
+const halves = chordsOf(r.reduced('halves').msm);
+const quarters = chordsOf(r.reduced('halves on quarters').msm);
 
 describe('the harmonic reductions', () => {
   it('run evenly: the half notes on the half note, the quarters on every quarter they sound', () => {
@@ -28,7 +28,7 @@ describe('the harmonic reductions', () => {
   });
 
   it('take the MPM’s tempo and dynamics alone', () => {
-    for (const { mpm } of [r.halves, r.quarters]) {
+    for (const { mpm } of [r.reduced('halves'), r.reduced('halves on quarters')]) {
       assert.match(mpm, /<tempoMap\b/);
       assert.match(mpm, /<dynamicsMap\b/);
       assert.doesNotMatch(mpm, /<(rubato|articulation|metricalAccentuation|movement)Map\b/);
@@ -38,15 +38,19 @@ describe('the harmonic reductions', () => {
   it('strike a chord in half notes and first in quarters alike, rolled alike', () => {
     const performed = (s: { msm: string; mpm: string }) =>
       performMsmToData(s, { expandOrnaments: false }).parts.flatMap((p) => p.notes);
-    const quartered = new Map(performed(r.quarters).map((n) => [n.id, n.milliseconds.date]));
-    const halved = performed(r.halves);
+    const quartered = new Map(
+      performed(r.reduced('halves on quarters')).map((n) => [n.id, n.milliseconds.date]),
+    );
+    const halved = performed(r.reduced('halves'));
     const same = halved.filter((n) => Math.abs((quartered.get(n.id) ?? NaN) - n.milliseconds.date) < 0.01);
     // all but where a quarter strikes a held note with the chord, which rolls with it
     assert.ok(same.length > 0.9 * halved.length, `${same.length} of ${halved.length}`);
   });
 
   it('roll a chord struck again on the quarter again, longer where the tempo slows', () => {
-    const notes = performMsmToData(r.quarters, { expandOrnaments: false }).parts.flatMap((p) => p.notes);
+    const notes = performMsmToData(r.reduced('halves on quarters'), { expandOrnaments: false }).parts.flatMap(
+      (p) => p.notes,
+    );
     const spread = (date: number): number => {
       const ms = notes.filter((n) => n.date === date).map((n) => n.milliseconds.date);
       return Math.max(...ms) - Math.min(...ms);
@@ -60,7 +64,7 @@ describe('the harmonic reductions', () => {
   });
 
   it('say where they roll a chord, and as which of the piece’s ornaments', () => {
-    for (const { mpm, rolls } of [r.halves, r.quarters]) {
+    for (const { mpm, rolls } of [r.reduced('halves'), r.reduced('halves on quarters')]) {
       const moved = [...mpm.matchAll(/<ornament\b[^>]*\sxml:id="([^"]*)-at-(\d+)"/g)].map(
         ([, ornament, date]) => `${ornament} ${date}`,
       );
@@ -71,12 +75,13 @@ describe('the harmonic reductions', () => {
       );
     }
     // the quarters roll a chord again on every quarter it is struck
-    assert.ok(r.quarters.rolls.length > 1.5 * r.halves.rolls.length);
-    for (const { date } of r.quarters.rolls) assert.equal(date % QUARTER, 0, String(date));
+    assert.ok(r.reduced('halves on quarters').rolls.length > 1.5 * r.reduced('halves').rolls.length);
+    for (const { date } of r.reduced('halves on quarters').rolls)
+      assert.equal(date % QUARTER, 0, String(date));
   });
 
   it('give the voice one held note for each chord of the half notes, from the melodic reduction', () => {
-    const line = r.line(loadReduction());
+    const line = r.line('halves', loadReduction());
     const notes = line.events.filter((e) => e.kind === 'note');
     assert.ok(notes.length > 0.8 * halves.length && notes.length <= halves.length);
     // held from chord to chord, the voice never silent between
