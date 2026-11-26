@@ -338,7 +338,7 @@ glide to the new setting's as it fades in.
 ### Wandering
 
 The button with the double arrow beside the fader's name lets the fader walk by itself
-(`src/page/wander.ts`): from the far left, a setting at a time, to the far right, then back, and so
+(`src/page/wander.ts`): from the far right, a setting at a time, to the far left, then back, and so
 on while the music plays, each setting heard for a bar and a half (`WANDER_BARS`). It stops at each
 point of the table where the voice is rendered for it (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
 and 0.9), and counts the bar and a half in the music from where the setting takes over, so that

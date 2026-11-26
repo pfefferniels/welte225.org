@@ -30,7 +30,7 @@ import { browserFrames, Redraws } from './redraws.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { PianoSettings } from './settings.ts';
 import { SpectrogramView } from './spectrogram-view.ts';
-import { barsAt, nextStop, WANDER_BARS, WANDER_STOPS, type Wandering } from './wander.ts';
+import { barsAt, nextStop, WANDER_BARS, WANDER_START, WANDER_STOPS, type Wandering } from './wander.ts';
 
 const canvas = element('spec', HTMLCanvasElement);
 const playButton = element('play', HTMLButtonElement);
@@ -311,10 +311,10 @@ wanderButton.addEventListener('click', () => {
     stopWandering();
     return;
   }
-  // from the far left, towards the far right
-  wandering = { stop: 0, direction: 1, since: null };
+  // from the far right (the piece as Grünfeld plays it), towards the far left
+  wandering = { ...WANDER_START, since: null };
   wanderButton.setAttribute('aria-pressed', 'true');
-  wanderTo(0);
+  wanderTo(WANDER_START.stop);
   wanderTimer = setInterval(wanderOn, 100);
   if (!player.playing && !playButton.disabled) player.toggle();
 });

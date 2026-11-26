@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { RENDERED } from '../src/page/mix.ts';
-import { barsAt, nextStop, WANDER_STOPS, type Wandering } from '../src/page/wander.ts';
+import { barsAt, nextStop, WANDER_START, WANDER_STOPS, type Wandering } from '../src/page/wander.ts';
 import { ELABORATION, pianoPlays, voiceFollows } from '../src/shared/shape.ts';
 
 describe('wandering', () => {
@@ -16,14 +16,15 @@ describe('wandering', () => {
     });
   });
 
-  it('walks from the far left to the far right a setting at a time, then back, and so on', () => {
-    let at: Wandering = { stop: 0, direction: 1 };
+  it('walks from the far right to the far left a setting at a time, then back, and so on', () => {
+    let at: Wandering = WANDER_START;
     const walked = [at.stop];
     for (let i = 0; i < 14; i++) {
-      at = nextStop(at, 7);
+      at = nextStop(at);
       walked.push(at.stop);
     }
-    assert.deepEqual(walked, [0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0, 1, 2]);
+    assert.equal(WANDER_STOPS.length, 7);
+    assert.deepEqual(walked, [6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 5, 4]);
   });
 
   it('counts the playhead in bars, between downbeats and beyond them', () => {
