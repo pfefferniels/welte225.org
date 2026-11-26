@@ -283,7 +283,7 @@ const wanderTo = (stop: number): void => {
   renderSoon();
 };
 /**
- * Look where the music is: once the stop's setting has taken over, a bar and a half from there, on
+ * Look where the music is: once the stop's setting has taken over, two and a half bars from there, on
  * to the next. Not while paused, nor while the setting is still coming.
  */
 const wanderOn = (): void => {

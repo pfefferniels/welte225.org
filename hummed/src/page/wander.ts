@@ -1,14 +1,14 @@
 // Wandering: the fader walks by itself through the settings of the table (shared/shape.ts), one at a
-// time, each heard for a bar and a half of the music: from the far right (the piece as Grünfeld plays
-// it) to the far left, a setting at a time, then back again, and so on while the music plays. A bar
-// and a half is counted in the music from where a setting takes over, so that each is heard as long,
+// time, each heard for two and a half bars of the music: from the far right (the piece as Grünfeld plays
+// it) to the far left, a setting at a time, then back again, and so on while the music plays. Two and a
+// half bars are counted in the music from where a setting takes over, so that each is heard as long,
 // however fast it goes.
 import type { Seconds } from '../shared/units.ts';
 import { ELABORATION } from '../shared/shape.ts';
 import { voiceElaboration } from './mix.ts';
 
 /** How long each setting is heard: in bars of the music. */
-export const WANDER_BARS = 1.5;
+export const WANDER_BARS = 2.5;
 
 /** Where the fader stops: at each setting of the table, where the voice is rendered for it. */
 export const WANDER_STOPS: readonly number[] = ELABORATION.points.map((p) => voiceElaboration(p));
