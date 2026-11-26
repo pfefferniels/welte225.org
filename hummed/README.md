@@ -711,6 +711,51 @@ reconstruction, the harmonies or the chain, CI fails until the recordings are re
 the page plays the sampled grand meanwhile. Earlier settings that the voice is no longer rendered
 for leave the manifest with the next rendering.
 
+## The voice rendered ahead
+
+`npm run voices` renders the voice ahead for the same settings (`tools/voices.ts`), so that the
+page has every setting at once and can blend one into another as it plays. Each setting is
+prepared as a voice worker prepares it alone, with the worker's own code, and the whole voice is
+rendered chunk by chunk as the workers render it when the page plays from the beginning: the same
+chunks, each settled before it as a worker settles it, at the calibration's gain
+(`tools/node-support.ts`: `prepareLevel`, `renderLevel`). The samples are those of a worker in
+Node to the bit: a chunk sounds the same whatever was rendered before it and in whichever order
+(VocalTractLab starts its noise afresh with each), the whole voice at the elaboration 1 is what
+`npm run bench` collects from the chunks it is sent, and the setting at the page's first
+elaboration sounds from 3 to 9 s as the engine test's fingerprint has it. In Chromium the page's
+own worker (`worker.js`) renders the same but for the last bit of some of its maths, whose
+functions (`Math.exp`, `Math.pow`, `Math.sin` …) round otherwise than Node's: at the elaborations 0
+and 0.65 an eighth and a sixtieth of the samples differ, by at most 1.2·10⁻⁵ and 2.4·10⁻⁷, some 90
+and 120 dB under the humming's peaks; the plans' bars, clock and seams are the same, the piano's
+keys a femtosecond apart. The settings are rendered side by side, a VocalTractLab in each thread:
+the 21, an hour of humming, take 5 minutes on four cores.
+
+Each setting goes to `voice/`: the sound as a mono MP3 at LAME's V4, and the plan the page plays it
+with (JSON: the bars, the clock from score time to performed time, the piano's two parts, as a
+worker answers a request for a plan, but where it starts), listed in `manifest.json` with the
+fingerprint of the voice's gestural scores and opening, the gain, the speaker and VocalTractLab's
+fingerprint. At V4 the humming comes to 41 to 51 kbit/s, 0.4 to 1.5 MB a setting and 21 MB for all,
+and lies 34 to 41 dB above the coding noise; V3 would give 1.5 to 2 dB more for an eighth to a
+sixth more, V5 save a sixth to a fifth for 2 to 4 dB less. `test/voice-recordings.test.ts` compares the manifest and the plans
+with the voice and the piano as they are: after a change, CI fails until the voice is rendered
+again.
+
+An MP3 encoder delays the sound and pads it (LAME by 1105 samples), and writes by how much into the
+file's first frame. ffmpeg 6.1 and Chromium 158 take the delay out: decoded, each recording's first
+sample is the rendering's first, as the tool measures against the rendering for every setting (with
+the reference below, and without it at the loudest stretch of each third), the peak of their
+correlation within a hundredth of a sample of it, the humming 34 to 41 dB above the difference,
+12 dB less a sample off. A decoder that does not read that frame hands the sound over late: by 1105
+samples, by 2257 with the frame decoded as silence, by 529 where it takes out the encoder's part
+alone. So the page does not count on it. The manifest keeps a reference for each setting, the 1024
+samples of the rendering that are least like their surroundings within 4096 samples either way (a
+breath, a consonant, a voice coming up: at best 0.23 to 0.60 alike, where a decoded recording comes
+to 0.9999), and `alignVoice` (`src/shared/voice-recordings.ts`) finds it in the decoded sound, in
+sums of eight samples through the whole window and then sample by sample, in about a millisecond,
+and falls back on the lead measured where nothing matches well enough. The test has it find a
+recording decoded by ffmpeg, without its first frame, late by 529 and 2257 samples, and by
+Chromium, each sample for sample where a chunk rendered afresh lies.
+
 ## Code
 
 | Path                             | What it is                                                                                                                                                                                                                                                                                                                      |
@@ -725,11 +770,12 @@ for leave the manifest with the next rendering.
 | `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the workers' pool, transport, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the piano's picture, the instructions                                     |
 | `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                                                     |
 | `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                                                                 |
-| `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifest, the reconstruction's calls as instructions                   |
+| `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifests, the reconstruction's calls as instructions                  |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                                 |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                                                                                  |
+| `voice/`                         | the voice rendered ahead for every setting: MP3s, their plans and the manifest                                                                                                                                                                                                                                                  |
 | `reduction/`                     | what is hummed (`reduction.mei`), its rendering, the script that drafted it, the harmonic reduction in half notes (`halves.mei`), the harmonies where the piece sounds them (`harmonies.mei`), and a reduction in quarter notes made by hand from those (`quarters.mei`, the repeat of A written out; so far only in the tuner) |
-| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                                                                          |
+| `tools/`                         | build, calibration, a benchmark, the Pianoteq recordings, the voice rendered ahead, a browser smoke test, the figure of the elaboration, and what they share for running in Node                                                                                                                                                |
 | `figures/`                       | what the elaboration does (`npm run figure`), as TikZ in the dialect of the dissertation's figures: it needs their `keynotefigures.sty`                                                                                                                                                                                         |
 | `test/`                          | unit tests, the voice against its fingerprint, VocalTractLab in Node                                                                                                                                                                                                                                                            |
 | `vtl/`                           | the VocalTractLab build and its patch                                                                                                                                                                                                                                                                                           |
@@ -754,6 +800,7 @@ npm run calibrate    # after changing the reduction, the hum style or the recons
 npm run smoke        # the page in Chromium (needs Playwright installed): plays, switches, seeks, info, instructions, pianos
 npm run pianoteq -- render --pianoteq <Pianoteq's program> --preset <name>   # the recordings (above)
 npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
+npm run voices       # the voice rendered ahead for every setting (above)
 npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>; --mpm <file> writes its MPM
 npm run figure       # figures/elaboration.tex: what the fader does to the piano's exaggeration and the voice's
 ```

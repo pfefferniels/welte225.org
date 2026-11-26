@@ -19,6 +19,7 @@
     "calibrate": "node tools/calibrate.ts",
     "smoke": "node tools/smoke.ts",
     "pianoteq": "node tools/pianoteq.ts",
+    "voices": "node tools/voices.ts",
     "take": "node tools/take.ts",
     "figure": "node tools/elaboration-figure.ts",
     "melody": "node tools/melody.ts"
