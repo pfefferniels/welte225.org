@@ -1,15 +1,14 @@
 // Wandering: the fader glides by itself over the settings of the table (shared/shape.ts), from the far
 // right (the piece as Grünfeld plays it) to the far left, then back again, and so on while the music
-// plays. It goes at an even pace counted in the music, two and a half bars from one setting of the
-// table to the next, so that each is heard as long, however fast it goes; and as it goes, the voice
-// rendered for each step on the way (every 0.05) takes over from the one before, as when the fader is
-// dragged.
+// plays. It goes at an even pace counted in the music, two bars from one setting of the table to the
+// next, so that each is heard as long, however fast it goes; and as it goes, the voice rendered for
+// each step on the way (every 0.05) takes over from the one before, as when the fader is dragged.
 import type { Seconds } from '../shared/units.ts';
 import { ELABORATION } from '../shared/shape.ts';
 import { voiceElaboration } from './mix.ts';
 
 /** How long the fader takes from one setting of the table to the next: in bars of the music. */
-export const WANDER_BARS = 2.5;
+export const WANDER_BARS = 2;
 
 /** The settings of the table on the fader, where the voice is rendered for each: the glide's ends and its pace. */
 export const WANDER_STOPS: readonly number[] = ELABORATION.points.map((p) => voiceElaboration(p));

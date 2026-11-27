@@ -485,8 +485,8 @@ whose time has passed.
 
 The button with the double arrow beside the fader's name lets the fader glide by itself
 (`src/page/wander.ts`): from the far right to the far left, then back, and so on while the music
-plays, at an even pace counted in the music, two and a half bars from one setting of the table to the
-next (`WANDER_BARS`), so that each is heard as long however fast it goes: fifteen bars from end to end.
+plays, at an even pace counted in the music, two bars from one setting of the table to the next
+(`WANDER_BARS`), so that each is heard as long however fast it goes: twelve bars from end to end.
 Its ends are the first and the last point of the table (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
 and 0.9); between them it goes anywhere, not in the fader's whole steps, so that the thumb moves
 smoothly and the mix with it, and the voice rendered for each step on the way (every 0.05) takes over

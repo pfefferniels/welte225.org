@@ -20,9 +20,9 @@ describe('wandering', () => {
     });
   });
 
-  it('glides from the far right to the far left, a stop every two and a half bars, then back, and so on', () => {
+  it('glides from the far right to the far left, a stop every two bars, then back, and so on', () => {
     const n = WANDER_STOPS.length - 1;
-    assert.equal(WANDER_BARS, 2.5);
+    assert.equal(WANDER_BARS, 2);
     // at each stop in turn: right to left, then left to right, then on again
     for (let k = 0; k <= 3 * n; k++) {
       const turn = Math.floor(k / n) % 2 === 0;
