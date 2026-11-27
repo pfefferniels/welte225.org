@@ -354,7 +354,24 @@ powers summing to one throughout (`src/page/blend.ts`). Each sounds in a lane of
 (`src/page/lane.ts`): its voice, and its piano's two parts, each through the setting's own mix (as
 loud as the fader had them when it was asked for), and all three through one gain, its weight, which
 the page knows as the audio thread plays it (a series of linear ramps a few milliseconds apart) and
-draws it by. So the gains of the humming and the piano blend as the settings do.
+draws it by. So the gains of the humming and the piano blend as the settings do. A lane faded out
+is let go of: its sound stopped, and the library free to let go of its setting.
+
+Equal power holds for sounds with nothing in common. Two settings placed at the same tick share
+much, the same notes struck together, alike in phase or opposite; between neighbours, over a
+crossfade of 0.4 s, the two came out from −0.76 to +0.73 alike (the mean of their product against
+that of their powers), and the sum from 3.3 dB quieter to 1.7 dB louder than two unrelated sounds
+would be, in a stretch of 20 ms from 7.9 dB quieter to 2.5 dB louder (32 crossfades of seven pairs,
+the voice rendered ahead and the sampled grand, in an `OfflineAudioContext` with the page's code).
+Where the page has both sounds as buffers (the voice rendered ahead, and the piano's recordings
+where they are of the performance as it is, or none where an instrument plays it), it measures how
+alike they are over the crossfade, from one setting heard alone, and takes both gains by as much as
+keeps the sum where two unrelated sounds would have it, within 3 dB either way (`correction`): so
+corrected, the same crossfades came within 1.1 dB quieter and 0.8 dB louder over the whole fade,
+and from 4.9 dB quieter to 2.9 dB louder in a stretch of 20 ms (how alike two are changes within a
+crossfade). The sampled grand plays notes as they come, of which there is no buffer to measure:
+with it a crossfade stays equal in power. Settings that sound the same, voice, piano and mix (0.9,
+0.95 and 1), are not crossfaded at all: the one playing goes on under the other's name.
 
 The one coming in is placed so that at the crossfade's midpoint it is at the same tick of the score
 as the one going out, to the sample (`src/page/alignment.ts`): each rendering's clock maps its
@@ -369,7 +386,9 @@ misalignment is piecewise linear between the bends of the two clocks, so its mos
 Between neighbouring settings at nearly the same tempo it is 0.4 s; from the piece at Grünfeld's
 tempo into the half notes, 2.4 times as fast, 37 ms. A setting that is not ready is rendered once
 the fader rests, from as far ahead as the last ones took to be ready, and crossfades in the same
-way once it has sound there, over as much as 1.5 s (`CROSSFADE`). An instrument over MIDI cannot
+way once it has sound where it begins to be heard (which lies before where it is at the midpoint,
+where it comes in faster), over as much as 1.5 s (`CROSSFADE`); one whose recording does not load
+is rendered so too, the first setting from the beginning. An instrument over MIDI cannot
 fade: it is handed its messages only a quarter of a second ahead, a crossfade begins after what it
 has been handed, and it switches from the one setting to the other at the midpoint, the keys still
 down let up there.
@@ -397,7 +416,15 @@ computer, 320 MB where the browser says it has 4 GB, 192 MB on a phone. A second
 two pictures: the longest setting 147 MB, the shortest 45. So a computer keeps the setting playing
 and three long ones around it, or thirteen short ones; a phone one long one, or four short. Beyond
 the neighbours, the settings heard last are kept while they fit, and the one heard longest ago goes
-first; what sounds is never let go of. The voice at 0.9, 0.95 and 1 is the same, and decoded once.
+first; what sounds is never let go of, and once it has faded out the library lets go of what no
+longer fits. The voice at 0.9, 0.95 and 1 is the same, and decoded once; settings that sound the
+same share their pictures too.
+
+`test/player.test.ts` drives the transport with an audio graph made up for the test, whose clock
+it moves on, and the plans of `voice/`: a setting faded out is let go of; one rendered as you listen
+takes over wherever the playhead is when it is asked for; one whose recording does not load is
+rendered, even the first; one rendered whole before the playhead comes to where it was asked for
+still takes over; settings that sound the same go on into each other without a crossfade.
 
 ### Wandering
 

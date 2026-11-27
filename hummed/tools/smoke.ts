@@ -158,6 +158,10 @@ try {
     errors.push('a setting that is ready did not crossfade in briefly');
   await page.waitForTimeout(2000);
   await report('0.65 again');
+  // the settings faded out are let go of: one sounds
+  const sounding = await dataset('sounding');
+  console.log(`settings sounding once the crossfade is over: ${sounding ?? 'none'}`);
+  if (sounding !== '1') errors.push(`${sounding ?? 'no'} settings sound once the crossfade is over`);
   await page.evaluate(
     "(() => { const r = document.getElementById('pos'); r.value = 60; r.dispatchEvent(new Event('input')); })()",
   );

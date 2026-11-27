@@ -8,7 +8,7 @@ import { sameSetting, settingKey, type Setting, type StartAt } from '../shared/p
 import type { Seconds } from '../shared/units.ts';
 import { counterpart, placeCrossfade, SWITCH, type CrossfadeRule, type Placed } from './alignment.ts';
 import { CROSSFADE, type AudioGraph } from './audio-graph.ts';
-import { Weight } from './blend.ts';
+import { correction, likeness, Weight, type Correction, type Heard } from './blend.ts';
 import { Lane } from './lane.ts';
 import type { Mix } from './mix.ts';
 import type { PianoOutput, PianoPlay } from './outputs.ts';
@@ -74,11 +74,15 @@ export interface Sounding {
 export interface CrossfadeRecord extends Placed {
   readonly out: number;
   readonly in: number;
+  /** How much both were taken at the midpoint, for being alike; null where it was not measured. */
+  readonly corrected: number | null;
 }
 
 const SILENT: Mix = { hum: 0, harmonies: 0, piece: 0 };
 const heardIn = (mix: Mix): PianoPartName[] =>
   (['piece', 'harmonies'] as const).filter((part) => mix[part] > 0);
+const sameMix = (a: Mix, b: Mix): boolean =>
+  a.hum === b.hum && a.piece === b.piece && a.harmonies === b.harmonies;
 
 export class Player {
   readonly #graph: AudioGraph;
@@ -118,21 +122,28 @@ export class Player {
     readonly at: number;
   } | null = null;
 
+  /**
+   * `every` calls the transport's tick, which schedules what falls due and looks whether a setting
+   * asked for can take over: twenty times a second (the tests call it themselves).
+   */
   constructor(
     graph: AudioGraph,
     piano: PianoOutput,
     pool: VoicePool,
     library: ReadySettings,
     view: PlayerView,
+    every: (tick: () => void) => void = (tick) => {
+      setInterval(tick, 50);
+    },
   ) {
     this.#graph = graph;
     this.#piano = piano;
     this.#pool = pool;
     this.#library = library;
     this.#view = view;
-    setInterval(() => {
+    every(() => {
       this.#tick();
-    }, 50);
+    });
   }
 
   get current(): Rendering | null {
@@ -313,9 +324,11 @@ export class Player {
     if (!rendering) return;
     if (message.type === 'done') {
       rendering.done = true;
-      // whole: the library keeps it, to go back to at once
+      // whole: the library keeps it, to go back to at once; the one asked for is kept here until it
+      // takes over (it can be whole before the playhead comes to where it was asked for)
       this.#library.keep(rendering);
-      if (rendering !== this.#current) this.#renders.delete(message.id);
+      if (this.#pending?.id === message.id) this.#maybeSwitch();
+      else if (rendering !== this.#current) this.#renders.delete(message.id);
       return;
     }
     rendering.receive(message);
@@ -473,6 +486,12 @@ export class Player {
       this.#startFrom(this.#offset);
       if (!this.#pending) this.#view.status('');
     }
+    // waiting at the end: what took over there is over too, and nothing else is coming
+    if (cur && this.#playing && this.#waiting && !this.#pending && this.#offset >= cur.duration - 0.01) {
+      this.#waiting = false;
+      this.#view.status('');
+      this.#setPlaying(false);
+    }
     this.#schedule();
     if (cur && this.#playing && !this.#waiting && this.position() >= cur.duration - 0.01) {
       this.#offset = cur.duration;
@@ -495,11 +514,15 @@ export class Player {
     if (pending.id === null) {
       const next = this.#library.ready(pending.setting);
       if (!next) {
-        // not decoded after all: the workers render it
+        // not decoded after all (its files did not load): the workers render it, from a little
+        // ahead of the playhead, or from the beginning where nothing plays yet
         if (!this.#library.coming(pending.setting)) {
           this.#pending = null;
-          this.#wanted = cur?.setting ?? null;
-          this.change(pending.setting);
+          if (!cur) this.request(pending.setting, { seconds: 0 });
+          else {
+            this.#wanted = cur.setting;
+            this.change(pending.setting);
+          }
         }
         return;
       }
@@ -534,16 +557,38 @@ export class Player {
       if (next.rendered(0, 0.5) && pianoReady()) this.#adopt(next, 0, RENDERED_RULE);
       return;
     }
-    let t = counterpart(cur.clock, next.clock, this.position() + START_MARGIN + this.#piano.lead);
-    if (t < next.startSeconds - 0.01) {
-      // not there yet: wait while the old voice plays on, take over at its start once it has stopped
-      if (this.#playing && !this.#waiting) return;
-      t = next.startSeconds;
+    if (this.#playing && !this.#waiting && this.#lanes.length > 0) {
+      // the crossfade placed as it would be now: the sound has to be there from where the one
+      // coming in begins, which lies before where it is at the midpoint; else the old voice plays
+      // on, and it is looked at again as the playhead moves on and the sound comes
+      const placed = this.#place(next, RENDERED_RULE);
+      if (!placed) return;
+      const begin = Math.max(0, placed.at - placed.origin);
+      if (next.rendered(begin, begin + 0.4) && pianoReady())
+        this.#adopt(next, placed.to, RENDERED_RULE, placed);
+      return;
     }
+    // stopped: it takes over where the playhead is, or at its start where it has no sound before it
+    let t = counterpart(cur.clock, next.clock, this.position());
+    if (t < next.startSeconds - 0.01 && !next.rendered(t, t + 0.4)) t = next.startSeconds;
     if (next.rendered(t, t + 0.4) && pianoReady()) this.#adopt(next, t, RENDERED_RULE);
   }
 
-  #adopt(next: Rendering, t: Seconds, rule: CrossfadeRule): void {
+  /**
+   * Where a crossfade into `next` would be placed now: beginning a little ahead (after all an
+   * instrument has been handed), from the lane that comes in last.
+   */
+  #place(next: Rendering, rule: CrossfadeRule): Placed | null {
+    const lane = this.#lanes.at(-1);
+    if (!lane) return null;
+    let at = this.#graph.context.currentTime + START_MARGIN + this.#piano.lead;
+    // an instrument switches at the midpoint, after all it has been handed over
+    const inst = this.#instruments.at(-1);
+    if (inst) at = Math.max(at, inst.lane.at(inst.from));
+    return placeCrossfade(lane.rendering.clock, lane.origin, next.clock, at, rule);
+  }
+
+  #adopt(next: Rendering, t: Seconds, rule: CrossfadeRule, placed: Placed | null = null): void {
     const was = this.#current;
     this.#current = next;
     this.#pending = null;
@@ -551,7 +596,7 @@ export class Player {
     if (was && was !== next && was.id !== this.#request) this.#renders.delete(was.id);
     this.#library.used(next);
     if (this.#playing && !this.#waiting && was && was !== next && this.#lanes.length > 0)
-      this.#crossfade(next, rule);
+      this.#crossfade(next, rule, placed);
     else if (this.#playing) {
       // waiting for sound (or nothing playing to fade from): it starts here once it has some
       this.#stopAll();
@@ -577,23 +622,31 @@ export class Player {
    * Crossfade from what sounds into `next`: every lane fades out from where it is, while `next`
    * comes in, at the same tick as the current one at the midpoint.
    */
-  #crossfade(next: Rendering, rule: CrossfadeRule): void {
+  #crossfade(next: Rendering, rule: CrossfadeRule, placed: Placed | null): void {
     const lane = this.#lanes.at(-1);
     if (!lane) return;
-    const { context } = this.#graph;
-    let at = context.currentTime + START_MARGIN + this.#piano.lead;
-    // an instrument switches at the midpoint, after all it has been handed over
+    const mix = this.#mixOf(next.setting);
+    if (lane.weight.end === null && lane.rendering.sound === next.sound && sameMix(lane.mix, mix)) {
+      // the same sound at the same mix (the voice at 0.9, 0.95 and 1): it plays on under the new
+      // name; crossfaded, the two would add up to half as loud again in the middle
+      lane.relabel(next);
+      return;
+    }
+    const fade = placed ?? this.#place(next, rule);
+    if (!fade) return;
+    const { at, mid } = fade;
     const inst = this.#instruments.at(-1);
-    if (inst) at = Math.max(at, inst.lane.at(inst.from));
-    const fade = placeCrossfade(lane.rendering.clock, lane.origin, next.clock, at, rule);
-    const { mid } = fade;
-    for (const l of this.#lanes) l.fadeOut(at, fade.length);
+    // from one setting heard alone, the two as loud together as unrelated sounds would be, where
+    // both are known from their buffers; else equal in power
+    const alone = this.#lanes.length === 1 && lane.weight.at(at) === 1;
+    const corrected = alone ? this.#correction(lane, next, mix, fade) : undefined;
+    for (const l of this.#lanes) l.fadeOut(at, fade.length, corrected);
     const incoming = new Lane(
       this.#graph,
       next,
       { origin: fade.origin, begin: at, fresh: false },
-      Weight.fadingIn(at, fade.length),
-      this.#mixOf(next.setting),
+      Weight.fadingIn(at, fade.length, corrected),
+      mix,
       this.#piano.fades ? this.#piano : null,
     );
     this.#lanes.push(incoming);
@@ -606,7 +659,43 @@ export class Player {
       inst.play.stop(mid);
       this.#startInstrument(incoming, mid);
     }
-    this.#last = { ...fade, out: lane.rendering.id, in: next.id };
+    this.#last = { ...fade, out: lane.rendering.id, in: next.id, corrected: corrected?.(0.5) ?? null };
     this.#schedule();
+  }
+
+  /**
+   * How much both settings of a crossfade are to be taken up or down, measured over it from their
+   * buffers: the voice rendered ahead, and the piano's parts heard where it plays recordings (an
+   * instrument over MIDI is heard elsewhere). Null where either sounds otherwise (streams in, or the
+   * sampled grand plays it).
+   */
+  #correction(lane: Lane, next: Rendering, mix: Mix, fade: Placed): Correction | undefined {
+    if (!lane.rendering.whole || !next.whole) return undefined;
+    const from = fade.at;
+    const to = fade.at + fade.length;
+    const heard = (rendering: Rendering, origin: number, mixed: Mix): Heard | null => {
+      const parts: Heard['parts'][number][] = [];
+      const add = (buffer: AudioBuffer, gain: number): void => {
+        // the stretch of it the crossfade covers, and a sample either side
+        const first = Math.max(0, Math.floor((from - origin) * buffer.sampleRate) - 1);
+        const last = Math.min(buffer.length, Math.ceil((to - origin) * buffer.sampleRate) + 1);
+        if (last <= first) return;
+        const samples = new Float32Array(last - first);
+        buffer.copyFromChannel(samples, 0, first);
+        parts.push({ samples, from: first / buffer.sampleRate, rate: buffer.sampleRate, gain });
+      };
+      if (!rendering.whole) return null;
+      if (mixed.hum > 0) add(rendering.whole, mixed.hum);
+      if (this.#piano.fades)
+        for (const part of heardIn(mixed)) {
+          const buffer = this.#piano.buffer?.(rendering, part);
+          if (!buffer) return null;
+          add(buffer, mixed[part]);
+        }
+      return { origin, parts };
+    };
+    const going = heard(lane.rendering, lane.origin, lane.mix);
+    const coming = heard(next, fade.origin, mix);
+    return going && coming ? correction(likeness(going, coming, from, to)) : undefined;
   }
 }

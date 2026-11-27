@@ -136,6 +136,16 @@ function sameness(sound: ArrayBuffer): string {
   return `${bytes.length}:${h.toString(16)}`;
 }
 
+/** A text told from others by its length and a hash of its characters (FNV-1a). */
+function fnv(text: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return `${text.length}:${h.toString(16)}`;
+}
+
 const keyOf = (elaboration: number): string =>
   settingKey({ elaboration: Math.round(elaboration * 100) / 100 });
 
@@ -248,6 +258,14 @@ export class Library {
     this.#work();
   }
 
+  /**
+   * Let go of what no longer fits, now that what sounded may have faded out (what sounds is kept
+   * whatever it costs, and was when the fader moved on).
+   */
+  tidy(): void {
+    this.#trim();
+  }
+
   /** Whether the library keeps this rendering. */
   holds(rendering: Rendering): boolean {
     const key = settingKey(rendering.setting);
@@ -278,7 +296,9 @@ export class Library {
     const whole = rendering.whole;
     const shared = whole !== null && counted.has(whole);
     if (whole) counted.add(whole);
-    return (shared ? 0 : rendering.audio.byteLength) + this.#options.besides(rendering);
+    // by the buffer itself: an array taken of it may be detached once a source plays it
+    const voice = whole ? whole.length * whole.numberOfChannels * 4 : rendering.audio.byteLength;
+    return (shared ? 0 : voice) + this.#options.besides(rendering);
   }
 
   /** What is decoded, and what it costs. */
@@ -401,7 +421,13 @@ export class Library {
     try {
       const plan = parsePlan(entry.plan);
       const whole = this.#sharedSound(entry) ?? (await this.#decoded(sound, entry.voice));
-      entry.rendering = new Rendering({ ...plan, id: renderingId(), startSeconds: 0, startState: 0 }, whole);
+      // what it sounds like: its voice and its plan, but for the setting it is of
+      const sounds = `${entry.same}|${fnv(JSON.stringify({ ...plan, setting: null }))}`;
+      entry.rendering = new Rendering(
+        { ...plan, id: renderingId(), startSeconds: 0, startState: 0 },
+        whole,
+        sounds,
+      );
       entry.lastUsed = ++this.#clock;
     } catch (error) {
       entry.failed = true;

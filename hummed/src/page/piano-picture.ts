@@ -34,7 +34,8 @@ interface Job {
   /** A voice's picture is drawn before a piano's: it is the one drawn over the other. */
   readonly kind: 'voice' | 'piano';
   readonly strip: Strip;
-  readonly rendering: Rendering;
+  /** The renderings it is the picture of: those that sound alike share it. */
+  readonly renderings: Set<Rendering>;
   readonly source: () => Promise<PianoSound> | null;
   /**
    * The sound, while it comes and once it is there, kept until the picture is whole (the sampled
@@ -84,62 +85,63 @@ export class PianoPicture {
    * Asking starts it, from where the playhead `t` is in it.
    */
   strip(rendering: Rendering, part: PianoPartName, t: Seconds, urgency: Urgency = 'now'): Strip | null {
-    const key = `piano:${rendering.id}:${part}:${this.#piano}`;
-    const job =
-      this.#jobs.get(key) ??
-      this.#add({
-        key,
-        kind: 'piano',
-        strip: new Strip(INKS.piano),
-        rendering,
-        source: () => this.#source(rendering, part),
-        scale: PIANO_SCALES[this.#style],
-      });
+    const job = this.#job(rendering, `piano:${rendering.sound}:${part}:${this.#piano}`, () => ({
+      kind: 'piano',
+      strip: new Strip(INKS.piano),
+      source: () => this.#source(rendering, part),
+      scale: PIANO_SCALES[this.#style],
+    }));
     this.#want(job, t, urgency);
     return job.strip.columns > 0 ? job.strip : null;
   }
 
   /**
-   * A rendering's voice drawn from its sound, where it was rendered ahead: into its own strip, as
-   * the workers draw one that streams in.
+   * A rendering's voice as it is drawn: one that streams in, its own strip, which the workers draw;
+   * one rendered ahead, its picture drawn from its sound (asking starts it, from where the playhead
+   * `t` is in it), shared with those that sound the same.
    */
-  voice(rendering: Rendering, t: Seconds, urgency: Urgency = 'now'): void {
+  voice(rendering: Rendering, t: Seconds, urgency: Urgency = 'now'): Strip {
     const whole = rendering.whole;
-    if (!whole) return;
-    const key = `voice:${rendering.id}`;
-    const job =
-      this.#jobs.get(key) ??
-      this.#add({
-        key,
-        kind: 'voice',
-        strip: rendering.strip,
-        rendering,
-        source: () => Promise.resolve({ samples: whole.getChannelData(0), sampleRate: SAMPLE_RATE }),
-        scale: SPECTROGRAM_STYLES[this.#style].scale,
-      });
+    if (!whole) return rendering.strip;
+    const job = this.#job(rendering, `voice:${rendering.sound}`, () => ({
+      kind: 'voice',
+      strip: new Strip(INKS.hum),
+      source: () => Promise.resolve({ samples: whole.getChannelData(0), sampleRate: SAMPLE_RATE }),
+      scale: SPECTROGRAM_STYLES[this.#style].scale,
+    }));
     this.#want(job, t, urgency);
+    return job.strip;
   }
 
   /** What the pictures of a rendering take, in bytes (its voice's strip counted with its pictures). */
   bytes(rendering: Rendering): number {
     let tiles = rendering.whole ? 0 : rendering.strip.tiles.length;
-    for (const job of this.#jobs.values()) if (job.rendering === rendering) tiles += job.strip.tiles.length;
+    for (const job of this.#jobs.values()) if (job.renderings.has(rendering)) tiles += job.strip.tiles.length;
     return tiles * TILE * SPECTROGRAM.rows * 4;
   }
 
-  /** Let go of the pictures of renderings that are no longer kept. */
+  /** Let go of the pictures of a rendering that is no longer kept, unless another holds them. */
   drop(rendering: Rendering): void {
-    for (const job of this.#jobs.values()) if (job.rendering === rendering) this.#drop(job);
-    this.#next();
+    this.keepOnly((r) => r !== rendering);
   }
 
   /** Let go of the pictures of every rendering but those that `keep` says to keep. */
   keepOnly(keep: (rendering: Rendering) => boolean): void {
-    for (const job of [...this.#jobs.values()]) if (!keep(job.rendering)) this.#drop(job);
+    for (const job of [...this.#jobs.values()]) {
+      for (const rendering of [...job.renderings]) if (!keep(rendering)) job.renderings.delete(rendering);
+      if (job.renderings.size === 0) this.#drop(job);
+    }
     this.#next();
   }
 
-  #add(init: Pick<Job, 'key' | 'kind' | 'strip' | 'rendering' | 'source' | 'scale'>): Job {
+  /** The picture under `key`, held by `rendering` too; made as `make` says where there is none yet. */
+  #job(rendering: Rendering, key: string, make: () => Pick<Job, 'kind' | 'strip' | 'source' | 'scale'>): Job {
+    const job = this.#jobs.get(key) ?? this.#add({ key, renderings: new Set(), ...make() });
+    job.renderings.add(rendering);
+    return job;
+  }
+
+  #add(init: Pick<Job, 'key' | 'kind' | 'strip' | 'renderings' | 'source' | 'scale'>): Job {
     const job: Job = {
       ...init,
       asked: null,

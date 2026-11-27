@@ -47,9 +47,19 @@ export class Rendering {
   #samples = 0;
   done = false;
 
-  /** A rendering that streams in; or one whose sound is all there, in `whole` (then `audio` is its samples). */
-  constructor(plan: Plan, whole: AudioBuffer | null = null) {
+  /**
+   * What it sounds like, voice and piano: renderings that sound alike to the sample have the same
+   * (the voice rendered ahead at 0.9, 0.95 and 1, the same setting), each that streams in its own.
+   */
+  readonly sound: string;
+
+  /**
+   * A rendering that streams in; or one whose sound is all there, in `whole` (then `audio` is its
+   * samples), which sounds as `sound` says.
+   */
+  constructor(plan: Plan, whole: AudioBuffer | null = null, sound = `live:${plan.id}`) {
     this.id = plan.id;
+    this.sound = sound;
     this.setting = plan.setting;
     this.voiceLevel = plan.voiceLevel;
     this.duration = plan.duration;

@@ -120,6 +120,10 @@ const picture = new PianoPicture(
 const pianoColumns = new Written<number>((columns) => {
   canvas.dataset['piano'] = String(columns);
 });
+/** How many settings sound at once (more than one while they blend), likewise. */
+const soundingCount = new Written<number>((count) => {
+  canvas.dataset['sounding'] = String(count);
+});
 const instructions = new InstructionsView(element('instructions', HTMLElement), () => {
   // the visitor goes to read the call in MPM Desk
   if (player.playing) player.pause();
@@ -149,24 +153,29 @@ function draw(time: number): boolean {
   // each setting that sounds, as present as it is heard there (the humming at −52 dB all but gone,
   // as it sounds), and while settings blend, each as much as it weighs
   let columns = 0;
-  const layers = player.sounding(t).map(({ rendering, t: at, weight, mix }): Layer => {
+  const sounding = player.sounding(t);
+  // the axis is theirs by their powers, as shares of all (a crossfade of settings alike in sound
+  // takes both down a little, and of opposite ones up)
+  const power = sounding.reduce((sum, s) => sum + s.weight * s.weight, 0) || 1;
+  const layers = sounding.map(({ rendering, t: at, weight, mix }): Layer => {
     // the part each setting plays as it is heard: its mix, which the fader set while it was asked for
     const part = partIn(mix);
     const strip = part && display.piano ? picture.strip(rendering, part, at) : null;
     if (rendering === cur) columns = strip?.columns ?? 0;
-    picture.voice(rendering, at);
+    const voice = picture.voice(rendering, at);
     const loudest = Math.max(mix.harmonies, mix.piece) / LOUDEST.piano;
     const pianoAlpha = inkAlpha(PIANO_SCALES[spectrogramStyle], loudest);
     const humAlpha = inkAlpha(SPECTROGRAM_STYLES[spectrogramStyle].scale, mix.hum / LOUDEST.hum);
     return {
       rendering,
       t: at,
-      share: weight * weight,
-      voice: { strip: rendering.strip, alpha: weight * humAlpha },
+      share: (weight * weight) / power,
+      voice: { strip: voice, alpha: weight * humAlpha },
       piano: strip && { strip, alpha: weight * pianoAlpha },
     };
   });
   pianoColumns.set(columns);
+  soundingCount.set(layers.length);
   const drew = view.draw(layers, moving);
   // of the piece, or of the harmonic reductions, which take its tempo, dynamics and arpeggios alone
   const parts = partsOf(elaboration(), details);
@@ -258,6 +267,7 @@ setInterval(() => {
     // the piano of a setting rendered ahead, decoded with it
     if (settings.kind === 'recorded' && part) recorded.ready(rendering, [part]);
   }
+  library.tidy();
   picture.keepOnly((rendering) => player.inUse(rendering) || library.holds(rendering));
   recordings?.keep([...library.elaborations(), ...player.renderings().map((r) => r.setting.elaboration)]);
   showLibrary();

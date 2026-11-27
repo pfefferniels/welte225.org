@@ -44,6 +44,11 @@ export interface PianoOutput {
    * (an instrument, which is heard elsewhere, has none).
    */
   play(rendering: Rendering, t: Seconds, when: number, into: PianoInputs | null): PianoPlay;
+  /**
+   * A part's sound as one buffer, where this piano plays it from one (a recording decoded): what a
+   * crossfade measures how alike two settings sound by. Null where it plays notes as they come.
+   */
+  buffer?(rendering: Rendering, part: PianoPartName): AudioBuffer | null;
   /** Silence everything handed over. */
   stop(): void;
 }
@@ -128,6 +133,11 @@ export class BuiltInPiano implements PianoOutput {
     }
     if (!this.#sampler.ready()) return null;
     return this.#sampler.render(rendering.held(part), rendering.duration);
+  }
+
+  buffer(rendering: Rendering, part: PianoPartName): AudioBuffer | null {
+    if (!this.recorded(rendering) || this.#recordings?.failed(rendering.setting.elaboration)) return null;
+    return this.#recordings?.part(rendering.setting.elaboration, part) ?? null;
   }
 
   /** What a rendering's decoded recordings take, in bytes. */

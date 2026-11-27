@@ -3,7 +3,7 @@
 // runs with the audio clock from where it was placed: `origin` is the context time of its time 0.
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
-import { Weight, type Point } from './blend.ts';
+import { Weight, type Correction, type Point } from './blend.ts';
 import type { Mix } from './mix.ts';
 import type { PianoOutput, PianoPlay } from './outputs.ts';
 import type { Rendering } from './rendering.ts';
@@ -14,7 +14,7 @@ const SEGMENT: Seconds = 0.25;
 const GLIDE: Seconds = 0.02;
 
 export class Lane {
-  readonly rendering: Rendering;
+  #rendering: Rendering;
   readonly origin: number;
   /** When it begins to sound, in context time. */
   readonly begin: number;
@@ -48,7 +48,7 @@ export class Lane {
   ) {
     const context = graph.context;
     this.#context = context;
-    this.rendering = rendering;
+    this.#rendering = rendering;
     this.origin = placed.origin;
     this.begin = placed.begin;
     this.fresh = placed.fresh;
@@ -90,6 +90,20 @@ export class Lane {
     this.#piano = piano?.play(rendering, t, this.begin, this.#mixGains) ?? null;
   }
 
+  /** What it plays. */
+  get rendering(): Rendering {
+    return this.#rendering;
+  }
+
+  /**
+   * Go on as another rendering that sounds the same (`sound`), with the same mix: what plays plays
+   * on, now under its name. Fading from one into the other would add the two up, the same sound.
+   */
+  relabel(rendering: Rendering): void {
+    if (rendering.sound !== this.#rendering.sound) throw new Error('a lane goes on only as the same sound');
+    this.#rendering = rendering;
+  }
+
   /** Its time at a context time. */
   position(time: number): Seconds {
     return time - this.origin;
@@ -117,9 +131,12 @@ export class Lane {
     for (const p of points) this.#gain.gain.linearRampToValueAtTime(p.value, p.time);
   }
 
-  /** Fade out from wherever it is at context time `time`, over `length`: another comes in meanwhile. */
-  fadeOut(time: number, length: Seconds): void {
-    const added = this.weight.fadeOut(time, length);
+  /**
+   * Fade out from wherever it is at context time `time`, over `length`: another comes in meanwhile,
+   * both taken by `corrected` where they are alike.
+   */
+  fadeOut(time: number, length: Seconds, corrected?: Correction): void {
+    const added = this.weight.fadeOut(time, length, corrected);
     this.#gain.gain.cancelScheduledValues(time + 1e-6);
     this.#ramp(added);
   }
