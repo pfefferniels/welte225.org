@@ -51,22 +51,15 @@ export const BEHIND = 2;
 /**
  * The settings in the order they are wanted: the fader's own, then its neighbours among `rendered`
  * outward, the one next on the side it travels to before the one behind, up to `AHEAD` ahead and
- * `BEHIND` behind. Not travelling, it is as if it went up. `also` (where wandering goes next)
- * comes after the nearest two.
+ * `BEHIND` behind. Not travelling, it is as if it went up.
  */
-export function wanted(
-  rendered: readonly number[],
-  at: number,
-  direction: 1 | -1 | 0,
-  also: readonly number[] = [],
-): number[] {
+export function wanted(rendered: readonly number[], at: number, direction: 1 | -1 | 0): number[] {
   const i = rendered.reduce((best, e, k) => (Math.abs(e - at) < Math.abs(rendered[best] - at) ? k : best), 0);
   const d = direction === 0 ? 1 : direction;
   const order = [i];
   for (let k = 1; k <= Math.max(AHEAD, BEHIND); k++) {
     if (k <= AHEAD) order.push(i + d * k);
     if (k <= BEHIND) order.push(i - d * k);
-    if (k === 1) for (const e of also) order.push(rendered.indexOf(e));
   }
   const seen = new Set<number>();
   return order

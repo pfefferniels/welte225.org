@@ -16,9 +16,6 @@ describe('the settings that are ready', () => {
     // at an end, only what there is
     assert.deepEqual(wanted(RENDERED, 0, -1), [0, 0.05, 0.1]);
     assert.deepEqual(wanted(RENDERED, 1, 1), [1, 0.95, 0.9]);
-    // where wandering goes next comes after the nearest two
-    assert.deepEqual(wanted(RENDERED, 0.9, -1, [0.75]), [0.9, 0.85, 0.95, 0.75, 0.8, 1]);
-    assert.deepEqual(wanted(RENDERED, 0.3, 1, [0.45]), [0.3, 0.35, 0.25, 0.45, 0.4, 0.2]);
     // an elaboration between the steps is the nearest step's
     assert.equal(wanted(RENDERED, 0.42, 0)[0], 0.4);
   });

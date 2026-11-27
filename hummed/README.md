@@ -458,8 +458,7 @@ buffer as it is, with where the voice begins in it: copied out, the voice of fou
 page's thread up for a tenth of a second, and a crossfade's start with it. For the same reason a
 picture's sound goes to the worker that draws it in pieces of two seconds, which it draws from as
 they come, and the sampled grand is handed the notes it plays ahead a few hundred at a time. It fetches every setting's files ahead (a phone, only those around the fader), and decodes the
-setting the fader is at and its neighbours, three on the side it travels to and two behind, the
-next stop of a wandering fader after the nearest two, as far as a budget allows: 640 MB on a
+setting the fader is at and its neighbours, three on the side it travels to and two behind, as far as a budget allows: 640 MB on a
 computer, 320 MB where the browser says it has 4 GB, 192 MB on a phone. A second of a setting costs
 172 kB of voice, 188 kB of the piano part heard (a Pianoteq recording at 48 kHz) and 288 kB of its
 two pictures: the longest setting 147 MB, the shortest 45. So a computer keeps the setting playing
@@ -484,13 +483,18 @@ whose time has passed.
 
 ### Wandering
 
-The button with the double arrow beside the fader's name lets the fader walk by itself
-(`src/page/wander.ts`): from the far right, a setting at a time, to the far left, then back, and so
-on while the music plays, each setting heard for two and a half bars (`WANDER_BARS`). It stops at each
-point of the table where the voice is rendered for it (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
-and 0.9), and counts the two and a half bars in the music from where the setting takes over, so that
-each is heard as long however fast it goes; each comes in at once as the fader does, crossfading at
-the same place in the score, the library having decoded the next stop ahead. Moving the fader, or
+The button with the double arrow beside the fader's name lets the fader glide by itself
+(`src/page/wander.ts`): from the far right to the far left, then back, and so on while the music
+plays, at an even pace counted in the music, two and a half bars from one setting of the table to the
+next (`WANDER_BARS`), so that each is heard as long however fast it goes: fifteen bars from end to end.
+Its ends are the first and the last point of the table (`WANDER_STOPS`: 0, 0.15, 0.3, 0.45, 0.6, 0.75
+and 0.9); between them it goes anywhere, not in the fader's whole steps, so that the thumb moves
+smoothly and the mix with it, and the voice rendered for each step on the way (every 0.05) takes over
+from the one before as the fader comes to it, crossfading at the same place in the score, as in a
+slow drag, the library having decoded the next ones on the side it travels to. Every 40 ms it looks
+where the playhead is and moves on by as many bars as the music went on; not while paused, nor where
+the playhead went back or leapt ahead (a seek: it goes on from there), nor while the setting it has
+come to is neither heard nor ready (it waits there while that is rendered). Moving the fader, or
 setting a detail apart, stops it.
 
 ### The details

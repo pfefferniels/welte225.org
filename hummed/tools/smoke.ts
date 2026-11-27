@@ -1,10 +1,10 @@
 // The page in a real browser: serve the site (the repository root, as GitHub Pages does), open its
 // front page, play, move the elaboration (the voice rendered anew), seek, open the details under it
 // (one set apart rendered as its own setting, what is heard switched, the fader taking them back),
-// open and close the info card, show the reconstruction's instructions and the piano in the spectrogram, choose each piano in
-// the settings (an instrument over MIDI played by a stand-in that keeps what it is sent), and fail on
-// any page error. Needs Playwright with Chromium installed (not a
-// dependency of this project):   npm run smoke
+// open and close the info card, let the fader wander, show the reconstruction's instructions and the
+// piano in the spectrogram, choose each piano in the settings (an instrument over MIDI played by a
+// stand-in that keeps what it is sent), and fail on any page error. Needs Playwright with Chromium
+// installed (not a dependency of this project):   npm run smoke
 import { createReadStream, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { createRequire } from 'node:module';
@@ -251,6 +251,32 @@ try {
   const closed = !(await cardOpen());
   console.log(`info card: opens ${opened}, closes on Escape ${closed}`);
   if (!opened || !closed) errors.push('the info card does not open and close');
+
+  // wandering: the fader glides from the far right, between its whole steps, and is back in them
+  // once stopped; then back where it was, for what follows
+  const fader = (): Promise<{ value: number; step: string }> =>
+    page.evaluate(
+      "(() => { const e = document.getElementById('elaboration'); return { value: Number(e.value), step: e.step }; })()",
+    );
+  await page.click('#wander');
+  const wanderFrom = await fader();
+  await page.waitForFunction("Number(document.getElementById('elaboration').value) < 89.5", undefined, {
+    timeout: 60000,
+  });
+  const gliding = await fader();
+  await page.click('#wander');
+  const stopped = await fader();
+  console.log(
+    `wander: from ${wanderFrom.value} to ${gliding.value.toFixed(2)} (steps ${gliding.step}), stopped at ${stopped.value} (steps ${stopped.step})`,
+  );
+  if (wanderFrom.value !== 90 || gliding.step !== 'any' || Number.isInteger(gliding.value))
+    errors.push('the fader does not glide from the far right when it wanders');
+  if (stopped.step !== '1' || !Number.isInteger(stopped.value))
+    errors.push('the fader is not back in whole steps once it stops wandering');
+  await page.evaluate(
+    "(() => { const e = document.getElementById('elaboration'); e.value = 65; e.dispatchEvent(new Event('input')); })()",
+  );
+  await page.waitForTimeout(2000);
 
   // the settings: the reconstruction's instructions where the music is, each a link into MPM Desk
   await page.click('.settings-button');

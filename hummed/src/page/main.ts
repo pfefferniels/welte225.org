@@ -1,7 +1,7 @@
 // The page: the spectrogram fills it; transport and faders float over it.
 import { readReduction } from '../reduction/mei.ts';
 import { inkAlpha, isSpectrogramStyleName, PIANO_SCALES, SPECTROGRAM_STYLES } from '../shared/spectrogram.ts';
-import { plain, type Setting } from '../shared/protocol.ts';
+import { sameSetting, type Setting } from '../shared/protocol.ts';
 import type { VoiceManifest } from '../shared/voice-recordings.ts';
 import { counterpart } from './alignment.ts';
 import { createAudioGraph } from './audio-graph.ts';
@@ -43,7 +43,7 @@ import { browserFrames, Redraws } from './redraws.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { PianoSettings } from './settings.ts';
 import { SpectrogramView, type Layer } from './spectrogram-view.ts';
-import { barsAt, nextStop, WANDER_BARS, WANDER_START, WANDER_STOPS, type Wandering } from './wander.ts';
+import { barsAt, wanderAt, wentOn } from './wander.ts';
 
 const canvas = element('spec', HTMLCanvasElement);
 const playButton = element('play', HTMLButtonElement);
@@ -345,10 +345,9 @@ const renderSoon = (): void => {
 /** Where the fader was last, and which way it went: the library decodes more on that side. */
 let lastElaboration: number | null = null;
 let travel: 1 | -1 | 0 = 0;
-/** The order in which settings are wanted: the fader's, its neighbours, where wandering goes next. */
+/** The order in which settings are wanted: the fader's, then its neighbours, more on the side it travels to. */
 function wantedSettings(): Setting[] {
-  const next = wandering ? [WANDER_STOPS[nextStop(wandering).stop]] : [];
-  return wanted(RENDERED, voiceElaboration(elaboration()), travel, next).map((e) => ({ elaboration: e }));
+  return wanted(RENDERED, voiceElaboration(elaboration()), travel).map((e) => ({ elaboration: e }));
 }
 const applyElaboration = (): void => {
   const e = elaboration();
@@ -387,52 +386,64 @@ elaborationSlider.addEventListener('input', () => {
   renderSoon();
 });
 
-/* ---------- wandering: the fader walks through its settings by itself (wander.ts) ---------- */
+/* ---------- wandering: the fader glides over its settings by itself (wander.ts) ---------- */
 const wanderButton = element('wander', HTMLButtonElement);
-/** Where the wandering is, and in which bar the setting it stops at took over; null when it does not wander. */
-let wandering: (Wandering & { since: number | null }) | null = null;
+/**
+ * How far the wandering has gone, in bars of the music, and where the music was at the last look
+ * (null: look anew); null when it does not wander.
+ */
+let wandering: { bars: number; at: number | null } | null = null;
 let wanderTimer: ReturnType<typeof setInterval> | undefined;
-/** The fader to a stop, as if moved there, taking every detail with it. */
-const wanderTo = (stop: number): void => {
-  elaborationSlider.value = String(Math.round(WANDER_STOPS[stop] * 100));
+/** How often it looks where the music is and moves the fader on: often enough for the eye. */
+const WANDER_EVERY_MS = 40;
+/** The fader to where the wandering is, as if moved there, taking every detail with it. */
+const wanderTo = (e: number): void => {
+  const before = elaborationSlider.value;
+  elaborationSlider.value = String(e * 100);
+  if (elaborationSlider.value === before) return;
   details = FOLLOWING;
   applyElaboration();
   renderSoon();
 };
 /**
- * Look where the music is: once the stop's setting has taken over, two and a half bars from there, on
- * to the next. Not while paused, nor while the setting is still coming.
+ * Look where the music is, and move the fader on by as far as the music went on since. Not while
+ * paused; nor while the setting the fader has come to is neither heard nor ready to take over (it is
+ * rendered as the fader waits there), so that none is passed by unheard.
  */
 const wanderOn = (): void => {
   const cur = player.current;
   if (!wandering || !cur || !player.playing) return;
-  if (!plain(cur.setting) || Math.abs(cur.setting.elaboration - WANDER_STOPS[wandering.stop]) > 1e-9) return;
   const at = barsAt(cur.bars, player.position());
-  // counted from where it took over, or anew where the playhead went back before that
-  if (wandering.since === null || at < wandering.since) {
-    wandering.since = at;
-    return;
-  }
-  if (at - wandering.since < WANDER_BARS) return;
-  wandering = { ...nextStop(wandering), since: null };
-  wanderTo(wandering.stop);
+  const went = wentOn(wandering.at, at);
+  wandering.at = at;
+  const setting = settingOf(elaboration(), FOLLOWING);
+  if (!sameSetting(cur.setting, setting) && library.ready(setting) === null) return;
+  if (went === 0) return;
+  wandering.bars += went;
+  wanderTo(wanderAt(wandering.bars));
 };
 function stopWandering(): void {
   if (!wandering) return;
   wandering = null;
   clearInterval(wanderTimer);
   wanderButton.setAttribute('aria-pressed', 'false');
+  // the fader in whole steps again, from where the glide left it
+  elaborationSlider.step = '1';
+  elaborationSlider.value = String(Math.round(Number(elaborationSlider.value)));
 }
 wanderButton.addEventListener('click', () => {
   if (wandering) {
     stopWandering();
+    applyElaboration();
     return;
   }
-  // from the far right (the piece as Grünfeld plays it), towards the far left
-  wandering = { ...WANDER_START, since: null };
+  // from the far right (the piece as Grünfeld plays it), towards the far left; gliding, the fader
+  // goes anywhere between its whole steps
+  wandering = { bars: 0, at: null };
   wanderButton.setAttribute('aria-pressed', 'true');
-  wanderTo(WANDER_START.stop);
-  wanderTimer = setInterval(wanderOn, 100);
+  elaborationSlider.step = 'any';
+  wanderTo(wanderAt(0));
+  wanderTimer = setInterval(wanderOn, WANDER_EVERY_MS);
   if (!player.playing && !playButton.disabled) player.toggle();
 });
 // let go within a step, the fader goes to the step's point: that stretch is one setting
@@ -515,6 +526,8 @@ positionSlider.addEventListener('input', () => {
   if (!cur) return;
   setFill(positionSlider, Number(positionSlider.value) / cur.duration);
   player.seek(Number(positionSlider.value));
+  // a wandering fader goes on from where the music is now, as far as it goes on from there
+  if (wandering) wandering.at = null;
 });
 positionSlider.addEventListener('change', () => {
   seeking = false;
