@@ -11,7 +11,7 @@ import { SPECTROGRAM, SPECTROGRAM_STYLES } from '../src/shared/spectrogram.ts';
 import { SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
 import type { AudioBlock, StatePair, VtlEngine } from '../src/vtl/engine.ts';
 import { renderChunk } from '../src/worker/chunk.ts';
-import { drawPicture } from '../src/worker/picture.ts';
+import { arrived, drawPicture, type Arriving } from '../src/worker/picture.ts';
 import { makeSpectrogram } from '../src/worker/spectrogram.ts';
 
 const SECONDS = 12;
@@ -74,21 +74,59 @@ describe("a voice's picture", () => {
         if (part.spectrogram) live.set(part.spectrogram.pixels, part.spectrogram.column * SPECTROGRAM.rows);
       }
     const whole = new Uint8Array(total * SPECTROGRAM.rows);
-    await drawPicture(
+    // handed over as the page hands it, in pieces of a second, from before the first column on
+    // to the end and then from the beginning, the worker drawing as they come
+    const from = 700;
+    const first = from * SPECTROGRAM.hop - style.window / 2 - SPECTROGRAM.hop;
+    const arriving: Arriving = {
+      samples: new Float32Array(sound.length),
+      first,
+      received: 0,
+      wake: () => undefined,
+    };
+    let drawn = 0;
+    const drawing = drawPicture(
       {
         type: 'picture',
         id: 1,
-        samples: sound,
+        length: sound.length,
+        first,
         sampleRate: SAMPLE_RATE,
         spectrogram: 'melodic',
         scale: style.scale,
-        from: 700,
+        from,
       },
+      arriving,
       (message: PictureColumns) => {
         whole.set(message.pixels, message.column * SPECTROGRAM.rows);
+        drawn += message.count;
       },
-      () => Promise.resolve(true),
+      () =>
+        new Promise((resolve) =>
+          setImmediate(() => {
+            resolve(true);
+          }),
+        ),
     );
+    const pieces: [number, number][] = [];
+    for (let a = first; a < sound.length; a += SAMPLE_RATE)
+      pieces.push([a, Math.min(sound.length, a + SAMPLE_RATE)]);
+    for (let a = 0; a < first; a += SAMPLE_RATE) pieces.push([a, Math.min(first, a + SAMPLE_RATE)]);
+    let before = 0;
+    for (const [a, b] of pieces) {
+      // nothing is drawn of what has not come
+      await new Promise((resolve) => setImmediate(resolve));
+      assert.ok(drawn >= before);
+      before = drawn;
+      arriving.samples.set(sound.subarray(a, b), a);
+      arriving.received += b - a;
+      arriving.wake();
+    }
+    await drawing;
+    assert.equal(drawn, total);
+    // a column's window is all there before it is drawn
+    assert.ok(!arrived({ ...arriving, received: 10 }, 0, 100));
+    assert.ok(arrived({ ...arriving, received: 10 }, first, first + 10));
     let differ = 0;
     for (let i = 0; i < whole.length; i++) if (whole[i] !== live[i]) differ++;
     assert.equal(differ, 0);

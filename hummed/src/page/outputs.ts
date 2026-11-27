@@ -9,6 +9,7 @@ import type { Seconds } from '../shared/units.ts';
 import type { PianoSampler, PianoSound } from './piano.ts';
 import type { Recordings } from './recordings.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
+import { startOn } from './timeline.ts';
 
 /** Where a setting's piano is heard: an input for each part, which the setting's mix and fade follow. */
 export interface PianoInputs {
@@ -127,8 +128,7 @@ export class BuiltInPiano implements PianoOutput {
     const elaboration = rendering.setting.elaboration;
     if (this.recorded(rendering)) {
       const buffer = this.#recordings?.part(elaboration, part);
-      if (buffer)
-        return Promise.resolve({ samples: buffer.getChannelData(0), sampleRate: buffer.sampleRate });
+      if (buffer) return Promise.resolve({ buffer, lead: 0 });
       if (!this.#recordings?.failed(elaboration)) return null;
     }
     if (!this.#sampler.ready()) return null;
@@ -167,8 +167,9 @@ export class BuiltInPiano implements PianoOutput {
       const source = into[part].context.createBufferSource();
       source.buffer = buffer;
       source.connect(into[part]);
-      // from its place, even where that is before its time (a crossfade that begins at the start)
-      source.start(Math.max(at, at - from), Math.max(0, from));
+      // at its place, even where that is before its time (a crossfade that begins at the start),
+      // and as far into it as its place has passed
+      startOn(source, at, from);
       push(source);
     };
     const playNote = (

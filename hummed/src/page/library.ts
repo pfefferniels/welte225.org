@@ -8,7 +8,7 @@
 import { settingKey, type Setting } from '../shared/protocol.ts';
 import { SAMPLE_RATE } from '../shared/units.ts';
 import {
-  alignVoice,
+  findLead,
   ofThisTable,
   parsePlan,
   parseVoiceManifest,
@@ -420,13 +420,14 @@ export class Library {
     this.#decodingNow = true;
     try {
       const plan = parsePlan(entry.plan);
-      const whole = this.#sharedSound(entry) ?? (await this.#decoded(sound, entry.voice));
+      const { whole, lead } = this.#sharedSound(entry) ?? (await this.#decoded(sound, entry.voice));
       // what it sounds like: its voice and its plan, but for the setting it is of
       const sounds = `${entry.same}|${fnv(JSON.stringify({ ...plan, setting: null }))}`;
       entry.rendering = new Rendering(
         { ...plan, id: renderingId(), startSeconds: 0, startState: 0 },
         whole,
         sounds,
+        lead,
       );
       entry.lastUsed = ++this.#clock;
     } catch (error) {
@@ -441,27 +442,32 @@ export class Library {
   }
 
   /** The sound of another setting decoded already whose voice is the same, to share. */
-  #sharedSound(entry: Recorded): AudioBuffer | null {
-    for (const other of this.#recorded.values())
-      if (other !== entry && other.same === entry.same && other.rendering?.whole)
-        if (other.voice.samples === entry.voice.samples) return other.rendering.whole;
+  #sharedSound(entry: Recorded): { readonly whole: AudioBuffer; readonly lead: number } | null {
+    for (const other of this.#recorded.values()) {
+      const rendering = other.rendering;
+      if (other !== entry && other.same === entry.same && rendering?.whole)
+        if (other.voice.samples === entry.voice.samples)
+          return { whole: rendering.whole, lead: rendering.lead };
+    }
     return null;
   }
 
   /**
-   * The sound decoded at the rate it was rendered at, whatever the sound card's, and found in what
-   * the decoder gives (`alignVoice`); the bytes are kept for another time (decoding takes them).
+   * The sound decoded at the rate it was rendered at, whatever the sound card's, and where the
+   * rendering lies in it: its lead, found by the reference the tool kept (`findLead`), else the one
+   * it measured. The buffer is played from there as it is: copied out (`alignVoice`), each voice took
+   * the page's thread 60 to 180 ms. The bytes are kept for another time (decoding takes them).
    */
-  async #decoded(sound: ArrayBuffer, voice: RecordedVoice): Promise<AudioBuffer> {
+  async #decoded(
+    sound: ArrayBuffer,
+    voice: RecordedVoice,
+  ): Promise<{ readonly whole: AudioBuffer; readonly lead: number }> {
     const decoder = new OfflineAudioContext(1, 1, this.#sampleRate);
-    const decoded = await decoder.decodeAudioData(sound.slice(0));
-    const samples = alignVoice(decoded.getChannelData(0), voice);
-    const whole = new AudioBuffer({
-      length: samples.length,
-      numberOfChannels: 1,
-      sampleRate: this.#sampleRate,
-    });
-    whole.getChannelData(0).set(samples);
-    return whole;
+    const whole = await decoder.decodeAudioData(sound.slice(0));
+    const measured = voice.align['lead'];
+    const lead =
+      findLead(whole.getChannelData(0), voice)?.lead ??
+      (typeof measured === 'number' ? Math.round(measured) : 0);
+    return { whole, lead };
   }
 }

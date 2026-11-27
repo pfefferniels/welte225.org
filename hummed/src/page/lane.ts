@@ -4,6 +4,7 @@
 import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
 import type { AudioGraph } from './audio-graph.ts';
 import { Weight, type Correction, type Point } from './blend.ts';
+import { startOn } from './timeline.ts';
 import type { Mix } from './mix.ts';
 import type { PianoOutput, PianoPlay } from './outputs.ts';
 import type { Rendering } from './rendering.ts';
@@ -141,6 +142,13 @@ export class Lane {
     this.#ramp(added);
   }
 
+  /** Go out from wherever it is at context time `time` along a course of gains, to nothing after `length`. */
+  follow(time: number, length: Seconds, course: (time: number) => number): void {
+    const added = this.weight.follow(time, length, course);
+    this.#gain.gain.cancelScheduledValues(time + 1e-6);
+    this.#ramp(added);
+  }
+
   /** Whether it has faded out for good by context time `time`. */
   over(time: number): boolean {
     const end = this.weight.end;
@@ -173,11 +181,11 @@ export class Lane {
     if (whole) {
       if (this.#sources.length === 0) {
         // the whole voice from where it begins: one source, its offset that time of the rendering
+        // (and the decoder's lead) in the buffer, or later and as far into it where that has passed
         const source = this.#context.createBufferSource();
         source.buffer = whole;
         source.connect(this.#mixGains.hum);
-        const t = this.begin - this.origin;
-        source.start(t >= 0 ? this.begin : this.origin, Math.max(0, t));
+        startOn(source, this.begin, this.begin - this.origin + rendering.lead / whole.sampleRate);
         this.#sources.push(source);
       }
       this.#voiceUntil = Math.max(this.#voiceUntil, horizon);
@@ -193,7 +201,7 @@ export class Lane {
         source.buffer = buffer;
         source.connect(this.#mixGains.hum);
         // each piece where its first sample falls, so that they join sample to sample
-        source.start(Math.max(this.#context.currentTime, this.at(a / SAMPLE_RATE)));
+        startOn(source, this.at(a / SAMPLE_RATE), 0);
         this.#sources.push(source);
         this.#voiceUntil = t1;
       }
@@ -209,22 +217,26 @@ export class Lane {
     this.#pianoFrom = Math.max(this.#pianoFrom, until);
   }
 
-  /** Silence it and take it out of the audio graph. */
-  stop(): void {
+  /** Silence it, at once or at a context time, and take it out of the audio graph after. */
+  stop(at?: number): void {
     if (this.#stopped) return;
     this.#stopped = true;
     for (const source of this.#sources) {
       try {
-        source.stop();
+        source.stop(at);
       } catch {
-        // not started yet, or already stopped
+        // already stopped
       }
     }
     this.#sources = [];
-    this.#piano?.stop();
+    this.#piano?.stop(at);
     const nodes = this.#nodes;
-    setTimeout(() => {
-      for (const node of nodes) node.disconnect();
-    }, 200);
+    const after = at === undefined ? 0 : Math.max(0, at - this.#context.currentTime);
+    setTimeout(
+      () => {
+        for (const node of nodes) node.disconnect();
+      },
+      (after + 0.2) * 1000,
+    );
   }
 }

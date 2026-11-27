@@ -5,7 +5,7 @@
 // and drawn ahead for the settings around the fader, so that a crossfade into one has its picture
 // already. The worker draws one at a time, those of settings heard first, each from where the
 // playhead is in it to the end and then from the beginning.
-import type { PictureColumns, PictureRequest } from '../shared/protocol.ts';
+import type { PictureColumns, PictureRequest, PictureSamples } from '../shared/protocol.ts';
 import {
   INKS,
   PIANO_SCALES,
@@ -14,7 +14,7 @@ import {
   type SpectrogramScale,
   type SpectrogramStyleName,
 } from '../shared/spectrogram.ts';
-import { SAMPLE_RATE, type Seconds } from '../shared/units.ts';
+import type { Seconds } from '../shared/units.ts';
 import type { PianoSound } from './piano.ts';
 import type { PianoPartName, Rendering } from './rendering.ts';
 import { Strip, TILE } from './strip.ts';
@@ -23,6 +23,9 @@ import { Strip, TILE } from './strip.ts';
 export type PianoSoundSource = (rendering: Rendering, part: PianoPartName) => Promise<PianoSound> | null;
 
 const RETRY_MS = 300;
+/** A picture's sound is handed over in pieces of two seconds, four to a task. */
+const PIECE = 2;
+const PIECES_AT_ONCE = 4;
 /** How far before the playhead a picture begins: the strip shows that much of the past. */
 const BEFORE: Seconds = 6;
 
@@ -106,7 +109,7 @@ export class PianoPicture {
     const job = this.#job(rendering, `voice:${rendering.sound}`, () => ({
       kind: 'voice',
       strip: new Strip(INKS.hum),
-      source: () => Promise.resolve({ samples: whole.getChannelData(0), sampleRate: SAMPLE_RATE }),
+      source: () => Promise.resolve({ buffer: whole, lead: rendering.lead }),
       scale: SPECTROGRAM_STYLES[this.#style].scale,
     }));
     this.#want(job, t, urgency);
@@ -222,20 +225,63 @@ export class PianoPicture {
     const id = this.#nextId++;
     job.id = id;
     job.received = 0;
-    job.count = Math.ceil((sound.samples.length / sound.sampleRate) * SPECTROGRAM.columnsPerSecond);
+    const rate = sound.buffer.sampleRate;
+    const length = Math.max(0, sound.buffer.length - sound.lead);
+    job.count = Math.ceil((length / rate) * SPECTROGRAM.columnsPerSecond);
     this.#drawing = job;
-    // a copy goes to the worker: the sound is kept in case the picture is put back
-    const copy = sound.samples.slice();
+    // the sound under the first column's window first, then on to the end, then from the beginning
+    const from = Math.floor(job.from * SPECTROGRAM.columnsPerSecond);
+    const hop = rate / SPECTROGRAM.columnsPerSecond;
+    const half = SPECTROGRAM_STYLES[this.#style].window / 2;
+    const first = Math.max(0, Math.min(length, Math.floor(from * hop - half - hop)));
     const request: PictureRequest = {
       type: 'picture',
       id,
-      samples: copy,
-      sampleRate: sound.sampleRate,
+      length,
+      first,
+      sampleRate: rate,
       spectrogram: this.#style,
       scale: job.scale,
-      from: Math.floor(job.from * SPECTROGRAM.columnsPerSecond),
+      from,
     };
-    this.#drawer().postMessage(request, [copy.buffer]);
+    const worker = this.#drawer();
+    worker.postMessage(request);
+    void this.#hand(worker, job, id, sound, first, length);
+  }
+
+  /**
+   * Hand a picture's sound to the worker in pieces, a few to a task, copied as they go (copied whole,
+   * a sound of four minutes held the page's thread up for 20 ms); while the picture is still wanted.
+   */
+  async #hand(
+    worker: Worker,
+    job: Job,
+    id: number,
+    sound: PianoSound,
+    first: number,
+    length: number,
+  ): Promise<void> {
+    const { buffer, lead } = sound;
+    const piece = PIECE * buffer.sampleRate;
+    let start = first;
+    let wrapped = false;
+    for (let n = 1; job.id === id && this.#jobs.has(job.key); n++) {
+      if (!wrapped && start >= length) {
+        wrapped = true;
+        start = 0;
+      }
+      const end = Math.min(wrapped ? first : length, start + piece);
+      if (wrapped && start >= end) return;
+      const samples = new Float32Array(end - start);
+      // where the sound's first sample lies before the buffer's, silence
+      const from = lead + start;
+      if (from >= 0) buffer.copyFromChannel(samples, 0, from);
+      else if (end + lead > 0) buffer.copyFromChannel(samples.subarray(-from), 0, 0);
+      const message: PictureSamples = { type: 'picture-samples', id, start, samples };
+      worker.postMessage(message, [samples.buffer]);
+      start = end;
+      if (n % PIECES_AT_ONCE === 0) await new Promise((resolve) => setTimeout(resolve, 0));
+    }
   }
 
   /** The worker, its columns going to the strip they were drawn for. */

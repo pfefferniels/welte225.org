@@ -20,6 +20,7 @@ import {
   type PianoMessage,
   type PictureColumns,
   type PictureRequest,
+  type PictureSamples,
   type Setting,
   type Timings,
   type ToWorker,
@@ -33,7 +34,7 @@ import { FIRST_SOUND, renderChunk } from './chunk.ts';
 import { shapeOf } from './levels.ts';
 import { materials, type Materials } from './materials.ts';
 import { performPiano } from './piano.ts';
-import { drawPicture } from './picture.ts';
+import { drawPicture, type Arriving } from './picture.ts';
 import {
   copyLevel,
   hum,
@@ -54,7 +55,7 @@ import { maxStatesOf, scoreStates } from './voice-states.ts';
 interface WorkerScope {
   readonly name: string;
   postMessage(message: FromWorker | PictureColumns, transfer?: Transferable[]): void;
-  onmessage: ((event: MessageEvent<ToWorker | PictureRequest>) => void) | null;
+  onmessage: ((event: MessageEvent<ToWorker | PictureRequest | PictureSamples>) => void) | null;
 }
 const scope = self as unknown as WorkerScope;
 const post = (message: FromWorker, transfer: Transferable[] = []): void => {
@@ -110,6 +111,8 @@ let current = 0;
 let line: Promise<void> = Promise.resolve();
 /** The newest picture asked for. */
 let picture = 0;
+/** The sound of the newest picture as it comes. */
+let arriving: { readonly id: number; readonly sound: Arriving } | null = null;
 /** The channels to the workers this one prepares settings with: its helpers', or the planner's. */
 let peers: readonly MessagePort[] = [];
 let help: Help | null = null;
@@ -447,10 +450,18 @@ function receive(
 scope.onmessage = (event) => {
   const message = event.data;
   switch (message.type) {
-    case 'picture':
+    case 'picture': {
       picture = message.id;
+      const sound: Arriving = {
+        samples: new Float32Array(message.length),
+        first: message.first,
+        received: 0,
+        wake: nothing,
+      };
+      arriving = { id: message.id, sound };
       void drawPicture(
         message,
+        sound,
         (columns, transfer) => {
           scope.postMessage(columns, transfer);
         },
@@ -460,6 +471,15 @@ scope.onmessage = (event) => {
         },
       );
       return;
+    }
+    case 'picture-samples': {
+      if (arriving?.id !== message.id) return;
+      const { sound } = arriving;
+      sound.samples.set(message.samples, message.start);
+      sound.received += message.samples.length;
+      sound.wake();
+      return;
+    }
     case 'setup': {
       const style = SPECTROGRAM_STYLES[message.spectrogram];
       keep = message.keep;

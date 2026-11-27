@@ -164,13 +164,22 @@ export class Weight {
    */
   fadeOut(time: number, length: number, corrected: Correction = NONE): readonly Point[] {
     const from = this.at(time);
+    return this.follow(time, length, (t) => {
+      const phase = (t - time) / length;
+      return from * fadeOutGain(phase) * corrected(phase);
+    });
+  }
+
+  /**
+   * Go out from wherever it is at `time` along a course of gains (of context time), to nothing at
+   * `time + length`: as `fadeOut`, the course another's fade gives it. Returns the points after `time`.
+   */
+  follow(time: number, length: number, course: (time: number) => number): readonly Point[] {
+    const from = this.at(time);
     const kept = this.#points.filter((p) => p.time <= time);
     const added: Point[] = [];
     if (kept[kept.length - 1]?.time !== time) added.push({ time, value: from });
-    for (const t of steps(time, length)) {
-      const phase = (t - time) / length;
-      added.push({ time: t, value: from * fadeOutGain(phase) * corrected(phase) });
-    }
+    for (const t of steps(time, length)) added.push({ time: t, value: course(t) });
     // the last at nothing exactly; one gone already by then stays gone from when it went
     added[added.length - 1] = { time: time + length, value: 0 };
     this.#points.length = 0;

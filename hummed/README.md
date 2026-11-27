@@ -384,7 +384,29 @@ crossfade: about where two notes struck together begin to be heard as two, and a
 another hardly doubles it), 0.4 s at most, from there down by a sixth at a time, 10 ms at least: the
 misalignment is piecewise linear between the bends of the two clocks, so its most is found exactly.
 Between neighbouring settings at nearly the same tempo it is 0.4 s; from the piece at Grünfeld's
-tempo into the half notes, 2.4 times as fast, 37 ms. A setting that is not ready is rendered once
+tempo into the half notes, 2.4 times as fast, 37 ms.
+
+Where the crossfade begins is chosen too (`findCrossfade`). Where a note struck by the one going out
+lies within reach of its midpoint (beginning no more than 50 ms later, at least 60 ms long and half
+as long as it could be at once), the crossfade is centred on it, so that both strike it together
+(the bends of a clock are the dates no roll moves, its onsets). Else it begins at once if the two
+keep together there over 60 ms or more; else at the first place within half a second where they do;
+else at once if they keep together there at all, however briefly; else at the first place where
+they do within a second, or where they are least apart. Where the reductions pass through a figure
+of grace notes in a few milliseconds that the piece spends half a second on, no crossfade keeps them
+within 10 ms: there it waits. Over every ordered pair of the 21 settings, started every 50 ms through
+the piece (1,145,226 starts, the page's code over the plans' clocks), a crossfade that only chose its
+length left 922 starts over 10 ms apart, in 126 of the 342 pairs, the worst 157.5 ms (0.05 into
+0.65 in bar 6′) and between neighbours 46.6 ms (0.55 into 0.6); placed as well, none is over 10 ms.
+Half the crossfades begin at once, nine in ten within 10 ms, 99 in 100 within 0.36 s, all within
+0.72 s; one in five is centred on a note.
+
+While the fader is dragged, the crossfade is placed against the setting that came in last, and
+each older one still heard has to be under a quarter of its level before it is further apart than
+10 ms from any it is heard with (the one coming in, once that is at a quarter, the last one, the
+other older ones): it fades out from where it is, in a cosine as short as gets it there by then
+(`olderFades`), while the last one takes what is left of the power, the powers still summing to
+one. A setting that is not ready is rendered once
 the fader rests, from as far ahead as the last ones took to be ready, and crossfades in the same
 way once it has sound where it begins to be heard (which lies before where it is at the midpoint,
 where it comes in faster), over as much as 1.5 s (`CROSSFADE`); one whose recording does not load
@@ -393,7 +415,31 @@ fade: it is handed its messages only a quarter of a second ahead, a crossfade be
 has been handed, and it switches from the one setting to the other at the midpoint, the keys still
 down let up there.
 
-Measured in Chromium with every setting's voice replaced by a click every 30 ticks through its own
+A lane's timeline is fixed in context time once it is placed: where its voice, its recordings and
+its notes are at every moment. Each is started where the timeline puts it (`src/page/timeline.ts`):
+the page reads `currentTime` as it starts one, and one whose time has passed, or comes sooner than
+three render quanta from now (8.7 ms at 44.1 kHz), starts then instead, as far into its sound as its
+place has passed, so that it is heard where it would have been and not late. A note of the sampled
+grand comes in so, part-way through; one already over by then is left out. So that none has to, the
+notes are handed over two seconds ahead (`LOOKAHEAD`): with the CPU slowed four times in Chromium,
+the page's thread went as long as 1.4 s without a call to the audio graph. A crossfade whose
+beginning has come too near by the time its ramps are set (the page's thread held up while it was
+made) is made again from then, so that its weights are heard as placed. A pause stops everything
+at an explicit context time, those three quanta ahead, and keeps where the playhead is then as the
+place to go on from: playing on starts there, to the sample.
+
+Measured in Chromium as the page plays (the sampled grand; every call to the audio graph logged, the
+output kept sample by sample): each voice heard alone lies within half a sample of where its start
+put it (70 lanes). Through the clocks, at every crossfade's midpoint the two are within 0.03 ms,
+and wherever both are at a quarter within 9.8 ms: neighbours, the half notes into the piece struck
+again and back, after a seek, at the grace notes of bar 3 (before, 39.7 ms there), and in drags of
+moves 30 to 140 ms apart, in which three settings at a time are heard at a quarter or more, every
+two of them within 9.6 ms (before, 29.7 ms) and their powers summing to 0.999 to 1. With the CPU
+slowed four times, the same, no sound started after its time and no note late (before, as many as
+86 starts in a run after their time, notes by up to a second). A pause and a play go on from the
+sample where the pause stopped the sound (before, a render quantum was heard twice now and then).
+
+With every setting's voice replaced by a click every 30 ticks through its own
 clock, each lane's voice tapped as it leaves the lane (an `AudioWorklet` keeping every sample with
 its frame): each click of the one coming in lands within 0.02 ms of where the clocks put it against
 the one going out, and at the midpoint the two are within 0.02 ms of each other; the same code in an
@@ -407,8 +453,11 @@ picture goes over from the layout of the one going out to that of the one coming
 playhead. Moved while paused, the fader blends the picture alone, over a quarter of a second.
 
 The library decodes the voice at the rate it was rendered at (an `OfflineAudioContext` at 44.1 kHz,
-whatever the sound card's), finds it in the decoded sound (`alignVoice`), and keeps it as one buffer.
-It fetches every setting's files ahead (a phone, only those around the fader), and decodes the
+whatever the sound card's), finds it in the decoded sound (`alignVoice`), and keeps the decoded
+buffer as it is, with where the voice begins in it: copied out, the voice of four minutes held the
+page's thread up for a tenth of a second, and a crossfade's start with it. For the same reason a
+picture's sound goes to the worker that draws it in pieces of two seconds, which it draws from as
+they come, and the sampled grand is handed the notes it plays ahead a few hundred at a time. It fetches every setting's files ahead (a phone, only those around the fader), and decodes the
 setting the fader is at and its neighbours, three on the side it travels to and two behind, the
 next stop of a wandering fader after the nearest two, as far as a budget allows: 640 MB on a
 computer, 320 MB where the browser says it has 4 GB, 192 MB on a phone. A second of a setting costs
@@ -424,7 +473,14 @@ same share their pictures too.
 it moves on, and the plans of `voice/`: a setting faded out is let go of; one rendered as you listen
 takes over wherever the playhead is when it is asked for; one whose recording does not load is
 rendered, even the first; one rendered whole before the playhead comes to where it was asked for
-still takes over; settings that sound the same go on into each other without a crossfade.
+still takes over; settings that sound the same go on into each other without a crossfade; a drag
+of moves 20 to 140 ms apart keeps every two settings heard at once within 10 ms, their powers
+summing to one; a start the page's thread came to late is heard where it was placed; a crossfade
+whose beginning passed while it was made is made again, every ramp ahead of the clock; a pause and play
+go on from the sample the pause stopped at. `test/alignment.test.ts` places crossfades through the
+clocks of `voice/` (one at the figure of grace notes in bar 6′, where no crossfade begun at once
+keeps within 10 ms) and fades older settings out in time; `test/timeline.test.ts` starts sources
+whose time has passed.
 
 ### Wandering
 

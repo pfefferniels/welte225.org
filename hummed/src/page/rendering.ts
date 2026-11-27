@@ -37,6 +37,12 @@ export class Rendering {
    * one source. A rendering that streams in is played in short buffers as it comes.
    */
   readonly whole: AudioBuffer | null;
+  /**
+   * Where the rendering's first sample lies in `whole`, in samples: the sound decoded as it came,
+   * with the decoder's own lead (negative where it cut silence from the beginning). It is played
+   * from there, rather than copied out.
+   */
+  readonly lead: number;
   /** The voice's spectrogram, as far as it has arrived. */
   readonly strip = new Strip(INKS.hum);
   readonly #clock: Plan['clock'];
@@ -57,9 +63,10 @@ export class Rendering {
    * A rendering that streams in; or one whose sound is all there, in `whole` (then `audio` is its
    * samples), which sounds as `sound` says.
    */
-  constructor(plan: Plan, whole: AudioBuffer | null = null, sound = `live:${plan.id}`) {
+  constructor(plan: Plan, whole: AudioBuffer | null = null, sound = `live:${plan.id}`, lead = 0) {
     this.id = plan.id;
     this.sound = sound;
+    this.lead = lead;
     this.setting = plan.setting;
     this.voiceLevel = plan.voiceLevel;
     this.duration = plan.duration;
@@ -70,7 +77,9 @@ export class Rendering {
     this.startSeconds = plan.startSeconds;
     this.#clock = plan.clock;
     this.whole = whole;
-    this.audio = whole ? whole.getChannelData(0) : new Float32Array(Math.ceil(plan.duration * SAMPLE_RATE));
+    this.audio = whole
+      ? whole.getChannelData(0).subarray(Math.max(0, lead))
+      : new Float32Array(Math.ceil(plan.duration * SAMPLE_RATE));
     this.#have = new Uint16Array(Math.ceil(plan.duration * 100) + 1);
     if (whole) {
       for (let c = 0; c < this.#have.length; c++)

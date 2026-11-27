@@ -2,7 +2,9 @@
 // moves on, with the plans of the voice rendered ahead (voice/): a setting faded out is let go of; a
 // setting rendered as you listen takes over once it has sound where it begins to be heard; one whose
 // recording does not load is rendered, even the first; one rendered whole before it takes over still
-// does; and settings that sound the same go on into each other without a crossfade.
+// does; settings that sound the same go on into each other without a crossfade; a drag keeps every
+// two settings heard together within the bound; and the sound keeps to its timeline where the page's
+// thread is late, at a crossfade made while it was held up, and at a pause.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
@@ -11,33 +13,67 @@ import type { Mix } from '../src/page/mix.ts';
 import type { PianoOutput } from '../src/page/outputs.ts';
 import { Player, type ReadySettings } from '../src/page/player.ts';
 import type { VoicePool } from '../src/page/pool.ts';
+import { counterpart } from '../src/page/alignment.ts';
 import { Rendering, renderingId } from '../src/page/rendering.ts';
 import { interp } from '../src/shared/math.ts';
 import { settingKey, type PlanBody, type Setting, type StartAt } from '../src/shared/protocol.ts';
 import { PAD_MS, SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
 
-/** An AudioParam, a node, a buffer's source, as far as the page uses them; nothing sounds. */
-const param = (): AudioParam =>
+/** A value an AudioParam is set to reach: for which context time, and the context's time as it was set. */
+interface Ramp {
+  readonly when: number;
+  readonly setAt: number;
+}
+
+/**
+ * An AudioParam, a node, a buffer's source, as far as the page uses them; nothing sounds. An
+ * AudioParam keeps what it is set to (`set` is told), cancelling apart.
+ */
+const param = (set: (when: number) => void = () => undefined): AudioParam =>
   ({
     value: 1,
-    setValueAtTime: () => undefined,
-    linearRampToValueAtTime: () => undefined,
+    setValueAtTime: (_value: number, when: number) => {
+      set(when);
+    },
+    linearRampToValueAtTime: (_value: number, when: number) => {
+      set(when);
+    },
     cancelScheduledValues: () => undefined,
-    setTargetAtTime: () => undefined,
+    setTargetAtTime: (_value: number, when: number) => {
+      set(when);
+    },
   }) as unknown as AudioParam;
 interface Source {
   readonly buffer: unknown;
   started: boolean;
   stopped: boolean;
+  /** Where it was started: at which context time, how far into its buffer; and when it was stopped. */
+  when: number;
+  offset: number;
+  stoppedAt: number | undefined;
+  /** The context time when the page asked for it to start. */
+  asked: number;
 }
 
 /** A context whose clock the test moves on, which keeps every source the page starts. */
-function fakeContext(): { context: AudioContext; sources: Source[]; now: { time: number } } {
-  const now = { time: 0 };
+function fakeContext(): {
+  context: AudioContext;
+  sources: Source[];
+  now: { time: number; slow: number };
+  ramps: Ramp[];
+} {
+  // a slow thread: each reading of the time finds it on by `slow`
+  const now = { time: 0, slow: 0 };
   const sources: Source[] = [];
-  const node = (): object => ({ connect: () => undefined, disconnect: () => undefined, gain: param() });
+  const ramps: Ramp[] = [];
+  const node = (): object => ({
+    connect: () => undefined,
+    disconnect: () => undefined,
+    gain: param((when) => ramps.push({ when, setAt: now.time })),
+  });
   const context = {
     get currentTime() {
+      now.time += now.slow;
       return now.time;
     },
     sampleRate: 48000,
@@ -51,14 +87,24 @@ function fakeContext(): { context: AudioContext; sources: Source[]; now: { time:
     createBufferSource() {
       const source = {
         buffer: null as unknown,
+        context,
+        playbackRate: { value: 1 },
         started: false,
         stopped: false,
+        when: NaN,
+        offset: NaN,
+        asked: NaN,
+        stoppedAt: undefined as number | undefined,
         connect: () => undefined,
-        start() {
+        start(when: number, offset = 0) {
           source.started = true;
+          source.when = when;
+          source.offset = offset;
+          source.asked = now.time;
         },
-        stop() {
+        stop(at?: number) {
           source.stopped = true;
+          source.stoppedAt = at;
         },
       };
       sources.push(source);
@@ -66,7 +112,7 @@ function fakeContext(): { context: AudioContext; sources: Source[]; now: { time:
     },
     resume: () => Promise.resolve(),
   } as unknown as AudioContext;
-  return { context, sources, now };
+  return { context, sources, now, ramps };
 }
 
 const plans = new Map<string, PlanBody>();
@@ -100,7 +146,7 @@ const MIX: Mix = { hum: 0.1, piece: 1, harmonies: 0 };
 
 /** A player on the fake graph, its library holding `ready` (and `coming`, which can change), its pool keeping requests. */
 function setUp(ready: readonly Rendering[], coming: (setting: Setting) => boolean = () => false) {
-  const { context, sources, now } = fakeContext();
+  const { context, sources, now, ramps } = fakeContext();
   const sink = { connect: () => undefined, gain: param() };
   const graph = { context, master: sink, hum: sink, piano: sink, harmonies: sink } as unknown as AudioGraph;
   const piano = {
@@ -175,7 +221,19 @@ function setUp(ready: readonly Rendering[], coming: (setting: Setting) => boolea
     send(0, startState * STATE_STEP);
     player.receive({ type: 'done', id: request.id });
   };
-  return { player, sources, requests, statuses, run, feed, now };
+  return {
+    player,
+    sources,
+    requests,
+    statuses,
+    run,
+    feed,
+    now,
+    ramps,
+    tick: () => {
+      tick();
+    },
+  };
 }
 
 describe('the transport changing settings', () => {
@@ -271,5 +329,122 @@ describe('the transport changing settings', () => {
     player.change(other.setting);
     assert.ok(player.blending);
     assert.ok(player.lastCrossfade);
+  });
+
+  it('keeps every setting heard with another within 10 ms of it while the fader is dragged', () => {
+    const settings = [0.55, 0.6, 0.65, 0.7, 0.75].map((e) => recorded(e));
+    for (const [gap, path] of [
+      [0.04, [0.65, 0.7, 0.75]],
+      [0.14, [0.65, 0.7, 0.75]],
+      [0.03, [0.7, 0.65, 0.6, 0.55]],
+      [0.02, [0.65, 0.7, 0.75, 0.7, 0.65]],
+    ] as const) {
+      const { player, now, tick } = setUp(settings);
+      player.begin({ elaboration: 0.6 });
+      player.play();
+      player.seek(20);
+      for (let k = 0; k < 10; k++) {
+        now.time += 0.05;
+        tick();
+      }
+      let most = 0;
+      let power = { least: Infinity, most: 0 };
+      const moves = [...path];
+      // a millisecond at a time, the transport ticking every 50 ms, the fader moving every `gap`
+      for (let ms = 0, next = 0; ms < 2000; ms++) {
+        if (moves.length > 0 && ms >= next) {
+          const e = moves.shift();
+          if (e !== undefined) player.change({ elaboration: e });
+          next = ms + gap * 1000;
+        }
+        now.time += 0.001;
+        if (ms % 50 === 0) tick();
+        const heard = player.sounding(player.position());
+        const total = heard.reduce((sum, h) => sum + h.weight ** 2, 0);
+        power = { least: Math.min(power.least, total), most: Math.max(power.most, total) };
+        for (const a of heard)
+          for (const b of heard)
+            if (a !== b && a.weight >= 0.25 && b.weight >= 0.25)
+              most = Math.max(most, Math.abs(counterpart(a.rendering.clock, b.rendering.clock, a.t) - b.t));
+      }
+      assert.ok(
+        most <= 0.0101,
+        `${path.join(' ')} every ${gap * 1000} ms: ${(most * 1000).toFixed(1)} ms apart`,
+      );
+      assert.ok(power.least > 0.97 && power.most < 1.03, `power ${power.least}..${power.most}`);
+    }
+  });
+
+  it('keeps each sound where its timeline puts it when the page’s thread is late', () => {
+    const [a, b] = [recorded(0.6), recorded(0.65)];
+    const { player, sources, now, run } = setUp([a, b]);
+    player.begin(a.setting);
+    player.play();
+    run(1);
+    // from here every reading of the time finds it 100 ms on: the crossfade’s time passes before
+    // the sound coming in is started
+    now.slow = 0.1;
+    player.change(b.setting);
+    now.slow = 0;
+    const placed = player.lastCrossfade;
+    assert.ok(placed);
+    const coming = sources.at(-1);
+    assert.ok(coming?.buffer === b.whole);
+    // started later than asked, and as much further into it: its time 0 where the crossfade put it
+    assert.ok(coming.asked > placed.at, 'the place had passed');
+    assert.ok(coming.when >= coming.asked);
+    assert.ok(Math.abs(coming.when - coming.offset - placed.origin) < 1e-9);
+  });
+
+  it('finds a crossfade again whose beginning passed while it was made', () => {
+    const [a, b] = [recorded(0.6), recorded(0.65)];
+    // measuring how alike the two sound holds the page's thread up, the first time, for 100 ms
+    const whole = b.whole;
+    assert.ok(whole);
+    let stalls = 1;
+    const { player, sources, now, ramps, run } = setUp([a, b]);
+    whole.copyFromChannel = (destination: Float32Array) => {
+      if (stalls-- > 0) now.time += 0.1;
+      destination.fill(0);
+    };
+    player.begin(a.setting);
+    player.play();
+    run(1);
+    ramps.length = 0;
+    player.change(b.setting);
+    const placed = player.lastCrossfade;
+    assert.ok(placed);
+    assert.equal(stalls, -1, 'measured again');
+    // every ramp of the crossfade lies ahead of the context's time as it was set
+    assert.ok(ramps.length > 0);
+    for (const ramp of ramps)
+      assert.ok(ramp.when >= ramp.setAt, `a ramp for ${ramp.when} set at ${ramp.setAt}`);
+    // and the one coming in starts where it is placed
+    const coming = sources.at(-1);
+    assert.ok(coming?.buffer === b.whole);
+    assert.equal(coming.when, placed.at);
+    assert.ok(Math.abs(coming.when - coming.offset - placed.origin) < 1e-9);
+  });
+
+  it('pauses to the sample, and plays on from there', () => {
+    const a = recorded(0.6);
+    const { player, sources, now, run } = setUp([a]);
+    player.begin(a.setting);
+    player.play();
+    run(1.3);
+    now.time += 0.0123;
+    const playing = sources.at(-1);
+    assert.ok(playing);
+    player.pause();
+    // it stops a little ahead, where the audio thread has not been yet, and is kept there
+    const stop = playing.stoppedAt;
+    assert.ok(stop !== undefined && stop > now.time);
+    const position = player.position();
+    assert.ok(Math.abs(stop - (playing.when - playing.offset) - position) < 1e-12);
+    run(0.5);
+    player.play();
+    const again = sources.at(-1);
+    assert.ok(again && again !== playing);
+    assert.ok(Math.abs(again.offset - position) < 1e-12, `${again.offset} after ${position}`);
   });
 });

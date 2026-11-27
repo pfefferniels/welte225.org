@@ -230,19 +230,32 @@ export type FromWorker =
   | LevelMessage;
 
 /**
- * A worker of its own draws the piano under the voice: the page hands it a part's sound as it is
- * heard (a recording, or the sampled grand played ahead), and gets its spectrogram back in columns,
- * from the one asked for to the end and then from the beginning. A newer request stops an older.
+ * A worker of its own draws pictures from sound: the piano under the voice (a part's sound as it is
+ * heard, a recording or the sampled grand played ahead), and the voice rendered ahead. The page
+ * asks for a picture, then hands the sound over in pieces (`PictureSamples`), from `first` to the
+ * end and then from the beginning (copied whole, a sound held its thread up for tens of ms), and
+ * gets the spectrogram back in columns, from the one asked for to the end and then from the
+ * beginning, each drawn once its sound has come. A newer request stops an older.
  */
 export interface PictureRequest {
   readonly type: 'picture';
   readonly id: number;
-  readonly samples: Float32Array;
+  /** How many samples the sound has, and the first that is handed over. */
+  readonly length: number;
+  readonly first: number;
   readonly sampleRate: number;
   readonly spectrogram: SpectrogramStyleName;
   readonly scale: SpectrogramScale;
   /** The column to begin with: where the playhead is. */
   readonly from: number;
+}
+
+/** A piece of a picture's sound, from its sample `start` on. */
+export interface PictureSamples {
+  readonly type: 'picture-samples';
+  readonly id: number;
+  readonly start: number;
+  readonly samples: Float32Array;
 }
 
 export interface PictureColumns {
