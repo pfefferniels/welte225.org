@@ -9,20 +9,26 @@ import { mpmElements } from '../shared/mpm.ts';
 import { ELABORATION, pianoPlays } from '../shared/shape.ts';
 import type { Ms, Ticks } from '../shared/units.ts';
 import { assemble, type Described } from './assemble.ts';
-import { contextOf, withinReach } from './context.ts';
 import { along, clamp } from './geometry.ts';
 import { stretch, where } from './piece.ts';
 import type { Sounded } from './rendering.ts';
-import { RollView, type Marked, type RollNote } from './roll.ts';
+import { RollView } from './roll.ts';
 import { createPassagePlayer, type Emphasis, type PassageListeners, type PassagePlayer } from './passage.ts';
 import { silentPlayer } from './sound.ts';
 import { nameOf } from './staff.ts';
+import type { Marked, RollNote } from './types.ts';
 
 /** How much the instructions a remark did not write are damped while its own are brought out. */
 const DAMPED = 0.35;
 /** The pointer rests this long on a remark before its passage plays, and it plays on this long after the pointer has left. */
 const DWELL: Ms = 500;
 const LINGER: Ms = 200;
+/**
+ * Inside the passage of a remark that is lit, another's words take the pointer once it has rested
+ * on them for so long, within so many pixels; crossed, they do not.
+ */
+const REST: Ms = 300;
+const STILL = 4;
 /** How long the notes of a rendering are waited for before its passage is played without them. */
 const NOTES_WAIT: Ms = 6000;
 
@@ -55,6 +61,7 @@ const ui = {
   bringLabel: element('bring-label', HTMLElement),
   hint: element('hint', HTMLElement),
   staff: element('staff', HTMLButtonElement),
+  notes: element('notes', HTMLButtonElement),
   zoomIn: element('zoom-in', HTMLButtonElement),
   zoomOut: element('zoom-out', HTMLButtonElement),
   fit: element('fit', HTMLButtonElement),
@@ -121,7 +128,7 @@ function showFocus(): void {
     const count = described?.marked.length ?? 0;
     ui.said.textContent = '';
     ui.where.textContent = described
-      ? `${count} ${count === 1 ? 'remark' : 'remarks'} on the playing. Click one, or rest the pointer on it, to hear its passage with what it wrote brought out; the arrow keys go from one to the next.`
+      ? `${count} ${count === 1 ? 'remark' : 'remarks'} on the playing, those on the longer passages from afar, the others as you zoom in. Point at one for its notes; rest on it, or click, to hear it.`
       : '';
     ui.calls.replaceChildren();
     return;
@@ -203,30 +210,12 @@ function emphasisOf(marked: Marked): Emphasis | undefined {
  * it takes around it; of a remark about the whole piece, what is in view.
  */
 function passageOf(marked: Marked, d: Described): { from: Ticks; to: Ticks } {
+  if (marked.heard) return marked.heard;
   const { piece, laid } = d;
-  const { about } = marked.remark;
-  const after = (date: Ticks): Ticks => piece.dates.find((other) => other > date) ?? piece.end;
-  if (about.kind === 'piece') {
-    const { from, to } = view.inView;
-    const first = piece.dates.find((date) => laid.msAt(date) >= from) ?? 0;
-    const last = piece.dates.findLast((date) => laid.msAt(date) <= to) ?? piece.end;
-    return { from: first, to: after(Math.max(first, last)) };
-  }
-  const written = d.written.get(marked.remark.id);
-  const scope = { kind: about.kind, from: about.from, to: about.to, ids: about.notes };
-  const score = {
-    dates: piece.dates,
-    beats: piece.beats,
-    bars: piece.bars.map((bar) => bar.from),
-    notes: piece.notes,
-  };
-  const context = withinReach(
-    piece.dates,
-    scope,
-    contextOf(score, scope, written?.topics ?? new Set(), written?.touched ?? []),
-    laid.msAt,
-  );
-  return { from: context.from, to: after(context.to) };
+  const { from, to } = view.inView;
+  const first = piece.dates.find((date) => laid.msAt(date) >= from) ?? 0;
+  const last = piece.dates.findLast((date) => laid.msAt(date) <= to) ?? piece.end;
+  return { from: first, to: piece.dates.find((date) => date > Math.max(first, last)) ?? piece.end };
 }
 
 interface Rendering {
@@ -384,6 +373,7 @@ function halt(): void {
   state = 'stopped';
   bringing = null;
   pending = null;
+  view.follow(false);
   view.playhead(at, false);
 }
 
@@ -410,6 +400,9 @@ async function playOn(from: Ms = at): Promise<void> {
   const begin = seen ? from : Math.max(0, view.inView.from);
   const first = d.laid.dateAt(begin < d.roll.total - 200 ? begin : 0);
   state = 'preparing';
+  // no remark's notes are in sight for it: those around the line are, as it goes
+  view.playhead(begin, false);
+  view.follow(true);
   showState();
   await start(
     mine,
@@ -417,6 +410,7 @@ async function playOn(from: Ms = at): Promise<void> {
     listeners(mine, () => {
       // at its end the line goes back to the beginning
       at = 0;
+      view.follow(false);
       view.playhead(at, false);
     }),
   );
@@ -443,7 +437,8 @@ function hover(marked: Marked | null): void {
   const free = unlocked && (state === 'stopped' || bringing !== null);
   if (marked && free && marked !== bringing)
     hovering = setTimeout(() => {
-      void bring(marked, () => view.pointed === marked);
+      // clicked meanwhile, it plays already
+      if (marked !== bringing && marked !== pending) void bring(marked, () => view.pointed === marked);
     }, DWELL);
   else if (!marked)
     hovering = setTimeout(() => {
@@ -548,7 +543,11 @@ ui.roll.addEventListener('pointerup', (event) => {
   // a touch that moved was scrolling the roll
   if (Math.hypot(x - down.x, y - down.y) >= 8) return;
   const hit = view.hit(x, y);
-  if (hit.marked) choose(hit.marked);
+  const marked = hit.direct ?? hit.held;
+  settle(null);
+  // a click takes the pointer along, also to words it had only crossed
+  if (marked && event.pointerType !== 'touch') point(marked);
+  if (marked) choose(marked);
   else if (view.chosen) choose(null);
   else if (x >= view.gutter && !hit.above) {
     // a click on nothing leaves the line there, and what plays goes on from it
@@ -560,29 +559,56 @@ ui.roll.addEventListener('pointerup', (event) => {
 ui.roll.addEventListener('pointercancel', () => {
   pressed = null;
 });
+/** Point at a remark, and at a note with it; a remark newly pointed at is in focus, and plays once dwelt on. */
+function point(marked: Marked | null, note: RollNote | null = null): void {
+  const before = view.pointed;
+  view.point(marked, note);
+  if (marked === before) return;
+  hover(marked);
+  showFocus();
+}
+
+/** The words the pointer is on inside another remark's passage, where it came to them, and what waits for it to rest. */
+let crossing: {
+  readonly on: Marked;
+  readonly x: number;
+  readonly y: number;
+  readonly timer: ReturnType<typeof setTimeout>;
+} | null = null;
+/** The pointer is on such words at a place (or with null on none): rested on, they take it. */
+function settle(on: Marked | null, x = 0, y = 0): void {
+  if (crossing?.on === on && Math.hypot(x - crossing.x, y - crossing.y) < STILL) return;
+  clearTimeout(crossing?.timer);
+  crossing = on && {
+    on,
+    x,
+    y,
+    timer: setTimeout(() => {
+      crossing = null;
+      point(on);
+    }, REST),
+  };
+}
+
 ui.roll.addEventListener('pointermove', (event) => {
   if (event.pointerType === 'touch') return;
   const { x, y } = local(event);
-  const hit = view.hit(x, y);
-  const before = view.pointed;
-  view.point(hit.marked, hit.note);
-  if (hit.marked !== before) {
-    hover(hit.marked);
-    showFocus();
-  }
-  ui.roll.style.cursor = hit.marked ? 'pointer' : 'default';
-  if (hit.note) showTip(hit.note, x, y);
+  const { direct, held, note } = view.hit(x, y);
+  // the pointer stays with a lit remark over its passage: another's words there are only crossed
+  const crossed = direct && held && direct !== held && direct !== view.pointed ? direct : null;
+  const marked = crossed ? held : (direct ?? held);
+  settle(crossed, x, y);
+  // words lie over the notes: on its own words, a remark's notes are not pointed at
+  const under = direct && !crossed ? null : note;
+  point(marked, under);
+  ui.roll.style.cursor = (direct ?? marked) ? 'pointer' : 'default';
+  if (under) showTip(under, x, y);
   else ui.tip.hidden = true;
 });
 ui.roll.addEventListener('pointerleave', () => {
   ui.tip.hidden = true;
-  if (!view.pointed) {
-    view.point(null);
-    return;
-  }
-  view.point(null);
-  hover(null);
-  showFocus();
+  settle(null);
+  point(null);
 });
 ui.scroll.addEventListener('scroll', () => {
   ui.tip.hidden = true;
@@ -592,7 +618,8 @@ ui.roll.addEventListener(
   (event) => {
     if (!(event.ctrlKey || event.metaKey)) return;
     event.preventDefault();
-    view.zoom(event.deltaY < 0 ? 1.15 : 1 / 1.15, local(event).x);
+    // a wheel turns in small steps of its own: each is taken at once
+    view.zoom(event.deltaY < 0 ? 1.15 : 1 / 1.15, local(event).x, false);
   },
   { passive: false },
 );
@@ -645,6 +672,11 @@ ui.staff.addEventListener('click', () => {
   ui.staff.setAttribute('aria-pressed', String(view.staff));
   remember('described.staff', view.staff ? 'on' : 'off');
 });
+ui.notes.addEventListener('click', () => {
+  view.allNotes = !view.allNotes;
+  ui.notes.setAttribute('aria-pressed', String(view.allNotes));
+  remember('described.notes', view.allNotes ? 'on' : 'off');
+});
 ui.zoomIn.addEventListener('click', () => {
   view.zoom(1.3);
 });
@@ -671,11 +703,11 @@ for (const gesture of ['pointerdown', 'keydown'] as const)
     { once: true, capture: true },
   );
 
-/** The remarks in the order of the score, for going from one to the next. */
+/** The remarks that are there at this zoom, in the order of the score, for going from one to the next. */
 const inOrder = (): Marked[] =>
-  [...(described?.marked ?? [])].sort(
-    (a, b) => a.remark.about.from - b.remark.about.from || a.remark.about.to - b.remark.about.to,
-  );
+  (described?.marked ?? [])
+    .filter((marked) => view.readable(marked))
+    .sort((a, b) => a.remark.about.from - b.remark.about.from || a.remark.about.to - b.remark.about.to);
 
 document.addEventListener('keydown', (event) => {
   const target = event.target;
@@ -737,6 +769,8 @@ async function load(): Promise<void> {
   ui.interim.hidden = !described.interim;
   view.staff = recall('described.staff') !== 'off';
   ui.staff.setAttribute('aria-pressed', String(view.staff));
+  view.allNotes = recall('described.notes') === 'on';
+  ui.notes.setAttribute('aria-pressed', String(view.allNotes));
   view.set(described.roll, described.marked);
   ui.loading.hidden = true;
   ui.play.disabled = false;

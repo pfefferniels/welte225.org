@@ -1,7 +1,8 @@
 // The page's material, made from the texts the site publishes: the piece as the roll plays it, the
 // MPM's rendering laid on the recording's clock, and the remarks, each with the notes it is about
 // and what it wrote.
-import type { Ms } from '../shared/units.ts';
+import type { Ms, Ticks } from '../shared/units.ts';
+import { contextOf, withinReach } from './context.ts';
 import { readPiece, type Piece, type WorkFile } from './piece.ts';
 import {
   callsOf,
@@ -13,7 +14,7 @@ import {
   type Written,
 } from './remarks.ts';
 import { lay, perform, temposOf, type Laid } from './rendering.ts';
-import type { Marked, RollData, RollNote } from './roll.ts';
+import type { Marked, RollData, RollNote } from './types.ts';
 
 export interface Texts {
   /** ../mpm/score.msm, transcription.mei and performance.mpm. */
@@ -38,17 +39,49 @@ export interface Described {
 }
 
 /**
- * A remark with the notes of the roll it is about. An arrow goes from the first note it names to
- * the last; where the roll does not play one of them (a note of the score the take has not), from
- * or to the passage's own first or last note.
+ * The stretch of the score played for a remark, `to` exclusive: its passage with what it takes
+ * around it, by what the remark wrote, and no further than is within reach in the roll's time.
  */
-function mark(remark: Remark, notes: readonly RollNote[], byId: ReadonlyMap<string, RollNote>): Marked {
+function heardFor(remark: Remark, written: Written, piece: Piece, laid: Laid): { from: Ticks; to: Ticks } {
+  const { about } = remark;
+  const scope = { kind: about.kind, from: about.from, to: about.to, ids: about.notes };
+  const score = {
+    dates: piece.dates,
+    beats: piece.beats,
+    bars: piece.bars.map((bar) => bar.from),
+    notes: piece.notes,
+  };
+  const context = withinReach(
+    piece.dates,
+    scope,
+    contextOf(score, scope, written.topics, written.touched),
+    laid.msAt,
+  );
+  return { from: context.from, to: piece.dates.find((date) => date > context.to) ?? piece.end };
+}
+
+/**
+ * A remark with the notes of the roll it is about, and those played around them. An arrow goes
+ * from the first note it names to the last; where the roll does not play one of them (a note of
+ * the score the take has not), from or to the passage's own first or last note.
+ */
+function mark(
+  remark: Remark,
+  notes: readonly RollNote[],
+  byId: ReadonlyMap<string, RollNote>,
+  heard: { from: Ticks; to: Ticks } | null,
+): Marked {
   const own = notesOf(remark.about, notes);
-  if (remark.about.kind !== 'arrow') return { remark, own, ends: null };
+  const mine = new Set(own);
+  const around = heard
+    ? notes.filter((note) => note.date >= heard.from && note.date < heard.to && !mine.has(note))
+    : [];
+  if (remark.about.kind !== 'arrow') return { remark, own, ends: null, heard, around };
   const named = remark.about.notes.map((id) => byId.get(id));
   const first = named.at(0) ?? own.at(0);
   const last = (named.length > 1 ? named.at(-1) : undefined) ?? own.at(-1);
-  return { remark, own, ends: first && last && first.date < last.date ? [first, last] : null };
+  const ends = first && last && first.date < last.date ? ([first, last] as const) : null;
+  return { remark, own, ends, heard, around };
 }
 
 export function assemble({ msm, mei, mpm, work, remarks }: Texts): Described {
@@ -76,6 +109,9 @@ export function assemble({ msm, mei, mpm, work, remarks }: Texts): Described {
   const read = own.length > 0 ? own : readRemarks(remarks);
   const calls = callsOf(work);
   const names = elementNames(mpm);
+  const written = new Map(read.map((remark) => [remark.id, writtenBy(remark, calls, names)]));
+  const writtenOf = (remark: Remark): Written =>
+    written.get(remark.id) ?? { ids: [], topics: new Set(), touched: [] };
   return {
     piece,
     laid,
@@ -89,8 +125,15 @@ export function assemble({ msm, mei, mpm, work, remarks }: Texts): Described {
       msAt: laid.msAt,
       total,
     },
-    marked: read.map((remark) => mark(remark, notes, byId)),
-    written: new Map(read.map((remark) => [remark.id, writtenBy(remark, calls, names)])),
+    marked: read.map((remark) =>
+      mark(
+        remark,
+        notes,
+        byId,
+        remark.about.kind === 'piece' ? null : heardFor(remark, writtenOf(remark), piece, laid),
+      ),
+    ),
+    written,
     interim: own.length === 0,
   };
 }

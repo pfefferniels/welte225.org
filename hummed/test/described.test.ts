@@ -215,6 +215,29 @@ describe('the remarks carried over from the segments', () => {
       assert.ok(marked.ends[0].date < marked.ends[1].date, marked.remark.text);
     }
   });
+  it('are each played with what is heard around their own notes, and no more than is within reach', () => {
+    const { piece, laid } = described;
+    for (const marked of described.marked) {
+      const { about, text } = marked.remark;
+      assert.ok(marked.heard, text);
+      const { from, to } = marked.heard;
+      // its own passage, and at least the chord before and the chord after
+      assert.ok(from <= about.from && to >= about.to, text);
+      const first = marked.own[0].date;
+      const last = marked.own[marked.own.length - 1].date;
+      assert.ok(from < first || first === piece.dates[0], text);
+      assert.ok(to > last, text);
+      assert.ok(first - from <= 2 * 720 && to - last <= 3 * 720, `${text}: ${from}–${to}`);
+      assert.ok(laid.msAt(to) - laid.msAt(from) < laid.msAt(about.to) - laid.msAt(about.from) + 9000, text);
+      // around its own notes: the rest of what is played, none of them twice
+      const own = new Set(marked.own);
+      for (const note of marked.around) {
+        assert.ok(!own.has(note), `${text}: ${note.id}`);
+        assert.ok(note.date >= from && note.date < to, `${text}: ${note.id}`);
+      }
+      assert.ok(marked.around.length > 0, text);
+    }
+  });
   it('wrote instructions the MPM has, of the kinds the context is chosen by', () => {
     const names = elementNames(mpm);
     let bringsOut = 0;

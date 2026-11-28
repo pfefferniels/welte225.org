@@ -330,9 +330,10 @@
     <header>
       <h1>Träumerei, described</h1>
       <p>
-        Alfred Grünfeld plays Schumann on Welte-Mignon roll 225 (1905): the
-        notes as the reconstruction renders them, behind each its shadow as it
-        was played, and over the passages what was said of the playing.
+        Alfred Grünfeld plays Schumann on Welte-Mignon roll 225 (1905): what was
+        said of the playing, where it was said of; and for each remark its notes
+        as the reconstruction renders them, behind each its shadow as it was
+        played.
       </p>
     </header>
 
@@ -342,7 +343,7 @@
           id="roll"
           tabindex="0"
           role="img"
-          aria-label="Piano roll of the recording over a grand staff. The notes are what the reconstruction's MPM renders, each with a gray shadow where it was played otherwise; the remarks stand over the passages they are about. The arrow keys go from one remark to the next and play its passage; Space plays and pauses."
+          aria-label="The recording as a roll over a grand staff, with what was said of the playing where the notes are it was said of; a remark's notes come into sight when it is pointed at or chosen: what the reconstruction's MPM renders, each with a gray shadow where it was played otherwise. The arrow keys go from one remark to the next and play its passage; Space plays and pauses."
         ></canvas>
         <div class="spacer" id="spacer"></div>
       </div>
@@ -396,6 +397,14 @@
         title="The notes on the two staves, by their spelling, or key by key"
       >
         Grand staff
+      </button>
+      <button
+        id="notes"
+        type="button"
+        aria-pressed="false"
+        title="All notes in sight all the time, not only those of the remark pointed at or chosen"
+      >
+        All notes
       </button>
       <span class="zoom">
         <button id="zoom-out" type="button" aria-label="Zoom out">−</button>

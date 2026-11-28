@@ -65,6 +65,10 @@ function fakeGraph(now: { time: number }) {
     createGain: node,
     createChannelMerger: node,
     createChannelSplitter: node,
+    createBuffer: (_channels: number, length: number) => ({
+      length,
+      getChannelData: () => new Float32Array(length),
+    }),
     createBufferSource() {
       const source = {
         buffer: null as unknown,
@@ -260,6 +264,59 @@ describe('a passage the workers render', () => {
     assert.ok(canPlay(rendering, begin, end));
     // not what lies before it
     assert.ok(!rendering.rendered(begin - 0.5, end));
+  });
+
+  it('can play once it is done, whatever has come of it: nothing more will', () => {
+    const rendering = new Rendering(plan);
+    rendering.receive(sound(first, first + 40));
+    assert.ok(!canPlay(rendering, begin, end));
+    rendering.done = true;
+    assert.ok(canPlay(rendering, begin, end));
+  });
+
+  it('is handed over from its first sound wherever its lane is placed, on a slot’s edge too', () => {
+    // A passage from the piece's first tick begins with the silence before the music: at 0.6 s, the
+    // edge of a 10 ms slot, and its sound comes from that slot on. A lane reckons where it begins
+    // from its origin; placed at some context times that came out a hair before 0.6 s, in the slot
+    // before, which never comes: nothing of the voice was handed over, and the passage waited for
+    // sound that was there (every second or third time the first remark was chosen).
+    const opening: Plan = {
+      ...body,
+      id: renderingId(),
+      startSeconds: PAD_MS / 1000,
+      startState: Math.floor((Math.floor((PAD_MS / 1000) * 100) * slot) / STATE_STEP),
+      endState: Math.ceil((Math.ceil(end * 100) * slot) / STATE_STEP),
+    };
+    const rendering = new Rendering(opening);
+    rendering.receive({
+      ...sound(opening.startState, opening.endState ?? 0),
+      id: opening.id,
+    });
+    const stretch = stretchOf(rendering, body.clock.ticks[0], 4320);
+    assert.equal(stretch.begin, 0.6);
+    // context times a page was at when it began (1.642 and 1.682 are two that failed), and others
+    const times = [
+      1.642,
+      1.682,
+      1.651,
+      1.712,
+      1.622,
+      ...Array.from({ length: 400 }, (_, k) => 0.5 + k * 0.0173),
+    ];
+    assert.ok(
+      times.some((at) => at - (at - stretch.begin) < stretch.begin),
+      'some of them round short',
+    );
+    for (const at of times) {
+      const now = { time: at - 0.06 };
+      const { graph, sources } = fakeGraph(now);
+      const lane = laneOf(graph, rendering, stretch, mix(1), fakePiano().piano, at);
+      assert.ok(lane.position(at) >= stretch.begin, `begins before its sound at ${at}`);
+      lane.schedule(now.time, 2, 0);
+      assert.ok(sources.length > 0, `no voice handed over at ${at}`);
+      now.time += 0.05;
+      assert.ok(!lane.starved(now.time), `out of sound at ${at}`);
+    }
   });
 
   it('waits for more where the sound comes more slowly than it plays', async () => {

@@ -820,13 +820,36 @@ one core.
 
 ## Described: the roll with what was said of it
 
-`/described/` shows the recording as a piano roll over a grand staff, and on it what a reader said
-of the playing in their own words. It is the viewer of MPM Desk's prototype _DescribeIt!_, whose
-editor goes into the Desk: nothing is written here, the roll is read and heard. For now a page of
-its own (`../described/index.html`, `src/described/`, bundled to `described.js`); in the long run
-the site's stage.
+`/described/` shows the recording as a roll over a grand staff, and on it what a reader said of the
+playing in their own words. It is the viewer of MPM Desk's prototype _DescribeIt!_, whose editor
+goes into the Desk: nothing is written here, the roll is read and heard. For now a page of its own
+(`../described/index.html`, `src/described/`, bundled to `described.js`); in the long run the
+site's stage.
 
-**The roll** (`roll.ts`, `geometry.ts`, `staff.ts`, `glyphs.ts`) is on the recording's clock. A note
+**It is read like a map** (`roll.ts`, `words.ts`, `geometry.ts`, `motion.ts`). The page is about
+the words and the arrows, less about the notes. At rest the roll is the staves, the bars and the
+remarks, each one's words standing where its notes are; the notes themselves come into sight for
+the remark that is pointed at or chosen. And a remark is there by how wide its passage is on the
+screen, as a share of what the whole roll takes when it is fitted into the window: not at all
+below a fortieth of that, wholly from a seventeenth (30 and 72 pixels in a window 1360 wide, never
+less than 6 and 14), coming in continuously between the two as one zooms, its words and its arrow
+together (`presence`). So from afar the few remarks on long passages are read, and those on short
+ones come as one goes closer, and the whole roll across the window shows the same ones on a phone
+as on a desk: 3 of the 109 wholly there and 21 on their way, as far as a narrow window has room
+for their words. At the zoom the page opens at in a window 1360 wide (22 s across), 101 and 8; two
+steps closer, all but one. What is not there takes no room and cannot be pointed at; the arrow keys
+go through those that are there, and a remark chosen is there at any zoom. Gone into closely, a
+remark whose passage is wider than what is seen of the roll steps back, down to half its ink at
+twice that width, but only for remarks on shorter passages within its own, and as far as they are
+there; its words stay in sight as its passage is scrolled through. The words' faces follow the
+passage's length in the score, in three sizes (a bar and more, half a bar and more, less). The
+closest zoom has some five seconds across a wide window. From afar the bars thin out as well:
+every second, fifth or tenth has its number, and the lines of the others go.
+
+**The roll** (`sheet.ts`, `staves.ts`, `notes.ts`, `staff.ts`, `glyphs.ts`) is on the recording's
+clock: `roll.ts` is the view, what is shown and how far it is zoomed and scrolled, one frame after
+another; the staves, the notes and the remarks are drawn on its sheet by a module each, and
+`pointer.ts` says what the pointer finds in a frame. A note
 is a box on the staff it is written on, on its line or in its space, with ledger lines, the key
 signature read off the notes and an accidental where a note departs from it; the two staves are
 compact and set apart, and can be put back key by key. The louder note is taller and more solid,
@@ -858,14 +881,33 @@ changes nothing and names the calls that came of it:
       "model": null, "date": null, "steps": [], "calls": ["cbf5caab…", "…"] } }
 
 It is about the whole piece, a passage (`span`, `to` exclusive), a set of notes (`notes`, `box`)
-or a direction from a note to another (`arrow`). A passage stands under a brace, a set in a hull, a
-direction is a bowed arrow, each with its words in a serif on a pale ground; remarks about the
-whole piece stand in rows above the ruler. The shortest passage's marker goes nearest its notes,
-longer ones over it, and the words above their marker wherever they are clear of the others, cut
-where a short passage has long ones, a hairline down to the marker where others stand between. A
-remark whose words find no room within a few lines of its marker stands without them until it is
-pointed at or chosen; then it is lit, drawn over the rest, its notes solid and everything else
-pale. With the whole roll across a window that is most of them.
+or a direction from a note to another (`arrow`). A direction is a bowed arrow, there at rest with
+its words, quiet; a passage's brace and the hull round a set of notes (`marks.ts`) are not: they
+come with the notes when the remark is lit, and go with them. The words stand on top of the notes,
+in a serif on a pale ground: over the middle of the passage, at the height of its notes (an
+arrow's with the hand it runs through), and they say all they say wherever nothing stands in the
+way, running past their passage on either side. They do not lie on one another: the remark on the
+longer passage has its place, and the others are cut against it, or put off their place, up or
+down by whole lines, whichever takes less from them (`placeWords`: a line off weighs as much as a
+third of the words cut; none is cut below 96 pixels). What is put where does not depend on where
+the roll is scrolled to; at the window's edge words are cut to what is seen of their room, from
+their beginning on, and go out when little of it is left. Remarks about the whole piece stand in
+rows above the ruler.
+
+Pointed at or chosen, a remark is lit: its words move out of the way of its notes, to over its
+brace, hull or arrow, and say all they say; its notes come into sight with their shadows, what is
+played around them fainter (it is what is heard with them), the pedals under them, fading at the
+two ends of the stretch; everything else goes pale. Left, it all goes back. On the remark, the
+pointer stays with it over its passage, though its words have gone from under it, and the pale
+words of other remarks that lie there do not take it by being crossed: they do once the pointer
+has rested on them for 300 ms (within 4 pixels), or at a click. So a remark inside the lit one is
+reached by resting on its words. **Motion** is eased and takes 280 ms throughout: the words
+moving, the notes coming and going, a step of the zoom by its buttons (the wheel's steps are small
+and taken at once). The fading with the zoom follows the zoom itself; where the zoom changes which
+line words stand on or how much room they have, they glide there. A reader whose system asks for
+reduced motion gets none: everything is where it goes at once. A switch, _All notes_, has every
+note in sight all the time. While the piece plays from the line with nothing chosen, the notes are
+in sight around the line, from 1.5 s behind it to 4.5 s ahead, and the words stay where they are.
 
 The page takes the remarks from `../mpm/work.json` where it has any. Until MPM Desk publishes
 some, it takes them from `../described/remarks.json`: **the reconstruction's 109 hand-made segments
@@ -878,9 +920,9 @@ today's file by their ids; the other 50 are each one half of a pedal's press, do
 one call today, so four presses are of two remarks). It fails where a call cannot be found or a
 segment is left without calls. The file is a stand-in: it goes when the work file has remarks.
 
-**Hearing a remark** (`main.ts`, `context.ts`, `passage.ts`). A click on a remark chooses it and
-plays its passage, as does the pointer resting on one for half a second, once a first gesture has
-allowed sound; the arrow keys go from one remark to the next. A passage is never played bare: what
+**Hearing a remark** (`main.ts`, `context.ts`, `passage.ts`). A click on a remark, or a tap,
+chooses it and plays its passage, as does the pointer resting on one for half a second, once a
+first gesture has allowed sound; the arrow keys go from one remark to the next. A passage is never played bare: what
 is said of it is heard against what surrounds it, and how much that takes depends on what the
 remark wrote, which the page knows from the elements of its calls in the MPM (tempo, rubato,
 dynamics; an ornament is a roll, an articulation touch, an accentuation pattern an accent, a
@@ -903,9 +945,10 @@ Of the prototype's own reading side, the page leaves out: hearing the roll as it
 both at once; the figure of how well the MPM matches the playing, and its four parts; the MPM as
 text; the reconstruction's dashed, assumed tempo (the published MPM assumes none); the height of
 loud notes as a setting, and the shadows as a switch. `test/described.test.ts`,
-`test/staff.test.ts`, `test/geometry.test.ts` and `test/context.test.ts` hold the material, the
-laying on the clock (under 25 ms in the median, over the published files), the remarks' file
-against today's work file and the score, the carrying over, and the rules.
+`test/staff.test.ts`, `test/geometry.test.ts`, `test/motion.test.ts` and `test/context.test.ts`
+hold the material, the laying on the clock (under 25 ms in the median, over the published files),
+the remarks' file against today's work file and the score, the carrying over, the rules, how much
+a remark is there at a width, where words are placed, and the easing.
 
 ## The piano
 
@@ -1016,7 +1059,7 @@ Chromium, each sample for sample where a chunk rendered afresh lies.
 | `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the library of ready settings, the workers' pool, transport and its lanes, the crossfade's alignment and weights, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the pictures, the instructions |
 | `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                                                                                              |
 | `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                                                                                                          |
-| `src/described/`                 | the described page (above): the piece as the roll shows it, the rendering laid on the recording's clock, the remarks and what they wrote, the context a passage is played with, the roll and its geometry, staff and glyphs, the page; `passage.ts` plays a passage; `segments.ts` carries the old segments over                                                         |
+| `src/described/`                 | the described page (above): the piece as the roll shows it, the rendering laid on the recording's clock, the remarks and what they wrote, the context a passage is played with, the roll and its geometry, its motion, staff, glyphs and marks, the page; `passage.ts` plays a passage; `segments.ts` carries the old segments over                                      |
 | `described.js`                   | the described page's bundle, committed as the others are                                                                                                                                                                                                                                                                                                                 |
 | `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifests, the reconstruction's calls as instructions                                                           |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                                                                          |

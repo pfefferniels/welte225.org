@@ -167,10 +167,18 @@ export function laneOf(
   from: Seconds = stretch.begin,
 ): Lane {
   const fadeIn = from < stretch.from ? stretch.from - from : from > stretch.begin ? RESUME_FADE : 0;
+  // A lane reckons where it begins from its origin, `at - origin`, and rounding can leave that a
+  // hair before `from`. A passage from the piece's first tick begins on the edge of a 10 ms slot,
+  // the first its rendering has sound of: a hair before it is the slot before, which never comes,
+  // so none of the voice was handed over and the passage waited for it (at some times of the audio
+  // clock never, between 8 and 16 s and past a minute nearly always). The origin is set so that
+  // the lane begins at `from` or a hair after.
+  let origin = at - from;
+  while (at - origin < from) origin -= Math.abs(origin) * Number.EPSILON + Number.MIN_VALUE;
   const lane = new Lane(
     graph,
     rendering,
-    { origin: at - from, begin: at, fresh: true },
+    { origin, begin: at, fresh: true },
     fadeIn > 0 ? Weight.fadingIn(at, fadeIn) : new Weight(at, 1),
     mix,
     piano,
@@ -181,13 +189,14 @@ export function laneOf(
 }
 
 /**
- * Whether a rendering can play from `t` to `to` now: all of it has come, or its first sound has and
- * the rest comes fast enough; rendered more slowly than it plays, it has to be as far ahead as it
- * will fall behind.
+ * Whether a rendering can play from `t` to `to` now: all of it has come (or all that ever will), or
+ * its first sound has and the rest comes fast enough; rendered more slowly than it plays, it has to
+ * be as far ahead as it will fall behind.
  */
 export function canPlay(rendering: Rendering, t: Seconds, to: Seconds): boolean {
-  if (rendering.rendered(t, to)) return true;
-  const there = Math.min(to - t, rendering.aheadOf(t));
+  if (rendering.done || rendering.rendered(t, to)) return true;
+  // (what has come is counted in tenths of a second, which add up to a hair less than they are)
+  const there = Math.min(to - t, rendering.aheadOf(t) + 1e-6);
   return there >= FIRST_SOUND && there >= (to - t) * (1 - Math.min(1, rendering.speed() / PACE));
 }
 
@@ -623,22 +632,27 @@ class Passages implements PassagePlayer {
       const time = context.currentTime;
       lane.schedule(time, LOOKAHEAD, 0);
       if (time >= end) this.#finish(playing, lane, end);
-      else if (time < end - FADE_OUT && lane.starved(time)) this.#wait(playing, stage, rendering, lane);
+      // out of sound with more to come: one that is done has nothing to wait for
+      else if (time < end - FADE_OUT && !rendering.done && lane.starved(time))
+        this.#wait(playing, stage, rendering, lane);
     };
     const timer = setInterval(hand, HAND_EVERY_MS);
     let frame = 0;
     const follow = (): void => {
       frame = requestAnimationFrame(follow);
-      const at = lane.position(heardTime(context));
+      // where it is; until it begins (a little ahead), where it begins: the playhead never goes back
+      const at = lane.position(Math.max(lane.begin, heardTime(context)));
       if (at < stretch.to) listeners.onTick?.(clip(rendering.toTick(at), from, to));
     };
     playing.running.push(() => {
       clearInterval(timer);
       cancelAnimationFrame(frame);
     });
-    hand();
     this.#state(playing, 'playing');
     // unless whoever listens has stopped it at the word
+    if (playing.lane !== lane) return;
+    hand();
+    // nor where it has run out of sound at once, and waits
     if (playing.lane === lane && listeners.onTick) follow();
   }
 
@@ -661,7 +675,8 @@ class Passages implements PassagePlayer {
    * it stops there, and goes on from there once enough has come.
    */
   #wait(playing: Playing, stage: Stage, rendering: Rendering, lane: Lane): void {
-    const t = lane.position(stage.graph.context.currentTime);
+    // from where it is; from where it began, if it ran out before it had (it starts a little ahead)
+    const t = lane.position(Math.max(lane.begin, stage.graph.context.currentTime));
     this.#rest(playing);
     this.#quiet(lane, stage.graph.context);
     playing.lane = null;

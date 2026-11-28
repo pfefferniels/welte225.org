@@ -208,29 +208,113 @@ export function hullOf(rects: readonly Rect[], from: number, to: number): Point[
   return points;
 }
 
-/** What stands over the notes already: a remark's marker or its words. */
-export interface Taken {
-  readonly xa: number;
-  readonly xb: number;
-  readonly top: number;
-  readonly bottom: number;
+/** From 0 at `lo` to 1 at `hi`, without a corner at either. */
+export function smoothstep(lo: number, hi: number, x: number): number {
+  const t = clamp((x - lo) / (hi - lo), 0, 1);
+  return t * t * (3 - 2 * t);
 }
 
+/** How much of the window the whole roll leaves free at its end when it is fitted into it. */
+export const MARGIN = 70;
+
 /**
- * Where something `room` tall and from `xa` to `xb` wide can stand, at `y` or the least above it,
- * clear of what stands there already: its lower edge. Nothing is moved down.
+ * How wide a remark's passage has to be on the screen for the remark to be there, as shares of the
+ * roll's width when the whole of it is fitted into the window: not at all below the first, wholly
+ * from the second. As on a map, the long passages' remarks are read from afar and the short ones'
+ * come as one goes closer; and with the whole roll in the window the same few are there, however
+ * wide the window is. On a window 1360 wide the two are 30 and 72 pixels.
  */
-export function clearOf(taken: readonly Taken[], xa: number, xb: number, y: number, room: number): number {
-  for (let again = true, turns = 0; again && turns < 40; turns++) {
-    again = false;
-    for (const other of taken) {
-      if (other.xa < xb + 8 && other.xb > xa - 8 && y - room < other.bottom && y > other.top) {
-        y = other.top - 4;
-        again = true;
+export const SHOWS: readonly [number, number] = [30 / 1215, 72 / 1215];
+/** And never less than these, in pixels: words of passages thinner than this could not be told apart. */
+const SHOWS_AT_LEAST: readonly [number, number] = [6, 14];
+
+/** The two widths for a window whose roll, fitted into it, would be `room` wide. */
+export const shows = (room: number): [number, number] => [
+  Math.max(SHOWS_AT_LEAST[0], SHOWS[0] * room),
+  Math.max(SHOWS_AT_LEAST[1], SHOWS[1] * room),
+];
+
+/** How much a remark is there, 0 to 1, for a passage `width` wide on the screen. */
+export const presence = (width: number, room: number): number => smoothstep(...shows(room), width);
+
+/** How little is left of a remark's ink once its passage is far wider than what is seen of the roll. */
+export const BACK = 0.5;
+
+/**
+ * How much a remark stands forward, from 1 down to `BACK`: gone into closely, a passage wider than
+ * the `view` steps back for the shorter ones in it, and at twice the view's width it has.
+ */
+export const standing = (width: number, view: number): number =>
+  1 - (1 - BACK) * smoothstep(view, 2 * view, width);
+
+/** A remark's words to be placed. */
+export interface Words {
+  /** Where their middle would stand: over the middle of the passage, at the height of its notes. */
+  readonly cx: number;
+  readonly cy: number;
+  /** How wide they are when they say all they say, and how tall. */
+  readonly w: number;
+  readonly h: number;
+  /** How far left and right they may reach at the most: the roll's two ends. */
+  readonly lo: number;
+  readonly hi: number;
+}
+
+/** Where words stand: how far off their place, up (negative) or down, and from where to where. */
+export interface Placed {
+  readonly off: number;
+  readonly left: number;
+  readonly width: number;
+}
+
+/** How many lines up or down words may be put off their place. */
+const LINES_OFF = 6;
+/** What a line off their place weighs against words cut down to nothing: a third of them cut is as bad. */
+const CUT = 3;
+/** Words are not cut shorter than this, in pixels (those that are shorter are not cut at all). */
+export const LEAST = 96;
+/** How far apart words on one line stand at the least: they are sentences, and must not read as one. */
+const APART = 14;
+
+/**
+ * Where each remark's words stand so that none lie on one another, the first given first. Words
+ * say all they say wherever nothing stands in the way, running past their passage on either side
+ * and aside as far as they still stand over its middle. Where others stand, they are cut against
+ * them, or put up or down by whole lines, whichever takes less from them: a small cut before a
+ * line off, a line off before a large cut. Null where nothing of them finds room between `top`
+ * and `bottom`.
+ */
+export function placeWords(words: readonly Words[], top: number, bottom: number): (Placed | null)[] {
+  const taken: { xa: number; xb: number; ya: number; yb: number }[] = [];
+  return words.map(({ cx, cy, w, h, lo, hi }) => {
+    const line = h + 2;
+    let best: (Placed & { cost: number; ya: number }) | null = null;
+    for (let k = 0; k <= 2 * LINES_OFF; k++) {
+      // 0, one up, one down, two up, …
+      const lines = Math.ceil(k / 2);
+      if (best && best.cost <= lines) break;
+      const off = (k % 2 === 1 ? -1 : 1) * lines * line;
+      const ya = cy + off - h / 2;
+      if (ya < top || ya + h > bottom) continue;
+      // what is free on this line, on either side of the passage's middle
+      let left = lo;
+      let right = hi;
+      for (const other of taken) {
+        if (other.ya >= ya + h + 2 || other.yb <= ya - 2) continue;
+        if (other.xb + APART <= cx) left = Math.max(left, other.xb + APART);
+        else if (other.xa - APART >= cx) right = Math.min(right, other.xa - APART);
+        else left = right = cx;
       }
+      const width = Math.min(w, right - left);
+      if (width < Math.min(w, LEAST)) continue;
+      const cost = lines + CUT * (1 - width / w);
+      if (!best || cost < best.cost)
+        best = { off, width, left: clamp(cx - width / 2, left, right - width), cost, ya };
     }
-  }
-  return y;
+    if (!best) return null;
+    taken.push({ xa: best.left, xb: best.left + best.width, ya: best.ya, yb: best.ya + h });
+    return { off: best.off, left: best.left, width: best.width };
+  });
 }
 
 /**
@@ -272,6 +356,14 @@ export function rowsOf(
   return { places, rows: places.length > 0 ? row + 1 : 0 };
 }
 
+/**
+ * How far the roll can be zoomed, in pixels a millisecond: out to a piece of five minutes across a
+ * narrow window, in to some five seconds across a wide one, where the shortest passage that is
+ * spoken of is a good hand wide.
+ */
+export const FARTHEST = 0.001;
+export const CLOSEST = 0.25;
+
 /** The zoom that keeps a moment under the same pixel: the new scale, and where to scroll to. */
 export function zoomAbout(
   ppt: number,
@@ -281,6 +373,6 @@ export function zoomAbout(
   scrollLeft: number,
 ): { ppt: number; scrollLeft: number } {
   const ms = (anchor - gutter + scrollLeft) / ppt;
-  const next = clamp(ppt * factor, 0.002, 0.4);
+  const next = clamp(ppt * factor, FARTHEST, CLOSEST);
   return { ppt: next, scrollLeft: Math.max(0, gutter + ms * next - anchor) };
 }
