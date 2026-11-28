@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Träumerei, described</title>
+    <meta
+      name="description"
+      content="Grünfeld's 1905 Welte-Mignon recording of Schumann's Träumerei as a piano roll over a grand staff: the notes as the reconstruction renders them, their shadows as they were played, and over the passages what was said of the playing, each remark to be heard with what it wrote brought out."
+    />
+    <meta name="author" content="Niels Pfeffer" />
+    <!-- the page's code lives in /hummed/, with the voice and the piano it shares (src/described/) -->
+    <base href="/hummed/" />
+    <style>
+      :root {
+        color-scheme: light;
+        --ground: #ffffff;
+        --ink: #16181d;
+        --muted: #5b6270;
+        --rule: #e5e7eb;
+        --soft: #f3f4f6;
+        --accent: #a3232f;
+        --link: #1f4e8c;
+        /* the roll's own: its ground, its grid, the two hands, a grace note, a shadow */
+        --roll: #fcfcfd;
+        --grid: #dde0e6;
+        --faint: #8a909c;
+        --right: #1f4e8c;
+        --left: #a3232f;
+        --grace: #6b3fa0;
+        --ghost: #74808e;
+        --sans: Helvetica, Arial, sans-serif;
+        --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      header,
+      .focus,
+      .bar,
+      footer {
+        padding-left: max(1rem, env(safe-area-inset-left, 0px));
+        padding-right: max(1rem, env(safe-area-inset-right, 0px));
+      }
+
+      /* one line above the roll */
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: 0.2rem 1rem;
+        padding-top: 0.45rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid var(--rule);
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.15rem;
+        white-space: nowrap;
+      }
+      header p {
+        margin: 0;
+        min-width: 0;
+        color: var(--muted);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      /* the roll, from edge to edge */
+      .stage {
+        flex: 1 1 auto;
+        min-height: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: var(--roll);
+      }
+      .scroll {
+        flex: 1 1 auto;
+        min-height: 0;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .scroll canvas {
+        position: sticky;
+        left: 0;
+        top: 0;
+        display: block;
+        touch-action: pan-x;
+      }
+      /* The roll is most of the page: its focus is shown as a hairline, not as the accent's frame. */
+      .scroll canvas:focus-visible {
+        outline: 1px solid var(--faint);
+        outline-offset: -1px;
+      }
+      .spacer {
+        height: 1px;
+        margin-top: -1px;
+      }
+      .loading {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--accent);
+        background: var(--roll);
+      }
+      .loading[hidden],
+      .tip[hidden] {
+        display: none;
+      }
+      .tip {
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        max-width: 300px;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+        background: var(--ink);
+        color: var(--ground);
+        font-size: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      }
+      .tip .k {
+        display: inline-block;
+        min-width: 3.9rem;
+        opacity: 0.65;
+      }
+
+      /* under the roll: the remark in focus, then what plays it */
+      .focus {
+        display: flex;
+        align-items: baseline;
+        gap: 0 0.9rem;
+        height: 2.1rem;
+        padding-top: 0.35rem;
+        border-top: 1px solid var(--rule);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .said {
+        flex: 0 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .where {
+        flex: 0 0 auto;
+        color: var(--muted);
+      }
+      .calls {
+        flex: 1 1 0;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.9rem;
+      }
+      .calls a + a::before {
+        content: "·";
+        color: var(--muted);
+        margin: 0 0.45rem;
+        display: inline-block;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem 0.9rem;
+        min-height: 2.5rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.3rem;
+        color: var(--muted);
+      }
+      .bar label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        white-space: nowrap;
+      }
+      .bar output {
+        min-width: 2.6rem;
+        font-variant-numeric: tabular-nums;
+      }
+      #hint {
+        flex: 1 1 auto;
+        min-width: 0;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .zoom {
+        display: inline-flex;
+        gap: 0.2rem;
+      }
+      select,
+      button {
+        font: inherit;
+        color: var(--ink);
+        padding: 0.2rem 0.55rem;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        background: var(--ground);
+      }
+      button {
+        cursor: pointer;
+        background: var(--soft);
+        white-space: nowrap;
+      }
+      button:disabled {
+        color: var(--muted);
+        cursor: default;
+      }
+      button[aria-pressed="true"] {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--ground);
+      }
+      #play {
+        min-width: 2.2rem;
+        border-color: var(--accent);
+        background: var(--ground);
+        color: var(--accent);
+      }
+      #play[aria-pressed="true"] {
+        background: var(--accent);
+        color: var(--ground);
+      }
+      #play svg {
+        display: block;
+        margin: 0.2rem auto;
+        fill: currentColor;
+      }
+      .zoom button {
+        min-width: 2rem;
+      }
+      input[type="range"] {
+        width: 5.5rem;
+        accent-color: var(--accent);
+      }
+      footer {
+        padding-top: 0.3rem;
+        padding-bottom: 0.45rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.85rem;
+        color: var(--muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @media (max-width: 720px) {
+        header {
+          flex-direction: column;
+        }
+        header p {
+          max-width: 100%;
+          font-size: 0.85rem;
+        }
+        .focus {
+          display: block;
+          height: 4.2rem;
+        }
+        .said {
+          display: block;
+        }
+        .where,
+        .calls {
+          white-space: normal;
+        }
+        .where::after {
+          content: " ";
+        }
+        .bar {
+          flex-wrap: wrap;
+        }
+        #hint {
+          order: -1;
+          flex-basis: 100%;
+          min-height: 2.8em;
+          white-space: normal;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+        }
+        .zoom {
+          margin-left: auto;
+        }
+        footer {
+          white-space: normal;
+        }
+      }
+    </style>
+    <script src="described.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Träumerei, described</h1>
+      <p>
+        Alfred Grünfeld plays Schumann on Welte-Mignon roll 225 (1905): the
+        notes as the reconstruction renders them, behind each its shadow as it
+        was played, and over the passages what was said of the playing.
+      </p>
+    </header>
+
+    <main class="stage">
+      <div class="scroll" id="scroll">
+        <canvas
+          id="roll"
+          tabindex="0"
+          role="img"
+          aria-label="Piano roll of the recording over a grand staff. The notes are what the reconstruction's MPM renders, each with a gray shadow where it was played otherwise; the remarks stand over the passages they are about. The arrow keys go from one remark to the next and play its passage; Space plays and pauses."
+        ></canvas>
+        <div class="spacer" id="spacer"></div>
+      </div>
+      <div class="tip" id="tip" hidden></div>
+      <p class="loading" id="loading" role="status">Loading the roll …</p>
+    </main>
+
+    <section class="focus" aria-live="polite" aria-label="The remark in focus">
+      <span class="said" id="said"></span>
+      <span class="where" id="where"></span>
+      <span class="calls" id="calls"></span>
+    </section>
+
+    <div class="bar">
+      <button
+        id="play"
+        type="button"
+        aria-pressed="false"
+        aria-label="Play"
+        disabled
+      >
+        <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+          <path id="play-icon" d="M2.5 1v10l8.5-5z" />
+        </svg>
+      </button>
+      <label
+        title="What is played of the remark in focus, and of the piece when none is: the seven steps of the front page's fader, from the harmonies in half notes to the piece itself, the inner voice humming along."
+        >played as
+        <select id="level"></select
+      ></label>
+      <label
+        id="bring-label"
+        title="How strongly the instructions a remark wrote are exaggerated when its passage is played; everything else is held back. The notes are drawn where that rendering has them."
+        >bring out
+        <input
+          id="bring"
+          type="range"
+          min="1"
+          max="1.9"
+          step="0.1"
+          value="1.5"
+          disabled
+        />
+        <output id="bring-value" for="bring">× 1.5</output></label
+      >
+      <p id="hint" role="status"></p>
+      <button
+        id="staff"
+        type="button"
+        aria-pressed="true"
+        title="The notes on the two staves, by their spelling, or key by key"
+      >
+        Grand staff
+      </button>
+      <span class="zoom">
+        <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+        <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        <button id="fit" type="button">Fit</button>
+      </span>
+    </div>
+
+    <footer>
+      <a href="/">To the roll</a> · <a href="/overview/">overview</a> ·
+      <span id="interim"
+        >The remarks are the reconstruction's 109 hand-made segments of 8
+        November 2026, carried over (<a href="/described/remarks.json"
+          >remarks.json</a
+        >); they stand in until remarks made in MPM Desk are published in
+        <a href="/mpm/work.json">work.json</a>. ·
+      </span>
+      <a href="https://github.com/pfefferniels/welte225.org/tree/main/hummed"
+        >source</a
+      >
+    </footer>
+  </body>
+</html>

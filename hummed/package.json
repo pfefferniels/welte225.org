@@ -22,7 +22,8 @@
     "voices": "node tools/voices.ts",
     "take": "node tools/take.ts",
     "figure": "node tools/elaboration-figure.ts",
-    "melody": "node tools/melody.ts"
+    "melody": "node tools/melody.ts",
+    "remarks": "node tools/remarks.ts"
   },
   "dependencies": {
     "espressivo": "0.13.0"

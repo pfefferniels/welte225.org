@@ -11,6 +11,7 @@ export default tseslint.config(
       'worker.js',
       'take.js',
       'take-worker.js',
+      'described.js',
       'vtl.js',
       '*.map',
       'research',

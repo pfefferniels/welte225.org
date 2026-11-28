@@ -12,9 +12,14 @@ const MIN_CHUNK_STATES = Math.round((1.5 * SAMPLE_RATE) / STATE_STEP);
 
 /**
  * The chunks of a rendering in the order they are needed: from the start to the end, then from the
- * beginning up to the start. The start splits its chunk if it falls inside one.
+ * beginning up to the start. The start splits its chunk if it falls inside one. A passage alone
+ * (a plan that ends) is one chunk, from its start to its end: nothing else of it is rendered.
  */
-export function chunkOrder(plan: Pick<Plan, 'stateCount' | 'seams' | 'startState'>): Chunk[] {
+export function chunkOrder(plan: Pick<Plan, 'stateCount' | 'seams' | 'startState' | 'endState'>): Chunk[] {
+  if (plan.endState !== undefined) {
+    const first = Math.max(0, Math.min(plan.stateCount - 1, plan.startState));
+    return [[first, Math.max(first + 1, Math.min(plan.stateCount, plan.endState))]];
+  }
   const cuts = [0];
   for (const seam of [...plan.seams].sort((a, b) => a - b)) {
     const last = cuts[cuts.length - 1] ?? 0;

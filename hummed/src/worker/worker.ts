@@ -5,17 +5,21 @@
 // several such workers side by side (shared/protocol.ts says who does what): the first prepares a
 // setting, with the help of the next two, and answers with the plan; the others are handed what it
 // prepared. One more worker only draws the piano's sound as the page hands it over (picture.ts):
-// that one loads nothing else.
+// that one loads nothing else. And any worker performs the piece note by note for whoever draws it
+// (notes.ts), which needs the score and the MPM alone.
 import { parseCalibration, parseHumStyle } from '../hummer/data.ts';
 import { voiceStyle } from '../hummer/style.ts';
 import { dynamicsRange, readDynamics, turningPoints } from '../hummer/index.ts';
 import { chunkOrder } from '../shared/chunks.ts';
+import { emphasisKey } from '../shared/emphasis.ts';
 import {
   sameSetting,
   VOICE_WORKER,
   type BetweenWorkers,
   type DynamicsMessage,
   type FromWorker,
+  type NotesAnswer,
+  type NotesRequest,
   type OpenMessage,
   type PianoMessage,
   type PictureColumns,
@@ -31,8 +35,10 @@ import type { Reduction } from '../reduction/types.ts';
 import { VtlEngine } from '../vtl/engine.ts';
 import type { CreateVtl } from '../vtl/module.ts';
 import { FIRST_SOUND, renderChunk } from './chunk.ts';
+import { emphasised } from './emphasis.ts';
 import { shapeOf } from './levels.ts';
 import { materials, type Materials } from './materials.ts';
+import { performedNotes } from './notes.ts';
 import { performPiano } from './piano.ts';
 import { drawPicture, type Arriving } from './picture.ts';
 import {
@@ -54,8 +60,9 @@ import { maxStatesOf, scoreStates } from './voice-states.ts';
 
 interface WorkerScope {
   readonly name: string;
-  postMessage(message: FromWorker | PictureColumns, transfer?: Transferable[]): void;
-  onmessage: ((event: MessageEvent<ToWorker | PictureRequest | PictureSamples>) => void) | null;
+  postMessage(message: FromWorker | PictureColumns | NotesAnswer, transfer?: Transferable[]): void;
+  onmessage:
+    ((event: MessageEvent<ToWorker | PictureRequest | PictureSamples | NotesRequest>) => void) | null;
 }
 const scope = self as unknown as WorkerScope;
 const post = (message: FromWorker, transfer: Transferable[] = []): void => {
@@ -64,8 +71,18 @@ const post = (message: FromWorker, transfer: Transferable[] = []): void => {
 const now = (): number => performance.now();
 const nothing = (): void => undefined;
 
+// espressivo reports every part of the score the MPM has no part of its own for, each time it
+// performs; the reconstruction's MPM is global, so that is both hands, every time
+const report = console.error.bind(console);
+console.error = (...said: unknown[]): void => {
+  if (typeof said[0] === 'string' && said[0].startsWith('No MPM part found')) return;
+  report(...said);
+};
+
 /** The scores and the data: what the performances and the hummer are made from. */
 interface Texts extends HumData {
+  /** The reconstruction's MPM as it is: what a setting's instructions are brought out of. */
+  readonly mpm: string;
   /**
    * What the piano plays and the voice follows (materials.ts): the reductions, the piece and its
    * versions struck again, the melody, each made when first needed here.
@@ -125,18 +142,28 @@ const get = async (url: string): Promise<Response> => {
   return response;
 };
 
-async function loadTexts(): Promise<Texts> {
-  const [msm, halves, quarters, accompaniment, mpm, melody, style, calibration] = await Promise.all([
+let score: Promise<Score> | null = null;
+/** The piece and the reconstruction's MPM: all that a worker asked only for the performed notes loads. */
+function loadScore(): Promise<Score> {
+  score ??= Promise.all([
     get('../mpm/score.msm').then((r) => r.text()),
+    get('../mpm/performance.mpm').then((r) => r.text()),
+  ]).then(([msm, mpm]) => ({ msm, mpm }));
+  return score;
+}
+
+async function loadTexts(): Promise<Texts> {
+  const [{ msm, mpm }, halves, quarters, accompaniment, melody, style, calibration] = await Promise.all([
+    loadScore(),
     get('reduction/halves.mei').then((r) => r.text()),
     get('reduction/quarters.mei').then((r) => r.text()),
     get('reduction/harmonies.mei').then((r) => r.text()),
-    get('../mpm/performance.mpm').then((r) => r.text()),
     get('data/melody.json').then((r) => r.json() as Promise<string[]>),
     get('data/hum-style.json').then((r) => r.json() as Promise<unknown>),
     get('data/calibration.json').then((r) => r.json() as Promise<unknown>),
   ]);
   return {
+    mpm,
     // converting the MEI takes a tenth of a second or two, and only where a reduction is needed
     materials: materials({ msm, mpm, halves, quarters, accompaniment, melody }),
     range: dynamicsRange(mpm),
@@ -211,18 +238,35 @@ function hold(L: Level): void {
   levels = [L, ...others].slice(0, planning ? keep : 1);
 }
 
+/** The materials of the MPM with the instructions last asked for brought out: one emphasis is heard at a time. */
+let broughtOut: { readonly key: string; readonly materials: Materials } | null = null;
+
+/**
+ * What the piano plays and the voice follows at a setting: made of the MPM as it is, or of the MPM
+ * with the setting's instructions brought out (emphasis.ts). What the hummer reads of the MPM
+ * beside the performance (`HumData`) stays the reconstruction's own, as under any exaggeration.
+ */
+function materialsAt(texts: Texts, setting: Setting): Materials {
+  const { emphasis } = setting;
+  if (!emphasis) return texts.materials;
+  const key = emphasisKey(emphasis);
+  if (broughtOut?.key !== key)
+    broughtOut = { key, materials: texts.materials.withMpm(emphasised(texts.mpm, emphasis)) };
+  return broughtOut.materials;
+}
+
 /**
  * The piano's two parts at a setting (the piece as it plays it there, the harmonies those it plays
  * there or last before), and where its harmonies roll a chord.
  */
 const pianoAt = (texts: Texts, setting: Setting): Piano => {
-  const { score, rolls } = texts.materials.pianoScore(setting.elaboration);
+  const { score, rolls } = materialsAt(texts, setting).pianoScore(setting.elaboration);
   return { ...performPiano(score, shapeOf(setting)), rolls };
 };
 
 /** What the voice follows at a setting: the piece, or a harmonic reduction (reductions.ts). */
 const voiceScoreAt = (texts: Texts, setting: Setting): Score =>
-  texts.materials.voiceScore(setting.elaboration);
+  materialsAt(texts, setting).voiceScore(setting.elaboration);
 
 /**
  * Prepare a setting. With helpers (`box.alone` false), the piano's parts, the open score's tract
@@ -253,7 +297,7 @@ async function prepare(r: Resources, setup: Setup, box: Help, setting: Setting):
   if (await stopped()) return null;
   const dynamics = box.dynamics?.curve ?? timed('espressivo', () => performDynamics(score, mpm));
   const performed = { performance, dynamics };
-  const sung = texts.materials.sung(setting.elaboration, setup.reduction);
+  const sung = materialsAt(texts, setting).sung(setting.elaboration, setup.reduction);
   const voice = timed('hummer', () => hum(performed, sung, texts, shape));
   const maxStates = maxStatesOf(voice);
   if (!box.alone)
@@ -334,7 +378,7 @@ async function work(message: Task, box: Help, reply: MessagePort | undefined): P
       const setup = await setupReady;
       const L = await levelFor(r, setup, box, message.setting);
       if (!L || id !== current) return;
-      const plan = planOf(L, id, message.start);
+      const plan = planOf(L, id, message.start, message.until);
       post(plan);
       // the chunk that is heard first, at once; then a copy of the level for each worker without it
       const [from, to] = chunkOrder(plan)[0];
@@ -447,9 +491,26 @@ function receive(
   wake();
 }
 
+/** Perform the piece note by note, with the instructions asked for brought out, and answer with the notes. */
+async function answerNotes({ id, emphasis }: NotesRequest): Promise<void> {
+  try {
+    const { msm, mpm } = await loadScore();
+    scope.postMessage({ type: 'notes', id, notes: performedNotes({ msm, mpm: emphasised(mpm, emphasis) }) });
+  } catch (error) {
+    scope.postMessage({
+      type: 'notes-failed',
+      id,
+      message: error instanceof Error ? error.message : String(error),
+    });
+  }
+}
+
 scope.onmessage = (event) => {
   const message = event.data;
   switch (message.type) {
+    case 'notes':
+      void answerNotes(message);
+      return;
     case 'picture': {
       picture = message.id;
       const sound: Arriving = {

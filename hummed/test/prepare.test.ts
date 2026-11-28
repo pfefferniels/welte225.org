@@ -1,10 +1,12 @@
 // A setting prepared by several workers, and rendered in chunks: whoever makes a part of it, and
-// whichever worker renders a chunk, the result is the same.
+// whichever worker renders a chunk, the result is the same. And a passage of it alone: planned up to
+// where it ends, and rendered in one chunk and nothing past it.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { describe, it } from 'node:test';
 import { readDynamics } from '../src/hummer/index.ts';
 import { chunkOrder } from '../src/shared/chunks.ts';
+import { interp } from '../src/shared/math.ts';
 import { SPECTROGRAM, SPECTROGRAM_STYLES } from '../src/shared/spectrogram.ts';
 import { SAMPLE_RATE, STATE_STEP } from '../src/shared/units.ts';
 import { chunkSpan, FIRST_SOUND, renderChunk, type ChunkPart } from '../src/worker/chunk.ts';
@@ -90,6 +92,46 @@ describe('a setting prepared', async () => {
     const tick = plan.clock.ticks[10];
     const byTick = planOf(level, 8, { tick });
     assert.ok(Math.abs(byTick.startSeconds - (plan.clock.ms[10] / 1000 + 0.6)) < 1e-9);
+  });
+
+  it('plans a passage alone from its first tick to its last, in whole 10 ms slots', () => {
+    const plan = planOf(level, 9, { tick: 2160 }, { tick: 4320 });
+    const slot = SAMPLE_RATE / 100;
+    const at = (tick: number): number => interp(tick, plan.clock.ticks, plan.clock.ms) / 1000 + 0.6;
+    const endState = plan.endState ?? NaN;
+    assert.equal(plan.startSeconds, at(2160));
+    assert.ok(plan.startState * STATE_STEP <= Math.floor(at(2160) * 100) * slot);
+    assert.ok(endState * STATE_STEP >= Math.ceil(at(4320) * 100) * slot);
+    assert.ok((endState - 1) * STATE_STEP < Math.ceil(at(4320) * 100) * slot);
+    // one chunk, and no other: nothing before the passage, nothing after it
+    assert.deepEqual(chunkOrder(plan), [[plan.startState, endState]]);
+    // without an end it is the plan of the piece from there, as it was: every chunk, round to the start
+    const whole = planOf(level, 9, { tick: 2160 });
+    assert.ok(!('endState' in whole));
+    assert.deepEqual({ ...whole, endState }, plan);
+    assert.ok(chunkOrder(whole).length > 10);
+    // an end past the piece's is the piece's; one before the start leaves a state to render
+    const { duration, stateCount } = level.plan;
+    assert.equal(planOf(level, 9, { seconds: duration - 1 }, { seconds: duration + 9 }).endState, stateCount);
+    const backwards = planOf(level, 9, { seconds: 5 }, { seconds: 4 });
+    assert.equal(backwards.endState, backwards.startState + 1);
+  });
+
+  it('renders a passage alone: its sound once, from its start to its end, and nothing past it', () => {
+    const plan = planOf(level, 9, { tick: 2160 }, { tick: 4320 });
+    const [[from, to], ...others] = chunkOrder(plan);
+    assert.deepEqual(others, []);
+    let sample = from * STATE_STEP;
+    let energy = 0;
+    for (const part of render(level, from, to)) {
+      if (part.samples.length === 0) continue;
+      assert.equal(part.start, sample);
+      sample += part.samples.length;
+      for (const x of part.samples) energy += x * x;
+    }
+    assert.equal(sample, to * STATE_STEP);
+    assert.ok(to * STATE_STEP < (level.plan.stateCount - 1) * STATE_STEP);
+    assert.ok(energy > 0, 'the voice sounds in it');
   });
 
   it('settles the voice before a chunk: not at the beginning, briefly at a seam, longer elsewhere', () => {

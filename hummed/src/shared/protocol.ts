@@ -2,9 +2,10 @@
 import type { ArticulatorMove } from '../hummer/articulators.ts';
 import type { DynamicsCurve } from '../hummer/performance.ts';
 import type { Reduction } from '../reduction/types.ts';
+import { emphasisKey, type Emphasis } from './emphasis.ts';
 import type { PianoPart } from './piano.ts';
 import type { SpectrogramScale, SpectrogramStyleName } from './spectrogram.ts';
-import type { Seconds, Ticks } from './units.ts';
+import type { Ms, Seconds, Ticks } from './units.ts';
 
 /** Where a rendering starts: a place in the score (kept across levels) or a time in this level. */
 export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
@@ -13,22 +14,29 @@ export type StartAt = { readonly tick: Ticks } | { readonly seconds: Seconds };
  * What a rendering is of: the elaboration, which sets how flighty the performance is (how fast, how
  * exactly struck), how exaggerated the piano's and the voice's, and how loosely the voice keeps to
  * the pitch (shared/shape.ts, `Shape`); and where the visitor set the flightiness and the
- * exaggeration apart from it, each as a place on the fader's own scale.
+ * exaggeration apart from it, each as a place on the fader's own scale. A passage played alone
+ * (described/passage.ts) may have instructions of the MPM brought out in it: the MPM all of this is
+ * then made from is another (shared/emphasis.ts, as `emphasisOf` gives it).
  */
 export interface Setting {
   readonly elaboration: number;
   readonly flighty?: number;
   readonly exaggerated?: number;
+  readonly emphasis?: Emphasis;
 }
 
 /** What tells settings apart: the same key, the same rendering. */
 export const settingKey = (s: Setting): string =>
-  `${s.elaboration}|${s.flighty ?? ''}|${s.exaggerated ?? ''}`;
+  `${s.elaboration}|${s.flighty ?? ''}|${s.exaggerated ?? ''}${s.emphasis ? `|${emphasisKey(s.emphasis)}` : ''}`;
 
 export const sameSetting = (a: Setting, b: Setting): boolean => settingKey(a) === settingKey(b);
 
-/** A setting as the elaboration alone has it, nothing set apart: one the recordings are of. */
-export const plain = (s: Setting): boolean => s.flighty === undefined && s.exaggerated === undefined;
+/**
+ * A setting as the elaboration alone has it, nothing set apart and nothing brought out: one the
+ * recordings are of.
+ */
+export const plain = (s: Setting): boolean =>
+  s.flighty === undefined && s.exaggerated === undefined && s.emphasis === undefined;
 
 /**
  * The name the page gives the workers that render the voice: one so named loads VocalTractLab and
@@ -60,6 +68,10 @@ export const VOICE_WORKER = 'voice';
  * of them) once its own first sound is out, and the page hands each copy on, followed by that
  * worker's first chunk. A worker handed a chunk of a setting it has no level of prepares it itself:
  * later, but the same, the chain being deterministic.
+ *
+ * A plan asked for with `until` is of a passage alone: the setting is prepared as ever (the voice's
+ * line and breath are those of the whole piece), but of its sound only the stretch from `start` to
+ * `until` is rendered, in one chunk, which the planner goes on to; `chunkOrder` has no other.
  */
 export type ToWorker =
   | {
@@ -80,6 +92,8 @@ export type ToWorker =
       readonly id: number;
       readonly setting: Setting;
       readonly start: StartAt;
+      /** Where the sound ends, for a passage alone; else it goes on to the end, and round to the start. */
+      readonly until?: StartAt;
       /** Whether there is a worker to help with the preparation. */
       readonly helped: boolean;
       /** How many copies of the level to send after the plan, for the workers without it. */
@@ -200,13 +214,18 @@ export interface Plan {
   /** Where the sound starts coming, and its tract state (at the start of a 10 ms slot). */
   readonly startSeconds: Seconds;
   readonly startState: number;
+  /** Of a passage alone: the tract state its sound ends before (at the end of a 10 ms slot). */
+  readonly endState?: number;
   /** Tract states in all (110 samples each), and those where the voice is silent, to cut at. */
   readonly stateCount: number;
   readonly seams: readonly number[];
 }
 
-/** A plan without what depends on where the rendering starts: the same for every request of a setting. */
-export type PlanBody = Omit<Plan, 'id' | 'startSeconds' | 'startState'>;
+/**
+ * A plan without what depends on where the rendering starts and ends: the same for every request
+ * of a setting.
+ */
+export type PlanBody = Omit<Plan, 'id' | 'startSeconds' | 'startState' | 'endState'>;
 
 export interface AudioMessage {
   readonly type: 'audio';
@@ -265,3 +284,31 @@ export interface PictureColumns {
   readonly count: number;
   readonly pixels: Uint8Array;
 }
+
+/** A note as espressivo performs it: when its key goes down and up (the performance's own time), and how hard. */
+export interface PerformedNote {
+  readonly on: Ms;
+  readonly off: Ms;
+  readonly velocity: number;
+}
+
+/**
+ * Any worker performs the piece for whoever draws it (described/passage.ts): the score's notes as
+ * espressivo performs the MPM as it is, or with instructions brought out, at the piece's own tempo
+ * (no setting's flight or exaggeration). It is asked beside the requests for the voice, with ids of
+ * its own, and stops none of them; a worker asked only this loads the score and the MPM alone.
+ */
+export interface NotesRequest {
+  readonly type: 'notes';
+  readonly id: number;
+  readonly emphasis?: Emphasis;
+}
+
+/** The notes of the score, each by its xml:id; or why they could not be performed. */
+export type NotesAnswer =
+  | {
+      readonly type: 'notes';
+      readonly id: number;
+      readonly notes: readonly (readonly [id: string, note: PerformedNote])[];
+    }
+  | { readonly type: 'notes-failed'; readonly id: number; readonly message: string };

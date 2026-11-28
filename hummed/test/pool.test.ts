@@ -38,6 +38,11 @@ describe('chunkOrder', () => {
   it('renders in one piece without seams', () => {
     assert.deepEqual(chunkOrder({ stateCount: 500, seams: [], startState: 0 }), [[0, 500]]);
   });
+  it('has one chunk for a passage alone, from its start to its end, whatever the seams', () => {
+    assert.deepEqual(chunkOrder({ ...plan, startState: 1500, endState: 6200 }), [[1500, 6200]]);
+    assert.deepEqual(chunkOrder({ ...plan, startState: 9990, endState: 20000 }), [[9990, 10000]]);
+    assert.deepEqual(chunkOrder({ ...plan, startState: 400, endState: 300 }), [[400, 401]]);
+  });
 });
 
 /** A worker's stand-in: keeps what the pool sends it, and says what the test has it say. */
@@ -62,7 +67,8 @@ class StandIn implements PoolWorker {
   /** What the pool has sent since this was last asked, each message as its type and what tells it apart. */
   got(): string[] {
     return this.#got.splice(0).map((m) => {
-      if (m.type === 'plan') return `plan ${m.id} helped ${m.helped} share ${m.share}`;
+      if (m.type === 'plan')
+        return `plan ${m.id} helped ${m.helped} share ${m.share}${m.until ? ` until ${JSON.stringify(m.until)}` : ''}`;
       if (m.type === 'chunk') return `chunk ${m.id} ${m.from}-${m.to}`;
       return 'id' in m ? `${m.type} ${m.id}` : m.type;
     });
@@ -304,6 +310,75 @@ describe('the pool', () => {
     // the planner's own chunk first, then the next
     assert.deepEqual(second.got(), ['link', 'chunk 1 0-2000']);
     assert.deepEqual(third.got(), ['link', 'chunk 1 2000-5000']);
+  });
+
+  it('has the first worker render a passage alone, and hands no other its level', () => {
+    const { pool, workers, events } = poolOf(3);
+    const [planner, second, third] = workers;
+    workers.forEach((w) => w.got());
+    pool.request(1, setting, { tick: 2130 }, { tick: 4320 });
+    // the others help to prepare it, as ever; none is to be sent a copy of what is prepared
+    assert.deepEqual(
+      workers.map((w) => w.got()),
+      [['plan 1 helped true share 0 until {"tick":4320}'], ['stop 1'], ['stop 1']],
+    );
+    planner.says({ ...planOf(1), startState: 1500, endState: 6200 });
+    planner.says(sound(1, 1500, 6200));
+    // its one chunk is the planner's: nobody is handed anything, not even near its end
+    assert.deepEqual(
+      workers.map((w) => w.got()),
+      [[], [], []],
+    );
+    assert.deepEqual(
+      events.map((e) => e.type),
+      ['plan', 'audio'],
+    );
+    planner.says(done(1, 1500, 6200));
+    assert.deepEqual(events.at(-1), { type: 'done', id: 1 });
+    assert.deepEqual(second.got(), []);
+    assert.deepEqual(third.got(), []);
+  });
+
+  it('has the next worker render the passage when the planner fails', () => {
+    const { pool, workers } = poolOf(2);
+    const [planner, second] = workers;
+    pool.request(1, setting, { tick: 2130 }, { tick: 4320 });
+    workers.forEach((w) => w.got());
+    planner.says({ type: 'error', id: 1, message: 'no' });
+    assert.deepEqual(second.got(), ['plan 1 helped false share 0 until {"tick":4320}']);
+    // and after the plan: its chunk, to prepare the setting for by itself
+    const again = poolOf(2);
+    again.pool.request(1, setting, { tick: 2130 }, { tick: 4320 });
+    again.workers[0]?.says({ ...planOf(1), startState: 1500, endState: 6200 });
+    again.workers.forEach((w) => w.got());
+    again.workers[0]?.says({ type: 'error', id: 1, message: 'no' });
+    assert.deepEqual(again.workers[1]?.got(), ['chunk 1 1500-6200']);
+  });
+
+  it('stops every worker, and hears no more of what they were rendering', () => {
+    const { pool, workers, events } = poolOf(2);
+    const [planner, second] = workers;
+    pool.request(1, setting, { seconds: 0 });
+    planner.says(planOf(1));
+    workers.forEach((w) => w.got());
+    events.length = 0;
+    pool.stop(2);
+    assert.deepEqual(
+      workers.map((w) => w.got()),
+      [['stop 2'], ['stop 2']],
+    );
+    // what was on its way: nothing is handed out for it, and it is never done
+    planner.says(levelOf(1));
+    planner.says(done(1, 0, 2000));
+    assert.deepEqual(second.got(), []);
+    assert.deepEqual(planner.got(), []);
+    assert.deepEqual(
+      events.map((e) => e.type),
+      [],
+    );
+    // the next request is rendered as ever
+    pool.request(3, setting, { seconds: 0 });
+    assert.deepEqual(planner.got(), ['plan 3 helped true share 1']);
   });
 
   it('reports the failure of the last worker', () => {

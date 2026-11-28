@@ -6,7 +6,7 @@ import { interp } from '../shared/math.ts';
 import { heldNotes, type HeldNote, type PianoPart } from '../shared/piano.ts';
 import type { AudioMessage, Plan, Roll, Setting, Timings } from '../shared/protocol.ts';
 import { INKS } from '../shared/spectrogram.ts';
-import { PAD_MS, SAMPLE_RATE, type Seconds, type Ticks } from '../shared/units.ts';
+import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds, type Ticks } from '../shared/units.ts';
 import { Strip } from './strip.ts';
 
 const SLOT = SAMPLE_RATE / 100;
@@ -49,6 +49,8 @@ export class Rendering {
   readonly #held = new Map<PianoPartName, readonly HeldNote[]>();
   /** Samples arrived per 10 ms slot. */
   readonly #have: Uint16Array;
+  /** How far slots come at all, counted from the first: not to the end where a passage alone is rendered. */
+  readonly #slots: number;
   readonly #began = performance.now();
   #samples = 0;
   done = false;
@@ -81,6 +83,7 @@ export class Rendering {
       ? whole.getChannelData(0).subarray(Math.max(0, lead))
       : new Float32Array(Math.ceil(plan.duration * SAMPLE_RATE));
     this.#have = new Uint16Array(Math.ceil(plan.duration * 100) + 1);
+    this.#slots = plan.endState === undefined ? Infinity : Math.floor((plan.endState * STATE_STEP) / SLOT);
     if (whole) {
       for (let c = 0; c < this.#have.length; c++)
         this.#have[c] = Math.max(0, Math.min(SLOT, this.audio.length - c * SLOT));
@@ -105,11 +108,11 @@ export class Rendering {
       this.strip.draw(message.spectrogram.column, message.spectrogram.count, message.spectrogram.pixels);
   }
 
-  /** Whether the sound from t0 to t1 has all arrived. */
+  /** Whether the sound from t0 to t1 has all arrived: of a passage alone, as far as any is to come. */
   rendered(t0: Seconds, t1: Seconds): boolean {
     if (this.whole) return true;
     const a = Math.max(0, Math.floor(t0 * 100));
-    const b = Math.min(this.#have.length - 1, Math.ceil(t1 * 100));
+    const b = Math.min(this.#have.length - 1, this.#slots, Math.ceil(t1 * 100));
     for (let c = a; c < b; c++)
       if (this.#have[c] < Math.min(SLOT, this.audio.length - c * SLOT)) return false;
     return true;

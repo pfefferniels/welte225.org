@@ -818,6 +818,95 @@ as loud; the calls for rubato and accentuation name their stretches and leave th
 desk, and have not been run through its chain; a take is analysed in about twice its length on
 one core.
 
+## Described: the roll with what was said of it
+
+`/described/` shows the recording as a piano roll over a grand staff, and on it what a reader said
+of the playing in their own words. It is the viewer of MPM Desk's prototype _DescribeIt!_, whose
+editor goes into the Desk: nothing is written here, the roll is read and heard. For now a page of
+its own (`../described/index.html`, `src/described/`, bundled to `described.js`); in the long run
+the site's stage.
+
+**The roll** (`roll.ts`, `geometry.ts`, `staff.ts`, `glyphs.ts`) is on the recording's clock. A note
+is a box on the staff it is written on, on its line or in its space, with ledger lines, the key
+signature read off the notes and an accidental where a note departs from it; the two staves are
+compact and set apart, and can be put back key by key. The louder note is taller and more solid,
+on a logarithmic scale (the recording's median velocity one row, its 98th percentile three). The
+notes are what the MPM renders; behind each, gray and dashed, stands its shadow, the same note as
+the roll played it (`../mpm/transcription.mei` read by the take's reader, `take/roll.ts`, with the
+work file's corrections of the velocities), drawn only where the two differ to the eye. The grace
+notes, which the score gives no date, are where they were played; under the keys the pedals, a
+press as it was recorded a shadow, what the MPM moves solid; above, a ruler with the bars. The
+clefs and accidentals are drawn as lines: the site fetches no font, and a clef in whatever font a
+browser falls back on sits on another line.
+
+**The rendering, laid on the recording's clock** (`rendering.ts`). espressivo performs the MPM on a
+clock of its own (`performMsmToData`, every note on its date). It is laid on the recording's as
+MPM Desk's chain places a tempo: anew at every `<tempo>`, by how much later the chord on the
+tempo's date was recorded than it is rendered (its notes one by one, so that a rolled chord is laid
+on its roll), and that is added to every note and every move of a pedal the tempo governs; a tempo
+that begins on no chord (6 of the 60) goes on from the one before. What one stretch gets wrong is
+so not carried into the next: laid once, on the first note, the rendering's onsets are 55 ms from
+the playing in the median; laid at every tempo, 17.5 ms (34 ms on average, 88 ms at the 90th
+percentile). The bar lines stand where the tempo map has them (espressivo's own clock,
+`computeMillisecondsAt`, summed over the tempos: where the renderer has the pedal's moves).
+
+**The remarks** (`remarks.ts`). A remark is a step of the work file, MPM Desk's `Describe`, which
+changes nothing and names the calls that came of it:
+
+    { "id": "047fa902…", "name": "Describe", "options": { "text": "Hinspielen zur 1",
+      "about": { "kind": "arrow", "from": 2520, "to": 3960, "notes": ["nrbga5m", "n10g2bbj"] },
+      "model": null, "date": null, "steps": [], "calls": ["cbf5caab…", "…"] } }
+
+It is about the whole piece, a passage (`span`, `to` exclusive), a set of notes (`notes`, `box`)
+or a direction from a note to another (`arrow`). A passage stands under a brace, a set in a hull, a
+direction is a bowed arrow, each with its words in a serif on a pale ground; remarks about the
+whole piece stand in rows above the ruler. The shortest passage's marker goes nearest its notes,
+longer ones over it, and the words above their marker wherever they are clear of the others, cut
+where a short passage has long ones, a hairline down to the marker where others stand between. A
+remark whose words find no room within a few lines of its marker stands without them until it is
+pointed at or chosen; then it is lit, drawn over the rest, its notes solid and everything else
+pale. With the whole roll across a window that is most of them.
+
+The page takes the remarks from `../mpm/work.json` where it has any. Until MPM Desk publishes
+some, it takes them from `../described/remarks.json`: **the reconstruction's 109 hand-made segments
+of 8 November 2026, carried over**. The work file then grouped its calls into segments, each with a
+note in the editor's words; replayed through the prototype, each was given a place in the score.
+`npm run remarks -- <work file with segments> <today's work file> <directory of places>`
+(`tools/remarks.ts`, `src/described/segments.ts`) made a remark of each: the segment's id, its
+note, its place, and today's calls that were the segment's (402 of the 452 calls of then are in
+today's file by their ids; the other 50 are each one half of a pedal's press, down or up, which is
+one call today, so four presses are of two remarks). It fails where a call cannot be found or a
+segment is left without calls. The file is a stand-in: it goes when the work file has remarks.
+
+**Hearing a remark** (`main.ts`, `context.ts`, `passage.ts`). A click on a remark chooses it and
+plays its passage, as does the pointer resting on one for half a second, once a first gesture has
+allowed sound; the arrow keys go from one remark to the next. A passage is never played bare: what
+is said of it is heard against what surrounds it, and how much that takes depends on what the
+remark wrote, which the page knows from the elements of its calls in the MPM (tempo, rubato,
+dynamics; an ornament is a roll, an articulation touch, an accentuation pattern an accent, a
+movement the pedal). Always the chord before and the chord after; for a pulse back to the beat
+before the passage's first and on through a second chord; for touch, and for notes that are named,
+the neighbours in the same hand; for an accent pattern its whole bar, for the pedal the beat
+either side; never more than two beats, nor what sounds further than 2.6 s from the passage, but
+the nearest chord whatever it takes. The passage is played by `passage.ts` (the front page's piano
+and inner voice): at the level of elaboration chosen for the remark, one of the seven of the
+fader's table, the piece itself until another is chosen; and with the instructions the remark
+wrote brought out, by as much as the slider says (×1 to ×1.9), every other dimension held back to
+0.35. espressivo's exaggeration works on whole dimensions, not on single instructions; playing
+only the passage is what keeps it to the remark. While a remark is brought out the notes are drawn
+where that rendering has them (`PassagePlayer.notes`, laid on the roll where the passage's first
+chord stands), and they move as the slider does. With nothing chosen, play goes on from the line a
+click on nothing leaves. `/described/?silent` starts no worker and makes no sound: the page keeps
+time by itself (`sound.ts`).
+
+Of the prototype's own reading side, the page leaves out: hearing the roll as it was played, or
+both at once; the figure of how well the MPM matches the playing, and its four parts; the MPM as
+text; the reconstruction's dashed, assumed tempo (the published MPM assumes none); the height of
+loud notes as a setting, and the shadows as a switch. `test/described.test.ts`,
+`test/staff.test.ts`, `test/geometry.test.ts` and `test/context.test.ts` hold the material, the
+laying on the clock (under 25 ms in the median, over the published files), the remarks' file
+against today's work file and the score, the carrying over, and the rules.
+
 ## The piano
 
 The worker sends the piano with every plan as the roll plays it: each part's keys with their own
@@ -927,6 +1016,8 @@ Chromium, each sample for sample where a chunk rendered afresh lies.
 | `src/page/`                      | the page: audio graph and room, the elaboration mix and its details, the pianos (sampler, recordings, MIDI) and their settings, renderings, the library of ready settings, the workers' pool, transport and its lanes, the crossfade's alignment and weights, spectrogram view and when it is drawn (redraws, frame, glide), the readout, the pictures, the instructions |
 | `src/take/`                      | a take (above): the body and its sound, the inversion, the movements, the roll's data, the reading against it, and the page with its worker, capture, drawing and WAV files                                                                                                                                                                                              |
 | `take.js`, `take-worker.js`      | the take's bundles, committed as the others are                                                                                                                                                                                                                                                                                                                          |
+| `src/described/`                 | the described page (above): the piece as the roll shows it, the rendering laid on the recording's clock, the remarks and what they wrote, the context a passage is played with, the roll and its geometry, staff and glyphs, the page; `passage.ts` plays a passage; `segments.ts` carries the old segments over                                                         |
+| `described.js`                   | the described page's bundle, committed as the others are                                                                                                                                                                                                                                                                                                                 |
 | `src/shared/`                    | what both sides use: units, maths, the table of points along the fader and the shape a setting gives (tempo, inexactness, exaggerations), the messages between them, the order of the chunks, the piano's parts and their MIDI messages, the recordings' manifests, the reconstruction's calls as instructions                                                           |
 | `data/`                          | the speaker (VocalTractLab's JD3 with 66 mouth shapes fitted to a recorded hum, mixes of three, the open shape `ah`, and glottis shapes from breathy to modal, `g00` to `g20`), the hum style measured from it, the calibration                                                                                                                                          |
 | `piano/`                         | Salamander Grand Piano samples, a minor third apart, at four velocities, mono, 7 s; in `pianoteq/`, the Pianoteq recordings and their manifest                                                                                                                                                                                                                           |
@@ -960,6 +1051,7 @@ npm run pianoteq -- midi --out <dir>   # only the MIDI files of every setting
 npm run voices       # the voice rendered ahead for every setting (above)
 npm run take -- --bars 1-4            # a take through the analysis in Node: the hummer's own voice with taps, or --take <take.json>; --mpm <file> writes its MPM
 npm run figure       # figures/elaboration.tex: what the fader does to the piano's exaggeration and the voice's
+npm run remarks -- <work file with segments> <today's work file> <directory of places>   # ../described/remarks.json (above)
 ```
 
 `npm run pianoteq` needs Pianoteq (the program itself, e.g. on a Mac `/Applications/Pianoteq

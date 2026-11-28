@@ -1,0 +1,2490 @@
+{
+ "provenance": [
+  {
+   "id": "821fda57-7ea5-4a05-ab4f-2b221a141996",
+   "name": "Describe",
+   "options": {
+    "text": "Drücken des Verschiebungspedals",
+    "about": {
+     "kind": "notes",
+     "from": 0,
+     "to": 720,
+     "notes": [
+      "npk4lw6"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "fdee86c3-5d22-4271-b2fc-df408b0cfb38"
+    ]
+   }
+  },
+  {
+   "id": "7938a94a-fe29-42d0-bca8-b134a6776a96",
+   "name": "Describe",
+   "options": {
+    "text": "Auftaktenergie hin zur 1",
+    "about": {
+     "kind": "arrow",
+     "from": 0,
+     "to": 1440,
+     "notes": [
+      "npk4lw6",
+      "nxbdd6x"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9258acc5-b614-4fd2-ac2c-21bf29cdf376",
+     "f55da820-4a7c-4778-bff5-109b08f3e1b1",
+     "03c9d40a-feaf-4f91-a6cd-a458937c0635"
+    ]
+   }
+  },
+  {
+   "id": "646f927c-8e4e-4e2b-b09a-6db176eee1c8",
+   "name": "Describe",
+   "options": {
+    "text": "der Harmonie \"nachlauschen\": dynamische Reduktion, leichte zeitliche Dehnung",
+    "about": {
+     "kind": "span",
+     "from": 720,
+     "to": 3240,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "1e3a886c-b56e-4cd6-9a7b-7cb3783f642f",
+     "4bb70f78-63ab-4a7e-b513-7fdaff6a6310",
+     "afdb2d83-776f-4397-8b08-6c1da56945d4",
+     "0d04499f-9c3d-4e44-8749-18f5f2a1a8d9"
+    ]
+   }
+  },
+  {
+   "id": "0fad3105-f846-4c6f-88da-0682d76b1afd",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag als Ereignis: vor dem Schlag arpeggiert",
+    "about": {
+     "kind": "notes",
+     "from": 1440,
+     "to": 2520,
+     "notes": [
+      "n1ubfgy0",
+      "n1obi0t8",
+      "n1yas34a",
+      "nd80ywu"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "69f91e58-1ffa-4352-97a8-f797b3cb2fd4",
+     "3193a830-ea95-4617-bee3-da0e973747b7"
+    ]
+   }
+  },
+  {
+   "id": "047fa902-3259-4497-a972-23e89ca1ea65",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen zur 1",
+    "about": {
+     "kind": "arrow",
+     "from": 2520,
+     "to": 3960,
+     "notes": [
+      "nrbga5m",
+      "n10g2bbj"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "cbf5caab-5392-4a67-9839-ecb425493dab",
+     "0abf2a20-d740-47ae-9e7a-ff79fc4740df",
+     "1ae57fe3-7cca-4170-ad24-9ec24d2447a9",
+     "a1e4a439-d675-4ea8-91cc-24602165423d",
+     "68d087ca-7297-4d29-a359-9659af1016cc",
+     "f3b540f3-4197-4d0d-b23e-4ac3e785801b",
+     "3489ea66-aa3a-42c9-b74a-14b2a36df57d"
+    ]
+   }
+  },
+  {
+   "id": "3603c14a-8b03-4583-b77d-6a728834b342",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 3600,
+     "to": 4320,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "182b412f-fe92-4a94-8229-85b292b1b65b",
+     "0140cee8-ca70-4505-8c14-1b75864a4316"
+    ]
+   }
+  },
+  {
+   "id": "d3889a97-57b7-4fd6-aaf5-926474bb7325",
+   "name": "Describe",
+   "options": {
+    "text": "\"Nachlauschen\"",
+    "about": {
+     "kind": "span",
+     "from": 3960,
+     "to": 6120,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "dd376dfc-d46a-45e9-a06b-4c17ab7d06b6",
+     "ca94f33d-b75b-4a8c-81ef-87d00b4009a9",
+     "ee707653-aeb2-4056-9eb9-b443c24b509f"
+    ]
+   }
+  },
+  {
+   "id": "018ee72f-65e0-4cc7-bb81-2b0c050ab60d",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf 1",
+    "about": {
+     "kind": "arrow",
+     "from": 5760,
+     "to": 6840,
+     "notes": [
+      "n1nv0ztz",
+      "n1i66osm"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "0b1001e8-6b14-4891-9ede-d0223502570e",
+     "88598cb0-fc30-4d72-b741-45c0d8e4833b",
+     "2f6a7847-d776-44a9-85c9-c37cfc632f7a",
+     "a0505e93-e57b-4a4d-9157-143dc6e878b8",
+     "3e42e998-d096-4108-9ee7-8812e54e8b06",
+     "75cad33d-fe79-42e7-8e9b-6fafaaeaf3b6",
+     "5874fd63-6b6a-4739-abe5-c41b2738f292",
+     "5aea7c0e-2588-477f-b41b-b22aaa39102d",
+     "cdb39ae3-e1cc-4cc2-8685-b0db37d37d93",
+     "dd4d687b-74f2-465f-aa82-452d6c543445",
+     "b374d476-071d-43bf-8bc1-2ff1d8de7d20"
+    ]
+   }
+  },
+  {
+   "id": "cf0555f0-d19c-46fb-a13e-840bc7c79075",
+   "name": "Describe",
+   "options": {
+    "text": "Dynamisch dranbleiben",
+    "about": {
+     "kind": "span",
+     "from": 7200,
+     "to": 10080,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "0085d53b-c2b2-4dda-8f6e-bcbae8a0edb4"
+    ]
+   }
+  },
+  {
+   "id": "80d8e0d0-7814-4566-b9a0-b700191ebc2d",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf Taktmitte",
+    "about": {
+     "kind": "arrow",
+     "from": 7200,
+     "to": 8280,
+     "notes": [
+      "n1sw27dc",
+      "n1ix0t3p"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "94f08c1b-ada2-460a-8ad7-2e6e751033f9",
+     "3d5aaf6f-39ab-45c0-a91b-c74613966165",
+     "873b59f0-f8a3-46f8-81c4-0cd9cf9fa93e",
+     "ddbdc2db-d2bf-45a3-9a79-5ad9f24df0ce",
+     "ba8df537-bb70-482a-95c8-e235a686fc3d",
+     "2041acd1-0485-4a62-b74c-d1a10444f2b9",
+     "17d00847-d2dc-4a27-9d80-2b0b7b22899b",
+     "1e86c694-c3d1-4255-a8f5-bde90ade3ba4",
+     "bd72589e-ad4e-48e8-82f7-4184df5f13aa",
+     "a4d488ee-a086-4b12-8681-54feaacccab8"
+    ]
+   }
+  },
+  {
+   "id": "f53ec81a-c3c1-42f0-9092-ed0fa2a231cd",
+   "name": "Describe",
+   "options": {
+    "text": "Klang öffnen (\"gelüftete\" Artikulation + Pedal, Arpeggi)",
+    "about": {
+     "kind": "span",
+     "from": 8640,
+     "to": 10440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "d579f332-38c4-4d04-9fcc-b31ed355ccdd",
+     "462251e2-a9c3-45ac-9db3-b5a5b6110229",
+     "a94fde0c-010a-4e00-88cd-cbaeeee3b230",
+     "1d4dab1d-ae12-4ea9-81a1-f6ebb299a001",
+     "f20986ff-64ce-40d3-93e5-5a6ac8ad0392",
+     "cda19c36-d323-4a9a-8643-d46710114292",
+     "bdc38bcc-b172-42a4-a944-d1ff4bd64766",
+     "d8f39ca7-2efe-46f7-ade1-94b2e3b49fb1",
+     "b3cb83a7-f9e2-41e4-a5cf-35ee62eb8daa",
+     "26a3c15e-79a9-4643-be8f-8b3e175bc5d2",
+     "e943d31f-ce33-4b98-a59e-639100332845",
+     "85f355a8-a368-482b-8100-7f08ce7fd1b1",
+     "e1cfef4d-6f6e-4e6b-8208-7d2cfa795418"
+    ]
+   }
+  },
+  {
+   "id": "6598edf0-779e-41ce-b4a6-9aa69dd3b186",
+   "name": "Describe",
+   "options": {
+    "text": "Verbinden zur nächsten Phrase: \"nach vorne\", lombardische Achtel, legato",
+    "about": {
+     "kind": "arrow",
+     "from": 10080,
+     "to": 12960,
+     "notes": [
+      "nusg357",
+      "n3vsg4k"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "461e7864-2b21-40e3-a11c-39b585c853a0",
+     "e56c99bf-31f4-4bdb-a787-d035d92a0cea",
+     "06761281-3aa7-4272-8d78-83f6d8150913",
+     "e9a52d0d-ec7b-46f2-9b4d-022c29aebb4e",
+     "30129449-231b-45ab-831d-c40200986242",
+     "3d64acc0-116d-425b-a805-2cf23854fdac",
+     "fc546b37-2e08-4720-b188-5aa2f5dd897a",
+     "16f8c156-4444-4afe-9f70-d4b80cdaa798",
+     "af149d40-14f9-4d15-99e6-df7ce8a643c9"
+    ]
+   }
+  },
+  {
+   "id": "5222c4c2-639e-46d9-a153-e8ccd41ac893",
+   "name": "Describe",
+   "options": {
+    "text": "Kurzes Entspannen auf C-Dur",
+    "about": {
+     "kind": "span",
+     "from": 10080,
+     "to": 10800,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "ae3ef7d5-dd3a-4d4a-9247-9e9da898aff1",
+     "3bcf55db-1a28-48a6-9025-06e4b0c96c38",
+     "ec23afd2-f9b5-4462-912d-6a71979fb6cf"
+    ]
+   }
+  },
+  {
+   "id": "7e3a3e05-becf-4477-afce-1c8a0ca57a3b",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag etwas abschattieren",
+    "about": {
+     "kind": "span",
+     "from": 12240,
+     "to": 14400,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b7f80bf1-60a7-4b0d-978b-7974a3be5ee0",
+     "8e7f1775-e1bd-402d-9100-4122ffc62b19",
+     "831e8c65-31f0-4406-b51e-1f19b0d62a0f",
+     "3a2ce775-4c80-40cc-bfa2-7f3ea829847e",
+     "2072a83e-4728-489e-a9dc-a242c373a607"
+    ]
+   }
+  },
+  {
+   "id": "24386f8c-4add-4da7-80fa-883902af44f5",
+   "name": "Describe",
+   "options": {
+    "text": "Stete Verlangsamung zum melodischen Höhepunkt (A-Dur)",
+    "about": {
+     "kind": "arrow",
+     "from": 14040,
+     "to": 17640,
+     "notes": [
+      "n115d2p7",
+      "nblqaln"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "2c83e7d3-94dd-46da-8ee6-7895a9917c18",
+     "042ad0a1-36a8-4bfc-a9cf-982fcdb716ca",
+     "18a7a35f-a1ff-4268-960e-cc26883dcd60",
+     "b35bde26-2e3b-4447-839f-db973b2d6189",
+     "735087d0-604b-4b65-afbc-61fb01da4e83",
+     "ddefba0d-a901-42d9-bfc0-6e62dc469585"
+    ]
+   }
+  },
+  {
+   "id": "ee29477f-1b22-4ae8-8faf-1c0091772918",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf c",
+    "about": {
+     "kind": "arrow",
+     "from": 14040,
+     "to": 15480,
+     "notes": [
+      "n115d2p7",
+      "n18bx34c"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "51dfdcbf-99df-42b7-acf4-4875082751a5"
+    ]
+   }
+  },
+  {
+   "id": "b1300a25-c157-4941-8afe-3969e84f881d",
+   "name": "Describe",
+   "options": {
+    "text": "„Aufweichen“: Decrescendo und Arpeggio zum a″",
+    "about": {
+     "kind": "arrow",
+     "from": 15120,
+     "to": 16920,
+     "notes": [
+      "n18bx34c",
+      "n104mme9"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "e56c1c50-7702-46f9-9735-baa9cf38683b",
+     "3229b4c1-7f81-4217-8130-4b81866c84c3"
+    ]
+   }
+  },
+  {
+   "id": "f4a992c8-3216-4627-9057-9bce57714988",
+   "name": "Describe",
+   "options": {
+    "text": "Bewegung zum d-Moll hin stark zurücknehmen",
+    "about": {
+     "kind": "arrow",
+     "from": 16920,
+     "to": 18360,
+     "notes": [
+      "nt5mh08",
+      "nu68um5"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "2aac2b1a-7be2-4182-8503-7cc3d7a03229",
+     "174bc0cf-15bb-41fc-be0e-5e1991be851b",
+     "5a24959b-3cc0-4ccd-8f58-186b81847f6c"
+    ]
+   }
+  },
+  {
+   "id": "d472996d-738c-4dd1-9ee4-b8c0cc37cdc5",
+   "name": "Describe",
+   "options": {
+    "text": "Richtung zum Quartsextakkord, Vorwärts-„Lilt“",
+    "about": {
+     "kind": "arrow",
+     "from": 17280,
+     "to": 19800,
+     "notes": [
+      "nblqaln",
+      "n4tf26j"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "706e0f1a-1d66-4f89-bf50-3dab2ac23ade",
+     "db9191a1-e832-45ea-b837-19a10072798b",
+     "eeac006f-2df6-4ece-b8fd-e89d9b802d6e",
+     "a25adc91-1faa-48fa-9918-c180665df613",
+     "25bd4f82-b551-4a22-95b7-fd39a07987c7",
+     "be6033a7-ef99-4694-88c7-b08638c83209",
+     "1356b1b7-836b-479b-a39b-2500c13a5521",
+     "4512ca88-19bf-4b09-9a1d-08882098a54d",
+     "632e597a-ec0d-4aa5-915c-698b3d9bf40b"
+    ]
+   }
+  },
+  {
+   "id": "b712355a-1ce3-473c-b5bd-4f58b5703174",
+   "name": "Describe",
+   "options": {
+    "text": "Hin zur Paenultima (Dominante + Sexte)",
+    "about": {
+     "kind": "arrow",
+     "from": 19440,
+     "to": 21960,
+     "notes": [
+      "n4tf26j",
+      "n1qoq9d6"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "e243420c-5387-4edf-835d-2639dd5e6bea",
+     "aaa889ac-3c38-47d7-859f-a5cb45cb2e4a"
+    ]
+   }
+  },
+  {
+   "id": "6ed49811-53dc-4716-bf02-2b503488060b",
+   "name": "Describe",
+   "options": {
+    "text": "Arpeggio schattieren",
+    "about": {
+     "kind": "span",
+     "from": 19440,
+     "to": 20880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "db9f7266-850f-4bf6-bf0d-9f76d6080fbf",
+     "7d0f199a-59bc-49ac-ae59-e6ad49688391",
+     "2e6c150e-05ca-49d3-b705-4616b728223f"
+    ]
+   }
+  },
+  {
+   "id": "09b6094a-1db8-459b-9c33-427adcd1d8c4",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 20160,
+     "to": 20880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "5354bff1-415b-423b-b0bf-a2aea2ef9ac9",
+     "fab60e77-5e8f-4efa-bfe3-c44aceb091f6"
+    ]
+   }
+  },
+  {
+   "id": "ae978e18-b878-4d59-bb09-536ca6ffb25e",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 20880,
+     "to": 22680,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "39710772-26e5-438e-b865-0581e72ba12a",
+     "4880c06b-a347-40b5-9c5a-91ec1c401d9a",
+     "6f4a6d4d-c77c-49e2-a444-f01d4d22e19a",
+     "790923cc-47a9-4086-9249-3b2d11da2331",
+     "4fd59478-91ad-48ce-b718-8921da74547b",
+     "76e6dabe-5025-48ec-8e9d-c303baff2c2b",
+     "553bdef5-9f53-49a4-adec-a0482d2dfebb",
+     "6c0d1495-ac24-4391-a277-1569ab03946f",
+     "80ce3fc7-72fe-49d2-a9ec-e32195569f87",
+     "f75ae12d-5243-4f37-bf25-ac2cb6aa537a",
+     "2d9e75f0-599a-4929-ac0d-a5f91a36fc21"
+    ]
+   }
+  },
+  {
+   "id": "436cd72b-5ef4-46a7-8e99-d36e0a71f9c6",
+   "name": "Describe",
+   "options": {
+    "text": "Neue Phrase vorbereiten",
+    "about": {
+     "kind": "span",
+     "from": 22320,
+     "to": 23760,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "7b94689a-6c11-4d85-8e5b-91e0138dc5f5",
+     "e830a292-f1be-4472-933f-0e09e7b26ea9",
+     "9576beb9-e83b-4018-8604-3cbece5cd1a9",
+     "19b9da4d-0879-4ce1-9896-8b65f9f8dc29",
+     "e9fa62ca-a9df-4f33-a3de-2b65c8c32be7",
+     "b420b1d6-c47e-48b6-8465-4eb73df226dd"
+    ]
+   }
+  },
+  {
+   "id": "61cfb25f-8a56-4744-af8f-cad4da376dd3",
+   "name": "Describe",
+   "options": {
+    "text": "Beruhigen",
+    "about": {
+     "kind": "span",
+     "from": 23760,
+     "to": 26640,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b808557c-b129-48fc-8a2d-52a31ebc8a2e"
+    ]
+   }
+  },
+  {
+   "id": "e7667c94-7c6d-4691-a796-d79e84865442",
+   "name": "Describe",
+   "options": {
+    "text": "Nachlauschen nur angedeutet: Nachschlag kurz und leise, ohne Dehnung in die Phrase weiterführen",
+    "about": {
+     "kind": "span",
+     "from": 23760,
+     "to": 25920,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "1c01492d-87a8-4762-9875-2eb3f327be57",
+     "7a1153de-13cb-4a3a-91f3-6ea342ccc024",
+     "ddb6996a-4276-4f65-a181-6cfb6caaa811",
+     "cb08d3e2-7aa2-4aa2-a527-cbea127a796b",
+     "eb0f4053-b674-435c-8bc0-b44712854fa9",
+     "7b6ae727-44d6-46b3-8df7-129ba9830de9"
+    ]
+   }
+  },
+  {
+   "id": "cf7d37a3-4ffd-4b49-9e5d-62b7c4b5134b",
+   "name": "Describe",
+   "options": {
+    "text": "Überlegato",
+    "about": {
+     "kind": "span",
+     "from": 25560,
+     "to": 28800,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "3c3c52c2-bb13-468f-969f-aa9c05ec2239",
+     "5adb9d90-89af-4a67-aa02-3c583977797e",
+     "32680bb9-b83e-44a2-afa5-87feab1561d2"
+    ]
+   }
+  },
+  {
+   "id": "4c3500c4-4468-4947-ba94-c8a930a454ef",
+   "name": "Describe",
+   "options": {
+    "text": "Zum B-Dur-Akkord hin entspannen",
+    "about": {
+     "kind": "arrow",
+     "from": 25920,
+     "to": 29160,
+     "notes": [
+      "n1ogvejs-rend2",
+      "n1nv0ztz-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "50226304-5908-4dfc-a1b1-f73bb69fb145",
+     "32680bb9-b83e-44a2-afa5-87feab1561d2"
+    ]
+   }
+  },
+  {
+   "id": "98d54f68-c139-4bef-a6ad-28c88e3065b5",
+   "name": "Describe",
+   "options": {
+    "text": "dynamisch Weiterführen",
+    "about": {
+     "kind": "span",
+     "from": 26640,
+     "to": 28800,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "793a3a74-c369-46a7-9c46-f090e7122ba5"
+    ]
+   }
+  },
+  {
+   "id": "57f29be6-43e8-4dbc-b425-38219be9ace6",
+   "name": "Describe",
+   "options": {
+    "text": "Kurzes Verweilen auf Quartsextakkord („Innehalten“); Beruhigen (dynamisch und agogisch)",
+    "about": {
+     "kind": "span",
+     "from": 28800,
+     "to": 30600,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "c9e4f750-87f0-4004-9aa3-bd9ed88cc888",
+     "f7198c89-00e4-4f32-baec-dd76dfcdfee2",
+     "37d034d9-e060-4c6a-933f-fd545630d080",
+     "69d60ebc-1771-43df-8347-b95c24aa110e",
+     "69ea2150-886a-4da7-829f-5c13cbbd39f0",
+     "3f4d4c97-45ea-4330-8ca5-5381e8a9d661"
+    ]
+   }
+  },
+  {
+   "id": "ad9d5d44-b501-44d1-8cd9-58664ccdc241",
+   "name": "Describe",
+   "options": {
+    "text": "Vorwärtsbewegung durch Inegalité",
+    "about": {
+     "kind": "arrow",
+     "from": 28800,
+     "to": 29880,
+     "notes": [
+      "n1nv0ztz-rend2",
+      "n1i66osm-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "00eaa6f2-555d-4434-a7c8-1ab51be5650f",
+     "a57850c6-9351-46d1-a7e7-8b9e4caa2803",
+     "d304a4a7-cab7-491b-8e38-d62a88803521"
+    ]
+   }
+  },
+  {
+   "id": "803284bf-4997-418e-8546-50b76a5c348d",
+   "name": "Describe",
+   "options": {
+    "text": "etwas aktiver, nach vorne",
+    "about": {
+     "kind": "arrow",
+     "from": 30240,
+     "to": 32040,
+     "notes": [
+      "n1sw27dc-rend2",
+      "nlbef7n-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "5f98d63c-72d3-4e28-b590-3ce5ae96456d",
+     "df527898-4d97-44ab-afe4-f24f875da706"
+    ]
+   }
+  },
+  {
+   "id": "b86cea25-33b2-46a9-83d4-40fb1e7747ce",
+   "name": "Describe",
+   "options": {
+    "text": "Richtung durch Inegalité",
+    "about": {
+     "kind": "arrow",
+     "from": 30240,
+     "to": 31320,
+     "notes": [
+      "n1sw27dc-rend2",
+      "n1ix0t3p-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "4614d4c5-696c-404a-8255-2a6da3b84d6a",
+     "a1ec38e9-25c7-42b3-9c6e-7c6cf7e04a00",
+     "bd5460d4-70e2-468e-81d8-9c4084735d9b",
+     "978076ca-3220-4b46-b73c-fc42366dd9dc"
+    ]
+   }
+  },
+  {
+   "id": "a164d06d-5c67-4208-b876-0388f5d2d755",
+   "name": "Describe",
+   "options": {
+    "text": "Ankommen, Klang öffnen",
+    "about": {
+     "kind": "span",
+     "from": 30960,
+     "to": 31680,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "e015c06a-4298-4297-8662-35f4aa2300d2",
+     "edf98f85-8248-499b-9606-50f3f4464cca",
+     "c39b339d-22c3-48a8-994a-9cc00e40293f"
+    ]
+   }
+  },
+  {
+   "id": "afc86cac-e631-494f-8b9e-a8a8d4bf6b3d",
+   "name": "Describe",
+   "options": {
+    "text": "Spannung aufbauen",
+    "about": {
+     "kind": "span",
+     "from": 31680,
+     "to": 33120,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "a2fd1b51-9c79-46bf-b766-2cd3d1713f56",
+     "a55b812c-3ade-485e-a82a-35119e574776",
+     "f4c5aa95-d26a-4437-aa00-49e3d399e071",
+     "eaa896e0-b943-49dd-ab18-071c494e4265",
+     "3ffa5d9d-869d-45e2-a41a-24d7a29ca16d",
+     "02757423-c6bb-4d96-b430-487ed6d59033",
+     "c533527b-49fb-45f4-b135-56ed3ec25ef2"
+    ]
+   }
+  },
+  {
+   "id": "de292c8f-0d9d-469c-af87-7b6d26f840bf",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 32400,
+     "to": 33480,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "dbeb0196-0e8d-4962-85da-106fa1c4c9a4",
+     "c8d815ee-81cd-45fe-8227-6e37ef64971b"
+    ]
+   }
+  },
+  {
+   "id": "fbe387f3-0e0d-41cc-9afa-0acef598d46f",
+   "name": "Describe",
+   "options": {
+    "text": "kleine Verzögerung — durch gedachtes Portamento (imitiert als Arpeggio)",
+    "about": {
+     "kind": "span",
+     "from": 32760,
+     "to": 33480,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9221d7c3-9c88-4641-818b-8d43ac582cb3",
+     "ac161ec3-6af3-4b17-b314-d29cd0b2e262"
+    ]
+   }
+  },
+  {
+   "id": "6e60a45b-5bff-40fd-92ea-939e468d8f84",
+   "name": "Describe",
+   "options": {
+    "text": "Auftakt unter C-Dur schattieren: schneller und leiser werden",
+    "about": {
+     "kind": "span",
+     "from": 33120,
+     "to": 34560,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "eb405007-8d7b-467b-8e48-d24135a570f0",
+     "28bec123-5f47-4f31-9563-a146139917c2",
+     "dd8e75ff-61ee-4e69-97ba-efbe30d1d677"
+    ]
+   }
+  },
+  {
+   "id": "b1703afe-823a-4261-9969-dbab1ae85531",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "notes",
+     "from": 33120,
+     "to": 33480,
+     "notes": [
+      "n1pkbpqe-rend2",
+      "nuygr2l-rend2",
+      "nh1xkvc-rend2",
+      "nrma14f-rend2",
+      "nusg357-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "fd158008-4606-4968-87e2-5adc450f7175",
+     "fd794d2a-f4c8-4a09-a76b-cf0228016c87"
+    ]
+   }
+  },
+  {
+   "id": "2a2de3ed-ab69-4b52-9ff5-b9c7843060dc",
+   "name": "Describe",
+   "options": {
+    "text": "langsamer und deutlicher werden",
+    "about": {
+     "kind": "span",
+     "from": 34200,
+     "to": 35280,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "aaeceb18-a257-4108-9dfd-68ba036d62a4",
+     "4617722c-e2d8-451f-826c-3573db92d39c",
+     "4711b1e4-c586-449b-bb0b-c8a1a05936cf",
+     "c854a1c3-47e9-4d67-b0f7-24ef413361d4",
+     "c6a60e63-7dac-4145-ae0b-f25f4abd2ef0"
+    ]
+   }
+  },
+  {
+   "id": "4a301aa8-e25f-40e0-975b-1d925653d9b2",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag schattieren",
+    "about": {
+     "kind": "span",
+     "from": 35280,
+     "to": 37440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "f5c41495-9134-4745-9967-bd0eddb7d9f5",
+     "8b1b9688-3236-4546-a79e-5aec53cebf8d",
+     "6c570349-d9aa-49c8-bad3-941782aa2c3e",
+     "4d88bab0-f3a8-46ae-8d0d-032a180360b4",
+     "bd47309d-680a-4136-9932-4af9a4c2324c",
+     "3baf870c-595a-43e1-a45b-ab70b32cc497"
+    ]
+   }
+  },
+  {
+   "id": "a15d8a21-0e3c-40f2-8225-02c9b8be9013",
+   "name": "Describe",
+   "options": {
+    "text": "konstante, leichte Verlangsamung",
+    "about": {
+     "kind": "span",
+     "from": 37080,
+     "to": 39960,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b5dbdb93-d5f1-4389-a467-2442d0b239dd"
+    ]
+   }
+  },
+  {
+   "id": "f7685af4-6084-4d8b-841b-ba8517c97f5e",
+   "name": "Describe",
+   "options": {
+    "text": "als Dreiklang aufwärts entspannen",
+    "about": {
+     "kind": "span",
+     "from": 37440,
+     "to": 38880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9030cf5a-1d11-4b73-8ac1-bba446283d49",
+     "d9f4ada4-9e95-4daa-a50d-695adc692e77"
+    ]
+   }
+  },
+  {
+   "id": "a665df3a-e6fc-4a14-92f2-664ac98b5ad4",
+   "name": "Describe",
+   "options": {
+    "text": "\"Hineinfallen\" und Verweilen",
+    "about": {
+     "kind": "arrow",
+     "from": 38520,
+     "to": 40680,
+     "notes": [
+      "n1nt4vth-rend2",
+      "nblqaln-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "8030ced2-2231-46e7-a2d4-37102fd3630c",
+     "fd162907-5c7c-4727-984d-4222c3666ad2",
+     "3398fd1d-86bc-438e-8f74-5a4d3f6aa2a2",
+     "8bb1cc16-b260-4fcd-995b-9f056cb652e8",
+     "b4ca3b87-5cc4-4a02-8f65-616c4d0e50cb"
+    ]
+   }
+  },
+  {
+   "id": "00fae607-0737-4b14-a723-841dabca0f66",
+   "name": "Describe",
+   "options": {
+    "text": "Schneller und leiser, in den d-Moll-Akkord „hineinfallen“",
+    "about": {
+     "kind": "arrow",
+     "from": 39960,
+     "to": 41400,
+     "notes": [
+      "nt5mh08-rend2",
+      "nu68um5-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "22e4272e-7940-4490-99f5-5d7e278a951d",
+     "0fefa643-7094-4360-8875-4d2e55e69d83",
+     "981e169a-8ad6-4f18-9adc-9521b837804f",
+     "5fc49f61-a2f7-47d9-8090-eb6ffd22f536",
+     "daa011f7-3431-4384-9ab4-33b476e1863a"
+    ]
+   }
+  },
+  {
+   "id": "ece08c1a-e163-434e-9291-aab3c47deb45",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 41040,
+     "to": 42840,
+     "notes": [
+      "nu68um5-rend2",
+      "n4tf26j-rend2"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b5856da8-f250-4626-bb26-e6a8f5d23f8a",
+     "1e682941-1016-467f-afc7-09c4e37fca31",
+     "bdf2ec51-cd4f-459f-be72-7ccf778a281a"
+    ]
+   }
+  },
+  {
+   "id": "1d66d419-868e-47e1-8a86-848b18fa1792",
+   "name": "Describe",
+   "options": {
+    "text": "Verbindung der absteigenden Quinte a-d",
+    "about": {
+     "kind": "span",
+     "from": 41040,
+     "to": 42120,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "31ea31ca-69d5-4bee-8d00-8899c2eaef74"
+    ]
+   }
+  },
+  {
+   "id": "26b2e9af-f98d-40b7-a53a-e82c70585940",
+   "name": "Describe",
+   "options": {
+    "text": "Verfrühtes Einsetzen (der Mollsubdominante)",
+    "about": {
+     "kind": "span",
+     "from": 41760,
+     "to": 42480,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "3c37cff9-2e20-48ff-9887-3f6650f15bd8",
+     "125d7de1-5444-4866-8cdc-3e0f343c21eb"
+    ]
+   }
+  },
+  {
+   "id": "2cf2e441-b702-4c25-9a5d-e14c378d4ff2",
+   "name": "Describe",
+   "options": {
+    "text": "Bewegen",
+    "about": {
+     "kind": "span",
+     "from": 42480,
+     "to": 46800,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "75b6e887-34fa-4691-9a6c-c82c1834893a"
+    ]
+   }
+  },
+  {
+   "id": "0ddac397-c9e9-404f-a7c6-0531e3ab57fb",
+   "name": "Describe",
+   "options": {
+    "text": "nachschlagende Akkordbrechung schattieren",
+    "about": {
+     "kind": "span",
+     "from": 42480,
+     "to": 43920,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "5e644aed-96ad-4d28-a90c-a3fb2152b128",
+     "690648b1-eb54-44b0-94c4-026ce0a0954c",
+     "d12f2db0-06e3-41d2-ba4c-c11d2b12c96c",
+     "96ad69ad-3975-4535-81c9-e25704710142",
+     "af82b19a-57f1-425a-956d-b1a3c6f2eade"
+    ]
+   }
+  },
+  {
+   "id": "672c670d-fd25-4eb9-a3c4-c37e6816ea24",
+   "name": "Describe",
+   "options": {
+    "text": "Verfrühtes Einsetzen (des verminderten Septakkords)",
+    "about": {
+     "kind": "span",
+     "from": 43200,
+     "to": 43920,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "2e64e3eb-82d3-4d9f-b3eb-7aa68baeaaa0",
+     "429d1d8d-59ce-4bf8-bf52-fd562116f1c0",
+     "6ba1bbff-8c33-470b-8314-a0414f48b468"
+    ]
+   }
+  },
+  {
+   "id": "a4ef5a2d-3e62-4a82-a7fe-37712d7de1ab",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivierung der Inegalité",
+    "about": {
+     "kind": "span",
+     "from": 43920,
+     "to": 45360,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "bd7bdad5-d2b3-49f6-bdb5-d13d31d2041b",
+     "f7c2e2f0-172f-44ff-a7f2-d1ca66c8dc01",
+     "e94f2b2f-18ca-42d8-b5df-e76a82564304",
+     "a1e7bb5d-591f-4d1e-bff2-b660a0021f89",
+     "745a89ac-faaa-4920-b12e-ae1e106642cc",
+     "f318799a-e782-4c42-aeeb-a99b3fce3ed7",
+     "dc7dcb5e-bc23-4e92-a2ab-a6e501d77d73",
+     "1d38e03c-7eba-4f42-878e-7ed03c8aa4b4",
+     "b3c4769b-b20b-4eae-87ca-ab264f2f2a95"
+    ]
+   }
+  },
+  {
+   "id": "9917074b-2f5d-43d1-8ce8-af260f860373",
+   "name": "Describe",
+   "options": {
+    "text": "Überleitung wird träger",
+    "about": {
+     "kind": "span",
+     "from": 45360,
+     "to": 46800,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "656e0b15-c1d5-4f5b-b257-768c0ac798e0",
+     "94eb3168-2062-4739-9785-b3a33d021c4a",
+     "1e8815a3-66b8-4dc5-bbc5-530707ad53b0",
+     "3a73cc0d-0ce5-449c-a4f2-5df1d963eacb",
+     "a273dff3-bc01-426d-85ed-4a32eb90356e"
+    ]
+   }
+  },
+  {
+   "id": "b6fdbb8c-bf4c-4868-9a1c-641053b7c880",
+   "name": "Describe",
+   "options": {
+    "text": "Klang langsam öffnen",
+    "about": {
+     "kind": "span",
+     "from": 46440,
+     "to": 53640,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "fdee86c3-5d22-4271-b2fc-df408b0cfb38"
+    ]
+   }
+  },
+  {
+   "id": "7a978bbb-224d-46de-b467-42f45a180ba9",
+   "name": "Describe",
+   "options": {
+    "text": "schattierter Nachklang",
+    "about": {
+     "kind": "span",
+     "from": 46800,
+     "to": 49320,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "945eb739-5381-4d43-8c4d-5a2f44c6864d",
+     "ba386d59-8824-4d27-b41c-1abbc5599628",
+     "7f85d4ae-0553-429c-b535-5706c2c79f05",
+     "4211747d-93ee-4e79-b7d1-de13ad18f0fc",
+     "800c708b-0706-4ff5-a4e2-87f11677b615",
+     "8e5082c5-b15d-4002-98c3-e73d2cb51658"
+    ]
+   }
+  },
+  {
+   "id": "565c9628-4d9f-4545-96d1-9f77e579bb41",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 48600,
+     "to": 49680,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "921b38fb-edb1-4a59-bc7b-7929b744a4b1",
+     "d20e33b2-0479-45d1-95f2-a252bceddb6f"
+    ]
+   }
+  },
+  {
+   "id": "3c2c274b-a3a3-41ab-ac65-5ebb6962e82c",
+   "name": "Describe",
+   "options": {
+    "text": "Anlauf",
+    "about": {
+     "kind": "arrow",
+     "from": 48960,
+     "to": 51480,
+     "notes": [
+      "n4pgv9b",
+      "n1gj9vis"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "93b07249-0e24-479f-aa08-67535343e0d8",
+     "a8a22da3-3905-456b-af51-cbb83cf3e515",
+     "bf5667c6-ff26-43e8-a53e-51d877e83743"
+    ]
+   }
+  },
+  {
+   "id": "76900ab5-b659-49eb-b0c8-2c6ed1da292e",
+   "name": "Describe",
+   "options": {
+    "text": "Verfrühung des Spannungsakkords (Mollsubdominante)",
+    "about": {
+     "kind": "span",
+     "from": 49680,
+     "to": 50400,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "6f383f12-c3bc-4bb4-bb3c-c3911cf55c58",
+     "f3af280a-c6f8-4bfb-9dd0-fb7ba9c28482",
+     "39ed2571-a46f-4541-a3eb-fe76170fe774"
+    ]
+   }
+  },
+  {
+   "id": "887902a3-f80c-415c-a067-9a88ff31ae0f",
+   "name": "Describe",
+   "options": {
+    "text": "Dynamisch etwas zurück",
+    "about": {
+     "kind": "span",
+     "from": 50400,
+     "to": 52560,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "dcab077e-3b17-4043-81f4-7b76b8dfe89c"
+    ]
+   }
+  },
+  {
+   "id": "5a6b448d-5922-4ef8-aee3-69e632fab865",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 50400,
+     "to": 51840,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "534c0f15-d23e-4510-92b4-929895ffc64d",
+     "18f1a395-41fb-40db-b26d-2ec4f15d9b5a"
+    ]
+   }
+  },
+  {
+   "id": "19411a04-17bf-41c7-b445-9921ddc29692",
+   "name": "Describe",
+   "options": {
+    "text": "Weiter zurück",
+    "about": {
+     "kind": "span",
+     "from": 51480,
+     "to": 53640,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "a2182d4c-2a96-4697-a2d4-a562ab745683",
+     "5b9c7bc3-7d34-43d5-9407-88a6754ae60b",
+     "5313250a-f49b-480e-b43b-17f3cf17ccfe"
+    ]
+   }
+  },
+  {
+   "id": "8835f067-f57c-4bea-b61e-1eac5942a2a0",
+   "name": "Describe",
+   "options": {
+    "text": "Ausgedehntes g-Moll",
+    "about": {
+     "kind": "span",
+     "from": 52560,
+     "to": 53640,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "a3ddf882-7660-475c-b94e-5b058b06c23a",
+     "9979bd2c-4fca-4f29-82a7-49f104cd3998",
+     "5a53e5b4-e347-460d-a6d9-361a833fba1d",
+     "d13f1c47-a21e-4bd5-904c-048dfa072fce"
+    ]
+   }
+  },
+  {
+   "id": "e236c037-e1f9-4fe2-af75-1762d3bd8ab4",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen zum Quartsextakkord: wichtige Harmonien etwas zu früh",
+    "about": {
+     "kind": "arrow",
+     "from": 53280,
+     "to": 54360,
+     "notes": [
+      "nq3miud",
+      "n1th2zai"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "e81aeddd-f891-48b4-a5b5-301b42361e9d",
+     "cecb6f9f-7db4-481e-b175-81805627b3d0",
+     "d528b68d-c09a-47f7-a701-065b39a8e2f6",
+     "e93e36bb-780e-40a3-8197-b0b87574c4b5",
+     "fb87b18c-d7a7-4d54-ad1a-59c29992cdc2"
+    ]
+   }
+  },
+  {
+   "id": "c9720aed-c67b-4509-8930-e1bd674421d5",
+   "name": "Describe",
+   "options": {
+    "text": "Arpeggio schattieren unter Quartsextakkord",
+    "about": {
+     "kind": "span",
+     "from": 54000,
+     "to": 55440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "3326fe34-7ea0-4eae-8edb-6b145d73c49a",
+     "1a4e0d06-a612-463c-a4c8-f749555039f6",
+     "a6d0cd0c-55b9-4ff6-9f10-fddb901500ea",
+     "9d7ad054-273b-47ca-9a3a-bc1a04327e2d",
+     "db5bad2a-a928-4bf6-9e3a-55c970af579d"
+    ]
+   }
+  },
+  {
+   "id": "11d46f48-200c-4ae3-aea4-0caafdda21ea",
+   "name": "Describe",
+   "options": {
+    "text": "Großangelegtes Decrescendo — der dynamische Verlauf folgt dem Tonhöhenverlauf",
+    "about": {
+     "kind": "span",
+     "from": 54000,
+     "to": 56880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9383b88b-bbb3-421f-a08c-2cbbe6a2823f",
+     "1d337706-4b67-420b-abe5-68921069d2a1",
+     "88b40db0-3353-45e6-ab55-645a837d96c9"
+    ]
+   }
+  },
+  {
+   "id": "ecc57d79-1a69-4f54-8524-36f9dc3c5477",
+   "name": "Describe",
+   "options": {
+    "text": "Subdominante etwas früher und arpeggiert",
+    "about": {
+     "kind": "span",
+     "from": 54720,
+     "to": 55440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "59d4b497-cd60-44de-9bc1-23b0cd10a11f",
+     "8f7d5f4a-45f7-45b8-89a8-b8dac667242f",
+     "4bc1705e-d2bf-4d56-8880-653ffb7748fe"
+    ]
+   }
+  },
+  {
+   "id": "c358481c-0609-4222-ba34-8501b618310d",
+   "name": "Describe",
+   "options": {
+    "text": "Kurze \"Station\" auf Quartsextakkord",
+    "about": {
+     "kind": "span",
+     "from": 55440,
+     "to": 56520,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "90adb8dc-391b-4f19-83ee-08b126238f75",
+     "12b416ff-543d-43d4-a2dc-af28de57dd95",
+     "16c92417-c3b0-4dc9-b299-5b75ce70dae2"
+    ]
+   }
+  },
+  {
+   "id": "dd042a2c-91ef-40f2-a025-b9fbfa6a9338",
+   "name": "Describe",
+   "options": {
+    "text": "Interessante Harmonien früher",
+    "about": {
+     "kind": "span",
+     "from": 56160,
+     "to": 56880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b3be8ea7-67c0-4296-b035-57c8defd62ff",
+     "fa1557bd-5862-46b2-82be-b65f41b0ff0e",
+     "7b83c4f1-6f1a-434c-9d63-3884a16178a0"
+    ]
+   }
+  },
+  {
+   "id": "a379d774-0173-4f61-8b61-f04b30f8f11b",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen zum B-Dur",
+    "about": {
+     "kind": "arrow",
+     "from": 56880,
+     "to": 59040,
+     "notes": [
+      "n1i87jv4",
+      "n1wyaxu1"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b271b14e-9b06-48b5-b817-e06010333a8b",
+     "43a0f6be-b174-4c0c-9ad6-8ede9c82d850",
+     "7716f34e-1930-43cc-8cf9-7db598620472",
+     "1c3531be-9aac-44e0-b6cb-6f52a4e45cd6"
+    ]
+   }
+  },
+  {
+   "id": "6078a08e-f0c5-4190-828e-b606c54cf8e2",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 56880,
+     "to": 57600,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "ca89c13b-f044-45a9-8de4-2dd070bf0946"
+    ]
+   }
+  },
+  {
+   "id": "878584e2-421b-472f-86d9-c8e0922c2258",
+   "name": "Describe",
+   "options": {
+    "text": "Dranbleiben, auf melodischen Höhepunkt hin",
+    "about": {
+     "kind": "arrow",
+     "from": 58320,
+     "to": 62280,
+     "notes": [
+      "n1wyaxu1",
+      "n8ifr85"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b6032711-a39c-47dd-86f1-4cae8e13c9f6",
+     "87fbe6c5-ad4a-4865-9baa-c9d411179c1d"
+    ]
+   }
+  },
+  {
+   "id": "624f2bdf-2f1c-4ce9-9cc8-895be809cd72",
+   "name": "Describe",
+   "options": {
+    "text": "Abschattieren",
+    "about": {
+     "kind": "span",
+     "from": 58320,
+     "to": 60120,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "f78b0a40-ecbc-4c74-be33-43a822e9fc14",
+     "d05b3df0-de9f-45fe-9abe-f1e0f9406444",
+     "9da60de5-51bb-490b-b9bb-32e6447e6719",
+     "f6e3020c-0a67-44ce-bfd1-3d2bbe486475"
+    ]
+   }
+  },
+  {
+   "id": "c176332d-9fd7-4a36-8875-6a65769b96e2",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf b, dort minimal Zeit lassen",
+    "about": {
+     "kind": "arrow",
+     "from": 60120,
+     "to": 61560,
+     "notes": [
+      "nmr4y85",
+      "njdnyph"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "c56a87fc-8923-47af-919d-45a1198cf94b",
+     "930facf4-1b04-4d48-9213-b677dec65cf5",
+     "f6e3020c-0a67-44ce-bfd1-3d2bbe486475"
+    ]
+   }
+  },
+  {
+   "id": "8a143343-1778-4720-83b2-aa0ac720fef1",
+   "name": "Describe",
+   "options": {
+    "text": "Kurz entspannen, dann fließend in den Dominantseptnonakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 60840,
+     "to": 62280,
+     "notes": [
+      "n1bpwvh2",
+      "n8ifr85"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "bcebc4f5-cbb6-4925-8693-e707cb36290a",
+     "f2108196-7f25-4c90-a803-2ea5b2eb8bc8",
+     "3b4b88fd-6587-48c0-a91a-27bef8c1ccee",
+     "113d0967-c93a-42c5-b6b6-8b75cd7fd722"
+    ]
+   }
+  },
+  {
+   "id": "de01b528-2586-4a9f-8fdc-32e2edda6369",
+   "name": "Describe",
+   "options": {
+    "text": "Etwas flüchtiger werden",
+    "about": {
+     "kind": "span",
+     "from": 61560,
+     "to": 64080,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "7b36e41f-8cd1-4208-b4fb-daee2cc68e38",
+     "37198c6a-423d-4704-a8b3-ed867851d654",
+     "cd3f6926-29eb-4d4d-99bd-2e4d1d7d66ce",
+     "053d1d60-73b6-4d8f-afb1-cb2ca65e9728",
+     "68e29bfd-05bd-428b-9349-3b69cd5469d2"
+    ]
+   }
+  },
+  {
+   "id": "663f4859-f1d7-4634-8aaf-59eda8cb9a89",
+   "name": "Describe",
+   "options": {
+    "text": "Beruhigen",
+    "about": {
+     "kind": "span",
+     "from": 63360,
+     "to": 64440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "7019d314-5899-4097-890c-3491b247ea0e",
+     "baf3fa25-c67d-4eb4-9239-7bb6dde329ce",
+     "9447b880-ade1-49db-be93-2f2c45c72c2a",
+     "819b1dd7-2954-49ee-af6c-b179c5cbaec6"
+    ]
+   }
+  },
+  {
+   "id": "d9f14011-3e85-414e-96d8-c0aaab9a9d07",
+   "name": "Describe",
+   "options": {
+    "text": "Hinspielen auf Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 64080,
+     "to": 65880,
+     "notes": [
+      "nps5o4g",
+      "n1wnb9gd"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "6706cfca-ccef-4e86-94b1-505879c5e36e",
+     "0c619b44-a56e-4b87-a503-d7f1d28ca07f"
+    ]
+   }
+  },
+  {
+   "id": "62c0a4a5-95fc-41be-b21b-efb33cc3b458",
+   "name": "Describe",
+   "options": {
+    "text": "Verfrühtes a",
+    "about": {
+     "kind": "span",
+     "from": 64080,
+     "to": 65160,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "10257ea2-04b8-4c70-b450-12194e054828",
+     "3d6f59f7-0f1c-422e-b9c4-47fb87298004",
+     "c5317b2a-5b71-4bd4-a886-a6eec67faebd"
+    ]
+   }
+  },
+  {
+   "id": "c4541ed6-74f7-4b28-a80c-eb6f20861a52",
+   "name": "Describe",
+   "options": {
+    "text": "Hineinfallen in Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 64800,
+     "to": 65880,
+     "notes": [
+      "n18wt6zr",
+      "n1wnb9gd"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "18400464-8282-41ed-bcf6-cd9c3c860f85",
+     "96a4dcf1-9574-472c-b999-c66f1752087a",
+     "11fd20af-8aaf-4839-9160-d4bb7e927117"
+    ]
+   }
+  },
+  {
+   "id": "279dd975-ddb8-42d9-90d4-1324200e976a",
+   "name": "Describe",
+   "options": {
+    "text": "großflächig dynamisch langsam zurückgehen",
+    "about": {
+     "kind": "span",
+     "from": 65520,
+     "to": 69480,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "12b9f08b-cbe6-4b91-811b-51a781e70f46",
+     "dd9458cc-a822-4887-8884-36f0ee3dc243",
+     "7ecfe4f8-4487-439f-9809-b79e37bbce9b"
+    ]
+   }
+  },
+  {
+   "id": "2e2d8bb7-aa9c-42c0-8a9f-0b51753161d7",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag schattieren",
+    "about": {
+     "kind": "span",
+     "from": 65520,
+     "to": 66600,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b66c2a25-71d7-4d2e-98ac-d04553316a92",
+     "77d57f7f-d215-42b3-a7fa-05c0b6298073",
+     "8609e938-df9d-4c43-8795-5e81749c3af0",
+     "3d6f59f7-0f1c-422e-b9c4-47fb87298004"
+    ]
+   }
+  },
+  {
+   "id": "ec57a047-fb4c-49e3-b289-f8d6a9fd7e6f",
+   "name": "Describe",
+   "options": {
+    "text": "Zum Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 66600,
+     "to": 67320,
+     "notes": [
+      "nccuymd",
+      "ncyeubn"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "e2297e10-2606-44a6-a186-33fed040177b",
+     "319c893c-b360-466b-b63d-fab175f43d99",
+     "69daad1d-c0d9-42b7-931a-b02af9323663"
+    ]
+   }
+  },
+  {
+   "id": "f5ee836d-e79d-48be-b749-df0283eeb837",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag schattieren",
+    "about": {
+     "kind": "span",
+     "from": 66960,
+     "to": 68040,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "52bc8e32-0f9e-467a-9459-364d7fa80703",
+     "f86b3ab6-6b0b-475f-98a1-27f06bf8de07"
+    ]
+   }
+  },
+  {
+   "id": "5e6e6105-b808-4ecf-a4a9-79bcdf63be4c",
+   "name": "Describe",
+   "options": {
+    "text": "Beruhigung vor Phrasenende",
+    "about": {
+     "kind": "span",
+     "from": 67320,
+     "to": 69840,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "a2bcb283-00e2-47b3-bef2-b3ffb97c9acf",
+     "5fc44c4b-d223-461b-bef1-02cae1435c2c",
+     "2f7690c5-e6cd-4e1a-97a7-ed05bd87d2c9",
+     "2dcc52d6-75b9-4b6a-9aa7-6acddf52e10d"
+    ]
+   }
+  },
+  {
+   "id": "7473dcf7-6749-455f-a400-f8ffa313c3bb",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 69120,
+     "to": 69840,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "ef273c4e-2d65-4dd2-b3a6-bd2639b5d100",
+     "27fc7dbb-0133-4288-ac60-067dcf3d9064",
+     "d0380b16-5cdc-44bd-821b-a8bd046538ab"
+    ]
+   }
+  },
+  {
+   "id": "6a3c300f-b1b4-4518-af94-fdea24322eef",
+   "name": "Describe",
+   "options": {
+    "text": "dynamisch etwas zurück",
+    "about": {
+     "kind": "span",
+     "from": 69840,
+     "to": 73440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "b1ddfce0-f96d-4745-8e6f-726132530e0d"
+    ]
+   }
+  },
+  {
+   "id": "8ae251b2-3ca4-4f2e-ba2f-fbf4c97e655a",
+   "name": "Describe",
+   "options": {
+    "text": "vorwärts ...",
+    "about": {
+     "kind": "arrow",
+     "from": 69840,
+     "to": 72360,
+     "notes": [
+      "njybem0",
+      "n734q5i"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "2e991a64-d9f8-4f94-8e63-ea9a950e7c07"
+    ]
+   }
+  },
+  {
+   "id": "4fe7a110-4d91-4326-a1e2-5b0f93df2f1b",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag schattieren",
+    "about": {
+     "kind": "span",
+     "from": 69840,
+     "to": 72000,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "0a4760d2-2ba1-41a9-a19a-6ff97204db71",
+     "94b47d84-f911-477a-bc68-64d7d6149733",
+     "0fccf50a-bba6-410b-bdf8-c3e6cd296a12"
+    ]
+   }
+  },
+  {
+   "id": "5ca4980b-fbef-469c-9eac-9daccf02ab3f",
+   "name": "Describe",
+   "options": {
+    "text": "zum B-Dur-Akkord",
+    "about": {
+     "kind": "arrow",
+     "from": 72000,
+     "to": 74880,
+     "notes": [
+      "n734q5i",
+      "n1kq1vgo"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "ddfd9344-9b1f-4e18-8d28-9f61ea9f18b7",
+     "2aeb43d9-32f1-4e1f-b07f-91ba8fae5276",
+     "351a3a92-3556-4376-b1d7-fefc141631b8",
+     "1f487926-76b1-43c9-a907-1d82bd8388b0",
+     "f7dbf753-8ecb-4b23-9255-45f137100962"
+    ]
+   }
+  },
+  {
+   "id": "8230f96b-1e39-4515-b654-dce80e3dca4b",
+   "name": "Describe",
+   "options": {
+    "text": "Resonanz durch Pedal halten, aber etwas verkürzt",
+    "about": {
+     "kind": "span",
+     "from": 73080,
+     "to": 74880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "060dc873-984b-4d52-8295-c076e3c0eef8",
+     "1af12644-9664-42d1-b3d7-b1f044c65906"
+    ]
+   }
+  },
+  {
+   "id": "48ec9583-f24b-41f0-ac09-fd99270af4e4",
+   "name": "Describe",
+   "options": {
+    "text": "hin zum Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 73440,
+     "to": 76680,
+     "notes": [
+      "n1kq1vgo",
+      "n1fo3s7x"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "445ea95f-9c9b-46fe-8805-36b64989d846",
+     "dbb6cba1-1037-4184-a092-cab6229da67a",
+     "53d2ac47-eb7c-4a55-b683-beb6c90dff68",
+     "bf9ca1b7-b9fa-4b0e-9ee1-85bdf6c03338",
+     "06b585a1-75fc-4e2c-9400-139c5c054fe1"
+    ]
+   }
+  },
+  {
+   "id": "eb7cd8ea-1a3d-4d18-918a-3a04469d68c4",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 75600,
+     "to": 76680,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9af6477c-8771-4321-b72e-099db2e2e51b",
+     "2ffb1ac4-8c16-4f7e-8a82-aba2c24a9417",
+     "18f3d6cc-1e6b-49e9-9b19-6fb75394a8eb"
+    ]
+   }
+  },
+  {
+   "id": "fa4f9d02-b3ba-47d3-923e-66cca29191d8",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 76320,
+     "to": 78480,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "541e9881-cb84-4ad8-bf74-f82e08491d43"
+    ]
+   }
+  },
+  {
+   "id": "8be75870-c4f6-413a-b544-e2e7435594aa",
+   "name": "Describe",
+   "options": {
+    "text": "mit Inegalité vorwärts zum b",
+    "about": {
+     "kind": "arrow",
+     "from": 76320,
+     "to": 78120,
+     "notes": [
+      "n1fo3s7x",
+      "n1z0ua2q"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "f8bec790-b9e2-4b12-a1fc-e1a40dfcf55a",
+     "e7f394ed-526c-40db-b53b-259a5f863c60",
+     "f2f7b682-18c6-4127-b682-a7bcb2744958",
+     "a3f2f783-a426-4943-b730-083c71bfffc9",
+     "2a37487f-115f-4da7-9478-a1a9cc6308bc",
+     "b6a6f38a-601a-415d-8842-560ae19758b1",
+     "f2daf168-38ed-4392-9acf-9528cc2a5448",
+     "50aa766a-10ba-4008-a598-c6f429c47a4f"
+    ]
+   }
+  },
+  {
+   "id": "bc04b5da-81b3-4607-9faa-23573fd67b2d",
+   "name": "Describe",
+   "options": {
+    "text": "Hineinfallen",
+    "about": {
+     "kind": "arrow",
+     "from": 77760,
+     "to": 79560,
+     "notes": [
+      "n1z0ua2q",
+      "n24lxzb"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "d1276ca6-6452-4c79-92e2-3f67651a6919",
+     "9c3a9bc3-19f4-440d-a3d8-f61180de6f7d",
+     "85ae6a56-ffde-446a-9b24-50009b574882",
+     "792e34cd-a7d5-4a70-9436-3e88436d2c7a",
+     "cd8e0954-75ea-4886-9878-722875bba794",
+     "4c8303fb-e557-40d4-9936-d29e2c43ff56",
+     "d271effe-2062-4e18-9995-80e6c67a648e"
+    ]
+   }
+  },
+  {
+   "id": "cb7a4d16-e43f-41c2-8b06-f18d6172ac37",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 78480,
+     "to": 81360,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "1c17e854-d413-4809-a691-bb2cefd31cbd",
+     "1c0561ac-fbb6-40ae-a00a-7b5ad6c8945b"
+    ]
+   }
+  },
+  {
+   "id": "669b43e1-e13c-4870-98be-8a782552554a",
+   "name": "Describe",
+   "options": {
+    "text": "Gut-schlecht Akzente",
+    "about": {
+     "kind": "span",
+     "from": 79200,
+     "to": 81360,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "4838d841-464a-4ef5-a98f-6950c3cffc5f",
+     "dde72113-75d6-4770-b715-4611960a7fb0",
+     "9434c909-c8ba-47ef-933c-ee15c4ef666e"
+    ]
+   }
+  },
+  {
+   "id": "cd238c20-e1b3-4746-affc-c5e8c2c0ceba",
+   "name": "Describe",
+   "options": {
+    "text": "gedehntes d",
+    "about": {
+     "kind": "span",
+     "from": 79200,
+     "to": 80280,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "07715398-b3de-4c4b-a177-56bd50930c39",
+     "62c2b1be-af27-4b09-94e9-2b58b6077c67",
+     "b0a5fb71-1d14-43c8-8e15-b35c21203523"
+    ]
+   }
+  },
+  {
+   "id": "65fb4f9a-9c1c-437b-b76f-5193f2748a2b",
+   "name": "Describe",
+   "options": {
+    "text": "Weich ins F-Dur",
+    "about": {
+     "kind": "arrow",
+     "from": 80280,
+     "to": 82080,
+     "notes": [
+      "n96slkt",
+      "nazvjqs"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "46dda75f-1129-4b37-a325-dcfe3fe65678",
+     "e4412141-c4a7-418f-b783-c89f1c6f8f8f",
+     "be99f69d-f400-459d-b2a1-9ed7e7371ac3"
+    ]
+   }
+  },
+  {
+   "id": "68f3844c-d70a-41f5-985d-f779b91b9642",
+   "name": "Describe",
+   "options": {
+    "text": "Nachschlag schattieren",
+    "about": {
+     "kind": "span",
+     "from": 81360,
+     "to": 83520,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "966b93d6-b27a-4e61-9506-602ff66c6af6",
+     "ba831c06-286d-421d-b25b-d1569a221d2c",
+     "2c5f324e-c143-42ea-b258-35fff7564bf0",
+     "5f90ca8a-d74e-4249-ad11-07401ff2d730",
+     "53d55a35-70b7-42f4-95ab-c5d27a177cbc"
+    ]
+   }
+  },
+  {
+   "id": "36f41eff-e10e-4c60-86e8-cf2a9e32a222",
+   "name": "Describe",
+   "options": {
+    "text": "Bewegen",
+    "about": {
+     "kind": "span",
+     "from": 83520,
+     "to": 86400,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "be3b3007-4863-439d-934e-f2de8d045726",
+     "732cbc7d-ad53-42fd-9f9b-edf50a71183b",
+     "a5d088ee-e7f7-49ec-98da-7d4cea500fe2",
+     "7566da0f-6705-4e1a-b6e7-242f5a655fe7"
+    ]
+   }
+  },
+  {
+   "id": "91601f33-6fa7-4aef-9786-57f9c42b51f7",
+   "name": "Describe",
+   "options": {
+    "text": "Richtung zum \"a\"",
+    "about": {
+     "kind": "arrow",
+     "from": 83520,
+     "to": 86040,
+     "notes": [
+      "n1wi5y4d",
+      "napoy3h"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "31e9f3fd-b858-4acc-a13b-efccbca5b6bd",
+     "f1e1f654-218a-47ac-be3b-901a5df09261"
+    ]
+   }
+  },
+  {
+   "id": "cea2dae7-4b97-482e-a10c-6279d51f4074",
+   "name": "Describe",
+   "options": {
+    "text": "Legato in der aufsteigenden Sexte c-a",
+    "about": {
+     "kind": "span",
+     "from": 84240,
+     "to": 84960,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "d453a10f-d5b4-4f3f-9e92-c3554b6d9dbd"
+    ]
+   }
+  },
+  {
+   "id": "58eb812f-2628-49f4-af8b-85296eb0a48a",
+   "name": "Describe",
+   "options": {
+    "text": "Beruhigen",
+    "about": {
+     "kind": "span",
+     "from": 84600,
+     "to": 86400,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "9acc3304-96b9-42e5-a667-8e6ebafb96b9",
+     "a847020a-a92a-4c8c-97e6-000c84877590"
+    ]
+   }
+  },
+  {
+   "id": "ba9a8bcb-ba44-41ee-bdcd-36b51ff25ba4",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 86400,
+     "to": 91440,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "79e13017-ba98-4271-9330-34df8ffa5a6b"
+    ]
+   }
+  },
+  {
+   "id": "e7dead82-8936-4849-bd72-61123b73b3d1",
+   "name": "Describe",
+   "options": {
+    "text": "zum Quartsextakkord",
+    "about": {
+     "kind": "arrow",
+     "from": 86400,
+     "to": 88200,
+     "notes": [
+      "n9borlx",
+      "nax4mru"
+     ]
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "ca77154e-d17b-4d87-b7dc-f791305eede1",
+     "b80c9a0d-210b-4285-a6af-0ca1165491be",
+     "8d6c95d2-d93d-45c9-9fcd-443c62e9a29d",
+     "9baf6778-ce20-46cb-93b1-7d90a0994fa8",
+     "d810cec1-e9c1-4a8b-adc9-3d61f205e83a",
+     "3df67abd-9f3f-44e5-b80a-4c43e4773751"
+    ]
+   }
+  },
+  {
+   "id": "0411e9c3-b0aa-4270-a395-2acd90dc8758",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen",
+    "about": {
+     "kind": "span",
+     "from": 87840,
+     "to": 89280,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "60077a71-b311-43b3-8480-d0e304399400",
+     "a90f54f5-9a2d-473a-b996-628db622ab7e",
+     "c72c800b-2760-46ba-92e8-2b67967220f3",
+     "d2b2f397-ff52-43d3-9915-649b2386a2f9",
+     "8c0270b9-c187-406d-bee5-722ea9d7acda"
+    ]
+   }
+  },
+  {
+   "id": "f9d73caf-538f-49a3-ab16-f59a59ee64e3",
+   "name": "Describe",
+   "options": {
+    "text": "Intensivieren",
+    "about": {
+     "kind": "span",
+     "from": 88920,
+     "to": 91080,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "2ba8ab0f-aaa0-41d4-bded-49242468c2d9",
+     "e99c77d9-a2ac-4b9a-a7eb-18985cd094d1",
+     "f0377a7d-fd00-4b8f-bf12-4a417fd26741",
+     "a1bad580-b1b0-492e-8c58-992add199a35",
+     "02e6f684-5238-410a-8b51-2f3d85aa59a1",
+     "c8b58cde-925a-4baa-8e91-07cf7230bbfa"
+    ]
+   }
+  },
+  {
+   "id": "ab593be2-ae87-42a8-a4ac-12907e2904f9",
+   "name": "Describe",
+   "options": {
+    "text": "Zurücknehmen und beruhigen: leiser, Pedal mit jedem Basston erneuert",
+    "about": {
+     "kind": "span",
+     "from": 90000,
+     "to": 92880,
+     "notes": []
+    },
+    "model": null,
+    "date": null,
+    "steps": [],
+    "calls": [
+     "795d7de1-ffa6-45d7-8116-36c37eab6a94",
+     "49a444d5-40e4-40ee-974a-a6fd42e15f31",
+     "cb756905-5e71-425c-b60d-4641b334c6b2",
+     "5941551b-e1ce-4686-95ef-c363f93d1178",
+     "02a7186d-c68e-4afc-a49c-c4bda55e744d",
+     "8d1efda4-c50b-47b2-ad3e-ff048dfb2366",
+     "0848ad2b-a45f-4f57-98ca-3934d2daaf80"
+    ]
+   }
+  }
+ ]
+}

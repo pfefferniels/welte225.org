@@ -9,4 +9,5 @@ data/
 piano/
 take.js
 take-worker.js
+described.js
 voice/

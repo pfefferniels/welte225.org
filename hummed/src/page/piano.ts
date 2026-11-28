@@ -30,12 +30,15 @@ export class PianoSampler {
   readonly #context: AudioContext;
   readonly #samples = new Map<string, AudioBuffer>();
   readonly #failed: (error: unknown) => void;
+  readonly #directory: string;
   #loading: Promise<void> | null = null;
   #loaded = false;
 
-  constructor(context: AudioContext, failed: (error: unknown) => void) {
+  /** `directory`: where piano/ lies, for a page that is not beside it. */
+  constructor(context: AudioContext, failed: (error: unknown) => void, directory = '') {
     this.#context = context;
     this.#failed = failed;
+    this.#directory = directory;
   }
 
   /** Whether the samples are there; the first ask loads them. */
@@ -58,7 +61,7 @@ export class PianoSampler {
     await Promise.all(
       BASES.flatMap((base) =>
         LAYERS.map(async (layer) => {
-          const response = await fetch(`piano/p${base}v${layer}.mp3`);
+          const response = await fetch(`${this.#directory}piano/p${base}v${layer}.mp3`);
           if (!response.ok) throw new Error(`piano sample ${base}/${layer}: ${response.status}`);
           const buffer = await this.#context.decodeAudioData(await response.arrayBuffer());
           this.#samples.set(`${base}:${layer}`, buffer);

@@ -67,6 +67,8 @@ interface Job {
   readonly id: number;
   readonly setting: Setting;
   readonly start: StartAt;
+  /** Where it ends, where a passage alone is rendered. */
+  readonly until: StartAt | undefined;
   /** The worker asked for the plan. */
   readonly planner: PoolWorker;
   /** Whether the plan has come: only then are there chunks to hand out. */
@@ -106,13 +108,16 @@ export class VoicePool {
     return this.#workers.length;
   }
 
-  setup(reduction: Reduction, spectrogram: SpectrogramStyleName): void {
-    for (const worker of this.#workers)
-      worker.postMessage({ type: 'setup', reduction, spectrogram, keep: levelsKept() });
+  /** What every worker needs before it prepares anything; `keep`: how many prepared settings the first holds. */
+  setup(reduction: Reduction, spectrogram: SpectrogramStyleName, keep = levelsKept()): void {
+    for (const worker of this.#workers) worker.postMessage({ type: 'setup', reduction, spectrogram, keep });
   }
 
-  /** Render a setting from a place; stops whatever was being rendered before. */
-  request(id: number, setting: Setting, start: StartAt): void {
+  /**
+   * Render a setting from a place; stops whatever was being rendered before. With `until`, a passage
+   * alone, up to there: the first worker renders it in one piece, and no other is handed its level.
+   */
+  request(id: number, setting: Setting, start: StartAt, until?: StartAt): void {
     const planner = this.#workers.at(0);
     if (!planner) return;
     const others = this.#workers.slice(1);
@@ -121,6 +126,7 @@ export class VoicePool {
       id,
       setting,
       start,
+      until,
       planner,
       planned: false,
       queue: [],
@@ -135,10 +141,20 @@ export class VoicePool {
       id,
       setting,
       start,
+      ...(until && { until }),
       helped: others.length > 0,
-      share: waiting.size,
+      share: until ? 0 : waiting.size,
     });
     for (const worker of others) worker.postMessage({ type: 'stop', id });
+  }
+
+  /**
+   * Stop whatever is being rendered, with nothing else to render: `id` is a new request's, which the
+   * workers give way to. What they have prepared they keep.
+   */
+  stop(id: number): void {
+    this.#job = null;
+    for (const worker of this.#workers) worker.postMessage({ type: 'stop', id });
   }
 
   /** The first worker prepares settings with the help of the next two: give them channels to each other. */
@@ -231,7 +247,7 @@ export class VoicePool {
     if (!job.planned) {
       // before the plan: without the planner, the next worker plans instead; without a helper
       // (which may have been helping), the planner does the rest itself
-      if (worker === job.planner) this.request(job.id, job.setting, job.start);
+      if (worker === job.planner) this.request(job.id, job.setting, job.start, job.until);
       else if (index <= HELPERS) job.planner.postMessage({ type: 'alone', id: job.id });
       return;
     }

@@ -16,7 +16,7 @@ import {
 import { interp } from '../shared/math.ts';
 import type { PianoPart } from '../shared/piano.ts';
 import type { LevelData, Plan, PlanBody, Roll, Setting, StartAt, Timings } from '../shared/protocol.ts';
-import { PAD_MS, SAMPLE_RATE, STATE_STEP } from '../shared/units.ts';
+import { PAD_MS, SAMPLE_RATE, STATE_STEP, type Seconds } from '../shared/units.ts';
 import type { Reduction } from '../reduction/types.ts';
 import type { StatePair } from '../vtl/engine.ts';
 import type { ChunkSource } from './chunk.ts';
@@ -145,19 +145,27 @@ export function makeLevel(
   };
 }
 
-/** The plan of a level for a request: how long, where its bars and seams are, where the sound starts. */
-export function planOf(L: Level, id: number, start: StartAt): Plan {
-  const startSeconds =
-    'tick' in start
-      ? interp(start.tick, L.plan.clock.ticks, L.plan.clock.ms) / 1000 + PAD_MS / 1000
-      : start.seconds;
+/**
+ * The plan of a level for a request: how long, where its bars and seams are, where the sound starts;
+ * and for a passage alone (`until`), where it ends.
+ */
+export function planOf(L: Level, id: number, start: StartAt, until?: StartAt): Plan {
+  const seconds = (at: StartAt): Seconds =>
+    'tick' in at ? interp(at.tick, L.plan.clock.ticks, L.plan.clock.ms) / 1000 + PAD_MS / 1000 : at.seconds;
+  const startSeconds = seconds(start);
   // the first state at or before the 10 ms slot of the start: the page counts sound per slot
   const slot = SAMPLE_RATE / 100;
   const startState = Math.max(
     0,
     Math.min(L.plan.stateCount - 1, Math.floor((Math.floor(startSeconds * 100) * slot) / STATE_STEP)),
   );
-  return { ...L.plan, id, startSeconds, startState };
+  if (!until) return { ...L.plan, id, startSeconds, startState };
+  // and the first state past the slot the end falls in, a state after the start at the least
+  const endState = Math.max(
+    startState + 1,
+    Math.min(L.plan.stateCount, Math.ceil((Math.ceil(seconds(until) * 100) * slot) / STATE_STEP)),
+  );
+  return { ...L.plan, id, startSeconds, startState, endState };
 }
 
 /** A copy of a level to hand to another worker, and its buffers, to transfer rather than copy again. */

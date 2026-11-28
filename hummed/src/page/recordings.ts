@@ -26,22 +26,27 @@ interface Part {
 export class Recordings {
   readonly manifest: RecordingsManifest;
   readonly #context: AudioContext;
+  readonly #directory: string;
   readonly #parts = new Map<string, Part>();
   readonly #failed = new Set<number>();
   /** Told when a part has been decoded. */
   changed: () => void = () => undefined;
 
-  constructor(context: AudioContext, manifest: RecordingsManifest) {
+  constructor(context: AudioContext, manifest: RecordingsManifest, directory = '') {
     this.#context = context;
     this.manifest = manifest;
+    this.#directory = directory + BASE;
   }
 
-  /** The recordings listed in piano/pianoteq/manifest.json; null where there are none. */
-  static async load(context: AudioContext): Promise<Recordings | null> {
-    const response = await fetch(`${BASE}manifest.json`);
+  /**
+   * The recordings listed in piano/pianoteq/manifest.json; null where there are none. `directory`:
+   * where piano/ lies, for a page that is not beside it.
+   */
+  static async load(context: AudioContext, directory = ''): Promise<Recordings | null> {
+    const response = await fetch(`${directory}${BASE}manifest.json`);
     if (!response.ok) return null;
     const manifest = parseManifest(await response.json());
-    return manifest && new Recordings(context, manifest);
+    return manifest && new Recordings(context, manifest, directory);
   }
 
   /** The setting's entry in the manifest, if it was rendered. */
@@ -75,7 +80,7 @@ export class Recordings {
     if (held.bytes) return Promise.resolve(held.bytes);
     held.fetching ??= (async () => {
       const file = entry[part].file;
-      const response = await fetch(BASE + file);
+      const response = await fetch(this.#directory + file);
       if (!response.ok) throw new Error(`${file}: ${response.status}`);
       return response.arrayBuffer();
     })().then(

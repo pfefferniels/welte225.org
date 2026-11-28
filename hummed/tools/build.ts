@@ -1,5 +1,5 @@
-// Bundle the page (app.js) and the worker (worker.js), and the take's (take.js, take-worker.js),
-// minified with source maps. The bundles are
+// Bundle the page (app.js) and the worker (worker.js), the take's (take.js, take-worker.js) and the
+// described page's (described.js), minified with source maps. The bundles are
 // committed: GitHub Pages serves the repository as it is. CI checks that they match the sources.
 import { build, type BuildOptions } from 'esbuild';
 
@@ -44,5 +44,12 @@ await Promise.all([
     entryPoints: ['src/take/worker.ts'],
     outfile: 'take-worker.js',
     banner: { js: banner('a take taken apart, with espressivo (GPL-3.0-only, Niels Pfeffer)') },
+  }),
+  // the described page (../described/)
+  build({
+    ...common,
+    entryPoints: ['src/described/main.ts'],
+    outfile: 'described.js',
+    banner: { js: banner('the roll described, with espressivo (GPL-3.0-only, Niels Pfeffer)') },
   }),
 ]);
